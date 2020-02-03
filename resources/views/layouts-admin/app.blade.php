@@ -14,6 +14,10 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" ></script>
+        <script src="{{asset('assets/scripts/template.js')}}"></script>
     
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -55,7 +59,5 @@
                 </div>
             </div>
         </div>        
-        <script src="{{ asset('js/app.js') }}" ></script>
-        <script src="{{asset('assets/scripts/template.js')}}"></script>
     </body>
 </html>

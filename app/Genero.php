@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GrupoMicrobiano extends Model
+class Genero extends Model
 {
     public function cepas()
     {

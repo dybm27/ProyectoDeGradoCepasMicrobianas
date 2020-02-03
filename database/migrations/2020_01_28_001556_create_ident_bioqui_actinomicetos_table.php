@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGrupoMicrobianosTable extends Migration
+class CreateIdentBioquiActinomicetosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateGrupoMicrobianosTable extends Migration
      */
     public function up()
     {
-        Schema::create('grupo_microbianos', function (Blueprint $table) {
+        Schema::create('ident_bioqui_actinomicetos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateGrupoMicrobianosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grupo_microbianos');
+        Schema::dropIfExists('ident_bioqui_actinomicetos');
     }
 }

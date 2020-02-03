@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tipouser()
+    {
+        return $this->belongsTo(TipoUser::class);
+    }
+
+    public function hasRole($role)
+    {
+        if ($this->tipouser_id==$role) {
+            return true;
+        }
+        return false;
+    }
 }
