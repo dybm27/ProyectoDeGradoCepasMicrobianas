@@ -21,7 +21,8 @@ class CreateCepasTable extends Migration
             $table->unsignedBigInteger('especie_id');
             $table->string('estado',50);
             $table->string('origen',50);
-            $table->boolean('publicado');
+            $table->boolean('publicar')->default(0);
+            $table->longText('otras_caract')->nullable();
             $table->timestamps();
 
             $table->foreign('grupo_microbiano_id')->references('id')->on('grupo_microbianos');

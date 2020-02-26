@@ -22,14 +22,14 @@
                     </div>
                     <div class="widget-content-left  ml-3 header-user-info">
                         <div class="widget-heading">
-                            Alina Mclourd
+                            {{Auth::user()->name}}
                         </div>
                         <div class="widget-subheading">
-                            VP People Manager
+                            {{Auth::user()->tipouser->nombre}}
                         </div>
                     </div>
                     <div class="widget-content-right header-user-info ml-3">
-                        <a class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"><i class="lnr-power-switch"></i></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

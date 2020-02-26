@@ -30,10 +30,11 @@ class CreateCaracMacroBacteriasTable extends Migration
             $table->foreign('detalleoptico_id')->references('id')->on('detalle_opticos');
             $table->unsignedBigInteger('superficie_id');
             $table->foreign('superficie_id')->references('id')->on('superficies');
-            $table->string('tamaño',30);
+            $table->string('tamano',30);
             $table->string('color',100);
             $table->longText('otras_caract')->nullable();
-            $table->string('imagen')->nullable();
+            $table->string('imagen');
+            $table->string('imagenPublica');
             $table->longText('descripcion',100)->nullable();
             $table->timestamps();
         });

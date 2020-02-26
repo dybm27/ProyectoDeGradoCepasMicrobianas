@@ -15,8 +15,8 @@ class CreateMetodoConserHongosTable extends Migration
     {
         Schema::create('metodo_conser_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hongo_id');
-            $table->foreign('hongo_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->unsignedBigInteger('hongo_filamentoso_id');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_hongo_levaduras');
             $table->date('fecha');
@@ -26,6 +26,7 @@ class CreateMetodoConserHongosTable extends Migration
             $table->integer('numero_pases')->nullable();
             $table->longText('observaciones',100)->nullable();
             $table->string('imagen')->nullable();
+            $table->string('imagenPublica')->nullable();
             $table->longText('descripcion',100)->nullable();
             $table->timestamps();
         });

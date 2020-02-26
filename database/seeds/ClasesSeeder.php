@@ -12,16 +12,16 @@ class ClasesSeeder extends Seeder
     public function run()
     {
         DB::table('clases')->insert([
-            'nombre' => 'clase 1',
+            'nombre' => 'Clase 1',
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'clase 2',
+            'nombre' => 'Clase 2',
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'clase 3',
+            'nombre' => 'Clase 3',
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'clase 4',
+            'nombre' => 'Clase 4',
         ]);
     }
 }

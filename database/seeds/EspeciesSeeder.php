@@ -12,16 +12,16 @@ class EspeciesSeeder extends Seeder
     public function run()
     {
         DB::table('especies')->insert([
-            'nombre' => 'especie 1',
+            'nombre' => 'Especie 1',
         ]);
         DB::table('especies')->insert([
-            'nombre' => 'especie 2',
+            'nombre' => 'Especie 2',
         ]);
         DB::table('especies')->insert([
-            'nombre' => 'especie 3',
+            'nombre' => 'Especie 3',
         ]);
         DB::table('especies')->insert([
-            'nombre' => 'especie 4',
+            'nombre' => 'Especie 4',
         ]);
     }
 }

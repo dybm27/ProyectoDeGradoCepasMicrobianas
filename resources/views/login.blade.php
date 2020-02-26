@@ -63,19 +63,25 @@
                                             <div class="col-md-6">
                                                 <div class="position-relative form-group">
                                                     <label for="exampleEmail" class="" >Email</label>
-                                                    <input name="email" id="exampleEmail" placeholder="Email here..." type="email" 
-                                                    class="form-control" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                                    
+                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" 
+                                                    placeholder="Email..." required autocomplete="email" autofocus>
+                                                    @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="position-relative form-group">
-                                                    <label for="examplePassword" class="">Password</label>
-                                                    <input name="password" id="examplePassword" placeholder="Password here..." type="password" 
-                                                    class="form-control" required autocomplete="current-password">
+                                                    <label for="examplePassword" class="">Contraseña</label>
+                                                    <input id="password" type="password" class="form-control @error('email') is-invalid @enderror" name="password" 
+                                                    placeholder="Contraseña..." required autocomplete="current-password">
+                
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="position-relative form-check">
                                             <input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
                                             <label for="exampleCheck" class="form-check-label">Keep me logged in</label>

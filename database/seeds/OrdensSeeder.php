@@ -12,16 +12,16 @@ class OrdensSeeder extends Seeder
     public function run()
     {
         DB::table('ordens')->insert([
-            'nombre' => 'orden 1',
+            'nombre' => 'Orden 1',
         ]);
         DB::table('ordens')->insert([
-            'nombre' => 'orden 2',
+            'nombre' => 'Orden 2',
         ]);
         DB::table('ordens')->insert([
-            'nombre' => 'orden 3',
+            'nombre' => 'Orden 3',
         ]);
         DB::table('ordens')->insert([
-            'nombre' => 'orden 4',
+            'nombre' => 'Orden 4',
         ]);
     }
 }

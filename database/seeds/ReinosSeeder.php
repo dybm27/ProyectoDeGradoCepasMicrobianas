@@ -12,16 +12,16 @@ class ReinosSeeder extends Seeder
     public function run()
     {
         DB::table('reinos')->insert([
-            'nombre' => 'reino 1',
+            'nombre' => 'Reino 1',
         ]);
         DB::table('reinos')->insert([
-            'nombre' => 'reino 2',
+            'nombre' => 'Reino 2',
         ]);
         DB::table('reinos')->insert([
-            'nombre' => 'reino 3',
+            'nombre' => 'Reino 3',
         ]);
         DB::table('reinos')->insert([
-            'nombre' => 'reino 4',
+            'nombre' => 'Reino 4',
         ]);
     }
 }

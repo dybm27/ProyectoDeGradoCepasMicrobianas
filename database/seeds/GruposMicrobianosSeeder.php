@@ -12,16 +12,16 @@ class GruposMicrobianosSeeder extends Seeder
     public function run()
     {
         DB::table('grupo_microbianos')->insert([
-            'nombre' => 'Bacterias',
+            'nombre' => 'Bacteria',
         ]);
         DB::table('grupo_microbianos')->insert([
-            'nombre' => 'Hongos Filamentosos',
+            'nombre' => 'Hongo Filamentoso',
         ]);
         DB::table('grupo_microbianos')->insert([
-            'nombre' => 'Levaduras',
+            'nombre' => 'Levadura',
         ]);
         DB::table('grupo_microbianos')->insert([
-            'nombre' => 'Actinomisetos',
+            'nombre' => 'Actinomiceto',
         ]);
     }
 }

@@ -1,30 +1,40 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
+require('./bootstrap');
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import router from './router/index'
+import store from './store/index'
+import VueEvents from 'vue-events'
+Vue.use(VueEvents)
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('modal', require('./components/ModalComponent.vue').default);
+Vue.component('perfil', require('./components/PerfilComponent.vue').default);
+Vue.component('cepas', require('./components/cepas/CepasComponent.vue').default);
+Vue.component('bacterias', require('./components/cepas/BacteriasComponent.vue').default);
+Vue.component('hongos', require('./components/cepas/HongosComponent.vue').default);
+Vue.component('levaduras', require('./components/cepas/LevadurasComponent.vue').default);
+Vue.component('actinomicetos', require('./components/cepas/ActinomicetosComponent.vue').default);
+Vue.component('vuetable', require('vuetable-2/src/components/Vuetable').default);
+Vue.component('acciones-cepas', require('./components/cepas/AccionesCepasComponent.vue').default);
+Vue.component('checkboxs-publicar', require('./components/cepas/CheckboxsPublicarComponent.vue').default);
+Vue.component('my-detail-row', require('./components/DetailRowComponent.vue').default);
+Vue.component('filter-bar', require('./components/FilterBarComponent.vue').default);
+Vue.component('vuetable-pagination', require('./components/PaginationComponent.vue').default);
+Vue.component('vuetable-pagination-info', require('./components/PaginationInfoComponent').default);
+Vue.component('my-vuetable', require('./components/MyVuetableComponent').default);
+Vue.component('nav-actinomicetos', require('./components/cepas/actinomicetos/NavActinomicetosComponent').default);
+Vue.component('nav-bacterias', require('./components/cepas/bacterias/NavBacteriasComponent').default);
+Vue.component('nav-hongos', require('./components/cepas/hongos/NavHongosComponent').default);
+Vue.component('nav-levaduras', require('./components/cepas/levaduras/NavLevadurasComponent').default);
+Vue.component('form-carat-macro-bacteria', require('./components/cepas/bacterias/forms-caract/FormCaractMacroComponent').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+
+
 
 const app = new Vue({
     el: '#app',
+    router,
+    store
 });
+

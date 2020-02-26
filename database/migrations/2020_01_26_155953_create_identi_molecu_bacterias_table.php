@@ -23,7 +23,9 @@ class CreateIdentiMolecuBacteriasTable extends Migration
             $table->string('produc_reversed',100);
             $table->longText('obser_secuenciacion');
             $table->string('img_pcr')->nullable();
+            $table->string('img_pcrPublica')->nullable();
             $table->string('img_secuen')->nullable();
+            $table->string('img_secuenPublica')->nullable();
             $table->timestamps();
         });
     }

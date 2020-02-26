@@ -12,16 +12,16 @@ class PhylumsSeeder extends Seeder
     public function run()
     {
         DB::table('phylums')->insert([
-            'nombre' => 'phylum 1',
+            'nombre' => 'Phylum 1',
         ]);
         DB::table('phylums')->insert([
-            'nombre' => 'phylum 2',
+            'nombre' => 'Phylum 2',
         ]);
         DB::table('phylums')->insert([
-            'nombre' => 'phylum 3',
+            'nombre' => 'Phylum 3',
         ]);
         DB::table('phylums')->insert([
-            'nombre' => 'phylum 4',
+            'nombre' => 'Phylum 4',
         ]);
     }
 }

@@ -11,6 +11,19 @@ class ConsistenciasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+        DB::table('consistencias')->insert([
+            'nombre' => 'Consistencia 1',
+        ]);
+        DB::table('consistencias')->insert([
+            'nombre' => 'Consistencia 2',
+        ]);
+        DB::table('consistencias')->insert([
+            'nombre' => 'Consistencia 3',
+        ]);
+        DB::table('consistencias')->insert([
+            'nombre' => 'Consistencia 4',
+        ]);
+    
     }
 }

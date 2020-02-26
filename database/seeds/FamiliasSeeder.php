@@ -12,16 +12,16 @@ class FamiliasSeeder extends Seeder
     public function run()
     {
         DB::table('familias')->insert([
-            'nombre' => 'familia 1',
+            'nombre' => 'Familia 1',
         ]);
         DB::table('familias')->insert([
-            'nombre' => 'familia 2',
+            'nombre' => 'Familia 2',
         ]);
         DB::table('familias')->insert([
-            'nombre' => 'familia 3',
+            'nombre' => 'Familia 3',
         ]);
         DB::table('familias')->insert([
-            'nombre' => 'familia 4',
+            'nombre' => 'Familia 4',
         ]);
     }
 }

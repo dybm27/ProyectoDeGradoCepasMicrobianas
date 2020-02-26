@@ -12,16 +12,16 @@ class DivisionesSeeder extends Seeder
     public function run()
     {
         DB::table('divisions')->insert([
-            'nombre' => 'division 1',
+            'nombre' => 'Division 1',
         ]);
         DB::table('divisions')->insert([
-            'nombre' => 'division 2',
+            'nombre' => 'Division 2',
         ]);
         DB::table('divisions')->insert([
-            'nombre' => 'division 3',
+            'nombre' => 'Division 3',
         ]);
         DB::table('divisions')->insert([
-            'nombre' => 'division 4',
+            'nombre' => 'Division 4',
         ]);
     }
 }

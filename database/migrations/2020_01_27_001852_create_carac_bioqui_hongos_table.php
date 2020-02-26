@@ -15,14 +15,17 @@ class CreateCaracBioquiHongosTable extends Migration
     {
         Schema::create('carac_bioqui_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hongo_id');
-            $table->foreign('hongo_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->unsignedBigInteger('hongo_filamentoso_id');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
             $table->string('enzimas',100);
             $table->string('azucares',100);
             $table->longText('otras_caracteristicas')->nullable();
             $table->string('imagen1')->nullable();
+            $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
+            $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
+            $table->string('imagenPublica3')->nullable();
             $table->longText('descripcion')->nullable();
             $table->timestamps();
         });

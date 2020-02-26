@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             'phylums','reinos','tipo_users','users','forma_caract_macros','bordes','elevacions',
             'forma_caract_micros','detalle_opticos','superficies','consistencias','tipo_metodo_conservacion_bacterias',
             'tipo_metodo_conservacion_hongo_levaduras','color_hongos','textura_hongos','espora_asexual_hongos',
-            'espora_sexual_hongos','conidioforo_hongos'
+            'espora_sexual_hongos','conidioforo_hongos','cepas'
         ]);
         $this->call(TipoUserSeeder::class);
         $this->call(GruposMicrobianosSeeder::class);
@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EsporasSexualesHongosSeeder::class);
         $this->call(ConidioforosHongosSeeder::class);
         $this->call(GenerosSeeder::class);
+        //$this->call(CepasSeeder::class);
         // $this->call(UsersTableSeeder::class);
     }
 

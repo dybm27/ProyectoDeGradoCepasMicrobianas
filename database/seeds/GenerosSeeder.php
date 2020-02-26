@@ -12,16 +12,16 @@ class GenerosSeeder extends Seeder
     public function run()
     {
         DB::table('generos')->insert([
-            'nombre' => 'genero 1',
+            'nombre' => 'Genero 1',
         ]);
         DB::table('generos')->insert([
-            'nombre' => 'genero 2',
+            'nombre' => 'Genero 2',
         ]);
         DB::table('generos')->insert([
-            'nombre' => 'genero 3',
+            'nombre' => 'Genero 3',
         ]);
         DB::table('generos')->insert([
-            'nombre' => 'genero 4',
+            'nombre' => 'Genero 4',
         ]);
     }
 }

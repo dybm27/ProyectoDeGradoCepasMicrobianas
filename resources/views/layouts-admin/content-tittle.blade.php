@@ -2,16 +2,17 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading">
             <div class="page-title-icon">
-                <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                </i>
+                @yield('icono-titulo')
             </div>
-            <div>Analytics Dashboard
-                <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+            <div>
+                @yield('titulo')
+                <div class="page-title-subheading">
+                    @yield('subtitulo')
                 </div>
             </div>
         </div>
         <div class="page-title-actions">
-            
+            @yield('accion')
         </div>    
     </div>
 </div>  

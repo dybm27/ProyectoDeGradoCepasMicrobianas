@@ -6,21 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cepa extends Model
 {
-   
-
-    public function division()
-    {
-        return $this->belongsTo(Division::class);
-    }
 
     public function especie()
     {
         return $this->belongsTo(Especie::class);
-    }
-
-    public function familia()
-    {
-        return $this->belongsTo(Familia::class);
     }
 
     public function genero()

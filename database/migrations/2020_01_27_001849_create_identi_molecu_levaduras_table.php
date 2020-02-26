@@ -26,7 +26,9 @@ class CreateIdentiMolecuLevadurasTable extends Migration
             $table->string('analisis_filogenetico',100);
             $table->longText('observaciones')->nullable();
             $table->string('imagen_pcr')->nullable();
+            $table->string('imagen_pcrPublica')->nullable();
             $table->string('imagen_blast')->nullable();
+            $table->string('imagen_blastPublica')->nullable();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateIdentiMolecuHongosTable extends Migration
     {
         Schema::create('identi_molecu_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hongo_id');
-            $table->foreign('hongo_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->unsignedBigInteger('hongo_filamentoso_id');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
             $table->string('secuencia_forward');
             $table->string('secuencia_reversed');
             $table->string('producto_forward');
@@ -26,7 +26,9 @@ class CreateIdentiMolecuHongosTable extends Migration
             $table->string('analisis_filogenetico',100);
             $table->longText('observaciones')->nullable();
             $table->string('imagen_pcr')->nullable();
+            $table->string('imagen_pcrPublica')->nullable();
             $table->string('imagen_blast')->nullable();
+            $table->string('imagen_blastPublica')->nullable();
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class CreateMetodoConserLevadurasTable extends Migration
             $table->integer('numero_pases')->nullable();
             $table->longText('observaciones')->nullable();
             $table->string('imagen')->nullable();
+            $table->string('imagenPublica')->nullable();
             $table->longText('descripcion')->nullable();
             $table->timestamps();
         });

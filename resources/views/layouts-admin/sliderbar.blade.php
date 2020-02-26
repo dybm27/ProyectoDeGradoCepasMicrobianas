@@ -7,400 +7,62 @@
     <div class="scrollbar-sidebar ps ps--active-y">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Administrar Cepas</li>
-                <li class="mm-active">
+                <li class="app-sidebar__heading">Administrar Informacion</li>
+                <li>
+                    <a href="{{route('home')}}" @yield('route-perfil')>
+                        <i class="metismenu-icon pe-7s-graph2">
+                        </i>Perfil
+                    </a>
+                </li>
+                <li @yield('route-cepa')>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-rocket"></i>
-                        Dashboards
+                        Cepas
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html" class="mm-active">
+                            <a href="{{route('cepas')}}" @yield('route-todas')>
                                 <i class="metismenu-icon">
-                                </i>Analytics
+                                </i>Todas
                             </a>
                         </li>
                         <li>
-                            <a href="dashboards-commerce.html">
+                            <a href="{{route('cepas_bacterias')}}" @yield('route-bacteria')>
                                 <i class="metismenu-icon">
-                                </i>Commerce
+                                </i>Bacterias
                             </a>
                         </li>
                         <li>
-                            <a href="dashboards-sales.html">
+                            <a href="{{route('cepas_hongos')}}" @yield('route-hongo')>
                                 <i class="metismenu-icon">
-                                </i>Sales
+                                </i>Hongos Filamentosos
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('cepas_levaduras')}}" @yield('route-levadura')>
                                 <i class="metismenu-icon"></i>
-                                Minimal
-                                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                Levaduras
                             </a>
-                            <ul>
-                                <li>
-                                    <a href="dashboards-minimal-1.html">
-                                        <i class="metismenu-icon">
-                                        </i>Variation 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dashboards-minimal-2.html">
-                                        <i class="metismenu-icon">
-                                        </i>Variation 2
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <a href="dashboards-crm.html">
+                            <a href="{{route('cepas_actinomicetos')}}" @yield('route-actinomiceto')>
                                 <i class="metismenu-icon"></i>
-                                CRM
+                                Actinomicetos
                             </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-browser"></i>
-                        Pages
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="pages-login.html">
-                                <i class="metismenu-icon"></i>
-                                Login
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-login-boxed.html">
-                                <i class="metismenu-icon">
-                                </i>Login Boxed
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-register.html">
-                                <i class="metismenu-icon">
-                                </i>Register
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-register-boxed.html">
-                                <i class="metismenu-icon">
-                                </i>Register Boxed
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-forgot-password.html">
-                                <i class="metismenu-icon">
-                                </i>Forgot Password
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-forgot-password-boxed.html">
-                                <i class="metismenu-icon">
-                                </i>Forgot Password Boxed
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-plugin"></i>
-                        Applications
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="apps-mailbox.html">
-                                <i class="metismenu-icon">
-                                </i>Mailbox
-                            </a>
-                        </li>
-                        <li>
-                            <a href="apps-chat.html">
-                                <i class="metismenu-icon">
-                                </i>Chat
-                            </a>
-                        </li>
-                        <li>
-                            <a href="apps-faq-section.html">
-                                <i class="metismenu-icon">
-                                </i>FAQ Section
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon"></i>
-                                Forums
-                                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="apps-forum-list.html">
-                                        <i class="metismenu-icon">
-                                        </i>Forum Listing
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="apps-forum-threads.html">
-                                        <i class="metismenu-icon">
-                                        </i>Forum Threads
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="apps-forum-discussion.html">
-                                        <i class="metismenu-icon">
-                                        </i>Forum Discussion
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </li>
                 <li class="app-sidebar__heading">Usuario Final</li>
+                <hr/>
                 <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
-                        Elements
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="metismenu-icon lnr-exit"></i>Cerrar Sesion
                     </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon"></i>
-                                Buttons
-                                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="elements-buttons-standard.html">
-                                        <i class="metismenu-icon">
-                                        </i>Standard
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="elements-buttons-pills.html">
-                                        <i class="metismenu-icon">
-                                        </i>Pills
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="elements-buttons-square.html">
-                                        <i class="metismenu-icon">
-                                        </i>Square
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="elements-buttons-shadow.html">
-                                        <i class="metismenu-icon">
-                                        </i>Shadow
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="elements-buttons-icons.html">
-                                        <i class="metismenu-icon">
-                                        </i>With Icons
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="elements-dropdowns.html">
-                                <i class="metismenu-icon">
-                                </i>Dropdowns
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-icons.html">
-                                <i class="metismenu-icon">
-                                </i>Icons
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-badges-labels.html">
-                                <i class="metismenu-icon">
-                                </i>Badges
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-cards.html">
-                                <i class="metismenu-icon">
-                                </i>Cards
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-loaders.html">
-                                <i class="metismenu-icon">
-                                </i>Loading Indicators
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-list-group.html">
-                                <i class="metismenu-icon">
-                                </i>List Groups
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-navigation.html">
-                                <i class="metismenu-icon">
-                                </i>Navigation Menus
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-timelines.html">
-                                <i class="metismenu-icon">
-                                </i>Timeline
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-utilities.html">
-                                <i class="metismenu-icon">
-                                </i>Utilities
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-car"></i>
-                        Components
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="components-tabs.html">
-                                <i class="metismenu-icon">
-                                </i>Tabs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-accordions.html">
-                                <i class="metismenu-icon">
-                                </i>Accordions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-notifications.html">
-                                <i class="metismenu-icon">
-                                </i>Notifications
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-modals.html">
-                                <i class="metismenu-icon">
-                                </i>Modals
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-loading-blocks.html">
-                                <i class="metismenu-icon">
-                                </i>Loading Blockers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-progress-bar.html">
-                                <i class="metismenu-icon">
-                                </i>Progress Bar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-tooltips-popovers.html">
-                                <i class="metismenu-icon">
-                                </i>Tooltips &amp; Popovers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-carousel.html">
-                                <i class="metismenu-icon">
-                                </i>Carousel
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-calendar.html">
-                                <i class="metismenu-icon">
-                                </i>Calendar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-pagination.html">
-                                <i class="metismenu-icon">
-                                </i>Pagination
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-count-up.html">
-                                <i class="metismenu-icon">
-                                </i>Count Up
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-scrollable-elements.html">
-                                <i class="metismenu-icon">
-                                </i>Scrollable
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-tree-view.html">
-                                <i class="metismenu-icon">
-                                </i>Tree View
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-maps.html">
-                                <i class="metismenu-icon">
-                                </i>Maps
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-ratings.html">
-                                <i class="metismenu-icon">
-                                </i>Ratings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-image-crop.html">
-                                <i class="metismenu-icon">
-                                </i>Image Crop
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-guided-tours.html">
-                                <i class="metismenu-icon">
-                                </i>Guided Tours
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Tables
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="tables-data-tables.html">
-                                <i class="metismenu-icon">
-                                </i>Data Tables
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tables-regular.html">
-                                <i class="metismenu-icon">
-                                </i>Regular Tables
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tables-grid.html">
-                                <i class="metismenu-icon">
-                                </i>Grid Tables
-                            </a>
-                        </li>
-                    </ul>
+                    <form id="logout-form1" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>  
                 </li>
             </ul>
         </div>
