@@ -9,7 +9,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{nombre}}</h5>
                 <form
-                  @submit.prevent="agregar"
+                  @submit.prevent="evento"
                   v-if="getGrupos !=''&&getGeneros !=''&&getEspecies !=''"
                 >
                   <div class="position-relative form-group">
@@ -263,19 +263,48 @@ export default {
     };
   },
   methods: {
-    agregar() {
-      axios
-        .post("/cepas/agregar", this.parametros)
-        .then(res => {
-          this.redirect();
-        })
-        .catch(error => {
-          if (error.response) {
+    evento() {
+      if (this.nombre === "Editar Cepa") {
+        axios
+          .put(`/cepas/editar/${this.$route.params.cepaId}`, this.parametros)
+          .then(res => {
             this.errors = [];
-            this.errors = error.response.data.errors;
-            console.log(error.response.data);
-          }
-        });
+            this.redirect();
+            this.toastr(
+              "Mensaje de ejecución",
+              "Cepa editada con exito!!",
+              "success"
+            );
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
+      } else {
+        axios
+          .post("/cepas/agregar", this.parametros)
+          .then(res => {
+            this.errors = [];
+            this.redirect();
+            this.toastr(
+              "Mensaje de ejecución",
+              "Cepa agregada con exito!!",
+              "success"
+            );
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
+      }
     },
     ocultarGrupoMicrobiano() {
       if (this.tipoG === 0) {
@@ -305,12 +334,10 @@ export default {
     },
     verificarTipo() {
       if (window.location.pathname === "/cepas/agregar") {
-        console.log("agregar");
         this.nombre = "Agregar Nueva Cepa";
         this.classBtn = "btn-primary";
         this.nombreBtn = "Guardar";
       } else {
-        console.log("editar");
         this.disabled = true;
         this.nombre = "Editar Cepa";
         this.classBtn = "btn-warning";
@@ -340,7 +367,7 @@ export default {
       this.parametros.origen = cepa.cepa.origen;
       this.parametros.otras_caracteristicas = cepa.cepa.otras_caract;
 
-      switch (cepa.grupo_microbiano_id) {
+      switch (cepa.cepa.grupo_microbiano_id) {
         case 1:
           break;
         case 2:
@@ -366,6 +393,26 @@ export default {
       if (cepa.cepa.publicar == 1) {
         this.parametros.publicar = true;
       }
+    },
+    toastr(titulo, msg, tipo) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: 5000,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: () => {},
+        onClicked: () => {},
+        onClosed: () => {},
+        onMouseOver: () => {},
+        onMouseOut: () => {}
+      });
     }
   },
   computed: {

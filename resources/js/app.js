@@ -5,10 +5,14 @@ window.Vue = require('vue');
 import router from './router/index'
 import store from './store/index'
 import VueEvents from 'vue-events'
+import VueToastr from 'vue-toastr'
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal)
 Vue.use(VueEvents)
+Vue.use(VueToastr)
 
 
-Vue.component('modal', require('./components/ModalComponent.vue').default);
 Vue.component('perfil', require('./components/PerfilComponent.vue').default);
 Vue.component('cepas', require('./components/cepas/CepasComponent.vue').default);
 Vue.component('bacterias', require('./components/cepas/BacteriasComponent.vue').default);

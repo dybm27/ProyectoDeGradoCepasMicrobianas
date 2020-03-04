@@ -66,6 +66,21 @@ export default new Vuex.Store({
         mutacionAgregarCaractMacroBacteria(state, data) {
             state.cepa.caract_macroscopicas.push(data);
         },
+        mutacionEditarCaractMacroBacteria(state, data) {
+            for (let i = 0; i < state.cepa.caract_macroscopicas.length; i++) {
+                if (state.cepa.caract_macroscopicas[i].id === data.id) {
+                    //Vue.set(state.cepa.caract_macroscopicas, i, data);
+                    state.cepa.caract_macroscopicas.splice(i, 1, data);
+                }
+            }
+        },
+        mutacionEliminarCaractMacroBacteria(state, data) {
+            for (let i = 0; i < state.cepa.caract_macroscopicas.length; i++) {
+                if (state.cepa.caract_macroscopicas[i].id === data.id) {
+                    state.cepa.caract_macroscopicas.splice(i, 1);
+                }
+            }
+        },
         limpiarCepa(state) {
             state.cepa = null;
             this.info_caract_bacterias = [];
@@ -89,6 +104,12 @@ export default new Vuex.Store({
         },
         accionAgregarCaractMacroBacteria({ commit }, data) {
             commit("mutacionAgregarCaractMacroBacteria", data);
+        },
+        accionEditarCaractMacroBacteria({ commit }, data) {
+            commit("mutacionEditarCaractMacroBacteria", data);
+        },
+        accionEliminarCaractMacroBacteria({ commit }, data) {
+            commit("mutacionEliminarCaractMacroBacteria", data);
         }
     },
     modules: {}

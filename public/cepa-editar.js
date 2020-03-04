@@ -279,18 +279,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   methods: {
-    agregar: function agregar() {
+    evento: function evento() {
       var _this = this;
 
-      axios.post("/cepas/agregar", this.parametros).then(function (res) {
-        _this.redirect();
-      })["catch"](function (error) {
-        if (error.response) {
+      if (this.nombre === "Editar Cepa") {
+        axios.put("/cepas/editar/".concat(this.$route.params.cepaId), this.parametros).then(function (res) {
           _this.errors = [];
-          _this.errors = error.response.data.errors;
-          console.log(error.response.data);
-        }
-      });
+
+          _this.redirect();
+
+          _this.toastr("Mensaje de ejecución", "Cepa editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
+
+          }
+        });
+      } else {
+        axios.post("/cepas/agregar", this.parametros).then(function (res) {
+          _this.errors = [];
+
+          _this.redirect();
+
+          _this.toastr("Mensaje de ejecución", "Cepa agregada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
+
+          }
+        });
+      }
     },
     ocultarGrupoMicrobiano: function ocultarGrupoMicrobiano() {
       if (this.tipoG === 0) {
@@ -324,12 +348,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     verificarTipo: function verificarTipo() {
       if (window.location.pathname === "/cepas/agregar") {
-        console.log("agregar");
         this.nombre = "Agregar Nueva Cepa";
         this.classBtn = "btn-primary";
         this.nombreBtn = "Guardar";
       } else {
-        console.log("editar");
         this.disabled = true;
         this.nombre = "Editar Cepa";
         this.classBtn = "btn-warning";
@@ -358,7 +380,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.origen = cepa.cepa.origen;
       this.parametros.otras_caracteristicas = cepa.cepa.otras_caract;
 
-      switch (cepa.grupo_microbiano_id) {
+      switch (cepa.cepa.grupo_microbiano_id) {
         case 1:
           break;
 
@@ -387,6 +409,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (cepa.cepa.publicar == 1) {
         this.parametros.publicar = true;
       }
+    },
+    toastr: function toastr(titulo, msg, tipo) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: 5000,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: function onCreated() {},
+        onClicked: function onClicked() {},
+        onClosed: function onClosed() {},
+        onMouseOver: function onMouseOver() {},
+        onMouseOut: function onMouseOut() {}
+      });
     }
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias"])),
@@ -441,7 +483,7 @@ var render = function() {
                         on: {
                           submit: function($event) {
                             $event.preventDefault()
-                            return _vm.agregar($event)
+                            return _vm.evento($event)
                           }
                         }
                       },

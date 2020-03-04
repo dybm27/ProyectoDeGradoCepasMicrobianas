@@ -8,7 +8,7 @@
           role="tab"
           class="nav-link"
         >
-          <span>C. Macroscopicas</span>
+          <span>C. Macroscópicas</span>
         </router-link>
       </li>
       <li class="nav-item">
@@ -18,7 +18,7 @@
           role="tab"
           class="nav-link"
         >
-          <span>C. Microscopicas</span>
+          <span>C. Microscópicas</span>
         </router-link>
       </li>
       <li class="nav-item">
@@ -28,7 +28,7 @@
           role="tab"
           class="nav-link"
         >
-          <span>C. Bioquimicas</span>
+          <span>C. Bioquímicas</span>
         </router-link>
       </li>
       <li class="nav-item">
@@ -48,7 +48,7 @@
           role="tab"
           class="nav-link"
         >
-          <span>M. Conservacion</span>
+          <span>M. Conservación</span>
         </router-link>
       </li>
     </ul>

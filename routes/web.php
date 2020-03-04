@@ -34,22 +34,30 @@ Route::group(['middleware' => 'auth'], function () {
     //-- Perfil
     Route::get('/perfil', 'PerfilController@index')->name('home');
 
-    //-- Gestionar cepas
+    //-- vistas cepas
     Route::get('/cepas', 'CepaController@index')->name('cepas');
     Route::get('/cepas/agregar', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}', 'CepaController@agregarCaract');
-    Route::get('/cepas/bacteria/{id}/caract-macro', 'CepaController@agregarCaract');
+    Route::get('/cepas/editar/{id}', 'CepaController@index');
+    //-- crud cepas
+    Route::post('/cepas/agregar', 'CepaController@store');
+    Route::put('/cepas/editar/{id}', 'CepaController@update');
+    Route::delete('/cepas/eliminar/{id}', 'CepaController@delete');
+    //-- vistas caract-bacterias
+    Route::get('/cepas/bacteria/{id}', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-macro', 'CepaController@index');
+    //-- crud caract-bacterias
     Route::post('/cepas/bacteria/caract-macro', 'CaractMacroBacteriaController@store');
     Route::put('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@update');
+    Route::delete('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@destroy');
 
 
 
 
-    Route::get('/cepas/bacteria/{id}/caract-micro', 'CepaController@agregarCaract');
-    Route::get('/cepas/bacteria/{id}/caract-bioqui', 'CepaController@agregarCaract');
-    Route::get('/cepas/bacteria/{id}/caract-fisio', 'CepaController@agregarCaract');
-    Route::get('/cepas/bacteria/{id}/identi-molecu', 'CepaController@agregarCaract');
-    Route::get('/cepas/bacteria/{id}/metodo-conser', 'CepaController@agregarCaract');
+    Route::get('/cepas/bacteria/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-bioqui', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-fisio', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/identi-molecu', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser', 'CepaController@index');
     Route::get('/cepas-bacterias', 'CepaController@bacterias')->name('cepas_bacterias');
     Route::get('/cepas-bacterias/form-agregar', 'CepaController@bacterias');
     Route::get('/cepas-levaduras', 'CepaController@levaduras')->name('cepas_levaduras');
@@ -58,9 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cepas-hongos/form-agregar', 'CepaController@hongos');
     Route::get('/cepas-actinomicetos', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
     Route::get('/cepas-actinomicetos/form-agregar', 'CepaController@actinomicetos');
-    Route::post('/cepas/agregar', 'CepaController@store')->name('cepa_agregar');
-    Route::put('/cepas/editar/{id}', 'CepaController@update')->name('cepa_editar');
-    Route::delete('/cepas/eliminar/{id}', 'CepaController@delete')->name('cepa_eliminar');
+
 
     // Ruta para Vue
     Route::get('/{vue_capture?}', function () {

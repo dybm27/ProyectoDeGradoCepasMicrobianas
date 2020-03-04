@@ -14,7 +14,26 @@
         <nav-actinomicetos></nav-actinomicetos>
       </div>
     </div>
-    <div v-else>Esperando Informacion</div>
+    <div v-else>
+      <div class="container mt-5">
+        <div class="row ">
+          <div class="col-lg-12 d-flex justify-content-center mt-5">
+            <div class="loader mt-5">
+              <div class="ball-spin-fade-loader mt-5">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

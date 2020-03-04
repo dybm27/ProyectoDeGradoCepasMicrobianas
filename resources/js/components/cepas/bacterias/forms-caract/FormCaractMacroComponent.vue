@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="evento" enctype="multipart/form-data">
+    <form @submit.prevent="evento">
       <div class="container">
         <div class="row justify-content-md-center">
           <div class="col col-sm-6">
@@ -223,8 +223,9 @@
 
 <script>
 import vuex from "vuex";
+
 export default {
-  props: ["info", "radioId1", "radioId2", "radioId3"],
+  props: ["info", "radioId1", "radioId2", "radioId3", "modificarInfo"],
   data() {
     return {
       parametros: {
@@ -247,39 +248,116 @@ export default {
       errors: []
     };
   },
+  watch: {
+    modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    }
+  },
   methods: {
     evento() {
       if (this.tituloForm === "Agregar Medio") {
-        let formData = this.appendInfo();
-        console.log(this.parametros);
-        console.log(formData);
+        let formData = new FormData();
+        this.appendInfo(formData);
         axios
-          .post("/cepas/bacteria/caract-macro", formData)
+          .post("/cepas/bacteria/caract-macro", formData, {
+            headers: { "Content-Type": "multipart/form-data" }
+          })
           .then(res => {
-            console.log(res.data);
-            /* this.$refs.inputImagen.value = "";
+            this.errors = [];
+            this.$refs.inputImagen.value = "";
             this.tituloForm = "Editar Medio";
             this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);*/
+            this.$emit("agregar", res.data);
+            this.toastr(
+              "Mensaje de ejecución",
+              "Caracteristica Macroscópica agregada con exito!!",
+              "success"
+            );
           })
           .catch(error => {
-            console.log(error.response);
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
           });
       } else {
-        let formData = this.appendInfo();
-        formData.append("_method", "put");
-        console.log(this.parametros);
-        console.log(formData);
-
-        axios
-          .put(`/cepas/bacteria/caract-macro/${this.info.id}`, formData)
-          .then(res => {
-            console.log(res.data);
-          })
-          .catch(error => {
-            console.log(error.response);
-          });
+        if (this.parametros.imagen === this.info.imagen) {
+          axios
+            .put(
+              `/cepas/bacteria/caract-macro/${this.info.id}`,
+              this.parametros
+            )
+            .then(res => {
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Mensaje de ejecución",
+                "Caracteristica Macroscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch(error => {
+              if (error.response) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+                this.toastr("Error!!", "", "error");
+                // console.log(error.response.data);
+              }
+            });
+        } else {
+          let formData = new FormData();
+          this.appendInfo(formData);
+          formData.append("_method", "PUT");
+          axios
+            .post(`/cepas/bacteria/caract-macro/${this.info.id}`, formData, {
+              headers: { "Content-Type": "multipart/form-data" }
+            })
+            .then(res => {
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Mensaje de ejecución",
+                "Caracteristica Macroscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch(error => {
+              if (error.response) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+                this.toastr("Error!!", "", "error");
+                // console.log(error.response.data);
+              }
+            });
+        }
       }
+    },
+    toastr(titulo, msg, tipo) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: 5000,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: () => {},
+        onClicked: () => {},
+        onClosed: () => {},
+        onMouseOver: () => {},
+        onMouseOut: () => {}
+      });
     },
     llenarInfo() {
       this.parametros.medio = this.info.medio;
@@ -291,14 +369,13 @@ export default {
       this.parametros.detalle_optico = this.info.detalleoptico_id;
       this.parametros.tamaño = this.info.tamano;
       this.parametros.superficie = this.info.superficie_id;
-      this.parametros.otras_caract = this.info.otras_caract;
+      this.parametros.otras_caracteristicas = this.info.otras_caract;
       this.parametros.imagen = this.info.imagen;
       this.imageMiniatura = this.info.imagenPublica;
       this.parametros.imagen_descripcion = this.info.descripcion;
     },
-    appendInfo() {
-      let formData = new FormData();
-      formData.append("cepaId", this.$route.params.cepaId);
+    appendInfo(formData) {
+      formData.append("cepaId", this.$route.params.cepaBacteriaId);
       formData.append("medio", this.parametros.medio);
       formData.append("forma", this.parametros.forma);
       formData.append("borde", this.parametros.borde);
@@ -308,10 +385,9 @@ export default {
       formData.append("detalle_optico", this.parametros.detalle_optico);
       formData.append("tamaño", this.parametros.tamaño);
       formData.append("superficie", this.parametros.superficie);
-      formData.append("otras_caract", this.parametros.otras_caract);
+      formData.append("otras_caract", this.parametros.otras_caracteristicas);
       formData.append("imagen", this.parametros.imagen);
       formData.append("imagen_descripcion", this.parametros.imagen_descripcion);
-      return formData;
     },
     obtenerImagen(e) {
       let file = e.target.files[0];

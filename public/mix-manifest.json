@@ -14,7 +14,7 @@
     "/caract-micro-hongo.js": "/caract-micro-hongo.js",
     "/caract-micro-levadura.js": "/caract-micro-levadura.js",
     "/caract-molecu-actinomiceto.js": "/caract-molecu-actinomiceto.js",
-    "/cepa-agregar.js": "/cepa-agregar.js",
+    "/cepa-editar.js": "/cepa-editar.js",
     "/cepas-actinomicetos.js": "/cepas-actinomicetos.js",
     "/cepas-bacterias.js": "/cepas-bacterias.js",
     "/cepas-hongos.js": "/cepas-hongos.js",
@@ -29,7 +29,5 @@
     "/metodo-conser-bacteria.js": "/metodo-conser-bacteria.js",
     "/metodo-conser-hongo.js": "/metodo-conser-hongo.js",
     "/metodo-conser-levadura.js": "/metodo-conser-levadura.js",
-    "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js",
-    "/table-cepas.js": "/table-cepas.js",
-    "/cepa-editar.js": "/cepa-editar.js"
+    "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js"
 }
