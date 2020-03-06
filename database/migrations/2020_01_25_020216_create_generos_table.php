@@ -15,8 +15,11 @@ class CreateGenerosTable extends Migration
     {
         Schema::create('generos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre',50)->unique();
+            $table->string('nombre', 50)->unique();
+            $table->unsignedBigInteger('grupo_microbiano_id');
             $table->timestamps();
+
+            $table->foreign('grupo_microbiano_id')->references('id')->on('grupo_microbianos');
         });
     }
 

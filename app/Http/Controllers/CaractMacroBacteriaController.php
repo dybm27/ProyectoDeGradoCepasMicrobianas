@@ -29,11 +29,10 @@ class CaractMacroBacteriaController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'medio' => 'bail|required|regex:/^[\pL\s\-]+$/u',
+            'medio' => 'required',
             'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
         ];
         $messages = [
-            'medio.regex' => 'El medio solo puede contener letras.',
             'color.regex' => 'El color solo puede contener letras.'
         ];
         $this->validate($request, $rules, $messages);
@@ -89,11 +88,10 @@ class CaractMacroBacteriaController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'medio' => 'bail|required|regex:/^[\pL\s\-]+$/u',
+            'medio' => 'required',
             'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
         ];
         $messages = [
-            'medio.regex' => 'El medio solo puede contener letras.',
             'color.regex' => 'El color solo puede contener letras.'
         ];
         $this->validate($request, $rules, $messages);

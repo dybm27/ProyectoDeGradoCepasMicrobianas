@@ -85792,11 +85792,25 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     getGeneros: function getGeneros(state) {
       return state.tipos.generos;
     },
-    getGrupos: function getGrupos(state) {
-      return state.tipos.gmicrobianos;
+    getGenerosId: function getGenerosId(state) {
+      return function (id) {
+        return state.tipos.generos.filter(function (genero) {
+          return genero.grupo_microbiano_id === id;
+        });
+      };
     },
     getEspecies: function getEspecies(state) {
       return state.tipos.especies;
+    },
+    getEspeciesId: function getEspeciesId(state) {
+      return function (id) {
+        return state.tipos.especies.filter(function (especie) {
+          return especie.genero_id === id;
+        });
+      };
+    },
+    getGrupos: function getGrupos(state) {
+      return state.tipos.gmicrobianos;
     },
     getPhylums: function getPhylums(state) {
       return state.tipos.phylums;

@@ -8,10 +8,7 @@
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <h5 class="card-title">{{nombre}}</h5>
-                <form
-                  @submit.prevent="evento"
-                  v-if="getGrupos !=''&&getGeneros !=''&&getEspecies !=''"
-                >
+                <form @submit.prevent="evento" v-if="getGrupos&&getGeneros&&getEspecies">
                   <div class="position-relative form-group">
                     <label for="codigo" class>Codigo</label>
                     <input
@@ -33,6 +30,7 @@
                       class="form-control"
                       v-model="parametros.grupo_microbiano"
                       :disabled="disabled"
+                      @change="cambiarGeneroEspecie"
                     >
                       <option
                         v-for="(gm,index) in getGrupos"
@@ -41,6 +39,26 @@
                       >{{gm.nombre}}</option>
                     </select>
                   </div>
+                  <div class="input-group">
+                    <select
+                      name="select"
+                      id="genero"
+                      class="form-control"
+                      v-model="parametros.genero"
+                      @change="cambiarEspecie"
+                    >
+                      <option
+                        v-for="(g,index) in getGenerosId(parametros.grupo_microbiano)"
+                        :key="index"
+                        :value="g.id"
+                      >{{g.nombre}}</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button class="mb-2 mr-2 btn-icon btn-shadow btn-dashed btn btn-outline-info">
+                        <i class="pe-7s-science btn-icon-wrapper"></i>Info
+                      </button>
+                    </div>
+                  </div>
                   <div class="position-relative form-group">
                     <label for="genero" class>Genero</label>
                     <select
@@ -48,9 +66,10 @@
                       id="genero"
                       class="form-control"
                       v-model="parametros.genero"
+                      @change="cambiarEspecie"
                     >
                       <option
-                        v-for="(g,index) in getGeneros"
+                        v-for="(g,index) in getGenerosId(parametros.grupo_microbiano)"
                         :key="index"
                         :value="g.id"
                       >{{g.nombre}}</option>
@@ -65,7 +84,7 @@
                       v-model="parametros.especie"
                     >
                       <option
-                        v-for="(e,index) in getEspecies"
+                        v-for="(e,index) in getEspeciesId(parametros.genero)"
                         :key="index"
                         :value="e.id"
                       >{{e.nombre}}</option>
@@ -413,6 +432,19 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
+    },
+    cambiarGeneroEspecie() {
+      this.parametros.genero = this.getGenerosId(
+        this.parametros.grupo_microbiano
+      )[0].id;
+      this.parametros.especie = this.getEspeciesId(
+        this.parametros.genero
+      )[0].id;
+    },
+    cambiarEspecie() {
+      this.parametros.especie = this.getEspeciesId(
+        this.parametros.genero
+      )[0].id;
     }
   },
   computed: {
@@ -425,7 +457,9 @@ export default {
       "getReinos",
       "getDivisiones",
       "getClases",
-      "getFamilias"
+      "getFamilias",
+      "getGenerosId",
+      "getEspeciesId"
     ])
   },
   mounted() {

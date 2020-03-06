@@ -20,8 +20,6 @@ class CreateCaracMacroBacteriasTable extends Migration
             $table->string('medio',50);
             $table->unsignedBigInteger('forma_id');
             $table->foreign('forma_id')->references('id')->on('forma_caract_macros');
-            $table->unsignedBigInteger('consistencia_id');
-            $table->foreign('consistencia_id')->references('id')->on('consistencias');
             $table->unsignedBigInteger('elevacion_id');
             $table->foreign('elevacion_id')->references('id')->on('elevacions');
             $table->unsignedBigInteger('borde_id');

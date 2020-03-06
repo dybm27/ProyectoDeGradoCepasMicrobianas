@@ -342,6 +342,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             this.cambiarActive(1);
           } else {
             this.mostrar1 = false;
+            this.mostrarForm1 = false;
           }
 
           break;

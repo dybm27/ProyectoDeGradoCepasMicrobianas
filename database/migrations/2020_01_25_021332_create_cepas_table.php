@@ -15,19 +15,19 @@ class CreateCepasTable extends Migration
     {
         Schema::create('cepas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('codigo',50)->unique();
+            $table->string('codigo', 50)->unique();
             $table->unsignedBigInteger('grupo_microbiano_id');
             $table->unsignedBigInteger('genero_id');
             $table->unsignedBigInteger('especie_id');
-            $table->string('estado',50);
-            $table->string('origen',50);
+            $table->string('estado', 50);
+            $table->string('origen', 50);
             $table->boolean('publicar')->default(0);
             $table->longText('otras_caract')->nullable();
             $table->timestamps();
 
             $table->foreign('grupo_microbiano_id')->references('id')->on('grupo_microbianos');
             $table->foreign('genero_id')->references('id')->on('generos');
-            $table->foreign('especie_id')->references('id')->on('especies');            
+            $table->foreign('especie_id')->references('id')->on('especies');
         });
     }
 

@@ -19,11 +19,21 @@ export default new Vuex.Store({
         getGeneros(state) {
             return state.tipos.generos;
         },
-        getGrupos(state) {
-            return state.tipos.gmicrobianos;
+        getGenerosId: state => id => {
+            return state.tipos.generos.filter(
+                genero => genero.grupo_microbiano_id === id
+            );
         },
         getEspecies(state) {
             return state.tipos.especies;
+        },
+        getEspeciesId: state => id => {
+            return state.tipos.especies.filter(
+                especie => especie.genero_id === id
+            );
+        },
+        getGrupos(state) {
+            return state.tipos.gmicrobianos;
         },
         getPhylums(state) {
             return state.tipos.phylums;

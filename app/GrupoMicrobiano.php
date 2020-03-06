@@ -10,4 +10,9 @@ class GrupoMicrobiano extends Model
     {
         return $this->hasMany(Cepa::class);
     }
+
+    public function generos()
+    {
+        return $this->hasMany(Genero::class);
+    }
 }

@@ -326,6 +326,7 @@ export default {
             this.cambiarActive(1);
           } else {
             this.mostrar1 = false;
+            this.mostrarForm1 = false;
           }
           break;
         case 2:
