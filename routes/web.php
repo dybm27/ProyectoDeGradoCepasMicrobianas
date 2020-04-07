@@ -38,26 +38,67 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cepas', 'CepaController@index')->name('cepas');
     Route::get('/cepas/agregar', 'CepaController@index');
     Route::get('/cepas/editar/{id}', 'CepaController@index');
+
     //-- crud cepas
     Route::post('/cepas/agregar', 'CepaController@store');
     Route::put('/cepas/editar/{id}', 'CepaController@update');
-    Route::delete('/cepas/eliminar/{id}', 'CepaController@delete');
+    Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
+
+    //-- crud info-cepas
+    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
+
     //-- vistas caract-bacterias
     Route::get('/cepas/bacteria/{id}', 'CepaController@index');
     Route::get('/cepas/bacteria/{id}/caract-macro', 'CepaController@index');
-    //-- crud caract-bacterias
-    Route::post('/cepas/bacteria/caract-macro', 'CaractMacroBacteriaController@store');
-    Route::put('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@update');
-    Route::delete('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@destroy');
-
-
-
-
     Route::get('/cepas/bacteria/{id}/caract-micro', 'CepaController@index');
     Route::get('/cepas/bacteria/{id}/caract-bioqui', 'CepaController@index');
     Route::get('/cepas/bacteria/{id}/caract-fisio', 'CepaController@index');
     Route::get('/cepas/bacteria/{id}/identi-molecu', 'CepaController@index');
     Route::get('/cepas/bacteria/{id}/metodo-conser', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser/agregar', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+
+    //-- crud caract-bacterias
+    //--- macro
+    Route::post('/cepas/bacteria/caract-macro', 'CaractMacroBacteriaController@store');
+    Route::put('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@update');
+    Route::delete('/cepas/bacteria/caract-macro/{id}', 'CaractMacroBacteriaController@destroy');
+    //--- micro
+    Route::post('/cepas/bacteria/caract-micro', 'CaractMicroBacteriaController@store');
+    Route::put('/cepas/bacteria/caract-micro/{id}', 'CaractMicroBacteriaController@update');
+    Route::delete('/cepas/bacteria/caract-micro/{id}', 'CaractMicroBacteriaController@destroy');
+    Route::put('/cepas/bacteria/caract-micro/agregar-imagen/{id}', 'CaractMicroBacteriaController@agregarImagen');
+    Route::put('/cepas/bacteria/caract-micro/cambiar-imagen/{id}', 'CaractMicroBacteriaController@cambiarImagen');
+    Route::put('/cepas/bacteria/caract-micro/eliminar-imagen/{id}', 'CaractMicroBacteriaController@elimarImagen');
+    //--- bioqui
+    Route::post('/cepas/bacteria/caract-bioqui', 'CaractBioquiBacteriaController@store');
+    Route::put('/cepas/bacteria/caract-bioqui/{id}', 'CaractBioquiBacteriaController@update');
+    Route::delete('/cepas/bacteria/caract-bioqui/{id}', 'CaractBioquiBacteriaController@destroy');
+    Route::put('/cepas/bacteria/caract-bioqui/agregar-imagen/{id}', 'CaractBioquiBacteriaController@agregarImagen');
+    Route::put('/cepas/bacteria/caract-bioqui/cambiar-imagen/{id}', 'CaractBioquiBacteriaController@cambiarImagen');
+    Route::put('/cepas/bacteria/caract-bioqui/eliminar-imagen/{id}', 'CaractBioquiBacteriaController@elimarImagen');
+    //--- fisio
+    Route::post('/cepas/bacteria/caract-fisio', 'CaractFisioBacteriaController@store');
+    Route::put('/cepas/bacteria/caract-fisio/{id}', 'CaractFisioBacteriaController@update');
+    Route::delete('/cepas/bacteria/caract-fisio/{id}', 'CaractFisioBacteriaController@destroy');
+    Route::put('/cepas/bacteria/caract-fisio/agregar-imagen/{id}', 'CaractFisioBacteriaController@agregarImagen');
+    Route::put('/cepas/bacteria/caract-fisio/cambiar-imagen/{id}', 'CaractFisioBacteriaController@cambiarImagen');
+    Route::put('/cepas/bacteria/caract-fisio/eliminar-imagen/{id}', 'CaractFisioBacteriaController@elimarImagen');
+    //--- identi-molecu
+    Route::post('/cepas/bacteria/identi-molecu', 'IdentiMolecuBacteriaController@store');
+    Route::put('/cepas/bacteria/identi-molecu/{id}', 'IdentiMolecuBacteriaController@update');
+    Route::delete('/cepas/bacteria/identi-molecu/{id}', 'IdentiMolecuBacteriaController@destroy');
+    //--- metodo-conser
+    Route::post('/cepas/bacteria/metodo-conser', 'MetodoConserBacteriaController@store');
+    Route::put('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@update');
+    Route::delete('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@destroy');
+    
+
+
+    //-- crud info-caract-bacterias
+    Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
+
+
     Route::get('/cepas-bacterias', 'CepaController@bacterias')->name('cepas_bacterias');
     Route::get('/cepas-bacterias/form-agregar', 'CepaController@bacterias');
     Route::get('/cepas-levaduras', 'CepaController@levaduras')->name('cepas_levaduras');

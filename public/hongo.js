@@ -100,19 +100,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.getCepa != null
-      ? _c("div", [
-          _vm.getCepa.cepa.grupo_microbiano_id == 1
-            ? _c("div", [_c("nav-bacterias")], 1)
-            : _vm.getCepa.cepa.grupo_microbiano_id == 2
-            ? _c("div", [_c("nav-hongos")], 1)
-            : _vm.getCepa.cepa.grupo_microbiano_id == 3
-            ? _c("div", [_c("nav-levaduras")], 1)
-            : _c("div", [_c("nav-actinomicetos")], 1)
-        ])
-      : _c("div", [_vm._m(0)])
-  ])
+  return _c(
+    "div",
+    [
+      _vm.getCepa != null
+        ? [
+            _vm.getCepa.cepa.grupo_microbiano_id == 1
+              ? [_c("nav-bacterias")]
+              : _vm.getCepa.cepa.grupo_microbiano_id == 2
+              ? [_c("nav-hongos")]
+              : _vm.getCepa.cepa.grupo_microbiano_id == 3
+              ? [_c("nav-levaduras")]
+              : [_c("nav-actinomicetos")]
+          ]
+        : [_vm._m(0)]
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -120,7 +124,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row " }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           { staticClass: "col-lg-12 d-flex justify-content-center mt-5" },

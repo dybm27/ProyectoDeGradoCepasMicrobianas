@@ -1,22 +1,22 @@
 <template>
   <div>
-    <div v-if="getCepa!=null">
-      <div v-if="getCepa.cepa.grupo_microbiano_id==1">
+    <template v-if="getCepa!=null">
+      <template v-if="getCepa.cepa.grupo_microbiano_id==1">
         <nav-bacterias></nav-bacterias>
-      </div>
-      <div v-else-if="getCepa.cepa.grupo_microbiano_id==2">
+      </template>
+      <template v-else-if="getCepa.cepa.grupo_microbiano_id==2">
         <nav-hongos></nav-hongos>
-      </div>
-      <div v-else-if="getCepa.cepa.grupo_microbiano_id==3">
+      </template>
+      <template v-else-if="getCepa.cepa.grupo_microbiano_id==3">
         <nav-levaduras></nav-levaduras>
-      </div>
-      <div v-else>
+      </template>
+      <template v-else>
         <nav-actinomicetos></nav-actinomicetos>
-      </div>
-    </div>
-    <div v-else>
+      </template>
+    </template>
+    <template v-else>
       <div class="container mt-5">
-        <div class="row ">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center mt-5">
             <div class="loader mt-5">
               <div class="ball-spin-fade-loader mt-5">
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <label>
       Buscar:
       <input v-model="filterText" @keyup.enter="doFilter" class="form-control form-control-sm" placeholder="..." aria-controls="example" />
-      <button class="btn-icon btn btn-danger" @click="resetFilter"><i class="lnr-undo"></i></button>
+      <button class="btn-icon btn btn-danger" @click="resetFilter"><i class="fas fa-redo"></i></button>
     </label>
    <!-- <button class="mr-1 btn btn-primary" @click="doFilter">Go</button>
     <button class="btn btn-warning" @click="resetFilter">Reset</button> -->

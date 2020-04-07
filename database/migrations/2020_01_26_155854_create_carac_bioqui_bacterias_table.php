@@ -34,24 +34,24 @@ class CreateCaracBioquiBacteriasTable extends Migration
             $table->string('xilosa',100);
             $table->string('arabinosa',100);
             $table->string('sacarosa',100);
-            $table->string('otros_azucares',100);
+            $table->string('otros_azucares',100)->nullable();
             $table->string('almidon',100);
             $table->string('lecitinasa',100);
             $table->string('lipasa',100);
-            $table->string('otras_enzimas',100);
+            $table->string('otras_enzimas',100)->nullable();
             $table->string('hidro_caseina',100);
             $table->string('hidro_gelatina',100);
             $table->string('hidro_urea',100);
             $table->string('creci_nacl',100);
             $table->string('creci_dif_temp',100);
-            $table->longText('otras_caract')->nullable();
+            $table->string('otras_caract')->nullable();
             $table->string('imagen1')->nullable();
             $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

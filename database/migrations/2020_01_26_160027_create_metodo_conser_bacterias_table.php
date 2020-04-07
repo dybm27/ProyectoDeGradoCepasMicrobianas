@@ -19,13 +19,13 @@ class CreateMetodoConserBacteriasTable extends Migration
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_bacterias');
-            $table->string('tipo_agar',50)->nullable();
+            $table->string('tipo_agar', 50)->nullable();
             $table->date('fecha');
             $table->integer('numero_replicas');
-            $table->string('recuento_microgota',50);
+            $table->string('recuento_microgota', 50);
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

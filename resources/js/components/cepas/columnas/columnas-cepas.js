@@ -41,7 +41,6 @@ export default [
     {
         name: "__component:acciones-cepas",
         title: "Acciones",
-        titleClass: "text-center",
-        dataClass: "text-center"
+        titleClass: "text-center"
     }
 ];

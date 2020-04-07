@@ -22,6 +22,7 @@ use App\Orden;
 use App\Phylum;
 use App\Reino;
 use App\Superficie;
+use App\TipoAgar;
 use App\TipoMetodoConservacionBacteria;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -47,6 +48,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 
+// url tabla cepas
 Route::get('cepas', function (Request $request) {
     $cepas = Cepa::leftJoin('generos', 'cepas.genero_id', '=', 'generos.id')
         ->leftJoin('especies', 'cepas.especie_id', '=', 'especies.id')
@@ -140,6 +142,40 @@ Route::get('cepa/agregar-editar-caract/{id}', function (Request $request) {
             break;
     }
     return $query;
+});
+
+Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
+    $cepas = Cepa::leftJoin('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->leftJoin('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->leftJoin('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id');
+
+    $query = $cepas->select(
+        'cepas.*',
+        'generos.nombre As nombre_genero',
+        'especies.nombre As nombre_especie',
+        'grupo_microbianos.nombre As nombre_grupo'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where('cepas.codigo', 'like', $value)
+            ->orWhere('generos.nombre', 'like', $value)
+            ->orWhere('especies.nombre', 'like', $value)
+            ->orWhere('grupo_microbianos.nombre', 'like', $value)
+            ->orWhere('cepas.estado', 'like', $value)
+            ->orWhere('cepas.origen', 'like', $value);
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
 });
 
 Route::get('cepas-bacterias', function () {
@@ -366,20 +402,21 @@ Route::get('info-caract-bacterias', function () {
     $elevacions = Elevacion::all();
     $detalle_opticos = DetalleOptico::all();
     $superficies = Superficie::all();
-    $consistencias = Consistencia::all();
     $formas_micros = FormaCaractMicro::all();
     $tipo_metodo = TipoMetodoConservacionBacteria::all();
+    $tipo_agar = TipoAgar::all();
     $array = [
         'caract_macro' => [
             'formas_macros' => $formas_macros, 'bordes' => $bordes,
             'elevacions' => $elevacions, 'detalle_opticos' => $detalle_opticos,
-            'consistencias' => $consistencias, 'superficies' => $superficies,
+            'superficies' => $superficies,
         ],
         'caract_micro' => [
             'formas_micros' => $formas_micros
         ],
         'metodo_conser' => [
-            'tipo_metodo' => $tipo_metodo
+            'tipo_metodo' => $tipo_metodo,
+            'tipo_agar' => $tipo_agar
         ]
     ];
     return $array;

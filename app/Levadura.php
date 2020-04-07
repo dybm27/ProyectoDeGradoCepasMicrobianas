@@ -53,6 +53,6 @@ class Levadura extends Model
 
     public function metodoConservacion()
     {
-        return $this->hasOne(MetodoConserLevadura::class);
+        return $this->hasMany(MetodoConserLevadura::class);
     }
 }

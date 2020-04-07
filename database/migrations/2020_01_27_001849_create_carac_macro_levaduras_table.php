@@ -24,7 +24,7 @@ class CreateCaracMacroLevadurasTable extends Migration
             $table->string('borde_colonia',50);
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->longText('descripcion',100)->nullable();
+            $table->string('descripcion',100)->nullable();
             $table->timestamps();
         });
     }

@@ -22,10 +22,10 @@ class CreateCaracMacroHongosTable extends Migration
             $table->foreign('color_id')->references('id')->on('color_hongos');
             $table->unsignedBigInteger('textura_id');
             $table->foreign('textura_id')->references('id')->on('textura_hongos');
-            $table->longText('caracteristicas_reverso',100);
+            $table->string('caracteristicas_reverso',100);
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->longText('descripcion',100)->nullable();
+            $table->string('descripcion',100)->nullable();
             $table->timestamps();
         });
     }

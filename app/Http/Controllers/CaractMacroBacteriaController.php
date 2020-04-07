@@ -10,22 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class CaractMacroBacteriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $rules = [
@@ -44,15 +28,14 @@ class CaractMacroBacteriaController extends Controller
         $fileName = $file->getClientOriginalName();
         $time = time();
 
-        Storage::disk('local')->put('/public/caract_macro_bacterias_img/' . $bacteria->id . '-' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/caract_macro_bacterias_img/' . $bacteria->id . '-' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/caract_macro_bacterias_img/' . $bacteria->id . '-' . $time . '-' . $fileName;
+        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
 
         $caractMacroBacteria = new CaracMacroBacteria();
         $caractMacroBacteria->bacteria_id = $bacteria->id;
         $caractMacroBacteria->medio = $request->medio;
         $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->consistencia_id = $request->consistencia;
         $caractMacroBacteria->elevacion_id = $request->elevacion;
         $caractMacroBacteria->borde_id = $request->borde;
         $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
@@ -68,23 +51,11 @@ class CaractMacroBacteriaController extends Controller
         return $caractMacroBacteria;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $rules = [
@@ -106,33 +77,24 @@ class CaractMacroBacteriaController extends Controller
             //agregar imagen nueva
             $fileName = $file->getClientOriginalName();
             $time = time();
-            Storage::disk('local')->put('/public/caract_macro_bacterias_img/' . $caractMacroBacteria->bacteria_id . '-' . $time . '-' . $fileName, file_get_contents($file));
-            $ruta = '/public/caract_macro_bacterias_img/' . $caractMacroBacteria->bacteria_id . '-' . $time . '-' . $fileName;
-            $rutaPublica = '/storage/caract_macro_bacterias_img/' . $caractMacroBacteria->bacteria_id . '-' . $time . '-' . $fileName;
+            Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
+            $ruta = '/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+            $rutaPublica = '/storage/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
 
             $caractMacroBacteria->imagen = $ruta;
             $caractMacroBacteria->imagenPublica = $rutaPublica;
         }
 
-        if ($request->otras_caract == 'null') {
-            $caractMacroBacteria->otras_caract = null;
-        } else {
-            $caractMacroBacteria->otras_caract = $request->otras_caract;
-        }
-        if ($request->imagen_descripcion == 'null') {
-            $caractMacroBacteria->descripcion = null;
-        } else {
-            $caractMacroBacteria->descripcion = $request->imagen_descripcion;
-        }
         $caractMacroBacteria->medio = $request->medio;
         $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->consistencia_id = $request->consistencia;
         $caractMacroBacteria->elevacion_id = $request->elevacion;
         $caractMacroBacteria->borde_id = $request->borde;
         $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
         $caractMacroBacteria->superficie_id = $request->superficie;
         $caractMacroBacteria->tamano = $request->tamaño;
         $caractMacroBacteria->color = $request->color;
+        $caractMacroBacteria->otras_caract = $request->otras_caract;
+        $caractMacroBacteria->descripcion = $request->imagen_descripcion;
 
 
         $caractMacroBacteria->save();
@@ -140,12 +102,6 @@ class CaractMacroBacteriaController extends Controller
         return $caractMacroBacteria;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $caractMacroBacteria = CaracMacroBacteria::find($id);

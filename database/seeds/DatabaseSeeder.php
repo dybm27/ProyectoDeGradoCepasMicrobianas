@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
             'grupo_microbianos','generos','especies','divisions','clases','ordens','familias',
             'phylums','reinos','tipo_users','users','forma_caract_macros','bordes','elevacions',
             'forma_caract_micros','detalle_opticos','superficies','tipo_metodo_conservacion_bacterias',
-            'tipo_metodo_conservacion_hongo_levaduras','color_hongos','textura_hongos','espora_asexual_hongos',
-            'espora_sexual_hongos','conidioforo_hongos','cepas'
+            'tipo_metodo_conservacion_hongos','tipo_metodo_conservacion_levaduras','color_hongos','textura_hongos','espora_asexual_hongos',
+            'espora_sexual_hongos','conidioforo_hongos','cepas','tipo_agars'
         ]);
         $this->call(TipoUserSeeder::class);
         $this->call(GruposMicrobianosSeeder::class);

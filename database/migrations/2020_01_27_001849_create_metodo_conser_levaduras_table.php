@@ -18,16 +18,16 @@ class CreateMetodoConserLevadurasTable extends Migration
             $table->unsignedBigInteger('levadura_id');
             $table->foreign('levadura_id')->references('id')->on('levaduras')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_id');
-            $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_hongo_levaduras');
+            $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_levaduras');
             $table->date('fecha');
             $table->integer('numero_replicas')->nullable();
             $table->string('recuento_microgota',50)->nullable();
             $table->string('medio_cultivo',50)->nullable();
             $table->integer('numero_pases')->nullable();
-            $table->longText('observaciones')->nullable();
+            $table->string('observaciones')->nullable();
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

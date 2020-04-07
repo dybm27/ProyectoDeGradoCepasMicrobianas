@@ -23,10 +23,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      refrescarTabla: false,
+      idCepaEliminar: "",
       fields: _columnas_columnas_cepas__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
         field: "id",
@@ -34,7 +78,56 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
-  methods: {},
+  methods: {
+    toastr: function toastr(titulo, msg, tipo, time) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: time,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: function onCreated() {},
+        onClicked: function onClicked() {},
+        onClosed: function onClosed() {},
+        onMouseOver: function onMouseOver() {},
+        onMouseOut: function onMouseOut() {}
+      });
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla = false;
+    },
+    eliminarCepa: function eliminarCepa() {
+      var _this = this;
+
+      axios["delete"]("/cepas/eliminar/".concat(this.idCepaEliminar)).then(function (res) {
+        if (res.data === "negativo") {
+          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+
+          _this.$modal.hide("my_modal_eliminarCepa");
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+
+          _this.$modal.hide("my_modal_eliminarCepa");
+        }
+      })["catch"](function (error) {
+        if (error.response) {//console.log(error.response.data);
+        }
+
+        _this.toastr("Error!!!", "", "error", 4000);
+      });
+    },
+    beforeOpen: function beforeOpen(data) {
+      this.idCepaEliminar = data.params.id;
+    }
+  },
   computed: {},
   mounted: function mounted() {
     this.$emit("rutaHijo", window.location.pathname);
@@ -66,19 +159,133 @@ var render = function() {
           "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
       }),
       _vm._v(" "),
-      _c("my-vuetable", {
-        attrs: {
-          "api-url": "http://127.0.0.1:8000/api/cepas",
-          fields: _vm.fields,
-          "sort-order": _vm.sortOrder,
-          "detail-row-component": "my-detail-row"
-        }
-      })
+      _c("div", { staticClass: "tabs-animation" }, [
+        _c("div", { staticClass: "main-card mb-3 card" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("my-vuetable", {
+                attrs: {
+                  "api-url": "http://127.0.0.1:8000/api/cepas",
+                  fields: _vm.fields,
+                  "sort-order": _vm.sortOrder,
+                  "detail-row-component": "my-detail-row",
+                  refrescarTabla: _vm.refrescarTabla
+                },
+                on: { cambiarVariable: _vm.cambiarVariable }
+              })
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "my_modal_eliminarCepa",
+            classes: "my_modal",
+            width: 400,
+            height: 300
+          },
+          on: { "before-open": _vm.beforeOpen }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v("Eliminar Cepa Microbiana")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("my_modal_eliminarCepa")
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("my_modal_eliminarCepa")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: { click: _vm.eliminarCepa }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
+          ])
+        ]
+      )
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header-tab card-header" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "card-header-title font-size-lg text-capitalize font-weight-normal"
+        },
+        [
+          _c("i", {
+            staticClass:
+              "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+          }),
+          _vm._v("\n          Tabla Dinamica Cepas Microbianas\n        ")
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -204,8 +411,7 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   name: "__component:acciones-cepas",
   title: "Acciones",
-  titleClass: "text-center",
-  dataClass: "text-center"
+  titleClass: "text-center"
 }]);
 
 /***/ })

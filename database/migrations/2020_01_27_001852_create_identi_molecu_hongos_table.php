@@ -17,6 +17,8 @@ class CreateIdentiMolecuHongosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hongo_filamentoso_id');
             $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->string('nombre_forward', 100);
+            $table->string('nombre_reversed', 100);
             $table->string('secuencia_forward');
             $table->string('secuencia_reversed');
             $table->string('producto_forward');
@@ -24,7 +26,7 @@ class CreateIdentiMolecuHongosTable extends Migration
             $table->string('condiciones_pcr',100);
             $table->string('blast',100);
             $table->string('analisis_filogenetico',100);
-            $table->longText('observaciones')->nullable();
+            $table->string('observaciones')->nullable();
             $table->string('imagen_pcr')->nullable();
             $table->string('imagen_pcrPublica')->nullable();
             $table->string('imagen_blast')->nullable();

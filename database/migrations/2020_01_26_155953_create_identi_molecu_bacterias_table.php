@@ -17,11 +17,13 @@ class CreateIdentiMolecuBacteriasTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
-            $table->string('secuen_forward',100);
-            $table->string('secuen_reversed',100);
-            $table->string('produc_forward',100);
-            $table->string('produc_reversed',100);
-            $table->longText('obser_secuenciacion');
+            $table->string('nombre_forward', 100);
+            $table->string('nombre_reversed', 100);
+            $table->string('secuen_forward', 100);
+            $table->string('secuen_reversed', 100);
+            $table->string('produc_forward', 100);
+            $table->string('produc_reversed', 100);
+            $table->string('obser_secuenciacion');
             $table->string('img_pcr')->nullable();
             $table->string('img_pcrPublica')->nullable();
             $table->string('img_secuen')->nullable();

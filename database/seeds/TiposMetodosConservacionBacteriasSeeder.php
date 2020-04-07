@@ -27,5 +27,18 @@ class TiposMetodosConservacionBacteriasSeeder extends Seeder
         DB::table('tipo_metodo_conservacion_bacterias')->insert([
             'nombre'=>'Caldo'
         ]);
+
+        DB::table('tipo_agars')->insert([
+            'nombre'=>'Semisólido'
+        ]);
+        DB::table('tipo_agars')->insert([
+            'nombre'=>'Caja'
+        ]);
+        DB::table('tipo_agars')->insert([
+            'nombre'=>'Sólido'
+        ]);
+        DB::table('tipo_agars')->insert([
+            'nombre'=>'Tubo'
+        ]);
     }
 }

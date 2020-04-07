@@ -12,7 +12,7 @@ const routes = [
                 /* webpackChunkName: "cepas-todas" */
 
                 "../components/cepas/TableCepasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas/agregar",
@@ -22,7 +22,7 @@ const routes = [
                 /* webpackChunkName: "cepa-agregar" */
 
                 "../components/cepas/FormCepasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas/editar/:cepaId",
@@ -32,7 +32,7 @@ const routes = [
                 /* webpackChunkName: "cepa-editar" */
 
                 "../components/cepas/FormCepasComponent.vue"
-            )
+            ),
     },
 
     // ------------------------ CARACTERISTICAS BACTERIAS ------------------------------------------
@@ -54,8 +54,8 @@ const routes = [
                     import(
                         /* webpackChunkName: "caract-macro-bacteria" */
 
-                        "../components/cepas/bacterias/InfoCaractMacroComponent.vue"
-                    )
+                        "../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"
+                    ),
             },
             {
                 path: "caract-micro",
@@ -64,8 +64,8 @@ const routes = [
                     import(
                         /* webpackChunkName: "caract-micro-bacteria" */
 
-                        "../components/cepas/bacterias/forms-caract/FormCaractMicroComponent.vue"
-                    )
+                        "../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"
+                    ),
             },
             {
                 path: "caract-bioqui",
@@ -74,8 +74,8 @@ const routes = [
                     import(
                         /* webpackChunkName: "caract-bioqui-bacteria" */
 
-                        "../components/cepas/bacterias/forms-caract/FormCaractBioquiComponent.vue"
-                    )
+                        "../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"
+                    ),
             },
             {
                 path: "caract-fisio",
@@ -84,8 +84,8 @@ const routes = [
                     import(
                         /* webpackChunkName: "caract-fisio-bacteria" */
 
-                        "../components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue"
-                    )
+                        "../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"
+                    ),
             },
             {
                 path: "identi-molecu",
@@ -94,20 +94,52 @@ const routes = [
                     import(
                         /* webpackChunkName: "identi-molecu-bacteria" */
 
-                        "../components/cepas/bacterias/forms-caract/FormIdentiMolecuComponent.vue"
-                    )
+                        "../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"
+                    ),
             },
             {
                 path: "metodo-conser",
-                name: "metodo-conser-bacteria",
+                name: "",
                 component: () =>
                     import(
                         /* webpackChunkName: "metodo-conser-bacteria" */
 
-                        "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
-                    )
-            }
-        ]
+                        "../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"
+                    ),
+                children: [
+                    {
+                        path: "",
+                        name: "metodo-conser-bacteria",
+                        component: () =>
+                            import(
+                                /* webpackChunkName: "metodo-conser-bacteria-tabla" */
+
+                                "../components/cepas/bacterias/tablas/TablaMetodoConserBacteriasComponent.vue"
+                            ),
+                    },
+                    {
+                        path: "agregar",
+                        name: "metodo-conser-bacteria-agregar",
+                        component: () =>
+                            import(
+                                /* webpackChunkName: "metodo-conser-bacteria-agregar" */
+
+                                "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
+                            ),
+                    },
+                    {
+                        path: "editar/:metodoConserBacteriaId",
+                        name: "metodo-conser-bacteria-editar",
+                        component: () =>
+                            import(
+                                /* webpackChunkName: "metodo-conser-bacteria-editar" */
+
+                                "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
+                            ),
+                    },
+                ],
+            },
+        ],
     },
 
     // ---------------------- HONGOS ------------------------------------------------
@@ -129,7 +161,7 @@ const routes = [
                         /* webpackChunkName: "caract-macro-hongo" */
 
                         "../components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-micro",
@@ -139,7 +171,7 @@ const routes = [
                         /* webpackChunkName: "caract-micro-hongo" */
 
                         "../components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-bioqui",
@@ -149,7 +181,7 @@ const routes = [
                         /* webpackChunkName: "caract-bioqui-hongo" */
 
                         "../components/cepas/hongos/forms-caract/FormCaractBioquiComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "identi-molecu",
@@ -159,7 +191,7 @@ const routes = [
                         /* webpackChunkName: "identi-molecu-hongo" */
 
                         "../components/cepas/hongos/forms-caract/FormIdentiMolecuComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "metodo-conser",
@@ -169,9 +201,9 @@ const routes = [
                         /* webpackChunkName: "metodo-conser-hongo" */
 
                         "../components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
-                    )
-            }
-        ]
+                    ),
+            },
+        ],
     },
 
     // ---------------------- LEVADURAS ------------------------------------------------
@@ -193,7 +225,7 @@ const routes = [
                         /* webpackChunkName: "caract-macro-levadura" */
 
                         "../components/cepas/levaduras/forms-caract/FormCaractMacroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-micro",
@@ -203,7 +235,7 @@ const routes = [
                         /* webpackChunkName: "caract-micro-levadura" */
 
                         "../components/cepas/levaduras/forms-caract/FormCaractMicroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-bioqui",
@@ -213,7 +245,7 @@ const routes = [
                         /* webpackChunkName: "caract-bioqui-levadura" */
 
                         "../components/cepas/levaduras/forms-caract/FormCaractBioquiComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "identi-molecu",
@@ -223,7 +255,7 @@ const routes = [
                         /* webpackChunkName: "identi-molecu-levadura" */
 
                         "../components/cepas/levaduras/forms-caract/FormIdentiMolecuComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "metodo-conser",
@@ -233,9 +265,9 @@ const routes = [
                         /* webpackChunkName: "metodo-conser-levadura" */
 
                         "../components/cepas/levaduras/forms-caract/FormMetodoConserComponent.vue"
-                    )
-            }
-        ]
+                    ),
+            },
+        ],
     },
 
     // ---------------------- ACTINOMICETOS ------------------------------------------------
@@ -257,7 +289,7 @@ const routes = [
                         /* webpackChunkName: "caract-macro-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormCaractMacroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-micro",
@@ -267,7 +299,7 @@ const routes = [
                         /* webpackChunkName: "caract-micro-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormCaractMicroComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "identi-bioqui",
@@ -277,7 +309,7 @@ const routes = [
                         /* webpackChunkName: "identi-bioqui-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormIdentiBioquiComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "caract-molecu",
@@ -287,7 +319,7 @@ const routes = [
                         /* webpackChunkName: "caract-molecu-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormCaractMolecuComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "metodo-conser",
@@ -297,7 +329,7 @@ const routes = [
                         /* webpackChunkName: "metodo-conser-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormMetodoConserComponent.vue"
-                    )
+                    ),
             },
             {
                 path: "otras-caract",
@@ -307,9 +339,9 @@ const routes = [
                         /* webpackChunkName: "otras-caract-actinomiceto" */
 
                         "../components/cepas/actinomicetos/forms-caract/FormOtrasCaractComponent.vue"
-                    )
-            }
-        ]
+                    ),
+            },
+        ],
     },
 
     // ----------------------------------------------------------------------------------------------
@@ -319,7 +351,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "cepas-bacterias" */ "../components/cepas/TableBacteriasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-bacterias/form-agregar",
@@ -327,7 +359,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "form-agregar" */ "../components/cepas/FormCepasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-hongos",
@@ -335,7 +367,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "cepas-hongos" */ "../components/cepas/TableHongosComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-hongos/form-agregar",
@@ -343,7 +375,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "form-agregar" */ "../components/cepas/FormCepasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-levaduras",
@@ -351,7 +383,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "cepas-levaduras" */ "../components/cepas/TableLevadurasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-levaduras/form-agregar",
@@ -359,7 +391,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "form-agregar" */ "../components/cepas/FormCepasComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-actinomicetos",
@@ -367,7 +399,7 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "cepas-actinomicetos" */ "../components/cepas/TableActinomicetosComponent.vue"
-            )
+            ),
     },
     {
         path: "/cepas-actinomicetos/form-agregar",
@@ -375,14 +407,14 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "form-agregar" */ "../components/cepas/FormCepasComponent.vue"
-            )
-    }
+            ),
+    },
 ];
 
 const router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
-    routes
+    routes,
 });
 
 export default router;

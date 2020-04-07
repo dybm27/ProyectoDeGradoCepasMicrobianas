@@ -1,0 +1,34 @@
+.carousel-item {
+    display: block;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+    transition: transform 0.6s ease;
+}
+.slide-leave-to {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 0;
+}
+.slide-enter {
+    transform: translateX(100%);
+}
+
+.slide-next.slide-leave-to {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 0;
+}
+.slide-next.slide-enter {
+    transform: translateX(100%);
+}
+
+.slide-prev.slide-leave-to {
+    transform: translateX(100%);
+    position: absolute;
+    top: 0;
+}
+.slide-prev.slide-enter {
+    transform: translateX(-100%);
+}

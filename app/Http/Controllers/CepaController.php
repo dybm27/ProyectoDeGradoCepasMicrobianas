@@ -172,7 +172,78 @@ class CepaController extends Controller
 
     public function destroy($id)
     {
-        $nota = Cepa::find($id);
-        $nota->delete();
+        $cepa = Cepa::find($id);
+        if ($this->validarEliminar($cepa)) {
+            return 'negativo';
+        } else {
+            $cepa->delete();
+            return $cepa;
+        }
+    }
+
+    public function validarEliminar($cepa)
+    {
+        $res = false;
+        switch ($cepa->grupo_microbiano_id) {
+            case 1:
+                $bacteria = Bacteria::where('cepa_id', $cepa->id)
+                    ->with([
+                        'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
+                        'caractFisiologica', 'identMolecular', 'metodoConservacion'
+                    ])
+                    ->first();
+                if (
+                    count($bacteria->caractMacroscopicas) > 0 || $bacteria->caractMicroscopicas != null
+                    || $bacteria->caractBioquimica != null || $bacteria->caractFisiologica != null
+                    || $bacteria->identMolecular != null || count($bacteria->metodoConservacion) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case 2:
+                $hongo = HongoFilamentoso::where('cepa_id', $cepa->id)
+                    ->with([
+                        'caractMacroscopicas', 'caractMicroscopicas',
+                        'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                    ])
+                    ->first();
+                if (
+                    count($hongo->caractMacroscopicas) > 0 || $hongo->caractMicroscopicas != null
+                    || $hongo->caractBioquimica != null || $hongo->identMolecular != null
+                    || $hongo->metodoConservacion != null
+                ) {
+                    $res = true;
+                }
+                break;
+            case 3:
+                $levadura = Levadura::where('cepa_id', $cepa->id)
+                    ->with([
+                        'caractMacroscopicas', 'caractMicroscopicas',
+                        'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                    ])
+                    ->first();
+                if (
+                    count($levadura->caractMacroscopicas) > 0 || $levadura->caractMicroscopicas != null
+                    || $levadura->caractBioquimica != null || $levadura->identMolecular != null
+                    || $levadura->metodoConservacion != null
+                ) {
+                    $res = true;
+                }
+                break;
+            case 4:
+                $actinomiceto = Actinomiceto::where('cepa_id', $cepa->id)
+                    ->with([
+                        /*, 'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
+                    'caractFisiologica', 'identMolecular', 'metodoConservacion'*/])->first();
+                /*  if (
+                        count($actinomiceto->caractMacroscopicas) > 0 || $actinomiceto->caractMicroscopicas != null
+                        || $actinomiceto->caractBioquimica != null || $actinomiceto->caractFisiologica != null
+                        || $actinomiceto->identMolecular != null || $actinomiceto->metodoConservacion != null
+                    ) {
+                        $res = true;
+                    }*/
+                break;
+        }
+        return $res;
     }
 }

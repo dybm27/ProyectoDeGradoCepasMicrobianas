@@ -3,7 +3,7 @@
     <form @submit.prevent="evento">
       <div class="container">
         <div class="row justify-content-md-center">
-          <div class="col col-sm-6">
+          <div class="col-sm-6">
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
@@ -12,7 +12,7 @@
                   <input
                     name="medio"
                     id="medio"
-                    placeholder="Medio..."
+                    placeholder="..."
                     type="text"
                     class="form-control"
                     v-model="parametros.medio"
@@ -20,9 +20,9 @@
                   />
                   <span v-if="errors.medio" class="text-danger">{{errors.medio[0]}}</span>
                 </div>
-                <div v-if="getInfoCaractMacroBacterias">
-                  <div class="position-relative form-group">
-                    <label for="forma" class>Forma</label>
+                <template v-if="getInfoCaractMacroBacterias">
+                  <label for="forma" class>Forma</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="forma"
@@ -35,9 +35,17 @@
                         :value="f.id"
                       >{{f.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('forma_macro')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="borde" class>Borde</label>
+                  <label for="borde" class>Borde</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="borde"
@@ -50,24 +58,17 @@
                         :value="b.id"
                       >{{b.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('borde')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="consistencia" class>Consistencia</label>
-                    <select
-                      name="select"
-                      id="consistencia"
-                      class="form-control"
-                      v-model="parametros.consistencia"
-                    >
-                      <option
-                        v-for="(c,index) in getInfoCaractMacroBacterias.consistencias"
-                        :key="index"
-                        :value="c.id"
-                      >{{c.nombre}}</option>
-                    </select>
-                  </div>
-                  <div class="position-relative form-group">
-                    <label for="detalle_optico" class>Detalle Optico</label>
+                  <label for="detalle_optico" class>Detalle Óptico</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="detalle_optico"
@@ -80,9 +81,17 @@
                         :value="d.id"
                       >{{d.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('detalle')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="elevacion" class>Elevacion</label>
+                  <label for="elevacion" class>Elevación</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="elevacion"
@@ -95,9 +104,17 @@
                         :value="e.id"
                       >{{e.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('elevacion')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="superficie" class>Superficie</label>
+                  <label for="superficie" class>Superficie</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="superficie"
@@ -110,13 +127,21 @@
                         :value="s.id"
                       >{{s.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('superficie')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
                   <div class="position-relative form-group">
                     <label for="color" class>Color</label>
                     <input
                       name="color"
                       id="color"
-                      placeholder="Color..."
+                      placeholder="..."
                       type="text"
                       class="form-control"
                       v-model="parametros.color"
@@ -124,11 +149,11 @@
                     />
                     <span v-if="errors.color" class="text-danger">{{errors.color[0]}}</span>
                   </div>
-                </div>
+                </template>
               </div>
             </div>
           </div>
-          <div class="col col-sm-6">
+          <div class="col-sm-6">
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <div class="position-relative form-group">
@@ -189,19 +214,20 @@
                     ref="inputImagen"
                     :required="required"
                   />
-                  <span v-if="errors.imagen" class="text-danger">{{errors.imagen}}</span>
-                  <!--  <small
-                    class="form-text text-muted"
-                  >Debe tener un tamaño ''px ''px y un peso de ''kbs.</small>-->
+                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
                 </div>
-                <figure class="text-center">
-                  <img
-                    width="290"
-                    height="290"
-                    :src="mostraImagen"
-                    alt="Imagen Caracteristica Macroscopica"
-                  />
-                </figure>
+                <template v-if="mostraImagen">
+                  <div class="table-responsive">
+                    <figure class="text-center">
+                      <img
+                        width="210"
+                        height="210"
+                        :src="mostraImagen"
+                        alt="Imagen Caracteristica Macroscopica"
+                      />
+                    </figure>
+                  </div>
+                </template>
                 <div class="position-relative form-group">
                   <label for="imagen_descripcion">Descripcion de la Imagen</label>
                   <textarea
@@ -218,6 +244,39 @@
         </div>
       </div>
     </form>
+    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
+          <button type="button" class="close" @click="$modal.hide('agregar-caract-info')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="position-relative form-group">
+            <label for="nombre" class>Nombre</label>
+            <input
+              name="nombre"
+              id="nombre"
+              placeholder="..."
+              type="text"
+              class="form-control"
+              v-model="modal.input"
+              required
+            />
+            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$modal.hide('agregar-caract-info')"
+          >Cancelar</button>
+          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -233,7 +292,6 @@ export default {
         forma: 1,
         borde: 1,
         elevacion: 1,
-        consistencia: 1,
         color: "",
         detalle_optico: 1,
         tamaño: "grande",
@@ -242,10 +300,17 @@ export default {
         imagen: "",
         imagen_descripcion: ""
       },
+      modal: {
+        titulo: "",
+        input: "",
+        tipo: "",
+        errors: []
+      },
       tituloForm: "",
       imageMiniatura: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      imagenError: ""
     };
   },
   watch: {
@@ -257,6 +322,7 @@ export default {
     }
   },
   methods: {
+    ...vuex.mapActions(["accionAgregarTipoCaract"]),
     evento() {
       if (this.tituloForm === "Agregar Medio") {
         let formData = new FormData();
@@ -272,8 +338,8 @@ export default {
             this.nomBtn = "Editar";
             this.$emit("agregar", res.data);
             this.toastr(
-              "Mensaje de ejecución",
-              "Caracteristica Macroscópica agregada con exito!!",
+              "Agregar Medio",
+              "Medio agregado con exito!!",
               "success"
             );
           })
@@ -282,7 +348,6 @@ export default {
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
           });
       } else {
@@ -297,8 +362,8 @@ export default {
               this.$refs.inputImagen.value = "";
               this.$emit("editar", res.data);
               this.toastr(
-                "Mensaje de ejecución",
-                "Caracteristica Macroscópica editada con exito!!",
+                "Editar Medio",
+                "Medio editado con exito!!",
                 "success"
               );
             })
@@ -323,8 +388,8 @@ export default {
               this.$refs.inputImagen.value = "";
               this.$emit("editar", res.data);
               this.toastr(
-                "Mensaje de ejecución",
-                "Caracteristica Macroscópica editada con exito!!",
+                "Editar Medio",
+                "Medio editado con exito!!",
                 "success"
               );
             })
@@ -364,15 +429,16 @@ export default {
       this.parametros.forma = this.info.forma_id;
       this.parametros.borde = this.info.borde_id;
       this.parametros.elevacion = this.info.elevacion_id;
-      this.parametros.consistencia = this.info.consistencia_id;
       this.parametros.color = this.info.color;
       this.parametros.detalle_optico = this.info.detalleoptico_id;
       this.parametros.tamaño = this.info.tamano;
       this.parametros.superficie = this.info.superficie_id;
-      this.parametros.otras_caracteristicas = this.info.otras_caract;
+      this.parametros.otras_caracteristicas =
+        this.info.otras_caract === "null" ? "" : this.info.otras_caract;
       this.parametros.imagen = this.info.imagen;
       this.imageMiniatura = this.info.imagenPublica;
-      this.parametros.imagen_descripcion = this.info.descripcion;
+      this.parametros.imagen_descripcion =
+        this.info.descripcion === "null" ? "" : this.info.descripcion;
     },
     appendInfo(formData) {
       formData.append("cepaId", this.$route.params.cepaBacteriaId);
@@ -380,7 +446,6 @@ export default {
       formData.append("forma", this.parametros.forma);
       formData.append("borde", this.parametros.borde);
       formData.append("elevacion", this.parametros.elevacion);
-      formData.append("consistencia", this.parametros.consistencia);
       formData.append("color", this.parametros.color);
       formData.append("detalle_optico", this.parametros.detalle_optico);
       formData.append("tamaño", this.parametros.tamaño);
@@ -396,13 +461,13 @@ export default {
 
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.errors.imagen =
+          this.imagenError =
             "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
           this.imageMiniatura = "";
           this.$refs.inputImagen.value = "";
           this.parametros.imagen = "";
         } else {
-          this.errors.imagen = "";
+          this.imagenError = "";
           this.cargarImagen(file);
         }
       }
@@ -413,6 +478,53 @@ export default {
         this.imageMiniatura = e.target.result;
       };
       reader.readAsDataURL(file);
+    },
+    showModal(tipo) {
+      this.modal.input = "";
+      this.modal.errors = [];
+      this.modal.tipo = tipo;
+      if (tipo === "forma_macro") {
+        this.modal.titulo = "Agregar Nueva Forma";
+      } else if (tipo === "borde") {
+        this.modal.titulo = "Agregar Nuevo Borde";
+      } else if (tipo === "detalle") {
+        this.modal.titulo = "Agregar Nuevo Detalle Óptico";
+      } else if (tipo === "elevacion") {
+        this.modal.titulo = "Agregar Nueva Elevación";
+      } else {
+        this.modal.titulo = "Agregar Nueva Superficie";
+      }
+      this.$modal.show("agregar-caract-info");
+    },
+    agregarInfo() {
+      if (this.modal.input === "") {
+        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
+      } else {
+        let parametros = {
+          tipo: this.modal.tipo,
+          nombre: this.modal.input
+        };
+        axios
+          .post("/info-caract-bacterias/agregar", parametros)
+          .then(res => {
+            this.accionAgregarTipoCaract({
+              info: res.data,
+              tipo: this.modal.tipo
+            });
+            this.$modal.hide("agregar-caract-info");
+            this.toastr(
+              "Agregar Informacion",
+              `${this.modal.tipo} agregado/a con exito`,
+              "success"
+            );
+          })
+          .catch(error => {
+            if (error.response) {
+              this.modal.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!!", "", "error");
+          });
+      }
     }
   },
   computed: {

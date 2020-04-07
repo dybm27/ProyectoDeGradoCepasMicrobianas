@@ -13,6 +13,6 @@ class MetodoConserHongo extends Model
     
     public function tipoMetodo()
     {
-        return $this->belongsTo(TipoMetodoConservacionHongoLevadura::class);
+        return $this->belongsTo(TipoMetodoConservacionHongo::class);
     }
 }
