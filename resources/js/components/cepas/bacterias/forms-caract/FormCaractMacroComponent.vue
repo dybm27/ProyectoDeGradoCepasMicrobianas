@@ -7,7 +7,7 @@
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
-              
+
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
@@ -23,14 +23,14 @@
                 </div>
 
                 <template v-if="getInfoCaractMacroBacterias">
-
                   <label for="forma" class>Forma</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
                       id="forma"
                       class="form-control"
-                      v-model="parametros.forma">
+                      v-model="parametros.forma"
+                    >
                       <option
                         v-for="(f,index) in getInfoCaractMacroBacterias.formas_macros"
                         :key="index"
@@ -40,7 +40,8 @@
                     <div class="input-group-append">
                       <button
                         class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                        @click.prevent="showModal('forma_macro')">
+                        @click.prevent="showModal('forma_macro')"
+                      >
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
@@ -52,7 +53,8 @@
                       name="select"
                       id="borde"
                       class="form-control"
-                      v-model="parametros.borde">
+                      v-model="parametros.borde"
+                    >
                       <option
                         v-for="(b,index) in getInfoCaractMacroBacterias.bordes"
                         :key="index"
@@ -140,18 +142,10 @@
                       </button>
                     </div>
                   </div>
-<<<<<<< HEAD
                   <label for="color" class>Color</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
-=======
-
-                  <div class="position-relative form-group">
-                    <label for="color" class>Color</label>
-                    <input
-                      name="color"
->>>>>>> 46a78ec52f2abd4cf062cd5f875ccb0bd45db045
                       id="color"
                       class="form-control"
                       v-model="parametros.color"
@@ -171,7 +165,6 @@
                       </button>
                     </div>
                   </div>
-
                 </template>
               </div>
             </div>
@@ -180,8 +173,7 @@
           <div class="col-sm-6">
             <div class="main-card mb-3 card">
               <div class="card-body">
-
-                <div class="position-relative form-group">  
+                <div class="position-relative form-group">
                   <label>Tamaño</label>
                   <div>
                     <div class="custom-radio custom-control custom-control-inline">
@@ -256,7 +248,7 @@
                     </figure>
                   </div>
                 </template>
-                
+
                 <div class="position-relative form-group">
                   <label for="imagen_descripcion">Descripcion de la Imagen</label>
                   <textarea
@@ -268,19 +260,13 @@
                 </div>
 
                 <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </form>
-<<<<<<< HEAD
     <modal name="agregar-caract-info-bacteria" classes="my_modal" :width="450" :height="450">
-=======
-
-    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
->>>>>>> 46a78ec52f2abd4cf062cd5f875ccb0bd45db045
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
@@ -313,7 +299,6 @@
         </div>
       </div>
     </modal>
-
   </div>
 </template>
 
@@ -350,7 +335,7 @@ export default {
       imagenError: ""
     };
   },
-  
+
   watch: {
     modificarInfo() {
       if (this.modificarInfo) {

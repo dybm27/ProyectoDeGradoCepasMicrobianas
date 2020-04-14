@@ -167,7 +167,7 @@ var render = function() {
             [
               _c("my-vuetable", {
                 attrs: {
-                  "api-url": "http://127.0.0.1:8000/api/cepas-bacterias",
+                  "api-url": "http://34.231.74.220/api/cepas-bacterias",
                   fields: _vm.fields,
                   "sort-order": _vm.sortOrder,
                   "detail-row-component": "my-detail-row-bacterias",
