@@ -26,7 +26,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Genero();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->grupo_microbiano_id = $request->grupo_microbiano;
                 $tipo->save();
                 break;
@@ -40,7 +40,7 @@ class InfoCepasController extends Controller
                 $this->validate($request, $rules, $messages);
 
                 $tipo = new Especie();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->genero_id = $request->genero;
                 $tipo->save();
                 break;
@@ -53,7 +53,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Familia();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "orden":
@@ -65,7 +65,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Orden();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "clase":
@@ -77,7 +77,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Clase();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "phylum":
@@ -89,7 +89,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Phylum();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "reino":
@@ -101,7 +101,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Reino();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "division":
@@ -113,7 +113,7 @@ class InfoCepasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Division();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
         }

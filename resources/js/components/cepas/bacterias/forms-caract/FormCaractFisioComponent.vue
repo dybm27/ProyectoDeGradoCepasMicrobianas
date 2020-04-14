@@ -420,7 +420,11 @@ export default {
       this.llenarArregloImagenes();
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("acido_indolacetico", this.parametros.acido_indolacetico);
       formData.append("fosforo", this.parametros.fosforo);
       formData.append("sideroforos", this.parametros.sideroforos);

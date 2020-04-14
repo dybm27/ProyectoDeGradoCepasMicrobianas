@@ -40,16 +40,8 @@
 
                     <div class="app-wrapper-footer">
 
-                        <div class="app-footer">
+                        @include('layouts-admin.footer')
 
-                            <div class="app-footer__inner">
-
-                                <div class="app-footer-left"></div>
-
-                                <div class="app-footer-right"></div>
-                                
-                            </div>
-                        </div>
                     </div>
                 </div>
                 

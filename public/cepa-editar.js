@@ -411,7 +411,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mostrarForm: true
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarTipo"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarTipoCepa"]), {
     evento: function evento() {
       var _this = this;
 
@@ -453,7 +453,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.tipoG === 0) {
         this.mostrarGrupos = true;
       } else {
+        this.parametros.grupo_microbiano = this.tipoG;
         this.mostrarGrupos = false;
+        this.cambiarGeneroEspecie();
       }
     },
     redirect: function redirect() {
@@ -463,19 +465,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case 1:
-          this.$router.push("/cepas-bacterias");
+          this.$router.push("/bacterias");
           break;
 
         case 2:
-          this.$router.push("/cepas-hongos");
+          this.$router.push("/hongos");
           break;
 
         case 3:
-          this.$router.push("/cepas-levaduras");
+          this.$router.push("/levaduras");
           break;
 
         case 4:
-          this.$router.push("/cepas-actinomicetos");
+          this.$router.push("/actinomicetos");
           break;
       }
     },
@@ -619,7 +621,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           grupo_microbiano: this.modal.grupo_microbiano
         };
         axios.post("/info-cepas/agregar", parametros).then(function (res) {
-          _this3.accionAgregarTipo({
+          _this3.accionAgregarTipoCepa({
             info: res.data,
             tipo: _this3.modal.tipo
           });
@@ -643,10 +645,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   mounted: function mounted() {
-    this.$emit("rutaHijo", window.location.pathname);
     this.ocultarGrupoMicrobiano();
   },
   created: function created() {
+    this.$emit("rutaHijo", window.location.pathname);
     this.verificarTipo();
   }
 });

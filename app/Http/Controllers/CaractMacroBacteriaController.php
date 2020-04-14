@@ -14,10 +14,9 @@ class CaractMacroBacteriaController extends Controller
     {
         $rules = [
             'medio' => 'required',
-            'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
         ];
         $messages = [
-            'color.regex' => 'El color solo puede contener letras.'
+            //'color.regex' => 'El color solo puede contener letras.'
         ];
         $this->validate($request, $rules, $messages);
 
@@ -35,13 +34,13 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria = new CaracMacroBacteria();
         $caractMacroBacteria->bacteria_id = $bacteria->id;
         $caractMacroBacteria->medio = $request->medio;
-        $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->elevacion_id = $request->elevacion;
-        $caractMacroBacteria->borde_id = $request->borde;
-        $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
-        $caractMacroBacteria->superficie_id = $request->superficie;
+        $caractMacroBacteria->forma_id = intval($request->forma);
+        $caractMacroBacteria->elevacion_id = intval($request->elevacion);
+        $caractMacroBacteria->borde_id = intval($request->borde);
+        $caractMacroBacteria->detalleoptico_id = intval($request->detalle_optico);
+        $caractMacroBacteria->superficie_id = intval($request->superficie);
         $caractMacroBacteria->tamano = $request->tamaño;
-        $caractMacroBacteria->color = $request->color;
+        $caractMacroBacteria->color_id = intval($request->color);
         $caractMacroBacteria->otras_caract = $request->otras_caract;
         $caractMacroBacteria->imagen = $ruta;
         $caractMacroBacteria->imagenPublica = $rutaPublica;
@@ -60,10 +59,10 @@ class CaractMacroBacteriaController extends Controller
     {
         $rules = [
             'medio' => 'required',
-            'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
+            // 'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
         ];
         $messages = [
-            'color.regex' => 'El color solo puede contener letras.'
+            //   'color.regex' => 'El color solo puede contener letras.'
         ];
         $this->validate($request, $rules, $messages);
 
@@ -86,13 +85,13 @@ class CaractMacroBacteriaController extends Controller
         }
 
         $caractMacroBacteria->medio = $request->medio;
-        $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->elevacion_id = $request->elevacion;
-        $caractMacroBacteria->borde_id = $request->borde;
-        $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
-        $caractMacroBacteria->superficie_id = $request->superficie;
+        $caractMacroBacteria->forma_id = intval($request->forma);
+        $caractMacroBacteria->elevacion_id = intval($request->elevacion);
+        $caractMacroBacteria->borde_id = intval($request->borde);
+        $caractMacroBacteria->detalleoptico_id = intval($request->detalle_optico);
+        $caractMacroBacteria->superficie_id = intval($request->superficie);
         $caractMacroBacteria->tamano = $request->tamaño;
-        $caractMacroBacteria->color = $request->color;
+        $caractMacroBacteria->color_id = intval($request->color);
         $caractMacroBacteria->otras_caract = $request->otras_caract;
         $caractMacroBacteria->descripcion = $request->imagen_descripcion;
 

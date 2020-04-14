@@ -23,12 +23,10 @@ export default {
   methods: {
     doFilter() {
       this.$events.fire("filter-set", this.filterText);
-      console.log("doFilter:", this.filterText);
     },
     resetFilter() {
       this.filterText = ""; // clear the text in text input
       this.$events.fire("filter-reset");
-      console.log("resetFilter");
     }
   }
 };

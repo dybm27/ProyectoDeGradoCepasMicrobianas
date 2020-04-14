@@ -136,18 +136,28 @@
                       </button>
                     </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="color" class>Color</label>
-                    <input
-                      name="color"
+                  <label for="color" class>Color</label>
+                  <div class="input-group mb-3">
+                    <select
+                      name="select"
                       id="color"
-                      placeholder="..."
-                      type="text"
                       class="form-control"
                       v-model="parametros.color"
-                      required
-                    />
-                    <span v-if="errors.color" class="text-danger">{{errors.color[0]}}</span>
+                    >
+                      <option
+                        v-for="(c,index) in getInfoCaractMacroBacterias.colors"
+                        :key="index"
+                        :value="c.id"
+                      >{{c.nombre}}</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('color')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
                 </template>
               </div>
@@ -244,11 +254,11 @@
         </div>
       </div>
     </form>
-    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
+    <modal name="agregar-caract-info-bacteria" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar-caract-info')">
+          <button type="button" class="close" @click="$modal.hide('agregar-caract-info-bacteria')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -271,7 +281,7 @@
           <button
             type="button"
             class="btn btn-secondary"
-            @click="$modal.hide('agregar-caract-info')"
+            @click="$modal.hide('agregar-caract-info-bacteria')"
           >Cancelar</button>
           <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
         </div>
@@ -292,7 +302,7 @@ export default {
         forma: 1,
         borde: 1,
         elevacion: 1,
-        color: "",
+        color: 1,
         detalle_optico: 1,
         tamaño: "grande",
         superficie: 1,
@@ -322,7 +332,7 @@ export default {
     }
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoCaract"]),
+    ...vuex.mapActions(["accionAgregarTipoCaractBacteria"]),
     evento() {
       if (this.tituloForm === "Agregar Medio") {
         let formData = new FormData();
@@ -429,7 +439,7 @@ export default {
       this.parametros.forma = this.info.forma_id;
       this.parametros.borde = this.info.borde_id;
       this.parametros.elevacion = this.info.elevacion_id;
-      this.parametros.color = this.info.color;
+      this.parametros.color = this.info.color_id;
       this.parametros.detalle_optico = this.info.detalleoptico_id;
       this.parametros.tamaño = this.info.tamano;
       this.parametros.superficie = this.info.superficie_id;
@@ -441,7 +451,11 @@ export default {
         this.info.descripcion === "null" ? "" : this.info.descripcion;
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("medio", this.parametros.medio);
       formData.append("forma", this.parametros.forma);
       formData.append("borde", this.parametros.borde);
@@ -491,10 +505,12 @@ export default {
         this.modal.titulo = "Agregar Nuevo Detalle Óptico";
       } else if (tipo === "elevacion") {
         this.modal.titulo = "Agregar Nueva Elevación";
+      } else if (tipo === "color") {
+        this.modal.titulo = "Agregar Nuevo Color";
       } else {
         this.modal.titulo = "Agregar Nueva Superficie";
       }
-      this.$modal.show("agregar-caract-info");
+      this.$modal.show("agregar-caract-info-bacteria");
     },
     agregarInfo() {
       if (this.modal.input === "") {
@@ -507,11 +523,11 @@ export default {
         axios
           .post("/info-caract-bacterias/agregar", parametros)
           .then(res => {
-            this.accionAgregarTipoCaract({
+            this.accionAgregarTipoCaractBacteria({
               info: res.data,
               tipo: this.modal.tipo
             });
-            this.$modal.hide("agregar-caract-info");
+            this.$modal.hide("agregar-caract-info-bacteria");
             this.toastr(
               "Agregar Informacion",
               `${this.modal.tipo} agregado/a con exito`,

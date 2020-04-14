@@ -16,7 +16,7 @@
             api-url="http://127.0.0.1:8000/api/cepas"
             :fields="fields"
             :sort-order="sortOrder"
-            detail-row-component="my-detail-row"
+            detail-row-component="my-detail-row-cepas"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
           ></my-vuetable>
@@ -104,7 +104,6 @@ export default {
               "warning",
               8000
             );
-            this.$modal.hide("my_modal_eliminarCepa");
           } else {
             this.refrescarTabla = true;
             this.toastr(
@@ -113,8 +112,8 @@ export default {
               "success",
               5000
             );
-            this.$modal.hide("my_modal_eliminarCepa");
           }
+          this.$modal.hide("my_modal_eliminarCepa");
         })
         .catch(error => {
           if (error.response) {

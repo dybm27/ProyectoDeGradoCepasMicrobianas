@@ -42,12 +42,13 @@ import vuex from "vuex";
 
 export default {
   created() {
-    let ruta = window.location.pathname;
-    if (ruta.includes("bacteria")) {
+    if (this.$route.params.cepaId) {
+      this.obtenerCepa(this.$route.params.cepaId);
+    } else if (this.$route.params.cepaBacteriaId) {
       this.obtenerCepa(this.$route.params.cepaBacteriaId);
-    } else if (ruta.includes("hongo")) {
+    } else if (this.$route.params.cepaHongoId) {
       this.obtenerCepa(this.$route.params.cepaHongoId);
-    } else if (ruta.includes("levadura")) {
+    } else if (this.$route.params.cepaLevaduraId) {
       this.obtenerCepa(this.$route.params.cepaLevaduraId);
     } else {
       this.obtenerCepa(this.$route.params.cepaActinomicetoId);

@@ -138,6 +138,9 @@ export default {
     }
   },
   methods: {
+    tipoAgar(value) {
+      return value === "No" ? '<i class="fas fa-times"></i>' : value;
+    },
     allcap(value) {
       return value.toUpperCase();
     },
@@ -160,7 +163,7 @@ export default {
       this.$refs.vuetable.changePage(page);
     },
     onCellClicked(data, field, event) {
-      console.log("cellClicked: ", field.name);
+      //console.log("cellClicked: ", field.name);
       this.$refs.vuetable.toggleDetailRow(data.id);
     },
     onFilterSet(filterText) {

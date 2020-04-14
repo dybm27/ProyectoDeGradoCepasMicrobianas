@@ -68,12 +68,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -133,7 +133,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getMetodoConser"])),
-  mounted: function mounted() {}
+  created: function created() {
+    if (this.$route.params.cepaBacteriaId) {
+      this.url += this.$route.params.cepaBacteriaId;
+    } else {
+      this.url += this.$route.params.cepaId;
+    }
+  }
 });
 
 /***/ }),
@@ -164,10 +170,9 @@ var render = function() {
               [
                 _c("my-vuetable", {
                   attrs: {
-                    "api-url": "http://127.0.0.1:8000/api/cepas",
+                    "api-url": _vm.url,
                     fields: _vm.fields,
                     "sort-order": _vm.sortOrder,
-                    "detail-row-component": "my-detail-row",
                     refrescarTabla: _vm.refrescarTabla
                   },
                   on: { cambiarVariable: _vm.cambiarVariable }
@@ -363,41 +368,40 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "codigo",
-  sortField: "codigo",
-  title: "Codigo",
+  name: "nombre_tipo_metodo",
+  sortField: "tipo_id",
+  title: "Tipo de Método",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "nombre_tipo_agar",
+  sortField: "tipo_agar_id",
+  title: "Tipo Agar",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "tipoAgar"
+}, {
+  name: "numero_replicas",
+  sortField: "numero_replicas",
+  title: "Numero de Replicas",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "recuento_microgota",
+  sortField: "recuento_microgota",
+  title: "Recuento Microgota",
   titleClass: "text-center"
 }, {
-  name: "nombre_grupo",
-  sortField: "grupo_microbiano_id",
-  title: "Grupo Microbiano",
-  titleClass: "text-center"
+  name: "fecha",
+  sortField: "fecha",
+  title: "Fecha",
+  titleClass: "text-center",
+  dataClass: "text-center"
 }, {
-  name: "nombre_genero",
-  sortField: "genero_id",
-  title: "Genero",
-  titleClass: "text-center"
-}, {
-  name: "nombre_especie",
-  sortField: "especie_id",
-  title: "Especie",
-  titleClass: "text-center"
-}, {
-  name: "estado",
-  sortField: "estado",
-  titleClass: "text-center"
-}, {
-  name: "origen",
-  sortField: "origen",
-  titleClass: "text-center"
-},, {
-  name: "__component:checkboxs-publicar",
-  title: "Publicar",
-  titleClass: "text-center"
-}, {
-  name: "__component:acciones-cepas",
+  name: "__component:acciones_tabla_metodo_conser_bacteria",
   title: "Acciones",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center"
 }]);
 
 /***/ })

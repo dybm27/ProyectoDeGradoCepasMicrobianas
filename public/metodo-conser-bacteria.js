@@ -60,7 +60,11 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.go(-1);
     },
     cambiarVariable: function cambiarVariable(tipo) {
-      this.variableAgregar = false;
+      if (tipo === "agregar_editar") {
+        this.variableAgregar = false;
+      } else {
+        this.variableAgregar = true;
+      }
     }
   },
   computed: {

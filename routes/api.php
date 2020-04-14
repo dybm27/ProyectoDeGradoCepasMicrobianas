@@ -6,6 +6,8 @@ use App\Borde;
 use App\CaracMacroBacteria;
 use App\Cepa;
 use App\Clase;
+use App\ColorBacteria;
+use App\ColorLevadura;
 use App\Consistencia;
 use App\DetalleOptico;
 use App\Division;
@@ -18,10 +20,12 @@ use App\Genero;
 use App\GrupoMicrobiano;
 use App\HongoFilamentoso;
 use App\Levadura;
+use App\MetodoConserBacteria;
 use App\Orden;
 use App\Phylum;
 use App\Reino;
 use App\Superficie;
+use App\TexturaLevadura;
 use App\TipoAgar;
 use App\TipoMetodoConservacionBacteria;
 use Illuminate\Http\Request;
@@ -31,6 +35,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Psy\Util\Str;
+use SebastianBergmann\CodeCoverage\Node\Builder;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,15 +55,57 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // url tabla cepas
 Route::get('cepas', function (Request $request) {
-    $cepas = Cepa::leftJoin('generos', 'cepas.genero_id', '=', 'generos.id')
-        ->leftJoin('especies', 'cepas.especie_id', '=', 'especies.id')
-        ->leftJoin('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id');
+    $cepas = Cepa::join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->join('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id');
 
     $query = $cepas->select(
         'cepas.*',
         'generos.nombre As nombre_genero',
         'especies.nombre As nombre_especie',
         'grupo_microbianos.nombre As nombre_grupo'
+    )->with([
+        //'bacteria',
+        'hongo.orden', 'hongo.phylum', 'hongo.familia', 'hongo.clase',
+        'actinomiceto.orden', 'actinomiceto.phylum', 'actinomiceto.reino', 'actinomiceto.clase',
+        'levadura.orden', 'levadura.division', 'levadura.familia', 'levadura.clase'
+    ]);
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where(function ($query) use ($value) {
+            return $query->where('cepas.codigo', 'like', $value)
+                ->orWhere('generos.nombre', 'like', $value)
+                ->orWhere('especies.nombre', 'like', $value)
+                ->orWhere('grupo_microbianos.nombre', 'like', $value)
+                ->orWhere('cepas.estado', 'like', $value)
+                ->orWhere('cepas.origen', 'like', $value)
+                ->orWhere('cepas.id', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
+
+//url tabla cepas-bacterias
+Route::get('cepas-bacterias', function (Request $request) {
+    $cepas = DB::table('cepas')->where('cepas.grupo_microbiano_id', 1)
+        ->join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id');
+
+    $query = $cepas->select(
+        'cepas.*',
+        'generos.nombre As nombre_genero',
+        'especies.nombre As nombre_especie',
     );
 
     if ($request->filled('sort')) {
@@ -68,12 +115,164 @@ Route::get('cepas', function (Request $request) {
 
     if ($request->filled('filter')) {
         $value = "%{$request->filter}%";
-        $query = $query->where('cepas.codigo', 'like', $value)
-            ->orWhere('generos.nombre', 'like', $value)
-            ->orWhere('especies.nombre', 'like', $value)
-            ->orWhere('grupo_microbianos.nombre', 'like', $value)
-            ->orWhere('cepas.estado', 'like', $value)
-            ->orWhere('cepas.origen', 'like', $value);
+        $query = $query->where(function ($query) use ($value) {
+
+            return $query->where('cepas.codigo', 'like', $value)
+                ->orWhere('generos.nombre', 'like', $value)
+                ->orWhere('especies.nombre', 'like', $value)
+                ->orWhere('cepas.estado', 'like', $value)
+                ->orWhere('cepas.origen', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
+
+// url tabla cepas-hongos
+Route::get('cepas-hongos', function (Request $request) {
+
+    $cepas = DB::table('cepas')->where('cepas.grupo_microbiano_id', 2)
+        ->join('hongo_filamentosos', 'cepas.id', '=', 'hongo_filamentosos.cepa_id')
+        ->join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->join('clases', 'hongo_filamentosos.clase_id', '=', 'clases.id')
+        ->join('ordens', 'hongo_filamentosos.orden_id', '=', 'ordens.id')
+        ->join('familias', 'hongo_filamentosos.familia_id', '=', 'familias.id')
+        ->join('phylums', 'hongo_filamentosos.phylum_id', '=', 'phylums.id');
+
+    $query = $cepas->select(
+        'cepas.*',
+        'generos.nombre As nombre_genero',
+        'especies.nombre As nombre_especie',
+        'clases.nombre As nombre_clase',
+        'ordens.nombre As nombre_orden',
+        'familias.nombre As nombre_familia',
+        'phylums.nombre As nombre_phylum'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where(function ($query) use ($value) {
+            return $query->where('cepas.codigo', 'like', $value)
+                ->orWhere('generos.nombre', 'like', $value)
+                ->orWhere('especies.nombre', 'like', $value)
+                ->orWhere('clases.nombre', 'like', $value)
+                ->orWhere('familias.nombre', 'like', $value)
+                ->orWhere('ordens.nombre', 'like', $value)
+                ->orWhere('phylums.nombre', 'like', $value)
+                ->orWhere('cepas.estado', 'like', $value)
+                ->orWhere('cepas.origen', 'like', $value)
+                ->orWhere('cepas.id', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
+
+// url tabla cepas-levaduras
+Route::get('cepas-levaduras', function (Request $request) {
+
+    $cepas = DB::table('cepas')->where('cepas.grupo_microbiano_id', 3)
+        ->join('levaduras', 'cepas.id', '=', 'levaduras.cepa_id')
+        ->join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->join('clases', 'levaduras.clase_id', '=', 'clases.id')
+        ->join('ordens', 'levaduras.orden_id', '=', 'ordens.id')
+        ->join('familias', 'levaduras.familia_id', '=', 'familias.id')
+        ->join('divisions', 'levaduras.division_id', '=', 'divisions.id');
+
+    $query = $cepas->select(
+        'cepas.*',
+        'generos.nombre As nombre_genero',
+        'especies.nombre As nombre_especie',
+        'clases.nombre As nombre_clase',
+        'ordens.nombre As nombre_orden',
+        'familias.nombre As nombre_familia',
+        'divisions.nombre As nombre_division'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where(function ($query) use ($value) {
+            return $query->where('cepas.codigo', 'like', $value)
+                ->orWhere('generos.nombre', 'like', $value)
+                ->orWhere('especies.nombre', 'like', $value)
+                ->orWhere('clases.nombre', 'like', $value)
+                ->orWhere('familias.nombre', 'like', $value)
+                ->orWhere('ordens.nombre', 'like', $value)
+                ->orWhere('divisions.nombre', 'like', $value)
+                ->orWhere('cepas.estado', 'like', $value)
+                ->orWhere('cepas.origen', 'like', $value)
+                ->orWhere('cepas.id', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
+
+// url tabla cepas-actinomicetos
+Route::get('cepas-actinomicetos', function (Request $request) {
+
+    $cepas = DB::table('cepas')->where('cepas.grupo_microbiano_id', 4)
+        ->join('actinomicetos', 'cepas.id', '=', 'actinomicetos.cepa_id')
+        ->join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->join('clases', 'actinomicetos.clase_id', '=', 'clases.id')
+        ->join('ordens', 'actinomicetos.orden_id', '=', 'ordens.id')
+        ->join('phylums', 'actinomicetos.phylum_id', '=', 'phylums.id')
+        ->join('reinos', 'actinomicetos.reino_id', '=', 'reinos.id');
+
+    $query = $cepas->select(
+        'cepas.*',
+        'generos.nombre As nombre_genero',
+        'especies.nombre As nombre_especie',
+        'clases.nombre As nombre_clase',
+        'ordens.nombre As nombre_orden',
+        'phylums.nombre As nombre_phylum',
+        'reinos.nombre As nombre_reino'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where(function ($query) use ($value) {
+            return $query->where('cepas.codigo', 'like', $value)
+                ->orWhere('generos.nombre', 'like', $value)
+                ->orWhere('especies.nombre', 'like', $value)
+                ->orWhere('clases.nombre', 'like', $value)
+                ->orWhere('phylums.nombre', 'like', $value)
+                ->orWhere('ordens.nombre', 'like', $value)
+                ->orWhere('reinos.nombre', 'like', $value)
+                ->orWhere('cepas.estado', 'like', $value)
+                ->orWhere('cepas.origen', 'like', $value)
+                ->orWhere('cepas.id', 'like', $value);
+        });
     }
 
     $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
@@ -145,15 +344,23 @@ Route::get('cepa/agregar-editar-caract/{id}', function (Request $request) {
 });
 
 Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
-    $cepas = Cepa::leftJoin('generos', 'cepas.genero_id', '=', 'generos.id')
-        ->leftJoin('especies', 'cepas.especie_id', '=', 'especies.id')
-        ->leftJoin('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id');
+    $metodos = MetodoConserBacteria::where('bacteria_id',  $request->id)
+        ->leftJoin(
+            'tipo_metodo_conservacion_bacterias',
+            'metodo_conser_bacterias.tipo_id',
+            '=',
+            'tipo_metodo_conservacion_bacterias.id'
+        )->leftJoin(
+            'tipo_agars',
+            'metodo_conser_bacterias.tipo_agar_id',
+            '=',
+            'tipo_agars.id'
+        );
 
-    $query = $cepas->select(
-        'cepas.*',
-        'generos.nombre As nombre_genero',
-        'especies.nombre As nombre_especie',
-        'grupo_microbianos.nombre As nombre_grupo'
+    $query = $metodos->select(
+        'metodo_conser_bacterias.*',
+        'tipo_metodo_conservacion_bacterias.nombre As nombre_tipo_metodo',
+        'tipo_agars.nombre As nombre_tipo_agar'
     );
 
     if ($request->filled('sort')) {
@@ -163,12 +370,12 @@ Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
 
     if ($request->filled('filter')) {
         $value = "%{$request->filter}%";
-        $query = $query->where('cepas.codigo', 'like', $value)
-            ->orWhere('generos.nombre', 'like', $value)
-            ->orWhere('especies.nombre', 'like', $value)
-            ->orWhere('grupo_microbianos.nombre', 'like', $value)
-            ->orWhere('cepas.estado', 'like', $value)
-            ->orWhere('cepas.origen', 'like', $value);
+        $query = $query->where('metodo_conser_bacterias.id', 'like', $value)
+            ->orWhere('metodo_conser_bacterias.fecha', 'like', $value)
+            ->orWhere('metodo_conser_bacterias.numero_replicas', 'like', $value)
+            ->orWhere('metodo_conser_bacterias.recuento_microgota', 'like', $value)
+            ->orWhere('tipo_metodo_conservacion_bacterias.nombre', 'like', $value)
+            ->orWhere('tipo_agars.nombre', 'like', $value);
     }
 
     $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
@@ -176,205 +383,6 @@ Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
     $pagination = $query->paginate($perPage);
 
     return $pagination;
-});
-
-Route::get('cepas-bacterias', function () {
-    $cepas = Cepa::where('grupo_microbiano_id', 1)->get();
-    $gmicrobianos = GrupoMicrobiano::all();
-    $generos = Genero::all();
-    $especies = Especie::all();
-    foreach ($cepas as $cepa) {
-        foreach ($gmicrobianos as $gm) {
-            if ($cepa->grupo_microbiano_id == $gm->id) {
-                Arr::add($cepa, 'g_microbiano', $gm->nombre);
-            }
-        }
-        foreach ($generos as $g) {
-            if ($cepa->genero_id == $g->id) {
-                Arr::add($cepa, 'gene_ro', $g->nombre);
-            }
-        }
-        foreach ($especies as $e) {
-            if ($cepa->especie_id == $e->id) {
-                Arr::add($cepa, 'espe_cie', $e->nombre);
-            }
-        }
-    }
-    return $cepas;
-});
-
-Route::get('cepas-hongos', function () {
-    $cepas = Cepa::where('grupo_microbiano_id', 2)->get();
-    $gmicrobianos = GrupoMicrobiano::all();
-    $generos = Genero::all();
-    $especies = Especie::all();
-    foreach ($cepas as $cepa) {
-        foreach ($gmicrobianos as $gm) {
-            if ($cepa->grupo_microbiano_id == $gm->id) {
-                Arr::add($cepa, 'g_microbiano', $gm->nombre);
-            }
-        }
-        foreach ($generos as $g) {
-            if ($cepa->genero_id == $g->id) {
-                Arr::add($cepa, 'gene_ro', $g->nombre);
-            }
-        }
-        foreach ($especies as $e) {
-            if ($cepa->especie_id == $e->id) {
-                Arr::add($cepa, 'espe_cie', $e->nombre);
-            }
-        }
-    }
-    return $cepas;
-});
-
-Route::get('cepas-levaduras', function () {
-    $cepas = Cepa::where('grupo_microbiano_id', 3)->get();
-    $gmicrobianos = GrupoMicrobiano::all();
-    $generos = Genero::all();
-    $especies = Especie::all();
-    foreach ($cepas as $cepa) {
-        foreach ($gmicrobianos as $gm) {
-            if ($cepa->grupo_microbiano_id == $gm->id) {
-                Arr::add($cepa, 'g_microbiano', $gm->nombre);
-            }
-        }
-        foreach ($generos as $g) {
-            if ($cepa->genero_id == $g->id) {
-                Arr::add($cepa, 'gene_ro', $g->nombre);
-            }
-        }
-        foreach ($especies as $e) {
-            if ($cepa->especie_id == $e->id) {
-                Arr::add($cepa, 'espe_cie', $e->nombre);
-            }
-        }
-    }
-    return $cepas;
-});
-
-Route::get('cepas-actinomicetos', function () {
-    $cepas = Cepa::where('grupo_microbiano_id', 4)->get();
-    $gmicrobianos = GrupoMicrobiano::all();
-    $generos = Genero::all();
-    $especies = Especie::all();
-    foreach ($cepas as $cepa) {
-        foreach ($gmicrobianos as $gm) {
-            if ($cepa->grupo_microbiano_id == $gm->id) {
-                Arr::add($cepa, 'g_microbiano', $gm->nombre);
-            }
-        }
-        foreach ($generos as $g) {
-            if ($cepa->genero_id == $g->id) {
-                Arr::add($cepa, 'gene_ro', $g->nombre);
-            }
-        }
-        foreach ($especies as $e) {
-            if ($cepa->especie_id == $e->id) {
-                Arr::add($cepa, 'espe_cie', $e->nombre);
-            }
-        }
-    }
-    return $cepas;
-});
-
-
-Route::get('bacterias', function () {
-    $bacterias = Bacteria::all();
-    return $bacterias;
-});
-
-Route::get('hongos', function () {
-    $hongos = HongoFilamentoso::all();
-    $clases = Clase::all();
-    $ordens = Orden::all();
-    $familias = Familia::all();
-    $phylums = Phylum::all();
-    foreach ($hongos as $hongo) {
-        foreach ($clases as $c) {
-            if ($hongo->clase_id == $c->id) {
-                Arr::add($hongo, 'cla_se', $c->nombre);
-            }
-        }
-        foreach ($ordens as $o) {
-            if ($hongo->orden_id == $o->id) {
-                Arr::add($hongo, 'or_den', $o->nombre);
-            }
-        }
-        foreach ($familias as $f) {
-            if ($hongo->familia_id == $f->id) {
-                Arr::add($hongo, 'fami_lia', $f->nombre);
-            }
-        }
-        foreach ($phylums as $p) {
-            if ($hongo->phylum_id == $p->id) {
-                Arr::add($hongo, 'phy_lum', $p->nombre);
-            }
-        }
-    }
-    return $hongos;
-});
-
-Route::get('levaduras', function () {
-    $levaduras = Levadura::all();
-    $clases = Clase::all();
-    $ordens = Orden::all();
-    $familias = Familia::all();
-    $divisions = Division::all();
-    foreach ($levaduras as $levadura) {
-        foreach ($clases as $c) {
-            if ($levadura->clase_id == $c->id) {
-                Arr::add($levadura, 'cla_se', $c->nombre);
-            }
-        }
-        foreach ($ordens as $o) {
-            if ($levadura->orden_id == $o->id) {
-                Arr::add($levadura, 'or_den', $o->nombre);
-            }
-        }
-        foreach ($familias as $f) {
-            if ($levadura->familia_id == $f->id) {
-                Arr::add($levadura, 'fami_lia', $f->nombre);
-            }
-        }
-        foreach ($divisions as $d) {
-            if ($levadura->division_id == $d->id) {
-                Arr::add($levadura, 'divi_sion', $d->nombre);
-            }
-        }
-    }
-    return $levaduras;
-});
-
-Route::get('actinomicetos', function () {
-    $actinomicetos = Actinomiceto::all();
-    $clases = Clase::all();
-    $ordens = Orden::all();
-    $phylums = Phylum::all();
-    $reinos = Reino::all();
-    foreach ($actinomicetos as $actinomiceto) {
-        foreach ($clases as $c) {
-            if ($actinomiceto->clase_id == $c->id) {
-                Arr::add($actinomiceto, 'cla_se', $c->nombre);
-            }
-        }
-        foreach ($ordens as $o) {
-            if ($actinomiceto->orden_id == $o->id) {
-                Arr::add($actinomiceto, 'or_den', $o->nombre);
-            }
-        }
-        foreach ($phylums as $p) {
-            if ($actinomiceto->phylum_id == $p->id) {
-                Arr::add($actinomiceto, 'phy_lum', $p->nombre);
-            }
-        }
-        foreach ($reinos as $r) {
-            if ($actinomiceto->reino_id == $r->id) {
-                Arr::add($actinomiceto, 'rei_no', $r->nombre);
-            }
-        }
-    }
-    return $actinomicetos;
 });
 
 Route::get('info-tipos-cepas', function () {
@@ -402,14 +410,15 @@ Route::get('info-caract-bacterias', function () {
     $elevacions = Elevacion::all();
     $detalle_opticos = DetalleOptico::all();
     $superficies = Superficie::all();
+    $colors = ColorBacteria::all();
     $formas_micros = FormaCaractMicro::all();
     $tipo_metodo = TipoMetodoConservacionBacteria::all();
-    $tipo_agar = TipoAgar::all();
+    $tipo_agar = TipoAgar::where('id', '!=', 1)->get();
     $array = [
         'caract_macro' => [
             'formas_macros' => $formas_macros, 'bordes' => $bordes,
             'elevacions' => $elevacions, 'detalle_opticos' => $detalle_opticos,
-            'superficies' => $superficies,
+            'superficies' => $superficies, 'colors' => $colors,
         ],
         'caract_micro' => [
             'formas_micros' => $formas_micros
@@ -418,6 +427,24 @@ Route::get('info-caract-bacterias', function () {
             'tipo_metodo' => $tipo_metodo,
             'tipo_agar' => $tipo_agar
         ]
+    ];
+    return $array;
+});
+
+Route::get('info-caract-levaduras', function () {
+    $colors = ColorLevadura::all();
+    $texturas = TexturaLevadura::all();
+    $array = [
+        'caract_macro' => [
+            'colors' => $colors, 'texturas' => $texturas,
+        ],
+        /*  'caract_micro' => [
+            'formas_micros' => $formas_micros
+        ],
+        'metodo_conser' => [
+            'tipo_metodo' => $tipo_metodo,
+            'tipo_agar' => $tipo_agar
+        ]*/
     ];
     return $array;
 });

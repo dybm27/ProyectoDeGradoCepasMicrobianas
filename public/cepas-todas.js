@@ -108,15 +108,13 @@ __webpack_require__.r(__webpack_exports__);
       axios["delete"]("/cepas/eliminar/".concat(this.idCepaEliminar)).then(function (res) {
         if (res.data === "negativo") {
           _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
-
-          _this.$modal.hide("my_modal_eliminarCepa");
         } else {
           _this.refrescarTabla = true;
 
           _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-
-          _this.$modal.hide("my_modal_eliminarCepa");
         }
+
+        _this.$modal.hide("my_modal_eliminarCepa");
       })["catch"](function (error) {
         if (error.response) {//console.log(error.response.data);
         }
@@ -172,7 +170,7 @@ var render = function() {
                   "api-url": "http://127.0.0.1:8000/api/cepas",
                   fields: _vm.fields,
                   "sort-order": _vm.sortOrder,
-                  "detail-row-component": "my-detail-row",
+                  "detail-row-component": "my-detail-row-cepas",
                   refrescarTabla: _vm.refrescarTabla
                 },
                 on: { cambiarVariable: _vm.cambiarVariable }
@@ -379,7 +377,7 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   name: "codigo",
   sortField: "codigo",
-  title: "Codigo",
+  title: "Código",
   titleClass: "text-center"
 }, {
   name: "nombre_grupo",
@@ -389,7 +387,7 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   name: "nombre_genero",
   sortField: "genero_id",
-  title: "Genero",
+  title: "Género",
   titleClass: "text-center"
 }, {
   name: "nombre_especie",
@@ -407,9 +405,10 @@ __webpack_require__.r(__webpack_exports__);
 },, {
   name: "__component:checkboxs-publicar",
   title: "Publicar",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center"
 }, {
-  name: "__component:acciones-cepas",
+  name: "__component:acciones_cepas",
   title: "Acciones",
   titleClass: "text-center"
 }]);

@@ -38,7 +38,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTipos"]),
+    ...vuex.mapActions(["obtenerTiposCepas"]),
     ocultarLink(ruta) {
       if (ruta != "/cepas") {
         this.ruta = false;
@@ -53,7 +53,7 @@ export default {
     }
   },
   created() {
-    this.obtenerTipos();
+    this.obtenerTiposCepas();
   }
 };
 </script>

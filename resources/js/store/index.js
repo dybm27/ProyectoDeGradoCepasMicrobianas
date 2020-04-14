@@ -8,6 +8,7 @@ export default new Vuex.Store({
         cepa: null,
         tipos: [],
         info_caract_bacterias: [],
+        info_caract_levaduras: []
     },
     getters: {
         getCepa(state) {
@@ -28,8 +29,8 @@ export default new Vuex.Store({
         getMetodoConser(state) {
             return state.cepa.metodo_conservacion;
         },
-        getMetodoConserById(state) {
-            return state.cepa.metodo_conservacion;
+        getMetodoConserById: (state, getters) => id => {
+            return getters.getMetodoConser.find(metodo => metodo.id == id);
         },
         getIdentiMolecu(state) {
             return state.cepa.ident_molecular;
@@ -37,28 +38,28 @@ export default new Vuex.Store({
         getGeneros(state) {
             return state.tipos.generos;
         },
-        getGenerosId: (state) => (id) => {
+        getGenerosId: state => id => {
             return state.tipos.generos.filter(
-                (genero) => genero.grupo_microbiano_id === id
+                genero => genero.grupo_microbiano_id === id
             );
         },
         getGeneroCepa(state) {
             return state.tipos.generos.find(
-                (genero) =>
+                genero =>
                     genero.grupo_microbiano_id === state.cepa.cepa.genero_id
             );
         },
         getEspecies(state) {
             return state.tipos.especies;
         },
-        getEspeciesId: (state) => (id) => {
+        getEspeciesId: state => id => {
             return state.tipos.especies.filter(
-                (especie) => especie.genero_id === id
+                especie => especie.genero_id === id
             );
         },
         getEspecieCepa(state) {
             return state.tipos.especies.find(
-                (especie) => especie.genero_id === state.cepa.cepa.especie_id
+                especie => especie.genero_id === state.cepa.cepa.especie_id
             );
         },
         getGrupos(state) {
@@ -91,6 +92,9 @@ export default new Vuex.Store({
         getInfoMetodoConserBacterias(state) {
             return state.info_caract_bacterias.metodo_conser;
         },
+        getInfoCaractMacroLevaduras(state) {
+            return state.info_caract_levaduras.caract_macro;
+        }
     },
     mutations: {
         llenarTipos(state, tipos) {
@@ -101,6 +105,9 @@ export default new Vuex.Store({
         },
         llenarInfoCaractBacterias(state, info) {
             state.info_caract_bacterias = info;
+        },
+        llenarInfoCaractLevaduras(state, info) {
+            state.info_caract_levaduras = info;
         },
         mutacionAgregarCaract(state, data) {
             switch (data.tipo) {
@@ -206,7 +213,6 @@ export default new Vuex.Store({
                     state.cepa.ident_molecular = null;
                     break;
                 case "metodo":
-                    state.cepa.metodo_conservacion.push(data.data);
                     for (
                         let i = 0;
                         i < state.cepa.metodo_conservacion.length;
@@ -226,7 +232,7 @@ export default new Vuex.Store({
             state.cepa = null;
             state.info_caract_bacterias = [];
         },
-        mutacionAgregarTipo(state, data) {
+        mutacionAgregarTipoCepa(state, data) {
             switch (data.tipo) {
                 case "genero":
                     state.tipos.generos.push(data.info);
@@ -254,7 +260,7 @@ export default new Vuex.Store({
                     break;
             }
         },
-        mutacionAgregarTipoCaract(state, data) {
+        mutacionAgregarTipoCaractBacteria(state, data) {
             switch (data.tipo) {
                 case "forma_macro":
                     state.info_caract_bacterias.caract_macro.formas_macros.push(
@@ -281,6 +287,11 @@ export default new Vuex.Store({
                         data.info
                     );
                     break;
+                case "color":
+                    state.info_caract_bacterias.caract_macro.colors.push(
+                        data.info
+                    );
+                    break;
                 case "forma_micro":
                     state.info_caract_bacterias.caract_micro.formas_micros.push(
                         data.info
@@ -298,26 +309,48 @@ export default new Vuex.Store({
                     break;
             }
         },
+        mutacionAgregarTipoCaractLevadura(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    state.info_caract_levaduras.caract_macro.colors.push(
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    state.info_caract_levaduras.caract_macro.texturas.push(
+                        data.info
+                    );
+                    break;
+            }
+        }
     },
     actions: {
-        obtenerTipos({ commit }) {
-            axios.get("/api/info-tipos-cepas").then((res) => {
+        obtenerTiposCepas({ commit }) {
+            axios.get("/api/info-tipos-cepas").then(res => {
                 commit("llenarTipos", res.data);
             });
         },
-        accionAgregarTipo({ commit }, data) {
-            commit("mutacionAgregarTipo", data);
+        accionAgregarTipoCepa({ commit }, data) {
+            commit("mutacionAgregarTipoCepa", data);
         },
         obtenerInfoCaractBacterias({ commit }) {
-            axios.get("/api/info-caract-bacterias").then((res) => {
+            axios.get("/api/info-caract-bacterias").then(res => {
                 commit("llenarInfoCaractBacterias", res.data);
             });
         },
-        accionAgregarTipoCaract({ commit }, data) {
-            commit("mutacionAgregarTipoCaract", data);
+        accionAgregarTipoCaractBacteria({ commit }, data) {
+            commit("mutacionAgregarTipoCaractBacteria", data);
+        },
+        obtenerInfoCaractLevaduras({ commit }) {
+            axios.get("/api/info-caract-levaduras").then(res => {
+                commit("llenarInfoCaractLevaduras", res.data);
+            });
+        },
+        accionAgregarTipoCaractLevadura({ commit }, data) {
+            commit("mutacionAgregarTipoCaractLevadura", data);
         },
         obtenerCepa({ commit }, id) {
-            axios.get(`/api/cepa/agregar-editar-caract/${id}`).then((res) => {
+            axios.get(`/api/cepa/agregar-editar-caract/${id}`).then(res => {
                 commit("llenarCepa", res.data);
             });
         },
@@ -329,7 +362,7 @@ export default new Vuex.Store({
         },
         accionEliminarCaract({ commit }, data) {
             commit("mutacionEliminarCaract", data);
-        },
+        }
     },
-    modules: {},
+    modules: {}
 });

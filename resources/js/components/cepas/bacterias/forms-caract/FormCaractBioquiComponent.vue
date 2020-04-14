@@ -829,7 +829,11 @@ export default {
       this.llenarArregloImagenes();
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("oxidasa", this.parametros.oxidasa);
       formData.append("catalasa", this.parametros.catalasa);
       formData.append("atrato", this.parametros.atrato);

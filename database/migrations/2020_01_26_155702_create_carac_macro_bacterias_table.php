@@ -17,7 +17,7 @@ class CreateCaracMacroBacteriasTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
-            $table->string('medio',50);
+            $table->string('medio', 50);
             $table->unsignedBigInteger('forma_id');
             $table->foreign('forma_id')->references('id')->on('forma_caract_macros');
             $table->unsignedBigInteger('elevacion_id');
@@ -28,12 +28,13 @@ class CreateCaracMacroBacteriasTable extends Migration
             $table->foreign('detalleoptico_id')->references('id')->on('detalle_opticos');
             $table->unsignedBigInteger('superficie_id');
             $table->foreign('superficie_id')->references('id')->on('superficies');
-            $table->string('tamano',30);
-            $table->string('color',100);
+            $table->unsignedBigInteger('color_id');
+            $table->foreign('color_id')->references('id')->on('color_bacterias');
+            $table->string('tamano', 30);
             $table->string('otras_caract')->nullable();
             $table->string('imagen');
             $table->string('imagenPublica');
-            $table->string('descripcion',100)->nullable();
+            $table->string('descripcion', 100)->nullable();
             $table->timestamps();
         });
     }

@@ -396,7 +396,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipo"]),
+    ...vuex.mapActions(["accionAgregarTipoCepa"]),
     evento() {
       if (this.nombre === "Editar Cepa") {
         axios
@@ -436,7 +436,9 @@ export default {
       if (this.tipoG === 0) {
         this.mostrarGrupos = true;
       } else {
+        this.parametros.grupo_microbiano = this.tipoG;
         this.mostrarGrupos = false;
+        this.cambiarGeneroEspecie();
       }
     },
     redirect() {
@@ -445,16 +447,16 @@ export default {
           this.$router.push("/cepas");
           break;
         case 1:
-          this.$router.push("/cepas-bacterias");
+          this.$router.push("/bacterias");
           break;
         case 2:
-          this.$router.push("/cepas-hongos");
+          this.$router.push("/hongos");
           break;
         case 3:
-          this.$router.push("/cepas-levaduras");
+          this.$router.push("/levaduras");
           break;
         case 4:
-          this.$router.push("/cepas-actinomicetos");
+          this.$router.push("/actinomicetos");
           break;
       }
     },
@@ -597,7 +599,7 @@ export default {
         axios
           .post("/info-cepas/agregar", parametros)
           .then(res => {
-            this.accionAgregarTipo({ info: res.data, tipo: this.modal.tipo });
+            this.accionAgregarTipoCepa({ info: res.data, tipo: this.modal.tipo });
             this.$modal.hide("agregar-otra-info");
             this.toastr(
               "Agregar Info",
@@ -633,10 +635,10 @@ export default {
     }
   },
   mounted() {
-    this.$emit("rutaHijo", window.location.pathname);
     this.ocultarGrupoMicrobiano();
   },
   created() {
+    this.$emit("rutaHijo", window.location.pathname);
     this.verificarTipo();
   }
 };

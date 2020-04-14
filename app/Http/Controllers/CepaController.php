@@ -210,7 +210,7 @@ class CepaController extends Controller
                 if (
                     count($hongo->caractMacroscopicas) > 0 || $hongo->caractMicroscopicas != null
                     || $hongo->caractBioquimica != null || $hongo->identMolecular != null
-                    || $hongo->metodoConservacion != null
+                    ||  count($hongo->metodoConservacion) > 0
                 ) {
                     $res = true;
                 }
@@ -225,7 +225,7 @@ class CepaController extends Controller
                 if (
                     count($levadura->caractMacroscopicas) > 0 || $levadura->caractMicroscopicas != null
                     || $levadura->caractBioquimica != null || $levadura->identMolecular != null
-                    || $levadura->metodoConservacion != null
+                    || count($levadura->metodoConservacion) > 0
                 ) {
                     $res = true;
                 }
@@ -238,7 +238,7 @@ class CepaController extends Controller
                 /*  if (
                         count($actinomiceto->caractMacroscopicas) > 0 || $actinomiceto->caractMicroscopicas != null
                         || $actinomiceto->caractBioquimica != null || $actinomiceto->caractFisiologica != null
-                        || $actinomiceto->identMolecular != null || $actinomiceto->metodoConservacion != null
+                        || $actinomiceto->identMolecular != null || count($actinomiceto->metodoConservacion) > 0
                     ) {
                         $res = true;
                     }*/

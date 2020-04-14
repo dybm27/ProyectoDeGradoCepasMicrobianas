@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Bacteria;
+use App\MetodoConserBacteria;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MetodoConserBacteriaController extends Controller
 {
@@ -10,11 +14,12 @@ class MetodoConserBacteriaController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'medio' => 'required',
-            'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
+            'fecha' => 'required',
+            'numero_replicas' => 'bail|required|numeric|min:1|max:999999999'
         ];
         $messages = [
-            'color.regex' => 'El color solo puede contener letras.'
+            'fecha.required' => 'Favor agregar la FECHA.',
+            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!'
         ];
         $this->validate($request, $rules, $messages);
 
@@ -25,27 +30,25 @@ class MetodoConserBacteriaController extends Controller
         $fileName = $file->getClientOriginalName();
         $time = time();
 
-        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
+        Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
 
-        $caractMacroBacteria = new CaracMacroBacteria();
-        $caractMacroBacteria->bacteria_id = $bacteria->id;
-        $caractMacroBacteria->medio = $request->medio;
-        $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->elevacion_id = $request->elevacion;
-        $caractMacroBacteria->borde_id = $request->borde;
-        $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
-        $caractMacroBacteria->superficie_id = $request->superficie;
-        $caractMacroBacteria->tamano = $request->tamaño;
-        $caractMacroBacteria->color = $request->color;
-        $caractMacroBacteria->otras_caract = $request->otras_caract;
-        $caractMacroBacteria->imagen = $ruta;
-        $caractMacroBacteria->imagenPublica = $rutaPublica;
-        $caractMacroBacteria->descripcion = $request->imagen_descripcion;
-        $caractMacroBacteria->save();
+        $fecha = Carbon::createFromDate($request->fecha);
 
-        return $caractMacroBacteria;
+        $metodoConserBacteria = new MetodoConserBacteria();
+        $metodoConserBacteria->bacteria_id = $bacteria->id;
+        $metodoConserBacteria->tipo_id = intval($request->tipo_metodo);
+        $metodoConserBacteria->tipo_agar_id = intval($request->tipo_agar);
+        $metodoConserBacteria->fecha = $fecha;
+        $metodoConserBacteria->numero_replicas = intval($request->numero_replicas);
+        $metodoConserBacteria->recuento_microgota = $request->recuento_microgota;
+        $metodoConserBacteria->imagen = $ruta;
+        $metodoConserBacteria->descripcion = $request->descripcion;
+        $metodoConserBacteria->imagenPublica = $rutaPublica;
+        $metodoConserBacteria->save();
+
+        return $metodoConserBacteria;
     }
 
     public function show($id)
@@ -56,56 +59,54 @@ class MetodoConserBacteriaController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'medio' => 'required',
-            'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
+            'fecha' => 'required',
+            'numero_replicas' => 'bail|numeric|required'
         ];
         $messages = [
-            'color.regex' => 'El color solo puede contener letras.'
+            'fecha.required' => 'Favor agregar la FECHA.',
+            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!'
         ];
         $this->validate($request, $rules, $messages);
 
-        $caractMacroBacteria = CaracMacroBacteria::find($id);
+        $metodoConserBacteria = MetodoConserBacteria::find($id);
 
         $file = $request->file('imagen');
 
+        $fecha = Carbon::createFromDate($request->fecha);
+
+        $metodoConserBacteria->tipo_id = intval($request->tipo_metodo);
+        $metodoConserBacteria->tipo_agar_id = intval($request->tipo_agar);
+        $metodoConserBacteria->fecha = $fecha;
+        $metodoConserBacteria->numero_replicas = intval($request->numero_replicas);
+        $metodoConserBacteria->recuento_microgota = $request->recuento_microgota;
+        $metodoConserBacteria->descripcion = $request->descripcion;
+
         if (!empty($file)) {
             //eliminar imagen vieja
-            Storage::disk('local')->delete($caractMacroBacteria->imagen);
+            Storage::disk('local')->delete($metodoConserBacteria->imagen);
             //agregar imagen nueva
             $fileName = $file->getClientOriginalName();
             $time = time();
-            Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-            $ruta = '/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-            $rutaPublica = '/storage/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+            Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
+            $ruta = '/public/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+            $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName;
 
-            $caractMacroBacteria->imagen = $ruta;
-            $caractMacroBacteria->imagenPublica = $rutaPublica;
+            $metodoConserBacteria->imagen = $ruta;
+            $metodoConserBacteria->imagenPublica = $rutaPublica;
         }
 
-        $caractMacroBacteria->medio = $request->medio;
-        $caractMacroBacteria->forma_id = $request->forma;
-        $caractMacroBacteria->elevacion_id = $request->elevacion;
-        $caractMacroBacteria->borde_id = $request->borde;
-        $caractMacroBacteria->detalleoptico_id = $request->detalle_optico;
-        $caractMacroBacteria->superficie_id = $request->superficie;
-        $caractMacroBacteria->tamano = $request->tamaño;
-        $caractMacroBacteria->color = $request->color;
-        $caractMacroBacteria->otras_caract = $request->otras_caract;
-        $caractMacroBacteria->descripcion = $request->imagen_descripcion;
+        $metodoConserBacteria->save();
 
-
-        $caractMacroBacteria->save();
-
-        return $caractMacroBacteria;
+        return $metodoConserBacteria;
     }
 
     public function destroy($id)
     {
-        $caractMacroBacteria = CaracMacroBacteria::find($id);
+        $metodoConserBacteria = MetodoConserBacteria::find($id);
         //eliminar imagen 
-        Storage::disk('local')->delete($caractMacroBacteria->imagen);
-        $caractMacroBacteria->delete();
+        Storage::disk('local')->delete($metodoConserBacteria->imagen);
+        $metodoConserBacteria->delete();
 
-        return $caractMacroBacteria;
+        return $metodoConserBacteria;
     }
 }

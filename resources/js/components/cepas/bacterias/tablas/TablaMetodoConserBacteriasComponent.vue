@@ -3,10 +3,9 @@
     <template v-if="getMetodoConser!=''">
       <div class="card-body mt-3 ml-2 mr-2">
         <my-vuetable
-          api-url="http://127.0.0.1:8000/api/cepas"
+          :api-url="url"
           :fields="fields"
           :sort-order="sortOrder"
-          detail-row-component="my-detail-row"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
         ></my-vuetable>
@@ -56,6 +55,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
+      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,
@@ -120,7 +120,13 @@ export default {
   computed: {
     ...vuex.mapGetters(["getMetodoConser"])
   },
-  mounted() {}
+  created() {
+    if (this.$route.params.cepaBacteriaId) {
+      this.url += this.$route.params.cepaBacteriaId;
+    }else {
+      this.url += this.$route.params.cepaId;
+    }
+  }
 };
 </script>
 

@@ -67,96 +67,100 @@ export default {
   },
   methods: {
     itemAction(action, data, index) {
-      console.log("custom-actions: " + action, data.id, index);
+      let ruta = window.location.pathname;
+
       if (action == "agregar-editar-caract") {
         switch (data.grupo_microbiano_id) {
           case 1:
-            this.$router.push({
-              name: "caract-macro-bacteria",
-              params: { cepaBacteriaId: data.id }
-            });
+            if (ruta.includes("bacterias")) {
+              this.$router.push({
+                name: "caract-macro-bacteria",
+                params: { cepaBacteriaId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-bacteria",
+                params: { cepaId: data.id }
+              });
+            }
             break;
           case 2:
-            this.$router.push({
-              name: "caract-macro-hongo",
-              params: { cepaHongoId: data.id }
-            });
+            /*if (ruta.includes("hongos")) {
+              this.$router.push({
+                name: "caract-macro-hongo",
+                params: { cepaHongoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-hongo",
+                params: { cepaId: data.id }
+              });
+            }*/
             break;
           case 3:
-            this.$router.push({
-              name: "caract-macro-levadura",
-              params: { cepaLevaduraId: data.id }
-            });
+            /*
+            if (ruta.includes("levaduras")) {
+              this.$router.push({
+                name: "caract-macro-levadura",
+                params: { cepaLevaduraId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-levadura",
+                params: { cepaId: data.id }
+              });
+            }
+            */
             break;
           case 4:
-            this.$router.push({
-              name: "caract-macro-actinomiceto",
-              params: { cepaActinomicetoId: data.id }
-            });
+            /* if (ruta.includes("actinomicetos")) {
+              this.$router.push({
+                name: "caract-macro-actinomiceto",
+                params: { cepaActinomicetoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-actinomiceto",
+                params: { cepaId: data.id }
+              });
+            } */
             break;
         }
       } else if (action == "ver-cepa") {
       } else {
-        this.$router.push({
-          name: "cepa-editar",
-          params: { cepaId: data.id }
-        });
+        if (ruta.includes("bacterias")) {
+          this.$router.push({
+            name: "cepa-bacteria-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("hongos")) {
+          this.$router.push({
+            name: "cepa-hongo-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("levaduras")) {
+          this.$router.push({
+            name: "cepa-levadura-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("actinomicetos")) {
+          this.$router.push({
+            name: "cepa-actinomiceto-editar",
+            params: { cepaId: data.id }
+          });
+        } else {
+          this.$router.push({
+            name: "cepa-editar",
+            params: { cepaId: data.id }
+          });
+        }
       }
     },
     showModal(data) {
       this.$modal.show("my_modal_eliminarCepa", { id: data.id });
     }
   },
-  computed: {
-    ocultarButton() {
-      switch (this.rowData.grupo_microbiano_id) {
-        case 1:
-          if (
-            this.rowData.carac_macro_bacterias != null &&
-            this.rowData.carac_bioqui_bacterias != null &&
-            this.rowData.carac_micro_bacterias != null &&
-            this.rowData.carac_fisio_bacterias != null &&
-            this.rowData.identi_molecu_bacterias != null &&
-            this.rowData.metodo_conser_bacterias != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 2:
-          if (
-            this.rowData.carac_macro_hongos != null &&
-            this.rowData.carac_micro_hongos != null &&
-            this.rowData.carac_bioqui_hongos != null &&
-            this.rowData.identi_molecu_hongos != null &&
-            this.rowData.metodo_conser_hongos != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 3:
-          if (
-            this.rowData.carac_macro_levaduras != null &&
-            this.rowData.carac_micro_levaduras != null &&
-            this.rowData.carac_bioqui_levaduras != null &&
-            this.rowData.identi_molecu_levaduras != null &&
-            this.rowData.metodo_conser_levaduras != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 4:
-          this.mostrar = true;
-          break;
-      }
-      return this.mostrar;
-    }
-  },
+  computed: {},
   created() {}
 };
 </script>

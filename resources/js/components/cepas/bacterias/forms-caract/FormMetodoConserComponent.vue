@@ -14,7 +14,7 @@
                       name="select"
                       id="forma"
                       class="form-control"
-                      v-model="parametros.tipo_metodo"
+                      v-model.number="parametros.tipo_metodo"
                     >
                       <option
                         v-for="(m,index) in getInfoMetodoConserBacterias.tipo_metodo"
@@ -39,7 +39,7 @@
                       name="select"
                       id="tipo_agar"
                       class="form-control"
-                      v-model="parametros.tipo_agar"
+                      v-model.number="parametros.tipo_agar"
                     >
                       <option
                         v-for="(f,index) in getInfoMetodoConserBacterias.tipo_agar"
@@ -68,9 +68,9 @@
                           :lang="lang"
                           v-model="parametros.fecha"
                           value-type="format"
-                          format="DD-MM-YYYY"
                           placeholder="..."
                         ></date-picker>
+                        <span v-if="errors.fecha" class="text-danger">{{errors.fecha[0]}}</span>
                       </div>
                     </div>
                   </div>
@@ -83,9 +83,13 @@
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.numero_replicas"
+                        v-model.number="parametros.numero_replicas"
                         required
                       />
+                      <span
+                        v-if="errors.numero_replicas"
+                        class="text-danger"
+                      >{{errors.numero_replicas[0]}}</span>
                     </div>
                   </div>
                 </div>
@@ -200,9 +204,9 @@ export default {
       info: "",
       parametros: {
         tipo_metodo: 1,
-        tipo_agar: 1,
+        tipo_agar: 2,
         fecha: "",
-        numero_replicas: "",
+        numero_replicas: 0,
         recuento_microgota: "",
         imagen: "",
         descripcion: ""
@@ -222,11 +226,13 @@ export default {
   },
   methods: {
     ...vuex.mapActions([
-      "accionAgregarTipoCaract",
+      "accionAgregarTipoCaractBacteria",
       "accionAgregarCaract",
       "accionEditarCaract"
     ]),
     evento() {
+      this.parametros.tipo_agar =
+        this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
       if (this.tituloForm === "Agregar Método") {
         let formData = new FormData();
         this.appendInfo(formData);
@@ -235,16 +241,14 @@ export default {
             headers: { "Content-Type": "multipart/form-data" }
           })
           .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Método";
-            this.nomBtn = "Editar";
-            this.accionAgregarCaract({ tipo: "metodo", data: data });
+            this.accionAgregarCaract({ tipo: "metodo", data: res.data });
             this.toastr(
               "Agregar Método",
               "Método agregado con exito!!",
               "success"
             );
+            this.$emit("cambiarVariable", "tabla");
+            this.$router.push({ name: "metodo-conser-bacteria" });
           })
           .catch(error => {
             if (error.response) {
@@ -261,14 +265,14 @@ export default {
               this.parametros
             )
             .then(res => {
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.accionEditarCaract({ tipo: "metodo", data: data });
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
               this.toastr(
                 "Editar Método",
                 "Método editado con exito!!",
                 "success"
               );
+              this.$emit("cambiarVariable", "tabla");
+              this.$router.push({ name: "metodo-conser-bacteria" });
             })
             .catch(error => {
               if (error.response) {
@@ -287,14 +291,14 @@ export default {
               headers: { "Content-Type": "multipart/form-data" }
             })
             .then(res => {
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.accionEditarCaract({ tipo: "metodo", data: data });
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
               this.toastr(
                 "Editar Método",
                 "Método editado con exito!!",
                 "success"
               );
+              this.$emit("cambiarVariable", "tabla");
+              this.$router.push({ name: "metodo-conser-bacteria" });
             })
             .catch(error => {
               if (error.response) {
@@ -329,7 +333,7 @@ export default {
     },
     llenarInfo() {
       this.parametros.tipo_metodo = this.info.tipo_id;
-      this.parametros.tipo_agar = this.info.tipo_agar;
+      this.parametros.tipo_agar = this.info.tipo_agar_id;
       this.parametros.fecha = this.info.fecha;
       this.parametros.numero_replicas = this.info.numero_replicas;
       this.parametros.recuento_microgota = this.info.recuento_microgota;
@@ -339,7 +343,11 @@ export default {
         this.info.descripcion === "null" ? "" : this.info.descripcion;
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("tipo_metodo", this.parametros.tipo_metodo);
       formData.append("tipo_agar", this.parametros.tipo_agar);
       formData.append("fecha", this.parametros.fecha);
@@ -357,9 +365,9 @@ export default {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
             "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.imageMiniatura = "";
+          this.imageMiniatura = this.info.imagenPublica;
           this.$refs.inputImagen.value = "";
-          this.parametros.imagen = "";
+          this.parametros.imagen = this.info.imagen;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
@@ -396,7 +404,7 @@ export default {
         axios
           .post("/info-caract-bacterias/agregar", parametros)
           .then(res => {
-            this.accionAgregarTipoCaract({
+            this.accionAgregarTipoCaractBacteria({
               info: res.data,
               tipo: this.modal.tipo
             });
@@ -450,7 +458,7 @@ export default {
     }
   },
   created() {
-    this.$emit("cambiarVariable");
+    this.$emit("cambiarVariable", "agregar_editar");
     if (!this.$route.params.metodoConserBacteriaId) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";

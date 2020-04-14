@@ -381,7 +381,11 @@ export default {
       this.imagenMiniaturaSec = this.info.img_secuenPublica;
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("nombre_forward", this.parametros.nombre_forward);
       formData.append("nombre_reversed", this.parametros.nombre_reversed);
       formData.append("secuen_forward", this.parametros.secuen_forward);

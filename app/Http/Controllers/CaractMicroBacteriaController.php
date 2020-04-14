@@ -59,7 +59,7 @@ class CaractMicroBacteriaController extends Controller
 
         $caractMicroBacteria = new CaracMicroBacteria();
         $caractMicroBacteria->bacteria_id = $bacteria->id;
-        $caractMicroBacteria->forma_id = $request->forma;
+        $caractMicroBacteria->forma_id = intval($request->forma);
         $caractMicroBacteria->ordenamiento = $request->ordenamiento;
         $caractMicroBacteria->tincion_gram = $request->tincion_gram;
         $caractMicroBacteria->tincion_esporas = $request->tincion_esporas;
@@ -92,7 +92,7 @@ class CaractMicroBacteriaController extends Controller
 
         $caractMicroBacteria = CaracMicroBacteria::find($id);
 
-        $caractMicroBacteria->forma_id = $request->forma;
+        $caractMicroBacteria->forma_id = intval($request->forma);
         $caractMicroBacteria->ordenamiento = $request->ordenamiento;
         $caractMicroBacteria->tincion_gram = $request->tincion_gram;
         $caractMicroBacteria->tincion_esporas = $request->tincion_esporas;

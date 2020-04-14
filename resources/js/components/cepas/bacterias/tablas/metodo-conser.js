@@ -7,40 +7,44 @@ export default [
         dataClass: "text-center"
     },
     {
-        name: "codigo",
-        sortField: "codigo",
-        title: "Codigo",
+        name: "nombre_tipo_metodo",
+        sortField: "tipo_id",
+        title: "Tipo de Método",
+        titleClass: "text-center",
+        dataClass: "text-center"
+    },
+    {
+        name: "nombre_tipo_agar",
+        sortField: "tipo_agar_id",
+        title: "Tipo Agar",
+        titleClass: "text-center",
+        dataClass: "text-center",
+        callback: "tipoAgar"
+    },
+    {
+        name: "numero_replicas",
+        sortField: "numero_replicas",
+        title: "Numero de Replicas",
+        titleClass: "text-center",
+        dataClass: "text-center"
+    },
+    {
+        name: "recuento_microgota",
+        sortField: "recuento_microgota",
+        title: "Recuento Microgota",
         titleClass: "text-center"
     },
     {
-        name: "nombre_grupo",
-        sortField: "grupo_microbiano_id",
-        title: "Grupo Microbiano",
-        titleClass: "text-center"
+        name: "fecha",
+        sortField: "fecha",
+        title: "Fecha",
+        titleClass: "text-center",
+        dataClass: "text-center"
     },
     {
-        name: "nombre_genero",
-        sortField: "genero_id",
-        title: "Genero",
-        titleClass: "text-center"
-    },
-    {
-        name: "nombre_especie",
-        sortField: "especie_id",
-        title: "Especie",
-        titleClass: "text-center"
-    },
-    { name: "estado", sortField: "estado", titleClass: "text-center" },
-    { name: "origen", sortField: "origen", titleClass: "text-center" },
-    ,
-    {
-        name: "__component:checkboxs-publicar",
-        title: "Publicar",
-        titleClass: "text-center"
-    },
-    {
-        name: "__component:acciones-cepas",
+        name: "__component:acciones_tabla_metodo_conser_bacteria",
         title: "Acciones",
-        titleClass: "text-center"
+        titleClass: "text-center",
+        dataClass: "text-center"
     }
 ];

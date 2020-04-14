@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Borde;
+use App\ColorBacteria;
 use App\DetalleOptico;
 use App\Elevacion;
 use App\FormaCaractMacro;
@@ -26,7 +27,7 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new FormaCaractMacro();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "borde":
@@ -39,7 +40,7 @@ class InfoCaracBacteriasController extends Controller
                 $this->validate($request, $rules, $messages);
 
                 $tipo = new Borde();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "detalle":
@@ -52,7 +53,7 @@ class InfoCaracBacteriasController extends Controller
                 $this->validate($request, $rules, $messages);
 
                 $tipo = new DetalleOptico();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "elevacion":
@@ -64,7 +65,7 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Elevacion();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "superficie":
@@ -76,7 +77,7 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new Superficie();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "forma_micro":
@@ -88,7 +89,7 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new FormaCaractMicro();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "metodo_conser":
@@ -100,7 +101,7 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new TipoMetodoConservacionBacteria();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
             case "tipo_agar":
@@ -112,7 +113,19 @@ class InfoCaracBacteriasController extends Controller
                 ];
                 $this->validate($request, $rules, $messages);
                 $tipo = new TipoAgar();
-                $tipo->nombre = $request->nombre;
+                $tipo->nombre = ucfirst($request->nombre);
+                $tipo->save();
+                break;
+            case "color":
+                $rules = [
+                    'nombre' => 'bail|required|unique:color_bacterias,nombre'
+                ];
+                $messages = [
+                    'nombre.unique' => 'Ya se encuentra registrado un Color con ese nombre.'
+                ];
+                $this->validate($request, $rules, $messages);
+                $tipo = new ColorBacteria();
+                $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
                 break;
         }

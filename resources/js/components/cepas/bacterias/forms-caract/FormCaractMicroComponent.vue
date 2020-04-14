@@ -374,7 +374,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoCaract"]),
+    ...vuex.mapActions(["accionAgregarTipoCaractBacteria"]),
     evento() {
       if (this.tituloForm === "Agregar Característica") {
         let formData = new FormData();
@@ -465,7 +465,7 @@ export default {
         axios
           .post("/info-caract-bacterias/agregar", parametros)
           .then(res => {
-            this.accionAgregarTipoCaract({
+            this.accionAgregarTipoCaractBacteria({
               info: res.data,
               tipo: this.modal.tipo
             });
@@ -594,7 +594,11 @@ export default {
       this.llenarArregloImagenes();
     },
     appendInfo(formData) {
-      formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      if (this.$route.params.cepaBacteriaId) {
+        formData.append("cepaId", this.$route.params.cepaBacteriaId);
+      } else {
+        formData.append("cepaId", this.$route.params.cepaId);
+      }
       formData.append("forma", this.parametros.forma);
       formData.append("ordenamiento", this.parametros.ordenamiento);
       formData.append("tincion_gram", this.parametros.tincion_gram);
