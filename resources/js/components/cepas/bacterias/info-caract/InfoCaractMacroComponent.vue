@@ -28,9 +28,11 @@
 
         <div class="row">
           <div class="col-md-12">
+
             <template v-if="mostrarForms">
               <div class="tabs-lg-alternate card-header">
                 <ul class="nav nav-justified">
+
                   <template v-if="mostrar1">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive1" @click="cambiarActive(1)">
@@ -44,6 +46,7 @@
                       </a>
                     </li>
                   </template>
+
                   <template v-if="mostrar2">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive2" @click="cambiarActive(2)">
@@ -57,6 +60,7 @@
                       </a>
                     </li>
                   </template>
+                  
                   <template v-if="mostrar3">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
@@ -73,6 +77,7 @@
                 </ul>
               </div>
               <div class="tab-content">
+
                 <template v-if="mostrar1">
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
@@ -91,6 +96,7 @@
                     </div>
                   </div>
                 </template>
+
                 <template v-if="mostrar2">
                   <div class="tab-pane" :class="computedActive2">
                     <div class="card-body">
@@ -109,6 +115,7 @@
                     </div>
                   </div>
                 </template>
+
                 <template v-if="mostrar3">
                   <div class="tab-pane" :class="computedActive3">
                     <div class="card-body">
@@ -127,8 +134,10 @@
                     </div>
                   </div>
                 </template>
+
               </div>
             </template>
+
             <template v-else>
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
@@ -138,6 +147,7 @@
                 </h5>
               </div>
             </template>
+
           </div>
         </div>
       </div>
@@ -184,16 +194,19 @@ export default {
   methods: {
     ...vuex.mapActions([
       "accionAgregarCaract",
-      "accionEditarCaract",
+      "accionEditarCaract", 
       "accionEliminarCaract"
     ]),
+
     agregarInfo(data) {
       this.accionAgregarCaract({ tipo: "macro", data: data });
       this.mostrarBtnAgregar = true;
     },
+
     editarInfo(data) {
       this.accionEditarCaract({ tipo: "macro", data: data });
     },
+
     eliminarMedio() {
       let id = 0;
       let num = 0;
@@ -228,9 +241,11 @@ export default {
           }
         });
     },
+
     cambiarVariable() {
       this.modificarForm = false;
     },
+
     toastr(titulo, msg, tipo) {
       this.$toastr.Add({
         title: titulo,
@@ -251,9 +266,11 @@ export default {
         onMouseOut: () => {}
       });
     },
+
     showModal() {
       this.$modal.show("my_modal");
     },
+
     cancelar() {
       if (this.mostrarForm1) {
         this.mostrarForm1 = false;
@@ -271,6 +288,7 @@ export default {
         this.mostrarBtnAgregar = true;
       }
     },
+
     abrirForm() {
       if (!this.mostrar1) {
         this.cambiarActive(1);
@@ -286,6 +304,7 @@ export default {
         this.mostrarBtnAgregar = false;
       }
     },
+
     llenarForms() {
       if (this.getCaractMacro[0]) {
         this.medio1 = this.getCaractMacro[0].medio;
@@ -301,6 +320,7 @@ export default {
         this.mostrarBtnAgregar = false;
       }
     },
+
     cambiarActive(num) {
       switch (num) {
         case 1:
@@ -329,6 +349,7 @@ export default {
           break;
       }
     },
+
     formatear(num) {
       switch (num) {
         case 1:
@@ -359,6 +380,7 @@ export default {
       }
     }
   },
+
   computed: {
     ...vuex.mapGetters(["getCaractMacro"]),
     computedActive1() {
@@ -388,6 +410,7 @@ export default {
         return true;
       }
     },
+
     mostrarBtnEliminar() {
       if (this.getCaractMacro[0] && this.mostrarForm1) {
         return true;
@@ -399,6 +422,7 @@ export default {
         return false;
       }
     },
+
     mostrarBtnCancelar() {
       if (!this.getCaractMacro[0] && this.mostrarForm1) {
         return true;
@@ -410,9 +434,11 @@ export default {
         return false;
       }
     },
+
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
     },
+
     medio1: {
       get() {
         if (this.getCaractMacro[0]) {
@@ -440,6 +466,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 .my_modal {
