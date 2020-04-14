@@ -13,7 +13,7 @@
         <div class="card-body">
           <!--  detail-row-component="my-detail-row" -->
           <my-vuetable
-            api-url="http://127.0.0.1:8000/api/cepas-bacterias"
+            api-url="http://34.231.74.220/api/cepas-bacterias"
             :fields="fields"
             :sort-order="sortOrder"
             detail-row-component="my-detail-row-bacterias"

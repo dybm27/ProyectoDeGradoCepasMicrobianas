@@ -85,7 +85,7 @@ export default {
             }
             break;
           case 2:
-            /*if (ruta.includes("hongos")) {
+            /**if (ruta.includes("hongos")) {
               this.$router.push({
                 name: "caract-macro-hongo",
                 params: { cepaHongoId: data.id }
@@ -95,11 +95,10 @@ export default {
                 name: "caract-macro-cepa-hongo",
                 params: { cepaId: data.id }
               });
-            }*/
+            } */
             break;
           case 3:
-            /*
-            if (ruta.includes("levaduras")) {
+            /** if (ruta.includes("levaduras")) {
               this.$router.push({
                 name: "caract-macro-levadura",
                 params: { cepaLevaduraId: data.id }
@@ -109,8 +108,7 @@ export default {
                 name: "caract-macro-cepa-levadura",
                 params: { cepaId: data.id }
               });
-            }
-            */
+            } */
             break;
           case 4:
             /* if (ruta.includes("actinomicetos")) {
