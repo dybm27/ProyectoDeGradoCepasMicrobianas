@@ -41,10 +41,12 @@ export default {
   methods: {
     itemAction(action, data, index) {
       if (action == "editar-metodo") {
-        this.$router.push({
-          name: "metodo-conser-bacteria-editar",
-          params: { metodoConserBacteriaId: data.id }
-        });
+        let ruta = window.location.pathname;
+        if (ruta.includes("bacterias")) {
+          this.$router.push({ name: "metodo-conser-bacteria-editar" });
+        } else {
+          this.$router.push({ name: "metodo-conser-cepa-bacteria-editar" });
+        }
       }
     },
     showModal(data) {

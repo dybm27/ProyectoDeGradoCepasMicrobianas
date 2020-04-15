@@ -50,10 +50,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     agregar: function agregar() {
+      var ruta = window.location.pathname;
       this.variableAgregar = false;
-      this.$router.push({
-        name: "metodo-conser-bacteria-agregar"
-      });
+
+      if (ruta.includes("bacterias")) {
+        this.$router.push({
+          name: "metodo-conser-bacteria-agregar"
+        });
+      } else {
+        this.$router.push({
+          name: "metodo-conser-cepa-bacteria-agregar"
+        });
+      }
     },
     cancelar: function cancelar() {
       this.variableAgregar = true;
@@ -70,6 +78,19 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     mostrarBtnAgregar: function mostrarBtnAgregar() {
       return this.variableAgregar;
+    },
+    rutaMetodo: function rutaMetodo() {
+      var ruta = window.location.pathname;
+
+      if (ruta.includes("bacterias")) {
+        return {
+          name: "metodo-conser-bacteria"
+        };
+      } else {
+        return {
+          name: "metodo-conser-cepa-bacteria"
+        };
+      }
     }
   }
 });
@@ -119,7 +140,7 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                        attrs: { to: { name: "metodo-conser-bacteria" } },
+                        attrs: { to: _vm.rutaMetodo },
                         on: { click: _vm.cancelar }
                       },
                       [_vm._v("Cancelar")]
