@@ -33,21 +33,54 @@ Route::group(['middleware' => 'auth'], function () {
 
     //-- Perfil
     Route::get('/perfil', 'PerfilController@index')->name('home');
-
+    //-- Calendario
+    Route::get('/calendario', 'CalendarioController@index')->name('calendario');
     //-- vistas cepas
     Route::get('/cepas', 'CepaController@index')->name('cepas');
     Route::get('/cepas/agregar', 'CepaController@index');
     Route::get('/cepas/editar/{id}', 'CepaController@index');
-    //-- vistas caract
-    Route::get('/cepas/{id}', 'CepaController@index');
-    Route::get('/cepas/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/{id}/caract-bioqui', 'CepaController@index');
-    Route::get('/cepas/{id}/caract-fisio', 'CepaController@index');
-    Route::get('/cepas/{id}/identi-molecu', 'CepaController@index');
-    Route::get('/cepas/{id}/metodo-conser', 'CepaController@index');
-    Route::get('/cepas/{id}/metodo-conser/agregar', 'CepaController@index');
-    Route::get('/cepas/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+    //-- vistas caract - todas
+    //bacteria
+    Route::get('/cepas/bacteria/{id}', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-macro', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-bioqui', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/caract-fisio', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/identi-molecu', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser/agregar', 'CepaController@index');
+    Route::get('/cepas/bacteria/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+    //levadura
+    Route::get('/cepas/levadura/{id}', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/caract-macro', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/caract-bioqui', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/identi-molecu', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/metodo-conser', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/metodo-conser/agregar', 'CepaController@index');
+    Route::get('/cepas/levadura/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+    //hongo
+    Route::get('/cepas/hongo/{id}', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-macro', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-bioqui', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/identi-molecu', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+
+    //-- crud cepas
+    Route::post('/cepas/agregar', 'CepaController@store');
+    Route::put('/cepas/editar/{id}', 'CepaController@update');
+    Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
+
+    //-- crud info-cepas
+    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
+
+    //-----------------------------------------------------------------------------------------------------------
+
+    //--------------------- BACTERIAS ---------------------------------
+
     //-- vistas cepas-bacterias
     Route::get('/bacterias', 'CepaController@bacterias')->name('cepas_bacterias');
     Route::get('/bacterias/agregar', 'CepaController@bacterias');
@@ -62,46 +95,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/bacterias/{id}/metodo-conser', 'CepaController@bacterias');
     Route::get('/bacterias/{id}/metodo-conser/agregar', 'CepaController@bacterias');
     Route::get('bacterias/{id}/metodo-conser/editar/{id2}', 'CepaController@bacterias');
-    //-- vistas cepas-levaduras
-    Route::get('/levaduras', 'CepaController@levaduras')->name('cepas_levaduras');
-    Route::get('/levaduras/agregar', 'CepaController@levaduras');
-    Route::get('/levaduras/editar/{id}', 'CepaController@levaduras');
-    //-- vistas caract-levaduras
-    Route::get('/levaduras/{id}', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-macro', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-micro', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-bioqui', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/identi-molecu', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser/agregar', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser/editar/{id2}', 'CepaController@levaduras');
-    //-- vistas cepas-hongos
-    Route::get('/hongos', 'CepaController@hongos')->name('cepas_hongos');
-    Route::get('/hongos/agregar', 'CepaController@hongos');
-    Route::get('/hongos/editar/{id}', 'CepaController@hongos');
-    //-- vistas caract-hongos
-    Route::get('/hongos/{id}', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-macro', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-micro', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-bioqui', 'CepaController@hongos');
-    Route::get('/hongos/{id}/identi-molecu', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser/agregar', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser/editar/{id2}', 'CepaController@hongos');
-    //-- vistas cepas-actinomicetos
-    Route::get('/actinomicetos', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
-    Route::get('/actinomicetos/agregar', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/editar/{id}', 'CepaController@actinomicetos');
-
-    //-- crud cepas
-    Route::post('/cepas/agregar', 'CepaController@store');
-    Route::put('/cepas/editar/{id}', 'CepaController@update');
-    Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
-
-    //-- crud info-cepas
-    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
-
-    //-----------------------------------------------------------------------------------------------------------
 
     //-- crud info-bacterias
     Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
@@ -141,7 +134,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@update');
     Route::delete('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@destroy');
 
-    //-- crud info-bacterias
+    //--------------------- LEVADURAS ---------------------------------
+
+    //-- vistas cepas-levaduras
+    Route::get('/levaduras', 'CepaController@levaduras')->name('cepas_levaduras');
+    Route::get('/levaduras/agregar', 'CepaController@levaduras');
+    Route::get('/levaduras/editar/{id}', 'CepaController@levaduras');
+    //-- vistas caract-levaduras
+    Route::get('/levaduras/{id}', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/caract-macro', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/caract-micro', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/caract-bioqui', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/identi-molecu', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/metodo-conser', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/metodo-conser/agregar', 'CepaController@levaduras');
+    Route::get('/levaduras/{id}/metodo-conser/editar/{id2}', 'CepaController@levaduras');
+
+    //-- crud info-levaduras
     Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
 
     //-- crud caract-levaduras
@@ -172,6 +181,36 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/cepas/levadura/metodo-conser/{id}', 'MetodoConserLevaduraController@update');
     Route::delete('/cepas/levadura/metodo-conser/{id}', 'MetodoConserLevaduraController@destroy');
 
+    //--------------------- HONGOS ---------------------------------
+
+    //-- vistas cepas-hongos
+    Route::get('/hongos', 'CepaController@hongos')->name('cepas_hongos');
+    Route::get('/hongos/agregar', 'CepaController@hongos');
+    Route::get('/hongos/editar/{id}', 'CepaController@hongos');
+    //-- vistas caract-hongos
+    Route::get('/hongos/{id}', 'CepaController@hongos');
+    Route::get('/hongos/{id}/caract-macro', 'CepaController@hongos');
+    Route::get('/hongos/{id}/caract-micro', 'CepaController@hongos');
+    Route::get('/hongos/{id}/caract-bioqui', 'CepaController@hongos');
+    Route::get('/hongos/{id}/identi-molecu', 'CepaController@hongos');
+    Route::get('/hongos/{id}/metodo-conser', 'CepaController@hongos');
+    Route::get('/hongos/{id}/metodo-conser/agregar', 'CepaController@hongos');
+    Route::get('/hongos/{id}/metodo-conser/editar/{id2}', 'CepaController@hongos');
+
+    //--------------------- ACTINOMICETOS ---------------------------------
+
+    //-- vistas cepas-actinomicetos
+    Route::get('/actinomicetos', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
+    Route::get('/actinomicetos/agregar', 'CepaController@actinomicetos');
+    Route::get('/actinomicetos/editar/{id}', 'CepaController@actinomicetos');
+
+    //---------------------- EVENTOS -----------------------------------------
+
+    //---crud
+    Route::post('/eventos/agregar', 'CalendarioController@store');
+    Route::put('/eventos/editar/{id}', 'CalendarioController@update');
+    Route::delete('/eventos/eliminar/{id}', 'CalendarioController@destroy');
+    Route::get('/user/logueado', 'CalendarioController@obtenerUserLogueado');
 
     // Ruta para Vue
     Route::get('/{vue_capture?}', function () {

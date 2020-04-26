@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-bioqui-bacteria
+          <form-carat-bioqui-levadura
             :modificarInfo="modificarForm"
             :info="getCaractBioqui"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-bioqui-bacteria>
+          ></form-carat-bioqui-levadura>
         </template>
         <template v-else>
           <div class="text-center">
@@ -112,7 +112,7 @@ export default {
     },
     eliminar() {
       axios
-        .delete(`/cepas/bacteria/caract-bioqui/${this.getCaractBioqui.id}`)
+        .delete(`/cepas/levadura/caract-bioqui/${this.getCaractBioqui.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;

@@ -129,7 +129,7 @@
                   </div>
                 </template>
                 <div class="position-relative form-group">
-                  <label for="imagen_descripcion">Descripcion de la Imagen</label>
+                  <label for="imagen_descripcion">Descripción de la Imagen</label>
                   <textarea
                     name="text"
                     id="imagen_descripcion"
@@ -346,7 +346,12 @@ export default {
       formData.append("borde_colonia", this.parametros.borde_colonia);
       formData.append("color", this.parametros.color);
       formData.append("imagen", this.parametros.imagen);
-      formData.append("imagen_descripcion", this.parametros.imagen_descripcion);
+      formData.append(
+        "imagen_descripcion",
+        this.parametros.imagen_descripcion === null
+          ? ""
+          : this.parametros.imagen_descripcion
+      );
     },
     obtenerImagen(e) {
       let file = e.target.files[0];

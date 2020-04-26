@@ -2,9 +2,7 @@
   <div>
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
-      data-toggle="tooltip"
-      data-placement="top"
-      title="Editar Método"
+      v-tooltip="'Editar Metodo'"
       @click="itemAction('editar-metodo', rowData, rowIndex)"
     >
       <i class="fas fa-pencil-alt"></i>
@@ -12,9 +10,7 @@
 
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
-      data-toggle="tooltip"
-      data-placement="top"
-      title="Eliminar Método"
+      v-tooltip="'Eliminar Metodo'"
       @click="showModal(rowData)"
     >
       <i class="far fa-trash-alt"></i>

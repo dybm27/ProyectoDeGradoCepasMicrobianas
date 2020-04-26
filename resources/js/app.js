@@ -7,10 +7,13 @@ import store from './store/index'
 import VueEvents from 'vue-events'
 import VueToastr from 'vue-toastr'
 import VModal from 'vue-js-modal'
+import VTooltip from 'v-tooltip'
 
+Vue.use(VTooltip)
 Vue.use(VModal)
 Vue.use(VueEvents)
 Vue.use(VueToastr)
+
 //vistas
 Vue.component('perfil', require('./components/PerfilComponent.vue').default);
 Vue.component('cepas', require('./components/cepas/CepasComponent.vue').default);
@@ -18,6 +21,7 @@ Vue.component('bacterias', require('./components/cepas/bacterias/BacteriasCompon
 Vue.component('hongos', require('./components/cepas/hongos/HongosComponent.vue').default);
 Vue.component('levaduras', require('./components/cepas/levaduras/LevadurasComponent.vue').default);
 Vue.component('actinomicetos', require('./components/cepas/actinomicetos/ActinomicetosComponent.vue').default);
+Vue.component('calendario', require('./components/CalendarioComponent.vue').default);
 //my-vuetable
 Vue.component('vuetable', require('vuetable-2/src/components/Vuetable').default);
 Vue.component('my-vuetable', require('./components/MyVuetableComponent').default);
@@ -36,6 +40,7 @@ Vue.component('dropzone', require('./components/DropzoneComponent').default);
 Vue.component('carousel', require('./components/carousel/CarouselComponent').default);
 Vue.component('carousel-item', require('./components/carousel/CarouselItemComponent').default);
 Vue.component('carousel-control', require('./components/carousel/CarouselControlComponent').default);
+Vue.component('imagenes', require('./components/cepas/ImagenesComponent').default);
 //bacterias
 Vue.component('nav-bacterias', require('./components/cepas/bacterias/NavBacteriasComponent').default);
 Vue.component('form-carat-macro-bacteria', require('./components/cepas/bacterias/forms-caract/FormCaractMacroComponent').default);

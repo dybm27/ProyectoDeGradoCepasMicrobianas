@@ -45,8 +45,7 @@ export default new Vuex.Store({
         },
         getGeneroCepa(state) {
             return state.tipos.generos.find(
-                genero =>
-                    genero.grupo_microbiano_id === state.cepa.cepa.genero_id
+                genero => genero.id === state.cepa.cepa.genero_id
             );
         },
         getEspecies(state) {
@@ -59,7 +58,7 @@ export default new Vuex.Store({
         },
         getEspecieCepa(state) {
             return state.tipos.especies.find(
-                especie => especie.genero_id === state.cepa.cepa.especie_id
+                especie => especie.id === state.cepa.cepa.especie_id
             );
         },
         getGrupos(state) {
@@ -94,6 +93,9 @@ export default new Vuex.Store({
         },
         getInfoCaractMacroLevaduras(state) {
             return state.info_caract_levaduras.caract_macro;
+        },
+        getInfoMetodoConserLevaduras(state) {
+            return state.info_caract_levaduras.metodo_conser;
         }
     },
     mutations: {

@@ -408,12 +408,12 @@
                 <div class="form-row">
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="otras_caracteristicas">Otras Caracteristicas</label>
+                      <label for="otras_caract">Otras Características</label>
                       <textarea
-                        name="otras_caracteristicas"
-                        id="otras_caracteristicas"
+                        name="otras_caract"
+                        id="otras_caract"
                         class="form-control"
-                        v-model="parametros.otras_caracteristicas"
+                        v-model="parametros.otras_caract"
                       ></textarea>
                     </div>
                   </div>
@@ -440,7 +440,7 @@
                   </template>
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="descripcion_imagenes">Descripcion Imágenes</label>
+                      <label for="descripcion_imagenes">Descripción Imágenes</label>
                       <textarea
                         name="text"
                         id="descripcion_imagenes"
@@ -457,108 +457,15 @@
         </form>
       </div>
     </div>
-    <div class="main-card mb-3 card mt-4 mr-4 ml-4">
-      <div class="card-body">
-        <h5 class="card-title">Imagenes</h5>
-        <template v-if="mostraImagenes">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <carousel :imagenes="imagenes"></carousel>
-              </div>
-            </div>
-          </div>
-        </template>
-        <template v-else>
-          <div class="text-center">
-            <h5 class="mt-5 mb-5">
-              <span class="pr-1">
-                <b class="text-warning">SIN IMÁGENES</b>
-              </span>
-            </h5>
-          </div>
-        </template>
-        <template v-if="!required">
-          <div class="container mt-3 mb-3">
-            <div class="row">
-              <div class="col-md-4">
-                <button
-                  v-show="btnAgregar"
-                  type="button"
-                  class="mr-3 btn btn-info btn-block"
-                  @click="showModalImagen('agregar')"
-                >Agregar</button>
-              </div>
-              <div class="col-md-4">
-                <button
-                  v-show="btnCambiar"
-                  type="button"
-                  class="mr-3 btn btn-warning btn-block"
-                  @click="showModalImagen('cambiar')"
-                >Cambiar</button>
-              </div>
-              <div class="col-md-4">
-                <button
-                  v-show="btnEliminar"
-                  type="button"
-                  class="btn btn-danger btn-block"
-                  @click="showModalImagen('eliminar')"
-                >Eliminar</button>
-              </div>
-            </div>
-          </div>
-        </template>
-      </div>
-    </div>
-    <modal name="agregar_eliminar_imagen" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar_eliminar_imagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <template v-if="modalImagen.nomBtn!='Agregar'">
-            <div class="position-relative form-group">
-              <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
-              <select
-                name="select_imagen"
-                id="select_imagen"
-                v-model.number="modalImagen.select_imagen"
-                class="form-control"
-              >
-                <option value="1" v-if="parametros.imagen1">Primera</option>
-                <option value="2" v-if="parametros.imagen2">Segunda</option>
-                <option value="3" v-if="parametros.imagen3">Tercera</option>
-              </select>
-            </div>
-          </template>
-          <template v-if="modalImagen.nomBtn==='Cambiar'||modalImagen.nomBtn==='Agregar'">
-            <div class="position-relative form-group">
-              <label for="imagen" class>Seleccione la nueva Imagen</label>
-              <input
-                name="imagen"
-                @change="verificarImagen"
-                id="imagen"
-                type="file"
-                class="form-control-file"
-                ref="inputImagenModal"
-              />
-              <span v-if="modalImagen.errors" class="text-danger">{{modalImagen.errors}}</span>
-            </div>
-          </template>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar_eliminar_imagen')"
-          >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="accionModal">{{modalImagen.nomBtn}}</button>
-        </div>
-      </div>
-    </modal>
+    <imagenes
+      class="mt-4 mr-4 ml-4"
+      :required="required"
+      :parametros="this.parametros"
+      :tipoCepa="'bacteria/caract-bioqui'"
+      :imagenes="this.imagenes"
+      :cepa="this.info"
+      @accionImagen="accionImagen"
+    ></imagenes>
   </div>
 </template>
 
@@ -610,19 +517,11 @@ export default {
         tincion_esporas: "presencia",
         ubicacion_esporas: "central",
         tincion_capsula: "presencia",
-        otras_caracteristicas: "",
+        otras_caract: "",
         imagen1: "",
         imagen2: "",
         imagen3: "",
         descripcion_imagenes: ""
-      },
-      modalImagen: {
-        nomBtn: "Cambiar",
-        select_imagen: 1,
-        imagen: "",
-        titulo: "",
-        nomLabel: "Cual imagen desea cambiar?",
-        errors: ""
       },
       tituloForm: "",
       nomBtn: "",
@@ -821,7 +720,7 @@ export default {
       this.parametros.hidro_urea = this.info.hidro_urea;
       this.parametros.creci_nacl = this.info.creci_nacl;
       this.parametros.creci_dif_temp = this.info.creci_dif_temp;
-      this.parametros.otras_caracteristicas = this.info.otras_caract;
+      this.parametros.otras_caract = this.info.otras_caract;
       this.parametros.imagen1 = this.info.imagen1;
       this.parametros.imagen2 = this.info.imagen2;
       this.parametros.imagen3 = this.info.imagen3;
@@ -851,182 +750,44 @@ export default {
       formData.append("xilosa", this.parametros.xilosa);
       formData.append("arabinosa", this.parametros.arabinosa);
       formData.append("sacarosa", this.parametros.sacarosa);
-      formData.append("otros_azucares", this.parametros.otros_azucares);
+      formData.append(
+        "otros_azucares",
+        this.parametros.otros_azucares === null
+          ? ""
+          : this.parametros.otros_azucares
+      );
       formData.append("almidon", this.parametros.almidon);
       formData.append("lecitinasa", this.parametros.lecitinasa);
       formData.append("lipasa", this.parametros.lipasa);
-      formData.append("otras_enzimas", this.parametros.otras_enzimas);
+      formData.append(
+        "otras_enzimas",
+        this.parametros.otras_enzimas === null
+          ? ""
+          : this.parametros.otras_enzimas
+      );
       formData.append("hidro_caseina", this.parametros.hidro_caseina);
       formData.append("hidro_gelatina", this.parametros.hidro_gelatina);
       formData.append("hidro_urea", this.parametros.hidro_urea);
       formData.append("creci_nacl", this.parametros.creci_nacl);
       formData.append("creci_dif_temp", this.parametros.creci_dif_temp);
-      formData.append("otras_caract", this.parametros.otras_caracteristicas);
+      formData.append(
+        "otras_caract",
+        this.parametros.otras_caract === null
+          ? ""
+          : this.parametros.otras_caract
+      );
       formData.append("imagen1", this.parametros.imagen1);
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
         "imagenes_descripcion",
-        this.parametros.descripcion_imagenes
+        this.parametros.descripcion_imagenes === null
+          ? ""
+          : this.parametros.descripcion_imagenes
       );
     },
-    agregar() {
-      this.mostrarForm = true;
-      this.mostrarBtnAgregar = false;
-    },
-    cancelar() {
-      this.mostrarForm = false;
-      this.mostrarBtnAgregar = true;
-    },
-    showModalImagen(tipo) {
-      this.seleccionar();
-      this.modalImagen.errors = "";
-      this.modalImagen.imagen = "";
-      if (tipo === "cambiar") {
-        this.modalImagen.nomBtn = "Cambiar";
-        this.modalImagen.titulo = "Cambiar Imagen";
-        this.modalImagen.nomLabel = "Cual imagen desea cambiar?";
-      } else if (tipo === "eliminar") {
-        this.modalImagen.nomBtn = "Eliminar";
-        this.modalImagen.titulo = "Eliminar Imagen";
-        this.modalImagen.nomLabel = "Cual imagen desea eliminar?";
-      } else {
-        this.modalImagen.nomBtn = "Agregar";
-        this.modalImagen.titulo = "Agregar Imagen";
-      }
-
-      this.$modal.show("agregar_eliminar_imagen");
-    },
-    accionModal() {
-      this.modalImagen.errors = "";
-      if (this.modalImagen.nomBtn === "Cambiar") {
-        if (this.$refs.inputImagenModal.value) {
-          let formData = new FormData();
-          formData.append("numero", this.modalImagen.select_imagen);
-          formData.append("imagen", this.modalImagen.imagen);
-          formData.append("_method", "PUT");
-          axios
-            .post(
-              `/cepas/bacteria/caract-bioqui/cambiar-imagen/${this.info.id}`,
-              formData,
-              {
-                headers: { "Content-Type": "multipart/form-data" }
-              }
-            )
-            .then(res => {
-              this.$emit("editar", res.data);
-              this.$modal.hide("agregar_eliminar_imagen");
-              this.toastr(
-                "Cambiar Imagen",
-                "La imagen fue cambiada con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
-        }
-      } else if (this.modalImagen.nomBtn === "Eliminar") {
-        let parametros = {
-          numero: this.modalImagen.select_imagen
-        };
-        axios
-          .put(
-            `/cepas/bacteria/caract-bioqui/eliminar-imagen/${this.info.id}`,
-            parametros
-          )
-          .then(res => {
-            this.$emit("editar", res.data);
-            this.$modal.hide("agregar_eliminar_imagen");
-            this.toastr(
-              "Eliminar Imagen",
-              "Imagen eliminada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.modalImagen.errors = [];
-              this.modalImagen.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
-          });
-      } else {
-        if (this.$refs.inputImagenModal.value) {
-          this.colocarNumeroAgregar();
-          let formData = new FormData();
-          formData.append("numero", this.modalImagen.select_imagen);
-          formData.append("imagen", this.modalImagen.imagen);
-          formData.append("_method", "PUT");
-          axios
-            .post(
-              `/cepas/bacteria/caract-bioqui/agregar-imagen/${this.info.id}`,
-              formData,
-              {
-                headers: { "Content-Type": "multipart/form-data" }
-              }
-            )
-            .then(res => {
-              this.$emit("editar", res.data);
-              this.$modal.hide("agregar_eliminar_imagen");
-              this.toastr(
-                "Agregar Imagen",
-                "La imagen fue agregada con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
-        }
-      }
-    },
-    colocarNumeroAgregar() {
-      if (!this.parametros.imagen1) {
-        this.modalImagen.select_imagen = 1;
-      } else if (!this.parametros.imagen2) {
-        this.modalImagen.select_imagen = 2;
-      } else if (!this.parametros.imagen3) {
-        this.modalImagen.select_imagen = 3;
-      }
-    },
-    seleccionar() {
-      if (this.parametros.imagen1) {
-        this.modalImagen.select_imagen = 1;
-      } else if (this.parametros.imagen2) {
-        this.modalImagen.select_imagen = 2;
-      } else if (this.parametros.imagen3) {
-        this.modalImagen.select_imagen = 3;
-      }
-    },
-    verificarImagen(e) {
-      this.modalImagen.errors = "";
-      let file = e.target.files[0];
-      this.modalImagen.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.modalImagen.errors =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.$refs.inputImagenModal.value = "";
-          this.modalImagen.imagen = "";
-        }
-      }
+    accionImagen(data) {
+      this.$emit("editar", data);
     }
   },
   computed: {
@@ -1050,50 +811,6 @@ export default {
         return "col-md-4";
       } else {
         return "col-md-6";
-      }
-    },
-    mostraImagenes() {
-      if (
-        this.parametros.imagen1 ||
-        this.parametros.imagen2 ||
-        this.parametros.imagen3
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    btnAgregar() {
-      if (
-        !this.parametros.imagen1 ||
-        !this.parametros.imagen2 ||
-        !this.parametros.imagen3
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    btnCambiar() {
-      if (
-        this.parametros.imagen1 ||
-        this.parametros.imagen2 ||
-        this.parametros.imagen3
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    btnEliminar() {
-      if (
-        this.parametros.imagen1 ||
-        this.parametros.imagen2 ||
-        this.parametros.imagen3
-      ) {
-        return true;
-      } else {
-        return false;
       }
     }
   },

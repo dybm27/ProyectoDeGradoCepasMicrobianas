@@ -141,7 +141,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           data: res.data
         });
 
-        _this.toastr("Eliminar Característica", "Característica Macroscópica eliminada con exito!!", "success");
+        _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
       })["catch"](function (error) {
         if (error.response) {
           _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
@@ -320,7 +320,7 @@ var render = function() {
                   staticClass: "modal-title",
                   attrs: { id: "exampleModalLongTitle" }
                 },
-                [_vm._v("Eliminar Característica Macroscópica")]
+                [_vm._v("Eliminar Característica Microscópica")]
               ),
               _vm._v(" "),
               _c(

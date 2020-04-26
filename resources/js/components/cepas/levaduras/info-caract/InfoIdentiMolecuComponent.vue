@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-molecu-bacteria
+          <form-identi-molecu-levadura
             :modificarInfo="modificarForm"
             :info="getIdentiMolecu"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-molecu-bacteria>
+          ></form-identi-molecu-levadura>
         </template>
         <template v-else>
           <div class="text-center">
@@ -112,7 +112,7 @@ export default {
     },
     eliminar() {
       axios
-        .delete(`/cepas/bacteria/identi-molecu/${this.getIdentiMolecu.id}`)
+        .delete(`/cepas/levadura/identi-molecu/${this.getIdentiMolecu.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;

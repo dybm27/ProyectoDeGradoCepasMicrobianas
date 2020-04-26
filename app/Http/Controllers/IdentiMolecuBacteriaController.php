@@ -13,9 +13,9 @@ class IdentiMolecuBacteriaController extends Controller
     {
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
         // img pcr
-        $img_pcr = $this->agregarImagen($request->file('imagen_pcr'), $bacteria->id);
+        $img_pcr = $this->guardarImagen($request->file('imagen_pcr'), $bacteria->id);
         // img secuencia
-        $img_sec = $this->agregarImagen($request->file('imagen_sec'), $bacteria->id);
+        $img_sec = $this->guardarImagen($request->file('imagen_sec'), $bacteria->id);
 
         $IdentiMolecuBacteria = new IdentiMolecuBacteria();
         $IdentiMolecuBacteria->bacteria_id = $bacteria->id;
@@ -49,13 +49,13 @@ class IdentiMolecuBacteriaController extends Controller
 
         if (!empty($imagen_pcr)) {
             Storage::disk('local')->delete($IdentiMolecuBacteria->img_pcr);
-            $img_pcr = $this->agregarImagen($imagen_pcr, $IdentiMolecuBacteria->bacteria_id);
+            $img_pcr = $this->guardarImagen($imagen_pcr, $IdentiMolecuBacteria->bacteria_id);
             $IdentiMolecuBacteria->img_pcr = $img_pcr['ruta'];
             $IdentiMolecuBacteria->img_pcrPublica = $img_pcr['rutaPublica'];
         }
         if (!empty($imagen_sec)) {
             Storage::disk('local')->delete($IdentiMolecuBacteria->img_secuen);
-            $img_sec = $this->agregarImagen($imagen_sec, $IdentiMolecuBacteria->bacteria_id);
+            $img_sec = $this->guardarImagen($imagen_sec, $IdentiMolecuBacteria->bacteria_id);
             $IdentiMolecuBacteria->img_secuen = $img_sec['ruta'];
             $IdentiMolecuBacteria->img_secuenPublica = $img_sec['rutaPublica'];
         }
@@ -82,7 +82,7 @@ class IdentiMolecuBacteriaController extends Controller
         return $IdentiMolecuBacteria;
     }
 
-    public function agregarImagen($file, $id)
+    public function guardarImagen($file, $id)
     {
         $time = time();
         $fileName = $file->getClientOriginalName();

@@ -213,12 +213,12 @@
                 </div>
 
                 <div class="position-relative form-group">
-                  <label for="otras_caracteristicas">Otras Caracteristicas</label>
+                  <label for="otras_caract">Otras Características</label>
                   <textarea
                     name="text"
-                    id="otras_caracteristicas"
+                    id="otras_caract"
                     class="form-control"
-                    v-model="parametros.otras_caracteristicas"
+                    v-model="parametros.otras_caract"
                   ></textarea>
                 </div>
 
@@ -250,7 +250,7 @@
                 </template>
 
                 <div class="position-relative form-group">
-                  <label for="imagen_descripcion">Descripcion de la Imagen</label>
+                  <label for="imagen_descripcion">Descripción de la Imagen</label>
                   <textarea
                     name="text"
                     id="imagen_descripcion"
@@ -318,7 +318,7 @@ export default {
         detalle_optico: 1,
         tamaño: "grande",
         superficie: 1,
-        otras_caracteristicas: "",
+        otras_caract: "",
         imagen: "",
         imagen_descripcion: ""
       },
@@ -456,12 +456,10 @@ export default {
       this.parametros.detalle_optico = this.info.detalleoptico_id;
       this.parametros.tamaño = this.info.tamano;
       this.parametros.superficie = this.info.superficie_id;
-      this.parametros.otras_caracteristicas =
-        this.info.otras_caract === "null" ? "" : this.info.otras_caract;
+      this.parametros.otras_caract = this.info.otras_caract;
       this.parametros.imagen = this.info.imagen;
       this.imageMiniatura = this.info.imagenPublica;
-      this.parametros.imagen_descripcion =
-        this.info.descripcion === "null" ? "" : this.info.descripcion;
+      this.parametros.imagen_descripcion = this.info.descripcion;
     },
     appendInfo(formData) {
       if (this.$route.params.cepaBacteriaId) {
@@ -477,9 +475,19 @@ export default {
       formData.append("detalle_optico", this.parametros.detalle_optico);
       formData.append("tamaño", this.parametros.tamaño);
       formData.append("superficie", this.parametros.superficie);
-      formData.append("otras_caract", this.parametros.otras_caracteristicas);
+      formData.append(
+        "otras_caract",
+        this.parametros.otras_caract === null
+          ? ""
+          : this.parametros.otras_caract
+      );
       formData.append("imagen", this.parametros.imagen);
-      formData.append("imagen_descripcion", this.parametros.imagen_descripcion);
+      formData.append(
+        "imagen_descripcion",
+        this.parametros.imagen_descripcion === null
+          ? ""
+          : this.parametros.imagen_descripcion
+      );
     },
     obtenerImagen(e) {
       let file = e.target.files[0];

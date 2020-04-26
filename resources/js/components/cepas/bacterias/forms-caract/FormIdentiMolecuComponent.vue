@@ -394,7 +394,9 @@ export default {
       formData.append("produc_reversed", this.parametros.produc_reversed);
       formData.append(
         "obser_secuenciacion",
-        this.parametros.obser_secuenciacion
+        this.parametros.obser_secuenciacion === null
+          ? ""
+          : this.parametros.obser_secuenciacion
       );
       formData.append("imagen_pcr", this.parametros.imagen_pcr);
       formData.append("imagen_sec", this.parametros.imagen_sec);
@@ -408,9 +410,14 @@ export default {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.pcr =
             "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.imagenMiniaturaPcr = this.info.img_pcrPublica;
+          if (this.required) {
+            this.imagenMiniaturaPcr = "";
+            this.parametros.imagen_pcr = "";
+          } else {
+            this.imagenMiniaturaPcr = this.info.img_pcrPublica;
+            this.parametros.imagen_pcr = this.info.img_pcr;
+          }
           this.$refs.inputImagenPcr.value = "";
-          this.parametros.imagen_pcr = this.info.img_pcr;
         } else {
           this.imagenError.pcr = "";
           this.cargarImagen(file, "pcr");
@@ -426,9 +433,14 @@ export default {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.sec =
             "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.imagenMiniaturaSec = this.info.img_secuenPublica;
+          if (this.required) {
+            this.imagenMiniaturaSec = "";
+            this.parametros.imagen_sec = "";
+          } else {
+            this.imagenMiniaturaSec = this.info.img_secuenPublica;
+            this.parametros.imagen_sec = this.info.img_secuen;
+          }
           this.$refs.inputImagenSec.value = "";
-          this.parametros.imagen_sec = this.info.img_secuen;
         } else {
           this.imagenError.sec = "";
           this.cargarImagen(file, "sec");

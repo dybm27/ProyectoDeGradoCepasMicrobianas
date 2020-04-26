@@ -20,37 +20,25 @@ class CaractMicroBacteriaController extends Controller
 
 
         if (!empty($request->imagen1)) {
-            $file1 = $request->file('imagen1');
-            $fileName1 = $file1->getClientOriginalName();
-            $time1 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1, file_get_contents($file1));
-            $ruta1 = '/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
-            $rutaPublica1 = '/storage/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
+            $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
+            $ruta1 =  $imagen1['ruta'];
+            $rutaPublica1 =  $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
         if (!empty($request->imagen2)) {
-            $file2 = $request->file('imagen2');
-            $fileName2 = $file2->getClientOriginalName();
-            $time2 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2, file_get_contents($file2));
-            $ruta2 = '/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
-            $rutaPublica2 = '/storage/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
+            $imagen2 = $this->guardarImagen($request->file('imagen2'), $bacteria->id);
+            $ruta2 =  $imagen2['ruta'];
+            $rutaPublica2 =  $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
         if (!empty($request->imagen3)) {
-            $file3 = $request->file('imagen3');
-            $fileName3 = $file3->getClientOriginalName();
-            $time3 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3, file_get_contents($file3));
-            $ruta3 = '/public/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
-            $rutaPublica3 = '/storage/bacterias/caract_micro_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
+            $imagen3 = $this->guardarImagen($request->file('imagen3'), $bacteria->id);
+            $ruta3 =  $imagen3['ruta'];
+            $rutaPublica3 =  $imagen3['rutaPublica'];
         } else {
             $ruta3 = $request->imagen3;
             $rutaPublica3 = $request->imagen3;
@@ -102,7 +90,7 @@ class CaractMicroBacteriaController extends Controller
             $caractMicroBacteria->ubicacion_esporas = null;
         }
         $caractMicroBacteria->tincion_capsula = $request->tincion_capsula;
-        $caractMicroBacteria->otras_caract = $request->otras_caracteristicas;
+        $caractMicroBacteria->otras_caract = $request->otras_caract;
         $caractMicroBacteria->descripcion = $request->descripcion_imagenes;
         $caractMicroBacteria->save();
 
@@ -118,30 +106,25 @@ class CaractMicroBacteriaController extends Controller
 
         return $caractMicroBacteria;
     }
+
     public function agregarImagen(Request $request, $id)
     {
         $caractMicroBacteria = CaracMicroBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-
-        Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractMicroBacteria->bacteria_id);
 
         switch ($request->numero) {
             case 1:
-                $caractMicroBacteria->imagen1 = $ruta;
-                $caractMicroBacteria->imagenPublica1 = $rutaPublica;
+                $caractMicroBacteria->imagen1 = $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica1 = $imagen['rutaPublica'];
                 break;
             case 2:
-                $caractMicroBacteria->imagen2 = $ruta;
-                $caractMicroBacteria->imagenPublica2 = $rutaPublica;
+                $caractMicroBacteria->imagen2 = $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica2 = $imagen['rutaPublica'];
                 break;
             case 3:
-                $caractMicroBacteria->imagen3 = $ruta;
-                $caractMicroBacteria->imagenPublica3 = $rutaPublica;
+                $caractMicroBacteria->imagen3 = $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica3 = $imagen['rutaPublica'];
                 break;
         }
         $caractMicroBacteria->save();
@@ -151,35 +134,29 @@ class CaractMicroBacteriaController extends Controller
     {
         $caractMicroBacteria = CaracMicroBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-        //agregar imagen nueva
-        Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractMicroBacteria->bacteria_id);
 
         switch ($request->numero) {
             case 1:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractMicroBacteria->imagen1);
 
-                $caractMicroBacteria->imagen1 = $ruta;
-                $caractMicroBacteria->imagenPublica1 = $rutaPublica;
+                $caractMicroBacteria->imagen1 =  $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica1 = $imagen['rutaPublica'];
                 break;
             case 2:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractMicroBacteria->imagen2);
 
-                $caractMicroBacteria->imagen2 = $ruta;
-                $caractMicroBacteria->imagenPublica2 = $rutaPublica;
+                $caractMicroBacteria->imagen2 =  $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica2 = $imagen['rutaPublica'];
                 break;
             case 3:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractMicroBacteria->imagen3);
 
-                $caractMicroBacteria->imagen3 = $ruta;
-                $caractMicroBacteria->imagenPublica3 = $rutaPublica;
+                $caractMicroBacteria->imagen3 =  $imagen['ruta'];
+                $caractMicroBacteria->imagenPublica3 = $imagen['rutaPublica'];
                 break;
         }
         $caractMicroBacteria->save();
@@ -208,5 +185,15 @@ class CaractMicroBacteriaController extends Controller
         }
         $caractMicroBacteria->save();
         return $caractMicroBacteria;
+    }
+
+    public function guardarImagen($file, $id)
+    {
+        $time = time();
+        $fileName = $file->getClientOriginalName();
+        Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
+        return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 }

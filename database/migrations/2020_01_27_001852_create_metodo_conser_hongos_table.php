@@ -19,15 +19,16 @@ class CreateMetodoConserHongosTable extends Migration
             $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_hongos');
-            $table->date('fecha');
+            $table->dateTime('fecha');
             $table->integer('numero_replicas')->nullable();
-            $table->string('recuento_microgota',50)->nullable();
-            $table->string('medio_cultivo',50)->nullable();
+            $table->string('recuento_microgota', 50)->nullable();
+            $table->string('medio_cultivo', 50)->nullable();
             $table->integer('numero_pases')->nullable();
-            $table->string('observaciones',100)->nullable();
+            $table->string('observaciones', 100)->nullable();
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->string('descripcion',100)->nullable();
+            $table->string('descripcion', 100)->nullable();
+        
             $table->timestamps();
         });
     }

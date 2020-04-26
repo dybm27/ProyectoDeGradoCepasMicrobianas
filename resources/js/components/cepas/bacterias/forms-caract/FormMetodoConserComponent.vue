@@ -67,6 +67,7 @@
                         <date-picker
                           :lang="lang"
                           v-model="parametros.fecha"
+                          type="datetime"
                           value-type="format"
                           placeholder="..."
                         ></date-picker>
@@ -119,7 +120,7 @@
                   <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
                 </div>
                 <div class="position-relative form-group">
-                  <label for="descripcion">Descripcion</label>
+                  <label for="descripcion">Descripción</label>
                   <textarea
                     name="text"
                     id="descripcion"
@@ -194,7 +195,6 @@
 import vuex from "vuex";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
-import "vue2-datepicker/index.css";
 
 export default {
   components: { DatePicker },
@@ -206,7 +206,7 @@ export default {
         tipo_metodo: 1,
         tipo_agar: 2,
         fecha: "",
-        numero_replicas: 0,
+        numero_replicas: "",
         recuento_microgota: "",
         imagen: "",
         descripcion: ""
@@ -233,6 +233,8 @@ export default {
     evento() {
       this.parametros.tipo_agar =
         this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
+      this.parametros.fecha =
+        this.parametros.fecha === null ? "" : this.parametros.fecha;
       if (this.tituloForm === "Agregar Método") {
         let formData = new FormData();
         this.appendInfo(formData);
@@ -248,7 +250,7 @@ export default {
               "success"
             );
             this.$emit("cambiarVariable", "tabla");
-            this.$router.push({ name: "metodo-conser-bacteria" });
+            this.redireccionar();
           })
           .catch(error => {
             if (error.response) {
@@ -272,7 +274,7 @@ export default {
                 "success"
               );
               this.$emit("cambiarVariable", "tabla");
-              this.$router.push({ name: "metodo-conser-bacteria" });
+              this.redireccionar();
             })
             .catch(error => {
               if (error.response) {
@@ -298,7 +300,7 @@ export default {
                 "success"
               );
               this.$emit("cambiarVariable", "tabla");
-              this.$router.push({ name: "metodo-conser-bacteria" });
+              this.redireccionar();
             })
             .catch(error => {
               if (error.response) {
@@ -309,6 +311,14 @@ export default {
               }
             });
         }
+      }
+    },
+    redireccionar() {
+      let ruta = window.location.pathname;
+      if (ruta.includes("bacterias")) {
+        this.$router.push({ name: "metodo-conser-bacteria" });
+      } else {
+        this.$router.push({ name: "metodo-conser-cepa-bacteria" });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -339,8 +349,7 @@ export default {
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
       this.imageMiniatura = this.info.imagenPublica;
-      this.parametros.descripcion =
-        this.info.descripcion === "null" ? "" : this.info.descripcion;
+      this.parametros.descripcion = this.info.descripcion;
     },
     appendInfo(formData) {
       if (this.$route.params.cepaBacteriaId) {
@@ -354,7 +363,10 @@ export default {
       formData.append("numero_replicas", this.parametros.numero_replicas);
       formData.append("recuento_microgota", this.parametros.recuento_microgota);
       formData.append("imagen", this.parametros.imagen);
-      formData.append("descripcion", this.parametros.descripcion);
+      formData.append(
+        "descripcion",
+        this.parametros.descripcion === null ? "" : this.parametros.descripcion
+      );
     },
     obtenerImagen(e) {
       let file = e.target.files[0];

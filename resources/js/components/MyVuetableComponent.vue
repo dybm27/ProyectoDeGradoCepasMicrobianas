@@ -141,6 +141,18 @@ export default {
     tipoAgar(value) {
       return value === "No" ? '<i class="fas fa-times"></i>' : value;
     },
+    numeroReplicas(value) {
+      return value === 0 ? '<i class="fas fa-times"></i>' : value;
+    },
+    recuentoMicorgota(value) {
+      return value === null ? '<i class="fas fa-times"></i>' : value;
+    },
+    medioCultivo(value) {
+      return value === null ? '<i class="fas fa-times"></i>' : value;
+    },
+    numeroPases(value) {
+      return value === 0 ? '<i class="fas fa-times"></i>' : value;
+    },
     allcap(value) {
       return value.toUpperCase();
     },

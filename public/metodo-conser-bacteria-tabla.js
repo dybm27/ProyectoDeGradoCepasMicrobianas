@@ -73,7 +73,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      url: "http://34.231.74.220/api/cepa/bacteria/metodos-conser/",
+      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],

@@ -49,7 +49,7 @@
     <modal name="my_modal" classes="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Microscópica</h5>
           <button type="button" class="close" @click="$modal.hide('my_modal')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -120,7 +120,7 @@ export default {
           this.accionEliminarCaract({ tipo: "micro", data: res.data });
           this.toastr(
             "Eliminar Característica",
-            "Característica Macroscópica eliminada con exito!!",
+            "Característica Microscópica eliminada con exito!!",
             "success"
           );
         })

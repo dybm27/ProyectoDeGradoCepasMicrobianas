@@ -73,7 +73,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
+      url: "http://127.0.0.1:8000/api/cepa/levadura/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -110,7 +110,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarMetodo: function eliminarMetodo() {
       var _this = this;
 
-      axios["delete"]("/cepas/bacteria/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
+      axios["delete"]("/cepas/levadura/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
         _this.refrescarTabla = true;
 
         _this.accionEliminarCaract({
@@ -134,7 +134,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getMetodoConser"])),
   created: function created() {
-    this.url += this.$route.params.cepaBacteriaId;
+    if (this.$route.params.cepaLevaduraId) {
+      this.url += this.$route.params.cepaLevaduraId;
+    } else {
+      this.url += this.$route.params.cepaId;
+    }
   }
 });
 
@@ -370,23 +374,33 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "nombre_tipo_agar",
-  sortField: "tipo_agar_id",
-  title: "Tipo Agar",
-  titleClass: "text-center",
-  dataClass: "text-center",
-  callback: "tipoAgar"
-}, {
   name: "numero_replicas",
   sortField: "numero_replicas",
   title: "Numero de Replicas",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  callback: "numeroReplicas"
 }, {
   name: "recuento_microgota",
   sortField: "recuento_microgota",
   title: "Recuento Microgota",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "recuentoMicorgota"
+}, {
+  name: "medio_cultivo",
+  sortField: "medio_cultivo",
+  title: "Medio de Cultivo",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "medioCultivo"
+}, {
+  name: "numero_pases",
+  sortField: "numero_pases",
+  title: "Número de Pases",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "numeroPases"
 }, {
   name: "fecha",
   sortField: "fecha",
@@ -394,7 +408,7 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "__component:acciones_tabla_metodo_conser_bacteria",
+  name: "__component:acciones_tabla_metodo_conser_levadura",
   title: "Acciones",
   titleClass: "text-center",
   dataClass: "text-center"

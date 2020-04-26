@@ -4,9 +4,7 @@
       <div class="col-md-12 col-lg-12">
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
-          data-toggle="tooltip"
-          data-placement="left"
-          title="Agregar y Editar Caracteristicas"
+          v-tooltip.left="'Agregar y Editar Caracteristicas'"
           @click="itemAction('agregar-editar-caract', rowData, rowIndex)"
         >
           <i class="far fa-file-alt"></i>
@@ -14,9 +12,7 @@
 
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-primary"
-          data-toggle="tooltip"
-          data-placement="left"
-          title="Ver Cepa"
+          v-tooltip="'Ver Cepa'"
           @click="itemAction('ver-cepa', rowData, rowIndex)"
         >
           <i class="far fa-eye"></i>
@@ -27,9 +23,7 @@
       <div class="col-md-12 col-lg-12">
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Editar Cepa"
+          v-tooltip.left="'Editar Cepa'"
           @click="itemAction('editar-cepa', rowData, rowIndex)"
         >
           <i class="fas fa-pencil-alt"></i>
@@ -37,9 +31,7 @@
 
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Eliminar Cepa"
+          v-tooltip="'Eliminar Cepa'"
           @click="showModal(rowData)"
         >
           <i class="far fa-trash-alt"></i>
@@ -85,7 +77,7 @@ export default {
             }
             break;
           case 2:
-            /**if (ruta.includes("hongos")) {
+            if (ruta.includes("hongos")) {
               this.$router.push({
                 name: "caract-macro-hongo",
                 params: { cepaHongoId: data.id }
@@ -95,10 +87,10 @@ export default {
                 name: "caract-macro-cepa-hongo",
                 params: { cepaId: data.id }
               });
-            } */
+            }
             break;
           case 3:
-            /** if (ruta.includes("levaduras")) {
+            if (ruta.includes("levaduras")) {
               this.$router.push({
                 name: "caract-macro-levadura",
                 params: { cepaLevaduraId: data.id }
@@ -108,7 +100,7 @@ export default {
                 name: "caract-macro-cepa-levadura",
                 params: { cepaId: data.id }
               });
-            } */
+            }
             break;
           case 4:
             /* if (ruta.includes("actinomicetos")) {
@@ -163,8 +155,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.centrar {
-  align-content: center;
-}
-</style>

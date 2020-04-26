@@ -15,16 +15,16 @@ class TiposMetodosConservacionHLSeeder extends Seeder
             'nombre'=>'Glicerol'
         ]);
         DB::table('tipo_metodo_conservacion_hongos')->insert([
-            'nombre'=>'Medio solido'
+            'nombre'=>'Medio sólido'
         ]);
         DB::table('tipo_metodo_conservacion_hongos')->insert([
-            'nombre'=>'Medio liquido'
+            'nombre'=>'Medio líquido'
         ]);
         DB::table('tipo_metodo_conservacion_hongos')->insert([
             'nombre'=>'Suelo'
         ]);
         DB::table('tipo_metodo_conservacion_hongos')->insert([
-            'nombre'=>'Solucion salina'
+            'nombre'=>'Solución salina'
         ]);
         DB::table('tipo_metodo_conservacion_hongos')->insert([
             'nombre'=>'Papel filtro'
@@ -34,16 +34,16 @@ class TiposMetodosConservacionHLSeeder extends Seeder
             'nombre'=>'Glicerol'
         ]);
         DB::table('tipo_metodo_conservacion_levaduras')->insert([
-            'nombre'=>'Medio solido'
+            'nombre'=>'Medio sólido'
         ]);
         DB::table('tipo_metodo_conservacion_levaduras')->insert([
-            'nombre'=>'Medio liquido'
+            'nombre'=>'Medio líquido'
         ]);
         DB::table('tipo_metodo_conservacion_levaduras')->insert([
             'nombre'=>'Suelo'
         ]);
         DB::table('tipo_metodo_conservacion_levaduras')->insert([
-            'nombre'=>'Solucion salina'
+            'nombre'=>'Solución salina'
         ]);
         DB::table('tipo_metodo_conservacion_levaduras')->insert([
             'nombre'=>'Papel filtro'

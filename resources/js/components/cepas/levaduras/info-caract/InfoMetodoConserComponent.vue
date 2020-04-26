@@ -17,7 +17,7 @@
             <template v-else>
               <button
                 @click="cancelar"
-                :to="{name:'metodo-conser-bacteria'}"
+                :to="rutaMetodo"
                 class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
               >Cancelar</button>
             </template>
@@ -40,8 +40,13 @@ export default {
   },
   methods: {
     agregar() {
+      let ruta = window.location.pathname;
       this.variableAgregar = false;
-      this.$router.push({ name: "metodo-conser-bacteria-agregar" });
+      if (ruta.includes("levaduras")) {
+        this.$router.push({ name: "metodo-conser-levadura-agregar" });
+      } else {
+        this.$router.push({ name: "metodo-conser-cepa-levadura-agregar" });
+      }
     },
     cancelar() {
       this.variableAgregar = true;
@@ -58,6 +63,14 @@ export default {
   computed: {
     mostrarBtnAgregar() {
       return this.variableAgregar;
+    },
+    rutaMetodo() {
+      let ruta = window.location.pathname;
+      if (ruta.includes("levaduras")) {
+        return { name: "metodo-conser-levadura" };
+      } else {
+        return { name: "metodo-conser-cepa-levadura" };
+      }
     }
   }
 };

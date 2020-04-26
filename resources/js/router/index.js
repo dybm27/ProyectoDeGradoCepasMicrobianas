@@ -37,7 +37,7 @@ const routes = [
     },
     //bacterias
     {
-        path: "/cepas/:cepaId",
+        path: "/cepas/bacteria/:cepaId",
         name: "cepa-bacteria",
         component: () =>
             import(
@@ -142,7 +142,7 @@ const routes = [
     },
     //hongos
     {
-        path: "/cepas/:cepaId",
+        path: "/cepas/hongo/:cepaId",
         name: "cepa-hongo",
         component: () =>
             import(
@@ -237,7 +237,7 @@ const routes = [
     },
     //levaduras
     {
-        path: "/cepas/:cepaId",
+        path: "/cepas/levadura/:cepaId",
         name: "cepa-levadura",
         component: () =>
             import(

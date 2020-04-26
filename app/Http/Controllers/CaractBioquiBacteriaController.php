@@ -20,37 +20,25 @@ class CaractBioquiBacteriaController extends Controller
 
 
         if (!empty($request->imagen1)) {
-            $file1 = $request->file('imagen1');
-            $fileName1 = $file1->getClientOriginalName();
-            $time1 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1, file_get_contents($file1));
-            $ruta1 = '/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
-            $rutaPublica1 = '/storage/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
+            $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
+            $ruta1 = $imagen1['ruta'];
+            $rutaPublica1 = $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
         if (!empty($request->imagen2)) {
-            $file2 = $request->file('imagen2');
-            $fileName2 = $file2->getClientOriginalName();
-            $time2 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2, file_get_contents($file2));
-            $ruta2 = '/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
-            $rutaPublica2 = '/storage/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
+            $imagen2 = $this->guardarImagen($request->file('imagen2'), $bacteria->id);
+            $ruta2 = $imagen2['ruta'];
+            $rutaPublica2 = $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
         if (!empty($request->imagen3)) {
-            $file3 = $request->file('imagen3');
-            $fileName3 = $file3->getClientOriginalName();
-            $time3 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3, file_get_contents($file3));
-            $ruta3 = '/public/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
-            $rutaPublica3 = '/storage/bacterias/caract_bioqui_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
+            $imagen3 = $this->guardarImagen($request->file('imagen3'), $bacteria->id);
+            $ruta3 = $imagen3['ruta'];
+            $rutaPublica3 = $imagen3['rutaPublica'];
         } else {
             $ruta3 = $request->imagen3;
             $rutaPublica3 = $request->imagen3;
@@ -106,11 +94,6 @@ class CaractBioquiBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
-       /* $rules = [
-            'ordenamiento' => 'required'
-        ];
-        $this->validate($request, $rules);*/
-
         $caractBioquiBacteria = CaracBioquiBacteria::find($id);
 
         $caractBioquiBacteria->oxidasa = $request->oxidasa;
@@ -140,7 +123,7 @@ class CaractBioquiBacteriaController extends Controller
         $caractBioquiBacteria->hidro_urea = $request->hidro_urea;
         $caractBioquiBacteria->creci_nacl = $request->creci_nacl;
         $caractBioquiBacteria->creci_dif_temp = $request->creci_dif_temp;
-        $caractBioquiBacteria->otras_caract = $request->otras_caracteristicas;
+        $caractBioquiBacteria->otras_caract = $request->otras_caract;
         $caractBioquiBacteria->descripcion = $request->descripcion_imagenes;
         $caractBioquiBacteria->save();
 
@@ -160,26 +143,20 @@ class CaractBioquiBacteriaController extends Controller
     {
         $caractBioquiBacteria = CaracBioquiBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-
-        Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractBioquiBacteria->bacteria_id);
 
         switch ($request->numero) {
             case 1:
-                $caractBioquiBacteria->imagen1 = $ruta;
-                $caractBioquiBacteria->imagenPublica1 = $rutaPublica;
+                $caractBioquiBacteria->imagen1 =  $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica1 =  $imagen['rutaPublica'];
                 break;
             case 2:
-                $caractBioquiBacteria->imagen2 = $ruta;
-                $caractBioquiBacteria->imagenPublica2 = $rutaPublica;
+                $caractBioquiBacteria->imagen2 =  $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica2 =  $imagen['rutaPublica'];
                 break;
             case 3:
-                $caractBioquiBacteria->imagen3 = $ruta;
-                $caractBioquiBacteria->imagenPublica3 = $rutaPublica;
+                $caractBioquiBacteria->imagen3 =  $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica3 =  $imagen['rutaPublica'];
                 break;
         }
         $caractBioquiBacteria->save();
@@ -189,35 +166,30 @@ class CaractBioquiBacteriaController extends Controller
     {
         $caractBioquiBacteria = CaracBioquiBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-        //agregar imagen nueva
-        Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractBioquiBacteria->bacteria_id);
+
 
         switch ($request->numero) {
             case 1:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractBioquiBacteria->imagen1);
 
-                $caractBioquiBacteria->imagen1 = $ruta;
-                $caractBioquiBacteria->imagenPublica1 = $rutaPublica;
+                $caractBioquiBacteria->imagen1 = $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica1 = $imagen['rutaPublica'];
                 break;
             case 2:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractBioquiBacteria->imagen2);
 
-                $caractBioquiBacteria->imagen2 = $ruta;
-                $caractBioquiBacteria->imagenPublica2 = $rutaPublica;
+                $caractBioquiBacteria->imagen2 = $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica2 = $imagen['rutaPublica'];
                 break;
             case 3:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractBioquiBacteria->imagen3);
 
-                $caractBioquiBacteria->imagen3 = $ruta;
-                $caractBioquiBacteria->imagenPublica3 = $rutaPublica;
+                $caractBioquiBacteria->imagen3 = $imagen['ruta'];
+                $caractBioquiBacteria->imagenPublica3 = $imagen['rutaPublica'];
                 break;
         }
         $caractBioquiBacteria->save();
@@ -246,5 +218,15 @@ class CaractBioquiBacteriaController extends Controller
         }
         $caractBioquiBacteria->save();
         return $caractBioquiBacteria;
+    }
+
+    public function guardarImagen($file, $id)
+    {
+        $time = time();
+        $fileName = $file->getClientOriginalName();
+        Storage::disk('local')->put('/public/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
+        return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 }

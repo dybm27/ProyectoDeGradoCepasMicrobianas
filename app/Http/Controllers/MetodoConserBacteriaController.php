@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Bacteria;
+use App\Cepa;
 use App\MetodoConserBacteria;
+use App\TipoMetodoConservacionBacteria;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -13,6 +15,7 @@ class MetodoConserBacteriaController extends Controller
 
     public function store(Request $request)
     {
+
         $rules = [
             'fecha' => 'required',
             'numero_replicas' => 'bail|required|numeric|min:1|max:999999999'
@@ -25,16 +28,9 @@ class MetodoConserBacteriaController extends Controller
 
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
-        $file = $request->file('imagen');
-        //obtenemos el nombre de la imagen
-        $fileName = $file->getClientOriginalName();
-        $time = time();
+        $imagen = $this->guardarImagen($request->file('imagen'), $bacteria->id);
 
-        Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
-
-        $fecha = Carbon::createFromDate($request->fecha);
+        $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserBacteria = new MetodoConserBacteria();
         $metodoConserBacteria->bacteria_id = $bacteria->id;
@@ -43,9 +39,9 @@ class MetodoConserBacteriaController extends Controller
         $metodoConserBacteria->fecha = $fecha;
         $metodoConserBacteria->numero_replicas = intval($request->numero_replicas);
         $metodoConserBacteria->recuento_microgota = $request->recuento_microgota;
-        $metodoConserBacteria->imagen = $ruta;
+        $metodoConserBacteria->imagen = $imagen['ruta'];
         $metodoConserBacteria->descripcion = $request->descripcion;
-        $metodoConserBacteria->imagenPublica = $rutaPublica;
+        $metodoConserBacteria->imagenPublica =  $imagen['rutaPublica'];
         $metodoConserBacteria->save();
 
         return $metodoConserBacteria;
@@ -72,7 +68,7 @@ class MetodoConserBacteriaController extends Controller
 
         $file = $request->file('imagen');
 
-        $fecha = Carbon::createFromDate($request->fecha);
+        $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserBacteria->tipo_id = intval($request->tipo_metodo);
         $metodoConserBacteria->tipo_agar_id = intval($request->tipo_agar);
@@ -85,14 +81,10 @@ class MetodoConserBacteriaController extends Controller
             //eliminar imagen vieja
             Storage::disk('local')->delete($metodoConserBacteria->imagen);
             //agregar imagen nueva
-            $fileName = $file->getClientOriginalName();
-            $time = time();
-            Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-            $ruta = '/public/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-            $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $metodoConserBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+            $imagen = $this->guardarImagen($file, $metodoConserBacteria->bacteria_id);
 
-            $metodoConserBacteria->imagen = $ruta;
-            $metodoConserBacteria->imagenPublica = $rutaPublica;
+            $metodoConserBacteria->imagen =  $imagen['ruta'];
+            $metodoConserBacteria->imagenPublica =  $imagen['rutaPublica'];
         }
 
         $metodoConserBacteria->save();
@@ -109,4 +101,15 @@ class MetodoConserBacteriaController extends Controller
 
         return $metodoConserBacteria;
     }
+
+    public function guardarImagen($file, $id)
+    {
+        $time = time();
+        $fileName = $file->getClientOriginalName();
+        Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
+        return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
 }

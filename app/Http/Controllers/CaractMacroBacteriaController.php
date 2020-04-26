@@ -22,14 +22,9 @@ class CaractMacroBacteriaController extends Controller
 
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
-        $file = $request->file('imagen');
-        //obtenemos el nombre de la imagen
-        $fileName = $file->getClientOriginalName();
-        $time = time();
 
-        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $bacteria->id . '/' . $time . '-' . $fileName;
+        //obtenemos el nombre de la imagen
+        $imagen = $this->guardarImagen($request->file('imagen'), $bacteria->id);
 
         $caractMacroBacteria = new CaracMacroBacteria();
         $caractMacroBacteria->bacteria_id = $bacteria->id;
@@ -42,8 +37,8 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->tamano = $request->tamaño;
         $caractMacroBacteria->color_id = intval($request->color);
         $caractMacroBacteria->otras_caract = $request->otras_caract;
-        $caractMacroBacteria->imagen = $ruta;
-        $caractMacroBacteria->imagenPublica = $rutaPublica;
+        $caractMacroBacteria->imagen = $imagen['ruta'];
+        $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
         $caractMacroBacteria->descripcion = $request->imagen_descripcion;
         $caractMacroBacteria->save();
 
@@ -74,14 +69,10 @@ class CaractMacroBacteriaController extends Controller
             //eliminar imagen vieja
             Storage::disk('local')->delete($caractMacroBacteria->imagen);
             //agregar imagen nueva
-            $fileName = $file->getClientOriginalName();
-            $time = time();
-            Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-            $ruta = '/public/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-            $rutaPublica = '/storage/bacterias/caract_macro_img/' . $caractMacroBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+            $imagen = $this->guardarImagen($file, $caractMacroBacteria->bacteria_id);
 
-            $caractMacroBacteria->imagen = $ruta;
-            $caractMacroBacteria->imagenPublica = $rutaPublica;
+            $caractMacroBacteria->imagen = $imagen['ruta'];
+            $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
         }
 
         $caractMacroBacteria->medio = $request->medio;
@@ -109,5 +100,15 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->delete();
 
         return $caractMacroBacteria;
+    }
+
+    public function guardarImagen($file, $id)
+    {
+        $time = time();
+        $fileName = $file->getClientOriginalName();
+        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 }

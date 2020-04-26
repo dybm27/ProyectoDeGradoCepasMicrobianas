@@ -20,37 +20,25 @@ class CaractFisioBacteriaController extends Controller
 
 
         if (!empty($request->imagen1)) {
-            $file1 = $request->file('imagen1');
-            $fileName1 = $file1->getClientOriginalName();
-            $time1 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1, file_get_contents($file1));
-            $ruta1 = '/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
-            $rutaPublica1 = '/storage/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time1 . '-' . $fileName1;
+            $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
+            $ruta1 =  $imagen1['ruta'];
+            $rutaPublica1 =  $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
         if (!empty($request->imagen2)) {
-            $file2 = $request->file('imagen2');
-            $fileName2 = $file2->getClientOriginalName();
-            $time2 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2, file_get_contents($file2));
-            $ruta2 = '/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
-            $rutaPublica2 = '/storage/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time2 . '-' . $fileName2;
+            $imagen2 = $this->guardarImagen($request->file('imagen2'), $bacteria->id);
+            $ruta2 =  $imagen2['ruta'];
+            $rutaPublica2 =  $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
         if (!empty($request->imagen3)) {
-            $file3 = $request->file('imagen3');
-            $fileName3 = $file3->getClientOriginalName();
-            $time3 = time();
-
-            Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3, file_get_contents($file3));
-            $ruta3 = '/public/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
-            $rutaPublica3 = '/storage/bacterias/caract_fisio_img/' . $bacteria->id . '/' . $time3 . '-' . $fileName3;
+            $imagen3 = $this->guardarImagen($request->file('imagen3'), $bacteria->id);
+            $ruta3 =  $imagen3['ruta'];
+            $rutaPublica3 =  $imagen3['rutaPublica'];
         } else {
             $ruta3 = $request->imagen3;
             $rutaPublica3 = $request->imagen3;
@@ -83,18 +71,13 @@ class CaractFisioBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
-        /* $rules = [
-            'ordenamiento' => 'required'
-        ];
-        $this->validate($request, $rules);*/
-
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
         $caractFisioBacteria->acido_indolacetico = $request->acido_indolacetico;
         $caractFisioBacteria->fosforo = $request->fosforo;
         $caractFisioBacteria->sideroforos = $request->sideroforos;
         $caractFisioBacteria->nitrogeno = $request->nitrogeno;
-        $caractFisioBacteria->otras_caract = $request->otras_caracteristicas;
+        $caractFisioBacteria->otras_caract = $request->otras_caract;
         $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
 
@@ -114,26 +97,20 @@ class CaractFisioBacteriaController extends Controller
     {
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-
-        Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractFisioBacteria->bacteria_id);
 
         switch ($request->numero) {
             case 1:
-                $caractFisioBacteria->imagen1 = $ruta;
-                $caractFisioBacteria->imagenPublica1 = $rutaPublica;
+                $caractFisioBacteria->imagen1 = $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica1 =  $imagen['rutaPublica'];
                 break;
             case 2:
-                $caractFisioBacteria->imagen2 = $ruta;
-                $caractFisioBacteria->imagenPublica2 = $rutaPublica;
+                $caractFisioBacteria->imagen2 =  $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica2 = $imagen['rutaPublica'];
                 break;
             case 3:
-                $caractFisioBacteria->imagen3 = $ruta;
-                $caractFisioBacteria->imagenPublica3 = $rutaPublica;
+                $caractFisioBacteria->imagen3 =  $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica3 =  $imagen['rutaPublica'];
                 break;
         }
         $caractFisioBacteria->save();
@@ -143,35 +120,29 @@ class CaractFisioBacteriaController extends Controller
     {
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
-        $file = $request->file('imagen');
-        $fileName = $file->getClientOriginalName();
-        $time = time();
-        //agregar imagen nueva
-        Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id . '/' . $time . '-' . $fileName;
+        $imagen = $this->guardarImagen($request->file('imagen'), $caractFisioBacteria->bacteria_id);
 
         switch ($request->numero) {
             case 1:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractFisioBacteria->imagen1);
 
-                $caractFisioBacteria->imagen1 = $ruta;
-                $caractFisioBacteria->imagenPublica1 = $rutaPublica;
+                $caractFisioBacteria->imagen1 = $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica1 = $imagen['rutaPublica'];
                 break;
             case 2:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractFisioBacteria->imagen2);
 
-                $caractFisioBacteria->imagen2 = $ruta;
-                $caractFisioBacteria->imagenPublica2 = $rutaPublica;
+                $caractFisioBacteria->imagen2 = $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica2 = $imagen['rutaPublica'];
                 break;
             case 3:
                 //eliminar imagen vieja
                 Storage::disk('local')->delete($caractFisioBacteria->imagen3);
 
-                $caractFisioBacteria->imagen3 = $ruta;
-                $caractFisioBacteria->imagenPublica3 = $rutaPublica;
+                $caractFisioBacteria->imagen3 = $imagen['ruta'];
+                $caractFisioBacteria->imagenPublica3 = $imagen['rutaPublica'];
                 break;
         }
         $caractFisioBacteria->save();
@@ -200,5 +171,15 @@ class CaractFisioBacteriaController extends Controller
         }
         $caractFisioBacteria->save();
         return $caractFisioBacteria;
+    }
+
+    public function guardarImagen($file, $id)
+    {
+        $time = time();
+        $fileName = $file->getClientOriginalName();
+        Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
+        $ruta = '/public/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName;
+        $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName;
+        return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 }

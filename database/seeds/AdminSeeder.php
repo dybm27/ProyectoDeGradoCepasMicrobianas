@@ -17,5 +17,12 @@ class AdminSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'tipouser_id' => 1
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Aura Moreno',
+            'email' => 'aura@gmail.com',
+            'password' => Hash::make('12345678'),
+            'tipouser_id' => 3
+        ]);
     }
 }
