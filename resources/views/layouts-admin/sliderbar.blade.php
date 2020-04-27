@@ -10,13 +10,13 @@
                 <li class="app-sidebar__heading">Administrar Informacion</li>
                 <li>
                     <a href="{{route('home')}}" @yield('route-perfil')>
-                        <i class="metismenu-icon pe-7s-graph2">
+                        <i class="metismenu-icon pe-7s-id">
                         </i>Perfil
                     </a>
                 </li>
                 <li @yield('route-cepa')>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
+                        <i class="metismenu-icon pe-7s-science"></i>
                         Cepas
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -52,6 +52,12 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{route('calendario')}}" @yield('route-calendario')>
+                        <i class="metismenu-icon pe-7s-date">
+                        </i>Calendario
+                    </a>
                 </li>
                 <li class="app-sidebar__heading">Usuario Final</li>
                 <hr/>

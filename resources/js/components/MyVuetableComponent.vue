@@ -1,78 +1,65 @@
 <template>
-  <div class="tabs-animation">
-    <div class="main-card mb-3 card">
-      <div class="card-header-tab card-header">
-        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-          <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-          Tabla Dinamica Cepas Microbianas
+  <div class="dataTables_wrapper dt-bootstrap4">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="dataTables_length" id="example_length">
+          <label>
+            Buscar
+            <select
+              v-model.number="appendParams.per_page"
+              @change="refreshDatos"
+              name="example_length"
+              aria-controls="example"
+              class="custom-select custom-select-sm form-control form-control-sm"
+            >
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select> Resultados
+          </label>
         </div>
-        <div class="btn-actions-pane-right actions-icon-btn"></div>
       </div>
-      <div class="card-body">
-        <div class="dataTables_wrapper dt-bootstrap4">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <div class="dataTables_length" id="example_length">
-                <label>
-                  Buscar
-                  <select
-                    v-model.number="appendParams.per_page"
-                    @change="refreshDatos"
-                    name="example_length"
-                    aria-controls="example"
-                    class="custom-select custom-select-sm form-control form-control-sm"
-                  >
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select> Resultados
-                </label>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <filter-bar></filter-bar>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="table-responsive">
-                <!-- :detail-row-component="detailRowComponent" @vuetable:cell-clicked="onCellClicked" -->
-                <vuetable
-                  noDataTemplate="Datos no Disponibles"
-                  ref="vuetable"
-                  :css="css.table"
-                  :api-url="apiUrl"
-                  :fields="fields"
-                  pagination-path
-                  :sort-order="sortOrder"
-                  :append-params="appendParams"
-                  :detail-row-component="detailRowComponent"
-                  @vuetable:pagination-data="onPaginationData"
-                  @vuetable:cell-clicked="onCellClicked"
-                ></vuetable>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-5">
-              <vuetable-pagination-info
-                :css="css.infoclass"
-                info-template="Mostrando del {from} al {to} de {total} registros"
-                noDataTemplate="Sin registros"
-                ref="paginationInfo"
-              ></vuetable-pagination-info>
-            </div>
-            <div class="col-sm-12 col-md-7">
-              <vuetable-pagination
-                class="pull-right"
-                :css="css.pagination"
-                ref="pagination"
-                @vuetable-pagination:change-page="onChangePage"
-              ></vuetable-pagination>
-            </div>
-          </div>
+      <div class="col-sm-12 col-md-6">
+        <filter-bar></filter-bar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <!-- :detail-row-component="detailRowComponent" @vuetable:cell-clicked="onCellClicked" -->
+          <vuetable
+            noDataTemplate="Datos no Disponibles"
+            ref="vuetable"
+            :css="css.table"
+            :api-url="apiUrl"
+            :fields="fields"
+            pagination-path
+            :sort-order="sortOrder"
+            :append-params="appendParams"
+            :detail-row-component="detailRowComponent"
+            @vuetable:pagination-data="onPaginationData"
+            @vuetable:cell-clicked="onCellClicked"
+          ></vuetable>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-5">
+        <vuetable-pagination-info
+          :css="css.infoclass"
+          info-template="Mostrando del {from} al {to} de {total} registros"
+          noDataTemplate="Sin registros"
+          ref="paginationInfo"
+        ></vuetable-pagination-info>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <vuetable-pagination
+          class="pull-right"
+          :css="css.pagination"
+          ref="pagination"
+          @vuetable-pagination:change-page="onChangePage"
+        ></vuetable-pagination>
       </div>
     </div>
   </div>
@@ -104,6 +91,9 @@ export default {
     },
     detailRowComponent: {
       type: String
+    },
+    refrescarTabla: {
+      type: Boolean
     }
   },
   data() {
@@ -139,7 +129,30 @@ export default {
       }
     };
   },
+  watch: {
+    refrescarTabla() {
+      if (this.refrescarTabla) {
+        Vue.nextTick(() => this.$refs.vuetable.refresh());
+        this.$emit("cambiarVariable");
+      }
+    }
+  },
   methods: {
+    tipoAgar(value) {
+      return value === "No" ? '<i class="fas fa-times"></i>' : value;
+    },
+    numeroReplicas(value) {
+      return value === 0 ? '<i class="fas fa-times"></i>' : value;
+    },
+    recuentoMicorgota(value) {
+      return value === null ? '<i class="fas fa-times"></i>' : value;
+    },
+    medioCultivo(value) {
+      return value === null ? '<i class="fas fa-times"></i>' : value;
+    },
+    numeroPases(value) {
+      return value === 0 ? '<i class="fas fa-times"></i>' : value;
+    },
     allcap(value) {
       return value.toUpperCase();
     },
@@ -162,7 +175,7 @@ export default {
       this.$refs.vuetable.changePage(page);
     },
     onCellClicked(data, field, event) {
-      console.log("cellClicked: ", field.name);
+      //console.log("cellClicked: ", field.name);
       this.$refs.vuetable.toggleDetailRow(data.id);
     },
     onFilterSet(filterText) {

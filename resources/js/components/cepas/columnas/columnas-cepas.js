@@ -9,7 +9,7 @@ export default [
     {
         name: "codigo",
         sortField: "codigo",
-        title: "Codigo",
+        title: "Código",
         titleClass: "text-center"
     },
     {
@@ -21,7 +21,7 @@ export default [
     {
         name: "nombre_genero",
         sortField: "genero_id",
-        title: "Genero",
+        title: "Género",
         titleClass: "text-center"
     },
     {
@@ -36,12 +36,12 @@ export default [
     {
         name: "__component:checkboxs-publicar",
         title: "Publicar",
-        titleClass: "text-center"
-    },
-    {
-        name: "__component:acciones-cepas",
-        title: "Acciones",
         titleClass: "text-center",
         dataClass: "text-center"
+    },
+    {
+        name: "__component:acciones_cepas",
+        title: "Acciones",
+        titleClass: "text-center"
     }
 ];

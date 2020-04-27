@@ -19,7 +19,7 @@ class DetalleOpticosSeeder extends Seeder
             'nombre'=>'Traslucida'
         ]);
         DB::table('detalle_opticos')->insert([
-            'nombre'=>'Opaca'
+            'nombre'=>'Opaco'
         ]);
         DB::table('detalle_opticos')->insert([
             'nombre'=>'Brillante'

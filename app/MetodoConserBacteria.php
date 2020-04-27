@@ -15,4 +15,9 @@ class MetodoConserBacteria extends Model
     {
         return $this->belongsTo(TipoMetodoConservacionBacteria::class);
     }
+
+    public function tipoAgar()
+    {
+        return $this->belongsTo(TipoAgar::class);
+    }
 }

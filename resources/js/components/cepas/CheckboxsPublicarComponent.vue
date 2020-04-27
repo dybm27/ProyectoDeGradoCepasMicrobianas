@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control" v-if="rowData.publicar==0">
+    <div class="custom-checkbox custom-control">
       <input
         type="checkbox"
         :id="rowData.id"
@@ -8,17 +8,7 @@
         class="custom-control-input"
         disabled
       />
-      <label class="custom-control-label" :for="rowData.id">No Publicado</label>
-    </div>
-    <div class="custom-checkbox custom-control" v-else>
-      <input
-        type="checkbox"
-        :id="rowData.id"
-        v-model="checkPublicar"
-        class="custom-control-input"
-        disabled
-      />
-      <label class="custom-control-label" :for="rowData.id">Publicado</label>
+      <label class="custom-control-label" :for="rowData.id"></label>
     </div>
   </div>
 </template>

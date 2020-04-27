@@ -10,4 +10,5 @@ class CaracMacroBacteria extends Model
     {
         return $this->belongsTo(Bacteria::class);
     }
+    
 }

@@ -27,7 +27,10 @@
     "/identi-molecu-levadura.js": "/identi-molecu-levadura.js",
     "/metodo-conser-actinomiceto.js": "/metodo-conser-actinomiceto.js",
     "/metodo-conser-bacteria.js": "/metodo-conser-bacteria.js",
+    "/metodo-conser-bacteria-tabla.js": "/metodo-conser-bacteria-tabla.js",
     "/metodo-conser-hongo.js": "/metodo-conser-hongo.js",
+    "/metodo-conser-hongo-tabla.js": "/metodo-conser-hongo-tabla.js",
     "/metodo-conser-levadura.js": "/metodo-conser-levadura.js",
+    "/metodo-conser-levadura-tabla.js": "/metodo-conser-levadura-tabla.js",
     "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js"
 }

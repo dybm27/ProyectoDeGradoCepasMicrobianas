@@ -19,19 +19,19 @@ class CreateCaracMicroBacteriasTable extends Migration
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
             $table->unsignedBigInteger('forma_id');
             $table->foreign('forma_id')->references('id')->on('forma_caract_micros');
-            $table->longText('ordenamiento');
+            $table->string('ordenamiento');
             $table->string('tincion_gram',100);
             $table->string('tincion_esporas',100);
             $table->string('ubicacion_esporas',100)->nullable();
             $table->string('tincion_capsula',100);
-            $table->longText('otras_caract')->nullable();
+            $table->string('otras_caract')->nullable();
             $table->string('imagen1')->nullable();
             $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

@@ -53,6 +53,6 @@ class HongoFilamentoso extends Model
 
     public function metodoConservacion()
     {
-        return $this->hasOne(MetodoConserHongo::class);
+        return $this->hasMany(MetodoConserHongo::class);
     }
 }

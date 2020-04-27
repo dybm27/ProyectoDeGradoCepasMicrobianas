@@ -27,14 +27,14 @@ class CreateCaracMicroLevadurasTable extends Migration
             $table->string('artroconidias',15);
             $table->string('induccion_filamentizacion',15);
             $table->string('formacion_asco_y_ascosporas',15);
-            $table->longText('otras_caract')->nullable();
+            $table->string('otras_caract')->nullable();
             $table->string('imagen1')->nullable();
             $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

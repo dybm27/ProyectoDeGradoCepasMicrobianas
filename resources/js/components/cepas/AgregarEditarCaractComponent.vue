@@ -1,22 +1,42 @@
 <template>
   <div>
-    <div v-if="getCepa!=null">
-      <div v-if="getCepa.cepa.grupo_microbiano_id==1">
+    <template v-if="tipo">
+      <template v-if="tipo===1">
         <nav-bacterias></nav-bacterias>
-      </div>
-      <div v-else-if="getCepa.cepa.grupo_microbiano_id==2">
+      </template>
+      <template v-else-if="tipo===2">
         <nav-hongos></nav-hongos>
-      </div>
-      <div v-else-if="getCepa.cepa.grupo_microbiano_id==3">
+      </template>
+      <template v-else-if="tipo===3">
         <nav-levaduras></nav-levaduras>
-      </div>
-      <div v-else>
+      </template>
+      <template v-else-if="tipo===4">
         <nav-actinomicetos></nav-actinomicetos>
-      </div>
-    </div>
-    <div v-else>
+      </template>
+      <template v-else>
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center mt-5">
+              <div class="loader mt-5">
+                <div class="ball-spin-fade-loader mt-5">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </template>
+    <template v-else>
       <div class="container mt-5">
-        <div class="row ">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center mt-5">
             <div class="loader mt-5">
               <div class="ball-spin-fade-loader mt-5">
@@ -33,7 +53,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -41,13 +61,19 @@
 import vuex from "vuex";
 
 export default {
+  data() {
+    return {
+      tipo: ""
+    };
+  },
   created() {
-    let ruta = window.location.pathname;
-    if (ruta.includes("bacteria")) {
+    if (this.$route.params.cepaId) {
+      this.obtenerCepa(this.$route.params.cepaId);
+    } else if (this.$route.params.cepaBacteriaId) {
       this.obtenerCepa(this.$route.params.cepaBacteriaId);
-    } else if (ruta.includes("hongo")) {
+    } else if (this.$route.params.cepaHongoId) {
       this.obtenerCepa(this.$route.params.cepaHongoId);
-    } else if (ruta.includes("levadura")) {
+    } else if (this.$route.params.cepaLevaduraId) {
       this.obtenerCepa(this.$route.params.cepaLevaduraId);
     } else {
       this.obtenerCepa(this.$route.params.cepaActinomicetoId);
@@ -56,12 +82,44 @@ export default {
   mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   },
-  data() {
-    return {};
+  watch: {
+    getCepa() {
+      if (this.getCepa) {
+        this.tipo = this.verificarUrl(this.getCepa.cepa.grupo_microbiano_id);
+      }
+    }
   },
   methods: {
     ...vuex.mapActions(["obtenerCepa"]),
-    ...vuex.mapMutations(["limpiarCepa"])
+    ...vuex.mapMutations(["limpiarCepa"]),
+    verificarUrl(tipo) {
+      let ruta = window.location.pathname;
+      switch (tipo) {
+        case 1:
+          if (ruta.includes("bacteria")) {
+            return 1;
+          }
+          break;
+        case 2:
+          if (ruta.includes("hongo")) {
+            return 2;
+          }
+          break;
+        case 3:
+          if (ruta.includes("levadura")) {
+            return 3;
+          }
+          break;
+        case 4:
+          if (ruta.includes("actinomiceto")) {
+            return 4;
+          }
+          break;
+        default:
+          return 0;
+          break;
+      }
+    }
   },
   computed: {
     ...vuex.mapGetters(["getCepa"])

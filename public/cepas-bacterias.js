@@ -1,49 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["cepas-bacterias"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _columnas_cepas_bacterias__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas-cepas-bacterias */ "./resources/js/components/cepas/bacterias/tablas/columnas-cepas-bacterias.js");
 //
 //
 //
@@ -102,25 +68,65 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      refrescarTabla: false,
+      idCepaEliminar: "",
+      fields: _columnas_cepas_bacterias__WEBPACK_IMPORTED_MODULE_0__["default"],
+      sortOrder: [{
+        field: "id",
+        direction: "asc"
+      }]
+    };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["obtenerCepasBacterias"]), {
-    verCepa: function verCepa(cepa, index) {},
-    editarCepa: function editarCepa(cepa, index) {},
-    publicar: function publicar(cepa, index) {
-      /*if (this.checkboxs[index].checked == false) {
-        this.checkboxs[index].checked=true;
-        console.log("No -> Si");
-      } else {
-        this.checkboxs[index].checked=false;
-        console.log("Si -> No");
-      }*/
+  methods: {
+    toastr: function toastr(titulo, msg, tipo, time) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: time,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: function onCreated() {},
+        onClicked: function onClicked() {},
+        onClosed: function onClosed() {},
+        onMouseOver: function onMouseOver() {},
+        onMouseOut: function onMouseOut() {}
+      });
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla = false;
+    },
+    eliminarCepa: function eliminarCepa() {
+      var _this = this;
+
+      axios["delete"]("/cepas/eliminar/".concat(this.idCepaEliminar)).then(function (res) {
+        if (res.data === "negativo") {
+          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+        }
+
+        _this.$modal.hide("my_modal_eliminarCepa");
+      })["catch"](function (error) {
+        if (error.response) {//console.log(error.response.data);
+        }
+
+        _this.toastr("Error!!!", "", "error", 4000);
+      });
+    },
+    beforeOpen: function beforeOpen(data) {
+      this.idCepaEliminar = data.params.id;
     }
-  }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getCepas", "getCheckboxs"])),
-  created: function created() {
-    this.obtenerCepasBacterias();
   },
+  computed: {},
   mounted: function mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   }
@@ -128,59 +134,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.centrar[data-v-2e536603] {\r\n  align-content: center;\r\n  background-color: black;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -192,288 +149,140 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("ul", {
-      staticClass:
-        "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "tabs-animation" }, [
-      _c("div", { staticClass: "main-card mb-3 card" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _vm.getCepas != ""
-            ? _c(
-                "table",
+  return _c(
+    "div",
+    [
+      _c("ul", {
+        staticClass:
+          "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "tabs-animation" }, [
+        _c("div", { staticClass: "main-card mb-3 card" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("my-vuetable", {
+                attrs: {
+                  "api-url": "http://127.0.0.1:8000/api/cepas-bacterias",
+                  fields: _vm.fields,
+                  "sort-order": _vm.sortOrder,
+                  "detail-row-component": "my-detail-row-bacterias",
+                  refrescarTabla: _vm.refrescarTabla
+                },
+                on: { cambiarVariable: _vm.cambiarVariable }
+              })
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "my_modal_eliminarCepa",
+            classes: "my_modal",
+            width: 400,
+            height: 300
+          },
+          on: { "before-open": _vm.beforeOpen }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
                 {
-                  staticClass: "table table-hover table-striped table-bordered",
-                  staticStyle: { width: "100%" },
-                  attrs: { id: "example" }
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v("Eliminar Cepa Microbiana")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("my_modal_eliminarCepa")
+                    }
+                  }
                 },
                 [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.getCepas, function(cepa, index) {
-                      return _c("tr", { key: index }, [
-                        _c("td", [_vm._v(_vm._s(cepa.codigo))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(cepa.gene_ro))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(cepa.espe_cie))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(cepa.estado))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(cepa.origen))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          !_vm.getCheckboxs[index].checked
-                            ? _c(
-                                "div",
-                                {
-                                  staticClass: "custom-checkbox custom-control"
-                                },
-                                [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.getCheckboxs[index].checked,
-                                        expression:
-                                          "getCheckboxs[index].checked"
-                                      }
-                                    ],
-                                    staticClass: "custom-control-input",
-                                    attrs: {
-                                      type: "checkbox",
-                                      id: cepa.id,
-                                      disabled: ""
-                                    },
-                                    domProps: {
-                                      checked: Array.isArray(
-                                        _vm.getCheckboxs[index].checked
-                                      )
-                                        ? _vm._i(
-                                            _vm.getCheckboxs[index].checked,
-                                            null
-                                          ) > -1
-                                        : _vm.getCheckboxs[index].checked
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.publicar(cepa, index)
-                                      },
-                                      change: function($event) {
-                                        var $$a =
-                                            _vm.getCheckboxs[index].checked,
-                                          $$el = $event.target,
-                                          $$c = $$el.checked ? true : false
-                                        if (Array.isArray($$a)) {
-                                          var $$v = null,
-                                            $$i = _vm._i($$a, $$v)
-                                          if ($$el.checked) {
-                                            $$i < 0 &&
-                                              _vm.$set(
-                                                _vm.getCheckboxs[index],
-                                                "checked",
-                                                $$a.concat([$$v])
-                                              )
-                                          } else {
-                                            $$i > -1 &&
-                                              _vm.$set(
-                                                _vm.getCheckboxs[index],
-                                                "checked",
-                                                $$a
-                                                  .slice(0, $$i)
-                                                  .concat($$a.slice($$i + 1))
-                                              )
-                                          }
-                                        } else {
-                                          _vm.$set(
-                                            _vm.getCheckboxs[index],
-                                            "checked",
-                                            $$c
-                                          )
-                                        }
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "label",
-                                    {
-                                      staticClass: "custom-control-label",
-                                      attrs: { for: cepa.id }
-                                    },
-                                    [_vm._v("No Publicado")]
-                                  )
-                                ]
-                              )
-                            : _c(
-                                "div",
-                                {
-                                  staticClass: "custom-checkbox custom-control"
-                                },
-                                [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.getCheckboxs[index].checked,
-                                        expression:
-                                          "getCheckboxs[index].checked"
-                                      }
-                                    ],
-                                    staticClass: "custom-control-input",
-                                    attrs: {
-                                      type: "checkbox",
-                                      id: cepa.id,
-                                      disabled: ""
-                                    },
-                                    domProps: {
-                                      checked: Array.isArray(
-                                        _vm.getCheckboxs[index].checked
-                                      )
-                                        ? _vm._i(
-                                            _vm.getCheckboxs[index].checked,
-                                            null
-                                          ) > -1
-                                        : _vm.getCheckboxs[index].checked
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.publicar(cepa, index)
-                                      },
-                                      change: function($event) {
-                                        var $$a =
-                                            _vm.getCheckboxs[index].checked,
-                                          $$el = $event.target,
-                                          $$c = $$el.checked ? true : false
-                                        if (Array.isArray($$a)) {
-                                          var $$v = null,
-                                            $$i = _vm._i($$a, $$v)
-                                          if ($$el.checked) {
-                                            $$i < 0 &&
-                                              _vm.$set(
-                                                _vm.getCheckboxs[index],
-                                                "checked",
-                                                $$a.concat([$$v])
-                                              )
-                                          } else {
-                                            $$i > -1 &&
-                                              _vm.$set(
-                                                _vm.getCheckboxs[index],
-                                                "checked",
-                                                $$a
-                                                  .slice(0, $$i)
-                                                  .concat($$a.slice($$i + 1))
-                                              )
-                                          }
-                                        } else {
-                                          _vm.$set(
-                                            _vm.getCheckboxs[index],
-                                            "checked",
-                                            $$c
-                                          )
-                                        }
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "label",
-                                    {
-                                      staticClass: "custom-control-label",
-                                      attrs: { for: cepa.id }
-                                    },
-                                    [_vm._v("Publicado")]
-                                  )
-                                ]
-                              )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-primary",
-                              attrs: {
-                                "data-toggle": "tooltip-light",
-                                "data-placement": "top",
-                                title: "Ver Cepa"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.verCepa(cepa, index)
-                                }
-                              }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "lnr-eye btn-icon-wrapper"
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                              attrs: {
-                                "data-toggle": "tooltip",
-                                "data-placement": "top",
-                                title: "Editar Cepa"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.editarCepa(cepa, index)
-                                }
-                              }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "lnr-pencil btn-icon-wrapper"
-                              })
-                            ]
-                          )
-                        ])
-                      ])
-                    }),
-                    0
-                  )
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
                 ]
               )
-            : _vm._e()
-        ])
-      ])
-    ])
-  ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("my_modal_eliminarCepa")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: { click: _vm.eliminarCepa }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Codigo")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Genero")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Especie")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Estado")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Origen")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Publicar")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Acciones")])
-      ])
+    return _c("div", { staticClass: "card-header-tab card-header" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "card-header-title font-size-lg text-capitalize font-weight-normal"
+        },
+        [
+          _c("i", {
+            staticClass:
+              "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+          }),
+          _vm._v(
+            "\n          Tabla Dinamica Cepas Microbianas - Bacterias\n        "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" })
     ])
   }
 ]
@@ -483,20 +292,18 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/TableBacteriasComponent.vue":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/cepas/TableBacteriasComponent.vue ***!
-  \*******************************************************************/
+/***/ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true& */ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true&");
-/* harmony import */ var _TableBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableBacteriasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& */ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* harmony import */ var _TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true& */ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true&");
+/* harmony import */ var _TablaBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaBacteriasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -504,69 +311,104 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _TableBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TablaBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "2e536603",
+  "0f8ccc6e",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/cepas/TableBacteriasComponent.vue"
+component.options.__file = "resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************/
+/***/ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TableBacteriasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaBacteriasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&":
-/*!****************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& ***!
-  \****************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=style&index=0&id=2e536603&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_style_index_0_id_2e536603_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true&":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true& ***!
-  \**************************************************************************************************************/
+/***/ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true& ***!
+  \*******************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TableBacteriasComponent.vue?vue&type=template&id=2e536603&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue?vue&type=template&id=0f8ccc6e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TableBacteriasComponent_vue_vue_type_template_id_2e536603_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaBacteriasComponent_vue_vue_type_template_id_0f8ccc6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/columnas-cepas-bacterias.js":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/columnas-cepas-bacterias.js ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  name: "id",
+  sortField: "id",
+  title: "Id",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "codigo",
+  sortField: "codigo",
+  title: "Código",
+  titleClass: "text-center"
+}, {
+  name: "nombre_genero",
+  sortField: "genero_id",
+  title: "Género",
+  titleClass: "text-center"
+}, {
+  name: "nombre_especie",
+  sortField: "especie_id",
+  title: "Especie",
+  titleClass: "text-center"
+}, {
+  name: "estado",
+  sortField: "estado",
+  titleClass: "text-center"
+}, {
+  name: "origen",
+  sortField: "origen",
+  titleClass: "text-center"
+},, {
+  name: "__component:checkboxs-publicar",
+  title: "Publicar",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "__component:acciones_cepas",
+  title: "Acciones",
+  titleClass: "text-center"
+}]);
 
 /***/ })
 

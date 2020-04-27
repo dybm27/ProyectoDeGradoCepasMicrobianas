@@ -38,6 +38,6 @@ class Bacteria extends Model
 
     public function metodoConservacion()
     {
-        return $this->hasOne(MetodoConserBacteria::class);
+        return $this->hasMany(MetodoConserBacteria::class);
     }
 }

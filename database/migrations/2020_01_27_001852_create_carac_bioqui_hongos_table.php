@@ -19,14 +19,14 @@ class CreateCaracBioquiHongosTable extends Migration
             $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
             $table->string('enzimas',100);
             $table->string('azucares',100);
-            $table->longText('otras_caracteristicas')->nullable();
+            $table->string('otras_caracteristicas')->nullable();
             $table->string('imagen1')->nullable();
             $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

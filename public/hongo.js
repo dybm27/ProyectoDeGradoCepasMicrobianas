@@ -55,16 +55,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      tipo: ""
+    };
+  },
   created: function created() {
-    var ruta = window.location.pathname;
-
-    if (ruta.includes("bacteria")) {
+    if (this.$route.params.cepaId) {
+      this.obtenerCepa(this.$route.params.cepaId);
+    } else if (this.$route.params.cepaBacteriaId) {
       this.obtenerCepa(this.$route.params.cepaBacteriaId);
-    } else if (ruta.includes("hongo")) {
+    } else if (this.$route.params.cepaHongoId) {
       this.obtenerCepa(this.$route.params.cepaHongoId);
-    } else if (ruta.includes("levadura")) {
+    } else if (this.$route.params.cepaLevaduraId) {
       this.obtenerCepa(this.$route.params.cepaLevaduraId);
     } else {
       this.obtenerCepa(this.$route.params.cepaActinomicetoId);
@@ -73,10 +98,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   },
-  data: function data() {
-    return {};
+  watch: {
+    getCepa: function getCepa() {
+      if (this.getCepa) {
+        this.tipo = this.verificarUrl(this.getCepa.cepa.grupo_microbiano_id);
+      }
+    }
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["obtenerCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapMutations(["limpiarCepa"])),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["obtenerCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapMutations(["limpiarCepa"]), {
+    verificarUrl: function verificarUrl(tipo) {
+      var ruta = window.location.pathname;
+
+      switch (tipo) {
+        case 1:
+          if (ruta.includes("bacteria")) {
+            return 1;
+          }
+
+          break;
+
+        case 2:
+          if (ruta.includes("hongo")) {
+            return 2;
+          }
+
+          break;
+
+        case 3:
+          if (ruta.includes("levadura")) {
+            return 3;
+          }
+
+          break;
+
+        case 4:
+          if (ruta.includes("actinomiceto")) {
+            return 4;
+          }
+
+          break;
+
+        default:
+          return 0;
+          break;
+      }
+    }
+  }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getCepa"])),
   destroyed: function destroyed() {
     this.limpiarCepa();
@@ -100,19 +167,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.getCepa != null
-      ? _c("div", [
-          _vm.getCepa.cepa.grupo_microbiano_id == 1
-            ? _c("div", [_c("nav-bacterias")], 1)
-            : _vm.getCepa.cepa.grupo_microbiano_id == 2
-            ? _c("div", [_c("nav-hongos")], 1)
-            : _vm.getCepa.cepa.grupo_microbiano_id == 3
-            ? _c("div", [_c("nav-levaduras")], 1)
-            : _c("div", [_c("nav-actinomicetos")], 1)
-        ])
-      : _c("div", [_vm._m(0)])
-  ])
+  return _c(
+    "div",
+    [
+      _vm.tipo
+        ? [
+            _vm.tipo === 1
+              ? [_c("nav-bacterias")]
+              : _vm.tipo === 2
+              ? [_c("nav-hongos")]
+              : _vm.tipo === 3
+              ? [_c("nav-levaduras")]
+              : _vm.tipo === 4
+              ? [_c("nav-actinomicetos")]
+              : [_vm._m(0)]
+          ]
+        : [_vm._m(1)]
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -120,7 +193,41 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row " }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-lg-12 d-flex justify-content-center mt-5" },
+          [
+            _c("div", { staticClass: "loader mt-5" }, [
+              _c("div", { staticClass: "ball-spin-fade-loader mt-5" }, [
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div")
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container mt-5" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           { staticClass: "col-lg-12 d-flex justify-content-center mt-5" },

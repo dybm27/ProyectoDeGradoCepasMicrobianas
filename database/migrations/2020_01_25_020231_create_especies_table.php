@@ -15,8 +15,11 @@ class CreateEspeciesTable extends Migration
     {
         Schema::create('especies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre',50)->unique();
+            $table->string('nombre', 50)->unique();
+            $table->unsignedBigInteger('genero_id');
             $table->timestamps();
+
+            $table->foreign('genero_id')->references('id')->on('especies');
         });
     }
 

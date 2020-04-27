@@ -21,7 +21,7 @@ class CreateCaracMicroHongosTable extends Migration
             $table->foreign('conidioforo_id')->references('id')->on('conidioforo_hongos');
             $table->string('fialides',15);
             $table->string('fialides_forma',50)->nullable();
-            $table->longText('fialides_otra_caracteristica')->nullable();
+            $table->string('fialides_otra_caracteristica')->nullable();
             $table->string('vesicula',100);
             $table->unsignedBigInteger('espora_asexual_id');
             $table->foreign('espora_asexual_id')->references('id')->on('espora_asexual_hongos');
@@ -31,14 +31,14 @@ class CreateCaracMicroHongosTable extends Migration
             $table->string('esporas_asexuales_conidios_otras',100)->nullable();
             $table->unsignedBigInteger('espora_sexual_id');
             $table->foreign('espora_sexual_id')->references('id')->on('espora_sexual_hongos');
-            $table->longText('otras_estructuras')->nullable();
+            $table->string('otras_estructuras')->nullable();
             $table->string('imagen1')->nullable();
             $table->string('imagenPublica1')->nullable();
             $table->string('imagen2')->nullable();
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->longText('descripcion')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

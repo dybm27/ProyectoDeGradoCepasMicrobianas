@@ -1,34 +1,43 @@
 <template>
-  <div class="centrar">
-    <button
-      class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
-      data-toggle="tooltip"
-      data-placement="left"
-      title="Agregar y Editar Caracteristicas"
-      @click="itemAction('agregar-editar-caract', rowData, rowIndex)"
-    >
-      <i class="pe-7s-paperclip btn-icon-wrapper"></i>
-    </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <button
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
+          v-tooltip.left="'Agregar y Editar Caracteristicas'"
+          @click="itemAction('agregar-editar-caract', rowData, rowIndex)"
+        >
+          <i class="far fa-file-alt"></i>
+        </button>
 
-    <button
-      class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-primary"
-      data-toggle="tooltip"
-      data-placement="left"
-      title="Ver Cepa"
-      @click="itemAction('ver-cepa', rowData, rowIndex)"
-    >
-      <i class="lnr-eye btn-icon-wrapper"></i>
-    </button>
+        <button
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-primary"
+          v-tooltip="'Ver Cepa'"
+          @click="itemAction('ver-cepa', rowData, rowIndex)"
+        >
+          <i class="far fa-eye"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <button
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
+          v-tooltip.left="'Editar Cepa'"
+          @click="itemAction('editar-cepa', rowData, rowIndex)"
+        >
+          <i class="fas fa-pencil-alt"></i>
+        </button>
 
-    <button
-      class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
-      data-toggle="tooltip"
-      data-placement="top"
-      title="Editar Cepa"
-      @click="itemAction('editar-cepa', rowData, rowIndex)"
-    >
-      <i class="lnr-pencil btn-icon-wrapper"></i>
-    </button>
+        <button
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
+          v-tooltip="'Eliminar Cepa'"
+          @click="showModal(rowData)"
+        >
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,99 +59,99 @@ export default {
   },
   methods: {
     itemAction(action, data, index) {
-      console.log("custom-actions: " + action, data.id, index);
+      let ruta = window.location.pathname;
+
       if (action == "agregar-editar-caract") {
         switch (data.grupo_microbiano_id) {
           case 1:
-            this.$router.push({
-              name: "caract-macro-bacteria",
-              params: { cepaBacteriaId: data.id }
-            });
+            if (ruta.includes("bacterias")) {
+              this.$router.push({
+                name: "caract-macro-bacteria",
+                params: { cepaBacteriaId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-bacteria",
+                params: { cepaId: data.id }
+              });
+            }
             break;
           case 2:
-            this.$router.push({
-              name: "caract-macro-hongo",
-              params: { cepaHongoId: data.id }
-            });
+            if (ruta.includes("hongos")) {
+              this.$router.push({
+                name: "caract-macro-hongo",
+                params: { cepaHongoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-hongo",
+                params: { cepaId: data.id }
+              });
+            }
             break;
           case 3:
-            this.$router.push({
-              name: "caract-macro-levadura",
-              params: { cepaLevaduraId: data.id }
-            });
+            if (ruta.includes("levaduras")) {
+              this.$router.push({
+                name: "caract-macro-levadura",
+                params: { cepaLevaduraId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-levadura",
+                params: { cepaId: data.id }
+              });
+            }
             break;
           case 4:
-            this.$router.push({
-              name: "caract-macro-actinomiceto",
-              params: { cepaActinomicetoId: data.id }
-            });
+            /* if (ruta.includes("actinomicetos")) {
+              this.$router.push({
+                name: "caract-macro-actinomiceto",
+                params: { cepaActinomicetoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "caract-macro-cepa-actinomiceto",
+                params: { cepaId: data.id }
+              });
+            } */
             break;
         }
       } else if (action == "ver-cepa") {
       } else {
-        this.$router.push({
-          name: "cepa-editar",
-          params: { cepaId: data.id }
-        });
+        if (ruta.includes("bacterias")) {
+          this.$router.push({
+            name: "cepa-bacteria-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("hongos")) {
+          this.$router.push({
+            name: "cepa-hongo-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("levaduras")) {
+          this.$router.push({
+            name: "cepa-levadura-editar",
+            params: { cepaId: data.id }
+          });
+        } else if (ruta.includes("actinomicetos")) {
+          this.$router.push({
+            name: "cepa-actinomiceto-editar",
+            params: { cepaId: data.id }
+          });
+        } else {
+          this.$router.push({
+            name: "cepa-editar",
+            params: { cepaId: data.id }
+          });
+        }
       }
+    },
+    showModal(data) {
+      this.$modal.show("my_modal_eliminarCepa", { id: data.id });
     }
   },
-  computed: {
-    ocultarButton() {
-      switch (this.rowData.grupo_microbiano_id) {
-        case 1:
-          if (
-            this.rowData.carac_macro_bacterias != null &&
-            this.rowData.carac_bioqui_bacterias != null &&
-            this.rowData.carac_micro_bacterias != null &&
-            this.rowData.carac_fisio_bacterias != null &&
-            this.rowData.identi_molecu_bacterias != null &&
-            this.rowData.metodo_conser_bacterias != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 2:
-          if (
-            this.rowData.carac_macro_hongos != null &&
-            this.rowData.carac_micro_hongos != null &&
-            this.rowData.carac_bioqui_hongos != null &&
-            this.rowData.identi_molecu_hongos != null &&
-            this.rowData.metodo_conser_hongos != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 3:
-          if (
-            this.rowData.carac_macro_levaduras != null &&
-            this.rowData.carac_micro_levaduras != null &&
-            this.rowData.carac_bioqui_levaduras != null &&
-            this.rowData.identi_molecu_levaduras != null &&
-            this.rowData.metodo_conser_levaduras != null
-          ) {
-            this.mostrar = false;
-          } else {
-            this.mostrar = true;
-          }
-          break;
-        case 4:
-          this.mostrar = true;
-          break;
-      }
-      return this.mostrar;
-    }
-  },
+  computed: {},
   created() {}
 };
 </script>
 
-<style scoped>
-.centrar {
-  align-content: center;
-}
-</style>

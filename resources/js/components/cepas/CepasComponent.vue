@@ -4,7 +4,7 @@
       <div class="page-title-wrapper">
         <div class="page-title-heading">
           <div class="page-title-icon">
-            <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
+            <i class="pe-7s-science icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
             Administrar Cepas
@@ -38,7 +38,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTipos"]),
+    ...vuex.mapActions(["obtenerTiposCepas"]),
     ocultarLink(ruta) {
       if (ruta != "/cepas") {
         this.ruta = false;
@@ -53,7 +53,7 @@ export default {
     }
   },
   created() {
-    this.obtenerTipos();
+    this.obtenerTiposCepas();
   }
 };
 </script>
