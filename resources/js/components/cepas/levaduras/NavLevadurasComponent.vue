@@ -111,15 +111,3 @@
     <router-view></router-view>
   </div>
 </template>
-
-<script>
-import vuex from "vuex";
-export default {
-  created() {
-    this.obtenerInfoCaractLevaduras();
-  },
-  methods: {
-    ...vuex.mapActions(["obtenerInfoCaractLevaduras"])
-  }
-};
-</script>

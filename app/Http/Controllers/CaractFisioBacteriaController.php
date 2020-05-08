@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\CaracFisioBacteria;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractFisioBacteriaController extends Controller
@@ -58,8 +60,11 @@ class CaractFisioBacteriaController extends Controller
         $caractFisioBacteria->imagenPublica2 = $rutaPublica2;
         $caractFisioBacteria->imagen3 = $ruta3;
         $caractFisioBacteria->imagenPublica3 = $rutaPublica3;
-        $caractFisioBacteria->descripcion = $request->imagenes_descripcion;
+        $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
+
+        $this->crearSeguimiento("Agregó la Característica Fisiológica a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $caractFisioBacteria;
     }
@@ -81,6 +86,9 @@ class CaractFisioBacteriaController extends Controller
         $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
 
+        $this->crearSeguimiento("Editó la Característica Fisiológica de la Cepa: "
+        . $caractFisioBacteria->bacteria->cepa->codigo);
+
         return $caractFisioBacteria;
     }
 
@@ -90,6 +98,9 @@ class CaractFisioBacteriaController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/bacterias/caract_fisio_img/' . $caractFisioBacteria->bacteria_id);
         $caractFisioBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Fisiológica de la Cepa: "
+            . $caractFisioBacteria->bacteria->cepa->codigo);
 
         return $caractFisioBacteria;
     }
@@ -114,6 +125,10 @@ class CaractFisioBacteriaController extends Controller
                 break;
         }
         $caractFisioBacteria->save();
+
+        $this->crearSeguimiento("Agregó una imagen a la Característica Fisiológica de la Cepa: "
+            . $caractFisioBacteria->bacteria->cepa->codigo);
+
         return $caractFisioBacteria;
     }
     public function cambiarImagen(Request $request, $id)
@@ -146,6 +161,10 @@ class CaractFisioBacteriaController extends Controller
                 break;
         }
         $caractFisioBacteria->save();
+
+        $this->crearSeguimiento("Cambió una imagen a la Característica Fisiológica de la Cepa: "
+            . $caractFisioBacteria->bacteria->cepa->codigo);
+
         return $caractFisioBacteria;
     }
 
@@ -170,6 +189,10 @@ class CaractFisioBacteriaController extends Controller
                 break;
         }
         $caractFisioBacteria->save();
+
+        $this->crearSeguimiento("Eliminó una imagen a la Característica Fisiológica de la Cepa: "
+            . $caractFisioBacteria->bacteria->cepa->codigo);
+
         return $caractFisioBacteria;
     }
 
@@ -182,4 +205,15 @@ class CaractFisioBacteriaController extends Controller
         $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
+    }
+    
 }

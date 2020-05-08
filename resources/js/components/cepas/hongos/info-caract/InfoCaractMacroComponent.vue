@@ -44,6 +44,7 @@
                       </a>
                     </li>
                   </template>
+
                   <template v-if="mostrar2">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive2" @click="cambiarActive(2)">
@@ -57,6 +58,7 @@
                       </a>
                     </li>
                   </template>
+
                   <template v-if="mostrar3">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
@@ -77,58 +79,52 @@
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
                       <template v-if="computedMostrarForm1">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-hongo
                           :info="getCaractMacro[0]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId1'"
-                          :radioId2="'radioId2'"
-                          :radioId3="'radioId3'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-hongo>
                       </template>
                     </div>
                   </div>
                 </template>
+
                 <template v-if="mostrar2">
                   <div class="tab-pane" :class="computedActive2">
                     <div class="card-body">
                       <template v-if="computedMostrarForm2">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-hongo
                           :info="getCaractMacro[1]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId4'"
-                          :radioId2="'radioId5'"
-                          :radioId3="'radioId6'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-hongo>
                       </template>
                     </div>
                   </div>
                 </template>
+
                 <template v-if="mostrar3">
                   <div class="tab-pane" :class="computedActive3">
                     <div class="card-body">
                       <template v-if="computedMostrarForm3">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-hongo
                           :info="getCaractMacro[2]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId7'"
-                          :radioId2="'radioId8'"
-                          :radioId3="'radioId9'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-hongo>
                       </template>
                     </div>
                   </div>
                 </template>
               </div>
             </template>
+
             <template v-else>
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
@@ -164,7 +160,6 @@
 
 <script>
 import vuex from "vuex";
-
 export default {
   data() {
     return {
@@ -208,23 +203,18 @@ export default {
         num = 3;
       }
       axios
-        .delete(`/cepas/bacteria/caract-macro/${id}`)
+        .delete(`/cepas/hongo/caract-macro/${id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.modificarForm = true;
           this.$modal.hide("my_modal");
           this.accionEliminarCaract({ tipo: "macro", data: res.data });
           this.formatear(num);
-          this.toastr(
-            "Eliminar Medio",
-            "Medio eliminado con exito!!",
-            "success"
-          );
+          this.toastr("Eliminar Medio", "Medio eliminado con éxito", "success");
         })
         .catch(error => {
           if (error.response) {
             this.toastr("Error!!", "", "error");
-            console.log(error.response.data);
           }
         });
     },
@@ -440,11 +430,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.my_modal {
-  position: relative;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-</style>

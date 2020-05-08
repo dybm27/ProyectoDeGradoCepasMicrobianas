@@ -55,7 +55,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
+      url: "api/cepa/hongo/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,
@@ -69,6 +69,7 @@ export default {
   },
   methods: {
     ...vuex.mapActions(["accionEliminarCaract"]),
+
     toastr(titulo, msg, tipo, time) {
       this.$toastr.Add({
         title: titulo,
@@ -89,12 +90,14 @@ export default {
         onMouseOut: () => {}
       });
     },
+
     cambiarVariable() {
       this.refrescarTabla = false;
     },
+
     eliminarMetodo() {
       axios
-        .delete(`/cepas/bacteria/metodo-conser/${this.idMetodoEliminar}`)
+        .delete(`/cepas/hongo/metodo-conser/${this.idMetodoEliminar}`)
         .then(res => {
           this.refrescarTabla = true;
           this.accionEliminarCaract({ tipo: "metodo", data: res.data });
@@ -113,18 +116,21 @@ export default {
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
+
     beforeOpen(data) {
       this.idMetodoEliminar = data.params.id;
     }
   },
+
   computed: {
     ...vuex.mapGetters(["getMetodoConser"])
   },
   created() {
-    this.url += this.$route.params.cepaBacteriaId;
+    if (this.$route.params.cepaHongoId) {
+      this.url += this.$route.params.cepaHongoId;
+    } else {
+      this.url += this.$route.params.cepaId;
+    }
   }
 };
 </script>
-
-<style scoped>
-</style>

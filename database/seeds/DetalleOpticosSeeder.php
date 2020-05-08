@@ -12,16 +12,16 @@ class DetalleOpticosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('detalle_opticos')->insert([
+        DB::table('detalle_optico_bacterias')->insert([
             'nombre'=>'Transparente'
         ]);
-        DB::table('detalle_opticos')->insert([
+        DB::table('detalle_optico_bacterias')->insert([
             'nombre'=>'Traslucida'
         ]);
-        DB::table('detalle_opticos')->insert([
+        DB::table('detalle_optico_bacterias')->insert([
             'nombre'=>'Opaco'
         ]);
-        DB::table('detalle_opticos')->insert([
+        DB::table('detalle_optico_bacterias')->insert([
             'nombre'=>'Brillante'
         ]);
     }

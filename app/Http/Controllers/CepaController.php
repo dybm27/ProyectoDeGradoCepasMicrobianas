@@ -7,7 +7,9 @@ use App\Bacteria;
 use App\Cepa;
 use App\HongoFilamentoso;
 use App\Levadura;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CepaController extends Controller
 {
@@ -101,6 +103,8 @@ class CepaController extends Controller
                 break;
         }
 
+        $this->crearSeguimiento("Agregó la Cepa: " . $cepa->codigo);
+
         return $cepa;
     }
 
@@ -122,6 +126,7 @@ class CepaController extends Controller
         $cepa2 = Cepa::where('codigo', $request->codigo)->first();
 
         if (empty($cepa2) || $cepa->id == $cepa2->id) {
+            $codigo = $cepa->codigo;
             $cepa->codigo = $request->codigo;
             $cepa->grupo_microbiano_id = $request->grupo_microbiano;
             $cepa->genero_id = $request->genero;
@@ -167,6 +172,9 @@ class CepaController extends Controller
                 break;
         }
         $cepa->save();
+
+        $this->crearSeguimiento("Editó la Cepa: " . $codigo);
+
         return $cepa;
     }
 
@@ -177,6 +185,7 @@ class CepaController extends Controller
             return 'negativo';
         } else {
             $cepa->delete();
+            $this->crearSeguimiento("Eliminó la Cepa: " . $cepa->codigo);
             return $cepa;
         }
     }
@@ -245,5 +254,15 @@ class CepaController extends Controller
                 break;
         }
         return $res;
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

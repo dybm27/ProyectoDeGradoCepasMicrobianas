@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Bacteria;
-use App\Cepa;
 use App\MetodoConserBacteria;
-use App\TipoMetodoConservacionBacteria;
+use App\Seguimiento;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MetodoConserBacteriaController extends Controller
@@ -43,6 +43,9 @@ class MetodoConserBacteriaController extends Controller
         $metodoConserBacteria->descripcion = $request->descripcion;
         $metodoConserBacteria->imagenPublica =  $imagen['rutaPublica'];
         $metodoConserBacteria->save();
+
+        $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $metodoConserBacteria;
     }
@@ -89,6 +92,9 @@ class MetodoConserBacteriaController extends Controller
 
         $metodoConserBacteria->save();
 
+        $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
+            . $metodoConserBacteria->bacteria->cepa->codigo);
+
         return $metodoConserBacteria;
     }
 
@@ -98,6 +104,9 @@ class MetodoConserBacteriaController extends Controller
         //eliminar imagen 
         Storage::disk('local')->delete($metodoConserBacteria->imagen);
         $metodoConserBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
+            . $metodoConserBacteria->bacteria->cepa->codigo);
 
         return $metodoConserBacteria;
     }
@@ -112,4 +121,13 @@ class MetodoConserBacteriaController extends Controller
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
+    }
 }

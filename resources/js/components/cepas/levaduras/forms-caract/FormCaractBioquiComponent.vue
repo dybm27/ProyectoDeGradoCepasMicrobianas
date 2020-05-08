@@ -131,6 +131,7 @@
                     @change="obtenerImagenes"
                     id="imagen"
                     type="file"
+                    accept="image/jpeg"
                     class="form-control-file"
                     ref="inputImagen"
                     multiple
@@ -417,7 +418,7 @@ export default {
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
-        "imagenes_descripcion",
+        "descripcion_imagenes",
         this.parametros.descripcion_imagenes === null
           ? ""
           : this.parametros.descripcion_imagenes

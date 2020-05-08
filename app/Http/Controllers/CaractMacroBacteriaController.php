@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\CaracMacroBacteria;
+use App\Seguimiento;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractMacroBacteriaController extends Controller
@@ -41,6 +43,9 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
         $caractMacroBacteria->descripcion = $request->imagen_descripcion;
         $caractMacroBacteria->save();
+
+        $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $caractMacroBacteria;
     }
@@ -86,8 +91,10 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->otras_caract = $request->otras_caract;
         $caractMacroBacteria->descripcion = $request->imagen_descripcion;
 
-
         $caractMacroBacteria->save();
+
+        $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "
+        . $caractMacroBacteria->bacteria->cepa->codigo);
 
         return $caractMacroBacteria;
     }
@@ -98,6 +105,9 @@ class CaractMacroBacteriaController extends Controller
         //eliminar imagen 
         Storage::disk('local')->delete($caractMacroBacteria->imagen);
         $caractMacroBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Macroscópica de la Cepa: "
+        . $caractMacroBacteria->bacteria->cepa->codigo);
 
         return $caractMacroBacteria;
     }
@@ -110,5 +120,15 @@ class CaractMacroBacteriaController extends Controller
         $ruta = '/public/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

@@ -4,20 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\CaracBioquiBacteria;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractBioquiBacteriaController extends Controller
 {
     public function store(Request $request)
     {
-        /*$rules = [
-            'ordenamiento' => 'required'
-        ];
-        $this->validate($request, $rules);*/
-
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
-
 
         if (!empty($request->imagen1)) {
             $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
@@ -49,7 +45,7 @@ class CaractBioquiBacteriaController extends Controller
         $caractBioquiBacteria->bacteria_id = $bacteria->id;
         $caractBioquiBacteria->oxidasa = $request->oxidasa;
         $caractBioquiBacteria->catalasa = $request->catalasa;
-        $caractBioquiBacteria->atrato = $request->atrato;
+        $caractBioquiBacteria->citrato = $request->citrato;
         $caractBioquiBacteria->tsi = $request->tsi;
         $caractBioquiBacteria->lia = $request->lia;
         $caractBioquiBacteria->sim = $request->sim;
@@ -81,8 +77,11 @@ class CaractBioquiBacteriaController extends Controller
         $caractBioquiBacteria->imagenPublica2 = $rutaPublica2;
         $caractBioquiBacteria->imagen3 = $ruta3;
         $caractBioquiBacteria->imagenPublica3 = $rutaPublica3;
-        $caractBioquiBacteria->descripcion = $request->imagenes_descripcion;
+        $caractBioquiBacteria->descripcion = $request->descripcion_imagenes;
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Agregó la Característica Bioquíquimica a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $caractBioquiBacteria;
     }
@@ -98,7 +97,7 @@ class CaractBioquiBacteriaController extends Controller
 
         $caractBioquiBacteria->oxidasa = $request->oxidasa;
         $caractBioquiBacteria->catalasa = $request->catalasa;
-        $caractBioquiBacteria->atrato = $request->atrato;
+        $caractBioquiBacteria->citrato = $request->citrato;
         $caractBioquiBacteria->tsi = $request->tsi;
         $caractBioquiBacteria->lia = $request->lia;
         $caractBioquiBacteria->sim = $request->sim;
@@ -127,6 +126,9 @@ class CaractBioquiBacteriaController extends Controller
         $caractBioquiBacteria->descripcion = $request->descripcion_imagenes;
         $caractBioquiBacteria->save();
 
+        $this->crearSeguimiento("Editó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
 
@@ -136,6 +138,9 @@ class CaractBioquiBacteriaController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id);
         $caractBioquiBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
 
         return $caractBioquiBacteria;
     }
@@ -160,6 +165,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Agregó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
     public function cambiarImagen(Request $request, $id)
@@ -193,6 +202,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Cambió una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
 
@@ -217,6 +230,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Eliminó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
 
@@ -228,5 +245,15 @@ class CaractBioquiBacteriaController extends Controller
         $ruta = '/public/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

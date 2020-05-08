@@ -5,7 +5,7 @@
         <div class="card-header-tab card-header">
           <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
             <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
-            Identificación Molecular
+            Identificación Bioquímica
           </div>
           <div class="btn-actions-pane-right text-capitalize">
             <button
@@ -26,19 +26,19 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-molecu-bacteria
+          <form-identi-bioqui-actinomiceto
             :modificarInfo="modificarForm"
-            :info="getIdentiMolecu"
+            :info="getIdentiBioqui"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-molecu-bacteria>
+          ></form-identi-bioqui-actinomiceto>
         </template>
         <template v-else>
           <div class="text-center">
             <h5 class="mt-5 mb-5">
               <span class="pr-1">
-                <b class="text-warning">AÚN NO SE HA AGREGADO LA IDENTIFICACIÓN</b>
+                <b class="text-warning">AÚN NO SE HAN AGREGADO LA IDENTIFICACIÓN</b>
               </span>
             </h5>
           </div>
@@ -46,10 +46,10 @@
       </div>
     </div>
 
-    <modal name="my_modal" classes="my_modal" :width="400" :height="300">
+    <modal name="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Identificación Molecular</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Identificación Bioquímica</h5>
           <button type="button" class="close" @click="$modal.hide('my_modal')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -104,23 +104,23 @@ export default {
       });
     },
     agregar(data) {
-      this.accionAgregarCaract({ tipo: "identi", data: data });
+      this.accionAgregarCaract({ tipo: "identi_bioqui", data: data });
     },
     editar(data) {
-      this.accionEditarCaract({ tipo: "identi", data: data });
+      this.accionEditarCaract({ tipo: "identi_bioqui", data: data });
       this.modificarForm = true;
     },
     eliminar() {
       axios
-        .delete(`/cepas/bacteria/identi-molecu/${this.getIdentiMolecu.id}`)
+        .delete(`/cepas/actinomiceto/identi-bioqui/${this.getIdentiBioqui.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
           this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "identi", data: res.data });
+          this.accionEliminarCaract({ tipo: "identi_bioqui", data: res.data });
           this.toastr(
-            "Eliminar Identificación",
-            "Identificación Molecular eliminada con exito!!",
+            "Eliminar Característica",
+            "Identificación Bioquímica eliminadas con exito!!",
             "success"
           );
         })
@@ -144,16 +144,16 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getIdentiMolecu"]),
+    ...vuex.mapGetters(["getIdentiBioqui"]),
     mostrarBtnEliminar() {
-      if (this.getIdentiMolecu) {
+      if (this.getIdentiBioqui) {
         return true;
       } else {
         return false;
       }
     },
     mostrarBtnCancelar() {
-      if (this.mostrarForm && !this.getIdentiMolecu) {
+      if (this.mostrarForm && !this.getIdentiBioqui) {
         return true;
       } else {
         return false;
@@ -164,7 +164,7 @@ export default {
     }
   },
   mounted() {
-    if (this.getIdentiMolecu) {
+    if (this.getIdentiBioqui) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }

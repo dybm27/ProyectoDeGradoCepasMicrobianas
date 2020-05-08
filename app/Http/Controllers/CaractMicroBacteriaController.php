@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\CaracMicroBacteria;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractMicroBacteriaController extends Controller
@@ -60,8 +62,11 @@ class CaractMicroBacteriaController extends Controller
         $caractMicroBacteria->imagenPublica2 = $rutaPublica2;
         $caractMicroBacteria->imagen3 = $ruta3;
         $caractMicroBacteria->imagenPublica3 = $rutaPublica3;
-        $caractMicroBacteria->descripcion = $request->imagenes_descripcion;
+        $caractMicroBacteria->descripcion = $request->descripcion_imagenes;
         $caractMicroBacteria->save();
+
+        $this->crearSeguimiento("Agregó la Característica Microscópica a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $caractMicroBacteria;
     }
@@ -94,6 +99,9 @@ class CaractMicroBacteriaController extends Controller
         $caractMicroBacteria->descripcion = $request->descripcion_imagenes;
         $caractMicroBacteria->save();
 
+        $this->crearSeguimiento("Editó la Característica Microscópica de la Cepa: "
+            . $caractMicroBacteria->bacteria->cepa->codigo);
+
         return $caractMicroBacteria;
     }
 
@@ -103,6 +111,9 @@ class CaractMicroBacteriaController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/bacterias/caract_micro_img/' . $caractMicroBacteria->bacteria_id);
         $caractMicroBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Microscópica de la Cepa: "
+            . $caractMicroBacteria->bacteria->cepa->codigo);
 
         return $caractMicroBacteria;
     }
@@ -128,6 +139,10 @@ class CaractMicroBacteriaController extends Controller
                 break;
         }
         $caractMicroBacteria->save();
+
+        $this->crearSeguimiento("Agregó una imagen a la Característica Microscópica de la Cepa: "
+            . $caractMicroBacteria->bacteria->cepa->codigo);
+
         return $caractMicroBacteria;
     }
     public function cambiarImagen(Request $request, $id)
@@ -160,6 +175,10 @@ class CaractMicroBacteriaController extends Controller
                 break;
         }
         $caractMicroBacteria->save();
+
+        $this->crearSeguimiento("Cambió una imagen a la Característica Microscópica de la Cepa: "
+            . $caractMicroBacteria->bacteria->cepa->codigo);
+
         return $caractMicroBacteria;
     }
 
@@ -184,6 +203,10 @@ class CaractMicroBacteriaController extends Controller
                 break;
         }
         $caractMicroBacteria->save();
+
+        $this->crearSeguimiento("Eliminó una imagen a la Característica Microscópica de la Cepa: "
+            . $caractMicroBacteria->bacteria->cepa->codigo);
+
         return $caractMicroBacteria;
     }
 
@@ -195,5 +218,15 @@ class CaractMicroBacteriaController extends Controller
         $ruta = '/public/bacterias/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/bacterias/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

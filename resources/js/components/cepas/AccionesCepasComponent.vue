@@ -103,7 +103,7 @@ export default {
             }
             break;
           case 4:
-            /* if (ruta.includes("actinomicetos")) {
+            if (ruta.includes("actinomicetos")) {
               this.$router.push({
                 name: "caract-macro-actinomiceto",
                 params: { cepaActinomicetoId: data.id }
@@ -113,7 +113,7 @@ export default {
                 name: "caract-macro-cepa-actinomiceto",
                 params: { cepaId: data.id }
               });
-            } */
+            }
             break;
         }
       } else if (action == "ver-cepa") {

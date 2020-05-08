@@ -28,11 +28,9 @@
 
         <div class="row">
           <div class="col-md-12">
-
             <template v-if="mostrarForms">
               <div class="tabs-lg-alternate card-header">
                 <ul class="nav nav-justified">
-
                   <template v-if="mostrar1">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive1" @click="cambiarActive(1)">
@@ -60,7 +58,7 @@
                       </a>
                     </li>
                   </template>
-                  
+
                   <template v-if="mostrar3">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
@@ -77,7 +75,6 @@
                 </ul>
               </div>
               <div class="tab-content">
-
                 <template v-if="mostrar1">
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
@@ -134,7 +131,6 @@
                     </div>
                   </div>
                 </template>
-
               </div>
             </template>
 
@@ -147,7 +143,6 @@
                 </h5>
               </div>
             </template>
-
           </div>
         </div>
       </div>
@@ -194,7 +189,7 @@ export default {
   methods: {
     ...vuex.mapActions([
       "accionAgregarCaract",
-      "accionEditarCaract", 
+      "accionEditarCaract",
       "accionEliminarCaract"
     ]),
 
@@ -237,7 +232,6 @@ export default {
         .catch(error => {
           if (error.response) {
             this.toastr("Error!!", "", "error");
-            console.log(error.response.data);
           }
         });
     },
@@ -466,12 +460,3 @@ export default {
   }
 };
 </script>
-
-
-<style scoped>
-.my_modal {
-  position: relative;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-</style>

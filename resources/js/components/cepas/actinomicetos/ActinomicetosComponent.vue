@@ -39,7 +39,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas"]),
+    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractActinomicetos"]),
     ocultarLink(ruta) {
       if (ruta != "/actinomicetos") {
         this.ruta = false;
@@ -54,6 +54,7 @@ export default {
     }
   },
   created() {
+    this.obtenerInfoCaractActinomicetos();
     this.obtenerTiposCepas();
   }
 };

@@ -2,45 +2,55 @@
 
 use App\Actinomiceto;
 use App\Bacteria;
-use App\Borde;
-use App\CaracMacroBacteria;
+use App\BordeActinomiceto;
+use App\BordeBacteria;
 use App\Cepa;
 use App\Clase;
+use App\ColorActinomiceto;
 use App\ColorBacteria;
+use App\ColorHongo;
 use App\ColorLevadura;
-use App\Consistencia;
-use App\DetalleOptico;
+use App\ConidioforoActinomiceto;
+use App\ConidioforoHongo;
+use App\DetalleOpticoBacteria;
 use App\Division;
-use App\Elevacion;
+use App\ElevacionBacteria;
 use App\Especie;
+use App\EsporaAsexualHongo;
+use App\EsporaSexualHongo;
 use App\Evento;
 use App\Familia;
-use App\FormaCaractMacro;
-use App\FormaCaractMicro;
+use App\FormaCaractMacroActinomiceto;
+use App\FormaCaractMacroBacteria;
+use App\FormaCaractMicroActinomiceto;
+use App\FormaCaractMicroBacteria;
 use App\Genero;
 use App\GrupoMicrobiano;
 use App\HongoFilamentoso;
 use App\Levadura;
 use App\MetodoConserBacteria;
+use App\MetodoConserHongo;
 use App\MetodoConserLevadura;
+use App\MicelioActinomiceto;
 use App\Orden;
 use App\Phylum;
+use App\PigmentoActinomiceto;
 use App\Reino;
-use App\Superficie;
+use App\Seguimiento;
+use App\SuperficieActinomiceto;
+use App\SuperficieBacteria;
+use App\TexturaActinomiceto;
+use App\TexturaHongo;
 use App\TexturaLevadura;
-use App\TipoAgar;
+use App\TincionGramActinomiceto;
+use App\TipoAgarBacteria;
 use App\TipoMetodoConservacionBacteria;
+use App\TipoMetodoConservacionHongo;
 use App\TipoMetodoConservacionLevadura;
+use App\TipoUser;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Psy\Util\Str;
-use SebastianBergmann\CodeCoverage\Node\Builder;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,13 +62,13 @@ use SebastianBergmann\CodeCoverage\Node\Builder;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-/*
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-*/
 
-//----------------------- urls tablas  -------------------------------------
+
+//----------------------- urls tablas cepas  -------------------------------------
 Route::get('cepas', function (Request $request) {
     $cepas = Cepa::join('generos', 'cepas.genero_id', '=', 'generos.id')
         ->join('especies', 'cepas.especie_id', '=', 'especies.id')
@@ -338,8 +348,8 @@ Route::get('cepa/agregar-editar-caract/{id}', function (Request $request) {
         case 4:
             $query = Actinomiceto::where('cepa_id', $request->id)
                 ->with([
-                    'cepa'/*, 'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
-                    'caractFisiologica', 'identMolecular', 'metodoConservacion'*/
+                    'cepa', 'caractMacroscopicas', 'caractMicroscopicas', 'identBioquimica',
+                    'otrasCaracteristicas'/*, 'caractMolecular', 'metodoConservacion'*/
                 ])->first();
             break;
     }
@@ -427,6 +437,43 @@ Route::get('cepa/levadura/metodos-conser/{id}', function (Request $request) {
 
     return $pagination;
 });
+Route::get('cepa/hongo/metodos-conser/{id}', function (Request $request) {
+    $cepa = HongoFilamentoso::where('cepa_id',  $request->id)->first();
+    $metodos = MetodoConserHongo::where('hongo_filamentoso_id',  $cepa->id)
+        ->join(
+            'tipo_metodo_conservacion_hongos',
+            'metodo_conser_hongos.tipo_id',
+            '=',
+            'tipo_metodo_conservacion_hongos.id'
+        );
+
+    $query = $metodos->select(
+        'metodo_conser_hongos.*',
+        '.nombre As nombre_tipo_metodo'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where('metodo_conser_hongos.id', 'like', $value)
+            ->orWhere('metodo_conser_hongos.fecha', 'like', $value)
+            ->orWhere('metodo_conser_hongos.numero_replicas', 'like', $value)
+            ->orWhere('metodo_conser_hongos.recuento_microgota', 'like', $value)
+            ->orWhere('metodo_conser_hongos.medio_cultivo', 'like', $value)
+            ->orWhere('metodo_conser_hongos.numero_pases', 'like', $value)
+            ->orWhere('tipo_metodo_conservacion_hongos.nombre', 'like', $value);
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
 //-----------------------------------------------------------------------------------
 
 
@@ -451,15 +498,15 @@ Route::get('info-tipos-cepas', function () {
     return $array;
 });
 Route::get('info-caract-bacterias', function () {
-    $formas_macros = FormaCaractMacro::all();
-    $bordes = Borde::all();
-    $elevacions = Elevacion::all();
-    $detalle_opticos = DetalleOptico::all();
-    $superficies = Superficie::all();
+    $formas_macros = FormaCaractMacroBacteria::all();
+    $bordes = BordeBacteria::all();
+    $elevacions = ElevacionBacteria::all();
+    $detalle_opticos = DetalleOpticoBacteria::all();
+    $superficies = SuperficieBacteria::all();
     $colors = ColorBacteria::all();
-    $formas_micros = FormaCaractMicro::all();
+    $formas_micros = FormaCaractMicroBacteria::all();
     $tipo_metodo = TipoMetodoConservacionBacteria::all();
-    $tipo_agar = TipoAgar::where('id', '!=', 1)->get();
+    $tipo_agar = TipoAgarBacteria::where('id', '!=', 1)->get();
     $array = [
         'caract_macro' => [
             'formas_macros' => $formas_macros, 'bordes' => $bordes,
@@ -487,6 +534,53 @@ Route::get('info-caract-levaduras', function () {
 
         'metodo_conser' => [
             'tipo_metodo' => $tipo_metodo,
+        ]
+    ];
+    return $array;
+});
+Route::get('info-caract-hongos', function () {
+    $colores =  ColorHongo::all();
+    $texturas = TexturaHongo::all();
+    $conidioforos = ConidioforoHongo::all();
+    $esporasAsexuales = EsporaAsexualHongo::all();
+    $esporasSexuales = EsporaSexualHongo::all();
+    $tipo_metodo = TipoMetodoConservacionHongo::all();
+
+    $array = [
+        'caract_macro' => [
+            'colores' => $colores, 'texturas' => $texturas,
+        ],
+        'caract_micro' => [
+            'conidioforos' => $conidioforos, 'esporas_asexuales' => $esporasAsexuales,
+            'esporas_sexuales' => $esporasSexuales
+        ],
+        'metodo_conser' => [
+            'tipo_metodo' => $tipo_metodo,
+        ]
+    ];
+    return $array;
+});
+Route::get('info-caract-actinomicetos', function () {
+    $formas_macros = FormaCaractMacroActinomiceto::all();
+    $bordes = BordeActinomiceto::all();
+    $texturas = TexturaActinomiceto::all();
+    $pigmentos = PigmentoActinomiceto::all();
+    $superficies = SuperficieActinomiceto::all();
+    $colors = ColorActinomiceto::all();
+    $formas_micros = FormaCaractMicroActinomiceto::all();
+    $tincions = TincionGramActinomiceto::all();
+    $micelios = MicelioActinomiceto::all();
+    $conidioforos = ConidioforoActinomiceto::all();
+
+    $array = [
+        'caract_macro' => [
+            'formas_macros' => $formas_macros, 'bordes' => $bordes,
+            'texturas' => $texturas, 'pigmentos' => $pigmentos,
+            'superficies' => $superficies, 'colors' => $colors,
+        ],
+        'caract_micro' => [
+            'formas_micros' => $formas_micros, 'tincions' => $tincions,
+            'micelios' => $micelios, 'conidioforos' => $conidioforos,
         ]
     ];
     return $array;
@@ -545,9 +639,35 @@ Route::get('eventos-metodos', function (Request $request) {
             'metodo_conser_levaduras.fecha As start'
         )->where('metodo_conser_levaduras.fecha', '>=', $request->start)
         ->where('metodo_conser_levaduras.fecha', '<=', $request->end)
-        ->union($eventosBacterias)->get();
+        ->union($eventosBacterias);
 
-    return $eventosLevaduras;
+    $eventosHongos = DB::table('cepas')
+        ->join('hongo_filamentosos', 'cepas.id', '=', 'hongo_filamentosos.cepa_id')
+        ->join('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id')
+        ->join('generos', 'cepas.genero_id', '=', 'generos.id')
+        ->join('especies', 'cepas.especie_id', '=', 'especies.id')
+        ->join(
+            'metodo_conser_hongos',
+            'hongo_filamentosos.id',
+            '=',
+            'metodo_conser_hongos.hongo_filamentoso_id'
+        )->join(
+            'tipo_metodo_conservacion_hongos',
+            'tipo_metodo_conservacion_hongos.id',
+            '=',
+            'metodo_conser_hongos.tipo_id'
+        )->select(
+            'tipo_metodo_conservacion_hongos.nombre As title',
+            'generos.nombre As genero',
+            'especies.nombre As especie',
+            'cepas.codigo',
+            'grupo_microbianos.nombre As grupo_microbiano',
+            'metodo_conser_hongos.fecha As start'
+        )->where('metodo_conser_hongos.fecha', '>=', $request->start)
+        ->where('metodo_conser_hongos.fecha', '<=', $request->end)
+        ->union($eventosLevaduras)->get();
+
+    return $eventosHongos;
 });
 //-----------------------------------------------------------------------------------
 
@@ -570,8 +690,81 @@ Route::get('eventos', function (Request $request) {
 //-----------------------------------------------------------------------------------
 
 //------------------------ consultar evento ------------------------------
-Route::get('eventoss', function () {
-    $user = Evento::find(1);
+
+
+//-----------------------------------------------------------------------------------
+
+//------------------------- url tabla usuarios -------------------------------------
+Route::get('usuarios', function (Request $request) {
+    $cepas = User::where('tipouser_id', '!=', 1)
+        ->join('tipo_users', 'users.tipouser_id', '=', 'tipo_users.id');
+
+    $query = $cepas->select(
+        'users.*',
+        'tipo_users.nombre As tipo_user'
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $query = $query->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $query = $query->where(function ($query) use ($value) {
+            return $query->where('users.name', 'like', $value)
+                ->orWhere('users.email', 'like', $value)
+                ->orWhere('tipo_users.nombre', 'like', $value)
+                ->orWhere('users.id', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $query->paginate($perPage);
+
+    return $pagination;
+});
+//--------------------------------------------------------------------------------------------
+
+//--------------------------- TIPOS_USERS Y USERS -----------------------------------------
+Route::get('tipos-users', function () {
+    $tipos_users = TipoUser::all();
+    return $tipos_users;
+});
+Route::get('users', function () {
+    $user = User::all();
     return $user;
 });
-//-----------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+
+//------------------------- url tabla seguimiento -------------------------------------
+Route::get('seguimientos', function (Request $request) {
+    $seguimientos = Seguimiento::select(
+        'Seguimientos.*',
+    );
+
+    if ($request->filled('sort')) {
+        $sort = explode('|', $request->sort);
+        $seguimientos = $seguimientos->orderBy($sort[0], $sort[1]);
+    }
+
+    if ($request->filled('filter')) {
+        $value = "%{$request->filter}%";
+        $seguimientos = $seguimientos->where(function ($query) use ($value) {
+            return $query->where('Seguimientos.nombre_responsable', 'like', $value)
+                ->orWhere('Seguimientos.email_responsable', 'like', $value)
+                ->orWhere('Seguimientos.tipo_user', 'like', $value)
+                ->orWhere('Seguimientos.accion', 'like', $value)
+                ->orWhere('Seguimientos.created_at', 'like', $value)
+                ->orWhere('Seguimientos.id', 'like', $value);
+        });
+    }
+
+    $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+    $pagination = $seguimientos->paginate($perPage);
+
+    return $pagination;
+});
+//--------------------------------------------------------------------------------------------

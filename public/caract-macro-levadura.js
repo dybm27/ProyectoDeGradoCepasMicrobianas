@@ -236,8 +236,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response) {
           _this.toastr("Error!!", "", "error");
-
-          console.log(error.response.data);
         }
       });
     },

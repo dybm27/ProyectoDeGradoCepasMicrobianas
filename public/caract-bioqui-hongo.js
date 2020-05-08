@@ -130,7 +130,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
-      axios["delete"]("/cepas/bacteria/caract-bioqui/".concat(this.getCaractBioqui.id)).then(function (res) {
+      axios["delete"]("/cepas/hongo/caract-bioqui/".concat(this.getCaractBioqui.id)).then(function (res) {
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -283,7 +283,7 @@ var render = function() {
             _vm._v(" "),
             _vm.mostrarForm
               ? [
-                  _c("form-carat-bioqui-bacteria", {
+                  _c("form-carat-bioqui-hongo", {
                     attrs: {
                       modificarInfo: _vm.modificarForm,
                       info: _vm.getCaractBioqui

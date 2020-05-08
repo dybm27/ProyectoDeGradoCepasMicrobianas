@@ -40,14 +40,14 @@
                 <div class="form-row">
                   <div class="col-md-6">
                     <div class="position-relative form-group">
-                      <label for="atrato" class>Atrato</label>
+                      <label for="citrato" class>Citrato</label>
                       <input
-                        name="atrato"
-                        id="atrato"
+                        name="citrato"
+                        id="citrato"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.atrato"
+                        v-model="parametros.citrato"
                         required
                       />
                     </div>
@@ -426,6 +426,7 @@
                           @change="obtenerImagenes"
                           id="imagen"
                           type="file"
+                          accept="image/jpeg"
                           class="form-control-file"
                           ref="inputImagen"
                           multiple
@@ -487,7 +488,7 @@ export default {
       parametros: {
         oxidasa: "",
         catalasa: "",
-        atrato: "",
+        citrato: "",
         tsi: "",
         lia: "",
         sim: "",
@@ -695,7 +696,7 @@ export default {
       this.imagenes = [];
       this.parametros.oxidasa = this.info.oxidasa;
       this.parametros.catalasa = this.info.catalasa;
-      this.parametros.atrato = this.info.atrato;
+      this.parametros.citrato = this.info.citrato;
       this.parametros.tsi = this.info.tsi;
       this.parametros.lia = this.info.lia;
       this.parametros.sim = this.info.sim;
@@ -735,7 +736,7 @@ export default {
       }
       formData.append("oxidasa", this.parametros.oxidasa);
       formData.append("catalasa", this.parametros.catalasa);
-      formData.append("atrato", this.parametros.atrato);
+      formData.append("citrato", this.parametros.citrato);
       formData.append("tsi", this.parametros.tsi);
       formData.append("lia", this.parametros.lia);
       formData.append("sim", this.parametros.sim);
@@ -780,7 +781,7 @@ export default {
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
-        "imagenes_descripcion",
+        "descripcion_imagenes",
         this.parametros.descripcion_imagenes === null
           ? ""
           : this.parametros.descripcion_imagenes
@@ -791,7 +792,6 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoCaractMicroBacterias"]),
     required() {
       if (this.tituloForm === "Agregar Característica") {
         return true;

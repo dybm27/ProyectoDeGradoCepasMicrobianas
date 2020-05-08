@@ -1,14 +1,21 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
+        auth: JSON.parse(userLogueado.content),
         cepa: null,
         tipos: [],
         info_caract_bacterias: [],
-        info_caract_levaduras: []
+        info_caract_levaduras: [],
+        info_caract_hongos: [],
+        info_caract_actinomicetos: [],
+        tipos_users: [],
+        usuarios: []
     },
     getters: {
         getCepa(state) {
@@ -34,6 +41,12 @@ export default new Vuex.Store({
         },
         getIdentiMolecu(state) {
             return state.cepa.ident_molecular;
+        },
+        getIdentiBioqui(state) {
+            return state.cepa.ident_bioquimica;
+        },
+        getOtrasCaract(state) {
+            return state.cepa.otras_caracteristicas;
         },
         getGeneros(state) {
             return state.tipos.generos;
@@ -96,6 +109,39 @@ export default new Vuex.Store({
         },
         getInfoMetodoConserLevaduras(state) {
             return state.info_caract_levaduras.metodo_conser;
+        },
+        getInfoCaractMacroHongos(state) {
+            return state.info_caract_hongos.caract_macro;
+        },
+        getInfoCaractMicroHongos(state) {
+            return state.info_caract_hongos.caract_micro;
+        },
+        getInfoMetodoConserHongos(state) {
+            return state.info_caract_hongos.metodo_conser;
+        },
+        getInfoCaractMacroActinomicetos(state) {
+            return state.info_caract_actinomicetos.caract_macro;
+        },
+        getInfoCaractMicroActinomicetos(state) {
+            return state.info_caract_actinomicetos.caract_micro;
+        },
+        getUsuarios(state) {
+            return state.usuarios;
+        },
+        getTipoUser(state) {
+            return state.tipos_users.filter(tipo => tipo.id != 1);
+        },
+        getTipoUserById: state => id => {
+            return state.tipos_users.find(tipo => tipo.id == id);
+        },
+        getUsuarioById: (state, getters) => id => {
+            return getters.getUsuarios.find(user => user.id == id);
+        },
+        getUsuarioByEmail: (state, getters) => email => {
+            return getters.getUsuarios.find(user => user.email == email);
+        },
+        getUserAuth(state) {
+            return state.auth;
         }
     },
     mutations: {
@@ -110,6 +156,18 @@ export default new Vuex.Store({
         },
         llenarInfoCaractLevaduras(state, info) {
             state.info_caract_levaduras = info;
+        },
+        llenarInfoCaractHongos(state, info) {
+            state.info_caract_hongos = info;
+        },
+        llenarInfoCaractActinomicetos(state, info) {
+            state.info_caract_actinomicetos = info;
+        },
+        llenarUsuarios(state, users) {
+            state.usuarios = users;
+        },
+        llenarTiposUsers(state, tipos) {
+            state.tipos_users = tipos;
         },
         mutacionAgregarCaract(state, data) {
             switch (data.tipo) {
@@ -131,6 +189,12 @@ export default new Vuex.Store({
                 case "metodo":
                     state.cepa.metodo_conservacion.push(data.data);
                     break;
+                case "identi_bioqui":
+                    state.cepa.ident_bioquimica = data.data;
+                    break;
+                case "otras":
+                    state.cepa.otras_caracteristicas = data.data;
+                    break;
             }
         },
         mutacionEditarCaract(state, data) {
@@ -145,7 +209,6 @@ export default new Vuex.Store({
                             state.cepa.caract_macroscopicas[i].id ===
                             data.data.id
                         ) {
-                            //Vue.set(state.cepa.caract_macroscopicas, i, data);
                             state.cepa.caract_macroscopicas.splice(
                                 i,
                                 1,
@@ -183,6 +246,12 @@ export default new Vuex.Store({
                             );
                         }
                     }
+                    break;
+                case "identi_bioqui":
+                    state.cepa.ident_bioquimica = data.data;
+                    break;
+                case "otras":
+                    state.cepa.otras_caracteristicas = data.data;
                     break;
             }
         },
@@ -227,6 +296,12 @@ export default new Vuex.Store({
                             state.cepa.metodo_conservacion.splice(i, 1);
                         }
                     }
+                    break;
+                case "identi_bioqui":
+                    state.cepa.ident_bioquimica = null;
+                    break;
+                case "otras":
+                    state.cepa.otras_caracteristicas = null;
                     break;
             }
         },
@@ -323,7 +398,145 @@ export default new Vuex.Store({
                         data.info
                     );
                     break;
+                case "metodo_conser":
+                    state.info_caract_levaduras.metodo_conser.tipo_metodo.push(
+                        data.info
+                    );
+                    break;
             }
+        },
+        mutacionAgregarTipoCaractHongo(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    state.info_caract_hongos.caract_macro.colores.push(
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    state.info_caract_hongos.caract_macro.texturas.push(
+                        data.info
+                    );
+                    break;
+                case "conidioforo":
+                    state.info_caract_hongos.caract_micro.conidioforos.push(
+                        data.info
+                    );
+                    break;
+                case "espora_asexual":
+                    state.info_caract_hongos.caract_micro.esporas_asexuales.push(
+                        data.info
+                    );
+                    break;
+                case "espora_sexual":
+                    state.info_caract_hongos.caract_micro.esporas_sexuales.push(
+                        data.info
+                    );
+                    break;
+                case "metodo_conser":
+                    state.info_caract_hongos.metodo_conser.tipo_metodo.push(
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionAgregarTipoCaractActinomiceto(state, data) {
+            switch (data.tipo) {
+                case "forma_macro":
+                    state.info_caract_actinomicetos.caract_macro.formas_macros.push(
+                        data.info
+                    );
+                    break;
+                case "borde":
+                    state.info_caract_actinomicetos.caract_macro.bordes.push(
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    state.info_caract_actinomicetos.caract_macro.texturas.push(
+                        data.info
+                    );
+                    break;
+                case "pigmento":
+                    state.info_caract_actinomicetos.caract_macro.pigmentos.push(
+                        data.info
+                    );
+                    break;
+                case "superficie":
+                    state.info_caract_actinomicetos.caract_macro.superficies.push(
+                        data.info
+                    );
+                    break;
+                case "color":
+                    state.info_caract_actinomicetos.caract_macro.colors.push(
+                        data.info
+                    );
+                    break;
+                case "forma_micro":
+                    state.info_caract_actinomicetos.caract_micro.formas_micros.push(
+                        data.info
+                    );
+                    break;
+                case "tincion":
+                    state.info_caract_actinomicetos.caract_micro.tincions.push(
+                        data.info
+                    );
+                    break;
+                case "micelio":
+                    state.info_caract_actinomicetos.caract_micro.micelios.push(
+                        data.info
+                    );
+                    break;
+                case "conidioforo":
+                    state.info_caract_actinomicetos.caract_micro.conidioforos.push(
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionTipoUsuario(state, data) {
+            switch (data.tipo) {
+                case "agregar":
+                    state.tipos_users.push(data.info);
+                    break;
+                case "editar":
+                    for (let i = 0; i < state.tipos_users.length; i++) {
+                        if (state.tipos_users[i].id === data.info.id) {
+                            state.tipos_users.splice(i, 1, data.info);
+                        }
+                    }
+                    break;
+                case "eliminar":
+                    for (let i = 0; i < state.tipos_users.length; i++) {
+                        if (state.tipos_users[i].id === data.info.id) {
+                            state.tipos_users.splice(i, 1);
+                        }
+                    }
+                    break;
+            }
+        },
+        mutacionUsuario(state, data) {
+            switch (data.tipo) {
+                case "agregar":
+                    state.usuarios.push(data.data);
+                    break;
+                case "editar":
+                    for (let i = 0; i < state.usuarios.length; i++) {
+                        if (state.usuarios[i].id === data.data.id) {
+                            state.usuarios.splice(i, 1, data.data);
+                        }
+                    }
+                    break;
+                case "eliminar":
+                    for (let i = 0; i < state.usuarios.length; i++) {
+                        if (state.usuarios[i].id === data.data.id) {
+                            state.usuarios.splice(i, 1);
+                        }
+                    }
+                    break;
+            }
+        },
+        mutacionModificarAuth(state, data) {
+            state.auth = data;
         }
     },
     actions: {
@@ -351,6 +564,22 @@ export default new Vuex.Store({
         accionAgregarTipoCaractLevadura({ commit }, data) {
             commit("mutacionAgregarTipoCaractLevadura", data);
         },
+        obtenerInfoCaractHongos({ commit }) {
+            axios.get("/api/info-caract-hongos").then(res => {
+                commit("llenarInfoCaractHongos", res.data);
+            });
+        },
+        accionAgregarTipoCaractHongo({ commit }, data) {
+            commit("mutacionAgregarTipoCaractHongo", data);
+        },
+        obtenerInfoCaractActinomicetos({ commit }) {
+            axios.get("/api/info-caract-actinomicetos").then(res => {
+                commit("llenarInfoCaractActinomicetos", res.data);
+            });
+        },
+        accionAgregarTipoCaractActinomiceto({ commit }, data) {
+            commit("mutacionAgregarTipoCaractActinomiceto", data);
+        },
         obtenerCepa({ commit }, id) {
             axios.get(`/api/cepa/agregar-editar-caract/${id}`).then(res => {
                 commit("llenarCepa", res.data);
@@ -364,6 +593,25 @@ export default new Vuex.Store({
         },
         accionEliminarCaract({ commit }, data) {
             commit("mutacionEliminarCaract", data);
+        },
+        obtenerUsers({ commit }, data) {
+            axios.get("/api/users").then(res => {
+                commit("llenarUsuarios", res.data);
+            });
+        },
+        obtenerTiposUsers({ commit }) {
+            axios.get("/api/tipos-users").then(res => {
+                commit("llenarTiposUsers", res.data);
+            });
+        },
+        accionTipoUsuario({ commit }, data) {
+            commit("mutacionTipoUsuario", data);
+        },
+        accionUsuario({ commit }, data) {
+            commit("mutacionUsuario", data);
+        },
+        accionModificarAuth({ commit }, data) {
+            commit("mutacionModificarAuth", data);
         }
     },
     modules: {}

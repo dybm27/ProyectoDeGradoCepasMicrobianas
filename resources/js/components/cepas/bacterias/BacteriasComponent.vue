@@ -39,7 +39,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas"]),
+    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractBacterias"]),
     ocultarLink(ruta) {
       if (ruta != "/bacterias") {
         this.ruta = false;
@@ -54,6 +54,7 @@ export default {
     }
   },
   created() {
+    this.obtenerInfoCaractBacterias();
     this.obtenerTiposCepas();
   }
 };

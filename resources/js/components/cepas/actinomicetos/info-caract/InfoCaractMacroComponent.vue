@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="showModal"
+              @click="$modal.show('eliminar_caract_macro')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Medio</button>
             <button
@@ -77,16 +77,13 @@
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
                       <template v-if="computedMostrarForm1">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-actinomiceto
                           :info="getCaractMacro[0]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId1'"
-                          :radioId2="'radioId2'"
-                          :radioId3="'radioId3'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-actinomiceto>
                       </template>
                     </div>
                   </div>
@@ -95,16 +92,13 @@
                   <div class="tab-pane" :class="computedActive2">
                     <div class="card-body">
                       <template v-if="computedMostrarForm2">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-actinomiceto
                           :info="getCaractMacro[1]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId4'"
-                          :radioId2="'radioId5'"
-                          :radioId3="'radioId6'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-actinomiceto>
                       </template>
                     </div>
                   </div>
@@ -113,16 +107,13 @@
                   <div class="tab-pane" :class="computedActive3">
                     <div class="card-body">
                       <template v-if="computedMostrarForm3">
-                        <form-carat-macro-bacteria
+                        <form-carat-macro-actinomiceto
                           :info="getCaractMacro[2]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                          :radioId1="'radioId7'"
-                          :radioId2="'radioId8'"
-                          :radioId3="'radioId9'"
-                        ></form-carat-macro-bacteria>
+                        ></form-carat-macro-actinomiceto>
                       </template>
                     </div>
                   </div>
@@ -142,11 +133,11 @@
         </div>
       </div>
     </div>
-    <modal name="my_modal" classes="my_modal" :width="400" :height="300">
+    <modal name="eliminar_caract_macro" :width="400" :height="200">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
-          <button type="button" class="close" @click="$modal.hide('my_modal')">
+          <button type="button" class="close" @click="$modal.hide('eliminar_caract_macro')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -154,7 +145,11 @@
           <p>Esta segura/o de eliminar la característica?.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$modal.hide('eliminar_caract_macro')"
+          >Cancelar</button>
           <button type="button" class="btn btn-primary" @click="eliminarMedio">Eliminar</button>
         </div>
       </div>
@@ -208,11 +203,11 @@ export default {
         num = 3;
       }
       axios
-        .delete(`/cepas/bacteria/caract-macro/${id}`)
+        .delete(`/cepas/actinomiceto/caract-macro/${id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.modificarForm = true;
-          this.$modal.hide("my_modal");
+          this.$modal.hide("eliminar_caract_macro");
           this.accionEliminarCaract({ tipo: "macro", data: res.data });
           this.formatear(num);
           this.toastr(
@@ -224,7 +219,6 @@ export default {
         .catch(error => {
           if (error.response) {
             this.toastr("Error!!", "", "error");
-            console.log(error.response.data);
           }
         });
     },
@@ -250,9 +244,6 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
-    },
-    showModal() {
-      this.$modal.show("my_modal");
     },
     cancelar() {
       if (this.mostrarForm1) {
@@ -440,11 +431,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.my_modal {
-  position: relative;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-</style>

@@ -27,7 +27,6 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="table-responsive">
-          <!-- :detail-row-component="detailRowComponent" @vuetable:cell-clicked="onCellClicked" -->
           <vuetable
             noDataTemplate="Datos no Disponibles"
             ref="vuetable"
@@ -132,12 +131,15 @@ export default {
   watch: {
     refrescarTabla() {
       if (this.refrescarTabla) {
-        Vue.nextTick(() => this.$refs.vuetable.refresh());
+        this.refreshDatos();
         this.$emit("cambiarVariable");
       }
     }
   },
   methods: {
+    imagen(value) {
+      return '<img width="80" heigth="80" src="' + value + '"></i>';
+    },
     tipoAgar(value) {
       return value === "No" ? '<i class="fas fa-times"></i>' : value;
     },

@@ -14,7 +14,9 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+        <!-- Usuario autenticado --> 
+        <meta name="user-logueado" content="{{ Auth::user() }}">
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{asset('assets/styles/template.css')}}" rel="stylesheet">
@@ -22,7 +24,7 @@
         <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" >
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >
 
             @include('layouts-admin.header')
 
@@ -32,7 +34,7 @@
 
                 <div class="app-main__outer">
 
-                    <div class="app-main__inner" id="app">
+                    <div class="app-main__inner">
 
                         @yield('contenido')
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\CaracMacroLevadura;
 use App\Levadura;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractMacroLevaduraController extends Controller
@@ -34,6 +36,9 @@ class CaractMacroLevaduraController extends Controller
         $caractMacroLevadura->imagenPublica = $imagen['rutaPublica'];
         $caractMacroLevadura->descripcion = $request->imagen_descripcion;
         $caractMacroLevadura->save();
+
+        $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
+            . $levadura->cepa->codigo);
 
         return $caractMacroLevadura;
     }
@@ -75,6 +80,8 @@ class CaractMacroLevaduraController extends Controller
         $caractMacroLevadura->color_id = intval($request->color);
         $caractMacroLevadura->descripcion = $request->imagen_descripcion;
 
+        $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "
+            . $caractMacroLevadura->levadura->cepa->codigo);
 
         $caractMacroLevadura->save();
 
@@ -88,6 +95,9 @@ class CaractMacroLevaduraController extends Controller
         Storage::disk('local')->delete($caractMacroLevadura->imagen);
         $caractMacroLevadura->delete();
 
+        $this->crearSeguimiento("Eliminó la Característica Macroscópica de la Cepa: "
+        . $caractMacroLevadura->levadura->cepa->codigo);
+
         return $caractMacroLevadura;
     }
 
@@ -99,5 +109,15 @@ class CaractMacroLevaduraController extends Controller
         $ruta = '/public/levaduras/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/levaduras/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

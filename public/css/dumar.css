@@ -161,3 +161,47 @@
     border-top-left-radius: calc(0.3rem - 1px);
     border-top-right-radius: calc(0.3rem - 1px);
 }
+
+/*Avatar perfil*/
+.avatar-icon-xl .avatar-icon {
+    width: 250px;
+    height: 250px;
+}
+.avatar-icon {
+    border: #fff solid 8px;
+    overflow: hidden;
+}
+.avatar-icon.rounded {
+    border-radius: 1rem !important;
+}
+
+.bg-warm-flame {
+    background-image: linear-gradient(
+        45deg,
+        #3f6ad8 20%,
+        #3f6ad830 70%,
+        #3f6ad8 100%
+    ) !important;
+}
+
+.dropdown-menu-header .menu-header-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 8;
+    opacity: 0.25;
+    filter: grayscale(50%);
+    background-size: cover;
+}
+
+.opacity-3 {
+    opacity: 1.5 !important;
+}
+
+.btn-transition {
+    color: #3f6ad8;
+    border-color: #e9ecef;
+    background-color: none;
+}

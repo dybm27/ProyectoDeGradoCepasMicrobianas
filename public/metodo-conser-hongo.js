@@ -41,7 +41,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -50,10 +49,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     agregar: function agregar() {
+      var ruta = window.location.pathname;
       this.variableAgregar = false;
-      this.$router.push({
-        name: "metodo-conser-bacteria-agregar"
-      });
+
+      if (ruta.includes("hongos")) {
+        this.$router.push({
+          name: "metodo-conser-hongo-agregar"
+        });
+      } else {
+        this.$router.push({
+          name: "metodo-conser-cepa-hongo-agregar"
+        });
+      }
     },
     cancelar: function cancelar() {
       this.variableAgregar = true;
@@ -119,7 +126,6 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                        attrs: { to: { name: "metodo-conser-bacteria" } },
                         on: { click: _vm.cancelar }
                       },
                       [_vm._v("Cancelar")]

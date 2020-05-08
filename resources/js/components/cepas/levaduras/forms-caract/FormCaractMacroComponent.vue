@@ -109,6 +109,7 @@
                     name="imagen"
                     @change="obtenerImagen"
                     id="imagen"
+                    accept="image/jpeg"
                     type="file"
                     class="form-control-file"
                     ref="inputImagen"
@@ -328,8 +329,7 @@ export default {
       this.parametros.borde_colonia = this.info.borde_colonia;
       this.parametros.imagen = this.info.imagen;
       this.imageMiniatura = this.info.imagenPublica;
-      this.parametros.imagen_descripcion =
-        this.info.descripcion === "null" ? "" : this.info.descripcion;
+      this.parametros.imagen_descripcion = this.info.descripcion;
     },
     appendInfo(formData) {
       if (this.$route.params.cepaLevaduraId) {

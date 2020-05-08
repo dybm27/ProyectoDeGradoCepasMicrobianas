@@ -135,6 +135,7 @@
                         @change="obtenerImagenPcr"
                         id="imagen_pcr"
                         type="file"
+                        accept="image/jpeg"
                         class="form-control-file"
                         ref="inputImagenPcr"
                         :required="required"
@@ -150,6 +151,7 @@
                         @change="obtenerImagenSec"
                         id="imagen_sec"
                         type="file"
+                        accept="image/jpeg"
                         class="form-control-file"
                         ref="inputImagenSec"
                         :required="required"
@@ -223,7 +225,7 @@
 </template>
 
 <script>
-import vuex, { mapGetters } from "vuex";
+import vuex from "vuex";
 
 export default {
   props: ["info", "modificarInfo"],

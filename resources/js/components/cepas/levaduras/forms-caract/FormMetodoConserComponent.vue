@@ -8,8 +8,8 @@
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
                 <template v-if="getInfoMetodoConserLevaduras">
-                  <div class="position-relative form-group">
-                    <label for="forma" class>Método de Conservación</label>
+                  <label for="forma" class>Método de Conservación</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
                       id="forma"
@@ -22,6 +22,14 @@
                         :value="m.id"
                       >{{m.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('metodo_conser')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
                 </template>
                 <div class="form-row">
@@ -125,6 +133,7 @@
                     @change="obtenerImagen"
                     id="imagen"
                     type="file"
+                    accept="image/jpeg"
                     class="form-control-file"
                     ref="inputImagen"
                     :required="required"
@@ -166,6 +175,39 @@
         </div>
       </div>
     </div>
+    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
+          <button type="button" class="close" @click="$modal.hide('agregar-caract-info')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="position-relative form-group">
+            <label for="nombre" class>Nombre</label>
+            <input
+              name="nombre"
+              id="nombre"
+              placeholder="..."
+              type="text"
+              class="form-control"
+              v-model="modal.input"
+              required
+            />
+            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$modal.hide('agregar-caract-info')"
+          >Cancelar</button>
+          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -191,6 +233,12 @@ export default {
         imagen: "",
         descripcion: ""
       },
+      modal: {
+        titulo: "",
+        input: "",
+        tipo: "",
+        errors: []
+      },
       tituloForm: "",
       imageMiniatura: "",
       nomBtn: "",
@@ -199,7 +247,11 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarCaract", "accionEditarCaract"]),
+    ...vuex.mapActions([
+      "accionAgregarCaract",
+      "accionEditarCaract",
+      "accionAgregarTipoCaractLevadura"
+    ]),
     evento() {
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
@@ -369,6 +421,45 @@ export default {
         this.imageMiniatura = e.target.result;
       };
       reader.readAsDataURL(file);
+    },
+    showModal(tipo) {
+      this.modal.input = "";
+      this.modal.errors = [];
+      this.modal.tipo = tipo;
+      if (tipo === "metodo_conser") {
+        this.modal.titulo = "Agregar Nueva Tipo de Método";
+      }
+      this.$modal.show("agregar-caract-info");
+    },
+    agregarInfo() {
+      if (this.modal.input === "") {
+        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
+      } else {
+        let parametros = {
+          tipo: this.modal.tipo,
+          nombre: this.modal.input
+        };
+        axios
+          .post("/info-caract-levaduras/agregar", parametros)
+          .then(res => {
+            this.accionAgregarTipoCaractLevadura({
+              info: res.data,
+              tipo: this.modal.tipo
+            });
+            this.$modal.hide("agregar-caract-info");
+            this.toastr(
+              "Agregar Informacion",
+              `${this.modal.tipo} agregado/a con exito`,
+              "success"
+            );
+          })
+          .catch(error => {
+            if (error.response) {
+              this.modal.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!!", "", "error");
+          });
+      }
     }
   },
   computed: {
@@ -434,6 +525,3 @@ export default {
   }
 };
 </script>
-
-<style  scoped>
-</style>

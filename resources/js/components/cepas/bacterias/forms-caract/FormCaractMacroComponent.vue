@@ -228,6 +228,7 @@
                     name="imagen"
                     @change="obtenerImagen"
                     id="imagen"
+                    accept="image/jpeg"
                     type="file"
                     class="form-control-file"
                     ref="inputImagen"
