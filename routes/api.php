@@ -588,7 +588,7 @@ Route::get('info-caract-actinomicetos', function () {
 //-----------------------------------------------------------------------------------
 
 //-------------------------url eventos metodos------------------------------
-Route::get('eventos-metodos', function (Request $request) {
+Route::get('eventos-metodos-bacterias', function (Request $request) {
     $eventosBacterias = DB::table('cepas')
         ->join('bacterias', 'cepas.id', '=', 'bacterias.cepa_id')
         ->join('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id')
@@ -613,8 +613,12 @@ Route::get('eventos-metodos', function (Request $request) {
             'grupo_microbianos.nombre As grupo_microbiano',
             'metodo_conser_bacterias.fecha As start'
         )->where('metodo_conser_bacterias.fecha', '>=', $request->start)
-        ->where('metodo_conser_bacterias.fecha', '<=', $request->end);
+        ->where('metodo_conser_bacterias.fecha', '<=', $request->end)
+        ->get();
 
+    return $eventosBacterias;
+});
+Route::get('eventos-metodos-levaduras', function (Request $request) {
     $eventosLevaduras = DB::table('cepas')
         ->join('levaduras', 'cepas.id', '=', 'levaduras.cepa_id')
         ->join('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id')
@@ -639,8 +643,11 @@ Route::get('eventos-metodos', function (Request $request) {
             'metodo_conser_levaduras.fecha As start'
         )->where('metodo_conser_levaduras.fecha', '>=', $request->start)
         ->where('metodo_conser_levaduras.fecha', '<=', $request->end)
-        ->union($eventosBacterias);
+        ->get();
 
+    return $eventosLevaduras;
+});
+Route::get('eventos-metodos-hongos', function (Request $request) {
     $eventosHongos = DB::table('cepas')
         ->join('hongo_filamentosos', 'cepas.id', '=', 'hongo_filamentosos.cepa_id')
         ->join('grupo_microbianos', 'cepas.grupo_microbiano_id', '=', 'grupo_microbianos.id')
@@ -665,7 +672,7 @@ Route::get('eventos-metodos', function (Request $request) {
             'metodo_conser_hongos.fecha As start'
         )->where('metodo_conser_hongos.fecha', '>=', $request->start)
         ->where('metodo_conser_hongos.fecha', '<=', $request->end)
-        ->union($eventosLevaduras)->get();
+        ->get();
 
     return $eventosHongos;
 });

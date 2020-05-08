@@ -215,9 +215,19 @@ export default {
           //googleCalendarId: "dumaryekselbm@ufps.edu.co"
         },
         {
-          url: "api/eventos-metodos",
-          className: "eventos-metodos",
+          url: "api/eventos-metodos-bacterias",
+          className: "eventos-metodos-bacterias",
+          color: "#16aaff"
+        },
+        {
+          url: "api/eventos-metodos-levaduras",
+          className: "eventos-metodos-levaduras",
           color: "#5EE220"
+        },
+        {
+          url: "api/eventos-metodos-hongos",
+          className: "eventos-metodos-hongos",
+          color: "#794c8a"
         }
       ],
       header: {
