@@ -11,7 +11,7 @@
       <div class="card-body">
         <template v-if="getUsuarios!=''">
           <my-vuetable
-            api-url="http://127.0.0.1:8000/api/seguimientos"
+            api-url="/api/seguimientos"
             :fields="fields"
             :sort-order="sortOrder"
             @cambiarVariable="cambiarVariable"

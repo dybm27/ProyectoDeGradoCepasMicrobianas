@@ -171,7 +171,7 @@ var render = function() {
             [
               _c("my-vuetable", {
                 attrs: {
-                  "api-url": "api/cepas",
+                  "api-url": "/api/cepas",
                   fields: _vm.fields,
                   "sort-order": _vm.sortOrder,
                   "detail-row-component": "my-detail-row-cepas",

@@ -95,7 +95,7 @@ var render = function() {
             ? [
                 _c("my-vuetable", {
                   attrs: {
-                    "api-url": "http://127.0.0.1:8000/api/seguimientos",
+                    "api-url": "/api/seguimientos",
                     fields: _vm.fields,
                     "sort-order": _vm.sortOrder,
                     refrescarTabla: _vm.refrescarTabla

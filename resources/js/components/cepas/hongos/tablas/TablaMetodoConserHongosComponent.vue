@@ -55,7 +55,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "api/cepa/hongo/metodos-conser/",
+      url: "/api/cepa/hongo/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,

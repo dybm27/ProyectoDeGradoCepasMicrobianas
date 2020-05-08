@@ -367,16 +367,16 @@ Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
             '=',
             'tipo_metodo_conservacion_bacterias.id'
         )->join(
-            'tipo_agars',
+            'tipo_agar_bacterias',
             'metodo_conser_bacterias.tipo_agar_id',
             '=',
-            'tipo_agars.id'
+            'tipo_agar_bacterias.id'
         );
 
     $query = $metodos->select(
         'metodo_conser_bacterias.*',
         'tipo_metodo_conservacion_bacterias.nombre As nombre_tipo_metodo',
-        'tipo_agars.nombre As nombre_tipo_agar'
+        'tipo_agar_bacterias.nombre As nombre_tipo_agar'
     );
 
     if ($request->filled('sort')) {
@@ -391,7 +391,7 @@ Route::get('cepa/bacteria/metodos-conser/{id}', function (Request $request) {
             ->orWhere('metodo_conser_bacterias.numero_replicas', 'like', $value)
             ->orWhere('metodo_conser_bacterias.recuento_microgota', 'like', $value)
             ->orWhere('tipo_metodo_conservacion_bacterias.nombre', 'like', $value)
-            ->orWhere('tipo_agars.nombre', 'like', $value);
+            ->orWhere('tipo_agar_bacterias.nombre', 'like', $value);
     }
 
     $perPage = request()->filled('per_page') ? (int) request()->per_page : null;

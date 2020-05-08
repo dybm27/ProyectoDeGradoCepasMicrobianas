@@ -2,7 +2,7 @@
   <div>
     <template v-if="getUsuarios!=''">
       <my-vuetable
-        api-url="http://127.0.0.1:8000/api/usuarios"
+        api-url="/api/usuarios"
         :fields="fields"
         :sort-order="sortOrder"
         @cambiarVariable="cambiarVariable"
