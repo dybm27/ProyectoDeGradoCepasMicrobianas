@@ -30,7 +30,7 @@ class CaractMacroBacteriaController extends Controller
 
         $caractMacroBacteria = new CaracMacroBacteria();
         $caractMacroBacteria->bacteria_id = $bacteria->id;
-        $caractMacroBacteria->medio = $request->medio;
+        $caractMacroBacteria->medio = ucfirst($request->medio);
         $caractMacroBacteria->forma_id = intval($request->forma);
         $caractMacroBacteria->elevacion_id = intval($request->elevacion);
         $caractMacroBacteria->borde_id = intval($request->borde);
@@ -80,7 +80,7 @@ class CaractMacroBacteriaController extends Controller
             $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
         }
 
-        $caractMacroBacteria->medio = $request->medio;
+        $caractMacroBacteria->medio = ucfirst($request->medio);
         $caractMacroBacteria->forma_id = intval($request->forma);
         $caractMacroBacteria->elevacion_id = intval($request->elevacion);
         $caractMacroBacteria->borde_id = intval($request->borde);
@@ -94,7 +94,7 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->save();
 
         $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "
-        . $caractMacroBacteria->bacteria->cepa->codigo);
+            . $caractMacroBacteria->bacteria->cepa->codigo);
 
         return $caractMacroBacteria;
     }
@@ -107,7 +107,7 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->delete();
 
         $this->crearSeguimiento("Eliminó la Característica Macroscópica de la Cepa: "
-        . $caractMacroBacteria->bacteria->cepa->codigo);
+            . $caractMacroBacteria->bacteria->cepa->codigo);
 
         return $caractMacroBacteria;
     }

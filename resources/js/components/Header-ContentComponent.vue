@@ -1,22 +1,17 @@
 <template>
   <div class="widget-content p-0">
     <div class="widget-content-wrapper">
-      <template v-if="getTipoUser!=''&&getUsuarios!=''">
-        <div class="widget-content-left">
-          <div class="btn-group">
-            <img
-              width="42"
-              class="rounded-circle"
-              :src="getUsuarioById(getUserAuth.id).avatarPublico"
-              alt
-            />
-          </div>
+      <div class="widget-content-left">
+        <div class="btn-group">
+          <img width="42" class="rounded-circle" :src="getUserAuth.avatarPublico" alt />
         </div>
-        <div class="widget-content-left ml-3 header-user-info">
-          <div class="widget-heading">{{getUsuarioById(getUserAuth.id).name}}</div>
+      </div>
+      <div class="widget-content-left ml-3 header-user-info">
+        <div class="widget-heading">{{getUserAuth.name}}</div>
+        <template v-if="getTipoUser!=''">
           <div class="widget-subheading">{{getTipoUserById(getUserAuth.tipouser_id).nombre}}</div>
-        </div>
-      </template>
+        </template>
+      </div>
       <div class="widget-content-right header-user-info ml-3"></div>
     </div>
   </div>
@@ -29,13 +24,7 @@ export default {
     ...vuex.mapActions(["obtenerTiposUsers", "obtenerUsers"])
   },
   computed: {
-    ...vuex.mapGetters([
-      "getUserAuth",
-      "getTipoUserById",
-      "getTipoUser",
-      "getUsuarios",
-      "getUsuarioById"
-    ])
+    ...vuex.mapGetters(["getUserAuth", "getTipoUserById", "getTipoUser"])
   },
   created() {
     this.obtenerTiposUsers();

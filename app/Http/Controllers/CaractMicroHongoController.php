@@ -79,7 +79,6 @@ class CaractMicroHongoController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $caractMicroHongo = CaracMicroHongo::find($id);
         $caractMicroHongo->conidioforo_id = $request->conidioforo;
         $caractMicroHongo->fialides = $request->fialides;
@@ -89,7 +88,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->espora_asexual_id = $request->espora_asexual;
         $caractMicroHongo->esporas_asexuales_conidios_tamano = $request->esporas_asexuales_conidios_tamano;
         $caractMicroHongo->esporas_asexuales_conidios_color = $request->esporas_asexuales_conidios_color;
-        $caractMicroHongo->esporas_asexuales_conidios_forma = $request->conesporas_asexuales_conidios_formaidio_forma;
+        $caractMicroHongo->esporas_asexuales_conidios_forma = $request->esporas_asexuales_conidios_forma;
         $caractMicroHongo->esporas_asexuales_conidios_otras = $request->esporas_asexuales_conidios_otras;
         $caractMicroHongo->espora_sexual_id = $request->espora_sexual;
         $caractMicroHongo->otras_estructuras = $request->otras_estructuras;
@@ -97,7 +96,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Editó la Característica Microscópica de la Cepa: "
-            . $caractMicroHongo->hongo->cepa->codigo);
+            . $caractMicroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMicroHongo;
     }
@@ -110,7 +109,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->delete();
 
         $this->crearSeguimiento("Eliminó la Característica Microscópica de la Cepa: "
-            . $caractMicroHongo->hongo->cepa->codigo);
+            . $caractMicroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMicroHongo;
     }
@@ -137,7 +136,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Agregó una imagen a la Característica Microscópica de la Cepa: "
-            . $caractMicroHongo->hongo->cepa->codigo);
+            . $caractMicroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMicroHongo;
     }
@@ -173,7 +172,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Cambió una imagen a la Característica Microscópica de la Cepa: "
-            . $caractMicroHongo->hongo->cepa->codigo);
+            . $caractMicroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMicroHongo;
     }
@@ -201,7 +200,7 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Eliminó una imagen a la Característica Microscópica de la Cepa: "
-            . $caractMicroHongo->hongo->cepa->codigo);
+            . $caractMicroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMicroHongo;
     }

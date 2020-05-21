@@ -15,113 +15,93 @@
       </div>
     </div>
     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"></ul>
-    <template v-if="getTipoUser!=''&&getUsuarios!=''">
-      <div class="tabs-animation">
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div class="col-md-7">
-              <div class="card-shadow-primary profile-responsive card-border mb-3 card">
-                <div class="dropdown-menu-header">
-                  <div class="dropdown-menu-header-inner bg-focus">
-                    <div
-                      class="menu-header-image opacity-3"
-                      style="background-image: url('assets/images/fondos/5.jpg')"
-                    ></div>
-                    <div class="menu-header-content btn-pane-right">
-                      <div class="avatar-icon-wrapper mr-2 avatar-icon-xl">
-                        <div class="avatar-icon rounded">
-                          <img :src="getUsuarioById(getUserAuth.id).avatarPublico" alt="Avatar" />
-                        </div>
+    <div class="tabs-animation">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-7">
+            <div class="card-shadow-primary profile-responsive card-border mb-3 card">
+              <div class="dropdown-menu-header">
+                <div class="dropdown-menu-header-inner bg-focus">
+                  <div
+                    class="menu-header-image opacity-3"
+                    style="background-image: url('assets/images/fondos/5.jpg')"
+                  ></div>
+                  <div class="menu-header-content btn-pane-right">
+                    <div class="avatar-icon-wrapper mr-2 avatar-icon-xl">
+                      <div class="avatar-icon rounded">
+                        <img :src="getUserAuth.avatarPublico" alt="Avatar" />
                       </div>
-                      <div>
-                        <h5 class="menu-header-title">{{getUsuarioById(getUserAuth.id).name}}</h5>
-                      </div>
+                    </div>
+                    <div>
+                      <h5 class="menu-header-title">{{getUserAuth.name}}</h5>
                     </div>
                   </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="widget-content">
-                      <div class="text-center">
-                        <h5 class="widget-heading opacity-2"></h5>
-                        <h5>
-                          <div class="row">
-                            <div class="col-md-12">
-                              <span class="float-left">
-                                <b>Tipo de Usuario:</b>
-                                {{getTipoUserById(getUserAuth.tipouser_id).nombre}}
-                              </span>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-12">
-                              <span class="float-left">
-                                <b>Email:</b>
-                                {{getUsuarioById(getUserAuth.id).email}}
-                              </span>
-                            </div>
-                          </div>
-                        </h5>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="p-0 list-group-item">
-                    <div class="grid-menu grid-menu-3col">
-                      <div class="no-gutters row">
-                        <div class="col-sm-4">
-                          <button
-                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                            @click="showModal('nombre')"
-                          >
-                            <i class="lnr-pencil btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Nombre
-                          </button>
-                        </div>
-                        <div class="col-sm-4">
-                          <button
-                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                            @click="showModal('imagen')"
-                          >
-                            <i class="lnr-link btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Imagen
-                          </button>
-                        </div>
-                        <div class="col-sm-4">
-                          <button
-                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                            @click="showModal('contraseña')"
-                          >
-                            <i class="lnr-star btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Contraseña
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
               </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="widget-content">
+                    <div class="text-center">
+                      <h5 class="widget-heading opacity-2"></h5>
+                      <h5>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <span class="float-left">
+                              <b>Tipo de Usuario:</b>
+                              <template
+                                v-if="getTipoUser!=''"
+                              >{{getTipoUserById(getUserAuth.tipouser_id).nombre}}</template>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <span class="float-left">
+                              <b>Email:</b>
+                              {{getUserAuth.email}}
+                            </span>
+                          </div>
+                        </div>
+                      </h5>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-0 list-group-item">
+                  <div class="grid-menu grid-menu-3col">
+                    <div class="no-gutters row">
+                      <div class="col-sm-4">
+                        <button
+                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                          @click="showModal('nombre')"
+                        >
+                          <i class="lnr-pencil btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Nombre
+                        </button>
+                      </div>
+                      <div class="col-sm-4">
+                        <button
+                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                          @click="showModal('imagen')"
+                        >
+                          <i class="lnr-link btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Imagen
+                        </button>
+                      </div>
+                      <div class="col-sm-4">
+                        <button
+                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                          @click="showModal('contraseña')"
+                        >
+                          <i class="lnr-star btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Contraseña
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </template>
-    <template v-else>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center mt-5">
-            <div class="loader mt-5">
-              <div class="ball-spin-fade-loader mt-5">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </template>
+    </div>
     <modal name="cambiarInfo" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -243,7 +223,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionUsuario"]),
+    ...vuex.mapActions(["accionUsuario", "accionModificarAuth"]),
     showModal(tipo) {
       this.nombre = "";
       this.pass1 = "";
@@ -319,9 +299,13 @@ export default {
       switch (this.tipo) {
         case "nombre":
           axios
-            .put(`/perfil/cambiar-${this.tipo}/${this.getUserAuth.id}`, parametros)
+            .put(
+              `/perfil/cambiar-${this.tipo}/${this.getUserAuth.id}`,
+              parametros
+            )
             .then(res => {
               this.accionUsuario({ tipo: "editar", data: res.data });
+              this.accionModificarAuth({ data: res.data });
               this.toastr(
                 this.titulo,
                 "Accion realizada con exito!!",
@@ -344,6 +328,7 @@ export default {
               }
             )
             .then(res => {
+              this.accionModificarAuth({ data: res.data });
               this.accionUsuario({ tipo: "editar", data: res.data });
               this.toastr(
                 this.titulo,
@@ -356,8 +341,12 @@ export default {
           break;
         case "contraseña":
           axios
-            .put(`/perfil/cambiar-${this.tipo}/${this.getUserAuth.id}`, parametros)
+            .put(
+              `/perfil/cambiar-${this.tipo}/${this.getUserAuth.id}`,
+              parametros
+            )
             .then(res => {
+              this.accionModificarAuth({ data: res.data });
               this.accionUsuario({ tipo: "editar", data: res.data });
               this.toastr(
                 this.titulo,
@@ -372,13 +361,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters([
-      "getTipoUserById",
-      "getTipoUser",
-      "getUsuarios",
-      "getUsuarioById",
-      "getUserAuth"
-    ]),
+    ...vuex.mapGetters(["getTipoUserById", "getTipoUser", "getUserAuth"]),
     validarNombre() {
       let letters = /^[A-Za-z\s]+$/;
       if (this.nombre) {

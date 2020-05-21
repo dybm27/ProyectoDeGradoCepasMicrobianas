@@ -13,6 +13,6 @@ class MetodoConserLevadura extends Model
     
     public function tipoMetodo()
     {
-        return $this->belongsTo(TipoMetodoConservacionLevadura::class);
+        return $this->belongsTo(TipoMetodoConservacionLevadura::class, 'tipo_id');
     }
 }

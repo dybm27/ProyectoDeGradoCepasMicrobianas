@@ -40,6 +40,7 @@ export default [
         sortField: "created_at",
         title: "Fecha",
         dataClass: "text-center",
-        titleClass: "text-center"
+        titleClass: "text-center",
+        callback: "formatDate"
     }
 ];

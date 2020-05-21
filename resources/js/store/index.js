@@ -25,7 +25,7 @@ export default new Vuex.Store({
             return state.cepa.caract_macroscopicas;
         },
         getCaractMicro(state) {
-            return state.cepa.caract_microscopicas;
+            return state.cepa.caract_microscopica;
         },
         getCaractBioqui(state) {
             return state.cepa.caract_bioquimica;
@@ -34,7 +34,7 @@ export default new Vuex.Store({
             return state.cepa.caract_fisiologica;
         },
         getMetodoConser(state) {
-            return state.cepa.metodo_conservacion;
+            return state.cepa.metodos_conservacion;
         },
         getMetodoConserById: (state, getters) => id => {
             return getters.getMetodoConser.find(metodo => metodo.id == id);
@@ -77,47 +77,187 @@ export default new Vuex.Store({
         getGrupos(state) {
             return state.tipos.gmicrobianos;
         },
+        getGrupoCepa(state) {
+            return state.tipos.gmicrobianos.find(
+                gmicrobiano =>
+                    gmicrobiano.id === state.cepa.cepa.grupo_microbiano_id
+            );
+        },
         getPhylums(state) {
             return state.tipos.phylums;
+        },
+        getPhylumCepa(state) {
+            return state.tipos.phylums.find(
+                phylum => phylum.id === state.cepa.phylum_id
+            );
         },
         getOrdens(state) {
             return state.tipos.ordens;
         },
+        getOrdenCepa(state) {
+            return state.tipos.ordens.find(
+                orden => orden.id === state.cepa.orden_id
+            );
+        },
         getReinos(state) {
             return state.tipos.reinos;
+        },
+        getReinoCepa(state) {
+            return state.tipos.reinos.find(
+                reino => reino.id === state.cepa.reino_id
+            );
         },
         getDivisiones(state) {
             return state.tipos.divisiones;
         },
+        getDivisionCepa(state) {
+            return state.tipos.divisiones.find(
+                division => division.id === state.cepa.division_id
+            );
+        },
         getClases(state) {
             return state.tipos.clases;
+        },
+        getClaseCepa(state) {
+            return state.tipos.clases.find(
+                clase => clase.id === state.cepa.clase_id
+            );
         },
         getFamilias(state) {
             return state.tipos.familias;
         },
+        getFamiliaCepa(state) {
+            return state.tipos.familias.find(
+                familia => familia.id === state.cepa.familia_id
+            );
+        },
         getInfoCaractMacroBacterias(state) {
             return state.info_caract_bacterias.caract_macro;
+        },
+        getInfoCaractMacroBacteriasById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma":
+                    return getters.getInfoCaractMacroBacterias.formas_macros.find(
+                        forma => forma.id === data.id
+                    );
+                case "borde":
+                    return getters.getInfoCaractMacroBacterias.bordes.find(
+                        borde => borde.id === data.id
+                    );
+                case "detalle":
+                    return getters.getInfoCaractMacroBacterias.detalle_opticos.find(
+                        detalle => detalle.id === data.id
+                    );
+                case "elevacion":
+                    return getters.getInfoCaractMacroBacterias.elevacions.find(
+                        elevacion => elevacion.id === data.id
+                    );
+                case "superficie":
+                    return getters.getInfoCaractMacroBacterias.superficies.find(
+                        superficie => superficie.id === data.id
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroBacterias.colors.find(
+                        color => color.id === data.id
+                    );
+            }
         },
         getInfoCaractMicroBacterias(state) {
             return state.info_caract_bacterias.caract_micro;
         },
+        getInfoCaractMicroBacteriasById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma":
+                    return getters.getInfoCaractMicroBacterias.formas_micros.find(
+                        forma => forma.id === data.id
+                    );
+            }
+        },
         getInfoMetodoConserBacterias(state) {
             return state.info_caract_bacterias.metodo_conser;
+        },
+        getInfoMetodoConserBacteriasById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserBacterias.tipo_metodo.find(
+                        tipo => tipo.id === data.id
+                    );
+                case "tipo_agar":
+                    return getters.getInfoMetodoConserBacterias.tipo_agar.find(
+                        tipo => tipo.id === data.id
+                    );
+            }
         },
         getInfoCaractMacroLevaduras(state) {
             return state.info_caract_levaduras.caract_macro;
         },
+        getInfoCaractMacroLevadurasById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroLevaduras.texturas.find(
+                        textura => textura.id === data.id
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroLevaduras.colors.find(
+                        color => color.id === data.id
+                    );
+            }
+        },
         getInfoMetodoConserLevaduras(state) {
             return state.info_caract_levaduras.metodo_conser;
+        },
+        getInfoMetodoConserLevadurasById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(
+                        tipo => tipo.id === data.id
+                    );
+            }
         },
         getInfoCaractMacroHongos(state) {
             return state.info_caract_hongos.caract_macro;
         },
+        getInfoCaractMacroHongosById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroHongos.texturas.find(
+                        textura => textura.id === data.id
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroHongos.colores.find(
+                        color => color.id === data.id
+                    );
+            }
+        },
         getInfoCaractMicroHongos(state) {
             return state.info_caract_hongos.caract_micro;
         },
+        getInfoCaractMicroHongosById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "conidioforo":
+                    return getters.getInfoCaractMicroHongos.conidioforos.find(
+                        conidioforo => conidioforo.id === data.id
+                    );
+                case "asexual":
+                    return getters.getInfoCaractMicroHongos.esporas_asexuales.find(
+                        asexual => asexual.id === data.id
+                    );
+                case "sexual":
+                    return getters.getInfoCaractMicroHongos.esporas_sexuales.find(
+                        sexual => sexual.id === data.id
+                    );
+            }
+        },
         getInfoMetodoConserHongos(state) {
             return state.info_caract_hongos.metodo_conser;
+        },
+        getInfoMetodoConserHongosById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserHongos.tipo_metodo.find(
+                        tipo => tipo.id === data.id
+                    );
+            }
         },
         getInfoCaractMacroActinomicetos(state) {
             return state.info_caract_actinomicetos.caract_macro;
@@ -175,7 +315,7 @@ export default new Vuex.Store({
                     state.cepa.caract_macroscopicas.push(data.data);
                     break;
                 case "micro":
-                    state.cepa.caract_microscopicas = data.data;
+                    state.cepa.caract_microscopica = data.data;
                     break;
                 case "bioqui":
                     state.cepa.caract_bioquimica = data.data;
@@ -187,7 +327,7 @@ export default new Vuex.Store({
                     state.cepa.ident_molecular = data.data;
                     break;
                 case "metodo":
-                    state.cepa.metodo_conservacion.push(data.data);
+                    state.cepa.metodos_conservacion.push(data.data);
                     break;
                 case "identi_bioqui":
                     state.cepa.ident_bioquimica = data.data;
@@ -218,7 +358,7 @@ export default new Vuex.Store({
                     }
                     break;
                 case "micro":
-                    state.cepa.caract_microscopicas = data.data;
+                    state.cepa.caract_microscopica = data.data;
                     break;
                 case "bioqui":
                     state.cepa.caract_bioquimica = data.data;
@@ -232,14 +372,14 @@ export default new Vuex.Store({
                 case "metodo":
                     for (
                         let i = 0;
-                        i < state.cepa.metodo_conservacion.length;
+                        i < state.cepa.metodos_conservacion.length;
                         i++
                     ) {
                         if (
-                            state.cepa.metodo_conservacion[i].id ===
+                            state.cepa.metodos_conservacion[i].id ===
                             data.data.id
                         ) {
-                            state.cepa.metodo_conservacion.splice(
+                            state.cepa.metodos_conservacion.splice(
                                 i,
                                 1,
                                 data.data
@@ -272,7 +412,7 @@ export default new Vuex.Store({
                     }
                     break;
                 case "micro":
-                    state.cepa.caract_microscopicas = null;
+                    state.cepa.caract_microscopica = null;
                     break;
                 case "bioqui":
                     state.cepa.caract_bioquimica = null;
@@ -286,14 +426,14 @@ export default new Vuex.Store({
                 case "metodo":
                     for (
                         let i = 0;
-                        i < state.cepa.metodo_conservacion.length;
+                        i < state.cepa.metodos_conservacion.length;
                         i++
                     ) {
                         if (
-                            state.cepa.metodo_conservacion[i].id ===
+                            state.cepa.metodos_conservacion[i].id ===
                             data.data.id
                         ) {
-                            state.cepa.metodo_conservacion.splice(i, 1);
+                            state.cepa.metodos_conservacion.splice(i, 1);
                         }
                     }
                     break;
@@ -305,9 +445,8 @@ export default new Vuex.Store({
                     break;
             }
         },
-        limpiarCepa(state) {
+        mutacionLimpiarCepa(state) {
             state.cepa = null;
-            state.info_caract_bacterias = [];
         },
         mutacionAgregarTipoCepa(state, data) {
             switch (data.tipo) {
@@ -536,7 +675,7 @@ export default new Vuex.Store({
             }
         },
         mutacionModificarAuth(state, data) {
-            state.auth = data;
+            state.auth = data.data;
         }
     },
     actions: {
@@ -612,6 +751,9 @@ export default new Vuex.Store({
         },
         accionModificarAuth({ commit }, data) {
             commit("mutacionModificarAuth", data);
+        },
+        limpiarCepa({ commit }) {
+            commit("mutacionLimpiarCepa");
         }
     },
     modules: {}

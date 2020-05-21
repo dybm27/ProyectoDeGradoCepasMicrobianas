@@ -21,13 +21,13 @@ class CaractMacroActinomicetoController extends Controller
 
         $caractMacroActinomiceto = new CaracMacroActinomiceto();
         $caractMacroActinomiceto->actinomiceto_id = $actinomiceto->id;
-        $caractMacroActinomiceto->medio = $request->medio;
+        $caractMacroActinomiceto->medio = ucfirst($request->medio);
         $caractMacroActinomiceto->forma_id = intval($request->forma);
         $caractMacroActinomiceto->textura_id = intval($request->textura);
         $caractMacroActinomiceto->borde_id = intval($request->borde);
         $caractMacroActinomiceto->pigmento_id = intval($request->pigmento);
         $caractMacroActinomiceto->superficie_id = intval($request->superficie);
-        $caractMacroActinomiceto->secrecion_geosminas = $request->secrecion_geosminas;
+        $caractMacroActinomiceto->secrecion_geosminas = ucfirst($request->secrecion_geosminas);
         $caractMacroActinomiceto->color_id = intval($request->color);
         $caractMacroActinomiceto->otras_caract = $request->otras_caract;
         $caractMacroActinomiceto->imagen = $imagen['ruta'];
@@ -62,13 +62,13 @@ class CaractMacroActinomicetoController extends Controller
             $caractMacroActinomiceto->imagenPublica = $imagen['rutaPublica'];
         }
 
-        $caractMacroActinomiceto->medio = $request->medio;
+        $caractMacroActinomiceto->medio = ucfirst($request->medio);
         $caractMacroActinomiceto->forma_id = intval($request->forma);
         $caractMacroActinomiceto->textura_id = intval($request->textura);
         $caractMacroActinomiceto->borde_id = intval($request->borde);
         $caractMacroActinomiceto->pigmento_id = intval($request->pigmento);
         $caractMacroActinomiceto->superficie_id = intval($request->superficie);
-        $caractMacroActinomiceto->secrecion_geosminas = $request->secrecion_geosminas;
+        $caractMacroActinomiceto->secrecion_geosminas = ucfirst($request->secrecion_geosminas);
         $caractMacroActinomiceto->color_id = intval($request->color);
         $caractMacroActinomiceto->otras_caract = $request->otras_caract;
         $caractMacroActinomiceto->descripcion = $request->imagen_descripcion;

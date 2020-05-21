@@ -458,15 +458,21 @@
         </form>
       </div>
     </div>
-    <imagenes
-      class="mt-4 mr-4 ml-4"
-      :required="required"
-      :parametros="this.parametros"
-      :tipoCepa="'bacteria/caract-bioqui'"
-      :imagenes="this.imagenes"
-      :cepa="this.info"
-      @accionImagen="accionImagen"
-    ></imagenes>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <imagenes
+            class="mt-4 mr-4 ml-4"
+            :required="required"
+            :parametros="this.parametros"
+            :tipoCepa="'bacteria/caract-bioqui'"
+            :imagenes="this.imagenes"
+            :cepa="this.info"
+            @accionImagen="accionImagen"
+          ></imagenes>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

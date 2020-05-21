@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="es">
 
     <head>
         <meta charset="utf-8">
@@ -78,10 +78,12 @@
                       class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8"
                     >
                       <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                        <div class="app-logo"></div>
+                        <div class="logo-majumba">
+                          <img src="{{asset('imagenes/logo_majumba-g.png')}}" alt="">
+                        </div>
                         <h4 class="mb-0">
-                          <span class="d-block">Welcome back,</span>
-                          <span>Please sign in to your account.</span>
+                          <span class="d-block"></span>
+                          <span>Bienvenido!!.. Por favor, inicia sesión con tu cuenta.</span>
                         </h4>
                         <div class="divider row"></div>
                         <div>

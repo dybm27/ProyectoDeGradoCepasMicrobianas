@@ -24,7 +24,7 @@ class CreateCaracBioquiLevadurasTable extends Migration
             $table->string('termotolerancia_42', 100)->nullable();
             $table->string('termotolerancia_45', 100)->nullable();
             $table->string('termotolerancia_otra', 100)->nullable();
-            $table->string('crecimineto', 20);
+            $table->string('crecimiento', 20);
             $table->string('nitratos', 100);
             $table->string('otras_caract')->nullable();
             $table->string('imagen1')->nullable();

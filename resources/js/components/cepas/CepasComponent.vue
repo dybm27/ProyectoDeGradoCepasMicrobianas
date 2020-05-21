@@ -42,7 +42,8 @@ export default {
       "obtenerTiposCepas",
       "obtenerInfoCaractHongos",
       "obtenerInfoCaractBacterias",
-      "obtenerInfoCaractLevaduras"
+      "obtenerInfoCaractLevaduras",
+      "obtenerInfoCaractActinomicetos"
     ]),
     ocultarLink(ruta) {
       if (ruta != "/cepas") {
@@ -58,6 +59,7 @@ export default {
     }
   },
   created() {
+    this.obtenerInfoCaractActinomicetos();
     this.obtenerInfoCaractHongos();
     this.obtenerInfoCaractBacterias();
     this.obtenerInfoCaractLevaduras();

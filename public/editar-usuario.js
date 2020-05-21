@@ -181,6 +181,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -201,113 +219,72 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nomBtn: "",
       errors: [],
       imagenError: "",
-      mensajeErrorEmail: ""
+      mensajeErrorEmail: "",
+      mensajeContraseña: "",
+      mensajeContraseña1: "",
+      mensajeNombre: "",
+      traerValorImg: false
     };
   },
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionTipoUsuario", "accionUsuario", "accionModificarAuth"]), {
+    cambiarValorImagen: function cambiarValorImagen(valor) {
+      this.parametros.imagen = valor;
+    },
     evento: function evento() {
       var _this = this;
 
-      if (this.validarEmail || this.validarNombre || this.validarContraseña || this.validarContraseñas) {
-        this.toastr("Alerta!!", "Favor arreglar los errores.!!", "warning");
-      } else {
-        this.parametros.pass = this.parametros.pass === undefined ? "" : this.parametros.pass;
+      this.parametros.pass = this.parametros.pass === undefined ? "" : this.parametros.pass;
+      this.parametros.imagen = this.parametros.imagen === this.info.avatar ? "" : this.parametros.imagen;
 
-        if (this.tituloForm === "Agregar Usuario") {
-          var formData = new FormData();
-          this.appendInfo(formData);
-          axios.post("/usuario/agregar", formData, {
-            headers: {
-              "Content-Type": "multipart/form-data"
-            }
-          }).then(function (res) {
-            _this.accionUsuario({
-              tipo: "agregar",
-              data: res.data
-            });
-
-            _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
-
-            _this.$emit("cambiarVariable", "tabla");
-
-            _this.$router.push({
-              name: "tabla-usuarios"
-            });
-          })["catch"](function (error) {
-            if (error.response) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-
-              _this.toastr("Error!!", "", "error");
-            }
+      if (this.tituloForm === "Agregar Usuario") {
+        axios.post("/usuario/agregar", this.parametros).then(function (res) {
+          _this.accionUsuario({
+            tipo: "agregar",
+            data: res.data
           });
-        } else {
-          if (this.parametros.imagen === this.info.avatar) {
-            axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
-              if (_this.getUserAuth.id === res.data.id) {
-                _this.accionModificarAuth(res.data);
-              }
 
-              _this.accionUsuario({
-                tipo: "editar",
-                data: res.data
-              });
+          _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
 
-              _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+          _this.$emit("cambiarVariable", "tabla");
 
-              _this.$emit("cambiarVariable", "tabla");
+          _this.$router.push({
+            name: "tabla-usuarios"
+          });
+        })["catch"](function (error) {
+          if (error.response) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
 
-              _this.$router.push({
-                name: "tabla-usuarios"
-              });
-            })["catch"](function (error) {
-              if (error.response) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-
-                _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-              }
-            });
-          } else {
-            var _formData = new FormData();
-
-            this.appendInfo(_formData);
-
-            _formData.append("_method", "PUT");
-
-            axios.post("/usuario/editar/".concat(this.info.id), _formData, {
-              headers: {
-                "Content-Type": "multipart/form-data"
-              }
-            }).then(function (res) {
-              if (_this.getUserAuth.id === res.data.id) {
-                _this.accionModificarAuth(res.data);
-              }
-
-              _this.accionUsuario({
-                tipo: "editar",
-                data: res.data
-              });
-
-              _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
-
-              _this.$emit("cambiarVariable", "tabla");
-
-              _this.$router.push({
-                name: "tabla-usuarios"
-              });
-            })["catch"](function (error) {
-              if (error.response) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-
-                _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-              }
-            });
+            _this.toastr("Error!!", "", "error");
           }
-        }
+        });
+      } else {
+        axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
+          if (_this.getUserAuth.id === res.data.id) {
+            _this.accionModificarAuth(res.data);
+          }
+
+          _this.accionUsuario({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+
+          _this.$emit("cambiarVariable", "tabla");
+
+          _this.$router.push({
+            name: "tabla-usuarios"
+          });
+        })["catch"](function (error) {
+          if (error.response) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
+
+          }
+        });
       }
     },
     toastr: function toastr(titulo, msg, tipo) {
@@ -338,24 +315,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.imagen = this.info.avatar;
       this.imageMiniatura = this.info.avatarPublico;
     },
-    appendInfo: function appendInfo(formData) {
-      formData.append("nombre", this.parametros.nombre);
-      formData.append("tipo_user", this.parametros.tipo_user);
-      formData.append("email", this.parametros.email);
-      formData.append("pass", this.parametros.pass);
-      formData.append("imagen", this.parametros.imagen);
-    },
     obtenerImagen: function obtenerImagen(e) {
-      var file = e.target.files[0];
-      this.parametros.imagen = file;
-      var allowedExtensions = /(.jpg|.jpeg)$/i;
+      var file = e.target.files[0]; //this.parametros.imagen = file;
+
+      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
 
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError = "La imagen debe ser en formato .jpg y menor a 2Mb.";
-          this.imageMiniatura = this.info.imagenPublica;
+          this.imagenError = "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
+          this.imageMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
+          this.parametros.imagen = this.info.avatar;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
@@ -368,14 +338,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new Image();
 
       reader.onload = function (e) {
-        if (e.path[0].height > 500 || e.path[0].width > 500) {
-          _this2.imagenError = "La imagen debe tener una dimension maxima de 500x500 px ";
-          _this2.imageMiniatura = _this2.info.imagenPublica;
-          _this2.$refs.inputImagen.value = "";
-          _this2.parametros.imagen = _this2.info.imagen;
+        /**if (e.path[0].height > 500 || e.path[0].width > 500) {
+          this.imagenError =
+            "La imagen debe tener una dimension maxima de 500x500 px ";
+          this.imageMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+          this.parametros.imagen = this.info.imagen;
         } else {
-          _this2.imageMiniatura = reader.src;
-        }
+          this.imageMiniatura = reader.src;
+        } */
+        _this2.imageMiniatura = reader.src;
       };
 
       reader.src = URL.createObjectURL(file);
@@ -408,26 +380,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     validarContraseñas: function validarContraseAs() {
       if (this.parametros.pass1) {
         if (this.parametros.pass != this.parametros.pass1) {
+          this.mensajeContraseña1 = "Las contraseñas no coinciden";
           return true;
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña1 = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
       }
     },
     validarEmail: function validarEmail() {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      if (this.parametros.email && this.required) {
-        if (!re.test(this.parametros.email) || this.errors.email) {
-          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-          return true;
-        } else {
-          if (this.getUsuarioByEmail(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico ya Existe";
+      if (this.required) {
+        if (this.parametros.email) {
+          if (!re.test(this.parametros.email)) {
+            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
             return true;
-          }
+          } else {
+            if (this.getUsuarioByEmail(this.parametros.email)) {
+              this.mensajeErrorEmail = "El correo electrónico ya Existe";
+              return true;
+            }
 
-          return false;
+            return false;
+          }
+        } else {
+          this.mensajeErrorEmail = "Este campo es obligatorio";
+          return true;
         }
       }
 
@@ -438,10 +423,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {
+          this.mensajeNombre = "Solo se admiten letras.";
           return true;
         } else {
           return false;
         }
+      } else {
+        this.mensajeNombre = "Este campo es obligatorio";
+        return true;
       }
     },
     validarContraseña: function validarContraseA() {
@@ -449,10 +438,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.parametros.pass) {
         if (!regexp_password.test(this.parametros.pass)) {
+          this.mensajeContraseña = " La contrase\xF1a debe tener:\n                      1: M\xEDnimo 8 y M\xE1ximo 15 caracteres \n                      2: Al menos una letra may\xFAscula \n                      3: Al menos un d\xEDgito\n                      4: Al menos 1 car\xE1cter especial";
           return true;
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
+      }
+    },
+    validarBtn: function validarBtn() {
+      if (this.validarEmail || this.validarNombre || this.validarContraseña || this.validarContraseñas || !this.parametros.imagen) {
+        return true;
+      }
+
+      return false;
+    },
+    mostrarBtn: function mostrarBtn() {
+      if (this.imageMiniatura != this.info.avatarPublico) {
+        return true;
+      } else {
+        return false;
       }
     }
   }),
@@ -565,7 +576,7 @@ var render = function() {
                                   ? _c(
                                       "em",
                                       { staticClass: "error invalid-feedback" },
-                                      [_vm._v("Solo se admiten letras.")]
+                                      [_vm._v(_vm._s(_vm.mensajeNombre))]
                                     )
                                   : _vm._e()
                               ]
@@ -666,7 +677,7 @@ var render = function() {
                                   attrs: {
                                     name: "imagen",
                                     id: "imagen",
-                                    accept: "image/jpeg",
+                                    accept: "image/jpeg, image/png",
                                     type: "file",
                                     required: _vm.required
                                   },
@@ -914,27 +925,7 @@ var render = function() {
                                 ? _c(
                                     "em",
                                     { staticClass: "error invalid-feedback" },
-                                    [
-                                      _vm._v(
-                                        "\n                    La contraseña debe tener:\n                    "
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "1: Mínimo 8 y Máximo 15 caracteres\n                    "
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "2: Al menos una letra mayúscula\n                    "
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "3: Al menos un dígito\n                    "
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "4: Al menos 1 carácter especial\n                  "
-                                      )
-                                    ]
+                                    [_vm._v(_vm._s(_vm.mensajeContraseña))]
                                   )
                                 : _vm._e()
                             ]),
@@ -1118,7 +1109,7 @@ var render = function() {
                                 ? _c(
                                     "em",
                                     { staticClass: "error invalid-feedback" },
-                                    [_vm._v("Las contraseñas no coinciden")]
+                                    [_vm._v(_vm._s(_vm.mensajeContraseña1))]
                                   )
                                 : _vm._e()
                             ]),
@@ -1127,7 +1118,8 @@ var render = function() {
                               "button",
                               {
                                 staticClass: "mb-2 mr-2 btn btn-block",
-                                class: _vm.btnClase
+                                class: _vm.btnClase,
+                                attrs: { disabled: _vm.validarBtn }
                               },
                               [_vm._v(_vm._s(_vm.nomBtnComputed))]
                             )
@@ -1151,13 +1143,35 @@ var render = function() {
                         _vm._v(" "),
                         _vm.mostraImagen
                           ? [
-                              _c("img", {
-                                staticClass: "d-block w-100",
-                                attrs: {
-                                  src: _vm.mostraImagen,
-                                  alt: "Avatar del Usuario"
-                                }
-                              })
+                              _vm.parametros.imagen === _vm.info.avatar
+                                ? [
+                                    _c("croppie", {
+                                      attrs: {
+                                        imagen: _vm.mostraImagen,
+                                        mostrarBtn: _vm.mostrarBtn,
+                                        zoom: 0,
+                                        editar: true
+                                      },
+                                      on: {
+                                        cambiarValorImagen:
+                                          _vm.cambiarValorImagen
+                                      }
+                                    })
+                                  ]
+                                : [
+                                    _c("croppie", {
+                                      attrs: {
+                                        imagen: _vm.mostraImagen,
+                                        mostrarBtn: _vm.mostrarBtn,
+                                        zoom: 1,
+                                        editar: false
+                                      },
+                                      on: {
+                                        cambiarValorImagen:
+                                          _vm.cambiarValorImagen
+                                      }
+                                    })
+                                  ]
                             ]
                           : [_vm._m(0)]
                       ],

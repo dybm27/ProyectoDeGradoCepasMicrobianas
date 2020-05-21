@@ -37,6 +37,16 @@ const routes = [
     },
     //bacterias
     {
+        path: "/cepas/bacteria/ver/:cepaId",
+        name: "ver-cepa-bacteria",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-cepa-bacteria" */
+
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
+    {
         path: "/cepas/bacteria/:cepaId",
         name: "cepa-bacteria",
         component: () =>
@@ -142,6 +152,16 @@ const routes = [
     },
     //hongos
     {
+        path: "/cepas/hongo/ver/:cepaId",
+        name: "ver-cepa-hongo",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-cepa-hongo" */
+
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
+    {
         path: "/cepas/hongo/:cepaId",
         name: "cepa-hongo",
         component: () =>
@@ -237,6 +257,16 @@ const routes = [
     },
     //levaduras
     {
+        path: "/cepas/levadura/ver/:cepaId",
+        name: "ver-cepa-levadura",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-cepa-levadura" */
+
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
+    {
         path: "/cepas/levadura/:cepaId",
         name: "cepa-levadura",
         component: () =>
@@ -331,7 +361,88 @@ const routes = [
         ]
     },
     //actinomiceto
+    {
+        path: "/cepas/actinomiceto/ver/:cepaId",
+        name: "ver-cepa-actinomiceto",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-cepa-actinomiceto" */
 
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
+    {
+        path: "/actinomicetos/:cepaId",
+        name: "cepa-actinomiceto",
+        component: () =>
+            import(
+                /* webpackChunkName: "cepa-actinomiceto" */
+
+                "../components/cepas/AgregarEditarCaractComponent.vue"
+            ),
+        children: [
+            {
+                path: "caract-macro",
+                name: "caract-macro-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "caract-macro-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"
+                    )
+            },
+            {
+                path: "caract-micro",
+                name: "caract-micro-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "caract-micro-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"
+                    )
+            },
+            {
+                path: "identi-bioqui",
+                name: "identi-bioqui-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "identi-bioqui-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"
+                    )
+            },
+            {
+                path: "otras-caract",
+                name: "otras-caract-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "otras-caract-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"
+                    )
+            },
+            {
+                path: "caract-molecu",
+                name: "caract-molecu-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "caract-molecu-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"
+                    )
+            },
+            {
+                path: "metodo-conser",
+                name: "metodo-conser-cepa-actinomiceto",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "metodo-conser-cepa-actinomiceto" */
+
+                        "../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"
+                    )
+            }
+        ]
+    },
     // ------------------------  BACTERIAS ------------------------------------------
     {
         path: "/bacterias",

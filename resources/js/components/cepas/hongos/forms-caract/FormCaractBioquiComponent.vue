@@ -41,22 +41,20 @@
                   ></textarea>
                 </div>
                 <template v-if="required">
-                  <div class="col-md-4">
-                    <div class="position-relative form-group">
-                      <label for="imagen" class>Imágenes</label>
-                      <input
-                        name="imagen"
-                        @change="obtenerImagenes"
-                        id="imagen"
-                        type="file"
-                        accept="image/jpeg"
-                        class="form-control-file"
-                        ref="inputImagen"
-                        multiple
-                        :required="required"
-                      />
-                      <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
-                    </div>
+                  <div class="position-relative form-group">
+                    <label for="imagen" class>Imágenes</label>
+                    <input
+                      name="imagen"
+                      @change="obtenerImagenes"
+                      id="imagen"
+                      type="file"
+                      accept="image/jpeg"
+                      class="form-control-file"
+                      ref="inputImagen"
+                      multiple
+                      :required="required"
+                    />
+                    <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
                   </div>
                 </template>
                 <div class="position-relative form-group">

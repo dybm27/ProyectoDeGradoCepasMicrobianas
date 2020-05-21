@@ -50,7 +50,7 @@ class CaractMicroBacteriaController extends Controller
         $caractMicroBacteria = new CaracMicroBacteria();
         $caractMicroBacteria->bacteria_id = $bacteria->id;
         $caractMicroBacteria->forma_id = intval($request->forma);
-        $caractMicroBacteria->ordenamiento = $request->ordenamiento;
+        $caractMicroBacteria->ordenamiento = ucfirst($request->ordenamiento);
         $caractMicroBacteria->tincion_gram = $request->tincion_gram;
         $caractMicroBacteria->tincion_esporas = $request->tincion_esporas;
         $caractMicroBacteria->ubicacion_esporas = $request->ubicacion_esporas;
@@ -86,10 +86,10 @@ class CaractMicroBacteriaController extends Controller
         $caractMicroBacteria = CaracMicroBacteria::find($id);
 
         $caractMicroBacteria->forma_id = intval($request->forma);
-        $caractMicroBacteria->ordenamiento = $request->ordenamiento;
+        $caractMicroBacteria->ordenamiento = ucfirst($request->ordenamiento);
         $caractMicroBacteria->tincion_gram = $request->tincion_gram;
         $caractMicroBacteria->tincion_esporas = $request->tincion_esporas;
-        if ($request->tincion_esporas == "presencia") {
+        if ($request->tincion_esporas == "Presencia") {
             $caractMicroBacteria->ubicacion_esporas = $request->ubicacion_esporas;
         } else {
             $caractMicroBacteria->ubicacion_esporas = null;

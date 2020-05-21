@@ -373,6 +373,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipoG"],
@@ -390,7 +391,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         division: 1,
         familia: 1,
         estado: "",
-        origen: "",
+        origen: "Donación",
         publicar: false,
         otras_caracteristicas: ""
       },
@@ -1554,43 +1555,70 @@ var render = function() {
                                 _vm._v("Origen")
                               ]),
                               _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.origen,
-                                    expression: "parametros.origen"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "origen",
-                                  id: "origen",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.parametros.origen },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.origen,
+                                      expression: "parametros.origen"
                                     }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "origen",
-                                      $event.target.value
-                                    )
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { name: "select", id: "origen" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "origen",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
                                   }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _vm.errors.origen
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.errors.origen[0]))
-                                  ])
-                                : _vm._e()
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Donación" } },
+                                    [_vm._v("Donación")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "Compra" } }, [
+                                    _vm._v("Compra")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Proyecto" } },
+                                    [_vm._v("Proyecto")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Aislamiento del Laboratorio"
+                                      }
+                                    },
+                                    [_vm._v("Aislamiento del Laboratorio")]
+                                  )
+                                ]
+                              )
                             ]
                           ),
                           _vm._v(" "),

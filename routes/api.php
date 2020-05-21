@@ -320,36 +320,39 @@ Route::get('cepa/{id}', function (Request $request) {
 //--------------------- caracteristicas cepas -------------------------------------
 Route::get('cepa/agregar-editar-caract/{id}', function (Request $request) {
     $cepa = Cepa::where('id', $request->id)->first();
+    if (empty($cepa)) {
+        return 'No Existe';
+    }
     switch ($cepa->grupo_microbiano_id) {
         case 1:
             $query = Bacteria::where('cepa_id', $request->id)
                 ->with([
-                    'cepa', 'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
-                    'caractFisiologica', 'identMolecular', 'metodoConservacion'
+                    'cepa', 'caractMacroscopicas', 'caractMicroscopica', 'caractBioquimica',
+                    'caractFisiologica', 'identMolecular', 'metodosConservacion'
                 ])
                 ->first();
             break;
         case 2:
             $query = HongoFilamentoso::where('cepa_id', $request->id)
                 ->with([
-                    'cepa', 'caractMacroscopicas', 'caractMicroscopicas',
-                    'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                    'cepa', 'caractMacroscopicas', 'caractMicroscopica',
+                    'caractBioquimica', 'identMolecular', 'metodosConservacion'
                 ])
                 ->first();
             break;
         case 3:
             $query = Levadura::where('cepa_id', $request->id)
                 ->with([
-                    'cepa', 'caractMacroscopicas', 'caractMicroscopicas',
-                    'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                    'cepa', 'caractMacroscopicas', 'caractMicroscopica',
+                    'caractBioquimica', 'identMolecular', 'metodosConservacion'
                 ])
                 ->first();
             break;
         case 4:
             $query = Actinomiceto::where('cepa_id', $request->id)
                 ->with([
-                    'cepa', 'caractMacroscopicas', 'caractMicroscopicas', 'identBioquimica',
-                    'otrasCaracteristicas'/*, 'caractMolecular', 'metodoConservacion'*/
+                    'cepa', 'caractMacroscopicas', 'caractMicroscopica', 'identBioquimica',
+                    'otrasCaracteristicas'/*, 'caractMolecular', 'metodosConservacion'*/
                 ])->first();
             break;
     }
@@ -747,8 +750,9 @@ Route::get('users', function () {
 
 //------------------------- url tabla seguimiento -------------------------------------
 Route::get('seguimientos', function (Request $request) {
+
     $seguimientos = Seguimiento::select(
-        'Seguimientos.*',
+        'seguimientos.*',
     );
 
     if ($request->filled('sort')) {
