@@ -2223,6 +2223,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/ec5bd254c223786f5fa2bb49a1e705c1b8e7cee2",
                 "reference": "ec5bd254c223786f5fa2bb49a1e705c1b8e7cee2",
+
                 "shasum": ""
             },
             "require": {
@@ -2417,6 +2418,7 @@
                 "mime-type"
             ],
             "time": "2020-04-17T03:29:44+00:00"
+
         },
         {
             "name": "symfony/polyfill-ctype",
