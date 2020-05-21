@@ -39,7 +39,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractLevaduras"]),
+    ...vuex.mapActions(["obtenerTiposCepas"]),
     ocultarLink(ruta) {
       if (ruta != "/levaduras") {
         this.ruta = false;
@@ -54,7 +54,6 @@ export default {
     }
   },
   created() {
-    this.obtenerInfoCaractLevaduras();
     this.obtenerTiposCepas();
   }
 };

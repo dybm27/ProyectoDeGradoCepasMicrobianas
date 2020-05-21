@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-micro-hongo
+          <form-carat-micro-bacteria
             :modificarInfo="modificarForm"
             :info="getCaractMicro"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-micro-hongo>
+          ></form-carat-micro-bacteria>
         </template>
         <template v-else>
           <div class="text-center">
@@ -49,7 +49,7 @@
     <modal name="my_modal" classes="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Microscópica</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
           <button type="button" class="close" @click="$modal.hide('my_modal')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -68,6 +68,7 @@
 
 <script>
 import vuex from "vuex";
+
 export default {
   data() {
     return {
@@ -111,18 +112,15 @@ export default {
     },
     eliminar() {
       axios
-        .delete(`/cepas/hongo/caract-micro/${this.getCaractMicro.id}`)
+        .delete(`/cepas/bacteria/caract-micro/${this.getCaractMicro.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
           this.$modal.hide("my_modal");
-          this.accionEliminarCaract({
-            tipo: "micro",
-            data: res.data
-          });
+          this.accionEliminarCaract({ tipo: "micro", data: res.data });
           this.toastr(
             "Eliminar Característica",
-            "Característica Microscópica eliminada con exito!!",
+            "Característica Macroscópica eliminada con exito!!",
             "success"
           );
         })

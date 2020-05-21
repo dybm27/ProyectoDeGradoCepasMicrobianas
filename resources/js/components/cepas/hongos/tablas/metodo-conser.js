@@ -14,47 +14,35 @@ export default [
         dataClass: "text-center"
     },
     {
+        name: "nombre_tipo_agar",
+        sortField: "tipo_agar_id",
+        title: "Tipo Agar",
+        titleClass: "text-center",
+        dataClass: "text-center",
+        callback: "tipoAgar"
+    },
+    {
         name: "numero_replicas",
         sortField: "numero_replicas",
         title: "Numero de Replicas",
         titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "numeroReplicas"
+        dataClass: "text-center"
     },
     {
         name: "recuento_microgota",
         sortField: "recuento_microgota",
         title: "Recuento Microgota",
-        titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "recuentoMicorgota"
-    },
-    {
-        name: "medio_cultivo",
-        sortField: "medio_cultivo",
-        title: "Medio de Cultivo",
-        titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "medioCultivo"
-    },
-    {
-        name: "numero_pases",
-        sortField: "numero_pases",
-        title: "Número de Pases",
-        titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "numeroPases"
+        titleClass: "text-center"
     },
     {
         name: "fecha",
         sortField: "fecha",
         title: "Fecha",
         titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "formatDate"
+        dataClass: "text-center"
     },
     {
-        name: "__component:acciones_tabla_metodo_conser_hongo",
+        name: "__component:acciones_tabla_metodo_conser_bacteria",
         title: "Acciones",
         titleClass: "text-center",
         dataClass: "text-center"

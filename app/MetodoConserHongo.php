@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class MetodoConserHongo extends Model
 {
-    public function hongoFilamentoso()
+    public function hongo()
     {
         return $this->belongsTo(HongoFilamentoso::class);
     }
     
     public function tipoMetodo()
     {
-        return $this->belongsTo(TipoMetodoConservacionHongo::class, 'tipo_id');
+        return $this->belongsTo(TipoMetodoConservacionHongo::class);
     }
 }

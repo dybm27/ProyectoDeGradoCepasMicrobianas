@@ -40,14 +40,14 @@
                 <div class="form-row">
                   <div class="col-md-6">
                     <div class="position-relative form-group">
-                      <label for="citrato" class>Citrato</label>
+                      <label for="atrato" class>Atrato</label>
                       <input
-                        name="citrato"
-                        id="citrato"
+                        name="atrato"
+                        id="atrato"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.citrato"
+                        v-model="parametros.atrato"
                         required
                       />
                     </div>
@@ -426,7 +426,6 @@
                           @change="obtenerImagenes"
                           id="imagen"
                           type="file"
-                          accept="image/jpeg"
                           class="form-control-file"
                           ref="inputImagen"
                           multiple
@@ -458,21 +457,15 @@
         </form>
       </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col-md-6">
-          <imagenes
-            class="mt-4 mr-4 ml-4"
-            :required="required"
-            :parametros="this.parametros"
-            :tipoCepa="'bacteria/caract-bioqui'"
-            :imagenes="this.imagenes"
-            :cepa="this.info"
-            @accionImagen="accionImagen"
-          ></imagenes>
-        </div>
-      </div>
-    </div>
+    <imagenes
+      class="mt-4 mr-4 ml-4"
+      :required="required"
+      :parametros="this.parametros"
+      :tipoCepa="'bacteria/caract-bioqui'"
+      :imagenes="this.imagenes"
+      :cepa="this.info"
+      @accionImagen="accionImagen"
+    ></imagenes>
   </div>
 </template>
 
@@ -494,7 +487,7 @@ export default {
       parametros: {
         oxidasa: "",
         catalasa: "",
-        citrato: "",
+        atrato: "",
         tsi: "",
         lia: "",
         sim: "",
@@ -702,7 +695,7 @@ export default {
       this.imagenes = [];
       this.parametros.oxidasa = this.info.oxidasa;
       this.parametros.catalasa = this.info.catalasa;
-      this.parametros.citrato = this.info.citrato;
+      this.parametros.atrato = this.info.atrato;
       this.parametros.tsi = this.info.tsi;
       this.parametros.lia = this.info.lia;
       this.parametros.sim = this.info.sim;
@@ -742,7 +735,7 @@ export default {
       }
       formData.append("oxidasa", this.parametros.oxidasa);
       formData.append("catalasa", this.parametros.catalasa);
-      formData.append("citrato", this.parametros.citrato);
+      formData.append("atrato", this.parametros.atrato);
       formData.append("tsi", this.parametros.tsi);
       formData.append("lia", this.parametros.lia);
       formData.append("sim", this.parametros.sim);
@@ -787,7 +780,7 @@ export default {
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
-        "descripcion_imagenes",
+        "imagenes_descripcion",
         this.parametros.descripcion_imagenes === null
           ? ""
           : this.parametros.descripcion_imagenes
@@ -798,6 +791,7 @@ export default {
     }
   },
   computed: {
+    ...vuex.mapGetters(["getInfoCaractMicroBacterias"]),
     required() {
       if (this.tituloForm === "Agregar Característica") {
         return true;

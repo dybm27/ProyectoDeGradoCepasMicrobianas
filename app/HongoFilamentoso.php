@@ -36,7 +36,7 @@ class HongoFilamentoso extends Model
         return $this->hasMany(CaracMacroHongo::class);
     }
 
-    public function caractMicroscopica()
+    public function caractMicroscopicas()
     {
         return $this->hasOne(CaracMicroHongo::class);
     }
@@ -51,7 +51,7 @@ class HongoFilamentoso extends Model
         return $this->hasOne(IdentiMolecuHongo::class);
     }
 
-    public function metodosConservacion()
+    public function metodoConservacion()
     {
         return $this->hasMany(MetodoConserHongo::class);
     }

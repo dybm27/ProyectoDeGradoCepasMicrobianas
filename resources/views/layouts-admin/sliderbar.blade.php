@@ -59,13 +59,7 @@
                         </i>Calendario
                     </a>
                 </li>
-                <li>
-                    <a href="{{route('usuarios')}}" @yield('route-usuarios')>
-                        <i class="metismenu-icon pe-7s-users">
-                        </i>Usuarios
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Portal Web Público</li>
+                <li class="app-sidebar__heading">Usuario Final</li>
                 <hr/>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();

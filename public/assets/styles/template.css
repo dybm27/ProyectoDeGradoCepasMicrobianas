@@ -18104,8 +18104,8 @@ a.avatar-icon-wrapper:hover .avatar-icon {
 
 .avatar-icon {
 	display: block;
-	width: 80px;
-	height: 80px;
+	width: 44px;
+	height: 44px;
 	transition: all .2s;
 	opacity: 1;
 	border-radius: 50px

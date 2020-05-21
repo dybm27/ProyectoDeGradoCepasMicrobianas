@@ -113,7 +113,6 @@
                     @change="obtenerImagen"
                     id="imagen"
                     type="file"
-                    accept="image/jpeg"
                     class="form-control-file"
                     ref="inputImagen"
                     :required="required"
@@ -486,3 +485,6 @@ export default {
   }
 };
 </script>
+
+<style  scoped>
+</style>

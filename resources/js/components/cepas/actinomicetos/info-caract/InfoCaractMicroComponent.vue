@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('eliminar_caract_micro')"
+              @click="$modal.show('my_modal')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Características</button>
             <button
@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-micro-actinomiceto
+          <form-carat-micro-bacteria
             :modificarInfo="modificarForm"
             :info="getCaractMicro"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-micro-actinomiceto>
+          ></form-carat-micro-bacteria>
         </template>
         <template v-else>
           <div class="text-center">
@@ -46,11 +46,11 @@
       </div>
     </div>
 
-    <modal name="eliminar_caract_micro" :width="400" :height="300">
+    <modal name="my_modal" classes="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Microscópica</h5>
-          <button type="button" class="close" @click="$modal.hide('eliminar_caract_micro')">
+          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
+          <button type="button" class="close" @click="$modal.hide('my_modal')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -58,11 +58,7 @@
           <p>Esta segura/o de eliminar la Característica?.</p>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('eliminar_caract_micro')"
-          >Cancelar</button>
+          <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
           <button type="button" class="btn btn-primary" @click="eliminar">Eliminar</button>
         </div>
       </div>
@@ -116,15 +112,15 @@ export default {
     },
     eliminar() {
       axios
-        .delete(`/cepas/actinomiceto/caract-micro/${this.getCaractMicro.id}`)
+        .delete(`/cepas/bacteria/caract-micro/${this.getCaractMicro.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
-          this.$modal.hide("eliminar_caract_micro");
+          this.$modal.hide("my_modal");
           this.accionEliminarCaract({ tipo: "micro", data: res.data });
           this.toastr(
             "Eliminar Característica",
-            "Característica Microscópica eliminada con exito!!",
+            "Característica Macroscópica eliminada con exito!!",
             "success"
           );
         })

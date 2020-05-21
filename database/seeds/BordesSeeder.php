@@ -12,22 +12,22 @@ class BordesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Entero'
         ]);
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Ondulado'
         ]);
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Lobulado'
         ]);
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Espinoso-dentado-lacerado o crenado'
         ]);
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Filamentoso'
         ]);
-        DB::table('borde_bacterias')->insert([
+        DB::table('bordes')->insert([
             'nombre'=>'Enrollado'
         ]);
     }

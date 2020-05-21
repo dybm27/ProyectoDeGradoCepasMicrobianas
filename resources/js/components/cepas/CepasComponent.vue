@@ -38,13 +38,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
-      "obtenerTiposCepas",
-      "obtenerInfoCaractHongos",
-      "obtenerInfoCaractBacterias",
-      "obtenerInfoCaractLevaduras",
-      "obtenerInfoCaractActinomicetos"
-    ]),
+    ...vuex.mapActions(["obtenerTiposCepas"]),
     ocultarLink(ruta) {
       if (ruta != "/cepas") {
         this.ruta = false;
@@ -59,10 +53,6 @@ export default {
     }
   },
   created() {
-    this.obtenerInfoCaractActinomicetos();
-    this.obtenerInfoCaractHongos();
-    this.obtenerInfoCaractBacterias();
-    this.obtenerInfoCaractLevaduras();
     this.obtenerTiposCepas();
   }
 };

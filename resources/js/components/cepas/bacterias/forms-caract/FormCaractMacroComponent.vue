@@ -182,7 +182,7 @@
                         :id="radioId1"
                         name="tamaño"
                         class="custom-control-input"
-                        value="Grande"
+                        value="grande"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId1">Grande</label>
@@ -193,7 +193,7 @@
                         :id="radioId2"
                         name="tamaño"
                         class="custom-control-input"
-                        value="Mediano"
+                        value="mediano"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId2">Mediano</label>
@@ -204,7 +204,7 @@
                         :id="radioId3"
                         name="tamaño"
                         class="custom-control-input"
-                        value="Pequeño"
+                        value="pequeño"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId3">Pequeño</label>
@@ -228,7 +228,6 @@
                     name="imagen"
                     @change="obtenerImagen"
                     id="imagen"
-                    accept="image/jpeg"
                     type="file"
                     class="form-control-file"
                     ref="inputImagen"
@@ -317,7 +316,7 @@ export default {
         elevacion: 1,
         color: 1,
         detalle_optico: 1,
-        tamaño: "Grande",
+        tamaño: "grande",
         superficie: 1,
         otras_caract: "",
         imagen: "",

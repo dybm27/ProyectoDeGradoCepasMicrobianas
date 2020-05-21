@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Evento;
-use App\Seguimiento;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,8 +40,6 @@ class CalendarioController extends Controller
         $evento->descripcion = $request->descripcion;
         $evento->save();
 
-        $this->crearSeguimiento("Agregó el evento: " . $evento->titulo);
-
         return $evento;
     }
 
@@ -63,14 +60,11 @@ class CalendarioController extends Controller
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $evento = Evento::where('id', $id)->first();
-        $titulo = $evento->titulo;
         $evento->titulo = $request->titulo;
         $evento->fecha = $fecha;
         //    $evento->color = $request->color;
         $evento->descripcion = $request->descripcion;
         $evento->save();
-
-        $this->crearSeguimiento("Editó el evento: " .  $titulo);
 
         return $evento;
     }
@@ -80,18 +74,10 @@ class CalendarioController extends Controller
         $evento = Evento::where('id', $id)->first();
         $evento->delete();
 
-        $this->crearSeguimiento("Eliminó el evento: " . $evento->titulo);
-
         return $evento;
     }
-
-    public function crearSeguimiento($accion)
+    public function obtenerUserLogueado()
     {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
+        return Auth::user();
     }
 }

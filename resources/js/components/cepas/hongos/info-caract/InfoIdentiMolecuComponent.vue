@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-molecu-hongo
+          <form-identi-molecu-bacteria
             :modificarInfo="modificarForm"
             :info="getIdentiMolecu"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-molecu-hongo>
+          ></form-identi-molecu-bacteria>
         </template>
         <template v-else>
           <div class="text-center">
@@ -68,6 +68,7 @@
 
 <script>
 import vuex from "vuex";
+
 export default {
   data() {
     return {
@@ -111,7 +112,7 @@ export default {
     },
     eliminar() {
       axios
-        .delete(`/cepas/hongo/identi-molecu/${this.getIdentiMolecu.id}`)
+        .delete(`/cepas/bacteria/identi-molecu/${this.getIdentiMolecu.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;

@@ -10,9 +10,7 @@ use App\Genero;
 use App\Orden;
 use App\Phylum;
 use App\Reino;
-use App\Seguimiento;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class InfoCepasController extends Controller
 {
@@ -31,7 +29,6 @@ class InfoCepasController extends Controller
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->grupo_microbiano_id = $request->grupo_microbiano;
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Genero: " . $tipo->nombre);
                 break;
             case "especie":
                 $rules = [
@@ -46,7 +43,6 @@ class InfoCepasController extends Controller
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->genero_id = $request->genero;
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Especie: " . $tipo->nombre);
                 break;
             case "familia":
                 $rules = [
@@ -59,7 +55,6 @@ class InfoCepasController extends Controller
                 $tipo = new Familia();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Familia: " . $tipo->nombre);
                 break;
             case "orden":
                 $rules = [
@@ -72,7 +67,6 @@ class InfoCepasController extends Controller
                 $tipo = new Orden();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Orden: " . $tipo->nombre);
                 break;
             case "clase":
                 $rules = [
@@ -85,7 +79,6 @@ class InfoCepasController extends Controller
                 $tipo = new Clase();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Clase: " . $tipo->nombre);
                 break;
             case "phylum":
                 $rules = [
@@ -98,7 +91,6 @@ class InfoCepasController extends Controller
                 $tipo = new Phylum();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Phylum: " . $tipo->nombre);
                 break;
             case "reino":
                 $rules = [
@@ -111,7 +103,6 @@ class InfoCepasController extends Controller
                 $tipo = new Reino();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Reino: " . $tipo->nombre);
                 break;
             case "division":
                 $rules = [
@@ -124,20 +115,9 @@ class InfoCepasController extends Controller
                 $tipo = new Division();
                 $tipo->nombre = ucfirst($request->nombre);
                 $tipo->save();
-                $this->crearSeguimiento("Agregó un Tipo de Division: " . $tipo->nombre);
                 break;
         }
 
         return $tipo;
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
     }
 }

@@ -130,7 +130,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
-      axios["delete"]("/cepas/hongo/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
+      axios["delete"]("/cepas/bacteria/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -141,7 +141,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           data: res.data
         });
 
-        _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
+        _this.toastr("Eliminar Característica", "Característica Macroscópica eliminada con exito!!", "success");
       })["catch"](function (error) {
         if (error.response) {
           _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
@@ -283,7 +283,7 @@ var render = function() {
             _vm._v(" "),
             _vm.mostrarForm
               ? [
-                  _c("form-carat-micro-hongo", {
+                  _c("form-carat-micro-bacteria", {
                     attrs: {
                       modificarInfo: _vm.modificarForm,
                       info: _vm.getCaractMicro
@@ -320,7 +320,7 @@ var render = function() {
                   staticClass: "modal-title",
                   attrs: { id: "exampleModalLongTitle" }
                 },
-                [_vm._v("Eliminar Característica Microscópica")]
+                [_vm._v("Eliminar Característica Macroscópica")]
               ),
               _vm._v(" "),
               _c(

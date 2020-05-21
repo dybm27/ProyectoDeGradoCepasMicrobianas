@@ -16,7 +16,7 @@ class Bacteria extends Model
         return $this->hasMany(CaracMacroBacteria::class);
     }
 
-    public function caractMicroscopica()
+    public function caractMicroscopicas()
     {
         return $this->hasOne(CaracMicroBacteria::class);
     }
@@ -36,7 +36,7 @@ class Bacteria extends Model
         return $this->hasOne(IdentiMolecuBacteria::class);
     }
 
-    public function metodosConservacion()
+    public function metodoConservacion()
     {
         return $this->hasMany(MetodoConserBacteria::class);
     }

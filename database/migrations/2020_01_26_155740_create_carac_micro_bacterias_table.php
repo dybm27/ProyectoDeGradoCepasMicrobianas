@@ -18,7 +18,7 @@ class CreateCaracMicroBacteriasTable extends Migration
             $table->unsignedBigInteger('bacteria_id');
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
             $table->unsignedBigInteger('forma_id');
-            $table->foreign('forma_id')->references('id')->on('forma_caract_micro_bacterias');
+            $table->foreign('forma_id')->references('id')->on('forma_caract_micros');
             $table->string('ordenamiento');
             $table->string('tincion_gram',100);
             $table->string('tincion_esporas',100);

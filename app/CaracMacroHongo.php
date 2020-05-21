@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CaracMacroHongo extends Model
 {
-    public function hongoFilamentoso()
+    public function hongo()
     {
         return $this->belongsTo(HongoFilamentoso::class);
     }

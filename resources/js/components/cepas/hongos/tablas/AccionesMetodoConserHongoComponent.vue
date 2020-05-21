@@ -2,7 +2,7 @@
   <div>
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
-      v-tooltip.left="'Editar Metodo'"
+      v-tooltip="'Editar Metodo'"
       @click="itemAction('editar-metodo', rowData, rowIndex)"
     >
       <i class="fas fa-pencil-alt"></i>
@@ -10,7 +10,7 @@
 
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
-      v-tooltip.left="'Eliminar Metodo'"
+      v-tooltip="'Eliminar Metodo'"
       @click="showModal(rowData)"
     >
       <i class="far fa-trash-alt"></i>
@@ -37,18 +37,10 @@ export default {
   methods: {
     itemAction(action, data, index) {
       if (action == "editar-metodo") {
-        let ruta = window.location.pathname;
-        if (ruta.includes("hongos")) {
-          this.$router.push({
-            name: "metodo-conser-hongo-editar",
-            params: { metodoConserHongoId: data.id }
-          });
-        } else {
-          this.$router.push({
-            name: "metodo-conser-cepa-hongo-editar",
-            params: { metodoConserHongoId: data.id }
-          });
-        }
+        this.$router.push({
+          name: "metodo-conser-bacteria-editar",
+          params: { metodoConserBacteriaId: data.id }
+        });
       }
     },
     showModal(data) {
@@ -59,3 +51,9 @@ export default {
   created() {}
 };
 </script>
+
+<style scoped>
+.centrar {
+  align-content: center;
+}
+</style>

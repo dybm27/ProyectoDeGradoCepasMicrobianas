@@ -6,6 +6,6 @@
 
     @include('layouts-admin.headers.header-menu')
 
-    @include('layouts-admin.headers.header-content')
+    @include('layouts-admin.headers.header-content')   
 
 </div> 

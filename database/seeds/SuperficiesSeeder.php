@@ -12,13 +12,13 @@ class SuperficiesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('superficie_bacterias')->insert([
+        DB::table('superficies')->insert([
             'nombre'=>'Lisa'
         ]);
-        DB::table('superficie_bacterias')->insert([
+        DB::table('superficies')->insert([
             'nombre'=>'Enrugada'
         ]);
-        DB::table('superficie_bacterias')->insert([
+        DB::table('superficies')->insert([
             'nombre'=>'Papilada'
         ]);
     }

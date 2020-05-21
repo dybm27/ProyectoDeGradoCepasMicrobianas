@@ -20,13 +20,11 @@
     "/cepas-hongos.js": "/cepas-hongos.js",
     "/cepas-levaduras.js": "/cepas-levaduras.js",
     "/cepas-todas.js": "/cepas-todas.js",
-    "/editar-usuario.js": "/editar-usuario.js",
     "/hongo.js": "/hongo.js",
     "/identi-bioqui-actinomiceto.js": "/identi-bioqui-actinomiceto.js",
     "/identi-molecu-bacteria.js": "/identi-molecu-bacteria.js",
     "/identi-molecu-hongo.js": "/identi-molecu-hongo.js",
     "/identi-molecu-levadura.js": "/identi-molecu-levadura.js",
-    "/info_usuarios.js": "/info_usuarios.js",
     "/metodo-conser-actinomiceto.js": "/metodo-conser-actinomiceto.js",
     "/metodo-conser-bacteria.js": "/metodo-conser-bacteria.js",
     "/metodo-conser-bacteria-tabla.js": "/metodo-conser-bacteria-tabla.js",
@@ -34,8 +32,5 @@
     "/metodo-conser-hongo-tabla.js": "/metodo-conser-hongo-tabla.js",
     "/metodo-conser-levadura.js": "/metodo-conser-levadura.js",
     "/metodo-conser-levadura-tabla.js": "/metodo-conser-levadura-tabla.js",
-    "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js",
-    "/tabla-seguimiento.js": "/tabla-seguimiento.js",
-    "/tabla-usuarios.js": "/tabla-usuarios.js",
-    "/ver-cepa-hongo.js": "/ver-cepa-hongo.js"
+    "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js"
 }

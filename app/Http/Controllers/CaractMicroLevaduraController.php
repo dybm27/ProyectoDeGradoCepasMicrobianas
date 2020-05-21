@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CaracMicroLevadura;
 use App\Levadura;
-use App\Seguimiento;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractMicroLevaduraController extends Controller
@@ -61,11 +59,8 @@ class CaractMicroLevaduraController extends Controller
         $caractMicroLevadura->imagenPublica2 = $rutaPublica2;
         $caractMicroLevadura->imagen3 = $ruta3;
         $caractMicroLevadura->imagenPublica3 = $rutaPublica3;
-        $caractMicroLevadura->descripcion = $request->descripcion_imagenes;
+        $caractMicroLevadura->descripcion = $request->imagenes_descripcion;
         $caractMicroLevadura->save();
-
-        $this->crearSeguimiento("Agregó la Característica Microscópica a la Cepa: "
-            . $levadura->cepa->codigo);
 
         return $caractMicroLevadura;
     }
@@ -95,9 +90,6 @@ class CaractMicroLevaduraController extends Controller
         $caractMicroLevadura->descripcion = $request->descripcion_imagenes;
         $caractMicroLevadura->save();
 
-        $this->crearSeguimiento("Editó la Característica Microscópica de la Cepa: "
-            . $caractMicroLevadura->levadura->cepa->codigo);
-
         return $caractMicroLevadura;
     }
 
@@ -107,9 +99,6 @@ class CaractMicroLevaduraController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/levaduras/caract_micro_img/' . $caractMicroLevadura->levadura_id);
         $caractMicroLevadura->delete();
-
-        $this->crearSeguimiento("Eliminó la Característica Microscópica de la Cepa: "
-            . $caractMicroLevadura->levadura->cepa->codigo);
 
         return $caractMicroLevadura;
     }
@@ -134,10 +123,6 @@ class CaractMicroLevaduraController extends Controller
                 break;
         }
         $caractMicroLevadura->save();
-        
-        $this->crearSeguimiento("Agregó una imagen a la Característica Microscópica de la Cepa: "
-            . $caractMicroLevadura->levadura->cepa->codigo);
-
         return $caractMicroLevadura;
     }
     public function cambiarImagen(Request $request, $id)
@@ -170,10 +155,6 @@ class CaractMicroLevaduraController extends Controller
                 break;
         }
         $caractMicroLevadura->save();
-
-        $this->crearSeguimiento("Cambió una imagen a la Característica Microscópica de la Cepa: "
-        . $caractMicroLevadura->levadura->cepa->codigo);
-
         return $caractMicroLevadura;
     }
 
@@ -198,10 +179,6 @@ class CaractMicroLevaduraController extends Controller
                 break;
         }
         $caractMicroLevadura->save();
-
-        $this->crearSeguimiento("Eliminó una imagen a la Característica Microscópica de la Cepa: "
-        . $caractMicroLevadura->levadura->cepa->codigo);
-
         return $caractMicroLevadura;
     }
 
@@ -213,15 +190,5 @@ class CaractMicroLevaduraController extends Controller
         $ruta = '/public/levaduras/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/levaduras/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
     }
 }

@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\IdentiMolecuBacteria;
-use App\Seguimiento;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class IdentiMolecuBacteriaController extends Controller
@@ -27,15 +25,12 @@ class IdentiMolecuBacteriaController extends Controller
         $IdentiMolecuBacteria->secuen_reversed = $request->secuen_reversed;
         $IdentiMolecuBacteria->produc_forward = $request->produc_forward;
         $IdentiMolecuBacteria->produc_reversed = $request->produc_reversed;
-        $IdentiMolecuBacteria->obser_secuenciacion = ucfirst($request->obser_secuenciacion);
+        $IdentiMolecuBacteria->obser_secuenciacion = $request->obser_secuenciacion;
         $IdentiMolecuBacteria->img_pcr = $img_pcr['ruta'];
         $IdentiMolecuBacteria->img_pcrPublica = $img_pcr['rutaPublica'];
         $IdentiMolecuBacteria->img_secuen = $img_sec['ruta'];
         $IdentiMolecuBacteria->img_secuenPublica = $img_sec['rutaPublica'];
         $IdentiMolecuBacteria->save();
-
-        $this->crearSeguimiento("Agregó la Identificación Molecular a la Cepa: "
-            . $bacteria->cepa->codigo);
 
         return $IdentiMolecuBacteria;
     }
@@ -71,11 +66,8 @@ class IdentiMolecuBacteriaController extends Controller
         $IdentiMolecuBacteria->secuen_reversed = $request->secuen_reversed;
         $IdentiMolecuBacteria->produc_forward = $request->produc_forward;
         $IdentiMolecuBacteria->produc_reversed = $request->produc_reversed;
-        $IdentiMolecuBacteria->obser_secuenciacion = ucfirst($request->obser_secuenciacion);
+        $IdentiMolecuBacteria->obser_secuenciacion = $request->obser_secuenciacion;
         $IdentiMolecuBacteria->save();
-
-        $this->crearSeguimiento("Editó la Identificación Molecular de la Cepa: "
-            . $IdentiMolecuBacteria->bacteria->cepa->codigo);
 
         return $IdentiMolecuBacteria;
     }
@@ -86,9 +78,6 @@ class IdentiMolecuBacteriaController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/bacterias/identi_molecu_img/' . $IdentiMolecuBacteria->bacteria_id);
         $IdentiMolecuBacteria->delete();
-
-        $this->crearSeguimiento("Eliminó la Identificación Molecular de la Cepa: "
-            . $IdentiMolecuBacteria->bacteria->cepa->codigo);
 
         return $IdentiMolecuBacteria;
     }
@@ -101,15 +90,5 @@ class IdentiMolecuBacteriaController extends Controller
         $ruta = '/public/bacterias/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/bacterias/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
     }
 }

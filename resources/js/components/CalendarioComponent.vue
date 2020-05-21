@@ -4,11 +4,11 @@
       <div class="page-title-wrapper">
         <div class="page-title-heading">
           <div class="page-title-icon">
-            <i class="pe-7s-date icon-gradient bg-mean-fruit"></i>
+            <i class="pe-7s-bandaid icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
             Calendario
-            <div class="page-title-subheading">Informacion de eventos y metodos de conservación</div>
+            <div class="page-title-subheading">...</div>
           </div>
         </div>
         <div class="page-title-actions"></div>
@@ -184,7 +184,6 @@ import esLocale from "@fullcalendar/core/locales/es";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 import moment from "moment";
-import vuex from "vuex";
 
 export default {
   components: {
@@ -204,7 +203,7 @@ export default {
       ],
       calendarWeekends: true,
       googleCalendarApiKey: "AIzaSyDO3AOsa4-imBxdCAcPSXjr8ui5cEOWlB8",
-      eventos: { url: "/api/eventos", className: "eventos" },
+      eventos: { url: "api/eventos", className: "eventos" },
       eventSources: [
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
@@ -215,19 +214,9 @@ export default {
           //googleCalendarId: "dumaryekselbm@ufps.edu.co"
         },
         {
-          url: "/api/eventos-metodos-bacterias",
-          className: "eventos-metodos-bacterias",
-          color: "#16aaff"
-        },
-        {
-          url: "/api/eventos-metodos-levaduras",
-          className: "eventos-metodos-levaduras",
+          url: "api/eventos-metodos",
+          className: "eventos-metodos",
           color: "#5EE220"
-        },
-        {
-          url: "/api/eventos-metodos-hongos",
-          className: "eventos-metodos-hongos",
-          color: "#794c8a"
         }
       ],
       header: {
@@ -269,18 +258,27 @@ export default {
       this.allday = false;
       this.diaSemana = false;
       if (info.event.extendedProps.autor) {
-        this.modal.fecha = moment(info.event.start).format(
-          "YYYY-MM-DD HH:mm:ss"
-        );
-        this.modal.titulo = info.event.title;
-        this.modal.descripcion = info.event.extendedProps.descripcion;
-        this.modal.autor = info.event.extendedProps.autor;
-        this.modal.id = info.event.id;
-        if (this.getUserAuth.id === info.event.extendedProps.idAutor) {
-          this.abrirModal("editar1");
-        } else {
-          this.abrirModal("editar2");
-        }
+        axios
+          .get("/user/logueado")
+          .then(res => {
+            this.modal.fecha = moment(info.event.start).format(
+              "YYYY-MM-DD HH:mm:ss"
+            );
+            this.modal.titulo = info.event.title;
+            this.modal.descripcion = info.event.extendedProps.descripcion;
+            this.modal.autor = info.event.extendedProps.autor;
+            this.modal.id = info.event.id;
+            if (res.data.id === info.event.extendedProps.idAutor) {
+              this.abrirModal("editar1");
+            } else {
+              this.abrirModal("editar2");
+            }
+          })
+          .catch(error => {
+            if (error.response) {
+              // console.log(error.response);
+            }
+          });
       }
     },
     dateClick(info) {
@@ -463,9 +461,6 @@ export default {
           break;
       }
     }
-  },
-  computed: {
-    ...vuex.mapGetters(["getUserAuth"])
   }
 };
 </script>

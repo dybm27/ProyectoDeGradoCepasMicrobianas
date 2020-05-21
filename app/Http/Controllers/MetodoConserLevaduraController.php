@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Cepa;
 use App\Levadura;
 use App\MetodoConserLevadura;
-use App\Seguimiento;
+use App\TipoMetodoConservacionLevadura;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MetodoConserLevaduraController extends Controller
@@ -52,9 +52,6 @@ class MetodoConserLevaduraController extends Controller
         $metodoConserLevadura->descripcion = $request->descripcion;
         $metodoConserLevadura->imagenPublica =  $imagen['rutaPublica'];
         $metodoConserLevadura->save();
-
-        $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
-            . $levadura->cepa->codigo);
 
         return $metodoConserLevadura;
     }
@@ -112,21 +109,15 @@ class MetodoConserLevaduraController extends Controller
 
         $metodoConserLevadura->save();
 
-        $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
-            . $metodoConserLevadura->levadura->cepa->codigo);
-
         return $metodoConserLevadura;
     }
 
     public function destroy($id)
     {
-        $metodoConserLevadura = MetodoConserLevadura::find($id);
+        $metodoConserLevadura = metodoConserLevadura::find($id);
         //eliminar imagen 
         Storage::disk('local')->delete($metodoConserLevadura->imagen);
         $metodoConserLevadura->delete();
-
-        $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
-            . $metodoConserLevadura->levadura->cepa->codigo);
 
         return $metodoConserLevadura;
     }
@@ -139,15 +130,5 @@ class MetodoConserLevaduraController extends Controller
         $ruta = '/public/levaduras/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/levaduras/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
     }
 }

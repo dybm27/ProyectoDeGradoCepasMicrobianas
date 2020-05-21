@@ -12,25 +12,25 @@ class FormaCaractMacrosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Circular'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Puntiforme'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Filamentosa'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Irregular'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Rizoide'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Lanceolada'
         ]);
-        DB::table('forma_caract_macro_bacterias')->insert([
+        DB::table('forma_caract_macros')->insert([
             'nombre' => 'Fusiforme'
         ]);
     }

@@ -39,8 +39,7 @@ export default [
         sortField: "fecha",
         title: "Fecha",
         titleClass: "text-center",
-        dataClass: "text-center",
-        callback: "formatDate"
+        dataClass: "text-center"
     },
     {
         name: "__component:acciones_tabla_metodo_conser_bacteria",

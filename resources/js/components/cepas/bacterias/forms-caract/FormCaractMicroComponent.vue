@@ -48,7 +48,7 @@
                       id="tincion_gram1"
                       name="tincion_gram"
                       class="custom-control-input"
-                      value="Positivo"
+                      value="positivo"
                       v-model="parametros.tincion_gram"
                     />
                     <label class="custom-control-label" for="tincion_gram1">Gram Positivos</label>
@@ -59,7 +59,7 @@
                       id="tincion_gram2"
                       name="tincion_gram"
                       class="custom-control-input"
-                      value="Negativo"
+                      value="negativo"
                       v-model="parametros.tincion_gram"
                     />
                     <label class="custom-control-label" for="tincion_gram2">Gram Negativos</label>
@@ -75,7 +75,7 @@
                       id="tincion_esporas1"
                       name="tincion_esporas"
                       class="custom-control-input"
-                      value="Presencia"
+                      value="presencia"
                       v-model="parametros.tincion_esporas"
                     />
                     <label class="custom-control-label" for="tincion_esporas1">Presencia</label>
@@ -86,7 +86,7 @@
                       id="tincion_esporas2"
                       name="tincion_esporas"
                       class="custom-control-input"
-                      value="Ausencia"
+                      value="ausencia"
                       v-model="parametros.tincion_esporas"
                     />
                     <label class="custom-control-label" for="tincion_esporas2">Ausencia</label>
@@ -95,7 +95,7 @@
               </div>
               <div
                 class="position-relative form-group"
-                v-show="parametros.tincion_esporas==='Presencia'"
+                v-show="parametros.tincion_esporas==='presencia'"
               >
                 <label for="ubicacion_esporas" class>Ubicación de la Espora</label>
                 <select
@@ -104,9 +104,9 @@
                   v-model="parametros.ubicacion_esporas"
                   class="form-control"
                 >
-                  <option value="Central">Central</option>
-                  <option value="Subterminal">Subterminal</option>
-                  <option value="Terminal">Terminal</option>
+                  <option value="central">Central</option>
+                  <option value="subterminal">Subterminal</option>
+                  <option value="terminal">Terminal</option>
                 </select>
               </div>
               <div class="position-relative form-group">
@@ -118,7 +118,7 @@
                       id="tincion_capsula1"
                       name="tincion_capsula"
                       class="custom-control-input"
-                      value="Presencia"
+                      value="presencia"
                       v-model="parametros.tincion_capsula"
                     />
                     <label class="custom-control-label" for="tincion_capsula1">Presencia</label>
@@ -129,7 +129,7 @@
                       id="tincion_capsula2"
                       name="tincion_capsula"
                       class="custom-control-input"
-                      value="Ausencia"
+                      value="ausencia"
                       v-model="parametros.tincion_capsula"
                     />
                     <label class="custom-control-label" for="tincion_capsula2">Ausencia</label>
@@ -158,7 +158,6 @@
                     name="imagen"
                     @change="obtenerImagenes"
                     id="imagen"
-                    accept="image/jpeg"
                     type="file"
                     class="form-control-file"
                     ref="inputImagen"
@@ -249,10 +248,10 @@ export default {
       parametros: {
         forma: 1,
         ordenamiento: "",
-        tincion_gram: "Positivo",
-        tincion_esporas: "Presencia",
-        ubicacion_esporas: "Central",
-        tincion_capsula: "Presencia",
+        tincion_gram: "positivo",
+        tincion_esporas: "presencia",
+        ubicacion_esporas: "central",
+        tincion_capsula: "presencia",
         otras_caract: "",
         imagen1: "",
         imagen2: "",
@@ -482,7 +481,7 @@ export default {
       this.parametros.tincion_esporas = this.info.tincion_esporas;
       this.parametros.ubicacion_esporas =
         this.info.ubicacion_esporas === null
-          ? "Central"
+          ? "central"
           : this.info.ubicacion_esporas;
       this.parametros.tincion_capsula = this.info.tincion_capsula;
       this.parametros.otras_caract = this.info.otras_caract;
@@ -502,7 +501,7 @@ export default {
       formData.append("ordenamiento", this.parametros.ordenamiento);
       formData.append("tincion_gram", this.parametros.tincion_gram);
       formData.append("tincion_esporas", this.parametros.tincion_esporas);
-      if (this.parametros.tincion_esporas === "Presencia") {
+      if (this.parametros.tincion_esporas === "presencia") {
         formData.append("ubicacion_esporas", this.parametros.ubicacion_esporas);
       } else {
         formData.append("ubicacion_esporas", "");
@@ -518,7 +517,7 @@ export default {
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
-        "descripcion_imagenes",
+        "imagenes_descripcion",
         this.parametros.descripcion_imagenes === null
           ? ""
           : this.parametros.descripcion_imagenes
@@ -557,3 +556,6 @@ export default {
   }
 };
 </script>
+
+<style lang="css">
+</style>

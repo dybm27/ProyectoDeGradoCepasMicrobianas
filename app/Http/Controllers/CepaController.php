@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use App\Actinomiceto;
 use App\Bacteria;
 use App\Cepa;
-use App\DetalleOpticoBacteria;
 use App\HongoFilamentoso;
 use App\Levadura;
-use App\Seguimiento;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use PDF;
 
 class CepaController extends Controller
 {
@@ -106,8 +101,6 @@ class CepaController extends Controller
                 break;
         }
 
-        $this->crearSeguimiento("Agregó la Cepa: " . $cepa->codigo);
-
         return $cepa;
     }
 
@@ -129,7 +122,6 @@ class CepaController extends Controller
         $cepa2 = Cepa::where('codigo', $request->codigo)->first();
 
         if (empty($cepa2) || $cepa->id == $cepa2->id) {
-            $codigo = $cepa->codigo;
             $cepa->codigo = $request->codigo;
             $cepa->grupo_microbiano_id = $request->grupo_microbiano;
             $cepa->genero_id = $request->genero;
@@ -175,9 +167,6 @@ class CepaController extends Controller
                 break;
         }
         $cepa->save();
-
-        $this->crearSeguimiento("Editó la Cepa: " . $codigo);
-
         return $cepa;
     }
 
@@ -188,7 +177,6 @@ class CepaController extends Controller
             return 'negativo';
         } else {
             $cepa->delete();
-            $this->crearSeguimiento("Eliminó la Cepa: " . $cepa->codigo);
             return $cepa;
         }
     }
@@ -257,49 +245,5 @@ class CepaController extends Controller
                 break;
         }
         return $res;
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
-    }
-
-    public function imprimirPDF(Request $request, $id)
-    {
-        $imprimir = $request->imprimir;
-        $fecha = Carbon::now()->format('Y-m-d');
-        $cepa = Cepa::find($id);
-        switch ($cepa->grupo_microbiano_id) {
-            case 1:
-                $cantidad = $this->cantidadCaractMacros($cepa->bacteria->caractMacroscopicas);
-                $pdf = PDF::loadView('imprimirVistaVer.grupos.bacteria', compact('cepa', 'fecha', 'cantidad', 'imprimir'));
-                return $pdf->stream();
-                break;
-            case 2:
-                $cantidad = $this->cantidadCaractMacros($cepa->hongo->caractMacroscopicas);
-                $pdf = PDF::loadView('imprimirVistaVer.grupos.hongo', compact('cepa', 'fecha', 'cantidad', 'imprimir'));
-                return $pdf->stream();
-                break;
-            case 3:
-                $pdf = PDF::loadView('imprimirVistaVer.grupos.levadura', compact('cepa', 'fecha', 'imprimir'));
-                return $pdf->stream();
-                break;
-            case 4:
-                break;
-        }
-    }
-
-    public function cantidadCaractMacros($caracts)
-    {
-        $numero = 0;
-        foreach ($caracts as $caract) {
-            $numero++;
-        }
-        return $numero;
     }
 }

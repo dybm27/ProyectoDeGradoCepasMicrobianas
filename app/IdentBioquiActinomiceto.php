@@ -6,8 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class IdentBioquiActinomiceto extends Model
 {
-    public function actinomiceto()
-    {
-        return $this->belongsTo(Actinomiceto::class);
-    }
+    //
 }
