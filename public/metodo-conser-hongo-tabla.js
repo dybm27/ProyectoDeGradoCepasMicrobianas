@@ -73,7 +73,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
+      url: "/api/cepa/hongo/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -110,7 +110,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarMetodo: function eliminarMetodo() {
       var _this = this;
 
-      axios["delete"]("/cepas/bacteria/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
+      axios["delete"]("/cepas/hongo/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
         _this.refrescarTabla = true;
 
         _this.accionEliminarCaract({
@@ -134,16 +134,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getMetodoConser"])),
   created: function created() {
-    this.url += this.$route.params.cepaBacteriaId;
+    if (this.$route.params.cepaHongoId) {
+      this.url += this.$route.params.cepaHongoId;
+    } else {
+      this.url += this.$route.params.cepaId;
+    }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -288,7 +292,7 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true& */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true&");
+/* harmony import */ var _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&");
 /* harmony import */ var _TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -300,11 +304,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "19d607b0",
+  null,
   null
   
 )
@@ -330,19 +334,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true&":
-/*!*************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true& ***!
-  \*************************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& ***!
+  \*************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -370,31 +374,42 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "nombre_tipo_agar",
-  sortField: "tipo_agar_id",
-  title: "Tipo Agar",
-  titleClass: "text-center",
-  dataClass: "text-center",
-  callback: "tipoAgar"
-}, {
   name: "numero_replicas",
   sortField: "numero_replicas",
   title: "Numero de Replicas",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  callback: "numeroReplicas"
 }, {
   name: "recuento_microgota",
   sortField: "recuento_microgota",
   title: "Recuento Microgota",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "recuentoMicorgota"
+}, {
+  name: "medio_cultivo",
+  sortField: "medio_cultivo",
+  title: "Medio de Cultivo",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "medioCultivo"
+}, {
+  name: "numero_pases",
+  sortField: "numero_pases",
+  title: "Número de Pases",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "numeroPases"
 }, {
   name: "fecha",
   sortField: "fecha",
   title: "Fecha",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  callback: "formatDate"
 }, {
-  name: "__component:acciones_tabla_metodo_conser_bacteria",
+  name: "__component:acciones_tabla_metodo_conser_hongo",
   title: "Acciones",
   titleClass: "text-center",
   dataClass: "text-center"

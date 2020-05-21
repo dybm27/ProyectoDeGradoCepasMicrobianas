@@ -4,20 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\CaracBioquiBacteria;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CaractBioquiBacteriaController extends Controller
 {
     public function store(Request $request)
     {
-        /*$rules = [
-            'ordenamiento' => 'required'
-        ];
-        $this->validate($request, $rules);*/
-
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
-
 
         if (!empty($request->imagen1)) {
             $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
@@ -47,33 +43,33 @@ class CaractBioquiBacteriaController extends Controller
 
         $caractBioquiBacteria = new CaracBioquiBacteria();
         $caractBioquiBacteria->bacteria_id = $bacteria->id;
-        $caractBioquiBacteria->oxidasa = $request->oxidasa;
-        $caractBioquiBacteria->catalasa = $request->catalasa;
-        $caractBioquiBacteria->atrato = $request->atrato;
-        $caractBioquiBacteria->tsi = $request->tsi;
-        $caractBioquiBacteria->lia = $request->lia;
-        $caractBioquiBacteria->sim = $request->sim;
-        $caractBioquiBacteria->rm = $request->rm;
-        $caractBioquiBacteria->vp = $request->vp;
-        $caractBioquiBacteria->nitrato = $request->nitrato;
-        $caractBioquiBacteria->caldo_urea = $request->caldo_urea;
-        $caractBioquiBacteria->of = $request->of;
-        $caractBioquiBacteria->glucosa = $request->glucosa;
-        $caractBioquiBacteria->lactosa = $request->lactosa;
-        $caractBioquiBacteria->manitol = $request->manitol;
-        $caractBioquiBacteria->xilosa = $request->xilosa;
-        $caractBioquiBacteria->arabinosa = $request->arabinosa;
-        $caractBioquiBacteria->sacarosa = $request->sacarosa;
+        $caractBioquiBacteria->oxidasa = ucfirst($request->oxidasa);
+        $caractBioquiBacteria->catalasa = ucfirst($request->catalasa);
+        $caractBioquiBacteria->citrato = ucfirst($request->citrato);
+        $caractBioquiBacteria->tsi = ucfirst($request->tsi);
+        $caractBioquiBacteria->lia = ucfirst($request->lia);
+        $caractBioquiBacteria->sim = ucfirst($request->sim);
+        $caractBioquiBacteria->rm = ucfirst($request->rm);
+        $caractBioquiBacteria->vp = ucfirst($request->vp);
+        $caractBioquiBacteria->nitrato = ucfirst($request->nitrato);
+        $caractBioquiBacteria->caldo_urea = ucfirst($request->caldo_urea);
+        $caractBioquiBacteria->of = ucfirst($request->of);
+        $caractBioquiBacteria->glucosa = ucfirst($request->glucosa);
+        $caractBioquiBacteria->lactosa = ucfirst($request->lactosa);
+        $caractBioquiBacteria->manitol = ucfirst($request->manitol);
+        $caractBioquiBacteria->xilosa = ucfirst($request->xilosa);
+        $caractBioquiBacteria->arabinosa = ucfirst($request->arabinosa);
+        $caractBioquiBacteria->sacarosa = ucfirst($request->sacarosa);
         $caractBioquiBacteria->otros_azucares = $request->otros_azucares;
-        $caractBioquiBacteria->almidon = $request->almidon;
-        $caractBioquiBacteria->lecitinasa = $request->lecitinasa;
-        $caractBioquiBacteria->lipasa = $request->lipasa;
+        $caractBioquiBacteria->almidon = ucfirst($request->almidon);
+        $caractBioquiBacteria->lecitinasa = ucfirst($request->lecitinasa);
+        $caractBioquiBacteria->lipasa = ucfirst($request->lipasa);
         $caractBioquiBacteria->otras_enzimas = $request->otras_enzimas;
-        $caractBioquiBacteria->hidro_caseina = $request->hidro_caseina;
-        $caractBioquiBacteria->hidro_gelatina = $request->hidro_gelatina;
-        $caractBioquiBacteria->hidro_urea = $request->hidro_urea;
-        $caractBioquiBacteria->creci_nacl = $request->creci_nacl;
-        $caractBioquiBacteria->creci_dif_temp = $request->creci_dif_temp;
+        $caractBioquiBacteria->hidro_caseina = ucfirst($request->hidro_caseina);
+        $caractBioquiBacteria->hidro_gelatina = ucfirst($request->hidro_gelatina);
+        $caractBioquiBacteria->hidro_urea = ucfirst($request->hidro_urea);
+        $caractBioquiBacteria->creci_nacl = ucfirst($request->creci_nacl);
+        $caractBioquiBacteria->creci_dif_temp = ucfirst($request->creci_dif_temp);
         $caractBioquiBacteria->otras_caract = $request->otras_caract;
         $caractBioquiBacteria->imagen1 = $ruta1;
         $caractBioquiBacteria->imagenPublica1 = $rutaPublica1;
@@ -81,8 +77,11 @@ class CaractBioquiBacteriaController extends Controller
         $caractBioquiBacteria->imagenPublica2 = $rutaPublica2;
         $caractBioquiBacteria->imagen3 = $ruta3;
         $caractBioquiBacteria->imagenPublica3 = $rutaPublica3;
-        $caractBioquiBacteria->descripcion = $request->imagenes_descripcion;
+        $caractBioquiBacteria->descripcion = $request->descripcion_imagenes;
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Agregó la Característica Bioquíquimica a la Cepa: "
+            . $bacteria->cepa->codigo);
 
         return $caractBioquiBacteria;
     }
@@ -96,36 +95,39 @@ class CaractBioquiBacteriaController extends Controller
     {
         $caractBioquiBacteria = CaracBioquiBacteria::find($id);
 
-        $caractBioquiBacteria->oxidasa = $request->oxidasa;
-        $caractBioquiBacteria->catalasa = $request->catalasa;
-        $caractBioquiBacteria->atrato = $request->atrato;
-        $caractBioquiBacteria->tsi = $request->tsi;
-        $caractBioquiBacteria->lia = $request->lia;
-        $caractBioquiBacteria->sim = $request->sim;
-        $caractBioquiBacteria->rm = $request->rm;
-        $caractBioquiBacteria->vp = $request->vp;
-        $caractBioquiBacteria->nitrato = $request->nitrato;
-        $caractBioquiBacteria->caldo_urea = $request->caldo_urea;
-        $caractBioquiBacteria->of = $request->of;
-        $caractBioquiBacteria->glucosa = $request->glucosa;
-        $caractBioquiBacteria->lactosa = $request->lactosa;
-        $caractBioquiBacteria->manitol = $request->manitol;
-        $caractBioquiBacteria->xilosa = $request->xilosa;
-        $caractBioquiBacteria->arabinosa = $request->arabinosa;
-        $caractBioquiBacteria->sacarosa = $request->sacarosa;
+        $caractBioquiBacteria->oxidasa = ucfirst($request->oxidasa);
+        $caractBioquiBacteria->catalasa = ucfirst($request->catalasa);
+        $caractBioquiBacteria->citrato = ucfirst($request->citrato);
+        $caractBioquiBacteria->tsi = ucfirst($request->tsi);
+        $caractBioquiBacteria->lia = ucfirst($request->lia);
+        $caractBioquiBacteria->sim = ucfirst($request->sim);
+        $caractBioquiBacteria->rm = ucfirst($request->rm);
+        $caractBioquiBacteria->vp = ucfirst($request->vp);
+        $caractBioquiBacteria->nitrato = ucfirst($request->nitrato);
+        $caractBioquiBacteria->caldo_urea = ucfirst($request->caldo_urea);
+        $caractBioquiBacteria->of = ucfirst($request->of);
+        $caractBioquiBacteria->glucosa = ucfirst($request->glucosa);
+        $caractBioquiBacteria->lactosa = ucfirst($request->lactosa);
+        $caractBioquiBacteria->manitol = ucfirst($request->manitol);
+        $caractBioquiBacteria->xilosa = ucfirst($request->xilosa);
+        $caractBioquiBacteria->arabinosa = ucfirst($request->arabinosa);
+        $caractBioquiBacteria->sacarosa = ucfirst($request->sacarosa);
         $caractBioquiBacteria->otros_azucares = $request->otros_azucares;
-        $caractBioquiBacteria->almidon = $request->almidon;
-        $caractBioquiBacteria->lecitinasa = $request->lecitinasa;
-        $caractBioquiBacteria->lipasa = $request->lipasa;
+        $caractBioquiBacteria->almidon = ucfirst($request->almidon);
+        $caractBioquiBacteria->lecitinasa = ucfirst($request->lecitinasa);
+        $caractBioquiBacteria->lipasa = ucfirst($request->lipasa);
         $caractBioquiBacteria->otras_enzimas = $request->otras_enzimas;
-        $caractBioquiBacteria->hidro_caseina = $request->hidro_caseina;
-        $caractBioquiBacteria->hidro_gelatina = $request->hidro_gelatina;
-        $caractBioquiBacteria->hidro_urea = $request->hidro_urea;
-        $caractBioquiBacteria->creci_nacl = $request->creci_nacl;
-        $caractBioquiBacteria->creci_dif_temp = $request->creci_dif_temp;
+        $caractBioquiBacteria->hidro_caseina = ucfirst($request->hidro_caseina);
+        $caractBioquiBacteria->hidro_gelatina = ucfirst($request->hidro_gelatina);
+        $caractBioquiBacteria->hidro_urea = ucfirst($request->hidro_urea);
+        $caractBioquiBacteria->creci_nacl = ucfirst($request->creci_nacl);
+        $caractBioquiBacteria->creci_dif_temp = ucfirst($request->creci_dif_temp);
         $caractBioquiBacteria->otras_caract = $request->otras_caract;
         $caractBioquiBacteria->descripcion = $request->descripcion_imagenes;
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Editó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
 
         return $caractBioquiBacteria;
     }
@@ -136,6 +138,9 @@ class CaractBioquiBacteriaController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/bacterias/caract_bioqui_img/' . $caractBioquiBacteria->bacteria_id);
         $caractBioquiBacteria->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
 
         return $caractBioquiBacteria;
     }
@@ -160,6 +165,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Agregó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
     public function cambiarImagen(Request $request, $id)
@@ -193,6 +202,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Cambió una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
 
@@ -217,6 +230,10 @@ class CaractBioquiBacteriaController extends Controller
                 break;
         }
         $caractBioquiBacteria->save();
+
+        $this->crearSeguimiento("Eliminó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiBacteria->bacteria->cepa->codigo);
+
         return $caractBioquiBacteria;
     }
 
@@ -228,5 +245,15 @@ class CaractBioquiBacteriaController extends Controller
         $ruta = '/public/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/bacterias/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

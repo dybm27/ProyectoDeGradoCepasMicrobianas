@@ -258,16 +258,17 @@
                   </div>
                   <div class="position-relative form-group">
                     <label for="origen" class>Origen</label>
-                    <input
-                      name="origen"
+                    <select
+                      name="select"
                       id="origen"
-                      placeholder="..."
-                      type="text"
                       class="form-control"
                       v-model="parametros.origen"
-                      required
-                    />
-                    <span v-if="errors.origen" class="text-danger">{{errors.origen[0]}}</span>
+                    >
+                      <option value="Donación">Donación</option>
+                      <option value="Compra">Compra</option>
+                      <option value="Proyecto">Proyecto</option>
+                      <option value="Aislamiento del Laboratorio">Aislamiento del Laboratorio</option>
+                    </select>
                   </div>
                   <div class="position-relative form-group">
                     <label for="otras_caracteristicas">Otras Caracteristicas</label>
@@ -374,7 +375,7 @@ export default {
         division: 1,
         familia: 1,
         estado: "",
-        origen: "",
+        origen: "Donación",
         publicar: false,
         otras_caracteristicas: ""
       },
@@ -599,7 +600,10 @@ export default {
         axios
           .post("/info-cepas/agregar", parametros)
           .then(res => {
-            this.accionAgregarTipoCepa({ info: res.data, tipo: this.modal.tipo });
+            this.accionAgregarTipoCepa({
+              info: res.data,
+              tipo: this.modal.tipo
+            });
             this.$modal.hide("agregar-otra-info");
             this.toastr(
               "Agregar Info",

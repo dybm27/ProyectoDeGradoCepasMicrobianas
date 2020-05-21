@@ -15,7 +15,7 @@ class Actinomiceto extends Model
     {
         return $this->belongsTo(Phylum::class);
     }
-    
+
     public function reino()
     {
         return $this->belongsTo(Reino::class);
@@ -29,5 +29,35 @@ class Actinomiceto extends Model
     public function cepa()
     {
         return $this->belongsTo(Cepa::class);
+    }
+
+    public function caractMacroscopicas()
+    {
+        return $this->hasMany(CaracMacroActinomiceto::class);
+    }
+
+    public function caractMicroscopica()
+    {
+        return $this->hasOne(CaracMicroActinomiceto::class);
+    }
+
+    public function identBioquimica()
+    {
+        return $this->hasOne(IdentBioquiActinomiceto::class);
+    }
+
+    public function otrasCaracteristicas()
+    {
+        return $this->hasOne(OtrasCaracActinomiceto::class);
+    }
+
+    public function caractMolecular()
+    {
+        return $this->hasOne(CaracMolecuActinomiceto::class);
+    }
+
+    public function metodosConservacion()
+    {
+        return $this->hasMany(MetodoConserActinomiceto::class);
     }
 }

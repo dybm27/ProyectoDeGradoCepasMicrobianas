@@ -17,7 +17,7 @@
                           id="hifas1"
                           name="hifas"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.hifas"
                         />
                         <label class="custom-control-label" for="hifas1">Presencia</label>
@@ -28,7 +28,7 @@
                           id="hifas2"
                           name="hifas"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.hifas"
                         />
                         <label class="custom-control-label" for="hifas2">Ausencia</label>
@@ -46,7 +46,7 @@
                           id="capsula1"
                           name="capsula"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.capsula"
                         />
                         <label class="custom-control-label" for="capsula1">Presencia</label>
@@ -57,7 +57,7 @@
                           id="capsula2"
                           name="capsula"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.capsula"
                         />
                         <label class="custom-control-label" for="capsula2">Ausencia</label>
@@ -77,7 +77,7 @@
                           id="balistoconidias1"
                           name="balistoconidias"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.balistoconidias"
                         />
                         <label class="custom-control-label" for="balistoconidias1">Presencia</label>
@@ -88,7 +88,7 @@
                           id="balistoconidias2"
                           name="balistoconidias"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.balistoconidias"
                         />
                         <label class="custom-control-label" for="balistoconidias2">Ausencia</label>
@@ -106,7 +106,7 @@
                           id="artroconidias1"
                           name="artroconidias"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.artroconidias"
                         />
                         <label class="custom-control-label" for="artroconidias1">Presencia</label>
@@ -117,7 +117,7 @@
                           id="artroconidias2"
                           name="artroconidias"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.artroconidias"
                         />
                         <label class="custom-control-label" for="artroconidias2">Ausencia</label>
@@ -137,7 +137,7 @@
                           id="pseudohifas1"
                           name="pseudohifas"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.pseudohifas"
                         />
                         <label class="custom-control-label" for="pseudohifas1">Presencia</label>
@@ -148,7 +148,7 @@
                           id="pseudohifas2"
                           name="pseudohifas"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.pseudohifas"
                         />
                         <label class="custom-control-label" for="pseudohifas2">Ausencia</label>
@@ -166,7 +166,7 @@
                           id="blastoconidias1"
                           name="blastoconidias"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.blastoconidias"
                         />
                         <label class="custom-control-label" for="blastoconidias1">Presencia</label>
@@ -177,7 +177,7 @@
                           id="blastoconidias2"
                           name="blastoconidias"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.blastoconidias"
                         />
                         <label class="custom-control-label" for="blastoconidias2">Ausencia</label>
@@ -197,7 +197,7 @@
                           id="produccion_clamidosporas1"
                           name="produccion_clamidosporas"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.produccion_clamidosporas"
                         />
                         <label
@@ -211,7 +211,7 @@
                           id="produccion_clamidosporas2"
                           name="produccion_clamidosporas"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.produccion_clamidosporas"
                         />
                         <label class="custom-control-label" for="produccion_clamidosporas2">Ausencia</label>
@@ -229,7 +229,7 @@
                           id="induccion_filamentizacion1"
                           name="induccion_filamentizacion"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.induccion_filamentizacion"
                         />
                         <label
@@ -243,7 +243,7 @@
                           id="induccion_filamentizacion2"
                           name="induccion_filamentizacion"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.induccion_filamentizacion"
                         />
                         <label
@@ -266,7 +266,7 @@
                           id="produccion_tubo_germinativo1"
                           name="produccion_tubo_germinativo"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.produccion_tubo_germinativo"
                         />
                         <label
@@ -280,7 +280,7 @@
                           id="produccion_tubo_germinativo2"
                           name="produccion_tubo_germinativo"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.produccion_tubo_germinativo"
                         />
                         <label
@@ -301,7 +301,7 @@
                           id="formacion_asco_y_ascosporas1"
                           name="formacion_asco_y_ascosporas"
                           class="custom-control-input"
-                          value="presencia"
+                          value="Presencia"
                           v-model="parametros.formacion_asco_y_ascosporas"
                         />
                         <label
@@ -315,7 +315,7 @@
                           id="formacion_asco_y_ascosporas2"
                           name="formacion_asco_y_ascosporas"
                           class="custom-control-input"
-                          value="ausencia"
+                          value="Ausencia"
                           v-model="parametros.formacion_asco_y_ascosporas"
                         />
                         <label
@@ -352,6 +352,7 @@
                     type="file"
                     class="form-control-file"
                     ref="inputImagen"
+                    accept="image/jpeg"
                     multiple
                     :required="required"
                   />
@@ -403,16 +404,16 @@ export default {
   data() {
     return {
       parametros: {
-        hifas: "presencia",
-        capsula: "presencia",
-        pseudohifas: "presencia",
-        balistoconidias: "presencia",
-        produccion_tubo_germinativo: "presencia",
-        blastoconidias: "presencia",
-        produccion_clamidosporas: "presencia",
-        artroconidias: "presencia",
-        induccion_filamentizacion: "presencia",
-        formacion_asco_y_ascosporas: "presencia",
+        hifas: "Presencia",
+        capsula: "Presencia",
+        pseudohifas: "Presencia",
+        balistoconidias: "Presencia",
+        produccion_tubo_germinativo: "Presencia",
+        blastoconidias: "Presencia",
+        produccion_clamidosporas: "Presencia",
+        artroconidias: "Presencia",
+        induccion_filamentizacion: "Presencia",
+        formacion_asco_y_ascosporas: "Presencia",
         otras_caract: "",
         imagen1: "",
         imagen2: "",
@@ -646,7 +647,7 @@ export default {
       formData.append("imagen2", this.parametros.imagen2);
       formData.append("imagen3", this.parametros.imagen3);
       formData.append(
-        "imagenes_descripcion",
+        "descripcion_imagenes",
         this.parametros.descripcion_imagenes === null
           ? ""
           : this.parametros.descripcion_imagenes

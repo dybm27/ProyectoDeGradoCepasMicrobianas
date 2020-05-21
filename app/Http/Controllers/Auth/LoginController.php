@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -26,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    
+
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
@@ -44,4 +45,13 @@ class LoginController extends Controller
         return view('login');
     }
 
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
+    }
 }

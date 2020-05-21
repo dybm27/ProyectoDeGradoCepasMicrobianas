@@ -41,7 +41,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -78,19 +77,6 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     mostrarBtnAgregar: function mostrarBtnAgregar() {
       return this.variableAgregar;
-    },
-    rutaMetodo: function rutaMetodo() {
-      var ruta = window.location.pathname;
-
-      if (ruta.includes("levaduras")) {
-        return {
-          name: "metodo-conser-levadura"
-        };
-      } else {
-        return {
-          name: "metodo-conser-cepa-levadura"
-        };
-      }
     }
   }
 });
@@ -140,7 +126,6 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                        attrs: { to: _vm.rutaMetodo },
                         on: { click: _vm.cancelar }
                       },
                       [_vm._v("Cancelar")]

@@ -84,6 +84,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -130,18 +134,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
-      axios["delete"]("/cepas/bacteria/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
+      axios["delete"]("/cepas/actinomiceto/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
-        _this.$modal.hide("my_modal");
+        _this.$modal.hide("eliminar_caract_micro");
 
         _this.accionEliminarCaract({
           tipo: "micro",
           data: res.data
         });
 
-        _this.toastr("Eliminar Característica", "Característica Macroscópica eliminada con exito!!", "success");
+        _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
       })["catch"](function (error) {
         if (error.response) {
           _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
@@ -253,7 +257,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
-                          return _vm.$modal.show("my_modal")
+                          return _vm.$modal.show("eliminar_caract_micro")
                         }
                       }
                     },
@@ -283,7 +287,7 @@ var render = function() {
             _vm._v(" "),
             _vm.mostrarForm
               ? [
-                  _c("form-carat-micro-bacteria", {
+                  _c("form-carat-micro-actinomiceto", {
                     attrs: {
                       modificarInfo: _vm.modificarForm,
                       info: _vm.getCaractMicro
@@ -303,14 +307,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "modal",
-        {
-          attrs: {
-            name: "my_modal",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          }
-        },
+        { attrs: { name: "eliminar_caract_micro", width: 400, height: 300 } },
         [
           _c("div", { staticClass: "modal-content" }, [
             _c("div", { staticClass: "modal-header" }, [
@@ -320,7 +317,7 @@ var render = function() {
                   staticClass: "modal-title",
                   attrs: { id: "exampleModalLongTitle" }
                 },
-                [_vm._v("Eliminar Característica Macroscópica")]
+                [_vm._v("Eliminar Característica Microscópica")]
               ),
               _vm._v(" "),
               _c(
@@ -330,7 +327,7 @@ var render = function() {
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
-                      return _vm.$modal.hide("my_modal")
+                      return _vm.$modal.hide("eliminar_caract_micro")
                     }
                   }
                 },
@@ -354,7 +351,7 @@ var render = function() {
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
-                      return _vm.$modal.hide("my_modal")
+                      return _vm.$modal.hide("eliminar_caract_micro")
                     }
                   }
                 },

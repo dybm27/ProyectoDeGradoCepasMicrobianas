@@ -327,11 +327,17 @@ export default {
       }
     },
     btnEliminar() {
-      if (
-        this.parametros.imagen1 ||
-        this.parametros.imagen2 ||
-        this.parametros.imagen3
-      ) {
+      let cant = 0;
+      if (this.parametros.imagen1) {
+        cant++;
+      }
+      if (this.parametros.imagen2) {
+        cant++;
+      }
+      if (this.parametros.imagen3) {
+        cant++;
+      }
+      if (cant > 1) {
         return true;
       } else {
         return false;

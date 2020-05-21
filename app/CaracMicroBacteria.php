@@ -10,4 +10,9 @@ class CaracMicroBacteria extends Model
     {
         return $this->belongsTo(Bacteria::class);
     }
+
+    public function forma()
+    {
+        return $this->belongsTo(FormaCaractMicroBacteria::class);
+    }
 }

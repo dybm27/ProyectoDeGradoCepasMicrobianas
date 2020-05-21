@@ -12,25 +12,25 @@ class ElevacionsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Plana o aplastada'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Elevada o lente'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Convexa baja'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Convexa o cupuliforme'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Mamelonada o umbonada'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Pulvinada'
         ]);
-        DB::table('elevacions')->insert([
+        DB::table('elevacion_bacterias')->insert([
             'nombre'=>'Umbilicada o crateriforme'
         ]);
     }

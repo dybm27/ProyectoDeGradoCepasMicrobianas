@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\CaracBioquiLevadura;
 use App\Levadura;
+use App\Seguimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class caractBioquiLevaduraController extends Controller
@@ -42,14 +44,14 @@ class caractBioquiLevaduraController extends Controller
         $caractBioquiLevadura = new CaracBioquiLevadura();
         $caractBioquiLevadura->levadura_id = $levadura->id;
         $caractBioquiLevadura->crecimiento = $request->crecimiento;
-        $caractBioquiLevadura->ureasa = $request->ureasa;
-        $caractBioquiLevadura->fenol_oxidasa = $request->fenol_oxidasa;
-        $caractBioquiLevadura->produccion_acido = $request->produccion_acido;
+        $caractBioquiLevadura->ureasa = ucfirst($request->ureasa);
+        $caractBioquiLevadura->fenol_oxidasa = ucfirst($request->fenol_oxidasa);
+        $caractBioquiLevadura->produccion_acido = ucfirst($request->produccion_acido);
         $caractBioquiLevadura->termotolerancia_37 = $request->termotolerancia_37;
         $caractBioquiLevadura->termotolerancia_42 = $request->termotolerancia_42;
         $caractBioquiLevadura->termotolerancia_45 = $request->termotolerancia_45;
         $caractBioquiLevadura->termotolerancia_otra = $request->termotolerancia_otra;
-        $caractBioquiLevadura->nitratos = $request->nitratos;
+        $caractBioquiLevadura->nitratos = ucfirst($request->nitratos);
         $caractBioquiLevadura->otras_caract = $request->otras_caract;
         $caractBioquiLevadura->imagen1 = $ruta1;
         $caractBioquiLevadura->imagenPublica1 = $rutaPublica1;
@@ -57,8 +59,11 @@ class caractBioquiLevaduraController extends Controller
         $caractBioquiLevadura->imagenPublica2 = $rutaPublica2;
         $caractBioquiLevadura->imagen3 = $ruta3;
         $caractBioquiLevadura->imagenPublica3 = $rutaPublica3;
-        $caractBioquiLevadura->descripcion = $request->imagenes_descripcion;
+        $caractBioquiLevadura->descripcion = $request->descripcion_imagenes;
         $caractBioquiLevadura->save();
+
+        $this->crearSeguimiento("Agregó la Característica Bioquíquimica a la Cepa: "
+            . $levadura->cepa->codigo);
 
         return $caractBioquiLevadura;
     }
@@ -78,17 +83,20 @@ class caractBioquiLevaduraController extends Controller
         $caractBioquiLevadura = CaracBioquiLevadura::find($id);
 
         $caractBioquiLevadura->crecimiento = $request->crecimiento;
-        $caractBioquiLevadura->ureasa = $request->ureasa;
-        $caractBioquiLevadura->fenol_oxidasa = $request->fenol_oxidasa;
-        $caractBioquiLevadura->produccion_acido = $request->produccion_acido;
+        $caractBioquiLevadura->ureasa = ucfirst($request->ureasa);
+        $caractBioquiLevadura->fenol_oxidasa = ucfirst($request->fenol_oxidasa);
+        $caractBioquiLevadura->produccion_acido = ucfirst($request->produccion_acido);
         $caractBioquiLevadura->termotolerancia_37 = $request->termotolerancia_37;
         $caractBioquiLevadura->termotolerancia_42 = $request->termotolerancia_42;
         $caractBioquiLevadura->termotolerancia_45 = $request->termotolerancia_45;
         $caractBioquiLevadura->termotolerancia_otra = $request->termotolerancia_otra;
-        $caractBioquiLevadura->nitratos = $request->nitratos;
+        $caractBioquiLevadura->nitratos = ucfirst($request->nitratos);
         $caractBioquiLevadura->otras_caract = $request->otras_caract;
         $caractBioquiLevadura->descripcion = $request->descripcion_imagenes;
         $caractBioquiLevadura->save();
+
+        $this->crearSeguimiento("Editó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiLevadura->levadura->cepa->codigo);
 
         return $caractBioquiLevadura;
     }
@@ -99,6 +107,9 @@ class caractBioquiLevaduraController extends Controller
         //eliminar directorio
         Storage::deleteDirectory('/public/levaduras/caract_bioqui_img/' . $caractBioquiLevadura->levadura_id);
         $caractBioquiLevadura->delete();
+
+        $this->crearSeguimiento("Eliminó la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiLevadura->levadura->cepa->codigo);
 
         return $caractBioquiLevadura;
     }
@@ -123,6 +134,10 @@ class caractBioquiLevaduraController extends Controller
                 break;
         }
         $caractBioquiLevadura->save();
+
+        $this->crearSeguimiento("Agregó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiLevadura->levadura->cepa->codigo);
+
         return $caractBioquiLevadura;
     }
     public function cambiarImagen(Request $request, $id)
@@ -155,6 +170,10 @@ class caractBioquiLevaduraController extends Controller
                 break;
         }
         $caractBioquiLevadura->save();
+
+        $this->crearSeguimiento("Cambió una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiLevadura->levadura->cepa->codigo);
+
         return $caractBioquiLevadura;
     }
 
@@ -179,6 +198,10 @@ class caractBioquiLevaduraController extends Controller
                 break;
         }
         $caractBioquiLevadura->save();
+
+        $this->crearSeguimiento("Eliminó una imagen a la Característica Bioquíquimica de la Cepa: "
+            . $caractBioquiLevadura->levadura->cepa->codigo);
+
         return $caractBioquiLevadura;
     }
 
@@ -190,5 +213,15 @@ class caractBioquiLevaduraController extends Controller
         $ruta = '/public/levaduras/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         $rutaPublica = '/storage/levaduras/caract_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function crearSeguimiento($accion)
+    {
+        $seguimiento = new Seguimiento();
+        $seguimiento->nombre_responsable = Auth::user()->name;
+        $seguimiento->email_responsable = Auth::user()->email;
+        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->accion = $accion;
+        $seguimiento->save();
     }
 }

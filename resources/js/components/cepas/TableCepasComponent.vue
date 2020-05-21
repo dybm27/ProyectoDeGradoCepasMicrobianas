@@ -13,12 +13,13 @@
         <div class="card-body">
           <!--  detail-row-component="my-detail-row" -->
           <my-vuetable
-            api-url="http://127.0.0.1:8000/api/cepas"
+            api-url="/api/cepas"
             :fields="fields"
             :sort-order="sortOrder"
             detail-row-component="my-detail-row-cepas"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
+            @datos="datos"
           ></my-vuetable>
         </div>
       </div>
@@ -124,6 +125,9 @@ export default {
     },
     beforeOpen(data) {
       this.idCepaEliminar = data.params.id;
+    },
+    datos(datos) {
+      console.log(datos);
     }
   },
   computed: {},
@@ -132,6 +136,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

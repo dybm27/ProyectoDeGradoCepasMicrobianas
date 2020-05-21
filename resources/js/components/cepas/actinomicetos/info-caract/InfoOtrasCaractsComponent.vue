@@ -5,7 +5,7 @@
         <div class="card-header-tab card-header">
           <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
             <i class="header-icon lnr-charts icon-gradient bg-happy-green"></i>
-            Características Bioquímicas
+            Otras Características de Interés
           </div>
           <div class="btn-actions-pane-right text-capitalize">
             <button
@@ -17,22 +17,22 @@
               v-show="mostrarBtnEliminar"
               @click="$modal.show('my_modal')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Eliminar Características</button>
+            >Eliminar Característica</button>
             <button
               v-show="mostrarBtnAgregarComputed"
               @click="btnAgregar"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
-            >Agregar Características</button>
+            >Agregar Característica</button>
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-bioqui-bacteria
+          <form-otras-caract-actinomiceto
             :modificarInfo="modificarForm"
-            :info="getCaractBioqui"
+            :info="getOtrasCaract"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-bioqui-bacteria>
+          ></form-otras-caract-actinomiceto>
         </template>
         <template v-else>
           <div class="text-center">
@@ -46,16 +46,19 @@
       </div>
     </div>
 
-    <modal name="my_modal" classes="my_modal" :width="400" :height="300">
+    <modal name="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Bioquímica</h5>
+          <h5
+            class="modal-title"
+            id="exampleModalLongTitle"
+          >Eliminar Otras Características de Interés</h5>
           <button type="button" class="close" @click="$modal.hide('my_modal')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>Esta segura/o de eliminar la Característica?.</p>
+          <p>Esta segura/o de eliminar laS CaracterísticaS?.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
@@ -104,23 +107,23 @@ export default {
       });
     },
     agregar(data) {
-      this.accionAgregarCaract({ tipo: "bioqui", data: data });
+      this.accionAgregarCaract({ tipo: "otras", data: data });
     },
     editar(data) {
-      this.accionEditarCaract({ tipo: "bioqui", data: data });
+      this.accionEditarCaract({ tipo: "otras", data: data });
       this.modificarForm = true;
     },
     eliminar() {
       axios
-        .delete(`/cepas/bacteria/caract-bioqui/${this.getCaractBioqui.id}`)
+        .delete(`/cepas/actinomiceto/otras-caract/${this.getOtrasCaract.id}`)
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
           this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "bioqui", data: res.data });
+          this.accionEliminarCaract({ tipo: "otras", data: res.data });
           this.toastr(
             "Eliminar Característica",
-            "Características Bioquímicas eliminadas con exito!!",
+            "Otras Características de Interés eliminadas con exito!!",
             "success"
           );
         })
@@ -144,16 +147,16 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getCaractBioqui"]),
+    ...vuex.mapGetters(["getOtrasCaract"]),
     mostrarBtnEliminar() {
-      if (this.getCaractBioqui) {
+      if (this.getOtrasCaract) {
         return true;
       } else {
         return false;
       }
     },
     mostrarBtnCancelar() {
-      if (this.mostrarForm && !this.getCaractBioqui) {
+      if (this.mostrarForm && !this.getOtrasCaract) {
         return true;
       } else {
         return false;
@@ -164,7 +167,7 @@ export default {
     }
   },
   mounted() {
-    if (this.getCaractBioqui) {
+    if (this.getOtrasCaract) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }

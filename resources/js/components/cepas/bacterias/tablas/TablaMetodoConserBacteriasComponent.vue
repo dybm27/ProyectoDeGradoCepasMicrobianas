@@ -55,7 +55,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "http://127.0.0.1:8000/api/cepa/bacteria/metodos-conser/",
+      url: "/api/cepa/bacteria/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,
@@ -121,14 +121,14 @@ export default {
       this.idMetodoEliminar = data.params.id;
     }
   },
-  
+
   computed: {
     ...vuex.mapGetters(["getMetodoConser"])
   },
   created() {
     if (this.$route.params.cepaBacteriaId) {
       this.url += this.$route.params.cepaBacteriaId;
-    }else {
+    } else {
       this.url += this.$route.params.cepaId;
     }
   }

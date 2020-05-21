@@ -19,7 +19,7 @@ class CreateCaracBioquiBacteriasTable extends Migration
             $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
             $table->string('oxidasa',100);
             $table->string('catalasa',100);
-            $table->string('atrato',100);
+            $table->string('citrato',100);
             $table->string('tsi',100);
             $table->string('lia',100);
             $table->string('sim',100);

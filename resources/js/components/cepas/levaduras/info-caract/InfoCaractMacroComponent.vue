@@ -215,7 +215,6 @@ export default {
         .catch(error => {
           if (error.response) {
             this.toastr("Error!!", "", "error");
-            console.log(error.response.data);
           }
         });
     },

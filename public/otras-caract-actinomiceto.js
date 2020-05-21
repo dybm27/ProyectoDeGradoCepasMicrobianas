@@ -84,6 +84,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -116,13 +119,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     agregar: function agregar(data) {
       this.accionAgregarCaract({
-        tipo: "bioqui",
+        tipo: "otras",
         data: data
       });
     },
     editar: function editar(data) {
       this.accionEditarCaract({
-        tipo: "bioqui",
+        tipo: "otras",
         data: data
       });
       this.modificarForm = true;
@@ -130,18 +133,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
-      axios["delete"]("/cepas/bacteria/caract-bioqui/".concat(this.getCaractBioqui.id)).then(function (res) {
+      axios["delete"]("/cepas/actinomiceto/otras-caract/".concat(this.getOtrasCaract.id)).then(function (res) {
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
         _this.$modal.hide("my_modal");
 
         _this.accionEliminarCaract({
-          tipo: "bioqui",
+          tipo: "otras",
           data: res.data
         });
 
-        _this.toastr("Eliminar Característica", "Características Bioquímicas eliminadas con exito!!", "success");
+        _this.toastr("Eliminar Característica", "Otras Características de Interés eliminadas con exito!!", "success");
       })["catch"](function (error) {
         if (error.response) {
           _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
@@ -161,16 +164,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.mostrarBtnAgregar = true;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getCaractBioqui"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getOtrasCaract"]), {
     mostrarBtnEliminar: function mostrarBtnEliminar() {
-      if (this.getCaractBioqui) {
+      if (this.getOtrasCaract) {
         return true;
       } else {
         return false;
       }
     },
     mostrarBtnCancelar: function mostrarBtnCancelar() {
-      if (this.mostrarForm && !this.getCaractBioqui) {
+      if (this.mostrarForm && !this.getOtrasCaract) {
         return true;
       } else {
         return false;
@@ -181,7 +184,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   mounted: function mounted() {
-    if (this.getCaractBioqui) {
+    if (this.getOtrasCaract) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
@@ -257,7 +260,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Eliminar Características")]
+                    [_vm._v("Eliminar Característica")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -275,7 +278,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
                       on: { click: _vm.btnAgregar }
                     },
-                    [_vm._v("Agregar Características")]
+                    [_vm._v("Agregar Característica")]
                   )
                 ]
               )
@@ -283,10 +286,10 @@ var render = function() {
             _vm._v(" "),
             _vm.mostrarForm
               ? [
-                  _c("form-carat-bioqui-bacteria", {
+                  _c("form-otras-caract-actinomiceto", {
                     attrs: {
                       modificarInfo: _vm.modificarForm,
-                      info: _vm.getCaractBioqui
+                      info: _vm.getOtrasCaract
                     },
                     on: {
                       agregar: _vm.agregar,
@@ -301,79 +304,64 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "my_modal",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          }
-        },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Característica Bioquímica")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
+      _c("modal", { attrs: { name: "my_modal", width: 400, height: 300 } }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _c("div", { staticClass: "modal-header" }, [
+            _c(
+              "h5",
+              {
+                staticClass: "modal-title",
+                attrs: { id: "exampleModalLongTitle" }
+              },
+              [_vm._v("Eliminar Otras Características de Interés")]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la Característica?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
+            _c(
+              "button",
+              {
+                staticClass: "close",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.$modal.hide("my_modal")
                   }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
-                  on: { click: _vm.eliminar }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
+                }
+              },
+              [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _c("p", [_vm._v("Esta segura/o de eliminar laS CaracterísticaS?.")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-footer" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-secondary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.$modal.hide("my_modal")
+                  }
+                }
+              },
+              [_vm._v("Cancelar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button" },
+                on: { click: _vm.eliminar }
+              },
+              [_vm._v("Eliminar")]
+            )
           ])
-        ]
-      )
+        ])
+      ])
     ],
     1
   )
@@ -393,7 +381,7 @@ var staticRenderFns = [
         _c("i", {
           staticClass: "header-icon lnr-charts icon-gradient bg-happy-green"
         }),
-        _vm._v("\n          Características Bioquímicas\n        ")
+        _vm._v("\n          Otras Características de Interés\n        ")
       ]
     )
   },

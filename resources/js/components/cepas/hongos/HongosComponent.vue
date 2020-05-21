@@ -39,7 +39,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas"]),
+    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractHongos"]),
     ocultarLink(ruta) {
       if (ruta != "/hongos") {
         this.ruta = false;
@@ -54,6 +54,7 @@ export default {
     }
   },
   created() {
+    this.obtenerInfoCaractHongos();
     this.obtenerTiposCepas();
   }
 };

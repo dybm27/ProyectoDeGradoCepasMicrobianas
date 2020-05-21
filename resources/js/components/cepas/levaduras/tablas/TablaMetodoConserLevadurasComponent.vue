@@ -55,7 +55,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "http://127.0.0.1:8000/api/cepa/levadura/metodos-conser/",
+      url: "/api/cepa/levadura/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,

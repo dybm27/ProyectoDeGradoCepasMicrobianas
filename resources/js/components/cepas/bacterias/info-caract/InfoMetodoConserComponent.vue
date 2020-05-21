@@ -17,7 +17,6 @@
             <template v-else>
               <button
                 @click="cancelar"
-                :to="rutaMetodo"
                 class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
               >Cancelar</button>
             </template>
@@ -63,14 +62,6 @@ export default {
   computed: {
     mostrarBtnAgregar() {
       return this.variableAgregar;
-    },
-    rutaMetodo() {
-      let ruta = window.location.pathname;
-      if (ruta.includes("bacterias")) {
-        return { name: "metodo-conser-bacteria" };
-      } else {
-        return { name: "metodo-conser-cepa-bacteria" };
-      }
     }
   }
 };

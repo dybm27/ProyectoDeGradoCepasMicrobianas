@@ -36,7 +36,7 @@ class Levadura extends Model
         return $this->hasMany(CaracMacroLevadura::class);
     }
 
-    public function caractMicroscopicas()
+    public function caractMicroscopica()
     {
         return $this->hasOne(CaracMicroLevadura::class);
     }
@@ -51,7 +51,7 @@ class Levadura extends Model
         return $this->hasOne(IdentiMolecuLevadura::class);
     }
 
-    public function metodoConservacion()
+    public function metodosConservacion()
     {
         return $this->hasMany(MetodoConserLevadura::class);
     }
