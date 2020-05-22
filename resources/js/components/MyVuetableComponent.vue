@@ -65,9 +65,7 @@
 </template>
 
 <script>
-import accounting from "accounting";
 import moment from "moment";
-
 export default {
   name: "my-vuetable",
   components: {
@@ -163,11 +161,8 @@ export default {
         ? '<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"><i class="pe-7s-male"></i> Male</span>'
         : '<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"><i class="pe-7s-female"></i> Female</span>';
     },
-    formatNumber(value) {
-      return accounting.formatNumber(value, 2);
-    },
-    formatDate(value, fmt = "D MMM YYYY") {
-      return value == null ? "" : moment(value, "YYYY-MM-DD").format(fmt);
+    formatDate(value, fmt = "D-MMM-YYYY hh:mma") {
+      return value == null ? "" : moment(value).format(fmt);
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);
@@ -198,6 +193,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

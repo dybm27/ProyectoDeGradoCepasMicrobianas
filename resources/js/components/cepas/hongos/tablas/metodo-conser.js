@@ -50,7 +50,8 @@ export default [
         sortField: "fecha",
         title: "Fecha",
         titleClass: "text-center",
-        dataClass: "text-center"
+        dataClass: "text-center",
+        callback: "formatDate"
     },
     {
         name: "__component:acciones_tabla_metodo_conser_hongo",

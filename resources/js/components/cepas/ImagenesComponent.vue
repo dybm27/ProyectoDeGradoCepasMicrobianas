@@ -1,58 +1,45 @@
 <template>
   <div>
-    <div class="main-card mb-3 card">
-      <div class="card-body">
-        <h5 class="card-title">Imagenes</h5>
-        <template v-if="mostraImagenes">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <carousel :imagenes="imagenes"></carousel>
-              </div>
-            </div>
+    <template v-if="mostraImagenes">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <carousel :imagenes="imagenes"></carousel>
           </div>
-        </template>
-        <template v-else>
-          <div class="text-center">
-            <h5 class="mt-5 mb-5">
-              <span class="pr-1">
-                <b class="text-warning">SIN IMÁGENES</b>
-              </span>
-            </h5>
-          </div>
-        </template>
-        <template v-if="!required">
-          <div class="container mt-3 mb-3">
-            <div class="row">
-              <div class="col-md-4">
-                <button
-                  v-show="btnAgregar"
-                  type="button"
-                  class="mr-3 btn btn-info btn-block"
-                  @click="showModalImagen('agregar')"
-                >Agregar</button>
-              </div>
-              <div class="col-md-4">
-                <button
-                  v-show="btnCambiar"
-                  type="button"
-                  class="mr-3 btn btn-warning btn-block"
-                  @click="showModalImagen('cambiar')"
-                >Cambiar</button>
-              </div>
-              <div class="col-md-4">
-                <button
-                  v-show="btnEliminar"
-                  type="button"
-                  class="btn btn-danger btn-block"
-                  @click="showModalImagen('eliminar')"
-                >Eliminar</button>
-              </div>
-            </div>
-          </div>
-        </template>
+        </div>
       </div>
-    </div>
+    </template>
+    <template>
+      <div class="container mt-3 mb-3">
+        <div class="row">
+          <div class="col-md-4">
+            <button
+              v-show="btnAgregar"
+              type="button"
+              class="mr-3 btn btn-info btn-block"
+              @click="showModalImagen('agregar')"
+            >Agregar</button>
+          </div>
+          <div class="col-md-4">
+            <button
+              v-show="btnCambiar"
+              type="button"
+              class="mr-3 btn btn-warning btn-block"
+              @click="showModalImagen('cambiar')"
+            >Cambiar</button>
+          </div>
+          <div class="col-md-4">
+            <button
+              v-show="btnEliminar"
+              type="button"
+              class="btn btn-danger btn-block"
+              @click="showModalImagen('eliminar')"
+            >Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <modal name="agregar_eliminar_imagen" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -107,7 +94,7 @@
 
 <script>
 export default {
-  props: ["required", "parametros", "tipoCepa", "imagenes", "cepa"],
+  props: ["parametros", "tipoCepa", "imagenes", "cepa"],
   data() {
     return {
       modalImagen: {
@@ -137,7 +124,6 @@ export default {
         this.modalImagen.nomBtn = "Agregar";
         this.modalImagen.titulo = "Agregar Imagen";
       }
-
       this.$modal.show("agregar_eliminar_imagen");
     },
     seleccionar() {
@@ -327,11 +313,17 @@ export default {
       }
     },
     btnEliminar() {
-      if (
-        this.parametros.imagen1 ||
-        this.parametros.imagen2 ||
-        this.parametros.imagen3
-      ) {
+      let cant = 0;
+      if (this.parametros.imagen1) {
+        cant++;
+      }
+      if (this.parametros.imagen2) {
+        cant++;
+      }
+      if (this.parametros.imagen3) {
+        cant++;
+      }
+      if (cant > 1) {
         return true;
       } else {
         return false;

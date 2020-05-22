@@ -33,17 +33,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -91,21 +80,17 @@ var render = function() {
         "div",
         { staticClass: "card-body" },
         [
-          _vm.getUsuarios != ""
-            ? [
-                _c("my-vuetable", {
-                  attrs: {
-                    "api-url": "/api/seguimientos",
-                    fields: _vm.fields,
-                    "sort-order": _vm.sortOrder,
-                    refrescarTabla: _vm.refrescarTabla
-                  },
-                  on: { cambiarVariable: _vm.cambiarVariable }
-                })
-              ]
-            : [_vm._m(1)]
+          _c("my-vuetable", {
+            attrs: {
+              "api-url": "/api/seguimientos",
+              fields: _vm.fields,
+              "sort-order": _vm.sortOrder,
+              refrescarTabla: _vm.refrescarTabla
+            },
+            on: { cambiarVariable: _vm.cambiarVariable }
+          })
         ],
-        2
+        1
       )
     ])
   ])
@@ -132,20 +117,6 @@ var staticRenderFns = [
       ),
       _vm._v(" "),
       _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("h5", { staticClass: "mt-5 mb-5" }, [
-        _c("span", { staticClass: "pr-1" }, [
-          _c("b", { staticClass: "text-warning" }, [
-            _vm._v("NO SE HAN HECHO MODIFICACIONES")
-          ])
-        ])
-      ])
     ])
   }
 ]
@@ -270,7 +241,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   sortField: "created_at",
   title: "Fecha",
   dataClass: "text-center",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  callback: "formatDate"
 }]);
 
 /***/ })

@@ -19,7 +19,7 @@ class CaractMacroHongoController extends Controller
 
         $caractMacroHongo = new CaracMacroHongo();
         $caractMacroHongo->hongo_filamentoso_id = $hongo->id;
-        $caractMacroHongo->medio = $request->medio;
+        $caractMacroHongo->medio = ucfirst($request->medio);
         $caractMacroHongo->color_id = intval($request->color);
         $caractMacroHongo->textura_id = intval($request->textura);
         $caractMacroHongo->caracteristicas_reverso = $request->caracteristicas_reverso;
@@ -50,7 +50,7 @@ class CaractMacroHongoController extends Controller
             $caractMacroHongo->imagen = $imagen['ruta'];
             $caractMacroHongo->imagenPublica = $imagen['rutaPublica'];
         }
-        $caractMacroHongo->medio = $request->medio;
+        $caractMacroHongo->medio =  ucfirst($request->medio);
         $caractMacroHongo->color_id = intval($request->color);
         $caractMacroHongo->textura_id = intval($request->textura);
         $caractMacroHongo->caracteristicas_reverso = $request->caracteristicas_reverso;
@@ -58,7 +58,7 @@ class CaractMacroHongoController extends Controller
         $caractMacroHongo->save();
 
         $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "
-        . $caractMacroHongo->hongo->cepa->codigo);
+            . $caractMacroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMacroHongo;
     }
@@ -70,7 +70,7 @@ class CaractMacroHongoController extends Controller
         $caractMacroHongo->delete();
 
         $this->crearSeguimiento("Eliminó la Característica Macroscópica de la Cepa: "
-        . $caractMacroHongo->hongo->cepa->codigo);
+            . $caractMacroHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractMacroHongo;
     }

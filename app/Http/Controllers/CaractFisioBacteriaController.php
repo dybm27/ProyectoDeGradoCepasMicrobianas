@@ -49,10 +49,10 @@ class CaractFisioBacteriaController extends Controller
 
         $caractFisioBacteria = new CaracFisioBacteria();
         $caractFisioBacteria->bacteria_id = $bacteria->id;
-        $caractFisioBacteria->acido_indolacetico = $request->acido_indolacetico;
-        $caractFisioBacteria->fosforo = $request->fosforo;
-        $caractFisioBacteria->sideroforos = $request->sideroforos;
-        $caractFisioBacteria->nitrogeno = $request->nitrogeno;
+        $caractFisioBacteria->acido_indolacetico = ucfirst($request->acido_indolacetico);
+        $caractFisioBacteria->fosforo = ucfirst($request->fosforo);
+        $caractFisioBacteria->sideroforos = ucfirst($request->sideroforos);
+        $caractFisioBacteria->nitrogeno = ucfirst($request->nitrogeno);
         $caractFisioBacteria->otras_caract = $request->otras_caract;
         $caractFisioBacteria->imagen1 = $ruta1;
         $caractFisioBacteria->imagenPublica1 = $rutaPublica1;
@@ -78,16 +78,16 @@ class CaractFisioBacteriaController extends Controller
     {
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
-        $caractFisioBacteria->acido_indolacetico = $request->acido_indolacetico;
-        $caractFisioBacteria->fosforo = $request->fosforo;
-        $caractFisioBacteria->sideroforos = $request->sideroforos;
-        $caractFisioBacteria->nitrogeno = $request->nitrogeno;
+        $caractFisioBacteria->acido_indolacetico = ucfirst($request->acido_indolacetico);
+        $caractFisioBacteria->fosforo = ucfirst($request->fosforo);
+        $caractFisioBacteria->sideroforos = ucfirst($request->sideroforos);
+        $caractFisioBacteria->nitrogeno = ucfirst($request->nitrogeno);
         $caractFisioBacteria->otras_caract = $request->otras_caract;
         $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
 
         $this->crearSeguimiento("Editó la Característica Fisiológica de la Cepa: "
-        . $caractFisioBacteria->bacteria->cepa->codigo);
+            . $caractFisioBacteria->bacteria->cepa->codigo);
 
         return $caractFisioBacteria;
     }
@@ -215,5 +215,4 @@ class CaractFisioBacteriaController extends Controller
         $seguimiento->accion = $accion;
         $seguimiento->save();
     }
-    
 }

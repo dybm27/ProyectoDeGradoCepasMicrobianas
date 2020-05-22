@@ -180,41 +180,41 @@
           </div>
         </div>
         <div class="row justify-content-md-center">
-          <div class="col-sm-12">
+          <div class="col-md-5">
             <div class="main-card mb-3 card">
               <div class="card-body">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <template v-if="mostraImagenPcr">
-                      <h5 class="card-title">Imagen PCR</h5>
-                      <img :src="mostraImagenPcr" class="d-block w-100" alt="Imagen PCR" />
-                    </template>
-                    <template v-else>
-                      <div class="text-center">
-                        <h5 class="mt-5 mb-5">
-                          <span class="pr-1">
-                            <b class="text-warning">SIN IMAGEN PCR</b>
-                          </span>
-                        </h5>
-                      </div>
-                    </template>
+                <template v-if="mostraImagenPcr">
+                  <h5 class="card-title">Imagen PCR</h5>
+                  <img :src="mostraImagenPcr" class="d-block w-100" alt="Imagen PCR" />
+                </template>
+                <template v-else>
+                  <div class="text-center">
+                    <h5 class="mt-5 mb-5">
+                      <span class="pr-1">
+                        <b class="text-warning">SIN IMAGEN PCR</b>
+                      </span>
+                    </h5>
                   </div>
-                  <div class="col-md-6">
-                    <template v-if="mostraImagenSec">
-                      <h5 class="card-title">Imagen Secuenciación</h5>
-                      <img :src="mostraImagenSec" class="d-block w-100" alt="Imagen PCR" />
-                    </template>
-                    <template v-else>
-                      <div class="text-center">
-                        <h5 class="mt-5 mb-5">
-                          <span class="pr-1">
-                            <b class="text-warning">SIN IMAGEN DE SECUENCIACIÓN</b>
-                          </span>
-                        </h5>
-                      </div>
-                    </template>
+                </template>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <template v-if="mostraImagenSec">
+                  <h5 class="card-title">Imagen Secuenciación</h5>
+                  <img :src="mostraImagenSec" class="d-block w-100" alt="Imagen PCR" />
+                </template>
+                <template v-else>
+                  <div class="text-center">
+                    <h5 class="mt-5 mb-5">
+                      <span class="pr-1">
+                        <b class="text-warning">SIN IMAGEN DE SECUENCIACIÓN</b>
+                      </span>
+                    </h5>
                   </div>
-                </div>
+                </template>
               </div>
             </div>
           </div>
@@ -226,7 +226,6 @@
 
 <script>
 import vuex from "vuex";
-
 export default {
   props: ["info", "modificarInfo"],
   data() {
@@ -407,7 +406,6 @@ export default {
       let file = e.target.files[0];
       this.parametros.imagen_pcr = file;
       let allowedExtensions = /(.jpg|.jpeg)$/i;
-
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.pcr =
@@ -430,7 +428,6 @@ export default {
       let file = e.target.files[0];
       this.parametros.imagen_sec = file;
       let allowedExtensions = /(.jpg|.jpeg)$/i;
-
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.sec =
@@ -505,6 +502,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

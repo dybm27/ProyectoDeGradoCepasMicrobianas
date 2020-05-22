@@ -60,7 +60,6 @@ export default {
   methods: {
     itemAction(action, data, index) {
       let ruta = window.location.pathname;
-
       if (action == "agregar-editar-caract") {
         switch (data.grupo_microbiano_id) {
           case 1:
@@ -117,6 +116,60 @@ export default {
             break;
         }
       } else if (action == "ver-cepa") {
+        switch (data.grupo_microbiano_id) {
+          case 1:
+            if (ruta.includes("bacterias")) {
+              this.$router.push({
+                name: "ver-bacteria",
+                params: { cepaBacteriaId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "ver-cepa-bacteria",
+                params: { cepaId: data.id }
+              });
+            }
+            break;
+          case 2:
+            if (ruta.includes("hongos")) {
+              this.$router.push({
+                name: "ver-hongo",
+                params: { cepaHongoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "ver-cepa-hongo",
+                params: { cepaId: data.id }
+              });
+            }
+            break;
+          case 3:
+            if (ruta.includes("levaduras")) {
+              this.$router.push({
+                name: "ver-levadura",
+                params: { cepaLevaduraId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "ver-cepa-levadura",
+                params: { cepaId: data.id }
+              });
+            }
+            break;
+          case 4:
+            if (ruta.includes("actinomicetos")) {
+              this.$router.push({
+                name: "ver-actinomiceto",
+                params: { cepaActinomicetoId: data.id }
+              });
+            } else {
+              this.$router.push({
+                name: "ver-cepa-actinomiceto",
+                params: { cepaId: data.id }
+              });
+            }
+            break;
+        }
       } else {
         if (ruta.includes("bacterias")) {
           this.$router.push({
@@ -154,4 +207,3 @@ export default {
   created() {}
 };
 </script>
-

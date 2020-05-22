@@ -205,3 +205,57 @@
     border-color: #e9ecef;
     background-color: none;
 }
+@media (min-width: 10px) {
+    .card-columns {
+        column-count: 1;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+}
+@media (min-width: 600px) {
+    .card-columns {
+        column-count: 2;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+}
+@media (min-width: 1000px) {
+    .card-columns {
+        column-count: 3;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+}
+
+.app-header__logo .logo-majumba-inicio > img {
+    height: 40px;
+    width: 150px;
+}
+
+.sidebar-mobile-open .app-sidebar .app-header__logo .logo-majumba-inicio > img {
+    width: 150px !important;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.fixed-sidebar.closed-sidebar:not(.fixed-header)
+    .app-sidebar
+    .app-header__logo
+    .logo-majumba-inicio {
+    display: none;
+}
+
+.closed-sidebar:not(.closed-sidebar-mobile)
+    .app-header
+    .app-header__logo
+    .logo-majumba-inicio {
+    display: none;
+}
+
+.logo-majumba > img {
+    height: 200px;
+    width: 400px;
+}

@@ -12,6 +12,7 @@
 */
 
 // Authentication Routes...
+
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login_vista');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -71,6 +72,27 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
     Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
     Route::get('/cepas/hongo/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
+    //hongo
+    Route::get('/cepas/hongo/{id}', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-macro', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/caract-bioqui', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/identi-molecu', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
+    Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
+    //actinomiceto
+    Route::get('/cepas/actinomiceto/{id}', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/caract-macro', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/caract-micro', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/identi-bioqui', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/otras-caract', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/caract-molecu', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/{id}/metodo-conser', 'CepaController@index');
+    //-- vista ver 
+    Route::get('/cepas/bacteria/ver/{id}', 'CepaController@index');
+    Route::get('/cepas/hongo/ver/{id}', 'CepaController@index');
+    Route::get('/cepas/levadura/ver/{id}', 'CepaController@index');
+    Route::get('/cepas/actinomiceto/ver/{id}', 'CepaController@index');
 
     //-- crud cepas
     Route::post('/cepas/agregar', 'CepaController@store');
@@ -98,6 +120,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/bacterias/{id}/metodo-conser', 'CepaController@bacterias');
     Route::get('/bacterias/{id}/metodo-conser/agregar', 'CepaController@bacterias');
     Route::get('bacterias/{id}/metodo-conser/editar/{id2}', 'CepaController@bacterias');
+    //-- vista ver 
+    Route::get('/bacterias/ver/{id}', 'CepaController@bacterias');
 
     //-- crud info-bacterias
     Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
@@ -152,6 +176,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/levaduras/{id}/metodo-conser', 'CepaController@levaduras');
     Route::get('/levaduras/{id}/metodo-conser/agregar', 'CepaController@levaduras');
     Route::get('/levaduras/{id}/metodo-conser/editar/{id2}', 'CepaController@levaduras');
+    //-- vista ver 
+    Route::get('/levaduras/ver/{id}', 'CepaController@levaduras');
 
     //-- crud info-levaduras
     Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
@@ -199,6 +225,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/hongos/{id}/metodo-conser', 'CepaController@hongos');
     Route::get('/hongos/{id}/metodo-conser/agregar', 'CepaController@hongos');
     Route::get('/hongos/{id}/metodo-conser/editar/{id2}', 'CepaController@hongos');
+    //-- vista ver 
+    Route::get('/hongos/ver/{id}', 'CepaController@hongos');
 
     //-- crud info-caract-hongos
     Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
@@ -245,6 +273,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/actinomicetos/{id}/otras-caract', 'CepaController@actinomicetos');
     Route::get('/actinomicetos/{id}/caract-molecu', 'CepaController@actinomicetos');
     Route::get('/actinomicetos/{id}/metodo-conser', 'CepaController@actinomicetos');
+    //-- vista ver 
+    Route::get('/actinomicetos/ver/{id}', 'CepaController@actinomicetos');
 
     //-- crud info-caract-actinomicetos
     Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetoController@agregarInfo');
@@ -305,8 +335,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/tipo-user/editar/{id}', 'UsuariosController@update');
     Route::delete('/tipo-user/eliminar/{id}', 'UsuariosController@destroy');
 
+    //---------------------- IMPRIMIR ------------------------------------------
+    Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
+
     // Ruta para Vue
     Route::get('/{vue_capture?}', function () {
-        return view('app');
+        return view('404');
     })->where('vue_capture', '[\/\w\.-]*');
 });

@@ -113,7 +113,7 @@ class MetodoConserHongoController extends Controller
         $MetodoConserHongo->save();
 
         $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
-            . $MetodoConserHongo->hongo->cepa->codigo);
+            . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
         return $MetodoConserHongo;
     }
@@ -126,7 +126,7 @@ class MetodoConserHongoController extends Controller
         $MetodoConserHongo->delete();
 
         $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
-            . $MetodoConserHongo->hongo->cepa->codigo);
+            . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
         return $MetodoConserHongo;
     }

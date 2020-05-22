@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class IdentiMolecuHongo extends Model
 {
-    public function hongo()
+    public function hongoFilamentoso()
     {
         return $this->belongsTo(HongoFilamentoso::class);
     }

@@ -373,6 +373,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipoG"],
@@ -390,7 +391,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         division: 1,
         familia: 1,
         estado: "",
-        origen: "",
+        origen: "Donación",
         publicar: false,
         otras_caracteristicas: ""
       },
@@ -655,10 +656,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca& ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1554,43 +1555,70 @@ var render = function() {
                                 _vm._v("Origen")
                               ]),
                               _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.origen,
-                                    expression: "parametros.origen"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "origen",
-                                  id: "origen",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.parametros.origen },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.origen,
+                                      expression: "parametros.origen"
                                     }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "origen",
-                                      $event.target.value
-                                    )
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { name: "select", id: "origen" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "origen",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
                                   }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _vm.errors.origen
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.errors.origen[0]))
-                                  ])
-                                : _vm._e()
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Donación" } },
+                                    [_vm._v("Donación")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "Compra" } }, [
+                                    _vm._v("Compra")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Proyecto" } },
+                                    [_vm._v("Proyecto")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Aislamiento del Laboratorio"
+                                      }
+                                    },
+                                    [_vm._v("Aislamiento del Laboratorio")]
+                                  )
+                                ]
+                              )
                             ]
                           ),
                           _vm._v(" "),
@@ -1956,7 +1984,7 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true& */ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true&");
+/* harmony import */ var _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCepasComponent.vue?vue&type=template&id=9c23e2ca& */ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&");
 /* harmony import */ var _FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -1968,11 +1996,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "9c23e2ca",
+  null,
   null
   
 )
@@ -1998,19 +2026,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true& ***!
-  \*********************************************************************************************************/
+/***/ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca& ***!
+  \*********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCepasComponent.vue?vue&type=template&id=9c23e2ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -13,11 +13,11 @@ class MetodoConserBacteria extends Model
 
     public function tipoMetodo()
     {
-        return $this->belongsTo(TipoMetodoConservacionBacteria::class);
+        return $this->belongsTo(TipoMetodoConservacionBacteria::class, 'tipo_id');
     }
 
     public function tipoAgar()
     {
-        return $this->belongsTo(TipoAgar::class);
+        return $this->belongsTo(TipoAgarBacteria::class);
     }
 }

@@ -44,8 +44,8 @@ class CaractBioquiHongoController extends Controller
         }
         $caractBioquiHongo = new CaracBioquiHongo();
         $caractBioquiHongo->hongo_filamentoso_id = $hongo->id;
-        $caractBioquiHongo->enzimas = $request->enzimas;
-        $caractBioquiHongo->azucares = $request->azucares;
+        $caractBioquiHongo->enzimas = ucfirst($request->enzimas);
+        $caractBioquiHongo->azucares = ucfirst($request->azucares);
 
         $caractBioquiHongo->otras_caracteristicas = $request->otras_caract;
         $caractBioquiHongo->imagen1 = $ruta1;
@@ -70,8 +70,8 @@ class CaractBioquiHongoController extends Controller
     {
 
         $caractBioquiHongo = CaracBioquiHongo::find($id);
-        $caractBioquiHongo->enzimas = $request->enzimas;
-        $caractBioquiHongo->azucares = $request->azucares;
+        $caractBioquiHongo->enzimas = ucfirst($request->enzimas);
+        $caractBioquiHongo->azucares = ucfirst($request->azucares);
 
 
         $caractBioquiHongo->otras_caracteristicas = $request->otras_caract;
@@ -79,7 +79,7 @@ class CaractBioquiHongoController extends Controller
         $caractBioquiHongo->save();
 
         $this->crearSeguimiento("Editó la Característica Bioquíquimica de la Cepa: "
-            . $caractBioquiHongo->hongo->cepa->codigo);
+            . $caractBioquiHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractBioquiHongo;
     }
@@ -91,7 +91,7 @@ class CaractBioquiHongoController extends Controller
         $caractBioquiHongo->delete();
 
         $this->crearSeguimiento("Eliminó la Característica Bioquíquimica de la Cepa: "
-            . $caractBioquiHongo->hongo->cepa->codigo);
+            . $caractBioquiHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractBioquiHongo;
     }
@@ -117,7 +117,7 @@ class CaractBioquiHongoController extends Controller
         $caractBioquiHongo->save();
 
         $this->crearSeguimiento("Agregó una imagen a la Característica Bioquíquimica de la Cepa: "
-            . $caractBioquiHongo->hongo->cepa->codigo);
+            . $caractBioquiHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractBioquiHongo;
     }
@@ -150,7 +150,7 @@ class CaractBioquiHongoController extends Controller
         $caractBioquiHongo->save();
 
         $this->crearSeguimiento("Cambió una imagen a la Característica Bioquíquimica de la Cepa: "
-            . $caractBioquiHongo->hongo->cepa->codigo);
+            . $caractBioquiHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractBioquiHongo;
     }
@@ -177,7 +177,7 @@ class CaractBioquiHongoController extends Controller
         $caractBioquiHongo->save();
 
         $this->crearSeguimiento("Eliminó una imagen a la Característica Bioquíquimica de la Cepa: "
-            . $caractBioquiHongo->hongo->cepa->codigo);
+            . $caractBioquiHongo->hongoFilamentoso->cepa->codigo);
 
         return $caractBioquiHongo;
     }
