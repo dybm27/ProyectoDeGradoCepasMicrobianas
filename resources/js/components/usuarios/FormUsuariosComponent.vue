@@ -19,7 +19,7 @@
                       v-model="parametros.nombre"
                       required
                     />
-                    <em v-if="validarNombre" class="error invalid-feedback">Solo se admiten letras.</em>
+                    <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
                   </div>
                   <template v-if="getTipoUser">
                     <div class="osition-relative form-group">
@@ -44,7 +44,7 @@
                       name="imagen"
                       @change="obtenerImagen"
                       id="imagen"
-                      accept="image/jpeg"
+                      accept="image/jpeg, image/png"
                       type="file"
                       :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
                       ref="inputImagen"
@@ -83,13 +83,10 @@
                         <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
                       </span>
                     </div>
-                    <em v-if="validarContraseña" class="error invalid-feedback">
-                      La contraseña debe tener:
-                      <br />1: Mínimo 8 y Máximo 15 caracteres
-                      <br />2: Al menos una letra mayúscula
-                      <br />3: Al menos un dígito
-                      <br />4: Al menos 1 carácter especial
-                    </em>
+                    <em
+                      v-if="validarContraseña"
+                      class="error invalid-feedback"
+                    >{{mensajeContraseña}}</em>
                   </div>
                   <label for="pass1" class>Confirmar Contraseña</label>
                   <div class="input-group mb-3">
@@ -111,9 +108,13 @@
                     <em
                       v-if="validarContraseñas"
                       class="error invalid-feedback"
-                    >Las contraseñas no coinciden</em>
+                    >{{mensajeContraseña1}}</em>
                   </div>
-                  <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
+                  <button
+                    class="mb-2 mr-2 btn btn-block"
+                    :class="btnClase"
+                    :disabled="validarBtn"
+                  >{{nomBtnComputed}}</button>
                 </div>
               </form>
             </div>
@@ -123,7 +124,26 @@
               <div class="card-body">
                 <h5 class="card-title">Imagen</h5>
                 <template v-if="mostraImagen">
-                  <img :src="mostraImagen" class="d-block w-100" alt="Avatar del Usuario" />
+                  <template v-if="mostraImagen===info.avatarPublico">
+                    <croppie
+                      :imagen="mostraImagen"
+                      @cambiarValorImagen="cambiarValorImagen"
+                      :mostrarBtn="mostrarBtn"
+                      :enableZoom="false"
+                      :zoom="0"
+                      :editar="true"
+                    />
+                  </template>
+                  <template v-else>
+                    <croppie
+                      :imagen="mostraImagen"
+                      @cambiarValorImagen="cambiarValorImagen"
+                      :mostrarBtn="mostrarBtn"
+                      :zoom="1"
+                      :enableZoom="true"
+                      :editar="false"
+                    />
+                  </template>
                 </template>
                 <template v-else>
                   <div class="text-center">
@@ -165,7 +185,6 @@
 
 <script>
 import vuex from "vuex";
-
 export default {
   data() {
     return {
@@ -185,7 +204,11 @@ export default {
       nomBtn: "",
       errors: [],
       imagenError: "",
-      mensajeErrorEmail: ""
+      mensajeErrorEmail: "",
+      mensajeContraseña: "",
+      mensajeContraseña1: "",
+      mensajeNombre: "",
+      traerValorImg: false
     };
   },
   methods: {
@@ -194,97 +217,69 @@ export default {
       "accionUsuario",
       "accionModificarAuth"
     ]),
-    evento() {
-      if (
-        this.validarEmail ||
-        this.validarNombre ||
-        this.validarContraseña ||
-        this.validarContraseñas
-      ) {
-        this.toastr("Alerta!!", "Favor arreglar los errores.!!", "warning");
-      } else {
-        this.parametros.pass =
-          this.parametros.pass === undefined ? "" : this.parametros.pass;
-        if (this.tituloForm === "Agregar Usuario") {
-          let formData = new FormData();
-          this.appendInfo(formData);
-          axios
-            .post("/usuario/agregar", formData, {
-              headers: { "Content-Type": "multipart/form-data" }
-            })
-            .then(res => {
-              this.accionUsuario({ tipo: "agregar", data: res.data });
-              this.toastr(
-                "Agregar Usuario",
-                "Usuario agregado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable", "tabla");
-              this.$router.push({ name: "tabla-usuarios" });
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-              }
-            });
+    cambiarValorImagen(valor) {
+      if (valor === "cancelar") {
+        if (!this.required) {
+          this.parametros.imagen = this.info.avatar;
+          this.imageMiniatura = this.info.avatarPublico;
         } else {
-          if (this.parametros.imagen === this.info.avatar) {
-            axios
-              .put(`/usuario/editar/${this.info.id}`, this.parametros)
-              .then(res => {
-                if (this.getUserAuth.id === res.data.id) {
-                  this.accionModificarAuth(res.data);
-                }
-                this.accionUsuario({ tipo: "editar", data: res.data });
-                this.toastr(
-                  "Editar Usuario",
-                  "Usuario editado con exito!!",
-                  "success"
-                );
-                this.$emit("cambiarVariable", "tabla");
-                this.$router.push({ name: "tabla-usuarios" });
-              })
-              .catch(error => {
-                if (error.response) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                  this.toastr("Error!!", "", "error");
-                  // console.log(error.response.data);
-                }
-              });
-          } else {
-            let formData = new FormData();
-            this.appendInfo(formData);
-            formData.append("_method", "PUT");
-            axios
-              .post(`/usuario/editar/${this.info.id}`, formData, {
-                headers: { "Content-Type": "multipart/form-data" }
-              })
-              .then(res => {
-                if (this.getUserAuth.id === res.data.id) {
-                  this.accionModificarAuth(res.data);
-                }
-                this.accionUsuario({ tipo: "editar", data: res.data });
-                this.toastr(
-                  "Editar Usuario",
-                  "Usuario editado con exito!!",
-                  "success"
-                );
-                this.$emit("cambiarVariable", "tabla");
-                this.$router.push({ name: "tabla-usuarios" });
-              })
-              .catch(error => {
-                if (error.response) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                  this.toastr("Error!!", "", "error");
-                  // console.log(error.response.data);
-                }
-              });
-          }
+          this.parametros.imagen = "";
         }
+      } else {
+        this.parametros.imagen = valor;
+      }
+    },
+    evento() {
+      this.parametros.pass =
+        this.parametros.pass === undefined ? "" : this.parametros.pass;
+      this.parametros.imagen =
+        this.parametros.imagen === this.info.avatar
+          ? ""
+          : this.parametros.imagen;
+      if (this.tituloForm === "Agregar Usuario") {
+        axios
+          .post("/usuario/agregar", this.parametros)
+          .then(res => {
+            this.accionUsuario({ tipo: "agregar", data: res.data });
+            this.toastr(
+              "Agregar Usuario",
+              "Usuario agregado con exito!!",
+              "success"
+            );
+            this.$emit("cambiarVariable", "tabla");
+            this.$router.push({ name: "tabla-usuarios" });
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+            }
+          });
+      } else {
+        axios
+          .put(`/usuario/editar/${this.info.id}`, this.parametros)
+          .then(res => {
+            if (this.getUserAuth.id === res.data.id) {
+              this.accionModificarAuth(res.data);
+            }
+            this.accionUsuario({ tipo: "editar", data: res.data });
+            this.toastr(
+              "Editar Usuario",
+              "Usuario editado con exito!!",
+              "success"
+            );
+            this.$emit("cambiarVariable", "tabla");
+            this.$router.push({ name: "tabla-usuarios" });
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -315,25 +310,17 @@ export default {
       this.parametros.imagen = this.info.avatar;
       this.imageMiniatura = this.info.avatarPublico;
     },
-    appendInfo(formData) {
-      formData.append("nombre", this.parametros.nombre);
-      formData.append("tipo_user", this.parametros.tipo_user);
-      formData.append("email", this.parametros.email);
-      formData.append("pass", this.parametros.pass);
-      formData.append("imagen", this.parametros.imagen);
-    },
     obtenerImagen(e) {
       let file = e.target.files[0];
-      this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
-
+      //this.parametros.imagen = file;
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
-            "La imagen debe ser en formato .jpg y menor a 2Mb.";
-          this.imageMiniatura = this.info.imagenPublica;
+            "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
+          this.imageMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
+          this.parametros.imagen = this.info.avatar;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
@@ -343,7 +330,7 @@ export default {
     cargarImagen(file) {
       let reader = new Image();
       reader.onload = e => {
-        if (e.path[0].height > 500 || e.path[0].width > 500) {
+        /**if (e.path[0].height > 500 || e.path[0].width > 500) {
           this.imagenError =
             "La imagen debe tener una dimension maxima de 500x500 px ";
           this.imageMiniatura = this.info.imagenPublica;
@@ -351,7 +338,8 @@ export default {
           this.parametros.imagen = this.info.imagen;
         } else {
           this.imageMiniatura = reader.src;
-        }
+        } */
+        this.imageMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
     }
@@ -390,46 +378,93 @@ export default {
     validarContraseñas() {
       if (this.parametros.pass1) {
         if (this.parametros.pass != this.parametros.pass1) {
+          this.mensajeContraseña1 = "Las contraseñas no coinciden";
           return true;
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña1 = "Este campo es obligatorio";
+          return true;
+        }
+        return false;
       }
     },
     validarEmail() {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (this.parametros.email && this.required) {
-        if (!re.test(this.parametros.email) || this.errors.email) {
-          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-          return true;
-        } else {
-          if (this.getUsuarioByEmail(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico ya Existe";
+      if (this.required) {
+        if (this.parametros.email) {
+          if (!re.test(this.parametros.email)) {
+            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
             return true;
+          } else {
+            if (this.getUsuarioByEmail(this.parametros.email)) {
+              this.mensajeErrorEmail = "El correo electrónico ya Existe";
+              return true;
+            }
+            return false;
           }
-          return false;
+        } else {
+          this.mensajeErrorEmail = "Este campo es obligatorio";
+          return true;
         }
       }
       return false;
     },
     validarNombre() {
+      // solo numero /^([0-9])*$/
       let letters = /^[A-Za-z\s]+$/;
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {
+          this.mensajeNombre = "Solo se admiten letras.";
           return true;
         } else {
           return false;
         }
+      } else {
+        this.mensajeNombre = "Este campo es obligatorio";
+        return true;
       }
     },
     validarContraseña() {
       let regexp_password = /^(?=.*[A-Z])(?=.*\d)(?=.*[$@!%?&#()"'|_])([A-Za-z\d$@!%?&#()"'|_]){8,15}$/;
       if (this.parametros.pass) {
         if (!regexp_password.test(this.parametros.pass)) {
+          this.mensajeContraseña = ` La contraseña debe tener:
+                      1: Mínimo 8 y Máximo 15 caracteres 
+                      2: Al menos una letra mayúscula 
+                      3: Al menos un dígito
+                      4: Al menos 1 carácter especial`;
           return true;
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña = "Este campo es obligatorio";
+          return true;
+        }
+        return false;
+      }
+    },
+    validarBtn() {
+      if (
+        this.validarEmail ||
+        this.validarNombre ||
+        this.validarContraseña ||
+        this.validarContraseñas ||
+        !this.parametros.imagen
+      ) {
+        return true;
+      }
+      return false;
+    },
+    mostrarBtn() {
+      if (this.imageMiniatura != this.info.avatarPublico) {
+        return true;
+      } else {
+        return false;
       }
     }
   },

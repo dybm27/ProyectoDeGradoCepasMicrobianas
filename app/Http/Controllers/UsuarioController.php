@@ -23,7 +23,7 @@ class UsuarioController extends Controller
         ];
         $this->validate($request, $rules);
 
-        $imagen = $this->guardarImagen($request->file('imagen'));
+        $imagen = $this->guardarImagen($request->imagen);
 
         $usuario = new User();
         $usuario->name = ucfirst($request->nombre);
@@ -44,15 +44,9 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
-        /* if (!Hash::check($request->pass, $usuario->password)) {
-            return 'true';
-        } else {
-            return 'false';
-        }*/
-        $file = $request->file('imagen');
-        if (!empty($file)) {
+        if (!is_null($request->imagen)) {
             Storage::disk('local')->delete($usuario->avatar);
-            $imagen = $this->guardarImagen($file);
+            $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];
             $usuario->avatarPublico = $imagen['rutaPublica'];
         }
@@ -80,13 +74,16 @@ class UsuarioController extends Controller
         return $usuario;
     }
 
-    public function guardarImagen($file)
+    public function guardarImagen($imagen)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/usuarios/avatar_img/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/usuarios/avatar_img/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/usuarios/avatar_img/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        //$path = storage_path('usuarios/avatar_img/' . $image_name);
+        Storage::disk('local')->put('/public/usuarios/avatar_img/' . $image_name, $data);
+        // file_put_contents($path, $data);
+        $ruta = '/public/usuarios/avatar_img/' . $image_name;
+        $rutaPublica = '/storage/usuarios/avatar_img/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

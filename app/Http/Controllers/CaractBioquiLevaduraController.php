@@ -44,14 +44,14 @@ class caractBioquiLevaduraController extends Controller
         $caractBioquiLevadura = new CaracBioquiLevadura();
         $caractBioquiLevadura->levadura_id = $levadura->id;
         $caractBioquiLevadura->crecimiento = $request->crecimiento;
-        $caractBioquiLevadura->ureasa = $request->ureasa;
-        $caractBioquiLevadura->fenol_oxidasa = $request->fenol_oxidasa;
-        $caractBioquiLevadura->produccion_acido = $request->produccion_acido;
+        $caractBioquiLevadura->ureasa = ucfirst($request->ureasa);
+        $caractBioquiLevadura->fenol_oxidasa = ucfirst($request->fenol_oxidasa);
+        $caractBioquiLevadura->produccion_acido = ucfirst($request->produccion_acido);
         $caractBioquiLevadura->termotolerancia_37 = $request->termotolerancia_37;
         $caractBioquiLevadura->termotolerancia_42 = $request->termotolerancia_42;
         $caractBioquiLevadura->termotolerancia_45 = $request->termotolerancia_45;
         $caractBioquiLevadura->termotolerancia_otra = $request->termotolerancia_otra;
-        $caractBioquiLevadura->nitratos = $request->nitratos;
+        $caractBioquiLevadura->nitratos = ucfirst($request->nitratos);
         $caractBioquiLevadura->otras_caract = $request->otras_caract;
         $caractBioquiLevadura->imagen1 = $ruta1;
         $caractBioquiLevadura->imagenPublica1 = $rutaPublica1;
@@ -83,14 +83,14 @@ class caractBioquiLevaduraController extends Controller
         $caractBioquiLevadura = CaracBioquiLevadura::find($id);
 
         $caractBioquiLevadura->crecimiento = $request->crecimiento;
-        $caractBioquiLevadura->ureasa = $request->ureasa;
-        $caractBioquiLevadura->fenol_oxidasa = $request->fenol_oxidasa;
-        $caractBioquiLevadura->produccion_acido = $request->produccion_acido;
+        $caractBioquiLevadura->ureasa = ucfirst($request->ureasa);
+        $caractBioquiLevadura->fenol_oxidasa = ucfirst($request->fenol_oxidasa);
+        $caractBioquiLevadura->produccion_acido = ucfirst($request->produccion_acido);
         $caractBioquiLevadura->termotolerancia_37 = $request->termotolerancia_37;
         $caractBioquiLevadura->termotolerancia_42 = $request->termotolerancia_42;
         $caractBioquiLevadura->termotolerancia_45 = $request->termotolerancia_45;
         $caractBioquiLevadura->termotolerancia_otra = $request->termotolerancia_otra;
-        $caractBioquiLevadura->nitratos = $request->nitratos;
+        $caractBioquiLevadura->nitratos = ucfirst($request->nitratos);
         $caractBioquiLevadura->otras_caract = $request->otras_caract;
         $caractBioquiLevadura->descripcion = $request->descripcion_imagenes;
         $caractBioquiLevadura->save();

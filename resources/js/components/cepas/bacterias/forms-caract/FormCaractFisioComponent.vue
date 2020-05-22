@@ -99,10 +99,10 @@
         <div class="col-sm-6">
           <imagenes
             :required="required"
-            :parametros="this.parametros"
+            :parametros="parametros"
             :tipoCepa="'bacteria/caract-fisio'"
-            :imagenes="this.imagenes"
-            :cepa="this.info"
+            :imagenes="imagenes"
+            :cepa="info"
             @accionImagen="accionImagen"
           ></imagenes>
         </div>

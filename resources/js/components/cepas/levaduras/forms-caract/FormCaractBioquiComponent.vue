@@ -48,25 +48,45 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_37" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_37"
+                  />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">42°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_42" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_42"
+                  />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">45°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_45" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_45"
+                  />
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">otra°</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_otra" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_otra"
+                  />
+                  <em
+                    v-if="termotolerancia"
+                    class="error invalid-feedback"
+                  >Llenar al menos una de las diferentes temperaturas.</em>
                 </div>
               </div>
               <div class="position-relative form-group">
@@ -78,7 +98,7 @@
                       id="crecimiento1"
                       name="crecimiento"
                       class="custom-control-input"
-                      value="positivo"
+                      value="Positivo"
                       v-model="parametros.crecimiento"
                     />
                     <label class="custom-control-label" for="crecimiento1">Positivo +</label>
@@ -89,7 +109,7 @@
                       id="crecimiento2"
                       name="crecimiento"
                       class="custom-control-input"
-                      value="negativo"
+                      value="Negativo"
                       v-model="parametros.crecimiento"
                     />
                     <label class="custom-control-label" for="crecimiento2">Negativo -</label>
@@ -152,15 +172,19 @@
                   v-model="parametros.descripcion_imagenes"
                 ></textarea>
               </div>
-              <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtn}}</button>
+              <button
+                class="mb-2 mr-2 btn btn-block"
+                :class="btnClase"
+                :disabled="computedDisableBtn"
+              >{{nomBtn}}</button>
             </div>
           </div>
           <imagenes
             :required="required"
-            :parametros="this.parametros"
+            :parametros="parametros"
             :tipoCepa="'levadura/caract-bioqui'"
-            :imagenes="this.imagenes"
-            :cepa="this.info"
+            :imagenes="imagenes"
+            :cepa="info"
             @accionImagen="accionImagen"
           ></imagenes>
         </div>
@@ -171,7 +195,6 @@
 
 <script>
 import vuex from "vuex";
-
 export default {
   props: ["info", "modificarInfo"],
   watch: {
@@ -192,7 +215,7 @@ export default {
         termotolerancia_42: "",
         termotolerancia_45: "",
         termotolerancia_otra: "",
-        crecimiento: "positivo",
+        crecimiento: "Positivo",
         nitratos: "",
         otras_caract: "",
         imagen1: "",
@@ -204,7 +227,8 @@ export default {
       nomBtn: "",
       errors: [],
       erroresImagenes: "",
-      imagenes: []
+      imagenes: [],
+      disableBtn: false
     };
   },
   methods: {
@@ -370,7 +394,6 @@ export default {
     },
     llenarInfo() {
       this.imagenes = [];
-
       this.parametros.crecimiento = this.info.crecimiento;
       this.parametros.ureasa = this.info.ureasa;
       this.parametros.fenol_oxidasa = this.info.fenol_oxidasa;
@@ -380,7 +403,6 @@ export default {
       this.parametros.termotolerancia_45 = this.info.termotolerancia_45;
       this.parametros.termotolerancia_otra = this.info.termotolerancia_otra;
       this.parametros.nitratos = this.info.nitratos;
-
       this.parametros.otras_caract = this.info.otras_caract;
       this.parametros.imagen1 = this.info.imagen1;
       this.parametros.imagen2 = this.info.imagen2;
@@ -442,6 +464,22 @@ export default {
       } else {
         return "btn-warning";
       }
+    },
+    termotolerancia() {
+      if (
+        this.parametros.termotolerancia_37 ||
+        this.parametros.termotolerancia_42 ||
+        this.parametros.termotolerancia_45 ||
+        this.parametros.termotolerancia_otra
+      ) {
+        this.disableBtn = false;
+        return false;
+      }
+      this.disableBtn = true;
+      return true;
+    },
+    computedDisableBtn() {
+      return this.disableBtn;
     }
   },
   mounted() {
@@ -456,6 +494,3 @@ export default {
   }
 };
 </script>
-
-<style lang="css">
-</style>

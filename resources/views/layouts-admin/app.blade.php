@@ -8,7 +8,7 @@
         <title> @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
         <meta name="description" content="This is an example dashboard created using build-in elements and components.">
-
+        <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
 
@@ -22,6 +22,7 @@
         <link href="{{asset('assets/styles/template.css')}}" rel="stylesheet">
         <link href="{{ asset('css/dumar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
+        @yield('estilos')
     </head>
     <body>
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >

@@ -38,7 +38,7 @@
                       id="fialides1"
                       name="fialides"
                       class="custom-control-input"
-                      value="presencia"
+                      value="Presencia"
                       v-model="parametros.fialides"
                     />
                     <label class="custom-control-label" for="fialides1">Presencia</label>
@@ -49,7 +49,7 @@
                       id="fialides2"
                       name="fialides"
                       class="custom-control-input"
-                      value="ausencia"
+                      value="Ausencia"
                       v-model="parametros.fialides"
                     />
                     <label class="custom-control-label" for="fialides2">Ausencia</label>
@@ -57,7 +57,7 @@
 
                   <div
                     class="position-relative form-group"
-                    v-show="parametros.fialides === 'presencia'"
+                    v-if="parametros.fialides === 'Presencia'"
                   >
                     <label for="fialides_forma" class>Forma</label>
                     <input
@@ -82,7 +82,6 @@
                       type="text"
                       class="form-control"
                       v-model="parametros.fialides_otra_caracteristica"
-                      required
                     />
                     <span
                       v-if="errors.fialides_otra_caracteristica"
@@ -98,7 +97,7 @@
                       id="vesicula1"
                       name="vesicula"
                       class="custom-control-input"
-                      value="presencia"
+                      value="Presencia"
                       v-model="parametros.vesicula"
                     />
                     <label class="custom-control-label" for="vesicula1">Presencia</label>
@@ -109,7 +108,7 @@
                       id="vesicula2"
                       name="vesicula"
                       class="custom-control-input"
-                      value="ausencia"
+                      value="Ausencia"
                       v-model="parametros.vesicula"
                     />
                     <label class="custom-control-label" for="vesicula2">Ausencia</label>
@@ -148,7 +147,7 @@
                         id="esporas_asexuales_conidios_tamano1"
                         name="esporas_asexuales_conidios_tamano"
                         class="custom-control-input"
-                        value="grande"
+                        value="Grande"
                         v-model="parametros.esporas_asexuales_conidios_tamano"
                       />
                       <label
@@ -162,7 +161,7 @@
                         id="esporas_asexuales_conidios_tamano2"
                         name="esporas_asexuales_conidios_tamano"
                         class="custom-control-input"
-                        value="mediano"
+                        value="Mediano"
                         v-model="parametros.esporas_asexuales_conidios_tamano"
                       />
                       <label
@@ -176,7 +175,7 @@
                         id="esporas_asexuales_conidios_tamano3"
                         name="esporas_asexuales_conidios_tamano"
                         class="custom-control-input"
-                        value="pequeño"
+                        value="Pequeño"
                         v-model="parametros.esporas_asexuales_conidios_tamano"
                       />
                       <label
@@ -222,14 +221,8 @@
                     type="text"
                     class="form-control"
                     v-model="parametros.esporas_asexuales_conidios_otras"
-                    required
                   />
-                  <span
-                    v-if="errors.esporas_asexuales_conidios_otras"
-                    class="text-danger"
-                  >{{ errors.esporas_asexuales_conidios_otras[0] }}</span>
                 </div>
-
                 <label for="espora_sexual" class>Espora Sexual</label>
                 <div class="input-group mb-3">
                   <select
@@ -304,10 +297,10 @@
 
           <imagenes
             :required="required"
-            :parametros="this.parametros"
+            :parametros="parametros"
             :tipoCepa="'hongo/caract-micro'"
-            :imagenes="this.imagenes"
-            :cepa="this.info"
+            :imagenes="imagenes"
+            :cepa="info"
             @accionImagen="accionImagen"
           ></imagenes>
         </div>
@@ -366,12 +359,12 @@ export default {
     return {
       parametros: {
         conidioforo: 1,
-        fialides: "presencia",
+        fialides: "Presencia",
         fialides_forma: "",
         fialides_otra_caracteristica: "",
-        vesicula: "presencia",
+        vesicula: "Presencia",
         espora_asexual: 1,
-        esporas_asexuales_conidios_tamano: "grande",
+        esporas_asexuales_conidios_tamano: "Grande",
         esporas_asexuales_conidios_color: "",
         esporas_asexuales_conidios_forma: "",
         esporas_asexuales_conidios_otras: "",
@@ -398,7 +391,7 @@ export default {
   methods: {
     ...vuex.mapActions(["accionAgregarTipoCaractHongo"]),
     evento() {
-      if (this.parametros.fialides === "ausencia") {
+      if (this.parametros.fialides === "Ausencia") {
         this.parametros.fialides_forma = "";
         this.parametros.fialides_otra_caracteristica = "";
       }
@@ -622,7 +615,7 @@ export default {
       this.parametros.espora_asexual = this.info.espora_asexual_id;
       this.parametros.esporas_asexuales_conidios_tamano =
         this.info.esporas_asexuales_conidios_tamano === null
-          ? "grande"
+          ? "Grande"
           : this.info.esporas_asexuales_conidios_tamano;
       this.parametros.esporas_asexuales_conidios_color = this.info.esporas_asexuales_conidios_color;
       this.parametros.esporas_asexuales_conidios_forma = this.info.esporas_asexuales_conidios_forma;
@@ -666,7 +659,6 @@ export default {
         "esporas_asexuales_conidios_otras",
         this.parametros.esporas_asexuales_conidios_otras
       );
-
       formData.append("espora_sexual", this.parametros.espora_sexual);
       formData.append(
         "otras_estructuras",
@@ -690,7 +682,6 @@ export default {
   },
   computed: {
     ...vuex.mapGetters(["getInfoCaractMicroHongos"]),
-
     required() {
       if (this.tituloForm === "Agregar Característica") {
         return true;

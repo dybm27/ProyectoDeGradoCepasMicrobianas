@@ -36,7 +36,7 @@ class Actinomiceto extends Model
         return $this->hasMany(CaracMacroActinomiceto::class);
     }
 
-    public function caractMicroscopicas()
+    public function caractMicroscopica()
     {
         return $this->hasOne(CaracMicroActinomiceto::class);
     }
@@ -56,7 +56,7 @@ class Actinomiceto extends Model
         return $this->hasOne(CaracMolecuActinomiceto::class);
     }
 
-    public function metodoConservacion()
+    public function metodosConservacion()
     {
         return $this->hasMany(MetodoConserActinomiceto::class);
     }

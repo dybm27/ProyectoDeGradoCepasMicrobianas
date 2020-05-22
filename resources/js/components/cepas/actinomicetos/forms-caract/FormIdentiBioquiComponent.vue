@@ -225,10 +225,10 @@
             </div>
             <imagenes
               :required="required"
-              :parametros="this.parametros"
+              :parametros="parametros"
               :tipoCepa="'actinomiceto/identi-bioqui'"
-              :imagenes="this.imagenes"
-              :cepa="this.info"
+              :imagenes="imagenes"
+              :cepa="info"
               @accionImagen="accionImagen"
             ></imagenes>
           </div>

@@ -182,7 +182,7 @@
                         :id="radioId1"
                         name="tamaño"
                         class="custom-control-input"
-                        value="grande"
+                        value="Grande"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId1">Grande</label>
@@ -193,7 +193,7 @@
                         :id="radioId2"
                         name="tamaño"
                         class="custom-control-input"
-                        value="mediano"
+                        value="Mediano"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId2">Mediano</label>
@@ -204,7 +204,7 @@
                         :id="radioId3"
                         name="tamaño"
                         class="custom-control-input"
-                        value="pequeño"
+                        value="Pequeño"
                         v-model="parametros.tamaño"
                       />
                       <label class="custom-control-label" :for="radioId3">Pequeño</label>
@@ -305,7 +305,6 @@
 
 <script>
 import vuex from "vuex";
-
 export default {
   props: ["info", "radioId1", "radioId2", "radioId3", "modificarInfo"],
   data() {
@@ -317,7 +316,7 @@ export default {
         elevacion: 1,
         color: 1,
         detalle_optico: 1,
-        tamaño: "grande",
+        tamaño: "Grande",
         superficie: 1,
         otras_caract: "",
         imagen: "",
@@ -336,7 +335,6 @@ export default {
       imagenError: ""
     };
   },
-
   watch: {
     modificarInfo() {
       if (this.modificarInfo) {
@@ -494,7 +492,6 @@ export default {
       let file = e.target.files[0];
       this.parametros.imagen = file;
       let allowedExtensions = /(.jpg|.jpeg)$/i;
-
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
@@ -603,6 +600,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

@@ -9,24 +9,13 @@
         <div class="btn-actions-pane-right actions-icon-btn"></div>
       </div>
       <div class="card-body">
-        <template v-if="getUsuarios!=''">
-          <my-vuetable
-            api-url="/api/seguimientos"
-            :fields="fields"
-            :sort-order="sortOrder"
-            @cambiarVariable="cambiarVariable"
-            :refrescarTabla="refrescarTabla"
-          ></my-vuetable>
-        </template>
-        <template v-else>
-          <div class="text-center">
-            <h5 class="mt-5 mb-5">
-              <span class="pr-1">
-                <b class="text-warning">NO SE HAN HECHO MODIFICACIONES</b>
-              </span>
-            </h5>
-          </div>
-        </template>
+        <my-vuetable
+          api-url="/api/seguimientos"
+          :fields="fields"
+          :sort-order="sortOrder"
+          @cambiarVariable="cambiarVariable"
+          :refrescarTabla="refrescarTabla"
+        ></my-vuetable>
       </div>
     </div>
   </div>
@@ -34,7 +23,6 @@
 <script>
 import FieldDefs from "./columnas/columnas-seguimiento";
 import vuex from "vuex";
-
 export default {
   data() {
     return {

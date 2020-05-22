@@ -27,7 +27,7 @@ class IdentiMolecuBacteriaController extends Controller
         $IdentiMolecuBacteria->secuen_reversed = $request->secuen_reversed;
         $IdentiMolecuBacteria->produc_forward = $request->produc_forward;
         $IdentiMolecuBacteria->produc_reversed = $request->produc_reversed;
-        $IdentiMolecuBacteria->obser_secuenciacion = $request->obser_secuenciacion;
+        $IdentiMolecuBacteria->obser_secuenciacion = ucfirst($request->obser_secuenciacion);
         $IdentiMolecuBacteria->img_pcr = $img_pcr['ruta'];
         $IdentiMolecuBacteria->img_pcrPublica = $img_pcr['rutaPublica'];
         $IdentiMolecuBacteria->img_secuen = $img_sec['ruta'];
@@ -71,11 +71,11 @@ class IdentiMolecuBacteriaController extends Controller
         $IdentiMolecuBacteria->secuen_reversed = $request->secuen_reversed;
         $IdentiMolecuBacteria->produc_forward = $request->produc_forward;
         $IdentiMolecuBacteria->produc_reversed = $request->produc_reversed;
-        $IdentiMolecuBacteria->obser_secuenciacion = $request->obser_secuenciacion;
+        $IdentiMolecuBacteria->obser_secuenciacion = ucfirst($request->obser_secuenciacion);
         $IdentiMolecuBacteria->save();
 
         $this->crearSeguimiento("Editó la Identificación Molecular de la Cepa: "
-        . $IdentiMolecuBacteria->bacteria->cepa->codigo);
+            . $IdentiMolecuBacteria->bacteria->cepa->codigo);
 
         return $IdentiMolecuBacteria;
     }
@@ -88,7 +88,7 @@ class IdentiMolecuBacteriaController extends Controller
         $IdentiMolecuBacteria->delete();
 
         $this->crearSeguimiento("Eliminó la Identificación Molecular de la Cepa: "
-        . $IdentiMolecuBacteria->bacteria->cepa->codigo);
+            . $IdentiMolecuBacteria->bacteria->cepa->codigo);
 
         return $IdentiMolecuBacteria;
     }

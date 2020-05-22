@@ -1,0 +1,162 @@
+@page {
+    margin: 190px 70px 100px 70px;
+}
+
+/* emcabezado */
+header {
+    position: fixed;
+    padding-top: -150px;
+    height: 119px;
+}
+
+.header-titulo,
+.header-subtitulo {
+    font-size: 16px;
+}
+
+.tabla-header > tr > th {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.logo-majumba {
+    padding-left: -2px;
+    padding-top: -2px;
+    padding-right: -8px;
+    padding-bottom: -8px;
+}
+
+.logo-ufps {
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: -60px;
+    height: 50px;
+    text-align: right;
+}
+
+.page-number:before {
+    content: "Página " counter(page);
+}
+
+.pagina {
+    padding-top: 12px;
+    padding-right: 5px;
+}
+
+.nueva-pagina {
+    page-break-after: always;
+}
+
+/* tabla cepa*/
+.div-cepa {
+    padding-bottom: 5px;
+}
+.tabla-cepa > thead > tr > th {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #f7b92480;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.tabla-cepa > tbody > tr > td {
+    text-align: left;
+    border: 1px solid black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/* Caract macro bacteria */
+.div-caract-macro {
+    padding-bottom: 5px;
+}
+.tabla-caract-macro > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-caract-macro > tbody > tr > .thead-caract-macro {
+    text-align: center;
+    background-color: #f7b92480;
+}
+
+/* Caract micro bacteria */
+.div-caract-micro {
+    padding-bottom: 5px;
+}
+.tabla-caract-micro > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-caract-micro > tbody > tr > .thead-caract-micro {
+    text-align: center;
+    background-color: #f7b92480;
+}
+
+/* Caract bioqui bacteria */
+.div-caract-bioqui {
+    padding-bottom: 5px;
+}
+.tabla-caract-bioqui > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-caract-bioqui > tbody > tr > .thead-caract-bioqui {
+    text-align: center;
+    background-color: #f7b92480;
+}
+
+/* Caract fisio bacteria */
+.div-caract-fisio {
+    padding-bottom: 5px;
+}
+.tabla-caract-fisio > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-caract-fisio > tbody > tr > .thead-caract-fisio {
+    text-align: center;
+    background-color: #f7b92480;
+}
+
+/* identi molecu bacteria */
+.div-identi-molecu {
+    padding-bottom: 5px;
+}
+.tabla-identi-molecu > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-identi-molecu > tbody > tr > .thead-identi-molecu {
+    text-align: center;
+    background-color: #f7b92480;
+}
+
+/* metodos conser bacteria */
+.div-metodos-conser {
+    padding-bottom: 5px;
+}
+.tabla-metodos-conser > tbody > tr > td {
+    border: 1px solid black;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.tabla-metodos-conser > tbody > tr > .thead-metodos-conser {
+    text-align: center;
+    background-color: #f7b92480;
+}

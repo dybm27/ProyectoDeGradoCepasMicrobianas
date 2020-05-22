@@ -451,28 +451,59 @@
                     </div>
                   </div>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtn}}</button>
+                <button
+                  class="mb-2 mr-2 btn btn-block"
+                  :class="btnClase"
+                  :disabled="btnDisable"
+                >{{nomBtn}}</button>
               </div>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <imagenes
-      class="mt-4 mr-4 ml-4"
-      :required="required"
-      :parametros="this.parametros"
-      :tipoCepa="'bacteria/caract-bioqui'"
-      :imagenes="this.imagenes"
-      :cepa="this.info"
-      @accionImagen="accionImagen"
-    ></imagenes>
+    <div class="container">
+      <div class="main-card mb-3 card">
+        <div class="card-body">
+          <h5 class="card-title">Imagenes</h5>
+          <div class="row justify-content-md-center">
+            <template v-if="required">
+              <div class="col-md-12">
+                <template v-if="imagenes.length===cantImagenes">
+                  <croppie-cepas :imagenes="imagenes" @cambiarValorImagen="cambiarValorImagen" />
+                </template>
+                <template v-else>
+                  <div class="text-center">
+                    <h5 class="mt-5 mb-5">
+                      <span class="pr-1">
+                        <b class="text-warning">SIN IMÁGENES</b>
+                      </span>
+                    </h5>
+                  </div>
+                </template>
+              </div>
+            </template>
+            <template v-else>
+              <div class="col-md-8">
+                <imagenes
+                  class="mt-4 mr-4 ml-4"
+                  :parametros="parametros"
+                  :tipoCepa="'bacteria/caract-bioqui'"
+                  :imagenes="imagenes"
+                  :cepa="info"
+                  @accionImagen="accionImagen"
+                ></imagenes>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import vuex from "vuex";
-
 export default {
   props: ["info", "modificarInfo"],
   watch: {
@@ -528,10 +559,24 @@ export default {
       nomBtn: "",
       errors: [],
       erroresImagenes: "",
-      imagenes: []
+      imagenes: [],
+      cantImagenes: ""
     };
   },
   methods: {
+    cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.parametros.imagen1 = datos.data;
+          break;
+        case 2:
+          this.parametros.imagen2 = datos.data;
+          break;
+        case 3:
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento() {
       if (this.tituloForm === "Agregar Característica") {
         let formData = new FormData();
@@ -602,13 +647,14 @@ export default {
       });
     },
     obtenerImagenes(e) {
+      this.cantImagenes = 0;
       this.limpiar(0);
       let file = e.target.files[3];
       if (file) {
         this.erroresImagenes = "Solo puede subir max 3 imágenes.";
         this.limpiar(1);
       } else {
-        let allowedExtensions = /(.jpg|.jpeg)$/i;
+        let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
         let imagenes = [];
         for (let index = 0; index < 3; index++) {
           let imagen = e.target.files[index];
@@ -616,7 +662,7 @@ export default {
             if (!allowedExtensions.exec(imagen.name) || imagen.size > 2000000) {
               this.limpiar(1);
               this.erroresImagenes =
-                "Las imagenes deben ser en formato .jpeg/.jpg y menor a 2Mb.";
+                "Las imagenes deben ser en formato .png/.jpg y menor a 2Mb.";
               imagenes = "";
               break;
             } else {
@@ -627,6 +673,7 @@ export default {
             break;
           }
         }
+        this.cantImagenes = imagenes.length;
         this.cargarImagenes(imagenes);
       }
     },
@@ -637,16 +684,16 @@ export default {
           reader.onload = e => {
             switch (index) {
               case 0:
-                this.parametros.imagen1 = imagenes[index];
-                this.pushImagen(1, e.target.result, true);
+                //this.parametros.imagen1 = imagenes[index];
+                this.imagenes.push(e.target.result);
                 break;
               case 1:
-                this.parametros.imagen2 = imagenes[index];
-                this.pushImagen(2, e.target.result, false);
+                //this.parametros.imagen2 = imagenes[index];
+                this.imagenes.push(e.target.result);
                 break;
               case 2:
-                this.parametros.imagen3 = imagenes[index];
-                this.pushImagen(3, e.target.result, false);
+                //this.parametros.imagen3 = imagenes[index];
+                this.imagenes.push(e.target.result);
                 break;
             }
           };
@@ -812,6 +859,22 @@ export default {
       } else {
         return "col-md-6";
       }
+    },
+    btnDisable() {
+      if (this.imagenes) {
+        if (this.imagenes[0] && !this.parametros.imagen1) {
+          return true;
+        }
+        if (this.imagenes[1] && !this.parametros.imagen2) {
+          return true;
+        }
+        if (this.imagenes[2] && !this.parametros.imagen3) {
+          return true;
+        }
+        return false;
+      } else {
+        return false;
+      }
     }
   },
   mounted() {
@@ -826,6 +889,3 @@ export default {
   }
 };
 </script>
-
-<style lang="css">
-</style>

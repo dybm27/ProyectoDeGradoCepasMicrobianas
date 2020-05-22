@@ -85,7 +85,7 @@ class IdentiMolecuHongoController extends Controller
         $IdentiMolecuHongo->save();
 
         $this->crearSeguimiento("Editó la Identificación Molecular de la Cepa: "
-            . $IdentiMolecuHongo->hongo->cepa->codigo);
+            . $IdentiMolecuHongo->hongoFilamentoso->cepa->codigo);
 
         return $IdentiMolecuHongo;
     }
@@ -98,7 +98,7 @@ class IdentiMolecuHongoController extends Controller
         $IdentiMolecuHongo->delete();
 
         $this->crearSeguimiento("Eliminó la Identificación Molecular de la Cepa: "
-            . $IdentiMolecuHongo->hongo->cepa->codigo);
+            . $IdentiMolecuHongo->hongoFilamentoso->cepa->codigo);
 
         return $IdentiMolecuHongo;
     }
