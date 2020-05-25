@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="getUsuarios">
+    <template v-if="validarForm">
       <div class="container mt-3 ml-2 mr-2">
         <div class="row justify-content-md-center">
           <div class="col-sm-6">
@@ -126,22 +126,28 @@
                 <template v-if="mostraImagen">
                   <template v-if="mostraImagen===info.avatarPublico">
                     <croppie
+                      :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtn="mostrarBtn"
+                      :mostrarBtnCroppie="mostrarBtnCroppie"
                       :enableZoom="false"
                       :zoom="0"
                       :editar="true"
+                      :boundaryHeigth="300"
+                      :viewportWidth="200"
                     />
                   </template>
                   <template v-else>
                     <croppie
+                      :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtn="mostrarBtn"
+                      :mostrarBtnCroppie="mostrarBtnCroppie"
                       :zoom="1"
                       :enableZoom="true"
                       :editar="false"
+                      :boundaryHeigth="300"
+                      :viewportWidth="200"
                     />
                   </template>
                 </template>
@@ -166,7 +172,6 @@
           <div class="col-lg-12 d-flex justify-content-center mt-5">
             <div class="loader mt-5">
               <div class="ball-spin-fade-loader mt-5">
-                <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -200,7 +205,7 @@ export default {
         imagen: ""
       },
       tituloForm: "",
-      imageMiniatura: "",
+      imagenMiniatura: "",
       nomBtn: "",
       errors: [],
       imagenError: "",
@@ -218,15 +223,16 @@ export default {
       "accionModificarAuth"
     ]),
     cambiarValorImagen(valor) {
-      if (valor === "cancelar") {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
         if (!this.required) {
           this.parametros.imagen = this.info.avatar;
-          this.imageMiniatura = this.info.avatarPublico;
+          this.imagenMiniatura = this.info.avatarPublico;
+          this.$refs.inputImagen.value = "";
         } else {
           this.parametros.imagen = "";
         }
-      } else {
-        this.parametros.imagen = valor;
       }
     },
     evento() {
@@ -308,7 +314,7 @@ export default {
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
-      this.imageMiniatura = this.info.avatarPublico;
+      this.imagenMiniatura = this.info.avatarPublico;
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
@@ -318,28 +324,23 @@ export default {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
             "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imageMiniatura = this.info.avatarPublico;
+          this.imagenMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
           this.parametros.imagen = this.info.avatar;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
         }
+      } else {
+        this.imagenMiniatura = this.info.avatarPublico;
+        this.$refs.inputImagen.value = "";
+        this.parametros.imagen = this.info.avatar;
       }
     },
     cargarImagen(file) {
       let reader = new Image();
       reader.onload = e => {
-        /**if (e.path[0].height > 500 || e.path[0].width > 500) {
-          this.imagenError =
-            "La imagen debe tener una dimension maxima de 500x500 px ";
-          this.imageMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imageMiniatura = reader.src;
-        } */
-        this.imageMiniatura = reader.src;
+        this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
     }
@@ -353,7 +354,7 @@ export default {
       "getUserAuth"
     ]),
     mostraImagen() {
-      return this.imageMiniatura;
+      return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
@@ -413,8 +414,8 @@ export default {
       return false;
     },
     validarNombre() {
-      // solo numero /^([0-9])*$/
-      let letters = /^[A-Za-z\s]+$/;
+      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
+      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {
           this.mensajeNombre = "Solo se admiten letras.";
@@ -460,12 +461,20 @@ export default {
       }
       return false;
     },
-    mostrarBtn() {
-      if (this.imageMiniatura != this.info.avatarPublico) {
+    mostrarBtnCroppie() {
+      if (this.imagenMiniatura != this.info.avatarPublico) {
         return true;
       } else {
         return false;
       }
+    },
+    validarForm() {
+      if (!this.$route.params.usuarioId) {
+        return true;
+      } else if (this.parametros.email) {
+        return true;
+      }
+      return false;
     }
   },
   created() {
@@ -475,9 +484,21 @@ export default {
       this.nomBtn = "Agregar";
     } else {
       this.info = this.getUsuarioById(this.$route.params.usuarioId);
-      this.llenarInfo();
+      if (this.info) {
+        this.llenarInfo();
+      }
       this.tituloForm = "Editar Usuario";
       this.nomBtn = "Editar";
+    }
+  },
+  watch: {
+    getUsuarios() {
+      if (this.getUsuarios) {
+        if (this.$route.params.usuarioId) {
+          this.info = this.getUsuarioById(this.$route.params.usuarioId);
+          this.llenarInfo();
+        }
+      }
     }
   }
 };

@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div id="croppie" class="container"></div>
-    <template v-if="mostrarBtn">
+  <div class="container">
+    <div :id="id"></div>
+    <template v-if="mostrarBtnCroppie">
       <template v-if="btnAprobar">
         <button class="btn btn-success" @click="resultado">Aprobar Imagen</button>
-        <span class="text-danger" v-if="mostrarMensaje">Debe Aprobar la imagen</span>
+        <em class="text-danger small" v-if="mostrarMensaje">Debe Aprobar la imagen</em>
       </template>
       <template v-else>
         <button class="btn btn-danger float-right" @click="cancelar">Cancelar</button>
@@ -16,7 +16,16 @@
 <script>
 import Croppie from "croppie";
 export default {
-  props: ["imagen", "mostrarBtn", "zoom", "editar", "enableZoom"],
+  props: [
+    "id",
+    "imagen",
+    "mostrarBtnCroppie",
+    "zoom",
+    "editar",
+    "enableZoom",
+    "boundaryHeigth",
+    "viewportWidth"
+  ],
   data() {
     return {
       croppie: null,
@@ -28,14 +37,14 @@ export default {
   },
   methods: {
     crearCroppie() {
-      let el = document.getElementById("croppie");
+      let el = document.getElementById(this.id);
       this.croppie = new Croppie(el, {
         viewport: {
-          width: 200,
+          width: this.viewportWidth,
           height: 200
         },
         boundary: {
-          height: 300
+          height: this.boundaryHeigth
         },
         enableZoom: this.enableZoom
       });
@@ -52,7 +61,7 @@ export default {
     },
     cancelar() {
       this.btnAprobar = true;
-      this.$emit("cambiarValorImagen", "cancelar");
+      this.$emit("cambiarValorImagen", "");
     }
   },
   watch: {

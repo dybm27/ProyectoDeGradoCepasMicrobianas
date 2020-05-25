@@ -131,7 +131,7 @@
                   <input
                     name="imagen"
                     @change="obtenerImagen"
-                    accept="image/jpeg"
+                    accept="image/jpeg, image/png"
                     id="imagen"
                     type="file"
                     class="form-control-file"
@@ -149,7 +149,11 @@
                     v-model="parametros.descripcion"
                   ></textarea>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
+                <button
+                  class="mb-2 mr-2 btn btn-block"
+                  :class="btnClase"
+                  :disabled="validarBtn"
+                >{{nomBtnComputed}}</button>
               </div>
             </form>
           </div>
@@ -159,7 +163,32 @@
             <div class="card-body">
               <h5 class="card-title">Imagen</h5>
               <template v-if="mostraImagen">
-                <img :src="mostraImagen" class="d-block w-100" alt="Imagen Método de Conservación" />
+                <template v-if="validarCroppie">
+                  <croppie
+                    :id="'croppie'"
+                    :imagen="mostraImagen"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :mostrarBtnCroppie="mostrarBtnCroppie"
+                    :enableZoom="false"
+                    :zoom="0"
+                    :editar="true"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
+                  />
+                </template>
+                <template v-else>
+                  <croppie
+                    :id="'croppie'"
+                    :imagen="mostraImagen"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :mostrarBtnCroppie="mostrarBtnCroppie"
+                    :zoom="1"
+                    :enableZoom="true"
+                    :editar="false"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
+                  />
+                </template>
               </template>
               <template v-else>
                 <div class="text-center">
@@ -223,6 +252,7 @@ export default {
       lang: Lang,
       info: "",
       parametros: {
+        cepaId: "",
         tipo_metodo: 1,
         fecha: "",
         numero_replicas: "",
@@ -240,7 +270,7 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imageMiniatura: "",
+      imagenMiniatura: "",
       nomBtn: "",
       errors: [],
       imagenError: ""
@@ -252,16 +282,25 @@ export default {
       "accionEditarCaract",
       "accionAgregarTipoCaractHongo"
     ]),
+    cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.required) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
     evento() {
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
       if (this.tituloForm === "Agregar Método") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/hongo/metodo-conser", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/hongo/metodo-conser", this.parametros)
           .then(res => {
             this.accionAgregarCaract({ tipo: "metodo", data: res.data });
             this.toastr(
@@ -280,54 +319,26 @@ export default {
             }
           });
       } else {
-        if (this.parametros.imagen === this.info.imagen) {
-          axios
-            .put(`/cepas/hongo/metodo-conser/${this.info.id}`, this.parametros)
-            .then(res => {
-              this.accionEditarCaract({ tipo: "metodo", data: res.data });
-              this.toastr(
-                "Editar Método",
-                "Método editado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable", "tabla");
-              this.redireccionar();
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        } else {
-          let formData = new FormData();
-          this.appendInfo(formData);
-          formData.append("_method", "PUT");
-          axios
-            .post(`/cepas/hongo/metodo-conser/${this.info.id}`, formData, {
-              headers: { "Content-Type": "multipart/form-data" }
-            })
-            .then(res => {
-              this.accionEditarCaract({ tipo: "metodo", data: res.data });
-              this.toastr(
-                "Editar Método",
-                "Método editado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable", "tabla");
-              this.redireccionar();
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        }
+        axios
+          .put(`/cepas/hongo/metodo-conser/${this.info.id}`, this.parametros)
+          .then(res => {
+            this.accionEditarCaract({ tipo: "metodo", data: res.data });
+            this.toastr(
+              "Editar Método",
+              "Método editado con exito!!",
+              "success"
+            );
+            this.$emit("cambiarVariable", "tabla");
+            this.redireccionar();
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
       }
     },
     redireccionar() {
@@ -367,55 +378,45 @@ export default {
       this.parametros.numero_replicas = this.info.numero_replicas;
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
-      this.imageMiniatura = this.info.imagenPublica;
+      this.imagenMiniatura = this.info.imagenPublica;
       this.parametros.descripcion = this.info.descripcion;
     },
-    appendInfo(formData) {
-      if (this.$route.params.cepaHongoId) {
-        formData.append("cepaId", this.$route.params.cepaHongoId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("tipo_metodo", this.parametros.tipo_metodo);
-      formData.append("medio_cultivo", this.parametros.medio_cultivo);
-      formData.append("numero_pases", this.parametros.numero_pases);
-      formData.append(
-        "observaciones",
-        this.parametros.observaciones === null
-          ? ""
-          : this.parametros.observaciones
-      );
-      formData.append("fecha", this.parametros.fecha);
-      formData.append("numero_replicas", this.parametros.numero_replicas);
-      formData.append("recuento_microgota", this.parametros.recuento_microgota);
-      formData.append("imagen", this.parametros.imagen);
-      formData.append(
-        "descripcion",
-        this.parametros.descripcion === null ? "" : this.parametros.descripcion
-      );
-    },
+
     obtenerImagen(e) {
       let file = e.target.files[0];
       this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
 
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.imageMiniatura = this.info.imagenPublica;
+            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
           this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
         }
       }
     },
     cargarImagen(file) {
       let reader = new FileReader();
       reader.onload = e => {
-        this.imageMiniatura = e.target.result;
+        this.imagenMiniatura = e.target.result;
       };
       reader.readAsDataURL(file);
     },
@@ -462,7 +463,7 @@ export default {
   computed: {
     ...vuex.mapGetters(["getInfoMetodoConserHongos", "getMetodoConserById"]),
     mostraImagen() {
-      return this.imageMiniatura;
+      return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
@@ -504,6 +505,34 @@ export default {
         this.parametros.medio_cultivo = "";
         return true;
       }
+    },
+    mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    },
+    validarBtn() {
+      if (!this.parametros.imagen) {
+        return true;
+      }
+      return false;
     }
   },
   created() {
@@ -518,6 +547,11 @@ export default {
       this.llenarInfo();
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";
+    }
+    if (this.$route.params.cepaHongoId) {
+      this.parametros.cepaId = this.$route.params.cepaHongoId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
     }
   }
 };

@@ -191,16 +191,11 @@
               <div class="card">
                 <template v-if="imagenes.micro!=''">
                   <div class="mt-3 ml-5 mb-1 mr-5">
-                    <carousel :imagenes="imagenes.micro"></carousel>
+                    <carousel :id="1" :imagenes="imagenes.micro"></carousel>
                   </div>
-                  <template v-if="getCaractMicro.descripcion">
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <b>Descripción:</b>
-                        {{getCaractMicro.descripcion}}
-                      </small>
-                    </div>
-                  </template>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
                 </template>
               </div>
             </div>
@@ -282,16 +277,11 @@
               <div class="card">
                 <template v-if="imagenes.fisio!=''">
                   <div class="mt-2 ml-5 mb-2 mr-5">
-                    <carousel :imagenes="imagenes.fisio"></carousel>
+                    <carousel :id="2" :imagenes="imagenes.fisio"></carousel>
                   </div>
-                  <template v-if="getCaractFisio.descripcion">
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <b>Descripción:</b>
-                        {{getCaractFisio.descripcion}}
-                      </small>
-                    </div>
-                  </template>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
                 </template>
               </div>
             </div>
@@ -360,16 +350,11 @@
               <div class="card">
                 <template v-if="imagenes.bioqui!=''">
                   <div class="mt-2 ml-5 mb-2 mr-5">
-                    <carousel :imagenes="imagenes.bioqui"></carousel>
+                    <carousel :id="3" :imagenes="imagenes.bioqui"></carousel>
                   </div>
-                  <template v-if="getCaractBioqui.descripcion">
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <b>Descripción:</b>
-                        {{getCaractBioqui.descripcion}}
-                      </small>
-                    </div>
-                  </template>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
                 </template>
               </div>
             </div>
@@ -890,50 +875,20 @@ export default {
       switch (tipo) {
         case "macro":
           this.mostrarCaractMacro = !this.mostrarCaractMacro;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractFisio = false;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "micro":
-          this.mostrarCaractMacro = false;
           this.mostrarCaractMicro = !this.mostrarCaractMicro;
-          this.mostrarCaractFisio = false;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "fisio":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
           this.mostrarCaractFisio = !this.mostrarCaractFisio;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "bioqui":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractFisio = false;
           this.mostrarCaractBioqui = !this.mostrarCaractBioqui;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "identi":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractFisio = false;
-          this.mostrarCaractBioqui = false;
           this.mostrarIdentiMolecu = !this.mostrarIdentiMolecu;
-          this.mostrarMetodosConser = false;
           break;
         case "metodo":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractFisio = false;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
           this.mostrarMetodosConser = !this.mostrarMetodosConser;
           break;
       }

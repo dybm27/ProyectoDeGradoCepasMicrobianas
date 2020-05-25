@@ -28,7 +28,7 @@ class MetodoConserBacteriaController extends Controller
 
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $bacteria->id);
+        $imagen = $this->guardarImagen($request->imagen, $bacteria->id);
 
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
@@ -40,7 +40,6 @@ class MetodoConserBacteriaController extends Controller
         $metodoConserBacteria->numero_replicas = intval($request->numero_replicas);
         $metodoConserBacteria->recuento_microgota = $request->recuento_microgota;
         $metodoConserBacteria->imagen = $imagen['ruta'];
-        $metodoConserBacteria->descripcion = $request->descripcion;
         $metodoConserBacteria->imagenPublica =  $imagen['rutaPublica'];
         $metodoConserBacteria->save();
 
@@ -69,8 +68,6 @@ class MetodoConserBacteriaController extends Controller
 
         $metodoConserBacteria = MetodoConserBacteria::find($id);
 
-        $file = $request->file('imagen');
-
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserBacteria->tipo_id = intval($request->tipo_metodo);
@@ -78,13 +75,12 @@ class MetodoConserBacteriaController extends Controller
         $metodoConserBacteria->fecha = $fecha;
         $metodoConserBacteria->numero_replicas = intval($request->numero_replicas);
         $metodoConserBacteria->recuento_microgota = $request->recuento_microgota;
-        $metodoConserBacteria->descripcion = $request->descripcion;
 
-        if (!empty($file)) {
+        if ($request->imagen != $metodoConserBacteria->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($metodoConserBacteria->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $metodoConserBacteria->bacteria_id);
+            $imagen = $this->guardarImagen($request->imagen, $metodoConserBacteria->bacteria_id);
 
             $metodoConserBacteria->imagen =  $imagen['ruta'];
             $metodoConserBacteria->imagenPublica =  $imagen['rutaPublica'];
@@ -111,13 +107,14 @@ class MetodoConserBacteriaController extends Controller
         return $metodoConserBacteria;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/bacterias/metodo_conser_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/bacterias/metodo_conser_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

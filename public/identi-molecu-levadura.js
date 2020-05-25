@@ -119,6 +119,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         tipo: "identi",
         data: data
       });
+      this.modificarForm = true;
     },
     editar: function editar(data) {
       this.accionEditarCaract({

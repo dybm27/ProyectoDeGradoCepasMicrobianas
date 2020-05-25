@@ -332,7 +332,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_caseina" class>Hidrolisís de la Caseína</label>
                       <input
@@ -346,7 +346,7 @@
                       />
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_gelatina" class>Hidrolisís de la Gelatina</label>
                       <input
@@ -360,7 +360,9 @@
                       />
                     </div>
                   </div>
-                  <div class="col-md-4">
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="hidro_urea" class>Hidrolisís de la Úrea</label>
                       <input
@@ -370,22 +372,6 @@
                         type="text"
                         class="form-control"
                         v-model="parametros.hidro_urea"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="position-relative form-group">
-                      <label for="creci_nacl" class>Crecimiento en Nacl</label>
-                      <input
-                        name="creci_nacl"
-                        id="creci_nacl"
-                        placeholder="..."
-                        type="text"
-                        class="form-control"
-                        v-model="parametros.creci_nacl"
                         required
                       />
                     </div>
@@ -408,13 +394,16 @@
                 <div class="form-row">
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="otras_caract">Otras Características</label>
-                      <textarea
-                        name="otras_caract"
-                        id="otras_caract"
+                      <label for="creci_nacl" class>Crecimiento en Nacl</label>
+                      <input
+                        name="creci_nacl"
+                        id="creci_nacl"
+                        placeholder="..."
+                        type="text"
                         class="form-control"
-                        v-model="parametros.otras_caract"
-                      ></textarea>
+                        v-model="parametros.creci_nacl"
+                        required
+                      />
                     </div>
                   </div>
                   <template v-if="required">
@@ -426,27 +415,24 @@
                           @change="obtenerImagenes"
                           id="imagen"
                           type="file"
-                          accept="image/jpeg"
+                          accept="image/jpeg, image/png"
                           class="form-control-file"
                           ref="inputImagen"
                           multiple
                           :required="required"
                         />
                         <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
-                        <!--  <small
-                    class="form-text text-muted"
-                        >Debe tener un tamaño ''px ''px y un peso de ''kbs.</small>-->
                       </div>
                     </div>
                   </template>
                   <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="descripcion_imagenes">Descripción Imágenes</label>
+                      <label for="otras_caract">Otras Características</label>
                       <textarea
-                        name="text"
-                        id="descripcion_imagenes"
+                        name="otras_caract"
+                        id="otras_caract"
                         class="form-control"
-                        v-model="parametros.descripcion_imagenes"
+                        v-model="parametros.otras_caract"
                       ></textarea>
                     </div>
                   </div>
@@ -463,14 +449,18 @@
       </div>
     </div>
     <div class="container">
-      <div class="main-card mb-3 card">
-        <div class="card-body">
-          <h5 class="card-title">Imagenes</h5>
-          <div class="row justify-content-md-center">
-            <template v-if="required">
-              <div class="col-md-12">
-                <template v-if="imagenes.length===cantImagenes">
-                  <croppie-cepas :imagenes="imagenes" @cambiarValorImagen="cambiarValorImagen" />
+      <div class="row justify-content-md-center">
+        <template v-if="required">
+          <div class="col-md-12">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">Imagenes</h5>
+                <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+                  <croppie-cepas
+                    :imagenes="imagenesCroppie"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :posicion="'horizontal'"
+                  />
                 </template>
                 <template v-else>
                   <div class="text-center">
@@ -482,11 +472,15 @@
                   </div>
                 </template>
               </div>
-            </template>
-            <template v-else>
-              <div class="col-md-8">
+            </div>
+          </div>
+        </template>
+        <template v-else>
+          <div class="col-md-5">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">Imagenes</h5>
                 <imagenes
-                  class="mt-4 mr-4 ml-4"
                   :parametros="parametros"
                   :tipoCepa="'bacteria/caract-bioqui'"
                   :imagenes="imagenes"
@@ -494,9 +488,9 @@
                   @accionImagen="accionImagen"
                 ></imagenes>
               </div>
-            </template>
+            </div>
           </div>
-        </div>
+        </template>
       </div>
     </div>
   </div>
@@ -517,6 +511,7 @@ export default {
   data() {
     return {
       parametros: {
+        cepaId: "",
         oxidasa: "",
         catalasa: "",
         citrato: "",
@@ -552,13 +547,13 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: "",
-        descripcion_imagenes: ""
+        imagen3: ""
       },
       tituloForm: "",
       nomBtn: "",
       errors: [],
       erroresImagenes: "",
+      imagenesCroppie: [],
       imagenes: [],
       cantImagenes: ""
     };
@@ -567,24 +562,23 @@ export default {
     cambiarValorImagen(datos) {
       switch (datos.num) {
         case 1:
+          this.imagenes[0].source = datos.data;
           this.parametros.imagen1 = datos.data;
           break;
         case 2:
+          this.imagenes[1].source = datos.data;
           this.parametros.imagen2 = datos.data;
           break;
         case 3:
+          this.imagenes[2].source = datos.data;
           this.parametros.imagen3 = datos.data;
           break;
       }
     },
     evento() {
       if (this.tituloForm === "Agregar Característica") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/bacteria/caract-bioqui", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/bacteria/caract-bioqui", this.parametros)
           .then(res => {
             this.errors = [];
             this.$refs.inputImagen.value = "";
@@ -662,7 +656,7 @@ export default {
             if (!allowedExtensions.exec(imagen.name) || imagen.size > 2000000) {
               this.limpiar(1);
               this.erroresImagenes =
-                "Las imagenes deben ser en formato .png/.jpg y menor a 2Mb.";
+                "Las imagenes deben ser en formato .png .jpg y menor a 2Mb.";
               imagenes = "";
               break;
             } else {
@@ -678,22 +672,23 @@ export default {
       }
     },
     cargarImagenes(imagenes) {
+      this.imagenesCroppie = [];
       if (imagenes) {
         for (let index = 0; index < imagenes.length; index++) {
           let reader = new FileReader();
           reader.onload = e => {
             switch (index) {
               case 0:
-                //this.parametros.imagen1 = imagenes[index];
-                this.imagenes.push(e.target.result);
+                this.pushImagen(1, e.target.result, true);
+                this.imagenesCroppie.push(e.target.result);
                 break;
               case 1:
-                //this.parametros.imagen2 = imagenes[index];
-                this.imagenes.push(e.target.result);
+                this.pushImagen(2, e.target.result, false);
+                this.imagenesCroppie.push(e.target.result);
                 break;
               case 2:
-                //this.parametros.imagen3 = imagenes[index];
-                this.imagenes.push(e.target.result);
+                this.pushImagen(3, e.target.result, false);
+                this.imagenesCroppie.push(e.target.result);
                 break;
             }
           };
@@ -772,67 +767,7 @@ export default {
       this.parametros.imagen1 = this.info.imagen1;
       this.parametros.imagen2 = this.info.imagen2;
       this.parametros.imagen3 = this.info.imagen3;
-      this.parametros.descripcion_imagenes = this.info.descripcion;
       this.llenarArregloImagenes();
-    },
-    appendInfo(formData) {
-      if (this.$route.params.cepaBacteriaId) {
-        formData.append("cepaId", this.$route.params.cepaBacteriaId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("oxidasa", this.parametros.oxidasa);
-      formData.append("catalasa", this.parametros.catalasa);
-      formData.append("citrato", this.parametros.citrato);
-      formData.append("tsi", this.parametros.tsi);
-      formData.append("lia", this.parametros.lia);
-      formData.append("sim", this.parametros.sim);
-      formData.append("rm", this.parametros.rm);
-      formData.append("vp", this.parametros.vp);
-      formData.append("nitrato", this.parametros.nitrato);
-      formData.append("caldo_urea", this.parametros.caldo_urea);
-      formData.append("of", this.parametros.of);
-      formData.append("glucosa", this.parametros.glucosa);
-      formData.append("lactosa", this.parametros.lactosa);
-      formData.append("manitol", this.parametros.manitol);
-      formData.append("xilosa", this.parametros.xilosa);
-      formData.append("arabinosa", this.parametros.arabinosa);
-      formData.append("sacarosa", this.parametros.sacarosa);
-      formData.append(
-        "otros_azucares",
-        this.parametros.otros_azucares === null
-          ? ""
-          : this.parametros.otros_azucares
-      );
-      formData.append("almidon", this.parametros.almidon);
-      formData.append("lecitinasa", this.parametros.lecitinasa);
-      formData.append("lipasa", this.parametros.lipasa);
-      formData.append(
-        "otras_enzimas",
-        this.parametros.otras_enzimas === null
-          ? ""
-          : this.parametros.otras_enzimas
-      );
-      formData.append("hidro_caseina", this.parametros.hidro_caseina);
-      formData.append("hidro_gelatina", this.parametros.hidro_gelatina);
-      formData.append("hidro_urea", this.parametros.hidro_urea);
-      formData.append("creci_nacl", this.parametros.creci_nacl);
-      formData.append("creci_dif_temp", this.parametros.creci_dif_temp);
-      formData.append(
-        "otras_caract",
-        this.parametros.otras_caract === null
-          ? ""
-          : this.parametros.otras_caract
-      );
-      formData.append("imagen1", this.parametros.imagen1);
-      formData.append("imagen2", this.parametros.imagen2);
-      formData.append("imagen3", this.parametros.imagen3);
-      formData.append(
-        "descripcion_imagenes",
-        this.parametros.descripcion_imagenes === null
-          ? ""
-          : this.parametros.descripcion_imagenes
-      );
     },
     accionImagen(data) {
       this.$emit("editar", data);
@@ -861,17 +796,53 @@ export default {
       }
     },
     btnDisable() {
-      if (this.imagenes) {
-        if (this.imagenes[0] && !this.parametros.imagen1) {
-          return true;
+      if (this.imagenes != "") {
+        if (this.info) {
+          if (this.info.imagen1) {
+            if (this.imagenes[0] && !this.parametros.imagen1) {
+              return true;
+            }
+            if (this.info.imagen2) {
+              if (this.imagenes[1] && !this.parametros.imagen2) {
+                return true;
+              }
+              if (this.info.imagen3) {
+                if (this.imagenes[2] && !this.parametros.imagen3) {
+                  return true;
+                }
+              }
+            } else if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen2) {
+            if (this.imagenes[0] && !this.parametros.imagen2) {
+              return true;
+            }
+            if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen3) {
+            if (this.imagenes[0] && !this.parametros.imagen3) {
+              return true;
+            }
+          }
+          return false;
+        } else {
+          if (this.imagenes[0] && !this.parametros.imagen1) {
+            return true;
+          }
+          if (this.imagenes[1] && !this.parametros.imagen2) {
+            return true;
+          }
+          if (this.imagenes[2] && !this.parametros.imagen3) {
+            return true;
+          }
+          return false;
         }
-        if (this.imagenes[1] && !this.parametros.imagen2) {
-          return true;
-        }
-        if (this.imagenes[2] && !this.parametros.imagen3) {
-          return true;
-        }
-        return false;
       } else {
         return false;
       }
@@ -885,6 +856,11 @@ export default {
     } else {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
+    }
+    if (this.$route.params.cepaBacteriaId) {
+      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
     }
   }
 };

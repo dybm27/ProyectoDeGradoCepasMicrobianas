@@ -27,7 +27,6 @@ class CreateMetodoConserLevadurasTable extends Migration
             $table->string('observaciones')->nullable();
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->string('descripcion')->nullable();
 
             $table->timestamps();
         });

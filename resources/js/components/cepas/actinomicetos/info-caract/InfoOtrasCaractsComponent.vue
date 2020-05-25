@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('my_modal')"
+              @click="$modal.show('otras_caract')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Característica</button>
             <button
@@ -46,22 +46,22 @@
       </div>
     </div>
 
-    <modal name="my_modal" :width="400" :height="300">
+    <modal name="otras_caract" :width="450" :height="200">
       <div class="modal-content">
         <div class="modal-header">
           <h5
             class="modal-title"
             id="exampleModalLongTitle"
           >Eliminar Otras Características de Interés</h5>
-          <button type="button" class="close" @click="$modal.hide('my_modal')">
+          <button type="button" class="close" @click="$modal.hide('otras_caract')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>Esta segura/o de eliminar laS CaracterísticaS?.</p>
+          <p>Esta segura/o de eliminar las Características?.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
+          <button type="button" class="btn btn-secondary" @click="$modal.hide('otras_caract')">Cancelar</button>
           <button type="button" class="btn btn-primary" @click="eliminar">Eliminar</button>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default {
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
-          this.$modal.hide("my_modal");
+          this.$modal.hide("otras_caract");
           this.accionEliminarCaract({ tipo: "otras", data: res.data });
           this.toastr(
             "Eliminar Característica",

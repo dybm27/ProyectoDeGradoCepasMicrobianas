@@ -14,7 +14,7 @@ class MetodoConserLevaduraController extends Controller
 {
     public function store(Request $request)
     {
-        if ($request->numero_pases == null) {
+        if (is_null($request->numero_pases)) {
             $rules = [
                 'fecha' => 'required',
                 'numero_replicas' => 'bail|numeric|min:1|max:999999999'
@@ -35,7 +35,7 @@ class MetodoConserLevaduraController extends Controller
 
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $levadura->id);
+        $imagen = $this->guardarImagen($request->imagen, $levadura->id);
 
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
@@ -49,7 +49,6 @@ class MetodoConserLevaduraController extends Controller
         $metodoConserLevadura->medio_cultivo = $request->medio_cultivo;
         $metodoConserLevadura->observaciones = $request->observaciones;
         $metodoConserLevadura->imagen = $imagen['ruta'];
-        $metodoConserLevadura->descripcion = $request->descripcion;
         $metodoConserLevadura->imagenPublica =  $imagen['rutaPublica'];
         $metodoConserLevadura->save();
 
@@ -66,7 +65,7 @@ class MetodoConserLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->numero_pases == null) {
+        if (is_null($request->numero_pases)) {
             $rules = [
                 'fecha' => 'required',
                 'numero_replicas' => 'bail|numeric|min:1|max:999999999'
@@ -87,8 +86,6 @@ class MetodoConserLevaduraController extends Controller
 
         $metodoConserLevadura = MetodoConserLevadura::find($id);
 
-        $file = $request->file('imagen');
-
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserLevadura->tipo_id = intval($request->tipo_metodo);
@@ -98,13 +95,12 @@ class MetodoConserLevaduraController extends Controller
         $metodoConserLevadura->recuento_microgota = $request->recuento_microgota;
         $metodoConserLevadura->medio_cultivo = $request->medio_cultivo;
         $metodoConserLevadura->observaciones = $request->observaciones;
-        $metodoConserLevadura->descripcion = $request->descripcion;
 
-        if (!empty($file)) {
+        if ($request->imagen != $metodoConserLevadura->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($metodoConserLevadura->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $metodoConserLevadura->levadura_id);
+            $imagen = $this->guardarImagen($request->imagen, $metodoConserLevadura->levadura_id);
 
             $metodoConserLevadura->imagen =  $imagen['ruta'];
             $metodoConserLevadura->imagenPublica =  $imagen['rutaPublica'];
@@ -131,13 +127,14 @@ class MetodoConserLevaduraController extends Controller
         return $metodoConserLevadura;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/levaduras/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/levaduras/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/levaduras/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/levaduras/metodo_conser_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/levaduras/metodo_conser_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/levaduras/metodo_conser_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

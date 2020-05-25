@@ -2,8 +2,14 @@
   <div>
     <transition name="slide">
       <div class="carousel-item" :class="directionClass" v-show="active">
-        <span class="badge badge-pill badge-primary">{{num}}</span>
-        <img class="d-block w-100" :src="source" :alt="text" />
+        <div class="container">
+          <div class="row">
+            <span class="badge badge-pill badge-primary float-left">{{num}}</span>
+          </div>
+          <div class="row justify-content-md-center">
+            <img width="200px" height="200px" :src="source" :alt="text" class="border border-primary rounded" />
+          </div>
+        </div>
       </div>
     </transition>
   </div>

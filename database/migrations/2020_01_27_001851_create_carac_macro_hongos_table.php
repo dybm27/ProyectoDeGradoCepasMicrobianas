@@ -25,7 +25,6 @@ class CreateCaracMacroHongosTable extends Migration
             $table->string('caracteristicas_reverso',100);
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->string('descripcion',100)->nullable();
             $table->timestamps();
         });
     }

@@ -26,7 +26,6 @@ class CreateMetodoConserBacteriasTable extends Migration
             $table->string('recuento_microgota', 50);
             $table->string('imagen')->nullable();
             $table->string('imagenPublica')->nullable();
-            $table->string('descripcion')->nullable();
         
             $table->timestamps();
         });

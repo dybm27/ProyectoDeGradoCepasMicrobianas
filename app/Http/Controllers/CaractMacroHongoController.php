@@ -15,7 +15,7 @@ class CaractMacroHongoController extends Controller
     {
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $hongo->id);
+        $imagen = $this->guardarImagen($request->imagen, $hongo->id);
 
         $caractMacroHongo = new CaracMacroHongo();
         $caractMacroHongo->hongo_filamentoso_id = $hongo->id;
@@ -40,12 +40,11 @@ class CaractMacroHongoController extends Controller
     public function update(Request $request, $id)
     {
         $caractMacroHongo = CaracMacroHongo::find($id);
-        $file = $request->file('imagen');
-        if (!empty($file)) {
+        if ($request->imagen != $caractMacroHongo->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($caractMacroHongo->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $caractMacroHongo->hongo_filamentoso_id);
+            $imagen = $this->guardarImagen($request->imagen, $caractMacroHongo->hongo_filamentoso_id);
 
             $caractMacroHongo->imagen = $imagen['ruta'];
             $caractMacroHongo->imagenPublica = $imagen['rutaPublica'];
@@ -75,13 +74,14 @@ class CaractMacroHongoController extends Controller
         return $caractMacroHongo;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/hongos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/hongos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/hongos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/hongos/caract_macro_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/hongos/caract_macro_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/hongos/caract_macro_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

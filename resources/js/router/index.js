@@ -372,7 +372,7 @@ const routes = [
             )
     },
     {
-        path: "/actinomicetos/:cepaId",
+        path: "/cepas/actinomiceto/:cepaId",
         name: "cepa-actinomiceto",
         component: () =>
             import(
@@ -578,7 +578,16 @@ const routes = [
             }
         ]
     },
+    {
+        path: "/bacterias/ver/:cepaBacteriaId",
+        name: "ver-bacteria",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-bacteria" */
 
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
     // ---------------------- HONGOS ------------------------------------------------
     {
         path: "/hongos",
@@ -704,7 +713,16 @@ const routes = [
             }
         ]
     },
+    {
+        path: "/hongos/ver/:cepaHongoId",
+        name: "ver-hongo",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-hongo" */
 
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
     // ---------------------- LEVADURAS ------------------------------------------------
     {
         path: "/levaduras",
@@ -828,7 +846,16 @@ const routes = [
             }
         ]
     },
+    {
+        path: "/levaduras/ver/:cepaLevaduraId",
+        name: "ver-levadura",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-levadura" */
 
+                "../components/cepas/VerCepaComponent.vue"
+            )
+    },
     // ---------------------- ACTINOMICETOS ------------------------------------------------
     {
         path: "/actinomicetos",
@@ -929,6 +956,16 @@ const routes = [
                     )
             }
         ]
+    },
+    {
+        path: "/actinomicetos/ver/:cepaActinomicetoId",
+        name: "ver-actinomiceto",
+        component: () =>
+            import(
+                /* webpackChunkName: "ver-actinomiceto" */
+
+                "../components/cepas/VerCepaComponent.vue"
+            )
     },
     // ----------------------------------------------------------------------------------------------
 

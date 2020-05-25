@@ -15,9 +15,9 @@ class IdentiMolecuHongoController extends Controller
     {
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
         // img pcr
-        $imagen_pcr = $this->guardarImagen($request->file('imagen_pcr'), $hongo->id);
-        // img blast
-        $imagen_blast = $this->guardarImagen($request->file('imagen_blast'), $hongo->id);
+        $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $hongo->id, 'pcr');
+
+        $imagen_blast = $this->guardarImagen($request->imagen_blast, $hongo->id, 'blast');
 
         $IdentiMolecuHongo = new IdentiMolecuHongo();
         $IdentiMolecuHongo->hongo_filamentoso_id = $hongo->id;
@@ -52,20 +52,17 @@ class IdentiMolecuHongoController extends Controller
 
     public function update(Request $request, $id)
     {
-        $imagen_pcr = $request->file('imagen_pcr');
-        $imagen_blast = $request->file('imagen_blast');
-
         $IdentiMolecuHongo = IdentiMolecuHongo::find($id);
 
-        if (!empty($imagen_pcr)) {
+        if ($request->imagen_pcr != $IdentiMolecuHongo->imagen_pcr) {
             Storage::disk('local')->delete($IdentiMolecuHongo->imagen_pcr);
-            $imagen_pcr = $this->guardarImagen($imagen_pcr, $IdentiMolecuHongo->bateria_id);
+            $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $IdentiMolecuHongo->bateria_id, 'pcr');
             $IdentiMolecuHongo->imagen_pcr = $imagen_pcr['ruta'];
             $IdentiMolecuHongo->imagen_pcrPublica = $imagen_pcr['rutaPublica'];
         }
-        if (!empty($imagen_blast)) {
+        if ($request->imagen_blast != $IdentiMolecuHongo->imagen_blast) {
             Storage::disk('local')->delete($IdentiMolecuHongo->imagen_blast);
-            $imagen_blast = $this->guardarImagen($imagen_blast, $IdentiMolecuHongo->hongo_filamentoso_id);
+            $imagen_blast = $this->guardarImagen($request->imagen_blast, $IdentiMolecuHongo->hongo_filamentoso_id, 'blast');
             $IdentiMolecuHongo->imagen_blast = $imagen_blast['ruta'];
             $IdentiMolecuHongo->imagen_blastPublica = $imagen_blast['rutaPublica'];
         }
@@ -103,13 +100,14 @@ class IdentiMolecuHongoController extends Controller
         return $IdentiMolecuHongo;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id, $tipo)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/hongos/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/hongos/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/hongos/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = $tipo . '-' . time() . '.png';
+        Storage::disk('local')->put('/public/hongos/identi_molecu_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/hongos/identi_molecu_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/hongos/identi_molecu_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

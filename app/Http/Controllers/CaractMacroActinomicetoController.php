@@ -15,9 +15,7 @@ class CaractMacroActinomicetoController extends Controller
     {
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
 
-
-        //obtenemos el nombre de la imagen
-        $imagen = $this->guardarImagen($request->file('imagen'), $actinomiceto->id);
+        $imagen = $this->guardarImagen($request->imagen, $actinomiceto->id);
 
         $caractMacroActinomiceto = new CaracMacroActinomiceto();
         $caractMacroActinomiceto->actinomiceto_id = $actinomiceto->id;
@@ -32,7 +30,6 @@ class CaractMacroActinomicetoController extends Controller
         $caractMacroActinomiceto->otras_caract = $request->otras_caract;
         $caractMacroActinomiceto->imagen = $imagen['ruta'];
         $caractMacroActinomiceto->imagenPublica = $imagen['rutaPublica'];
-        $caractMacroActinomiceto->descripcion = $request->imagen_descripcion;
         $caractMacroActinomiceto->save();
 
         $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
@@ -50,13 +47,11 @@ class CaractMacroActinomicetoController extends Controller
     {
         $caractMacroActinomiceto = CaracMacroActinomiceto::find($id);
 
-        $file = $request->file('imagen');
-
-        if (!empty($file)) {
+        if ($request->imagen != $caractMacroActinomiceto->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($caractMacroActinomiceto->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $caractMacroActinomiceto->actinomiceto_id);
+            $imagen = $this->guardarImagen($request->imagen, $caractMacroActinomiceto->actinomiceto_id);
 
             $caractMacroActinomiceto->imagen = $imagen['ruta'];
             $caractMacroActinomiceto->imagenPublica = $imagen['rutaPublica'];
@@ -71,7 +66,6 @@ class CaractMacroActinomicetoController extends Controller
         $caractMacroActinomiceto->secrecion_geosminas = ucfirst($request->secrecion_geosminas);
         $caractMacroActinomiceto->color_id = intval($request->color);
         $caractMacroActinomiceto->otras_caract = $request->otras_caract;
-        $caractMacroActinomiceto->descripcion = $request->imagen_descripcion;
 
         $caractMacroActinomiceto->save();
 
@@ -94,13 +88,14 @@ class CaractMacroActinomicetoController extends Controller
         return $caractMacroActinomiceto;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/actinomicetos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/actinomicetos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/actinomicetos/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/actinomicetos/caract_macro_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/actinomicetos/caract_macro_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/actinomicetos/caract_macro_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

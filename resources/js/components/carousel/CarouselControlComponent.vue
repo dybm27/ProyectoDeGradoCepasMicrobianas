@@ -18,7 +18,7 @@
 <script>
 import bus from "./event-bus";
 export default {
-  props: ["order"],
+  props: ["order", "id"],
   data() {
     return {
       buttonClass: `carousel-control-${this.order}`
@@ -32,9 +32,9 @@ export default {
   methods: {
     handleClick(event) {
       if (this.order === "next") {
-        bus.$emit("goNext");
+        bus.$emit("goNext-" + this.id);
       } else if (this.order === "prev") {
-        bus.$emit("goPrev");
+        bus.$emit("goPrev-" + this.id);
       }
     }
   }

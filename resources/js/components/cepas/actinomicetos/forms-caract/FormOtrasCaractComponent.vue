@@ -1,179 +1,230 @@
 <template>
-  <div>
-    <form @submit.prevent="evento" class="mt-4 mr-4 ml-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <h5 class="card-title">{{tituloForm}}</h5>
-                <div class="position-relative form-group">
-                  <label for="fijacion_nitrogeno" class>Fijación Nitrogeno</label>
-                  <input
-                    name="fijacion_nitrogeno"
-                    id="fijacion_nitrogeno"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.fijacion_nitrogeno"
-                    required
-                  />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">{{tituloForm}}</h5>
+            <form @submit.prevent="evento" class="mt-4 mr-4 ml-4">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="fijacion_nitrogeno" class>Fijación Nitrogeno</label>
+                    <input
+                      name="fijacion_nitrogeno"
+                      id="fijacion_nitrogeno"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.fijacion_nitrogeno"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="position-relative form-group">
-                  <label for="produccion_aia" class>Producción AIA</label>
-                  <input
-                    name="produccion_aia"
-                    id="produccion_aia"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.produccion_aia"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="giberelinas" class>Giberelinas</label>
-                  <input
-                    name="giberelinas"
-                    id="giberelinas"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.giberelinas"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="produccion_sideroforos" class>Producción Sideróforos</label>
-                  <input
-                    name="produccion_sideroforos"
-                    id="produccion_sideroforos"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.produccion_sideroforos"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="solubili_fosforo" class>Solubilización de Fósforo</label>
-                  <input
-                    name="solubili_fosforo"
-                    id="solubili_fosforo"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.solubili_fosforo"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="produccion_pha" class>Producción PHA</label>
-                  <input
-                    name="produccion_pha"
-                    id="produccion_pha"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.produccion_pha"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="alta_produc_antibioticos" class>Alta Producción De Antibióticos</label>
-                  <input
-                    name="alta_produc_antibioticos"
-                    id="alta_produc_antibioticos"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.alta_produc_antibioticos"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="activi_enzimaticas" class>Actividades Enzimáticas</label>
-                  <input
-                    name="activi_enzimaticas"
-                    id="activi_enzimaticas"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.activi_enzimaticas"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="antagonismos" class>Antagonismos</label>
-                  <input
-                    name="antagonismos"
-                    id="antagonismos"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.antagonismos"
-                    required
-                  />
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="produccion_aia" class>Producción AIA</label>
+                    <input
+                      name="produccion_aia"
+                      id="produccion_aia"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.produccion_aia"
+                      required
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <div class="position-relative form-group">
-                  <label for="otras_caract">Otras Características</label>
-                  <textarea
-                    name="otras_caract"
-                    id="otras_caract"
-                    class="form-control"
-                    v-model="parametros.otras_caract"
-                  ></textarea>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="giberelinas" class>Giberelinas</label>
+                    <input
+                      name="giberelinas"
+                      id="giberelinas"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.giberelinas"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="produccion_sideroforos" class>Producción Sideróforos</label>
+                    <input
+                      name="produccion_sideroforos"
+                      id="produccion_sideroforos"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.produccion_sideroforos"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="solubili_fosforo" class>Solubilización de Fósforo</label>
+                    <input
+                      name="solubili_fosforo"
+                      id="solubili_fosforo"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.solubili_fosforo"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="produccion_pha" class>Producción PHA</label>
+                    <input
+                      name="produccion_pha"
+                      id="produccion_pha"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.produccion_pha"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="alta_produc_antibioticos" class>Alta Producción De Antibióticos</label>
+                    <input
+                      name="alta_produc_antibioticos"
+                      id="alta_produc_antibioticos"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.alta_produc_antibioticos"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="activi_enzimaticas" class>Actividades Enzimáticas</label>
+                    <input
+                      name="activi_enzimaticas"
+                      id="activi_enzimaticas"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.activi_enzimaticas"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div :class="classRow">
+                  <div class="position-relative form-group">
+                    <label for="antagonismos" class>Antagonismos</label>
+                    <input
+                      name="antagonismos"
+                      id="antagonismos"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.antagonismos"
+                      required
+                    />
+                  </div>
                 </div>
                 <template v-if="required">
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Imágenes</label>
-                    <input
-                      name="imagen"
-                      @change="obtenerImagenes"
-                      id="imagen"
-                      type="file"
-                      accept="image/jpeg"
-                      class="form-control-file"
-                      ref="inputImagen"
-                      multiple
-                      :required="required"
-                    />
-                    <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
-                    <!--  <small
-                    class="form-text text-muted"
-                    >Debe tener un tamaño ''px ''px y un peso de ''kbs.</small>-->
+                  <div class="col-md-4">
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Imágenes</label>
+                      <input
+                        name="imagen"
+                        @change="obtenerImagenes"
+                        id="imagen"
+                        type="file"
+                        accept="image/jpeg, image/png"
+                        class="form-control-file"
+                        ref="inputImagen"
+                        multiple
+                        :required="required"
+                      />
+                      <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                    </div>
                   </div>
                 </template>
-                <div class="position-relative form-group">
-                  <label for="descripcion_imagenes">Descripción Imágenes</label>
-                  <textarea
-                    name="text"
-                    id="descripcion_imagenes"
-                    class="form-control"
-                    v-model="parametros.descripcion_imagenes"
-                  ></textarea>
+                <div :class="classRow">
+                  <div class="position-relative form-group">
+                    <label for="otras_caract">Otras Características</label>
+                    <textarea
+                      name="otras_caract"
+                      id="otras_caract"
+                      class="form-control autosize-input"
+                      v-model="parametros.otras_caract"
+                    ></textarea>
+                  </div>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtn}}</button>
               </div>
-            </div>
-            <imagenes
-              :required="required"
-              :parametros="this.parametros"
-              :tipoCepa="'actinomiceto/otras-caract'"
-              :imagenes="this.imagenes"
-              :cepa="this.info"
-              @accionImagen="accionImagen"
-            ></imagenes>
+              <button
+                class="mb-2 mr-2 btn btn-block"
+                :class="btnClase"
+                :disabled="btnDisable"
+              >{{nomBtn}}</button>
+            </form>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+    <div class="row justify-content-md-center">
+      <template v-if="required">
+        <div class="col-md-12">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <h5 class="card-title">Imagenes</h5>
+              <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+                <croppie-cepas
+                  :imagenes="imagenesCroppie"
+                  @cambiarValorImagen="cambiarValorImagen"
+                  :posicion="'horizontal'"
+                />
+              </template>
+              <template v-else>
+                <div class="text-center">
+                  <h5 class="mt-5 mb-5">
+                    <span class="pr-1">
+                      <b class="text-warning">SIN IMÁGENES</b>
+                    </span>
+                  </h5>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template v-else>
+        <div class="col-md-5">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <h5 class="card-title">Imagenes</h5>
+              <imagenes
+                :parametros="parametros"
+                :tipoCepa="'actinomiceto/otras-caract'"
+                :imagenes="imagenes"
+                :cepa="info"
+                @accionImagen="accionImagen"
+              ></imagenes>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -193,6 +244,7 @@ export default {
   data() {
     return {
       parametros: {
+        cepaId: "",
         fijacion_nitrogeno: "",
         produccion_aia: "",
         giberelinas: "",
@@ -205,25 +257,38 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: "",
-        descripcion_imagenes: ""
+        imagen3: ""
       },
       tituloForm: "",
       nomBtn: "",
       errors: [],
       erroresImagenes: "",
-      imagenes: []
+      imagenesCroppie: [],
+      imagenes: [],
+      cantImagenes: ""
     };
   },
   methods: {
+    cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.imagenes[0].source = datos.data;
+          this.parametros.imagen1 = datos.data;
+          break;
+        case 2:
+          this.imagenes[1].source = datos.data;
+          this.parametros.imagen2 = datos.data;
+          break;
+        case 3:
+          this.imagenes[2].source = datos.data;
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento() {
       if (this.tituloForm === "Agregar Características") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/actinomiceto/otras-caract", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/actinomiceto/otras-caract", this.parametros)
           .then(res => {
             this.errors = [];
             this.$refs.inputImagen.value = "";
@@ -289,13 +354,14 @@ export default {
       });
     },
     obtenerImagenes(e) {
+      this.cantImagenes = 0;
       this.limpiar(0);
       let file = e.target.files[3];
       if (file) {
         this.erroresImagenes = "Solo puede subir max 3 imágenes.";
         this.limpiar(1);
       } else {
-        let allowedExtensions = /(.jpg|.jpeg)$/i;
+        let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
         let imagenes = [];
         for (let index = 0; index < 3; index++) {
           let imagen = e.target.files[index];
@@ -303,7 +369,7 @@ export default {
             if (!allowedExtensions.exec(imagen.name) || imagen.size > 2000000) {
               this.limpiar(1);
               this.erroresImagenes =
-                "Las imagenes deben ser en formato .jpeg/.jpg y menor a 2Mb.";
+                "Las imagenes deben ser en formato .png .jpg y menor a 2Mb.";
               imagenes = "";
               break;
             } else {
@@ -314,6 +380,7 @@ export default {
             break;
           }
         }
+        this.cantImagenes = imagenes.length;
         this.cargarImagenes(imagenes);
       }
     },
@@ -324,15 +391,15 @@ export default {
           reader.onload = e => {
             switch (index) {
               case 0:
-                this.parametros.imagen1 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(1, e.target.result, true);
                 break;
               case 1:
-                this.parametros.imagen2 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(2, e.target.result, false);
                 break;
               case 2:
-                this.parametros.imagen3 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(3, e.target.result, false);
                 break;
             }
@@ -394,45 +461,7 @@ export default {
       this.parametros.imagen1 = this.info.imagen1;
       this.parametros.imagen2 = this.info.imagen2;
       this.parametros.imagen3 = this.info.imagen3;
-      this.parametros.descripcion_imagenes = this.info.descripcion;
       this.llenarArregloImagenes();
-    },
-    appendInfo(formData) {
-      if (this.$route.params.cepaActinomicetoId) {
-        formData.append("cepaId", this.$route.params.cepaActinomicetoId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("fijacion_nitrogeno", this.parametros.fijacion_nitrogeno);
-      formData.append("produccion_aia", this.parametros.produccion_aia);
-      formData.append("giberelinas", this.parametros.giberelinas);
-      formData.append("solubili_fosforo", this.parametros.solubili_fosforo);
-      formData.append(
-        "produccion_sideroforos",
-        this.parametros.produccion_sideroforos
-      );
-      formData.append("antagonismos", this.parametros.antagonismos);
-      formData.append("activi_enzimaticas", this.parametros.activi_enzimaticas);
-      formData.append(
-        "alta_produc_antibioticos",
-        this.parametros.alta_produc_antibioticos
-      );
-      formData.append("produccion_pha", this.parametros.produccion_pha);
-      formData.append(
-        "otras_caract",
-        this.parametros.otras_caract === null
-          ? ""
-          : this.parametros.otras_caract
-      );
-      formData.append("imagen1", this.parametros.imagen1);
-      formData.append("imagen2", this.parametros.imagen2);
-      formData.append("imagen3", this.parametros.imagen3);
-      formData.append(
-        "descripcion_imagenes",
-        this.parametros.descripcion_imagenes === null
-          ? ""
-          : this.parametros.descripcion_imagenes
-      );
     },
     accionImagen(data) {
       this.$emit("editar", data);
@@ -452,6 +481,65 @@ export default {
       } else {
         return "btn-warning";
       }
+    },
+    classRow() {
+      if (this.tituloForm === "Agregar Características") {
+        return "col-md-4";
+      } else {
+        return "col-md-6";
+      }
+    },
+    btnDisable() {
+      if (this.imagenes != "") {
+        if (this.info) {
+          if (this.info.imagen1) {
+            if (this.imagenes[0] && !this.parametros.imagen1) {
+              return true;
+            }
+            if (this.info.imagen2) {
+              if (this.imagenes[1] && !this.parametros.imagen2) {
+                return true;
+              }
+              if (this.info.imagen3) {
+                if (this.imagenes[2] && !this.parametros.imagen3) {
+                  return true;
+                }
+              }
+            } else if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen2) {
+            if (this.imagenes[0] && !this.parametros.imagen2) {
+              return true;
+            }
+            if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen3) {
+            if (this.imagenes[0] && !this.parametros.imagen3) {
+              return true;
+            }
+          }
+          return false;
+        } else {
+          if (this.imagenes[0] && !this.parametros.imagen1) {
+            return true;
+          }
+          if (this.imagenes[1] && !this.parametros.imagen2) {
+            return true;
+          }
+          if (this.imagenes[2] && !this.parametros.imagen3) {
+            return true;
+          }
+          return false;
+        }
+      } else {
+        return false;
+      }
     }
   },
   mounted() {
@@ -462,6 +550,11 @@ export default {
     } else {
       this.tituloForm = "Agregar Características";
       this.nomBtn = "Agregar";
+    }
+    if (this.$route.params.cepaActinomicetoId) {
+      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
     }
   }
 };
