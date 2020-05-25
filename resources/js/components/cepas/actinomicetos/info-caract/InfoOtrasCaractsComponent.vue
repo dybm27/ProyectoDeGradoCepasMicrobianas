@@ -61,7 +61,11 @@
           <p>Esta segura/o de eliminar las Características?.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="$modal.hide('otras_caract')">Cancelar</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$modal.hide('otras_caract')"
+          >Cancelar</button>
           <button type="button" class="btn btn-primary" @click="eliminar">Eliminar</button>
         </div>
       </div>

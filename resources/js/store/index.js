@@ -262,8 +262,56 @@ export default new Vuex.Store({
         getInfoCaractMacroActinomicetos(state) {
             return state.info_caract_actinomicetos.caract_macro;
         },
+        getInfoCaractMacroActinomicetosById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroActinomicetos.texturas.find(
+                        textura => textura.id === data.id
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroActinomicetos.colors.find(
+                        color => color.id === data.id
+                    );
+                case "forma":
+                    return getters.getInfoCaractMacroActinomicetos.formas_macros.find(
+                        forma => forma.id === data.id
+                    );
+                case "superficie":
+                    return getters.getInfoCaractMacroActinomicetos.superficies.find(
+                        superficie => superficie.id === data.id
+                    );
+                case "borde":
+                    return getters.getInfoCaractMacroActinomicetos.bordes.find(
+                        borde => borde.id === data.id
+                    );
+                case "pigmento":
+                    return getters.getInfoCaractMacroActinomicetos.pigmentos.find(
+                        pigmento => pigmento.id === data.id
+                    );
+            }
+        },
         getInfoCaractMicroActinomicetos(state) {
             return state.info_caract_actinomicetos.caract_micro;
+        },
+        getInfoCaractMicroActinomicetosById: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma":
+                    return getters.getInfoCaractMicroActinomicetos.formas_micros.find(
+                        forma => forma.id === data.id
+                    );
+                case "tincion":
+                    return getters.getInfoCaractMicroActinomicetos.tincions.find(
+                        tincion => tincion.id === data.id
+                    );
+                case "micelio":
+                    return getters.getInfoCaractMicroActinomicetos.micelios.find(
+                        micelio => micelio.id === data.id
+                    );
+                case "conidioforo":
+                    return getters.getInfoCaractMicroActinomicetos.conidioforos.find(
+                        conidioforo => conidioforo.id === data.id
+                    );
+            }
         },
         getUsuarios(state) {
             return state.usuarios;

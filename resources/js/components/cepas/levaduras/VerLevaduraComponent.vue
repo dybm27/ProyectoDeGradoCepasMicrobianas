@@ -837,37 +837,17 @@ export default {
       switch (tipo) {
         case "macro":
           this.mostrarCaractMacro = !this.mostrarCaractMacro;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "micro":
-          this.mostrarCaractMacro = false;
           this.mostrarCaractMicro = !this.mostrarCaractMicro;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "bioqui":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
           this.mostrarCaractBioqui = !this.mostrarCaractBioqui;
-          this.mostrarIdentiMolecu = false;
-          this.mostrarMetodosConser = false;
           break;
         case "identi":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractBioqui = false;
           this.mostrarIdentiMolecu = !this.mostrarIdentiMolecu;
-          this.mostrarMetodosConser = false;
           break;
         case "metodo":
-          this.mostrarCaractMacro = false;
-          this.mostrarCaractMicro = false;
-          this.mostrarCaractBioqui = false;
-          this.mostrarIdentiMolecu = false;
           this.mostrarMetodosConser = !this.mostrarMetodosConser;
           break;
       }
