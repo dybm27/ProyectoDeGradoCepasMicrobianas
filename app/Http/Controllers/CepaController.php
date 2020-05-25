@@ -200,14 +200,14 @@ class CepaController extends Controller
             case 1:
                 $bacteria = Bacteria::where('cepa_id', $cepa->id)
                     ->with([
-                        'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
-                        'caractFisiologica', 'identMolecular', 'metodoConservacion'
+                        'caractMacroscopicas', 'caractMicroscopica', 'caractBioquimica',
+                        'caractFisiologica', 'identMolecular', 'metodosConservacion'
                     ])
                     ->first();
                 if (
-                    count($bacteria->caractMacroscopicas) > 0 || $bacteria->caractMicroscopicas != null
+                    count($bacteria->caractMacroscopicas) > 0 || $bacteria->caractMicroscopica != null
                     || $bacteria->caractBioquimica != null || $bacteria->caractFisiologica != null
-                    || $bacteria->identMolecular != null || count($bacteria->metodoConservacion) > 0
+                    || $bacteria->identMolecular != null || count($bacteria->metodosConservacion) > 0
                 ) {
                     $res = true;
                 }
@@ -215,14 +215,14 @@ class CepaController extends Controller
             case 2:
                 $hongo = HongoFilamentoso::where('cepa_id', $cepa->id)
                     ->with([
-                        'caractMacroscopicas', 'caractMicroscopicas',
-                        'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                        'caractMacroscopicas', 'caractMicroscopica',
+                        'caractBioquimica', 'identMolecular', 'metodosConservacion'
                     ])
                     ->first();
                 if (
-                    count($hongo->caractMacroscopicas) > 0 || $hongo->caractMicroscopicas != null
+                    count($hongo->caractMacroscopicas) > 0 || $hongo->caractMicroscopica != null
                     || $hongo->caractBioquimica != null || $hongo->identMolecular != null
-                    ||  count($hongo->metodoConservacion) > 0
+                    ||  count($hongo->metodosConservacion) > 0
                 ) {
                     $res = true;
                 }
@@ -230,14 +230,14 @@ class CepaController extends Controller
             case 3:
                 $levadura = Levadura::where('cepa_id', $cepa->id)
                     ->with([
-                        'caractMacroscopicas', 'caractMicroscopicas',
-                        'caractBioquimica', 'identMolecular', 'metodoConservacion'
+                        'caractMacroscopicas', 'caractMicroscopica',
+                        'caractBioquimica', 'identMolecular', 'metodosConservacion'
                     ])
                     ->first();
                 if (
-                    count($levadura->caractMacroscopicas) > 0 || $levadura->caractMicroscopicas != null
+                    count($levadura->caractMacroscopicas) > 0 || $levadura->caractMicroscopica != null
                     || $levadura->caractBioquimica != null || $levadura->identMolecular != null
-                    || count($levadura->metodoConservacion) > 0
+                    || count($levadura->metodosConservacion) > 0
                 ) {
                     $res = true;
                 }
@@ -245,15 +245,15 @@ class CepaController extends Controller
             case 4:
                 $actinomiceto = Actinomiceto::where('cepa_id', $cepa->id)
                     ->with([
-                        /*, 'caractMacroscopicas', 'caractMicroscopicas', 'caractBioquimica',
-                    'caractFisiologica', 'identMolecular', 'metodoConservacion'*/])->first();
-                /*  if (
-                        count($actinomiceto->caractMacroscopicas) > 0 || $actinomiceto->caractMicroscopicas != null
-                        || $actinomiceto->caractBioquimica != null || $actinomiceto->caractFisiologica != null
-                        || $actinomiceto->identMolecular != null || count($actinomiceto->metodoConservacion) > 0
-                    ) {
-                        $res = true;
-                    }*/
+                        'caractMacroscopicas', 'caractMicroscopica', 'identBioquimica',
+                        'otrasCaracteristicas'
+                    ])->first();
+                if (
+                    count($actinomiceto->caractMacroscopicas) > 0 || $actinomiceto->caractMicroscopica != null
+                    || $actinomiceto->identBioquimica != null || $actinomiceto->otrasCaracteristicas != null
+                ) {
+                    $res = true;
+                }
                 break;
         }
         return $res;
@@ -286,10 +286,14 @@ class CepaController extends Controller
                 return $pdf->stream();
                 break;
             case 3:
-                $pdf = PDF::loadView('imprimirVistaVer.grupos.levadura', compact('cepa', 'fecha', 'imprimir'));
+                $cantidad = $this->cantidadCaractMacros($cepa->levadura->caractMacroscopicas);
+                $pdf = PDF::loadView('imprimirVistaVer.grupos.levadura', compact('cepa', 'fecha', 'cantidad', 'imprimir'));
                 return $pdf->stream();
                 break;
             case 4:
+                $cantidad = $this->cantidadCaractMacros($cepa->actinomiceto->caractMacroscopicas);
+                $pdf = PDF::loadView('imprimirVistaVer.grupos.actinomiceto', compact('cepa', 'fecha', 'cantidad', 'imprimir'));
+                return $pdf->stream();
                 break;
         }
     }

@@ -36,21 +36,15 @@
 @endif
 @if(count($cepa->levadura->caractMacroscopicas))
     @if (in_array('todo',$imprimir)||in_array('caract-macro',$imprimir))
-    @php
-        $cantMacro = 0;
-        foreach($cepa->levadura->caractMacroscopicas as $caract) {
-            $cantMacro++;
-        }
-    @endphp
     <div class="div-caract-macro">
         <table class="table tabla-caract-macro">
             <tbody>
                 <tr>
-                    <td colspan="{{$cantMacro+1}}" class="thead-caract-macro"><b>Características Macroscópicas</b></td>
+                    <td colspan="{{$cantidad+1}}" class="thead-caract-macro"><b>Características Macroscópicas</b></td>
                 </tr>
                 <tr>
                     <td rowspan="2" class="thead-caract-macro" style="padding-top: 10px"><b>Caracteres</b></td>
-                    <td colspan="{{$cantMacro}}" class="thead-caract-macro"><b>Medios Selectivos</b></td>
+                    <td colspan="{{$cantidad}}" class="thead-caract-macro"><b>Medios Selectivos</b></td>
                 </tr>
                 <tr>
                 @foreach ($cepa->levadura->caractMacroscopicas as $caract)
@@ -82,7 +76,7 @@
                     @endforeach 
                 </tr> 
                 <tr>
-                    <td colspan="{{$cantMacro+1}}" style="text-align: center">
+                    <td colspan="{{$cantidad+1}}" style="text-align: center">
                         @foreach ($cepa->levadura->caractMacroscopicas as $caract)
                             <b>{{$caract->medio}}</b>
                             <img id="redondear" width="150px" height="150px" src="{{public_path($caract->imagenPublica)}}" 

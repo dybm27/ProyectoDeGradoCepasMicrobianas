@@ -80,7 +80,7 @@
                     <option value="caract-micro">Características Microscópicas</option>
                   </template>
                   <template v-if="getIdentiBioqui">
-                    <option value="identi-otras">Identificación Bioquímica</option>
+                    <option value="identi-bioqui">Identificación Bioquímica</option>
                   </template>
                   <template v-if="getOtrasCaract">
                     <option value="otras-caract">Otras Características</option>

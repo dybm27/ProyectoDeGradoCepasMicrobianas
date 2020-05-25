@@ -16,7 +16,7 @@ class CaracMicroActinomiceto extends Model
     }
     public function tincionGram()
     {
-        return $this->belongsTo(TincionGramActinomiceto::class);
+        return $this->belongsTo(TincionGramActinomiceto::class, 'tinciongram_id');
     }
     public function micelio()
     {
