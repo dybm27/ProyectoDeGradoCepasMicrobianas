@@ -201,6 +201,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -217,7 +222,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         imagen: ""
       },
       tituloForm: "",
-      imageMiniatura: "",
+      imagenMiniatura: "",
       nomBtn: "",
       errors: [],
       imagenError: "",
@@ -230,15 +235,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionTipoUsuario", "accionUsuario", "accionModificarAuth"]), {
     cambiarValorImagen: function cambiarValorImagen(valor) {
-      if (valor === "cancelar") {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
         if (!this.required) {
           this.parametros.imagen = this.info.avatar;
-          this.imageMiniatura = this.info.avatarPublico;
+          this.imagenMiniatura = this.info.avatarPublico;
+          this.$refs.inputImagen.value = "";
         } else {
           this.parametros.imagen = "";
         }
-      } else {
-        this.parametros.imagen = valor;
       }
     },
     evento: function evento() {
@@ -324,7 +330,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
-      this.imageMiniatura = this.info.avatarPublico;
+      this.imagenMiniatura = this.info.avatarPublico;
     },
     obtenerImagen: function obtenerImagen(e) {
       var file = e.target.files[0]; //this.parametros.imagen = file;
@@ -334,13 +340,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError = "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imageMiniatura = this.info.avatarPublico;
+          this.imagenMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
           this.parametros.imagen = this.info.avatar;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
         }
+      } else {
+        this.imagenMiniatura = this.info.avatarPublico;
+        this.$refs.inputImagen.value = "";
+        this.parametros.imagen = this.info.avatar;
       }
     },
     cargarImagen: function cargarImagen(file) {
@@ -349,16 +359,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new Image();
 
       reader.onload = function (e) {
-        /**if (e.path[0].height > 500 || e.path[0].width > 500) {
-          this.imagenError =
-            "La imagen debe tener una dimension maxima de 500x500 px ";
-          this.imageMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imageMiniatura = reader.src;
-        } */
-        _this2.imageMiniatura = reader.src;
+        _this2.imagenMiniatura = reader.src;
       };
 
       reader.src = URL.createObjectURL(file);
@@ -366,7 +367,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getTipoUser", "getUsuarioById", "getUsuarioByEmail", "getUsuarios", "getUserAuth"]), {
     mostraImagen: function mostraImagen() {
-      return this.imageMiniatura;
+      return this.imagenMiniatura;
     },
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
@@ -430,8 +431,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return false;
     },
     validarNombre: function validarNombre() {
-      // solo numero /^([0-9])*$/
-      var letters = /^[A-Za-z\s]+$/;
+      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
+      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
 
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {
@@ -471,12 +472,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       return false;
     },
-    mostrarBtn: function mostrarBtn() {
-      if (this.imageMiniatura != this.info.avatarPublico) {
+    mostrarBtnCroppie: function mostrarBtnCroppie() {
+      if (this.imagenMiniatura != this.info.avatarPublico) {
         return true;
       } else {
         return false;
       }
+    },
+    validarForm: function validarForm() {
+      if (!this.$route.params.usuarioId) {
+        return true;
+      } else if (this.parametros.email) {
+        return true;
+      }
+
+      return false;
     }
   }),
   created: function created() {
@@ -487,9 +497,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Agregar";
     } else {
       this.info = this.getUsuarioById(this.$route.params.usuarioId);
-      this.llenarInfo();
+
+      if (this.info) {
+        this.llenarInfo();
+      }
+
       this.tituloForm = "Editar Usuario";
       this.nomBtn = "Editar";
+    }
+  },
+  watch: {
+    getUsuarios: function getUsuarios() {
+      if (this.getUsuarios) {
+        if (this.$route.params.usuarioId) {
+          this.info = this.getUsuarioById(this.$route.params.usuarioId);
+          this.llenarInfo();
+        }
+      }
     }
   }
 });
@@ -514,7 +538,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.getUsuarios
+      _vm.validarForm
         ? [
             _c("div", { staticClass: "container mt-3 ml-2 mr-2" }, [
               _c("div", { staticClass: "row justify-content-md-center" }, [
@@ -1159,11 +1183,15 @@ var render = function() {
                                 ? [
                                     _c("croppie", {
                                       attrs: {
+                                        id: "croppie",
                                         imagen: _vm.mostraImagen,
-                                        mostrarBtn: _vm.mostrarBtn,
+                                        mostrarBtnCroppie:
+                                          _vm.mostrarBtnCroppie,
                                         enableZoom: false,
                                         zoom: 0,
-                                        editar: true
+                                        editar: true,
+                                        boundaryHeigth: 300,
+                                        viewportWidth: 200
                                       },
                                       on: {
                                         cambiarValorImagen:
@@ -1174,11 +1202,15 @@ var render = function() {
                                 : [
                                     _c("croppie", {
                                       attrs: {
+                                        id: "croppie",
                                         imagen: _vm.mostraImagen,
-                                        mostrarBtn: _vm.mostrarBtn,
+                                        mostrarBtnCroppie:
+                                          _vm.mostrarBtnCroppie,
                                         zoom: 1,
                                         enableZoom: true,
-                                        editar: false
+                                        editar: false,
+                                        boundaryHeigth: 300,
+                                        viewportWidth: 200
                                       },
                                       on: {
                                         cambiarValorImagen:
@@ -1226,8 +1258,6 @@ var staticRenderFns = [
           [
             _c("div", { staticClass: "loader mt-5" }, [
               _c("div", { staticClass: "ball-spin-fade-loader mt-5" }, [
-                _c("div"),
-                _vm._v(" "),
                 _c("div"),
                 _vm._v(" "),
                 _c("div"),

@@ -209,12 +209,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         data: data
       });
       this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
     },
     editarInfo: function editarInfo(data) {
       this.accionEditarCaract({
         tipo: "macro",
         data: data
       });
+      this.modificarForm = true;
     },
     eliminarMedio: function eliminarMedio() {
       var _this = this;

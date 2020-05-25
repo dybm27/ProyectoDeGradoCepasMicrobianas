@@ -11,15 +11,15 @@
         :directionClass="directionClass"
       ></carousel-item>
     </div>
-    <carousel-control order="prev">Previous</carousel-control>
-    <carousel-control order="next">Next</carousel-control>
+    <carousel-control :id="id" order="prev">Previous</carousel-control>
+    <carousel-control :id="id" order="next">Next</carousel-control>
   </div>
 </template>
 
 <script>
 import bus from "./event-bus";
 export default {
-  props: ["imagenes"],
+  props: ["imagenes", "id"],
   data() {
     return {
       directionClass: ""
@@ -65,7 +65,7 @@ export default {
     }
   },
   created() {
-    bus.$on("goPrev", this.prev).$on("goNext", this.next);
+    bus.$on("goPrev-" + this.id, this.prev).$on("goNext-" + this.id, this.next);
   }
 };
 </script>

@@ -15,24 +15,24 @@ class IdentiBioquiActinomicetoController extends Controller
     {
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
 
-        if (!empty($request->imagen1)) {
-            $imagen1 = $this->guardarImagen($request->file('imagen1'), $actinomiceto->id);
+        if (!is_null($request->imagen1)) {
+            $imagen1 = $this->guardarImagen($request->imagen1, $actinomiceto->id, 1);
             $ruta1 = $imagen1['ruta'];
             $rutaPublica1 = $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
-        if (!empty($request->imagen2)) {
-            $imagen2 = $this->guardarImagen($request->file('imagen2'), $actinomiceto->id);
+        if (!is_null($request->imagen2)) {
+            $imagen2 = $this->guardarImagen($request->imagen2, $actinomiceto->id, 2);
             $ruta2 = $imagen2['ruta'];
             $rutaPublica2 = $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
-        if (!empty($request->imagen3)) {
-            $imagen3 = $this->guardarImagen($request->file('imagen3'), $actinomiceto->id);
+        if (!is_null($request->imagen3)) {
+            $imagen3 = $this->guardarImagen($request->imagen3, $actinomiceto->id, 3);
             $ruta3 = $imagen3['ruta'];
             $rutaPublica3 = $imagen3['rutaPublica'];
         } else {
@@ -61,7 +61,6 @@ class IdentiBioquiActinomicetoController extends Controller
         $identiBioquiActinomiceto->imagenPublica2 = $rutaPublica2;
         $identiBioquiActinomiceto->imagen3 = $ruta3;
         $identiBioquiActinomiceto->imagenPublica3 = $rutaPublica3;
-        $identiBioquiActinomiceto->descripcion = $request->descripcion_imagenes;
         $identiBioquiActinomiceto->save();
 
         $this->crearSeguimiento("Agregó la Identificación Bioquíquimica a la Cepa: "
@@ -92,7 +91,6 @@ class IdentiBioquiActinomicetoController extends Controller
         $identiBioquiActinomiceto->hidro_gelatina = $request->hidro_gelatina;
         $identiBioquiActinomiceto->hidro_urea = $request->hidro_urea;
         $identiBioquiActinomiceto->otras_caract = $request->otras_caract;
-        $identiBioquiActinomiceto->descripcion = $request->descripcion_imagenes;
         $identiBioquiActinomiceto->save();
 
         $this->crearSeguimiento("Editó la Identificación Bioquíquimica de la Cepa: "
@@ -117,7 +115,7 @@ class IdentiBioquiActinomicetoController extends Controller
     {
         $identiBioquiActinomiceto = IdentBioquiActinomiceto::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $identiBioquiActinomiceto->actinomiceto_id);
+        $imagen = $this->guardarImagen($request->imagen, $identiBioquiActinomiceto->actinomiceto_id, $request->numero);
 
         switch ($request->numero) {
             case 1:
@@ -144,7 +142,7 @@ class IdentiBioquiActinomicetoController extends Controller
     {
         $identiBioquiActinomiceto = IdentBioquiActinomiceto::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $identiBioquiActinomiceto->actinomiceto_id);
+        $imagen = $this->guardarImagen($request->imagen, $identiBioquiActinomiceto->actinomiceto_id, $request->numero);
 
 
         switch ($request->numero) {
@@ -206,13 +204,14 @@ class IdentiBioquiActinomicetoController extends Controller
         return $identiBioquiActinomiceto;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id, $num)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/actinomicetos/identi_bioqui_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = $num . '-' . time() . '.png';
+        Storage::disk('local')->put('/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

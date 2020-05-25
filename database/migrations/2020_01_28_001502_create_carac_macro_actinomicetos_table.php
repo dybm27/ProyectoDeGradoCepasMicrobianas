@@ -34,7 +34,6 @@ class CreateCaracMacroActinomicetosTable extends Migration
             $table->string('otras_caract')->nullable();
             $table->string('imagen');
             $table->string('imagenPublica');
-            $table->string('descripcion', 100)->nullable();
             $table->timestamps();
         });
     }

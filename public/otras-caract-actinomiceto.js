@@ -137,7 +137,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
-        _this.$modal.hide("my_modal");
+        _this.$modal.hide("otras_caract");
 
         _this.accionEliminarCaract({
           tipo: "otras",
@@ -256,7 +256,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
-                          return _vm.$modal.show("my_modal")
+                          return _vm.$modal.show("otras_caract")
                         }
                       }
                     },
@@ -304,64 +304,74 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("modal", { attrs: { name: "my_modal", width: 400, height: 300 } }, [
-        _c("div", { staticClass: "modal-content" }, [
-          _c("div", { staticClass: "modal-header" }, [
-            _c(
-              "h5",
-              {
-                staticClass: "modal-title",
-                attrs: { id: "exampleModalLongTitle" }
-              },
-              [_vm._v("Eliminar Otras Características de Interés")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "close",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.$modal.hide("my_modal")
+      _c(
+        "modal",
+        { attrs: { name: "otras_caract", width: 450, height: 200 } },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v("Eliminar Otras Características de Interés")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("otras_caract")
+                    }
                   }
-                }
-              },
-              [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _c("p", [_vm._v("Esta segura/o de eliminar laS CaracterísticaS?.")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-footer" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-secondary",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.$modal.hide("my_modal")
-                  }
-                }
-              },
-              [_vm._v("Cancelar")]
-            ),
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.eliminar }
-              },
-              [_vm._v("Eliminar")]
-            )
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", [
+                _vm._v("Esta segura/o de eliminar las Características?.")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("otras_caract")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: { click: _vm.eliminar }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
           ])
-        ])
-      ])
+        ]
+      )
     ],
     1
   )

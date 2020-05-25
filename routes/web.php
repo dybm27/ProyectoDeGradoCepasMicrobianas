@@ -72,14 +72,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
     Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
     Route::get('/cepas/hongo/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
-    //hongo
-    Route::get('/cepas/hongo/{id}', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-bioqui', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/identi-molecu', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
     //actinomiceto
     Route::get('/cepas/actinomiceto/{id}', 'CepaController@index');
     Route::get('/cepas/actinomiceto/{id}/caract-macro', 'CepaController@index');

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <form @submit.prevent="evento">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-sm-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <h5 class="card-title">{{titulo}}</h5>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-6">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <h5 class="card-title">{{titulo}}</h5>
+              <form @submit.prevent="evento">
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
@@ -171,12 +171,20 @@
                     required
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
+                <div class="position-relative form-group">
+                  <label for="imagen" class>Imagen</label>
+                  <input
+                    name="imagen"
+                    @change="obtenerImagen"
+                    id="imagen"
+                    accept="image/jpeg, image/png"
+                    type="file"
+                    class="form-control-file"
+                    ref="inputImagen"
+                    :required="required"
+                  />
+                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
+                </div>
                 <div class="position-relative form-group">
                   <label for="otras_caract">Otras Características</label>
                   <textarea
@@ -186,48 +194,60 @@
                     v-model="parametros.otras_caract"
                   ></textarea>
                 </div>
-                <div class="position-relative form-group">
-                  <label for="imagen" class>Imagen</label>
-                  <input
-                    name="imagen"
-                    @change="obtenerImagen"
-                    id="imagen"
-                    accept="image/jpeg"
-                    type="file"
-                    class="form-control-file"
-                    ref="inputImagen"
-                    :required="required"
+                <button
+                  class="mb-2 mr-2 btn btn-block"
+                  :class="btnClase"
+                  :disabled="validarBtn"
+                >{{nomBtnComputed}}</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <template v-if="mostraImagen">
+                <template v-if="validarCroppie">
+                  <croppie
+                    :id="'croppie'"
+                    :imagen="mostraImagen"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :mostrarBtnCroppie="mostrarBtnCroppie"
+                    :enableZoom="false"
+                    :zoom="0"
+                    :editar="true"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
                   />
-                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
-                </div>
-                <template v-if="mostraImagen">
-                  <div class="table-responsive">
-                    <figure class="text-center">
-                      <img
-                        width="380"
-                        height="380"
-                        :src="mostraImagen"
-                        alt="Imagen Caracteristica Macroscopica"
-                      />
-                    </figure>
-                  </div>
                 </template>
-                <div class="position-relative form-group">
-                  <label for="imagen_descripcion">Descripción de la Imagen</label>
-                  <textarea
-                    name="text"
-                    id="imagen_descripcion"
-                    class="form-control"
-                    v-model="parametros.imagen_descripcion"
-                  ></textarea>
+                <template v-else>
+                  <croppie
+                    :id="'croppie'"
+                    :imagen="mostraImagen"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :mostrarBtnCroppie="mostrarBtnCroppie"
+                    :zoom="1"
+                    :enableZoom="true"
+                    :editar="false"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
+                  />
+                </template>
+              </template>
+              <template v-else>
+                <div class="text-center">
+                  <h5 class="mt-5 mb-5">
+                    <span class="pr-1">
+                      <b class="text-warning">SIN IMAGEN</b>
+                    </span>
+                  </h5>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
-              </div>
+              </template>
             </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
     <modal name="agregar-caract-info-actinomiceto" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -276,6 +296,7 @@ export default {
   data() {
     return {
       parametros: {
+        cepaId: "",
         medio: "",
         forma: 1,
         borde: 1,
@@ -295,7 +316,7 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imageMiniatura: "",
+      imagenMiniatura: "",
       nomBtn: "",
       errors: [],
       imagenError: ""
@@ -312,14 +333,23 @@ export default {
   },
   methods: {
     ...vuex.mapActions(["accionAgregarTipoCaractActinomiceto"]),
+    cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.required) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
     evento() {
       if (this.tituloForm === "Agregar Medio") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/actinomiceto/caract-macro", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/actinomiceto/caract-macro", this.parametros)
           .then(res => {
             this.errors = [];
             this.$refs.inputImagen.value = "";
@@ -340,61 +370,25 @@ export default {
             }
           });
       } else {
-        if (this.parametros.imagen === this.info.imagen) {
-          axios
-            .put(
-              `/cepas/actinomiceto/caract-macro/${this.info.id}`,
-              this.parametros
-            )
-            .then(res => {
+        axios
+          .put(
+            `/cepas/actinomiceto/caract-macro/${this.info.id}`,
+            this.parametros
+          )
+          .then(res => {
+            this.errors = [];
+            this.$refs.inputImagen.value = "";
+            this.$emit("editar", res.data);
+            this.toastr("Editar Medio", "Medio editado con exito!!", "success");
+          })
+          .catch(error => {
+            if (error.response) {
               this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Medio",
-                "Medio editado con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        } else {
-          let formData = new FormData();
-          this.appendInfo(formData);
-          formData.append("_method", "PUT");
-          axios
-            .post(
-              `/cepas/actinomiceto/caract-macro/${this.info.id}`,
-              formData,
-              {
-                headers: { "Content-Type": "multipart/form-data" }
-              }
-            )
-            .then(res => {
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Medio",
-                "Medio editado con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        }
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -428,62 +422,43 @@ export default {
       this.parametros.superficie = this.info.superficie_id;
       this.parametros.otras_caract = this.info.otras_caract;
       this.parametros.imagen = this.info.imagen;
-      this.imageMiniatura = this.info.imagenPublica;
-      this.parametros.imagen_descripcion = this.info.descripcion;
-    },
-    appendInfo(formData) {
-      if (this.$route.params.cepaActinomicetoId) {
-        formData.append("cepaId", this.$route.params.cepaActinomicetoId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("medio", this.parametros.medio);
-      formData.append("forma", this.parametros.forma);
-      formData.append("borde", this.parametros.borde);
-      formData.append("textura", this.parametros.textura);
-      formData.append("color", this.parametros.color);
-      formData.append("pigmento", this.parametros.pigmento);
-      formData.append(
-        "secrecion_geosminas",
-        this.parametros.secrecion_geosminas
-      );
-      formData.append("superficie", this.parametros.superficie);
-      formData.append(
-        "otras_caract",
-        this.parametros.otras_caract === null
-          ? ""
-          : this.parametros.otras_caract
-      );
-      formData.append("imagen", this.parametros.imagen);
-      formData.append(
-        "imagen_descripcion",
-        this.parametros.imagen_descripcion === null
-          ? ""
-          : this.parametros.imagen_descripcion
-      );
+      this.imagenMiniatura = this.info.imagenPublica;
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
       this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
 
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.imageMiniatura = "";
+            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
           this.$refs.inputImagen.value = "";
-          this.parametros.imagen = "";
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
         }
       }
     },
     cargarImagen(file) {
       let reader = new FileReader();
       reader.onload = e => {
-        this.imageMiniatura = e.target.result;
+        this.imagenMiniatura = e.target.result;
       };
       reader.readAsDataURL(file);
     },
@@ -540,7 +515,7 @@ export default {
   computed: {
     ...vuex.mapGetters(["getInfoCaractMacroActinomicetos"]),
     mostraImagen() {
-      return this.imageMiniatura;
+      return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {
@@ -561,6 +536,34 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
+    },
+    mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    },
+    validarBtn() {
+      if (!this.parametros.imagen) {
+        return true;
+      }
+      return false;
     }
   },
   mounted() {
@@ -571,6 +574,11 @@ export default {
       this.llenarInfo();
       this.tituloForm = "Editar Medio";
       this.nomBtn = "Editar";
+    }
+    if (this.$route.params.cepaActinomicetoId) {
+      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
     }
   }
 };

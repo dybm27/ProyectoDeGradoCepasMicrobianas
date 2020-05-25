@@ -13,32 +13,27 @@ class CaractFisioBacteriaController extends Controller
 {
     public function store(Request $request)
     {
-        /*$rules = [
-            'ordenamiento' => 'required'
-        ];
-        $this->validate($request, $rules);*/
-
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
 
-        if (!empty($request->imagen1)) {
-            $imagen1 = $this->guardarImagen($request->file('imagen1'), $bacteria->id);
+        if (!is_null($request->imagen1)) {
+            $imagen1 = $this->guardarImagen($request->imagen1, $bacteria->id, 1);
             $ruta1 =  $imagen1['ruta'];
             $rutaPublica1 =  $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
-        if (!empty($request->imagen2)) {
-            $imagen2 = $this->guardarImagen($request->file('imagen2'), $bacteria->id);
+        if (!is_null($request->imagen2)) {
+            $imagen2 = $this->guardarImagen($request->imagen2, $bacteria->id, 2);
             $ruta2 =  $imagen2['ruta'];
             $rutaPublica2 =  $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
-        if (!empty($request->imagen3)) {
-            $imagen3 = $this->guardarImagen($request->file('imagen3'), $bacteria->id);
+        if (!is_null($request->imagen3)) {
+            $imagen3 = $this->guardarImagen($request->imagen3, $bacteria->id, 3);
             $ruta3 =  $imagen3['ruta'];
             $rutaPublica3 =  $imagen3['rutaPublica'];
         } else {
@@ -60,7 +55,6 @@ class CaractFisioBacteriaController extends Controller
         $caractFisioBacteria->imagenPublica2 = $rutaPublica2;
         $caractFisioBacteria->imagen3 = $ruta3;
         $caractFisioBacteria->imagenPublica3 = $rutaPublica3;
-        $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
 
         $this->crearSeguimiento("Agregó la Característica Fisiológica a la Cepa: "
@@ -83,7 +77,6 @@ class CaractFisioBacteriaController extends Controller
         $caractFisioBacteria->sideroforos = ucfirst($request->sideroforos);
         $caractFisioBacteria->nitrogeno = ucfirst($request->nitrogeno);
         $caractFisioBacteria->otras_caract = $request->otras_caract;
-        $caractFisioBacteria->descripcion = $request->descripcion_imagenes;
         $caractFisioBacteria->save();
 
         $this->crearSeguimiento("Editó la Característica Fisiológica de la Cepa: "
@@ -108,7 +101,7 @@ class CaractFisioBacteriaController extends Controller
     {
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $caractFisioBacteria->bacteria_id);
+        $imagen = $this->guardarImagen($request->imagen, $caractFisioBacteria->bacteria_id, $request->numero);
 
         switch ($request->numero) {
             case 1:
@@ -135,7 +128,7 @@ class CaractFisioBacteriaController extends Controller
     {
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $caractFisioBacteria->bacteria_id);
+        $imagen = $this->guardarImagen($request->imagen, $caractFisioBacteria->bacteria_id, $request->numero);
 
         switch ($request->numero) {
             case 1:
@@ -196,13 +189,14 @@ class CaractFisioBacteriaController extends Controller
         return $caractFisioBacteria;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id, $num)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = $num . '-' . time() . '.png';
+        Storage::disk('local')->put('/public/bacterias/caract_fisio_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/bacterias/caract_fisio_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/bacterias/caract_fisio_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

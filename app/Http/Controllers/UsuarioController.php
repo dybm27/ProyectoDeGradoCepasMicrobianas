@@ -44,7 +44,7 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
-        if (!is_null($request->imagen)) {
+        if ($request->imagen != $usuario->avatar) {
             Storage::disk('local')->delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];
@@ -79,9 +79,7 @@ class UsuarioController extends Controller
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
         $image_name = time() . '.png';
-        //$path = storage_path('usuarios/avatar_img/' . $image_name);
         Storage::disk('local')->put('/public/usuarios/avatar_img/' . $image_name, $data);
-        // file_put_contents($path, $data);
         $ruta = '/public/usuarios/avatar_img/' . $image_name;
         $rutaPublica = '/storage/usuarios/avatar_img/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];

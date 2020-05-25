@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <modal name="eliminar_caract_micro" :width="400" :height="300">
+    <modal name="eliminar_caract_micro" :width="400" :height="200">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Microscópica</h5>

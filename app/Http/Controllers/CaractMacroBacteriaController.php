@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Bacteria;
 use App\CaracMacroBacteria;
 use App\Seguimiento;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -14,19 +13,9 @@ class CaractMacroBacteriaController extends Controller
 {
     public function store(Request $request)
     {
-        $rules = [
-            'medio' => 'required',
-        ];
-        $messages = [
-            //'color.regex' => 'El color solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
-
-        //obtenemos el nombre de la imagen
-        $imagen = $this->guardarImagen($request->file('imagen'), $bacteria->id);
+        $imagen = $this->guardarImagen($request->imagen, $bacteria->id);
 
         $caractMacroBacteria = new CaracMacroBacteria();
         $caractMacroBacteria->bacteria_id = $bacteria->id;
@@ -41,7 +30,6 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->otras_caract = $request->otras_caract;
         $caractMacroBacteria->imagen = $imagen['ruta'];
         $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
-        $caractMacroBacteria->descripcion = $request->imagen_descripcion;
         $caractMacroBacteria->save();
 
         $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
@@ -57,24 +45,13 @@ class CaractMacroBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'medio' => 'required',
-            // 'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
-        ];
-        $messages = [
-            //   'color.regex' => 'El color solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $caractMacroBacteria = CaracMacroBacteria::find($id);
 
-        $file = $request->file('imagen');
-
-        if (!empty($file)) {
+        if ($request->imagen != $caractMacroBacteria->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($caractMacroBacteria->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $caractMacroBacteria->bacteria_id);
+            $imagen = $this->guardarImagen($request->imagen, $caractMacroBacteria->bacteria_id);
 
             $caractMacroBacteria->imagen = $imagen['ruta'];
             $caractMacroBacteria->imagenPublica = $imagen['rutaPublica'];
@@ -89,7 +66,6 @@ class CaractMacroBacteriaController extends Controller
         $caractMacroBacteria->tamano = $request->tamaño;
         $caractMacroBacteria->color_id = intval($request->color);
         $caractMacroBacteria->otras_caract = $request->otras_caract;
-        $caractMacroBacteria->descripcion = $request->imagen_descripcion;
 
         $caractMacroBacteria->save();
 
@@ -112,13 +88,14 @@ class CaractMacroBacteriaController extends Controller
         return $caractMacroBacteria;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/bacterias/caract_macro_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/bacterias/caract_macro_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/bacterias/caract_macro_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

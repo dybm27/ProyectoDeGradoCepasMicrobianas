@@ -196,10 +196,12 @@ export default {
     agregarInfo(data) {
       this.accionAgregarCaract({ tipo: "macro", data: data });
       this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
     },
 
     editarInfo(data) {
       this.accionEditarCaract({ tipo: "macro", data: data });
+      this.modificarForm = true;
     },
 
     eliminarMedio() {

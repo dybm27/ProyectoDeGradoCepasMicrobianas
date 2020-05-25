@@ -31,7 +31,6 @@ class CreateCaracMicroBacteriasTable extends Migration
             $table->string('imagenPublica2')->nullable();
             $table->string('imagen3')->nullable();
             $table->string('imagenPublica3')->nullable();
-            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

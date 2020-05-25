@@ -9,7 +9,7 @@
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
         <meta name="description" content="ArchitectUI HTML Bootstrap 4 Dashboard Template">
-
+        <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
         

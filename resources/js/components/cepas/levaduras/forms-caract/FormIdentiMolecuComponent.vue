@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <form @submit.prevent="evento" class="mt-4 mr-4 ml-4">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-sm-12">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <h5 class="card-title">{{titulo}}</h5>
+  <div class="mt-4 mr-4 ml-4">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-12">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <h5 class="card-title">{{titulo}}</h5>
+              <form @submit.prevent="evento">
                 <div class="position-relative form-group">
                   <label for="medio" class>Primers</label>
                   <div class="form-row">
@@ -135,7 +135,7 @@
                         @change="obtenerImagenPcr"
                         id="imagen_pcr"
                         type="file"
-                        accept="image/jpeg"
+                        accept="image/jpeg, image/png"
                         class="form-control-file"
                         ref="inputImagenPcr"
                         :required="required"
@@ -150,7 +150,7 @@
                         name="imagen_blast"
                         @change="obtenerImagenBlast"
                         id="imagen_blast"
-                        accept="image/jpeg"
+                        accept="image/jpeg, image/png"
                         type="file"
                         class="form-control-file"
                         ref="inputImagenBlast"
@@ -220,64 +220,118 @@
                     </div>
                   </div>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-md-center">
-          <div class="col-sm-12">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <template v-if="mostraImagenPcr">
-                      <h5 class="card-title">Imagen PCR</h5>
-                      <img :src="mostraImagenPcr" class="d-block w-100" alt="Imagen PCR" />
-                    </template>
-                    <template v-else>
-                      <div class="text-center">
-                        <h5 class="mt-5 mb-5">
-                          <span class="pr-1">
-                            <b class="text-warning">SIN IMAGEN PCR</b>
-                          </span>
-                        </h5>
-                      </div>
-                    </template>
-                  </div>
-                  <div class="col-md-6">
-                    <template v-if="mostraImagenBlast">
-                      <h5 class="card-title">Imagen Blast</h5>
-                      <img :src="mostraImagenBlast" class="d-block w-100" alt="Imagen PCR" />
-                    </template>
-                    <template v-else>
-                      <div class="text-center">
-                        <h5 class="mt-5 mb-5">
-                          <span class="pr-1">
-                            <b class="text-warning">SIN IMAGEN BLAST</b>
-                          </span>
-                        </h5>
-                      </div>
-                    </template>
-                  </div>
-                </div>
-              </div>
+                <button
+                  class="mb-2 mr-2 btn btn-block"
+                  :disabled="validarBtn"
+                  :class="btnClase"
+                >{{nomBtnComputed}}</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </form>
+      <div class="row justify-content-md-center">
+        <div class="col-md-5">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <template v-if="mostraImagenPcr">
+                <h5 class="card-title">Imagen PCR</h5>
+                <template v-if="validarCroppiePcr">
+                  <croppie
+                    :id="'croppie1'"
+                    :imagen="mostraImagenPcr"
+                    @cambiarValorImagen="cambiarValorImagenPcr"
+                    :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                    :enableZoom="false"
+                    :zoom="0"
+                    :editar="true"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
+                  />
+                </template>
+                <template v-else>
+                  <croppie
+                    :id="'croppie1'"
+                    :imagen="mostraImagenPcr"
+                    @cambiarValorImagen="cambiarValorImagenPcr"
+                    :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                    :zoom="1"
+                    :enableZoom="true"
+                    :editar="false"
+                    :boundaryHeigth="300"
+                    :viewportWidth="200"
+                  />
+                </template>
+              </template>
+              <template v-else>
+                <div class="text-center">
+                  <h5 class="mt-5 mb-5">
+                    <span class="pr-1">
+                      <b class="text-warning">SIN IMAGEN PCR</b>
+                    </span>
+                  </h5>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <template v-if="mostraImagenBlast">
+                <h5 class="card-title">Imagen Blast</h5>
+                <template v-if="validarCroppieBlast">
+                  <croppie
+                    :id="'croppie2'"
+                    :imagen="mostraImagenBlast"
+                    @cambiarValorImagen="cambiarValorImagenBlast"
+                    :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                    :enableZoom="false"
+                    :zoom="0"
+                    :editar="true"
+                    :boundaryHeigth="300"
+                    :viewportWidth="300"
+                  />
+                </template>
+                <template v-else>
+                  <croppie
+                    :id="'croppie2'"
+                    :imagen="mostraImagenBlast"
+                    @cambiarValorImagen="cambiarValorImagenBlast"
+                    :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                    :zoom="1"
+                    :enableZoom="true"
+                    :editar="false"
+                    :boundaryHeigth="300"
+                    :viewportWidth="300"
+                  />
+                </template>
+              </template>
+              <template v-else>
+                <div class="text-center">
+                  <h5 class="mt-5 mb-5">
+                    <span class="pr-1">
+                      <b class="text-warning">SIN IMAGEN BLAST</b>
+                    </span>
+                  </h5>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import vuex, { mapGetters } from "vuex";
-
+import vuex from "vuex";
 export default {
   props: ["info", "modificarInfo"],
   data() {
     return {
       parametros: {
+        cepaId: "",
         nombre_forward: "",
         nombre_reversed: "",
         secuencia_forward: "",
@@ -311,14 +365,36 @@ export default {
     }
   },
   methods: {
+    cambiarValorImagenPcr(valor) {
+      if (valor) {
+        this.parametros.imagen_pcr = valor;
+      } else {
+        if (!this.required) {
+          this.parametros.imagen_pcr = this.info.imagen_pcr;
+          this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
+          this.$refs.inputImagenPcr.value = "";
+        } else {
+          this.parametros.imagen_pcr = "";
+        }
+      }
+    },
+    cambiarValorImagenBlast(valor) {
+      if (valor) {
+        this.parametros.imagen_blast = valor;
+      } else {
+        if (!this.required) {
+          this.parametros.imagen_blast = this.info.imagen_blast;
+          this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
+          this.$refs.inputImagenBlast.value = "";
+        } else {
+          this.parametros.imagen_blast = "";
+        }
+      }
+    },
     evento() {
       if (this.tituloForm === "Agregar Identificación") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/levadura/identi-molecu", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/levadura/identi-molecu", this.parametros)
           .then(res => {
             this.errors = [];
             this.$refs.inputImagenPcr.value = "";
@@ -340,62 +416,27 @@ export default {
             }
           });
       } else {
-        if (
-          this.parametros.imagen_pcr === this.info.imagen_pcr &&
-          this.parametros.imagen_blast === this.info.imagen_blast
-        ) {
-          axios
-            .put(
-              `/cepas/levadura/identi-molecu/${this.info.id}`,
-              this.parametros
-            )
-            .then(res => {
+        axios
+          .put(`/cepas/levadura/identi-molecu/${this.info.id}`, this.parametros)
+          .then(res => {
+            this.errors = [];
+            this.$refs.inputImagenPcr.value = "";
+            this.$refs.inputImagenBlast.value = "";
+            this.$emit("editar", res.data);
+            this.toastr(
+              "Editar Identificación",
+              "Identificación Molecular editada con exito!!",
+              "success"
+            );
+          })
+          .catch(error => {
+            if (error.response) {
               this.errors = [];
-              this.$refs.inputImagenPcr.value = "";
-              this.$refs.inputImagenBlast.value = "";
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Identificación",
-                "Identificación Molecular editada con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        } else {
-          let formData = new FormData();
-          this.appendInfo(formData);
-          formData.append("_method", "PUT");
-          axios
-            .post(`/cepas/levadura/identi-molecu/${this.info.id}`, formData, {
-              headers: { "Content-Type": "multipart/form-data" }
-            })
-            .then(res => {
-              this.errors = [];
-              this.$refs.inputImagenPcr.value = "";
-              this.$refs.inputImagenBlast.value = "";
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Identificación",
-                "Identificación Molecular editada con exito!!",
-                "success"
-              );
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
-        }
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -434,42 +475,13 @@ export default {
       this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
       this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
     },
-    appendInfo(formData) {
-      if (this.$route.params.cepaLevaduraId) {
-        formData.append("cepaId", this.$route.params.cepaLevaduraId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("nombre_forward", this.parametros.nombre_forward);
-      formData.append("nombre_reversed", this.parametros.nombre_reversed);
-      formData.append("secuencia_forward", this.parametros.secuencia_forward);
-      formData.append("secuencia_reversed", this.parametros.secuencia_reversed);
-      formData.append("producto_forward", this.parametros.producto_forward);
-      formData.append("producto_reversed", this.parametros.producto_reversed);
-      formData.append("condiciones_pcr", this.parametros.condiciones_pcr);
-      formData.append("blast", this.parametros.blast);
-      formData.append(
-        "analisis_filogenetico",
-        this.parametros.analisis_filogenetico
-      );
-      formData.append(
-        "observaciones",
-        this.parametros.observaciones === null
-          ? ""
-          : this.parametros.observaciones
-      );
-      formData.append("imagen_pcr", this.parametros.imagen_pcr);
-      formData.append("imagen_blast", this.parametros.imagen_blast);
-    },
     obtenerImagenPcr(e) {
       let file = e.target.files[0];
-      this.parametros.imagen_pcr = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
-
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.pcr =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
+            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
           if (this.required) {
             this.imagenMiniaturaPcr = "";
             this.parametros.imagen_pcr = "";
@@ -482,17 +494,23 @@ export default {
           this.imagenError.pcr = "";
           this.cargarImagen(file, "pcr");
         }
+      } else {
+        if (this.required) {
+          this.imagenMiniaturaPcr = "";
+          this.parametros.imagen_pcr = "";
+        } else {
+          this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
+          this.parametros.imagen_pcr = this.info.imagen_pcr;
+        }
       }
     },
     obtenerImagenBlast(e) {
       let file = e.target.files[0];
-      this.parametros.imagen_blast = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
-
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.blast =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
+            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
           if (this.required) {
             this.imagenMiniaturaBlast = "";
             this.parametros.imagen_blast = "";
@@ -504,6 +522,14 @@ export default {
         } else {
           this.imagenError.blast = "";
           this.cargarImagen(file, "blast");
+        }
+      } else {
+        if (this.required) {
+          this.imagenMiniaturaBlast = "";
+          this.parametros.imagen_blast = "";
+        } else {
+          this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
+          this.parametros.imagen_blast = this.info.imagen_blast;
         }
       }
     },
@@ -549,6 +575,56 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
+    },
+    mostrarBtnCroppiePcr() {
+      if (this.info) {
+        if (this.imagenMiniaturaPcr != this.info.imagen_pcrPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    mostrarBtnCroppieBlast() {
+      if (this.info) {
+        if (this.imagenMiniaturaBlast != this.info.imagen_blastPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppiePcr() {
+      if (this.info) {
+        if (this.imagenMiniaturaPcr == this.info.imagen_pcrPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    },
+    validarCroppieBlast() {
+      if (this.info) {
+        if (this.imagenMiniaturaBlast == this.info.imagen_blastPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    },
+    validarBtn() {
+      if (!this.parametros.imagen_pcr || !this.parametros.imagen_blast) {
+        return true;
+      }
+      return false;
     }
   },
   mounted() {
@@ -560,9 +636,11 @@ export default {
       this.tituloForm = "Agregar Identificación";
       this.nomBtn = "Agregar";
     }
+    if (this.$route.params.cepaLevaduraId) {
+      this.parametros.cepaId = this.$route.params.cepaLevaduraId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
+    }
   }
 };
 </script>
-
-<style scoped>
-</style>

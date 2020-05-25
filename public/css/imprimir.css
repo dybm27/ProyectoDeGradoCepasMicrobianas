@@ -160,3 +160,7 @@ footer {
     text-align: center;
     background-color: #f7b92480;
 }
+
+#redondear {
+    border-radius: 15px;
+}

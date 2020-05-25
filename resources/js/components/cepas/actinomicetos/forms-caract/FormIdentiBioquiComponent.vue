@@ -1,14 +1,14 @@
 <template>
   <div>
-    <form @submit.prevent="evento" class="mt-4 mr-4 ml-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <h5 class="card-title">{{tituloForm}}</h5>
+    <div class="container">
+      <div class="main-card mb-3 card">
+        <div class="card-body">
+          <h5 class="card-title">{{tituloForm}}</h5>
+          <div class="row justify-content-md-center">
+            <div class="col-md-12">
+              <form @submit.prevent="evento">
                 <div class="form-row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="oxidasa" class>Oxidasa</label>
                       <input
@@ -22,7 +22,7 @@
                       />
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="catalasa" class>Catalasa</label>
                       <input
@@ -36,9 +36,7 @@
                       />
                     </div>
                   </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="citrato" class>Citrato</label>
                       <input
@@ -52,7 +50,9 @@
                       />
                     </div>
                   </div>
-                  <div class="col-md-6">
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
                       <label for="nitrato" class>Nitratos</label>
                       <input
@@ -66,175 +66,219 @@
                       />
                     </div>
                   </div>
-                </div>
-                <div class="position-relative form-group">
-                  <label for="caseina" class>Caseina</label>
-                  <input
-                    name="caseina"
-                    id="caseina"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.caseina"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="hidro_urea" class>Hidrolisís de la Úrea</label>
-                  <input
-                    name="hidro_urea"
-                    id="hidro_urea"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.hidro_urea"
-                    required
-                  />
-                </div>
-                <div class="position-relative form-group">
-                  <label for="hidro_gelatina" class>Hidrolisís de la Gelatina</label>
-                  <input
-                    name="hidro_gelatina"
-                    id="hidro_gelatina"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.hidro_gelatina"
-                    required
-                  />
-                </div>
-                <label for="manitol" class>Fermentación de:</label>
-                <div class="form-row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
-                      <label for="fer_lactosa" class>Lactosa</label>
+                      <label for="caseina" class>Caseina</label>
                       <input
-                        name="fer_lactosa"
-                        id="fer_lactosa"
+                        name="caseina"
+                        id="caseina"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.fer_lactosa"
+                        v-model="parametros.caseina"
                         required
                       />
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="position-relative form-group">
-                      <label for="fer_manitol" class>Manitol</label>
+                      <label for="hidro_urea" class>Hidrolisís de la Úrea</label>
                       <input
-                        name="fer_manitol"
-                        id="fer_manitol"
+                        name="hidro_urea"
+                        id="hidro_urea"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.fer_manitol"
+                        v-model="parametros.hidro_urea"
                         required
                       />
                     </div>
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="col-md-6">
+                  <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="fer_inositol" class>Inositol</label>
+                      <label for="hidro_gelatina" class>Hidrolisís de la Gelatina</label>
                       <input
-                        name="fer_inositol"
-                        id="fer_inositol"
+                        name="hidro_gelatina"
+                        id="hidro_gelatina"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.fer_inositol"
+                        v-model="parametros.hidro_gelatina"
                         required
                       />
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <template v-if="required">
+                    <div class="col-md-4">
+                      <div class="position-relative form-group">
+                        <label for="imagen" class>Imágenes</label>
+                        <input
+                          name="imagen"
+                          @change="obtenerImagenes"
+                          id="imagen"
+                          type="file"
+                          accept="image/jpeg, image/png"
+                          class="form-control-file"
+                          ref="inputImagen"
+                          multiple
+                          :required="required"
+                        />
+                        <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                      </div>
+                    </div>
+                  </template>
+                  <div :class="classRow">
                     <div class="position-relative form-group">
-                      <label for="fer_sacarosa" class>Sacarosa</label>
+                      <label for="sensi_antibioticos" class>Sensibilidad a Antibióticos</label>
                       <input
-                        name="fer_sacarosa"
-                        id="fer_sacarosa"
+                        name="sensi_antibioticos"
+                        id="sensi_antibioticos"
                         placeholder="..."
                         type="text"
                         class="form-control"
-                        v-model="parametros.fer_sacarosa"
+                        v-model="parametros.sensi_antibioticos"
                         required
                       />
                     </div>
                   </div>
                 </div>
-                <div class="position-relative form-group">
-                  <label for="sensi_antibioticos" class>Sensibilidad a Antibióticos</label>
-                  <input
-                    name="sensi_antibioticos"
-                    id="sensi_antibioticos"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.sensi_antibioticos"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <div class="position-relative form-group">
-                  <label for="otras_caract">Otras Características</label>
-                  <textarea
-                    name="otras_caract"
-                    id="otras_caract"
-                    class="form-control"
-                    v-model="parametros.otras_caract"
-                  ></textarea>
-                </div>
-                <template v-if="required">
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Imágenes</label>
-                    <input
-                      name="imagen"
-                      @change="obtenerImagenes"
-                      id="imagen"
-                      type="file"
-                      accept="image/jpeg"
-                      class="form-control-file"
-                      ref="inputImagen"
-                      multiple
-                      :required="required"
-                    />
-                    <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
-                    <!--  <small
-                    class="form-text text-muted"
-                    >Debe tener un tamaño ''px ''px y un peso de ''kbs.</small>-->
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="manitol">
+                      <b>Fermentación de:</b>
+                    </label>
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="position-relative form-group">
+                          <label for="fer_lactosa" class>Lactosa</label>
+                          <input
+                            name="fer_lactosa"
+                            id="fer_lactosa"
+                            placeholder="..."
+                            type="text"
+                            class="form-control"
+                            v-model="parametros.fer_lactosa"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="position-relative form-group">
+                          <label for="fer_manitol" class>Manitol</label>
+                          <input
+                            name="fer_manitol"
+                            id="fer_manitol"
+                            placeholder="..."
+                            type="text"
+                            class="form-control"
+                            v-model="parametros.fer_manitol"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="position-relative form-group">
+                          <label for="fer_inositol" class>Inositol</label>
+                          <input
+                            name="fer_inositol"
+                            id="fer_inositol"
+                            placeholder="..."
+                            type="text"
+                            class="form-control"
+                            v-model="parametros.fer_inositol"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="position-relative form-group">
+                          <label for="fer_sacarosa" class>Sacarosa</label>
+                          <input
+                            name="fer_sacarosa"
+                            id="fer_sacarosa"
+                            placeholder="..."
+                            type="text"
+                            class="form-control"
+                            v-model="parametros.fer_sacarosa"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </template>
-                <div class="position-relative form-group">
-                  <label for="descripcion_imagenes">Descripción Imágenes</label>
-                  <textarea
-                    name="text"
-                    id="descripcion_imagenes"
-                    class="form-control"
-                    v-model="parametros.descripcion_imagenes"
-                  ></textarea>
+                  <div class="col-md-6">
+                    <div class="position-relative form-group">
+                      <label for="otras_caract">Otras Características</label>
+                      <textarea
+                        style="height: 153px;"
+                        name="otras_caract"
+                        id="otras_caract"
+                        class="form-control"
+                        v-model="parametros.otras_caract"
+                      ></textarea>
+                    </div>
+                  </div>
                 </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtn}}</button>
-              </div>
+                <button
+                  class="mb-2 mr-2 btn btn-block"
+                  :class="btnClase"
+                  :disabled="btnDisable"
+                >{{nomBtn}}</button>
+              </form>
             </div>
-            <imagenes
-              :required="required"
-              :parametros="parametros"
-              :tipoCepa="'actinomiceto/identi-bioqui'"
-              :imagenes="imagenes"
-              :cepa="info"
-              @accionImagen="accionImagen"
-            ></imagenes>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <template v-if="required">
+          <div class="col-md-12">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">Imagenes</h5>
+                <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
+                  <croppie-cepas
+                    :imagenes="imagenesCroppie"
+                    @cambiarValorImagen="cambiarValorImagen"
+                    :posicion="'horizontal'"
+                  />
+                </template>
+                <template v-else>
+                  <div class="text-center">
+                    <h5 class="mt-5 mb-5">
+                      <span class="pr-1">
+                        <b class="text-warning">SIN IMÁGENES</b>
+                      </span>
+                    </h5>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template v-else>
+          <div class="col-md-5">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">Imagenes</h5>
+                <imagenes
+                  :parametros="parametros"
+                  :tipoCepa="'actinomiceto/identi-bioqui'"
+                  :imagenes="imagenes"
+                  :cepa="info"
+                  @accionImagen="accionImagen"
+                ></imagenes>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -254,6 +298,7 @@ export default {
   data() {
     return {
       parametros: {
+        cepaId: "",
         oxidasa: "",
         catalasa: "",
         citrato: "",
@@ -270,24 +315,37 @@ export default {
         imagen1: "",
         imagen2: "",
         imagen3: "",
-        descripcion_imagenes: ""
       },
       tituloForm: "",
       nomBtn: "",
       errors: [],
       erroresImagenes: "",
-      imagenes: []
+      imagenesCroppie: [],
+      imagenes: [],
+      cantImagenes: ""
     };
   },
   methods: {
+    cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.imagenes[0].source = datos.data;
+          this.parametros.imagen1 = datos.data;
+          break;
+        case 2:
+          this.imagenes[1].source = datos.data;
+          this.parametros.imagen2 = datos.data;
+          break;
+        case 3:
+          this.imagenes[2].source = datos.data;
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento() {
       if (this.tituloForm === "Agregar Identificación") {
-        let formData = new FormData();
-        this.appendInfo(formData);
         axios
-          .post("/cepas/actinomiceto/identi-bioqui", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .post("/cepas/actinomiceto/identi-bioqui", this.parametros)
           .then(res => {
             this.errors = [];
             this.$refs.inputImagen.value = "";
@@ -353,13 +411,14 @@ export default {
       });
     },
     obtenerImagenes(e) {
+      this.cantImagenes = 0;
       this.limpiar(0);
       let file = e.target.files[3];
       if (file) {
         this.erroresImagenes = "Solo puede subir max 3 imágenes.";
         this.limpiar(1);
       } else {
-        let allowedExtensions = /(.jpg|.jpeg)$/i;
+        let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
         let imagenes = [];
         for (let index = 0; index < 3; index++) {
           let imagen = e.target.files[index];
@@ -367,7 +426,7 @@ export default {
             if (!allowedExtensions.exec(imagen.name) || imagen.size > 2000000) {
               this.limpiar(1);
               this.erroresImagenes =
-                "Las imagenes deben ser en formato .jpeg/.jpg y menor a 2Mb.";
+                "Las imagenes deben ser en formato .png .jpg y menor a 2Mb.";
               imagenes = "";
               break;
             } else {
@@ -378,25 +437,27 @@ export default {
             break;
           }
         }
+        this.cantImagenes = imagenes.length;
         this.cargarImagenes(imagenes);
       }
     },
     cargarImagenes(imagenes) {
+      this.imagenesCroppie = [];
       if (imagenes) {
         for (let index = 0; index < imagenes.length; index++) {
           let reader = new FileReader();
           reader.onload = e => {
             switch (index) {
               case 0:
-                this.parametros.imagen1 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(1, e.target.result, true);
                 break;
               case 1:
-                this.parametros.imagen2 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(2, e.target.result, false);
                 break;
               case 2:
-                this.parametros.imagen3 = imagenes[index];
+                this.imagenesCroppie.push(e.target.result);
                 this.pushImagen(3, e.target.result, false);
                 break;
             }
@@ -461,42 +522,7 @@ export default {
       this.parametros.imagen1 = this.info.imagen1;
       this.parametros.imagen2 = this.info.imagen2;
       this.parametros.imagen3 = this.info.imagen3;
-      this.parametros.descripcion_imagenes = this.info.descripcion;
       this.llenarArregloImagenes();
-    },
-    appendInfo(formData) {
-      if (this.$route.params.cepaActinomicetoId) {
-        formData.append("cepaId", this.$route.params.cepaActinomicetoId);
-      } else {
-        formData.append("cepaId", this.$route.params.cepaId);
-      }
-      formData.append("oxidasa", this.parametros.oxidasa);
-      formData.append("catalasa", this.parametros.catalasa);
-      formData.append("citrato", this.parametros.citrato);
-      formData.append("caseina", this.parametros.caseina);
-      formData.append("nitrato", this.parametros.nitrato);
-      formData.append("sensi_antibioticos", this.parametros.sensi_antibioticos);
-      formData.append("fer_manitol", this.parametros.fer_manitol);
-      formData.append("fer_lactosa", this.parametros.fer_lactosa);
-      formData.append("fer_inositol", this.parametros.fer_inositol);
-      formData.append("fer_sacarosa", this.parametros.fer_sacarosa);
-      formData.append("hidro_gelatina", this.parametros.hidro_gelatina);
-      formData.append("hidro_urea", this.parametros.hidro_urea);
-      formData.append(
-        "otras_caract",
-        this.parametros.otras_caract === null
-          ? ""
-          : this.parametros.otras_caract
-      );
-      formData.append("imagen1", this.parametros.imagen1);
-      formData.append("imagen2", this.parametros.imagen2);
-      formData.append("imagen3", this.parametros.imagen3);
-      formData.append(
-        "descripcion_imagenes",
-        this.parametros.descripcion_imagenes === null
-          ? ""
-          : this.parametros.descripcion_imagenes
-      );
     },
     accionImagen(data) {
       this.$emit("editar", data);
@@ -516,6 +542,65 @@ export default {
       } else {
         return "btn-warning";
       }
+    },
+    classRow() {
+      if (this.tituloForm === "Agregar Identificación") {
+        return "col-md-4";
+      } else {
+        return "col-md-6";
+      }
+    },
+    btnDisable() {
+      if (this.imagenes != "") {
+        if (this.info) {
+          if (this.info.imagen1) {
+            if (this.imagenes[0] && !this.parametros.imagen1) {
+              return true;
+            }
+            if (this.info.imagen2) {
+              if (this.imagenes[1] && !this.parametros.imagen2) {
+                return true;
+              }
+              if (this.info.imagen3) {
+                if (this.imagenes[2] && !this.parametros.imagen3) {
+                  return true;
+                }
+              }
+            } else if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen2) {
+            if (this.imagenes[0] && !this.parametros.imagen2) {
+              return true;
+            }
+            if (this.info.imagen3) {
+              if (this.imagenes[1] && !this.parametros.imagen3) {
+                return true;
+              }
+            }
+          } else if (this.info.imagen3) {
+            if (this.imagenes[0] && !this.parametros.imagen3) {
+              return true;
+            }
+          }
+          return false;
+        } else {
+          if (this.imagenes[0] && !this.parametros.imagen1) {
+            return true;
+          }
+          if (this.imagenes[1] && !this.parametros.imagen2) {
+            return true;
+          }
+          if (this.imagenes[2] && !this.parametros.imagen3) {
+            return true;
+          }
+          return false;
+        }
+      } else {
+        return false;
+      }
     }
   },
   mounted() {
@@ -526,6 +611,11 @@ export default {
     } else {
       this.tituloForm = "Agregar Identificación";
       this.nomBtn = "Agregar";
+    }
+    if (this.$route.params.cepaActinomicetoId) {
+      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
     }
   }
 };

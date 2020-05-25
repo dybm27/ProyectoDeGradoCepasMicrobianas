@@ -184,14 +184,9 @@
                   <div class="mt-3 ml-5 mb-1 mr-5">
                     <carousel :imagenes="imagenes.micro"></carousel>
                   </div>
-                  <template v-if="getCaractMicro.descripcion">
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <b>Descripción:</b>
-                        {{getCaractMicro.descripcion}}
-                      </small>
-                    </div>
-                  </template>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
                 </template>
               </div>
             </div>
@@ -276,14 +271,9 @@
                   <div class="mt-2 ml-5 mb-2 mr-5">
                     <carousel :imagenes="imagenes.bioqui"></carousel>
                   </div>
-                  <template v-if="getCaractBioqui.descripcion">
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <b>Descripción:</b>
-                        {{getCaractBioqui.descripcion}}
-                      </small>
-                    </div>
-                  </template>
+                  <div class="card-footer">
+                    <small class="text-muted"></small>
+                  </div>
                 </template>
               </div>
             </div>

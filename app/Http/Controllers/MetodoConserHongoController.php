@@ -14,7 +14,7 @@ class MetodoConserHongoController extends Controller
 {
     public function store(Request $request)
     {
-        if ($request->numero_pases == null) {
+        if (is_null($request->numero_pases)) {
             $rules = [
                 'fecha' => 'required',
                 'numero_replicas' => 'bail|numeric|min:1|max:999999999'
@@ -35,7 +35,7 @@ class MetodoConserHongoController extends Controller
 
         $hongo_filamentoso = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $hongo_filamentoso->id);
+        $imagen = $this->guardarImagen($request->imagen, $hongo_filamentoso->id);
 
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
@@ -49,7 +49,6 @@ class MetodoConserHongoController extends Controller
         $MetodoConserHongo->medio_cultivo = $request->medio_cultivo;
         $MetodoConserHongo->observaciones = $request->observaciones;
         $MetodoConserHongo->imagen = $imagen['ruta'];
-        $MetodoConserHongo->descripcion = $request->descripcion;
         $MetodoConserHongo->imagenPublica =  $imagen['rutaPublica'];
         $MetodoConserHongo->save();
 
@@ -66,7 +65,7 @@ class MetodoConserHongoController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->numero_pases == null) {
+        if (is_null($request->numero_pases)) {
             $rules = [
                 'fecha' => 'required',
                 'numero_replicas' => 'bail|numeric|min:1|max:999999999'
@@ -87,8 +86,6 @@ class MetodoConserHongoController extends Controller
 
         $MetodoConserHongo = MetodoConserHongo::find($id);
 
-        $file = $request->file('imagen');
-
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $MetodoConserHongo->tipo_id = intval($request->tipo_metodo);
@@ -98,13 +95,12 @@ class MetodoConserHongoController extends Controller
         $MetodoConserHongo->recuento_microgota = $request->recuento_microgota;
         $MetodoConserHongo->medio_cultivo = $request->medio_cultivo;
         $MetodoConserHongo->observaciones = $request->observaciones;
-        $MetodoConserHongo->descripcion = $request->descripcion;
 
-        if (!empty($file)) {
+        if ($request->imagen != $MetodoConserHongo->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($MetodoConserHongo->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $MetodoConserHongo->hongo_filamentoso_id);
+            $imagen = $this->guardarImagen($request->imagen, $MetodoConserHongo->hongo_filamentoso_id);
 
             $MetodoConserHongo->imagen =  $imagen['ruta'];
             $MetodoConserHongo->imagenPublica =  $imagen['rutaPublica'];
@@ -131,13 +127,14 @@ class MetodoConserHongoController extends Controller
         return $MetodoConserHongo;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/hongos/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/hongos/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/hongos/metodo_conser_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/hongos/metodo_conser_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/hongos/metodo_conser_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/hongos/metodo_conser_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

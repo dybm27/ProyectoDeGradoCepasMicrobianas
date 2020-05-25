@@ -15,9 +15,9 @@ class IdentiMolecuLevaduraController extends Controller
     {
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
-        $imagen_pcr = $this->guardarImagen($request->file('imagen_pcr'), $levadura->id);
+        $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $levadura->id, 'pcr');
 
-        $imagen_blast = $this->guardarImagen($request->file('imagen_blast'), $levadura->id);
+        $imagen_blast = $this->guardarImagen($request->imagen_blast, $levadura->id, 'blast');
 
         $IdentiMolecuLevadura = new IdentiMolecuLevadura();
         $IdentiMolecuLevadura->levadura_id = $levadura->id;
@@ -50,20 +50,17 @@ class IdentiMolecuLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-        $imagen_pcr = $request->file('imagen_pcr');
-        $imagen_blast = $request->file('imagen_blast');
-
         $IdentiMolecuLevadura = IdentiMolecuLevadura::find($id);
 
-        if (!empty($imagen_pcr)) {
+        if ($request->imagen_pcr != $IdentiMolecuLevadura->imagen_pcr) {
             Storage::disk('local')->delete($IdentiMolecuLevadura->imagen_pcr);
-            $imagen_pcr = $this->guardarImagen($imagen_pcr, $IdentiMolecuLevadura->levadura_id);
+            $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $IdentiMolecuLevadura->levadura_id, 'pcr');
             $IdentiMolecuLevadura->imagen_pcr = $imagen_pcr['ruta'];
             $IdentiMolecuLevadura->imagen_pcrPublica = $imagen_pcr['rutaPublica'];
         }
-        if (!empty($imagen_blast)) {
+        if ($request->imagen_blast != $IdentiMolecuLevadura->imagen_blast) {
             Storage::disk('local')->delete($IdentiMolecuLevadura->imagen_blast);
-            $imagen_blast = $this->guardarImagen($imagen_blast, $IdentiMolecuLevadura->levadura_id);
+            $imagen_blast = $this->guardarImagen($request->imagen_blast, $IdentiMolecuLevadura->levadura_id, 'blast');
             $IdentiMolecuLevadura->imagen_blast = $imagen_blast['ruta'];
             $IdentiMolecuLevadura->imagen_blastPublica = $imagen_blast['rutaPublica'];
         }
@@ -99,13 +96,14 @@ class IdentiMolecuLevaduraController extends Controller
         return $IdentiMolecuLevadura;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id, $tipo)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/levaduras/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/levaduras/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/levaduras/identi_molecu_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = $tipo . '-' . time() . '.png';
+        Storage::disk('local')->put('/public/levaduras/identi_molecu_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/levaduras/identi_molecu_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/levaduras/identi_molecu_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

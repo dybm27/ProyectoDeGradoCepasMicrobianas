@@ -307,7 +307,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "modal",
-        { attrs: { name: "eliminar_caract_micro", width: 400, height: 300 } },
+        { attrs: { name: "eliminar_caract_micro", width: 400, height: 200 } },
         [
           _c("div", { staticClass: "modal-content" }, [
             _c("div", { staticClass: "modal-header" }, [

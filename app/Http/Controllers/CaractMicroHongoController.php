@@ -15,24 +15,24 @@ class CaractMicroHongoController extends Controller
     {
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
 
-        if (!empty($request->imagen1)) {
-            $imagen1 = $this->guardarImagen($request->file('imagen1'), $hongo->id);
+        if (!is_null($request->imagen1)) {
+            $imagen1 = $this->guardarImagen($request->imagen1, $hongo->id, 1);
             $ruta1 =  $imagen1['ruta'];
             $rutaPublica1 =  $imagen1['rutaPublica'];
         } else {
             $ruta1 = $request->imagen1;
             $rutaPublica1 = $request->imagen1;
         }
-        if (!empty($request->imagen2)) {
-            $imagen2 = $this->guardarImagen($request->file('imagen2'), $hongo->id);
+        if (!is_null($request->imagen2)) {
+            $imagen2 = $this->guardarImagen($request->imagen2, $hongo->id, 2);
             $ruta2 =  $imagen2['ruta'];
             $rutaPublica2 =  $imagen2['rutaPublica'];
         } else {
             $ruta2 = $request->imagen2;
             $rutaPublica2 = $request->imagen2;
         }
-        if (!empty($request->imagen3)) {
-            $imagen3 = $this->guardarImagen($request->file('imagen3'), $hongo->id);
+        if (!is_null($request->imagen3)) {
+            $imagen3 = $this->guardarImagen($request->imagen3, $hongo->id, 3);
             $ruta3 =  $imagen3['ruta'];
             $rutaPublica3 =  $imagen3['rutaPublica'];
         } else {
@@ -63,7 +63,6 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->imagenPublica2 = $rutaPublica2;
         $caractMicroHongo->imagen3 = $ruta3;
         $caractMicroHongo->imagenPublica3 = $rutaPublica3;
-        $caractMicroHongo->descripcion = $request->descripcion_imagenes;
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Agregó la Característica Microscópica a la Cepa: "
@@ -92,7 +91,6 @@ class CaractMicroHongoController extends Controller
         $caractMicroHongo->esporas_asexuales_conidios_otras = $request->esporas_asexuales_conidios_otras;
         $caractMicroHongo->espora_sexual_id = $request->espora_sexual;
         $caractMicroHongo->otras_estructuras = $request->otras_estructuras;
-        $caractMicroHongo->descripcion = $request->descripcion_imagenes;
         $caractMicroHongo->save();
 
         $this->crearSeguimiento("Editó la Característica Microscópica de la Cepa: "
@@ -117,7 +115,7 @@ class CaractMicroHongoController extends Controller
     {
         $caractMicroHongo = CaracMicroHongo::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $caractMicroHongo->hongo_filamentoso_id);
+        $imagen = $this->guardarImagen($request->imagen, $caractMicroHongo->hongo_filamentoso_id, $request->numero);
 
         switch ($request->numero) {
             case 1:
@@ -144,7 +142,7 @@ class CaractMicroHongoController extends Controller
     {
         $caractMicroHongo = CaracMicroHongo::find($id);
 
-        $imagen = $this->guardarImagen($request->file('imagen'), $caractMicroHongo->hongo_filamentoso_id);
+        $imagen = $this->guardarImagen($request->imagen, $caractMicroHongo->hongo_filamentoso_id, $request->numero);
 
         switch ($request->numero) {
             case 1:
@@ -205,13 +203,14 @@ class CaractMicroHongoController extends Controller
         return $caractMicroHongo;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id, $num)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/hongos/caract_micro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/hongos/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/hongos/caract_micro_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = $num . '-' . time() . '.png';
+        Storage::disk('local')->put('/public/hongos/caract_micro_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/hongos/caract_micro_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/hongos/caract_micro_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 

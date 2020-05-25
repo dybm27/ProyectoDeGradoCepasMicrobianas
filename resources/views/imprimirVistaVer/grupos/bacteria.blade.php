@@ -89,8 +89,8 @@
                     <td colspan="{{$cantidad+1}}" style="text-align: center">
                         @foreach ($cepa->bacteria->caractMacroscopicas as $caract)
                         <b>{{$caract->medio}}</b>
-                        <img width="100px" height="100px" src="{{public_path($caract->imagenPublica)}}" 
-                                style="padding-top: 25px;padding-right: 40px"/>     
+                        <img id="redondear" width="150px" height="150px" src="{{public_path($caract->imagenPublica)}}" 
+                                style="padding-top: 25px;padding-right: 15px"/>     
                         @endforeach         
                     </td>
                 </tr>
@@ -136,15 +136,15 @@
                 <tr>
                     <td colspan="2" style="text-align: center">
                         @if ($cepa->bacteria->caractMicroscopica->imagenPublica1) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica1)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica1)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractMicroscopica->imagenPublica2) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica2)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica2)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractMicroscopica->imagenPublica3) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica3)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractMicroscopica->imagenPublica3)}}" 
                             style="padding-top: 25px"/>
                         @endif    
                     </td>
@@ -244,15 +244,15 @@
                 <tr>
                     <td colspan="4" style="text-align: center">
                         @if ($cepa->bacteria->caractBioquimica->imagenPublica1) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica1)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica1)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractBioquimica->imagenPublica2) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica2)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica2)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractBioquimica->imagenPublica3) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica3)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractBioquimica->imagenPublica3)}}" 
                                 style="padding-top: 25px"/>
                         @endif    
                     </td>
@@ -289,15 +289,15 @@
                 <tr>
                     <td colspan="2" style="text-align: center">
                         @if ($cepa->bacteria->caractFisiologica->imagenPublica1) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica1)}}" 
+                            <img  id="redondear"width="150px" height="150px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica1)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractFisiologica->imagenPublica2) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica2)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica2)}}" 
                             style="padding-top: 25px;padding-right: 60px"/>
                         @endif
                         @if ($cepa->bacteria->caractFisiologica->imagenPublica3) 
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica3)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->caractFisiologica->imagenPublica3)}}" 
                                 style="padding-top: 25px"/>
                         @endif    
                     </td>
@@ -346,7 +346,7 @@
                     <td colspan="2" style="text-align: center">
                         <b>Imagen PCR</b>
                         <div>
-                            <img width="100px" height="100px" src="{{public_path($cepa->bacteria->identMolecular->img_pcrPublica)}}" 
+                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->bacteria->identMolecular->img_pcrPublica)}}" 
                             style="padding-top: 30px"/>
                         </div>
                     </td>
@@ -355,7 +355,7 @@
                             <b>Imagen Secuenciación</b>
                         </div>
                         <div>
-                            <img width="200px" height="100px" src="{{public_path($cepa->bacteria->identMolecular->img_secuenPublica)}}" 
+                            <img id="redondear" width="250px" height="150px" src="{{public_path($cepa->bacteria->identMolecular->img_secuenPublica)}}" 
                             style="padding-top: 30px"/>
                         </div>
                     </td>
@@ -377,7 +377,7 @@
                     <tr>
                         <td rowspan="3" style="text-align: center">
                             <div>
-                                <img width="100px" height="100px" src="{{public_path($metodo->imagenPublica)}}" 
+                                <img id="redondear" width="150px" height="150px" src="{{public_path($metodo->imagenPublica)}}" 
                                 style="padding-top: 30px"/>
                             </div>
                         </td>        

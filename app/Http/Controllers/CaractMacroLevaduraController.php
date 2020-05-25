@@ -13,17 +13,9 @@ class CaractMacroLevaduraController extends Controller
 {
     public function store(Request $request)
     {
-        $rules = [
-            'medio' => 'required',
-        ];
-        $messages = [
-            //'color.regex' => 'El color solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
         //obtenemos el nombre de la imagen
-        $imagen = $this->guardarImagen($request->file('imagen'), $levadura->id);
+        $imagen = $this->guardarImagen($request->imagen, $levadura->id);
 
         $caractMacroLevadura = new CaracMacroLevadura();
         $caractMacroLevadura->levadura_id = $levadura->id;
@@ -34,7 +26,6 @@ class CaractMacroLevaduraController extends Controller
         $caractMacroLevadura->color_id = intval($request->color);
         $caractMacroLevadura->imagen = $imagen['ruta'];
         $caractMacroLevadura->imagenPublica = $imagen['rutaPublica'];
-        $caractMacroLevadura->descripcion = $request->imagen_descripcion;
         $caractMacroLevadura->save();
 
         $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
@@ -50,24 +41,13 @@ class CaractMacroLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'medio' => 'required',
-            // 'color' => 'bail|required|regex:/^[\pL\s\-]+$/u'
-        ];
-        $messages = [
-            //   'color.regex' => 'El color solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $caractMacroLevadura = CaracMacroLevadura::find($id);
 
-        $file = $request->file('imagen');
-
-        if (!empty($file)) {
+        if ($request->imagen != $caractMacroLevadura->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($caractMacroLevadura->imagen);
             //agregar imagen nueva
-            $imagen = $this->guardarImagen($file, $caractMacroLevadura->levadura_id);
+            $imagen = $this->guardarImagen($request->imagen, $caractMacroLevadura->levadura_id);
 
             $caractMacroLevadura->imagen = $imagen['ruta'];
             $caractMacroLevadura->imagenPublica = $imagen['rutaPublica'];
@@ -78,7 +58,6 @@ class CaractMacroLevaduraController extends Controller
         $caractMacroLevadura->topografia_superficie = $request->topografia_superficie;
         $caractMacroLevadura->borde_colonia = $request->borde_colonia;
         $caractMacroLevadura->color_id = intval($request->color);
-        $caractMacroLevadura->descripcion = $request->imagen_descripcion;
 
         $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "
             . $caractMacroLevadura->levadura->cepa->codigo);
@@ -96,18 +75,19 @@ class CaractMacroLevaduraController extends Controller
         $caractMacroLevadura->delete();
 
         $this->crearSeguimiento("Eliminó la Característica Macroscópica de la Cepa: "
-        . $caractMacroLevadura->levadura->cepa->codigo);
+            . $caractMacroLevadura->levadura->cepa->codigo);
 
         return $caractMacroLevadura;
     }
 
-    public function guardarImagen($file, $id)
+    public function guardarImagen($imagen, $id)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/levaduras/caract_macro_img/' . $id . '/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/levaduras/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/levaduras/caract_macro_img/' . $id . '/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/levaduras/caract_macro_img/' . $id . '/' . $image_name, $data);
+        $ruta = '/public/levaduras/caract_macro_img/' . $id . '/' . $image_name;
+        $rutaPublica = '/storage/levaduras/caract_macro_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 
