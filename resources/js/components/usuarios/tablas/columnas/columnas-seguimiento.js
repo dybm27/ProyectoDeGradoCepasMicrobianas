@@ -31,7 +31,7 @@ export default [
     {
         name: "accion",
         sortField: "accion",
-        title: "Accion",
+        title: "Acción",
         titleClass: "text-center",
         dataClass: "text-center"
     },

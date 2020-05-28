@@ -68,6 +68,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -173,7 +174,8 @@ var render = function() {
                     "api-url": _vm.url,
                     fields: _vm.fields,
                     "sort-order": _vm.sortOrder,
-                    refrescarTabla: _vm.refrescarTabla
+                    refrescarTabla: _vm.refrescarTabla,
+                    nameGet: "metodos-hongos"
                   },
                   on: { cambiarVariable: _vm.cambiarVariable }
                 })
@@ -376,7 +378,7 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   name: "numero_replicas",
   sortField: "numero_replicas",
-  title: "Numero de Replicas",
+  title: "Número de Replicas",
   titleClass: "text-center",
   dataClass: "text-center",
   callback: "numeroReplicas"
@@ -408,6 +410,12 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center",
   callback: "formatDate"
+}, {
+  name: "imagenPublica",
+  title: "Imagen",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "imagen"
 }, {
   name: "__component:acciones_tabla_metodo_conser_hongo",
   title: "Acciones",

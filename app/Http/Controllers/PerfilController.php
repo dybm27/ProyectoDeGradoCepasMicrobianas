@@ -32,7 +32,7 @@ class PerfilController extends Controller
     {
         $usuario = $request->user();
         Storage::disk('local')->delete($usuario->avatar);
-        $imagen = $this->guardarImagen($request->file('imagen'));
+        $imagen = $this->guardarImagen($request->imagen);
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
         $usuario->save();
@@ -47,15 +47,15 @@ class PerfilController extends Controller
         return $usuario;
     }
 
-    
-    public function guardarImagen($file)
+
+    public function guardarImagen($imagen)
     {
-        $time = time();
-        $fileName = $file->getClientOriginalName();
-        Storage::disk('local')->put('/public/usuarios/avatar_img/' . $time . '-' . $fileName, file_get_contents($file));
-        $ruta = '/public/usuarios/avatar_img/' . $time . '-' . $fileName;
-        $rutaPublica = '/storage/usuarios/avatar_img/' . $time . '-' . $fileName;
+        $imagen_array = explode(",", $imagen);
+        $data = base64_decode($imagen_array[1]);
+        $image_name = time() . '.png';
+        Storage::disk('local')->put('/public/usuarios/avatar_img/' . $image_name, $data);
+        $ruta = '/public/usuarios/avatar_img/' . $image_name;
+        $rutaPublica = '/storage/usuarios/avatar_img/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
-
 }

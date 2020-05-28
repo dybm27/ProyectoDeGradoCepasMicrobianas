@@ -66,6 +66,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -163,7 +164,8 @@ var render = function() {
                 "api-url": "/api/usuarios",
                 fields: _vm.fields,
                 "sort-order": _vm.sortOrder,
-                refrescarTabla: _vm.refrescarTabla
+                refrescarTabla: _vm.refrescarTabla,
+                nameGet: "usuarios"
               },
               on: { cambiarVariable: _vm.cambiarVariable }
             }),

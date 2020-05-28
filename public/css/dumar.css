@@ -259,3 +259,7 @@
     height: 200px;
     width: 400px;
 }
+
+.dropdown-menu {
+    min-width: 10rem;
+}

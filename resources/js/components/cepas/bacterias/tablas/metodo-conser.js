@@ -24,7 +24,7 @@ export default [
     {
         name: "numero_replicas",
         sortField: "numero_replicas",
-        title: "Numero de Replicas",
+        title: "Número de Replicas",
         titleClass: "text-center",
         dataClass: "text-center"
     },
@@ -41,6 +41,13 @@ export default [
         titleClass: "text-center",
         dataClass: "text-center",
         callback: "formatDate"
+    },
+    {
+        name: "imagenPublica",
+        title: "Imagen",
+        titleClass: "text-center",
+        dataClass: "text-center",
+        callback: "imagen"
     },
     {
         name: "__component:acciones_tabla_metodo_conser_bacteria",

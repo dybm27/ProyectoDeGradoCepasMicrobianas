@@ -102,6 +102,77 @@
         </div>
       </div>
     </div>
+    <modal name="cambiarImagen" classes="my_modal" :width="700" :height="485">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
+          <button type="button" class="close" @click="$modal.hide('cambiarImagen')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <template v-if="tipo==='imagen'">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="imagen" class>Imagen</label>
+                    <input
+                      name="imagen"
+                      @change="obtenerImagen"
+                      id="imagen"
+                      accept="image/jpeg"
+                      type="file"
+                      :class="['form-control-file', errorImagen!=''? 'is-invalid':'']"
+                      ref="inputImagen"
+                      required
+                    />
+                    <em v-if="errorImagen" class="error invalid-feedback">{{errorImagen}}</em>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <template v-if="mostraImagen">
+                    <croppie
+                      :id="'croppie'"
+                      :imagen="mostraImagen"
+                      @cambiarValorImagen="cambiarValorImagen"
+                      :mostrarBtnCroppie="true"
+                      :zoom="1"
+                      :enableZoom="true"
+                      :editar="false"
+                      :boundaryHeigth="230"
+                      :viewportWidth="200"
+                    />
+                  </template>
+                  <template v-else>
+                    <div class="text-center">
+                      <h5 class="mt-5 mb-5">
+                        <span class="pr-1">
+                          <b class="text-warning">SIN IMAGEN</b>
+                        </span>
+                      </h5>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$modal.hide('cambiarImagen')"
+          >Cancelar</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            @click="eventBtn"
+            :disabled="validarBoton"
+          >Cambiar</button>
+        </div>
+      </div>
+    </modal>
     <modal name="cambiarInfo" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -124,22 +195,6 @@
                 required
               />
               <em v-if="validarNombre" class="error invalid-feedback">{{errorNombre}}</em>
-            </div>
-          </template>
-          <template v-if="tipo==='imagen'">
-            <div class="position-relative form-group">
-              <label for="imagen" class>Imagen</label>
-              <input
-                name="imagen"
-                @change="obtenerImagen"
-                id="imagen"
-                accept="image/jpeg"
-                type="file"
-                :class="['form-control-file', errorImagen!=''? 'is-invalid':'']"
-                ref="inputImagen"
-                required
-              />
-              <em v-if="errorImagen" class="error invalid-feedback">{{errorImagen}}</em>
             </div>
           </template>
           <template v-if="tipo==='contraseña'">
@@ -218,11 +273,15 @@ export default {
       pass2: "",
       errorImagen: "",
       errorPass: "",
-      errorNombre: ""
+      errorNombre: "",
+      imagenMiniatura: ""
     };
   },
   methods: {
     ...vuex.mapActions(["accionUsuario", "accionModificarAuth"]),
+    cambiarValorImagen(valor) {
+      this.imagen = valor;
+    },
     showModal(tipo) {
       this.nombre = "";
       this.pass1 = "";
@@ -231,15 +290,17 @@ export default {
       switch (tipo) {
         case "nombre":
           this.titulo = "Cambiar Nombre";
+          this.$modal.show("cambiarInfo");
           break;
         case "imagen":
           this.titulo = "Cambiar Imagen";
+          this.$modal.show("cambiarImagen");
           break;
         case "contraseña":
           this.titulo = "Cambiar Contraseña";
+          this.$modal.show("cambiarInfo");
           break;
       }
-      this.$modal.show("cambiarInfo");
     },
     toastr(titulo, msg, tipo) {
       this.$toastr.Add({
@@ -263,36 +324,34 @@ export default {
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
-      this.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg)$/i;
+      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.errorImagen =
-            "La imagen debe ser en formato .jpg y menor a 2Mb.";
+            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
           this.$refs.inputImagen.value = "";
           this.imagen = "";
         } else {
           this.errorImagen = "";
-          this.validarImagen(file);
+          this.cargarImagen(file);
         }
+      } else {
+        this.imagen = "";
+        this.imagenMiniatura = "";
       }
     },
-    validarImagen(file) {
+    cargarImagen(file) {
       let reader = new Image();
       reader.onload = e => {
-        if (e.path[0].height > 500 || e.path[0].width > 500) {
-          this.errorImagen =
-            "La imagen debe tener una dimension maxima de 500x500 px ";
-          this.$refs.inputImagen.value = "";
-          this.imagen = "";
-        }
+        this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
     },
     eventBtn() {
       let parametros = {
         nombre: this.nombre,
-        pass: this.pass1
+        pass: this.pass1,
+        imagen: this.imagen
       };
       switch (this.tipo) {
         case "nombre":
@@ -314,16 +373,10 @@ export default {
             .catch(error => {});
           break;
         case "imagen":
-          let formData = new FormData();
-          formData.append("imagen", this.imagen);
-          formData.append("_method", "PUT");
           axios
-            .post(
+            .put(
               `/perfil/cambiar-${this.tipo}/${this.getUserAuth.id}`,
-              formData,
-              {
-                headers: { "Content-Type": "multipart/form-data" }
-              }
+              parametros
             )
             .then(res => {
               this.accionModificarAuth({ data: res.data });
@@ -333,7 +386,7 @@ export default {
                 "Accion realizada con exito!!",
                 "success"
               );
-              this.$modal.hide("cambiarInfo");
+              this.$modal.hide("cambiarImagen");
             })
             .catch(error => {});
           break;
@@ -425,6 +478,9 @@ export default {
           }
           break;
       }
+    },
+    mostraImagen() {
+      return this.imagenMiniatura;
     }
   },
   created() {}

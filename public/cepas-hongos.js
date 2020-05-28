@@ -65,6 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -171,7 +172,8 @@ var render = function() {
                   fields: _vm.fields,
                   "sort-order": _vm.sortOrder,
                   "detail-row-component": "my-detail-row-h-l-a",
-                  refrescarTabla: _vm.refrescarTabla
+                  refrescarTabla: _vm.refrescarTabla,
+                  nameGet: "hongos"
                 },
                 on: { cambiarVariable: _vm.cambiarVariable }
               })

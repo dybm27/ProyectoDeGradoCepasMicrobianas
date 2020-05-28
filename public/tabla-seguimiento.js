@@ -33,6 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -85,7 +86,8 @@ var render = function() {
               "api-url": "/api/seguimientos",
               fields: _vm.fields,
               "sort-order": _vm.sortOrder,
-              refrescarTabla: _vm.refrescarTabla
+              refrescarTabla: _vm.refrescarTabla,
+              nameGet: "seguimientos"
             },
             on: { cambiarVariable: _vm.cambiarVariable }
           })
@@ -233,7 +235,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }, {
   name: "accion",
   sortField: "accion",
-  title: "Accion",
+  title: "Acción",
   titleClass: "text-center",
   dataClass: "text-center"
 }, {

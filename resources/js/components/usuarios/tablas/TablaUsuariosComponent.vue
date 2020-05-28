@@ -7,6 +7,7 @@
         :sort-order="sortOrder"
         @cambiarVariable="cambiarVariable"
         :refrescarTabla="refrescarTabla"
+        :nameGet="'usuarios'"
       ></my-vuetable>
       <modal
         name="my_modal_eliminarUsuario"

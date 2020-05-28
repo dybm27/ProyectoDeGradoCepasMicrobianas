@@ -19,6 +19,7 @@
             detail-row-component="my-detail-row-h-l-a"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
+            :nameGet="'levaduras'"
           ></my-vuetable>
         </div>
       </div>

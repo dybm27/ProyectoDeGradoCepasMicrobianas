@@ -8,6 +8,7 @@
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
+          :nameGet="'metodos-hongos'"
         ></my-vuetable>
       </div>
       <modal

@@ -15,6 +15,7 @@
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
+          :nameGet="'seguimientos'"
         ></my-vuetable>
       </div>
     </div>

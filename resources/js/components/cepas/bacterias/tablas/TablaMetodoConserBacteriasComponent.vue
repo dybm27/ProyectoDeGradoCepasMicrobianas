@@ -8,6 +8,7 @@
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
+          :nameGet="'metodos-bacterias'"
         ></my-vuetable>
       </div>
       <modal

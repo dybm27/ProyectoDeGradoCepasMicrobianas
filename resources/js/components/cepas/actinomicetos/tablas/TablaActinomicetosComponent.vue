@@ -19,6 +19,7 @@
             detail-row-component="my-detail-row-h-l-a"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
+            :nameGet="'actinomicetos'"
           ></my-vuetable>
         </div>
       </div>

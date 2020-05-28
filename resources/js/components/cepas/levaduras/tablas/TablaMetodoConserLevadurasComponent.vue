@@ -8,6 +8,7 @@
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
+          :nameGet="'metodos-levaduras'"
         ></my-vuetable>
       </div>
       <modal
@@ -121,14 +122,14 @@ export default {
       this.idMetodoEliminar = data.params.id;
     }
   },
-  
+
   computed: {
     ...vuex.mapGetters(["getMetodoConser"])
   },
   created() {
     if (this.$route.params.cepaLevaduraId) {
       this.url += this.$route.params.cepaLevaduraId;
-    }else {
+    } else {
       this.url += this.$route.params.cepaId;
     }
   }

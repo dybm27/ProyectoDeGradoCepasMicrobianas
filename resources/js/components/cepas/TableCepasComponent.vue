@@ -17,9 +17,9 @@
             :fields="fields"
             :sort-order="sortOrder"
             detail-row-component="my-detail-row-cepas"
+            :nameGet="'cepas'"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
-            @datos="datos"
           ></my-vuetable>
         </div>
       </div>
@@ -125,9 +125,6 @@ export default {
     },
     beforeOpen(data) {
       this.idCepaEliminar = data.params.id;
-    },
-    datos(datos) {
-      console.log(datos);
     }
   },
   computed: {},

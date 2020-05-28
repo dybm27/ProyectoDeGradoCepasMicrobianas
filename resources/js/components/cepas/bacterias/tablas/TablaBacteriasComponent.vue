@@ -19,6 +19,7 @@
             detail-row-component="my-detail-row-bacterias"
             @cambiarVariable="cambiarVariable"
             :refrescarTabla="refrescarTabla"
+            :nameGet="'bacterias'"
           ></my-vuetable>
         </div>
       </div>

@@ -212,7 +212,7 @@ export default {
         nomLabel: "",
         errors: ""
       },
-      imageMiniatura: ""
+      imagenMiniatura: ""
     };
   },
   methods: {
@@ -221,7 +221,7 @@ export default {
     },
     showModalImagen(tipo) {
       this.seleccionar();
-      this.imageMiniatura = "";
+      this.imagenMiniatura = "";
       this.modalImagen.errors = "";
       this.modalImagen.imagen = "";
       if (tipo === "cambiar") {
@@ -365,12 +365,15 @@ export default {
           this.modalImagen.errors = "";
           this.cargarImagen(file);
         }
+      } else {
+        this.modalImagen.imagen = "";
+        this.imagenMiniatura = "";
       }
     },
     cargarImagen(file) {
       let reader = new Image();
       reader.onload = e => {
-        this.imageMiniatura = reader.src;
+        this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
     },
@@ -447,7 +450,7 @@ export default {
       }
     },
     mostraImagen() {
-      return this.imageMiniatura;
+      return this.imagenMiniatura;
     },
     validarBtn() {
       if (!this.modalImagen.imagen) {

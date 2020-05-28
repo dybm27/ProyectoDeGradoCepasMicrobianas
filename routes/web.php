@@ -327,11 +327,48 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/tipo-user/editar/{id}', 'UsuariosController@update');
     Route::delete('/tipo-user/eliminar/{id}', 'UsuariosController@destroy');
 
-    //---------------------- IMPRIMIR ------------------------------------------
+    //---------------------- EXPORTAR PDF------------------------------------------
     Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
+    //---------------------- EXPORTAR EXCEL------------------------------------------
+    //cepas
+    Route::get('/exportar/cepas', 'ExportarExcelController@exportarCepas');
+    Route::get('/exportar/tabla/cepas', 'ExportarExcelController@exportarCepasTabla');
+    //bacterias
+    Route::get('/exportar/bacterias', 'ExportarExcelController@exportarBacterias');
+    Route::get('/exportar/tabla/bacterias', 'ExportarExcelController@exportarBacteriasTabla');
+    //hongos
+    Route::get('/exportar/hongos', 'ExportarExcelController@exportarHongos');
+    Route::get('/exportar/tabla/hongos', 'ExportarExcelController@exportarHongosTabla');
+    //levaduras
+    Route::get('/exportar/levaduras', 'ExportarExcelController@exportarLevaduras');
+    Route::get('/exportar/tabla/levaduras', 'ExportarExcelController@exportarLevadurasTabla');
+    //actinomicetos
+    Route::get('/exportar/actinomicetos', 'ExportarExcelController@exportarActinomicetos');
+    Route::get('/exportar/tabla/actinomicetos', 'ExportarExcelController@exportarActinomicetosTabla');
+
+    //metodos-bacterias
+    Route::get('/exportar/metodos-bacterias', 'ExportarExcelController@exportarMetodosBacterias');
+    Route::get('/exportar/tabla/metodos-bacterias', 'ExportarExcelController@exportarMetodosBacteriasTabla');
+    //metodos-hongos
+    Route::get('/exportar/metodos-hongos', 'ExportarExcelController@exportarMetodosHongos');
+    Route::get('/exportar/tabla/metodos-hongos', 'ExportarExcelController@exportarMetodosHongosTabla');
+    //levaduras
+    Route::get('/exportar/metodos-levaduras', 'ExportarExcelController@exportarMetodosLevaduras');
+    Route::get('/exportar/tabla/metodos-levaduras', 'ExportarExcelController@exportarMetodosLevadurasTabla');
+    //actinomicetos
+    Route::get('/exportar/metodos-actinomicetos', 'ExportarExcelController@exportarMetodosActinomicetos');
+    Route::get('/exportar/tabla/metodos-actinomicetos', 'ExportarExcelController@exportarMetodosActinomicetosTabla');
+
+    //usuarios
+    Route::get('/exportar/usuarios', 'ExportarExcelController@exportarUsuarios');
+    Route::get('/exportar/tabla/usuarios', 'ExportarExcelController@exportarUsuariosTabla');
+    //seguimientos
+    Route::get('/exportar/seguimientos', 'ExportarExcelController@exportarSeguimientos');
+    Route::get('/exportar/tabla/seguimientos', 'ExportarExcelController@exportarSeguimientosTabla');
 
     // Ruta para Vue
     Route::get('/{vue_capture?}', function () {
         return view('404');
     })->where('vue_capture', '[\/\w\.-]*');
 });
+

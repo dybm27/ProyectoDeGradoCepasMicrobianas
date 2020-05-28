@@ -125,9 +125,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     beforeOpen: function beforeOpen(data) {
       this.idCepaEliminar = data.params.id;
-    },
-    datos: function datos(_datos) {
-      console.log(_datos);
     }
   },
   computed: {},
@@ -175,9 +172,10 @@ var render = function() {
                   fields: _vm.fields,
                   "sort-order": _vm.sortOrder,
                   "detail-row-component": "my-detail-row-cepas",
+                  nameGet: "cepas",
                   refrescarTabla: _vm.refrescarTabla
                 },
-                on: { cambiarVariable: _vm.cambiarVariable, datos: _vm.datos }
+                on: { cambiarVariable: _vm.cambiarVariable }
               })
             ],
             1
