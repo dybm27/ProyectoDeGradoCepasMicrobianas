@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="7"><b>METODOS DE CONSERVACIÓN LEVADURAS</b></th>
+            <th colspan="6"><b>METODOS DE CONSERVACIÓN LEVADURAS</b></th>
         </tr>
         <tr>
             <th><b>Tipo de Método</b></th>
@@ -10,7 +10,6 @@
             <th><b>Medio de Cultivo</b></th>
             <th><b>Número de Pases</b></th>
             <th><b>Fecha</b></th>
-            <th><b>Imagen</b></th>
         </tr>
     </thead>
     <tbody>
@@ -45,8 +44,12 @@
                     {{$metodo->numero_pases}}
                 @endif
             </td>
-            <td>{{ $metodo->fecha }}</td>
-            <td><img src="{{public_path($metodo->imagenPublica)}}" width="100px"  height="100px"></td>
+            <td>
+                @php
+                    $fecha=date('d-m-Y', strtotime($metodo->fecha))
+                @endphp
+                {{$fecha}}
+            </td>
         </tr>
     @endforeach
     </tbody>

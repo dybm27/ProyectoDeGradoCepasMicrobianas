@@ -21,7 +21,12 @@
             <td>{{ $datoDecodificado->email_responsable }}</td>
             <td>{{ $datoDecodificado->tipo_user }}</td>
             <td>{{ $datoDecodificado->accion }}</td>
-            <td>{{ $datoDecodificado->created_at }}</td>
+            <td>
+                @php
+                    $fecha=date('d-m-Y', strtotime($datoDecodificado->created_at))
+                @endphp
+                {{$fecha}}
+            </td>
         </tr>
     @endforeach
     </tbody>

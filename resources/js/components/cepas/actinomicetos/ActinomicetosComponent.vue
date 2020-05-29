@@ -8,7 +8,25 @@
           </div>
           <div>
             Administrar Cepas - Actinomicetos
-            <div class="page-title-subheading">cepas microbianas de la UFPS.</div>
+            <div class="page-title-subheading opacity-10">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a>
+                      <i class="fa fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a>Cepas Microbianas</a>
+                  </li>
+                  <template v-show="tipo">
+                    <li class="breadcrumb-item">
+                      <a>{{tipo}}</a>
+                    </li>
+                  </template>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="page-title-actions">
@@ -35,7 +53,8 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      ruta: true
+      ruta: true,
+      tipo: ""
     };
   },
   methods: {
@@ -43,8 +62,14 @@ export default {
     ocultarLink(ruta) {
       if (ruta != "/actinomicetos") {
         this.ruta = false;
+        if (ruta.includes("caract")) {
+          this.tipo = "Características";
+        } else if (ruta.includes("ver")) {
+          this.tipo = "Ver Información";
+        }
       } else {
         this.ruta = true;
+        this.tipo = "";
       }
     }
   },

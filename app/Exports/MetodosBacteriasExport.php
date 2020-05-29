@@ -58,9 +58,9 @@ class MetodosBacteriasExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $cantidad, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:F2')
+                    ->getStyle('A1:E2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:F' . $cantidad)
+                $event->sheet->getStyle('A3:E' . $cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];

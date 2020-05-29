@@ -52,9 +52,9 @@ class MetodosActinomicetosExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $cantidad, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:H1')
+                    ->getStyle('A1:G1')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A2:H' . $cantidad)
+                $event->sheet->getStyle('A2:G' . $cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];

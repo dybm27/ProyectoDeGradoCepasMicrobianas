@@ -8,7 +8,20 @@
           </div>
           <div>
             Administrar Usuarios
-            <div class="page-title-subheading">Agregar editar o eliminar usuarios y seguimiento</div>
+            <div class="page-title-subheading opacity-10">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a>
+                      <i class="fa fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a>{{tipo}}</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="page-title-actions"></div>
@@ -26,10 +39,23 @@
         </router-link>
       </li>
     </ul>
-    <router-view></router-view>
+    <router-view @rutaHijo="ocultarLink"></router-view>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return { tipo: "" };
+  },
+  methods: {
+    ocultarLink(ruta) {
+      if (ruta.includes("seguimiento")) {
+        this.tipo = "Seguimiento";
+      } else {
+        this.tipo = "Usuarios";
+      }
+    }
+  }
+};
 </script>

@@ -25,8 +25,12 @@
             </td>
             <td>{{ $metodo->numero_replicas }}</td>
             <td>{{ $metodo->recuento_microgota }}</td>
-            <td>{{ $metodo->fecha }}</td>
-            <td><img src="{{public_path($metodo->imagenPublica)}}" width="100px"  height="100px"></td>
+            <td>
+                @php
+                    $fecha=date('d-m-Y', strtotime($metodo->fecha))
+                @endphp
+                {{$fecha}}
+            </td>
         </tr>
     @endforeach
     </tbody>

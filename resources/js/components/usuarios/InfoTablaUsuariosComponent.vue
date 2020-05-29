@@ -55,6 +55,9 @@ export default {
     mostrarLinkAgregar() {
       return this.variableAgregar;
     }
+  },
+  created() {
+    this.$emit("rutaHijo", window.location.pathname);
   }
 };
 </script>

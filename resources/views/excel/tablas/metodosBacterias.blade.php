@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="6"><b>METODOS DE CONSERVACIÓN BACTERIAS</b></th>
+            <th colspan="5"><b>METODOS DE CONSERVACIÓN BACTERIAS</b></th>
         </tr>
         <tr>
             <th><b>Tipo de Método</b></th>
@@ -9,7 +9,6 @@
             <th><b>Número de Replicas</b></th>
             <th><b>Recuento Microgota</b></th>
             <th><b>Fecha</b></th>
-            <th><b>Imagen</b></th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +27,12 @@
                 </td>
                 <td>{{ $datoDecodificado->numero_replicas }}</td>
                 <td>{{ $datoDecodificado->recuento_microgota }}</td>
-                <td>{{ $datoDecodificado->fecha }}</td>
-                <td><img src="{{public_path($datoDecodificado->imagenPublica)}}" width="100px"  height="100px"></td>
+                <td>
+                    @php
+                        $fecha=date('d-m-Y', strtotime($datoDecodificado->fecha))
+                    @endphp
+                    {{$fecha}}
+                </td>
             </tr>
         @endforeach
     </tbody>

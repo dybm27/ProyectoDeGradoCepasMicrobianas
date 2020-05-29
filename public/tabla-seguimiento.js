@@ -53,6 +53,9 @@ __webpack_require__.r(__webpack_exports__);
     cambiarVariable: function cambiarVariable() {
       this.refrescarTabla = false;
     }
+  },
+  created: function created() {
+    this.$emit("rutaHijo", window.location.pathname);
   }
 });
 

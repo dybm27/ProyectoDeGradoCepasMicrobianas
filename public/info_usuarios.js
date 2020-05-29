@@ -67,6 +67,9 @@ __webpack_require__.r(__webpack_exports__);
     mostrarLinkAgregar: function mostrarLinkAgregar() {
       return this.variableAgregar;
     }
+  },
+  created: function created() {
+    this.$emit("rutaHijo", window.location.pathname);
   }
 });
 

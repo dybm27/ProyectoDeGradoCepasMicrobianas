@@ -18,7 +18,12 @@
             <td>{{ $seguimiento->email_responsable }}</td>
             <td>{{ $seguimiento->tipo_user }}</td>
             <td>{{ $seguimiento->accion }}</td>
-            <td>{{ $seguimiento->created_at }}</td>
+            <td>
+                @php
+                    $fecha=date('d-m-Y', strtotime($seguimiento->created_at))
+                @endphp
+                {{$fecha}}
+            </td>
         </tr>
     @endforeach
     </tbody>

@@ -7,8 +7,21 @@
             <i class="pe-7s-id icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
-            Perfil
-            <div class="page-title-subheading">Datos del Usuario.</div>
+            Información del Usuario
+            <div class="page-title-subheading opacity-10">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a>
+                      <i class="fa fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a>Perfil</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="page-title-actions"></div>

@@ -7,8 +7,21 @@
             <i class="pe-7s-date icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
-            Calendario
-            <div class="page-title-subheading">Informacion de eventos y metodos de conservación</div>
+            Seguimiento a los Métodos de Conservación
+            <div class="page-title-subheading opacity-10">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a>
+                      <i class="fa fa-home"></i>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a>Calendario</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="page-title-actions"></div>

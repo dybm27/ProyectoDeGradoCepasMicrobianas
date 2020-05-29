@@ -26,7 +26,6 @@
                 <td>{{ $datoDecodificado->nombre_clase }}</td>
                 <td>{{ $datoDecodificado->nombre_orden }}</td>
                 <td>{{ $datoDecodificado->estado }}</td>
-                <td><img src="{{public_path($datoDecodificado->imagenPublica)}}" width="100px"  height="100px"></td>
             </tr>
         @endforeach
     </tbody>

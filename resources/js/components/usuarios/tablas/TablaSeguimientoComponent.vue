@@ -43,6 +43,9 @@ export default {
     cambiarVariable() {
       this.refrescarTabla = false;
     }
+  },
+  created() {
+    this.$emit("rutaHijo", window.location.pathname);
   }
 };
 </script>

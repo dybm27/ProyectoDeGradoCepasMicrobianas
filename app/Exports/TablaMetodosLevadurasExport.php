@@ -64,9 +64,9 @@ class TablaMetodosLevadurasExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:G2')
+                    ->getStyle('A1:F2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:G' . $this->cantidad)
+                $event->sheet->getStyle('A3:F' . $this->cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];
