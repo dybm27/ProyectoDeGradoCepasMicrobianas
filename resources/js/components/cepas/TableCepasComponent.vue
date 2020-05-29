@@ -1,27 +1,24 @@
 <template>
   <div>
-    <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"></ul>
-    <div class="tabs-animation">
-      <div class="main-card mb-3 card">
-        <div class="card-header-tab card-header">
-          <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-            <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-            Tabla Dinamica Cepas Microbianas
-          </div>
-          <div class="btn-actions-pane-right actions-icon-btn"></div>
+    <div class="main-card mb-3 card">
+      <div class="card-header-tab card-header">
+        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+          <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
+          Tabla Dinamica Cepas Microbianas
         </div>
-        <div class="card-body">
-          <!--  detail-row-component="my-detail-row" -->
-          <my-vuetable
-            api-url="/api/cepas"
-            :fields="fields"
-            :sort-order="sortOrder"
-            detail-row-component="my-detail-row-cepas"
-            :nameGet="'cepas'"
-            @cambiarVariable="cambiarVariable"
-            :refrescarTabla="refrescarTabla"
-          ></my-vuetable>
-        </div>
+        <div class="btn-actions-pane-right actions-icon-btn"></div>
+      </div>
+      <div class="card-body">
+        <!--  detail-row-component="my-detail-row" -->
+        <my-vuetable
+          api-url="/info-panel/cepas"
+          :fields="fields"
+          :sort-order="sortOrder"
+          detail-row-component="my-detail-row-cepas"
+          :nameGet="'cepas'"
+          @cambiarVariable="cambiarVariable"
+          :refrescarTabla="refrescarTabla"
+        ></my-vuetable>
       </div>
     </div>
     <modal
@@ -64,7 +61,7 @@ export default {
       fields: FieldDefs,
       sortOrder: [
         {
-          field: "id",
+          field: "codigo",
           direction: "asc"
         }
       ]

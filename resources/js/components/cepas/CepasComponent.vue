@@ -38,7 +38,7 @@
           <router-link
             v-else
             class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
-            to="/cepas"
+            to="/cepas/tabla"
           >Volver</router-link>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       ruta: true,
-      tipo: ""
+      tipo: "Tabla"
     };
   },
   methods: {
@@ -65,16 +65,24 @@ export default {
       "obtenerInfoCaractActinomicetos"
     ]),
     ocultarLink(ruta) {
-      if (ruta != "/cepas") {
+      if (ruta != "/cepas/tabla") {
         this.ruta = false;
-        if (ruta.includes("caract")) {
+        if (
+          ruta.includes("caract") ||
+          ruta.includes("identi") ||
+          ruta.includes("metodo")
+        ) {
           this.tipo = "Características";
         } else if (ruta.includes("ver")) {
           this.tipo = "Ver Información";
+        } else if (ruta.includes("agregar")) {
+          this.tipo = "Agregar";
+        } else {
+          this.tipo = "Editar";
         }
       } else {
         this.ruta = true;
-        this.tipo = "";
+        this.tipo = "Tabla";
       }
     }
   },

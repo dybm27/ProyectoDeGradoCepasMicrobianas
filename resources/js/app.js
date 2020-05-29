@@ -21,6 +21,8 @@ Vue.component('croppie-cepas', require('./components/cepas/CroppieCepasComponent
 Vue.component('header-content', require('./components/Header-ContentComponent.vue').default);
 //perfil
 Vue.component('perfil', require('./components/PerfilComponent.vue').default);
+//otra info
+Vue.component('otra-info', require('./components/otra-info/OtraInfoComponent.vue').default);
 //my-vuetable
 Vue.component('vuetable', require('vuetable-2/src/components/Vuetable').default);
 Vue.component('my-vuetable', require('./components/MyVuetableComponent').default);

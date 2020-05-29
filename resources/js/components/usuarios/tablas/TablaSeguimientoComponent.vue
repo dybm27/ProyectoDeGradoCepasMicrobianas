@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
         <my-vuetable
-          api-url="/api/seguimientos"
+          api-url="/info-panel/seguimientos"
           :fields="fields"
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
@@ -31,7 +31,7 @@ export default {
       fields: FieldDefs,
       sortOrder: [
         {
-          field: "id",
+          field: "nombre_responsable",
           direction: "asc"
         }
       ],

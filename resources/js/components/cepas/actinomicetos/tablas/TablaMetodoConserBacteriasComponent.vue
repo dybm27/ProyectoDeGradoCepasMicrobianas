@@ -56,7 +56,7 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "api/cepa/bacteria/metodos-conser/",
+      url: "/info-panel/cepa/bacteria/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,

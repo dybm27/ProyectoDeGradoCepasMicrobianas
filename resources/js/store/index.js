@@ -728,7 +728,7 @@ export default new Vuex.Store({
     },
     actions: {
         obtenerTiposCepas({ commit }) {
-            axios.get("/api/info-tipos-cepas").then(res => {
+            axios.get("/info-panel/info-tipos-cepas").then(res => {
                 commit("llenarTipos", res.data);
             });
         },
@@ -736,7 +736,7 @@ export default new Vuex.Store({
             commit("mutacionAgregarTipoCepa", data);
         },
         obtenerInfoCaractBacterias({ commit }) {
-            axios.get("/api/info-caract-bacterias").then(res => {
+            axios.get("/info-panel/info-caract-bacterias").then(res => {
                 commit("llenarInfoCaractBacterias", res.data);
             });
         },
@@ -744,7 +744,7 @@ export default new Vuex.Store({
             commit("mutacionAgregarTipoCaractBacteria", data);
         },
         obtenerInfoCaractLevaduras({ commit }) {
-            axios.get("/api/info-caract-levaduras").then(res => {
+            axios.get("/info-panel/info-caract-levaduras").then(res => {
                 commit("llenarInfoCaractLevaduras", res.data);
             });
         },
@@ -752,7 +752,7 @@ export default new Vuex.Store({
             commit("mutacionAgregarTipoCaractLevadura", data);
         },
         obtenerInfoCaractHongos({ commit }) {
-            axios.get("/api/info-caract-hongos").then(res => {
+            axios.get("/info-panel/info-caract-hongos").then(res => {
                 commit("llenarInfoCaractHongos", res.data);
             });
         },
@@ -760,7 +760,7 @@ export default new Vuex.Store({
             commit("mutacionAgregarTipoCaractHongo", data);
         },
         obtenerInfoCaractActinomicetos({ commit }) {
-            axios.get("/api/info-caract-actinomicetos").then(res => {
+            axios.get("/info-panel/info-caract-actinomicetos").then(res => {
                 commit("llenarInfoCaractActinomicetos", res.data);
             });
         },
@@ -768,7 +768,7 @@ export default new Vuex.Store({
             commit("mutacionAgregarTipoCaractActinomiceto", data);
         },
         obtenerCepa({ commit }, id) {
-            axios.get(`/api/cepa/agregar-editar-caract/${id}`).then(res => {
+            axios.get(`/info-panel/cepa/agregar-editar-caract/${id}`).then(res => {
                 commit("llenarCepa", res.data);
             });
         },
@@ -782,12 +782,12 @@ export default new Vuex.Store({
             commit("mutacionEliminarCaract", data);
         },
         obtenerUsers({ commit }, data) {
-            axios.get("/api/users").then(res => {
+            axios.get("/info-panel/users").then(res => {
                 commit("llenarUsuarios", res.data);
             });
         },
         obtenerTiposUsers({ commit }) {
-            axios.get("/api/tipos-users").then(res => {
+            axios.get("/info-panel/tipos-users").then(res => {
                 commit("llenarTiposUsers", res.data);
             });
         },

@@ -1,298 +1,279 @@
 <template>
   <div>
-    <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"></ul>
-    <div class="tabs-animation">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-sm-8">
-            <div class="main-card mb-3 card">
-              <div class="card-body">
-                <h5 class="card-title">{{nombre}}</h5>
-                <form
-                  @submit.prevent="evento"
-                  v-if="getGrupos&&getGeneros&&getEspecies&&mostrarFormComputed"
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-sm-8">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <h5 class="card-title">{{nombre}}</h5>
+              <form
+                @submit.prevent="evento"
+                v-if="getGrupos&&getGeneros&&getEspecies&&mostrarFormComputed"
+              >
+                <div class="position-relative form-group">
+                  <label for="codigo" class>Código</label>
+                  <input
+                    name="codigo"
+                    id="codigo"
+                    placeholder="..."
+                    type="text"
+                    class="form-control"
+                    v-model="parametros.codigo"
+                    required
+                  />
+                  <span v-if="errors.codigo" class="text-danger">{{errors.codigo[0]}}</span>
+                </div>
+                <div class="position-relative form-group" v-if="mostrarGrupos">
+                  <label for="grupo_microbiano" class>Grupo Microbiano</label>
+                  <select
+                    name="select"
+                    id="grupo_microbiano"
+                    class="form-control"
+                    v-model="parametros.grupo_microbiano"
+                    :disabled="disabled"
+                    @change="cambiarGeneroEspecie"
+                  >
+                    <option
+                      v-for="(gm,index) in getGrupos"
+                      :key="index"
+                      :value="gm.id"
+                    >{{gm.nombre}}</option>
+                  </select>
+                </div>
+                <label for="genero" class>Género</label>
+                <div class="input-group mb-3">
+                  <select
+                    name="select"
+                    id="genero"
+                    class="form-control"
+                    v-model="parametros.genero"
+                    @change="cambiarEspecie"
+                  >
+                    <option
+                      v-for="(g,index) in getGenerosId(parametros.grupo_microbiano)"
+                      :key="index"
+                      :value="g.id"
+                    >{{g.nombre}}</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button
+                      class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                      @click.prevent="showModal('genero')"
+                    >
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <label for="especie" class>Especie</label>
+                <div class="input-group mb-3">
+                  <select
+                    name="select"
+                    id="especie"
+                    class="form-control"
+                    v-model="parametros.especie"
+                  >
+                    <option
+                      v-for="(e,index) in getEspeciesId(parametros.genero)"
+                      :key="index"
+                      :value="e.id"
+                    >{{e.nombre}}</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button
+                      class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                      @click.prevent="showModal('especie')"
+                    >
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div v-if=" parametros.grupo_microbiano === 3 ">
+                  <label for="division" class>Division</label>
+                  <div class="input-group mb-3">
+                    <select
+                      name="select"
+                      id="division"
+                      class="form-control"
+                      v-model="parametros.division"
+                    >
+                      <option
+                        v-for="(d,index) in getDivisiones"
+                        :key="index"
+                        :value="d.id"
+                      >{{d.nombre}}</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('division')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div v-if=" parametros.grupo_microbiano === 4 ">
+                  <label for="reino" class>Reino</label>
+                  <div class="input-group mb-3">
+                    <select
+                      name="select"
+                      id="reino"
+                      class="form-control"
+                      v-model="parametros.reino"
+                    >
+                      <option v-for="(r,index) in getReinos" :key="index" :value="r.id">{{r.nombre}}</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('reino')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano === 4">
+                  <label for="phylum" class>Phylum</label>
+                  <div class="input-group mb-3">
+                    <select
+                      name="select"
+                      id="phylum"
+                      class="form-control"
+                      v-model="parametros.phylum"
+                    >
+                      <option
+                        v-for="(p,index) in getPhylums"
+                        :key="index"
+                        :value="p.id"
+                      >{{p.nombre}}</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('phylum')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano=== 3  || parametros.grupo_microbiano === 4"
                 >
-                  <div class="position-relative form-group">
-                    <label for="codigo" class>Código</label>
-                    <input
-                      name="codigo"
-                      id="codigo"
-                      placeholder="..."
-                      type="text"
-                      class="form-control"
-                      v-model="parametros.codigo"
-                      required
-                    />
-                    <span v-if="errors.codigo" class="text-danger">{{errors.codigo[0]}}</span>
-                  </div>
-                  <div class="position-relative form-group" v-if="mostrarGrupos">
-                    <label for="grupo_microbiano" class>Grupo Microbiano</label>
-                    <select
-                      name="select"
-                      id="grupo_microbiano"
-                      class="form-control"
-                      v-model="parametros.grupo_microbiano"
-                      :disabled="disabled"
-                      @change="cambiarGeneroEspecie"
-                    >
-                      <option
-                        v-for="(gm,index) in getGrupos"
-                        :key="index"
-                        :value="gm.id"
-                      >{{gm.nombre}}</option>
-                    </select>
-                  </div>
-                  <label for="genero" class>Género</label>
+                  <label for="clase" class>Clase</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
-                      id="genero"
+                      id="clase"
                       class="form-control"
-                      v-model="parametros.genero"
-                      @change="cambiarEspecie"
+                      v-model="parametros.clase"
                     >
-                      <option
-                        v-for="(g,index) in getGenerosId(parametros.grupo_microbiano)"
-                        :key="index"
-                        :value="g.id"
-                      >{{g.nombre}}</option>
+                      <option v-for="(c,index) in getClases" :key="index" :value="c.id">{{c.nombre}}</option>
                     </select>
                     <div class="input-group-append">
                       <button
                         class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                        @click.prevent="showModal('genero')"
+                        @click.prevent="showModal('clase')"
                       >
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
                   </div>
-                  <label for="especie" class>Especie</label>
+                  <label for="orden" class>Orden</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
-                      id="especie"
+                      id="orden"
                       class="form-control"
-                      v-model="parametros.especie"
+                      v-model="parametros.orden"
                     >
-                      <option
-                        v-for="(e,index) in getEspeciesId(parametros.genero)"
-                        :key="index"
-                        :value="e.id"
-                      >{{e.nombre}}</option>
+                      <option v-for="(o,index) in getOrdens" :key="index" :value="o.id">{{o.nombre}}</option>
                     </select>
                     <div class="input-group-append">
                       <button
                         class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                        @click.prevent="showModal('especie')"
+                        @click.prevent="showModal('orden')"
                       >
                         <i class="fas fa-plus"></i>
                       </button>
                     </div>
                   </div>
-                  <div v-if=" parametros.grupo_microbiano === 3 ">
-                    <label for="division" class>Division</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="division"
-                        class="form-control"
-                        v-model="parametros.division"
-                      >
-                        <option
-                          v-for="(d,index) in getDivisiones"
-                          :key="index"
-                          :value="d.id"
-                        >{{d.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('division')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div v-if=" parametros.grupo_microbiano === 4 ">
-                    <label for="reino" class>Reino</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="reino"
-                        class="form-control"
-                        v-model="parametros.reino"
-                      >
-                        <option
-                          v-for="(r,index) in getReinos"
-                          :key="index"
-                          :value="r.id"
-                        >{{r.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('reino')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano === 4"
-                  >
-                    <label for="phylum" class>Phylum</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="phylum"
-                        class="form-control"
-                        v-model="parametros.phylum"
-                      >
-                        <option
-                          v-for="(p,index) in getPhylums"
-                          :key="index"
-                          :value="p.id"
-                        >{{p.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('phylum')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano=== 3  || parametros.grupo_microbiano === 4"
-                  >
-                    <label for="clase" class>Clase</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="clase"
-                        class="form-control"
-                        v-model="parametros.clase"
-                      >
-                        <option
-                          v-for="(c,index) in getClases"
-                          :key="index"
-                          :value="c.id"
-                        >{{c.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('clase')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <label for="orden" class>Orden</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="orden"
-                        class="form-control"
-                        v-model="parametros.orden"
-                      >
-                        <option
-                          v-for="(o,index) in getOrdens"
-                          :key="index"
-                          :value="o.id"
-                        >{{o.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('orden')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano=== 3 "
-                  >
-                    <label for="familia" class>Familia</label>
-                    <div class="input-group mb-3">
-                      <select
-                        name="select"
-                        id="familia"
-                        class="form-control"
-                        v-model="parametros.familia"
-                      >
-                        <option
-                          v-for="(f,index) in getFamilias"
-                          :key="index"
-                          :value="f.id"
-                        >{{f.nombre}}</option>
-                      </select>
-                      <div class="input-group-append">
-                        <button
-                          class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
-                          @click.prevent="showModal('familia')"
-                        >
-                          <i class="fas fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="position-relative form-group">
-                    <label for="estado" class>Estado</label>
-                    <input
-                      name="estado"
-                      id="estado"
-                      placeholder="..."
-                      type="text"
-                      class="form-control"
-                      v-model="parametros.estado"
-                      required
-                    />
-                    <span v-if="errors.estado" class="text-danger">{{errors.estado[0]}}</span>
-                  </div>
-                  <div class="position-relative form-group">
-                    <label for="origen" class>Origen</label>
+                </div>
+                <div v-if="parametros.grupo_microbiano === 2 || parametros.grupo_microbiano=== 3 ">
+                  <label for="familia" class>Familia</label>
+                  <div class="input-group mb-3">
                     <select
                       name="select"
-                      id="origen"
+                      id="familia"
                       class="form-control"
-                      v-model="parametros.origen"
+                      v-model="parametros.familia"
                     >
-                      <option value="Donación">Donación</option>
-                      <option value="Compra">Compra</option>
-                      <option value="Proyecto">Proyecto</option>
-                      <option value="Aislamiento del Laboratorio">Aislamiento del Laboratorio</option>
+                      <option
+                        v-for="(f,index) in getFamilias"
+                        :key="index"
+                        :value="f.id"
+                      >{{f.nombre}}</option>
                     </select>
+                    <div class="input-group-append">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        @click.prevent="showModal('familia')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="position-relative form-group">
-                    <label for="otras_caracteristicas">Otras Caracteristicas</label>
-                    <textarea
-                      name="text"
-                      id="otras_caracteristicas"
-                      class="form-control"
-                      v-model="parametros.otras_caracteristicas"
-                    ></textarea>
-                  </div>
-                  <div class="custom-checkbox custom-control">
-                    <input
-                      type="checkbox"
-                      id="publicar"
-                      class="custom-control-input"
-                      v-model="parametros.publicar"
-                    />
-                    <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
-                  </div>
-                  <button class="mt-1 btn" :class="classBtn">{{nombreBtn}}</button>
-                  <!-- float-right -->
-                </form>
-                <div v-else>Cargando...</div>
-              </div>
+                </div>
+                <div class="position-relative form-group">
+                  <label for="estado" class>Estado</label>
+                  <input
+                    name="estado"
+                    id="estado"
+                    placeholder="..."
+                    type="text"
+                    class="form-control"
+                    v-model="parametros.estado"
+                    required
+                  />
+                  <span v-if="errors.estado" class="text-danger">{{errors.estado[0]}}</span>
+                </div>
+                <div class="position-relative form-group">
+                  <label for="origen" class>Origen</label>
+                  <select
+                    name="select"
+                    id="origen"
+                    class="form-control"
+                    v-model="parametros.origen"
+                  >
+                    <option value="Donación">Donación</option>
+                    <option value="Compra">Compra</option>
+                    <option value="Proyecto">Proyecto</option>
+                    <option value="Aislamiento del Laboratorio">Aislamiento del Laboratorio</option>
+                  </select>
+                </div>
+                <div class="position-relative form-group">
+                  <label for="otras_caracteristicas">Otras Caracteristicas</label>
+                  <textarea
+                    name="text"
+                    id="otras_caracteristicas"
+                    class="form-control"
+                    v-model="parametros.otras_caracteristicas"
+                  ></textarea>
+                </div>
+                <div class="custom-checkbox custom-control">
+                  <input
+                    type="checkbox"
+                    id="publicar"
+                    class="custom-control-input"
+                    v-model="parametros.publicar"
+                  />
+                  <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
+                </div>
+                <button class="mt-1 btn" :class="classBtn">{{nombreBtn}}</button>
+                <!-- float-right -->
+              </form>
+              <div v-else>Cargando...</div>
             </div>
           </div>
         </div>
@@ -478,7 +459,7 @@ export default {
     bucarCepa() {
       let id = this.$route.params.cepaId;
       axios
-        .get(`/api/cepa/${id}`)
+        .get(`/info-panel/cepa/${id}`)
         .then(res => {
           this.llenarParametros(res.data);
           this.mostrarForm = true;

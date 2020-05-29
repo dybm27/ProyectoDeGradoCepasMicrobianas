@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container mt-4">
       <div class="main-card mb-3 card">
         <div class="card-body">
           <h5 class="card-title">{{tituloForm}}</h5>

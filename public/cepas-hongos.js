@@ -63,9 +63,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -74,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
       idCepaEliminar: "",
       fields: _columnas_cepas_hongos__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
-        field: "id",
+        field: "codigo",
         direction: "asc"
       }]
     };
@@ -153,34 +150,27 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("ul", {
-        staticClass:
-          "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "tabs-animation" }, [
-        _c("div", { staticClass: "main-card mb-3 card" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c("my-vuetable", {
-                attrs: {
-                  "api-url": "/api/cepas-hongos",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  "detail-row-component": "my-detail-row-h-l-a",
-                  refrescarTabla: _vm.refrescarTabla,
-                  nameGet: "hongos"
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
-            ],
-            1
-          )
-        ])
+      _c("div", { staticClass: "main-card mb-3 card" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card-body" },
+          [
+            _c("my-vuetable", {
+              attrs: {
+                "api-url": "/info-panel/cepas-hongos",
+                fields: _vm.fields,
+                "sort-order": _vm.sortOrder,
+                "detail-row-component": "my-detail-row-h-l-a",
+                refrescarTabla: _vm.refrescarTabla,
+                nameGet: "hongos"
+              },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c(
@@ -278,9 +268,7 @@ var staticRenderFns = [
             staticClass:
               "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
           }),
-          _vm._v(
-            "\n          Tabla Dinamica Cepas Microbianas - Hongos\n        "
-          )
+          _vm._v("\n        Tabla Dinamica Cepas Microbianas - Hongos\n      ")
         ]
       ),
       _vm._v(" "),
@@ -373,12 +361,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  name: "id",
-  sortField: "id",
-  title: "Id",
-  titleClass: "text-center",
-  dataClass: "text-center"
-}, {
   name: "codigo",
   sortField: "codigo",
   title: "Código",

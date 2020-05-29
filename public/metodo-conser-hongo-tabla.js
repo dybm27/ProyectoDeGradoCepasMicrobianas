@@ -74,12 +74,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      url: "/api/cepa/hongo/metodos-conser/",
+      url: "/info-panel/cepa/hongo/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
-        field: "id",
+        field: "tipo_id",
         direction: "asc"
       }]
     };
@@ -364,12 +364,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  name: "id",
-  sortField: "id",
-  title: "Id",
-  titleClass: "text-center",
-  dataClass: "text-center"
-}, {
   name: "nombre_tipo_metodo",
   sortField: "tipo_id",
   title: "Tipo de Método",

@@ -1,13 +1,5 @@
 export default [
     {
-        name: "id",
-        sortField: "id",
-        title: "Id",
-        titleClass: "text-center",
-        dataClass: "text-center",
-        dataClass: "text-center"
-    },
-    {
         name: "name",
         sortField: "name",
         title: "Nombre",

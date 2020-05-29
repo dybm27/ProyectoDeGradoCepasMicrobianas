@@ -217,7 +217,7 @@ export default {
       ],
       calendarWeekends: true,
       googleCalendarApiKey: "AIzaSyDO3AOsa4-imBxdCAcPSXjr8ui5cEOWlB8",
-      eventos: { url: "/api/eventos", className: "eventos" },
+      eventos: { url: "/info-panel/eventos", className: "eventos" },
       eventSources: [
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
@@ -228,17 +228,17 @@ export default {
           //googleCalendarId: "dumaryekselbm@ufps.edu.co"
         },
         {
-          url: "/api/eventos-metodos-bacterias",
+          url: "/info-panel/eventos-metodos-bacterias",
           className: "eventos-metodos-bacterias",
           color: "#16aaff"
         },
         {
-          url: "/api/eventos-metodos-levaduras",
+          url: "/info-panel/eventos-metodos-levaduras",
           className: "eventos-metodos-levaduras",
           color: "#5EE220"
         },
         {
-          url: "/api/eventos-metodos-hongos",
+          url: "/info-panel/eventos-metodos-hongos",
           className: "eventos-metodos-hongos",
           color: "#794c8a"
         }

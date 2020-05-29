@@ -17,7 +17,7 @@
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a>Cepas Microbianas</a>
+                    <a>Levaduras</a>
                   </li>
                   <template v-show="tipo">
                     <li class="breadcrumb-item">
@@ -60,16 +60,24 @@ export default {
   methods: {
     ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractLevaduras"]),
     ocultarLink(ruta) {
-      if (ruta != "/levaduras") {
+      if (ruta != "/levaduras/tabla") {
         this.ruta = false;
-        if (ruta.includes("caract")) {
+        if (
+          ruta.includes("caract") ||
+          ruta.includes("identi") ||
+          ruta.includes("metodo")
+        ) {
           this.tipo = "Características";
         } else if (ruta.includes("ver")) {
           this.tipo = "Ver Información";
+        } else if (ruta.includes("agregar")) {
+          this.tipo = "Agregar";
+        } else {
+          this.tipo = "Editar";
         }
       } else {
         this.ruta = true;
-        this.tipo = "";
+        this.tipo = "Tabla";
       }
     }
   },

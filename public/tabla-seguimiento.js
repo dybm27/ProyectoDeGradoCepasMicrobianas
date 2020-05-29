@@ -42,7 +42,7 @@ __webpack_require__.r(__webpack_exports__);
       refrescarTabla: false,
       fields: _columnas_columnas_seguimiento__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
-        field: "id",
+        field: "nombre_responsable",
         direction: "asc"
       }],
       errors: [],
@@ -86,7 +86,7 @@ var render = function() {
         [
           _c("my-vuetable", {
             attrs: {
-              "api-url": "/api/seguimientos",
+              "api-url": "/info-panel/seguimientos",
               fields: _vm.fields,
               "sort-order": _vm.sortOrder,
               refrescarTabla: _vm.refrescarTabla,
@@ -209,15 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/* harmony default export */ __webpack_exports__["default"] = ([_defineProperty({
-  name: "id",
-  sortField: "id",
-  title: "Id",
-  titleClass: "text-center",
-  dataClass: "text-center"
-}, "dataClass", "text-center"), {
+/* harmony default export */ __webpack_exports__["default"] = ([{
   name: "nombre_responsable",
   sortField: "nombre_responsable",
   title: "Nombre Responsable",

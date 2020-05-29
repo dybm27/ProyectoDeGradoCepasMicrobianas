@@ -2,7 +2,7 @@
   <div>
     <template v-if="getUsuarios!=''">
       <my-vuetable
-        api-url="/api/usuarios"
+        api-url="/info-panel/usuarios"
         :fields="fields"
         :sort-order="sortOrder"
         @cambiarVariable="cambiarVariable"
@@ -60,7 +60,7 @@ export default {
       fields: FieldDefs,
       sortOrder: [
         {
-          field: "id",
+          field: "name",
           direction: "asc"
         }
       ],

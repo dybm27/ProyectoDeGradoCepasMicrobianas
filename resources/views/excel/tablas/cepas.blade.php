@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th><b>CEPAS</b></th>
+            <th colspan="7"><b>CEPAS</b></th>
         </tr>
         <tr>
             <th><b>Codigo</b></th>

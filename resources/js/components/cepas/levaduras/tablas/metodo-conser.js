@@ -1,12 +1,5 @@
 export default [
     {
-        name: "id",
-        sortField: "id",
-        title: "Id",
-        titleClass: "text-center",
-        dataClass: "text-center"
-    },
-    {
         name: "nombre_tipo_metodo",
         sortField: "tipo_id",
         title: "Tipo de Método",

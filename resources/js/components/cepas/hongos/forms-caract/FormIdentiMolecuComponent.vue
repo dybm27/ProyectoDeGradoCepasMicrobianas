@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4 mr-4 ml-4">
+  <div class="container mt-4">
     <div class="row justify-content-md-center">
       <div class="col-sm-12">
         <div class="main-card mb-3 card">
@@ -224,91 +224,91 @@
       </div>
     </div>
     <div class="row justify-content-md-center">
-      <div class="col-sm-12">
+      <div class="col-sm-5">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <div class="form-row">
-              <div class="col-md-6">
-                <template v-if="mostraImagenPcr">
-                  <h5 class="card-title">Imagen PCR</h5>
-                  <template v-if="validarCroppiePcr">
-                    <croppie
-                      :id="'croppie1'"
-                      :imagen="mostraImagenPcr"
-                      @cambiarValorImagen="cambiarValorImagenPcr"
-                      :mostrarBtnCroppie="mostrarBtnCroppiePcr"
-                      :enableZoom="false"
-                      :zoom="0"
-                      :editar="true"
-                      :boundaryHeigth="300"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <croppie
-                      :id="'croppie1'"
-                      :imagen="mostraImagenPcr"
-                      @cambiarValorImagen="cambiarValorImagenPcr"
-                      :mostrarBtnCroppie="mostrarBtnCroppiePcr"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="300"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                </template>
-                <template v-else>
-                  <div class="text-center">
-                    <h5 class="mt-5 mb-5">
-                      <span class="pr-1">
-                        <b class="text-warning">SIN IMAGEN PCR</b>
-                      </span>
-                    </h5>
-                  </div>
-                </template>
+            <template v-if="mostraImagenPcr">
+              <h5 class="card-title">Imagen PCR</h5>
+              <template v-if="validarCroppiePcr">
+                <croppie
+                  :id="'croppie1'"
+                  :imagen="mostraImagenPcr"
+                  @cambiarValorImagen="cambiarValorImagenPcr"
+                  :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                  :enableZoom="false"
+                  :zoom="0"
+                  :editar="true"
+                  :boundaryHeigth="300"
+                  :viewportWidth="200"
+                />
+              </template>
+              <template v-else>
+                <croppie
+                  :id="'croppie1'"
+                  :imagen="mostraImagenPcr"
+                  @cambiarValorImagen="cambiarValorImagenPcr"
+                  :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                  :zoom="1"
+                  :enableZoom="true"
+                  :editar="false"
+                  :boundaryHeigth="300"
+                  :viewportWidth="200"
+                />
+              </template>
+            </template>
+            <template v-else>
+              <div class="text-center">
+                <h5 class="mt-5 mb-5">
+                  <span class="pr-1">
+                    <b class="text-warning">SIN IMAGEN PCR</b>
+                  </span>
+                </h5>
               </div>
-              <div class="col-md-6">
-                <template v-if="mostraImagenBlast">
-                  <h5 class="card-title">Imagen BLAST</h5>
-                  <template v-if="validarCroppieBlast">
-                    <croppie
-                      :id="'croppie2'"
-                      :imagen="mostraImagenBlast"
-                      @cambiarValorImagen="cambiarValorImagenBlast"
-                      :mostrarBtnCroppie="mostrarBtnCroppieBlast"
-                      :enableZoom="false"
-                      :zoom="0"
-                      :editar="true"
-                      :boundaryHeigth="300"
-                      :viewportWidth="300"
-                    />
-                  </template>
-                  <template v-else>
-                    <croppie
-                      :id="'croppie2'"
-                      :imagen="mostraImagenBlast"
-                      @cambiarValorImagen="cambiarValorImagenBlast"
-                      :mostrarBtnCroppie="mostrarBtnCroppieBlast"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="300"
-                      :viewportWidth="300"
-                    />
-                  </template>
-                </template>
-                <template v-else>
-                  <div class="text-center">
-                    <h5 class="mt-5 mb-5">
-                      <span class="pr-1">
-                        <b class="text-warning">SIN IMAGEN BLAST</b>
-                      </span>
-                    </h5>
-                  </div>
-                </template>
+            </template>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <template v-if="mostraImagenBlast">
+              <h5 class="card-title">Imagen BLAST</h5>
+              <template v-if="validarCroppieBlast">
+                <croppie
+                  :id="'croppie2'"
+                  :imagen="mostraImagenBlast"
+                  @cambiarValorImagen="cambiarValorImagenBlast"
+                  :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                  :enableZoom="false"
+                  :zoom="0"
+                  :editar="true"
+                  :boundaryHeigth="300"
+                  :viewportWidth="300"
+                />
+              </template>
+              <template v-else>
+                <croppie
+                  :id="'croppie2'"
+                  :imagen="mostraImagenBlast"
+                  @cambiarValorImagen="cambiarValorImagenBlast"
+                  :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                  :zoom="1"
+                  :enableZoom="true"
+                  :editar="false"
+                  :boundaryHeigth="300"
+                  :viewportWidth="300"
+                />
+              </template>
+            </template>
+            <template v-else>
+              <div class="text-center">
+                <h5 class="mt-5 mb-5">
+                  <span class="pr-1">
+                    <b class="text-warning">SIN IMAGEN BLAST</b>
+                  </span>
+                </h5>
               </div>
-            </div>
+            </template>
           </div>
         </div>
       </div>

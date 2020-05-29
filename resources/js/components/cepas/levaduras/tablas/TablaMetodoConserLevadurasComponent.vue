@@ -56,13 +56,13 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      url: "/api/cepa/levadura/metodos-conser/",
+      url: "/info-panel/cepa/levadura/metodos-conser/",
       refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,
       sortOrder: [
         {
-          field: "id",
+          field: "tipo_id",
           direction: "asc"
         }
       ]

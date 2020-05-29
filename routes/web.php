@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,9 +37,9 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 //, 'verified'
 Route::group(['middleware' => ['auth']], function () {
 
-    //--------------------- CEPAS ---------------------------
+    //--------------------- CEPAS --------------------------------------------------------------------
     //-- vistas cepas
-    Route::get('/cepas', 'CepaController@index')->name('cepas');
+    Route::get('/cepas/tabla', 'CepaController@index')->name('cepas');
     Route::get('/cepas/agregar', 'CepaController@index');
     Route::get('/cepas/editar/{id}', 'CepaController@index');
     //-- vistas caract - todas
@@ -94,12 +93,12 @@ Route::group(['middleware' => ['auth']], function () {
     //-- crud info-cepas
     Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
 
-    //-----------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------
 
-    //--------------------- BACTERIAS ---------------------------------
+    //--------------------- BACTERIAS -----------------------------------------------------------
 
     //-- vistas cepas-bacterias
-    Route::get('/bacterias', 'CepaController@bacterias')->name('cepas_bacterias');
+    Route::get('/bacterias/tabla', 'CepaController@bacterias')->name('cepas_bacterias');
     Route::get('/bacterias/agregar', 'CepaController@bacterias');
     Route::get('/bacterias/editar/{id}', 'CepaController@bacterias');
     //-- vistas caract-bacterias
@@ -153,10 +152,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@update');
     Route::delete('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@destroy');
 
-    //--------------------- LEVADURAS ---------------------------------
+    //--------------------- LEVADURAS ----------------------------------------------------------
 
     //-- vistas cepas-levaduras
-    Route::get('/levaduras', 'CepaController@levaduras')->name('cepas_levaduras');
+    Route::get('/levaduras/tabla', 'CepaController@levaduras')->name('cepas_levaduras');
     Route::get('/levaduras/agregar', 'CepaController@levaduras');
     Route::get('/levaduras/editar/{id}', 'CepaController@levaduras');
     //-- vistas caract-levaduras
@@ -202,10 +201,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/cepas/levadura/metodo-conser/{id}', 'MetodoConserLevaduraController@update');
     Route::delete('/cepas/levadura/metodo-conser/{id}', 'MetodoConserLevaduraController@destroy');
 
-    //--------------------- HONGOS ---------------------------------
+    //--------------------- HONGOS -------------------------------------------------------------
 
     //-- vistas cepas-hongos
-    Route::get('/hongos', 'CepaController@hongos')->name('cepas_hongos');
+    Route::get('/hongos/tabla', 'CepaController@hongos')->name('cepas_hongos');
     Route::get('/hongos/agregar', 'CepaController@hongos');
     Route::get('/hongos/editar/{id}', 'CepaController@hongos');
     //-- vistas caract-hongos
@@ -251,10 +250,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/cepas/hongo/metodo-conser/{id}', 'MetodoConserHongoController@update');
     Route::delete('/cepas/hongo/metodo-conser/{id}', 'MetodoConserHongoController@destroy');
 
-    //--------------------- ACTINOMICETOS ---------------------------------
+    //--------------------- ACTINOMICETOS -----------------------------------------------------
 
     //-- vistas cepas-actinomicetos
-    Route::get('/actinomicetos', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
+    Route::get('/actinomicetos/tabla', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
     Route::get('/actinomicetos/agregar', 'CepaController@actinomicetos');
     Route::get('/actinomicetos/editar/{id}', 'CepaController@actinomicetos');
     //-- vistas caract-actinomicetos
@@ -298,7 +297,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/cepas/actinomiceto/otras-caract/cambiar-imagen/{id}', 'OtrasCaractActinomicetoController@cambiarImagen');
     Route::put('/cepas/actinomiceto/otras-caract/eliminar-imagen/{id}', 'OtrasCaractActinomicetoController@elimarImagen');
 
-    //---------------------- EVENTOS -----------------------------------------
+    //---------------------- EVENTOS -------------------------------------------------------------
 
     //-- Calendario
     Route::get('/calendario', 'CalendarioController@index')->name('calendario');
@@ -307,16 +306,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/eventos/editar/{id}', 'CalendarioController@update');
     Route::delete('/eventos/eliminar/{id}', 'CalendarioController@destroy');
 
-    //---------------------- USUARIOS ------------------------------------------
+    //---------------------- USUARIOS ------------------------------------------------------------
     //-- Perfil
     Route::get('/perfil', 'PerfilController@index')->name('home');
     Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
     Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
     Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
     //-- Usuarios
-    Route::get('/usuarios', 'UsuarioController@index')->name('usuarios');
-    Route::get('/usuarios/agregar', 'UsuarioController@index');
-    Route::get('/usuarios/editar/{id}', 'UsuarioController@index');
+    Route::get('/usuarios/tabla-usuarios', 'UsuarioController@index')->name('usuarios');
+    Route::get('/usuarios/tabla-usuarios/agregar', 'UsuarioController@index');
+    Route::get('/usuarios/tabla-usuarios/editar/{id}', 'UsuarioController@index');
     Route::get('/usuarios/tabla-seguimiento', 'UsuarioController@index');
 
     Route::post('/usuario/agregar', 'UsuarioController@store');
@@ -327,9 +326,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/tipo-user/editar/{id}', 'UsuariosController@update');
     Route::delete('/tipo-user/eliminar/{id}', 'UsuariosController@destroy');
 
-    //---------------------- EXPORTAR PDF------------------------------------------
+    //---------------------- EXPORTAR PDF----------------------------------------------------------
     Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
-    //---------------------- EXPORTAR EXCEL------------------------------------------
+    //---------------------- EXPORTAR EXCEL--------------------------------------------------------
     //cepas
     Route::get('/exportar/cepas', 'ExportarExcelController@exportarCepas');
     Route::get('/exportar/tabla/cepas', 'ExportarExcelController@exportarCepasTabla');
@@ -366,9 +365,54 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/exportar/seguimientos', 'ExportarExcelController@exportarSeguimientos');
     Route::get('/exportar/tabla/seguimientos', 'ExportarExcelController@exportarSeguimientosTabla');
 
+    //--------------------- OTRA INFORMACION -----------------------------------------------------
+    Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
+
+
+    //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
+    Route::group(['prefix' => 'info-panel'], function () {
+        //----------------------- CEPAS  ---------------------------------------------------------
+        //----------------------- urls tablas cepas  ---------------------------------------------
+        Route::get('cepas', 'InfoPanelCepasController@cepas');
+        Route::get('cepas-bacterias', 'InfoPanelCepasController@bacterias');
+        Route::get('cepas-hongos', 'InfoPanelCepasController@hongos');
+        Route::get('cepas-levaduras', 'InfoPanelCepasController@levaduras');
+        Route::get('cepas-actinomicetos', 'InfoPanelCepasController@actinomicetos');
+        //----------------------- obtener cepa ---------------------------------------------------
+        Route::get('cepa/{id}', 'InfoPanelCepasController@obtenerCepa');
+        //--------------------- obtener caracteristicas cepas ------------------------------------
+        Route::get('cepa/agregar-editar-caract/{id}', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
+        //----------- urls tablas metodos de conservacion ----------------------------------------
+        Route::get('cepa/bacteria/metodos-conser/{id}', 'InfoPanelCepasController@metodosBacterias');
+        Route::get('cepa/levadura/metodos-conser/{id}', 'InfoPanelCepasController@metodosLevaduras');
+        Route::get('cepa/hongo/metodos-conser/{id}', 'InfoPanelCepasController@metodosHongos');
+        //----------------------- info cepas y caracts  ------------------------------------------
+        Route::get('info-tipos-cepas', 'InfoPanelCepasController@infoTiposCepas');
+        Route::get('info-caract-bacterias', 'InfoPanelCepasController@infoCaractBacterias');
+        Route::get('info-caract-levaduras', 'InfoPanelCepasController@infoCaractLevaduras');
+        Route::get('info-caract-hongos', 'InfoPanelCepasController@infoCaractHongos');
+        Route::get('info-caract-actinomicetos', 'InfoPanelCepasController@infoCaractActinomicetos');
+        //--------------------------- EVENTOS  ---------------------------------------------------
+        //-------------------------url eventos metodos--------------------------------------------
+        Route::get('eventos-metodos-bacterias', 'InfoPanelEventosController@eventosBacterias');
+        Route::get('eventos-metodos-levaduras', 'InfoPanelEventosController@eventosLevaduras');
+        Route::get('eventos-metodos-hongos', 'InfoPanelEventosController@eventosHongos');
+        //-------------------------url eventos ---------------------------------------------------
+        Route::get('eventos', 'InfoPanelEventosController@eventos');
+        //------------------------ USUARIOS ------------------------------------------------------
+        //------------------------- url tabla usuarios -------------------------------------------
+        Route::get('usuarios', 'InfoPanelUsuariosController@tablaUsuarios');
+        //--------------------------- tiposUsuarios - usuairos -----------------------------------------
+        Route::get('tipos-users', 'InfoPanelUsuariosController@tipoUsuarios');
+        Route::get('users', 'InfoPanelUsuariosController@usuarios');
+        //------------------------- url tabla seguimiento -------------------------------------
+        Route::get('seguimientos', 'InfoPanelUsuariosController@tablaSeguimientos');
+        //--------------------------------------------------------------------------------------------
+    });
+
+
     // Ruta para Vue
     Route::get('/{vue_capture?}', function () {
         return view('404');
     })->where('vue_capture', '[\/\w\.-]*');
 });
-

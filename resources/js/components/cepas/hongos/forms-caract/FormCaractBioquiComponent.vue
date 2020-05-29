@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
-    <div class="row">
+  <div class="container mt-4">
+    <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <div class="main-card mb-3 card mt-3 ml-3">
+        <div class="main-card mb-3 card">
           <div class="card-body">
             <h5 class="card-title">{{tituloForm}}</h5>
             <form @submit.prevent="evento">

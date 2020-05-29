@@ -76,7 +76,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       idUsuarioEliminar: "",
       fields: _columnas_columnas_usuarios__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
-        field: "id",
+        field: "name",
         direction: "asc"
       }],
       modal: {
@@ -161,7 +161,7 @@ var render = function() {
         ? [
             _c("my-vuetable", {
               attrs: {
-                "api-url": "/api/usuarios",
+                "api-url": "/info-panel/usuarios",
                 fields: _vm.fields,
                 "sort-order": _vm.sortOrder,
                 refrescarTabla: _vm.refrescarTabla,
@@ -350,15 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/* harmony default export */ __webpack_exports__["default"] = ([_defineProperty({
-  name: "id",
-  sortField: "id",
-  title: "Id",
-  titleClass: "text-center",
-  dataClass: "text-center"
-}, "dataClass", "text-center"), {
+/* harmony default export */ __webpack_exports__["default"] = ([{
   name: "name",
   sortField: "name",
   title: "Nombre",

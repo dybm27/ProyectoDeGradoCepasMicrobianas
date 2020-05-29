@@ -54,6 +54,12 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="{{route('otra_info')}}" @yield('route-otra')>
+                        <i class="metismenu-icon pe-7s-diskette">
+                        </i>Otra Información
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('calendario')}}" @yield('route-calendario')>
                         <i class="metismenu-icon pe-7s-date">
                         </i>Calendario
