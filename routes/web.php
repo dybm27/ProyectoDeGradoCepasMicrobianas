@@ -340,40 +340,118 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
     //---------------------- EXPORTAR EXCEL--------------------------------------------------------
     //cepas
-    Route::get('/exportar/cepas', 'ExportarExcelController@exportarCepas');
-    Route::get('/exportar/tabla/cepas', 'ExportarExcelController@exportarCepasTabla');
+    Route::get('/exportar/cepas', 'ExportarExcelCepasController@cepas');
+    Route::get('/exportar/tabla/cepas', 'ExportarExcelCepasController@cepasTabla');
     //bacterias
-    Route::get('/exportar/bacterias', 'ExportarExcelController@exportarBacterias');
-    Route::get('/exportar/tabla/bacterias', 'ExportarExcelController@exportarBacteriasTabla');
+    Route::get('/exportar/bacterias', 'ExportarExcelBacteriasController@bacterias');
+    Route::get('/exportar/tabla/bacterias', 'ExportarExcelBacteriasController@bacteriasTabla');
     //hongos
-    Route::get('/exportar/hongos', 'ExportarExcelController@exportarHongos');
-    Route::get('/exportar/tabla/hongos', 'ExportarExcelController@exportarHongosTabla');
+    Route::get('/exportar/hongos', 'ExportarExcelHongosController@hongos');
+    Route::get('/exportar/tabla/hongos', 'ExportarExcelHongosController@hongosTabla');
     //levaduras
-    Route::get('/exportar/levaduras', 'ExportarExcelController@exportarLevaduras');
-    Route::get('/exportar/tabla/levaduras', 'ExportarExcelController@exportarLevadurasTabla');
+    Route::get('/exportar/levaduras', 'ExportarExcelLevadurasController@levaduras');
+    Route::get('/exportar/tabla/levaduras', 'ExportarExcelLevadurasController@levadurasTabla');
     //actinomicetos
-    Route::get('/exportar/actinomicetos', 'ExportarExcelController@exportarActinomicetos');
-    Route::get('/exportar/tabla/actinomicetos', 'ExportarExcelController@exportarActinomicetosTabla');
+    Route::get('/exportar/actinomicetos', 'ExportarExcelActinomicetosController@actinomicetos');
+    Route::get('/exportar/tabla/actinomicetos', 'ExportarExcelActinomicetosController@actinomicetosTabla');
 
     //metodos-bacterias
-    Route::get('/exportar/metodos-bacterias', 'ExportarExcelController@exportarMetodosBacterias');
-    Route::get('/exportar/tabla/metodos-bacterias', 'ExportarExcelController@exportarMetodosBacteriasTabla');
+    Route::get('/exportar/metodos-bacterias', 'ExportarExcelBacteriasController@metodosBacterias');
+    Route::get('/exportar/tabla/metodos-bacterias', 'ExportarExcelBacteriasController@metodosBacteriasTabla');
     //metodos-hongos
-    Route::get('/exportar/metodos-hongos', 'ExportarExcelController@exportarMetodosHongos');
-    Route::get('/exportar/tabla/metodos-hongos', 'ExportarExcelController@exportarMetodosHongosTabla');
-    //levaduras
-    Route::get('/exportar/metodos-levaduras', 'ExportarExcelController@exportarMetodosLevaduras');
-    Route::get('/exportar/tabla/metodos-levaduras', 'ExportarExcelController@exportarMetodosLevadurasTabla');
+    Route::get('/exportar/metodos-hongos', 'ExportarExcelHongosController@metodosHongos');
+    Route::get('/exportar/tabla/metodos-hongos', 'ExportarExcelHongosController@metodosHongosTabla');
+    //metodos-levaduras
+    Route::get('/exportar/metodos-levaduras', 'ExportarExcelLevadurasController@metodosLevaduras');
+    Route::get('/exportar/tabla/metodos-levaduras', 'ExportarExcelLevadurasController@metodosLevadurasTabla');
     //actinomicetos
-    Route::get('/exportar/metodos-actinomicetos', 'ExportarExcelController@exportarMetodosActinomicetos');
-    Route::get('/exportar/tabla/metodos-actinomicetos', 'ExportarExcelController@exportarMetodosActinomicetosTabla');
+    Route::get('/exportar/metodos-actinomicetos', 'ExportarExcelActinomicetosController@metodosActinomicetos');
+    Route::get('/exportar/tabla/metodos-actinomicetos', 'ExportarExcelActinomicetosController@metodosActinomicetosTabla');
 
     //usuarios
-    Route::get('/exportar/usuarios', 'ExportarExcelController@exportarUsuarios');
-    Route::get('/exportar/tabla/usuarios', 'ExportarExcelController@exportarUsuariosTabla');
+    Route::get('/exportar/usuarios', 'ExportarExcelUsuariosController@usuarios');
+    Route::get('/exportar/tabla/usuarios', 'ExportarExcelUsuariosController@usuariosTabla');
     //seguimientos
-    Route::get('/exportar/seguimientos', 'ExportarExcelController@exportarSeguimientos');
-    Route::get('/exportar/tabla/seguimientos', 'ExportarExcelController@exportarSeguimientosTabla');
+    Route::get('/exportar/seguimientos', 'ExportarExcelUsuariosController@seguimientos');
+    Route::get('/exportar/tabla/seguimientos', 'ExportarExcelUsuariosController@seguimientosTabla');
+
+    // otra-info-cepas
+    Route::get('/exportar/generos', 'ExportarExcelCepasController@generos');
+    Route::get('/exportar/especies', 'ExportarExcelCepasController@especies');
+    Route::get('/exportar/familias', 'ExportarExcelCepasController@familias');
+    Route::get('/exportar/divisions', 'ExportarExcelCepasController@divisions');
+    Route::get('/exportar/reinos', 'ExportarExcelCepasController@reinos');
+    Route::get('/exportar/clases', 'ExportarExcelCepasController@clases');
+    Route::get('/exportar/phylums', 'ExportarExcelCepasController@phylums');
+    Route::get('/exportar/ordens', 'ExportarExcelCepasController@ordens');
+    Route::get('/exportar/tabla/generos', 'ExportarExcelCepasController@generosTabla');
+    Route::get('/exportar/tabla/especies', 'ExportarExcelCepasController@especiesTabla');
+    Route::get('/exportar/tabla/familias', 'ExportarExcelCepasController@familiasTabla');
+    Route::get('/exportar/tabla/divisions', 'ExportarExcelCepasController@divisionsTabla');
+    Route::get('/exportar/tabla/reinos', 'ExportarExcelCepasController@reinosTabla');
+    Route::get('/exportar/tabla/clases', 'ExportarExcelCepasController@clasesTabla');
+    Route::get('/exportar/tabla/phylums', 'ExportarExcelCepasController@phylumsTabla');
+    Route::get('/exportar/tabla/ordens', 'ExportarExcelCepasController@ordensTabla');
+    // otra-info-bacterias
+    Route::get('/exportar/formas-macro-bacteria', 'ExportarExcelBacteriasController@formasMacro');
+    Route::get('/exportar/formas-micro-bacteria', 'ExportarExcelBacteriasController@formasMicro');
+    Route::get('/exportar/bordes-bacteria', 'ExportarExcelBacteriasController@bordes');
+    Route::get('/exportar/detalles-bacteria', 'ExportarExcelBacteriasController@detalles');
+    Route::get('/exportar/elevacions-bacteria', 'ExportarExcelBacteriasController@elevacions');
+    Route::get('/exportar/superficies-bacteria', 'ExportarExcelBacteriasController@superficies');
+    Route::get('/exportar/colors-bacteria', 'ExportarExcelBacteriasController@colors');
+    Route::get('/exportar/tipos-metodos-bacteria', 'ExportarExcelBacteriasController@tiposMetodos');
+    Route::get('/exportar/tipos-agars-bacteria', 'ExportarExcelBacteriasController@tiposAgars');
+    Route::get('/exportar/tabla/formas-macro-bacteria', 'ExportarExcelBacteriasController@formasMacroTabla');
+    Route::get('/exportar/tabla/formas-micro-bacteria', 'ExportarExcelBacteriasController@formasMicroTabla');
+    Route::get('/exportar/tabla/bordes-bacteria', 'ExportarExcelBacteriasController@bordesTabla');
+    Route::get('/exportar/tabla/detalles-bacteria', 'ExportarExcelBacteriasController@detallesTabla');
+    Route::get('/exportar/tabla/elevacions-bacteria', 'ExportarExcelBacteriasController@elevacionsTabla');
+    Route::get('/exportar/tabla/superficies-bacteria', 'ExportarExcelBacteriasController@superficiesTabla');
+    Route::get('/exportar/tabla/colors-bacteria', 'ExportarExcelBacteriasController@colorsTabla');
+    Route::get('/exportar/tabla/tipos-metodos-bacteria', 'ExportarExcelBacteriasController@tiposMetodosTabla');
+    Route::get('/exportar/tabla/tipos-agars-bacteria', 'ExportarExcelBacteriasController@tiposAgarsTabla');
+    //otra-info-hongos
+    Route::get('/exportar/colors-hongo', 'ExportarExcelHongosController@colors');
+    Route::get('/exportar/texturas-hongo', 'ExportarExcelHongosController@texturas');
+    Route::get('/exportar/conidioforos-hongo', 'ExportarExcelHongosController@conidioforos');
+    Route::get('/exportar/esporasA-hongo', 'ExportarExcelHongosController@esporasAsexual');
+    Route::get('/exportar/esporasS-hongo', 'ExportarExcelHongosController@esporasSexual');
+    Route::get('/exportar/tipos-metodos-hongo', 'ExportarExcelHongosController@tiposMetodos');
+    Route::get('/exportar/tabla/colors-hongo', 'ExportarExcelHongosController@colorsTabla');
+    Route::get('/exportar/tabla/texturas-hongo', 'ExportarExcelHongosController@texturasTabla');
+    Route::get('/exportar/tabla/conidioforos-hongo', 'ExportarExcelHongosController@conidioforosTabla');
+    Route::get('/exportar/tabla/esporasA-hongo', 'ExportarExcelHongosController@esporasAsexualTabla');
+    Route::get('/exportar/tabla/esporasS-hongo', 'ExportarExcelHongosController@esporasSexualTabla');
+    Route::get('/exportar/tabla/tipos-metodos-hongo', 'ExportarExcelHongosController@tiposMetodosTabla');
+    //otra-info-levaduras
+    Route::get('/exportar/colors-levadura', 'ExportarExcelLevadurasController@colors');
+    Route::get('/exportar/texturas-levadura', 'ExportarExcelLevadurasController@texturas');
+    Route::get('/exportar/tipos-metodos-levadura', 'ExportarExcelLevadurasController@tiposMetodos');
+    Route::get('/exportar/tabla/colors-levadura', 'ExportarExcelLevadurasController@colorsTabla');
+    Route::get('/exportar/tabla/texturas-levadura', 'ExportarExcelLevadurasController@texturasTabla');
+    Route::get('/exportar/tabla/tipos-metodos-levadura', 'ExportarExcelLevadurasController@tiposMetodosTabla');
+    //otra-info-actinomicetos
+    Route::get('/exportar/colors-actinomiceto', 'ExportarExcelActinomicetosController@colors');
+    Route::get('/exportar/texturas-actinomiceto', 'ExportarExcelActinomicetosController@texturas');
+    Route::get('/exportar/formas-macro-actinomiceto', 'ExportarExcelActinomicetosController@formasMacro');
+    Route::get('/exportar/formas-micro-actinomiceto', 'ExportarExcelActinomicetosController@formasMicro');
+    Route::get('/exportar/bordes-actinomiceto', 'ExportarExcelActinomicetosController@bordes');
+    Route::get('/exportar/pigmentos-actinomiceto', 'ExportarExcelActinomicetosController@pigmentos');
+    Route::get('/exportar/tincions-actinomiceto', 'ExportarExcelActinomicetosController@tincions');
+    Route::get('/exportar/superficies-actinomiceto', 'ExportarExcelActinomicetosController@superficies');
+    Route::get('/exportar/micelios-actinomiceto', 'ExportarExcelActinomicetosController@micelios');
+    Route::get('/exportar/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforos');
+    Route::get('/exportar/tabla/colors-actinomiceto', 'ExportarExcelActinomicetosController@colorsTabla');
+    Route::get('/exportar/tabla/texturas-actinomiceto', 'ExportarExcelActinomicetosController@texturasTabla');
+    Route::get('/exportar/tabla/formas-macro-actinomiceto', 'ExportarExcelActinomicetosController@formasMacroTabla');
+    Route::get('/exportar/tabla/formas-micro-actinomiceto', 'ExportarExcelActinomicetosController@formasMicroTabla');
+    Route::get('/exportar/tabla/bordes-actinomiceto', 'ExportarExcelActinomicetosController@bordesTabla');
+    Route::get('/exportar/tabla/pigmentos-actinomiceto', 'ExportarExcelActinomicetosController@pigmentosTabla');
+    Route::get('/exportar/tabla/tincions-actinomiceto', 'ExportarExcelActinomicetosController@tincionsTabla');
+    Route::get('/exportar/tabla/superficies-actinomiceto', 'ExportarExcelActinomicetosController@superficiesTabla');
+    Route::get('/exportar/tabla/micelios-actinomiceto', 'ExportarExcelActinomicetosController@miceliosTabla');
+    Route::get('/exportar/tabla/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforosTabla');
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
