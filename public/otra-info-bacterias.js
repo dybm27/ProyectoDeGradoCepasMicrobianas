@@ -13,9 +13,232 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      refrescarTabla1: false,
+      refrescarTabla2: false,
+      refrescarTabla3: false,
+      refrescarTabla4: false,
+      refrescarTabla5: false,
+      refrescarTabla6: false,
+      refrescarTabla7: false,
+      refrescarTabla8: false,
+      refrescarTabla9: false,
+      tablasCaractMacro: false,
+      tablasCaractMicro: false,
+      tablasMetodos: false
+    };
+  },
   created: function created() {
     this.$emit("rutaHijo", window.location.pathname);
+  },
+  methods: {
+    accionModal: function accionModal(datos) {
+      switch (datos.tipo) {
+        case "forma_macro":
+          this.refrescarTabla1 = true;
+          break;
+
+        case "borde":
+          this.refrescarTabla2 = true;
+          break;
+
+        case "detalle":
+          this.refrescarTabla3 = true;
+          break;
+
+        case "elevacion":
+          this.refrescarTabla4 = true;
+          break;
+
+        case "superficie":
+          this.refrescarTabla5 = true;
+          break;
+
+        case "color":
+          this.refrescarTabla6 = true;
+          break;
+
+        case "forma_micro":
+          this.refrescarTabla7 = true;
+          break;
+
+        case "tipo_metodo":
+          this.refrescarTabla8 = true;
+          break;
+
+        case "tipo_agar":
+          this.refrescarTabla9 = true;
+          break;
+      }
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla1 = false;
+      this.refrescarTabla2 = false;
+      this.refrescarTabla3 = false;
+      this.refrescarTabla4 = false;
+      this.refrescarTabla5 = false;
+      this.refrescarTabla6 = false;
+      this.refrescarTabla7 = false;
+      this.refrescarTabla8 = false;
+      this.refrescarTabla9 = false;
+    },
+    mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
+      this.tablasCaractMacro = !this.tablasCaractMacro;
+    },
+    mostrarTablasCaractMicro: function mostrarTablasCaractMicro() {
+      this.tablasCaractMicro = !this.tablasCaractMicro;
+    },
+    mostrarTablasMetodos: function mostrarTablasMetodos() {
+      this.tablasMetodos = !this.tablasMetodos;
+    }
   }
 });
 
@@ -36,9 +259,334 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("bacteria")])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasCaractMacro }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasCaractMacro
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-formas-macro-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla1 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-bordes-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla2 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-detalles-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla3 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-elevacions-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla4 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-superficies-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla5 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-colors-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla6 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasCaractMicro }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasCaractMicro
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-formas-micro-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla7 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasMetodos }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasMetodos
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-tipos-metodos-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla8 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-tipos-agars-bacteria", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla9 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("modales-otra-info-bacterias", {
+        on: { "accionModal-bacteria": _vm.accionModal }
+      })
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Características Macroscópicas\n          "
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Características Microscópicas\n          "
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Métodos De Conservación\n          "
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

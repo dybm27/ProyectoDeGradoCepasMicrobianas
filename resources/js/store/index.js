@@ -56,6 +56,9 @@ export default new Vuex.Store({
                 genero => genero.grupo_microbiano_id === id
             );
         },
+        getGenerosById: state => id => {
+            return state.tipos.generos.find(genero => genero.id === id);
+        },
         getGeneroCepa(state) {
             return state.tipos.generos.find(
                 genero => genero.id === state.cepa.cepa.genero_id
@@ -388,22 +391,14 @@ export default new Vuex.Store({
         mutacionEditarCaract(state, data) {
             switch (data.tipo) {
                 case "macro":
-                    for (
-                        let i = 0;
-                        i < state.cepa.caract_macroscopicas.length;
-                        i++
-                    ) {
-                        if (
-                            state.cepa.caract_macroscopicas[i].id ===
-                            data.data.id
-                        ) {
-                            state.cepa.caract_macroscopicas.splice(
-                                i,
-                                1,
-                                data.data
-                            );
-                        }
-                    }
+                    var indice = state.cepa.caract_macroscopicas.findIndex(
+                        caract => caract.id === data.data.id
+                    );
+                    state.cepa.caract_macroscopicas.splice(
+                        indice,
+                        1,
+                        data.data
+                    );
                     break;
                 case "micro":
                     state.cepa.caract_microscopica = data.data;
@@ -418,22 +413,14 @@ export default new Vuex.Store({
                     state.cepa.ident_molecular = data.data;
                     break;
                 case "metodo":
-                    for (
-                        let i = 0;
-                        i < state.cepa.metodos_conservacion.length;
-                        i++
-                    ) {
-                        if (
-                            state.cepa.metodos_conservacion[i].id ===
-                            data.data.id
-                        ) {
-                            state.cepa.metodos_conservacion.splice(
-                                i,
-                                1,
-                                data.data
-                            );
-                        }
-                    }
+                    var indice = state.cepa.metodos_conservacion.findIndex(
+                        metod => metod.id === data.data.id
+                    );
+                    state.cepa.metodos_conservacion.splice(
+                        indice,
+                        1,
+                        data.data
+                    );
                     break;
                 case "identi_bioqui":
                     state.cepa.ident_bioquimica = data.data;
@@ -446,18 +433,10 @@ export default new Vuex.Store({
         mutacionEliminarCaract(state, data) {
             switch (data.tipo) {
                 case "macro":
-                    for (
-                        let i = 0;
-                        i < state.cepa.caract_macroscopicas.length;
-                        i++
-                    ) {
-                        if (
-                            state.cepa.caract_macroscopicas[i].id ===
-                            data.data.id
-                        ) {
-                            state.cepa.caract_macroscopicas.splice(i, 1);
-                        }
-                    }
+                    var indice = state.cepa.caract_macroscopicas.findIndex(
+                        caract => caract.id === data.data.id
+                    );
+                    state.cepa.caract_macroscopicas.splice(indice, 1);
                     break;
                 case "micro":
                     state.cepa.caract_microscopica = null;
@@ -472,18 +451,11 @@ export default new Vuex.Store({
                     state.cepa.ident_molecular = null;
                     break;
                 case "metodo":
-                    for (
-                        let i = 0;
-                        i < state.cepa.metodos_conservacion.length;
-                        i++
-                    ) {
-                        if (
-                            state.cepa.metodos_conservacion[i].id ===
-                            data.data.id
-                        ) {
-                            state.cepa.metodos_conservacion.splice(i, 1);
-                        }
-                    }
+                    var indice = state.cepa.metodos_conservacion.findIndex(
+                        metod => metod.id === data.data.id
+                    );
+                    state.cepa.metodos_conservacion.splice(indice, 1);
+
                     break;
                 case "identi_bioqui":
                     state.cepa.ident_bioquimica = null;
@@ -521,6 +493,110 @@ export default new Vuex.Store({
                     break;
                 case "division":
                     state.tipos.divisions.push(data.info);
+                    break;
+            }
+        },
+        mutacionEditarTipoCepa(state, data) {
+            switch (data.tipo) {
+                case "genero":
+                    var indice = state.tipos.generos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.generos.splice(indice, 1, data.info);
+                    break;
+                case "especie":
+                    var indice = state.tipos.especies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.especies.splice(indice, 1, data.info);
+                    break;
+                case "familia":
+                    var indice = state.tipos.familias.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.familias.splice(indice, 1, data.info);
+                    break;
+                case "orden":
+                    var indice = state.tipos.ordens.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.ordens.splice(indice, 1, data.info);
+                    break;
+                case "clase":
+                    var indice = state.tipos.clases.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.clases.splice(indice, 1, data.info);
+                    break;
+                case "phylum":
+                    var indice = state.tipos.phylums.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.phylums.splice(indice, 1, data.info);
+                    break;
+                case "reino":
+                    var indice = state.tipos.reinos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.reinos.splice(indice, 1, data.info);
+                    break;
+                case "division":
+                    var indice = state.tipos.divisions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.divisions.splice(indice, 1, data.info);
+                    break;
+            }
+        },
+        mutacionEliminarTipoCepa(state, data) {
+            switch (data.tipo) {
+                case "genero":
+                    var indice = state.tipos.generos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.generos.splice(indice, 1);
+                    break;
+                case "especie":
+                    var indice = state.tipos.especies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.especies.splice(indice, 1);
+                    break;
+                case "familia":
+                    var indice = state.tipos.familias.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.familias.splice(indice, 1);
+                    break;
+                case "orden":
+                    var indice = state.tipos.ordens.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.ordens.splice(indicei, 1);
+                    break;
+                case "clase":
+                    var indice = state.tipos.clases.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.clases.splice(indice, 1);
+                    break;
+                case "phylum":
+                    var indice = state.tipos.phylums.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.phylums.splice(indice, 1);
+                    break;
+                case "reino":
+                    var indice = state.tipos.reinos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.reinos.splice(indice, 1);
+                    break;
+                case "division":
+                    var indice = state.tipos.divisions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos.divisions.splice(indice, 1);
                     break;
             }
         },
@@ -573,6 +649,185 @@ export default new Vuex.Store({
                     break;
             }
         },
+        mutacionEditarTipoCaractBacteria(state, data) {
+            switch (data.tipo) {
+                case "forma_macro":
+                    var indice = state.info_caract_bacterias.caract_macro.formas_macros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.formas_macros.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "borde":
+                    var indice = state.info_caract_bacterias.caract_macro.bordes.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.bordes.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "detalle":
+                    var indice = state.info_caract_bacterias.caract_macro.detalle_opticos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.detalle_opticos.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "elevacion":
+                    var indice = state.info_caract_bacterias.caract_macro.elevacions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.elevacions.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "superficie":
+                    var indice = state.info_caract_bacterias.caract_macro.superficies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.superficies.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "color":
+                    var indice = state.info_caract_bacterias.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.colors.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "forma_micro":
+                    var indice = state.info_caract_bacterias.caract_micro.formas_micros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_micro.formas_micros.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "tipo_agar":
+                    var indice = state.info_caract_bacterias.metodo_conser.tipo_agar.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.metodo_conser.tipo_agar.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEliminarTipoCaractBacteria(state, data) {
+            switch (data.tipo) {
+                case "forma_macro":
+                    var indice = state.info_caract_bacterias.caract_macro.formas_macros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.formas_macros.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "borde":
+                    var indice = state.info_caract_bacterias.caract_macro.bordes.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.bordes.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "detalle":
+                    var indice = state.info_caract_bacterias.caract_macro.detalle_opticos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.detalle_opticos.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "elevacion":
+                    var indice = state.info_caract_bacterias.caract_macro.elevacions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.elevacions.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "superficie":
+                    var indice = state.info_caract_bacterias.caract_macro.superficies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.superficies.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "color":
+                    var indice = state.info_caract_bacterias.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_macro.colors.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "forma_micro":
+                    var indice = state.info_caract_bacterias.caract_micro.formas_micros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.caract_micro.formas_micros.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "tipo_agar":
+                    var indice = state.info_caract_bacterias.metodo_conser.tipo_agar.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_bacterias.metodo_conser.tipo_agar.splice(
+                        indice,
+                        1
+                    );
+                    break;
+            }
+        },
         mutacionAgregarTipoCaractLevadura(state, data) {
             switch (data.tipo) {
                 case "color":
@@ -588,6 +843,71 @@ export default new Vuex.Store({
                 case "metodo_conser":
                     state.info_caract_levaduras.metodo_conser.tipo_metodo.push(
                         data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEditarTipoCaractLevadura(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    var indice = state.info_caract_levaduras.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.caract_macro.colors.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_levaduras.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.caract_macro.texturas.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEliminarTipoCaractLevadura(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    var indice = state.info_caract_levaduras.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.caract_macro.colors.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_levaduras.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.caract_macro.texturas.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_levaduras.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1
                     );
                     break;
             }
@@ -622,6 +942,128 @@ export default new Vuex.Store({
                 case "metodo_conser":
                     state.info_caract_hongos.metodo_conser.tipo_metodo.push(
                         data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEditarTipoCaractHongo(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    var indice = state.info_caract_hongos.caract_macro.colores.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_macro.colores.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_hongos.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_macro.texturas.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "conidioforo":
+                    var indice = state.info_caract_hongos.caract_micro.conidioforos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.conidioforos.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "espora_asexual":
+                    var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.esporas_asexuales.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "espora_sexual":
+                    var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.esporas_sexuales.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEliminarTipoCaractHongo(state, data) {
+            switch (data.tipo) {
+                case "color":
+                    var indice = state.info_caract_hongos.caract_macro.colores.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_macro.colores.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_hongos.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_macro.texturas.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "conidioforo":
+                    var indice = state.info_caract_hongos.caract_micro.conidioforos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.conidioforos.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "espora_asexual":
+                    var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.esporas_asexuales.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "espora_sexual":
+                    var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.caract_micro.esporas_sexuales.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "metodo_conser":
+                    var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_hongos.metodo_conser.tipo_metodo.splice(
+                        indice,
+                        1
                     );
                     break;
             }
@@ -680,24 +1122,221 @@ export default new Vuex.Store({
                     break;
             }
         },
+        mutacionEditarTipoCaractActinomiceto(state, data) {
+            switch (data.tipo) {
+                case "forma_macro":
+                    var indice = state.info_caract_actinomicetos.caract_macro.formas_macros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.formas_macros.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "borde":
+                    var indice = state.info_caract_actinomicetos.caract_macro.bordes.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.bordes.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_actinomicetos.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.texturas.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "pigmento":
+                    var indice = state.info_caract_actinomicetos.caract_macro.pigmentos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.pigmentos.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "superficie":
+                    var indice = state.info_caract_actinomicetos.caract_macro.superficies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.superficies.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "color":
+                    var indice = state.info_caract_actinomicetos.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.colors.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "forma_micro":
+                    var indice = state.info_caract_actinomicetos.caract_micro.formas_micros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.formas_micros.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "tincion":
+                    var indice = state.info_caract_actinomicetos.caract_micro.tincions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.tincions.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "micelio":
+                    var indice = state.info_caract_actinomicetos.caract_micro.micelios.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.micelios.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+                case "conidioforo":
+                    var indice = state.info_caract_actinomicetos.caract_micro.conidioforos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.conidioforos.splice(
+                        indice,
+                        1,
+                        data.info
+                    );
+                    break;
+            }
+        },
+        mutacionEliminarTipoCaractActinomiceto(state, data) {
+            switch (data.tipo) {
+                case "forma_macro":
+                    var indice = state.info_caract_actinomicetos.caract_macro.formas_macros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.formas_macros.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "borde":
+                    var indice = state.info_caract_actinomicetos.caract_macro.bordes.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.bordes.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "textura":
+                    var indice = state.info_caract_actinomicetos.caract_macro.texturas.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.texturas.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "pigmento":
+                    var indice = state.info_caract_actinomicetos.caract_macro.pigmentos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.pigmentos.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "superficie":
+                    var indice = state.info_caract_actinomicetos.caract_macro.superficies.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.superficies.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "color":
+                    var indice = state.info_caract_actinomicetos.caract_macro.colors.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_macro.colors.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "forma_micro":
+                    var indice = state.info_caract_actinomicetos.caract_micro.formas_micros.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.formas_micros.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "tincion":
+                    var indice = state.info_caract_actinomicetos.caract_micro.tincions.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.tincions.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "micelio":
+                    var indice = state.info_caract_actinomicetos.caract_micro.micelios.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.micelios.splice(
+                        indice,
+                        1
+                    );
+                    break;
+                case "conidioforo":
+                    var indice = state.info_caract_actinomicetos.caract_micro.conidioforos.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.info_caract_actinomicetos.caract_micro.conidioforos.splice(
+                        indice,
+                        1
+                    );
+                    break;
+            }
+        },
         mutacionTipoUsuario(state, data) {
             switch (data.tipo) {
                 case "agregar":
                     state.tipos_users.push(data.info);
                     break;
                 case "editar":
-                    for (let i = 0; i < state.tipos_users.length; i++) {
-                        if (state.tipos_users[i].id === data.info.id) {
-                            state.tipos_users.splice(i, 1, data.info);
-                        }
-                    }
+                    var indice = state.tipos_users.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos_users.splice(indice, 1, data.info);
                     break;
                 case "eliminar":
-                    for (let i = 0; i < state.tipos_users.length; i++) {
-                        if (state.tipos_users[i].id === data.info.id) {
-                            state.tipos_users.splice(i, 1);
-                        }
-                    }
+                    var indice = state.tipos_users.findIndex(
+                        tipo => tipo.id === data.info.id
+                    );
+                    state.tipos_users.splice(indice, 1);
+
                     break;
             }
         },
@@ -707,18 +1346,16 @@ export default new Vuex.Store({
                     state.usuarios.push(data.data);
                     break;
                 case "editar":
-                    for (let i = 0; i < state.usuarios.length; i++) {
-                        if (state.usuarios[i].id === data.data.id) {
-                            state.usuarios.splice(i, 1, data.data);
-                        }
-                    }
+                    var indice = state.usuarios.findIndex(
+                        user => user.id === data.data.id
+                    );
+                    state.usuarios.splice(indice, 1, data.data);
                     break;
                 case "eliminar":
-                    for (let i = 0; i < state.usuarios.length; i++) {
-                        if (state.usuarios[i].id === data.data.id) {
-                            state.usuarios.splice(i, 1);
-                        }
-                    }
+                    var indice = state.usuarios.findIndex(
+                        user => user.id === data.data.id
+                    );
+                    state.usuarios.splice(indice, 1);
                     break;
             }
         },
@@ -735,6 +1372,12 @@ export default new Vuex.Store({
         accionAgregarTipoCepa({ commit }, data) {
             commit("mutacionAgregarTipoCepa", data);
         },
+        accionEditarTipoCepa({ commit }, data) {
+            commit("mutacionEditarTipoCepa", data);
+        },
+        accionEliminarTipoCepa({ commit }, data) {
+            commit("mutacionEliminarTipoCepa", data);
+        },
         obtenerInfoCaractBacterias({ commit }) {
             axios.get("/info-panel/info-caract-bacterias").then(res => {
                 commit("llenarInfoCaractBacterias", res.data);
@@ -742,6 +1385,12 @@ export default new Vuex.Store({
         },
         accionAgregarTipoCaractBacteria({ commit }, data) {
             commit("mutacionAgregarTipoCaractBacteria", data);
+        },
+        accionEditarTipoCaractBacteria({ commit }, data) {
+            commit("mutacionEditarTipoCaractBacteria", data);
+        },
+        accionEliminarTipoCaractBacteria({ commit }, data) {
+            commit("mutacionEliminarTipoCaractBacteria", data);
         },
         obtenerInfoCaractLevaduras({ commit }) {
             axios.get("/info-panel/info-caract-levaduras").then(res => {
@@ -751,6 +1400,12 @@ export default new Vuex.Store({
         accionAgregarTipoCaractLevadura({ commit }, data) {
             commit("mutacionAgregarTipoCaractLevadura", data);
         },
+        accionEditarTipoCaractLevadura({ commit }, data) {
+            commit("mutacionEditarTipoCaractLevadura", data);
+        },
+        accionEliminarTipoCaractLevadura({ commit }, data) {
+            commit("mutacionEliminarTipoCaractLevadura", data);
+        },
         obtenerInfoCaractHongos({ commit }) {
             axios.get("/info-panel/info-caract-hongos").then(res => {
                 commit("llenarInfoCaractHongos", res.data);
@@ -758,6 +1413,12 @@ export default new Vuex.Store({
         },
         accionAgregarTipoCaractHongo({ commit }, data) {
             commit("mutacionAgregarTipoCaractHongo", data);
+        },
+        accionEditarTipoCaractHongo({ commit }, data) {
+            commit("mutacionEditarTipoCaractHongo", data);
+        },
+        accionEliminarTipoCaractHongo({ commit }, data) {
+            commit("mutacionEliminarTipoCaractHongo", data);
         },
         obtenerInfoCaractActinomicetos({ commit }) {
             axios.get("/info-panel/info-caract-actinomicetos").then(res => {
@@ -767,10 +1428,18 @@ export default new Vuex.Store({
         accionAgregarTipoCaractActinomiceto({ commit }, data) {
             commit("mutacionAgregarTipoCaractActinomiceto", data);
         },
+        accionEditarTipoCaractActinomiceto({ commit }, data) {
+            commit("mutacionEditarTipoCaractActinomiceto", data);
+        },
+        accionEliminarTipoCaractActinomiceto({ commit }, data) {
+            commit("mutacionEliminarTipoCaractActinomiceto", data);
+        },
         obtenerCepa({ commit }, id) {
-            axios.get(`/info-panel/cepa/agregar-editar-caract/${id}`).then(res => {
-                commit("llenarCepa", res.data);
-            });
+            axios
+                .get(`/info-panel/cepa/agregar-editar-caract/${id}`)
+                .then(res => {
+                    commit("llenarCepa", res.data);
+                });
         },
         accionAgregarCaract({ commit }, data) {
             commit("mutacionAgregarCaract", data);

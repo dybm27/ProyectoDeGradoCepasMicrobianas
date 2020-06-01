@@ -167,6 +167,211 @@ class InfoCaracActinomicetoController extends Controller
         return $tipo;
     }
 
+    public function EditarInfo(Request $request, $id)
+    {
+        switch ($request->tipo) {
+            case "forma_macro":
+                $tipo1 = FormaCaractMacroActinomiceto::find($id);
+                $tipo2 = FormaCaractMacroActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado una Forma con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Forma Macroscópica en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "borde":
+                $tipo1 = BordeActinomiceto::find($id);
+                $tipo2 = BordeActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Borde con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Borde en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "textura":
+                $tipo1 = TexturaActinomiceto::find($id);
+                $tipo2 = TexturaActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrada una textura con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de textura en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "pigmento":
+                $tipo1 = PigmentoActinomiceto::find($id);
+                $tipo2 = PigmentoActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Pigmento con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Pigmento en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "superficie":
+                $tipo1 = SuperficieActinomiceto::find($id);
+                $tipo2 = SuperficieActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado una Superficie con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Superficie en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "forma_micro":
+                $tipo1 = FormaCaractMicroActinomiceto::find($id);
+                $tipo2 = FormaCaractMicroActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrada una Forma con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Forma Microscópica en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "tincion":
+                $tipo1 = TincionGramActinomiceto::find($id);
+                $tipo2 = TincionGramActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrada una TincionGram con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de TincionGram en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "micelio":
+                $tipo1 = MicelioActinomiceto::find($id);
+                $tipo2 = MicelioActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Micelio con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Micelio en actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "conidioforo":
+                $tipo1 = ConidioforoActinomiceto::find($id);
+                $tipo2 = ConidioforoActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Conidioforo con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Conidioforo en actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+            case "color":
+                $tipo1 = ColorActinomiceto::find($id);
+                $tipo2 = ColorActinomiceto::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Color con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Color en Actinomicetos: "
+                    . $tipo1->nombre);
+                break;
+        }
+
+        return $tipo1;
+    }
+
+    public function eliminarInfo(Request $request, $id)
+    {
+        switch ($request->tipo) {
+            case "forma_macro":
+                $tipo = FormaCaractMacroActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "borde":
+                $tipo = BordeActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Borde en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "textura":
+                $tipo = TexturaActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de textura en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "pigmento":
+                $tipo = PigmentoActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Pigmento en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "superficie":
+                $tipo = SuperficieActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Superficie en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "forma_micro":
+                $tipo = FormaCaractMicroActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "tincion":
+                $tipo = TincionGramActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de TincionGram en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "micelio":
+                $tipo = MicelioActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Micelio en actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "conidioforo":
+                $tipo = ConidioforoActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en actinomicetos: "
+                    . $tipo->nombre);
+                break;
+            case "color":
+                $tipo = ColorActinomiceto::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Color en Actinomicetos: "
+                    . $tipo->nombre);
+                break;
+        }
+
+        return $tipo;
+    }
     public function crearSeguimiento($accion)
     {
         $seguimiento = new Seguimiento();

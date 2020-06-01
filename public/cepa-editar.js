@@ -443,23 +443,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     redirect: function redirect() {
       switch (this.tipoG) {
         case 0:
-          this.$router.push("/cepas");
+          this.$router.push("/cepas/tabla");
           break;
 
         case 1:
-          this.$router.push("/bacterias");
+          this.$router.push("/bacterias/tabla");
           break;
 
         case 2:
-          this.$router.push("/hongos");
+          this.$router.push("/hongos/tabla");
           break;
 
         case 3:
-          this.$router.push("/levaduras");
+          this.$router.push("/levaduras/tabla");
           break;
 
         case 4:
-          this.$router.push("/actinomicetos");
+          this.$router.push("/actinomicetos/tabla");
           break;
       }
     },

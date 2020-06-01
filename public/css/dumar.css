@@ -151,6 +151,13 @@
     border-top-color: rgba(10, 127, 204, 0.685);
 }
 
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    bottom: 0;
+    border-width: 0 0.4rem 0.4rem;
+    border-bottom-color: rgba(10, 127, 204, 0.685);
+}
+
 .popover-header {
     padding: 0.5rem 0.75rem;
     margin-bottom: 0;
@@ -262,4 +269,8 @@
 
 .dropdown-menu {
     min-width: 10rem;
+}
+
+.btn-icon .btn-icon-wrapper {
+    font-size: 25px;
 }

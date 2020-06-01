@@ -35,11 +35,19 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   data() {
     return { tipo: "" };
   },
   methods: {
+    ...vuex.mapActions([
+      "obtenerTiposCepas",
+      "obtenerInfoCaractHongos",
+      "obtenerInfoCaractBacterias",
+      "obtenerInfoCaractLevaduras",
+      "obtenerInfoCaractActinomicetos"
+    ]),
     cambiarTipo(ruta) {
       if (ruta.includes("cepas")) {
         this.tipo = "Cepas";
@@ -53,6 +61,13 @@ export default {
         this.tipo = "Actinomicetos";
       }
     }
+  },
+  created() {
+    this.obtenerInfoCaractActinomicetos();
+    this.obtenerInfoCaractHongos();
+    this.obtenerInfoCaractBacterias();
+    this.obtenerInfoCaractLevaduras();
+    this.obtenerTiposCepas();
   }
 };
 </script>

@@ -13,9 +13,110 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      refrescarTabla1: false,
+      refrescarTabla2: false,
+      refrescarTabla3: false,
+      refrescarTabla4: false,
+      refrescarTabla5: false,
+      refrescarTabla6: false,
+      refrescarTabla7: false,
+      refrescarTabla8: false
+    };
+  },
   created: function created() {
     this.$emit("rutaHijo", window.location.pathname);
+  },
+  methods: {
+    accionModal: function accionModal(datos) {
+      switch (datos.tipo) {
+        case "genero":
+          this.refrescarTabla1 = true;
+          break;
+
+        case "especie":
+          this.refrescarTabla2 = true;
+          break;
+
+        case "familia":
+          this.refrescarTabla8 = true;
+          break;
+
+        case "orden":
+          this.refrescarTabla3 = true;
+          break;
+
+        case "clase":
+          this.refrescarTabla4 = true;
+          break;
+
+        case "phylum":
+          this.refrescarTabla5 = true;
+          break;
+
+        case "reino":
+          this.refrescarTabla7 = true;
+          break;
+
+        case "division":
+          this.refrescarTabla6 = true;
+          break;
+      }
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla1 = false;
+      this.refrescarTabla2 = false;
+      this.refrescarTabla3 = false;
+      this.refrescarTabla4 = false;
+      this.refrescarTabla5 = false;
+      this.refrescarTabla6 = false;
+      this.refrescarTabla7 = false;
+      this.refrescarTabla8 = false;
+    }
   }
 });
 
@@ -36,7 +137,126 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("cepa")])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-generos", {
+              attrs: { refrescarTabla: _vm.refrescarTabla1 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-especies", {
+              attrs: { refrescarTabla: _vm.refrescarTabla2 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-ordens", {
+              attrs: { refrescarTabla: _vm.refrescarTabla3 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-clases", {
+              attrs: { refrescarTabla: _vm.refrescarTabla4 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-phylums", {
+              attrs: { refrescarTabla: _vm.refrescarTabla5 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-divisions", {
+              attrs: { refrescarTabla: _vm.refrescarTabla6 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-reinos", {
+              attrs: { refrescarTabla: _vm.refrescarTabla7 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-10" },
+          [
+            _c("tabla-familias", {
+              attrs: { refrescarTabla: _vm.refrescarTabla8 },
+              on: { cambiarVariable: _vm.cambiarVariable }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("modales-otra-info-cepas", { on: { accionModal: _vm.accionModal } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

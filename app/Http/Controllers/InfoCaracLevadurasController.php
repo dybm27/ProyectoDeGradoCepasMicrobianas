@@ -61,6 +61,79 @@ class InfoCaracLevadurasController extends Controller
         return $tipo;
     }
 
+    public function editarInfo(Request $request, $id)
+    {
+        switch ($request->tipo) {
+            case "color":
+                $tipo1 = ColorLevadura::find($id);
+                $tipo2 = ColorLevadura::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Color con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Color en Levaduras: "
+                    . $tipo1->nombre);
+                break;
+            case "textura":
+                $tipo1 = TexturaLevadura::find($id);
+                $tipo2 = TexturaLevadura::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrada una Textura con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Textura en Levaduras: "
+                    . $tipo1->nombre);
+                break;
+            case "metodo_conser":
+                $tipo1 = TipoMetodoConservacionLevadura::find($id);
+                $tipo2 = TipoMetodoConservacionLevadura::where('nombre', $request->nombre)->first();
+                if (!is_null($tipo2)) {
+                    if ($tipo2->id != $tipo1->id) {
+                        return response('Ya se encuentra registrado un Tipo de Metodo con ese nombre', 422);
+                    }
+                }
+                $tipo1->nombre = ucfirst($request->nombre);
+                $tipo1->save();
+                $this->crearSeguimiento("Editó un Tipo de Metodo de Conservación en Levaduras: "
+                    . $tipo1->nombre);
+                break;
+        }
+
+        return $tipo1;
+    }
+
+    public function eliminarInfo(Request $request, $id)
+    {
+        switch ($request->tipo) {
+            case "color":
+                $tipo = ColorLevadura::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Color en Levaduras: "
+                    . $tipo->nombre);
+                break;
+            case "textura":
+                $tipo = TexturaLevadura::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Textura en Levaduras: "
+                    . $tipo->nombre);
+                break;
+            case "metodo_conser":
+                $tipo = TipoMetodoConservacionLevadura::find($id);
+                $tipo->delete();
+                $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Levaduras: "
+                    . $tipo->nombre);
+                break;
+        }
+
+        return $tipo;
+    }
+
     public function crearSeguimiento($accion)
     {
         $seguimiento = new Seguimiento();

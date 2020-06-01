@@ -33,6 +33,7 @@
         <div class="card-body mt-3 mr-2 ml-2">
           <div class="table-responsive">
             <FullCalendar
+              :firstDay="0"
               class="demo-app-calendar"
               ref="fullCalendar"
               themeSystem="bootstrap"

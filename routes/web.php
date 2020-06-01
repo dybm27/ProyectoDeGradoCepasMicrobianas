@@ -92,6 +92,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //-- crud info-cepas
     Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
+    Route::put('/info-cepas/editar/{id}', 'InfoCepasController@editarInfo');
+    Route::delete('/info-cepas/eliminar/{id}', 'InfoCepasController@eliminarInfo');
 
     //-------------------------------------------------------------------------------------------
 
@@ -116,6 +118,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //-- crud info-bacterias
     Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
+    Route::put('/info-caract-bacterias/editar/{id}', 'InfoCaracBacteriasController@editarInfo');
+    Route::delete('/info-caract-bacterias/eliminar/{id}', 'InfoCaracBacteriasController@eliminarInfo');
 
     //-- crud caract-bacterias
     //--- macro
@@ -172,6 +176,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //-- crud info-levaduras
     Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
+    Route::put('/info-caract-levaduras/editar/{id}', 'InfoCaracLevadurasController@editarInfo');
+    Route::delete('/info-caract-levaduras/eliminar/{id}', 'InfoCaracLevadurasController@eliminarInfo');
 
     //-- crud caract-levaduras
     //--- macro
@@ -221,6 +227,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //-- crud info-caract-hongos
     Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
+    Route::put('/info-caract-hongos/editar/{id}', 'InfoCaracHongosController@editarInfo');
+    Route::delete('/info-caract-hongos/eliminar/{id}', 'InfoCaracHongosController@eliminarInfo');
 
     //crud caract-hongos
     //---macro
@@ -269,6 +277,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //-- crud info-caract-actinomicetos
     Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetoController@agregarInfo');
+    Route::put('/info-caract-actinomicetos/editar/{id}', 'InfoCaracActinomicetoController@editarInfo');
+    Route::delete('/info-caract-actinomicetos/eliminar/{id}', 'InfoCaracActinomicetoController@eliminarInfo');
 
     //crud caract-actinomicetos
     //---macro
@@ -367,6 +377,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
+    Route::get('/otra-info/bacterias', 'OtraInfoController@index')->name('otra_info');
+    Route::get('/otra-info/hongos', 'OtraInfoController@index')->name('otra_info');
+    Route::get('/otra-info/levaduras', 'OtraInfoController@index')->name('otra_info');
+    Route::get('/otra-info/actinomicetos', 'OtraInfoController@index')->name('otra_info');
 
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
@@ -374,24 +388,65 @@ Route::group(['middleware' => ['auth']], function () {
         //----------------------- CEPAS  ---------------------------------------------------------
         //----------------------- urls tablas cepas  ---------------------------------------------
         Route::get('cepas', 'InfoPanelCepasController@cepas');
-        Route::get('cepas-bacterias', 'InfoPanelCepasController@bacterias');
-        Route::get('cepas-hongos', 'InfoPanelCepasController@hongos');
-        Route::get('cepas-levaduras', 'InfoPanelCepasController@levaduras');
-        Route::get('cepas-actinomicetos', 'InfoPanelCepasController@actinomicetos');
+        Route::get('cepas-bacterias', 'InfoPanelBacteriasController@bacterias');
+        Route::get('cepas-hongos', 'InfoPanelHongosController@hongos');
+        Route::get('cepas-levaduras', 'InfoPanelLevadurasController@levaduras');
+        Route::get('cepas-actinomicetos', 'InfoPanelActinomicetosController@actinomicetos');
         //----------------------- obtener cepa ---------------------------------------------------
         Route::get('cepa/{id}', 'InfoPanelCepasController@obtenerCepa');
         //--------------------- obtener caracteristicas cepas ------------------------------------
         Route::get('cepa/agregar-editar-caract/{id}', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
         //----------- urls tablas metodos de conservacion ----------------------------------------
-        Route::get('cepa/bacteria/metodos-conser/{id}', 'InfoPanelCepasController@metodosBacterias');
-        Route::get('cepa/levadura/metodos-conser/{id}', 'InfoPanelCepasController@metodosLevaduras');
-        Route::get('cepa/hongo/metodos-conser/{id}', 'InfoPanelCepasController@metodosHongos');
+        Route::get('cepa/bacteria/metodos-conser/{id}', 'InfoPanelBacteriasController@metodos');
+        Route::get('cepa/levadura/metodos-conser/{id}', 'InfoPanelLevadurasController@metodos');
+        Route::get('cepa/hongo/metodos-conser/{id}', 'InfoPanelHongosController@metodos');
+        //----------- urls tablas info cepas ----------------------------------------
+        Route::get('generos', 'InfoPanelCepasController@generos');
+        Route::get('especies', 'InfoPanelCepasController@especies');
+        Route::get('familias', 'InfoPanelCepasController@familias');
+        Route::get('divisions', 'InfoPanelCepasController@divisions');
+        Route::get('reinos', 'InfoPanelCepasController@reinos');
+        Route::get('clases', 'InfoPanelCepasController@clases');
+        Route::get('phylums', 'InfoPanelCepasController@phylums');
+        Route::get('ordens', 'InfoPanelCepasController@ordens');
+        //----------- urls tablas info bacterias ----------------------------------------
+        Route::get('formas-macro-bacteria', 'InfoPanelBacteriasController@formasMacro');
+        Route::get('formas-micro-bacteria', 'InfoPanelBacteriasController@formasMicro');
+        Route::get('bordes-bacteria', 'InfoPanelBacteriasController@bordes');
+        Route::get('detalles-bacteria', 'InfoPanelBacteriasController@detalles');
+        Route::get('elevacions-bacteria', 'InfoPanelBacteriasController@elevacions');
+        Route::get('superficies-bacteria', 'InfoPanelBacteriasController@superficies');
+        Route::get('colors-bacteria', 'InfoPanelBacteriasController@colors');
+        Route::get('tipos-metodos-bacteria', 'InfoPanelBacteriasController@tiposMetodos');
+        Route::get('tipos-agars-bacteria', 'InfoPanelBacteriasController@tiposAgars');
+        //----------- urls tablas info hongos ----------------------------------------
+        Route::get('colors-hongo', 'InfoPanelHongosController@colors');
+        Route::get('texturas-hongo', 'InfoPanelHongosController@texturas');
+        Route::get('conidioforos-hongo', 'InfoPanelHongosController@conidioforos');
+        Route::get('esporasA-hongo', 'InfoPanelHongosController@esporasAsexual');
+        Route::get('esporasS-hongo', 'InfoPanelHongosController@esporasSexual');
+        Route::get('tipos-metodos-hongo', 'InfoPanelHongosController@tiposMetodos');
+        //----------- urls tablas info levaduras ----------------------------------------
+        Route::get('colors-levadura', 'InfoPanelLevadurasController@colors');
+        Route::get('texturas-levadura', 'InfoPanelLevadurasController@texturas');
+        Route::get('tipos-metodos-levadura', 'InfoPanelLevadurasController@tiposMetodos');
+        //----------- urls tablas info actinomicetos ----------------------------------------
+        Route::get('colors-actinomiceto', 'InfoPanelActinomicetosController@colors');
+        Route::get('texturas-actinomiceto', 'InfoPanelActinomicetosController@texturas');
+        Route::get('formas-macro-actinomiceto', 'InfoPanelActinomicetosController@formasMacro');
+        Route::get('formas-micro-actinomiceto', 'InfoPanelActinomicetosController@formasMicro');
+        Route::get('bordes-actinomiceto', 'InfoPanelActinomicetosController@bordes');
+        Route::get('pigmentos-actinomiceto', 'InfoPanelActinomicetosController@pigmentos');
+        Route::get('tincions-actinomiceto', 'InfoPanelActinomicetosController@tincions');
+        Route::get('superficies-actinomiceto', 'InfoPanelActinomicetosController@superficies');
+        Route::get('micelios-actinomiceto', 'InfoPanelActinomicetosController@micelios');
+        Route::get('conidioforo-actinomiceto', 'InfoPanelActinomicetosController@conidioforos');
         //----------------------- info cepas y caracts  ------------------------------------------
-        Route::get('info-tipos-cepas', 'InfoPanelCepasController@infoTiposCepas');
-        Route::get('info-caract-bacterias', 'InfoPanelCepasController@infoCaractBacterias');
-        Route::get('info-caract-levaduras', 'InfoPanelCepasController@infoCaractLevaduras');
-        Route::get('info-caract-hongos', 'InfoPanelCepasController@infoCaractHongos');
-        Route::get('info-caract-actinomicetos', 'InfoPanelCepasController@infoCaractActinomicetos');
+        Route::get('info-tipos-cepas', 'InfoPanelCepasController@infoTipos');
+        Route::get('info-caract-bacterias', 'InfoPanelBacteriasController@infoCaract');
+        Route::get('info-caract-levaduras', 'InfoPanelLevadurasController@infoCaract');
+        Route::get('info-caract-hongos', 'InfoPanelHongosController@infoCaract');
+        Route::get('info-caract-actinomicetos', 'InfoPanelActinomicetosController@infoCaract');
         //--------------------------- EVENTOS  ---------------------------------------------------
         //-------------------------url eventos metodos--------------------------------------------
         Route::get('eventos-metodos-bacterias', 'InfoPanelEventosController@eventosBacterias');

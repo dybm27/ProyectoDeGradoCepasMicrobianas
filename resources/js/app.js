@@ -23,6 +23,44 @@ Vue.component('header-content', require('./components/Header-ContentComponent.vu
 Vue.component('perfil', require('./components/PerfilComponent.vue').default);
 //otra info
 Vue.component('otra-info', require('./components/otra-info/OtraInfoComponent.vue').default);
+// --------------- cepas -------------------
+Vue.component('modales-otra-info-cepas', require('./components/otra-info/tablas/cepas/ModalesComponent.vue').default);
+Vue.component('tabla-generos', require('./components/otra-info/tablas/cepas/generos/TablaGenerosComponent.vue').default);
+Vue.component('acciones_generos', require('./components/otra-info/tablas/cepas/generos/AccionesGenerosComponent.vue').default);
+Vue.component('tabla-especies', require('./components/otra-info/tablas/cepas/especies/TablaEspeciesComponent.vue').default);
+Vue.component('acciones_especies', require('./components/otra-info/tablas/cepas/especies/AccionesEspeciesComponent.vue').default);
+Vue.component('tabla-clases', require('./components/otra-info/tablas/cepas/clases/TablaClasesComponent.vue').default);
+Vue.component('acciones_clases', require('./components/otra-info/tablas/cepas/clases/AccionesClasesComponent.vue').default);
+Vue.component('tabla-phylums', require('./components/otra-info/tablas/cepas/phylums/TablaPhylumsComponent.vue').default);
+Vue.component('acciones_phylums', require('./components/otra-info/tablas/cepas/phylums/AccionesPhylumsComponent.vue').default);
+Vue.component('tabla-ordens', require('./components/otra-info/tablas/cepas/ordens/TablaOrdensComponent.vue').default);
+Vue.component('acciones_ordens', require('./components/otra-info/tablas/cepas/ordens/AccionesOrdensComponent.vue').default);
+Vue.component('tabla-reinos', require('./components/otra-info/tablas/cepas/reinos/TablaReinosComponent.vue').default);
+Vue.component('acciones_reinos', require('./components/otra-info/tablas/cepas/reinos/AccionesReinosComponent.vue').default);
+Vue.component('tabla-familias', require('./components/otra-info/tablas/cepas/familias/TablaFamiliasComponent.vue').default);
+Vue.component('acciones_familias', require('./components/otra-info/tablas/cepas/familias/AccionesFamiliasComponent.vue').default);
+Vue.component('tabla-divisions', require('./components/otra-info/tablas/cepas/divisions/TablaDivisionsComponent.vue').default);
+Vue.component('acciones_divisions', require('./components/otra-info/tablas/cepas/divisions/AccionesDivisionsComponent.vue').default);
+// --------------- bacterias -------------------
+Vue.component('modales-otra-info-bacterias', require('./components/otra-info/tablas/bacterias/ModalesComponent.vue').default);
+Vue.component('tabla-formas-macro-bacteria', require('./components/otra-info/tablas/bacterias/formas-macro/TablaFormasMacroComponent.vue').default);
+Vue.component('acciones_formas_macro_bacteria', require('./components/otra-info/tablas/bacterias/formas-macro/AccionesFormasMacroComponent.vue').default);
+Vue.component('tabla-bordes-bacteria', require('./components/otra-info/tablas/bacterias/bordes/TablaBordesComponent.vue').default);
+Vue.component('acciones_bordes_bacteria', require('./components/otra-info/tablas/bacterias/bordes/AccionesBordesComponent.vue').default);
+Vue.component('tabla-detalles-bacteria', require('./components/otra-info/tablas/bacterias/detalles/TablaDetallesComponent.vue').default);
+Vue.component('acciones_detalles_bacteria', require('./components/otra-info/tablas/bacterias/detalles/AccionesDetallesComponent.vue').default);
+Vue.component('tabla-elevacions-bacteria', require('./components/otra-info/tablas/bacterias/elevacions/TablaElevacionsComponent.vue').default);
+Vue.component('acciones_elevacions_bacteria', require('./components/otra-info/tablas/bacterias/elevacions/AccionesElevacionsComponent.vue').default);
+Vue.component('tabla-superficies-bacteria', require('./components/otra-info/tablas/bacterias/superficies/TablaSuperficiesComponent.vue').default);
+Vue.component('acciones_superficies_bacteria', require('./components/otra-info/tablas/bacterias/superficies/AccionesSuperficiesComponent.vue').default);
+Vue.component('tabla-colors-bacteria', require('./components/otra-info/tablas/bacterias/colors/TablaColorsComponent.vue').default);
+Vue.component('acciones_colors_bacteria', require('./components/otra-info/tablas/bacterias/colors/AccionesColorsComponent.vue').default);
+Vue.component('tabla-formas-micro-bacteria', require('./components/otra-info/tablas/bacterias/formas-micro/TablaFormasMicroComponent.vue').default);
+Vue.component('acciones_formas_micro_bacteria', require('./components/otra-info/tablas/bacterias/formas-micro/AccionesFormasMicroComponent.vue').default);
+Vue.component('tabla-tipos-metodos-bacteria', require('./components/otra-info/tablas/bacterias/tipos-metodos/TablaTiposMetodosComponent.vue').default);
+Vue.component('acciones_tipos_metodos_bacteria', require('./components/otra-info/tablas/bacterias/tipos-metodos/AccionesTiposMetodosComponent.vue').default);
+Vue.component('tabla-tipos-agars-bacteria', require('./components/otra-info/tablas/bacterias/tipos-agars/TablaTiposAgarsComponent.vue').default);
+Vue.component('acciones_tipos_agars_bacteria', require('./components/otra-info/tablas/bacterias/tipos-agars/AccionesTiposAgarsComponent.vue').default);
 //my-vuetable
 Vue.component('vuetable', require('vuetable-2/src/components/Vuetable').default);
 Vue.component('my-vuetable', require('./components/MyVuetableComponent').default);

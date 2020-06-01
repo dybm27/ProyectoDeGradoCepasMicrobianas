@@ -10,7 +10,7 @@
 
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
-      v-tooltip.left="'Eliminar Usuario'"
+      v-tooltip="'Eliminar Usuario'"
       @click="showModal(rowData)"
     >
       <i class="far fa-trash-alt"></i>
