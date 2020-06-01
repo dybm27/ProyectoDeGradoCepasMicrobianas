@@ -151,9 +151,16 @@ class InfoPanelCepasController extends Controller
 
     public function generos(Request $request)
     {
-        $generos = Genero::select(
-            'generos.*'
-        );
+        $generos = Genero::join(
+            'grupo_microbianos',
+            'generos.grupo_microbiano_id',
+            '=',
+            'grupo_microbianos.id'
+        )
+            ->select(
+                'generos.*',
+                'grupo_microbianos.nombre As nombre_grupo'
+            );
 
         if ($request->filled('sort')) {
             $sort = explode('|', $request->sort);
@@ -163,7 +170,8 @@ class InfoPanelCepasController extends Controller
         if ($request->filled('filter')) {
             $value = "%{$request->filter}%";
             $generos = $generos->where(function ($generos) use ($value) {
-                return $generos->orWhere('generos.nombre', 'like', $value);
+                return $generos->orWhere('generos.nombre', 'like', $value)
+                    ->orWhere('grupo_microbianos.nombre', 'like', $value);
             });
         }
 
@@ -176,9 +184,11 @@ class InfoPanelCepasController extends Controller
 
     public function especies(Request $request)
     {
-        $especies = Especie::select(
-            'especies.*'
-        );
+        $especies = Especie::join('generos', 'especies.genero_id', '=', 'generos.id')
+            ->select(
+                'especies.*',
+                'generos.nombre As nombre_genero',
+            );
 
         if ($request->filled('sort')) {
             $sort = explode('|', $request->sort);
@@ -188,7 +198,8 @@ class InfoPanelCepasController extends Controller
         if ($request->filled('filter')) {
             $value = "%{$request->filter}%";
             $especies = $especies->where(function ($especies) use ($value) {
-                return $especies->orWhere('especies.nombre', 'like', $value);
+                return $especies->orWhere('especies.nombre', 'like', $value)
+                    ->orWhere('generos.nombre', 'like', $value);
             });
         }
 

@@ -13,9 +13,120 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      refrescarTabla1: false,
+      refrescarTabla2: false,
+      refrescarTabla3: false,
+      tablasCaractMacro: false,
+      tablasMetodos: false
+    };
+  },
   created: function created() {
     this.$emit("rutaHijo", window.location.pathname);
+  },
+  methods: {
+    accionModal: function accionModal(datos) {
+      switch (datos.tipo) {
+        case "color":
+          this.refrescarTabla1 = true;
+          break;
+
+        case "textura":
+          this.refrescarTabla2 = true;
+          break;
+
+        case "tipo_metodo":
+          this.refrescarTabla3 = true;
+          break;
+      }
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla1 = false;
+      this.refrescarTabla2 = false;
+      this.refrescarTabla3 = false;
+    },
+    mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
+      this.tablasCaractMacro = !this.tablasCaractMacro;
+    },
+    mostrarTablasMetodos: function mostrarTablasMetodos() {
+      this.tablasMetodos = !this.tablasMetodos;
+    }
   }
 });
 
@@ -36,9 +147,175 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("levadura")])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasCaractMacro }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasCaractMacro
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-colors-levadura", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla1 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-texturas-levadura", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla2 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasMetodos }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasMetodos
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-tipos-metodos-levadura", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla3 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("modales-otra-info-levaduras", {
+        on: { "accionModal-levadura": _vm.accionModal }
+      })
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Características Macroscópicas\n          "
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Métodos De Conservación\n          "
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

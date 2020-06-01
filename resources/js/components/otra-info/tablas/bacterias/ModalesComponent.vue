@@ -260,7 +260,6 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getGenerosId", "getGrupos", "getGenerosById"]),
     validarNombre() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;

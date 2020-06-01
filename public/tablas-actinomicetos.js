@@ -13,9 +13,218 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      refrescarTabla1: false,
+      refrescarTabla2: false,
+      refrescarTabla3: false,
+      refrescarTabla4: false,
+      refrescarTabla5: false,
+      refrescarTabla6: false,
+      refrescarTabla7: false,
+      refrescarTabla8: false,
+      refrescarTabla9: false,
+      refrescarTabla10: false,
+      tablasCaractMacro: false,
+      tablasCaractMicro: false
+    };
+  },
   created: function created() {
     this.$emit("rutaHijo", window.location.pathname);
+  },
+  methods: {
+    accionModal: function accionModal(datos) {
+      switch (datos.tipo) {
+        case "textura":
+          this.refrescarTabla1 = true;
+          break;
+
+        case "color":
+          this.refrescarTabla2 = true;
+          break;
+
+        case "forma_macro":
+          this.refrescarTabla3 = true;
+          break;
+
+        case "superficie":
+          this.refrescarTabla4 = true;
+          break;
+
+        case "borde":
+          this.refrescarTabla5 = true;
+          break;
+
+        case "pigmento":
+          this.refrescarTabla6 = true;
+          break;
+
+        case "tincion":
+          this.refrescarTabla7 = true;
+          break;
+
+        case "forma_micro":
+          this.refrescarTabla8 = true;
+          break;
+
+        case "micelio":
+          this.refrescarTabla9 = true;
+          break;
+
+        case "conidioforo":
+          this.refrescarTabla10 = true;
+          break;
+      }
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla1 = false;
+      this.refrescarTabla2 = false;
+      this.refrescarTabla3 = false;
+      this.refrescarTabla4 = false;
+      this.refrescarTabla5 = false;
+      this.refrescarTabla6 = false;
+      this.refrescarTabla7 = false;
+      this.refrescarTabla8 = false;
+      this.refrescarTabla9 = false;
+      this.refrescarTabla10 = false;
+    },
+    mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
+      this.tablasCaractMacro = !this.tablasCaractMacro;
+    },
+    mostrarTablasCaractMicro: function mostrarTablasCaractMicro() {
+      this.tablasCaractMicro = !this.tablasCaractMicro;
+    }
   }
 });
 
@@ -36,9 +245,301 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("actinomiceto")])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasCaractMacro }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasCaractMacro
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-texturas-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla1 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-colors-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla2 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-formas-macro-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla3 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-superficies-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla4 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-bordes-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla5 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-pigmentos-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla6 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right actions-icon-btn" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
+                      on: { click: _vm.mostrarTablasCaractMicro }
+                    },
+                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.tablasCaractMicro
+              ? _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-tincions-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla7 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-formas-micro-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla8 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-micelios-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla9 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "row justify-content-md-center" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-10" },
+                          [
+                            _c("tabla-conidioforos-actinomiceto", {
+                              attrs: { refrescarTabla: _vm.refrescarTabla10 },
+                              on: { cambiarVariable: _vm.cambiarVariable }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("modales-otra-info-actinomicetos", {
+        on: { "accionModal-actinomiceto": _vm.accionModal }
+      })
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Características Macroscópicas\n          "
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+        }),
+        _vm._v(
+          "\n            Tablas Dinamicas Características Microscópicas\n          "
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

@@ -61,6 +61,50 @@ Vue.component('tabla-tipos-metodos-bacteria', require('./components/otra-info/ta
 Vue.component('acciones_tipos_metodos_bacteria', require('./components/otra-info/tablas/bacterias/tipos-metodos/AccionesTiposMetodosComponent.vue').default);
 Vue.component('tabla-tipos-agars-bacteria', require('./components/otra-info/tablas/bacterias/tipos-agars/TablaTiposAgarsComponent.vue').default);
 Vue.component('acciones_tipos_agars_bacteria', require('./components/otra-info/tablas/bacterias/tipos-agars/AccionesTiposAgarsComponent.vue').default);
+// --------------- hongos -------------------
+Vue.component('modales-otra-info-hongos', require('./components/otra-info/tablas/hongos/ModalesComponent.vue').default);
+Vue.component('tabla-colors-hongo', require('./components/otra-info/tablas/hongos/colors/TablaColorsComponent.vue').default);
+Vue.component('acciones_colors_hongo', require('./components/otra-info/tablas/hongos/colors/AccionesColorsComponent.vue').default);
+Vue.component('tabla-texturas-hongo', require('./components/otra-info/tablas/hongos/texturas/TablaTexturasComponent.vue').default);
+Vue.component('acciones_texturas_hongo', require('./components/otra-info/tablas/hongos/texturas/AccionesTexturasComponent.vue').default);
+Vue.component('tabla-conidioforos-hongo', require('./components/otra-info/tablas/hongos/conidioforos/TablaConidioforosComponent.vue').default);
+Vue.component('acciones_conidioforos_hongo', require('./components/otra-info/tablas/hongos/conidioforos/AccionesConidioforosComponent.vue').default);
+Vue.component('tabla-esporas-asexual-hongo', require('./components/otra-info/tablas/hongos/esporas-asexual/TablaEsporasAsexualComponent.vue').default);
+Vue.component('acciones_esporas_asexual_hongo', require('./components/otra-info/tablas/hongos/esporas-asexual/AccionesEsporasAsexualComponent.vue').default);
+Vue.component('tabla-esporas-sexual-hongo', require('./components/otra-info/tablas/hongos/esporas-sexual/TablaEsporasSexualComponent.vue').default);
+Vue.component('acciones_esporas_sexual_hongo', require('./components/otra-info/tablas/hongos/esporas-sexual/AccionesEsporasSexualComponent.vue').default);
+Vue.component('tabla-tipos-metodos-hongo', require('./components/otra-info/tablas/hongos/tipos-metodos/TablaTiposMetodosComponent.vue').default);
+Vue.component('acciones_tipos_metodos_hongo', require('./components/otra-info/tablas/hongos/tipos-metodos/AccionesTiposMetodosComponent.vue').default);
+// --------------- levaduras -------------------
+Vue.component('modales-otra-info-levaduras', require('./components/otra-info/tablas/levaduras/ModalesComponent.vue').default);
+Vue.component('tabla-colors-levadura', require('./components/otra-info/tablas/levaduras/colors/TablaColorsComponent.vue').default);
+Vue.component('acciones_colors_levadura', require('./components/otra-info/tablas/levaduras/colors/AccionesColorsComponent.vue').default);
+Vue.component('tabla-texturas-levadura', require('./components/otra-info/tablas/levaduras/texturas/TablaTexturasComponent.vue').default);
+Vue.component('acciones_texturas_levadura', require('./components/otra-info/tablas/levaduras/texturas/AccionesTexturasComponent.vue').default);
+Vue.component('tabla-tipos-metodos-levadura', require('./components/otra-info/tablas/levaduras/tipos-metodos/TablaTiposMetodosComponent.vue').default);
+Vue.component('acciones_tipos_metodos_levadura', require('./components/otra-info/tablas/levaduras/tipos-metodos/AccionesTiposMetodosComponent.vue').default);
+// --------------- actinomicetos -------------------
+Vue.component('modales-otra-info-actinomicetos', require('./components/otra-info/tablas/actinomicetos/ModalesComponent.vue').default);
+Vue.component('tabla-formas-macro-actinomiceto', require('./components/otra-info/tablas/actinomicetos/formas-macro/TablaFormasMacroComponent.vue').default);
+Vue.component('acciones_formas_macro_actinomiceto', require('./components/otra-info/tablas/actinomicetos/formas-macro/AccionesFormasMacroComponent.vue').default);
+Vue.component('tabla-bordes-actinomiceto', require('./components/otra-info/tablas/actinomicetos/bordes/TablaBordesComponent.vue').default);
+Vue.component('acciones_bordes_actinomiceto', require('./components/otra-info/tablas/actinomicetos/bordes/AccionesBordesComponent.vue').default);
+Vue.component('tabla-pigmentos-actinomiceto', require('./components/otra-info/tablas/actinomicetos/pigmentos/TablaPigmentosComponent.vue').default);
+Vue.component('acciones_pigmentos_actinomiceto', require('./components/otra-info/tablas/actinomicetos/pigmentos/AccionesPigmentosComponent.vue').default);
+Vue.component('tabla-texturas-actinomiceto', require('./components/otra-info/tablas/actinomicetos/texturas/TablaTexturasComponent.vue').default);
+Vue.component('acciones_texturas_actinomiceto', require('./components/otra-info/tablas/actinomicetos/texturas/AccionesTexturasComponent.vue').default);
+Vue.component('tabla-superficies-actinomiceto', require('./components/otra-info/tablas/actinomicetos/superficies/TablaSuperficiesComponent.vue').default);
+Vue.component('acciones_superficies_actinomiceto', require('./components/otra-info/tablas/actinomicetos/superficies/AccionesSuperficiesComponent.vue').default);
+Vue.component('tabla-colors-actinomiceto', require('./components/otra-info/tablas/actinomicetos/colors/TablaColorsComponent.vue').default);
+Vue.component('acciones_colors_actinomiceto', require('./components/otra-info/tablas/actinomicetos/colors/AccionesColorsComponent.vue').default);
+Vue.component('tabla-formas-micro-actinomiceto', require('./components/otra-info/tablas/actinomicetos/formas-micro/TablaFormasMicroComponent.vue').default);
+Vue.component('acciones_formas_micro_actinomiceto', require('./components/otra-info/tablas/actinomicetos/formas-micro/AccionesFormasMicroComponent.vue').default);
+Vue.component('tabla-tincions-actinomiceto', require('./components/otra-info/tablas/actinomicetos/tincions/TablaTincionsComponent.vue').default);
+Vue.component('acciones_tincions_actinomiceto', require('./components/otra-info/tablas/actinomicetos/tincions/AccionesTincionsComponent.vue').default);
+Vue.component('tabla-micelios-actinomiceto', require('./components/otra-info/tablas/actinomicetos/micelios/TablaMiceliosComponent.vue').default);
+Vue.component('acciones_micelios_actinomiceto', require('./components/otra-info/tablas/actinomicetos/micelios/AccionesMiceliosComponent.vue').default);
+Vue.component('tabla-conidioforos-actinomiceto', require('./components/otra-info/tablas/actinomicetos/conidioforos/TablaConidioforosComponent.vue').default);
+Vue.component('acciones_conidioforos_actinomiceto', require('./components/otra-info/tablas/actinomicetos/conidioforos/AccionesConidioforosComponent.vue').default);
 //my-vuetable
 Vue.component('vuetable', require('vuetable-2/src/components/Vuetable').default);
 Vue.component('my-vuetable', require('./components/MyVuetableComponent').default);

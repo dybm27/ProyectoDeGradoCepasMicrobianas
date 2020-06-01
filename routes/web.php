@@ -377,10 +377,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/bacterias', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/hongos', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/levaduras', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/actinomicetos', 'OtraInfoController@index')->name('otra_info');
+    Route::get('/otra-info/bacterias', 'OtraInfoController@index');
+    Route::get('/otra-info/hongos', 'OtraInfoController@index');
+    Route::get('/otra-info/levaduras', 'OtraInfoController@index');
+    Route::get('/otra-info/actinomicetos', 'OtraInfoController@index');
 
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
@@ -440,7 +440,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('tincions-actinomiceto', 'InfoPanelActinomicetosController@tincions');
         Route::get('superficies-actinomiceto', 'InfoPanelActinomicetosController@superficies');
         Route::get('micelios-actinomiceto', 'InfoPanelActinomicetosController@micelios');
-        Route::get('conidioforo-actinomiceto', 'InfoPanelActinomicetosController@conidioforos');
+        Route::get('conidioforos-actinomiceto', 'InfoPanelActinomicetosController@conidioforos');
         //----------------------- info cepas y caracts  ------------------------------------------
         Route::get('info-tipos-cepas', 'InfoPanelCepasController@infoTipos');
         Route::get('info-caract-bacterias', 'InfoPanelBacteriasController@infoCaract');
