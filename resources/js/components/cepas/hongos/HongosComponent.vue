@@ -32,12 +32,12 @@
         <div class="page-title-actions">
           <router-link
             v-if="ocultar"
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
+            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
             :to="{name: 'cepa-hongo-agregar'}"
           >Agregar Nueva Cepa - Hongo</router-link>
           <router-link
             v-else
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
+            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
             :to="{name: 'cepas-hongos'}"
           >Volver</router-link>
         </div>
@@ -58,7 +58,8 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractHongos"]),
+    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("info_caract", ["obtenerInfoCaractHongos"]),
     ocultarLink(ruta) {
       if (ruta != "/hongos/tabla") {
         this.ruta = false;

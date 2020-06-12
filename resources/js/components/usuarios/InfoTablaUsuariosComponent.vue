@@ -10,7 +10,7 @@
           <template v-if="mostrarLinkAgregar">
             <button
               @click="agregar"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Usuario</button>
           </template>
           <template v-else>

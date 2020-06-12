@@ -41,8 +41,8 @@ export default {
     return { tipo: "" };
   },
   methods: {
-    ...vuex.mapActions([
-      "obtenerTiposCepas",
+    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("info_caract", [
       "obtenerInfoCaractHongos",
       "obtenerInfoCaractBacterias",
       "obtenerInfoCaractLevaduras",

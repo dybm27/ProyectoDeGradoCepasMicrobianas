@@ -21,10 +21,11 @@
 import vuex from "vuex";
 export default {
   methods: {
-    ...vuex.mapActions(["obtenerTiposUsers", "obtenerUsers"])
+    ...vuex.mapActions("usuarios", ["obtenerTiposUsers", "obtenerUsers"])
   },
   computed: {
-    ...vuex.mapGetters(["getUserAuth", "getTipoUserById", "getTipoUser"])
+    ...vuex.mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]),
+    ...vuex.mapGetters(["getUserAuth"])
   },
   created() {
     this.obtenerTiposUsers();

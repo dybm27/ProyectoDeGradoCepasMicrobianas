@@ -24,8 +24,8 @@
         <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
         @yield('estilos')
     </head>
-    <body>
-        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >
+    <body><!--fixed-footer-->
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar " id="app" >
 
             @include('layouts-admin.header')
 

@@ -233,7 +233,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       traerValorImg: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionTipoUsuario", "accionUsuario", "accionModificarAuth"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionModificarAuth"]), {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -365,13 +365,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.src = URL.createObjectURL(file);
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getTipoUser", "getUsuarioById", "getUsuarioByEmail", "getUsuarios", "getUserAuth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getTipoUser", "getUsuarioById", "getUsuarioByEmail", "getUsuarios", "getUserAuth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"]), {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     },
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

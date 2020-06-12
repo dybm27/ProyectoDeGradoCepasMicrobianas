@@ -9,11 +9,9 @@
         <div class="btn-actions-pane-right actions-icon-btn">
           <button
             @click="$modal.show('modal_agregar_tipo_hongo',{tipo:'textura'})"
-            class="btn-wide btn-outline-2x mr-md-2 mb-2 btn btn-outline-focus btn-sm"
+            class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
           >Agregar</button>
-          <button class="mb-2 mr-2 btn-icon btn-pill btn btn-link" @click="mostrarTabla">
-            <i class="lnr-menu btn-icon-wrapper"></i>
-          </button>
+          <img @click="mostrarTabla" :src="'/iconos/icons8-vista-general-3-35.png'" />
         </div>
       </div>
       <div class="card-body" v-if="tabla">

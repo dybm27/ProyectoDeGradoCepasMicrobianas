@@ -32,11 +32,10 @@
       <div class="main-card mb-4 card">
         <div class="card-body mt-3 mr-2 ml-2">
           <div class="table-responsive">
+            <!--  :themeSystem="bootstrap"-->
             <FullCalendar
               :firstDay="0"
-              class="demo-app-calendar"
               ref="fullCalendar"
-              themeSystem="bootstrap"
               defaultView="dayGridMonth"
               :fixedWeekCount="false"
               :eventLimit="true"
@@ -151,7 +150,7 @@
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="metodoModal('agregar')"
             v-if="btnAgregar"
           >Agregar</button>
@@ -207,6 +206,7 @@ export default {
   },
   data() {
     return {
+      bootstrap: "bootstrap",
       calendarPlugins: [
         // plugins must be defined in the JS
         dayGridPlugin,
@@ -222,7 +222,7 @@ export default {
       eventSources: [
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
-          color: "#e3342f",
+          color: "#ff0000e3",
           className: "google"
         },
         {

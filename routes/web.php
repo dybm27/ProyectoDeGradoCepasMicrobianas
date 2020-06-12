@@ -453,6 +453,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/exportar/tabla/micelios-actinomiceto', 'ExportarExcelActinomicetosController@miceliosTabla');
     Route::get('/exportar/tabla/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforosTabla');
 
+    //sitio-web
+    Route::get('/exportar/objetivos', 'ExportarExcelSitioWebController@objetivos');
+    Route::get('/exportar/tabla/objetivos', 'ExportarExcelSitioWebController@objetivosTabla');
+    Route::get('/exportar/investigadores', 'ExportarExcelSitioWebController@investigadores');
+    Route::get('/exportar/tabla/investigadores', 'ExportarExcelSitioWebController@investigadoresTabla');
+    Route::get('/exportar/proyectos', 'ExportarExcelSitioWebController@proyectos');
+    Route::get('/exportar/tabla/proyectos', 'ExportarExcelSitioWebController@proyectosTabla');
+    Route::get('/exportar/publicaciones', 'ExportarExcelSitioWebController@publicaciones');
+    Route::get('/exportar/tabla/publicaciones', 'ExportarExcelSitioWebController@publicacionesTabla');
+
+
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
     Route::get('/otra-info/bacterias', 'OtraInfoController@index');
@@ -460,6 +471,40 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/otra-info/levaduras', 'OtraInfoController@index');
     Route::get('/otra-info/actinomicetos', 'OtraInfoController@index');
 
+    //--------------------- IMAGENES LOGIN -----------------------------------------------------
+    Route::get('/imagenes-login/ver', 'ImagenLoginController@index')->name('imagenes');
+    Route::get('/imagenes-login/agregar', 'ImagenLoginController@index');
+    Route::get('/imagenes-login/editar/{id}', 'ImagenLoginController@index');
+    Route::post('/login/imagen/', 'ImagenLoginController@store');
+    Route::put('/login/imagen/{id}', 'ImagenLoginController@update');
+    Route::delete('/login/imagen/{id}', 'ImagenLoginController@destroy');
+
+
+    //--------------------- ADMINISTRAR SITIO WEB -----------------------------------------------
+    //quienes somos
+    Route::get('/quienes-somos/mision', 'QuienesSomosController@index')->name('quienes-somos');
+    Route::get('/quienes-somos/vision', 'QuienesSomosController@index');
+    Route::get('/quienes-somos/objetivos', 'QuienesSomosController@index');
+    Route::put('/quienes-somos/vision/cambiar', 'QuienesSomosController@cambiarVision');
+    Route::put('/quienes-somos/mision/cambiar', 'QuienesSomosController@cambiarMision');
+    Route::post('/quienes-somos/objetivo/agregar', 'QuienesSomosController@agregarObjetivo');
+    Route::put('/quienes-somos/objetivo/{id}', 'QuienesSomosController@editarObjetivo');
+    Route::delete('/quienes-somos/objetivo/{id}', 'QuienesSomosController@eliminarObjetivo');
+    //investigadores
+    Route::get('/investigadores', 'InvestigadoresController@index')->name('investigadores');
+    Route::post('/investigadores', 'InvestigadoresController@store');
+    Route::put('/investigadores/{id}', 'InvestigadoresController@update');
+    Route::delete('/investigadores/{id}', 'InvestigadoresController@destroy');
+    //documentos
+    Route::get('/documentos/proyectos', 'DocumentosController@index')->name('proyectos');
+    Route::get('/documentos/publicaciones', 'DocumentosController@index');
+    Route::post('/documentos', 'DocumentosController@store');
+    Route::put('/documentos/{id}', 'DocumentosController@update');
+    Route::delete('/documentos/{id}', 'DocumentosController@destroy');
+    //equipamiento
+    Route::get('/equipamientos', 'EquipamientoController@index')->name('equipamiento');
+    //publicidad
+    Route::get('/publicidad/noticias', 'PublicidadController@index')->name('noticias');
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
@@ -541,6 +586,18 @@ Route::group(['middleware' => ['auth']], function () {
         //------------------------- url tabla seguimiento -------------------------------------
         Route::get('seguimientos', 'InfoPanelUsuariosController@tablaSeguimientos');
         //--------------------------------------------------------------------------------------------
+        //------------------------ IMAGENES LOGIN ------------------------------------------------------
+        //------------------------- imagenes -------------------------------------------
+        Route::get('login-imagenes', 'ImagenLoginController@imagenes');
+        //------------------------ SITIO WEB ------------------------------------------------------
+        //------------------------- quienes somos -------------------------------------------
+        Route::get('quienes-somos', 'InfoPanelSitioWebController@quienesSomos');
+        Route::get('quienes-somos/objetivos', 'InfoPanelSitioWebController@objetivos');
+        Route::get('investigadores-tabla', 'InfoPanelSitioWebController@investigadoresTabla');
+        Route::get('investigadores', 'InfoPanelSitioWebController@investigadores');
+        Route::get('proyectos-tabla', 'InfoPanelSitioWebController@proyectosTabla');
+        Route::get('publicaciones-tabla', 'InfoPanelSitioWebController@publicacionesTabla');
+        Route::get('documentos', 'InfoPanelSitioWebController@documentos');
     });
 
 

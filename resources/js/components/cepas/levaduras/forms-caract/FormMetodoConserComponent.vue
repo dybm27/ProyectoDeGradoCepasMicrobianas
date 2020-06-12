@@ -24,7 +24,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('metodo_conser')"
                       >
                         <i class="fas fa-plus"></i>
@@ -118,15 +118,6 @@
                   </div>
                 </template>
                 <div class="position-relative form-group">
-                  <label for="observaciones">Observaciones</label>
-                  <textarea
-                    name="text"
-                    id="observaciones"
-                    class="form-control"
-                    v-model="parametros.observaciones"
-                  ></textarea>
-                </div>
-                <div class="position-relative form-group">
                   <label for="imagen" class>Imagen</label>
                   <input
                     name="imagen"
@@ -141,12 +132,12 @@
                   <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
                 </div>
                 <div class="position-relative form-group">
-                  <label for="descripcion">Descripción</label>
+                  <label for="observaciones">Observaciones</label>
                   <textarea
                     name="text"
-                    id="descripcion"
+                    id="observaciones"
                     class="form-control"
-                    v-model="parametros.descripcion"
+                    v-model="parametros.observaciones"
                   ></textarea>
                 </div>
                 <button
@@ -194,7 +185,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -233,7 +224,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -246,6 +237,7 @@ import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 
 export default {
+  props: ["idMetodo"],
   components: { DatePicker },
   data() {
     return {
@@ -260,8 +252,7 @@ export default {
         medio_cultivo: "",
         numero_pases: "",
         observaciones: "",
-        imagen: "",
-        descripcion: ""
+        imagen: ""
       },
       modal: {
         titulo: "",
@@ -277,11 +268,8 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
-      "accionAgregarCaract",
-      "accionEditarCaract",
-      "accionAgregarTipoCaractLevadura"
-    ]),
+    ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractLevadura"]),
     cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -308,8 +296,7 @@ export default {
               "Método agregado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -328,8 +315,7 @@ export default {
               "Método editado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -339,14 +325,6 @@ export default {
               // console.log(error.response.data);
             }
           });
-      }
-    },
-    redireccionar() {
-      let ruta = window.location.pathname;
-      if (ruta.includes("levaduras")) {
-        this.$router.push({ name: "metodo-conser-levadura" });
-      } else {
-        this.$router.push({ name: "metodo-conser-cepa-levadura" });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -379,7 +357,6 @@ export default {
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-      this.parametros.descripcion = this.info.descripcion;
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
@@ -458,13 +435,14 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoMetodoConserLevaduras", "getMetodoConserById"]),
+    ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
+    ...vuex.mapGetters("info_caract", ["getInfoMetodoConserLevaduras"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -533,14 +511,11 @@ export default {
     }
   },
   created() {
-    this.$emit("cambiarVariable", "agregar_editar");
-    if (!this.$route.params.metodoConserLevaduraId) {
+    if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
     } else {
-      this.info = this.getMetodoConserById(
-        this.$route.params.metodoConserLevaduraId
-      );
+      this.info = this.getMetodoConserById(this.idMetodo);
       this.llenarInfo();
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";

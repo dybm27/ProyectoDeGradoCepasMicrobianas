@@ -217,11 +217,8 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
-      "accionTipoUsuario",
-      "accionUsuario",
-      "accionModificarAuth"
-    ]),
+    ...vuex.mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]),
+    ...vuex.mapActions(["accionModificarAuth"]),
     cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -346,19 +343,20 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters([
+    ...vuex.mapGetters("usuarios", [
       "getTipoUser",
       "getUsuarioById",
       "getUsuarioByEmail",
       "getUsuarios",
       "getUserAuth"
     ]),
+    ...vuex.mapGetters(["getUserAuth"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

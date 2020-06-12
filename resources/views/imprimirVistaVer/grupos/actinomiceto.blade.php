@@ -151,6 +151,12 @@
 @endif
 @if(!is_null($cepa->actinomiceto->identBioquimica))
     @if (in_array('todo',$imprimir)||in_array('identi-bioqui',$imprimir))
+    @php
+        $rowFer=2;
+        if(!is_null($cepa->actinomiceto->identBioquimica->fer_otro)){
+            $rowFer++;
+        }
+    @endphp
     <div class="div-identi-bioqui">
         <table class="table tabla-identi-bioqui">
             <tbody>
@@ -184,7 +190,7 @@
                     <td colspan="3">{{$cepa->actinomiceto->identBioquimica->sensi_antibioticos}}</td>
                 </tr>
                 <tr>
-                    <td rowspan="2" style="text-align: center;padding-top: 10px"><b>Fermentación</b></td>
+                    <td rowspan="{{$rowFer}}" style="text-align: center;padding-top: 10px"><b>Fermentación</b></td>
                     <td><b>Lactosa</b></td>
                     <td>{{$cepa->actinomiceto->identBioquimica->fer_lactosa}}</td>
                     <td><b>Manitol</b></td>
@@ -196,6 +202,12 @@
                     <td><b>Sacarosa</b></td>
                     <td>{{$cepa->actinomiceto->identBioquimica->fer_sacarosa}}</td>
                 </tr>
+                @if ($rowFer==3)
+                    <tr>
+                        <td><b>Otros Azúcares</b></td>
+                        <td colspan="3">{{$cepa->actinomiceto->identBioquimica->fer_otro}}</td>
+                    </tr>
+                @endif
                 <tr>
                     <td colspan="5" style="text-align: center">
                         @if ($cepa->actinomiceto->identBioquimica->imagenPublica1) 

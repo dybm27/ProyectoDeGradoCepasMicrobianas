@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import store from "../store/index";
 Vue.use(VueRouter);
 
 const routes = [
@@ -118,45 +118,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-cepa-bacteria",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-cepa-bacteria" */
 
                                 "../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-cepa-bacteria",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-bacteria-tabla" */
-
-                                        "../components/cepas/bacterias/tablas/TablaMetodoConserBacteriasComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-cepa-bacteria-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-bacteria-agregar" */
-
-                                        "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserBacteriaId",
-                                name: "metodo-conser-cepa-bacteria-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-bacteria-editar" */
-
-                                        "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -223,45 +191,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-cepa-hongo",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-cepa-hongo" */
 
                                 "../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-cepa-hongo",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-hongo-tabla" */
-
-                                        "../components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-cepa-hongo-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-hongo-agregar" */
-
-                                        "../components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserHongoId",
-                                name: "metodo-conser-cepa-hongo-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-hongo-editar" */
-
-                                        "../components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -328,45 +264,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-cepa-levadura",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-cepa-levadura" */
 
                                 "../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-cepa-levadura",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-levadura-tabla" */
-
-                                        "../components/cepas/levaduras/tablas/TablaMetodoConserLevadurasComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-cepa-levadura-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-levadura-agregar" */
-
-                                        "../components/cepas/levaduras/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserLevaduraId",
-                                name: "metodo-conser-cepa-levadura-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-cepa-levadura-editar" */
-
-                                        "../components/cepas/levaduras/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -558,45 +462,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-bacteria",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-bacteria" */
 
                                 "../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-bacteria",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-bacteria-tabla" */
-
-                                        "../components/cepas/bacterias/tablas/TablaMetodoConserBacteriasComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-bacteria-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-bacteria-agregar" */
-
-                                        "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserBacteriaId",
-                                name: "metodo-conser-bacteria-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-bacteria-editar" */
-
-                                        "../components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -706,45 +578,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-hongo",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-hongo" */
 
                                 "../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-hongo",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-hongo-tabla" */
-
-                                        "../components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-hongo-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-hongo-agregar" */
-
-                                        "../components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserHongoId",
-                                name: "metodo-conser-hongo-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-hongo-editar" */
-
-                                        "../components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -851,45 +691,13 @@ const routes = [
                     },
                     {
                         path: "metodo-conser",
-                        name: "",
+                        name: "metodo-conser-levadura",
                         component: () =>
                             import(
                                 /* webpackChunkName: "metodo-conser-levadura" */
 
                                 "../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"
-                            ),
-                        children: [
-                            {
-                                path: "",
-                                name: "metodo-conser-levadura",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-levadura-tabla" */
-
-                                        "../components/cepas/levaduras/tablas/TablaMetodoConserLevadurasComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "agregar",
-                                name: "metodo-conser-levadura-agregar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-levadura-agregar" */
-
-                                        "../components/cepas/levaduras/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            },
-                            {
-                                path: "editar/:metodoConserLevaduraId",
-                                name: "metodo-conser-levadura-editar",
-                                component: () =>
-                                    import(
-                                        /* webpackChunkName: "metodo-conser-levadura-editar" */
-
-                                        "../components/cepas/levaduras/forms-caract/FormMetodoConserComponent.vue"
-                                    )
-                            }
-                        ]
+                            )
                     }
                 ]
             },
@@ -1158,8 +966,129 @@ const routes = [
                     )
             }
         ]
-    }
+    },
 
+    // ------------------------------- IMAGENES LOGIN ------------------------------------------
+    {
+        path: "/imagenes-login/",
+        name: "imagenes-login",
+        component: () =>
+            import(
+                /* webpackChunkName: "imagenes-login" */
+
+                "../components/imagenes-login/ContainerImagenesComponent.vue"
+            ),
+        children: [
+            {
+                path: "ver",
+                name: "imagenes-ver",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "imagenes-ver" */
+
+                        "../components/imagenes-login/VerImagenesComponent.vue"
+                    )
+            },
+            {
+                path: "agregar",
+                name: "imagenes-agregar",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "imagenes-agregar" */
+
+                        "../components/imagenes-login/FromImagenComponent.vue"
+                    )
+            },
+            {
+                path: "editar/:idImagen",
+                name: "imagenes-editar",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "imagenes-editar" */
+
+                        "../components/imagenes-login/FromImagenComponent.vue"
+                    )
+            }
+        ]
+    },
+
+    // ------------------------------- QUIENES SOMOS ------------------------------------------
+    {
+        path: "/quienes-somos",
+        name: "quienes-somos",
+        component: () =>
+            import(
+                /* webpackChunkName: "quienes-somos" */
+
+                "../components/sitio-web/quienes-somos/NavQuienesSomosComponent.vue"
+            ),
+        children: [
+            {
+                path: "mision",
+                name: "mision",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "mision" */
+
+                        "../components/sitio-web/quienes-somos/MisionComponent.vue"
+                    )
+            },
+            {
+                path: "vision",
+                name: "vision",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "vision" */
+
+                        "../components/sitio-web/quienes-somos/VisionComponent.vue"
+                    )
+            },
+            {
+                path: "objetivos",
+                name: "objetivos",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "objetivos" */
+
+                        "../components/sitio-web/quienes-somos/ObjetivosComponent.vue"
+                    )
+            }
+        ]
+    },
+
+    // ------------------------------- DOCUMENTOS ------------------------------------------
+    {
+        path: "/documentos",
+        name: "documentos",
+        component: () =>
+            import(
+                /* webpackChunkName: "documentos" */
+
+                "../components/sitio-web/documentos/NavComponent.vue"
+            ),
+        children: [
+            {
+                path: "proyectos",
+                name: "proyectos",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "proyectos" */
+
+                        "../components/sitio-web/documentos/proyectos/ContainerComponent.vue"
+                    )
+            },
+            {
+                path: "publicaciones",
+                name: "publicaciones",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "publicaciones" */
+
+                        "../components/sitio-web/documentos/publicaciones/ContainerComponent.vue"
+                    )
+            }
+        ]
+    }
     /**{
         path: "*",
         name: "",
@@ -1176,5 +1105,9 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 });
+
+/**router.beforeEach((to, from, next) => {
+    next();
+}); */
 
 export default router;

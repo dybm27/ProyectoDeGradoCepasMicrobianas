@@ -44,7 +44,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('my_modal_eliminarCepa')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarCepa">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarCepa">Eliminar</button>
         </div>
       </div>
     </modal>

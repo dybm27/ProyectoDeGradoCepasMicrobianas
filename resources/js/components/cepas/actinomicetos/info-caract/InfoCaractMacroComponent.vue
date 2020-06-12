@@ -21,7 +21,7 @@
             <button
               v-show="mostrarBtnAgregarComputed"
               @click="abrirForm"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Medio</button>
           </div>
         </div>
@@ -47,7 +47,7 @@
                   <template v-if="mostrar2">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive2" @click="cambiarActive(2)">
-                        <div class="widget-number text-warning">Medio 2</div>
+                        <div class="widget-number text-success">Medio 2</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
@@ -60,7 +60,7 @@
                   <template v-if="mostrar3">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
-                        <div class="widget-number text-danger">Medio 3</div>
+                        <div class="widget-number text-success">Medio 3</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
@@ -124,7 +124,7 @@
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
                   <span class="pr-1">
-                    <b class="text-warning">NO SE HA AGREGADO NINGÚN MEDIO</b>
+                    <b class="text-success">NO SE HA AGREGADO NINGÚN MEDIO</b>
                   </span>
                 </h5>
               </div>
@@ -150,7 +150,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('eliminar_caract_macro')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarMedio">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarMedio">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -177,7 +177,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
       "accionEliminarCaract"
@@ -353,7 +353,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getCaractMacro"]),
+    ...vuex.mapGetters("cepa", ["getCaractMacro"]),
     computedActive1() {
       return this.active1;
     },

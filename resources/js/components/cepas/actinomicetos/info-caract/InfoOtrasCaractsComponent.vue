@@ -21,7 +21,7 @@
             <button
               v-show="mostrarBtnAgregarComputed"
               @click="btnAgregar"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Característica</button>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <div class="text-center">
             <h5 class="mt-5 mb-5">
               <span class="pr-1">
-                <b class="text-warning">AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS</b>
+                <b class="text-success">AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS</b>
               </span>
             </h5>
           </div>
@@ -66,7 +66,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('otras_caract')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminar">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminar">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -85,7 +85,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
       "accionEliminarCaract"
@@ -151,7 +151,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getOtrasCaract"]),
+    ...vuex.mapGetters("cepa", ["getOtrasCaract"]),
     mostrarBtnEliminar() {
       if (this.getOtrasCaract) {
         return true;

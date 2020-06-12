@@ -34,7 +34,7 @@
               class="btn btn-secondary"
               @click="$modal.hide('my_modal_eliminar_metodo')"
             >Cancelar</button>
-            <button type="button" class="btn btn-primary" @click="eliminarMetodo">Eliminar</button>
+            <button type="button" class="btn btn-success" @click="eliminarMetodo">Eliminar</button>
           </div>
         </div>
       </modal>
@@ -43,7 +43,7 @@
       <div class="text-center">
         <h5 class="mt-5 mb-5">
           <span class="pr-1">
-            <b class="text-warning">NO SE HA AGREGADO NINGÚN MÉTODO</b>
+            <b class="text-success">NO SE HA AGREGADO NINGÚN MÉTODO</b>
           </span>
         </h5>
       </div>
@@ -69,7 +69,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionEliminarCaract"]),
+    ...vuex.mapActions("cepa", ["accionEliminarCaract"]),
 
     toastr(titulo, msg, tipo, time) {
       this.$toastr.Add({
@@ -124,7 +124,7 @@ export default {
   },
 
   computed: {
-    ...vuex.mapGetters(["getMetodoConser"])
+    ...vuex.mapGetters("cepa", ["getMetodoConser"])
   },
   created() {
     if (this.$route.params.cepaHongoId) {

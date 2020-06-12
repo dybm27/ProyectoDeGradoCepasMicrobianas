@@ -56815,7 +56815,7 @@
 			for (e in this.mapData = c.Map.maps[this.params.map], this.markers = {}, this.regions = {}, this.regionsColors = {}, this.regionsData = {}, this.container = c.$("<div>").addClass("jvectormap-container"), this.params.container && this.params.container.append(this.container), this.container.data("mapObject", this), this.defaultWidth = this.mapData.width, this.defaultHeight = this.mapData.height, this.setBackgroundColor(this.params.backgroundColor), this.onResize = function() {
 					i.updateSize()
 				}, c.$(window).resize(this.onResize), c.Map.apiEvents) this.params[e] && this.container.bind(c.Map.apiEvents[e] + ".jvectormap", this.params[e]);
-			this.canvas = new c.VectorCanvas(this.container[0], this.width, this.height), this.params.bindTouchEvents && ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch ? this.bindContainerTouchEvents() : window.MSGesture && this.bindContainerPointerEvents()), this.bindContainerEvents(), this.bindElementEvents(), this.createTip(), this.params.zoomButtons && this.bindZoomButtons(), this.createRegions(), this.createMarkers(this.params.markers || {}), this.updateSize(), this.params.focusOn && ("string" == typeof this.params.focusOn ? this.params.focusOn = {
+			this.canvas = new c.VectorCanvas(this.container[0], this.width, this.height), this.params.bindTouchEvents && ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch ? this.bindContainerTouchEvents() : window.MSGesture && this.bindContainerPointerEvents()), this.bindContainerEvents(), this.bindElementEvents(), this.params.zoomButtons && this.bindZoomButtons(), this.createRegions(), this.createMarkers(this.params.markers || {}), this.updateSize(), this.params.focusOn && ("string" == typeof this.params.focusOn ? this.params.focusOn = {
 				region: this.params.focusOn
 			} : c.$.isArray(this.params.focusOn) && (this.params.focusOn = {
 				regions: this.params.focusOn
@@ -56913,17 +56913,6 @@
 					t.setScale(t.scale * t.params.zoomStep, t.width / 2, t.height / 2, !1, t.params.zoomAnimate)
 				}), this.container.find(".jvectormap-zoomout").click(function() {
 					t.setScale(t.scale / t.params.zoomStep, t.width / 2, t.height / 2, !1, t.params.zoomAnimate)
-				})
-			},
-			createTip: function() {
-				var t = this;
-				this.tip = c.$("<div/>").addClass("jvectormap-tip").appendTo(c.$("body")), this.container.mousemove(function(e) {
-					var i = e.pageX - 15 - t.tipWidth,
-						n = e.pageY - 15 - t.tipHeight;
-					5 > i && (i = e.pageX + 15), 5 > n && (n = e.pageY + 15), t.tip.css({
-						left: i,
-						top: n
-					})
 				})
 			},
 			setScale: function(t, e, i, n, a) {

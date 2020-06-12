@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\ImagenLogin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -42,7 +43,8 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('login');
+        $imagenes = ImagenLogin::all();
+        return view('login', compact('imagenes'));
     }
 
     protected function sendLoginResponse(Request $request)
@@ -52,6 +54,6 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended($this->redirectPath());
+            ?: redirect()->intended($this->redirectPath());
     }
 }

@@ -211,15 +211,15 @@
             </div>
           </template>
           <template v-if="tipo==='contraseña'">
-            <label for="pass1" class>Contraseña</label>
+            <label for="pass" class>Contraseña</label>
             <div class="input-group mb-3">
               <input
-                name="pass1"
-                id="pass1"
+                name="pass"
+                id="pass"
                 placeholder="..."
                 :type="showPass==true?'text':'password'"
                 :class="['form-control',validarContraseña===true? 'is-invalid':'']"
-                v-model="pass1"
+                v-model="pass"
                 required
               />
               <div class="input-group-append">
@@ -278,12 +278,13 @@ export default {
   data() {
     return {
       showPass: false,
+      showPass1: false,
       titulo: "",
       tipo: "",
       nombre: "",
       imagen: "",
+      pass: "",
       pass1: "",
-      pass2: "",
       errorImagen: "",
       errorPass: "",
       errorNombre: "",
@@ -291,13 +292,14 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionUsuario", "accionModificarAuth"]),
+    ...vuex.mapActions("usuarios", ["accionUsuario"]),
+    ...vuex.mapActions(["accionModificarAuth"]),
     cambiarValorImagen(valor) {
       this.imagen = valor;
     },
     showModal(tipo) {
       this.nombre = "";
-      this.pass1 = "";
+      this.pass = "";
       this.imagen = "";
       this.tipo = tipo;
       switch (tipo) {
@@ -363,7 +365,7 @@ export default {
     eventBtn() {
       let parametros = {
         nombre: this.nombre,
-        pass: this.pass1,
+        pass: this.pass,
         imagen: this.imagen
       };
       switch (this.tipo) {
@@ -425,7 +427,12 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getTipoUserById", "getTipoUser", "getUserAuth"]),
+    ...vuex.mapGetters("usuarios", [
+      "getTipoUserById",
+      "getTipoUser",
+      "getUserAuth"
+    ]),
+    ...vuex.mapGetters(["getUserAuth"]),
     validarNombre() {
       let letters = /^[A-Za-z\s]+$/;
       if (this.nombre) {
@@ -441,8 +448,8 @@ export default {
       }
     },
     validarContraseñas() {
-      if (this.pass2) {
-        if (this.pass1 != this.pass2) {
+      if (this.pass1) {
+        if (this.pass != this.pass1) {
           return true;
         } else {
           return false;
@@ -451,8 +458,8 @@ export default {
     },
     validarContraseña() {
       let regexp_password = /^(?=.*[A-Z])(?=.*\d)(?=.*[$@!%?&#()"'|_])([A-Za-z\d$@!%?&#()"'|_]){8,15}$/;
-      if (this.pass1) {
-        if (!regexp_password.test(this.pass1)) {
+      if (this.pass) {
+        if (!regexp_password.test(this.pass)) {
           this.errorPass = ` La contraseña debe tener:
                 1: Mínimo 8 y Máximo 15 caracteres
                 2: Al menos una letra mayúscula

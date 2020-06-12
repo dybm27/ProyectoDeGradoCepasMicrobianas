@@ -44,6 +44,7 @@
             <div class="card-header d-flex">
               Exportar a PDF
               <button
+                :disabled="btnTodoDisabled"
                 class="btn-icon btn-icon-only btn-pill btn btn-outline-success ml-auto"
                 @click="imprimir('todo')"
               >
@@ -82,7 +83,11 @@
                 </select>
                 <em v-if="errorSelect" class="error invalid-feedback">{{errorSelect}}</em>
               </div>
-              <button class="btn btn-danger" @click="imprimir('select')">Solo lo Seleccionado</button>
+              <button
+                class="btn btn-danger"
+                @click="imprimir('select')"
+                :disabled="btnSeleccionadoDisabled"
+              >Solo lo Seleccionado</button>
             </div>
           </div>
         </div>
@@ -95,12 +100,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Macroscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('macro')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMacro">
@@ -177,12 +180,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Microscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('micro')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMicro">
@@ -263,12 +264,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Fisiológicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('fisio')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractFisio">
@@ -336,12 +335,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Bioquímicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('bioqui')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractBioqui">
@@ -485,12 +482,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Identificación Molecular</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('identi')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarIdentiMolecu">
@@ -582,12 +577,10 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Métodos De Conservación</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <button
+            <img
+              :src="'/iconos/icons8-vista-general-3-35.png'"
               @click="mostrarOcultarCaract('metodo')"
-              class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-info"
-            >
-              <i class="lnr-menu btn-icon-wrapper"></i>
-            </button>
+            />
           </div>
         </div>
         <div class="container mb-3 mt-3 ml-3 mr-3" v-if="mostrarMetodosConser">
@@ -746,25 +739,37 @@ export default {
         fila1: [],
         fila2: [],
         fila3: []
-      }
+      },
+      btnTodo: false,
+      btnSeleccionado: false
     };
   },
   computed: {
-    ...vuex.mapGetters([
+    ...vuex.mapGetters("cepa", [
       "getCepa",
       "getCaractMacro",
       "getCaractMicro",
       "getCaractBioqui",
       "getCaractFisio",
       "getMetodoConser",
-      "getIdentiMolecu",
+      "getIdentiMolecu"
+    ]),
+    ...vuex.mapGetters("info_cepas", [
       "getGrupoCepa",
       "getGeneroCepa",
-      "getEspecieCepa",
+      "getEspecieCepa"
+    ]),
+    ...vuex.mapGetters("info_caract", [
       "getInfoCaractMacroBacteriasById",
       "getInfoCaractMicroBacteriasById",
       "getInfoMetodoConserBacteriasById"
-    ])
+    ]),
+    btnTodoDisabled() {
+      return this.btnTodo;
+    },
+    btnSeleccionadoDisabled() {
+      return this.btnSeleccionado;
+    }
   },
   methods: {
     imprimir(tipo) {
@@ -782,6 +787,8 @@ export default {
           break;
       }
       if (imprimir) {
+        this.btnTodo = true;
+        this.btnSeleccionado = true;
         this.toastr(
           "Descarga!!",
           `La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. 
@@ -813,8 +820,13 @@ export default {
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            this.btnTodo = false;
+            this.btnSeleccionado = false;
           })
-          .catch(error => {});
+          .catch(error => {
+            this.btnTodo = false;
+            this.btnSeleccionado = false;
+          });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
       }

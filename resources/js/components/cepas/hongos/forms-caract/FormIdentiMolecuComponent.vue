@@ -260,7 +260,7 @@
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
                   <span class="pr-1">
-                    <b class="text-warning">SIN IMAGEN PCR</b>
+                    <b class="text-success">SIN IMAGEN PCR</b>
                   </span>
                 </h5>
               </div>
@@ -304,7 +304,7 @@
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
                   <span class="pr-1">
-                    <b class="text-warning">SIN IMAGEN BLAST</b>
+                    <b class="text-success">SIN IMAGEN BLAST</b>
                   </span>
                 </h5>
               </div>
@@ -317,7 +317,7 @@
 </template>
 
 <script>
-import vuex, { mapGetters } from "vuex";
+import vuex from "vuex";
 export default {
   props: ["info", "modificarInfo"],
   data() {
@@ -544,7 +544,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getGeneroCepa", "getEspecieCepa"]),
+    ...vuex.mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"]),
     mostraImagenPcr() {
       return this.imagenMiniaturaPcr;
     },
@@ -553,7 +553,7 @@ export default {
     },
     btnClase() {
       if (this.tituloForm === "Agregar Identificación") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

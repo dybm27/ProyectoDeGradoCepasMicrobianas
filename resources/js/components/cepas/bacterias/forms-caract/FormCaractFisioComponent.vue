@@ -105,7 +105,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMÁGENES</b>
+                      <b class="text-success">SIN IMÁGENES</b>
                     </span>
                   </h5>
                 </div>
@@ -128,8 +128,6 @@
 </template>
 
 <script>
-import vuex from "vuex";
-
 export default {
   props: ["info", "modificarInfo"],
   watch: {
@@ -366,7 +364,7 @@ export default {
     },
     btnClase() {
       if (this.tituloForm === "Agregar Característica") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

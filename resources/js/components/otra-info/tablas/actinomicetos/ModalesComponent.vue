@@ -10,7 +10,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Agregar {{primeraMayus(modal.tipo)}}</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_agregar_tipo_actinomiceto')">
+          <button
+            type="button"
+            class="close"
+            @click="$modal.hide('modal_agregar_tipo_actinomiceto')"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -40,7 +44,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="agregarTipo"
             :disabled="validarNombre"
           >Agregar</button>
@@ -57,7 +61,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Editar {{primeraMayus(modal.tipo)}}</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_editar_tipo_actinomiceto')">
+          <button
+            type="button"
+            class="close"
+            @click="$modal.hide('modal_editar_tipo_actinomiceto')"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -86,7 +94,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="editarTipo"
             :disabled="validarNombre"
           >Editar</button>
@@ -103,7 +111,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{primeraMayus(modal.tipo)}}</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_eliminar_tipo_actinomiceto')">
+          <button
+            type="button"
+            class="close"
+            @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -116,7 +128,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarTipo">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -135,7 +147,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractActinomiceto",
       "accionEditarTipoCaractActinomiceto",
       "accionEliminarTipoCaractActinomiceto"
@@ -177,7 +189,10 @@ export default {
     },
     editarTipo() {
       axios
-        .put(`/info-caract-actinomicetos/editar/${this.idTipoEditar}`, this.modal)
+        .put(
+          `/info-caract-actinomicetos/editar/${this.idTipoEditar}`,
+          this.modal
+        )
         .then(res => {
           this.accionEditarTipoCaractActinomiceto({
             info: res.data,

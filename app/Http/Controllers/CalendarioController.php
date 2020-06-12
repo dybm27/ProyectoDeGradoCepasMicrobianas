@@ -41,8 +41,6 @@ class CalendarioController extends Controller
         $evento->descripcion = $request->descripcion;
         $evento->save();
 
-        $this->crearSeguimiento("Agregó el evento: " . $evento->titulo);
-
         return $evento;
     }
 
@@ -70,8 +68,6 @@ class CalendarioController extends Controller
         $evento->descripcion = $request->descripcion;
         $evento->save();
 
-        $this->crearSeguimiento("Editó el evento: " .  $titulo);
-
         return $evento;
     }
 
@@ -80,18 +76,6 @@ class CalendarioController extends Controller
         $evento = Evento::where('id', $id)->first();
         $evento->delete();
 
-        $this->crearSeguimiento("Eliminó el evento: " . $evento->titulo);
-
         return $evento;
-    }
-
-    public function crearSeguimiento($accion)
-    {
-        $seguimiento = new Seguimiento();
-        $seguimiento->nombre_responsable = Auth::user()->name;
-        $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
-        $seguimiento->accion = $accion;
-        $seguimiento->save();
     }
 }

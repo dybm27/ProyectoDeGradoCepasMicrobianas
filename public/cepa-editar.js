@@ -393,7 +393,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mostrarForm: true
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarTipoCepa"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa"]), {
     evento: function evento() {
       var _this = this;
 
@@ -466,7 +466,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     verificarTipo: function verificarTipo() {
       if (!this.$route.params.cepaId) {
         this.nombre = "Agregar Nueva Cepa";
-        this.classBtn = "btn-primary";
+        this.classBtn = "btn-success";
         this.nombreBtn = "Guardar";
         this.mostrarForm = true;
       } else {
@@ -621,7 +621,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId"]), {
     mostrarFormComputed: function mostrarFormComputed() {
       return this.mostrarForm;
     }
@@ -1568,7 +1568,9 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "custom-checkbox custom-control" },
+                          {
+                            staticClass: "custom-checkbox custom-control mb-2"
+                          },
                           [
                             _c("input", {
                               directives: [

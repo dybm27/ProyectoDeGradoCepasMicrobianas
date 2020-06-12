@@ -37,7 +37,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('color')"
                       >
                         <i class="fas fa-plus"></i>
@@ -60,7 +60,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('textura')"
                       >
                         <i class="fas fa-plus"></i>
@@ -136,7 +136,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -180,7 +180,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -222,7 +222,7 @@ export default {
     }
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoCaractHongo"]),
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -392,13 +392,13 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoCaractMacroHongos"]),
+    ...vuex.mapGetters("info_caract", ["getInfoCaractMacroHongos"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

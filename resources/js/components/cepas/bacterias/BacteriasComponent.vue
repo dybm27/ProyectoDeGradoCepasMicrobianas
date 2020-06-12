@@ -32,12 +32,12 @@
         <div class="page-title-actions">
           <router-link
             v-if="ocultar"
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
+            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
             :to="{name: 'cepa-bacteria-agregar'}"
           >Agregar Nueva Cepa - Bacteria</router-link>
           <router-link
             v-else
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
+            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
             :to="{name: 'cepas-bacterias'}"
           >Volver</router-link>
         </div>
@@ -58,7 +58,8 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["obtenerTiposCepas", "obtenerInfoCaractBacterias"]),
+    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("info_caract", ["obtenerInfoCaractBacterias"]),
     ocultarLink(ruta) {
       if (ruta != "/bacterias/tabla") {
         this.ruta = false;

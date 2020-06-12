@@ -93,7 +93,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     toastr: function toastr(titulo, msg, tipo) {
       this.$toastr.Add({
         title: titulo,
@@ -161,7 +161,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.mostrarBtnAgregar = true;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getIdentiBioqui"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getIdentiBioqui"]), {
     mostrarBtnEliminar: function mostrarBtnEliminar() {
       if (this.getIdentiBioqui) {
         return true;
@@ -272,7 +272,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
                       on: { click: _vm.btnAgregar }
                     },
                     [_vm._v("Agregar Identificación")]
@@ -350,7 +350,7 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "btn btn-primary",
+                staticClass: "btn btn-success",
                 attrs: { type: "button" },
                 on: { click: _vm.eliminar }
               },
@@ -389,7 +389,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-center" }, [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
-          _c("b", { staticClass: "text-warning" }, [
+          _c("b", { staticClass: "text-success" }, [
             _vm._v("AÚN NO SE HAN AGREGADO LA IDENTIFICACIÓN")
           ])
         ])

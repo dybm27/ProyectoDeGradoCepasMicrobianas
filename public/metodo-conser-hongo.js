@@ -41,43 +41,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      variableAgregar: true
+      formulario: false,
+      id: 0
     };
   },
   methods: {
-    agregar: function agregar() {
-      var ruta = window.location.pathname;
-      this.variableAgregar = false;
+    abrirFormulario: function abrirFormulario(id) {
+      if (id != 0) {
+        this.id = id;
+      } else {
+        this.id = 0;
+      }
 
-      if (ruta.includes("hongos")) {
-        this.$router.push({
-          name: "metodo-conser-hongo-agregar"
-        });
-      } else {
-        this.$router.push({
-          name: "metodo-conser-cepa-hongo-agregar"
-        });
-      }
+      this.formulario = !this.formulario;
     },
-    cancelar: function cancelar() {
-      this.variableAgregar = true;
-      this.$router.go(-1);
-    },
-    cambiarVariable: function cambiarVariable(tipo) {
-      if (tipo === "agregar_editar") {
-        this.variableAgregar = false;
-      } else {
-        this.variableAgregar = true;
-      }
+    cambiarVariableFormulario: function cambiarVariableFormulario() {
+      this.formulario = !this.formulario;
     }
   },
-  computed: {
-    mostrarBtnAgregar: function mostrarBtnAgregar() {
-      return this.variableAgregar;
-    }
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on("abrirFormularioMetodoHongo", function (e) {
+      return _this.abrirFormulario(e);
+    });
   }
 });
 
@@ -108,16 +103,20 @@ var render = function() {
             "div",
             { staticClass: "btn-actions-pane-right text-capitalize" },
             [
-              _vm.mostrarBtnAgregar
+              !_vm.formulario
                 ? [
                     _c(
                       "button",
                       {
                         staticClass:
-                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
-                        on: { click: _vm.agregar }
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
                       },
-                      [_vm._v("Agregar Método")]
+                      [_vm._v("Agregar")]
                     )
                   ]
                 : [
@@ -126,7 +125,11 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                        on: { click: _vm.cancelar }
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
                       },
                       [_vm._v("Cancelar")]
                     )
@@ -138,8 +141,17 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          [_c("router-view", { on: { cambiarVariable: _vm.cambiarVariable } })],
-          1
+          [
+            !_vm.formulario
+              ? [_c("tabla-metodo-conser-hongo")]
+              : [
+                  _c("form-metodo-conser-hongo", {
+                    attrs: { idMetodo: _vm.id },
+                    on: { cambiarVariable: _vm.cambiarVariableFormulario }
+                  })
+                ]
+          ],
+          2
         )
       ])
     ])

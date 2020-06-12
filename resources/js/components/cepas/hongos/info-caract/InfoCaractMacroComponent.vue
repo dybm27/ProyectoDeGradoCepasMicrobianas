@@ -21,7 +21,7 @@
             <button
               v-show="mostrarBtnAgregarComputed"
               @click="abrirForm"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Medio</button>
           </div>
         </div>
@@ -129,7 +129,7 @@
               <div class="text-center">
                 <h5 class="mt-5 mb-5">
                   <span class="pr-1">
-                    <b class="text-warning">NO SE HA AGREGADO NINGÚN MEDIO</b>
+                    <b class="text-success">NO SE HA AGREGADO NINGÚN MEDIO</b>
                   </span>
                 </h5>
               </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarMedio">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarMedio">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -177,7 +177,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
       "accionEliminarCaract"
@@ -350,7 +350,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getCaractMacro"]),
+    ...vuex.mapGetters("cepa", ["getCaractMacro"]),
     computedActive1() {
       return this.active1;
     },

@@ -202,7 +202,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     agregarInfo: function agregarInfo(data) {
       this.accionAgregarCaract({
         tipo: "macro",
@@ -394,7 +394,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getCaractMacro"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMacro"]), {
     computedActive1: function computedActive1() {
       return this.active1;
     },
@@ -551,7 +551,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
+                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
                     on: { click: _vm.abrirForm }
                   },
                   [_vm._v("Agregar Medio")]
@@ -636,7 +636,7 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "widget-number text-warning"
+                                                "widget-number text-success"
                                             },
                                             [_vm._v("Medio 2")]
                                           ),
@@ -678,7 +678,7 @@ var render = function() {
                                             "div",
                                             {
                                               staticClass:
-                                                "widget-number text-danger"
+                                                "widget-number text-success"
                                             },
                                             [_vm._v("Medio 3")]
                                           ),
@@ -907,7 +907,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: { type: "button" },
                   on: { click: _vm.eliminarMedio }
                 },
@@ -971,7 +971,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-center" }, [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
-          _c("b", { staticClass: "text-warning" }, [
+          _c("b", { staticClass: "text-success" }, [
             _vm._v("NO SE HA AGREGADO NINGÚN MEDIO")
           ])
         ])

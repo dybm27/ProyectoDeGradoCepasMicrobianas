@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12 col-lg-12">
         <button
-          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"
           v-tooltip.left="'Agregar y Editar Caracteristicas'"
           @click="itemAction('agregar-editar-caract', rowData, rowIndex)"
         >
@@ -11,7 +11,7 @@
         </button>
 
         <button
-          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-primary"
+          class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
           v-tooltip="'Ver Cepa'"
           @click="itemAction('ver-cepa', rowData, rowIndex)"
         >
@@ -202,8 +202,6 @@ export default {
     showModal(data) {
       this.$modal.show("my_modal_eliminarCepa", { id: data.id });
     }
-  },
-  computed: {},
-  created() {}
+  }
 };
 </script>

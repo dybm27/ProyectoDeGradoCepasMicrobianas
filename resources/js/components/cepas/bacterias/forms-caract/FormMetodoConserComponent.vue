@@ -24,7 +24,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('metodo_conser')"
                       >
                         <i class="fas fa-plus"></i>
@@ -165,7 +165,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -205,7 +205,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -218,6 +218,7 @@ import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 
 export default {
+  props: ["idMetodo"],
   components: { DatePicker },
   data() {
     return {
@@ -246,11 +247,8 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
-      "accionAgregarTipoCaractBacteria",
-      "accionAgregarCaract",
-      "accionEditarCaract"
-    ]),
+    ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -279,8 +277,7 @@ export default {
               "Método agregado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -299,8 +296,7 @@ export default {
               "Método editado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -310,14 +306,6 @@ export default {
               // console.log(error.response.data);
             }
           });
-      }
-    },
-    redireccionar() {
-      let ruta = window.location.pathname;
-      if (ruta.includes("bacterias")) {
-        this.$router.push({ name: "metodo-conser-bacteria" });
-      } else {
-        this.$router.push({ name: "metodo-conser-cepa-bacteria" });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -429,7 +417,8 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoMetodoConserBacterias", "getMetodoConserById"]),
+    ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
+    ...vuex.mapGetters("info_caract", ["getInfoMetodoConserBacterias"]),
     mostrarAgar() {
       if (this.parametros.tipo_metodo === 4) {
         return true;
@@ -442,7 +431,7 @@ export default {
     },
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -490,14 +479,11 @@ export default {
     }
   },
   created() {
-    this.$emit("cambiarVariable", "agregar_editar");
-    if (!this.$route.params.metodoConserBacteriaId) {
+    if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
     } else {
-      this.info = this.getMetodoConserById(
-        this.$route.params.metodoConserBacteriaId
-      );
+      this.info = this.getMetodoConserById(this.idMetodo);
       this.llenarInfo();
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";

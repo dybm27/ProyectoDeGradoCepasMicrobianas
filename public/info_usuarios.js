@@ -105,7 +105,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
                       on: { click: _vm.agregar }
                     },
                     [_vm._v("Agregar Usuario")]

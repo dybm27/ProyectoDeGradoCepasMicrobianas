@@ -209,15 +209,26 @@
                         </div>
                       </div>
                     </div>
+                    <div class="position-relative form-group">
+                      <label for="fer_inositol" class>Otro Azúcar</label>
+                      <input
+                        name="fer_inositol"
+                        id="fer_inositol"
+                        placeholder="..."
+                        type="text"
+                        class="form-control"
+                        v-model="parametros.fer_otro"
+                      />
+                    </div>
                   </div>
                   <div class="col-md-6">
                     <div class="position-relative form-group">
                       <label for="otras_caract">Otras Características</label>
                       <textarea
-                        style="height: 153px;"
+                        style="height: 200px;"
                         name="otras_caract"
                         id="otras_caract"
-                        class="form-control"
+                        class="form-control mt-2"
                         v-model="parametros.otras_caract"
                       ></textarea>
                     </div>
@@ -252,7 +263,7 @@
                   <div class="text-center">
                     <h5 class="mt-5 mb-5">
                       <span class="pr-1">
-                        <b class="text-warning">SIN IMÁGENES</b>
+                        <b class="text-success">SIN IMÁGENES</b>
                       </span>
                     </h5>
                   </div>
@@ -283,8 +294,6 @@
 </template>
 
 <script>
-import vuex from "vuex";
-
 export default {
   props: ["info", "modificarInfo"],
   watch: {
@@ -309,12 +318,13 @@ export default {
         fer_lactosa: "",
         fer_inositol: "",
         fer_sacarosa: "",
+        fer_otro: "",
         hidro_gelatina: "",
         hidro_urea: "",
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: "",
+        imagen3: ""
       },
       tituloForm: "",
       nomBtn: "",
@@ -516,6 +526,7 @@ export default {
       this.parametros.fer_lactosa = this.info.fer_lactosa;
       this.parametros.fer_inositol = this.info.fer_inositol;
       this.parametros.fer_sacarosa = this.info.fer_sacarosa;
+      this.parametros.fer_otro = this.info.fer_otro;
       this.parametros.hidro_gelatina = this.info.hidro_gelatina;
       this.parametros.hidro_urea = this.info.hidro_urea;
       this.parametros.otras_caract = this.info.otras_caract;
@@ -538,7 +549,7 @@ export default {
     },
     btnClase() {
       if (this.tituloForm === "Agregar Identificación") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }

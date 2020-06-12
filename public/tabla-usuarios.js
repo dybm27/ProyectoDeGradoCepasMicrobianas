@@ -90,7 +90,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       titulo_modal: ""
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions(["accionAgregarTipoUsers"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("usuarios", ["accionAgregarTipoUsers"]), {
     toastr: function toastr(titulo, msg, tipo, time) {
       this.$toastr.Add({
         title: titulo,
@@ -134,7 +134,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.idUsuarioEliminar = data.params.id;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getUsuarios"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("usuarios", ["getUsuarios"]))
 });
 
 /***/ }),
@@ -234,7 +234,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-primary",
+                        staticClass: "btn btn-success",
                         attrs: { type: "button" },
                         on: { click: _vm.eliminarUsuario }
                       },
@@ -258,7 +258,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-center" }, [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
-          _c("b", { staticClass: "text-warning" }, [
+          _c("b", { staticClass: "text-success" }, [
             _vm._v("NO SE HAN AGREGADO USUARIOS")
           ])
         ])

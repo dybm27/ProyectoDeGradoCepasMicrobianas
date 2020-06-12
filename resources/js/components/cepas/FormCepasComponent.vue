@@ -261,7 +261,7 @@
                     v-model="parametros.otras_caracteristicas"
                   ></textarea>
                 </div>
-                <div class="custom-checkbox custom-control">
+                <div class="custom-checkbox custom-control mb-2">
                   <input
                     type="checkbox"
                     id="publicar"
@@ -377,7 +377,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoCepa"]),
+    ...vuex.mapActions("info_cepas", ["accionAgregarTipoCepa"]),
     evento() {
       if (this.nombre === "Editar Cepa") {
         axios
@@ -444,7 +444,7 @@ export default {
     verificarTipo() {
       if (!this.$route.params.cepaId) {
         this.nombre = "Agregar Nueva Cepa";
-        this.classBtn = "btn-primary";
+        this.classBtn = "btn-success";
         this.nombreBtn = "Guardar";
         this.mostrarForm = true;
       } else {
@@ -599,7 +599,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters([
+    ...vuex.mapGetters("info_cepas", [
       "getGrupos",
       "getGeneros",
       "getEspecies",

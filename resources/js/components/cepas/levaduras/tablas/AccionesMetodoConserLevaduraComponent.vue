@@ -36,20 +36,7 @@ export default {
   },
   methods: {
     itemAction(action, data, index) {
-      if (action == "editar-metodo") {
-        let ruta = window.location.pathname;
-        if (ruta.includes("levaduras")) {
-          this.$router.push({
-            name: "metodo-conser-levadura-editar",
-            params: { metodoConserLevaduraId: data.id }
-          });
-        } else {
-          this.$router.push({
-            name: "metodo-conser-cepa-levadura-editar",
-            params: { metodoConserLevaduraId: data.id }
-          });
-        }
-      }
+      this.$events.fire("abrirFormularioMetodoLevadura", data.id);
     },
     showModal(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });
