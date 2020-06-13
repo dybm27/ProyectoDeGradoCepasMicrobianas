@@ -89,6 +89,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/cepas/agregar', 'CepaController@store');
     Route::put('/cepas/editar/{id}', 'CepaController@update');
     Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
+    Route::put('/cepas/publicar/{id}', 'CepaController@publicar');
 
     //-- crud info-cepas
     Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
@@ -462,7 +463,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/exportar/tabla/proyectos', 'ExportarExcelSitioWebController@proyectosTabla');
     Route::get('/exportar/publicaciones', 'ExportarExcelSitioWebController@publicaciones');
     Route::get('/exportar/tabla/publicaciones', 'ExportarExcelSitioWebController@publicacionesTabla');
-
+    Route::get('/exportar/equipamientos', 'ExportarExcelSitioWebController@equipamientos');
+    Route::get('/exportar/tabla/equipamientos', 'ExportarExcelSitioWebController@equipamientosTabla');
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
@@ -503,6 +505,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/documentos/{id}', 'DocumentosController@destroy');
     //equipamiento
     Route::get('/equipamientos', 'EquipamientoController@index')->name('equipamiento');
+    Route::post('/equipamientos', 'EquipamientoController@store');
+    Route::put('/equipamientos/{id}', 'EquipamientoController@update');
+    Route::delete('/equipamientos/{id}', 'EquipamientoController@destroy');
     //publicidad
     Route::get('/publicidad/noticias', 'PublicidadController@index')->name('noticias');
 
@@ -598,6 +603,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('proyectos-tabla', 'InfoPanelSitioWebController@proyectosTabla');
         Route::get('publicaciones-tabla', 'InfoPanelSitioWebController@publicacionesTabla');
         Route::get('documentos', 'InfoPanelSitioWebController@documentos');
+        Route::get('equipamientos-tabla', 'InfoPanelSitioWebController@equipamientosTabla');
+        Route::get('equipamientos', 'InfoPanelSitioWebController@equipamientos');
     });
 
 

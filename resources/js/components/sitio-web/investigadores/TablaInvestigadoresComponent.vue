@@ -55,7 +55,6 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      idCepaEliminar: "",
       fields: FieldDefs,
       sortOrder: [
         {

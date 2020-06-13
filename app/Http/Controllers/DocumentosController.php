@@ -16,18 +16,6 @@ class DocumentosController extends Controller
 
     public function store(Request $request)
     {
-        switch ($request->tipo) {
-            case 'proyecto':
-                $reglas = ['nombre' => 'unique:proyectos,nombre'];
-                $mensajes = ['nombre.unique' => 'Ya existe un proyecto con ese nombre'];
-                break;
-            case 'publicacion':
-                $reglas = ['nombre' => 'unique:publicacions,nombre'];
-                $mensajes = ['nombre.unique' => 'Ya existe una Publicación con ese nombre'];
-                break;
-        }
-        $this->validate($request, $reglas, $mensajes);
-
         $imagen = $this->guardarImagen($request->imagen);
         $archivo = $this->guardarArchivo($request->file('archivo'), $request->nombre . '.pdf');
 
@@ -65,11 +53,7 @@ class DocumentosController extends Controller
         }
 
 
-        if (!is_null($documento2)) {
-            if ($documento2->id != $documento->id) {
-                return response('Ya existe un proyecto con ese nombre', 422);
-            }
-        } else {
+        if (is_null($documento2)) {
             $archivo = $this->moverArchivo($documento->nombre, $request->nombre);
             $documento->ruta = $archivo['ruta'];
             $documento->rutaPublica = $archivo['rutaPublica'];

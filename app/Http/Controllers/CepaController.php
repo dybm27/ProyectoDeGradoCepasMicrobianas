@@ -287,4 +287,12 @@ class CepaController extends Controller
         }
         return $numero;
     }
+
+    public function publicar(Request $request, $id)
+    {
+        $cepa = Cepa::find($id);
+        $cepa->publicar = $request->publicar;
+        $cepa->save();
+        return $cepa;
+    }
 }

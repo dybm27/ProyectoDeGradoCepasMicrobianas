@@ -49,7 +49,7 @@
               :events="eventos"
               @dateClick="dateClick"
               @eventClick="eventClick"
-              @eventRender="eventRender"
+              :eventRender="v => eventRender(v)"
             />
           </div>
         </div>

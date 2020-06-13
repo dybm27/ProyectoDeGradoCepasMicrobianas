@@ -11,6 +11,7 @@ import imagenes_login from "./modulos/imagenes-login";
 import quienes_somos from "./modulos/quienes-somos";
 import investigadores from "./modulos/investigadores";
 import documentos from "./modulos/documentos";
+import equipamientos from "./modulos/equipamientos";
 
 let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
 
@@ -37,13 +38,14 @@ export default new Vuex.Store({
     },
     modules: {
         usuarios,
-       // cepas,
+        // cepas,
         cepa,
         info_caract,
         info_cepas,
         imagenes_login,
         quienes_somos,
         investigadores,
-        documentos
+        documentos,
+        equipamientos
     }
 });

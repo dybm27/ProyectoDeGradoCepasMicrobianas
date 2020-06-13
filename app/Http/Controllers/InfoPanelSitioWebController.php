@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Equipamiento;
 use App\Investigador;
 use App\Mision;
 use App\Objetivo;
@@ -137,6 +138,38 @@ class InfoPanelSitioWebController extends Controller
         $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
 
         $pagination = $publicacions->paginate($perPage);
+
+        return $pagination;
+    }
+
+    public function equipamientos()
+    {
+        return Equipamiento::all();
+    }
+
+    public function equipamientosTabla(Request $request)
+    {
+        $equipamientos = Equipamiento::select(
+            'equipamientos.*'
+        );
+
+        if ($request->filled('sort')) {
+            $sort = explode('|', $request->sort);
+            $equipamientos = $equipamientos->orderBy($sort[0], $sort[1]);
+        }
+
+        if ($request->filled('filter')) {
+            $value = "%{$request->filter}%";
+            $equipamientos = $equipamientos->where(function ($equipamientos) use ($value) {
+                return $equipamientos->orWhere('equipamientos.nombre', 'like', $value)
+                    ->orWhere('equipamientos.funcion', 'like', $value)
+                    ->orWhere('equipamientos.caracteristicas', 'like', $value);
+            });
+        }
+
+        $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+        $pagination = $equipamientos->paginate($perPage);
 
         return $pagination;
     }

@@ -200,7 +200,6 @@ export default {
         axios
           .post("/investigadores", this.parametros)
           .then(res => {
-            console.log(res.data);
             this.accionInvestigador({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Investigador",

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EquipamientosExport;
 use App\Exports\InvestigadoresExport;
 use App\Exports\ObjetivosExport;
 use App\Exports\ProyectosExport;
 use App\Exports\PublicacionesExport;
+use App\Exports\TablaEquipamientosExport;
 use App\Exports\TablaInvestigadoresExport;
 use App\Exports\TablaObjetivosExport;
 use App\Exports\TablaProyectosExport;
@@ -53,5 +55,15 @@ class ExportarExcelSitioWebController extends Controller
     public function publicacionesTabla(Request $request)
     {
         return Excel::download(new TablaPublicacionesExport($request->datos), 'tabla-publicaciones.xlsx');
+    }
+
+    public function equipamientos()
+    {
+        return Excel::download(new EquipamientosExport, 'equipamientos.xlsx');
+    }
+
+    public function equipamientosTabla(Request $request)
+    {
+        return Excel::download(new TablaEquipamientosExport($request->datos), 'tabla-equipamientos.xlsx');
     }
 }

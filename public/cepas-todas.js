@@ -152,7 +152,6 @@ __webpack_require__.r(__webpack_exports__);
       this.idCepaEliminar = data.params.id;
     }
   },
-  computed: {},
   mounted: function mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   }

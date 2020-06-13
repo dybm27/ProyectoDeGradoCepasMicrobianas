@@ -185,6 +185,10 @@ Vue.component('checkboxs_investigadores', require('./components/sitio-web/invest
 Vue.component('form-investigadores', require('./components/sitio-web/investigadores/FormInvestigadoresComponent.vue').default);
 //equipamientos
 Vue.component('equipamientos', require('./components/sitio-web/EquipamientosComponent.vue').default);
+Vue.component('tabla-equipamientos', require('./components/sitio-web/equipamientos/TablaComponent.vue').default);
+Vue.component('acciones_equipamientos', require('./components/sitio-web/equipamientos/AccionesComponent.vue').default);
+Vue.component('checkboxs_equipamientos', require('./components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue').default);
+Vue.component('form-equipamientos', require('./components/sitio-web/equipamientos/FormComponent.vue').default);
 //publicidad
 Vue.component('publicidad', require('./components/sitio-web/PublicidadComponent.vue').default);
 //documentos

@@ -124,7 +124,6 @@ export default {
       this.idCepaEliminar = data.params.id;
     }
   },
-  computed: {},
   mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   }

@@ -8525,7 +8525,7 @@
 						if (1 < e.yaxis.length) throw new Error("Multiple Y Axis for bars are not supported. Switch to column chart by setting plotOptions.bar.horizontal=false");
 						e.xaxis.tooltip.enabled = !1, e.yaxis[0].tooltip.enabled = !1, e.chart.zoom.enabled = !1
 					}
-					return "bar" === e.chart.type && e.tooltip.shared && ("barWidth" === e.xaxis.crosshairs.width && 1 < e.series.length && (console.warn('crosshairs.width = "barWidth" is only supported in single series, not in a multi-series barChart'), e.xaxis.crosshairs.width = "tickWidth"), e.plotOptions.bar.horizontal && (e.states.hover.type = "none"), e.tooltip.followCursor || (console.warn("followCursor option in shared columns cannot be turned off"), e.tooltip.followCursor = !0)), Array.isArray(e.stroke.width) && "line" !== e.chart.type && "area" !== e.chart.type && (console.warn("stroke.width option accepts array only for line and area charts. Reverted back to Number"), e.stroke.width = e.stroke.width[0]), e
+					return e
 				}
 			}]), t
 		}();

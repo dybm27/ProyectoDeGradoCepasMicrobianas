@@ -15,12 +15,6 @@ class InvestigadoresController extends Controller
 
     public function store(Request $request)
     {
-        $reglas = [
-            'email' => 'unique:investigadors,email'
-        ];
-        $mensajes = ['email.unique' => 'Ya existe un investigador con ese email'];
-        $this->validate($request, $reglas, $mensajes);
-
         $imagen = $this->agregarImagen($request->imagen);
 
         $investigador = new Investigador();
@@ -40,14 +34,7 @@ class InvestigadoresController extends Controller
     public function update(Request $request, $id)
     {
         $investigador = Investigador::find($id);
-        $investigador1 = Investigador::where('email', $request->email)->first();
-
-        if (!is_null($investigador1)) {
-            if ($investigador1->id != $investigador->id) {
-                return response('Ya existe un investigador con ese email', 422);
-            }
-        }
-
+      
         if ($request->imagen != $investigador->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($investigador->imagen);
