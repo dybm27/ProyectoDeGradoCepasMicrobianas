@@ -12,6 +12,7 @@ import quienes_somos from "./modulos/quienes-somos";
 import investigadores from "./modulos/investigadores";
 import documentos from "./modulos/documentos";
 import equipamientos from "./modulos/equipamientos";
+import publicidad from "./modulos/publicidad";
 
 let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
 
@@ -46,6 +47,7 @@ export default new Vuex.Store({
         quienes_somos,
         investigadores,
         documentos,
-        equipamientos
+        equipamientos,
+        publicidad
     }
 });

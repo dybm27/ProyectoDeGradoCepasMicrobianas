@@ -12,7 +12,7 @@ export default {
         },
         getProyectoByNombre: (state, getters) => nombre => {
             return getters.getProyectos.find(
-                proyecto => proyecto.nombre === nombre
+                proyecto => proyecto.nombre_documento === nombre
             );
         },
         getPublicaciones(state) {
@@ -25,7 +25,7 @@ export default {
         },
         getPublicacionByNombre: (state, getters) => nombre => {
             return getters.getPublicaciones.find(
-                publicacion => publicacion.nombre === nombre
+                publicacion => publicacion.nombre_documento === nombre
             );
         }
     },

@@ -60,7 +60,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -274,7 +274,7 @@ export default {
         if (e.path[0].height > e.path[0].width) {
           this.imagenMiniatura = reader.src;
         } else {
-          this.imagenError = "La altura de la imagen debe ser mayor al ancho.";
+          this.imagenError = "La imagen debe ser en forma vertical.";
           this.$refs.inputImagen.value = "";
           if (this.info) {
             this.imagenMiniatura = this.info.imagenPublica;

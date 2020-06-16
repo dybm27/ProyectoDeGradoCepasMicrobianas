@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use App\Documento;
 use App\Proyecto;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -43,7 +44,7 @@ class ProyectosExport implements FromView, WithEvents
 
         $descargo = Auth::user()->name;
 
-        $cantidad = Proyecto::count() + 2;
+        $cantidad = Documento::where('tipo_documento_id', 1)->count() + 2;
 
         return [
 
@@ -58,9 +59,9 @@ class ProyectosExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $cantidad, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:B2')
+                    ->getStyle('A1:C2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:B' . $cantidad)
+                $event->sheet->getStyle('A3:C' . $cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];
@@ -69,7 +70,7 @@ class ProyectosExport implements FromView, WithEvents
     public function view(): View
     {
         return view('excel.documentos', [
-            'documentos' => Proyecto::all(), 'titulo' => 'Proyectos'
+            'documentos' => Documento::where('tipo_documento_id', 1)->get(), 'titulo' => 'Proyectos'
         ]);
     }
 }

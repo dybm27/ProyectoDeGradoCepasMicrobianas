@@ -17,9 +17,6 @@
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a>Inicio</a>
-                  </li>
-                  <li class="breadcrumb-item">
                     <a>{{tipo}}</a>
                   </li>
                   <template v-if="tipo2">

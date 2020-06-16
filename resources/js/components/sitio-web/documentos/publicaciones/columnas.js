@@ -1,8 +1,14 @@
 export default [
     {
-        name: "nombre",
-        sortField: "nombre",
-        title: "Nombre",
+        name: "nombre_documento",
+        sortField: "nombre_documento",
+        title: "Nombre Publicación",
+        titleClass: "text-center"
+    },
+    {
+        name: "nombre_autor",
+        sortField: "nombre_autor",
+        title: "Nombre Autor",
         titleClass: "text-center"
     },
     {

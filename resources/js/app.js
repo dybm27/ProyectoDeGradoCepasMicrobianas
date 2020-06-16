@@ -8,12 +8,16 @@ import VueEvents from 'vue-events'
 import VueToastr from 'vue-toastr'
 import VModal from 'vue-js-modal'
 import VTooltip from 'v-tooltip'
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
+Vue.use( CKEditor );
 Vue.use(VTooltip)
 Vue.use(VModal)
 Vue.use(VueEvents)
 Vue.use(VueToastr)
 
+//editor
+Vue.component('editor-texto', require('./components/editor-texto/EditorTextoComponent.vue').default);
 //croppie
 Vue.component('croppie', require('./components/CroppieComponent.vue').default);
 Vue.component('croppie-cepas', require('./components/cepas/CroppieCepasComponent.vue').default);
@@ -191,6 +195,10 @@ Vue.component('checkboxs_equipamientos', require('./components/sitio-web/equipam
 Vue.component('form-equipamientos', require('./components/sitio-web/equipamientos/FormComponent.vue').default);
 //publicidad
 Vue.component('publicidad', require('./components/sitio-web/PublicidadComponent.vue').default);
+Vue.component('tabla-noticias', require('./components/sitio-web/publicidad/noticias/TablaComponent.vue').default);
+Vue.component('form-noticias', require('./components/sitio-web/publicidad/noticias/FormComponent.vue').default);
+Vue.component('acciones_noticias', require('./components/sitio-web/publicidad/noticias/AccionesComponent.vue').default);
+Vue.component('checkboxs_noticias', require('./components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue').default);
 //documentos
 Vue.component('documentos', require('./components/sitio-web/DocumentosComponent.vue').default);
 Vue.component('tabla-proyectos', require('./components/sitio-web/documentos/proyectos/TablaComponent.vue').default);

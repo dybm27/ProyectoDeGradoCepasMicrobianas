@@ -7,17 +7,33 @@
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
               <div class="position-relative form-group">
-                <label for="nombre" class>Nombre</label>
+                <label for="nombre_documento" class>Nombre Proyecto</label>
                 <input
-                  name="nombre"
-                  id="nombre"
+                  name="nombre_documento"
+                  id="nombre_documento"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombre? 'is-invalid':'']"
-                  v-model="parametros.nombre"
+                  :class="['form-control', validarNombreProyecto? 'is-invalid':'']"
+                  v-model="parametros.nombre_documento"
                   required
                 />
-                <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
+                <em
+                  v-if="validarNombreProyecto"
+                  class="error invalid-feedback"
+                >{{mensajeNombreProyecto}}</em>
+              </div>
+              <div class="position-relative form-group">
+                <label for="nombre_autor" class>Nombre Autor</label>
+                <input
+                  name="nombre_autor"
+                  id="nombre_autor"
+                  placeholder="..."
+                  type="text"
+                  :class="['form-control', validarNombreAutor? 'is-invalid':'']"
+                  v-model="parametros.nombre_autor"
+                  required
+                />
+                <em v-if="validarNombreAutor" class="error invalid-feedback">{{mensajeNombreAutor}}</em>
               </div>
               <template v-if="required">
                 <div class="position-relative form-group">
@@ -135,7 +151,8 @@ export default {
     return {
       info: "",
       parametros: {
-        nombre: "",
+        nombre_documento: "",
+        nombre_autor: "",
         archivo: "",
         descripcion: "",
         imagen: "",
@@ -148,7 +165,8 @@ export default {
       errors: [],
       imagenError: "",
       archivoError: "",
-      mensajeNombre: "",
+      mensajeNombreProyecto: "",
+      mensajeNombreAutor: "",
       traerValorImg: false
     };
   },
@@ -170,7 +188,8 @@ export default {
     evento() {
       if (this.tituloForm === "Agregar Proyecto") {
         let form = new FormData();
-        form.append("nombre", this.parametros.nombre);
+        form.append("nombre_documento", this.parametros.nombre_documento);
+        form.append("nombre_autor", this.parametros.nombre_autor);
         form.append("descripcion", this.parametros.descripcion);
         form.append("archivo", this.parametros.archivo);
         form.append("imagen", this.parametros.imagen);
@@ -245,7 +264,8 @@ export default {
       });
     },
     llenarInfo() {
-      this.parametros.nombre = this.info.nombre;
+      this.parametros.nombre_documento = this.info.nombre_documento;
+      this.parametros.nombre_autor = this.info.nombre_autor;
       this.parametros.descripcion = this.info.descripcion;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
@@ -328,20 +348,21 @@ export default {
     nomBtnComputed() {
       return this.nomBtn;
     },
-    validarNombre() {
+    validarNombreProyecto() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.nombre) {
-        if (!letters.test(this.parametros.nombre)) {
-          this.mensajeNombre = "Solo se admiten letras.";
+      if (this.parametros.nombre_documento) {
+        if (!letters.test(this.parametros.nombre_documento)) {
+          this.mensajeNombreProyecto = "Solo se admiten letras.";
           return true;
         } else {
-          if (this.getProyectoByNombre(this.parametros.nombre)) {
+          if (this.getProyectoByNombre(this.parametros.nombre_documento)) {
             if (
-              this.getProyectoByNombre(this.parametros.nombre).id !=
+              this.getProyectoByNombre(this.parametros.nombre_documento).id !=
               this.info.id
             ) {
-              this.mensajeNombre = "Ya existe un proyecto con ese nombre";
+              this.mensajeNombreProyecto =
+                "Ya existe un proyecto con ese nombre";
               return true;
             }
             return false;
@@ -351,8 +372,24 @@ export default {
       }
       return false;
     },
+    validarNombreAutor() {
+      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
+      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
+      if (this.parametros.nombre_autor) {
+        if (!letters.test(this.parametros.nombre_autor)) {
+          this.mensajeNombreAutor = "Solo se admiten letras.";
+          return true;
+        }
+        return false;
+      }
+      return false;
+    },
     validarBtn() {
-      if (this.validarNombre || !this.parametros.imagen) {
+      if (
+        this.validarNombreProyecto ||
+        this.validarNombreAutor ||
+        !this.parametros.imagen
+      ) {
         return true;
       }
       return false;

@@ -1,10 +1,11 @@
 <table>
     <thead>
         <tr>
-            <th colspan="2"><b>{{$titulo}} MAJUMBA</b></th>
+            <th colspan="3"><b>{{$titulo}} MAJUMBA</b></th>
         </tr>
         <tr>
-            <th><b>Nombre</b></th>
+            <th><b>Nombre {{$titulo}}</b></th>
+            <th><b>Nombre Autor</b></th>
             <th><b>Descripcion</b></th>
         </tr>
     </thead>
@@ -14,7 +15,8 @@
             $datoDecodificado= json_decode($dato);
             @endphp
             <tr>
-                <td>{{ $datoDecodificado->nombre }}</td>
+                <td>{{ $datoDecodificado->nombre_documento }}</td>
+                <td>{{ $datoDecodificado->nombre_autor }}</td>
                 <td>{{ $datoDecodificado->descripcion }}</td>
             </tr>
         @endforeach

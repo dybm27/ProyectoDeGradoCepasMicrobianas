@@ -17,11 +17,13 @@
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a>Inicio</a>
-                  </li>
-                  <li class="breadcrumb-item">
                     <a>{{tipo}}</a>
                   </li>
+                  <template v-if="tipo2">
+                    <li class="breadcrumb-item">
+                      <a>{{tipo2}}</a>
+                    </li>
+                  </template>
                 </ol>
               </nav>
             </div>
@@ -30,23 +32,39 @@
         <div class="page-title-actions"></div>
       </div>
     </div>
-    <router-view @rutaHijo="cambiarTipo"></router-view>
+    <router-view @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></router-view>
   </div>
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   data() {
-    return { tipo: "" };
+    return { tipo: "", tipo2: "" };
   },
   methods: {
-    cambiarTipo(ruta) {
-      if (ruta.includes("seguimiento")) {
-        this.tipo = "Tabla Seguimiento";
+    ...vuex.mapActions("publicidad", ["obtenerPublicidad"]),
+    ruta(ruta) {
+      if (ruta.includes("noticias")) {
+        this.tipo = "Tabla Noticias";
+      } else if (ruta.includes("actividades")) {
+        this.tipo = "Tabla Actividades";
       } else {
-        this.tipo = "Tabla Usuarios";
+        this.tipo = "Tabla Novedades";
+      }
+    },
+    cambiarTipo(tipo) {
+      if (tipo === "agregar") {
+        this.tipo2 = "Agregar";
+      } else if (tipo === "editar") {
+        this.tipo2 = "Editar";
+      } else {
+        this.tipo2 = "";
       }
     }
+  },
+  created() {
+    this.obtenerPublicidad();
   }
 };
 </script>

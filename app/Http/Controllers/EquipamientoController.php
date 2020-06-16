@@ -67,4 +67,13 @@ class EquipamientoController extends Controller
         $rutaPublica = '/storage/equipos/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
+
+
+    public function publicar(Request $request, $id)
+    {
+        $equipo = Equipamiento::find($id);
+        $equipo->publicar = $request->publicar;
+        $equipo->save();
+        return $equipo;
+    }
 }

@@ -58,7 +58,7 @@ export default {
       fields: FieldDefs,
       sortOrder: [
         {
-          field: "nombre",
+          field: "nombre_documento",
           direction: "asc"
         }
       ],

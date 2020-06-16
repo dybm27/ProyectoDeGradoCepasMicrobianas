@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Publicacion;
+use App\Documento;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithEvents;
@@ -43,7 +43,7 @@ class PublicacionesExport implements FromView, WithEvents
 
         $descargo = Auth::user()->name;
 
-        $cantidad = Publicacion::count() + 2;
+        $cantidad = Documento::where('tipo_documento_id', 2)->count() + 2;
 
         return [
 
@@ -58,9 +58,9 @@ class PublicacionesExport implements FromView, WithEvents
 
             BeforeSheet::class => function (BeforeSheet $event) use ($styleArray1, $cantidad, $styleArray2) {
                 $event->sheet->setTitle('Hoja 1')
-                    ->getStyle('A1:B2')
+                    ->getStyle('A1:C2')
                     ->applyFromArray($styleArray1);
-                $event->sheet->getStyle('A3:B' . $cantidad)
+                $event->sheet->getStyle('A3:C' . $cantidad)
                     ->applyFromArray($styleArray2);
             }
         ];
@@ -69,7 +69,7 @@ class PublicacionesExport implements FromView, WithEvents
     public function view(): View
     {
         return view('excel.documentos', [
-            'documentos' => Publicacion::all(), 'titulo' => 'Publicaciones'
+            'documentos' => Documento::where('tipo_documento_id', 2)->get(), 'titulo' => 'Publicaciones'
         ]);
     }
 }

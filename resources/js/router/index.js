@@ -1088,6 +1088,50 @@ const routes = [
                     )
             }
         ]
+    },
+
+    // ------------------------------- PUBLICIDAD ------------------------------------------
+    {
+        path: "/publicidad",
+        name: "publicidad",
+        component: () =>
+            import(
+                /* webpackChunkName: "publicidad" */
+
+                "../components/sitio-web/publicidad/NavComponent.vue"
+            ),
+        children: [
+            {
+                path: "noticias",
+                name: "noticias",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "noticias" */
+
+                        "../components/sitio-web/publicidad/noticias/ContainerComponent.vue"
+                    )
+            },
+            {
+                path: "actividades",
+                name: "actividades",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "actividades" */
+
+                        "../components/sitio-web/publicidad/actividades/ContainerComponent.vue"
+                    )
+            },
+            {
+                path: "novedades",
+                name: "novedades",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "novedades" */
+
+                        "../components/sitio-web/publicidad/novedades/ContainerComponent.vue"
+                    )
+            }
+        ]
     }
     /**{
         path: "*",

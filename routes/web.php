@@ -497,19 +497,29 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/investigadores', 'InvestigadoresController@store');
     Route::put('/investigadores/{id}', 'InvestigadoresController@update');
     Route::delete('/investigadores/{id}', 'InvestigadoresController@destroy');
+    Route::put('/investigadores/publicar/{id}', 'InvestigadoresController@publicar');
     //documentos
     Route::get('/documentos/proyectos', 'DocumentosController@index')->name('proyectos');
     Route::get('/documentos/publicaciones', 'DocumentosController@index');
     Route::post('/documentos', 'DocumentosController@store');
     Route::put('/documentos/{id}', 'DocumentosController@update');
     Route::delete('/documentos/{id}', 'DocumentosController@destroy');
+    Route::put('/documentos/publicar/{id}', 'DocumentosController@publicar');
     //equipamiento
     Route::get('/equipamientos', 'EquipamientoController@index')->name('equipamiento');
     Route::post('/equipamientos', 'EquipamientoController@store');
     Route::put('/equipamientos/{id}', 'EquipamientoController@update');
     Route::delete('/equipamientos/{id}', 'EquipamientoController@destroy');
+    Route::put('/equipamientos/publicar/{id}', 'EquipamientoController@publicar');
     //publicidad
     Route::get('/publicidad/noticias', 'PublicidadController@index')->name('noticias');
+    Route::get('/publicidad/actividades', 'PublicidadController@index');
+    Route::get('/publicidad/novedades', 'PublicidadController@index');
+    Route::post('/publicidad', 'PublicidadController@store');
+    Route::put('/publicidad/{id}', 'PublicidadController@update');
+    Route::delete('/publicidad/{id}', 'PublicidadController@destroy');
+    Route::put('/publicidad/publicar/{id}', 'PublicidadController@publicar');
+    Route::post('/publicidad/upload', 'PublicidadController@uploadImagen');
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
@@ -605,6 +615,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('documentos', 'InfoPanelSitioWebController@documentos');
         Route::get('equipamientos-tabla', 'InfoPanelSitioWebController@equipamientosTabla');
         Route::get('equipamientos', 'InfoPanelSitioWebController@equipamientos');
+        Route::get('noticias-tabla', 'InfoPanelSitioWebController@noticiasTabla');
+        Route::get('actividades-tabla', 'InfoPanelSitioWebController@actividadesTabla');
+        Route::get('novedades-tabla', 'InfoPanelSitioWebController@novedadesTabla');
+        Route::get('publicidad', 'InfoPanelSitioWebController@publicidad');
     });
 
 

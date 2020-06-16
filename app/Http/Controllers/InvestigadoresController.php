@@ -34,7 +34,7 @@ class InvestigadoresController extends Controller
     public function update(Request $request, $id)
     {
         $investigador = Investigador::find($id);
-      
+
         if ($request->imagen != $investigador->imagen) {
             //eliminar imagen vieja
             Storage::disk('local')->delete($investigador->imagen);
@@ -73,5 +73,13 @@ class InvestigadoresController extends Controller
         $ruta = '/public/investigadores/' . $image_name;
         $rutaPublica = '/storage/investigadores/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function publicar(Request $request, $id)
+    {
+        $investigador = Investigador::find($id);
+        $investigador->publicar = $request->publicar;
+        $investigador->save();
+        return $investigador;
     }
 }

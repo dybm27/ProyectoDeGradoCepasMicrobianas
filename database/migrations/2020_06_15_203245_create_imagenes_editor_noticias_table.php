@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePublicacionsTable extends Migration
+class CreateImagenesEditorNoticiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreatePublicacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('publicacions', function (Blueprint $table) {
+        Schema::create('imagenes_editor_noticias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre')->unique();
-            $table->longText('descripcion');
-            $table->boolean('publicar')->default(0);
-            $table->string('ruta');
-            $table->string('rutaPublica');
+            $table->string('tipo');
+            $table->unsignedBigInteger('noticia_id');
+            $table->foreign('noticia_id')->references('id')->on('noticias');
             $table->string('imagen');
             $table->string('imagenPublica');
             $table->timestamps();
@@ -33,6 +31,6 @@ class CreatePublicacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publicacions');
+        Schema::dropIfExists('imagenes_editors');
     }
 }

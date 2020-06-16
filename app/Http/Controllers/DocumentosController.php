@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Documento;
 use App\Proyecto;
 use App\Publicacion;
 use Illuminate\Http\Request;
@@ -16,18 +17,22 @@ class DocumentosController extends Controller
 
     public function store(Request $request)
     {
-        $imagen = $this->guardarImagen($request->imagen);
-        $archivo = $this->guardarArchivo($request->file('archivo'), $request->nombre . '.pdf');
+        $documento = new Documento();
 
         switch ($request->tipo) {
             case 'proyecto':
-                $documento = new Proyecto();
+                $documento->tipo_documento_id = 1;
                 break;
             case 'publicacion':
-                $documento = new Publicacion();
+                $documento->tipo_documento_id = 2;
                 break;
         }
-        $documento->nombre = $request->nombre;
+
+        $imagen = $this->guardarImagen($documento->tipo_documento_id, $request->imagen);
+        $archivo = $this->guardarArchivo($documento->tipo_documento_id, $request->file('archivo'), $request->nombre_documento . '.pdf');
+
+        $documento->nombre_documento = $request->nombre_documento;
+        $documento->nombre_autor = $request->nombre_autor;
         $documento->descripcion = $request->descripcion;
         $documento->publicar = $request->publicar;
         $documento->ruta = $archivo['ruta'];
@@ -41,31 +46,23 @@ class DocumentosController extends Controller
 
     public function update(Request $request, $id)
     {
-        switch ($request->tipo) {
-            case 'proyecto':
-                $documento = Proyecto::find($id);
-                $documento2 = Proyecto::where('nombre', $request->nombre)->first();
-                break;
-            case 'publicacion':
-                $documento = Publicacion::find($id);
-                $documento2 = Publicacion::where('nombre', $request->nombre)->first();
-                break;
-        }
-
+        $documento = Documento::find($id);
+        $documento2 = Documento::where('nombre_documento', $request->nombre_documento)->first();
 
         if (is_null($documento2)) {
-            $archivo = $this->moverArchivo($documento->nombre, $request->nombre);
+            $archivo = $this->moverArchivo($documento->tipo_documento_id, $documento->nombre_documento, $request->nombre_documento);
             $documento->ruta = $archivo['ruta'];
             $documento->rutaPublica = $archivo['rutaPublica'];
-            $documento->nombre = $request->nombre;
+            $documento->nombre_documento = $request->nombre_documento;
         }
 
         if ($request->imagen != $documento->imagen) {
             Storage::disk('local')->delete($documento->imagen);
-            $imagen = $this->guardarImagen($request->imagen);
+            $imagen = $this->guardarImagen($documento->tipo_documento_id, $request->imagen);
             $documento->imagen = $imagen['ruta'];
             $documento->imagenPublica = $imagen['rutaPublica'];
         }
+        $documento->nombre_autor = $request->nombre_autor;
         $documento->descripcion = $request->descripcion;
         $documento->publicar = $request->publicar;
         $documento->save();
@@ -75,44 +72,46 @@ class DocumentosController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        switch ($request->tipo) {
-            case 'proyecto':
-                $documento = Proyecto::find($id);
-                break;
-            case 'publicacion':
-                $documento = Publicacion::find($id);
-                break;
-        }
+
+        $documento = Documento::find($id);
         Storage::disk('local')->delete($documento->ruta);
         Storage::disk('local')->delete($documento->imagen);
         $documento->delete();
         return $documento;
     }
 
-    public function guardarImagen($imagen)
+    public function guardarImagen($tipo, $imagen)
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
         $image_name = time() . '.png';
-        Storage::put('/public/proyectos/imagenes/' . $image_name, $data);
-        $ruta = '/public/proyectos/imagenes/' . $image_name;
-        $rutaPublica = '/storage/proyectos/imagenes/' . $image_name;
+        Storage::put('/public/documentos/' . $tipo . '/imagenes/' . $image_name, $data);
+        $ruta = '/public/documentos/' . $tipo . '/imagenes/' . $image_name;
+        $rutaPublica = '/storage/documentos/' . $tipo . '/imagenes/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 
-    public function guardarArchivo($file, $nombre)
+    public function guardarArchivo($tipo, $file, $nombre_documento)
     {
-        Storage::disk('public')->put('/proyectos/archivos/' . $nombre, file_get_contents($file));
-        $ruta = '/public/proyectos/archivos/' . $nombre;
-        $rutaPublica = '/storage/proyectos/archivos/' . $nombre;
+        Storage::disk('public')->put('/documentos/' . $tipo . '/archivos/' . $nombre_documento, file_get_contents($file));
+        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre_documento;
+        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre_documento;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
 
-    public function moverArchivo($nombre, $nombreNuevo)
+    public function moverArchivo($tipo, $nombre_documento, $nombre_documentoNuevo)
     {
-        Storage::move('/public/proyectos/archivos/' . $nombre . '.pdf', '/public/proyectos/archivos/' . $nombreNuevo . '.pdf');
-        $ruta = '/public/proyectos/archivos/' . $nombreNuevo . '.pdf';
-        $rutaPublica = '/storage/proyectos/archivos/' . $nombreNuevo . '.pdf';
+        Storage::move('/public/documentos/' . $tipo . '/archivos/' . $nombre_documento . '.pdf', '/public/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf');
+        $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf';
+        $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre_documentoNuevo . '.pdf';
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
+    }
+
+    public function publicar(Request $request, $id)
+    {
+        $documento = Documento::find($id);
+        $documento->publicar = $request->publicar;
+        $documento->save();
+        return $documento;
     }
 }
