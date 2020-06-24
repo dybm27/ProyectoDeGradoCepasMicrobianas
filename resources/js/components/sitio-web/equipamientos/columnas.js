@@ -17,12 +17,13 @@ export default [
         title: "Función",
         titleClass: "text-center"
     },
+    /**
     {
         name: "imagenPublica",
         title: "Imagen",
         titleClass: "text-center",
         callback: "imagen"
-    },
+    }, */
     {
         name: "__component:checkboxs_equipamientos",
         title: "Publicar",

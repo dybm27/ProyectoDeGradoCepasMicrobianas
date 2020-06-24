@@ -175,8 +175,10 @@ Vue.component('calendario', require('./components/CalendarioComponent.vue').defa
 Vue.component('usuarios', require('./components/usuarios/UsuariosComponent.vue').default);
 Vue.component('acciones_tabla_usuarios', require('./components/usuarios/tablas/AccionesTablaUsuariosComponent.vue').default);
 Vue.component('acciones_tabla_seguimientos', require('./components/usuarios/tablas/AccionesTablaSeguimientoComponent.vue').default);
-//calendario
+//imagenes-login
 Vue.component('imagenes-login', require('./components/imagenes-login/ImagenesLoginComponent.vue').default);
+Vue.component('from-imagen', require('./components/imagenes-login/FromImagenComponent.vue').default);
+Vue.component('ver-imagenes', require('./components/imagenes-login/VerImagenesComponent.vue').default);
 //------- sitio-web ---------------
 //quienes-somos
 Vue.component('quienes-somos', require('./components/sitio-web/QuienesSomosComponent.vue').default);
@@ -199,6 +201,14 @@ Vue.component('tabla-noticias', require('./components/sitio-web/publicidad/notic
 Vue.component('form-noticias', require('./components/sitio-web/publicidad/noticias/FormComponent.vue').default);
 Vue.component('acciones_noticias', require('./components/sitio-web/publicidad/noticias/AccionesComponent.vue').default);
 Vue.component('checkboxs_noticias', require('./components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue').default);
+Vue.component('tabla-novedades', require('./components/sitio-web/publicidad/novedades/TablaComponent.vue').default);
+Vue.component('form-novedades', require('./components/sitio-web/publicidad/novedades/FormComponent.vue').default);
+Vue.component('acciones_novedades', require('./components/sitio-web/publicidad/novedades/AccionesComponent.vue').default);
+Vue.component('checkboxs_novedades', require('./components/sitio-web/publicidad/novedades/CheckboxsPublicarComponent.vue').default);
+Vue.component('tabla-actividades', require('./components/sitio-web/publicidad/actividades/TablaComponent.vue').default);
+Vue.component('form-actividades', require('./components/sitio-web/publicidad/actividades/FormComponent.vue').default);
+Vue.component('acciones_actividades', require('./components/sitio-web/publicidad/actividades/AccionesComponent.vue').default);
+Vue.component('checkboxs_actividades', require('./components/sitio-web/publicidad/actividades/CheckboxsPublicarComponent.vue').default);
 //documentos
 Vue.component('documentos', require('./components/sitio-web/DocumentosComponent.vue').default);
 Vue.component('tabla-proyectos', require('./components/sitio-web/documentos/proyectos/TablaComponent.vue').default);

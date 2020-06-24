@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ActividadesExport;
 use App\Exports\EquipamientosExport;
 use App\Exports\InvestigadoresExport;
+use App\Exports\NoticiasExport;
+use App\Exports\NovedadesExport;
 use App\Exports\ObjetivosExport;
 use App\Exports\ProyectosExport;
 use App\Exports\PublicacionesExport;
+use App\Exports\TablaActividadesExport;
 use App\Exports\TablaEquipamientosExport;
 use App\Exports\TablaInvestigadoresExport;
+use App\Exports\TablaNoticiasExport;
+use App\Exports\TablaNovedadesExport;
 use App\Exports\TablaObjetivosExport;
 use App\Exports\TablaProyectosExport;
 use App\Exports\TablaPublicacionesExport;
@@ -17,16 +23,6 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ExportarExcelSitioWebController extends Controller
 {
-    public function objetivos()
-    {
-        return Excel::download(new ObjetivosExport, 'objetivos.xlsx');
-    }
-
-    public function objetivosTabla(Request $request)
-    {
-        return Excel::download(new TablaObjetivosExport($request->datos), 'tabla-objetivos.xlsx');
-    }
-
     public function investigadores()
     {
         return Excel::download(new InvestigadoresExport, 'investigadores.xlsx');
@@ -65,5 +61,35 @@ class ExportarExcelSitioWebController extends Controller
     public function equipamientosTabla(Request $request)
     {
         return Excel::download(new TablaEquipamientosExport($request->datos), 'tabla-equipamientos.xlsx');
+    }
+
+    public function noticias()
+    {
+        return Excel::download(new NoticiasExport, 'noticias.xlsx');
+    }
+
+    public function noticiasTabla(Request $request)
+    {
+        return Excel::download(new TablaNoticiasExport($request->datos), 'tabla-noticias.xlsx');
+    }
+
+    public function novedades()
+    {
+        return Excel::download(new NovedadesExport, 'novedades.xlsx');
+    }
+
+    public function novedadesTabla(Request $request)
+    {
+        return Excel::download(new TablaNovedadesExport($request->datos), 'tabla-novedades.xlsx');
+    }
+
+    public function actividades()
+    {
+        return Excel::download(new ActividadesExport, 'actividades.xlsx');
+    }
+
+    public function actividadesTabla(Request $request)
+    {
+        return Excel::download(new TablaActividadesExport($request->datos), 'tabla-actividades.xlsx');
     }
 }

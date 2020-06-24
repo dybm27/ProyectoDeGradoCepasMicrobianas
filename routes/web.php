@@ -334,8 +334,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy');
 
     Route::post('/tipo-user/agregar', 'TipoUsuarioController@store');
-    Route::put('/tipo-user/editar/{id}', 'UsuariosController@update');
-    Route::delete('/tipo-user/eliminar/{id}', 'UsuariosController@destroy');
+    Route::put('/tipo-user/editar/{id}', 'TipoUsuarioController@update');
+    Route::delete('/tipo-user/eliminar/{id}', 'TipoUsuarioController@destroy');
 
     //---------------------- EXPORTAR PDF----------------------------------------------------------
     Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
@@ -455,8 +455,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/exportar/tabla/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforosTabla');
 
     //sitio-web
-    Route::get('/exportar/objetivos', 'ExportarExcelSitioWebController@objetivos');
-    Route::get('/exportar/tabla/objetivos', 'ExportarExcelSitioWebController@objetivosTabla');
     Route::get('/exportar/investigadores', 'ExportarExcelSitioWebController@investigadores');
     Route::get('/exportar/tabla/investigadores', 'ExportarExcelSitioWebController@investigadoresTabla');
     Route::get('/exportar/proyectos', 'ExportarExcelSitioWebController@proyectos');
@@ -465,6 +463,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/exportar/tabla/publicaciones', 'ExportarExcelSitioWebController@publicacionesTabla');
     Route::get('/exportar/equipamientos', 'ExportarExcelSitioWebController@equipamientos');
     Route::get('/exportar/tabla/equipamientos', 'ExportarExcelSitioWebController@equipamientosTabla');
+    Route::get('/exportar/noticias', 'ExportarExcelSitioWebController@noticias');
+    Route::get('/exportar/tabla/noticias', 'ExportarExcelSitioWebController@noticiasTabla');
+    Route::get('/exportar/actividades', 'ExportarExcelSitioWebController@actividades');
+    Route::get('/exportar/tabla/actividades', 'ExportarExcelSitioWebController@actividadesTabla');
+    Route::get('/exportar/novedades', 'ExportarExcelSitioWebController@novedades');
+    Route::get('/exportar/tabla/novedades', 'ExportarExcelSitioWebController@novedadesTabla');
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
     Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
@@ -477,9 +481,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/imagenes-login/ver', 'ImagenLoginController@index')->name('imagenes');
     Route::get('/imagenes-login/agregar', 'ImagenLoginController@index');
     Route::get('/imagenes-login/editar/{id}', 'ImagenLoginController@index');
-    Route::post('/login/imagen/', 'ImagenLoginController@store');
     Route::put('/login/imagen/{id}', 'ImagenLoginController@update');
-    Route::delete('/login/imagen/{id}', 'ImagenLoginController@destroy');
 
 
     //--------------------- ADMINISTRAR SITIO WEB -----------------------------------------------
@@ -489,9 +491,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/quienes-somos/objetivos', 'QuienesSomosController@index');
     Route::put('/quienes-somos/vision/cambiar', 'QuienesSomosController@cambiarVision');
     Route::put('/quienes-somos/mision/cambiar', 'QuienesSomosController@cambiarMision');
-    Route::post('/quienes-somos/objetivo/agregar', 'QuienesSomosController@agregarObjetivo');
-    Route::put('/quienes-somos/objetivo/{id}', 'QuienesSomosController@editarObjetivo');
-    Route::delete('/quienes-somos/objetivo/{id}', 'QuienesSomosController@eliminarObjetivo');
+    Route::put('/quienes-somos/objetivos/cambiar', 'QuienesSomosController@cambiarObjetivos');
     //investigadores
     Route::get('/investigadores', 'InvestigadoresController@index')->name('investigadores');
     Route::post('/investigadores', 'InvestigadoresController@store');
@@ -519,7 +519,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/publicidad/{id}', 'PublicidadController@update');
     Route::delete('/publicidad/{id}', 'PublicidadController@destroy');
     Route::put('/publicidad/publicar/{id}', 'PublicidadController@publicar');
-    Route::post('/publicidad/upload', 'PublicidadController@uploadImagen');
+
+    //editor
+    Route::post('/editor/upload', 'ImagenesEditorController@uploadImagen');
+    Route::get('/editor/upload', 'ImagenesEditorController@eliminarImagenesDelStorage');
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
@@ -607,7 +610,6 @@ Route::group(['middleware' => ['auth']], function () {
         //------------------------ SITIO WEB ------------------------------------------------------
         //------------------------- quienes somos -------------------------------------------
         Route::get('quienes-somos', 'InfoPanelSitioWebController@quienesSomos');
-        Route::get('quienes-somos/objetivos', 'InfoPanelSitioWebController@objetivos');
         Route::get('investigadores-tabla', 'InfoPanelSitioWebController@investigadoresTabla');
         Route::get('investigadores', 'InfoPanelSitioWebController@investigadores');
         Route::get('proyectos-tabla', 'InfoPanelSitioWebController@proyectosTabla');

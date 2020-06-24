@@ -33,6 +33,7 @@
             :css="css.table"
             :api-url="apiUrl"
             :fields="fields"
+            data-path="data"
             pagination-path
             :sort-order="sortOrder"
             :append-params="appendParams"
@@ -90,9 +91,6 @@ export default {
     detailRowComponent: {
       type: String
     },
-    refrescarTabla: {
-      type: Boolean
-    },
     nameGet: {
       type: String,
       required: true
@@ -132,14 +130,6 @@ export default {
       disabledBtn: false
     };
   },
-  watch: {
-    refrescarTabla() {
-      if (this.refrescarTabla) {
-        this.refreshDatos();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   methods: {
     imagen(value) {
       return '<img width="80" heigth="80" src="' + value + '"></i>';
@@ -173,6 +163,7 @@ export default {
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);
       this.$refs.paginationInfo.setPaginationData(paginationData);
+      this.$events.fire("verificarBloqueos");
     },
     onChangePage(page) {
       this.$refs.vuetable.changePage(page);
@@ -278,6 +269,10 @@ export default {
       this.onFilterSet(eventData)
     );
     this.$events.$on(this.nameGet + "-filter-reset", e => this.onFilterReset());
+  },
+  destroyed() {
+    this.$events.off(this.nameGet + "-filter-set");
+    this.$events.off(this.nameGet + "-filter-reset");
   }
 };
 </script>

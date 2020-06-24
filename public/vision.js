@@ -1,4 +1,3 @@
-(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Blue marker":"Marcador azul",Bold:"Negrita",Cancel:"Cancelar","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen",Code:"Código",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Full size image":"Imagen a tamaño completo","Green marker":"Marcador verde","Green pen":"Texto verde",Highlight:"Resaltar","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Insert image":"Insertar imagen","Insert paragraph after block":"","Insert paragraph before block":"",Italic:"Cursiva","Left aligned image":"Imagen alineada a la izquierda",Link:"Enlace","Link URL":"URL del enlace",Next:"Siguiente","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva","Pink marker":"Marcador rosa",Previous:"Anterior","Red pen":"Texto rojo",Redo:"Rehacer","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0","Right aligned image":"Imagen alineada a la derecha",Save:"Guardar","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Strikethrough:"Tachado",Subscript:"Subíndice",Superscript:"Superíndice","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","This link has no URL":"Este enlace no tiene URL",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Widget toolbar":"Barra de herramientas del widget","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["vision"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue?vue&type=script&lang=js&":
@@ -45,21 +44,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      texto: ""
+      parametros: {
+        cuerpo: "",
+        imagenesEditor: [],
+        imagenesGuardadas: []
+      }
     };
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("quienes_somos", ["getQuienesSomos"]), {
     verificarBtn: function verificarBtn() {
-      if (this.texto) {
-        if (this.texto === this.getQuienesSomos.vision.texto) {
-          return true;
+      if (this.getQuienesSomos.vision) {
+        if (this.parametros.cuerpo) {
+          if (this.getQuienesSomos.vision.cuerpo === this.parametros.cuerpo) {
+            return true;
+          }
+
+          return false;
         }
 
-        return false;
+        return true;
       } else {
         return true;
       }
@@ -68,35 +105,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     this.$emit("rutaHijo", window.location.pathname);
   },
-  watch: {
-    getQuienesSomos: function getQuienesSomos() {
-      if (this.getQuienesSomos) {
-        this.texto = this.getQuienesSomos.vision.texto;
-      }
-    }
-  },
-  mounted: function mounted() {
-    if (this.getQuienesSomos) {
-      this.texto = this.getQuienesSomos.vision.texto;
-    }
-  },
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("quienes_somos", ["accionCambiarQuienesSomos"]), {
     cambiarVision: function cambiarVision() {
       var _this = this;
 
-      axios.put("/quienes-somos/vision/cambiar", {
-        texto: this.texto
-      }).then(function (res) {
+      axios.put("/quienes-somos/vision/cambiar", this.parametros).then(function (res) {
         _this.accionCambiarQuienesSomos({
           data: res.data,
           tipo: "vision"
         });
 
         _this.toastr("Cambiar Visión", "Visión cambiada con exito", "success");
-      })["catch"](function (error) {
-        if (error.response) {}
-
-        _this.toastr("Error!!!!", "", "error");
       });
     },
     toastr: function toastr(titulo, msg, tipo) {
@@ -118,6 +137,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         onMouseOver: function onMouseOver() {},
         onMouseOut: function onMouseOut() {}
       });
+    },
+    aceptarContenido: function aceptarContenido(data) {
+      this.parametros.cuerpo = data.contenido;
+      this.parametros.imagenesEditor = data.imagenesEditor;
+      this.parametros.imagenesGuardadas = data.imagenesGuardadas;
+    },
+    modificarContenido: function modificarContenido(data) {
+      this.parametros.cuerpo = "";
     }
   })
 });
@@ -139,54 +166,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-9" }, [
-        _c("div", { staticClass: "main-card mb-3 card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Visión")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.texto,
-                  expression: "texto"
-                }
-              ],
-              staticClass: "form-control",
-              staticStyle: { height: "150px" },
-              attrs: { name: "texto", id: "texto" },
-              domProps: { value: _vm.texto },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.texto = $event.target.value
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "row mt-3 justify-content-center" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { disabled: _vm.verificarBtn },
-                  on: { click: _vm.cambiarVision }
-                },
-                [_vm._v("Cambiar")]
-              )
+  return _c(
+    "div",
+    [
+      _vm.getQuienesSomos
+        ? [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "main-card mb-3 card" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v("Visión")
+                        ]),
+                        _vm._v(" "),
+                        _c("editor-texto", {
+                          attrs: { info: _vm.getQuienesSomos.vision },
+                          on: {
+                            contenido: _vm.aceptarContenido,
+                            modificar: _vm.modificarContenido
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c("div", { staticClass: "col-md-4 mt-3" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-block btn-success",
+                          attrs: { disabled: _vm.verificarBtn },
+                          on: { click: _vm.cambiarVision }
+                        },
+                        [_vm._v("Cambiar")]
+                      )
+                    ])
+                  ])
+                ])
+              ])
             ])
-          ])
-        ])
-      ])
-    ])
-  ])
+          ]
+        : [_vm._m(0)]
+    ],
+    2
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container mt-5" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-lg-12 d-flex justify-content-center mt-5" },
+          [
+            _c("div", { staticClass: "loader" }, [
+              _c("div", { staticClass: "ball-spin-fade-loader" }, [
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div"),
+                _vm._v(" "),
+                _c("div")
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [_c("hr")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [_c("hr")])
+    ])
+  }
+]
 render._withStripped = true
 
 

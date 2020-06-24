@@ -206,12 +206,12 @@ export default {
             }
           })
           .then(res => {
-            this.accionProyecto({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Proyecto",
               "Proyecto agregado con exito!!",
               "success"
             );
+            this.accionProyecto({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
@@ -225,12 +225,12 @@ export default {
         axios
           .put(`/documentos/${this.idProyecto}`, this.parametros)
           .then(res => {
-            this.accionProyecto({ tipo: "editar", data: res.data });
             this.toastr(
               "Editar Proyecto",
               "Proyecto editado con exito!!",
               "success"
             );
+            this.accionProyecto({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {

@@ -967,51 +967,6 @@ const routes = [
             }
         ]
     },
-
-    // ------------------------------- IMAGENES LOGIN ------------------------------------------
-    {
-        path: "/imagenes-login/",
-        name: "imagenes-login",
-        component: () =>
-            import(
-                /* webpackChunkName: "imagenes-login" */
-
-                "../components/imagenes-login/ContainerImagenesComponent.vue"
-            ),
-        children: [
-            {
-                path: "ver",
-                name: "imagenes-ver",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "imagenes-ver" */
-
-                        "../components/imagenes-login/VerImagenesComponent.vue"
-                    )
-            },
-            {
-                path: "agregar",
-                name: "imagenes-agregar",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "imagenes-agregar" */
-
-                        "../components/imagenes-login/FromImagenComponent.vue"
-                    )
-            },
-            {
-                path: "editar/:idImagen",
-                name: "imagenes-editar",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "imagenes-editar" */
-
-                        "../components/imagenes-login/FromImagenComponent.vue"
-                    )
-            }
-        ]
-    },
-
     // ------------------------------- QUIENES SOMOS ------------------------------------------
     {
         path: "/quienes-somos",

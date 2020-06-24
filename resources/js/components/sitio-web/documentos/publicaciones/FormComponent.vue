@@ -206,12 +206,12 @@ export default {
             }
           })
           .then(res => {
-            this.accionPublicacion({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Publicacion",
               "Publicacion agregada con exito!!",
               "success"
             );
+            this.accionPublicacion({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
@@ -225,12 +225,12 @@ export default {
         axios
           .put(`/documentos/${this.idPublicacion}`, this.parametros)
           .then(res => {
-            this.accionPublicacion({ tipo: "editar", data: res.data });
             this.toastr(
               "Editar Publicacion",
               "Publicacion editada con exito!!",
               "success"
             );
+            this.accionPublicacion({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {

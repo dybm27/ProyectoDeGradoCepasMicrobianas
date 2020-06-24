@@ -1,4 +1,3 @@
-(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Blue marker":"Marcador azul",Bold:"Negrita",Cancel:"Cancelar","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen",Code:"Código",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Full size image":"Imagen a tamaño completo","Green marker":"Marcador verde","Green pen":"Texto verde",Highlight:"Resaltar","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Insert image":"Insertar imagen","Insert paragraph after block":"","Insert paragraph before block":"",Italic:"Cursiva","Left aligned image":"Imagen alineada a la izquierda",Link:"Enlace","Link URL":"URL del enlace",Next:"Siguiente","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva","Pink marker":"Marcador rosa",Previous:"Anterior","Red pen":"Texto rojo",Redo:"Rehacer","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0","Right aligned image":"Imagen alineada a la derecha",Save:"Guardar","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Strikethrough:"Tachado",Subscript:"Subíndice",Superscript:"Superíndice","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","This link has no URL":"Este enlace no tiene URL",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Widget toolbar":"Barra de herramientas del widget","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["actividades"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue?vue&type=script&lang=js&":
@@ -46,20 +45,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       formulario: false,
       id: 0,
-      tipo: ""
+      tipo: "",
+      ids: {
+        btns: [],
+        checks: []
+      },
+      misBloqueos: {
+        btns: [],
+        checks: []
+      }
     };
   },
-  methods: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"])),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
     abrirFormulario: function abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
       } else {
+        this.id = 0;
+      }
+
+      this.formulario = !this.formulario;
+    },
+    cerrarFormulario: function cerrarFormulario() {
+      if (this.id != 0) {
+        window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
+          idBtn: this.id
+        });
+        window.Echo["private"]("desbloquearCheckActividad").whisper("desbloquearCheckActividad", {
+          idCheck: this.id
+        });
+        this.$events.fire("spliceMisBloqueosActividad", {
+          id: this.id
+        });
         this.id = 0;
       }
 
@@ -70,16 +102,203 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
-  },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNoticias"])),
-  created: function created() {
-    var _this = this;
+    },
+    bloquearBtns: function bloquearBtns(index, id) {
+      this.$events.fire(index + "-bloquearBtnsActividad", {
+        idBtn: id
+      });
+    },
+    crearEventoBtns: function crearEventoBtns(index) {
+      var _this = this;
 
-    this.$events.$on("abrirFormularioProyecto", function (e) {
-      return _this.abrirFormulario(e);
+      this.$events.$on(index + "-verificarBloqueoBtnsActividad", function (e) {
+        return _this.bloquearBtns(e.index, e.id);
+      });
+    },
+    eliminarEventoBtns: function eliminarEventoBtns(index) {
+      this.$events.off(index + "-verificarBloqueoBtnsActividad");
+    },
+    bloquearCheck: function bloquearCheck(index, id) {
+      this.$events.fire(index + "-bloquearCheckActividad", {
+        idCheck: id
+      });
+    },
+    crearEventoCheck: function crearEventoCheck(index) {
+      var _this2 = this;
+
+      this.$events.$on(index + "-verificarBloqueoCheckActividad", function (e) {
+        return _this2.bloquearCheck(e.index, e.id);
+      });
+    },
+    eliminarEventoCheck: function eliminarEventoCheck(index) {
+      this.$events.off(index + "-verificarBloqueoCheckActividad");
+    },
+    bloquearBtnsActividad: function bloquearBtnsActividad(e) {
+      this.ids.btns.push({
+        idUser: e.idUser,
+        idBtn: e.idBtn,
+        index: e.index
+      });
+      this.crearEventoBtns(e.index);
+      this.$events.fire(e.index + "-bloquearBtnsActividad", {
+        idBtn: e.idBtn
+      });
+    },
+    desbloquearBtnsActividad: function desbloquearBtnsActividad(e) {
+      var data = this.ids.btns.find(function (data) {
+        return data.idBtn === e.idBtn;
+      });
+      this.eliminarEventoBtns(data.index);
+      this.ids.btns.splice(this.ids.btns.findIndex(function (data) {
+        return data.idBtn === e.idBtn;
+      }), 1);
+      this.$events.fire(data.index + "-desbloquearBtnsActividad", {
+        idBtn: data.idBtn
+      });
+    },
+    bloquearCheckActividad: function bloquearCheckActividad(e) {
+      this.ids.checks.push({
+        idUser: e.idUser,
+        idCheck: e.idCheck,
+        index: e.index
+      });
+      this.crearEventoCheck(e.index);
+      this.$events.fire(e.index + "-bloquearCheckActividad", {
+        idCheck: e.idCheck
+      });
+    },
+    desbloquearCheckActividad: function desbloquearCheckActividad(e) {
+      var data = this.ids.checks.find(function (data) {
+        return data.idCheck === e.idCheck;
+      });
+      this.eliminarEventoCheck(data.index);
+      this.ids.checks.splice(this.ids.checks.findIndex(function (data) {
+        return data.idCheck === e.idCheck;
+      }), 1);
+      this.$events.fire(data.index + "-desbloquearCheckActividad", {
+        idCheck: data.idCheck
+      });
+    },
+    borrarBtnsCheck: function borrarBtnsCheck(id) {
+      var btns = this.ids.btns.find(function (data) {
+        return data.idUser === id;
+      });
+      var checks = this.ids.checks.find(function (data) {
+        return data.idUser === id;
+      });
+
+      if (btns) {
+        this.desbloquearBtnsActividad(btns);
+        this.desbloquearCheckActividad(checks);
+      }
+    },
+    pushMisBloqueos: function pushMisBloqueos(e) {
+      this.misBloqueos.btns.push({
+        idUser: e.idUser,
+        idBtn: e.id,
+        index: e.index
+      });
+      this.misBloqueos.checks.push({
+        idUser: e.idUser,
+        idCheck: e.id,
+        index: e.index
+      });
+    },
+    spliceMisBloqueos: function spliceMisBloqueos(e) {
+      this.misBloqueos.btns.splice(this.misBloqueos.btns.findIndex(function (data) {
+        return data.idBtn === e.id;
+      }), 1);
+      this.misBloqueos.checks.splice(this.misBloqueos.checks.findIndex(function (data) {
+        return data.idCheck === e.id;
+      }), 1);
+    },
+    verificarBloqueos: function verificarBloqueos() {
+      for (var index = 0; index < this.ids.btns.length; index++) {
+        this.$events.fire(this.ids.btns[index].index + "-bloquearBtnsActividad", {
+          idBtn: this.ids.btns[index].idBtn
+        });
+        this.$events.fire(this.ids.btns[index].index + "-bloquearCheckActividad", {
+          idCheck: this.ids.btns[index].idBtn
+        });
+      }
+    }
+  }),
+  mounted: function mounted() {
+    var _this3 = this;
+
+    window.Echo.join("noticias").here(function (data) {}).joining(function (data) {
+      window.Echo["private"]("recibirBtnsCheckActividad").whisper("recibirBtnsCheckActividad", {
+        bloqueos: _this3.misBloqueos
+      });
+    }).leaving(function (data) {
+      _this3.borrarBtnsCheck(data.id);
+    }); //  .listen("Prueba", e => {});
+
+    window.Echo["private"]("bloquearBtnsActividad").listenForWhisper("bloquearBtnsActividad", function (e) {
+      _this3.bloquearBtnsActividad(e);
+    });
+    window.Echo["private"]("desbloquearBtnsActividad").listenForWhisper("desbloquearBtnsActividad", function (e) {
+      _this3.desbloquearBtnsActividad(e);
+    });
+    window.Echo["private"]("bloquearCheckActividad").listenForWhisper("bloquearCheckActividad", function (e) {
+      _this3.bloquearCheckActividad(e);
+    });
+    window.Echo["private"]("desbloquearCheckActividad").listenForWhisper("desbloquearCheckActividad", function (e) {
+      _this3.desbloquearCheckActividad(e);
+    });
+  },
+  created: function created() {
+    var _this4 = this;
+
+    this.$events.$on("abrirFormularioActividad", function (e) {
+      return _this4.abrirFormulario(e);
     });
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo.channel("actividad").listen("ActividadEvent", function (e) {
+      _this4.accionActividad({
+        tipo: e.tipo,
+        data: e.actividad
+      });
+
+      _this4.$events.fire(e.actividad.id + "-actualizarPublicarActividad", e.actividad.publicar);
+
+      if (!_this4.formulario) {
+        _this4.$events.fire("actualizartablaActividad");
+      }
+    });
+    window.Echo["private"]("recibirBtnsCheckActividad").listenForWhisper("recibirBtnsCheckActividad", function (e) {
+      for (var index = 0; index < e.bloqueos.btns.length; index++) {
+        _this4.bloquearBtnsActividad(e.bloqueos.btns[index]);
+      }
+
+      for (var _index = 0; _index < e.bloqueos.checks.length; _index++) {
+        _this4.bloquearCheckActividad(e.bloqueos.checks[_index]);
+      }
+    });
+    this.$events.$on("pushMisBloqueosActividad", function (e) {
+      return _this4.pushMisBloqueos(e);
+    });
+    this.$events.$on("spliceMisBloqueosActividad", function (e) {
+      return _this4.spliceMisBloqueos(e);
+    });
+    this.$events.$on("verificarBloqueos", function (e) {
+      return _this4.verificarBloqueos();
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off("abrirFormularioActividad");
+    this.$events.$off("pushMisBloqueosActividad");
+    this.$events.$off("spliceMisBloqueosActividad");
+    this.$events.$off("verificarBloqueos");
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.Echo.leave("noticias");
+    window.Echo.leave("recibirBtnsCheckActividad");
+    window.Echo.leave("actividad");
+    window.Echo.leave("bloquearCheckActividad");
+    window.Echo.leave("desbloquearCheckActividad");
+    window.Echo.leave("desbloquearBtnsActividad");
+    window.Echo.leave("bloquearBtnsActividad");
   }
 });
 
@@ -130,11 +349,7 @@ var render = function() {
                   {
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
+                    on: { click: _vm.cerrarFormulario }
                   },
                   [_vm._v("Cancelar")]
                 )
@@ -144,10 +359,24 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card-body" }, [
-      _vm._v("\n    " + _vm._s(_vm.getNoticias[3].cuerpo) + "\n    "),
-      _c("div", { domProps: { innerHTML: _vm._s(_vm.getNoticias[3].cuerpo) } })
-    ])
+    _c(
+      "div",
+      { staticClass: "card-body" },
+      [
+        !_vm.formulario
+          ? [_c("tabla-actividades", { on: { cambiarTipo: _vm.cambiarTipo } })]
+          : [
+              _c("form-actividades", {
+                attrs: { idActividad: _vm.id },
+                on: {
+                  cambiarTipo: _vm.cambiarTipo,
+                  cambiarVariableFormulario: _vm.cambiarVariableFormulario
+                }
+              })
+            ]
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [

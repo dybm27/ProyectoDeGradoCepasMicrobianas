@@ -1,4 +1,3 @@
-(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Blue marker":"Marcador azul",Bold:"Negrita",Cancel:"Cancelar","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen",Code:"Código",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Full size image":"Imagen a tamaño completo","Green marker":"Marcador verde","Green pen":"Texto verde",Highlight:"Resaltar","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Insert image":"Insertar imagen","Insert paragraph after block":"","Insert paragraph before block":"",Italic:"Cursiva","Left aligned image":"Imagen alineada a la izquierda",Link:"Enlace","Link URL":"URL del enlace",Next:"Siguiente","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva","Pink marker":"Marcador rosa",Previous:"Anterior","Red pen":"Texto rojo",Redo:"Rehacer","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0","Right aligned image":"Imagen alineada a la derecha",Save:"Guardar","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Strikethrough:"Tachado",Subscript:"Subíndice",Superscript:"Superíndice","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","This link has no URL":"Este enlace no tiene URL",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Widget toolbar":"Barra de herramientas del widget","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["noticias"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue?vue&type=script&lang=js&":
@@ -10,6 +9,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -47,19 +53,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       formulario: false,
       id: 0,
-      tipo: ""
+      tipo: "",
+      ids: {
+        btns: [],
+        checks: []
+      },
+      misBloqueos: {
+        btns: [],
+        checks: []
+      }
     };
   },
-  methods: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"])),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
     abrirFormulario: function abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
       } else {
+        this.id = 0;
+      }
+
+      this.formulario = !this.formulario;
+    },
+    cerrarFormulario: function cerrarFormulario() {
+      if (this.id != 0) {
+        window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
+          idBtn: this.id
+        });
+        window.Echo["private"]("desbloquearCheckNoticia").whisper("desbloquearCheckNoticia", {
+          idCheck: this.id
+        });
+        this.$events.fire("spliceMisBloqueosNoticia", {
+          id: this.id
+        });
         this.id = 0;
       }
 
@@ -70,15 +102,167 @@ __webpack_require__.r(__webpack_exports__);
     },
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
+    },
+    bloquearBtns: function bloquearBtns(id) {
+      this.$events.fire(id + "-bloquearBtnsNoticia");
+    },
+    crearEventoBtns: function crearEventoBtns(id) {
+      var _this = this;
+
+      this.$events.$on(id + "-verificarBloqueoBtnsNoticia", function (e) {
+        return _this.bloquearBtns(id);
+      });
+    },
+    eliminarEventoBtns: function eliminarEventoBtns(id) {
+      this.$events.off(id + "-verificarBloqueoBtnsNoticia");
+    },
+    bloquearCheck: function bloquearCheck(id) {
+      this.$events.fire(id + "-bloquearCheckNoticia");
+    },
+    crearEventoCheck: function crearEventoCheck(id) {
+      var _this2 = this;
+
+      this.$events.$on(id + "-verificarBloqueoCheckNoticia", function (e) {
+        return _this2.bloquearCheck(id);
+      });
+    },
+    eliminarEventoCheck: function eliminarEventoCheck(id) {
+      this.$events.off(id + "-verificarBloqueoCheckNoticia");
+    },
+    bloquearBtnsNoticia: function bloquearBtnsNoticia(e) {
+      this.ids.btns.push({
+        idUser: e.idUser,
+        idBtn: e.idBtn
+      });
+      this.crearEventoBtns(e.idBtn);
+      this.$events.fire(e.idBtn + "-bloquearBtnsNoticia");
+    },
+    desbloquearBtnsNoticia: function desbloquearBtnsNoticia(e) {
+      this.eliminarEventoBtns(e.idBtn);
+      this.ids.btns.splice(this.ids.btns.findIndex(function (data) {
+        return data.idBtn === e.idBtn;
+      }), 1);
+      this.$events.fire(e.idBtn + "-desbloquearBtnsNoticia");
+    },
+    bloquearCheckNoticia: function bloquearCheckNoticia(e) {
+      this.ids.checks.push({
+        idUser: e.idUser,
+        idCheck: e.idCheck
+      });
+      this.crearEventoCheck(e.idCheck);
+      this.$events.fire(e.idCheck + "-bloquearCheckNoticia");
+    },
+    desbloquearCheckNoticia: function desbloquearCheckNoticia(e) {
+      this.eliminarEventoCheck(e.idCheck);
+      this.ids.checks.splice(this.ids.checks.findIndex(function (data) {
+        return data.idCheck === e.idCheck;
+      }), 1);
+      this.$events.fire(e.idCheck + "-desbloquearCheckNoticia");
+    },
+    verificarBtnsCheck: function verificarBtnsCheck(id) {
+      var btns = this.ids.btns.find(function (data) {
+        return data.idUser === id;
+      });
+      var checks = this.ids.checks.find(function (data) {
+        return data.idUser === id;
+      });
+
+      if (btns) {
+        this.desbloquearBtnsNoticia(btns);
+        this.desbloquearCheckNoticia(checks);
+      }
+    },
+    pushMisBloqueos: function pushMisBloqueos(e) {
+      this.misBloqueos.btns.push({
+        idUser: e.idUser,
+        idBtn: e.id
+      });
+      this.misBloqueos.checks.push({
+        idUser: e.idUser,
+        idCheck: e.id
+      });
+    },
+    spliceMisBloqueos: function spliceMisBloqueos(e) {
+      this.misBloqueos.btns.splice(this.misBloqueos.btns.findIndex(function (data) {
+        return data.idBtn === e.id;
+      }), 1);
+      this.misBloqueos.checks.splice(this.misBloqueos.checks.findIndex(function (data) {
+        return data.idCheck === e.id;
+      }), 1);
     }
+  }),
+  mounted: function mounted() {
+    var _this3 = this;
+
+    window.Echo.join("noticias").here(function (data) {}).joining(function (data) {
+      console.log("joing");
+      window.Echo["private"]("recibirBtnsCheckNoticia").whisper("recibirBtnsCheckNoticia", {
+        bloqueos: _this3.misBloqueos
+      });
+    }).leaving(function (data) {
+      _this3.verificarBtnsCheck(data.id);
+    }); //  .listen("Prueba", e => {});
+
+    window.Echo["private"]("bloquearBtnsNoticia").listenForWhisper("bloquearBtnsNoticia", function (e) {
+      _this3.bloquearBtnsNoticia(e);
+    });
+    window.Echo["private"]("desbloquearBtnsNoticia").listenForWhisper("desbloquearBtnsNoticia", function (e) {
+      _this3.desbloquearBtnsNoticia(e);
+    });
+    window.Echo["private"]("bloquearCheckNoticia").listenForWhisper("bloquearCheckNoticia", function (e) {
+      _this3.bloquearCheckNoticia(e);
+    });
+    window.Echo["private"]("desbloquearCheckNoticia").listenForWhisper("desbloquearCheckNoticia", function (e) {
+      _this3.desbloquearCheckNoticia(e);
+    });
   },
   created: function created() {
-    var _this = this;
+    var _this4 = this;
 
     this.$events.$on("abrirFormularioNoticia", function (e) {
-      return _this.abrirFormulario(e);
+      return _this4.abrirFormulario(e);
     });
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo.channel("noticia").listen("NoticiaEvent", function (e) {
+      _this4.accionNoticia({
+        tipo: e.tipo,
+        data: e.noticia
+      });
+
+      _this4.$events.fire(e.noticia.id + "-actualizarPublicarNoticia", e.noticia.publicar);
+
+      if (!_this4.formulario) {
+        _this4.$events.fire("actualizartablaNoticia");
+      }
+    });
+    window.Echo["private"]("recibirBtnsCheckNoticia").listenForWhisper("recibirBtnsCheckNoticia", function (e) {
+      console.log("entroooo");
+
+      for (var index = 0; index < e.bloqueos.btns.length; index++) {
+        _this4.bloquearBtnsNoticia(e.bloqueos.btns[index]);
+      }
+
+      for (var _index = 0; _index < e.bloqueos.checks.length; _index++) {
+        _this4.bloquearCheckNoticia(e.bloqueos.checks[_index]);
+      }
+    });
+    window.Echo["private"]("verificarBloqueosNoticia").listenForWhisper("verificarBloqueosNoticia", function (e) {
+      _this4.verificarBtnsCheck(e.id);
+    });
+    this.$events.$on("pushMisBloqueosNoticia", function (e) {
+      return _this4.pushMisBloqueos(e);
+    });
+    this.$events.$on("spliceMisBloqueosNoticia", function (e) {
+      return _this4.spliceMisBloqueos(e);
+    });
+  },
+  destroyed: function destroyed() {
+    window.Echo["private"]("verificarBloqueosNoticia").whisper("verificarBloqueosNoticia", {
+      id: this.getUserAuth.id
+    });
+    this.$events.$off("abrirFormularioNoticia");
+    this.$events.$off("pushMisBloqueosNoticia");
+    this.$events.$off("spliceMisBloqueosNoticia");
   }
 });
 
@@ -129,11 +313,7 @@ var render = function() {
                   {
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
+                    on: { click: _vm.cerrarFormulario }
                   },
                   [_vm._v("Cancelar")]
                 )
@@ -148,14 +328,7 @@ var render = function() {
       { staticClass: "card-body" },
       [
         !_vm.formulario
-          ? [
-              _c("tabla-noticias", {
-                on: {
-                  abrirFormularioNoticia: _vm.abrirFormulario,
-                  cambiarTipo: _vm.cambiarTipo
-                }
-              })
-            ]
+          ? [_c("tabla-noticias", { on: { cambiarTipo: _vm.cambiarTipo } })]
           : [
               _c("form-noticias", {
                 attrs: { idNoticia: _vm.id },

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Equipamiento;
+use App\Events\EquipamientoEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EquipamientoController extends Controller
@@ -25,7 +27,7 @@ class EquipamientoController extends Controller
         $equipo->imagen = $imagen['ruta'];
         $equipo->imagenPublica = $imagen['rutaPublica'];
         $equipo->save();
-
+        broadcast(new EquipamientoEvent($equipo, 'agregar'))->toOthers();
         return $equipo;
     }
 
@@ -45,7 +47,7 @@ class EquipamientoController extends Controller
         $equipo->funcion = $request->funcion;
         $equipo->publicar = $request->publicar;
         $equipo->save();
-
+        broadcast(new EquipamientoEvent($equipo, 'editar'))->toOthers();
         return $equipo;
     }
 
@@ -53,6 +55,7 @@ class EquipamientoController extends Controller
     {
         $equipo = Equipamiento::find($id);
         Storage::delete($equipo->imagen);
+        broadcast(new EquipamientoEvent($equipo, 'eliminar'))->toOthers();
         $equipo->delete();
         return $equipo;
     }
@@ -61,7 +64,7 @@ class EquipamientoController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = time() . '.png';
+        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/equipos/' . $image_name, $data);
         $ruta = '/public/equipos/' . $image_name;
         $rutaPublica = '/storage/equipos/' . $image_name;
@@ -74,6 +77,7 @@ class EquipamientoController extends Controller
         $equipo = Equipamiento::find($id);
         $equipo->publicar = $request->publicar;
         $equipo->save();
+        broadcast(new EquipamientoEvent($equipo, 'editar'))->toOthers();
         return $equipo;
     }
 }

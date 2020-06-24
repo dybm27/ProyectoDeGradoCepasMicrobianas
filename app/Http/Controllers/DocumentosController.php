@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Documento;
-use App\Proyecto;
-use App\Publicacion;
+use App\Events\ProyectoEvent;
+use App\Events\PublicacionEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DocumentosController extends Controller
@@ -40,7 +41,14 @@ class DocumentosController extends Controller
         $documento->imagen = $imagen['ruta'];
         $documento->imagenPublica = $imagen['rutaPublica'];
         $documento->save();
-
+        switch ($documento->tipo_documento_id) {
+            case 1:
+                broadcast(new ProyectoEvent($documento, 'agregar'))->toOthers();
+                break;
+            case 2:
+                broadcast(new PublicacionEvent($documento, 'agregar'))->toOthers();
+                break;
+        }
         return $documento;
     }
 
@@ -66,7 +74,14 @@ class DocumentosController extends Controller
         $documento->descripcion = $request->descripcion;
         $documento->publicar = $request->publicar;
         $documento->save();
-
+        switch ($documento->tipo_documento_id) {
+            case 1:
+                broadcast(new ProyectoEvent($documento, 'editar'))->toOthers();
+                break;
+            case 2:
+                broadcast(new PublicacionEvent($documento, 'editar'))->toOthers();
+                break;
+        }
         return $documento;
     }
 
@@ -76,6 +91,14 @@ class DocumentosController extends Controller
         $documento = Documento::find($id);
         Storage::disk('local')->delete($documento->ruta);
         Storage::disk('local')->delete($documento->imagen);
+        switch ($documento->tipo_documento_id) {
+            case 1:
+                broadcast(new ProyectoEvent($documento, 'eliminar'))->toOthers();
+                break;
+            case 2:
+                broadcast(new PublicacionEvent($documento, 'eliminar'))->toOthers();
+                break;
+        }
         $documento->delete();
         return $documento;
     }
@@ -84,7 +107,7 @@ class DocumentosController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = time() . '.png';
+        $image_name =  Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::put('/public/documentos/' . $tipo . '/imagenes/' . $image_name, $data);
         $ruta = '/public/documentos/' . $tipo . '/imagenes/' . $image_name;
         $rutaPublica = '/storage/documentos/' . $tipo . '/imagenes/' . $image_name;
@@ -112,6 +135,14 @@ class DocumentosController extends Controller
         $documento = Documento::find($id);
         $documento->publicar = $request->publicar;
         $documento->save();
+        switch ($documento->tipo_documento_id) {
+            case 1:
+                broadcast(new ProyectoEvent($documento, 'editar'))->toOthers();
+                break;
+            case 2:
+                broadcast(new PublicacionEvent($documento, 'editar'))->toOthers();
+                break;
+        }
         return $documento;
     }
 }

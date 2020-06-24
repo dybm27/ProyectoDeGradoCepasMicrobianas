@@ -42,8 +42,6 @@ export default {
         id: data.id
       });
     }
-  },
-  computed: {},
-  created() {}
+  }
 };
 </script>

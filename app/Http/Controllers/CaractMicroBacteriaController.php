@@ -202,7 +202,7 @@ class CaractMicroBacteriaController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = $num . '-' . time() . '.png';
+        $image_name = $num . '-' . Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/bacterias/caract_micro_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/bacterias/caract_micro_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/bacterias/caract_micro_img/' . $id . '/' . $image_name;

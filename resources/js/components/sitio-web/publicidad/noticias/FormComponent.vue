@@ -21,7 +21,13 @@
               </div>
               <div class="position-relative form-group">
                 <label for="select" class>Contenido de la Noticia:</label>
-                <select name="select" id="conidioforo" class="form-control" v-model="selectTipo">
+                <select
+                  name="select"
+                  id="conidioforo"
+                  class="form-control"
+                  v-model="selectTipo"
+                  :disabled="!required"
+                >
                   <option value="link">Link</option>
                   <option value="texto">Texto</option>
                 </select>
@@ -99,7 +105,12 @@
           <div class="main-card mb-3 card">
             <div class="card-body">
               <h5 class="card-title">Elaborar Noticia</h5>
-              <editor-texto @contenido="aceptarContenido" :info="info" />
+              <editor-texto
+                @contenido="aceptarContenido"
+                @modificar="modificarContenido"
+                :info="info"
+                :quienesSomos="false"
+              />
             </div>
           </div>
         </div>
@@ -121,13 +132,14 @@ export default {
         cuerpo: "",
         imagen: "",
         publicar: false,
-        tipo: "noticia"
+        tipo: "noticia",
+        imagenesEditor: [],
+        imagenesGuardadas: []
       },
       selectTipo: "link",
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       mensajeTitulo: "",
       mensajeLink: ""
@@ -136,12 +148,16 @@ export default {
   methods: {
     ...vuex.mapActions("publicidad", ["accionNoticia"]),
     evento() {
+      this.parametros.cuerpo =
+        this.parametros.cuerpo === null ? "" : this.parametros.cuerpo;
       if (this.tituloForm === "Agregar Noticia") {
         let form = new FormData();
         form.append("titulo", this.parametros.titulo);
         form.append("link", this.parametros.link);
         form.append("cuerpo", this.parametros.cuerpo);
         form.append("imagen", this.parametros.imagen);
+        form.append("imagenesEditor", this.parametros.imagenesEditor);
+        form.append("imagenesGuardadas", this.parametros.imagenesGuardadas);
         if (this.parametros.publicar) {
           form.append("publicar", 1);
         } else {
@@ -155,41 +171,115 @@ export default {
             }
           })
           .then(res => {
-            this.accionNoticia({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Noticia",
               "Noticia agregada con exito!!",
               "success"
             );
+            this.accionNoticia({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
             if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
+              this.toastr(
+                "Error!!",
+                error.response.data.errors.titulo[0],
+                "error"
+              );
             }
           });
       } else {
-        axios
-          .put(`/publicidad/${this.idNoticia}`, this.parametros)
-          .then(res => {
-            this.accionNoticia({ tipo: "editar", data: res.data });
-            this.toastr(
-              "Editar Noticia",
-              "Noticia editada con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
-          });
+        if (this.parametros.imagen === this.info.imagen) {
+          axios
+            .put(`/publicidad/${this.idNoticia}`, this.parametros)
+            .then(res => {
+              this.toastr(
+                "Editar Noticia",
+                "Noticia editada con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsNoticia").whisper(
+                "desbloquearBtnsNoticia",
+                {
+                  idBtn: res.data.id
+                }
+              );
+              window.Echo.private("desbloquearCheckNoticia").whisper(
+                "desbloquearCheckNoticia",
+                {
+                  idCheck: res.data.id
+                }
+              );
+              this.$events.fire("spliceMisBloqueosNoticia", {
+                id: res.data.id
+              });
+              this.accionNoticia({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch(error => {
+              if (error.response) {
+                this.toastr(
+                  "Error!!",
+                  error.response.data.errors.titulo[0],
+                  "error"
+                );
+              }
+            });
+        } else {
+          let form = new FormData();
+          form.append("titulo", this.parametros.titulo);
+          form.append("link", this.parametros.link);
+          form.append("cuerpo", this.parametros.cuerpo);
+          form.append("imagen", this.parametros.imagen);
+          form.append("imagenesEditor", this.parametros.imagenesEditor);
+          form.append("imagenesGuardadas", this.parametros.imagenesGuardadas);
+          if (this.parametros.publicar) {
+            form.append("publicar", 1);
+          } else {
+            form.append("publicar", 0);
+          }
+          form.append("tipo", this.parametros.tipo);
+          form.append("_method", "PUT");
+          axios
+            .post(`/publicidad/${this.idNoticia}`, form, {
+              headers: {
+                "content-type": "multipart/form-data"
+              }
+            })
+            .then(res => {
+              this.toastr(
+                "Editar Noticia",
+                "Noticia editada con exito!!",
+                "success"
+              );
+              this.accionNoticia({ tipo: "editar", data: res.data });
+              window.Echo.private("desbloquearBtnsNoticia").whisper(
+                "desbloquearBtnsNoticia",
+                {
+                  idBtn: res.data.id
+                }
+              );
+              window.Echo.private("desbloquearCheckNoticia").whisper(
+                "desbloquearCheckNoticia",
+                {
+                  idCheck: res.data.id
+                }
+              );
+              this.$events.fire("spliceMisBloqueosNoticia", {
+                id: res.data.id
+              });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch(error => {
+              if (error.response) {
+                this.toastr(
+                  "Error!!",
+                  error.response.data.errors.titulo[0],
+                  "error"
+                );
+              }
+            });
+        }
       }
     },
     toastr(titulo, msg, tipo) {
@@ -215,6 +305,7 @@ export default {
     llenarInfo() {
       this.parametros.titulo = this.info.titulo;
       this.parametros.cuerpo = this.info.cuerpo;
+      this.parametros.link = this.info.link;
       if (this.info.cuerpo) {
         this.selectTipo = "texto";
       }
@@ -259,12 +350,19 @@ export default {
       };
       reader.src = URL.createObjectURL(file);
     },
-    aceptarContenido(contenido) {
-      this.parametros.cuerpo = contenido;
+    aceptarContenido(data) {
+      this.parametros.cuerpo = data.contenido;
+      this.parametros.imagenesEditor = data.imagenesEditor;
+      this.parametros.imagenesGuardadas = data.imagenesGuardadas;
+    },
+    modificarContenido() {
+      this.parametros.cuerpo = "";
+      this.parametros.imagenesEditor = "";
     }
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo"]),
+    ...vuex.mapGetters(["getUserAuth"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },

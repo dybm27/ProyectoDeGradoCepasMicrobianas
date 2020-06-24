@@ -76,7 +76,10 @@ export default {
     return { formulario: false, id: 0, tipo: "" };
   },
   methods: {
-    ...vuex.mapActions("investigadores", ["obtenerInvestigadores"]),
+    ...vuex.mapActions("investigadores", [
+      "obtenerInvestigadores",
+      "accionInvestigador"
+    ]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -103,6 +106,16 @@ export default {
     this.$events.$on("abrirFormularioInvestigador", e =>
       this.abrirFormulario(e)
     );
+    window.Echo.channel("investigador").listen("InvestigadorEvent", e => {
+      this.accionInvestigador({ tipo: e.tipo, data: e.investigador });
+      this.$events.fire(
+        e.investigador.id + "-actualizarPublicarInvestigador",
+        e.investigador.publicar
+      );
+      if (!this.formulario) {
+        this.$events.fire("actualizartablaInvestigador");
+      }
+    });
   }
 };
 </script>

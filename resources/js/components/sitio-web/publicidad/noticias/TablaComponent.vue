@@ -1,13 +1,12 @@
 <template>
   <div>
-    <template v-if="getNoticias!=''">
+    <template v-if="mostrarTabla">
       <my-vuetable
+        ref="tabla"
         api-url="/info-panel/noticias-tabla"
         :fields="fields"
         :sort-order="sortOrder"
         :nameGet="'noticias'"
-        @cambiarVariable="cambiarVariable"
-        :refrescarTabla="refrescarTabla"
       ></my-vuetable>
     </template>
     <template v-else>
@@ -25,6 +24,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -62,20 +62,40 @@ export default {
           direction: "asc"
         }
       ],
-      refrescarTabla: false,
       idNoticia: ""
     };
   },
   computed: {
-    ...vuex.mapGetters("publicidad", ["getNoticias"])
+    ...vuex.mapGetters("publicidad", ["getNoticias"]),
+    ...vuex.mapGetters(["getUserAuth"]),
+    mostrarTabla() {
+      if (this.getNoticias != "" && this.getNoticias != null) {
+        return true;
+      }
+      return false;
+    }
   },
   methods: {
     ...vuex.mapActions("publicidad", ["accionNoticia"]),
-    cambiarVariable() {
-      this.refrescarTabla = false;
-    },
     beforeOpenEliminar(data) {
       this.idNoticia = data.params.id;
+    },
+    closeEliminar() {
+      window.Echo.private("desbloquearBtnsNoticia").whisper(
+        "desbloquearBtnsNoticia",
+        {
+          idBtn: this.idNoticia
+        }
+      );
+      window.Echo.private("desbloquearCheckNoticia").whisper(
+        "desbloquearCheckNoticia",
+        {
+          idCheck: this.idNoticia
+        }
+      );
+      this.$events.fire("spliceMisBloqueosNoticia", {
+        id: this.idNoticia
+      });
     },
     eliminarNoticia() {
       axios
@@ -83,17 +103,14 @@ export default {
           data: { tipo: "noticia" }
         })
         .then(res => {
-          this.accionNoticia({
-            data: res.data,
-            tipo: "eliminar"
-          });
-          this.$modal.hide("modal_eliminar_noticia");
           this.toastr(
             "Eliminar Noticia",
-            "Noticia eliminado con exito!!",
+            "Noticia eliminada con exito!!",
             "success"
           );
-          this.refrescarTabla = true;
+          this.accionNoticia({ tipo: "eliminar", data: res.data });
+          this.actualizarTabla();
+          this.$modal.hide("modal_eliminar_noticia");
         })
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
@@ -119,12 +136,20 @@ export default {
         onMouseOut: () => {}
       });
     },
-    abrirFormularioNoticia(id) {
-      this.$emit("abrirFormularioNoticia", id);
+    actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
+    this.$events.on("actualizartablaNoticia", e => this.actualizarTabla());
+  },
+  destroyed() {
+    this.$events.off("actualizartablaNoticia");
   }
 };
 </script>

@@ -1,4 +1,3 @@
-(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Blue marker":"Marcador azul",Bold:"Negrita",Cancel:"Cancelar","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen",Code:"Código",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Full size image":"Imagen a tamaño completo","Green marker":"Marcador verde","Green pen":"Texto verde",Highlight:"Resaltar","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Insert image":"Insertar imagen","Insert paragraph after block":"","Insert paragraph before block":"",Italic:"Cursiva","Left aligned image":"Imagen alineada a la izquierda",Link:"Enlace","Link URL":"URL del enlace",Next:"Siguiente","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva","Pink marker":"Marcador rosa",Previous:"Anterior","Red pen":"Texto rojo",Redo:"Rehacer","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0","Right aligned image":"Imagen alineada a la derecha",Save:"Guardar","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Strikethrough:"Tachado",Subscript:"Subíndice",Superscript:"Superíndice","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","This link has no URL":"Este enlace no tiene URL",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Widget toolbar":"Barra de herramientas del widget","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["novedades"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue?vue&type=script&lang=js&":
@@ -10,6 +9,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -36,15 +42,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       formulario: false,
       id: 0,
-      tipo: ""
+      tipo: "",
+      refrescar: false
     };
   },
-  methods: {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
     abrirFormulario: function abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -59,15 +83,30 @@ __webpack_require__.r(__webpack_exports__);
     },
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.refrescar = false;
     }
-  },
+  }),
   created: function created() {
     var _this = this;
 
-    this.$events.$on("abrirFormularioProyecto", function (e) {
+    this.$events.$on("abrirFormularioNovedad", function (e) {
       return _this.abrirFormulario(e);
     });
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo.channel("novedad").listen("NovedadEvent", function (e) {
+      _this.accionNovedad({
+        tipo: e.tipo,
+        data: e.novedad
+      });
+
+      _this.$events.fire(e.novedad.id + "-actualizarPublicarNovedad", e.novedad.publicar);
+
+      if (!_this.formulario) {
+        _this.$events.fire("actualizartablaNovedad");
+      }
+    });
   }
 });
 
@@ -132,7 +171,33 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card-body" })
+    _c(
+      "div",
+      { staticClass: "card-body" },
+      [
+        !_vm.formulario
+          ? [
+              _c("tabla-novedades", {
+                attrs: { refrescar: _vm.refrescar },
+                on: {
+                  abrirFormularioNovedad: _vm.abrirFormulario,
+                  cambiarTipo: _vm.cambiarTipo,
+                  cambiarVariable: _vm.cambiarVariable
+                }
+              })
+            ]
+          : [
+              _c("form-novedades", {
+                attrs: { idNovedad: _vm.id },
+                on: {
+                  cambiarTipo: _vm.cambiarTipo,
+                  cambiarVariableFormulario: _vm.cambiarVariableFormulario
+                }
+              })
+            ]
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
@@ -150,7 +215,7 @@ var staticRenderFns = [
         _c("i", {
           staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
         }),
-        _vm._v("\n      Tabla Dinámica Proyectos\n    ")
+        _vm._v("\n      Tabla Dinámica Novedades\n    ")
       ]
     )
   }

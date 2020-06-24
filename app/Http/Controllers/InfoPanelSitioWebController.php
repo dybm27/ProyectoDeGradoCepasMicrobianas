@@ -6,49 +6,21 @@ use App\Actividad;
 use App\Documento;
 use App\Equipamiento;
 use App\Investigador;
-use App\Mision;
 use App\Noticia;
 use App\Novedad;
-use App\Objetivo;
-use App\Vision;
+use App\QuienesSomos;
 use Illuminate\Http\Request;
 
 class InfoPanelSitioWebController extends Controller
 {
     public function quienesSomos()
     {
-        $mision = Mision::find(1);
-        $vision = Vision::find(1);
-        $objetivos = Objetivo::all();
+        $mision = QuienesSomos::where('quienes_somos_tipos_id', 1)->first();
+        $vision = QuienesSomos::where('quienes_somos_tipos_id', 2)->first();
+        $objetivos = QuienesSomos::where('quienes_somos_tipos_id', 3)->first();
         return [
             'mision' => $mision, 'vision' => $vision, 'objetivos' => $objetivos
         ];
-    }
-
-    public function objetivos(Request $request)
-    {
-        $Objetivos = Objetivo::select(
-            'objetivos.texto',
-            'objetivos.id'
-        );
-
-        if ($request->filled('sort')) {
-            $sort = explode('|', $request->sort);
-            $Objetivos = $Objetivos->orderBy($sort[0], $sort[1]);
-        }
-
-        if ($request->filled('filter')) {
-            $value = "%{$request->filter}%";
-            $Objetivos = $Objetivos->where(function ($Objetivos) use ($value) {
-                return $Objetivos->orWhere('Objetivos.texto', 'like', $value);
-            });
-        }
-
-        $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
-
-        $pagination = $Objetivos->paginate($perPage);
-
-        return $pagination;
     }
 
     public function investigadores(Request $request)
@@ -182,11 +154,7 @@ class InfoPanelSitioWebController extends Controller
     public function publicidad()
     {
         return [
-            'noticias' => Noticia::join(
-                'imagenes_editor_noticias',
-                'imagenes_editor_noticias.id',
-                'noticias.id'
-            )->get(),
+            'noticias' => Noticia::all(),
             'actividades' => Actividad::all(),
             'novedades' => Novedad::all()
         ];

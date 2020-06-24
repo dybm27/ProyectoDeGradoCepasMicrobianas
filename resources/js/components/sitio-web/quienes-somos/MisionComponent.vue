@@ -1,28 +1,58 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-9">
+  <div>
+    <template v-if="getQuienesSomos">
+      <div class="container">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <h5 class="card-title">Misión</h5>
-            <textarea
-              name="texto"
-              id="texto"
-              class="form-control"
-              v-model="texto"
-              style="height: 150px;"
-            ></textarea>
-            <div class="row mt-3 justify-content-center">
-              <button
-                class="btn btn-success"
-                :disabled="verificarBtn"
-                @click="cambiarMision"
-              >Cambiar</button>
+            <div class="row justify-content-center">
+              <div class="col-md-12">
+                <h5 class="card-title">Misión</h5>
+                <editor-texto
+                  @contenido="aceptarContenido"
+                  @modificar="modificarContenido"
+                  :info="getQuienesSomos.mision"
+                />
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-4 mt-3">
+                <button
+                  class="btn btn-block btn-success"
+                  :disabled="verificarBtn"
+                  @click="cambiarMision"
+                >Cambiar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </template>
+    <template v-else>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center mt-5">
+            <div class="loader">
+              <div class="ball-spin-fade-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -31,17 +61,24 @@ import vuex from "vuex";
 export default {
   data() {
     return {
-      texto: ""
+      parametros: {
+        cuerpo: "",
+        imagenesEditor: [],
+        imagenesGuardadas: []
+      }
     };
   },
   computed: {
     ...vuex.mapGetters("quienes_somos", ["getQuienesSomos"]),
     verificarBtn() {
-      if (this.texto) {
-        if (this.texto === this.getQuienesSomos.mision.texto) {
-          return true;
+      if (this.getQuienesSomos.mision) {
+        if (this.parametros.cuerpo) {
+          if (this.getQuienesSomos.mision.cuerpo === this.parametros.cuerpo) {
+            return true;
+          }
+          return false;
         }
-        return false;
+        return true;
       } else {
         return true;
       }
@@ -50,35 +87,17 @@ export default {
   created() {
     this.$emit("rutaHijo", window.location.pathname);
   },
-  watch: {
-    getQuienesSomos() {
-      if (this.getQuienesSomos) {
-        this.texto = this.getQuienesSomos.mision.texto;
-      }
-    }
-  },
-  mounted() {
-    if (this.getQuienesSomos) {
-      this.texto = this.getQuienesSomos.mision.texto;
-    }
-  },
+
   methods: {
     ...vuex.mapActions("quienes_somos", ["accionCambiarQuienesSomos"]),
     cambiarMision() {
-      axios
-        .put("/quienes-somos/mision/cambiar", { texto: this.texto })
-        .then(res => {
-          this.accionCambiarQuienesSomos({
-            data: res.data,
-            tipo: "mision"
-          });
-          this.toastr("Cambiar Misión", "Misión cambiada con exito", "success");
-        })
-        .catch(error => {
-          if (error.response) {
-          }
-          this.toastr("Error!!!!", "", "error");
+      axios.put("/quienes-somos/mision/cambiar", this.parametros).then(res => {
+        this.accionCambiarQuienesSomos({
+          data: res.data,
+          tipo: "mision"
         });
+        this.toastr("Cambiar Misión", "Misión cambiada con exito", "success");
+      });
     },
     toastr(titulo, msg, tipo) {
       this.$toastr.Add({
@@ -99,6 +118,14 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
+    },
+    aceptarContenido(data) {
+      this.parametros.cuerpo = data.contenido;
+      this.parametros.imagenesEditor = data.imagenesEditor;
+      this.parametros.imagenesGuardadas = data.imagenesGuardadas;
+    },
+    modificarContenido(data) {
+      this.parametros.cuerpo = "";
     }
   }
 };

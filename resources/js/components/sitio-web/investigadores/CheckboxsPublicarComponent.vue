@@ -30,7 +30,6 @@ export default {
     return { checkPublicar: false, disabled: false };
   },
   methods: {
-    ...vuex.mapActions("investigadores", ["accionInvestigador"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -41,11 +40,6 @@ export default {
           if (res.data.publicar) {
             this.toastr("Publicar", "Publicado con Exito!!");
           }
-          this.accionInvestigador({
-            data: res.data,
-            tipo: "editar"
-          });
-          this.checkPublicar = res.data.publicar;
           this.disabled = false;
         });
     },
@@ -68,6 +62,13 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
+    },
+    verificarPublicar(e) {
+      if (e == 0) {
+        this.checkPublicar = false;
+      } else {
+        this.checkPublicar = true;
+      }
     }
   },
   computed: {
@@ -76,11 +77,12 @@ export default {
     }
   },
   mounted() {
-    if (this.rowData.publicar == 0) {
-      this.checkPublicar = false;
-    } else {
-      this.checkPublicar = true;
-    }
+    this.verificarPublicar(this.rowData.publicar);
+  },
+  created() {
+    this.$events.$on(this.rowData.id + "-actualizarPublicarInvestigador", e =>
+      this.verificarPublicar(e)
+    );
   }
 };
 </script>

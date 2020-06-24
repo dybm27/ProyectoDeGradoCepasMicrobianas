@@ -17,10 +17,11 @@ class CreateNovedadsTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('link')->nullable();
-            $table->string('cuerpo')->nullable();
+            $table->longText('cuerpo')->nullable();
             $table->boolean('publicar')->default(0);
             $table->string('imagen');
             $table->string('imagenPublica');
+            $table->longText('imagenesEditor')->nullable();
             $table->timestamps();
         });
     }

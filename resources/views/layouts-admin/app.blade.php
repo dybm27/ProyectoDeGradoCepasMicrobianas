@@ -11,7 +11,6 @@
         <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
-
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Usuario autenticado --> 
@@ -25,7 +24,7 @@
         @yield('estilos')
     </head>
     <body><!--fixed-footer-->
-        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar " id="app" >
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >
 
             @include('layouts-admin.header')
 

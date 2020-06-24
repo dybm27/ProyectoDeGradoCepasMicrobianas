@@ -17,6 +17,7 @@ class CreateImagenLoginsTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('descripcion');
+            $table->boolean('mostrar')->default(0);
             $table->string('imagen');
             $table->string('imagenPublica');
             $table->timestamps();

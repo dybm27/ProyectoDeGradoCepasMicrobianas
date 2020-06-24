@@ -167,12 +167,12 @@ export default {
         axios
           .post("/equipamientos", this.parametros)
           .then(res => {
-            this.accionEquipamiento({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Equipamiento",
               "Equipamiento agregado con exito!!",
               "success"
             );
+            this.accionEquipamiento({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
@@ -186,12 +186,12 @@ export default {
         axios
           .put(`/equipamientos/${this.idEquipamiento}`, this.parametros)
           .then(res => {
-            this.accionEquipamiento({ tipo: "editar", data: res.data });
             this.toastr(
               "Editar Equipamiento",
               "Equipamiento editado con exito!!",
               "success"
             );
+            this.accionEquipamiento({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {

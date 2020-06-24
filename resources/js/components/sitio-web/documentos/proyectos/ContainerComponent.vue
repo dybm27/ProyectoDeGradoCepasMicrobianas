@@ -36,11 +36,13 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   data() {
     return { formulario: false, id: 0, tipo: "" };
   },
   methods: {
+    ...vuex.mapActions("documentos", ["accionProyecto"]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -57,10 +59,18 @@ export default {
     }
   },
   created() {
-    this.$events.$on("abrirFormularioProyecto", e =>
-      this.abrirFormulario(e)
-    );
+    this.$events.$on("abrirFormularioProyecto", e => this.abrirFormulario(e));
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo.channel("proyecto").listen("ProyectoEvent", e => {
+      this.accionProyecto({ tipo: e.tipo, data: e.proyecto });
+      this.$events.fire(
+        e.proyecto.id + "-actualizarPublicarProyecto",
+        e.proyecto.publicar
+      );
+      if (!this.formulario) {
+        this.$events.fire("actualizartablaProyecto");
+      }
+    });
   }
 };
 </script>

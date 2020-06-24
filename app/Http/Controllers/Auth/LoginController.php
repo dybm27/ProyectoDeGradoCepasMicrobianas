@@ -43,7 +43,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $imagenes = ImagenLogin::all();
+        $imagenes = ImagenLogin::where('mostrar', 1)->get();
         return view('login', compact('imagenes'));
     }
 

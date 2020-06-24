@@ -1,4 +1,4 @@
-export default  class MyUploadAdapter {
+export default class MyUploadAdapter {
     constructor(loader) {
         this.loader = loader;
     }
@@ -10,7 +10,7 @@ export default  class MyUploadAdapter {
                 data.append("upload", uploadedFile);
 
                 axios
-                    .post("/publicidad/upload", data, {
+                    .post("/editor/upload", data, {
                         headers: { "Content-Type": "multipart/form-data" }
                     })
                     .then(res => {
@@ -23,13 +23,13 @@ export default  class MyUploadAdapter {
                         }
                     })
                     .catch(error => {
-                        reject(error);
+                        alert(error);
                     });
             });
         });
     }
 
     abort() {
-        console.log('errrrrorrr');
+        alert("errrrrorrr");
     }
 }

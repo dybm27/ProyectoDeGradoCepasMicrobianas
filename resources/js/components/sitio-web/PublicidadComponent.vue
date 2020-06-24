@@ -61,10 +61,19 @@ export default {
       } else {
         this.tipo2 = "";
       }
+    },
+    eliminarImagenesStorage() {
+      axios.get("/editor/upload");
     }
+  },
+  computed: {
+    ...vuex.mapGetters(["getUserAuth"])
   },
   created() {
     this.obtenerPublicidad();
+    if (this.getUserAuth.tipouser_id === 1) {
+      this.eliminarImagenesStorage();
+    }
   }
 };
 </script>

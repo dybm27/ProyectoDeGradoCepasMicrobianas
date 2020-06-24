@@ -76,7 +76,10 @@ export default {
     return { formulario: false, id: 0, tipo: "" };
   },
   methods: {
-    ...vuex.mapActions("equipamientos", ["obtenerEquipamientos"]),
+    ...vuex.mapActions("equipamientos", [
+      "obtenerEquipamientos",
+      "accionEquipamiento"
+    ]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -103,6 +106,16 @@ export default {
     this.$events.$on("abrirFormularioEquipamiento", e =>
       this.abrirFormulario(e)
     );
+    window.Echo.channel("equipamiento").listen("EquipamientoEvent", e => {
+      this.accionEquipamiento({ tipo: e.tipo, data: e.equipamiento });
+      this.$events.fire(
+        e.equipamiento.id + "-actualizarPublicarEquipamiento",
+        e.equipamiento.publicar
+      );
+      if (!this.formulario) {
+        this.$events.fire("actualizartablaEquipamiento");
+      }
+    });
   }
 };
 </script>

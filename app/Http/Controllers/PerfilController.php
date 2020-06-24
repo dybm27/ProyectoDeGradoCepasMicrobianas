@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -52,7 +53,7 @@ class PerfilController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = time() . '.png';
+        $image_name = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/usuarios/avatar_img/' . $image_name, $data);
         $ruta = '/public/usuarios/avatar_img/' . $image_name;
         $rutaPublica = '/storage/usuarios/avatar_img/' . $image_name;

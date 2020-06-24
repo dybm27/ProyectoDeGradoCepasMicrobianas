@@ -1,109 +1,91 @@
 <template>
   <div class="container">
-    <template v-if="validarForm">
-      <div class="row justify-content-md-center">
-        <div class="col-md-6">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">{{titulo}}</h5>
-              <form @submit.prevent="evento">
-                <div class="position-relative form-group">
-                  <label for="titulo" class>Título</label>
-                  <input
-                    name="titulo"
-                    id="titulo"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.titulo"
-                    required
-                  />
-                  <em v-if="errors.titulo" class="text-danger">{{errors.titulo[0]}}</em>
-                </div>
-                <div class="position-relative form-group">
-                  <label for="imagen" class>Imagen</label>
-                  <input
-                    name="imagen"
-                    @change="obtenerImagen"
-                    id="imagen"
-                    accept="image/jpeg"
-                    type="file"
-                    class="form-control-file"
-                    ref="inputImagen"
-                    :required="required"
-                  />
-                  <em v-if="imagenError" class="text-danger">{{imagenError}}</em>
-                </div>
-                <div class="position-relative form-group">
-                  <label for="descripcion">Descripción</label>
-                  <textarea
-                    name="text"
-                    id="descripcion"
-                    class="form-control"
-                    v-model="parametros.descripcion"
-                    required
-                  ></textarea>
-                </div>
-                <button class="mb-2 mr-2 btn btn-block" :class="btnClase">{{nomBtnComputed}}</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">Imagen</h5>
-              <template v-if="mostraImagen">
-                <img class="d-block w-100 p-3" :src="mostraImagen" />
-              </template>
-              <template v-else>
-                <div class="text-center">
-                  <h5 class="mt-5 mb-5">
-                    <span class="pr-1">
-                      <b class="text-success">SIN IMAGEN</b>
-                    </span>
-                  </h5>
-                </div>
-              </template>
-            </div>
-          </div>
-        </div>
-      </div>
-    </template>
-    <template v-else>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center mt-5">
-            <div class="loader mt-5">
-              <div class="ball-spin-fade-loader mt-5">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">Editar Imagen</h5>
+            <form @submit.prevent="evento">
+              <div class="position-relative form-group">
+                <label for="titulo" class>Título</label>
+                <input
+                  name="titulo"
+                  id="titulo"
+                  placeholder="..."
+                  type="text"
+                  class="form-control"
+                  v-model="parametros.titulo"
+                  required
+                />
+                <em v-if="errors.titulo" class="text-danger">{{errors.titulo[0]}}</em>
               </div>
-            </div>
+              <div class="position-relative form-group">
+                <label for="imagen" class>Imagen</label>
+                <input
+                  name="imagen"
+                  @change="obtenerImagen"
+                  id="imagen"
+                  accept="image/jpeg"
+                  type="file"
+                  class="form-control-file"
+                  ref="inputImagen"
+                />
+                <em v-if="imagenError" class="text-danger">{{imagenError}}</em>
+              </div>
+              <div class="position-relative form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  name="text"
+                  id="descripcion"
+                  class="form-control"
+                  v-model="parametros.descripcion"
+                  required
+                ></textarea>
+              </div>
+              <div class="custom-checkbox custom-control mb-2">
+                <input
+                  type="checkbox"
+                  id="mostrar"
+                  class="custom-control-input"
+                  v-model="parametros.mostrar"
+                />
+                <label class="custom-control-label" for="mostrar">Desea Mostrar la imagen?</label>
+              </div>
+              <button class="mb-2 mr-2 btn btn-block btn-warning">Editar</button>
+            </form>
           </div>
         </div>
       </div>
-    </template>
+      <div class="col-md-6">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">Imagen</h5>
+            <template v-if="mostraImagen">
+              <img class="d-block w-100 p-3" :src="mostraImagen" />
+            </template>
+            <template v-else>
+              <div class="text-center">
+                <h5 class="mt-5 mb-5">
+                  <span class="pr-1">
+                    <b class="text-success">SIN IMAGEN</b>
+                  </span>
+                </h5>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import vuex from "vuex";
 export default {
-  created() {
-    this.$emit("rutaHijo", window.location.pathname);
-    if (this.getImagenesLogin.length === 3 && !this.$route.params.idImagen) {
-      this.$router.push({ name: "imagenes-ver" });
-    }
-  },
+  props: ["idImagen"],
   data() {
     return {
-      parametros: { imagen: "", titulo: "", descripcion: "" },
+      parametros: { imagen: "", titulo: "", descripcion: "", mostrar: false },
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
@@ -114,102 +96,58 @@ export default {
   },
   methods: {
     ...vuex.mapActions("imagenes_login", ["accionImagenLogin"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
-      if (this.tituloForm === "Agregar Imagen") {
-        let form = new FormData();
-        form.append("imagen", this.parametros.imagen);
-        form.append("descripcion", this.parametros.descripcion);
-        form.append("titulo", this.parametros.titulo);
+      if (this.parametros.imagen === this.info.imagen) {
         axios
-          .post("/login/imagen", form, {
-            headers: { "Content-Type": "multipart/form-data" }
-          })
+          .put(`/login/imagen/${this.info.id}`, this.parametros)
           .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Imagen";
-            this.nomBtn = "Editar";
-            this.accionImagenLogin({ tipo: "agregar", data: res.data });
+            this.$emit("mostrarFrom");
             this.toastr(
-              "Agregar Imagen",
-              "Imagen agregado con exito!!",
+              "Editar Imagen",
+              "Imagen editado con exito!!",
               "success"
             );
-            this.$router.push({ name: "imagenes-ver" });
           })
           .catch(error => {
             if (error.response) {
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
             }
           });
       } else {
-        if (this.parametros.imagen === this.info.imagen) {
-          axios
-            .put(`/login/imagen/${this.info.id}`, this.parametros)
-            .then(res => {
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.accionImagenLogin({ tipo: "editar", data: res.data });
-              this.toastr(
-                "Editar Imagen",
-                "Imagen editado con exito!!",
-                "success"
-              );
-              this.$router.push({ name: "imagenes-ver" });
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
+        let form = new FormData();
+        form.append("imagen", this.parametros.imagen);
+        form.append("descripcion", this.parametros.descripcion);
+        form.append("titulo", this.parametros.titulo);
+        if (this.parametros.mostrar) {
+          form.append("mostrar", 1);
         } else {
-          let form = new FormData();
-          form.append("imagen", this.parametros.imagen);
-          form.append("descripcion", this.parametros.descripcion);
-          form.append("titulo", this.parametros.titulo);
-          form.append("_method", "PUT");
-          axios
-            .post(`/login/imagen/${this.info.id}`, form, {
-              headers: { "Content-Type": "multipart/form-data" }
-            })
-            .then(res => {
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.accionImagenLogin({ tipo: "editar", data: res.data });
-              this.toastr(
-                "Editar Imagen",
-                "Imagen editado con exito!!",
-                "success"
-              );
-              this.$router.push({ name: "imagenes-ver" });
-            })
-            .catch(error => {
-              if (error.response) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
-            });
+          form.append("mostrar", 0);
         }
+        form.append("_method", "PUT");
+        axios
+          .post(`/login/imagen/${this.info.id}`, form, {
+            headers: { "Content-Type": "multipart/form-data" }
+          })
+          .then(res => {
+            this.toastr(
+              "Editar Imagen",
+              "Imagen editada con exito!!",
+              "success"
+            );
+            this.accionImagenLogin({ tipo: "editar", data: res.data });
+            this.$emit("mostrarFrom");
+          })
+          .catch(error => {
+            if (error.response) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
+              // console.log(error.response.data);
+            }
+          });
       }
     },
     toastr(titulo, msg, tipo) {
@@ -237,6 +175,9 @@ export default {
       this.parametros.descripcion = this.info.descripcion;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
+      if (this.info.mostrar == 1) {
+        this.parametros.mostrar = true;
+      }
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
@@ -289,71 +230,14 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters("imagenes_login", [
-      "getImagenLoginById",
-      "getImagenesLogin"
-    ]),
+    ...vuex.mapGetters("imagenes_login", ["getImagenLoginById"]),
     mostraImagen() {
       return this.imagenMiniatura;
-    },
-    btnClase() {
-      if (this.tituloForm === "Agregar Imagen") {
-        return "btn-primary";
-      } else {
-        return "btn-warning";
-      }
-    },
-    required() {
-      if (this.tituloForm === "Agregar Imagen") {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    titulo() {
-      return this.tituloForm;
-    },
-    nomBtnComputed() {
-      return this.nomBtn;
-    },
-    validarForm() {
-      if (!this.$route.params.idImagen) {
-        return true;
-      } else if (this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   mounted() {
-    if (!this.$route.params.idImagen) {
-      this.tituloForm = "Agregar Imagen";
-      this.nomBtn = "Agregar";
-    } else {
-      this.info = this.getImagenLoginById(this.$route.params.idImagen);
-      if (this.info) {
-        this.llenarInfo();
-      }
-      this.tituloForm = "Editar Imagen";
-      this.nomBtn = "Editar";
-    }
-  },
-  watch: {
-    getImagenesLogin() {
-      if (this.getImagenesLogin) {
-        if (
-          this.getImagenesLogin.length === 3 &&
-          !this.$route.params.idImagen
-        ) {
-          this.$router.push({ name: "imagenes-ver" });
-        } else {
-          if (this.$route.params.idImagen) {
-            this.info = this.getImagenLoginById(this.$route.params.idImagen);
-            this.llenarInfo();
-          }
-        }
-      }
-    }
+    this.info = this.getImagenLoginById(this.idImagen);
+    this.llenarInfo();
   }
 };
 </script>

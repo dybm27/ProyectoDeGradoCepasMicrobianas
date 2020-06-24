@@ -1,13 +1,12 @@
 <template>
   <div>
-    <template v-if="getPublicaciones!=''">
+    <template v-if="mostrarTabla">
       <my-vuetable
+        ref="tabla"
         api-url="/info-panel/publicaciones-tabla"
         :fields="fields"
         :sort-order="sortOrder"
         :nameGet="'publicaciones'"
-        @cambiarVariable="cambiarVariable"
-        :refrescarTabla="refrescarTabla"
       ></my-vuetable>
     </template>
     <template v-else>
@@ -62,22 +61,20 @@ export default {
           direction: "asc"
         }
       ],
-      refrescarTabla: false,
-      texto: "",
-      idPublicacion: "",
-      nombreModal: "",
-      nomBtn: "",
-      error: ""
+      idPublicacion: ""
     };
   },
   computed: {
-    ...vuex.mapGetters("documentos", ["getPublicaciones"])
+    ...vuex.mapGetters("documentos", ["getPublicaciones"]),
+    mostrarTabla() {
+      if (this.getPublicaciones != "") {
+        return true;
+      }
+      return false;
+    }
   },
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
-    cambiarVariable() {
-      this.refrescarTabla = false;
-    },
     beforeOpenEliminar(data) {
       this.idPublicacion = data.params.id;
     },
@@ -87,17 +84,14 @@ export default {
           data: { tipo: "publicacion" }
         })
         .then(res => {
-          this.accionPublicacion({
-            data: res.data,
-            tipo: "eliminar"
-          });
           this.$modal.hide("modal_eliminar_publicacion");
           this.toastr(
             "Eliminar Publicacion",
             "Publicacion eliminado con exito!!",
             "success"
           );
-          this.refrescarTabla = true;
+          this.accionPublicacion({ tipo: "eliminar", data: res.data });
+          this.actualizarTabla();
         })
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
@@ -125,10 +119,21 @@ export default {
     },
     abrirFormularioPublicacion(id) {
       this.$emit("abrirFormularioPublicacion", id);
+    },
+    actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
+    this.$events.on("actualizartablaPublicacion", e => this.actualizarTabla());
+  },
+  destroyed() {
+    this.$events.off("actualizartablaPublicacion");
   }
 };
 </script>

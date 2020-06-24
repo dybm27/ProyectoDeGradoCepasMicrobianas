@@ -22,7 +22,10 @@
     </div>
     <div class="card-body">
       <template v-if="!formulario">
-        <tabla-publicaciones @abrirFormularioPublicacion="abrirFormulario" @cambiarTipo="cambiarTipo"></tabla-publicaciones>
+        <tabla-publicaciones
+          @abrirFormularioPublicacion="abrirFormulario"
+          @cambiarTipo="cambiarTipo"
+        ></tabla-publicaciones>
       </template>
       <template v-else>
         <form-publicaciones
@@ -36,11 +39,13 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   data() {
     return { formulario: false, id: 0, tipo: "" };
   },
   methods: {
+    ...vuex.mapActions("documentos", ["accionPublicacion"]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -61,6 +66,16 @@ export default {
       this.abrirFormulario(e)
     );
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo.channel("publicacion").listen("PublicacionEvent", e => {
+      this.accionPublicacion({ tipo: e.tipo, data: e.publicacion });
+      this.$events.fire(
+        e.publicacion.id + "-actualizarPublicarPublicacion",
+        e.publicacion.publicar
+      );
+      if (!this.formulario) {
+        this.$events.fire("actualizartablaPublicacion");
+      }
+    });
   }
 };
 </script>

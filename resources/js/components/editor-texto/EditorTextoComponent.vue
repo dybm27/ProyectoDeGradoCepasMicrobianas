@@ -1,28 +1,29 @@
 <template>
-  <div>
-    <div class="mb-3">
-      <ckeditor
-        :editor="editor"
-        v-model="editorData"
-        :config="editorConfig"
-        :disabled="editorDisabled"
-      ></ckeditor>
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-12">
+        <ckeditor
+          :editor="editor"
+          v-model="editorData"
+          :config="editorConfig"
+          :disabled="editorDisabled"
+          @ready="ready"
+          @input="input"
+        ></ckeditor>
+      </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <template v-if="mostrarBtn">
-            <button
-              class="btn btn-block btn-success"
-              :disabled="validarBtn"
-              @click="aceptarContenido"
-            >Aceptar Contenido</button>
-          </template>
-          <template v-else>
-            <button class="btn btn-block btn-danger" @click="modificarContenido">Modificar Contenido</button>
-          </template>
-          <div v-html="editorData"></div>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <template v-if="mostrarBtn">
+          <button
+            class="btn btn-block btn-success"
+            :disabled="validarBtn"
+            @click="aceptarContenido"
+          >Aceptar Contenido</button>
+        </template>
+        <template v-else>
+          <button class="btn btn-block btn-danger" @click="modificarContenido">Modificar Contenido</button>
+        </template>
       </div>
     </div>
   </div>
@@ -36,7 +37,6 @@ import BoldPlugin from "@ckeditor/ckeditor5-basic-styles/src/bold";
 import ItalicPlugin from "@ckeditor/ckeditor5-basic-styles/src/italic";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline";
 import Strikethrough from "@ckeditor/ckeditor5-basic-styles/src/strikethrough";
-import Code from "@ckeditor/ckeditor5-basic-styles/src/code";
 import Subscript from "@ckeditor/ckeditor5-basic-styles/src/subscript";
 import Superscript from "@ckeditor/ckeditor5-basic-styles/src/superscript";
 import LinkPlugin from "@ckeditor/ckeditor5-link/src/link";
@@ -49,9 +49,28 @@ import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar";
 import ImageTextAlternative from "@ckeditor/ckeditor5-image/src/imagetextalternative";
 import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload";
+import List from "@ckeditor/ckeditor5-list/src/list";
+import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
+import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily";
+import FontSize from "@ckeditor/ckeditor5-font/src/fontsize";
+import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor";
+import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontbackgroundcolor";
+import Heading from "@ckeditor/ckeditor5-heading/src/heading";
+import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline";
+import Indent from "@ckeditor/ckeditor5-indent/src/indent";
+import IndentBlock from "@ckeditor/ckeditor5-indent/src/indentblock";
+import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
+import SpecialCharacters from "@ckeditor/ckeditor5-special-characters/src/specialcharacters";
+import SpecialCharactersEssentials from "@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials";
+import Table from "@ckeditor/ckeditor5-table/src/table";
+import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
+import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
+import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperties";
+import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote";
 
 import MyUploadAdapter from "./export-imagen";
-
+import "./custom.css";
+import columnas from "../sitio-web/quienes-somos/columnas";
 export default {
   props: ["info"],
   data() {
@@ -67,7 +86,6 @@ export default {
           ItalicPlugin,
           Underline,
           Strikethrough,
-          Code,
           Subscript,
           Superscript,
           LinkPlugin,
@@ -79,25 +97,73 @@ export default {
           ImageStyle,
           ImageToolbar,
           ImageTextAlternative,
-          ImageUpload
+          ImageUpload,
+          List,
+          Alignment,
+          FontFamily,
+          FontSize,
+          FontColor,
+          FontBackgroundColor,
+          Heading,
+          HorizontalLine,
+          Indent,
+          IndentBlock,
+          MediaEmbed,
+          SpecialCharacters,
+          SpecialCharactersEssentials,
+          Table,
+          TableToolbar,
+          TableProperties,
+          TableCellProperties,
+          BlockQuote
         ],
         toolbar: {
           items: [
+            "heading",
+            "|",
+            "fontFamily",
+            "fontSize",
+            "fontColor",
+            "fontBackgroundColor",
+            "|",
             "bold",
             "italic",
             "underline",
             "strikethrough",
-            "code",
-            "subscript",
-            "superscript",
+            "|",
             "link",
             "|",
-            "highlight",
+            "alignment",
             "|",
-            "imageUpload",
+            "outdent",
+            "indent",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "|",
             "undo",
-            "redo"
-          ]
+            "redo",
+            "|",
+            "insertTable",
+            "imageUpload",
+            "mediaEmbed",
+            "highlight",
+            "specialCharacters",
+            "subscript",
+            "superscript",
+            "horizontalLine",
+            "blockQuote"
+          ],
+          shouldNotGroupWhenFull: true
+        },
+        fontFamily: {
+          supportAllValues: true
+        },
+        fontSize: {
+          options: [9, 10, 11, 12, 13, "default", 16, 17, 18, 19, 20, 21]
+        },
+        alignment: {
+          options: ["justify", "left", "center", "right"]
         },
         image: {
           toolbar: [
@@ -108,19 +174,47 @@ export default {
             "imageTextAlternative"
           ],
           styles: ["full", "side", "alignLeft", "alignCenter", "alignRight"]
+        },
+        mediaEmbed: {
+          removeProviders: [
+            "instagram",
+            "twitter",
+            "googleMaps",
+            "flickr",
+            "facebook"
+          ]
+        },
+        table: {
+          contentToolbar: [
+            "tableColumn",
+            "tableRow",
+            "mergeTableCells",
+            "tableProperties",
+            "tableCellProperties"
+          ]
         }
       },
-      mostrarBtn: true
+      mostrarBtn: true,
+      html: "",
+      imagenes: [],
+      todasImagenes: []
     };
   },
   methods: {
     aceptarContenido() {
-      this.$emit("contenido", this.editorData);
+      this.imagenes = [];
+      this.obtenerPathImagenes();
+      this.oembedIframe();
+      this.$emit("contenido", {
+        contenido: this.html,
+        imagenesEditor: this.imagenes,
+        imagenesGuardadas: this.todasImagenes
+      });
       this.mostrarBtn = false;
       this.editorDisabled = true;
     },
     modificarContenido() {
-      this.$emit("contenido", "");
+      this.$emit("modificar");
       this.mostrarBtn = true;
       this.editorDisabled = false;
     },
@@ -128,6 +222,42 @@ export default {
       editor.plugins.get("FileRepository").createUploadAdapter = loader => {
         return new MyUploadAdapter(loader);
       };
+    },
+    oembedIframe() {
+      this.html = this.editorData;
+      this.html = this.html.replace("oembed url", "iframe src");
+      this.html = this.html.replace("watch?v=", "embed/");
+    },
+    iframeOembed() {
+      let cuerpo = this.info.cuerpo;
+      cuerpo = cuerpo.replace("iframe src", "oembed url");
+      cuerpo = cuerpo.replace("embed/", "watch?v=");
+      return cuerpo;
+    },
+    obtenerPathImagenes() {
+      let texto = this.editorData.split("storage");
+      for (let index = 1; index < texto.length; index++) {
+        this.imagenes.push(texto[index].split('">')[0]);
+      }
+    },
+    obtenerPathTodasImagenes() {
+      let texto = this.editorData.split("storage");
+      for (let index = 1; index < texto.length; index++) {
+        if (this.todasImagenes.indexOf(texto[index].split('">')[0]) == -1) {
+          this.todasImagenes.push(texto[index].split('">')[0]);
+        }
+      }
+    },
+    ready() {
+      if (this.info) {
+        let cuerpo = this.iframeOembed();
+        this.mostrarBtn = false;
+        this.editorDisabled = true;
+        this.editorData = cuerpo;
+      }
+    },
+    input(info) {
+      this.obtenerPathTodasImagenes();
     }
   },
   computed: {
@@ -136,16 +266,7 @@ export default {
         return true;
       }
       return false;
-    }
-  },
-  beforeDestroy() {
-    this.editor.destroy();
-  },
-  mounted() {
-    if (this.info) {
-      this.mostrarBtn = false;
-      this.editorData = this.info.cuerpo;
-    }
+    },
   }
 };
 </script>

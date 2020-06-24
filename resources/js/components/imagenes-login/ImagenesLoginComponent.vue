@@ -19,33 +19,38 @@
                   <li class="breadcrumb-item">
                     <a>Imagenes</a>
                   </li>
-                  <template v-if="tipo">
-                    <li class="breadcrumb-item">
-                      <a>{{tipo}}</a>
-                    </li>
-                  </template>
+
+                  <li class="breadcrumb-item">
+                    <template v-if="from">
+                      <a>Editar</a>
+                    </template>
+                    <template v-else>
+                      <a>Ver</a>
+                    </template>
+                  </li>
                 </ol>
               </nav>
             </div>
           </div>
         </div>
         <div class="page-title-actions">
-          <template v-if="ocultar">
-            <router-link
-              v-if="validarBtn"
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
-              :to="{name: 'imagenes-agregar'}"
-            >Agregar Imagen</router-link>
+          <template v-if="from">
+            <button
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
+              @click="mostrarFrom"
+            >Volver</button>
           </template>
-          <router-link
-            v-else
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-primary btn-lg"
-            :to="{name: 'imagenes-ver'}"
-          >Volver</router-link>
         </div>
       </div>
     </div>
-    <router-view @rutaHijo="cambiarTipo"></router-view>
+    <div class="tabs-animation">
+      <template v-if="!from">
+        <ver-imagenes @editarImagen="editarImagen" />
+      </template>
+      <template v-else>
+        <from-imagen :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+      </template>
+    </div>
   </div>
 </template>
 
@@ -53,35 +58,29 @@
 import vuex from "vuex";
 export default {
   data() {
-    return { tipo: "", ruta: true };
+    return {
+      idImagen: "",
+      from: false
+    };
   },
   methods: {
-    ...vuex.mapActions("imagenes_login", ["obtenerImagenesLogin"]),
-    cambiarTipo(ruta) {
-      if (ruta.includes("ver")) {
-        this.ruta = true;
-        this.tipo = "Ver";
-      } else {
-        this.ruta = false;
-        this.tipo = "Agregar";
-      }
-    }
-  },
-  computed: {
-    ...vuex.mapGetters("imagenes_login", ["getImagenesLogin"]),
-    ocultar() {
-      return this.ruta;
+    ...vuex.mapActions("imagenes_login", [
+      "obtenerImagenesLogin",
+      "accionImagenLogin"
+    ]),
+    editarImagen(id) {
+      this.idImagen = id;
+      this.from = !this.from;
     },
-    validarBtn() {
-      if (this.getImagenesLogin.length > 2) {
-        return false;
-      } else {
-        return true;
-      }
+    mostrarFrom() {
+      this.from = !this.from;
     }
   },
   created() {
     this.obtenerImagenesLogin();
+    window.Echo.channel("imagenesLogin").listen("ImagenesLoginEvent", e => {
+      this.accionImagenLogin({ tipo: "editar", data: e.imagen });
+    });
   }
 };
 </script>

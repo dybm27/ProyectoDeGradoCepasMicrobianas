@@ -20,24 +20,8 @@ export default {
                 case "vision":
                     state.quienes_somos.vision = data.data;
                     break;
-            }
-        },
-        modificarObjetivo(state, data) {
-            switch (data.tipo) {
-                case "agregar":
-                    state.quienes_somos.objetivos.push(data.data);
-                    break;
-                case "editar":
-                    var indice = state.quienes_somos.objetivos.findIndex(
-                        objetivo => objetivo.id === data.data.id
-                    );
-                    state.quienes_somos.objetivos.splice(indice, 1, data.data);
-                    break;
-                case "eliminar":
-                    var indice = state.quienes_somos.objetivos.findIndex(
-                        objetivo => objetivo.id === data.data.id
-                    );
-                    state.quienes_somos.objetivos.splice(indice, 1);
+                case "objetivos":
+                    state.quienes_somos.objetivos = data.data;
                     break;
             }
         }
@@ -50,9 +34,6 @@ export default {
         },
         accionCambiarQuienesSomos({ commit }, data) {
             commit("cambiarQuienesSomos", data);
-        },
-        accionObjetivo({ commit }, data) {
-            commit("modificarObjetivo", data);
         }
     }
 };

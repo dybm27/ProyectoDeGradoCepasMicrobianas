@@ -30,7 +30,7 @@ export default {
     return { checkPublicar: false, disabled: false };
   },
   methods: {
-    ...vuex.mapActions("publicidad", ["accionNoticia"]),
+    ...vuex.mapActions(["getUserAuth"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -42,11 +42,6 @@ export default {
           if (res.data.publicar) {
             this.toastr("Publicar", "Publicado con Exito!!");
           }
-          this.accionNoticia({
-            data: res.data,
-            tipo: "editar"
-          });
-          this.checkPublicar = res.data.publicar;
           this.disabled = false;
         });
     },
@@ -69,6 +64,19 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
+    },
+    verificarPublicar(e) {
+      if (e == 0) {
+        this.checkPublicar = false;
+      } else {
+        this.checkPublicar = true;
+      }
+    },
+    bloquearCheckNoticia(id) {
+      this.disabled = true;
+    },
+    desbloquearCheckNoticia(id) {
+      this.disabled = false;
     }
   },
   computed: {
@@ -77,11 +85,27 @@ export default {
     }
   },
   mounted() {
-    if (this.rowData.publicar == 0) {
-      this.checkPublicar = false;
-    } else {
-      this.checkPublicar = true;
-    }
+    this.verificarPublicar(this.rowData.publicar);
+    this.$events.fire(
+      this.rowData.id + "-verificarBloqueoCheckNoticia",
+      this.rowData.id
+    );
+  },
+  created() {
+    this.$events.$on(this.rowData.id + "-actualizarPublicarNoticia", e =>
+      this.verificarPublicar(e)
+    );
+    this.$events.$on(this.rowData.id + "-bloquearCheckNoticia", e =>
+      this.bloquearCheckNoticia()
+    );
+    this.$events.$on(this.rowData.id + "-desbloquearCheckNoticia", e =>
+      this.desbloquearCheckNoticia()
+    );
+  },
+  destroyed() {
+    this.$events.$off(this.rowData.id + "-actualizarPublicarNoticia");
+    this.$events.$off(this.rowData.id + "-bloquearCheckNoticia");
+    this.$events.$off(this.rowData.id + "-desbloquearCheckNoticia");
   }
 };
 </script>

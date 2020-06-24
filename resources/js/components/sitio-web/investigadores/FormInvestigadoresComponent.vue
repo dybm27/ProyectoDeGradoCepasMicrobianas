@@ -170,14 +170,12 @@ export default {
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       mensajeErrorEmail: "",
       mensajeCargo: "",
       mensajeNivel: "",
       mensajeNombres: "",
-      mensajeApellidos: "",
-      traerValorImg: false
+      mensajeApellidos: ""
     };
   },
   methods: {
@@ -200,39 +198,42 @@ export default {
         axios
           .post("/investigadores", this.parametros)
           .then(res => {
-            this.accionInvestigador({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Investigador",
               "Investigador agregado con exito!!",
               "success"
             );
+            this.accionInvestigador({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
             if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
+              this.toastr(
+                "Error!!",
+                error.response.data.errors.email[0],
+                "error"
+              );
             }
           });
       } else {
         axios
           .put(`/investigadores/${this.idInvestigador}`, this.parametros)
           .then(res => {
-            this.accionInvestigador({ tipo: "editar", data: res.data });
             this.toastr(
               "Editar Investigador",
               "Investigador editado con exito!!",
               "success"
             );
+            this.accionInvestigador({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
             if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+              this.toastr(
+                "Error!!",
+                error.response.data.errors.email[0],
+                "error"
+              );
             }
           });
       }
@@ -271,7 +272,6 @@ export default {
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
-      //this.parametros.imagen = file;
       let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
