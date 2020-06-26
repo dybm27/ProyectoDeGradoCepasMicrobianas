@@ -5,7 +5,7 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
-          @click="editar(rowData.id)"
+          @click="editar(rowData)"
           :disabled="disabledBtns"
         >
           <i class="fas fa-pencil-alt"></i>
@@ -14,7 +14,7 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
-          @click="showModal(rowData.id)"
+          @click="showModal(rowData)"
           :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
@@ -43,74 +43,81 @@ export default {
     ...vuex.mapGetters(["getUserAuth"])
   },
   methods: {
-    editar(id) {
-      this.$events.fire("abrirFormularioNoticia", id);
+    editar(data) {
+      this.$events.fire("abrirFormularioNoticia", data.id);
       window.Echo.private("bloquearBtnsNoticia").whisper(
         "bloquearBtnsNoticia",
         {
-          idBtn: id,
+          id: data.id,
           idUser: this.getUserAuth.id
         }
       );
       window.Echo.private("bloquearCheckNoticia").whisper(
         "bloquearCheckNoticia",
         {
-          idCheck: id,
+          id: data.id,
           idUser: this.getUserAuth.id
         }
       );
       this.$events.fire("pushMisBloqueosNoticia", {
-        id: id,
+        id: data.id,
         idUser: this.getUserAuth.id
       });
     },
-    showModal(id) {
+    showModal(data) {
       this.$modal.show("modal_eliminar_noticia", {
-        id: id
+        id: data.id
       });
       window.Echo.private("bloquearBtnsNoticia").whisper(
         "bloquearBtnsNoticia",
         {
-          idBtn: id,
+          id: data.id,
           idUser: this.getUserAuth.id
         }
       );
       window.Echo.private("bloquearCheckNoticia").whisper(
         "bloquearCheckNoticia",
         {
-          idCheck: id,
+          id: data.id,
           idUser: this.getUserAuth.id
         }
       );
       this.$events.fire("pushMisBloqueosNoticia", {
-        id: id,
+        id: data.id,
         idUser: this.getUserAuth.id
       });
     },
-    bloquearBtnsNoticia(id) {
+    bloquearBtnsNoticia(data) {
       this.disabledBtns = true;
     },
-    desbloquearBtnsNoticia(id) {
+    desbloquearBtnsNoticia(data) {
       this.disabledBtns = false;
+    },
+    crearEventosBtns() {
+      this.$events.$on(this.rowData.id + "-bloquearBtnsNoticia", e =>
+        this.bloquearBtnsNoticia()
+      );
+      this.$events.$on(this.rowData.id + "-desbloquearBtnsNoticia", e =>
+        this.desbloquearBtnsNoticia()
+      );
+    },
+    eliminarEventosBtns(id) {
+      this.disabledBtns = false;
+      this.$events.$off(id + "-bloquearBtnsNoticia");
+      this.$events.$off(id + "-desbloquearBtnsNoticia");
     }
   },
   created() {
-    this.$events.$on(this.rowData.id + "-bloquearBtnsNoticia", e =>
-      this.bloquearBtnsNoticia()
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-noticias", e =>
+      this.crearEventosBtns()
     );
-    this.$events.$on(this.rowData.id + "-desbloquearBtnsNoticia", e =>
-      this.desbloquearBtnsNoticia()
-    );
-  },
-  mounted() {
-    this.$events.fire(
-      this.rowData.id + "-verificarBloqueoBtnsNoticia",
-      this.rowData.id
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-noticias", e =>
+      this.eliminarEventosBtns(e)
     );
   },
   destroyed() {
-    this.$events.$off(this.rowData.id + "-bloquearBtnsNoticia");
-    this.$events.$off(this.rowData.id + "-desbloquearBtnsNoticia");
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-noticias");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-noticias");
   }
 };
 </script>

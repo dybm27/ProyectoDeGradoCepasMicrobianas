@@ -201,13 +201,13 @@ export default {
               window.Echo.private("desbloquearBtnsNoticia").whisper(
                 "desbloquearBtnsNoticia",
                 {
-                  idBtn: res.data.id
+                  id: res.data.id
                 }
               );
               window.Echo.private("desbloquearCheckNoticia").whisper(
                 "desbloquearCheckNoticia",
                 {
-                  idCheck: res.data.id
+                  id: res.data.id
                 }
               );
               this.$events.fire("spliceMisBloqueosNoticia", {
@@ -252,22 +252,22 @@ export default {
                 "Noticia editada con exito!!",
                 "success"
               );
-              this.accionNoticia({ tipo: "editar", data: res.data });
               window.Echo.private("desbloquearBtnsNoticia").whisper(
                 "desbloquearBtnsNoticia",
                 {
-                  idBtn: res.data.id
+                  id: res.data.id
                 }
               );
               window.Echo.private("desbloquearCheckNoticia").whisper(
                 "desbloquearCheckNoticia",
                 {
-                  idCheck: res.data.id
+                  id: res.data.id
                 }
               );
               this.$events.fire("spliceMisBloqueosNoticia", {
                 id: res.data.id
               });
+              this.accionNoticia({ tipo: "editar", data: res.data });
               this.$emit("cambiarVariableFormulario");
             })
             .catch(error => {

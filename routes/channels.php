@@ -30,7 +30,7 @@ Broadcast::channel('desbloquearCheckNoticia', function ($user) {
 Broadcast::channel('recibirBtnsCheckNoticia', function ($user) {
     return true;
 });
-Broadcast::channel('verificarBloqueosNoticia', function ($user) {
+Broadcast::channel('borrarBloqueosNoticia', function ($user) {
     return true;
 });
 //actividades
@@ -53,5 +53,27 @@ Broadcast::channel('recibirBtnsCheckActividad', function ($user) {
     return true;
 });
 Broadcast::channel('borrarBloqueosActividad', function ($user) {
+    return true;
+});
+//novedades
+Broadcast::channel('novedades', function ($user) {
+    return ['id' => $user->id];
+});
+Broadcast::channel('bloquearBtnsNovedad', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsNovedad', function ($user) {
+    return true;
+});
+Broadcast::channel('bloquearCheckNovedad', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearCheckNovedad', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsCheckNovedad', function ($user) {
+    return true;
+});
+Broadcast::channel('borrarBloqueosNovedad', function ($user) {
     return true;
 });

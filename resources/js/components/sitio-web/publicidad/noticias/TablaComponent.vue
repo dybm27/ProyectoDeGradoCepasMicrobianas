@@ -67,7 +67,6 @@ export default {
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNoticias"]),
-    ...vuex.mapGetters(["getUserAuth"]),
     mostrarTabla() {
       if (this.getNoticias != "" && this.getNoticias != null) {
         return true;
@@ -84,13 +83,13 @@ export default {
       window.Echo.private("desbloquearBtnsNoticia").whisper(
         "desbloquearBtnsNoticia",
         {
-          idBtn: this.idNoticia
+          id: this.idNoticia
         }
       );
       window.Echo.private("desbloquearCheckNoticia").whisper(
         "desbloquearCheckNoticia",
         {
-          idCheck: this.idNoticia
+          id: this.idNoticia
         }
       );
       this.$events.fire("spliceMisBloqueosNoticia", {

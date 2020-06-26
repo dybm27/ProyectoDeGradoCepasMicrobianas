@@ -29,6 +29,11 @@ export default {
   data() {
     return { checkPublicar: false, disabled: false };
   },
+  computed: {
+    computedDisabled() {
+      return this.disabled;
+    }
+  },
   methods: {
     publicar(data) {
       this.disabled = true;
@@ -72,47 +77,42 @@ export default {
       }
     },
     bloquearCheckActividad(data) {
-      if (data.idCheck === this.rowData.id) {
-        this.disabled = true;
-      } else {
-        this.disabled = false;
-      }
+      this.disabled = true;
     },
     desbloquearCheckActividad(data) {
-      if (data.idCheck === this.rowData.id) {
-        this.disabled = false;
-      } else {
-        this.disabled = true;
-      }
+      this.disabled = false;
+    },
+    crearEventosCheck() {
+      this.verificarPublicar(this.rowData.publicar);
+      this.$events.$on(this.rowData.id + "-bloquearCheckActividad", e =>
+        this.bloquearCheckActividad()
+      );
+      this.$events.$on(this.rowData.id + "-desbloquearCheckActividad", e =>
+        this.desbloquearCheckActividad()
+      );
+      this.$events.$on(this.rowData.id + "-actualizarPublicarActividad", e =>
+        this.verificarPublicar(e)
+      );
+    },
+    eliminarEventosCheck(id) {
+      this.disabled = false;
+      this.$events.$off(id + "-bloquearCheckActividad");
+      this.$events.$off(id + "-desbloquearCheckActividad");
+      this.$events.$off(id + "-actualizarPublicarActividad");
     }
-  },
-  computed: {
-    computedDisabled() {
-      return this.disabled;
-    }
-  },
-  mounted() {
-    this.verificarPublicar(this.rowData.publicar);
-    this.$events.fire(this.rowIndex + "-verificarBloqueoCheckActividad", {
-      index: this.rowIndex,
-      id: this.rowData.id
-    });
   },
   created() {
-    this.$events.$on(this.rowData.id + "-actualizarPublicarActividad", e =>
-      this.verificarPublicar(e)
+    this.verificarPublicar(this.rowData.publicar);
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-actividades", e =>
+      this.crearEventosCheck()
     );
-    this.$events.$on(this.rowIndex + "-bloquearCheckActividad", e =>
-      this.bloquearCheckActividad(e)
-    );
-    this.$events.$on(this.rowIndex + "-desbloquearCheckActividad", e =>
-      this.desbloquearCheckActividad(e)
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-actividades", e =>
+      this.eliminarEventosCheck(e)
     );
   },
   destroyed() {
-    this.$events.$off(this.rowData.id + "-actualizarPublicarActividad");
-    this.$events.$off(this.rowData.id + "-bloquearCheckActividad");
-    this.$events.$off(this.rowData.id + "-desbloquearCheckActividad");
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-actividades");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-actividades");
   }
 };
 </script>

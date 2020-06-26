@@ -261,16 +261,16 @@ export default {
             window.Echo.private("desbloquearBtnsActividad").whisper(
               "desbloquearBtnsActividad",
               {
-                idBtn: res.data.id
+                id: res.data.id
               }
             );
             window.Echo.private("desbloquearCheckActividad").whisper(
               "desbloquearCheckActividad",
               {
-                idCheck: res.data.id
+                id: res.data.id
               }
             );
-            this.$events.fire("spliceMisBloqueos", {
+            this.$events.fire("spliceMisBloqueosActividad", {
               id: res.data.id
             });
             this.accionActividad({ tipo: "editar", data: res.data });

@@ -24,6 +24,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -78,6 +79,23 @@ export default {
     beforeOpenEliminar(data) {
       this.idNovedad = data.params.id;
     },
+    closeEliminar() {
+      window.Echo.private("desbloquearBtnsNovedad").whisper(
+        "desbloquearBtnsNovedad",
+        {
+          id: this.idNovedad
+        }
+      );
+      window.Echo.private("desbloquearCheckNovedad").whisper(
+        "desbloquearCheckNovedad",
+        {
+          id: this.idNovedad
+        }
+      );
+      this.$events.fire("spliceMisBloqueosNovedad", {
+        id: this.idNovedad
+      });
+    },
     eliminarNovedad() {
       axios
         .delete(`/publicidad/${this.idNovedad}`, {
@@ -116,9 +134,6 @@ export default {
         onMouseOver: () => {},
         onMouseOut: () => {}
       });
-    },
-    abrirFormularioNovedad(id) {
-      this.$emit("abrirFormularioNovedad", id);
     },
     actualizarTabla() {
       if (this.mostrarTabla) {

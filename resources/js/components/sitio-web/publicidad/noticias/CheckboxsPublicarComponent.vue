@@ -29,8 +29,12 @@ export default {
   data() {
     return { checkPublicar: false, disabled: false };
   },
+  computed: {
+    computedDisabled() {
+      return this.disabled;
+    }
+  },
   methods: {
-    ...vuex.mapActions(["getUserAuth"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -72,40 +76,43 @@ export default {
         this.checkPublicar = true;
       }
     },
-    bloquearCheckNoticia(id) {
+    bloquearCheckNoticia(data) {
       this.disabled = true;
     },
-    desbloquearCheckNoticia(id) {
+    desbloquearCheckNoticia(data) {
       this.disabled = false;
+    },
+    crearEventosCheck() {
+      this.verificarPublicar(this.rowData.publicar);
+      this.$events.$on(this.rowData.id + "-bloquearCheckNoticia", e =>
+        this.bloquearCheckNoticia()
+      );
+      this.$events.$on(this.rowData.id + "-desbloquearCheckNoticia", e =>
+        this.desbloquearCheckNoticia()
+      );
+      this.$events.$on(this.rowData.id + "-actualizarPublicarNoticia", e =>
+        this.verificarPublicar(e)
+      );
+    },
+    eliminarEventosCheck(id) {
+      this.disabled = false;
+      this.$events.$off(id + "-bloquearCheckNoticia");
+      this.$events.$off(id + "-desbloquearCheckNoticia");
+      this.$events.$off(id + "-actualizarPublicarNoticia");
     }
-  },
-  computed: {
-    computedDisabled() {
-      return this.disabled;
-    }
-  },
-  mounted() {
-    this.verificarPublicar(this.rowData.publicar);
-    this.$events.fire(
-      this.rowData.id + "-verificarBloqueoCheckNoticia",
-      this.rowData.id
-    );
   },
   created() {
-    this.$events.$on(this.rowData.id + "-actualizarPublicarNoticia", e =>
-      this.verificarPublicar(e)
+    this.verificarPublicar(this.rowData.publicar);
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-noticias", e =>
+      this.crearEventosCheck()
     );
-    this.$events.$on(this.rowData.id + "-bloquearCheckNoticia", e =>
-      this.bloquearCheckNoticia()
-    );
-    this.$events.$on(this.rowData.id + "-desbloquearCheckNoticia", e =>
-      this.desbloquearCheckNoticia()
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-noticias", e =>
+      this.eliminarEventosCheck(e)
     );
   },
   destroyed() {
-    this.$events.$off(this.rowData.id + "-actualizarPublicarNoticia");
-    this.$events.$off(this.rowData.id + "-bloquearCheckNoticia");
-    this.$events.$off(this.rowData.id + "-desbloquearCheckNoticia");
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-noticias");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-noticias");
   }
 };
 </script>

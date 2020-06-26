@@ -1,8 +1,5 @@
 @extends('layouts-admin.app')
 
-@section('title')
-Cepas || Levaduras
-@endsection
 @section('route-cepa')
     class="mm-active"
 @endsection

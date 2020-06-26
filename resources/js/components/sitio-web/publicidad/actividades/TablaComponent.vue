@@ -83,16 +83,16 @@ export default {
       window.Echo.private("desbloquearBtnsActividad").whisper(
         "desbloquearBtnsActividad",
         {
-          idBtn: this.idActividad
+          id: this.idActividad
         }
       );
       window.Echo.private("desbloquearCheckActividad").whisper(
         "desbloquearCheckActividad",
         {
-          idCheck: this.idActividad
+          id: this.idActividad
         }
       );
-      this.$events.fire("spliceMisBloqueos", {
+      this.$events.fire("spliceMisBloqueosActividad", {
         id: this.idActividad
       });
     },

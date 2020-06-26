@@ -43,21 +43,11 @@ export default {
       formulario: false,
       id: 0,
       tipo: "",
-      ids: {
-        btns: [],
-        checks: []
-      },
-      misBloqueos: {
-        btns: [],
-        checks: []
-      }
+      bloqueos: [],
+      misBloqueos: []
     };
   },
-  computed: {
-    ...vuex.mapGetters(["getUserAuth"])
-  },
   methods: {
-    ...vuex.mapActions("publicidad", ["accionNoticia"]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -70,10 +60,10 @@ export default {
       if (this.id != 0) {
         window.Echo.private(
           "desbloquearBtnsNoticia"
-        ).whisper("desbloquearBtnsNoticia", { idBtn: this.id });
+        ).whisper("desbloquearBtnsNoticia", { id: this.id });
         window.Echo.private(
           "desbloquearCheckNoticia"
-        ).whisper("desbloquearCheckNoticia", { idCheck: this.id });
+        ).whisper("desbloquearCheckNoticia", { id: this.id });
         this.$events.fire("spliceMisBloqueosNoticia", {
           id: this.id
         });
@@ -87,88 +77,97 @@ export default {
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     },
+    // Bloquear Btns
+    bloquearBtnsNoticia(e) {
+      this.bloqueos.push({ idUser: e.idUser, id: e.id });
+      this.crearEventoBtns(e.id);
+      this.$events.fire(e.id + "-bloquearBtnsNoticia");
+    },
+    desbloquearBtnsNoticia(e) {
+      let data = this.bloqueos.find(data => data.id === e.id);
+      this.eliminarEventoBtns(data.id);
+      this.bloqueos.splice(
+        this.bloqueos.findIndex(data => data.id === e.id),
+        1
+      );
+      this.$events.fire(data.id + "-desbloquearBtnsNoticia");
+    },
     bloquearBtns(id) {
       this.$events.fire(id + "-bloquearBtnsNoticia");
     },
     crearEventoBtns(id) {
       this.$events.$on(id + "-verificarBloqueoBtnsNoticia", e =>
-        this.bloquearBtns(id)
+        this.bloquearBtns(e.id)
       );
     },
     eliminarEventoBtns(id) {
       this.$events.off(id + "-verificarBloqueoBtnsNoticia");
+    },
+    // Bloquear Check
+    bloquearCheckNoticia(e) {
+      this.bloqueos.push({ idUser: e.idUser, id: e.id });
+      this.crearEventoCheck(e.id);
+      this.$events.fire(e.id + "-bloquearCheckNoticia");
+    },
+    desbloquearCheckNoticia(e) {
+      let data = this.bloqueos.find(data => data.id === e.id);
+      this.eliminarEventoCheck(data.id);
+      this.bloqueos.splice(
+        this.bloqueos.findIndex(data => data.id === e.id),
+        1
+      );
+      this.$events.fire(data.id + "-desbloquearCheckNoticia");
     },
     bloquearCheck(id) {
       this.$events.fire(id + "-bloquearCheckNoticia");
     },
     crearEventoCheck(id) {
       this.$events.$on(id + "-verificarBloqueoCheckNoticia", e =>
-        this.bloquearCheck(id)
+        this.bloquearCheck(e.id)
       );
     },
     eliminarEventoCheck(id) {
       this.$events.off(id + "-verificarBloqueoCheckNoticia");
     },
-    bloquearBtnsNoticia(e) {
-      this.ids.btns.push({ idUser: e.idUser, idBtn: e.idBtn });
-      this.crearEventoBtns(e.idBtn);
-      this.$events.fire(e.idBtn + "-bloquearBtnsNoticia");
-    },
-    desbloquearBtnsNoticia(e) {
-      this.eliminarEventoBtns(e.idBtn);
-      this.ids.btns.splice(
-        this.ids.btns.findIndex(data => data.idBtn === e.idBtn),
-        1
-      );
-      this.$events.fire(e.idBtn + "-desbloquearBtnsNoticia");
-    },
-    bloquearCheckNoticia(e) {
-      this.ids.checks.push({ idUser: e.idUser, idCheck: e.idCheck });
-      this.crearEventoCheck(e.idCheck);
-      this.$events.fire(e.idCheck + "-bloquearCheckNoticia");
-    },
-    desbloquearCheckNoticia(e) {
-      this.eliminarEventoCheck(e.idCheck);
-      this.ids.checks.splice(
-        this.ids.checks.findIndex(data => data.idCheck === e.idCheck),
-        1
-      );
-      this.$events.fire(e.idCheck + "-desbloquearCheckNoticia");
-    },
-    verificarBtnsCheck(id) {
-      let btns = this.ids.btns.find(data => data.idUser === id);
-      let checks = this.ids.checks.find(data => data.idUser === id);
-      if (btns) {
-        this.desbloquearBtnsNoticia(btns);
-        this.desbloquearCheckNoticia(checks);
+    // eliminar bloqueos
+    borrarBtnsCheck(id) {
+      let data = this.bloqueos.find(data => data.idUser === id);
+      if (data) {
+        this.desbloquearBtnsNoticia(data);
+        this.desbloquearCheckNoticia(data);
       }
     },
+    // guardar mis bloqueos
     pushMisBloqueos(e) {
-      this.misBloqueos.btns.push({ idUser: e.idUser, idBtn: e.id });
-      this.misBloqueos.checks.push({ idUser: e.idUser, idCheck: e.id });
+      this.misBloqueos.push({
+        idUser: e.idUser,
+        id: e.id
+      });
     },
     spliceMisBloqueos(e) {
-      this.misBloqueos.btns.splice(
-        this.misBloqueos.btns.findIndex(data => data.idBtn === e.id),
+      this.misBloqueos.splice(
+        this.misBloqueos.findIndex(data => data.id === e.id),
         1
       );
-      this.misBloqueos.checks.splice(
-        this.misBloqueos.checks.findIndex(data => data.idCheck === e.id),
-        1
-      );
+    },
+    // verificar bloqueos existentes
+    verificarBloqueos() {
+      for (let index = 0; index < this.bloqueos.length; index++) {
+        this.bloquearBtns(this.bloqueos[index].id);
+        this.bloquearCheck(this.bloqueos[index].id);
+      }
     }
   },
   mounted() {
     window.Echo.join("noticias")
       .here(data => {})
       .joining(data => {
-        console.log("joing");
         window.Echo.private(
           "recibirBtnsCheckNoticia"
         ).whisper("recibirBtnsCheckNoticia", { bloqueos: this.misBloqueos });
       })
       .leaving(data => {
-        this.verificarBtnsCheck(data.id);
+        this.borrarBtnsCheck(data.id);
       });
     //  .listen("Prueba", e => {});
 
@@ -198,48 +197,38 @@ export default {
     );
   },
   created() {
-    this.$events.$on("abrirFormularioNoticia", e => this.abrirFormulario(e));
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("noticia").listen("NoticiaEvent", e => {
-      this.accionNoticia({ tipo: e.tipo, data: e.noticia });
-      this.$events.fire(
-        e.noticia.id + "-actualizarPublicarNoticia",
-        e.noticia.publicar
-      );
-      if (!this.formulario) {
-        this.$events.fire("actualizartablaNoticia");
-      }
-    });
     window.Echo.private("recibirBtnsCheckNoticia").listenForWhisper(
       "recibirBtnsCheckNoticia",
       e => {
-        console.log("entroooo");
-        for (let index = 0; index < e.bloqueos.btns.length; index++) {
-          this.bloquearBtnsNoticia(e.bloqueos.btns[index]);
-        }
-        for (let index = 0; index < e.bloqueos.checks.length; index++) {
-          this.bloquearCheckNoticia(e.bloqueos.checks[index]);
+        for (let index = 0; index < e.bloqueos.length; index++) {
+          this.bloquearBtnsNoticia(e.bloqueos[index]);
+          this.bloquearCheckNoticia(e.bloqueos[index]);
         }
       }
     );
-    window.Echo.private("verificarBloqueosNoticia").listenForWhisper(
-      "verificarBloqueosNoticia",
-      e => {
-        this.verificarBtnsCheck(e.id);
-      }
-    );
+    this.$events.$on("abrirFormularioNoticia", e => this.abrirFormulario(e));
     this.$events.$on("pushMisBloqueosNoticia", e => this.pushMisBloqueos(e));
     this.$events.$on("spliceMisBloqueosNoticia", e =>
       this.spliceMisBloqueos(e)
     );
+    this.$events.$on("verificarBloqueos-noticias", e =>
+      this.verificarBloqueos()
+    );
   },
   destroyed() {
-    window.Echo.private(
-      "verificarBloqueosNoticia"
-    ).whisper("verificarBloqueosNoticia", { id: this.getUserAuth.id });
     this.$events.$off("abrirFormularioNoticia");
     this.$events.$off("pushMisBloqueosNoticia");
     this.$events.$off("spliceMisBloqueosNoticia");
+    this.$events.$off("verificarBloqueos-noticias");
+  },
+  beforeDestroy() {
+    window.Echo.leave("noticias");
+    window.Echo.leave("recibirBtnsCheckNoticia");
+    window.Echo.leave("bloquearCheckNoticia");
+    window.Echo.leave("desbloquearCheckNoticia");
+    window.Echo.leave("desbloquearBtnsNoticia");
+    window.Echo.leave("bloquearBtnsNoticia");
   }
 };
 </script>

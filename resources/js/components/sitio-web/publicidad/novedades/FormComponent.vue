@@ -216,6 +216,21 @@ export default {
               "Novedad editada con exito!!",
               "success"
             );
+            window.Echo.private("desbloquearBtnsNovedad").whisper(
+              "desbloquearBtnsNovedad",
+              {
+                id: res.data.id
+              }
+            );
+            window.Echo.private("desbloquearCheckNovedad").whisper(
+              "desbloquearCheckNovedad",
+              {
+                id: res.data.id
+              }
+            );
+            this.$events.fire("spliceMisBloqueosNovedad", {
+              id: res.data.id
+            });
             this.accionNovedad({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })

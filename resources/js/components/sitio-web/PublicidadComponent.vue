@@ -43,7 +43,12 @@ export default {
     return { tipo: "", tipo2: "" };
   },
   methods: {
-    ...vuex.mapActions("publicidad", ["obtenerPublicidad"]),
+    ...vuex.mapActions("publicidad", [
+      "obtenerPublicidad",
+      "accionNoticia",
+      "accionActividad",
+      "accionNovedad"
+    ]),
     ruta(ruta) {
       if (ruta.includes("noticias")) {
         this.tipo = "Tabla Noticias";
@@ -70,6 +75,30 @@ export default {
     ...vuex.mapGetters(["getUserAuth"])
   },
   created() {
+    window.Echo.channel("novedad").listen("NovedadEvent", e => {
+      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
+      this.$events.fire(
+        e.novedad.id + "-actualizarPublicarNovedad",
+        e.novedad.publicar
+      );
+      this.$events.fire("actualizartablaNovedad");
+    });
+    window.Echo.channel("actividad").listen("ActividadEvent", e => {
+      this.accionActividad({ tipo: e.tipo, data: e.actividad });
+      this.$events.fire(
+        e.actividad.id + "-actualizarPublicarActividad",
+        e.actividad.publicar
+      );
+      this.$events.fire("actualizartablaActividad");
+    });
+    window.Echo.channel("noticia").listen("NoticiaEvent", e => {
+      this.accionNoticia({ tipo: e.tipo, data: e.noticia });
+      this.$events.fire(
+        e.noticia.id + "-actualizarPublicarNoticia",
+        e.noticia.publicar
+      );
+      this.$events.fire("actualizartablaNoticia");
+    });
     this.obtenerPublicidad();
     if (this.getUserAuth.tipouser_id === 1) {
       this.eliminarImagenesStorage();

@@ -10,12 +10,6 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -60,18 +54,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       formulario: false,
       id: 0,
       tipo: "",
-      ids: {
-        btns: [],
-        checks: []
-      },
-      misBloqueos: {
-        btns: [],
-        checks: []
-      }
+      bloqueos: [],
+      misBloqueos: []
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
+  methods: {
     abrirFormulario: function abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -84,10 +71,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     cerrarFormulario: function cerrarFormulario() {
       if (this.id != 0) {
         window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
-          idBtn: this.id
+          id: this.id
         });
         window.Echo["private"]("desbloquearCheckNoticia").whisper("desbloquearCheckNoticia", {
-          idCheck: this.id
+          id: this.id
         });
         this.$events.fire("spliceMisBloqueosNoticia", {
           id: this.id
@@ -103,6 +90,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     },
+    // Bloquear Btns
+    bloquearBtnsNoticia: function bloquearBtnsNoticia(e) {
+      this.bloqueos.push({
+        idUser: e.idUser,
+        id: e.id
+      });
+      this.crearEventoBtns(e.id);
+      this.$events.fire(e.id + "-bloquearBtnsNoticia");
+    },
+    desbloquearBtnsNoticia: function desbloquearBtnsNoticia(e) {
+      var data = this.bloqueos.find(function (data) {
+        return data.id === e.id;
+      });
+      this.eliminarEventoBtns(data.id);
+      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+        return data.id === e.id;
+      }), 1);
+      this.$events.fire(data.id + "-desbloquearBtnsNoticia");
+    },
     bloquearBtns: function bloquearBtns(id) {
       this.$events.fire(id + "-bloquearBtnsNoticia");
     },
@@ -110,11 +116,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.$events.$on(id + "-verificarBloqueoBtnsNoticia", function (e) {
-        return _this.bloquearBtns(id);
+        return _this.bloquearBtns(e.id);
       });
     },
     eliminarEventoBtns: function eliminarEventoBtns(id) {
       this.$events.off(id + "-verificarBloqueoBtnsNoticia");
+    },
+    // Bloquear Check
+    bloquearCheckNoticia: function bloquearCheckNoticia(e) {
+      this.bloqueos.push({
+        idUser: e.idUser,
+        id: e.id
+      });
+      this.crearEventoCheck(e.id);
+      this.$events.fire(e.id + "-bloquearCheckNoticia");
+    },
+    desbloquearCheckNoticia: function desbloquearCheckNoticia(e) {
+      var data = this.bloqueos.find(function (data) {
+        return data.id === e.id;
+      });
+      this.eliminarEventoCheck(data.id);
+      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+        return data.id === e.id;
+      }), 1);
+      this.$events.fire(data.id + "-desbloquearCheckNoticia");
     },
     bloquearCheck: function bloquearCheck(id) {
       this.$events.fire(id + "-bloquearCheckNoticia");
@@ -123,84 +148,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       this.$events.$on(id + "-verificarBloqueoCheckNoticia", function (e) {
-        return _this2.bloquearCheck(id);
+        return _this2.bloquearCheck(e.id);
       });
     },
     eliminarEventoCheck: function eliminarEventoCheck(id) {
       this.$events.off(id + "-verificarBloqueoCheckNoticia");
     },
-    bloquearBtnsNoticia: function bloquearBtnsNoticia(e) {
-      this.ids.btns.push({
-        idUser: e.idUser,
-        idBtn: e.idBtn
-      });
-      this.crearEventoBtns(e.idBtn);
-      this.$events.fire(e.idBtn + "-bloquearBtnsNoticia");
-    },
-    desbloquearBtnsNoticia: function desbloquearBtnsNoticia(e) {
-      this.eliminarEventoBtns(e.idBtn);
-      this.ids.btns.splice(this.ids.btns.findIndex(function (data) {
-        return data.idBtn === e.idBtn;
-      }), 1);
-      this.$events.fire(e.idBtn + "-desbloquearBtnsNoticia");
-    },
-    bloquearCheckNoticia: function bloquearCheckNoticia(e) {
-      this.ids.checks.push({
-        idUser: e.idUser,
-        idCheck: e.idCheck
-      });
-      this.crearEventoCheck(e.idCheck);
-      this.$events.fire(e.idCheck + "-bloquearCheckNoticia");
-    },
-    desbloquearCheckNoticia: function desbloquearCheckNoticia(e) {
-      this.eliminarEventoCheck(e.idCheck);
-      this.ids.checks.splice(this.ids.checks.findIndex(function (data) {
-        return data.idCheck === e.idCheck;
-      }), 1);
-      this.$events.fire(e.idCheck + "-desbloquearCheckNoticia");
-    },
-    verificarBtnsCheck: function verificarBtnsCheck(id) {
-      var btns = this.ids.btns.find(function (data) {
-        return data.idUser === id;
-      });
-      var checks = this.ids.checks.find(function (data) {
+    // eliminar bloqueos
+    borrarBtnsCheck: function borrarBtnsCheck(id) {
+      var data = this.bloqueos.find(function (data) {
         return data.idUser === id;
       });
 
-      if (btns) {
-        this.desbloquearBtnsNoticia(btns);
-        this.desbloquearCheckNoticia(checks);
+      if (data) {
+        this.desbloquearBtnsNoticia(data);
+        this.desbloquearCheckNoticia(data);
       }
     },
+    // guardar mis bloqueos
     pushMisBloqueos: function pushMisBloqueos(e) {
-      this.misBloqueos.btns.push({
+      this.misBloqueos.push({
         idUser: e.idUser,
-        idBtn: e.id
-      });
-      this.misBloqueos.checks.push({
-        idUser: e.idUser,
-        idCheck: e.id
+        id: e.id
       });
     },
     spliceMisBloqueos: function spliceMisBloqueos(e) {
-      this.misBloqueos.btns.splice(this.misBloqueos.btns.findIndex(function (data) {
-        return data.idBtn === e.id;
+      this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
+        return data.id === e.id;
       }), 1);
-      this.misBloqueos.checks.splice(this.misBloqueos.checks.findIndex(function (data) {
-        return data.idCheck === e.id;
-      }), 1);
+    },
+    // verificar bloqueos existentes
+    verificarBloqueos: function verificarBloqueos() {
+      for (var index = 0; index < this.bloqueos.length; index++) {
+        this.bloquearBtns(this.bloqueos[index].id);
+        this.bloquearCheck(this.bloqueos[index].id);
+      }
     }
-  }),
+  },
   mounted: function mounted() {
     var _this3 = this;
 
     window.Echo.join("noticias").here(function (data) {}).joining(function (data) {
-      console.log("joing");
       window.Echo["private"]("recibirBtnsCheckNoticia").whisper("recibirBtnsCheckNoticia", {
         bloqueos: _this3.misBloqueos
       });
     }).leaving(function (data) {
-      _this3.verificarBtnsCheck(data.id);
+      _this3.borrarBtnsCheck(data.id);
     }); //  .listen("Prueba", e => {});
 
     window.Echo["private"]("bloquearBtnsNoticia").listenForWhisper("bloquearBtnsNoticia", function (e) {
@@ -219,35 +212,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     var _this4 = this;
 
+    this.$emit("rutaHijo", window.location.pathname);
+    window.Echo["private"]("recibirBtnsCheckNoticia").listenForWhisper("recibirBtnsCheckNoticia", function (e) {
+      for (var index = 0; index < e.bloqueos.length; index++) {
+        _this4.bloquearBtnsNoticia(e.bloqueos[index]);
+
+        _this4.bloquearCheckNoticia(e.bloqueos[index]);
+      }
+    });
     this.$events.$on("abrirFormularioNoticia", function (e) {
       return _this4.abrirFormulario(e);
-    });
-    this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("noticia").listen("NoticiaEvent", function (e) {
-      _this4.accionNoticia({
-        tipo: e.tipo,
-        data: e.noticia
-      });
-
-      _this4.$events.fire(e.noticia.id + "-actualizarPublicarNoticia", e.noticia.publicar);
-
-      if (!_this4.formulario) {
-        _this4.$events.fire("actualizartablaNoticia");
-      }
-    });
-    window.Echo["private"]("recibirBtnsCheckNoticia").listenForWhisper("recibirBtnsCheckNoticia", function (e) {
-      console.log("entroooo");
-
-      for (var index = 0; index < e.bloqueos.btns.length; index++) {
-        _this4.bloquearBtnsNoticia(e.bloqueos.btns[index]);
-      }
-
-      for (var _index = 0; _index < e.bloqueos.checks.length; _index++) {
-        _this4.bloquearCheckNoticia(e.bloqueos.checks[_index]);
-      }
-    });
-    window.Echo["private"]("verificarBloqueosNoticia").listenForWhisper("verificarBloqueosNoticia", function (e) {
-      _this4.verificarBtnsCheck(e.id);
     });
     this.$events.$on("pushMisBloqueosNoticia", function (e) {
       return _this4.pushMisBloqueos(e);
@@ -255,14 +229,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.$events.$on("spliceMisBloqueosNoticia", function (e) {
       return _this4.spliceMisBloqueos(e);
     });
+    this.$events.$on("verificarBloqueos-noticias", function (e) {
+      return _this4.verificarBloqueos();
+    });
   },
   destroyed: function destroyed() {
-    window.Echo["private"]("verificarBloqueosNoticia").whisper("verificarBloqueosNoticia", {
-      id: this.getUserAuth.id
-    });
     this.$events.$off("abrirFormularioNoticia");
     this.$events.$off("pushMisBloqueosNoticia");
     this.$events.$off("spliceMisBloqueosNoticia");
+    this.$events.$off("verificarBloqueos-noticias");
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.Echo.leave("noticias");
+    window.Echo.leave("recibirBtnsCheckNoticia");
+    window.Echo.leave("bloquearCheckNoticia");
+    window.Echo.leave("desbloquearCheckNoticia");
+    window.Echo.leave("desbloquearBtnsNoticia");
+    window.Echo.leave("bloquearBtnsNoticia");
   }
 });
 

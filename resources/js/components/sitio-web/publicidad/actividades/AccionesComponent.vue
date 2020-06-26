@@ -48,23 +48,20 @@ export default {
       window.Echo.private("bloquearBtnsActividad").whisper(
         "bloquearBtnsActividad",
         {
-          idBtn: data.id,
-          idUser: this.getUserAuth.id,
-          index: this.rowIndex
+          id: data.id,
+          idUser: this.getUserAuth.id
         }
       );
       window.Echo.private("bloquearCheckActividad").whisper(
         "bloquearCheckActividad",
         {
-          idCheck: data.id,
-          idUser: this.getUserAuth.id,
-          index: this.rowIndex
+          id: data.id,
+          idUser: this.getUserAuth.id
         }
       );
       this.$events.fire("pushMisBloqueosActividad", {
         id: data.id,
-        idUser: this.getUserAuth.id,
-        index: this.rowIndex
+        idUser: this.getUserAuth.id
       });
     },
     showModal(data) {
@@ -74,58 +71,53 @@ export default {
       window.Echo.private("bloquearBtnsActividad").whisper(
         "bloquearBtnsActividad",
         {
-          idBtn: data.id,
-          idUser: this.getUserAuth.id,
-          index: this.rowIndex
+          id: data.id,
+          idUser: this.getUserAuth.id
         }
       );
       window.Echo.private("bloquearCheckActividad").whisper(
         "bloquearCheckActividad",
         {
-          idCheck: data.id,
-          idUser: this.getUserAuth.id,
-          index: this.rowIndex
+          id: data.id,
+          idUser: this.getUserAuth.id
         }
       );
       this.$events.fire("pushMisBloqueosActividad", {
         id: data.id,
-        idUser: this.getUserAuth.id,
-        index: this.rowIndex
+        idUser: this.getUserAuth.id
       });
     },
-    // hacer if
     bloquearBtnsActividad(data) {
-      if (this.rowData.id === data.idBtn) {
-        this.disabledBtns = true;
-      } else {
-        this.disabledBtns = false;
-      }
+      this.disabledBtns = true;
     },
     desbloquearBtnsActividad(data) {
-      if (this.rowData.id === data.idBtn) {
-        this.disabledBtns = false;
-      } else {
-        this.disabledBtns = true;
-      }
+      this.disabledBtns = false;
+    },
+    crearEventosBtns() {
+      this.$events.$on(this.rowData.id + "-bloquearBtnsActividad", e =>
+        this.bloquearBtnsActividad()
+      );
+      this.$events.$on(this.rowData.id + "-desbloquearBtnsActividad", e =>
+        this.desbloquearBtnsActividad()
+      );
+    },
+    eliminarEventosBtns(id) {
+      this.disabledBtns = false;
+      this.$events.$off(id + "-bloquearBtnsActividad");
+      this.$events.$off(id + "-desbloquearBtnsActividad");
     }
   },
   created() {
-    this.$events.$on(this.rowIndex + "-bloquearBtnsActividad", e =>
-      this.bloquearBtnsActividad(e)
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-actividades", e =>
+      this.crearEventosBtns()
     );
-    this.$events.$on(this.rowIndex + "-desbloquearBtnsActividad", e =>
-      this.desbloquearBtnsActividad(e)
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-actividades", e =>
+      this.eliminarEventosBtns(e)
     );
-  },
-  mounted() {
-    this.$events.fire(this.rowIndex + "-verificarBloqueoBtnsActividad", {
-      id: this.rowData.id,
-      index: this.rowIndex
-    });
   },
   destroyed() {
-    this.$events.$off(this.rowIndex + "-bloquearBtnsActividad");
-    this.$events.$off(this.rowIndex + "-desbloquearBtnsActividad");
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-actividades");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-actividades");
   }
 };
 </script>

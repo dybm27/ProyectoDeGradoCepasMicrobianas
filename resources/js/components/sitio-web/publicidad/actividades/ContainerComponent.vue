@@ -43,21 +43,11 @@ export default {
       formulario: false,
       id: 0,
       tipo: "",
-      ids: {
-        btns: [],
-        checks: []
-      },
-      misBloqueos: {
-        btns: [],
-        checks: []
-      }
+      bloqueos: [],
+      misBloqueos: []
     };
   },
-  computed: {
-    ...vuex.mapGetters(["getUserAuth"])
-  },
   methods: {
-    ...vuex.mapActions("publicidad", ["accionActividad"]),
     abrirFormulario(id) {
       if (id != 0) {
         this.id = id;
@@ -70,10 +60,10 @@ export default {
       if (this.id != 0) {
         window.Echo.private(
           "desbloquearBtnsActividad"
-        ).whisper("desbloquearBtnsActividad", { idBtn: this.id });
+        ).whisper("desbloquearBtnsActividad", { id: this.id });
         window.Echo.private(
           "desbloquearCheckActividad"
-        ).whisper("desbloquearCheckActividad", { idCheck: this.id });
+        ).whisper("desbloquearCheckActividad", { id: this.id });
         this.$events.fire("spliceMisBloqueosActividad", {
           id: this.id
         });
@@ -87,115 +77,89 @@ export default {
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     },
-    bloquearBtns(index, id) {
-      this.$events.fire(index + "-bloquearBtnsActividad", { idBtn: id });
-    },
-    crearEventoBtns(index) {
-      this.$events.$on(index + "-verificarBloqueoBtnsActividad", e =>
-        this.bloquearBtns(e.index, e.id)
-      );
-    },
-    eliminarEventoBtns(index) {
-      this.$events.off(index + "-verificarBloqueoBtnsActividad");
-    },
-    bloquearCheck(index, id) {
-      this.$events.fire(index + "-bloquearCheckActividad", { idCheck: id });
-    },
-    crearEventoCheck(index) {
-      this.$events.$on(index + "-verificarBloqueoCheckActividad", e =>
-        this.bloquearCheck(e.index, e.id)
-      );
-    },
-    eliminarEventoCheck(index) {
-      this.$events.off(index + "-verificarBloqueoCheckActividad");
-    },
+    // Bloquear Btns
     bloquearBtnsActividad(e) {
-      this.ids.btns.push({ idUser: e.idUser, idBtn: e.idBtn, index: e.index });
-      this.crearEventoBtns(e.index);
-      this.$events.fire(e.index + "-bloquearBtnsActividad", { idBtn: e.idBtn });
+      this.bloqueos.push({ idUser: e.idUser, id: e.id });
+      this.crearEventoBtns(e.id);
+      this.$events.fire(e.id + "-bloquearBtnsActividad");
     },
     desbloquearBtnsActividad(e) {
-      let data = this.ids.btns.find(data => data.idBtn === e.idBtn);
-      this.eliminarEventoBtns(data.index);
-      this.ids.btns.splice(
-        this.ids.btns.findIndex(data => data.idBtn === e.idBtn),
+      let data = this.bloqueos.find(data => data.id === e.id);
+      this.eliminarEventoBtns(data.id);
+      this.bloqueos.splice(
+        this.bloqueos.findIndex(data => data.id === e.id),
         1
       );
-      this.$events.fire(data.index + "-desbloquearBtnsActividad", {
-        idBtn: data.idBtn
-      });
+      this.$events.fire(data.id + "-desbloquearBtnsActividad");
     },
+    bloquearBtns(id) {
+      this.$events.fire(id + "-bloquearBtnsActividad");
+    },
+    crearEventoBtns(id) {
+      this.$events.$on(id + "-verificarBloqueoBtnsActividad", e =>
+        this.bloquearBtns(e.id)
+      );
+    },
+    eliminarEventoBtns(id) {
+      this.$events.off(id + "-verificarBloqueoBtnsActividad");
+    },
+    // Bloquear Check
     bloquearCheckActividad(e) {
-      this.ids.checks.push({
-        idUser: e.idUser,
-        idCheck: e.idCheck,
-        index: e.index
-      });
-      this.crearEventoCheck(e.index);
-      this.$events.fire(e.index + "-bloquearCheckActividad", {
-        idCheck: e.idCheck
-      });
+      this.bloqueos.push({ idUser: e.idUser, id: e.id });
+      this.crearEventoCheck(e.id);
+      this.$events.fire(e.id + "-bloquearCheckActividad");
     },
     desbloquearCheckActividad(e) {
-      let data = this.ids.checks.find(data => data.idCheck === e.idCheck);
-      this.eliminarEventoCheck(data.index);
-      this.ids.checks.splice(
-        this.ids.checks.findIndex(data => data.idCheck === e.idCheck),
+      let data = this.bloqueos.find(data => data.id === e.id);
+      this.eliminarEventoCheck(data.id);
+      this.bloqueos.splice(
+        this.bloqueos.findIndex(data => data.id === e.id),
         1
       );
-      this.$events.fire(data.index + "-desbloquearCheckActividad", {
-        idCheck: data.idCheck
-      });
+      this.$events.fire(data.id + "-desbloquearCheckActividad");
     },
+    bloquearCheck(id) {
+      this.$events.fire(id + "-bloquearCheckActividad");
+    },
+    crearEventoCheck(id) {
+      this.$events.$on(id + "-verificarBloqueoCheckActividad", e =>
+        this.bloquearCheck(e.id)
+      );
+    },
+    eliminarEventoCheck(id) {
+      this.$events.off(id + "-verificarBloqueoCheckActividad");
+    },
+    // eliminar bloqueos
     borrarBtnsCheck(id) {
-      let btns = this.ids.btns.find(data => data.idUser === id);
-      let checks = this.ids.checks.find(data => data.idUser === id);
-      if (btns) {
-        this.desbloquearBtnsActividad(btns);
-        this.desbloquearCheckActividad(checks);
+      let data = this.bloqueos.find(data => data.idUser === id);
+      if (data) {
+        this.desbloquearBtnsActividad(data);
+        this.desbloquearCheckActividad(data);
       }
     },
+    // guardar mis bloqueos
     pushMisBloqueos(e) {
-      this.misBloqueos.btns.push({
+      this.misBloqueos.push({
         idUser: e.idUser,
-        idBtn: e.id,
-        index: e.index
-      });
-      this.misBloqueos.checks.push({
-        idUser: e.idUser,
-        idCheck: e.id,
-        index: e.index
+        id: e.id
       });
     },
     spliceMisBloqueos(e) {
-      this.misBloqueos.btns.splice(
-        this.misBloqueos.btns.findIndex(data => data.idBtn === e.id),
-        1
-      );
-      this.misBloqueos.checks.splice(
-        this.misBloqueos.checks.findIndex(data => data.idCheck === e.id),
+      this.misBloqueos.splice(
+        this.misBloqueos.findIndex(data => data.id === e.id),
         1
       );
     },
+    // verificar bloqueos existentes
     verificarBloqueos() {
-      for (let index = 0; index < this.ids.btns.length; index++) {
-        this.$events.fire(
-          this.ids.btns[index].index + "-bloquearBtnsActividad",
-          {
-            idBtn: this.ids.btns[index].idBtn
-          }
-        );
-        this.$events.fire(
-          this.ids.btns[index].index + "-bloquearCheckActividad",
-          {
-            idCheck: this.ids.btns[index].idBtn
-          }
-        );
+      for (let index = 0; index < this.bloqueos.length; index++) {
+        this.bloquearBtns(this.bloqueos[index].id);
+        this.bloquearCheck(this.bloqueos[index].id);
       }
     }
   },
   mounted() {
-    window.Echo.join("noticias")
+    window.Echo.join("actividades")
       .here(data => {})
       .joining(data => {
         window.Echo.private(
@@ -233,45 +197,34 @@ export default {
     );
   },
   created() {
-    this.$events.$on("abrirFormularioActividad", e => this.abrirFormulario(e));
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("actividad").listen("ActividadEvent", e => {
-      this.accionActividad({ tipo: e.tipo, data: e.actividad });
-      this.$events.fire(
-        e.actividad.id + "-actualizarPublicarActividad",
-        e.actividad.publicar
-      );
-      if (!this.formulario) {
-        this.$events.fire("actualizartablaActividad");
-      }
-    });
     window.Echo.private("recibirBtnsCheckActividad").listenForWhisper(
       "recibirBtnsCheckActividad",
       e => {
-        for (let index = 0; index < e.bloqueos.btns.length; index++) {
-          this.bloquearBtnsActividad(e.bloqueos.btns[index]);
-        }
-        for (let index = 0; index < e.bloqueos.checks.length; index++) {
-          this.bloquearCheckActividad(e.bloqueos.checks[index]);
+        for (let index = 0; index < e.bloqueos.length; index++) {
+          this.bloquearBtnsActividad(e.bloqueos[index]);
+          this.bloquearCheckActividad(e.bloqueos[index]);
         }
       }
     );
+    this.$events.$on("abrirFormularioActividad", e => this.abrirFormulario(e));
     this.$events.$on("pushMisBloqueosActividad", e => this.pushMisBloqueos(e));
     this.$events.$on("spliceMisBloqueosActividad", e =>
       this.spliceMisBloqueos(e)
     );
-    this.$events.$on("verificarBloqueos", e => this.verificarBloqueos());
+    this.$events.$on("verificarBloqueos-actividades", e =>
+      this.verificarBloqueos()
+    );
   },
   destroyed() {
     this.$events.$off("abrirFormularioActividad");
     this.$events.$off("pushMisBloqueosActividad");
     this.$events.$off("spliceMisBloqueosActividad");
-    this.$events.$off("verificarBloqueos");
+    this.$events.$off("verificarBloqueos-actividades");
   },
   beforeDestroy() {
-    window.Echo.leave("noticias");
+    window.Echo.leave("actividades");
     window.Echo.leave("recibirBtnsCheckActividad");
-    window.Echo.leave("actividad");
     window.Echo.leave("bloquearCheckActividad");
     window.Echo.leave("desbloquearCheckActividad");
     window.Echo.leave("desbloquearBtnsActividad");
