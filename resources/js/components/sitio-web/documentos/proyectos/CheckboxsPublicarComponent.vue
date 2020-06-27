@@ -16,6 +16,7 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
 export default {
   props: {
     rowData: {
@@ -29,6 +30,7 @@ export default {
   data() {
     return { checkPublicar: false, disabled: false };
   },
+  mixins: [Toastr],
   methods: {
     publicar(data) {
       this.disabled = true;
@@ -43,26 +45,6 @@ export default {
           }
           this.disabled = false;
         });
-    },
-    toastr(titulo, msg) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: "success",
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     verificarPublicar(e) {
       if (e == 0) {

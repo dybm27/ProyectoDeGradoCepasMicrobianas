@@ -126,6 +126,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../mixins/toastr";
+import obtnerImagenCroopie from "../../../mixins/obtnerImagenCroopie";
 export default {
   props: ["idEquipamiento"],
   data() {
@@ -147,21 +149,9 @@ export default {
       mensajeFuncion: ""
     };
   },
+  mixins: [Toastr, obtnerImagenCroopie],
   methods: {
     ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Equipamiento") {
         axios
@@ -177,9 +167,14 @@ export default {
           })
           .catch(error => {
             if (error.response) {
-              this.errors = [];
+              if (error.response.data.errors.nombre) {
+                this.toastr(
+                  "Error!!",
+                  error.response.data.errors.nombres[0],
+                  "error"
+                );
+              }
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
           });
       } else {
@@ -191,38 +186,37 @@ export default {
               "Equipamiento editado con exito!!",
               "success"
             );
+            window.Echo.private("desbloquearBtnsEquipamiento").whisper(
+              "desbloquearBtnsEquipamiento",
+              {
+                id: res.data.id
+              }
+            );
+            window.Echo.private("desbloquearCheckEquipamiento").whisper(
+              "desbloquearCheckEquipamiento",
+              {
+                id: res.data.id
+              }
+            );
+            this.$events.fire("spliceMisBloqueosEquipamiento", {
+              id: res.data.id
+            });
             this.accionEquipamiento({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
           .catch(error => {
             if (error.response) {
-              this.errors = [];
+              if (error.response.data.errors.nombre) {
+                this.toastr(
+                  "Error!!",
+                  error.response.data.errors.nombres[0],
+                  "error"
+                );
+              }
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
           });
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     llenarInfo() {
       this.parametros.nombre = this.info.nombre;
@@ -233,34 +227,6 @@ export default {
       if (this.info.publicar == 1) {
         this.parametros.publicar = true;
       }
-    },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      //this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        this.imagenMiniatura = this.info.imagenPublica;
-        this.$refs.inputImagen.value = "";
-        this.parametros.imagen = this.info.imagen;
-      }
-    },
-    cargarImagen(file) {
-      let reader = new Image();
-      reader.onload = e => {
-        this.imagenMiniatura = reader.src;
-      };
-      reader.src = URL.createObjectURL(file);
     }
   },
   computed: {
@@ -268,9 +234,6 @@ export default {
       "getEquipamientoById",
       "getEquipamientoByNombre"
     ]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Equipamiento") {
         return "btn-success";
@@ -336,13 +299,6 @@ export default {
         return true;
       }
       return false;
-    },
-    mostrarBtnCroppie() {
-      if (this.imagenMiniatura != this.info.imagenPublica) {
-        return true;
-      } else {
-        return false;
-      }
     }
   },
   created() {

@@ -51,6 +51,8 @@
 
 <script>
 import FieldDefs from "./columnas";
+import Toastr from "../../../../mixins/toastr";
+import websocketsTabla from "../../../../mixins/websocketsTabla";
 import vuex from "vuex";
 export default {
   data() {
@@ -62,9 +64,10 @@ export default {
           direction: "asc"
         }
       ],
-      idActividad: ""
+      id: ""
     };
   },
+  mixins: [Toastr, websocketsTabla("Actividad")],
   computed: {
     ...vuex.mapGetters("publicidad", ["getActividades"]),
     mostrarTabla() {
@@ -77,28 +80,11 @@ export default {
   methods: {
     ...vuex.mapActions("publicidad", ["accionActividad"]),
     beforeOpenEliminar(data) {
-      this.idActividad = data.params.id;
-    },
-    closeEliminar() {
-      window.Echo.private("desbloquearBtnsActividad").whisper(
-        "desbloquearBtnsActividad",
-        {
-          id: this.idActividad
-        }
-      );
-      window.Echo.private("desbloquearCheckActividad").whisper(
-        "desbloquearCheckActividad",
-        {
-          id: this.idActividad
-        }
-      );
-      this.$events.fire("spliceMisBloqueosActividad", {
-        id: this.idActividad
-      });
+      this.id = data.params.id;
     },
     eliminarActividad() {
       axios
-        .delete(`/publicidad/${this.idActividad}`, {
+        .delete(`/publicidad/${this.id}`, {
           data: { tipo: "actividad" }
         })
         .then(res => {
@@ -114,41 +100,10 @@ export default {
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
         });
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
-    actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaActividad", e => this.actualizarTabla());
-  },
-  destroyed() {
-    this.$events.off("actualizartablaActividad");
   }
 };
 </script>

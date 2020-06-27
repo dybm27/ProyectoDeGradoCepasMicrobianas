@@ -16,7 +16,7 @@ class CreateCaracBioquiHongosTable extends Migration
         Schema::create('carac_bioqui_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hongo_filamentoso_id');
-            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos');
             $table->string('enzimas',100);
             $table->string('azucares',100);
             $table->string('otras_caracteristicas')->nullable();

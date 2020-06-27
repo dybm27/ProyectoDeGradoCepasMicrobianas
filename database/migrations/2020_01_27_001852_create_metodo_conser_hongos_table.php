@@ -16,7 +16,7 @@ class CreateMetodoConserHongosTable extends Migration
         Schema::create('metodo_conser_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hongo_filamentoso_id');
-            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_hongos');
             $table->dateTime('fecha');

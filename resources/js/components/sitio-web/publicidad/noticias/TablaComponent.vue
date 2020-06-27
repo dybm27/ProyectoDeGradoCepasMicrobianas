@@ -52,6 +52,8 @@
 <script>
 import FieldDefs from "./columnas";
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import websocketsTabla from "../../../../mixins/websocketsTabla";
 export default {
   data() {
     return {
@@ -62,7 +64,7 @@ export default {
           direction: "asc"
         }
       ],
-      idNoticia: ""
+      id: ""
     };
   },
   computed: {
@@ -74,31 +76,15 @@ export default {
       return false;
     }
   },
+  mixins: [Toastr, websocketsTabla("Noticia")],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNoticia"]),
     beforeOpenEliminar(data) {
-      this.idNoticia = data.params.id;
-    },
-    closeEliminar() {
-      window.Echo.private("desbloquearBtnsNoticia").whisper(
-        "desbloquearBtnsNoticia",
-        {
-          id: this.idNoticia
-        }
-      );
-      window.Echo.private("desbloquearCheckNoticia").whisper(
-        "desbloquearCheckNoticia",
-        {
-          id: this.idNoticia
-        }
-      );
-      this.$events.fire("spliceMisBloqueosNoticia", {
-        id: this.idNoticia
-      });
+      this.id = data.params.id;
     },
     eliminarNoticia() {
       axios
-        .delete(`/publicidad/${this.idNoticia}`, {
+        .delete(`/publicidad/${this.id}`, {
           data: { tipo: "noticia" }
         })
         .then(res => {
@@ -114,41 +100,10 @@ export default {
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
         });
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
-    actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaNoticia", e => this.actualizarTabla());
-  },
-  destroyed() {
-    this.$events.off("actualizartablaNoticia");
   }
 };
 </script>

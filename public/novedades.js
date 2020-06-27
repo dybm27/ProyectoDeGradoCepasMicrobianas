@@ -9,7 +9,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websockets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websockets */ "./resources/js/mixins/websockets.js");
+/* harmony import */ var _mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/abrirCerrarFormulario */ "./resources/js/mixins/abrirCerrarFormulario.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -47,205 +49,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      formulario: false,
-      id: 0,
-      tipo: "",
-      bloqueos: [],
-      misBloqueos: []
-    };
-  },
+  mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_0__["default"])("Novedad", "novedades"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__["default"])("Novedad")],
   methods: {
-    abrirFormulario: function abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-
-      this.formulario = !this.formulario;
-    },
-    cerrarFormulario: function cerrarFormulario() {
-      if (this.id != 0) {
-        window.Echo["private"]("desbloquearBtnsNovedad").whisper("desbloquearBtnsNovedad", {
-          id: this.id
-        });
-        window.Echo["private"]("desbloquearCheckNovedad").whisper("desbloquearCheckNovedad", {
-          id: this.id
-        });
-        this.$events.fire("spliceMisBloqueosNovedad", {
-          id: this.id
-        });
-        this.id = 0;
-      }
-
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario: function cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    },
-    // Bloquear Btns
-    bloquearBtnsNovedad: function bloquearBtnsNovedad(e) {
-      this.bloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-      this.crearEventoBtns(e.id);
-      this.$events.fire(e.id + "-bloquearBtnsNovedad");
-    },
-    desbloquearBtnsNovedad: function desbloquearBtnsNovedad(e) {
-      var data = this.bloqueos.find(function (data) {
-        return data.id === e.id;
-      });
-      this.eliminarEventoBtns(data.id);
-      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-      this.$events.fire(data.id + "-desbloquearBtnsNovedad");
-    },
-    bloquearBtns: function bloquearBtns(id) {
-      this.$events.fire(id + "-bloquearBtnsNovedad");
-    },
-    crearEventoBtns: function crearEventoBtns(id) {
-      var _this = this;
-
-      this.$events.$on(id + "-verificarBloqueoBtnsNovedad", function (e) {
-        return _this.bloquearBtns(e.id);
-      });
-    },
-    eliminarEventoBtns: function eliminarEventoBtns(id) {
-      this.$events.off(id + "-verificarBloqueoBtnsNovedad");
-    },
-    // Bloquear Check
-    bloquearCheckNovedad: function bloquearCheckNovedad(e) {
-      this.bloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-      this.crearEventoCheck(e.id);
-      this.$events.fire(e.id + "-bloquearCheckNovedad");
-    },
-    desbloquearCheckNovedad: function desbloquearCheckNovedad(e) {
-      var data = this.bloqueos.find(function (data) {
-        return data.id === e.id;
-      });
-      this.eliminarEventoCheck(data.id);
-      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-      this.$events.fire(data.id + "-desbloquearCheckNovedad");
-    },
-    bloquearCheck: function bloquearCheck(id) {
-      this.$events.fire(id + "-bloquearCheckNovedad");
-    },
-    crearEventoCheck: function crearEventoCheck(id) {
-      var _this2 = this;
-
-      this.$events.$on(id + "-verificarBloqueoCheckNovedad", function (e) {
-        return _this2.bloquearCheck(e.id);
-      });
-    },
-    eliminarEventoCheck: function eliminarEventoCheck(id) {
-      this.$events.off(id + "-verificarBloqueoCheckNovedad");
-    },
-    // eliminar bloqueos
-    borrarBtnsCheck: function borrarBtnsCheck(id) {
-      var data = this.bloqueos.find(function (data) {
-        return data.idUser === id;
-      });
-
-      if (data) {
-        this.desbloquearBtnsNovedad(data);
-        this.desbloquearCheckNovedad(data);
-      }
-    },
-    // guardar mis bloqueos
-    pushMisBloqueos: function pushMisBloqueos(e) {
-      this.misBloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-    },
-    spliceMisBloqueos: function spliceMisBloqueos(e) {
-      this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-    },
-    // verificar bloqueos existentes
-    verificarBloqueos: function verificarBloqueos() {
-      for (var index = 0; index < this.bloqueos.length; index++) {
-        this.bloquearBtns(this.bloqueos[index].id);
-        this.bloquearCheck(this.bloqueos[index].id);
-      }
     }
   },
-  mounted: function mounted() {
-    var _this3 = this;
-
-    window.Echo.join("novedades").here(function (data) {}).joining(function (data) {
-      window.Echo["private"]("recibirBtnsCheckNovedad").whisper("recibirBtnsCheckNovedad", {
-        bloqueos: _this3.misBloqueos
-      });
-    }).leaving(function (data) {
-      _this3.borrarBtnsCheck(data.id);
-    }); //  .listen("Prueba", e => {});
-
-    window.Echo["private"]("bloquearBtnsNovedad").listenForWhisper("bloquearBtnsNovedad", function (e) {
-      _this3.bloquearBtnsNovedad(e);
-    });
-    window.Echo["private"]("desbloquearBtnsNovedad").listenForWhisper("desbloquearBtnsNovedad", function (e) {
-      _this3.desbloquearBtnsNovedad(e);
-    });
-    window.Echo["private"]("bloquearCheckNovedad").listenForWhisper("bloquearCheckNovedad", function (e) {
-      _this3.bloquearCheckNovedad(e);
-    });
-    window.Echo["private"]("desbloquearCheckNovedad").listenForWhisper("desbloquearCheckNovedad", function (e) {
-      _this3.desbloquearCheckNovedad(e);
-    });
-  },
   created: function created() {
-    var _this4 = this;
-
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo["private"]("recibirBtnsCheckNovedad").listenForWhisper("recibirBtnsCheckNovedad", function (e) {
-      for (var index = 0; index < e.bloqueos.length; index++) {
-        _this4.bloquearBtnsNovedad(e.bloqueos[index]);
-
-        _this4.bloquearCheckNovedad(e.bloqueos[index]);
-      }
-    });
-    this.$events.$on("abrirFormularioNovedad", function (e) {
-      return _this4.abrirFormulario(e);
-    });
-    this.$events.$on("pushMisBloqueosNovedad", function (e) {
-      return _this4.pushMisBloqueos(e);
-    });
-    this.$events.$on("spliceMisBloqueosNovedad", function (e) {
-      return _this4.spliceMisBloqueos(e);
-    });
-    this.$events.$on("verificarBloqueos-novedades", function (e) {
-      return _this4.verificarBloqueos();
-    });
-  },
-  destroyed: function destroyed() {
-    this.$events.$off("abrirFormularioNovedad");
-    this.$events.$off("pushMisBloqueosNovedad");
-    this.$events.$off("spliceMisBloqueosNovedad");
-    this.$events.$off("verificarBloqueos-novedades");
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.Echo.leave("novedades");
-    window.Echo.leave("recibirBtnsCheckNovedad");
-    window.Echo.leave("bloquearCheckNovedad");
-    window.Echo.leave("desbloquearCheckNovedad");
-    window.Echo.leave("desbloquearBtnsNovedad");
-    window.Echo.leave("bloquearBtnsNovedad");
   }
 });
 

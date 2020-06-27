@@ -47,7 +47,7 @@
           </template>
           <template v-else>
             <button
-              @click="abrirFormulario(0)"
+              @click="cerrarFormulario"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Cancelar</button>
           </template>
@@ -70,27 +70,22 @@
 </template>
 
 <script>
+import websocketsMixin from "../../mixins/websockets";
+import abrirCerrarFormulario from "../../mixins/abrirCerrarFormulario";
 import vuex from "vuex";
 export default {
   data() {
-    return { formulario: false, id: 0, tipo: "" };
+    return { tipo: "" };
   },
+  mixins: [
+    websocketsMixin("Equipamiento", "equipamientos"),
+    abrirCerrarFormulario("Equipamiento")
+  ],
   methods: {
     ...vuex.mapActions("equipamientos", [
       "obtenerEquipamientos",
       "accionEquipamiento"
     ]),
-    abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
     cambiarTipo(tipo) {
       if (tipo === "agregar") {
         this.tipo = "Agregar";
@@ -103,18 +98,13 @@ export default {
   },
   created() {
     this.obtenerEquipamientos();
-    this.$events.$on("abrirFormularioEquipamiento", e =>
-      this.abrirFormulario(e)
-    );
     window.Echo.channel("equipamiento").listen("EquipamientoEvent", e => {
       this.accionEquipamiento({ tipo: e.tipo, data: e.equipamiento });
       this.$events.fire(
         e.equipamiento.id + "-actualizarPublicarEquipamiento",
         e.equipamiento.publicar
       );
-      if (!this.formulario) {
-        this.$events.fire("actualizartablaEquipamiento");
-      }
+      this.$events.fire("actualizartablaEquipamiento");
     });
   }
 };

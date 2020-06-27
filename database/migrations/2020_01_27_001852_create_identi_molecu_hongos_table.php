@@ -16,7 +16,7 @@ class CreateIdentiMolecuHongosTable extends Migration
         Schema::create('identi_molecu_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hongo_filamentoso_id');
-            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos');
             $table->string('nombre_forward', 100);
             $table->string('nombre_reversed', 100);
             $table->string('secuencia_forward');

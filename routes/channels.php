@@ -77,3 +77,25 @@ Broadcast::channel('recibirBtnsCheckNovedad', function ($user) {
 Broadcast::channel('borrarBloqueosNovedad', function ($user) {
     return true;
 });
+//equipamientos
+Broadcast::channel('equipamientos', function ($user) {
+    return ['id' => $user->id];
+});
+Broadcast::channel('bloquearBtnsEquipamiento', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsEquipamiento', function ($user) {
+    return true;
+});
+Broadcast::channel('bloquearCheckEquipamiento', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearCheckEquipamiento', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsCheckEquipamiento', function ($user) {
+    return true;
+});
+Broadcast::channel('borrarBloqueosEquipamiento', function ($user) {
+    return true;
+});

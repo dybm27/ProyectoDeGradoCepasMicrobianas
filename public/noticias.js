@@ -9,7 +9,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websockets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websockets */ "./resources/js/mixins/websockets.js");
+/* harmony import */ var _mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/abrirCerrarFormulario */ "./resources/js/mixins/abrirCerrarFormulario.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -47,205 +49,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      formulario: false,
-      id: 0,
-      tipo: "",
-      bloqueos: [],
-      misBloqueos: []
-    };
-  },
+  mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_0__["default"])("Noticia", "noticias"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__["default"])("Noticia")],
   methods: {
-    abrirFormulario: function abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-
-      this.formulario = !this.formulario;
-    },
-    cerrarFormulario: function cerrarFormulario() {
-      if (this.id != 0) {
-        window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
-          id: this.id
-        });
-        window.Echo["private"]("desbloquearCheckNoticia").whisper("desbloquearCheckNoticia", {
-          id: this.id
-        });
-        this.$events.fire("spliceMisBloqueosNoticia", {
-          id: this.id
-        });
-        this.id = 0;
-      }
-
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario: function cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    },
-    // Bloquear Btns
-    bloquearBtnsNoticia: function bloquearBtnsNoticia(e) {
-      this.bloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-      this.crearEventoBtns(e.id);
-      this.$events.fire(e.id + "-bloquearBtnsNoticia");
-    },
-    desbloquearBtnsNoticia: function desbloquearBtnsNoticia(e) {
-      var data = this.bloqueos.find(function (data) {
-        return data.id === e.id;
-      });
-      this.eliminarEventoBtns(data.id);
-      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-      this.$events.fire(data.id + "-desbloquearBtnsNoticia");
-    },
-    bloquearBtns: function bloquearBtns(id) {
-      this.$events.fire(id + "-bloquearBtnsNoticia");
-    },
-    crearEventoBtns: function crearEventoBtns(id) {
-      var _this = this;
-
-      this.$events.$on(id + "-verificarBloqueoBtnsNoticia", function (e) {
-        return _this.bloquearBtns(e.id);
-      });
-    },
-    eliminarEventoBtns: function eliminarEventoBtns(id) {
-      this.$events.off(id + "-verificarBloqueoBtnsNoticia");
-    },
-    // Bloquear Check
-    bloquearCheckNoticia: function bloquearCheckNoticia(e) {
-      this.bloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-      this.crearEventoCheck(e.id);
-      this.$events.fire(e.id + "-bloquearCheckNoticia");
-    },
-    desbloquearCheckNoticia: function desbloquearCheckNoticia(e) {
-      var data = this.bloqueos.find(function (data) {
-        return data.id === e.id;
-      });
-      this.eliminarEventoCheck(data.id);
-      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-      this.$events.fire(data.id + "-desbloquearCheckNoticia");
-    },
-    bloquearCheck: function bloquearCheck(id) {
-      this.$events.fire(id + "-bloquearCheckNoticia");
-    },
-    crearEventoCheck: function crearEventoCheck(id) {
-      var _this2 = this;
-
-      this.$events.$on(id + "-verificarBloqueoCheckNoticia", function (e) {
-        return _this2.bloquearCheck(e.id);
-      });
-    },
-    eliminarEventoCheck: function eliminarEventoCheck(id) {
-      this.$events.off(id + "-verificarBloqueoCheckNoticia");
-    },
-    // eliminar bloqueos
-    borrarBtnsCheck: function borrarBtnsCheck(id) {
-      var data = this.bloqueos.find(function (data) {
-        return data.idUser === id;
-      });
-
-      if (data) {
-        this.desbloquearBtnsNoticia(data);
-        this.desbloquearCheckNoticia(data);
-      }
-    },
-    // guardar mis bloqueos
-    pushMisBloqueos: function pushMisBloqueos(e) {
-      this.misBloqueos.push({
-        idUser: e.idUser,
-        id: e.id
-      });
-    },
-    spliceMisBloqueos: function spliceMisBloqueos(e) {
-      this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-        return data.id === e.id;
-      }), 1);
-    },
-    // verificar bloqueos existentes
-    verificarBloqueos: function verificarBloqueos() {
-      for (var index = 0; index < this.bloqueos.length; index++) {
-        this.bloquearBtns(this.bloqueos[index].id);
-        this.bloquearCheck(this.bloqueos[index].id);
-      }
     }
   },
-  mounted: function mounted() {
-    var _this3 = this;
-
-    window.Echo.join("noticias").here(function (data) {}).joining(function (data) {
-      window.Echo["private"]("recibirBtnsCheckNoticia").whisper("recibirBtnsCheckNoticia", {
-        bloqueos: _this3.misBloqueos
-      });
-    }).leaving(function (data) {
-      _this3.borrarBtnsCheck(data.id);
-    }); //  .listen("Prueba", e => {});
-
-    window.Echo["private"]("bloquearBtnsNoticia").listenForWhisper("bloquearBtnsNoticia", function (e) {
-      _this3.bloquearBtnsNoticia(e);
-    });
-    window.Echo["private"]("desbloquearBtnsNoticia").listenForWhisper("desbloquearBtnsNoticia", function (e) {
-      _this3.desbloquearBtnsNoticia(e);
-    });
-    window.Echo["private"]("bloquearCheckNoticia").listenForWhisper("bloquearCheckNoticia", function (e) {
-      _this3.bloquearCheckNoticia(e);
-    });
-    window.Echo["private"]("desbloquearCheckNoticia").listenForWhisper("desbloquearCheckNoticia", function (e) {
-      _this3.desbloquearCheckNoticia(e);
-    });
-  },
   created: function created() {
-    var _this4 = this;
-
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo["private"]("recibirBtnsCheckNoticia").listenForWhisper("recibirBtnsCheckNoticia", function (e) {
-      for (var index = 0; index < e.bloqueos.length; index++) {
-        _this4.bloquearBtnsNoticia(e.bloqueos[index]);
-
-        _this4.bloquearCheckNoticia(e.bloqueos[index]);
-      }
-    });
-    this.$events.$on("abrirFormularioNoticia", function (e) {
-      return _this4.abrirFormulario(e);
-    });
-    this.$events.$on("pushMisBloqueosNoticia", function (e) {
-      return _this4.pushMisBloqueos(e);
-    });
-    this.$events.$on("spliceMisBloqueosNoticia", function (e) {
-      return _this4.spliceMisBloqueos(e);
-    });
-    this.$events.$on("verificarBloqueos-noticias", function (e) {
-      return _this4.verificarBloqueos();
-    });
-  },
-  destroyed: function destroyed() {
-    this.$events.$off("abrirFormularioNoticia");
-    this.$events.$off("pushMisBloqueosNoticia");
-    this.$events.$off("spliceMisBloqueosNoticia");
-    this.$events.$off("verificarBloqueos-noticias");
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.Echo.leave("noticias");
-    window.Echo.leave("recibirBtnsCheckNoticia");
-    window.Echo.leave("bloquearCheckNoticia");
-    window.Echo.leave("desbloquearCheckNoticia");
-    window.Echo.leave("desbloquearBtnsNoticia");
-    window.Echo.leave("bloquearBtnsNoticia");
   }
 });
 

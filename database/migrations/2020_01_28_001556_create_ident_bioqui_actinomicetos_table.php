@@ -16,7 +16,7 @@ class CreateIdentBioquiActinomicetosTable extends Migration
         Schema::create('ident_bioqui_actinomicetos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('actinomiceto_id');
-            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos')->onDelete('cascade');
+            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos');
             $table->string('oxidasa', 100);
             $table->string('catalasa', 100);
             $table->string('citrato', 100);

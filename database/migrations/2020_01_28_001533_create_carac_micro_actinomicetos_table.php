@@ -16,7 +16,7 @@ class CreateCaracMicroActinomicetosTable extends Migration
         Schema::create('carac_micro_actinomicetos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('actinomiceto_id');
-            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos')->onDelete('cascade');
+            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos');
             $table->unsignedBigInteger('tinciongram_id');
             $table->foreign('tinciongram_id')->references('id')->on('tincion_gram_actinomicetos');
             $table->unsignedBigInteger('forma_id');

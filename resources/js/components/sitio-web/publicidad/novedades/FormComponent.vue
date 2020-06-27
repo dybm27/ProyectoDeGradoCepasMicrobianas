@@ -146,6 +146,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import obtnerImagenCroopie from "../../../../mixins/obtnerImagenCroopie";
 export default {
   props: ["idNovedad"],
   data() {
@@ -170,21 +172,9 @@ export default {
       mensajeLink: ""
     };
   },
+  mixins: [Toastr, obtnerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNovedad"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Novedad") {
         axios
@@ -245,26 +235,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.titulo = this.info.titulo;
       this.parametros.cuerpo = this.info.cuerpo;
@@ -278,33 +248,6 @@ export default {
         this.parametros.publicar = true;
       }
     },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        this.imagenMiniatura = this.info.imagenPublica;
-        this.$refs.inputImagen.value = "";
-        this.parametros.imagen = this.info.imagen;
-      }
-    },
-    cargarImagen(file) {
-      let reader = new Image();
-      reader.onload = e => {
-        this.imagenMiniatura = reader.src;
-      };
-      reader.src = URL.createObjectURL(file);
-    },
     aceptarContenido(data) {
       this.parametros.cuerpo = data.contenido;
       this.parametros.imagenesEditor = data.imagenesEditor;
@@ -316,9 +259,6 @@ export default {
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNovedadById", "getNovedadByTitulo"]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Novedad") {
         return "btn-success";
@@ -381,13 +321,6 @@ export default {
         return true;
       }
       return false;
-    },
-    mostrarBtnCroppie() {
-      if (this.imagenMiniatura != this.info.imagenPublica) {
-        return true;
-      } else {
-        return false;
-      }
     }
   },
   created() {

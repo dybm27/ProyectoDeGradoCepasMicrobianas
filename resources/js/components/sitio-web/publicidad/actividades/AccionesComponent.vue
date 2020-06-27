@@ -25,6 +25,7 @@
 </template>
 
   <script>
+import websocketsAccionesMixin from "../../../../mixins/websocketsAcciones";
 import vuex from "vuex";
 export default {
   props: {
@@ -36,88 +37,9 @@ export default {
       type: Number
     }
   },
-  data() {
-    return { disabledBtns: false };
-  },
+  mixins: [websocketsAccionesMixin("actividad", "Actividad", "actividades")],
   computed: {
     ...vuex.mapGetters(["getUserAuth"])
-  },
-  methods: {
-    editar(data) {
-      this.$events.fire("abrirFormularioActividad", data.id);
-      window.Echo.private("bloquearBtnsActividad").whisper(
-        "bloquearBtnsActividad",
-        {
-          id: data.id,
-          idUser: this.getUserAuth.id
-        }
-      );
-      window.Echo.private("bloquearCheckActividad").whisper(
-        "bloquearCheckActividad",
-        {
-          id: data.id,
-          idUser: this.getUserAuth.id
-        }
-      );
-      this.$events.fire("pushMisBloqueosActividad", {
-        id: data.id,
-        idUser: this.getUserAuth.id
-      });
-    },
-    showModal(data) {
-      this.$modal.show("modal_eliminar_actividad", {
-        id: data.id
-      });
-      window.Echo.private("bloquearBtnsActividad").whisper(
-        "bloquearBtnsActividad",
-        {
-          id: data.id,
-          idUser: this.getUserAuth.id
-        }
-      );
-      window.Echo.private("bloquearCheckActividad").whisper(
-        "bloquearCheckActividad",
-        {
-          id: data.id,
-          idUser: this.getUserAuth.id
-        }
-      );
-      this.$events.fire("pushMisBloqueosActividad", {
-        id: data.id,
-        idUser: this.getUserAuth.id
-      });
-    },
-    bloquearBtnsActividad(data) {
-      this.disabledBtns = true;
-    },
-    desbloquearBtnsActividad(data) {
-      this.disabledBtns = false;
-    },
-    crearEventosBtns() {
-      this.$events.$on(this.rowData.id + "-bloquearBtnsActividad", e =>
-        this.bloquearBtnsActividad()
-      );
-      this.$events.$on(this.rowData.id + "-desbloquearBtnsActividad", e =>
-        this.desbloquearBtnsActividad()
-      );
-    },
-    eliminarEventosBtns(id) {
-      this.disabledBtns = false;
-      this.$events.$off(id + "-bloquearBtnsActividad");
-      this.$events.$off(id + "-desbloquearBtnsActividad");
-    }
-  },
-  created() {
-    this.$events.$on(this.rowIndex + "-crearEventosBtns-actividades", e =>
-      this.crearEventosBtns()
-    );
-    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-actividades", e =>
-      this.eliminarEventosBtns(e)
-    );
-  },
-  destroyed() {
-    this.$events.$off(this.rowIndex + "-crearEventosBtns-actividades");
-    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-actividades");
   }
 };
 </script>

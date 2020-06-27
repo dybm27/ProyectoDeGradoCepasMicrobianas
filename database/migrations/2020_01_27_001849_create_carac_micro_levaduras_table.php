@@ -16,7 +16,7 @@ class CreateCaracMicroLevadurasTable extends Migration
         Schema::create('carac_micro_levaduras', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('levadura_id');
-            $table->foreign('levadura_id')->references('id')->on('levaduras')->onDelete('cascade');
+            $table->foreign('levadura_id')->references('id')->on('levaduras');
             $table->string('hifas',15);
             $table->string('pseudohifas',15);
             $table->string('balistoconidias',15);

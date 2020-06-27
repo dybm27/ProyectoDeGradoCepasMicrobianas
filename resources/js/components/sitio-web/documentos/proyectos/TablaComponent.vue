@@ -51,6 +51,7 @@
 <script>
 import FieldDefs from "./columnas";
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
 export default {
   data() {
     return {
@@ -64,6 +65,7 @@ export default {
       idProyecto: ""
     };
   },
+  mixins: [Toastr],
   computed: {
     ...vuex.mapGetters("documentos", ["getProyectos"]),
     mostrarTabla() {
@@ -96,26 +98,6 @@ export default {
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
         });
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     abrirFormularioProyecto(id) {
       this.$emit("abrirFormularioProyecto", id);
