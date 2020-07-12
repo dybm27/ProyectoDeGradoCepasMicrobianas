@@ -132,15 +132,15 @@
                       <label for="imagen_pcr" class>Imagen PCR</label>
                       <input
                         name="imagen_pcr"
-                        @change="obtenerImagenPcr"
+                        @change="obtenerImagen1"
                         id="imagen_pcr"
                         type="file"
                         accept="image/jpeg, image/png"
                         class="form-control-file"
-                        ref="inputImagenPcr"
+                        ref="inputImagen1"
                         :required="required"
                       />
-                      <span v-if="imagenError.pcr" class="text-danger">{{imagenError.pcr}}</span>
+                      <span v-if="imagenError.imagen1" class="text-danger">{{imagenError.imagen1}}</span>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -148,15 +148,15 @@
                       <label for="imagen_blast" class>Imagen Blast</label>
                       <input
                         name="imagen_blast"
-                        @change="obtenerImagenBlast"
+                        @change="obtenerImagen2"
                         id="imagen_blast"
                         accept="image/jpeg, image/png"
                         type="file"
                         class="form-control-file"
-                        ref="inputImagenBlast"
+                        ref="inputImagen2"
                         :required="required"
                       />
-                      <span v-if="imagenError.blast" class="text-danger">{{imagenError.blast}}</span>
+                      <span v-if="imagenError.imagen2" class="text-danger">{{imagenError.imagen2}}</span>
                     </div>
                   </div>
                 </div>
@@ -234,14 +234,14 @@
         <div class="col-md-5">
           <div class="main-card mb-3 card">
             <div class="card-body">
-              <template v-if="mostraImagenPcr">
+              <template v-if="mostraImagen1">
                 <h5 class="card-title">Imagen PCR</h5>
-                <template v-if="validarCroppiePcr">
+                <template v-if="validarCroppie1">
                   <croppie
                     :id="'croppie1'"
-                    :imagen="mostraImagenPcr"
-                    @cambiarValorImagen="cambiarValorImagenPcr"
-                    :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                    :imagen="mostraImagen1"
+                    @cambiarValorImagen="cambiarValorImagen1"
+                    :mostrarBtnCroppie="mostrarBtnCroppie1"
                     :enableZoom="false"
                     :zoom="0"
                     :editar="true"
@@ -252,9 +252,9 @@
                 <template v-else>
                   <croppie
                     :id="'croppie1'"
-                    :imagen="mostraImagenPcr"
-                    @cambiarValorImagen="cambiarValorImagenPcr"
-                    :mostrarBtnCroppie="mostrarBtnCroppiePcr"
+                    :imagen="mostraImagen1"
+                    @cambiarValorImagen="cambiarValorImagen1"
+                    :mostrarBtnCroppie="mostrarBtnCroppie1"
                     :zoom="1"
                     :enableZoom="true"
                     :editar="false"
@@ -278,14 +278,14 @@
         <div class="col-md-6">
           <div class="main-card mb-3 card">
             <div class="card-body">
-              <template v-if="mostraImagenBlast">
+              <template v-if="mostraImagen2">
                 <h5 class="card-title">Imagen Blast</h5>
-                <template v-if="validarCroppieBlast">
+                <template v-if="validarCroppie2">
                   <croppie
                     :id="'croppie2'"
-                    :imagen="mostraImagenBlast"
-                    @cambiarValorImagen="cambiarValorImagenBlast"
-                    :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                    :imagen="mostraImagen2"
+                    @cambiarValorImagen="cambiarValorImagen2"
+                    :mostrarBtnCroppie="mostrarBtnCroppie2"
                     :enableZoom="false"
                     :zoom="0"
                     :editar="true"
@@ -296,9 +296,9 @@
                 <template v-else>
                   <croppie
                     :id="'croppie2'"
-                    :imagen="mostraImagenBlast"
-                    @cambiarValorImagen="cambiarValorImagenBlast"
-                    :mostrarBtnCroppie="mostrarBtnCroppieBlast"
+                    :imagen="mostraImagen2"
+                    @cambiarValorImagen="cambiarValorImagen2"
+                    :mostrarBtnCroppie="mostrarBtnCroppie2"
                     :zoom="1"
                     :enableZoom="true"
                     :editar="false"
@@ -326,6 +326,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopie2Imagenes from "../../../../mixins/obtenerImagenCroopie2Imagenes";
 export default {
   props: ["info", "modificarInfo"],
   data() {
@@ -342,20 +344,15 @@ export default {
         blast: "",
         analisis_filogenetico: "",
         observaciones: "",
-        imagen_pcr: "",
-        imagen_blast: ""
+        imagen1: "",
+        imagen2: ""
       },
       tituloForm: "",
-      imagenMiniaturaPcr: "",
-      imagenMiniaturaBlast: "",
       nomBtn: "",
-      errors: [],
-      imagenError: {
-        pcr: "",
-        blast: ""
-      }
+      errors: []
     };
   },
+  mixins: [obtenerImagenCroopie2Imagenes, Toastr],
   watch: {
     modificarInfo() {
       if (this.modificarInfo) {
@@ -365,40 +362,14 @@ export default {
     }
   },
   methods: {
-    cambiarValorImagenPcr(valor) {
-      if (valor) {
-        this.parametros.imagen_pcr = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen_pcr = this.info.imagen_pcr;
-          this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
-          this.$refs.inputImagenPcr.value = "";
-        } else {
-          this.parametros.imagen_pcr = "";
-        }
-      }
-    },
-    cambiarValorImagenBlast(valor) {
-      if (valor) {
-        this.parametros.imagen_blast = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen_blast = this.info.imagen_blast;
-          this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
-          this.$refs.inputImagenBlast.value = "";
-        } else {
-          this.parametros.imagen_blast = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Identificación") {
         axios
           .post("/cepas/levadura/identi-molecu", this.parametros)
           .then(res => {
             this.errors = [];
-            this.$refs.inputImagenPcr.value = "";
-            this.$refs.inputImagenBlast.value = "";
+            this.$refs.inputImagen1.value = "";
+            this.$refs.inputImagen2.value = "";
             this.tituloForm = "Editar Identificación";
             this.nomBtn = "Editar";
             this.$emit("agregar", res.data);
@@ -420,8 +391,8 @@ export default {
           .put(`/cepas/levadura/identi-molecu/${this.info.id}`, this.parametros)
           .then(res => {
             this.errors = [];
-            this.$refs.inputImagenPcr.value = "";
-            this.$refs.inputImagenBlast.value = "";
+            this.$refs.inputImagen1.value = "";
+            this.$refs.inputImagen2.value = "";
             this.$emit("editar", res.data);
             this.toastr(
               "Editar Identificación",
@@ -439,26 +410,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.nombre_forward = this.info.nombre_forward;
       this.parametros.nombre_reversed = this.info.nombre_reversed;
@@ -470,92 +421,14 @@ export default {
       this.parametros.blast = this.info.blast;
       this.parametros.analisis_filogenetico = this.info.analisis_filogenetico;
       this.parametros.observaciones = this.info.observaciones;
-      this.parametros.imagen_pcr = this.info.imagen_pcr;
-      this.parametros.imagen_blast = this.info.imagen_blast;
-      this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
-      this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
-    },
-    obtenerImagenPcr(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError.pcr =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          if (this.required) {
-            this.imagenMiniaturaPcr = "";
-            this.parametros.imagen_pcr = "";
-          } else {
-            this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
-            this.parametros.imagen_pcr = this.info.imagen_pcr;
-          }
-          this.$refs.inputImagenPcr.value = "";
-        } else {
-          this.imagenError.pcr = "";
-          this.cargarImagen(file, "pcr");
-        }
-      } else {
-        if (this.required) {
-          this.imagenMiniaturaPcr = "";
-          this.parametros.imagen_pcr = "";
-        } else {
-          this.imagenMiniaturaPcr = this.info.imagen_pcrPublica;
-          this.parametros.imagen_pcr = this.info.imagen_pcr;
-        }
-      }
-    },
-    obtenerImagenBlast(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError.blast =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          if (this.required) {
-            this.imagenMiniaturaBlast = "";
-            this.parametros.imagen_blast = "";
-          } else {
-            this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
-            this.parametros.imagen_blast = this.info.imagen_blast;
-          }
-          this.$refs.inputImagenBlast.value = "";
-        } else {
-          this.imagenError.blast = "";
-          this.cargarImagen(file, "blast");
-        }
-      } else {
-        if (this.required) {
-          this.imagenMiniaturaBlast = "";
-          this.parametros.imagen_blast = "";
-        } else {
-          this.imagenMiniaturaBlast = this.info.imagen_blastPublica;
-          this.parametros.imagen_blast = this.info.imagen_blast;
-        }
-      }
-    },
-    cargarImagen(file, tipo) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        switch (tipo) {
-          case "pcr":
-            this.imagenMiniaturaPcr = e.target.result;
-            break;
-          case "blast":
-            this.imagenMiniaturaBlast = e.target.result;
-            break;
-        }
-      };
-      reader.readAsDataURL(file);
+      this.parametros.imagen1 = this.info.imagen_pcr;
+      this.parametros.imagen2 = this.info.imagen_blast;
+      this.imagenMiniatura1 = this.info.imagen_pcrPublica;
+      this.imagenMiniatura2 = this.info.imagen_blastPublica;
     }
   },
   computed: {
     ...vuex.mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"]),
-    mostraImagenPcr() {
-      return this.imagenMiniaturaPcr;
-    },
-    mostraImagenBlast() {
-      return this.imagenMiniaturaBlast;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Identificación") {
         return "btn-success";
@@ -575,56 +448,6 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    },
-    mostrarBtnCroppiePcr() {
-      if (this.info) {
-        if (this.imagenMiniaturaPcr != this.info.imagen_pcrPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    mostrarBtnCroppieBlast() {
-      if (this.info) {
-        if (this.imagenMiniaturaBlast != this.info.imagen_blastPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppiePcr() {
-      if (this.info) {
-        if (this.imagenMiniaturaPcr == this.info.imagen_pcrPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarCroppieBlast() {
-      if (this.info) {
-        if (this.imagenMiniaturaBlast == this.info.imagen_blastPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen_pcr || !this.parametros.imagen_blast) {
-        return true;
-      }
-      return false;
     }
   },
   mounted() {

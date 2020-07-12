@@ -339,6 +339,7 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../mixins/toastr";
 export default {
   props: ["tipoG"],
   data() {
@@ -376,6 +377,7 @@ export default {
       mostrarForm: true
     };
   },
+  mixins: [Toastr],
   methods: {
     ...vuex.mapActions("info_cepas", ["accionAgregarTipoCepa"]),
     evento() {
@@ -466,7 +468,6 @@ export default {
         })
         .catch(error => {
           if (error.response) {
-            console.log(error.response.data);
           }
         });
     },
@@ -505,26 +506,6 @@ export default {
       if (cepa.cepa.publicar == 1) {
         this.parametros.publicar = true;
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     cambiarGeneroEspecie() {
       this.parametros.genero = this.getGenerosId(

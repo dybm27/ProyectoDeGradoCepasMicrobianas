@@ -127,7 +127,7 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
-import obtnerImagenCroopie from "../../../mixins/obtnerImagenCroopie";
+import obtenerImagenCroopie from "../../../mixins/obtenerImagenCroopie";
 export default {
   props: ["idEquipamiento"],
   data() {
@@ -149,7 +149,7 @@ export default {
       mensajeFuncion: ""
     };
   },
-  mixins: [Toastr, obtnerImagenCroopie],
+  mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
     evento() {

@@ -5,6 +5,7 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
+          :disabled="disabledBtns"
           @click="editar(rowData)"
         >
           <i class="fas fa-pencil-alt"></i>
@@ -14,6 +15,7 @@
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
           @click="showModal(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
@@ -23,6 +25,8 @@
 </template>
 
   <script>
+import websocketsAccionesMixin from "../../../mixins/websocketsAcciones";
+import vuex from "vuex";
 export default {
   props: {
     rowData: {
@@ -33,17 +37,11 @@ export default {
       type: Number
     }
   },
-  methods: {
-    editar(data) {
-      this.$events.fire("abrirFormularioInvestigador", data.id);
-    },
-    showModal(data) {
-      this.$modal.show("modal_eliminar_investigador", {
-        id: data.id
-      });
-    }
-  },
-  computed: {},
-  created() {}
+  mixins: [
+    websocketsAccionesMixin("investigador", "Investigador", "investigadores")
+  ],
+  computed: {
+    ...vuex.mapGetters(["getUserAuth"])
+  }
 };
 </script>

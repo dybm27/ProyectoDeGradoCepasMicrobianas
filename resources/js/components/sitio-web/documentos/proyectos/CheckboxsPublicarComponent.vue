@@ -17,6 +17,7 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import websocketsCheckMixin from "../../../../mixins/websocketsCheck";
 export default {
   props: {
     rowData: {
@@ -30,7 +31,12 @@ export default {
   data() {
     return { checkPublicar: false, disabled: false };
   },
-  mixins: [Toastr],
+  mixins: [websocketsCheckMixin("Proyecto", "proyectos"), Toastr],
+  computed: {
+    computedDisabled() {
+      return this.disabled;
+    }
+  },
   methods: {
     publicar(data) {
       this.disabled = true;
@@ -54,18 +60,8 @@ export default {
       }
     }
   },
-  computed: {
-    computedDisabled() {
-      return this.disabled;
-    }
-  },
-  mounted() {
-    this.verificarPublicar(this.rowData.publicar);
-  },
   created() {
-    this.$events.$on(this.rowData.id + "-actualizarPublicarProyecto", e =>
-      this.verificarPublicar(e)
-    );
+    this.verificarPublicar(this.rowData.publicar);
   }
 };
 </script>

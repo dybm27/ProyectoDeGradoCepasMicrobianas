@@ -16,6 +16,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../mixins/toastr";
+import websocketsCheckMixin from "../../../mixins/websocketsCheck";
 export default {
   props: {
     rowData: {
@@ -28,6 +30,12 @@ export default {
   },
   data() {
     return { checkPublicar: false, disabled: false };
+  },
+  mixins: [websocketsCheckMixin("Investigador", "investigadores"), Toastr],
+  computed: {
+    computedDisabled() {
+      return this.disabled;
+    }
   },
   methods: {
     publicar(data) {
@@ -43,26 +51,6 @@ export default {
           this.disabled = false;
         });
     },
-    toastr(titulo, msg) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: "success",
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     verificarPublicar(e) {
       if (e == 0) {
         this.checkPublicar = false;
@@ -71,18 +59,8 @@ export default {
       }
     }
   },
-  computed: {
-    computedDisabled() {
-      return this.disabled;
-    }
-  },
-  mounted() {
-    this.verificarPublicar(this.rowData.publicar);
-  },
   created() {
-    this.$events.$on(this.rowData.id + "-actualizarPublicarInvestigador", e =>
-      this.verificarPublicar(e)
-    );
+    this.verificarPublicar(this.rowData.publicar);
   }
 };
 </script>

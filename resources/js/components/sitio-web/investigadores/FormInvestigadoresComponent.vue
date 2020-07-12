@@ -153,6 +153,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../mixins/toastr";
+import obtenerImagenCroopie from "../../../mixins/obtenerImagenCroopie";
 export default {
   props: ["idInvestigador"],
   data() {
@@ -175,24 +177,13 @@ export default {
       mensajeCargo: "",
       mensajeNivel: "",
       mensajeNombres: "",
-      mensajeApellidos: ""
+      mensajeApellidos: "",
+      errors: []
     };
   },
+  mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("investigadores", ["accionInvestigador"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Investigador") {
         axios
@@ -213,6 +204,7 @@ export default {
                 error.response.data.errors.email[0],
                 "error"
               );
+              this.errors = error.response.data.errors;
             }
           });
       } else {
@@ -224,6 +216,21 @@ export default {
               "Investigador editado con exito!!",
               "success"
             );
+            window.Echo.private("desbloquearBtnsInvestigador").whisper(
+              "desbloquearBtnsInvestigador",
+              {
+                id: res.data.id
+              }
+            );
+            window.Echo.private("desbloquearCheckInvestigador").whisper(
+              "desbloquearCheckInvestigador",
+              {
+                id: res.data.id
+              }
+            );
+            this.$events.fire("spliceMisBloqueosInvestigador", {
+              id: res.data.id
+            });
             this.accionInvestigador({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
@@ -234,29 +241,10 @@ export default {
                 error.response.data.errors.email[0],
                 "error"
               );
+              this.errors = error.response.data.errors;
             }
           });
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     llenarInfo() {
       this.parametros.nombres = this.info.nombres;
@@ -269,33 +257,6 @@ export default {
       if (this.info.publicar == 1) {
         this.parametros.publicar = true;
       }
-    },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        this.imagenMiniatura = this.info.imagenPublica;
-        this.$refs.inputImagen.value = "";
-        this.parametros.imagen = this.info.imagen;
-      }
-    },
-    cargarImagen(file) {
-      let reader = new Image();
-      reader.onload = e => {
-        this.imagenMiniatura = reader.src;
-      };
-      reader.src = URL.createObjectURL(file);
     }
   },
   computed: {
@@ -303,9 +264,6 @@ export default {
       "getInvestigadorById",
       "getInvestigadorByEmail"
     ]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Investigador") {
         return "btn-success";
@@ -412,13 +370,6 @@ export default {
         return true;
       }
       return false;
-    },
-    mostrarBtnCroppie() {
-      if (this.imagenMiniatura != this.info.imagenPublica) {
-        return true;
-      } else {
-        return false;
-      }
     }
   },
   created() {

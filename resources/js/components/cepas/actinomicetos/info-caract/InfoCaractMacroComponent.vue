@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('eliminar_caract_macro')"
+              @click="$modal.show('eliminar_caract_macro_actinomiceto')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Medio</button>
             <button
@@ -133,11 +133,15 @@
         </div>
       </div>
     </div>
-    <modal name="eliminar_caract_macro" :width="400" :height="200">
+    <modal name="eliminar_caract_macro_actinomiceto" :width="400" :height="200">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
-          <button type="button" class="close" @click="$modal.hide('eliminar_caract_macro')">
+          <button
+            type="button"
+            class="close"
+            @click="$modal.hide('eliminar_caract_macro_actinomiceto')"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -148,7 +152,7 @@
           <button
             type="button"
             class="btn btn-secondary"
-            @click="$modal.hide('eliminar_caract_macro')"
+            @click="$modal.hide('eliminar_caract_macro_actinomiceto')"
           >Cancelar</button>
           <button type="button" class="btn btn-success" @click="eliminarMedio">Eliminar</button>
         </div>
@@ -159,23 +163,10 @@
 
 <script>
 import vuex from "vuex";
-
+import Toastr from "../../../../mixins/toastr";
+import infoCaractMacroMixin from "../../../../mixins/infoCaractMacro";
 export default {
-  data() {
-    return {
-      active1: "active",
-      active2: "",
-      active3: "",
-      mostrar1: false,
-      mostrar2: false,
-      mostrar3: false,
-      mostrarForm1: true,
-      mostrarForm2: false,
-      mostrarForm3: false,
-      mostrarBtnAgregar: true,
-      modificarForm: false
-    };
-  },
+  mixins: [Toastr, infoCaractMacroMixin],
   methods: {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
@@ -209,7 +200,7 @@ export default {
         .then(res => {
           this.mostrarBtnAgregar = true;
           this.modificarForm = true;
-          this.$modal.hide("eliminar_caract_macro");
+          this.$modal.hide("eliminar_caract_macro_actinomiceto");
           this.accionEliminarCaract({ tipo: "macro", data: res.data });
           this.formatear(num);
           this.toastr(
@@ -223,213 +214,10 @@ export default {
             this.toastr("Error!!", "", "error");
           }
         });
-    },
-    cambiarVariable() {
-      this.modificarForm = false;
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
-    cancelar() {
-      if (this.mostrarForm1) {
-        this.mostrarForm1 = false;
-        this.mostrar1 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm2) {
-        this.mostrarForm2 = false;
-        this.cambiarActive(1);
-        this.mostrar2 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm3) {
-        this.mostrarForm3 = false;
-        this.cambiarActive(2);
-        this.mostrar3 = false;
-        this.mostrarBtnAgregar = true;
-      }
-    },
-    abrirForm() {
-      if (!this.mostrar1) {
-        this.cambiarActive(1);
-        this.mostrar1 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[0] && !this.mostrar2) {
-        this.cambiarActive(2);
-        this.mostrar2 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[1] && !this.mostrar3) {
-        this.cambiarActive(3);
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    llenarForms() {
-      if (this.getCaractMacro[0]) {
-        this.medio1 = this.getCaractMacro[0].medio;
-        this.mostrar1 = true;
-      }
-      if (this.getCaractMacro[1]) {
-        this.medio2 = this.getCaractMacro[1].medio;
-        this.mostrar2 = true;
-      }
-      if (this.getCaractMacro[2]) {
-        this.medio3 = this.getCaractMacro[2].medio;
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    cambiarActive(num) {
-      switch (num) {
-        case 1:
-          this.active1 = "active";
-          this.active2 = "";
-          this.active3 = "";
-          this.mostrarForm1 = true;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = false;
-          break;
-        case 2:
-          this.active1 = "";
-          this.active2 = "active";
-          this.active3 = "";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = true;
-          this.mostrarForm3 = false;
-          break;
-        case 3:
-          this.active1 = "";
-          this.active2 = "";
-          this.active3 = "active";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = true;
-          break;
-      }
-    },
-    formatear(num) {
-      switch (num) {
-        case 1:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else if (this.mostrar2) {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          } else {
-            this.mostrar1 = false;
-            this.mostrarForm1 = false;
-          }
-          break;
-        case 2:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          }
-          break;
-        case 3:
-          this.mostrar3 = false;
-          this.cambiarActive(2);
-          break;
-      }
     }
   },
   computed: {
-    ...vuex.mapGetters("cepa", ["getCaractMacro"]),
-    computedActive1() {
-      return this.active1;
-    },
-    computedActive2() {
-      return this.active2;
-    },
-    computedActive3() {
-      return this.active3;
-    },
-    computedMostrarForm1() {
-      return this.mostrarForm1;
-    },
-    computedMostrarForm2() {
-      return this.mostrarForm2;
-    },
-    computedMostrarForm3() {
-      return this.mostrarForm3;
-    },
-    mostrarForms() {
-      if (!this.getCaractMacro[0] && !this.mostrar1) {
-        this.mostrarForm1 = false;
-        return false;
-      } else {
-        this.llenarForms();
-        return true;
-      }
-    },
-    mostrarBtnEliminar() {
-      if (this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnCancelar() {
-      if (!this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnAgregarComputed() {
-      return this.mostrarBtnAgregar;
-    },
-    medio1: {
-      get() {
-        if (this.getCaractMacro[0]) {
-          return this.getCaractMacro[0].medio;
-        }
-      },
-      set() {}
-    },
-    medio2: {
-      get() {
-        if (this.getCaractMacro[1]) {
-          return this.getCaractMacro[1].medio;
-        }
-      },
-      set() {}
-    },
-    medio3: {
-      get() {
-        if (this.getCaractMacro[2]) {
-          return this.getCaractMacro[2].medio;
-        }
-      },
-      set() {}
-    }
+    ...vuex.mapGetters("cepa", ["getCaractMacro"])
   }
 };
 </script>

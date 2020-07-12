@@ -14,13 +14,14 @@ import documentos from "./modulos/documentos";
 import equipamientos from "./modulos/equipamientos";
 import publicidad from "./modulos/publicidad";
 
-let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
+//let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        auth: JSON.parse(userLogueado.content)
+        //  auth: JSON.parse(userLogueado.content)
+        auth: ""
     },
     getters: {
         getUserAuth(state) {

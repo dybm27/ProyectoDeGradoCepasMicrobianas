@@ -14,7 +14,7 @@
         </template>
         <template v-else>
           <button
-            @click="abrirFormulario(0)"
+            @click="cerrarFormulario"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
           >Cancelar</button>
         </template>
@@ -22,10 +22,7 @@
     </div>
     <div class="card-body">
       <template v-if="!formulario">
-        <tabla-publicaciones
-          @abrirFormularioPublicacion="abrirFormulario"
-          @cambiarTipo="cambiarTipo"
-        ></tabla-publicaciones>
+        <tabla-publicaciones @cambiarTipo="cambiarTipo"></tabla-publicaciones>
       </template>
       <template v-else>
         <form-publicaciones
@@ -40,42 +37,20 @@
 
 <script>
 import vuex from "vuex";
+import websocketsMixin from "../../../../mixins/websockets";
+import abrirCerrarFormulario from "../../../../mixins/abrirCerrarFormulario";
 export default {
-  data() {
-    return { formulario: false, id: 0, tipo: "" };
-  },
+  mixins: [
+    websocketsMixin("Publicacion", "publicaciones"),
+    abrirCerrarFormulario("Publicacion")
+  ],
   methods: {
-    ...vuex.mapActions("documentos", ["accionPublicacion"]),
-    abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     }
   },
   created() {
-    this.$events.$on("abrirFormularioPublicacion", e =>
-      this.abrirFormulario(e)
-    );
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("publicacion").listen("PublicacionEvent", e => {
-      this.accionPublicacion({ tipo: e.tipo, data: e.publicacion });
-      this.$events.fire(
-        e.publicacion.id + "-actualizarPublicarPublicacion",
-        e.publicacion.publicar
-      );
-      if (!this.formulario) {
-        this.$events.fire("actualizartablaPublicacion");
-      }
-    });
   }
 };
 </script>

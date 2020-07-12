@@ -10,6 +10,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websocketsSinTabla__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/websocketsSinTabla */ "./resources/js/mixins/websocketsSinTabla.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -74,6 +76,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -85,7 +101,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("quienes_somos", ["getQuienesSomos"]), {
+  mixins: [Object(_mixins_websocketsSinTabla__WEBPACK_IMPORTED_MODULE_1__["default"])("objetivos", "Objetivos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("quienes_somos", ["getQuienesSomos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"]), {
     verificarBtn: function verificarBtn() {
       if (this.getQuienesSomos.objetivos) {
         if (this.parametros.cuerpo) {
@@ -116,26 +133,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
 
         _this.toastr("Cambiar Objetivos", "Objetivos cambiados con exito", "success");
-      });
-    },
-    toastr: function toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
       });
     },
     aceptarContenido: function aceptarContenido(data) {
@@ -173,42 +170,84 @@ var render = function() {
         ? [
             _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "main-card mb-3 card" }, [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "row justify-content-center" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-md-12" },
-                      [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v("Objetivos")
-                        ]),
-                        _vm._v(" "),
-                        _c("editor-texto", {
-                          attrs: { info: _vm.getQuienesSomos.objetivos },
-                          on: {
-                            contenido: _vm.aceptarContenido,
-                            modificar: _vm.modificarContenido
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row justify-content-center" }, [
-                    _c("div", { staticClass: "col-md-4 mt-3" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-block btn-success",
-                          attrs: { disabled: _vm.verificarBtn },
-                          on: { click: _vm.cambiarObjetivos }
-                        },
-                        [_vm._v("Cambiar")]
-                      )
-                    ])
-                  ])
-                ])
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    !_vm.ocupado
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-12" },
+                                [
+                                  _c("h5", { staticClass: "card-title" }, [
+                                    _vm._v("Objetivos")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("editor-texto", {
+                                    attrs: {
+                                      info: _vm.getQuienesSomos.objetivos
+                                    },
+                                    on: {
+                                      contenido: _vm.aceptarContenido,
+                                      modificar: _vm.modificarContenido
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-md-4 mt-3" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-block btn-success",
+                                    attrs: { disabled: _vm.verificarBtn },
+                                    on: { click: _vm.cambiarObjetivos }
+                                  },
+                                  [_vm._v("Cambiar")]
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      : [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-md-8" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "alert alert-success mt-4 text-center",
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(_vm.user.name) +
+                                        " se encuentra editando los objetivos!"
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                  ],
+                  2
+                )
               ])
             ])
           ]
@@ -329,6 +368,101 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ObjetivosComponent_vue_vue_type_template_id_00592ba0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsSinTabla.js":
+/*!***************************************************!*\
+  !*** ./resources/js/mixins/websocketsSinTabla.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsSinTablaMixin = function websocketsSinTablaMixin(tipo, tipoM) {
+  return {
+    data: function data() {
+      return {
+        ocupado: false,
+        user: "",
+        ordenEntrada: []
+      };
+    },
+    methods: {
+      bloquear: function bloquear(arrayUsers) {
+        if (this.ordenEntrada.length === 0) {
+          this.ordenEntrada = arrayUsers;
+        }
+
+        if (this.getUserAuth.id != this.ordenEntrada[0].id) {
+          this.ocupado = true;
+          this.user = this.ordenEntrada[0];
+        } else {
+          this.ocupado = false;
+          this.user = "";
+        }
+      },
+      borrarUsuario: function borrarUsuario(user) {
+        if (this.ordenEntrada.length > 1) {
+          var index = this.ordenEntrada.findIndex(function (userArray) {
+            return userArray.id === user.id;
+          });
+          this.ordenEntrada.splice(index, 1);
+
+          if (this.getUserAuth.id === this.ordenEntrada[0].id) {
+            this.ocupado = false;
+            this.user = "";
+          } else {
+            this.ocupado = true;
+            this.user = this.ordenEntrada[0];
+          }
+        }
+      },
+      verificarPush: function verificarPush(user) {
+        if (this.ordenEntrada.length === 0) {
+          this.ordenEntrada.push(this.getUserAuth);
+          this.ordenEntrada.push(user);
+        } else {
+          this.ordenEntrada.push(user);
+        }
+      }
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      window.Echo.join(tipo).joining(function (data) {
+        _this.verificarPush(data.user);
+
+        window.Echo["private"]("bloquear" + tipoM).whisper("bloquear" + tipoM + "-" + data.user.id, {
+          arrayUsers: _this.ordenEntrada
+        });
+      }).leaving(function (data) {
+        _this.borrarUsuario(data.user);
+      });
+    },
+    created: function created() {
+      var _this2 = this;
+
+      this.$emit("rutaHijo", window.location.pathname);
+      window.Echo["private"]("bloquear" + tipoM).listenForWhisper("bloquear" + tipoM + "-" + this.getUserAuth.id, function (e) {
+        _this2.bloquear(e.arrayUsers);
+      });
+      window.Echo["private"]("borrarBloqueo" + tipoM).listenForWhisper("borrarBloqueo" + tipoM, function (e) {
+        _this2.borrarUsuario(e.user);
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      window.Echo.leave(tipo);
+      window.Echo.leave("bloquear" + tipoM);
+    },
+    destroyed: function destroyed() {
+      window.Echo.leave("borrarBloqueo" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsSinTablaMixin);
 
 /***/ })
 

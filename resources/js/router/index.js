@@ -1171,16 +1171,37 @@ const routes = [
                 meta: { title: "Novedades" }
             }
         ]
-    }
-    /**{
+    },
+    {
+        path: "/perfil",
+        name: "",
+        meta: { title: "Perfil" }
+    },
+    {
+        path: "/calendario",
+        name: "",
+        meta: { title: "Calendario" }
+    },
+    {
+        path: "/imagenes-login/ver",
+        name: "",
+        meta: { title: "Imagenes Login" }
+    },
+    {
+        path: "/investigadores",
+        name: "",
+        meta: { title: "Investigadores" }
+    },
+    {
+        path: "/equipamientos",
+        name: "",
+        meta: { title: "Equipamientos" }
+    },
+    {
         path: "*",
         name: "",
-        component: () =>
-            import(
-                webpackChunkName: "tabla-usuarios" 
-                "../components/error 404"
-            )
-    } */
+        meta: { title: "Error 404" }
+    }
 ];
 
 const router = new VueRouter({
@@ -1190,25 +1211,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    switch (to.path) {
-        case "/perfil":
-            document.title = "Perfil";
-            break;
-        case "/calendario":
-            document.title = "Calendario";
-            break;
-        case "/imagenes-login/ver":
-            document.title = "Imagenes Login";
-            break;
-        case "/investigadores":
-            document.title = "Investigadores";
-            break;
-        case "/equipamientos":
-            document.title = "Equipamientos";
-            break;
-        default:
-            document.title = to.meta.title;
-    }
+    document.title = to.meta.title;
     next();
 });
 

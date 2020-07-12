@@ -236,6 +236,9 @@ import vuex from "vuex";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
+
 export default {
   props: ["idMetodo"],
   components: { DatePicker },
@@ -261,28 +264,14 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
-      imagenError: ""
+      errors: []
     };
   },
+  mixins: [Toastr, obtenerImagenCroopieCepas],
   methods: {
     ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
@@ -327,26 +316,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.tipo_metodo = this.info.tipo_id;
       this.parametros.medio_cultivo = this.info.medio_cultivo;
@@ -357,45 +326,6 @@ export default {
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-    },
-
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen(file) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        this.imagenMiniatura = e.target.result;
-      };
-      reader.readAsDataURL(file);
     },
     showModal(tipo) {
       this.modal.input = "";
@@ -440,9 +370,6 @@ export default {
   computed: {
     ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
     ...vuex.mapGetters("info_caract", ["getInfoMetodoConserHongos"]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
         return "btn-success";
@@ -483,34 +410,6 @@ export default {
         this.parametros.medio_cultivo = "";
         return true;
       }
-    },
-    mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   created() {

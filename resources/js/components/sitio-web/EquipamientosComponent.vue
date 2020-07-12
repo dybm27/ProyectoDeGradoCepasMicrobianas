@@ -32,55 +32,36 @@
         <div class="page-title-actions"></div>
       </div>
     </div>
-    <div class="main-card mb-3 card">
-      <div class="card-header-tab card-header">
-        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-          <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-          Tabla Dinámica Equipamientos
-        </div>
-        <div class="btn-actions-pane-right actions-icon-btn">
-          <template v-if="!formulario">
-            <button
-              @click="abrirFormulario(0)"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
-            >Agregar</button>
-          </template>
-          <template v-else>
-            <button
-              @click="cerrarFormulario"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
-            >Cancelar</button>
-          </template>
+    <template v-if="numPestaña==1">
+      <contenedor-equipamientos @cambiarTipo="cambiarTipo" />
+    </template>
+    <template v-else>
+      <div class="container">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div
+                  class="alert alert-danger mt-4 text-center"
+                  role="alert"
+                >Ya has ingresado desde otra pestaña del navegador!!</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card-body">
-        <template v-if="!formulario">
-          <tabla-equipamientos @cambiarTipo="cambiarTipo"></tabla-equipamientos>
-        </template>
-        <template v-else>
-          <form-equipamientos
-            :idEquipamiento="id"
-            @cambiarTipo="cambiarTipo"
-            @cambiarVariableFormulario="cambiarVariableFormulario"
-          ></form-equipamientos>
-        </template>
-      </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <script>
-import websocketsMixin from "../../mixins/websockets";
-import abrirCerrarFormulario from "../../mixins/abrirCerrarFormulario";
+import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 import vuex from "vuex";
 export default {
   data() {
     return { tipo: "" };
   },
-  mixins: [
-    websocketsMixin("Equipamiento", "equipamientos"),
-    abrirCerrarFormulario("Equipamiento")
-  ],
+  mixins: [bloquearPestañasMixin("equipamiento")],
   methods: {
     ...vuex.mapActions("equipamientos", [
       "obtenerEquipamientos",

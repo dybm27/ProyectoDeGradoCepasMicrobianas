@@ -203,6 +203,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
 
 export default {
   props: ["info", "modificarInfo"],
@@ -224,12 +226,11 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
-      imagenError: ""
+      errors: []
     };
   },
+  mixins: [obtenerImagenCroopieCepas, Toastr],
   watch: {
     modificarInfo() {
       if (this.modificarInfo) {
@@ -240,19 +241,6 @@ export default {
   },
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractLevadura"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Medio") {
         axios
@@ -295,26 +283,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.medio = this.info.medio;
       this.parametros.color = this.info.color_id;
@@ -323,42 +291,6 @@ export default {
       this.parametros.borde_colonia = this.info.borde_colonia;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-    },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .jpeg/.jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen(file) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        this.imagenMiniatura = e.target.result;
-      };
-      reader.readAsDataURL(file);
     },
     showModal(tipo) {
       this.modal.input = "";
@@ -405,9 +337,6 @@ export default {
   },
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroLevaduras"]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {
         return "btn-success";
@@ -427,34 +356,6 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    },
-    mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   mounted() {

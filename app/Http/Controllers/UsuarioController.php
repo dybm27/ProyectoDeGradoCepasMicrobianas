@@ -94,4 +94,10 @@ class UsuarioController extends Controller
         $seguimiento->accion = $accion;
         $seguimiento->save();
     }
+
+    public function borrarSessionId()
+    {
+        Auth::user()->session_id = null;
+        Auth::user()->save();
+    }
 }

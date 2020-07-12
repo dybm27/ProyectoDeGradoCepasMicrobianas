@@ -13,8 +13,8 @@
         <meta name="msapplication-tap-highlight" content="no">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <!-- Usuario autenticado --> 
-        <meta name="user-logueado" content="{{ Auth::user() }}">
+        <!-- Usuario autenticado
+        <meta name="user-logueado" content="Auth::user()"> --> 
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,7 +24,7 @@
         @yield('estilos')
     </head>
     <body><!--fixed-footer-->
-        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer" id="app" >
 
             @include('layouts-admin.header')
 

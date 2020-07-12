@@ -145,6 +145,8 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 export default {
   props: ["idPublicacion"],
   data() {
@@ -170,21 +172,9 @@ export default {
       traerValorImg: false
     };
   },
+  mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
     evento() {
       if (this.tituloForm === "Agregar Publicacion") {
         let form = new FormData();
@@ -230,6 +220,21 @@ export default {
               "Publicacion editada con exito!!",
               "success"
             );
+            window.Echo.private("desbloquearBtnsPublicacion").whisper(
+              "desbloquearBtnsPublicacion",
+              {
+                id: res.data.id
+              }
+            );
+            window.Echo.private("desbloquearCheckPublicacion").whisper(
+              "desbloquearCheckPublicacion",
+              {
+                id: res.data.id
+              }
+            );
+            this.$events.fire("spliceMisBloqueosPublicacion", {
+              id: res.data.id
+            });
             this.accionPublicacion({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
@@ -290,34 +295,6 @@ export default {
         this.parametros.archivo = "";
         this.$refs.inputArchivo.value = "";
       }
-    },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      //this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        this.imagenMiniatura = this.info.imagenPublica;
-        this.$refs.inputImagen.value = "";
-        this.parametros.imagen = this.info.imagen;
-      }
-    },
-    cargarImagen(file) {
-      let reader = new Image();
-      reader.onload = e => {
-        this.imagenMiniatura = reader.src;
-      };
-      reader.src = URL.createObjectURL(file);
     }
   },
   computed: {
@@ -325,9 +302,6 @@ export default {
       "getPublicacionById",
       "getPublicacionByNombre"
     ]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Publicacion") {
         return "btn-success";
@@ -393,13 +367,6 @@ export default {
         return true;
       }
       return false;
-    },
-    mostrarBtnCroppie() {
-      if (this.imagenMiniatura != this.info.imagenPublica) {
-        return true;
-      } else {
-        return false;
-      }
     }
   },
   created() {

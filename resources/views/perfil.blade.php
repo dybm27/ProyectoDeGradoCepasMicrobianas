@@ -5,5 +5,5 @@
 @endsection
 
 @section('contenido')
-    <perfil />
+<perfil  />
 @endsection

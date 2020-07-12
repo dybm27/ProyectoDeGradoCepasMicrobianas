@@ -10,94 +10,57 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+/* harmony import */ var _mixins_websockets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websockets */ "./resources/js/mixins/websockets.js");
+/* harmony import */ var _mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/abrirCerrarFormulario */ "./resources/js/mixins/abrirCerrarFormulario.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      formulario: false,
-      id: 0,
-      tipo: ""
-    };
-  },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"]), {
-    abrirFormulario: function abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario: function cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
+  mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_1__["default"])("Proyecto", "proyectos"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto")],
+  methods: {
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     }
-  }),
+  },
   created: function created() {
-    var _this = this;
-
-    this.$events.$on("abrirFormularioProyecto", function (e) {
-      return _this.abrirFormulario(e);
-    });
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("proyecto").listen("ProyectoEvent", function (e) {
-      _this.accionProyecto({
-        tipo: e.tipo,
-        data: e.proyecto
-      });
-
-      _this.$events.fire(e.proyecto.id + "-actualizarPublicarProyecto", e.proyecto.publicar);
-
-      if (!_this.formulario) {
-        _this.$events.fire("actualizartablaProyecto");
-      }
-    });
   }
 });
 
@@ -148,11 +111,7 @@ var render = function() {
                   {
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
+                    on: { click: _vm.cerrarFormulario }
                   },
                   [_vm._v("Cancelar")]
                 )
@@ -167,14 +126,7 @@ var render = function() {
       { staticClass: "card-body" },
       [
         !_vm.formulario
-          ? [
-              _c("tabla-proyectos", {
-                on: {
-                  abrirFormularioProyecto: _vm.abrirFormulario,
-                  cambiarTipo: _vm.cambiarTipo
-                }
-              })
-            ]
+          ? [_c("tabla-proyectos", { on: { cambiarTipo: _vm.cambiarTipo } })]
           : [
               _c("form-proyectos", {
                 attrs: { idProyecto: _vm.id },

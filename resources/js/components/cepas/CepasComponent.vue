@@ -30,24 +30,45 @@
           </div>
         </div>
         <div class="page-title-actions">
-          <router-link
-            v-if="ocultar"
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-            to="/cepas/agregar"
-          >Agregar Nueva Cepa</router-link>
-          <router-link
-            v-else
-            class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-            to="/cepas/tabla"
-          >Volver</router-link>
+          <template v-if="numPestaña==1">
+            <router-link
+              v-if="ocultar"
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
+              to="/cepas/agregar"
+            >Agregar Nueva Cepa</router-link>
+            <router-link
+              v-else
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
+              to="/cepas/tabla"
+            >Volver</router-link>
+          </template>
         </div>
       </div>
     </div>
-    <router-view :tipoG="0" @rutaHijo="ocultarLink" />
+    <template v-if="numPestaña==1">
+      <router-view :tipoG="0" @rutaHijo="ocultarLink" />
+    </template>
+    <template v-else>
+      <div class="container">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div
+                  class="alert alert-danger mt-4 text-center"
+                  role="alert"
+                >Ya has ingresado desde otra pestaña del navegador!!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
+import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 import vuex from "vuex";
 export default {
   data() {
@@ -56,6 +77,7 @@ export default {
       tipo: "Tabla"
     };
   },
+  mixins: [bloquearPestañasMixin("cepasTodas")],
   methods: {
     ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
     ...vuex.mapActions("info_caract", [

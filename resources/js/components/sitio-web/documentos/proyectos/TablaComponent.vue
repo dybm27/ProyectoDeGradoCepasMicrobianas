@@ -24,6 +24,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -52,6 +53,7 @@
 import FieldDefs from "./columnas";
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import websocketsTabla from "../../../../mixins/websocketsTabla";
 export default {
   data() {
     return {
@@ -62,10 +64,10 @@ export default {
           direction: "asc"
         }
       ],
-      idProyecto: ""
+      id: ""
     };
   },
-  mixins: [Toastr],
+  mixins: [Toastr, websocketsTabla("Proyecto")],
   computed: {
     ...vuex.mapGetters("documentos", ["getProyectos"]),
     mostrarTabla() {
@@ -78,11 +80,11 @@ export default {
   methods: {
     ...vuex.mapActions("documentos", ["accionProyecto"]),
     beforeOpenEliminar(data) {
-      this.idProyecto = data.params.id;
+      this.id = data.params.id;
     },
     eliminarProyecto() {
       axios
-        .delete(`/documentos/${this.idProyecto}`, {
+        .delete(`/documentos/${this.id}`, {
           data: { tipo: "proyecto" }
         })
         .then(res => {
@@ -98,24 +100,10 @@ export default {
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
         });
-    },
-    abrirFormularioProyecto(id) {
-      this.$emit("abrirFormularioProyecto", id);
-    },
-    actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaProyecto", e => this.actualizarTabla());
-  },
-  destroyed() {
-    this.$events.off("actualizartablaProyecto");
   }
 };
 </script>

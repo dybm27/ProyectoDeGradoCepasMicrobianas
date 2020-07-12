@@ -29,91 +29,109 @@
     </div>
     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"></ul>
     <div class="tabs-animation">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-md-7">
-            <div class="card-shadow-primary profile-responsive card-border mb-3 card">
-              <div class="dropdown-menu-header">
-                <div class="dropdown-menu-header-inner bg-focus">
-                  <div
-                    class="menu-header-image opacity-3"
-                    style="background-image: url('assets/images/fondos/5.jpg')"
-                  ></div>
-                  <div class="menu-header-content btn-pane-right">
-                    <div class="avatar-icon-wrapper mr-2 avatar-icon-xl">
-                      <div class="avatar-icon rounded">
-                        <img :src="getUserAuth.avatarPublico" alt="Avatar" />
+      <template v-if="numPestaña==1">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-7">
+              <div class="card-shadow-primary profile-responsive card-border mb-3 card">
+                <div class="dropdown-menu-header">
+                  <div class="dropdown-menu-header-inner bg-focus">
+                    <div
+                      class="menu-header-image opacity-3"
+                      style="background-image: url('assets/images/fondos/5.jpg')"
+                    ></div>
+                    <div class="menu-header-content btn-pane-right">
+                      <div class="avatar-icon-wrapper mr-2 avatar-icon-xl">
+                        <div class="avatar-icon rounded">
+                          <img :src="getUserAuth.avatarPublico" alt="Avatar" />
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <h5 class="menu-header-title">{{getUserAuth.name}}</h5>
+                      <div>
+                        <h5 class="menu-header-title">{{getUserAuth.name}}</h5>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="widget-content">
+                      <div class="text-center">
+                        <h5 class="widget-heading opacity-2"></h5>
+                        <h5>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <span class="float-left">
+                                <b>Tipo de Usuario:</b>
+                                <template
+                                  v-if="getTipoUser!=''"
+                                >{{getTipoUserById(getUserAuth.tipouser_id).nombre}}</template>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <span class="float-left">
+                                <b>Email:</b>
+                                {{getUserAuth.email}}
+                              </span>
+                            </div>
+                          </div>
+                        </h5>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-0 list-group-item">
+                    <div class="grid-menu grid-menu-3col">
+                      <div class="no-gutters row">
+                        <div class="col-sm-4">
+                          <button
+                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                            @click="showModal('nombre')"
+                          >
+                            <i class="lnr-pencil btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Nombre
+                          </button>
+                        </div>
+                        <div class="col-sm-4">
+                          <button
+                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                            @click="showModal('imagen')"
+                          >
+                            <i class="lnr-link btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Imagen
+                          </button>
+                        </div>
+                        <div class="col-sm-4">
+                          <button
+                            class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
+                            @click="showModal('contraseña')"
+                          >
+                            <i class="lnr-star btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Contraseña
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <div class="widget-content">
-                    <div class="text-center">
-                      <h5 class="widget-heading opacity-2"></h5>
-                      <h5>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <span class="float-left">
-                              <b>Tipo de Usuario:</b>
-                              <template
-                                v-if="getTipoUser!=''"
-                              >{{getTipoUserById(getUserAuth.tipouser_id).nombre}}</template>
-                            </span>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <span class="float-left">
-                              <b>Email:</b>
-                              {{getUserAuth.email}}
-                            </span>
-                          </div>
-                        </div>
-                      </h5>
-                    </div>
-                  </div>
-                </li>
-                <li class="p-0 list-group-item">
-                  <div class="grid-menu grid-menu-3col">
-                    <div class="no-gutters row">
-                      <div class="col-sm-4">
-                        <button
-                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                          @click="showModal('nombre')"
-                        >
-                          <i class="lnr-pencil btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Nombre
-                        </button>
-                      </div>
-                      <div class="col-sm-4">
-                        <button
-                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                          @click="showModal('imagen')"
-                        >
-                          <i class="lnr-link btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Imagen
-                        </button>
-                      </div>
-                      <div class="col-sm-4">
-                        <button
-                          class="btn-icon-vertical btn-square btn-transition btn btn-outline-link"
-                          @click="showModal('contraseña')"
-                        >
-                          <i class="lnr-star btn-icon-wrapper btn-icon-lg mb-3"></i>Cambiar Contraseña
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
-      </div>
+      </template>
+      <template v-else>
+        <div class="container">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div
+                    class="alert alert-danger mt-4 text-center"
+                    role="alert"
+                  >Ya has ingresado desde otra pestaña del navegador!!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
     <modal name="cambiarImagen" classes="my_modal" :width="700" :height="485">
       <div class="modal-content">
@@ -273,6 +291,8 @@
 </template>
 
 <script>
+import bloquearPestañasMixin from "../mixins/bloquearPestañas";
+import Toastr from "../mixins/toastr";
 import vuex from "vuex";
 export default {
   data() {
@@ -291,6 +311,7 @@ export default {
       imagenMiniatura: ""
     };
   },
+  mixins: [bloquearPestañasMixin("perfil"), Toastr],
   methods: {
     ...vuex.mapActions("usuarios", ["accionUsuario"]),
     ...vuex.mapActions(["accionModificarAuth"]),
@@ -305,6 +326,7 @@ export default {
       switch (tipo) {
         case "nombre":
           this.titulo = "Cambiar Nombre";
+          this.nombre = this.getUserAuth.name;
           this.$modal.show("cambiarInfo");
           break;
         case "imagen":
@@ -316,26 +338,6 @@ export default {
           this.$modal.show("cambiarInfo");
           break;
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
@@ -469,15 +471,12 @@ export default {
         } else {
           return false;
         }
-      } else {
-        this.errorPass = "Favor llenar el campo";
-        return true;
       }
     },
     validarBoton() {
       switch (this.tipo) {
         case "nombre":
-          if (this.validarNombre) {
+          if (this.validarNombre || this.getUserAuth.name === this.nombre) {
             return true;
           } else {
             return false;
@@ -491,7 +490,11 @@ export default {
           }
           break;
         case "contraseña":
-          if (this.validarContraseña || this.validarContraseñas) {
+          if (
+            this.validarContraseña ||
+            this.validarContraseñas ||
+            this.pass === ""
+          ) {
             return true;
           } else {
             return false;

@@ -29,31 +29,49 @@
     </div>
     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"></ul>
     <div class="tabs-animation">
-      <div class="main-card mb-4 card">
-        <div class="card-body mt-3 mr-2 ml-2">
-          <div class="table-responsive">
-            <!--  :themeSystem="bootstrap"-->
-            <FullCalendar
-              :firstDay="0"
-              ref="fullCalendar"
-              defaultView="dayGridMonth"
-              :fixedWeekCount="false"
-              :eventLimit="true"
-              :googleCalendarApiKey="googleCalendarApiKey"
-              :header="header"
-              :eventSources="eventSources"
-              :locale="locale"
-              :customButtons="customButtons"
-              :plugins="calendarPlugins"
-              :weekends="calendarWeekends"
-              :events="eventos"
-              @dateClick="dateClick"
-              @eventClick="eventClick"
-              :eventRender="v => eventRender(v)"
-            />
+      <template v-if="numPestaña==1">
+        <div class="main-card mb-4 card">
+          <div class="card-body mt-3 mr-2 ml-2">
+            <div class="table-responsive">
+              <!--  :themeSystem="bootstrap"-->
+              <FullCalendar
+                :firstDay="0"
+                ref="fullCalendar"
+                defaultView="dayGridMonth"
+                :fixedWeekCount="false"
+                :eventLimit="true"
+                :googleCalendarApiKey="googleCalendarApiKey"
+                :header="header"
+                :eventSources="eventSources"
+                :locale="locale"
+                :customButtons="customButtons"
+                :plugins="calendarPlugins"
+                :weekends="calendarWeekends"
+                :events="eventos"
+                @dateClick="dateClick"
+                @eventClick="eventClick"
+                :eventRender="v => eventRender(v)"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </template>
+      <template v-else>
+        <div class="container">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div
+                    class="alert alert-danger mt-4 text-center"
+                    role="alert"
+                  >Ya has ingresado desde otra pestaña del navegador!!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
     <modal name="agregar-editar_eliminar-evento" width="400" height="auto">
       <div class="modal-content">
@@ -199,6 +217,8 @@ import Lang from "vue2-datepicker/locale/es";
 import moment from "moment";
 import vuex from "vuex";
 
+import bloquearPestañasMixin from "../mixins/bloquearPestañas";
+
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
@@ -277,6 +297,7 @@ export default {
       fechaCalendario: ""
     };
   },
+  mixins: [bloquearPestañasMixin("calendario")],
   methods: {
     eventClick(info) {
       info.jsEvent.preventDefault();

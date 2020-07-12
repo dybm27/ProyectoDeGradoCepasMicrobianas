@@ -50,68 +50,84 @@
                       class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8"
                     >
                       <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                        <div class="logo-majumba">
-                          <img src="{{asset('imagenes/logo_majumba-g.png')}}" alt="">
-                        </div>
-                        <h4 class="mb-0">
-                          <span class="d-block"></span>
-                          <span>Bienvenido!!.. Por favor, inicia sesión con tu cuenta.</span>
-                        </h4>
-                        <div class="divider row"></div>
-                        <div>
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-                            <div class="form-row">
-                              <div class="col-md-6">
-                                <div class="position-relative form-group">
-                                    <label for="exampleEmail" class>{{ __('E-Mail Address') }}</label>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        class="form-control @error('email') is-invalid @enderror"
-                                        name="email"
-                                        value="{{ old('email') }}"
-                                        placeholder="Email..."
-                                        required autocomplete="email" autofocus
-                                    />
-                                    @error('email')
-                                        <em class="error invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </em>
-                                    @enderror
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="position-relative form-group">
-                                    <label for="password" class>{{ __('Password') }}</label>
-                                    <input
-                                        id="password"
-                                        type="password"
-                                        class="form-control @error('email') is-invalid @enderror"
-                                        name="password"
-                                        placeholder="Contraseña..."
-                                        required autocomplete="current-password"
-                                    />
-                                </div>
-                              </div>
+                       <div class="container mt-5 mb-2">
+                         <div class="row">
+                           <div class="col-md-12">
+                            <div class="logo-majumba">
+                              <img src="{{asset('imagenes/logo_majumba-g.png')}}" alt="">
                             </div>
-                            <div class="position-relative form-check">
-                              <input name="check" id="exampleCheck" type="checkbox" class="form-check-input" />
-                              <label for="exampleCheck" class="form-check-label"> {{ __('Remember Me') }}</label>
-                            </div>
+                            <h4 class="mb-0">
+                              <span class="d-block"></span>
+                              <span>Bienvenido!!.. Por favor, inicia sesión con tu cuenta.</span>
+                            </h4>
                             <div class="divider row"></div>
-                            <div class="d-flex align-items-center">
-                              <div class="ml-auto">
-                                @if (Route::has('password.request'))
-                                    <a class="btn-lg btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                                <button class="btn btn-success btn-lg"> {{ __('Login') }}</button>
-                              </div>
+                            <div>
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    @if(session('message'))
+                                      <div class="alert alert-danger" role="alert">
+                                       {{session('message')}}
+                                      </div>
+                                    @endif
+                                <div class="form-row">
+                                  <div class="col-md-6">
+                                    <div class="position-relative form-group">
+                                        <label for="exampleEmail" class>{{ __('E-Mail Address') }}</label>
+                                        <input
+                                            id="email"
+                                            type="email"
+                                            class="form-control @error('email') is-invalid @enderror"
+                                            name="email"
+                                            value="{{ old('email') }}"
+                                            placeholder="Email..."
+                                            required autocomplete="email" autofocus
+                                        />
+                                        @error('email')
+                                            <em class="error invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </em>
+                                        @enderror
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label for="passwordLogin" class>{{ __('Password') }}</label>
+                                    <div class="input-group mb-3">
+                                        <input
+                                            id="passwordLogin"
+                                            type="password"
+                                            class="form-control @error('email') is-invalid @enderror"
+                                            name="password"
+                                            placeholder="Contraseña..."
+                                            required autocomplete="current-password"
+                                        />
+                                        <div class="input-group-append">
+                                          <span class="input-group-text" id="showPass" onclick="showPass()">
+                                            <i  id="iconLogin" class="fas fa-eye-slash"></i>
+                                          </span>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="position-relative form-check">
+                                  <input name="check" id="exampleCheck" type="checkbox" class="form-check-input" />
+                                  <label for="exampleCheck" class="form-check-label"> {{ __('Remember Me') }}</label>
+                                </div>
+                                <div class="divider row"></div>
+                                <div class="d-flex align-items-center">
+                                  <div class="ml-auto">
+                                    @if (Route::has('password.request'))
+                                        <a class="btn-lg btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
+                                    <button class="btn btn-success btn-lg"> {{ __('Login') }}</button>
+                                  </div>
+                                </div>
+                              </form>
                             </div>
-                          </form>
-                        </div>
+                           </div>
+                         </div>
+                       </div>
                       </div>
                     </div>
                   </div>

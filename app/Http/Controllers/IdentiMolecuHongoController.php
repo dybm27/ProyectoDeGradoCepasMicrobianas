@@ -15,9 +15,9 @@ class IdentiMolecuHongoController extends Controller
     {
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
         // img pcr
-        $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $hongo->id, 'pcr');
+        $imagen_pcr = $this->guardarImagen($request->imagen1, $hongo->id, 'pcr');
 
-        $imagen_blast = $this->guardarImagen($request->imagen_blast, $hongo->id, 'blast');
+        $imagen_blast = $this->guardarImagen($request->imagen2, $hongo->id, 'blast');
 
         $IdentiMolecuHongo = new IdentiMolecuHongo();
         $IdentiMolecuHongo->hongo_filamentoso_id = $hongo->id;
@@ -54,15 +54,15 @@ class IdentiMolecuHongoController extends Controller
     {
         $IdentiMolecuHongo = IdentiMolecuHongo::find($id);
 
-        if ($request->imagen_pcr != $IdentiMolecuHongo->imagen_pcr) {
+        if ($request->imagen1 != $IdentiMolecuHongo->imagen_pcr) {
             Storage::disk('local')->delete($IdentiMolecuHongo->imagen_pcr);
-            $imagen_pcr = $this->guardarImagen($request->imagen_pcr, $IdentiMolecuHongo->bateria_id, 'pcr');
+            $imagen_pcr = $this->guardarImagen($request->imagen1, $IdentiMolecuHongo->bateria_id, 'pcr');
             $IdentiMolecuHongo->imagen_pcr = $imagen_pcr['ruta'];
             $IdentiMolecuHongo->imagen_pcrPublica = $imagen_pcr['rutaPublica'];
         }
-        if ($request->imagen_blast != $IdentiMolecuHongo->imagen_blast) {
+        if ($request->imagen2 != $IdentiMolecuHongo->imagen_blast) {
             Storage::disk('local')->delete($IdentiMolecuHongo->imagen_blast);
-            $imagen_blast = $this->guardarImagen($request->imagen_blast, $IdentiMolecuHongo->hongo_filamentoso_id, 'blast');
+            $imagen_blast = $this->guardarImagen($request->imagen2, $IdentiMolecuHongo->hongo_filamentoso_id, 'blast');
             $IdentiMolecuHongo->imagen_blast = $imagen_blast['ruta'];
             $IdentiMolecuHongo->imagen_blastPublica = $imagen_blast['rutaPublica'];
         }

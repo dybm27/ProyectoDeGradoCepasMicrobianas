@@ -70,7 +70,6 @@ import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote";
 
 import MyUploadAdapter from "./export-imagen";
 import "./custom.css";
-import columnas from "../sitio-web/quienes-somos/columnas";
 export default {
   props: ["info"],
   data() {

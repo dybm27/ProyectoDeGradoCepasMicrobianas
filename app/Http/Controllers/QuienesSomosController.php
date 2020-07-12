@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\QuienesSomosEvent;
 use App\Mision;
 use App\Objetivo;
 use App\QuienesSomos;
@@ -18,27 +19,27 @@ class QuienesSomosController extends Controller
 
     public function cambiarMision(Request $request)
     {
-        $vision = QuienesSomos::where('quienes_somos_tipos_id', 1)->first();
-        $vision->cuerpo = $request->cuerpo;
-        $imagenesEditor = implode(",", $request->imagenesEditor);
-        $imagenesGuardadas = implode(",", $request->imagenesGuardadas);
-        $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
-        $vision->imagenesEditor = $imagenesEditor;
-        $vision->save();
-
-        return $vision;
-    }
-    public function cambiarVision(Request $request)
-    {
-        $mision = QuienesSomos::where('quienes_somos_tipos_id', 2)->first();
+        $mision = QuienesSomos::where('quienes_somos_tipos_id', 1)->first();
         $mision->cuerpo = $request->cuerpo;
         $imagenesEditor = implode(",", $request->imagenesEditor);
         $imagenesGuardadas = implode(",", $request->imagenesGuardadas);
         $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
         $mision->imagenesEditor = $imagenesEditor;
         $mision->save();
-
+        broadcast(new QuienesSomosEvent($mision, 'mision'))->toOthers();
         return $mision;
+    }
+    public function cambiarVision(Request $request)
+    {
+        $vision = QuienesSomos::where('quienes_somos_tipos_id', 2)->first();
+        $vision->cuerpo = $request->cuerpo;
+        $imagenesEditor = implode(",", $request->imagenesEditor);
+        $imagenesGuardadas = implode(",", $request->imagenesGuardadas);
+        $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
+        $vision->imagenesEditor = $imagenesEditor;
+        $vision->save();
+        broadcast(new QuienesSomosEvent($vision, 'vision'))->toOthers();
+        return $vision;
     }
     public function cambiarObjetivos(Request $request)
     {
@@ -49,7 +50,7 @@ class QuienesSomosController extends Controller
         $this->eliminarImagenes($imagenesEditor, $imagenesGuardadas);
         $objetivos->imagenesEditor = $imagenesEditor;
         $objetivos->save();
-
+        broadcast(new QuienesSomosEvent($objetivos, 'objetivos'))->toOthers();
         return $objetivos;
     }
 

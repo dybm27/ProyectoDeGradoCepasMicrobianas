@@ -1,6 +1,6 @@
 const websocketsMixin = (tipoM, tipoP) => ({
     data() {
-        return { bloqueos: [], misBloqueos: [] };
+        return { bloqueos: [], misBloqueos: [], timeout: "" };
     },
     methods: {
         // Bloquear Btns
@@ -55,14 +55,6 @@ const websocketsMixin = (tipoM, tipoP) => ({
         eliminarEventoCheck(id) {
             this.$events.off(id + "-verificarBloqueoCheck" + tipoM);
         },
-        // eliminar bloqueos
-        borrarBtnsCheck(id) {
-            let data = this.bloqueos.find(data => data.idUser === id);
-            if (data) {
-                this.desbloquearBtnsTabla(data);
-                this.desbloquearCheckTabla(data);
-            }
-        },
         // guardar mis bloqueos
         pushMisBloqueos(e) {
             this.misBloqueos.push({
@@ -76,29 +68,40 @@ const websocketsMixin = (tipoM, tipoP) => ({
                 1
             );
         },
+        //borrar bloqueos
+        borrarBloqueos(e) {
+            let data = this.bloqueos.find(data => data.idUser === e.id);
+            if (data) {
+                this.desbloquearBtnsTabla(data);
+                this.desbloquearCheckTabla(data);
+            }
+        },
         // verificar bloqueos existentes
         verificarBloqueos() {
             for (let index = 0; index < this.bloqueos.length; index++) {
                 this.bloquearBtns(this.bloqueos[index].id);
                 this.bloquearCheck(this.bloqueos[index].id);
             }
+        },
+        enviarBloqueos() {
+            window.Echo.private("recibirBtnsCheck" + tipoM).whisper(
+                "recibirBtnsCheck" + tipoM,
+                {
+                    bloqueos: this.misBloqueos
+                }
+            );
         }
     },
     mounted() {
         window.Echo.join(tipoP)
-            .here(data => {})
             .joining(data => {
-                window.Echo.private("recibirBtnsCheck" + tipoM).whisper(
-                    "recibirBtnsCheck" + tipoM,
-                    {
-                        bloqueos: this.misBloqueos
-                    }
-                );
+                if (this.misBloqueos.length > 0) {
+                    this.enviarBloqueos();
+                }
             })
             .leaving(data => {
-                this.borrarBtnsCheck(data.id);
+                this.borrarBloqueos(data.user);
             });
-        //  .listen("Prueba", e => {});
 
         window.Echo.private("bloquearBtns" + tipoM).listenForWhisper(
             "bloquearBtns" + tipoM,
@@ -133,9 +136,10 @@ const websocketsMixin = (tipoM, tipoP) => ({
         window.Echo.private("recibirBtnsCheck" + tipoM).listenForWhisper(
             "recibirBtnsCheck" + tipoM,
             e => {
-                for (let index = 0; index < e.bloqueos.length; index++) {
-                    this.bloquearBtnsTabla(e.bloqueos[index]);
-                    this.bloquearCheckTabla(e.bloqueos[index]);
+                console.log("recibirBtnsCheck");
+                if (e.bloqueos.length > 0) {
+                    this.bloquearBtnsTabla(e.bloqueos[0]);
+                    this.bloquearCheckTabla(e.bloqueos[0]);
                 }
             }
         );
@@ -155,6 +159,7 @@ const websocketsMixin = (tipoM, tipoP) => ({
         this.$events.$off("verificarBloqueos-" + tipoP);
     },
     beforeDestroy() {
+        this.enviarMisBloqueos();
         window.Echo.leave(tipoP);
         window.Echo.leave("recibirBtnsCheck" + tipoM);
         window.Echo.leave("bloquearCheck" + tipoM);

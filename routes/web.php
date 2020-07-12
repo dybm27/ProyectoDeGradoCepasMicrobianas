@@ -35,7 +35,8 @@ Route::get('email/verify', 'Auth\VerificationController@show')->name('verificati
 Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 //, 'verified'
-Route::group(['middleware' => ['auth']], function () {
+
+Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //--------------------- CEPAS --------------------------------------------------------------------
     //-- vistas cepas
@@ -323,6 +324,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
     Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
     Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
+    
     //-- Usuarios
     Route::get('/usuarios/tabla-usuarios', 'UsuarioController@index')->name('usuarios');
     Route::get('/usuarios/tabla-usuarios/agregar', 'UsuarioController@index');
@@ -332,6 +334,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/usuario/agregar', 'UsuarioController@store');
     Route::put('/usuario/editar/{id}', 'UsuarioController@update');
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy');
+   // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
 
     Route::post('/tipo-user/agregar', 'TipoUsuarioController@store');
     Route::put('/tipo-user/editar/{id}', 'TipoUsuarioController@update');
@@ -624,8 +627,8 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
 
-    // Ruta para Vue
-    Route::get('/{vue_capture?}', function () {
-        return view('404');
-    })->where('vue_capture', '[\/\w\.-]*');
+    // 404 admin
+    Route::get('{vue_capture?}', 'ErroresController@error_404')->where('vue_capture', '[\/\w\.-]*');
 });
+
+// 404 admin

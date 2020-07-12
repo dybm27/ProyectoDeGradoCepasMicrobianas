@@ -182,7 +182,7 @@ import vuex from "vuex";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 import Toastr from "../../../../mixins/toastr";
-import obtnerImagenCroopie from "../../../../mixins/obtnerImagenCroopie";
+import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 export default {
   props: ["idActividad"],
   data() {
@@ -211,7 +211,7 @@ export default {
       errors: []
     };
   },
-  mixins: [Toastr, obtnerImagenCroopie],
+  mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionActividad"]),
     evento() {

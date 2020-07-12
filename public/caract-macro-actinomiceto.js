@@ -10,6 +10,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/infoCaractMacro */ "./resources/js/mixins/infoCaractMacro.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -175,23 +177,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      active1: "active",
-      active2: "",
-      active3: "",
-      mostrar1: false,
-      mostrar2: false,
-      mostrar3: false,
-      mostrarForm1: true,
-      mostrarForm2: false,
-      mostrarForm3: false,
-      mostrarBtnAgregar: true,
-      modificarForm: false
-    };
-  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     agregarInfo: function agregarInfo(data) {
       this.accionAgregarCaract({
@@ -229,7 +223,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.mostrarBtnAgregar = true;
         _this.modificarForm = true;
 
-        _this.$modal.hide("eliminar_caract_macro");
+        _this.$modal.hide("eliminar_caract_macro_actinomiceto");
 
         _this.accionEliminarCaract({
           tipo: "macro",
@@ -244,221 +238,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this.toastr("Error!!", "", "error");
         }
       });
-    },
-    cambiarVariable: function cambiarVariable() {
-      this.modificarForm = false;
-    },
-    toastr: function toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
-    },
-    cancelar: function cancelar() {
-      if (this.mostrarForm1) {
-        this.mostrarForm1 = false;
-        this.mostrar1 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm2) {
-        this.mostrarForm2 = false;
-        this.cambiarActive(1);
-        this.mostrar2 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm3) {
-        this.mostrarForm3 = false;
-        this.cambiarActive(2);
-        this.mostrar3 = false;
-        this.mostrarBtnAgregar = true;
-      }
-    },
-    abrirForm: function abrirForm() {
-      if (!this.mostrar1) {
-        this.cambiarActive(1);
-        this.mostrar1 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[0] && !this.mostrar2) {
-        this.cambiarActive(2);
-        this.mostrar2 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[1] && !this.mostrar3) {
-        this.cambiarActive(3);
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    llenarForms: function llenarForms() {
-      if (this.getCaractMacro[0]) {
-        this.medio1 = this.getCaractMacro[0].medio;
-        this.mostrar1 = true;
-      }
-
-      if (this.getCaractMacro[1]) {
-        this.medio2 = this.getCaractMacro[1].medio;
-        this.mostrar2 = true;
-      }
-
-      if (this.getCaractMacro[2]) {
-        this.medio3 = this.getCaractMacro[2].medio;
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    cambiarActive: function cambiarActive(num) {
-      switch (num) {
-        case 1:
-          this.active1 = "active";
-          this.active2 = "";
-          this.active3 = "";
-          this.mostrarForm1 = true;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = false;
-          break;
-
-        case 2:
-          this.active1 = "";
-          this.active2 = "active";
-          this.active3 = "";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = true;
-          this.mostrarForm3 = false;
-          break;
-
-        case 3:
-          this.active1 = "";
-          this.active2 = "";
-          this.active3 = "active";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = true;
-          break;
-      }
-    },
-    formatear: function formatear(num) {
-      switch (num) {
-        case 1:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else if (this.mostrar2) {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          } else {
-            this.mostrar1 = false;
-            this.mostrarForm1 = false;
-          }
-
-          break;
-
-        case 2:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          }
-
-          break;
-
-        case 3:
-          this.mostrar3 = false;
-          this.cambiarActive(2);
-          break;
-      }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMacro"]), {
-    computedActive1: function computedActive1() {
-      return this.active1;
-    },
-    computedActive2: function computedActive2() {
-      return this.active2;
-    },
-    computedActive3: function computedActive3() {
-      return this.active3;
-    },
-    computedMostrarForm1: function computedMostrarForm1() {
-      return this.mostrarForm1;
-    },
-    computedMostrarForm2: function computedMostrarForm2() {
-      return this.mostrarForm2;
-    },
-    computedMostrarForm3: function computedMostrarForm3() {
-      return this.mostrarForm3;
-    },
-    mostrarForms: function mostrarForms() {
-      if (!this.getCaractMacro[0] && !this.mostrar1) {
-        this.mostrarForm1 = false;
-        return false;
-      } else {
-        this.llenarForms();
-        return true;
-      }
-    },
-    mostrarBtnEliminar: function mostrarBtnEliminar() {
-      if (this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnCancelar: function mostrarBtnCancelar() {
-      if (!this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
-      return this.mostrarBtnAgregar;
-    },
-    medio1: {
-      get: function get() {
-        if (this.getCaractMacro[0]) {
-          return this.getCaractMacro[0].medio;
-        }
-      },
-      set: function set() {}
-    },
-    medio2: {
-      get: function get() {
-        if (this.getCaractMacro[1]) {
-          return this.getCaractMacro[1].medio;
-        }
-      },
-      set: function set() {}
-    },
-    medio3: {
-      get: function get() {
-        if (this.getCaractMacro[2]) {
-          return this.getCaractMacro[2].medio;
-        }
-      },
-      set: function set() {}
-    }
-  })
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMacro"]))
 });
 
 /***/ }),
@@ -523,7 +305,9 @@ var render = function() {
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                     on: {
                       click: function($event) {
-                        return _vm.$modal.show("eliminar_caract_macro")
+                        return _vm.$modal.show(
+                          "eliminar_caract_macro_actinomiceto"
+                        )
                       }
                     }
                   },
@@ -837,7 +621,13 @@ var render = function() {
       _vm._v(" "),
       _c(
         "modal",
-        { attrs: { name: "eliminar_caract_macro", width: 400, height: 200 } },
+        {
+          attrs: {
+            name: "eliminar_caract_macro_actinomiceto",
+            width: 400,
+            height: 200
+          }
+        },
         [
           _c("div", { staticClass: "modal-content" }, [
             _c("div", { staticClass: "modal-header" }, [
@@ -857,7 +647,9 @@ var render = function() {
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
-                      return _vm.$modal.hide("eliminar_caract_macro")
+                      return _vm.$modal.hide(
+                        "eliminar_caract_macro_actinomiceto"
+                      )
                     }
                   }
                 },
@@ -881,7 +673,9 @@ var render = function() {
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
-                      return _vm.$modal.hide("eliminar_caract_macro")
+                      return _vm.$modal.hide(
+                        "eliminar_caract_macro_actinomiceto"
+                      )
                     }
                   }
                 },
@@ -1035,6 +829,231 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_4f2b3c96___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/infoCaractMacro.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/infoCaractMacro.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var infoCaractMacroMixin = {
+  data: function data() {
+    return {
+      active1: "active",
+      active2: "",
+      active3: "",
+      mostrar1: false,
+      mostrar2: false,
+      mostrar3: false,
+      mostrarForm1: true,
+      mostrarForm2: false,
+      mostrarForm3: false,
+      mostrarBtnAgregar: true,
+      modificarForm: false
+    };
+  },
+  methods: {
+    cambiarVariable: function cambiarVariable() {
+      this.modificarForm = false;
+    },
+    cancelar: function cancelar() {
+      if (this.mostrarForm1) {
+        this.mostrarForm1 = false;
+        this.mostrar1 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm2) {
+        this.mostrarForm2 = false;
+        this.cambiarActive(1);
+        this.mostrar2 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm3) {
+        this.mostrarForm3 = false;
+        this.cambiarActive(2);
+        this.mostrar3 = false;
+        this.mostrarBtnAgregar = true;
+      }
+    },
+    abrirForm: function abrirForm() {
+      if (!this.mostrar1) {
+        this.cambiarActive(1);
+        this.mostrar1 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[0] && !this.mostrar2) {
+        this.cambiarActive(2);
+        this.mostrar2 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[1] && !this.mostrar3) {
+        this.cambiarActive(3);
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    llenarForms: function llenarForms() {
+      if (this.getCaractMacro[0]) {
+        this.medio1 = this.getCaractMacro[0].medio;
+        this.mostrar1 = true;
+      }
+
+      if (this.getCaractMacro[1]) {
+        this.medio2 = this.getCaractMacro[1].medio;
+        this.mostrar2 = true;
+      }
+
+      if (this.getCaractMacro[2]) {
+        this.medio3 = this.getCaractMacro[2].medio;
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    cambiarActive: function cambiarActive(num) {
+      switch (num) {
+        case 1:
+          this.active1 = "active";
+          this.active2 = "";
+          this.active3 = "";
+          this.mostrarForm1 = true;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = false;
+          break;
+
+        case 2:
+          this.active1 = "";
+          this.active2 = "active";
+          this.active3 = "";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = true;
+          this.mostrarForm3 = false;
+          break;
+
+        case 3:
+          this.active1 = "";
+          this.active2 = "";
+          this.active3 = "active";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = true;
+          break;
+      }
+    },
+    formatear: function formatear(num) {
+      switch (num) {
+        case 1:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else if (this.mostrar2) {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          } else {
+            this.mostrar1 = false;
+            this.mostrarForm1 = false;
+          }
+
+          break;
+
+        case 2:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          }
+
+          break;
+
+        case 3:
+          this.mostrar3 = false;
+          this.cambiarActive(2);
+          break;
+      }
+    }
+  },
+  computed: {
+    computedActive1: function computedActive1() {
+      return this.active1;
+    },
+    computedActive2: function computedActive2() {
+      return this.active2;
+    },
+    computedActive3: function computedActive3() {
+      return this.active3;
+    },
+    computedMostrarForm1: function computedMostrarForm1() {
+      return this.mostrarForm1;
+    },
+    computedMostrarForm2: function computedMostrarForm2() {
+      return this.mostrarForm2;
+    },
+    computedMostrarForm3: function computedMostrarForm3() {
+      return this.mostrarForm3;
+    },
+    mostrarForms: function mostrarForms() {
+      if (!this.getCaractMacro[0] && !this.mostrar1) {
+        this.mostrarForm1 = false;
+        return false;
+      } else {
+        this.llenarForms();
+        return true;
+      }
+    },
+    mostrarBtnEliminar: function mostrarBtnEliminar() {
+      if (this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnCancelar: function mostrarBtnCancelar() {
+      if (!this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
+      return this.mostrarBtnAgregar;
+    },
+    medio1: {
+      get: function get() {
+        if (this.getCaractMacro[0]) {
+          return this.getCaractMacro[0].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio2: {
+      get: function get() {
+        if (this.getCaractMacro[1]) {
+          return this.getCaractMacro[1].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio3: {
+      get: function get() {
+        if (this.getCaractMacro[2]) {
+          return this.getCaractMacro[2].medio;
+        }
+      },
+      set: function set() {}
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
 
 /***/ })
 

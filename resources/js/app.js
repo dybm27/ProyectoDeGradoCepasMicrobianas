@@ -9,12 +9,14 @@ import VueToastr from 'vue-toastr'
 import VModal from 'vue-js-modal'
 import VTooltip from 'v-tooltip'
 import CKEditor from '@ckeditor/ckeditor5-vue';
+import Storage from 'vue-ls';
 
-Vue.use( CKEditor );
+Vue.use(CKEditor);
 Vue.use(VTooltip)
 Vue.use(VModal)
 Vue.use(VueEvents)
 Vue.use(VueToastr)
+Vue.use(Storage);
 
 //editor
 Vue.component('editor-texto', require('./components/editor-texto/EditorTextoComponent.vue').default);
@@ -182,15 +184,16 @@ Vue.component('ver-imagenes', require('./components/imagenes-login/VerImagenesCo
 //------- sitio-web ---------------
 //quienes-somos
 Vue.component('quienes-somos', require('./components/sitio-web/QuienesSomosComponent.vue').default);
-Vue.component('acciones_objetivos', require('./components/sitio-web/quienes-somos/AccionesObjetivosComponent.vue').default);
 //investigadores
 Vue.component('investigadores', require('./components/sitio-web/InvestigadoresComponent.vue').default);
+Vue.component('contenedor-investigadores', require('./components/sitio-web/investigadores/ContainerComponent.vue').default);
 Vue.component('tabla-investigadores', require('./components/sitio-web/investigadores/TablaInvestigadoresComponent.vue').default);
 Vue.component('acciones_investigadores', require('./components/sitio-web/investigadores/AccionesInvestigadoresComponent.vue').default);
 Vue.component('checkboxs_investigadores', require('./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue').default);
 Vue.component('form-investigadores', require('./components/sitio-web/investigadores/FormInvestigadoresComponent.vue').default);
 //equipamientos
 Vue.component('equipamientos', require('./components/sitio-web/EquipamientosComponent.vue').default);
+Vue.component('contenedor-equipamientos', require('./components/sitio-web/equipamientos/ContainerComponent.vue').default);
 Vue.component('tabla-equipamientos', require('./components/sitio-web/equipamientos/TablaComponent.vue').default);
 Vue.component('acciones_equipamientos', require('./components/sitio-web/equipamientos/AccionesComponent.vue').default);
 Vue.component('checkboxs_equipamientos', require('./components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue').default);
@@ -222,6 +225,8 @@ Vue.component('acciones_publicaciones', require('./components/sitio-web/document
 Vue.component('checkboxs_publicaciones', require('./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue').default);
 Vue.component('descargar_publicacion', require('./components/sitio-web/documentos/publicaciones/DescargarComponent.vue').default);
 
+//errores
+Vue.component('error-404', require('./components/errores/Error404Component.vue').default);
 // usuario autenticado
 //import auth from './autenticacion/auth'
 //Vue.mixin(auth);

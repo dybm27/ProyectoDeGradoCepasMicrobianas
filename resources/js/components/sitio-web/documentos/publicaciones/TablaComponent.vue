@@ -24,6 +24,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -50,6 +51,8 @@
 
 <script>
 import FieldDefs from "./columnas";
+import Toastr from "../../../../mixins/toastr";
+import websocketsTabla from "../../../../mixins/websocketsTabla";
 import vuex from "vuex";
 export default {
   data() {
@@ -61,9 +64,10 @@ export default {
           direction: "asc"
         }
       ],
-      idPublicacion: ""
+      id: ""
     };
   },
+  mixins: [Toastr, websocketsTabla("Publicacion")],
   computed: {
     ...vuex.mapGetters("documentos", ["getPublicaciones"]),
     mostrarTabla() {
@@ -76,11 +80,11 @@ export default {
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
     beforeOpenEliminar(data) {
-      this.idPublicacion = data.params.id;
+      this.id = data.params.id;
     },
     eliminarPublicacion() {
       axios
-        .delete(`/documentos/${this.idPublicacion}`, {
+        .delete(`/documentos/${this.id}`, {
           data: { tipo: "publicacion" }
         })
         .then(res => {
@@ -96,44 +100,10 @@ export default {
         .catch(error => {
           this.toastr("Error!!!!", "", "error");
         });
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
-    abrirFormularioPublicacion(id) {
-      this.$emit("abrirFormularioPublicacion", id);
-    },
-    actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
     }
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaPublicacion", e => this.actualizarTabla());
-  },
-  destroyed() {
-    this.$events.off("actualizartablaPublicacion");
   }
 };
 </script>

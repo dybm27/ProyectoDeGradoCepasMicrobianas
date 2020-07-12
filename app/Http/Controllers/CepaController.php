@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Actinomiceto;
 use App\Bacteria;
 use App\Cepa;
-use App\DetalleOpticoBacteria;
 use App\HongoFilamentoso;
 use App\Levadura;
 use App\Seguimiento;
@@ -16,7 +15,6 @@ use PDF;
 
 class CepaController extends Controller
 {
-
     public function index()
     {
         return view('cepa.index');

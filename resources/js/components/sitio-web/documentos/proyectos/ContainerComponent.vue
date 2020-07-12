@@ -14,7 +14,7 @@
         </template>
         <template v-else>
           <button
-            @click="abrirFormulario(0)"
+            @click="cerrarFormulario"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
           >Cancelar</button>
         </template>
@@ -22,7 +22,7 @@
     </div>
     <div class="card-body">
       <template v-if="!formulario">
-        <tabla-proyectos @abrirFormularioProyecto="abrirFormulario" @cambiarTipo="cambiarTipo"></tabla-proyectos>
+        <tabla-proyectos @cambiarTipo="cambiarTipo"></tabla-proyectos>
       </template>
       <template v-else>
         <form-proyectos
@@ -37,40 +37,20 @@
 
 <script>
 import vuex from "vuex";
+import websocketsMixin from "../../../../mixins/websockets";
+import abrirCerrarFormulario from "../../../../mixins/abrirCerrarFormulario";
 export default {
-  data() {
-    return { formulario: false, id: 0, tipo: "" };
-  },
+  mixins: [
+    websocketsMixin("Proyecto", "proyectos"),
+    abrirCerrarFormulario("Proyecto")
+  ],
   methods: {
-    ...vuex.mapActions("documentos", ["accionProyecto"]),
-    abrirFormulario(id) {
-      if (id != 0) {
-        this.id = id;
-      } else {
-        this.id = 0;
-      }
-      this.formulario = !this.formulario;
-    },
-    cambiarVariableFormulario() {
-      this.formulario = !this.formulario;
-    },
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     }
   },
   created() {
-    this.$events.$on("abrirFormularioProyecto", e => this.abrirFormulario(e));
     this.$emit("rutaHijo", window.location.pathname);
-    window.Echo.channel("proyecto").listen("ProyectoEvent", e => {
-      this.accionProyecto({ tipo: e.tipo, data: e.proyecto });
-      this.$events.fire(
-        e.proyecto.id + "-actualizarPublicarProyecto",
-        e.proyecto.publicar
-      );
-      if (!this.formulario) {
-        this.$events.fire("actualizartablaProyecto");
-      }
-    });
   }
 };
 </script>

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\ImagenLogin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -50,10 +52,27 @@ class LoginController extends Controller
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
-
+        if (is_null(Auth::User()->session_id)) {
+            Auth::user()->session_id = Session::getId();
+            Auth::user()->save();
+        }
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
             ?: redirect()->intended($this->redirectPath());
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::user()->session_id = null;
+        Auth::user()->save();
+
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return $this->loggedOut($request) ?: redirect('/');
     }
 }

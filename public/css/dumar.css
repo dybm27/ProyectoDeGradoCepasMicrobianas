@@ -258,8 +258,32 @@
 }
 
 .logo-majumba > img {
-    height: 200px;
-    width: 400px;
+    height: 250px;
+    width: 500px;
+}
+@media (max-width: 990px) {
+    .logo-majumba > img {
+        height: 300px;
+        width: 600px;
+    }
+}
+@media (max-width: 772px) {
+    .logo-majumba > img {
+        height: 250px;
+        width: 500px;
+    }
+}
+@media (max-width: 529px) {
+    .logo-majumba > img {
+        height: 200px;
+        width: 400px;
+    }
+}
+@media (max-width: 429px) {
+    .logo-majumba > img {
+        height: 150px;
+        width: 330px;
+    }
 }
 
 .dropdown-menu {

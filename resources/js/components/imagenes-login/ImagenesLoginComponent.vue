@@ -44,11 +44,29 @@
       </div>
     </div>
     <div class="tabs-animation">
-      <template v-if="!from">
-        <ver-imagenes @editarImagen="editarImagen" />
+      <template v-if="numPestaña==1">
+        <template v-if="!from">
+          <ver-imagenes @editarImagen="editarImagen" />
+        </template>
+        <template v-else>
+          <from-imagen :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+        </template>
       </template>
       <template v-else>
-        <from-imagen :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+        <div class="container">
+          <div class="main-card mb-3 card">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div
+                    class="alert alert-danger mt-4 text-center"
+                    role="alert"
+                  >Ya has ingresado desde otra pestaña del navegador!!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </template>
     </div>
   </div>
@@ -56,6 +74,7 @@
 
 <script>
 import vuex from "vuex";
+import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 export default {
   data() {
     return {
@@ -63,6 +82,7 @@ export default {
       from: false
     };
   },
+  mixins: [bloquearPestañasMixin("imagenesLogin")],
   methods: {
     ...vuex.mapActions("imagenes_login", [
       "obtenerImagenesLogin",

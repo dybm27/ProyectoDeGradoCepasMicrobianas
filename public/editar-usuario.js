@@ -10,6 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -207,6 +208,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -233,6 +235,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       traerValorImg: false
     };
   },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionModificarAuth"]), {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       if (valor) {
@@ -303,26 +306,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         });
       }
-    },
-    toastr: function toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
     },
     llenarInfo: function llenarInfo() {
       this.parametros.nombre = this.info.name;
@@ -397,13 +380,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
-      } else {
-        if (this.required) {
-          this.mensajeContraseña1 = "Este campo es obligatorio";
-          return true;
-        }
-
-        return false;
       }
     },
     validarEmail: function validarEmail() {
@@ -422,9 +398,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             return false;
           }
-        } else {
-          this.mensajeErrorEmail = "Este campo es obligatorio";
-          return true;
         }
       }
 
@@ -441,9 +414,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
-      } else {
-        this.mensajeNombre = "Este campo es obligatorio";
-        return true;
       }
     },
     validarContraseña: function validarContraseA() {
@@ -456,13 +426,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
-      } else {
-        if (this.required) {
-          this.mensajeContraseña = "Este campo es obligatorio";
-          return true;
-        }
-
-        return false;
       }
     },
     validarBtn: function validarBtn() {
@@ -934,24 +897,19 @@ var render = function() {
                               _c("div", { staticClass: "input-group-append" }, [
                                 _c(
                                   "span",
-                                  { staticClass: "input-group-text" },
+                                  {
+                                    staticClass: "input-group-text",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showPass = !_vm.showPass
+                                      }
+                                    }
+                                  },
                                   [
                                     _vm.showPass
-                                      ? _c("i", {
-                                          staticClass: "fas fa-eye",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.showPass = !_vm.showPass
-                                            }
-                                          }
-                                        })
+                                      ? _c("i", { staticClass: "fas fa-eye" })
                                       : _c("i", {
-                                          staticClass: "fas fa-eye-slash",
-                                          on: {
-                                            click: function($event) {
-                                              _vm.showPass = !_vm.showPass
-                                            }
-                                          }
+                                          staticClass: "fas fa-eye-slash"
                                         })
                                   ]
                                 )
