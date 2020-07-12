@@ -77,16 +77,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -161,14 +151,10 @@ var render = function() {
                 "div",
                 { staticClass: "btn-actions-pane-right actions-icon-btn" },
                 [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
-                      on: { click: _vm.mostrarTablasCaractMacro }
-                    },
-                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
-                  )
+                  _c("img", {
+                    attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
+                    on: { click: _vm.mostrarTablasCaractMacro }
+                  })
                 ]
               )
             ]),
@@ -228,14 +214,10 @@ var render = function() {
                 "div",
                 { staticClass: "btn-actions-pane-right actions-icon-btn" },
                 [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "mb-2 mr-2 btn-icon btn-pill btn btn-link",
-                      on: { click: _vm.mostrarTablasMetodos }
-                    },
-                    [_c("i", { staticClass: "lnr-menu btn-icon-wrapper" })]
-                  )
+                  _c("img", {
+                    attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
+                    on: { click: _vm.mostrarTablasMetodos }
+                  })
                 ]
               )
             ]),
@@ -290,7 +272,7 @@ var staticRenderFns = [
           staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
         }),
         _vm._v(
-          "\n            Tablas Dinamicas Características Macroscópicas\n          "
+          "\n            Tablas Dinámicas Características Macroscópicas\n          "
         )
       ]
     )

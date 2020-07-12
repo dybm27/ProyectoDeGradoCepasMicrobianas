@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->unsignedBigInteger('tipouser_id');
+            $table->text('session_id')->nullable();
+            $table->dateTime('lastActivityTime')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();

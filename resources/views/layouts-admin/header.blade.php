@@ -1,4 +1,4 @@
-<div class="app-header header-shadow">
+<div class="app-header header-shadow ">
 
     @include('layouts-admin.headers.header-logo')
 

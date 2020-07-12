@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Evento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class InfoPanelEventosController extends Controller
 {
     public function eventos(Request $request)
     {
+     //   $autor = Auth::user();
         $eventos = Evento::join('users', 'users.id', '=', "eventos.autor")
+         //   ->where('eventos.autor', '=', $autor->id)
             ->where('eventos.fecha', '>=', $request->start)
             ->where('eventos.fecha', '<=', $request->end)->select(
                 'eventos.id',

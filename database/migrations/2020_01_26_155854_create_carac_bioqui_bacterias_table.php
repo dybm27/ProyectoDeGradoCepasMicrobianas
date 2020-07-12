@@ -16,7 +16,7 @@ class CreateCaracBioquiBacteriasTable extends Migration
         Schema::create('carac_bioqui_bacterias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
-            $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
+            $table->foreign('bacteria_id')->references('id')->on('bacterias');
             $table->string('oxidasa',100);
             $table->string('catalasa',100);
             $table->string('citrato',100);

@@ -16,7 +16,7 @@ class CreateCaracBioquiLevadurasTable extends Migration
         Schema::create('carac_bioqui_levaduras', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('levadura_id');
-            $table->foreign('levadura_id')->references('id')->on('levaduras')->onDelete('cascade');
+            $table->foreign('levadura_id')->references('id')->on('levaduras');
             $table->string('ureasa', 100);
             $table->string('fenol_oxidasa', 100);
             $table->string('produccion_acido', 100);

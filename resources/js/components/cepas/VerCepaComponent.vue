@@ -84,7 +84,7 @@ export default {
     }
   },
   methods: {
-    ...vuex.mapActions(["obtenerCepa", "limpiarCepa"]),
+    ...vuex.mapActions("cepa", ["obtenerCepa", "limpiarCepa"]),
     verificarUrl(tipo) {
       let ruta = window.location.pathname;
       switch (tipo) {
@@ -120,7 +120,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getCepa"]),
+    ...vuex.mapGetters("cepa", ["getCepa"]),
     getTipo() {
       return this.tipo;
     }

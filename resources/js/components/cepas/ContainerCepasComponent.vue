@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div class="tabs-animation">
-      <router-view :tipoG="tipoG" @rutaHijo="ocultarLink" />
-    </div>
+  <div class="tabs-animation">
+    <router-view :tipoG="tipoG" @rutaHijo="ocultarLink" />
   </div>
 </template>
 

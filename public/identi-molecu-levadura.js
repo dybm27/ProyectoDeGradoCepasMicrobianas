@@ -10,6 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -85,6 +86,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -93,27 +95,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
-    toastr: function toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
-    },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     agregar: function agregar(data) {
       this.accionAgregarCaract({
         tipo: "identi",
@@ -162,7 +145,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.mostrarBtnAgregar = true;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getIdentiMolecu"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getIdentiMolecu"]), {
     mostrarBtnEliminar: function mostrarBtnEliminar() {
       if (this.getIdentiMolecu) {
         return true;
@@ -273,7 +256,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
                       on: { click: _vm.btnAgregar }
                     },
                     [_vm._v("Agregar Identificación")]
@@ -365,7 +348,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: { type: "button" },
                   on: { click: _vm.eliminar }
                 },
@@ -405,7 +388,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-center" }, [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
-          _c("b", { staticClass: "text-warning" }, [
+          _c("b", { staticClass: "text-success" }, [
             _vm._v("AÚN NO SE HA AGREGADO LA IDENTIFICACIÓN")
           ])
         ])

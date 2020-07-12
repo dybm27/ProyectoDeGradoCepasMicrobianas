@@ -16,7 +16,7 @@ class CreateMetodoConserLevadurasTable extends Migration
         Schema::create('metodo_conser_levaduras', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('levadura_id');
-            $table->foreign('levadura_id')->references('id')->on('levaduras')->onDelete('cascade');
+            $table->foreign('levadura_id')->references('id')->on('levaduras');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_levaduras');
             $table->dateTime('fecha');

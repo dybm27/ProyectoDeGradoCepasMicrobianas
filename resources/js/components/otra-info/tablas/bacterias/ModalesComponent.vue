@@ -40,7 +40,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="agregarTipo"
             :disabled="validarNombre"
           >Agregar</button>
@@ -86,7 +86,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="editarTipo"
             :disabled="validarNombre"
           >Editar</button>
@@ -116,7 +116,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_bacteria')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarTipo">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -135,7 +135,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractBacteria",
       "accionEditarTipoCaractBacteria",
       "accionEliminarTipoCaractBacteria"

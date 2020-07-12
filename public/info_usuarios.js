@@ -105,7 +105,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm",
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
                       on: { click: _vm.agregar }
                     },
                     [_vm._v("Agregar Usuario")]
@@ -151,7 +151,7 @@ var staticRenderFns = [
         _c("i", {
           staticClass: "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
         }),
-        _vm._v("\n        Tabla Dinamica Usuarios\n      ")
+        _vm._v("\n        Tabla Dinámica Usuarios\n      ")
       ]
     )
   }

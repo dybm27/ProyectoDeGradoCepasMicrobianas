@@ -33,6 +33,7 @@
             :css="css.table"
             :api-url="apiUrl"
             :fields="fields"
+            data-path="data"
             pagination-path
             :sort-order="sortOrder"
             :append-params="appendParams"
@@ -90,9 +91,6 @@ export default {
     detailRowComponent: {
       type: String
     },
-    refrescarTabla: {
-      type: Boolean
-    },
     nameGet: {
       type: String,
       required: true
@@ -129,16 +127,9 @@ export default {
           infoClass: "pull-left"
         }
       },
-      disabledBtn: false
+      disabledBtn: false,
+      dataAnterior: []
     };
-  },
-  watch: {
-    refrescarTabla() {
-      if (this.refrescarTabla) {
-        this.refreshDatos();
-        this.$emit("cambiarVariable");
-      }
-    }
   },
   methods: {
     imagen(value) {
@@ -175,6 +166,7 @@ export default {
       this.$refs.paginationInfo.setPaginationData(paginationData);
     },
     onChangePage(page) {
+      this.dataAnterior = this.$refs.vuetable.tableData;
       this.$refs.vuetable.changePage(page);
     },
     onCellClicked(data, field, event) {
@@ -190,6 +182,7 @@ export default {
       Vue.nextTick(() => this.$refs.vuetable.refresh());
     },
     refreshDatos() {
+      this.dataAnterior = this.$refs.vuetable.tableData;
       Vue.nextTick(() => this.$refs.vuetable.refresh());
     },
     loaded() {
@@ -197,6 +190,30 @@ export default {
         this.disabledBtn = true;
       } else {
         this.disabledBtn = false;
+        this.EventosCustomActions();
+        this.$events.fire("verificarBloqueos-" + this.nameGet);
+      }
+    },
+    EventosCustomActions() {
+      if (this.dataAnterior.length != 0) {
+        for (let index = 0; index < this.dataAnterior.length; index++) {
+          this.$events.fire(
+            index + "-eliminarEventosBtns-" + this.nameGet,
+            this.dataAnterior[index].id
+          );
+          this.$events.fire(
+            index + "-eliminarEventosCheck-" + this.nameGet,
+            this.dataAnterior[index].id
+          );
+        }
+      }
+      for (
+        let index = 0;
+        index < this.$refs.vuetable.tableData.length;
+        index++
+      ) {
+        this.$events.fire(index + "-crearEventosBtns-" + this.nameGet);
+        this.$events.fire(index + "-crearEventosCheck-" + this.nameGet);
       }
     },
     exportarExcel(tipo) {
@@ -278,6 +295,10 @@ export default {
       this.onFilterSet(eventData)
     );
     this.$events.$on(this.nameGet + "-filter-reset", e => this.onFilterReset());
+  },
+  destroyed() {
+    this.$events.off(this.nameGet + "-filter-set");
+    this.$events.off(this.nameGet + "-filter-reset");
   }
 };
 </script>

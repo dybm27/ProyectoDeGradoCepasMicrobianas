@@ -36,20 +36,7 @@ export default {
   },
   methods: {
     itemAction(action, data, index) {
-      if (action == "editar-metodo") {
-        let ruta = window.location.pathname;
-        if (ruta.includes("hongos")) {
-          this.$router.push({
-            name: "metodo-conser-hongo-editar",
-            params: { metodoConserHongoId: data.id }
-          });
-        } else {
-          this.$router.push({
-            name: "metodo-conser-cepa-hongo-editar",
-            params: { metodoConserHongoId: data.id }
-          });
-        }
-      }
+      this.$events.fire("abrirFormularioMetodoHongo", data.id);
     },
     showModal(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });

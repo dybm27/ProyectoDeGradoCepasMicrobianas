@@ -105,7 +105,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["obtenerCepa", "limpiarCepa"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["obtenerCepa", "limpiarCepa"]), {
     verificarUrl: function verificarUrl(tipo) {
       var ruta = window.location.pathname;
 
@@ -148,7 +148,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getCepa"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCepa"]), {
     getTipo: function getTipo() {
       return this.tipo;
     }

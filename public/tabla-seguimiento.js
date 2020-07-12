@@ -10,7 +10,6 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas_columnas_seguimiento__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas/columnas-seguimiento */ "./resources/js/components/usuarios/tablas/columnas/columnas-seguimiento.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -34,7 +33,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {

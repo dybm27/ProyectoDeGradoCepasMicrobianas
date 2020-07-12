@@ -37,7 +37,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('color')"
                       >
                         <i class="fas fa-plus"></i>
@@ -60,7 +60,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('textura')"
                       >
                         <i class="fas fa-plus"></i>
@@ -136,7 +136,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -180,7 +180,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -188,6 +188,9 @@
 </template>
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
+
 export default {
   props: ["info", "modificarInfo"],
   data() {
@@ -207,12 +210,11 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
-      imagenError: ""
+      errors: []
     };
   },
+  mixins: [Toastr, obtenerImagenCroopieCepas],
   watch: {
     modificarInfo() {
       if (this.modificarInfo) {
@@ -222,20 +224,7 @@ export default {
     }
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoCaractHongo"]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     evento() {
       if (this.tituloForm === "Agregar Medio") {
         axios
@@ -278,26 +267,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.medio = this.info.medio;
       this.parametros.color = this.info.color_id;
@@ -308,44 +277,6 @@ export default {
           : this.info.caracteristicas_reverso;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-    },
-
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen(file) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        this.imagenMiniatura = e.target.result;
-      };
-      reader.readAsDataURL(file);
     },
     showModal(tipo) {
       this.modal.input = "";
@@ -392,13 +323,10 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoCaractMacroHongos"]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
+    ...vuex.mapGetters("info_caract", ["getInfoCaractMacroHongos"]),
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -415,34 +343,6 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    },
-    mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   mounted() {

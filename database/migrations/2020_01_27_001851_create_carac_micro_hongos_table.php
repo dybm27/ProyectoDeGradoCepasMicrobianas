@@ -16,7 +16,7 @@ class CreateCaracMicroHongosTable extends Migration
         Schema::create('carac_micro_hongos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hongo_filamentoso_id');
-            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos')->onDelete('cascade');
+            $table->foreign('hongo_filamentoso_id')->references('id')->on('hongo_filamentosos');
             $table->unsignedBigInteger('conidioforo_id');
             $table->foreign('conidioforo_id')->references('id')->on('conidioforo_hongos');
             $table->string('fialides',15);

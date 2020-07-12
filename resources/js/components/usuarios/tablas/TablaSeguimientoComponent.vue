@@ -23,7 +23,6 @@
 </template>
 <script>
 import FieldDefs from "./columnas/columnas-seguimiento";
-import vuex from "vuex";
 export default {
   data() {
     return {

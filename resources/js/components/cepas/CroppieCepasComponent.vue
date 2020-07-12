@@ -8,11 +8,11 @@
               <div id="croppie1"></div>
               <template v-if="imagenes[0]">
                 <template v-if="btnAprobar1">
-                  <button class="btn btn-success" @click="resultado(1)">Aprobar Imagen</button>
+                  <button class="btn btn-success mb-2" @click="resultado(1)">Aprobar Imagen</button>
                   <em class="text-danger small" v-if="mostrarMensaje1">Debe Aprobar la imagen</em>
                 </template>
                 <template v-else>
-                  <button class="btn btn-danger float-right" @click="cancelar(1)">Cancelar</button>
+                  <button class="btn btn-danger mb-2 float-right" @click="cancelar(1)">Cancelar</button>
                 </template>
               </template>
             </div>
@@ -22,11 +22,11 @@
               <div id="croppie2"></div>
               <template v-if="imagenes[1]">
                 <template v-if="btnAprobar2">
-                  <button class="btn btn-success" @click="resultado(2)">Aprobar Imagen</button>
+                  <button class="btn btn-success mb-2" @click="resultado(2)">Aprobar Imagen</button>
                   <em class="text-danger small" v-if="mostrarMensaje2">Debe Aprobar la imagen</em>
                 </template>
                 <template v-else>
-                  <button class="btn btn-danger float-right" @click="cancelar(2)">Cancelar</button>
+                  <button class="btn btn-danger mb-2 float-right" @click="cancelar(2)">Cancelar</button>
                 </template>
               </template>
             </div>
@@ -36,11 +36,11 @@
               <div id="croppie3"></div>
               <template v-if="imagenes[2]">
                 <template v-if="btnAprobar3">
-                  <button class="btn btn-success" @click="resultado(3)">Aprobar Imagen</button>
+                  <button class="btn btn-success mb-2" @click="resultado(3)">Aprobar Imagen</button>
                   <em class="text-danger small" v-if="mostrarMensaje3">Debe Aprobar la imagen</em>
                 </template>
                 <template v-else>
-                  <button class="btn btn-danger float-right" @click="cancelar(3)">Cancelar</button>
+                  <button class="btn btn-danger mb-2 float-right" @click="cancelar(3)">Cancelar</button>
                 </template>
               </template>
             </div>
@@ -54,11 +54,11 @@
           <div id="croppie1"></div>
           <template v-if="imagenes[0]">
             <template v-if="btnAprobar1">
-              <button class="btn btn-success" @click="resultado(1)">Aprobar Imagen</button>
+              <button class="btn btn-success mb-2" @click="resultado(1)">Aprobar Imagen</button>
               <em class="text-danger" v-if="mostrarMensaje1">Debe Aprobar la imagen</em>
             </template>
             <template v-else>
-              <button class="btn btn-danger float-right" @click="cancelar(1)">Cancelar</button>
+              <button class="btn btn-danger mb-2 float-right" @click="cancelar(1)">Cancelar</button>
             </template>
           </template>
         </div>
@@ -66,11 +66,11 @@
           <div id="croppie2"></div>
           <template v-if="imagenes[1]">
             <template v-if="btnAprobar2">
-              <button class="btn btn-success" @click="resultado(2)">Aprobar Imagen</button>
+              <button class="btn btn-success mb-2" @click="resultado(2)">Aprobar Imagen</button>
               <em class="text-danger" v-if="mostrarMensaje2">Debe Aprobar la imagen</em>
             </template>
             <template v-else>
-              <button class="btn btn-danger float-right" @click="cancelar(2)">Cancelar</button>
+              <button class="btn btn-danger mb-2 float-right" @click="cancelar(2)">Cancelar</button>
             </template>
           </template>
         </div>
@@ -78,11 +78,11 @@
           <div id="croppie3"></div>
           <template v-if="imagenes[2]">
             <template v-if="btnAprobar3">
-              <button class="btn btn-success" @click="resultado(3)">Aprobar Imagen</button>
+              <button class="btn btn-success mb-2" @click="resultado(3)">Aprobar Imagen</button>
               <em class="text-danger" v-if="mostrarMensaje3">Debe Aprobar la imagen</em>
             </template>
             <template v-else>
-              <button class="btn btn-danger float-right" @click="cancelar(3)">Cancelar</button>
+              <button class="btn btn-danger mb-2 float-right" @click="cancelar(3)">Cancelar</button>
             </template>
           </template>
         </div>

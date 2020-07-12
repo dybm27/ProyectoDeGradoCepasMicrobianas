@@ -16,7 +16,7 @@ class CreateMetodoConserBacteriasTable extends Migration
         Schema::create('metodo_conser_bacterias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
-            $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
+            $table->foreign('bacteria_id')->references('id')->on('bacterias');
             $table->unsignedBigInteger('tipo_id');
             $table->foreign('tipo_id')->references('id')->on('tipo_metodo_conservacion_bacterias');
             $table->unsignedBigInteger('tipo_agar_id');

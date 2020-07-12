@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Actinomiceto;
 use App\Bacteria;
 use App\Cepa;
-use App\DetalleOpticoBacteria;
 use App\HongoFilamentoso;
 use App\Levadura;
 use App\Seguimiento;
@@ -16,7 +15,6 @@ use PDF;
 
 class CepaController extends Controller
 {
-
     public function index()
     {
         return view('cepa.index');
@@ -128,7 +126,7 @@ class CepaController extends Controller
         $cepa = Cepa::find($id);
         $cepa2 = Cepa::where('codigo', $request->codigo)->first();
 
-        if (empty($cepa2) || $cepa->id == $cepa2->id) {
+        if (is_null($cepa2) || $cepa->id == $cepa2->id) {
             $codigo = $cepa->codigo;
             $cepa->codigo = $request->codigo;
             $cepa->grupo_microbiano_id = $request->grupo_microbiano;
@@ -286,5 +284,13 @@ class CepaController extends Controller
             $numero++;
         }
         return $numero;
+    }
+
+    public function publicar(Request $request, $id)
+    {
+        $cepa = Cepa::find($id);
+        $cepa->publicar = $request->publicar;
+        $cepa->save();
+        return $cepa;
     }
 }

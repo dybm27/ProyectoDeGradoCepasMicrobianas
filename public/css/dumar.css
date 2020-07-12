@@ -56,7 +56,7 @@
 }
 
 .tooltip .tooltip-inner {
-    background: rgba(10, 127, 204, 0.685);
+    background: #38c172;
     color: white;
     border-radius: 16px;
     padding: 5px 10px 4px;
@@ -68,7 +68,7 @@
     border-style: solid;
     position: absolute;
     margin: 5px;
-    border-color: rgba(10, 127, 204, 0.685);
+    border-color: #38c172;
     z-index: 1;
 }
 
@@ -148,14 +148,14 @@
 .bs-tooltip-auto[x-placement^="top"] .arrow::before {
     top: 0;
     border-width: 0.4rem 0.4rem 0;
-    border-top-color: rgba(10, 127, 204, 0.685);
+    border-top-color: #38c172;
 }
 
 .bs-tooltip-bottom .arrow::before,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
     bottom: 0;
     border-width: 0 0.4rem 0.4rem;
-    border-bottom-color: rgba(10, 127, 204, 0.685);
+    border-bottom-color: #38c172;
 }
 
 .popover-header {
@@ -207,11 +207,6 @@
     opacity: 1.5 !important;
 }
 
-.btn-transition {
-    color: #3f6ad8;
-    border-color: #e9ecef;
-    background-color: none;
-}
 @media (min-width: 10px) {
     .card-columns {
         column-count: 1;
@@ -263,8 +258,32 @@
 }
 
 .logo-majumba > img {
-    height: 200px;
-    width: 400px;
+    height: 250px;
+    width: 500px;
+}
+@media (max-width: 990px) {
+    .logo-majumba > img {
+        height: 300px;
+        width: 600px;
+    }
+}
+@media (max-width: 772px) {
+    .logo-majumba > img {
+        height: 250px;
+        width: 500px;
+    }
+}
+@media (max-width: 529px) {
+    .logo-majumba > img {
+        height: 200px;
+        width: 400px;
+    }
+}
+@media (max-width: 429px) {
+    .logo-majumba > img {
+        height: 150px;
+        width: 330px;
+    }
 }
 
 .dropdown-menu {
@@ -273,4 +292,122 @@
 
 .btn-icon .btn-icon-wrapper {
     font-size: 25px;
+}
+
+/* Cambio de colores */
+
+/*siderbar*/
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    background-color: #38c172;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #38c172;
+}
+.app-sidebar__heading {
+    color: #38c172;
+}
+.vertical-nav-menu li a:hover {
+    background: #06f37940;
+}
+
+.vertical-nav-menu li a.mm-active {
+    color: #38c172;
+    background: #06f37940;
+}
+
+.vertical-nav-menu ul > li > a.mm-active {
+    color: #38c172;
+    background: #06f37940;
+}
+
+.vertical-nav-menu ul:before {
+    background: #06f37940;
+}
+
+.vertical-nav-menu ul > li > a:hover {
+    color: #38c172;
+}
+
+.btn-transition {
+    color: #3ac47d;
+}
+
+.btn-transition.btn-outline-link:hover {
+    color: #3ac47d;
+}
+/*paginacion*/
+.page-item.active .page-link,
+.pagination .active.page-number .page-link {
+    background-color: #3ac47d;
+    border-color: #38c172;
+}
+.pagination li a {
+    color: #38c172;
+}
+
+.tabs-animated .nav-link::before {
+    background: #3ac47d;
+}
+
+.ball-spin-fade-loader > div {
+    background-color: #3ac47d;
+}
+/*checkbox*/
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 0.2rem #06f37940;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #3ac47d;
+    background-color: #38c172;
+}
+
+.input-group-text {
+    background-color: #06f37940;
+    border: 1px solid #38c172;
+}
+/*calendario*/
+.fc-button-primary {
+    background-color: #38c172;
+    border-color: #3ac47d;
+}
+.fc-button-primary:hover {
+    background-color: #21e681a3;
+    border-color: #3ac47d;
+}
+.fc-button-primary:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem #3ac47d;
+    box-shadow: 0 0 0 0.2rem #3ac47d;
+}
+
+.fc-button-primary:not(:disabled):active,
+.fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #3ac47d;
+    border-color: #3ac47d;
+}
+.fc-button-primary:not(:disabled):active:focus,
+.fc-button-primary:not(:disabled).fc-button-active:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem #3ac47d;
+    box-shadow: 0 0 0 0.2rem #3ac47d;
+}
+.fc-button-primary:disabled {
+    background-color: #38c172;
+    border-color: #3ac47d;
+}
+
+.fc-unthemed td.fc-today {
+    background: #c1fcdd;
+}
+
+/*login*/
+.bg-premium-dark {
+    background-image: linear-gradient(
+        to right,
+        #434343 0%,
+        black 100%
+    ) !important;
 }

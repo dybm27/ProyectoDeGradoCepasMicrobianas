@@ -36,20 +36,7 @@ export default {
   },
   methods: {
     itemAction(action, data, index) {
-      if (action == "editar-metodo") {
-        let ruta = window.location.pathname;
-        if (ruta.includes("bacterias")) {
-          this.$router.push({
-            name: "metodo-conser-bacteria-editar",
-            params: { metodoConserBacteriaId: data.id }
-          });
-        } else {
-          this.$router.push({
-            name: "metodo-conser-cepa-bacteria-editar",
-            params: { metodoConserBacteriaId: data.id }
-          });
-        }
-      }
+      this.$events.fire("abrirFormularioMetodoBacteria", data.id);
     },
     showModal(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });

@@ -15,9 +15,9 @@ class IdentiMolecuBacteriaController extends Controller
     {
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
         // img pcr
-        $img_pcr = $this->guardarImagen($request->imagen_pcr, $bacteria->id, 'pcr');
+        $img_pcr = $this->guardarImagen($request->imagen1, $bacteria->id, 'pcr');
         // img secuencia
-        $img_sec = $this->guardarImagen($request->imagen_sec, $bacteria->id, 'sec');
+        $img_sec = $this->guardarImagen($request->imagen2, $bacteria->id, 'sec');
 
         $IdentiMolecuBacteria = new IdentiMolecuBacteria();
         $IdentiMolecuBacteria->bacteria_id = $bacteria->id;
@@ -49,15 +49,15 @@ class IdentiMolecuBacteriaController extends Controller
     {
         $IdentiMolecuBacteria = IdentiMolecuBacteria::find($id);
 
-        if ($request->imagen_pcr != $IdentiMolecuBacteria->img_pcr) {
+        if ($request->imagen1 != $IdentiMolecuBacteria->img_pcr) {
             Storage::disk('local')->delete($IdentiMolecuBacteria->img_pcr);
-            $img_pcr = $this->guardarImagen($request->imagen_pcr, $IdentiMolecuBacteria->bacteria_id, 'pcr');
+            $img_pcr = $this->guardarImagen($request->imagen1, $IdentiMolecuBacteria->bacteria_id, 'pcr');
             $IdentiMolecuBacteria->img_pcr = $img_pcr['ruta'];
             $IdentiMolecuBacteria->img_pcrPublica = $img_pcr['rutaPublica'];
         }
-        if ($request->imagen_sec != $IdentiMolecuBacteria->img_secuen) {
+        if ($request->imagen2 != $IdentiMolecuBacteria->img_secuen) {
             Storage::disk('local')->delete($IdentiMolecuBacteria->img_secuen);
-            $img_sec = $this->guardarImagen($request->imagen_sec, $IdentiMolecuBacteria->bacteria_id, 'sec');
+            $img_sec = $this->guardarImagen($request->imagen2, $IdentiMolecuBacteria->bacteria_id, 'sec');
             $IdentiMolecuBacteria->img_secuen = $img_sec['ruta'];
             $IdentiMolecuBacteria->img_secuenPublica = $img_sec['rutaPublica'];
         }
@@ -94,7 +94,7 @@ class IdentiMolecuBacteriaController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = $tipo . '-' . time() . '.png';
+        $image_name = $tipo . '-' . Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/bacterias/identi_molecu_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/bacterias/identi_molecu_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/bacterias/identi_molecu_img/' . $id . '/' . $image_name;

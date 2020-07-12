@@ -1,9 +1,5 @@
 @extends('layouts-admin.app')
 
-@section('title')
-Cepas || Bacterias
-@endsection
-
 @section('route-cepa')
     class="mm-active"
 @endsection

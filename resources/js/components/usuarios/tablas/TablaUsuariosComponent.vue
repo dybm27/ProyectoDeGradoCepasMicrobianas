@@ -32,7 +32,7 @@
               class="btn btn-secondary"
               @click="$modal.hide('my_modal_eliminarUsuario')"
             >Cancelar</button>
-            <button type="button" class="btn btn-primary" @click="eliminarUsuario">Eliminar</button>
+            <button type="button" class="btn btn-success" @click="eliminarUsuario">Eliminar</button>
           </div>
         </div>
       </modal>
@@ -41,7 +41,7 @@
       <div class="text-center">
         <h5 class="mt-5 mb-5">
           <span class="pr-1">
-            <b class="text-warning">NO SE HAN AGREGADO USUARIOS</b>
+            <b class="text-success">NO SE HAN AGREGADO USUARIOS</b>
           </span>
         </h5>
       </div>
@@ -76,7 +76,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions(["accionAgregarTipoUsers"]),
+    ...vuex.mapActions("usuarios", ["accionAgregarTipoUsers"]),
     toastr(titulo, msg, tipo, time) {
       this.$toastr.Add({
         title: titulo,
@@ -125,7 +125,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getUsuarios"])
+    ...vuex.mapGetters("usuarios", ["getUsuarios"])
   }
 };
 </script>

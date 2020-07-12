@@ -15,8 +15,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipoG"],
   methods: {
@@ -152,7 +150,6 @@ __webpack_require__.r(__webpack_exports__);
       this.idCepaEliminar = data.params.id;
     }
   },
-  computed: {},
   mounted: function mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   }
@@ -175,19 +172,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "tabs-animation" },
-      [
-        _c("router-view", {
-          attrs: { tipoG: _vm.tipoG },
-          on: { rutaHijo: _vm.ocultarLink }
-        })
-      ],
-      1
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "tabs-animation" },
+    [
+      _c("router-view", {
+        attrs: { tipoG: _vm.tipoG },
+        on: { rutaHijo: _vm.ocultarLink }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -332,7 +327,7 @@ var staticRenderFns = [
             staticClass:
               "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
           }),
-          _vm._v("\n        Tabla Dinamica Cepas Microbianas\n      ")
+          _vm._v("\n        Tabla Dinámica Cepas Microbianas\n      ")
         ]
       ),
       _vm._v(" "),

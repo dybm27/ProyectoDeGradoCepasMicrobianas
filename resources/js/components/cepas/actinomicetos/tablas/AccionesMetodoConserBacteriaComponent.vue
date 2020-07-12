@@ -46,9 +46,7 @@ export default {
     showModal(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });
     }
-  },
-  computed: {},
-  created() {}
+  }
 };
 </script>
 

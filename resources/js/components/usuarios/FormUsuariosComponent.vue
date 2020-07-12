@@ -78,9 +78,9 @@
                       :required="required"
                     />
                     <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
-                        <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
+                      <span class="input-group-text" @click="showPass=!showPass">
+                        <i class="fas fa-eye" v-if="showPass"></i>
+                        <i class="fas fa-eye-slash" v-else></i>
                       </span>
                     </div>
                     <em
@@ -190,6 +190,7 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../mixins/toastr";
 export default {
   data() {
     return {
@@ -216,12 +217,10 @@ export default {
       traerValorImg: false
     };
   },
+  mixins: [Toastr],
   methods: {
-    ...vuex.mapActions([
-      "accionTipoUsuario",
-      "accionUsuario",
-      "accionModificarAuth"
-    ]),
+    ...vuex.mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]),
+    ...vuex.mapActions(["accionModificarAuth"]),
     cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -288,26 +287,6 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.nombre = this.info.name;
       this.parametros.tipo_user = this.info.tipouser_id;
@@ -346,19 +325,20 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters([
+    ...vuex.mapGetters("usuarios", [
       "getTipoUser",
       "getUsuarioById",
       "getUsuarioByEmail",
       "getUsuarios",
       "getUserAuth"
     ]),
+    ...vuex.mapGetters(["getUserAuth"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -384,12 +364,6 @@ export default {
         } else {
           return false;
         }
-      } else {
-        if (this.required) {
-          this.mensajeContraseña1 = "Este campo es obligatorio";
-          return true;
-        }
-        return false;
       }
     },
     validarEmail() {
@@ -406,9 +380,6 @@ export default {
             }
             return false;
           }
-        } else {
-          this.mensajeErrorEmail = "Este campo es obligatorio";
-          return true;
         }
       }
       return false;
@@ -423,9 +394,6 @@ export default {
         } else {
           return false;
         }
-      } else {
-        this.mensajeNombre = "Este campo es obligatorio";
-        return true;
       }
     },
     validarContraseña() {
@@ -441,12 +409,6 @@ export default {
         } else {
           return false;
         }
-      } else {
-        if (this.required) {
-          this.mensajeContraseña = "Este campo es obligatorio";
-          return true;
-        }
-        return false;
       }
     },
     validarBtn() {

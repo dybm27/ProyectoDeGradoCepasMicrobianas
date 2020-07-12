@@ -24,7 +24,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('metodo_conser')"
                       >
                         <i class="fas fa-plus"></i>
@@ -165,7 +165,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -205,7 +205,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -217,7 +217,10 @@ import vuex from "vuex";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
 export default {
+  props: ["idMetodo"],
   components: { DatePicker },
   data() {
     return {
@@ -245,25 +248,10 @@ export default {
       imagenError: ""
     };
   },
+  mixins: [Toastr, obtenerImagenCroopieCepasMixin],
   methods: {
-    ...vuex.mapActions([
-      "accionAgregarTipoCaractBacteria",
-      "accionAgregarCaract",
-      "accionEditarCaract"
-    ]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
+    ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
       this.parametros.tipo_agar =
         this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
@@ -279,8 +267,7 @@ export default {
               "Método agregado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -299,8 +286,7 @@ export default {
               "Método editado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -312,34 +298,6 @@ export default {
           });
       }
     },
-    redireccionar() {
-      let ruta = window.location.pathname;
-      if (ruta.includes("bacterias")) {
-        this.$router.push({ name: "metodo-conser-bacteria" });
-      } else {
-        this.$router.push({ name: "metodo-conser-cepa-bacteria" });
-      }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.tipo_metodo = this.info.tipo_id;
       this.parametros.tipo_agar = this.info.tipo_agar_id;
@@ -348,42 +306,6 @@ export default {
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-    },
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen(file) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        this.imagenMiniatura = e.target.result;
-      };
-      reader.readAsDataURL(file);
     },
     showModal(tipo) {
       this.modal.input = "";
@@ -429,7 +351,8 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoMetodoConserBacterias", "getMetodoConserById"]),
+    ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
+    ...vuex.mapGetters("info_caract", ["getInfoMetodoConserBacterias"]),
     mostrarAgar() {
       if (this.parametros.tipo_metodo === 4) {
         return true;
@@ -437,12 +360,9 @@ export default {
         return false;
       }
     },
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -459,45 +379,14 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    },
-    mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   created() {
-    this.$emit("cambiarVariable", "agregar_editar");
-    if (!this.$route.params.metodoConserBacteriaId) {
+    if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
     } else {
-      this.info = this.getMetodoConserById(
-        this.$route.params.metodoConserBacteriaId
-      );
+      this.info = this.getMetodoConserById(this.idMetodo);
       this.llenarInfo();
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";

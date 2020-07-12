@@ -21,7 +21,7 @@
             <button
               v-show="mostrarBtnAgregarComputed"
               @click="btnAgregar"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Identificación</button>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <div class="text-center">
             <h5 class="mt-5 mb-5">
               <span class="pr-1">
-                <b class="text-warning">AÚN NO SE HA AGREGADO LA IDENTIFICACIÓN</b>
+                <b class="text-success">AÚN NO SE HA AGREGADO LA IDENTIFICACIÓN</b>
               </span>
             </h5>
           </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminar">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminar">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -68,6 +68,7 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
 
 export default {
   data() {
@@ -77,32 +78,13 @@ export default {
       modificarForm: false
     };
   },
+  mixins: [Toastr],
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
       "accionEliminarCaract"
     ]),
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     agregar(data) {
       this.accionAgregarCaract({ tipo: "identi", data: data });
       this.modificarForm = true;
@@ -145,7 +127,7 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getIdentiMolecu"]),
+    ...vuex.mapGetters("cepa", ["getIdentiMolecu"]),
     mostrarBtnEliminar() {
       if (this.getIdentiMolecu) {
         return true;

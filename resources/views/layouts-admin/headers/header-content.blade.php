@@ -11,7 +11,7 @@
     <div class="app-header-right">    
         <div class="header-dots"></div>    
         <div class="header-btn-lg pr-0">    
-            <header-content/>  
+            <header-content :admin="{{auth()->user()}}"/>  
         </div>
         <div class="header-btn-lg">
             <a class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();

@@ -16,7 +16,7 @@ class CreateOtrasCaracActinomicetosTable extends Migration
         Schema::create('otras_carac_actinomicetos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('actinomiceto_id');
-            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos')->onDelete('cascade');
+            $table->foreign('actinomiceto_id')->references('id')->on('actinomicetos');
             $table->string('fijacion_nitrogeno', 100);
             $table->string('produccion_aia', 100);
             $table->string('giberelinas', 100);

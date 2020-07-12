@@ -4,13 +4,13 @@
       <div class="card-header-tab card-header">
         <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
           <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-          Tabla Dinamica Usuarios
+          Tabla Dinámica Usuarios
         </div>
         <div class="btn-actions-pane-right actions-icon-btn">
           <template v-if="mostrarLinkAgregar">
             <button
               @click="agregar"
-              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
+              class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             >Agregar Usuario</button>
           </template>
           <template v-else>

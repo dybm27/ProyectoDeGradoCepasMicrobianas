@@ -6,15 +6,10 @@
           <div class="card-header-tab card-header">
             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
               <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-              Tablas Dinamicas Características Macroscópicas
+              Tablas Dinámicas Características Macroscópicas
             </div>
             <div class="btn-actions-pane-right actions-icon-btn">
-              <button
-                class="mb-2 mr-2 btn-icon btn-pill btn btn-link"
-                @click="mostrarTablasCaractMacro"
-              >
-                <i class="lnr-menu btn-icon-wrapper"></i>
-              </button>
+              <img @click="mostrarTablasCaractMacro" :src="'/iconos/icons8-vista-general-3-35.png'" />
             </div>
           </div>
           <div class="card-body" v-if="tablasCaractMacro">
@@ -81,12 +76,7 @@
               Tablas Dinamicas Características Microscópicas
             </div>
             <div class="btn-actions-pane-right actions-icon-btn">
-              <button
-                class="mb-2 mr-2 btn-icon btn-pill btn btn-link"
-                @click="mostrarTablasCaractMicro"
-              >
-                <i class="lnr-menu btn-icon-wrapper"></i>
-              </button>
+              <img @click="mostrarTablasCaractMicro" :src="'/iconos/icons8-vista-general-3-35.png'" />
             </div>
           </div>
           <div class="card-body" v-if="tablasCaractMicro">
@@ -113,12 +103,7 @@
               Tablas Dinamicas Métodos De Conservación
             </div>
             <div class="btn-actions-pane-right actions-icon-btn">
-              <button
-                class="mb-2 mr-2 btn-icon btn-pill btn btn-link"
-                @click="mostrarTablasMetodos"
-              >
-                <i class="lnr-menu btn-icon-wrapper"></i>
-              </button>
+              <img @click="mostrarTablasMetodos" :src="'/iconos/icons8-vista-general-3-35.png'" />
             </div>
           </div>
           <div class="card-body" v-if="tablasMetodos">

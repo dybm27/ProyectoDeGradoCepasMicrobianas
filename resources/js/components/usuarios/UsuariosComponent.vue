@@ -30,15 +30,35 @@
         <div class="page-title-actions"></div>
       </div>
     </div>
-    <router-view @rutaHijo="cambiarTipo"></router-view>
+    <template v-if="numPestaña==1">
+      <router-view @rutaHijo="cambiarTipo"></router-view>
+    </template>
+    <template v-else>
+      <div class="container">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div
+                  class="alert alert-danger mt-4 text-center"
+                  role="alert"
+                >Ya has ingresado desde otra pestaña del navegador!!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
+import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 export default {
   data() {
     return { tipo: "" };
   },
+  mixins: [bloquearPestañasMixin("usuario")],
   methods: {
     cambiarTipo(ruta) {
       if (ruta.includes("seguimiento")) {

@@ -92,7 +92,7 @@ class CaractMacroActinomicetoController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = time() . '.png';
+        $image_name =  Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/actinomicetos/caract_macro_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/actinomicetos/caract_macro_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/actinomicetos/caract_macro_img/' . $id . '/' . $image_name;

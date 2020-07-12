@@ -16,7 +16,7 @@ class CreateCaracMacroLevadurasTable extends Migration
         Schema::create('carac_macro_levaduras', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('levadura_id');
-            $table->foreign('levadura_id')->references('id')->on('levaduras')->onDelete('cascade');
+            $table->foreign('levadura_id')->references('id')->on('levaduras');
             $table->string('medio',50);
             $table->unsignedBigInteger('color_id');
             $table->foreign('color_id')->references('id')->on('color_levaduras');

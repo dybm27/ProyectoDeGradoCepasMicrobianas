@@ -24,7 +24,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('metodo_conser')"
                       >
                         <i class="fas fa-plus"></i>
@@ -118,15 +118,6 @@
                   </div>
                 </template>
                 <div class="position-relative form-group">
-                  <label for="observaciones">Observaciones</label>
-                  <textarea
-                    name="text"
-                    id="observaciones"
-                    class="form-control"
-                    v-model="parametros.observaciones"
-                  ></textarea>
-                </div>
-                <div class="position-relative form-group">
                   <label for="imagen" class>Imagen</label>
                   <input
                     name="imagen"
@@ -141,12 +132,12 @@
                   <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
                 </div>
                 <div class="position-relative form-group">
-                  <label for="descripcion">Descripción</label>
+                  <label for="observaciones">Observaciones</label>
                   <textarea
                     name="text"
-                    id="descripcion"
+                    id="observaciones"
                     class="form-control"
-                    v-model="parametros.descripcion"
+                    v-model="parametros.observaciones"
                   ></textarea>
                 </div>
                 <button
@@ -194,7 +185,7 @@
                 <div class="text-center">
                   <h5 class="mt-5 mb-5">
                     <span class="pr-1">
-                      <b class="text-warning">SIN IMAGEN</b>
+                      <b class="text-success">SIN IMAGEN</b>
                     </span>
                   </h5>
                 </div>
@@ -233,7 +224,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
         </div>
       </div>
     </modal>
@@ -245,7 +236,11 @@ import vuex from "vuex";
 import DatePicker from "vue2-datepicker";
 import Lang from "vue2-datepicker/locale/es";
 
+import Toastr from "../../../../mixins/toastr";
+import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
+
 export default {
+  props: ["idMetodo"],
   components: { DatePicker },
   data() {
     return {
@@ -260,8 +255,7 @@ export default {
         medio_cultivo: "",
         numero_pases: "",
         observaciones: "",
-        imagen: "",
-        descripcion: ""
+        imagen: ""
       },
       modal: {
         titulo: "",
@@ -270,31 +264,14 @@ export default {
         errors: []
       },
       tituloForm: "",
-      imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
-      imagenError: ""
+      errors: []
     };
   },
+  mixins: [Toastr, obtenerImagenCroopieCepas],
   methods: {
-    ...vuex.mapActions([
-      "accionAgregarCaract",
-      "accionEditarCaract",
-      "accionAgregarTipoCaractHongo"
-    ]),
-    cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
+    ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
+    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     evento() {
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
@@ -308,8 +285,7 @@ export default {
               "Método agregado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -328,8 +304,7 @@ export default {
               "Método editado con exito!!",
               "success"
             );
-            this.$emit("cambiarVariable", "tabla");
-            this.redireccionar();
+            this.$emit("cambiarVariable");
           })
           .catch(error => {
             if (error.response) {
@@ -341,34 +316,6 @@ export default {
           });
       }
     },
-    redireccionar() {
-      let ruta = window.location.pathname;
-      if (ruta.includes("hongos")) {
-        this.$router.push({ name: "metodo-conser-hongo" });
-      } else {
-        this.$router.push({ name: "metodo-conser-cepa-hongo" });
-      }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     llenarInfo() {
       this.parametros.tipo_metodo = this.info.tipo_id;
       this.parametros.medio_cultivo = this.info.medio_cultivo;
@@ -379,46 +326,6 @@ export default {
       this.parametros.recuento_microgota = this.info.recuento_microgota;
       this.parametros.imagen = this.info.imagen;
       this.imagenMiniatura = this.info.imagenPublica;
-      this.parametros.descripcion = this.info.descripcion;
-    },
-
-    obtenerImagen(e) {
-      let file = e.target.files[0];
-      this.parametros.imagen = file;
-      let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError =
-            "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen(file) {
-      let reader = new FileReader();
-      reader.onload = e => {
-        this.imagenMiniatura = e.target.result;
-      };
-      reader.readAsDataURL(file);
     },
     showModal(tipo) {
       this.modal.input = "";
@@ -461,13 +368,11 @@ export default {
     }
   },
   computed: {
-    ...vuex.mapGetters(["getInfoMetodoConserHongos", "getMetodoConserById"]),
-    mostraImagen() {
-      return this.imagenMiniatura;
-    },
+    ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
+    ...vuex.mapGetters("info_caract", ["getInfoMetodoConserHongos"]),
     btnClase() {
       if (this.tituloForm === "Agregar Método") {
-        return "btn-primary";
+        return "btn-success";
       } else {
         return "btn-warning";
       }
@@ -505,45 +410,14 @@ export default {
         this.parametros.medio_cultivo = "";
         return true;
       }
-    },
-    mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-      return false;
     }
   },
   created() {
-    this.$emit("cambiarVariable", "agregar_editar");
-    if (!this.$route.params.metodoConserHongoId) {
+    if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
     } else {
-      this.info = this.getMetodoConserById(
-        this.$route.params.metodoConserHongoId
-      );
+      this.info = this.getMetodoConserById(this.idMetodo);
       this.llenarInfo();
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";

@@ -16,7 +16,7 @@ class CreateCaracFisioBacteriasTable extends Migration
         Schema::create('carac_fisio_bacterias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
-            $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
+            $table->foreign('bacteria_id')->references('id')->on('bacterias');
             $table->string('acido_indolacetico',100);
             $table->string('fosforo',100);
             $table->string('sideroforos',100);

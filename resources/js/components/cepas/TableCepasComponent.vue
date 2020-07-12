@@ -4,7 +4,7 @@
       <div class="card-header-tab card-header">
         <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
           <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-          Tabla Dinamica Cepas Microbianas
+          Tabla Dinámica Cepas Microbianas
         </div>
         <div class="btn-actions-pane-right actions-icon-btn"></div>
       </div>
@@ -124,7 +124,6 @@ export default {
       this.idCepaEliminar = data.params.id;
     }
   },
-  computed: {},
   mounted() {
     this.$emit("rutaHijo", window.location.pathname);
   }

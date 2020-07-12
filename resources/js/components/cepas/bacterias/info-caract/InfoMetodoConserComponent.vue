@@ -8,22 +8,30 @@
             Métodos de Conservación
           </div>
           <div class="btn-actions-pane-right text-capitalize">
-            <template v-if="mostrarBtnAgregar">
+            <template v-if="!formulario">
               <button
-                @click="agregar"
-                class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"
-              >Agregar Método</button>
+                @click="abrirFormulario(0)"
+                class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
+              >Agregar</button>
             </template>
             <template v-else>
               <button
-                @click="cancelar"
+                @click="abrirFormulario(0)"
                 class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
               >Cancelar</button>
             </template>
           </div>
         </div>
         <div>
-          <router-view @cambiarVariable="cambiarVariable"></router-view>
+          <template v-if="!formulario">
+            <tabla-metodo-conser-bacteria></tabla-metodo-conser-bacteria>
+          </template>
+          <template v-else>
+            <form-metodo-conser-bacteria
+              :idMetodo="id"
+              @cambiarVariable="cambiarVariableFormulario"
+            ></form-metodo-conser-bacteria>
+          </template>
         </div>
       </div>
     </div>
@@ -34,35 +42,27 @@
 export default {
   data() {
     return {
-      variableAgregar: true
+      formulario: false,
+      id: 0
     };
   },
   methods: {
-    agregar() {
-      let ruta = window.location.pathname;
-      this.variableAgregar = false;
-      if (ruta.includes("bacterias")) {
-        this.$router.push({ name: "metodo-conser-bacteria-agregar" });
+    abrirFormulario(id) {
+      if (id != 0) {
+        this.id = id;
       } else {
-        this.$router.push({ name: "metodo-conser-cepa-bacteria-agregar" });
+        this.id = 0;
       }
+      this.formulario = !this.formulario;
     },
-    cancelar() {
-      this.variableAgregar = true;
-      this.$router.go(-1);
-    },
-    cambiarVariable(tipo) {
-      if (tipo === "agregar_editar") {
-        this.variableAgregar = false;
-      } else {
-        this.variableAgregar = true;
-      }
+    cambiarVariableFormulario() {
+      this.formulario = !this.formulario;
     }
   },
-  computed: {
-    mostrarBtnAgregar() {
-      return this.variableAgregar;
-    }
+  created() {
+    this.$events.$on("abrirFormularioMetodoBacteria", e =>
+      this.abrirFormulario(e)
+    );
   }
 };
 </script>

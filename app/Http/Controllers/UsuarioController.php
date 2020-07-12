@@ -78,7 +78,7 @@ class UsuarioController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = time() . '.png';
+        $image_name =  Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/usuarios/avatar_img/' . $image_name, $data);
         $ruta = '/public/usuarios/avatar_img/' . $image_name;
         $rutaPublica = '/storage/usuarios/avatar_img/' . $image_name;
@@ -93,5 +93,11 @@ class UsuarioController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function borrarSessionId()
+    {
+        Auth::user()->session_id = null;
+        Auth::user()->save();
     }
 }

@@ -4,13 +4,13 @@
     @include('layouts-admin.headers.header-mobile-menu')
     @include('layouts-admin.headers.header-menu')
        
-    <div class="scrollbar-sidebar ps ps--active-y">
+    <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Administrar Informacion</li>
                 <li>
                     <a href="{{route('home')}}" @yield('route-perfil')>
-                        <i class="metismenu-icon pe-7s-id">
+                        <i class="metismenu-icon pe-7s-user">
                         </i>Perfil
                     </a>
                 </li>
@@ -71,7 +71,43 @@
                         </i>Usuarios
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('imagenes')}}" @yield('route-imagenes')>
+                        <i class="metismenu-icon pe-7s-photo">
+                        </i>Imagenes Login
+                    </a>
+                </li>
                 <li class="app-sidebar__heading">Portal Web Público</li>
+                <li>
+                    <a href="{{route('quienes-somos')}}" @yield('route-quienes-somos')>
+                        <i class="metismenu-icon pe-7s-notebook">
+                        </i>Quienes Somos
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('investigadores')}}" @yield('route-investigadores')>
+                        <i class="metismenu-icon pe-7s-id">
+                        </i>Investigadores
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('proyectos')}}" @yield('route-documentos')>
+                        <i class="metismenu-icon pe-7s-paperclip">
+                        </i>Documentos
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('equipamiento')}}" @yield('route-equipamiento')>
+                        <i class="metismenu-icon pe-7s-portfolio">
+                        </i>Equipamiento
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('noticias')}}" @yield('route-publicidad')>
+                        <i class="metismenu-icon pe-7s-news-paper">
+                        </i>Publicidad
+                    </a>
+                </li>
                 <hr/>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();

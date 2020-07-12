@@ -5,17 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="Content-Language" content="es">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title> @yield('title')</title>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
         <meta name="description" content="This is an example dashboard created using build-in elements and components.">
         <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
-
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <!-- Usuario autenticado --> 
-        <meta name="user-logueado" content="{{ Auth::user() }}">
+        <!-- Usuario autenticado
+        <meta name="user-logueado" content="Auth::user()"> --> 
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,8 +23,8 @@
         <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
         @yield('estilos')
     </head>
-    <body>
-        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar" id="app" >
+    <body><!--fixed-footer-->
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer" id="app" >
 
             @include('layouts-admin.header')
 

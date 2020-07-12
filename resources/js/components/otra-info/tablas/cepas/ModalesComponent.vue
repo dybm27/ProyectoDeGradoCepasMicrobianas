@@ -25,6 +25,7 @@
               id="grupo_microbiano-modal"
               class="form-control"
               v-model="modal.grupo_microbiano"
+              @change="cambiarGeneroEspecie"
             >
               <option v-for="(gm,index) in getGrupos" :key="index" :value="gm.id">{{gm.nombre}}</option>
             </select>
@@ -64,7 +65,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="agregarTipo"
             :disabled="validarNombre"
           >Agregar</button>
@@ -131,7 +132,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="editarTipo"
             :disabled="validarNombre"
           >Editar</button>
@@ -161,7 +162,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_cepa')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="eliminarTipo">Eliminar</button>
+          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
         </div>
       </div>
     </modal>
@@ -180,7 +181,7 @@ export default {
     };
   },
   methods: {
-    ...vuex.mapActions([
+    ...vuex.mapActions("info_cepas", [
       "accionAgregarTipoCepa",
       "accionEditarTipoCepa",
       "accionEliminarTipoCepa"
@@ -321,10 +322,17 @@ export default {
     },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+    cambiarGeneroEspecie() {
+      this.modal.genero = this.getGenerosId(this.modal.grupo_microbiano)[0].id;
     }
   },
   computed: {
-    ...vuex.mapGetters(["getGenerosId", "getGrupos", "getGenerosById"]),
+    ...vuex.mapGetters("info_cepas", [
+      "getGenerosId",
+      "getGrupos",
+      "getGenerosById"
+    ]),
     validarNombre() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;

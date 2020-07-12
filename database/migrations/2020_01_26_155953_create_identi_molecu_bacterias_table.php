@@ -16,7 +16,7 @@ class CreateIdentiMolecuBacteriasTable extends Migration
         Schema::create('identi_molecu_bacterias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('bacteria_id');
-            $table->foreign('bacteria_id')->references('id')->on('bacterias')->onDelete('cascade');
+            $table->foreign('bacteria_id')->references('id')->on('bacterias');
             $table->string('nombre_forward', 100);
             $table->string('nombre_reversed', 100);
             $table->string('secuen_forward', 100);

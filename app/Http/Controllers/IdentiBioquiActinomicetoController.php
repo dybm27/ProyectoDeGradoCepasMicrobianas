@@ -50,8 +50,9 @@ class IdentiBioquiActinomicetoController extends Controller
         $identiBioquiActinomiceto->fer_manitol = $request->fer_manitol;
         $identiBioquiActinomiceto->fer_lactosa = $request->fer_lactosa;
         $identiBioquiActinomiceto->fer_inositol = $request->fer_inositol;
-        $identiBioquiActinomiceto->nitrato = $request->nitrato;
         $identiBioquiActinomiceto->fer_sacarosa = $request->fer_sacarosa;
+        $identiBioquiActinomiceto->fer_otro = $request->fer_otro;
+        $identiBioquiActinomiceto->nitrato = $request->nitrato;
         $identiBioquiActinomiceto->hidro_gelatina = $request->hidro_gelatina;
         $identiBioquiActinomiceto->hidro_urea = $request->hidro_urea;
         $identiBioquiActinomiceto->otras_caract = $request->otras_caract;
@@ -86,8 +87,9 @@ class IdentiBioquiActinomicetoController extends Controller
         $identiBioquiActinomiceto->fer_manitol = $request->fer_manitol;
         $identiBioquiActinomiceto->fer_lactosa = $request->fer_lactosa;
         $identiBioquiActinomiceto->fer_inositol = $request->fer_inositol;
-        $identiBioquiActinomiceto->nitrato = $request->nitrato;
         $identiBioquiActinomiceto->fer_sacarosa = $request->fer_sacarosa;
+        $identiBioquiActinomiceto->fer_otro = $request->fer_otro;
+        $identiBioquiActinomiceto->nitrato = $request->nitrato;
         $identiBioquiActinomiceto->hidro_gelatina = $request->hidro_gelatina;
         $identiBioquiActinomiceto->hidro_urea = $request->hidro_urea;
         $identiBioquiActinomiceto->otras_caract = $request->otras_caract;
@@ -208,7 +210,7 @@ class IdentiBioquiActinomicetoController extends Controller
     {
         $imagen_array = explode(",", $imagen);
         $data = base64_decode($imagen_array[1]);
-        $image_name = $num . '-' . time() . '.png';
+        $image_name = $num . '-' . Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
         Storage::disk('local')->put('/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name, $data);
         $ruta = '/public/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name;
         $rutaPublica = '/storage/actinomicetos/identi_bioqui_img/' . $id . '/' . $image_name;
