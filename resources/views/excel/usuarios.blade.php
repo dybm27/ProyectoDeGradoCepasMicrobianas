@@ -16,7 +16,6 @@
             <td>{{ $usuario->name }}</td>
             <td>{{ $usuario->email }}</td>
             <td>{{ $usuario->tipouser->nombre }}</td>
-            <td><img src="{{public_path($usuario->avatarPublico)}}" width="100px"  height="100px"></td>
         </tr>
     @endforeach
     </tbody>

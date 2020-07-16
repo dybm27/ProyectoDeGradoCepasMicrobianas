@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\ImagenLoginEvent;
+use App\Events\ImagenesLoginEvent;
 use App\ImagenLogin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,21 +17,24 @@ class ImagenLoginController extends Controller
 
     public function update(Request $request, $id)
     {
-        $imagen = ImagenLogin::find($id);
-        $datos = [];
-        if (!empty($request->file('imagen'))) {
-            Storage::disk('local')->delete($imagen->imagen);
-            //agregar imagen nueva
-            $rutas = $this->guardarImagen($request->file('imagen'));
-            $datos += ['imagen' => $rutas['ruta'], 'imagenPublica' => $rutas['rutaPublica']];
+        if ($this->verificarMostrar($request->mostrar)) {
+            $imagen = ImagenLogin::find($id);
+            if ($request->hasFile('imagen')) {
+                Storage::disk('local')->delete($imagen->imagen);
+                //agregar imagen nueva
+                $rutas = $this->guardarImagen($request->file('imagen'));
+                $imagen->imagen = $rutas['ruta'];
+                $imagen->imagenPublica = $rutas['rutaPublica'];
+            }
+            $imagen->titulo = $request->titulo;
+            $imagen->descripcion = $request->descripcion;
+            $imagen->mostrar = $request->mostrar;
+            $imagen->save();
+            broadcast(new ImagenesLoginEvent($imagen))->toOthers();
+            return $imagen;
+        } else {
+            return response(['mostrar' => 'Debe haber minimo una imagen para mostrar.'], 422);
         }
-        $datos += [
-            'titulo' => $request->titulo, 'descripcion' => $request->descripcion,
-            'mostrar' =>  $request->mostrar
-        ];
-        $imagen->update($datos);
-        broadcast(new ImagenesLoginEvent($imagen))->toOthers();
-        return $imagen;
     }
 
     public function guardarImagen($file)
@@ -47,5 +50,14 @@ class ImagenLoginController extends Controller
     public function imagenes()
     {
         return ImagenLogin::all();
+    }
+
+    public function verificarMostrar($mostrar)
+    {
+        $imagenesMostrar = ImagenLogin::where('mostrar', 1)->count();
+        if (!$mostrar && $imagenesMostrar == 1) {
+            return false;
+        }
+        return true;
     }
 }

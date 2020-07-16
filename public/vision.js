@@ -12,6 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_websocketsSinTabla__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/websocketsSinTabla */ "./resources/js/mixins/websocketsSinTabla.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _editor_texto_EditorTextoComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../editor-texto/EditorTextoComponent.vue */ "./resources/js/components/editor-texto/EditorTextoComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -91,7 +92,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Editor: _editor_texto_EditorTextoComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   data: function data() {
     return {
       parametros: {
@@ -188,7 +193,7 @@ var render = function() {
                                     _vm._v("Visión")
                                   ]),
                                   _vm._v(" "),
-                                  _c("editor-texto", {
+                                  _c("Editor", {
                                     attrs: { info: _vm.getQuienesSomos.vision },
                                     on: {
                                       contenido: _vm.aceptarContenido,
@@ -366,101 +371,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VisionComponent_vue_vue_type_template_id_ca91896a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/mixins/websocketsSinTabla.js":
-/*!***************************************************!*\
-  !*** ./resources/js/mixins/websocketsSinTabla.js ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var websocketsSinTablaMixin = function websocketsSinTablaMixin(tipo, tipoM) {
-  return {
-    data: function data() {
-      return {
-        ocupado: false,
-        user: "",
-        ordenEntrada: []
-      };
-    },
-    methods: {
-      bloquear: function bloquear(arrayUsers) {
-        if (this.ordenEntrada.length === 0) {
-          this.ordenEntrada = arrayUsers;
-        }
-
-        if (this.getUserAuth.id != this.ordenEntrada[0].id) {
-          this.ocupado = true;
-          this.user = this.ordenEntrada[0];
-        } else {
-          this.ocupado = false;
-          this.user = "";
-        }
-      },
-      borrarUsuario: function borrarUsuario(user) {
-        if (this.ordenEntrada.length > 1) {
-          var index = this.ordenEntrada.findIndex(function (userArray) {
-            return userArray.id === user.id;
-          });
-          this.ordenEntrada.splice(index, 1);
-
-          if (this.getUserAuth.id === this.ordenEntrada[0].id) {
-            this.ocupado = false;
-            this.user = "";
-          } else {
-            this.ocupado = true;
-            this.user = this.ordenEntrada[0];
-          }
-        }
-      },
-      verificarPush: function verificarPush(user) {
-        if (this.ordenEntrada.length === 0) {
-          this.ordenEntrada.push(this.getUserAuth);
-          this.ordenEntrada.push(user);
-        } else {
-          this.ordenEntrada.push(user);
-        }
-      }
-    },
-    mounted: function mounted() {
-      var _this = this;
-
-      window.Echo.join(tipo).joining(function (data) {
-        _this.verificarPush(data.user);
-
-        window.Echo["private"]("bloquear" + tipoM).whisper("bloquear" + tipoM + "-" + data.user.id, {
-          arrayUsers: _this.ordenEntrada
-        });
-      }).leaving(function (data) {
-        _this.borrarUsuario(data.user);
-      });
-    },
-    created: function created() {
-      var _this2 = this;
-
-      this.$emit("rutaHijo", window.location.pathname);
-      window.Echo["private"]("bloquear" + tipoM).listenForWhisper("bloquear" + tipoM + "-" + this.getUserAuth.id, function (e) {
-        _this2.bloquear(e.arrayUsers);
-      });
-      window.Echo["private"]("borrarBloqueo" + tipoM).listenForWhisper("borrarBloqueo" + tipoM, function (e) {
-        _this2.borrarUsuario(e.user);
-      });
-    },
-    beforeDestroy: function beforeDestroy() {
-      window.Echo.leave(tipo);
-      window.Echo.leave("bloquear" + tipoM);
-    },
-    destroyed: function destroyed() {
-      window.Echo.leave("borrarBloqueo" + tipoM);
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (websocketsSinTablaMixin);
 
 /***/ })
 

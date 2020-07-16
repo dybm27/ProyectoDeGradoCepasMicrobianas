@@ -42,7 +42,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn"
           >Agregar</button>
         </div>
       </div>
@@ -53,6 +53,7 @@
       :width="400"
       :height="450"
       @before-open="beforeOpenEditar"
+      @closed="closeEditar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -88,7 +89,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn"
           >Editar</button>
         </div>
       </div>
@@ -99,6 +100,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -125,15 +127,17 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import websocketsModalOtraInfo from "../../../../mixins/websocketsModalOtraInfo";
 export default {
   data() {
     return {
-      idTipoEditar: "",
-      idTipoEliminar: "",
+      id: "",
       modal: { nombre: "", tipo: "" },
       errors: ""
     };
   },
+  mixins: [Toastr, websocketsModalOtraInfo("BacteriasInfo")],
   methods: {
     ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractBacteria",
@@ -171,13 +175,13 @@ export default {
         });
     },
     beforeOpenEditar(data) {
-      this.idTipoEditar = data.params.id;
+      this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
     },
     editarTipo() {
       axios
-        .put(`/info-caract-bacterias/editar/${this.idTipoEditar}`, this.modal)
+        .put(`/info-caract-bacterias/editar/${this.id}`, this.modal)
         .then(res => {
           this.accionEditarTipoCaractBacteria({
             info: res.data,
@@ -203,12 +207,12 @@ export default {
         });
     },
     beforeOpenEliminar(data) {
-      this.idTipoEliminar = data.params.id;
+      this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo() {
       axios
-        .delete(`/info-caract-bacterias/eliminar/${this.idTipoEliminar}`, {
+        .delete(`/info-caract-bacterias/eliminar/${this.id}`, {
           data: this.modal
         })
         .then(res => {
@@ -235,26 +239,6 @@ export default {
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -275,6 +259,12 @@ export default {
         this.errors = "Este campo es obligatorio";
         return true;
       }
+    },
+    validarBtn() {
+      if (this.validarNombre || !this.modal.nombre) {
+        return true;
+      }
+      return false;
     }
   }
 };

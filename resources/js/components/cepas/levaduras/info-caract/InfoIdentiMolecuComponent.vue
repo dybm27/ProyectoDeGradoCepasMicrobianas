@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-molecu-levadura
+          <FormIdentiMolecu
             :modificarInfo="modificarForm"
             :info="getIdentiMolecu"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-molecu-levadura>
+          ></FormIdentiMolecu>
         </template>
         <template v-else>
           <div class="text-center">
@@ -69,8 +69,9 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
-
+import FormIdentiMolecu from "../forms-caract/FormIdentiMolecuComponent.vue";
 export default {
+  components: { FormIdentiMolecu },
   data() {
     return {
       mostrarBtnAgregar: true,

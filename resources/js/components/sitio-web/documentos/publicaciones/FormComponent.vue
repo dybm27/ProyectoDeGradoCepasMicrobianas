@@ -101,7 +101,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -114,7 +114,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -147,7 +147,11 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: {
+    Croppie
+  },
   props: ["idPublicacion"],
   data() {
     return {
@@ -247,26 +251,6 @@ export default {
             }
           });
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     llenarInfo() {
       this.parametros.nombre_documento = this.info.nombre_documento;

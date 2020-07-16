@@ -24,10 +24,10 @@
         </div>
         <div>
           <template v-if="!formulario">
-            <tabla-metodo-conser-hongo></tabla-metodo-conser-hongo>
+            <TablaMetodo></TablaMetodo>
           </template>
           <template v-else>
-            <form-metodo-conser-hongo :idMetodo="id" @cambiarVariable="cambiarVariableFormulario"></form-metodo-conser-hongo>
+            <FormMetodoConser :idMetodo="id" @cambiarVariable="cambiarVariableFormulario"></FormMetodoConser>
           </template>
         </div>
       </div>
@@ -36,7 +36,10 @@
 </template>
 
 <script>
+import FormMetodoConser from "../forms-caract/FormMetodoConserComponent.vue";
+import TablaMetodo from "../tablas/TablaMetodoConserHongosComponent.vue";
 export default {
+  components: { FormMetodoConser, TablaMetodo },
   data() {
     return {
       formulario: false,

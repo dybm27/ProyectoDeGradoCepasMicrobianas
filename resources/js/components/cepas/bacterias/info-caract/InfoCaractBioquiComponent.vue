@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-bioqui-bacteria
+          <FormCaractBioqui
             :modificarInfo="modificarForm"
             :info="getCaractBioqui"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-bioqui-bacteria>
+          ></FormCaractBioqui>
         </template>
         <template v-else>
           <div class="text-center">
@@ -69,7 +69,9 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import FormCaractBioqui from "../forms-caract/FormCaractBioquiComponent.vue";
 export default {
+  components: { FormCaractBioqui },
   data() {
     return {
       mostrarBtnAgregar: true,

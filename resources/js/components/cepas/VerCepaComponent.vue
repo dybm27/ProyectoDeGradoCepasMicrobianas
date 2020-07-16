@@ -2,16 +2,16 @@
   <div>
     <template v-if="getTipo">
       <template v-if="getTipo===1">
-        <ver-bacteria></ver-bacteria>
+        <VerBacteria></VerBacteria>
       </template>
       <template v-else-if="getTipo===2">
-        <ver-hongo></ver-hongo>
+        <VerHongo></VerHongo>
       </template>
       <template v-else-if="getTipo===3">
-        <ver-levadura></ver-levadura>
+        <VerLevadura></VerLevadura>
       </template>
       <template v-else-if="getTipo===4">
-        <ver-actinomiceto></ver-actinomiceto>
+        <VerActinomiceto></VerActinomiceto>
       </template>
       <template v-else>
         <div class="flex-center position-ref full-height">
@@ -45,7 +45,12 @@
 
 <script>
 import vuex from "vuex";
+import VerBacteria from "./bacterias/VerBacteriaComponent.vue";
+import VerHongo from "./hongos/VerHongoComponent.vue";
+import VerLevadura from "./levaduras/VerLevaduraComponent.vue";
+import VerActinomiceto from "./actinomicetos/VerActinomicetoComponent.vue";
 export default {
+  components: { VerBacteria, VerHongo, VerLevadura, VerActinomiceto },
   props: ["tipoG"],
   data() {
     return {

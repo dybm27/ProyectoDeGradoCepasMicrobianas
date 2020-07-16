@@ -85,7 +85,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -98,7 +98,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -130,7 +130,7 @@
           <div class="main-card mb-3 card">
             <div class="card-body">
               <h5 class="card-title">Elaborar Novedad</h5>
-              <editor-texto
+              <Editor
                 @contenido="aceptarContenido"
                 @modificar="modificarContenido"
                 :info="info"
@@ -148,7 +148,13 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
+import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: {
+    Croppie,
+    Editor
+  },
   props: ["idNovedad"],
   data() {
     return {

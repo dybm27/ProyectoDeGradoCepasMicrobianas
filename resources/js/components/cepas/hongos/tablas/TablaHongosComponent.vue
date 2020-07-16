@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
         <!--  detail-row-component="my-detail-row" -->
-        <my-vuetable
+        <MyVuetable
           api-url="/info-panel/cepas-hongos"
           :fields="fields"
           :sort-order="sortOrder"
@@ -18,7 +18,7 @@
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
           :nameGet="'hongos'"
-        ></my-vuetable>
+        ></MyVuetable>
       </div>
     </div>
     <modal
@@ -53,7 +53,9 @@
 
 <script>
 import FieldDefs from "./columnas-cepas-hongos";
+import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: { MyVuetable },
   data() {
     return {
       refrescarTabla: false,

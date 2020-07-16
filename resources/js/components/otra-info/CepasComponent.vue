@@ -1,105 +1,138 @@
 <template>
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-generos @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla1" />
+    <template v-if="getTipos!=''">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaGeneros />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-especies @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla2" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaEspecies />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-ordens @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla3" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaOrdens />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-clases @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla4" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaClases />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-phylums @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla5" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaPhylums />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-divisions @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla6" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaDivisions />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-reinos @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla7" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaReinos />
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-10">
-        <tabla-familias @cambiarVariable="cambiarVariable" :refrescarTabla="refrescarTabla8" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <TablaFamilias />
+        </div>
       </div>
-    </div>
-    <modales-otra-info-cepas @accionModal="accionModal" />
+    </template>
+    <template v-else>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center mt-5">
+          <div class="loader mt-5">
+            <div class="ball-spin-fade-loader mt-5">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <ModalOtraInfoCepas />
   </div>
 </template>
 
 <script>
+import websocketsOtraInfoMixin from "../../mixins/websocketsOtraInfo";
+import ModalOtraInfoCepas from "./tablas/cepas/ModalesComponent.vue";
+import TablaGeneros from "./tablas/cepas/generos/TablaGenerosComponent.vue";
+import TablaEspecies from "./tablas/cepas/especies/TablaEspeciesComponent.vue";
+import TablaOrdens from "./tablas/cepas/ordens/TablaOrdensComponent.vue";
+import TablaClases from "./tablas/cepas/clases/TablaClasesComponent.vue";
+import TablaPhylums from "./tablas/cepas/phylums/TablaPhylumsComponent.vue";
+import TablaDivisions from "./tablas/cepas/divisions/TablaDivisionsComponent.vue";
+import TablaReinos from "./tablas/cepas/reinos/TablaReinosComponent.vue";
+import TablaFamilias from "./tablas/cepas/familias/TablaFamiliasComponent.vue";
+import vuex from "vuex";
 export default {
-  data() {
-    return {
-      refrescarTabla1: false,
-      refrescarTabla2: false,
-      refrescarTabla3: false,
-      refrescarTabla4: false,
-      refrescarTabla5: false,
-      refrescarTabla6: false,
-      refrescarTabla7: false,
-      refrescarTabla8: false
-    };
+  components: {
+    ModalOtraInfoCepas,
+    TablaEspecies,
+    TablaOrdens,
+    TablaGeneros,
+    TablaDivisions,
+    TablaPhylums,
+    TablaClases,
+    TablaReinos,
+    TablaFamilias
+  },
+  mixins: [websocketsOtraInfoMixin("CepasInfo")],
+  methods: {
+    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"])
+  },
+  computed: {
+    ...vuex.mapGetters("info_cepas", ["getTipos"])
   },
   created() {
-    this.$emit("rutaHijo", window.location.pathname);
-  },
-  methods: {
-    accionModal(datos) {
-      switch (datos.tipo) {
-        case "genero":
-          this.refrescarTabla1 = true;
-          break;
-        case "especie":
-          this.refrescarTabla2 = true;
-          break;
-        case "familia":
-          this.refrescarTabla8 = true;
-          break;
-        case "orden":
-          this.refrescarTabla3 = true;
-          break;
-        case "clase":
-          this.refrescarTabla4 = true;
-          break;
-        case "phylum":
-          this.refrescarTabla5 = true;
-          break;
-        case "reino":
-          this.refrescarTabla7 = true;
-          break;
-        case "division":
-          this.refrescarTabla6 = true;
-          break;
-      }
-    },
-    cambiarVariable() {
-      this.refrescarTabla1 = false;
-      this.refrescarTabla2 = false;
-      this.refrescarTabla3 = false;
-      this.refrescarTabla4 = false;
-      this.refrescarTabla5 = false;
-      this.refrescarTabla6 = false;
-      this.refrescarTabla7 = false;
-      this.refrescarTabla8 = false;
+    if (this.getTipos == "") {
+      this.obtenerTiposCepas();
     }
+    this.$events.$on("verificarBloqueos-generos", e =>
+      this.verificarBloqueos("genero")
+    );
+    this.$events.$on("verificarBloqueos-especies", e =>
+      this.verificarBloqueos("especie")
+    );
+    this.$events.$on("verificarBloqueos-ordens", e =>
+      this.verificarBloqueos("orden")
+    );
+    this.$events.$on("verificarBloqueos-clases", e =>
+      this.verificarBloqueos("clase")
+    );
+    this.$events.$on("verificarBloqueos-phylums", e =>
+      this.verificarBloqueos("phylum")
+    );
+    this.$events.$on("verificarBloqueos-divisions", e =>
+      this.verificarBloqueos("division")
+    );
+    this.$events.$on("verificarBloqueos-reinos", e =>
+      this.verificarBloqueos("reino")
+    );
+    this.$events.$on("verificarBloqueos-familias", e =>
+      this.verificarBloqueos("familia")
+    );
+  },
+  destroyed() {
+    this.$events.$off("verificarBloqueos-generos");
+    this.$events.$off("verificarBloqueos-especies");
+    this.$events.$off("verificarBloqueos-ordens");
+    this.$events.$off("verificarBloqueos-clases");
+    this.$events.$off("verificarBloqueos-phylums");
+    this.$events.$off("verificarBloqueos-divisions");
+    this.$events.$off("verificarBloqueos-reinos");
+    this.$events.$off("verificarBloqueos-familias");
   }
 };
 </script>

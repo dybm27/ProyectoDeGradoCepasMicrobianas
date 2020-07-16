@@ -2,16 +2,16 @@
   <div>
     <template v-if="tipo">
       <template v-if="tipo===1">
-        <nav-bacterias></nav-bacterias>
+        <NavBacterias></NavBacterias>
       </template>
       <template v-else-if="tipo===2">
-        <nav-hongos></nav-hongos>
+        <NavHongos></NavHongos>
       </template>
       <template v-else-if="tipo===3">
-        <nav-levaduras></nav-levaduras>
+        <NavLevaduras></NavLevaduras>
       </template>
       <template v-else-if="tipo===4">
-        <nav-actinomicetos></nav-actinomicetos>
+        <NavActinomicetos></NavActinomicetos>
       </template>
       <template v-else>
         <div class="flex-center position-ref full-height">
@@ -45,7 +45,12 @@
 
 <script>
 import vuex from "vuex";
+import NavBacterias from "./bacterias/NavBacteriasComponent.vue";
+import NavHongos from "./hongos/NavHongosComponent.vue";
+import NavLevaduras from "./levaduras/NavLevadurasComponent.vue";
+import NavActinomicetos from "./actinomicetos/NavActinomicetosComponent.vue";
 export default {
+  components: { NavBacterias, NavHongos, NavLevaduras, NavActinomicetos },
   props: ["tipoG"],
   data() {
     return {

@@ -67,7 +67,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn"
           >Agregar</button>
         </div>
       </div>
@@ -78,6 +78,7 @@
       :width="400"
       :height="450"
       @before-open="beforeOpenEditar"
+      @closed="closeEditar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -134,7 +135,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn"
           >Editar</button>
         </div>
       </div>
@@ -145,6 +146,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -171,15 +173,17 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import websocketsModalOtraInfo from "../../../../mixins/websocketsModalOtraInfo";
 export default {
   data() {
     return {
-      idTipoEditar: "",
-      idTipoEliminar: "",
+      id: "",
       modal: { grupo_microbiano: 1, nombre: "", tipo: "", genero: 1 },
       errors: ""
     };
   },
+  mixins: [Toastr, websocketsModalOtraInfo("CepasInfo")],
   methods: {
     ...vuex.mapActions("info_cepas", [
       "accionAgregarTipoCepa",
@@ -200,10 +204,9 @@ export default {
             info: res.data,
             tipo: this.modal.tipo
           });
-          this.$emit("accionModal", {
-            accion: "agregar",
-            tipo: this.modal.tipo
-          });
+          this.$events.fire(
+            "actualizartabla" + this.primeraMayus(this.modal.tipo)
+          );
           this.$modal.hide("modal_agregar_tipo_cepa");
           this.toastr(
             `Agregar ${this.primeraMayus(this.modal.tipo)}`,
@@ -219,7 +222,7 @@ export default {
         });
     },
     beforeOpenEditar(data) {
-      this.idTipoEditar = data.params.id;
+      this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
       if (data.params.tipo === "genero") {
@@ -233,16 +236,15 @@ export default {
     },
     editarTipo() {
       axios
-        .put(`/info-cepas/editar/${this.idTipoEditar}`, this.modal)
+        .put(`/info-cepas/editar/${this.id}`, this.modal)
         .then(res => {
           this.accionEditarTipoCepa({
             info: res.data,
             tipo: this.modal.tipo
           });
-          this.$emit("accionModal", {
-            accion: "editar",
-            tipo: this.modal.tipo
-          });
+          this.$events.fire(
+            "actualizartabla" + this.primeraMayus(this.modal.tipo)
+          );
           this.toastr(
             `Editar ${this.primeraMayus(this.modal.tipo)}`,
             `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
@@ -259,12 +261,12 @@ export default {
         });
     },
     beforeOpenEliminar(data) {
-      this.idTipoEliminar = data.params.id;
+      this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo() {
       axios
-        .delete(`/info-cepas/eliminar/${this.idTipoEliminar}`, {
+        .delete(`/info-cepas/eliminar/${this.id}`, {
           data: this.modal
         })
         .then(res => {
@@ -280,15 +282,14 @@ export default {
               info: res.data,
               tipo: this.modal.tipo
             });
-            this.$emit("accionModal", {
-              accion: "eliminar",
-              tipo: this.modal.tipo
-            });
             this.toastr(
               `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
               `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
               "success",
               5000
+            );
+            this.$events.fire(
+              "actualizartabla" + this.primeraMayus(this.modal.tipo)
             );
           }
           this.$modal.hide("modal_eliminar_tipo_cepa");
@@ -299,26 +300,6 @@ export default {
           }
           this.toastr("Error!!!", "", "error", 4000);
         });
-    },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -344,10 +325,13 @@ export default {
           this.errors = "";
           return false;
         }
-      } else {
-        this.errors = "Este campo es obligatorio";
+      }
+    },
+    validarBtn() {
+      if (this.validarNombre || !this.modal.nombre) {
         return true;
       }
+      return false;
     }
   }
 };

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UsuarioEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,7 @@ class PerfilController extends Controller
         $usuario = $request->user();
         $usuario->name = ucfirst($request->nombre);
         $usuario->save();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         return $usuario;
     }
 
@@ -38,6 +40,7 @@ class PerfilController extends Controller
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
         $usuario->save();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         return $usuario;
     }
 

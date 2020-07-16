@@ -101,7 +101,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -114,7 +114,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -147,7 +147,11 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: {
+    Croppie
+  },
   props: ["idProyecto"],
   data() {
     return {
@@ -161,7 +165,7 @@ export default {
         publicar: false,
         tipo: "proyecto"
       },
-      tituloForm: "",
+      tituloCroppie: "",
       imagenMiniatura: "",
       nomBtn: "",
       errors: [],
@@ -176,8 +180,8 @@ export default {
   methods: {
     ...vuex.mapActions("documentos", ["accionProyecto"]),
     evento() {
-      if (this.tituloForm === "Agregar Proyecto") {
-        let form = new FormData();
+      if (this.tituloCroppie === "Agregar Proyecto") {
+        let form = new CroppieData();
         form.append("nombre_documento", this.parametros.nombre_documento);
         form.append("nombre_autor", this.parametros.nombre_autor);
         form.append("descripcion", this.parametros.descripcion);
@@ -202,7 +206,7 @@ export default {
               "success"
             );
             this.accionProyecto({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
+            this.$emit("cambiarVariableCroppieulario");
           })
           .catch(error => {
             if (error.response) {
@@ -236,7 +240,7 @@ export default {
               id: res.data.id
             });
             this.accionProyecto({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
+            this.$emit("cambiarVariableCroppieulario");
           })
           .catch(error => {
             if (error.response) {
@@ -283,21 +287,21 @@ export default {
       "getProyectoByNombre"
     ]),
     btnClase() {
-      if (this.tituloForm === "Agregar Proyecto") {
+      if (this.tituloCroppie === "Agregar Proyecto") {
         return "btn-success";
       } else {
         return "btn-warning";
       }
     },
     required() {
-      if (this.tituloForm === "Agregar Proyecto") {
+      if (this.tituloCroppie === "Agregar Proyecto") {
         return true;
       } else {
         return false;
       }
     },
     titulo() {
-      return this.tituloForm;
+      return this.tituloCroppie;
     },
     nomBtnComputed() {
       return this.nomBtn;
@@ -351,14 +355,14 @@ export default {
   },
   created() {
     if (this.idProyecto === 0) {
-      this.tituloForm = "Agregar Proyecto";
+      this.tituloCroppie = "Agregar Proyecto";
       this.nomBtn = "Agregar";
       this.$emit("cambiarTipo", "agregar");
     } else {
       this.info = this.getProyectoById(this.idProyecto);
       this.llenarInfo();
       this.$emit("cambiarTipo", "editar");
-      this.tituloForm = "Editar Proyecto";
+      this.tituloCroppie = "Editar Proyecto";
       this.nomBtn = "Editar";
     }
   }

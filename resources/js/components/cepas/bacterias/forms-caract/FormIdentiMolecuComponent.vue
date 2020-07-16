@@ -180,7 +180,7 @@
             <template v-if="mostraImagen1">
               <h5 class="card-title">Imagen PCR</h5>
               <template v-if="validarCroppie1">
-                <croppie
+                <Croppie
                   :id="'croppie1'"
                   :imagen="mostraImagen1"
                   @cambiarValorImagen="cambiarValorImagen1"
@@ -193,7 +193,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie1'"
                   :imagen="mostraImagen1"
                   @cambiarValorImagen="cambiarValorImagen1"
@@ -224,7 +224,7 @@
             <template v-if="mostraImagen2">
               <h5 class="card-title">Imagen Secuenciación</h5>
               <template v-if="validarCroppie2">
-                <croppie
+                <Croppie
                   :id="'croppie2'"
                   :imagen="mostraImagen2"
                   @cambiarValorImagen="cambiarValorImagen2"
@@ -237,7 +237,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie2'"
                   :imagen="mostraImagen2"
                   @cambiarValorImagen="cambiarValorImagen2"
@@ -270,7 +270,9 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie2ImagenesMixin from "../../../../mixins/obtenerImagenCroopie2Imagenes";
+import Croppie from "../../../CroppieComponent";
 export default {
+  components: { Croppie },
   props: ["info", "modificarInfo"],
   data() {
     return {

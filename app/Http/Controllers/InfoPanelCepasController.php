@@ -187,7 +187,7 @@ class InfoPanelCepasController extends Controller
         $especies = Especie::join('generos', 'especies.genero_id', '=', 'generos.id')
             ->select(
                 'especies.*',
-                'generos.nombre As nombre_genero',
+                'generos.nombre As nombre_genero'
             );
 
         if ($request->filled('sort')) {

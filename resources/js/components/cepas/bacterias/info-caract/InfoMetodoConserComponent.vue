@@ -24,13 +24,10 @@
         </div>
         <div>
           <template v-if="!formulario">
-            <tabla-metodo-conser-bacteria></tabla-metodo-conser-bacteria>
+            <TablaMetodo></TablaMetodo>
           </template>
           <template v-else>
-            <form-metodo-conser-bacteria
-              :idMetodo="id"
-              @cambiarVariable="cambiarVariableFormulario"
-            ></form-metodo-conser-bacteria>
+            <FormMetodoConser :idMetodo="id" @cambiarVariable="cambiarVariableFormulario"></FormMetodoConser>
           </template>
         </div>
       </div>
@@ -39,7 +36,10 @@
 </template>
 
 <script>
+import FormMetodoConser from "../forms-caract/FormMetodoConserComponent.vue";
+import TablaMetodo from "../tablas/TablaMetodoConserBacteriasComponent.vue";
 export default {
+  components: { FormMetodoConser, TablaMetodo },
   data() {
     return {
       formulario: false,

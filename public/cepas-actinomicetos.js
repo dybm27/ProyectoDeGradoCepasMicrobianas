@@ -10,6 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas_cepas_actinomicetos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas-cepas-actinomicetos */ "./resources/js/components/cepas/actinomicetos/tablas/columnas-cepas-actinomicetos.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
 //
 //
 //
@@ -64,7 +65,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       refrescarTabla: false,
@@ -157,7 +162,7 @@ var render = function() {
           "div",
           { staticClass: "card-body" },
           [
-            _c("my-vuetable", {
+            _c("MyVuetable", {
               attrs: {
                 "api-url": "/info-panel/cepas-actinomicetos",
                 fields: _vm.fields,

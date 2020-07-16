@@ -28,7 +28,7 @@ class InfoPanelBacteriasController extends Controller
         $query = $cepas->select(
             'cepas.*',
             'generos.nombre As nombre_genero',
-            'especies.nombre As nombre_especie',
+            'especies.nombre As nombre_especie'
         );
 
         if ($request->filled('sort')) {

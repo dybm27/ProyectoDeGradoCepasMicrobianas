@@ -6,6 +6,7 @@
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
           @click="editar(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="fas fa-pencil-alt"></i>
         </button>
@@ -13,7 +14,8 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
-          @click="showModal(rowData)"
+          @click="eliminar(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
@@ -23,6 +25,8 @@
 </template>
 
   <script>
+import vuex from "vuex";
+import websocketsAccionesOtraInfoMixin from "../../../../../mixins/websocketsAccionesOtraInfo";
 export default {
   props: {
     rowData: {
@@ -33,6 +37,12 @@ export default {
       type: Number
     }
   },
+  mixins: [
+    websocketsAccionesOtraInfoMixin("especie", "especies", "cepa", "CepasInfo")
+  ],
+  computed: {
+    ...vuex.mapGetters(["getUserAuth"])
+  },
   methods: {
     editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -41,15 +51,20 @@ export default {
         genero: data.genero_id,
         tipo: "especie"
       });
-    },
-    showModal(data) {
-      this.$modal.show("modal_eliminar_tipo_cepa", {
+      window.Echo.private("bloquearBtnsCepasInfo").whisper(
+        "bloquearBtnsCepasInfo",
+        {
+          id: data.id,
+          idUser: this.getUserAuth.id,
+          tipo: "especie"
+        }
+      );
+      this.$events.fire("pushMisBloqueosCepasInfo", {
         id: data.id,
+        idUser: this.getUserAuth.id,
         tipo: "especie"
       });
     }
-  },
-  computed: {},
-  created() {}
+  }
 };
 </script>

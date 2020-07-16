@@ -72,9 +72,6 @@
 import vuex from "vuex";
 import moment from "moment";
 export default {
-  created() {
-    this.$emit("rutaHijo", window.location.pathname);
-  },
   computed: {
     ...vuex.mapGetters("imagenes_login", ["getImagenesLogin"])
   },

@@ -77,7 +77,7 @@
                         </i>Imagenes Login
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Portal Web Público</li>
+                <li class="app-sidebar__heading">Sitio Web Público</li>
                 <li>
                     <a href="{{route('quienes-somos')}}" @yield('route-quienes-somos')>
                         <i class="metismenu-icon pe-7s-notebook">

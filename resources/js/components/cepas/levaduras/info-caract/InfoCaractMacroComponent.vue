@@ -77,13 +77,13 @@
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
                       <template v-if="computedMostrarForm1">
-                        <form-carat-macro-levadura
+                        <FormCaractMacro
                           :info="getCaractMacro[0]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-levadura>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -92,13 +92,13 @@
                   <div class="tab-pane" :class="computedActive2">
                     <div class="card-body">
                       <template v-if="computedMostrarForm2">
-                        <form-carat-macro-levadura
+                        <FormCaractMacro
                           :info="getCaractMacro[1]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-levadura>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -107,13 +107,13 @@
                   <div class="tab-pane" :class="computedActive3">
                     <div class="card-body">
                       <template v-if="computedMostrarForm3">
-                        <form-carat-macro-levadura
+                        <FormCaractMacro
                           :info="getCaractMacro[2]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-levadura>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -165,7 +165,9 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import infoCaractMacroMixin from "../../../../mixins/infoCaractMacro";
+import FormCaractMacro from "../forms-caract/FormCaractMacroComponent.vue";
 export default {
+  components: { FormCaractMacro },
   mixins: [Toastr, infoCaractMacroMixin],
   methods: {
     ...vuex.mapActions("cepa", [

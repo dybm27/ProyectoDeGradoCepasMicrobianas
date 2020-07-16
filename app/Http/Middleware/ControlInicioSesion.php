@@ -25,7 +25,7 @@ class ControlInicioSesion
             //validar inicio de sesion en otro navegador
             if (!is_null(Auth::user()->session_id)) {
                 if (Session::getId() != Auth::user()->session_id) {
-                    if (now()->diffInMinutes(Auth::user()->lastActivityTime) >= (15)) {
+                    if (now()->diffInMinutes(Auth::user()->lastActivityTime) >= (30)) {
                         Auth::user()->session_id = Session::getId();
                         Auth::user()->save();
                     } else {
@@ -40,7 +40,7 @@ class ControlInicioSesion
                     }
                 } else {
                     //validar estado de la sesion
-                    if (now()->diffInMinutes(session('lastActivityTime')) >= (15)) {
+                    if (now()->diffInMinutes(session('lastActivityTime')) >= (30)) {
                         Auth::user()->session_id = null;
                         Auth::user()->save();
                         Auth::logout();
@@ -50,7 +50,7 @@ class ControlInicioSesion
                     }
                 }
             } else {
-                if (now()->diffInMinutes(session('lastActivityTime')) >= (15)) {
+                if (now()->diffInMinutes(session('lastActivityTime')) >= (30)) {
                     Auth::user()->session_id = null;
                     Auth::user()->save();
                     Auth::logout();

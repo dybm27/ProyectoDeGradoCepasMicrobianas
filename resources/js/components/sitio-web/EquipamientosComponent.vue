@@ -33,7 +33,7 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <contenedor-equipamientos @cambiarTipo="cambiarTipo" />
+      <Contenedor @cambiarTipo="cambiarTipo" />
     </template>
     <template v-else>
       <div class="container">
@@ -57,7 +57,9 @@
 <script>
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 import vuex from "vuex";
+import Contenedor from "./equipamientos/ContainerComponent.vue";
 export default {
+  components: { Contenedor },
   data() {
     return { tipo: "" };
   },

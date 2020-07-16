@@ -10,7 +10,95 @@
 | used to check if an authenticated user can listen to the channel.
 |
 */
-
+//otra-info
+//cepas
+Broadcast::channel('CepasInfo', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsCepasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsCepasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsCepasInfo', function ($user) {
+    return true;
+});
+//bacterias
+Broadcast::channel('BacteriasInfo', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsBacteriasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsBacteriasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsBacteriasInfo', function ($user) {
+    return true;
+});
+//hongos
+Broadcast::channel('HongosInfo', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsHongosInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsHongosInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsHongosInfo', function ($user) {
+    return true;
+});
+//levaduras
+Broadcast::channel('LevadurasInfo', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsLevadurasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsLevadurasInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsLevadurasInfo', function ($user) {
+    return true;
+});
+//actinomicetos
+Broadcast::channel('ActinomicetosInfo', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsActinomicetosInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsActinomicetosInfo', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsActinomicetosInfo', function ($user) {
+    return true;
+});
+//usuarios
+Broadcast::channel('usuarios', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsUsuario', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsUsuario', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsUsuario', function ($user) {
+    return true;
+});
+//imagenes login
+Broadcast::channel('imagenesLogin', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearImagenesLogin', function ($user) {
+    return true;
+});
+Broadcast::channel('borrarBloqueoImagenesLogin', function ($user) {
+    return true;
+});
 //noticias
 Broadcast::channel('noticias', function ($user) {
     return ['user' => $user];

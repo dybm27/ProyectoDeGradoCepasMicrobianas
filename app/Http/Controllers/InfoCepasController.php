@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Clase;
 use App\Division;
 use App\Especie;
+use App\Events\CepasInfoEvent;
 use App\Familia;
 use App\Genero;
 use App\Orden;
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Auth;
 
 class InfoCepasController extends Controller
 {
+    public function index()
+    {
+        return view('otra-info');
+    }
+
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {
@@ -127,7 +133,7 @@ class InfoCepasController extends Controller
                 $this->crearSeguimiento("Agregó un Tipo de Division: " . $tipo->nombre);
                 break;
         }
-
+        broadcast(new CepasInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -233,7 +239,7 @@ class InfoCepasController extends Controller
                 $this->crearSeguimiento("Editó un Tipo de Division: " . $tipo1->nombre);
                 break;
         }
-
+        broadcast(new CepasInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -245,47 +251,54 @@ class InfoCepasController extends Controller
                 if ($this->validarEliminar($tipo)) {
                     return 'negativo';
                 } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Genero: " . $tipo->nombre);
                 }
                 break;
             case "especie":
                 $tipo = Especie::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Especie: " . $tipo->nombre);
                 break;
             case "familia":
                 $tipo = Familia::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Familia: " . $tipo->nombre);
                 break;
             case "orden":
                 $tipo = Orden::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Orden: " . $tipo->nombre);
                 break;
             case "clase":
                 $tipo = Clase::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Clase: " . $tipo->nombre);
                 break;
             case "phylum":
                 $tipo = Phylum::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Phylum: " . $tipo->nombre);
                 break;
             case "reino":
                 $tipo = Reino::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Reino: " . $tipo->nombre);
                 break;
             case "division":
                 $tipo =  Division::find($id);
+                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Division: " . $tipo->nombre);
                 break;
         }
-
         return $tipo;
     }
 

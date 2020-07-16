@@ -135,7 +135,7 @@
               <h5 class="card-title">Imagen</h5>
               <template v-if="mostraImagen">
                 <template v-if="validarCroppie">
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -148,7 +148,7 @@
                   />
                 </template>
                 <template v-else>
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -219,7 +219,9 @@ import Lang from "vue2-datepicker/locale/es";
 
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
+import Croppie from "../../../CroppieComponent";
 export default {
+  components: { Croppie },
   props: ["idMetodo"],
   components: { DatePicker },
   data() {

@@ -914,53 +914,19 @@ const routes = [
             import(
                 /* webpackChunkName: "usuarios" */
 
-                "../components/usuarios/NavUsuariosComponent.vue"
+                "../components/gestionar_usuarios/NavUsuariosComponent.vue"
             ),
         children: [
             {
                 path: "tabla-usuarios",
-                name: "",
+                name: "tabla-usuarios",
                 component: () =>
                     import(
-                        /* webpackChunkName: "info_usuarios" */
+                        /* webpackChunkName: "tabla-usuarios" */
 
-                        "../components/usuarios/InfoTablaUsuariosComponent.vue"
+                        "../components/gestionar_usuarios/usuarios/ContainerComponent.vue"
                     ),
-                children: [
-                    {
-                        path: "",
-                        name: "tabla-usuarios",
-                        component: () =>
-                            import(
-                                /* webpackChunkName: "tabla-usuarios" */
-
-                                "../components/usuarios/tablas/TablaUsuariosComponent.vue"
-                            ),
-                        meta: { title: "Tabla Usuarios" }
-                    },
-                    {
-                        path: "agregar",
-                        name: "agregar-usuario",
-                        component: () =>
-                            import(
-                                /* webpackChunkName: "agregar-usuario" */
-
-                                "../components/usuarios/FormUsuariosComponent.vue"
-                            ),
-                        meta: { title: "Agregar Usuario" }
-                    },
-                    {
-                        path: "editar/:usuarioId",
-                        name: "editar-usuario",
-                        component: () =>
-                            import(
-                                /* webpackChunkName: "editar-usuario" */
-
-                                "../components/usuarios/FormUsuariosComponent.vue"
-                            ),
-                        meta: { title: "Tabla Usuario" }
-                    }
-                ]
+                meta: { title: "Tabla Usuarios" }
             },
             {
                 path: "tabla-seguimiento",
@@ -969,7 +935,7 @@ const routes = [
                     import(
                         /* webpackChunkName: "tabla-seguimiento" */
 
-                        "../components/usuarios/tablas/TablaSeguimientoComponent.vue"
+                        "../components/gestionar_usuarios/seguimiento/TablaComponent.vue"
                     ),
                 meta: { title: "Tabla Seguimientos" }
             }

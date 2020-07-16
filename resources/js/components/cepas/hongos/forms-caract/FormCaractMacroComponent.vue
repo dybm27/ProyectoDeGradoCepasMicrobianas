@@ -106,7 +106,7 @@
             <div class="card-body">
               <template v-if="mostraImagen">
                 <template v-if="validarCroppie">
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -119,7 +119,7 @@
                   />
                 </template>
                 <template v-else>
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -190,8 +190,9 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
-
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: { Croppie },
   props: ["info", "modificarInfo"],
   data() {
     return {

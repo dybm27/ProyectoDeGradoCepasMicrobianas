@@ -15,14 +15,14 @@
         </div>
       </div>
       <div class="card-body" v-if="tabla">
-        <my-vuetable
+        <MyVuetable
           api-url="/info-panel/micelios-actinomiceto"
           :fields="fields"
           :sort-order="sortOrder"
           :nameGet="'micelios-actinomiceto'"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
-        ></my-vuetable>
+        ></MyVuetable>
       </div>
     </div>
   </div>
@@ -30,7 +30,9 @@
 
 <script>
 import FieldDefs from "./columnas";
+import MyVuetable from "../../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: { MyVuetable },
   props: ["refrescarTabla"],
   data() {
     return {

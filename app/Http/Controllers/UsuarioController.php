@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AuthEvent;
+use App\Events\UsuarioEvent;
 use App\Seguimiento;
 use App\User;
 use Illuminate\Http\Request;
@@ -33,7 +35,7 @@ class UsuarioController extends Controller
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
         $usuario->save();
-
+        broadcast(new UsuarioEvent($usuario, 'agregar'))->toOthers();
         $this->crearSeguimiento("Creó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -44,7 +46,7 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
-        if ($request->imagen != $usuario->avatar) {
+        if (!is_null($request->imagen)) {
             Storage::disk('local')->delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];
@@ -57,7 +59,8 @@ class UsuarioController extends Controller
             $usuario->password = Hash::make($request->pass);
         }
         $usuario->save();
-
+        broadcast(new AuthEvent($usuario))->toOthers();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         $this->crearSeguimiento("Editó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -67,8 +70,8 @@ class UsuarioController extends Controller
     {
         $usuario = User::find($id);
         Storage::disk('local')->delete($usuario->avatar);
+        broadcast(new UsuarioEvent($usuario, 'eliminar'))->toOthers();
         $usuario->delete();
-
         $this->crearSeguimiento("Eliminó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -93,11 +96,5 @@ class UsuarioController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
-    }
-
-    public function borrarSessionId()
-    {
-        Auth::user()->session_id = null;
-        Auth::user()->save();
     }
 }

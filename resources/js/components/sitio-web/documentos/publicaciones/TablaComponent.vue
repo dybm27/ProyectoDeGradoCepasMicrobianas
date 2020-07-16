@@ -1,13 +1,13 @@
 <template>
   <div>
     <template v-if="mostrarTabla">
-      <my-vuetable
+      <MyVuetable
         ref="tabla"
         api-url="/info-panel/publicaciones-tabla"
         :fields="fields"
         :sort-order="sortOrder"
         :nameGet="'publicaciones'"
-      ></my-vuetable>
+      ></MyVuetable>
     </template>
     <template v-else>
       <div class="text-center">
@@ -54,7 +54,11 @@ import FieldDefs from "./columnas";
 import Toastr from "../../../../mixins/toastr";
 import websocketsTabla from "../../../../mixins/websocketsTabla";
 import vuex from "vuex";
+import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: {
+    MyVuetable
+  },
   data() {
     return {
       fields: FieldDefs,

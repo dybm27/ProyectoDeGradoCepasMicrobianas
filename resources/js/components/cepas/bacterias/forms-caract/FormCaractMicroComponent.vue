@@ -177,7 +177,7 @@
             <h5 class="card-title">Imagenes</h5>
             <template v-if="required">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
-                <croppie-cepas
+                <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"
                   :posicion="'vertical'"
@@ -194,13 +194,13 @@
               </template>
             </template>
             <template v-else>
-              <imagenes
+              <Imagenes
                 :parametros="parametros"
                 :tipoCepa="'bacteria/caract-micro'"
                 :imagenes="imagenes"
                 :cepa="info"
                 @accionImagen="accionImagen"
-              ></imagenes>
+              ></Imagenes>
             </template>
           </div>
         </div>
@@ -246,7 +246,10 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
+import CroppieCepas from "../../CroppieCepasComponent.vue";
+import Imagenes from "../../ImagenesComponent.vue";
 export default {
+  components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
   watch: {
     modificarInfo() {

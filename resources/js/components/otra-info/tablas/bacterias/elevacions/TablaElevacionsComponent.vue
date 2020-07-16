@@ -15,42 +15,60 @@
         </div>
       </div>
       <div class="card-body" v-if="tabla">
-        <my-vuetable
-          api-url="/info-panel/elevacions-bacteria"
-          :fields="fields"
-          :sort-order="sortOrder"
-          :nameGet="'elevacions-bacteria'"
-          @cambiarVariable="cambiarVariable"
-          :refrescarTabla="refrescarTabla"
-        ></my-vuetable>
+        <template v-if="siHayDatos">
+          <MyVuetable
+            ref="tabla"
+            api-url="/info-panel/elevacions-bacteria"
+            :fields="fields"
+            :sort-order="sortOrder"
+            :nameGet="'elevacions-bacteria'"
+          ></MyVuetable>
+        </template>
+        <template v-else>
+          <div class="text-center">
+            <h5 class="mt-5 mb-5">
+              <span class="pr-1">
+                <b class="text-success">AÚN NO SE HAN AGREGADO ELEVACIONES</b>
+              </span>
+            </h5>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import vuex from "vuex";
 import FieldDefs from "./columnas";
+import websocketsTablaOtraInfoMixin from "../../../../../mixins/websocketsTablaOtraInfo";
+import MyVuetable from "../../../../vuetable/MyVuetableComponent.vue";
 export default {
-  props: ["refrescarTabla"],
+  components: { MyVuetable },
   data() {
     return {
-      idCepaEliminar: "",
       fields: FieldDefs,
       sortOrder: [
         {
           field: "nombre",
           direction: "asc"
         }
-      ],
-      tabla: false
+      ]
     };
   },
-  methods: {
-    cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [websocketsTablaOtraInfoMixin("elevacion")],
+  computed: {
+    ...vuex.mapGetters("info_caract", ["getInfoCaractMacroBacterias"]),
+    siHayDatos() {
+      if (
+        this.getInfoCaractMacroBacterias != "" &&
+        this.getInfoCaractMacroBacterias != null
+      ) {
+        if (this.getInfoCaractMacroBacterias.elevacions) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 };

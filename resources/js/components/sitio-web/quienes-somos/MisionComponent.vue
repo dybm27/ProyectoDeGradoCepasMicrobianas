@@ -8,7 +8,7 @@
               <div class="row justify-content-center">
                 <div class="col-md-12">
                   <h5 class="card-title">Misión</h5>
-                  <editor-texto
+                  <Editor
                     @contenido="aceptarContenido"
                     @modificar="modificarContenido"
                     :info="getQuienesSomos.mision"
@@ -72,7 +72,9 @@
 import websocketsSinTablaMixin from "../../../mixins/websocketsSinTabla";
 import Toastr from "../../../mixins/toastr";
 import vuex from "vuex";
+import Editor from "../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: { Editor },
   data() {
     return {
       parametros: {

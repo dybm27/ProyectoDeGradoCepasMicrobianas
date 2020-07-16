@@ -43,7 +43,7 @@ class InfoPanelUsuariosController extends Controller
     public function tablaSeguimientos(Request $request)
     {
         $seguimientos = Seguimiento::select(
-            'seguimientos.*',
+            'seguimientos.*'
         );
 
         if ($request->filled('sort')) {

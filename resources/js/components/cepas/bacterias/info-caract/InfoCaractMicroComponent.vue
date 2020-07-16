@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-micro-bacteria
+          <FormCaractMicro
             :modificarInfo="modificarForm"
             :info="getCaractMicro"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-micro-bacteria>
+          ></FormCaractMicro>
         </template>
         <template v-else>
           <div class="text-center">
@@ -69,7 +69,9 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import FormCaractMicro from "../forms-caract/FormCaractMicroComponent.vue";
 export default {
+  components: { FormCaractMicro },
   data() {
     return {
       mostrarBtnAgregar: true,

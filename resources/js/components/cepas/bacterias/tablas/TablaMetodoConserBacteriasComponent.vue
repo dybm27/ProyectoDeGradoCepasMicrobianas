@@ -2,14 +2,14 @@
   <div>
     <template v-if="getMetodoConser!=''">
       <div class="card-body mt-3 ml-2 mr-2">
-        <my-vuetable
+        <MyVuetable
           :api-url="url"
           :fields="fields"
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
           :nameGet="'metodos-bacterias'"
-        ></my-vuetable>
+        ></MyVuetable>
       </div>
       <modal
         name="my_modal_eliminar_metodo"
@@ -53,7 +53,9 @@
 <script>
 import FieldDefs from "./metodo-conser";
 import vuex from "vuex";
+import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: { MyVuetable },
   data() {
     return {
       url: "/info-panel/cepa/bacteria/metodos-conser/",

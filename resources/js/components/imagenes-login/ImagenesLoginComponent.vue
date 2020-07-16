@@ -46,10 +46,10 @@
     <div class="tabs-animation">
       <template v-if="numPestaña==1">
         <template v-if="!from">
-          <ver-imagenes @editarImagen="editarImagen" />
+          <vVerImagenes @editarImagen="editarImagen" />
         </template>
         <template v-else>
-          <from-imagen :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+          <Form :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
         </template>
       </template>
       <template v-else>
@@ -75,7 +75,10 @@
 <script>
 import vuex from "vuex";
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import VerImagenes from "./VerImagenesComponent.vue";
+import Form from "./FromImagenComponent.vue";
 export default {
+  components: { Form, VerImagenes },
   data() {
     return {
       idImagen: "",

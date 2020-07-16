@@ -2,6 +2,9 @@ export default {
     namespaced: true,
     state: { tipos: [] },
     getters: {
+        getTipos(state) {
+            return state.tipos;
+        },
         getGeneros(state) {
             return state.tipos.generos;
         },

@@ -92,10 +92,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
     Route::put('/cepas/publicar/{id}', 'CepaController@publicar');
 
-    //-- crud info-cepas
-    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
-    Route::put('/info-cepas/editar/{id}', 'InfoCepasController@editarInfo');
-    Route::delete('/info-cepas/eliminar/{id}', 'InfoCepasController@eliminarInfo');
 
     //-------------------------------------------------------------------------------------------
 
@@ -117,11 +113,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::get('bacterias/{id}/metodo-conser/editar/{id2}', 'CepaController@bacterias');
     //-- vista ver 
     Route::get('/bacterias/ver/{id}', 'CepaController@bacterias');
-
-    //-- crud info-bacterias
-    Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
-    Route::put('/info-caract-bacterias/editar/{id}', 'InfoCaracBacteriasController@editarInfo');
-    Route::delete('/info-caract-bacterias/eliminar/{id}', 'InfoCaracBacteriasController@eliminarInfo');
 
     //-- crud caract-bacterias
     //--- macro
@@ -176,11 +167,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     //-- vista ver 
     Route::get('/levaduras/ver/{id}', 'CepaController@levaduras');
 
-    //-- crud info-levaduras
-    Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
-    Route::put('/info-caract-levaduras/editar/{id}', 'InfoCaracLevadurasController@editarInfo');
-    Route::delete('/info-caract-levaduras/eliminar/{id}', 'InfoCaracLevadurasController@eliminarInfo');
-
     //-- crud caract-levaduras
     //--- macro
     Route::post('/cepas/levadura/caract-macro', 'CaractMacroLevaduraController@store');
@@ -227,11 +213,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     //-- vista ver 
     Route::get('/hongos/ver/{id}', 'CepaController@hongos');
 
-    //-- crud info-caract-hongos
-    Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
-    Route::put('/info-caract-hongos/editar/{id}', 'InfoCaracHongosController@editarInfo');
-    Route::delete('/info-caract-hongos/eliminar/{id}', 'InfoCaracHongosController@eliminarInfo');
-
     //crud caract-hongos
     //---macro
     Route::post('/cepas/hongo/caract-macro', 'CaractMacroHongoController@store');
@@ -277,11 +258,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     //-- vista ver 
     Route::get('/actinomicetos/ver/{id}', 'CepaController@actinomicetos');
 
-    //-- crud info-caract-actinomicetos
-    Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetoController@agregarInfo');
-    Route::put('/info-caract-actinomicetos/editar/{id}', 'InfoCaracActinomicetoController@editarInfo');
-    Route::delete('/info-caract-actinomicetos/eliminar/{id}', 'InfoCaracActinomicetoController@eliminarInfo');
-
     //crud caract-actinomicetos
     //---macro
     Route::post('/cepas/actinomiceto/caract-macro', 'CaractMacroActinomicetoController@store');
@@ -324,7 +300,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
     Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
     Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
-    
+
     //-- Usuarios
     Route::get('/usuarios/tabla-usuarios', 'UsuarioController@index')->name('usuarios');
     Route::get('/usuarios/tabla-usuarios/agregar', 'UsuarioController@index');
@@ -334,7 +310,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::post('/usuario/agregar', 'UsuarioController@store');
     Route::put('/usuario/editar/{id}', 'UsuarioController@update');
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy');
-   // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
+    // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
 
     Route::post('/tipo-user/agregar', 'TipoUsuarioController@store');
     Route::put('/tipo-user/editar/{id}', 'TipoUsuarioController@update');
@@ -474,11 +450,36 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::get('/exportar/tabla/novedades', 'ExportarExcelSitioWebController@novedadesTabla');
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
-    Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/bacterias', 'OtraInfoController@index');
-    Route::get('/otra-info/hongos', 'OtraInfoController@index');
-    Route::get('/otra-info/levaduras', 'OtraInfoController@index');
-    Route::get('/otra-info/actinomicetos', 'OtraInfoController@index');
+    Route::get('/otra-info/cepas', 'InfoCepasController@index')->name('otra_info');
+    Route::get('/otra-info/bacterias', 'InfoCaracBacteriasController@index');
+    Route::get('/otra-info/hongos', 'InfoCaracHongosController@index');
+    Route::get('/otra-info/levaduras', 'InfoCaracLevadurasController@index');
+    Route::get('/otra-info/actinomicetos', 'InfoCaracActinomicetosController@index');
+
+    //-- crud info-cepas
+    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
+    Route::put('/info-cepas/editar/{id}', 'InfoCepasController@editarInfo');
+    Route::delete('/info-cepas/eliminar/{id}', 'InfoCepasController@eliminarInfo');
+
+    //-- crud info-bacterias
+    Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
+    Route::put('/info-caract-bacterias/editar/{id}', 'InfoCaracBacteriasController@editarInfo');
+    Route::delete('/info-caract-bacterias/eliminar/{id}', 'InfoCaracBacteriasController@eliminarInfo');
+
+    //-- crud info-caract-hongos
+    Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
+    Route::put('/info-caract-hongos/editar/{id}', 'InfoCaracHongosController@editarInfo');
+    Route::delete('/info-caract-hongos/eliminar/{id}', 'InfoCaracHongosController@eliminarInfo');
+
+    //-- crud info-levaduras
+    Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
+    Route::put('/info-caract-levaduras/editar/{id}', 'InfoCaracLevadurasController@editarInfo');
+    Route::delete('/info-caract-levaduras/eliminar/{id}', 'InfoCaracLevadurasController@eliminarInfo');
+
+    //-- crud info-caract-actinomicetos
+    Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetosController@agregarInfo');
+    Route::put('/info-caract-actinomicetos/editar/{id}', 'InfoCaracActinomicetosController@editarInfo');
+    Route::delete('/info-caract-actinomicetos/eliminar/{id}', 'InfoCaracActinomicetosController@eliminarInfo');
 
     //--------------------- IMAGENES LOGIN -----------------------------------------------------
     Route::get('/imagenes-login/ver', 'ImagenLoginController@index')->name('imagenes');
@@ -600,7 +601,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('eventos', 'InfoPanelEventosController@eventos');
         //------------------------ USUARIOS ------------------------------------------------------
         //------------------------- url tabla usuarios -------------------------------------------
-        Route::get('usuarios', 'InfoPanelUsuariosController@tablaUsuarios');
+        Route::get('usuarios-tabla', 'InfoPanelUsuariosController@tablaUsuarios');
         //--------------------------- tiposUsuarios - usuairos -----------------------------------------
         Route::get('tipos-users', 'InfoPanelUsuariosController@tipoUsuarios');
         Route::get('users', 'InfoPanelUsuariosController@usuarios');

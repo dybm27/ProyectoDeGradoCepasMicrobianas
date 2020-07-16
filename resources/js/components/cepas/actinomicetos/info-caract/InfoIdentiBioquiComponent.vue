@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-bioqui-actinomiceto
+          <FormIdentiBioqui
             :modificarInfo="modificarForm"
             :info="getIdentiBioqui"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-bioqui-actinomiceto>
+          ></FormIdentiBioqui>
         </template>
         <template v-else>
           <div class="text-center">
@@ -70,7 +70,9 @@
 import vuex from "vuex";
 
 import Toastr from "../../../../mixins/toastr";
+import FormIdentiBioqui from "../forms-caract/FormIdentiBioquiComponent.vue";
 export default {
+  components: { FormIdentiBioqui },
   data() {
     return {
       mostrarBtnAgregar: true,

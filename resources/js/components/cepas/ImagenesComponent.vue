@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <carousel :id="1" :imagenes="imagenes"></carousel>
+            <Carousel :id="1" :imagenes="imagenes"></Carousel>
           </div>
         </div>
         <div class="row mt-3 mb-3">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-sm-6">
                   <template v-if="mostraImagen">
-                    <croppie
+                    <Croppie
                       :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-sm-6">
                   <template v-if="mostraImagen">
-                    <croppie
+                    <Croppie
                       :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
@@ -200,7 +200,10 @@
 </template>
 
 <script>
+import Carousel from "../carousel/CarouselComponent.vue";
+import Croppie from "../CroppieComponent.vue";
 export default {
+  components: { Carousel, Croppie },
   props: ["parametros", "tipoCepa", "imagenes", "cepa"],
   data() {
     return {

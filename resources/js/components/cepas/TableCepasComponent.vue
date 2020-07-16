@@ -53,7 +53,9 @@
 
 <script>
 import FieldDefs from "./columnas/columnas-cepas";
+import MyVuetable from "../vuetable/MyVuetableComponent.vue";
 export default {
+  components: { MyVuetable },
   data() {
     return {
       refrescarTabla: false,

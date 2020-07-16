@@ -61,12 +61,15 @@ export default {
   },
   mixins: [bloquearPestañasMixin("otraInfo")],
   methods: {
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("info_cepas", [
+      "accionAgregarTipoCepa",
+      "accionEditarTipoCepa",
+      "accionEliminarTipoCepa"
+    ]),
     ...vuex.mapActions("info_caract", [
-      "obtenerInfoCaractHongos",
-      "obtenerInfoCaractBacterias",
-      "obtenerInfoCaractLevaduras",
-      "obtenerInfoCaractActinomicetos"
+      "accionAgregarTipoCaractBacteria",
+      "accionEditarTipoCaractBacteria",
+      "accionEliminarTipoCaractBacteria"
     ]),
     cambiarTipo(ruta) {
       if (ruta.includes("cepas")) {
@@ -83,11 +86,64 @@ export default {
     }
   },
   created() {
-    this.obtenerInfoCaractActinomicetos();
-    this.obtenerInfoCaractHongos();
-    this.obtenerInfoCaractBacterias();
-    this.obtenerInfoCaractLevaduras();
-    this.obtenerTiposCepas();
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", e => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+      }
+      this.$events.fire("actualizartabla" + e.tipoCaract);
+    });
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", e => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+      }
+      this.$events.fire("actualizartabla" + e.tipoCaract);
+    }); /*
+    window.Echo.channel("hongos-info").listen("NovedadEvent", e => {
+      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
+      this.$events.fire("actualizartablaNovedad");
+    });
+    window.Echo.channel("levaduras-info").listen("NovedadEvent", e => {
+      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
+      this.$events.fire("actualizartablaNovedad");
+    });
+    window.Echo.channel("actinomicetos-info").listen("NovedadEvent", e => {
+      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
+      this.$events.fire("actualizartablaNovedad");
+    }); */
   }
 };
 </script>

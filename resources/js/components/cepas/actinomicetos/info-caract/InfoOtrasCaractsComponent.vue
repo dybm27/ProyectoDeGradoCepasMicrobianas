@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-otras-caract-actinomiceto
+          <FormOtrasCaract
             :modificarInfo="modificarForm"
             :info="getOtrasCaract"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-otras-caract-actinomiceto>
+          ></FormOtrasCaract>
         </template>
         <template v-else>
           <div class="text-center">
@@ -76,8 +76,9 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
-
+import FormOtrasCaract from "../forms-caract/FormOtrasCaractComponent";
 export default {
+  components: { FormOtrasCaract },
   data() {
     return {
       mostrarBtnAgregar: true,

@@ -105,7 +105,7 @@
           <div class="main-card mb-3 card">
             <div class="card-body">
               <h5 class="card-title">Elaborar Noticia</h5>
-              <editor-texto
+              <Editor
                 @contenido="aceptarContenido"
                 @modificar="modificarContenido"
                 :info="info"
@@ -122,7 +122,11 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: {
+    Editor
+  },
   props: ["idNoticia"],
   data() {
     return {

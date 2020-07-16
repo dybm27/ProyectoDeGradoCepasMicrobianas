@@ -1,129 +1,180 @@
 <template>
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-12">
-        <div class="main-card mb-3 card">
-          <div class="card-header-tab card-header">
-            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-              <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-              Tablas Dinámicas Características Macroscópicas
-            </div>
-            <div class="btn-actions-pane-right actions-icon-btn">
-              <img @click="mostrarTablasCaractMacro" :src="'/iconos/icons8-vista-general-3-35.png'" />
-            </div>
-          </div>
-          <div class="card-body" v-if="tablasCaractMacro">
-            <div class="container">
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-texturas-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla1"
-                  />
-                </div>
+    <template v-if="getInfoActinomicetos!=''">
+      <div class="row justify-content-md-center">
+        <div class="col-md-12">
+          <div class="main-card mb-3 card">
+            <div class="card-header-tab card-header">
+              <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
+                Tablas Dinámicas Características Macroscópicas
               </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-colors-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla2"
-                  />
-                </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-formas-macro-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla3"
-                  />
-                </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-superficies-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla4"
-                  />
-                </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-bordes-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla5"
-                  />
-                </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-pigmentos-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla6"
-                  />
-                </div>
+              <div class="btn-actions-pane-right actions-icon-btn">
+                <img
+                  @click="mostrarTablasCaractMacro"
+                  :src="'/iconos/icons8-vista-general-3-35.png'"
+                />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-12">
-        <div class="main-card mb-3 card">
-          <div class="card-header-tab card-header">
-            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-              <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
-              Tablas Dinamicas Características Microscópicas
-            </div>
-            <div class="btn-actions-pane-right actions-icon-btn">
-              <img @click="mostrarTablasCaractMicro" :src="'/iconos/icons8-vista-general-3-35.png'" />
-            </div>
-          </div>
-          <div class="card-body" v-if="tablasCaractMicro">
-            <div class="container">
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-tincions-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla7"
-                  />
+            <div class="card-body" v-if="tablasCaractMacro">
+              <div class="container">
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaTexturas
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla1"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-formas-micro-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla8"
-                  />
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaColors
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla2"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-micelios-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla9"
-                  />
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaFormasMacro
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla3"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                  <tabla-conidioforos-actinomiceto
-                    @cambiarVariable="cambiarVariable"
-                    :refrescarTabla="refrescarTabla10"
-                  />
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaSuperficies
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla4"
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaBordes
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla5"
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaPigmentos
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla6"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <modales-otra-info-actinomicetos @accionModal-actinomiceto="accionModal" />
+      <div class="row justify-content-md-center">
+        <div class="col-md-12">
+          <div class="main-card mb-3 card">
+            <div class="card-header-tab card-header">
+              <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
+                Tablas Dinamicas Características Microscópicas
+              </div>
+              <div class="btn-actions-pane-right actions-icon-btn">
+                <img
+                  @click="mostrarTablasCaractMicro"
+                  :src="'/iconos/icons8-vista-general-3-35.png'"
+                />
+              </div>
+            </div>
+            <div class="card-body" v-if="tablasCaractMicro">
+              <div class="container">
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaTincions
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla7"
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaFormasMicro
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla8"
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaMicelios
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla9"
+                    />
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-10">
+                    <TablaConidioforos
+                      @cambiarVariable="cambiarVariable"
+                      :refrescarTabla="refrescarTabla10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template v-else>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center mt-5">
+          <div class="loader mt-5">
+            <div class="ball-spin-fade-loader mt-5">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <ModalOtraInfoActinomiceto @accionModal-actinomiceto="accionModal" />
   </div>
 </template>
 
 <script>
+import ModalOtraInfoActinomiceto from "./tablas/actinomicetos/ModalesComponent.vue";
+import TablaBordes from "./tablas/actinomicetos/bordes/TablaBordesComponent.vue";
+import TablaColors from "./tablas/actinomicetos/colors/TablaColorsComponent.vue";
+import TablaConidioforos from "./tablas/actinomicetos/conidioforos/TablaConidioforosComponent.vue";
+import TablaMicelios from "./tablas/actinomicetos/micelios/TablaMiceliosComponent.vue";
+import TablaFormasMacro from "./tablas/actinomicetos/formas-macro/TablaFormasMacroComponent.vue";
+import TablaFormasMicro from "./tablas/actinomicetos/formas-micro/TablaFormasMicroComponent.vue";
+import TablaSuperficies from "./tablas/actinomicetos/superficies/TablaSuperficiesComponent.vue";
+import TablaTexturas from "./tablas/actinomicetos/texturas/TablaTexturasComponent.vue";
+import TablaTincions from "./tablas/actinomicetos/tincions/TablaTincionsComponent.vue";
+import TablaPigmentos from "./tablas/actinomicetos/pigmentos/TablaPigmentosComponent.vue";
+import vuex from "vuex";
 export default {
+  components: {
+    ModalOtraInfoActinomiceto,
+    TablaBordes,
+    TablaColors,
+    TablaConidioforos,
+    TablaMicelios,
+    TablaFormasMacro,
+    TablaFormasMicro,
+    TablaSuperficies,
+    TablaTexturas,
+    TablaPigmentos,
+    TablaTincions
+  },
   data() {
     return {
       refrescarTabla1: false,
@@ -141,9 +192,16 @@ export default {
     };
   },
   created() {
+    if (this.getInfoActinomicetos == "") {
+      this.obtenerInfoCaractActinomicetos();
+    }
     this.$emit("rutaHijo", window.location.pathname);
   },
+  computed: {
+    ...vuex.mapGetters("info_caract", ["getInfoActinomicetos"])
+  },
   methods: {
+    ...vuex.mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]),
     accionModal(datos) {
       switch (datos.tipo) {
         case "textura":

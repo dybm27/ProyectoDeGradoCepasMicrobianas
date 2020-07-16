@@ -21,7 +21,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         //  auth: JSON.parse(userLogueado.content)
-        auth: ""
+        auth: null
     },
     getters: {
         getUserAuth(state) {

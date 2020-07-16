@@ -7,6 +7,18 @@ export default {
         info_caract_actinomicetos: []
     },
     getters: {
+        getInfoBacterias(state) {
+            return state.info_caract_bacterias;
+        },
+        getInfoHongos(state) {
+            return state.info_caract_hongos;
+        },
+        getInfoLevaduras(state) {
+            return state.info_caract_levaduras;
+        },
+        getInfoActinomicetos(state) {
+            return state.info_caract_actinomicetos;
+        },
         getInfoCaractMacroBacterias(state) {
             return state.info_caract_bacterias.caract_macro;
         },
