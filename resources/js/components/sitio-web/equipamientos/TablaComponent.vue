@@ -42,7 +42,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_equipamiento')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarEquipamiento">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarEquipamiento"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -63,21 +68,22 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
+          direction: "asc",
+        },
       ],
-      id: ""
+      id: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, websocketsTabla("Equipamiento")],
   computed: {
-    ...vuex.mapGetters("equipamientos", ["getEquipamientos"]),
+    ...vuex.mapState("equipamientos", ["equipamientos"]),
     mostrarTabla() {
-      if (this.getEquipamientos != "") {
+      if (this.equipamientos != "" && this.equipamientos != null) {
         return true;
       }
       return false;
-    }
+    },
   },
   methods: {
     ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
@@ -85,9 +91,18 @@ export default {
       this.id = data.params.id;
     },
     eliminarEquipamiento() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/equipamientos/${this.id}`)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.$modal.hide("modal_eliminar_equipamiento");
           this.toastr(
             "Eliminar Equipamiento",
@@ -97,13 +112,14 @@ export default {
           this.accionEquipamiento({ tipo: "eliminar", data: res.data });
           this.actualizarTabla();
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!!", "", "error");
         });
-    }
+    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-  }
+  },
 };
 </script>

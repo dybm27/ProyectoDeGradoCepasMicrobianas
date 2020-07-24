@@ -238,6 +238,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -262,12 +267,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       tituloCroppie: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       archivoError: "",
       mensajeNombreProyecto: "",
       mensajeNombreAutor: "",
-      traerValorImg: false
+      traerValorImg: false,
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
@@ -275,8 +281,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloCroppie === "Agregar Proyecto") {
-        var form = new CroppieData();
+        var form = new FormData();
         form.append("nombre_documento", this.parametros.nombre_documento);
         form.append("nombre_autor", this.parametros.nombre_autor);
         form.append("descripcion", this.parametros.descripcion);
@@ -295,6 +303,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             "content-type": "multipart/form-data"
           }
         }).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
           _this.toastr("Agregar Proyecto", "Proyecto agregado con exito!!", "success");
 
           _this.accionProyecto({
@@ -304,6 +320,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableCroppieulario");
         })["catch"](function (error) {
+          _this.bloquearBtn = false;
+
           if (error.response) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
@@ -313,6 +331,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
       } else {
         axios.put("/documentos/".concat(this.idProyecto), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
           _this.toastr("Editar Proyecto", "Proyecto editado con exito!!", "success");
 
           window.Echo["private"]("desbloquearBtnsProyecto").whisper("desbloquearBtnsProyecto", {
@@ -333,12 +359,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableCroppieulario");
         })["catch"](function (error) {
+          _this.bloquearBtn = false;
+
           if (error.response) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
+            _this.toastr("Error!!", "", "error");
           }
         });
       }
@@ -529,6 +556,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -545,13 +577,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         field: "nombre_documento",
         direction: "asc"
       }],
-      id: ""
+      id: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_3__["default"])("Proyecto")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("documentos", ["getProyectos"]), {
     mostrarTabla: function mostrarTabla() {
-      if (this.getProyectos != "") {
+      if (this.getProyectos != "" && this.getProyectos != null) {
         return true;
       }
 
@@ -565,11 +598,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarProyecto: function eliminarProyecto() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/documentos/".concat(this.id), {
         data: {
           tipo: "proyecto"
         }
       }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this.bloquearBtnModal = false;
+
         _this.$modal.hide("modal_eliminar_proyecto");
 
         _this.toastr("Eliminar Proyecto", "Proyecto eliminado con exito!!", "success");
@@ -581,6 +623,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.actualizarTabla();
       })["catch"](function (error) {
+        _this.bloquearBtnModal = false;
+
         _this.toastr("Error!!!!", "", "error");
       });
     }
@@ -730,6 +774,21 @@ var render = function() {
                   _c("h5", { staticClass: "card-title" }, [
                     _vm._v(_vm._s(_vm.titulo))
                   ]),
+                  _vm._v(" "),
+                  _vm.errors != ""
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "alert alert-danger" },
+                          _vm._l(_vm.errors, function(item, index) {
+                            return _c("p", { key: index }, [
+                              _vm._v(_vm._s(item[0]))
+                            ])
+                          }),
+                          0
+                        )
+                      ]
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("div", { staticClass: "position-relative form-group" }, [
                     _c("label", { attrs: { for: "nombre_documento" } }, [
@@ -995,7 +1054,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.validarBtn }
+                      attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtnComputed))]
                   )
@@ -1178,7 +1237,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminarProyecto }
                 },
                 [_vm._v("Eliminar")]

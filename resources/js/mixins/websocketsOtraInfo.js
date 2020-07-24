@@ -95,12 +95,12 @@ const websocketsOtraInfoMixin = tipoInfo => ({
                 }
             }
         );
-        this.$events.$on("pushMisBloqueos" + tipoInfo, e =>
-            this.pushMisBloqueos(e)
-        );
-        this.$events.$on("spliceMisBloqueos" + tipoInfo, e =>
-            this.spliceMisBloqueos(e)
-        );
+        this.$events.$on("pushMisBloqueos" + tipoInfo, e => {
+            this.pushMisBloqueos(e);
+        });
+        this.$events.$on("spliceMisBloqueos" + tipoInfo, e => {
+            this.spliceMisBloqueos(e);
+        });
     },
     destroyed() {
         this.$events.$off("pushMisBloqueos" + tipoInfo);

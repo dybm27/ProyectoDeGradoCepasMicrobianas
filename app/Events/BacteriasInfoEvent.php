@@ -10,18 +10,23 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class BacteriasInfoEvent
+class BacteriasInfoEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $data;
+    public $tipoCaract;
+    public $tipoAccion;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data, $tipoCaract, $tipoAccion)
     {
-        //
+        $this->data = $data;
+        $this->tipoCaract =  $tipoCaract;
+        $this->tipoAccion =  $tipoAccion;
     }
 
     /**
@@ -31,6 +36,6 @@ class BacteriasInfoEvent
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('bacterias-name');
     }
 }

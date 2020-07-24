@@ -1,5 +1,97 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["identi-molecu-levadura"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! croppie */ "./node_modules/croppie/croppie.js");
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(croppie__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["id", "imagen", "mostrarBtnCroppie", "zoom", "editar", "enableZoom", "boundaryHeigth", "viewportWidth"],
+  data: function data() {
+    return {
+      croppie: null,
+      btnAprobar: true
+    };
+  },
+  mounted: function mounted() {
+    this.crearCroppie();
+  },
+  methods: {
+    crearCroppie: function crearCroppie() {
+      var el = document.getElementById(this.id);
+      this.croppie = new croppie__WEBPACK_IMPORTED_MODULE_0___default.a(el, {
+        viewport: {
+          width: this.viewportWidth,
+          height: 200
+        },
+        boundary: {
+          height: this.boundaryHeigth
+        },
+        enableZoom: this.enableZoom
+      });
+      this.croppie.bind({
+        url: this.imagen,
+        zoom: this.zoom
+      });
+    },
+    resultado: function resultado() {
+      var _this = this;
+
+      this.croppie.result().then(function (res) {
+        _this.btnAprobar = false;
+
+        _this.$emit("cambiarValorImagen", res);
+      });
+    },
+    cancelar: function cancelar() {
+      this.btnAprobar = true;
+      this.$emit("cambiarValorImagen", "");
+    }
+  },
+  watch: {
+    imagen: function imagen() {
+      if (this.imagen) {
+        this.btnAprobar = true;
+        this.croppie.destroy();
+        this.crearCroppie();
+      }
+    }
+  },
+  computed: {
+    mostrarMensaje: function mostrarMensaje() {
+      if (this.btnAprobar && !this.editar) {
+        return true;
+      }
+
+      return false;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/forms-caract/FormIdentiMolecuComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/forms-caract/FormIdentiMolecuComponent.vue?vue&type=script&lang=js& ***!
@@ -19,6 +111,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -373,7 +470,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_obtenerImagenCroopie2Imagenes__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -389,27 +487,50 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloForm === "Agregar Identificación") {
-        axios.post("/cepas/levadura/identi-molecu", this.parametros).then(function (res) {
-          _this.errors = [];
-          _this.$refs.inputImagen1.value = "";
-          _this.$refs.inputImagen2.value = "";
-          _this.tituloForm = "Editar Identificación";
-          _this.nomBtn = "Editar";
+        if (this.parametros.imagen1 && this.parametros.imagen2) {
+          axios.post("/cepas/levadura/identi-molecu", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-          _this.$emit("agregar", res.data);
+              window.location.href = "/";
+            }
 
-          _this.toastr("Agregar Identificación", "Identificación Molecular agregada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen1.value = "";
+            _this.$refs.inputImagen2.value = "";
+            _this.tituloForm = "Editar Identificación";
+            _this.nomBtn = "Editar";
+
+            _this.$emit("agregar", res.data);
+
+            _this.toastr("Agregar Identificación", "Identificación Molecular agregada con exito!!", "success");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
             _this.toastr("Error!!", "", "error");
-          }
-        });
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor agregre las respectivas imagenes."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios.put("/cepas/levadura/identi-molecu/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
           _this.errors = [];
           _this.$refs.inputImagen1.value = "";
           _this.$refs.inputImagen2.value = "";
@@ -418,13 +539,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.toastr("Editar Identificación", "Identificación Molecular editada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+          _this.bloquearBtn = false;
+          _this.errors = [];
+          _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-          }
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -607,6 +726,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios["delete"]("/cepas/levadura/identi-molecu/".concat(this.getIdentiMolecu.id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -619,10 +744,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Eliminar Identificación", "Identificación Molecular eliminada con exito!!", "success");
       })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-        }
+        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -666,6 +788,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { attrs: { id: _vm.id } }),
+      _vm._v(" "),
+      _vm.mostrarBtnCroppie
+        ? [
+            _vm.btnAprobar
+              ? [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      on: { click: _vm.resultado }
+                    },
+                    [_vm._v("Aprobar Imagen")]
+                  ),
+                  _vm._v(" "),
+                  _vm.mostrarMensaje
+                    ? _c("em", { staticClass: "text-danger small" }, [
+                        _vm._v("Debe Aprobar la imagen")
+                      ])
+                    : _vm._e()
+                ]
+              : [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger float-right",
+                      on: { click: _vm.cancelar }
+                    },
+                    [_vm._v("Cancelar")]
+                  )
+                ]
+          ]
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/forms-caract/FormIdentiMolecuComponent.vue?vue&type=template&id=07eed77a&":
 /*!*********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/forms-caract/FormIdentiMolecuComponent.vue?vue&type=template&id=07eed77a& ***!
@@ -702,6 +887,21 @@ var render = function() {
                   }
                 },
                 [
+                  _vm.errors != ""
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "alert alert-danger" },
+                          _vm._l(_vm.errors, function(item, index) {
+                            return _c("p", { key: index }, [
+                              _vm._v(_vm._s(item[0]))
+                            ])
+                          }),
+                          0
+                        )
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("div", { staticClass: "position-relative form-group" }, [
                     _c("label", { attrs: { for: "medio" } }, [
                       _vm._v("Primers")
@@ -1260,11 +1460,12 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.validarBtn }
+                      attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtnComputed))]
                   )
-                ]
+                ],
+                2
               )
             ])
           ])
@@ -1672,6 +1873,75 @@ var staticRenderFns = [
   }
 ]
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony import */ var _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CroppieComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

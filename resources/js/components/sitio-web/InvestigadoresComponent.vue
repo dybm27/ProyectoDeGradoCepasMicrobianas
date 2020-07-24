@@ -80,6 +80,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerInvestigadores();
     window.Echo.channel("investigador").listen("InvestigadorEvent", e => {
       this.accionInvestigador({ tipo: e.tipo, data: e.investigador });

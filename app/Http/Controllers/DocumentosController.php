@@ -18,6 +18,15 @@ class DocumentosController extends Controller
 
     public function store(Request $request)
     {
+        $rules = [
+            'nombre_documento' => 'required|unique:documentos,nombre_documento',
+            'nombre_autor' => 'required', 'descripcion' => 'required',
+            'imagen' => 'required', 'archivo' => 'required'
+        ];
+        $messages = [
+            'nombre_documento.unique' => 'Ya se encuentra registrado un documento con ese nombre.'
+        ];
+        $this->validate($request, $rules, $messages);
         $documento = new Documento();
 
         switch ($request->tipo) {
@@ -55,9 +64,16 @@ class DocumentosController extends Controller
     public function update(Request $request, $id)
     {
         $documento = Documento::find($id);
-        $documento2 = Documento::where('nombre_documento', $request->nombre_documento)->first();
+        $rules = [
+            'nombre_documento' => 'required|unique:documentos,nombre_documento,' . $documento->id,
+            'nombre_autor' => 'required', 'descripcion' => 'required'
+        ];
+        $messages = [
+            'nombre_documento.unique' => 'Ya se encuentra registrado un documento con ese nombre.'
+        ];
+        $this->validate($request, $rules, $messages);
 
-        if (is_null($documento2)) {
+        if ($documento->nombre_documento != $request->nombre_documento) {
             $archivo = $this->moverArchivo($documento->tipo_documento_id, $documento->nombre_documento, $request->nombre_documento);
             $documento->ruta = $archivo['ruta'];
             $documento->rutaPublica = $archivo['rutaPublica'];

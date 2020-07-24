@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <template v-if="getInfoLevaduras!=''">
+    <template v-if="info_caract_levaduras!=''">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
@@ -12,7 +12,7 @@
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
                   @click="mostrarTablasCaractMacro"
-                  :src="'/iconos/icons8-vista-general-3-35.png'"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
               </div>
             </div>
@@ -20,18 +20,12 @@
               <div class="container">
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaColors
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla1"
-                    />
+                    <TablaColors />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaTexturas
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla2"
-                    />
+                    <TablaTexturas />
                   </div>
                 </div>
               </div>
@@ -48,17 +42,17 @@
                 Tablas Dinamicas Métodos De Conservación
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
-                <img @click="mostrarTablasMetodos" :src="'/iconos/icons8-vista-general-3-35.png'" />
+                <img
+                  @click="mostrarTablasMetodos"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
+                />
               </div>
             </div>
             <div class="card-body" v-if="tablasMetodos">
               <div class="container">
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaMetodos
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla3"
-                    />
+                    <TablaMetodos />
                   </div>
                 </div>
               </div>
@@ -85,11 +79,12 @@
         </div>
       </div>
     </template>
-    <ModalOtraInfoLevaduras @accionModal-levadura="accionModal" />
+    <ModalOtraInfoLevaduras />
   </div>
 </template>
 
 <script>
+import websocketsOtraInfoMixin from "../../mixins/websocketsOtraInfo";
 import ModalOtraInfoLevaduras from "./tablas/levaduras/ModalesComponent.vue";
 import TablaMetodos from "./tablas/levaduras/tipos-metodos/TablaTiposMetodosComponent.vue";
 import TablaColors from "./tablas/levaduras/colors/TablaColorsComponent.vue";
@@ -104,49 +99,39 @@ export default {
   },
   data() {
     return {
-      refrescarTabla1: false,
-      refrescarTabla2: false,
-      refrescarTabla3: false,
       tablasCaractMacro: false,
       tablasMetodos: false
     };
   },
-  created() {
-    if (this.getInfoLevaduras == "") {
-      this.obtenerInfoCaractLevaduras();
-    }
-    this.obtenerInfoCaractLevaduras();
-    this.$emit("rutaHijo", window.location.pathname);
-  },
+  mixins: [websocketsOtraInfoMixin("LevadurasInfo")],
   computed: {
-    ...vuex.mapGetters("info_caract", ["getInfoLevaduras"])
+    ...vuex.mapState("info_caract", ["info_caract_levaduras"])
   },
   methods: {
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractLevaduras"]),
-    accionModal(datos) {
-      switch (datos.tipo) {
-        case "color":
-          this.refrescarTabla1 = true;
-          break;
-        case "textura":
-          this.refrescarTabla2 = true;
-          break;
-        case "tipo_metodo":
-          this.refrescarTabla3 = true;
-          break;
-      }
-    },
-    cambiarVariable() {
-      this.refrescarTabla1 = false;
-      this.refrescarTabla2 = false;
-      this.refrescarTabla3 = false;
-    },
     mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
     mostrarTablasMetodos() {
       this.tablasMetodos = !this.tablasMetodos;
     }
+  },
+  created() {
+    this.obtenerInfoCaractLevaduras();
+    this.$events.$on("verificarBloqueos-colors-levadura", e =>
+      this.verificarBloqueos("color")
+    );
+    this.$events.$on("verificarBloqueos-texturas-levadura", e =>
+      this.verificarBloqueos("textura")
+    );
+    this.$events.$on("verificarBloqueos-tipos-metodos-levadura", e =>
+      this.verificarBloqueos("tipo_metodo")
+    );
+  },
+  destroyed() {
+    this.$events.$off("verificarBloqueos-colors-levadura");
+    this.$events.$off("verificarBloqueos-texturas-levadura");
+    this.$events.$off("verificarBloqueos-tipos-metodos-levadura");
   }
 };
 </script>

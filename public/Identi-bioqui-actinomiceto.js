@@ -308,6 +308,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -350,7 +355,8 @@ __webpack_require__.r(__webpack_exports__);
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -358,39 +364,60 @@ __webpack_require__.r(__webpack_exports__);
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloForm === "Agregar Identificación") {
-        axios.post("/cepas/actinomiceto/identi-bioqui", this.parametros).then(function (res) {
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-          _this.tituloForm = "Editar Identificación";
-          _this.nomBtn = "Editar";
+        if (this.parametros.imagen1) {
+          axios.post("/cepas/actinomiceto/identi-bioqui", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-          _this.$emit("agregar", res.data);
+              window.location.href = "/";
+            }
 
-          _this.toastr("Agregar Identificación Bioquímica", "Identificación Bioquímica agregada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+            _this.tituloForm = "Editar Identificación";
+            _this.nomBtn = "Editar";
+
+            _this.$emit("agregar", res.data);
+
+            _this.toastr("Agregar Identificación Bioquímica", "Identificación Bioquímica agregada con exito!!", "success");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
             _this.toastr("Error!!", "", "error");
-          }
-        });
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija al menos 1 imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios.put("/cepas/actinomiceto/identi-bioqui/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
           _this.errors = [];
 
           _this.$emit("editar", res.data);
 
           _this.toastr("Editar Identificación Bioquímica", "Identificación Bioquímica editada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+          _this.bloquearBtn = false;
+          _this.errors = [];
+          _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-          }
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -581,6 +608,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios["delete"]("/cepas/actinomiceto/identi-bioqui/".concat(this.getIdentiBioqui.id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -593,10 +626,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Eliminar Característica", "Identificación Bioquímica eliminadas con exito!!", "success");
       })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-        }
+        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -664,297 +694,44 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row justify-content-md-center" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "form",
-                {
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.evento($event)
+            _c(
+              "div",
+              { staticClass: "col-md-12" },
+              [
+                _vm.errors != ""
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "alert alert-danger" },
+                        _vm._l(_vm.errors, function(item, index) {
+                          return _c("p", { key: index }, [
+                            _vm._v(_vm._s(item[0]))
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.evento($event)
+                      }
                     }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "form-row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "oxidasa" } }, [
-                            _vm._v("Oxidasa")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.oxidasa,
-                                expression: "parametros.oxidasa"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "oxidasa",
-                              id: "oxidasa",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.oxidasa },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "oxidasa",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "catalasa" } }, [
-                            _vm._v("Catalasa")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.catalasa,
-                                expression: "parametros.catalasa"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "catalasa",
-                              id: "catalasa",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.catalasa },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "catalasa",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "citrato" } }, [
-                            _vm._v("Citrato")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.citrato,
-                                expression: "parametros.citrato"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "citrato",
-                              id: "citrato",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.citrato },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "citrato",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "nitrato" } }, [
-                            _vm._v("Nitratos")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.nitrato,
-                                expression: "parametros.nitrato"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "nitrato",
-                              id: "nitrato",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.nitrato },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "nitrato",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "caseina" } }, [
-                            _vm._v("Caseina")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.caseina,
-                                expression: "parametros.caseina"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "caseina",
-                              id: "caseina",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.caseina },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "caseina",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "hidro_urea" } }, [
-                            _vm._v("Hidrolisís de la Úrea")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.hidro_urea,
-                                expression: "parametros.hidro_urea"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "hidro_urea",
-                              id: "hidro_urea",
-                              placeholder: "...",
-                              type: "text",
-                              required: ""
-                            },
-                            domProps: { value: _vm.parametros.hidro_urea },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "hidro_urea",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-row" },
-                    [
-                      _c("div", { class: _vm.classRow }, [
+                  },
+                  [
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-4" }, [
                         _c(
                           "div",
                           { staticClass: "position-relative form-group" },
                           [
-                            _c("label", { attrs: { for: "hidro_gelatina" } }, [
-                              _vm._v("Hidrolisís de la Gelatina")
+                            _c("label", { attrs: { for: "oxidasa" } }, [
+                              _vm._v("Oxidasa")
                             ]),
                             _vm._v(" "),
                             _c("input", {
@@ -962,21 +739,19 @@ var render = function() {
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.parametros.hidro_gelatina,
-                                  expression: "parametros.hidro_gelatina"
+                                  value: _vm.parametros.oxidasa,
+                                  expression: "parametros.oxidasa"
                                 }
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                name: "hidro_gelatina",
-                                id: "hidro_gelatina",
+                                name: "oxidasa",
+                                id: "oxidasa",
                                 placeholder: "...",
                                 type: "text",
                                 required: ""
                               },
-                              domProps: {
-                                value: _vm.parametros.hidro_gelatina
-                              },
+                              domProps: { value: _vm.parametros.oxidasa },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -984,7 +759,7 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.parametros,
-                                    "hidro_gelatina",
+                                    "oxidasa",
                                     $event.target.value
                                   )
                                 }
@@ -994,75 +769,33 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm.required
-                        ? [
-                            _c("div", { staticClass: "col-md-4" }, [
-                              _c(
-                                "div",
-                                { staticClass: "position-relative form-group" },
-                                [
-                                  _c("label", { attrs: { for: "imagen" } }, [
-                                    _vm._v("Imágenes")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    ref: "inputImagen",
-                                    staticClass: "form-control-file",
-                                    attrs: {
-                                      name: "imagen",
-                                      id: "imagen",
-                                      type: "file",
-                                      accept: "image/jpeg, image/png",
-                                      multiple: "",
-                                      required: _vm.required
-                                    },
-                                    on: { change: _vm.obtenerImagenes }
-                                  }),
-                                  _vm._v(" "),
-                                  _vm.erroresImagenes
-                                    ? _c(
-                                        "span",
-                                        { staticClass: "text-danger" },
-                                        [_vm._v(_vm._s(_vm.erroresImagenes))]
-                                      )
-                                    : _vm._e()
-                                ]
-                              )
-                            ])
-                          ]
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("div", { class: _vm.classRow }, [
+                      _c("div", { staticClass: "col-md-4" }, [
                         _c(
                           "div",
                           { staticClass: "position-relative form-group" },
                           [
-                            _c(
-                              "label",
-                              { attrs: { for: "sensi_antibioticos" } },
-                              [_vm._v("Sensibilidad a Antibióticos")]
-                            ),
+                            _c("label", { attrs: { for: "catalasa" } }, [
+                              _vm._v("Catalasa")
+                            ]),
                             _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.parametros.sensi_antibioticos,
-                                  expression: "parametros.sensi_antibioticos"
+                                  value: _vm.parametros.catalasa,
+                                  expression: "parametros.catalasa"
                                 }
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                name: "sensi_antibioticos",
-                                id: "sensi_antibioticos",
+                                name: "catalasa",
+                                id: "catalasa",
                                 placeholder: "...",
                                 type: "text",
                                 required: ""
                               },
-                              domProps: {
-                                value: _vm.parametros.sensi_antibioticos
-                              },
+                              domProps: { value: _vm.parametros.catalasa },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -1070,7 +803,51 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.parametros,
-                                    "sensi_antibioticos",
+                                    "catalasa",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "citrato" } }, [
+                              _vm._v("Citrato")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.citrato,
+                                  expression: "parametros.citrato"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "citrato",
+                                id: "citrato",
+                                placeholder: "...",
+                                type: "text",
+                                required: ""
+                              },
+                              domProps: { value: _vm.parametros.citrato },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "citrato",
                                     $event.target.value
                                   )
                                 }
@@ -1079,292 +856,580 @@ var render = function() {
                           ]
                         )
                       ])
-                    ],
-                    2
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _vm._m(0),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-row" }, [
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "div",
-                            { staticClass: "position-relative form-group" },
-                            [
-                              _c("label", { attrs: { for: "fer_lactosa" } }, [
-                                _vm._v("Lactosa")
-                              ]),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fer_lactosa,
-                                    expression: "parametros.fer_lactosa"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "fer_lactosa",
-                                  id: "fer_lactosa",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.parametros.fer_lactosa },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "fer_lactosa",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "div",
-                            { staticClass: "position-relative form-group" },
-                            [
-                              _c("label", { attrs: { for: "fer_manitol" } }, [
-                                _vm._v("Manitol")
-                              ]),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fer_manitol,
-                                    expression: "parametros.fer_manitol"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "fer_manitol",
-                                  id: "fer_manitol",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.parametros.fer_manitol },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "fer_manitol",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-row" }, [
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "div",
-                            { staticClass: "position-relative form-group" },
-                            [
-                              _c("label", { attrs: { for: "fer_inositol" } }, [
-                                _vm._v("Inositol")
-                              ]),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fer_inositol,
-                                    expression: "parametros.fer_inositol"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "fer_inositol",
-                                  id: "fer_inositol",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: {
-                                  value: _vm.parametros.fer_inositol
-                                },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "fer_inositol",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "div",
-                            { staticClass: "position-relative form-group" },
-                            [
-                              _c("label", { attrs: { for: "fer_sacarosa" } }, [
-                                _vm._v("Sacarosa")
-                              ]),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fer_sacarosa,
-                                    expression: "parametros.fer_sacarosa"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  name: "fer_sacarosa",
-                                  id: "fer_sacarosa",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: {
-                                  value: _vm.parametros.fer_sacarosa
-                                },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "fer_sacarosa",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "fer_inositol" } }, [
-                            _vm._v("Otro Azúcar")
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.fer_otro,
-                                expression: "parametros.fer_otro"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              name: "fer_inositol",
-                              id: "fer_inositol",
-                              placeholder: "...",
-                              type: "text"
-                            },
-                            domProps: { value: _vm.parametros.fer_otro },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "fer_otro",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c(
-                        "div",
-                        { staticClass: "position-relative form-group" },
-                        [
-                          _c("label", { attrs: { for: "otras_caract" } }, [
-                            _vm._v("Otras Características")
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "nitrato" } }, [
+                              _vm._v("Nitratos")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.nitrato,
+                                  expression: "parametros.nitrato"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "nitrato",
+                                id: "nitrato",
+                                placeholder: "...",
+                                type: "text",
+                                required: ""
+                              },
+                              domProps: { value: _vm.parametros.nitrato },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "nitrato",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "caseina" } }, [
+                              _vm._v("Caseina")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.caseina,
+                                  expression: "parametros.caseina"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "caseina",
+                                id: "caseina",
+                                placeholder: "...",
+                                type: "text",
+                                required: ""
+                              },
+                              domProps: { value: _vm.parametros.caseina },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "caseina",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "hidro_urea" } }, [
+                              _vm._v("Hidrolisís de la Úrea")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.hidro_urea,
+                                  expression: "parametros.hidro_urea"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "hidro_urea",
+                                id: "hidro_urea",
+                                placeholder: "...",
+                                type: "text",
+                                required: ""
+                              },
+                              domProps: { value: _vm.parametros.hidro_urea },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "hidro_urea",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-row" },
+                      [
+                        _c("div", { class: _vm.classRow }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c(
+                                "label",
+                                { attrs: { for: "hidro_gelatina" } },
+                                [_vm._v("Hidrolisís de la Gelatina")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.hidro_gelatina,
+                                    expression: "parametros.hidro_gelatina"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "hidro_gelatina",
+                                  id: "hidro_gelatina",
+                                  placeholder: "...",
+                                  type: "text",
+                                  required: ""
+                                },
+                                domProps: {
+                                  value: _vm.parametros.hidro_gelatina
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.parametros,
+                                      "hidro_gelatina",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm.required
+                          ? [
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-group"
+                                  },
+                                  [
+                                    _c("label", { attrs: { for: "imagen" } }, [
+                                      _vm._v("Imágenes")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      ref: "inputImagen",
+                                      staticClass: "form-control-file",
+                                      attrs: {
+                                        name: "imagen",
+                                        id: "imagen",
+                                        type: "file",
+                                        accept: "image/jpeg, image/png",
+                                        multiple: "",
+                                        required: _vm.required
+                                      },
+                                      on: { change: _vm.obtenerImagenes }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm.erroresImagenes
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "text-danger" },
+                                          [_vm._v(_vm._s(_vm.erroresImagenes))]
+                                        )
+                                      : _vm._e()
+                                  ]
+                                )
+                              ])
+                            ]
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("div", { class: _vm.classRow }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c(
+                                "label",
+                                { attrs: { for: "sensi_antibioticos" } },
+                                [_vm._v("Sensibilidad a Antibióticos")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.sensi_antibioticos,
+                                    expression: "parametros.sensi_antibioticos"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "sensi_antibioticos",
+                                  id: "sensi_antibioticos",
+                                  placeholder: "...",
+                                  type: "text",
+                                  required: ""
+                                },
+                                domProps: {
+                                  value: _vm.parametros.sensi_antibioticos
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.parametros,
+                                      "sensi_antibioticos",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ])
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("label", { attrs: { for: "fer_lactosa" } }, [
+                                  _vm._v("Lactosa")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.fer_lactosa,
+                                      expression: "parametros.fer_lactosa"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "fer_lactosa",
+                                    id: "fer_lactosa",
+                                    placeholder: "...",
+                                    type: "text",
+                                    required: ""
+                                  },
+                                  domProps: {
+                                    value: _vm.parametros.fer_lactosa
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "fer_lactosa",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
                           ]),
                           _vm._v(" "),
-                          _c("textarea", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.otras_caract,
-                                expression: "parametros.otras_caract"
-                              }
-                            ],
-                            staticClass: "form-control mt-2",
-                            staticStyle: { height: "200px" },
-                            attrs: { name: "otras_caract", id: "otras_caract" },
-                            domProps: { value: _vm.parametros.otras_caract },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c("label", { attrs: { for: "fer_manitol" } }, [
+                                  _vm._v("Manitol")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.fer_manitol,
+                                      expression: "parametros.fer_manitol"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "fer_manitol",
+                                    id: "fer_manitol",
+                                    placeholder: "...",
+                                    type: "text",
+                                    required: ""
+                                  },
+                                  domProps: {
+                                    value: _vm.parametros.fer_manitol
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "fer_manitol",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "fer_inositol" } },
+                                  [_vm._v("Inositol")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.fer_inositol,
+                                      expression: "parametros.fer_inositol"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "fer_inositol",
+                                    id: "fer_inositol",
+                                    placeholder: "...",
+                                    type: "text",
+                                    required: ""
+                                  },
+                                  domProps: {
+                                    value: _vm.parametros.fer_inositol
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "fer_inositol",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "fer_sacarosa" } },
+                                  [_vm._v("Sacarosa")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.fer_sacarosa,
+                                      expression: "parametros.fer_sacarosa"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "fer_sacarosa",
+                                    id: "fer_sacarosa",
+                                    placeholder: "...",
+                                    type: "text",
+                                    required: ""
+                                  },
+                                  domProps: {
+                                    value: _vm.parametros.fer_sacarosa
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "fer_sacarosa",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "fer_inositol" } }, [
+                              _vm._v("Otro Azúcar")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.fer_otro,
+                                  expression: "parametros.fer_otro"
                                 }
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "otras_caract",
-                                  $event.target.value
-                                )
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "fer_inositol",
+                                id: "fer_inositol",
+                                placeholder: "...",
+                                type: "text"
+                              },
+                              domProps: { value: _vm.parametros.fer_otro },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "fer_otro",
+                                    $event.target.value
+                                  )
+                                }
                               }
-                            }
-                          })
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "mb-2 mr-2 btn btn-block",
-                      class: _vm.btnClase,
-                      attrs: { disabled: _vm.btnDisable }
-                    },
-                    [_vm._v(_vm._s(_vm.nomBtn))]
-                  )
-                ]
-              )
-            ])
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "otras_caract" } }, [
+                              _vm._v("Otras Características")
+                            ]),
+                            _vm._v(" "),
+                            _c("textarea", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.parametros.otras_caract,
+                                  expression: "parametros.otras_caract"
+                                }
+                              ],
+                              staticClass: "form-control mt-2",
+                              staticStyle: { height: "200px" },
+                              attrs: {
+                                name: "otras_caract",
+                                id: "otras_caract"
+                              },
+                              domProps: { value: _vm.parametros.otras_caract },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.parametros,
+                                    "otras_caract",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "mb-2 mr-2 btn btn-block",
+                        class: _vm.btnClase,
+                        attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
+                      },
+                      [_vm._v(_vm._s(_vm.nomBtn))]
+                    )
+                  ]
+                )
+              ],
+              2
+            )
           ])
         ])
       ])

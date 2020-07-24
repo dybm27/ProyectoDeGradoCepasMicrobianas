@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">{{tituloForm}}</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="ureasa" class>Ureasa</label>
                 <input
@@ -48,46 +53,30 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_37"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_37" />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">42°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_42"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_42" />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">45°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_45"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_45" />
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">otra°</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_otra"
-                  />
-                  <em
-                    v-if="termotolerancia"
-                    class="error invalid-feedback"
-                  >Llenar al menos una de las diferentes temperaturas.</em>
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_otra" />
                 </div>
+                <span
+                  v-if="termotolerancia"
+                  class="text-danger"
+                >Llenar al menos una de las diferentes temperaturas.</span>
               </div>
               <div class="position-relative form-group">
                 <label>Crecimineto</label>
@@ -157,7 +146,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable"
+                :disabled="btnDisable||bloquearBtn||termotolerancia"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -168,7 +157,7 @@
           <div class="card-body">
             <template v-if="required">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
-                <cCroppieCepas
+                <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"
                   :posicion="'vertical'"
@@ -214,7 +203,7 @@ export default {
         this.llenarInfo();
         this.$emit("cambiarVariable");
       }
-    }
+    },
   },
   data() {
     return {
@@ -232,42 +221,65 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: ""
+        imagen3: "",
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [obtenerImagenCroopie3ImagenesMixin, Toastr],
   methods: {
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Característica") {
-        axios
-          .post("/cepas/levadura/caract-bioqui", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Característica";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Características Bioquímicas",
-              "Característica Bioquímica agregada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
+        if (this.parametros.imagen1) {
+          axios
+            .post("/cepas/levadura/caract-bioqui", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.tituloForm = "Editar Característica";
+              this.nomBtn = "Editar";
+              this.$emit("agregar", res.data);
+              this.toastr(
+                "Agregar Características Bioquímicas",
+                "Característica Bioquímica agregada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija al menos una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/levadura/caract-bioqui/${this.info.id}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.errors = [];
             this.$emit("editar", res.data);
             this.toastr(
@@ -276,13 +288,11 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -305,7 +315,7 @@ export default {
     },
     accionImagen(data) {
       this.$emit("editar", data);
-    }
+    },
   },
   computed: {
     required() {
@@ -332,7 +342,7 @@ export default {
         return false;
       }
       return true;
-    }
+    },
   },
   mounted() {
     if (this.info) {
@@ -348,6 +358,6 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>

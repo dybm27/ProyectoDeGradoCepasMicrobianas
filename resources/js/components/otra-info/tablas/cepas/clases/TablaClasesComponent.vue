@@ -7,11 +7,7 @@
           Tabla Dinámica Clases
         </div>
         <div class="btn-actions-pane-right actions-icon-btn">
-          <button
-            @click="$modal.show('modal_agregar_tipo_cepa',{tipo:'clase'})"
-            class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
-          >Agregar</button>
-          <img @click="mostrarTabla" :src="'/iconos/icons8-vista-general-3-35.png'" />
+          <AccionMostrar @mostrarTabla="mostrarTabla" :tipoModal="'cepa'" :tipo="'clase'" />
         </div>
       </div>
       <div class="card-body" v-if="tabla">
@@ -43,8 +39,9 @@ import vuex from "vuex";
 import FieldDefs from "./columnas";
 import websocketsTablaOtraInfoMixin from "../../../../../mixins/websocketsTablaOtraInfo";
 import MyVuetable from "../../../../vuetable/MyVuetableComponent.vue";
+import AccionMostrar from "../../AccionMostrar.vue";
 export default {
-  components: { MyVuetable },
+  components: { MyVuetable, AccionMostrar },
   data() {
     return {
       fields: FieldDefs,

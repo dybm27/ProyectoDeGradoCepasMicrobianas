@@ -81,7 +81,7 @@ export default {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
     };
   },
   mixins: [Toastr],
@@ -89,7 +89,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "micro", data: data });
@@ -101,7 +101,14 @@ export default {
     eliminar() {
       axios
         .delete(`/cepas/actinomiceto/caract-micro/${this.getCaractMicro.id}`)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
           this.$modal.hide("eliminar_caract_micro");
@@ -112,11 +119,8 @@ export default {
             "success"
           );
         })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-            // console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
     },
     cambiarVariable() {
@@ -129,7 +133,7 @@ export default {
     cancelar() {
       this.mostrarForm = false;
       this.mostrarBtnAgregar = true;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getCaractMicro"]),
@@ -149,13 +153,13 @@ export default {
     },
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
-    }
+    },
   },
   mounted() {
     if (this.getCaractMicro) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
-  }
+  },
 };
 </script>

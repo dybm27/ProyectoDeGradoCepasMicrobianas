@@ -38,6 +38,13 @@ export default {
     actions: {
         obtenerCepas({ commit }, id) {
             axios.get("/info-panel/cepas").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarCepas", res.data);
             });
         },

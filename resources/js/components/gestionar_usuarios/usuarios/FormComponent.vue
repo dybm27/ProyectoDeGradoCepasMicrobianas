@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="nombre" class>Nombre</label>
                 <input
@@ -105,7 +110,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -177,7 +182,7 @@ export default {
         email: "",
         pass: "",
         pass1: "",
-        imagen: ""
+        imagen: "",
       },
       tituloForm: "",
       imagenMiniatura: "",
@@ -187,7 +192,8 @@ export default {
       mensajeErrorEmail: "",
       mensajeContraseña: "",
       mensajeContraseña1: "",
-      mensajeNombre: ""
+      mensajeNombre: "",
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr],
@@ -208,6 +214,7 @@ export default {
       }
     },
     evento() {
+      this.bloquearBtn = true;
       this.parametros.pass =
         this.parametros.pass === undefined ? "" : this.parametros.pass;
       this.parametros.imagen =
@@ -217,7 +224,15 @@ export default {
       if (this.tituloForm === "Agregar Usuario") {
         axios
           .post("/usuario/agregar", this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.accionUsuario({ tipo: "agregar", data: res.data });
             this.toastr(
               "Agregar Usuario",
@@ -226,7 +241,8 @@ export default {
             );
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
               this.errors = [];
               this.errors = error.response.data.errors;
@@ -236,8 +252,16 @@ export default {
       } else {
         axios
           .put(`/usuario/editar/${this.info.id}`, this.parametros)
-          .then(res => {
-            if (this.getUserAuth.id === res.data.id) {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
+            if (this.auth.id === res.data.id) {
               this.accionModificarAuth({ data: res.data });
             }
             this.accionUsuario({ tipo: "editar", data: res.data });
@@ -250,20 +274,20 @@ export default {
             window.Echo.private("desbloquearBtnsUsuario").whisper(
               "desbloquearBtnsUsuario",
               {
-                id: res.data.id
+                id: res.data.id,
               }
             );
             this.$events.fire("spliceMisBloqueosUsuario", {
-              id: res.data.id
+              id: res.data.id,
             });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
           });
       }
@@ -299,21 +323,20 @@ export default {
     },
     cargarImagen(file) {
       let reader = new Image();
-      reader.onload = e => {
+      reader.onload = (e) => {
         this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
-    }
+    },
   },
   computed: {
+    ...vuex.mapState("usuarios", ["usuarios"]),
     ...vuex.mapGetters("usuarios", [
       "getTipoUser",
       "getUsuarioById",
       "getUsuarioByEmail",
-      "getUsuarios",
-      "getUserAuth"
     ]),
-    ...vuex.mapGetters(["getUserAuth"]),
+    ...vuex.mapState(["auth"]),
     mostraImagen() {
       return this.imagenMiniatura;
     },
@@ -338,7 +361,7 @@ export default {
       return this.nomBtn;
     },
     validarContraseñas() {
-      if (this.parametros.pass1) {
+      if (this.parametros.pass) {
         if (this.parametros.pass != this.parametros.pass1) {
           this.mensajeContraseña1 = "Las contraseñas no coinciden";
           return true;
@@ -410,7 +433,7 @@ export default {
       } else {
         return false;
       }
-    }
+    },
   },
   created() {
     if (this.idUsuario === 0) {
@@ -424,6 +447,6 @@ export default {
       this.tituloForm = "Editar Usuario";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

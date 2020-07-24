@@ -90,13 +90,16 @@ Broadcast::channel('recibirBtnsUsuario', function ($user) {
     return true;
 });
 //imagenes login
-Broadcast::channel('imagenesLogin', function ($user) {
+Broadcast::channel('ImgLogin', function ($user) {
     return ['user' => $user];
 });
-Broadcast::channel('bloquearImagenesLogin', function ($user) {
+Broadcast::channel('recibirBtnImgLogin', function ($user) {
     return true;
 });
-Broadcast::channel('borrarBloqueoImagenesLogin', function ($user) {
+Broadcast::channel('bloquearBtnImgLogin', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnImgLogin', function ($user) {
     return true;
 });
 //noticias

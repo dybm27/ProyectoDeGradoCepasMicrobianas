@@ -41,7 +41,7 @@ export default {
     websocketsAccionesMixin("equipamiento", "Equipamiento", "equipamientos")
   ],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"])
   }
 };
 </script>

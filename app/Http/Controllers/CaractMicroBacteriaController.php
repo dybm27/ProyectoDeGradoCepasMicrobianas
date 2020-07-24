@@ -13,6 +13,7 @@ class CaractMicroBacteriaController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
 
@@ -72,6 +73,7 @@ class CaractMicroBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMicroBacteria = CaracMicroBacteria::find($id);
 
         $caractMicroBacteria->forma_id = intval($request->forma);
@@ -217,5 +219,15 @@ class CaractMicroBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'ordenamiento' => 'required', 'forma' => 'required',
+            'tincion_gram' => 'required', 'tincion_esporas' => 'required',
+            'tincion_capsula' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

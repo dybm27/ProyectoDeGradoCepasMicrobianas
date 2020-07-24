@@ -7,6 +7,11 @@
             <form @submit.prevent="evento">
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <template v-if="getInfoMetodoConserLevaduras">
                   <label for="forma" class>Método de Conservación</label>
                   <div class="input-group mb-3">
@@ -17,7 +22,7 @@
                       v-model.number="parametros.tipo_metodo"
                     >
                       <option
-                        v-for="(m,index) in getInfoMetodoConserLevaduras.tipo_metodo"
+                        v-for="(m,index) in obtenerMetodos"
                         :key="index"
                         :value="m.id"
                       >{{m.nombre}}</option>
@@ -143,7 +148,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </div>
             </form>
@@ -224,7 +229,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -240,33 +250,34 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent.vue";
 export default {
-  components: { Croppie },
   props: ["idMetodo"],
-  components: { DatePicker },
+  components: { Croppie, DatePicker },
   data() {
     return {
       lang: Lang,
       info: "",
       parametros: {
         cepaId: "",
-        tipo_metodo: 1,
+        tipo_metodo: null,
         fecha: "",
         numero_replicas: "",
         recuento_microgota: "",
         medio_cultivo: "",
         numero_pases: "",
         observaciones: "",
-        imagen: ""
+        imagen: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [obtenerImagenCroopieCepas, Toastr],
@@ -274,31 +285,53 @@ export default {
     ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractLevadura"]),
     evento() {
+      this.bloquearBtn = true;
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
       if (this.tituloForm === "Agregar Método") {
-        axios
-          .post("/cepas/levadura/metodo-conser", this.parametros)
-          .then(res => {
-            this.accionAgregarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Agregar Método",
-              "Método agregado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
-          })
-          .catch(error => {
-            if (error.response) {
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/levadura/metodo-conser", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
+              this.accionAgregarCaract({ tipo: "metodo", data: res.data });
+              this.toastr(
+                "Agregar Método",
+                "Método agregado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable");
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/levadura/metodo-conser/${this.info.id}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.accionEditarCaract({ tipo: "metodo", data: res.data });
             this.toastr(
               "Editar Método",
@@ -307,13 +340,11 @@ export default {
             );
             this.$emit("cambiarVariable");
           })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -341,16 +372,18 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-levaduras/agregar", parametros)
-          .then(res => {
+          .then((res) => {
+            this.bloquearBtnModal = false;
             this.accionAgregarTipoCaractLevadura({
               info: res.data,
-              tipo: this.modal.tipo
+              tipo: this.modal.tipo,
             });
             this.$modal.hide("agregar-caract-info");
             this.toastr(
@@ -359,14 +392,25 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              this.errors = [];
               this.modal.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
@@ -411,9 +455,13 @@ export default {
         this.parametros.medio_cultivo = "";
         return true;
       }
-    }
+    },
+    obtenerMetodos() {
+      return this.getInfoMetodoConserLevaduras.tipo_metodo;
+    },
   },
   created() {
+    this.verificarSelects();
     if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
@@ -428,6 +476,15 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  watch: {
+    obtenerMetodos() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
+  },
 };
 </script>

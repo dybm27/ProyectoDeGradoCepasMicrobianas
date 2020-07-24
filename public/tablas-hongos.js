@@ -9,14 +9,15 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tablas_hongos_ModalesComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tablas/hongos/ModalesComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/ModalesComponent.vue");
-/* harmony import */ var _tablas_hongos_tipos_metodos_TablaTiposMetodosComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tablas/hongos/tipos-metodos/TablaTiposMetodosComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/tipos-metodos/TablaTiposMetodosComponent.vue");
-/* harmony import */ var _tablas_hongos_colors_TablaColorsComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tablas/hongos/colors/TablaColorsComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/colors/TablaColorsComponent.vue");
-/* harmony import */ var _tablas_hongos_texturas_TablaTexturasComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tablas/hongos/texturas/TablaTexturasComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/texturas/TablaTexturasComponent.vue");
-/* harmony import */ var _tablas_hongos_conidioforos_TablaConidioforosComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tablas/hongos/conidioforos/TablaConidioforosComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/conidioforos/TablaConidioforosComponent.vue");
-/* harmony import */ var _tablas_hongos_esporas_sexual_TablaEsporasSexualComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tablas/hongos/esporas-sexual/TablaEsporasSexualComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/esporas-sexual/TablaEsporasSexualComponent.vue");
-/* harmony import */ var _tablas_hongos_esporas_asexual_TablaEsporasAsexualComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tablas/hongos/esporas-asexual/TablaEsporasAsexualComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/esporas-asexual/TablaEsporasAsexualComponent.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/websocketsOtraInfo */ "./resources/js/mixins/websocketsOtraInfo.js");
+/* harmony import */ var _tablas_hongos_ModalesComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tablas/hongos/ModalesComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/ModalesComponent.vue");
+/* harmony import */ var _tablas_hongos_tipos_metodos_TablaTiposMetodosComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tablas/hongos/tipos-metodos/TablaTiposMetodosComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/tipos-metodos/TablaTiposMetodosComponent.vue");
+/* harmony import */ var _tablas_hongos_colors_TablaColorsComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tablas/hongos/colors/TablaColorsComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/colors/TablaColorsComponent.vue");
+/* harmony import */ var _tablas_hongos_texturas_TablaTexturasComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tablas/hongos/texturas/TablaTexturasComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/texturas/TablaTexturasComponent.vue");
+/* harmony import */ var _tablas_hongos_conidioforos_TablaConidioforosComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tablas/hongos/conidioforos/TablaConidioforosComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/conidioforos/TablaConidioforosComponent.vue");
+/* harmony import */ var _tablas_hongos_esporas_sexual_TablaEsporasSexualComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tablas/hongos/esporas-sexual/TablaEsporasSexualComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/esporas-sexual/TablaEsporasSexualComponent.vue");
+/* harmony import */ var _tablas_hongos_esporas_asexual_TablaEsporasAsexualComponent_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tablas/hongos/esporas-asexual/TablaEsporasAsexualComponent.vue */ "./resources/js/components/otra-info/tablas/hongos/esporas-asexual/TablaEsporasAsexualComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -145,21 +146,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -170,72 +157,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ModalOtraInfoHongos: _tablas_hongos_ModalesComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    TablaColors: _tablas_hongos_colors_TablaColorsComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    TablaTexturas: _tablas_hongos_texturas_TablaTexturasComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    TablaMetodos: _tablas_hongos_tipos_metodos_TablaTiposMetodosComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    TablaEsporasAsexuales: _tablas_hongos_esporas_asexual_TablaEsporasAsexualComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    TablaEsporasSexuales: _tablas_hongos_esporas_sexual_TablaEsporasSexualComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    TablaConidioforos: _tablas_hongos_conidioforos_TablaConidioforosComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    ModalOtraInfoHongos: _tablas_hongos_ModalesComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    TablaColors: _tablas_hongos_colors_TablaColorsComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    TablaTexturas: _tablas_hongos_texturas_TablaTexturasComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    TablaMetodos: _tablas_hongos_tipos_metodos_TablaTiposMetodosComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    TablaEsporasAsexuales: _tablas_hongos_esporas_asexual_TablaEsporasAsexualComponent_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    TablaEsporasSexuales: _tablas_hongos_esporas_sexual_TablaEsporasSexualComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    TablaConidioforos: _tablas_hongos_conidioforos_TablaConidioforosComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
     return {
-      refrescarTabla1: false,
-      refrescarTabla2: false,
-      refrescarTabla3: false,
-      refrescarTabla4: false,
-      refrescarTabla5: false,
-      refrescarTabla6: false,
       tablasCaractMacro: false,
       tablasCaractMicro: false,
       tablasMetodos: false
     };
   },
-  created: function created() {
-    if (this.getInfoHongos == "") {
-      this.obtenerInfoCaractHongos();
-    }
-
-    this.obtenerInfoCaractHongos();
-    this.$emit("rutaHijo", window.location.pathname);
-  },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_7__["default"].mapGetters("info_caract", ["getInfoHongos"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_7__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos"]), {
-    accionModal: function accionModal(datos) {
-      switch (datos.tipo) {
-        case "color":
-          this.refrescarTabla1 = true;
-          break;
-
-        case "textura":
-          this.refrescarTabla2 = true;
-          break;
-
-        case "conidioforo":
-          this.refrescarTabla3 = true;
-          break;
-
-        case "esporaA":
-          this.refrescarTabla4 = true;
-          break;
-
-        case "esporaS":
-          this.refrescarTabla5 = true;
-          break;
-
-        case "tipo_metodo":
-          this.refrescarTabla6 = true;
-          break;
-      }
-    },
-    cambiarVariable: function cambiarVariable() {
-      this.refrescarTabla1 = false;
-      this.refrescarTabla2 = false;
-      this.refrescarTabla3 = false;
-      this.refrescarTabla4 = false;
-      this.refrescarTabla5 = false;
-      this.refrescarTabla6 = false;
-    },
+  mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_8__["default"].mapState("info_caract", ["info_caract_hongos"])),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_8__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos"]), {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
@@ -245,7 +184,71 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     mostrarTablasMetodos: function mostrarTablasMetodos() {
       this.tablasMetodos = !this.tablasMetodos;
     }
-  })
+  }),
+  created: function created() {
+    var _this = this;
+
+    this.obtenerInfoCaractHongos();
+    this.$events.$on("verificarBloqueos-colors-hongo", function (e) {
+      return _this.verificarBloqueos("color");
+    });
+    this.$events.$on("verificarBloqueos-conidioforos-hongo", function (e) {
+      return _this.verificarBloqueos("conidioforo");
+    });
+    this.$events.$on("verificarBloqueos-esporasA-hongo", function (e) {
+      return _this.verificarBloqueos("esporaA");
+    });
+    this.$events.$on("verificarBloqueos-esporasS-hongo", function (e) {
+      return _this.verificarBloqueos("esporaS");
+    });
+    this.$events.$on("verificarBloqueos-texturas-hongo", function (e) {
+      return _this.verificarBloqueos("textura");
+    });
+    this.$events.$on("verificarBloqueos-tipos-metodos-hongo", function (e) {
+      return _this.verificarBloqueos("tipo_metodo");
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off("verificarBloqueos-colors-hongo");
+    this.$events.$off("verificarBloqueos-conidioforos-hongo");
+    this.$events.$off("verificarBloqueos-esporasA-hongo");
+    this.$events.$off("verificarBloqueos-esporasS-hongo");
+    this.$events.$off("verificarBloqueos-texturas-hongo");
+    this.$events.$off("verificarBloqueos-tipos-metodos-hongo");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["tipoModal", "tipo"],
+  methods: {
+    mostrarTabla: function mostrarTabla() {
+      this.$emit("mostrarTabla");
+    }
+  }
 });
 
 /***/ }),
@@ -260,6 +263,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsModalOtraInfo */ "./resources/js/mixins/websocketsModalOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -391,19 +396,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      idTipoEditar: "",
-      idTipoEliminar: "",
+      id: "",
       modal: {
         nombre: "",
-        tipo: ""
+        tipo: "",
+        bloquearBtnModal: false
       },
       errors: ""
     };
   },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("HongosInfo")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo"]), {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.modal.nombre = "";
@@ -412,7 +427,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     agregarTipo: function agregarTipo() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios.post("/info-caract-hongos/agregar", this.modal).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this.bloquearBtnModal = false;
+
         _this.accionAgregarTipoCaractHongo({
           info: res.data,
           tipo: _this.modal.tipo
@@ -427,6 +451,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
       })["catch"](function (error) {
+        _this.bloquearBtnModal = false;
+
         if (error.response) {
           _this.errors = error.response.data.errors;
         }
@@ -435,14 +461,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
-      this.idTipoEditar = data.params.id;
+      this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
     },
     editarTipo: function editarTipo() {
       var _this2 = this;
 
-      axios.put("/info-caract-hongos/editar/".concat(this.idTipoEditar), this.modal).then(function (res) {
+      this.bloquearBtnModal = true;
+      axios.put("/info-caract-hongos/editar/".concat(this.id), this.modal).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this2.bloquearBtnModal = false;
+
         _this2.accionEditarTipoCaractHongo({
           info: res.data,
           tipo: _this2.modal.tipo
@@ -457,6 +492,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this2.$modal.hide("modal_editar_tipo_hongo");
       })["catch"](function (error) {
+        _this2.bloquearBtnModal = false;
+
         if (error.response) {
           _this2.errors = error.response.data;
         }
@@ -465,15 +502,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
-      this.idTipoEliminar = data.params.id;
+      this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo: function eliminarTipo() {
       var _this3 = this;
 
-      axios["delete"]("/info-caract-hongos/eliminar/".concat(this.idTipoEliminar), {
+      this.bloquearBtnModal = true;
+      axios["delete"]("/info-caract-hongos/eliminar/".concat(this.id), {
         data: this.modal
       }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this3.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this3.bloquearBtnModal = false;
+
         _this3.accionEliminarTipoCaractHongo({
           info: res.data,
           tipo: _this3.modal.tipo
@@ -488,30 +534,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.$modal.hide("modal_eliminar_tipo_hongo");
       })["catch"](function (error) {
-        if (error.response) {//console.log(error.response.data);
-        }
+        _this3.bloquearBtnModal = false;
 
         _this3.toastr("Error!!!", "", "error", 4000);
-      });
-    },
-    toastr: function toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
       });
     },
     primeraMayus: function primeraMayus(string) {
@@ -531,10 +556,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.errors = "";
           return false;
         }
-      } else {
-        this.errors = "Este campo es obligatorio";
+      }
+    },
+    validarBtn: function validarBtn() {
+      if (this.validarNombre || !this.modal.nombre) {
         return true;
       }
+
+      return false;
     }
   }
 });
@@ -550,8 +579,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/colors/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/colors/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -582,32 +620,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoCaractMacroHongos != "" && this.getInfoCaractMacroHongos != null) {
+        if (this.getInfoCaractMacroHongos.colores.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -621,8 +670,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/conidioforos/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/conidioforos/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -653,32 +711,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
+        if (this.getInfoCaractMicroHongos.conidioforos.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -692,8 +761,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/esporas-asexual/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/esporas-asexual/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -724,32 +802,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
+        if (this.getInfoCaractMicroHongos.esporas_asexuales.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -763,8 +852,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/esporas-sexual/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/esporas-sexual/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -795,32 +893,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
+        if (this.getInfoCaractMicroHongos.esporas_sexuales.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -834,8 +943,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/texturas/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/texturas/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -866,32 +984,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoCaractMacroHongos != "" && this.getInfoCaractMacroHongos != null) {
+        if (this.getInfoCaractMacroHongos.texturas.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -905,8 +1034,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/tipos-metodos/columnas.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/hongos/tipos-metodos/columnas.js");
+/* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -937,32 +1075,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["refrescarTabla"],
   data: function data() {
     return {
-      idCepaEliminar: "",
-      fields: _columnas__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fields: _columnas__WEBPACK_IMPORTED_MODULE_1__["default"],
       sortOrder: [{
         field: "nombre",
         direction: "asc"
-      }],
-      tabla: false
+      }]
     };
   },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla: function mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserHongos"]), {
+    siHayDatos: function siHayDatos() {
+      if (this.getInfoMetodoConserHongos != "" && this.getInfoMetodoConserHongos != null) {
+        if (this.getInfoMetodoConserHongos.tipo_metodo.length > 0) {
+          return true;
+        }
+      }
+
+      return false;
     }
-  }
+  })
 });
 
 /***/ }),
@@ -986,7 +1135,7 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _vm.getInfoHongos != ""
+      _vm.info_caract_hongos != ""
         ? [
             _c("div", { staticClass: "row justify-content-md-center" }, [
               _c("div", { staticClass: "col-md-12" }, [
@@ -1002,7 +1151,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasCaractMacro }
                         })
@@ -1020,14 +1170,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaColors", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla1
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaColors")],
                                 1
                               )
                             ]
@@ -1040,14 +1183,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaTexturas", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla2
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaTexturas")],
                                 1
                               )
                             ]
@@ -1073,7 +1209,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasCaractMicro }
                         })
@@ -1091,14 +1228,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaConidioforos", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla3
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaConidioforos")],
                                 1
                               )
                             ]
@@ -1111,14 +1241,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaEsporasAsexuales", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla4
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaEsporasAsexuales")],
                                 1
                               )
                             ]
@@ -1131,14 +1254,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaEsporasSexuales", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla5
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaEsporasSexuales")],
                                 1
                               )
                             ]
@@ -1164,7 +1280,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasMetodos }
                         })
@@ -1182,14 +1299,7 @@ var render = function() {
                               _c(
                                 "div",
                                 { staticClass: "col-md-10" },
-                                [
-                                  _c("TablaMetodos", {
-                                    attrs: {
-                                      refrescarTabla: _vm.refrescarTabla6
-                                    },
-                                    on: { cambiarVariable: _vm.cambiarVariable }
-                                  })
-                                ],
+                                [_c("TablaMetodos")],
                                 1
                               )
                             ]
@@ -1203,9 +1313,7 @@ var render = function() {
           ]
         : [_vm._m(3)],
       _vm._v(" "),
-      _c("ModalOtraInfoHongos", {
-        on: { "accionModal-hongo": _vm.accionModal }
-      })
+      _c("ModalOtraInfoHongos")
     ],
     2
   )
@@ -1304,6 +1412,54 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass:
+          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+        on: {
+          click: function($event) {
+            return _vm.$modal.show("modal_agregar_tipo_" + _vm.tipoModal, {
+              tipo: _vm.tipo
+            })
+          }
+        }
+      },
+      [_vm._v("Agregar")]
+    ),
+    _vm._v(" "),
+    _c("img", {
+      attrs: {
+        src:
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
+      },
+      on: { click: _vm.mostrarTabla }
+    })
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1436,7 +1592,10 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarNombre },
+                  attrs: {
+                    type: "button",
+                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
+                  },
                   on: { click: _vm.agregarTipo }
                 },
                 [_vm._v("Agregar")]
@@ -1455,7 +1614,7 @@ var render = function() {
             width: 400,
             height: 450
           },
-          on: { "before-open": _vm.beforeOpenEditar }
+          on: { "before-open": _vm.beforeOpenEditar, closed: _vm.closeEditar }
         },
         [
           _c("div", { staticClass: "modal-content" }, [
@@ -1553,7 +1712,10 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarNombre },
+                  attrs: {
+                    type: "button",
+                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
+                  },
                   on: { click: _vm.editarTipo }
                 },
                 [_vm._v("Editar")]
@@ -1572,7 +1734,10 @@ var render = function() {
             width: 400,
             height: 300
           },
-          on: { "before-open": _vm.beforeOpenEliminar }
+          on: {
+            "before-open": _vm.beforeOpenEliminar,
+            closed: _vm.closeEliminar
+          }
         },
         [
           _c("div", { staticClass: "modal-content" }, [
@@ -1634,7 +1799,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminarTipo }
                 },
                 [_vm._v("Eliminar")]
@@ -1674,28 +1839,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "color"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "color" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -1703,18 +1857,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/colors-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "colors-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/colors-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "colors-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -1738,6 +1895,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Colores\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO COLORES")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -1766,28 +1937,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "conidioforo"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "conidioforo" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -1795,18 +1955,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/conidioforos-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "conidioforos-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/conidioforos-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "conidioforos-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -1830,6 +1993,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Conidioforos\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO CONIDIOFOROS")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -1858,28 +2035,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "esporaA"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "esporaA" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -1887,18 +2053,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/esporasA-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "esporasA-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/esporasA-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "esporasA-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -1922,6 +2091,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Esporas Asexuales\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO ESPORAS ASEXUALES")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -1950,28 +2133,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "esporaS"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "esporaS" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -1979,18 +2151,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/esporasS-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "esporasS-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/esporasS-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "esporasS-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -2014,6 +2189,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Esporas Sexuales\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO ESPORAS SEXUALES")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -2042,28 +2231,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "textura"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "textura" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2071,18 +2249,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/texturas-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "texturas-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/texturas-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "texturas-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -2106,6 +2287,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Texturas\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO TEXTURAS")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -2134,28 +2329,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_hongo", {
-                    tipo: "tipo_metodo"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "hongo", tipo: "tipo_metodo" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2163,18 +2347,21 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("MyVuetable", {
-                attrs: {
-                  "api-url": "/info-panel/tipos-metodos-hongo",
-                  fields: _vm.fields,
-                  "sort-order": _vm.sortOrder,
-                  nameGet: "tipos-metodos-hongo",
-                  refrescarTabla: _vm.refrescarTabla
-                },
-                on: { cambiarVariable: _vm.cambiarVariable }
-              })
+              _vm.siHayDatos
+                ? [
+                    _c("MyVuetable", {
+                      ref: "tabla",
+                      attrs: {
+                        "api-url": "/info-panel/tipos-metodos-hongo",
+                        fields: _vm.fields,
+                        "sort-order": _vm.sortOrder,
+                        nameGet: "tipos-metodos-hongo"
+                      }
+                    })
+                  ]
+                : [_vm._m(1)]
             ],
-            1
+            2
           )
         : _vm._e()
     ])
@@ -2198,6 +2385,20 @@ var staticRenderFns = [
         _vm._v("\n        Tabla Dinámica Tipos Metodos\n      ")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO METODOS")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -2270,6 +2471,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HongosComponent_vue_vue_type_template_id_f20737d4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HongosComponent_vue_vue_type_template_id_f20737d4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionMostrar.vue?vue&type=template&id=07821ea6& */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&");
+/* harmony import */ var _AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionMostrar.vue?vue&type=script&lang=js& */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/otra-info/tablas/AccionMostrar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionMostrar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionMostrar.vue?vue&type=template&id=07821ea6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -2893,6 +3163,215 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }]);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsModalOtraInfo.js":
+/*!********************************************************!*\
+  !*** ./resources/js/mixins/websocketsModalOtraInfo.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsModalOtraInfo = function websocketsModalOtraInfo(tipoInfo) {
+  return {
+    methods: {
+      closeEditar: function closeEditar() {
+        window.Echo["private"]("desbloquearBtns" + tipoInfo).whisper("desbloquearBtns" + tipoInfo, {
+          id: this.id,
+          tipo: this.modal.tipo
+        });
+        this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+          id: this.id,
+          tipo: this.modal.tipo
+        });
+      },
+      closeEliminar: function closeEliminar() {
+        window.Echo["private"]("desbloquearBtns" + tipoInfo).whisper("desbloquearBtns" + tipoInfo, {
+          id: this.id,
+          tipo: this.modal.tipo
+        });
+        this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+          id: this.id,
+          tipo: this.modal.tipo
+        });
+      }
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsModalOtraInfo);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsOtraInfo.js":
+/*!***************************************************!*\
+  !*** ./resources/js/mixins/websocketsOtraInfo.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
+  return {
+    data: function data() {
+      return {
+        bloqueos: [],
+        misBloqueos: []
+      };
+    },
+    methods: {
+      // Bloquear Btns
+      bloquearBtnsTabla: function bloquearBtnsTabla(e) {
+        this.bloqueos.push({
+          idUser: e.idUser,
+          id: e.id,
+          tipo: e.tipo
+        });
+        this.$events.fire(e.id + "-bloquearBtns-" + e.tipo);
+      },
+      desbloquearBtnsTabla: function desbloquearBtnsTabla(e) {
+        this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+          return data.id === e.id && data.tipo === e.tipo;
+        }), 1);
+        this.$events.fire(e.id + "-desbloquearBtns-" + e.tipo);
+      },
+      // guardar mis bloqueos
+      pushMisBloqueos: function pushMisBloqueos(e) {
+        this.misBloqueos.push({
+          idUser: e.idUser,
+          id: e.id,
+          tipo: e.tipo
+        });
+      },
+      spliceMisBloqueos: function spliceMisBloqueos(e) {
+        if (e.id != 0) {
+          this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
+            return data.id === e.id;
+          }), 1);
+        }
+      },
+      //borrar bloqueos
+      borrarBloqueos: function borrarBloqueos(e) {
+        var data = this.bloqueos.find(function (data) {
+          return data.idUser === e.id;
+        });
+
+        if (data) {
+          this.desbloquearBtnsTabla(data);
+        }
+      },
+      // verificar bloqueos existentes
+      verificarBloqueos: function verificarBloqueos(tipo) {
+        for (var index = 0; index < this.bloqueos.length; index++) {
+          if (this.bloqueos[index].tipo == tipo) {
+            this.$events.fire(this.bloqueos[index].id + "-bloquearBtns-" + tipo);
+          }
+        }
+      },
+      enviarBloqueos: function enviarBloqueos() {
+        window.Echo["private"]("recibirBtns" + tipoInfo).whisper("recibirBtns" + tipoInfo, {
+          bloqueos: this.misBloqueos
+        });
+      }
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      window.Echo.join(tipoInfo).joining(function (data) {
+        if (_this.misBloqueos.length > 0) {
+          _this.enviarBloqueos();
+        }
+      }).leaving(function (data) {
+        _this.borrarBloqueos(data.user);
+      });
+      window.Echo["private"]("bloquearBtns" + tipoInfo).listenForWhisper("bloquearBtns" + tipoInfo, function (e) {
+        _this.bloquearBtnsTabla(e);
+      });
+      window.Echo["private"]("desbloquearBtns" + tipoInfo).listenForWhisper("desbloquearBtns" + tipoInfo, function (e) {
+        if (e.id != 0) {
+          _this.desbloquearBtnsTabla(e);
+        }
+      });
+    },
+    created: function created() {
+      var _this2 = this;
+
+      this.$emit("rutaHijo", window.location.pathname);
+      window.Echo["private"]("recibirBtns" + tipoInfo).listenForWhisper("recibirBtns" + tipoInfo, function (e) {
+        if (e.bloqueos.length > 0) {
+          _this2.bloquearBtnsTabla(e.bloqueos[0]);
+        }
+      });
+      this.$events.$on("pushMisBloqueos" + tipoInfo, function (e) {
+        _this2.pushMisBloqueos(e);
+      });
+      this.$events.$on("spliceMisBloqueos" + tipoInfo, function (e) {
+        _this2.spliceMisBloqueos(e);
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.$off("pushMisBloqueos" + tipoInfo);
+      this.$events.$off("spliceMisBloqueos" + tipoInfo);
+    },
+    beforeDestroy: function beforeDestroy() {
+      window.Echo.leave(tipoInfo);
+      window.Echo.leave("recibirBtns" + tipoInfo);
+      window.Echo.leave("desbloquearBtns" + tipoInfo);
+      window.Echo.leave("bloquearBtns" + tipoInfo);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsOtraInfoMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsTablaOtraInfo.js":
+/*!********************************************************!*\
+  !*** ./resources/js/mixins/websocketsTablaOtraInfo.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsTablaOtraInfo = function websocketsTablaOtraInfo(tipo) {
+  return {
+    data: function data() {
+      return {
+        tabla: false
+      };
+    },
+    methods: {
+      mostrarTabla: function mostrarTabla() {
+        this.tabla = !this.tabla;
+      },
+      actualizarTabla: function actualizarTabla() {
+        if (this.mostrarTabla) {
+          if (this.$refs.tabla) {
+            this.$refs.tabla.refreshDatos();
+          }
+        }
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.on("actualizartabla" + tipo, function (e) {
+        return _this.actualizarTabla();
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.off("actualizartabla" + tipo);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsTablaOtraInfo);
 
 /***/ })
 

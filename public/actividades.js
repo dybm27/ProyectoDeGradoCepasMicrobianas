@@ -276,6 +276,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -312,7 +317,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       imagenError: "",
       mensajeTitulo: "",
       mensajeLink: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_4__["default"]],
@@ -320,8 +326,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloForm === "Agregar Actividad") {
         axios.post("/publicidad", this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
           _this.toastr("Agregar Actividad", "Actividad agregada con exito!!", "success");
 
           _this.accionActividad({
@@ -331,16 +347,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
-          if (error.response) {
-            if (error.response.data.errors.titulo) {
-              _this.toastr("Error!!", error.response.data.errors.titulo[0], "error");
-            }
+          _this.bloquearBtn = false;
 
+          if (error.response) {
             _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error");
           }
         });
       } else {
         axios.put("/publicidad/".concat(this.idActividad), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
           _this.toastr("Editar Actividad", "Actividad editada con exito!!", "success");
 
           window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
@@ -361,12 +385,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
-          if (error.response) {
-            if (error.response.data.errors.titulo) {
-              _this.toastr("Error!!", error.response.data.errors.titulo[0], "error");
-            }
+          _this.bloquearBtn = false;
 
+          if (error.response) {
             _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error");
           }
         });
       }
@@ -396,6 +420,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     modificarContenido: function modificarContenido() {
       this.parametros.cuerpo = "";
+    },
+    cambiarDatos: function cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
     }
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getActividadById", "getActividadByTitulo"]), {
@@ -555,6 +586,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -571,7 +607,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         field: "titulo",
         direction: "asc"
       }],
-      id: ""
+      id: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_2__["default"])("Actividad")],
@@ -591,11 +628,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarActividad: function eliminarActividad() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/publicidad/".concat(this.id), {
         data: {
           tipo: "actividad"
         }
       }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this.bloquearBtnModal = false;
+
         _this.toastr("Eliminar Actividad", "Actividad eliminada con exito!!", "success");
 
         _this.accionActividad({
@@ -607,6 +653,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.$modal.hide("modal_eliminar_actividad");
       })["catch"](function (error) {
+        _this.bloquearBtnModal = false;
+
         _this.toastr("Error!!!!", "", "error");
       });
     }
@@ -760,6 +808,21 @@ var render = function() {
                       _vm._v(_vm._s(_vm.titulo))
                     ]),
                     _vm._v(" "),
+                    _vm.errors != ""
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "alert alert-danger" },
+                            _vm._l(_vm.errors, function(item, index) {
+                              return _c("p", { key: index }, [
+                                _vm._v(_vm._s(item[0]))
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c("div", { staticClass: "position-relative form-group" }, [
                       _c("label", { attrs: { for: "titulo" } }, [
                         _vm._v("Título")
@@ -830,19 +893,22 @@ var render = function() {
                             disabled: !_vm.required
                           },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.selectTipo = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            }
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.selectTipo = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              _vm.cambiarDatos
+                            ]
                           }
                         },
                         [
@@ -937,13 +1003,7 @@ var render = function() {
                                   },
                                   expression: "parametros.fecha"
                                 }
-                              }),
-                              _vm._v(" "),
-                              _vm.errors.fecha
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.errors.fecha[0]))
-                                  ])
-                                : _vm._e()
+                              })
                             ],
                             1
                           )
@@ -1095,7 +1155,7 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn }
+                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -1317,7 +1377,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminarActividad }
                 },
                 [_vm._v("Eliminar")]

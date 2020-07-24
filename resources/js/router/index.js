@@ -7,20 +7,20 @@ const routes = [
     //-------------------------------TODAS------------------------------
     {
         path: "/cepas",
-        name: "cepas",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "cepas-todas" */
 
-                "../components/cepas/ContainerCepasComponent.vue"
+                "../components/cepas/CepasComponent.vue"
             ),
         children: [
             {
-                path: "tabla",
-                name: "cepas-todas",
+                path: "",
+                name: "cepas-tabla",
                 component: () =>
                     import(
-                        /* webpackChunkName: "cepas-todas" */
+                        /* webpackChunkName: "cepas-tabla" */
 
                         "../components/cepas/TableCepasComponent.vue"
                     ),
@@ -391,20 +391,20 @@ const routes = [
     // ------------------------  BACTERIAS ------------------------------------------
     {
         path: "/bacterias",
-        name: "bacterias",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "bacterias" */
 
-                "../components/cepas/bacterias/ContainerBacteriasComponent.vue"
+                "../components/cepas/bacterias/BacteriasComponent.vue"
             ),
         children: [
             {
-                path: "tabla",
-                name: "cepas-bacterias",
+                path: "",
+                name: "bacterias-tabla",
                 component: () =>
                     import(
-                        /* webpackChunkName: "cepas-bacterias" */
+                        /* webpackChunkName: "bacterias-tabla" */
 
                         "../components/cepas/bacterias/tablas/TablaBacteriasComponent.vue"
                     ),
@@ -527,20 +527,20 @@ const routes = [
     // ---------------------- HONGOS ------------------------------------------------
     {
         path: "/hongos",
-        name: "hongos",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "hongos" */
 
-                "../components/cepas/hongos/ContainerHongosComponent.vue"
+                "../components/cepas/hongos/HongosComponent.vue"
             ),
         children: [
             {
-                path: "tabla",
-                name: "cepas-hongos",
+                path: "",
+                name: "hongos-tabla",
                 component: () =>
                     import(
-                        /* webpackChunkName: "cepas-hongos" */
+                        /* webpackChunkName: "hongos-tabla" */
 
                         "../components/cepas/hongos/tablas/TablaHongosComponent.vue"
                     ),
@@ -651,20 +651,20 @@ const routes = [
     // ---------------------- LEVADURAS ------------------------------------------------
     {
         path: "/levaduras",
-        name: "levaduras",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "levaduras" */
 
-                "../components/cepas/levaduras/ContainerLevadurasComponent.vue"
+                "../components/cepas/levaduras/LevadurasComponent.vue"
             ),
         children: [
             {
-                path: "tabla",
-                name: "cepas-levaduras",
+                path: "",
+                name: "levaduras-tabla",
                 component: () =>
                     import(
-                        /* webpackChunkName: "cepas-levaduras" */ "../components/cepas/levaduras/tablas/TablaLevadurasComponent.vue"
+                        /* webpackChunkName: "levaduras-tabla" */ "../components/cepas/levaduras/tablas/TablaLevadurasComponent.vue"
                     ),
                 meta: { title: "Tabla Levaduras" }
             },
@@ -773,20 +773,20 @@ const routes = [
     // ---------------------- ACTINOMICETOS ------------------------------------------------
     {
         path: "/actinomicetos",
-        name: "actinomicetos",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "actinomicetos" */
 
-                "../components/cepas/actinomicetos/ContainerActinomicetosComponent.vue"
+                "../components/cepas/actinomicetos/ActinomicetosComponent.vue"
             ),
         children: [
             {
-                path: "tabla",
-                name: "cepas-actinomicetos",
+                path: "",
+                name: "actinomicetos-tabla",
                 component: () =>
                     import(
-                        /* webpackChunkName: "cepas-actinomicetos" */ "../components/cepas/actinomicetos/tablas/TablaActinomicetosComponent.vue"
+                        /* webpackChunkName: "actinomicetos-tabla" */ "../components/cepas/actinomicetos/tablas/TablaActinomicetosComponent.vue"
                     ),
                 meta: { title: "Tabla Actinomicetos" }
             },
@@ -909,16 +909,16 @@ const routes = [
 
     {
         path: "/usuarios",
-        name: "usuarios",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "usuarios" */
 
-                "../components/gestionar_usuarios/NavUsuariosComponent.vue"
+                "../components/gestionar_usuarios/UsuariosComponent.vue"
             ),
         children: [
             {
-                path: "tabla-usuarios",
+                path: "",
                 name: "tabla-usuarios",
                 component: () =>
                     import(
@@ -943,18 +943,18 @@ const routes = [
     },
     // ------------------------------- OTRA INFORMACION ------------------------------------------
     {
-        path: "/otra-info/",
-        name: "otra-info",
+        path: "/otra-info",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "otra-info" */
 
-                "../components/otra-info/NavOtraInfoComponent.vue"
+                "../components/otra-info/OtraInfoComponent.vue"
             ),
         children: [
             {
-                path: "cepas",
-                name: "tablas-cepas",
+                path: "",
+                name: "otra-info-cepas",
                 component: () =>
                     import(
                         /* webpackChunkName: "tablas-cepas" */
@@ -965,7 +965,7 @@ const routes = [
             },
             {
                 path: "bacterias",
-                name: "tablas-bacterias",
+                name: "otra-info-bacterias",
                 component: () =>
                     import(
                         /* webpackChunkName: "otra-info-bacterias" */
@@ -976,7 +976,7 @@ const routes = [
             },
             {
                 path: "hongos",
-                name: "tablas-hongos",
+                name: "otra-info-hongos",
                 component: () =>
                     import(
                         /* webpackChunkName: "tablas-hongos" */
@@ -987,7 +987,7 @@ const routes = [
             },
             {
                 path: "levaduras",
-                name: "tablas-levaduras",
+                name: "otra-info-levaduras",
                 component: () =>
                     import(
                         /* webpackChunkName: "tablas-levaduras" */
@@ -998,7 +998,7 @@ const routes = [
             },
             {
                 path: "actinomicetos",
-                name: "tablas-actinomicetos",
+                name: "otra-info-actinomicetos",
                 component: () =>
                     import(
                         /* webpackChunkName: "tablas-actinomicetos" */
@@ -1012,16 +1012,16 @@ const routes = [
     // ------------------------------- QUIENES SOMOS ------------------------------------------
     {
         path: "/quienes-somos",
-        name: "quienes-somos",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "quienes-somos" */
 
-                "../components/sitio-web/quienes-somos/NavQuienesSomosComponent.vue"
+                "../components/sitio-web/QuienesSomosComponent.vue"
             ),
         children: [
             {
-                path: "mision",
+                path: "",
                 name: "mision",
                 component: () =>
                     import(
@@ -1059,16 +1059,16 @@ const routes = [
     // ------------------------------- DOCUMENTOS ------------------------------------------
     {
         path: "/documentos",
-        name: "documentos",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "documentos" */
 
-                "../components/sitio-web/documentos/NavComponent.vue"
+                "../components/sitio-web/DocumentosComponent.vue"
             ),
         children: [
             {
-                path: "proyectos",
+                path: "",
                 name: "proyectos",
                 component: () =>
                     import(
@@ -1095,16 +1095,16 @@ const routes = [
     // ------------------------------- PUBLICIDAD ------------------------------------------
     {
         path: "/publicidad",
-        name: "publicidad",
+        name: "",
         component: () =>
             import(
                 /* webpackChunkName: "publicidad" */
 
-                "../components/sitio-web/publicidad/NavComponent.vue"
+                "../components/sitio-web/PublicidadComponent.vue"
             ),
         children: [
             {
-                path: "noticias",
+                path: "",
                 name: "noticias",
                 component: () =>
                     import(
@@ -1140,32 +1140,68 @@ const routes = [
     },
     {
         path: "/perfil",
-        name: "",
+        name: "perfil",
+        component: () =>
+            import(
+                /* webpackChunkName: "perfil" */
+
+                "../components/PerfilComponent.vue"
+            ),
         meta: { title: "Perfil" }
     },
     {
         path: "/calendario",
-        name: "",
+        name: "calendario",
+        component: () =>
+            import(
+                /* webpackChunkName: "calendario" */
+
+                "../components/CalendarioComponent.vue"
+            ),
         meta: { title: "Calendario" }
     },
     {
         path: "/imagenes-login/ver",
-        name: "",
+        name: "imagenes-login",
+        component: () =>
+            import(
+                /* webpackChunkName: "imagenes-login" */
+
+                "../components/imagenes-login/ImagenesLoginComponent.vue"
+            ),
         meta: { title: "Imagenes Login" }
     },
     {
         path: "/investigadores",
-        name: "",
+        name: "investigadores",
+        component: () =>
+            import(
+                /* webpackChunkName: "investigadores" */
+
+                "../components/sitio-web/InvestigadoresComponent.vue"
+            ),
         meta: { title: "Investigadores" }
     },
     {
         path: "/equipamientos",
-        name: "",
+        name: "equipamientos",
+        component: () =>
+            import(
+                /* webpackChunkName: "equipamientos" */
+
+                "../components/sitio-web/EquipamientosComponent.vue"
+            ),
         meta: { title: "Equipamientos" }
     },
     {
         path: "*",
         name: "",
+        component: () =>
+            import(
+                /* webpackChunkName: "error-404" */
+
+                "../components/errores/Error404Component.vue"
+            ),
         meta: { title: "Error 404" }
     }
 ];

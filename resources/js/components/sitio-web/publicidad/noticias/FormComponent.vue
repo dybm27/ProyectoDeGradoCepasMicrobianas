@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -25,6 +30,7 @@
                   name="select"
                   id="conidioforo"
                   class="form-control"
+                  @change="cambiarDatos"
                   v-model="selectTipo"
                   :disabled="!required"
                 >
@@ -73,7 +79,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -125,7 +131,7 @@ import Toastr from "../../../../mixins/toastr";
 import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
   components: {
-    Editor
+    Editor,
   },
   props: ["idNoticia"],
   data() {
@@ -139,7 +145,7 @@ export default {
         publicar: false,
         tipo: "noticia",
         imagenesEditor: [],
-        imagenesGuardadas: []
+        imagenesGuardadas: [],
       },
       selectTipo: "link",
       tituloForm: "",
@@ -147,15 +153,16 @@ export default {
       nomBtn: "",
       imagenError: "",
       mensajeTitulo: "",
-      mensajeLink: ""
+      mensajeLink: "",
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNoticia"]),
     evento() {
-      this.parametros.cuerpo =
-        this.parametros.cuerpo === null ? "" : this.parametros.cuerpo;
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Noticia") {
         let form = new FormData();
         form.append("titulo", this.parametros.titulo);
@@ -173,10 +180,18 @@ export default {
         axios
           .post("/publicidad", form, {
             headers: {
-              "content-type": "multipart/form-data"
-            }
+              "content-type": "multipart/form-data",
+            },
           })
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.toastr(
               "Agregar Noticia",
               "Noticia agregada con exito!!",
@@ -185,20 +200,26 @@ export default {
             this.accionNoticia({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
-              this.toastr(
-                "Error!!",
-                error.response.data.errors.titulo[0],
-                "error"
-              );
+              this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             }
           });
       } else {
         if (this.parametros.imagen === this.info.imagen) {
           axios
             .put(`/publicidad/${this.idNoticia}`, this.parametros)
-            .then(res => {
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
               this.toastr(
                 "Editar Noticia",
                 "Noticia editada con exito!!",
@@ -207,28 +228,26 @@ export default {
               window.Echo.private("desbloquearBtnsNoticia").whisper(
                 "desbloquearBtnsNoticia",
                 {
-                  id: res.data.id
+                  id: res.data.id,
                 }
               );
               window.Echo.private("desbloquearCheckNoticia").whisper(
                 "desbloquearCheckNoticia",
                 {
-                  id: res.data.id
+                  id: res.data.id,
                 }
               );
               this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id
+                id: res.data.id,
               });
               this.accionNoticia({ tipo: "editar", data: res.data });
               this.$emit("cambiarVariableFormulario");
             })
-            .catch(error => {
+            .catch((error) => {
+              this.bloquearBtn = false;
               if (error.response) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
-                );
+                this.errors = error.response.data.errors;
+                this.toastr("Error!!", "", "error");
               }
             });
         } else {
@@ -249,10 +268,10 @@ export default {
           axios
             .post(`/publicidad/${this.idNoticia}`, form, {
               headers: {
-                "content-type": "multipart/form-data"
-              }
+                "content-type": "multipart/form-data",
+              },
             })
-            .then(res => {
+            .then((res) => {
               this.toastr(
                 "Editar Noticia",
                 "Noticia editada con exito!!",
@@ -261,22 +280,22 @@ export default {
               window.Echo.private("desbloquearBtnsNoticia").whisper(
                 "desbloquearBtnsNoticia",
                 {
-                  id: res.data.id
+                  id: res.data.id,
                 }
               );
               window.Echo.private("desbloquearCheckNoticia").whisper(
                 "desbloquearCheckNoticia",
                 {
-                  id: res.data.id
+                  id: res.data.id,
                 }
               );
               this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id
+                id: res.data.id,
               });
               this.accionNoticia({ tipo: "editar", data: res.data });
               this.$emit("cambiarVariableFormulario");
             })
-            .catch(error => {
+            .catch((error) => {
               if (error.response) {
                 this.toastr(
                   "Error!!",
@@ -324,7 +343,7 @@ export default {
     },
     cargarImagen(file) {
       let reader = new Image();
-      reader.onload = e => {
+      reader.onload = (e) => {
         if (e.path[0].height < e.path[0].width) {
           this.imagenMiniatura = reader.src;
         } else {
@@ -344,7 +363,14 @@ export default {
     modificarContenido() {
       this.parametros.cuerpo = "";
       this.parametros.imagenesEditor = "";
-    }
+    },
+    cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo"]),
@@ -413,7 +439,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idNoticia === 0) {
@@ -427,6 +453,6 @@ export default {
       this.tituloForm = "Editar Noticia";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

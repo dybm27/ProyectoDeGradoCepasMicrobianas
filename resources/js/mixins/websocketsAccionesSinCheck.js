@@ -9,12 +9,12 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
                 "bloquearBtns" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoM, {
                 id: data.id,
-                idUser: this.getUserAuth.id
+                idUser: this.auth.id
             });
         },
         showModal(data) {
@@ -25,12 +25,12 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
                 "bloquearBtns" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoM, {
                 id: data.id,
-                idUser: this.getUserAuth.id
+                idUser: this.auth.id
             });
         },
         bloquearBtns() {
@@ -64,6 +64,8 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
     destroyed() {
         this.$events.$off(this.rowIndex + "-crearEventosBtns-" + tipoP);
         this.$events.$off(this.rowIndex + "-eliminarEventosBtns-" + tipoP);
+        this.$events.$off(this.rowData.id + "-bloquearBtns" + tipoM);
+        this.$events.$off(this.rowData.id + "-desbloquearBtns" + tipoM);
     }
 });
 export default websocketsAccionesSinCheckMixin;

@@ -6,6 +6,7 @@ use App\BordeBacteria;
 use App\ColorBacteria;
 use App\DetalleOpticoBacteria;
 use App\ElevacionBacteria;
+use App\Events\BacteriasInfoEvent;
 use App\FormaCaractMacroBacteria;
 use App\FormaCaractMicroBacteria;
 use App\Seguimiento;
@@ -21,7 +22,7 @@ class InfoCaracBacteriasController extends Controller
     {
         return view('otra-info');
     }
-    
+
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {
@@ -153,7 +154,7 @@ class InfoCaracBacteriasController extends Controller
                     . $tipo->nombre);
                 break;
         }
-
+        broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -278,7 +279,7 @@ class InfoCaracBacteriasController extends Controller
                     . $tipo1->nombre);
                 break;
         }
-
+        broadcast(new BacteriasInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -287,54 +288,63 @@ class InfoCaracBacteriasController extends Controller
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo = FormaCaractMacroBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "borde":
                 $tipo = BordeBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Borde en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "detalle":
                 $tipo = DetalleOpticoBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Detalle Opctico en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "elevacion":
                 $tipo = ElevacionBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Elevación en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "superficie":
                 $tipo = SuperficieBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Superficie en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "forma_micro":
                 $tipo = FormaCaractMicroBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "metodo_conser":
                 $tipo = TipoMetodoConservacionBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "tipo_agar":
                 $tipo = TipoAgarBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Agar en Bacterias: "
                     . $tipo->nombre);
                 break;
             case "color":
                 $tipo = ColorBacteria::find($id);
+                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Color en Bacterias: "
                     . $tipo->nombre);

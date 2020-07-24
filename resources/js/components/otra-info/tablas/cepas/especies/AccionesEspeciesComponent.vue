@@ -31,17 +31,17 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   mixins: [
-    websocketsAccionesOtraInfoMixin("especie", "especies", "cepa", "CepasInfo")
+    websocketsAccionesOtraInfoMixin("especie", "especies", "cepa", "CepasInfo"),
   ],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"]),
   },
   methods: {
     editar(data) {
@@ -49,22 +49,22 @@ export default {
         id: data.id,
         nombre: data.nombre,
         genero: data.genero_id,
-        tipo: "especie"
+        tipo: "especie",
       });
       window.Echo.private("bloquearBtnsCepasInfo").whisper(
         "bloquearBtnsCepasInfo",
         {
           id: data.id,
-          idUser: this.getUserAuth.id,
-          tipo: "especie"
+          idUser: this.auth.id,
+          tipo: "especie",
         }
       );
       this.$events.fire("pushMisBloqueosCepasInfo", {
         id: data.id,
-        idUser: this.getUserAuth.id,
-        tipo: "especie"
+        idUser: this.auth.id,
+        tipo: "especie",
       });
-    }
-  }
+    },
+  },
 };
 </script>

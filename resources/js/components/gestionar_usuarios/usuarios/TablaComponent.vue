@@ -42,7 +42,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_usuario')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarUsuario">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarUsuario"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -62,20 +67,21 @@ export default {
       sortOrder: [
         {
           field: "name",
-          direction: "asc"
-        }
+          direction: "asc",
+        },
       ],
-      id: ""
+      id: "",
+      bloquearBtnModal: false,
     };
   },
   computed: {
-    ...vuex.mapGetters("usuarios", ["getUsuarios"]),
+    ...vuex.mapState("usuarios", ["usuarios"]),
     mostrarTabla() {
-      if (this.getUsuarios != "" && this.getUsuarios != null) {
+      if (this.usuarios != "" && this.usuarios != null) {
         return true;
       }
       return false;
-    }
+    },
   },
   mixins: [Toastr],
   methods: {
@@ -84,9 +90,18 @@ export default {
       this.id = data.params.id;
     },
     eliminarUsuario() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/usuario/eliminar/${this.id}`)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.toastr(
             "Eliminar Usuario",
             "Usuario eliminado con exito!!",
@@ -97,10 +112,8 @@ export default {
           this.$modal.hide("modal_eliminar_usuario");
           this.actualizarTabla();
         })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
@@ -108,11 +121,11 @@ export default {
       window.Echo.private("desbloquearBtnsUsuario").whisper(
         "desbloquearBtnsUsuario",
         {
-          id: this.id
+          id: this.id,
         }
       );
       this.$events.fire("spliceMisBloqueosUsuario", {
-        id: this.id
+        id: this.id,
       });
     },
     actualizarTabla() {
@@ -121,14 +134,14 @@ export default {
           this.$refs.tabla.refreshDatos();
         }
       }
-    }
+    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaUsuario", e => this.actualizarTabla());
+    this.$events.on("actualizartablaUsuario", (e) => this.actualizarTabla());
   },
   destroyed() {
     this.$events.off("actualizartablaUsuario");
-  }
+  },
 };
 </script>

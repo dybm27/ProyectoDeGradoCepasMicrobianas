@@ -235,7 +235,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.color[data-v-88a06958] {\r\n  background-color: #3f6ad8;\n}\r\n", ""]);
+exports.push([module.i, "\n.color[data-v-88a06958] {\r\n  background-color: #3ac47d;\n}\r\n", ""]);
 
 // exports
 
@@ -489,14 +489,14 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c(
                   "span",
-                  { staticClass: "badge badge-pill badge-primary float-left" },
+                  { staticClass: "badge badge-pill badge-success float-left" },
                   [_vm._v(_vm._s(_vm.num))]
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row justify-content-md-center" }, [
                 _c("img", {
-                  staticClass: "border border-primary rounded",
+                  staticClass: "border border-success rounded",
                   attrs: {
                     width: "200px",
                     height: "200px",

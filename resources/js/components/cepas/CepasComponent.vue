@@ -38,15 +38,17 @@
             >Agregar Nueva Cepa</router-link>
             <router-link
               v-else
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              to="/cepas/tabla"
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
+              :to="{ name: 'cepas-tabla' }"
             >Volver</router-link>
           </template>
         </div>
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view :tipoG="0" @rutaHijo="ocultarLink" />
+      <div class="tabs-animation">
+        <router-view :tipoG="0" @rutaHijo="ocultarLink" />
+      </div>
     </template>
     <template v-else>
       <div class="container">
@@ -87,7 +89,7 @@ export default {
       "obtenerInfoCaractActinomicetos"
     ]),
     ocultarLink(ruta) {
-      if (ruta != "/cepas/tabla") {
+      if (ruta != "/cepas/" && ruta != "/cepas") {
         this.ruta = false;
         if (
           ruta.includes("caract") ||
@@ -114,6 +116,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerInfoCaractActinomicetos();
     this.obtenerInfoCaractHongos();
     this.obtenerInfoCaractBacterias();

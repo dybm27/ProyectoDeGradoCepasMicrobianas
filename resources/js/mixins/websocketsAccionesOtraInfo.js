@@ -14,13 +14,13 @@ const websocketsAccionesOtraInfoMixin = (tipo, tipoP, tipoModal, tipoInfo) => ({
                 "bloquearBtns" + tipoInfo,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id,
+                    idUser: this.auth.id,
                     tipo: tipo
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoInfo, {
                 id: data.id,
-                idUser: this.getUserAuth.id,
+                idUser: this.auth.id,
                 tipo: tipo
             });
         },
@@ -33,13 +33,13 @@ const websocketsAccionesOtraInfoMixin = (tipo, tipoP, tipoModal, tipoInfo) => ({
                 "bloquearBtns" + tipoInfo,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id,
+                    idUser: this.auth.id,
                     tipo: tipo
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoInfo, {
                 id: data.id,
-                idUser: this.getUserAuth.id,
+                idUser: this.auth.id,
                 tipo: tipo
             });
         },
@@ -74,6 +74,8 @@ const websocketsAccionesOtraInfoMixin = (tipo, tipoP, tipoModal, tipoInfo) => ({
     destroyed() {
         this.$events.$off(this.rowIndex + "-crearEventosBtns-" + tipoP);
         this.$events.$off(this.rowIndex + "-eliminarEventosBtns-" + tipoP);
+        this.$events.$off(this.rowData.id + "-desbloquearBtns-" + tipo);
+        this.$events.$off(this.rowData.id + "-bloquearBtns-" + tipo);
     }
 });
 export default websocketsAccionesOtraInfoMixin;

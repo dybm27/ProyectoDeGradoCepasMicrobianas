@@ -37,6 +37,9 @@ const websocketsCheck = (tipoM, tipoP) => ({
     destroyed() {
         this.$events.$off(this.rowIndex + "-crearEventosCheck-" + tipoP);
         this.$events.$off(this.rowIndex + "-eliminarEventosCheck-" + tipoP);
+        this.$events.$off(this.rowData.id + "-bloquearCheck" + tipoM);
+        this.$events.$off(this.rowData.id + "-desbloquearCheck" + tipoM);
+        this.$events.$off(this.rowData.id + "-actualizarPublicar" + tipoM);
     }
 });
 export default websocketsCheck;

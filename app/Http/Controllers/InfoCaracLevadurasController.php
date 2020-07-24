@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ColorLevadura;
+use App\Events\LevadurasInfoEvent;
 use App\Seguimiento;
 use App\TexturaLevadura;
 use App\TipoMetodoConservacionLevadura;
@@ -15,7 +16,7 @@ class InfoCaracLevadurasController extends Controller
     {
         return view('otra-info');
     }
-    
+
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {
@@ -62,7 +63,7 @@ class InfoCaracLevadurasController extends Controller
                     . $tipo->nombre);
                 break;
         }
-
+        broadcast(new LevadurasInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -109,7 +110,7 @@ class InfoCaracLevadurasController extends Controller
                     . $tipo1->nombre);
                 break;
         }
-
+        broadcast(new LevadurasInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -118,18 +119,21 @@ class InfoCaracLevadurasController extends Controller
         switch ($request->tipo) {
             case "color":
                 $tipo = ColorLevadura::find($id);
+                broadcast(new LevadurasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Color en Levaduras: "
                     . $tipo->nombre);
                 break;
             case "textura":
                 $tipo = TexturaLevadura::find($id);
+                broadcast(new LevadurasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Textura en Levaduras: "
                     . $tipo->nombre);
                 break;
             case "metodo_conser":
                 $tipo = TipoMetodoConservacionLevadura::find($id);
+                broadcast(new LevadurasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Levaduras: "
                     . $tipo->nombre);

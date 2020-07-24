@@ -17,11 +17,12 @@ class InvestigadoresController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            ['email' => 'unique:investigadors,email'],
-            ['email.unique' => 'Ya existe un investigador con ese Email']
-        );
+        $rules = [
+            'email' => 'required|unique:investigadors,email', 'nombres' => 'required',
+            'apellidos' => 'required', 'nivel_estudio' => 'required', 'cargo' => 'required'
+        ];
+        $this->validate($request, $rules);
+
         $imagen = $this->agregarImagen($request->imagen);
         $datos = [
             'nombres' => ucfirst($request->nombres), 'apellidos' => ucfirst($request->apellidos),
@@ -37,30 +38,30 @@ class InvestigadoresController extends Controller
     public function update(Request $request, $id)
     {
         $investigador = Investigador::find($id);
-        $investigador1 = Investigador::where('email', $request->email)->first();
-        if (is_null($investigador1) || $investigador->id == $investigador1->id) {
-            $datos = [];
-            if ($request->imagen != $investigador->imagen) {
-                //eliminar imagen vieja
-                Storage::disk('local')->delete($investigador->imagen);
-                //agregar imagen nueva
-                $imagen = $this->agregarImagen($request->imagen);
-                $datos += ['imagen' => $imagen['ruta'], 'imagenPublica' => $imagen['rutaPublica']];
-            }
-            $datos += [
-                'nombres' => ucfirst($request->nombres), 'apellidos' => ucfirst($request->apellidos),
-                'publicar' => $request->publicar, 'email' => $request->email,
-                'nivel_estudio' => ucfirst($request->nivel_estudio), 'cargo' => ucfirst($request->cargo)
-            ];
-            $investigador->update($datos);
-            broadcast(new InvestigadorEvent($investigador, 'editar'))->toOthers();
-            return $investigador;
-        } else {
-            return response()->json([
-                'errors' =>
-                ['email' => ['Ya existe un investigador con ese Email']]
-            ], 422);
+        $rules = [
+            'email' => 'required|unique:investigadors,email,' . $investigador->id,
+            'nombres' => 'required', 'apellidos' => 'required',
+            'nivel_estudio' => 'required', 'cargo' => 'required'
+        ];
+        $this->validate($request, $rules);
+        return 'paso';
+        $imagen = $this->agregarImagen($request->imagen);
+        $datos = [];
+        if ($request->imagen != $investigador->imagen) {
+            //eliminar imagen vieja
+            Storage::disk('local')->delete($investigador->imagen);
+            //agregar imagen nueva
+            $imagen = $this->agregarImagen($request->imagen);
+            $datos += ['imagen' => $imagen['ruta'], 'imagenPublica' => $imagen['rutaPublica']];
         }
+        $datos += [
+            'nombres' => ucfirst($request->nombres), 'apellidos' => ucfirst($request->apellidos),
+            'publicar' => $request->publicar, 'email' => $request->email,
+            'nivel_estudio' => ucfirst($request->nivel_estudio), 'cargo' => ucfirst($request->cargo)
+        ];
+        $investigador->update($datos);
+        broadcast(new InvestigadorEvent($investigador, 'editar'))->toOthers();
+        return $investigador;
     }
 
     public function destroy($id)

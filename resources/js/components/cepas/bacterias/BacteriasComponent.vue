@@ -38,15 +38,17 @@
             >Agregar Nueva Cepa - Bacteria</router-link>
             <router-link
               v-else
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              :to="{name: 'cepas-bacterias'}"
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
+              :to="{name: 'bacterias-tabla'}"
             >Volver</router-link>
           </template>
         </div>
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view :tipoG="1" @rutaHijo="ocultarLink" />
+      <div class="tabs-animation">
+        <router-view :tipoG="1" @rutaHijo="ocultarLink" />
+      </div>
     </template>
     <template v-else>
       <div class="container">
@@ -83,7 +85,7 @@ export default {
     ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractBacterias"]),
     ocultarLink(ruta) {
-      if (ruta != "/bacterias/tabla") {
+      if (ruta != "/bacterias/" && ruta != "/bacterias") {
         this.ruta = false;
         if (
           ruta.includes("caract") ||
@@ -110,6 +112,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerInfoCaractBacterias();
     this.obtenerTiposCepas();
   }

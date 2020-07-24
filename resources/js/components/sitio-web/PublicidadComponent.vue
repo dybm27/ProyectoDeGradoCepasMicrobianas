@@ -33,7 +33,7 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></router-view>
+      <Nav @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></Nav>
     </template>
     <template v-else>
       <div class="container">
@@ -57,7 +57,9 @@
 <script>
 import vuex from "vuex";
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import Nav from "./publicidad/NavComponent.vue";
 export default {
+  components: { Nav },
   data() {
     return { tipo: "", tipo2: "" };
   },
@@ -67,7 +69,7 @@ export default {
       "obtenerPublicidad",
       "accionNoticia",
       "accionActividad",
-      "accionNovedad"
+      "accionNovedad",
     ]),
     ruta(ruta) {
       if (ruta.includes("noticias")) {
@@ -89,13 +91,14 @@ export default {
     },
     eliminarImagenesStorage() {
       axios.get("/editor/upload");
-    }
+    },
   },
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"]),
   },
   created() {
-    window.Echo.channel("novedad").listen("NovedadEvent", e => {
+    this.$emit("rutaSider", window.location.pathname);
+    window.Echo.channel("novedad").listen("NovedadEvent", (e) => {
       this.accionNovedad({ tipo: e.tipo, data: e.novedad });
       this.$events.fire(
         e.novedad.id + "-actualizarPublicarNovedad",
@@ -103,7 +106,7 @@ export default {
       );
       this.$events.fire("actualizartablaNovedad");
     });
-    window.Echo.channel("actividad").listen("ActividadEvent", e => {
+    window.Echo.channel("actividad").listen("ActividadEvent", (e) => {
       this.accionActividad({ tipo: e.tipo, data: e.actividad });
       this.$events.fire(
         e.actividad.id + "-actualizarPublicarActividad",
@@ -111,7 +114,7 @@ export default {
       );
       this.$events.fire("actualizartablaActividad");
     });
-    window.Echo.channel("noticia").listen("NoticiaEvent", e => {
+    window.Echo.channel("noticia").listen("NoticiaEvent", (e) => {
       this.accionNoticia({ tipo: e.tipo, data: e.noticia });
       this.$events.fire(
         e.noticia.id + "-actualizarPublicarNoticia",
@@ -120,9 +123,9 @@ export default {
       this.$events.fire("actualizartablaNoticia");
     });
     this.obtenerPublicidad();
-    if (this.getUserAuth.tipouser_id === 1) {
+    if (this.auth.tipouser_id === 1) {
       this.eliminarImagenesStorage();
     }
-  }
+  },
 };
 </script>

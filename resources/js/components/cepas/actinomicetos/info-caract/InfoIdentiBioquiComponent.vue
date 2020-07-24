@@ -77,7 +77,7 @@ export default {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
     };
   },
   mixins: [Toastr],
@@ -85,7 +85,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "identi_bioqui", data: data });
@@ -97,7 +97,14 @@ export default {
     eliminar() {
       axios
         .delete(`/cepas/actinomiceto/identi-bioqui/${this.getIdentiBioqui.id}`)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           this.mostrarBtnAgregar = true;
           this.mostrarForm = false;
           this.$modal.hide("my_modal");
@@ -108,11 +115,8 @@ export default {
             "success"
           );
         })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-            // console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
     },
     cambiarVariable() {
@@ -125,7 +129,7 @@ export default {
     cancelar() {
       this.mostrarForm = false;
       this.mostrarBtnAgregar = true;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getIdentiBioqui"]),
@@ -145,13 +149,13 @@ export default {
     },
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
-    }
+    },
   },
   mounted() {
     if (this.getIdentiBioqui) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
-  }
+  },
 };
 </script>

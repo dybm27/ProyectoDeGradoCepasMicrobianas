@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <template v-if="getInfoActinomicetos!=''">
+    <template v-if="info_caract_actinomicetos!=''">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
@@ -12,7 +12,7 @@
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
                   @click="mostrarTablasCaractMacro"
-                  :src="'/iconos/icons8-vista-general-3-35.png'"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
               </div>
             </div>
@@ -20,50 +20,32 @@
               <div class="container">
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaTexturas
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla1"
-                    />
+                    <TablaTexturas />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaColors
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla2"
-                    />
+                    <TablaColors />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaFormasMacro
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla3"
-                    />
+                    <TablaFormasMacro />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaSuperficies
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla4"
-                    />
+                    <TablaSuperficies />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaBordes
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla5"
-                    />
+                    <TablaBordes />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaPigmentos
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla6"
-                    />
+                    <TablaPigmentos />
                   </div>
                 </div>
               </div>
@@ -82,7 +64,7 @@
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
                   @click="mostrarTablasCaractMicro"
-                  :src="'/iconos/icons8-vista-general-3-35.png'"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
               </div>
             </div>
@@ -90,34 +72,22 @@
               <div class="container">
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaTincions
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla7"
-                    />
+                    <TablaTincions />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaFormasMicro
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla8"
-                    />
+                    <TablaFormasMicro />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaMicelios
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla9"
-                    />
+                    <TablaMicelios />
                   </div>
                 </div>
                 <div class="row justify-content-md-center">
                   <div class="col-md-10">
-                    <TablaConidioforos
-                      @cambiarVariable="cambiarVariable"
-                      :refrescarTabla="refrescarTabla10"
-                    />
+                    <TablaConidioforos />
                   </div>
                 </div>
               </div>
@@ -144,11 +114,12 @@
         </div>
       </div>
     </template>
-    <ModalOtraInfoActinomiceto @accionModal-actinomiceto="accionModal" />
+    <ModalOtraInfoActinomiceto />
   </div>
 </template>
 
 <script>
+import websocketsOtraInfoMixin from "../../mixins/websocketsOtraInfo";
 import ModalOtraInfoActinomiceto from "./tablas/actinomicetos/ModalesComponent.vue";
 import TablaBordes from "./tablas/actinomicetos/bordes/TablaBordesComponent.vue";
 import TablaColors from "./tablas/actinomicetos/colors/TablaColorsComponent.vue";
@@ -173,87 +144,71 @@ export default {
     TablaSuperficies,
     TablaTexturas,
     TablaPigmentos,
-    TablaTincions
+    TablaTincions,
   },
   data() {
     return {
-      refrescarTabla1: false,
-      refrescarTabla2: false,
-      refrescarTabla3: false,
-      refrescarTabla4: false,
-      refrescarTabla5: false,
-      refrescarTabla6: false,
-      refrescarTabla7: false,
-      refrescarTabla8: false,
-      refrescarTabla9: false,
-      refrescarTabla10: false,
       tablasCaractMacro: false,
-      tablasCaractMicro: false
+      tablasCaractMicro: false,
     };
   },
-  created() {
-    if (this.getInfoActinomicetos == "") {
-      this.obtenerInfoCaractActinomicetos();
-    }
-    this.$emit("rutaHijo", window.location.pathname);
-  },
+  mixins: [websocketsOtraInfoMixin("ActinomicetosInfo")],
   computed: {
-    ...vuex.mapGetters("info_caract", ["getInfoActinomicetos"])
+    ...vuex.mapState("info_caract", ["info_caract_actinomicetos"]),
   },
   methods: {
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]),
-    accionModal(datos) {
-      switch (datos.tipo) {
-        case "textura":
-          this.refrescarTabla1 = true;
-          break;
-        case "color":
-          this.refrescarTabla2 = true;
-          break;
-        case "forma_macro":
-          this.refrescarTabla3 = true;
-          break;
-        case "superficie":
-          this.refrescarTabla4 = true;
-          break;
-        case "borde":
-          this.refrescarTabla5 = true;
-          break;
-        case "pigmento":
-          this.refrescarTabla6 = true;
-          break;
-        case "tincion":
-          this.refrescarTabla7 = true;
-          break;
-        case "forma_micro":
-          this.refrescarTabla8 = true;
-          break;
-        case "micelio":
-          this.refrescarTabla9 = true;
-          break;
-        case "conidioforo":
-          this.refrescarTabla10 = true;
-          break;
-      }
-    },
-    cambiarVariable() {
-      this.refrescarTabla1 = false;
-      this.refrescarTabla2 = false;
-      this.refrescarTabla3 = false;
-      this.refrescarTabla4 = false;
-      this.refrescarTabla5 = false;
-      this.refrescarTabla6 = false;
-      this.refrescarTabla7 = false;
-      this.refrescarTabla8 = false;
-      this.refrescarTabla9 = false;
-      this.refrescarTabla10 = false;
-    },
     mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
     mostrarTablasCaractMicro() {
       this.tablasCaractMicro = !this.tablasCaractMicro;
-    }
-  }
+    },
+  },
+  created() {
+    this.obtenerInfoCaractActinomicetos();
+    this.$events.$on("verificarBloqueos-bordes-actinomiceto", (e) =>
+      this.verificarBloqueos("borde")
+    );
+    this.$events.$on("verificarBloqueos-colors-actinomiceto", (e) =>
+      this.verificarBloqueos("color")
+    );
+    this.$events.$on("verificarBloqueos-micelios-actinomiceto", (e) =>
+      this.verificarBloqueos("micelio")
+    );
+    this.$events.$on("verificarBloqueos-conidioforos-actinomiceto", (e) =>
+      this.verificarBloqueos("conidioforo")
+    );
+    this.$events.$on("verificarBloqueos-formas-macro-actinomiceto", (e) =>
+      this.verificarBloqueos("forma_macro")
+    );
+    this.$events.$on("verificarBloqueos-formas-micro-actinomiceto", (e) =>
+      this.verificarBloqueos("forma_micro")
+    );
+    this.$events.$on("verificarBloqueos-superficies-actinomiceto", (e) =>
+      this.verificarBloqueos("superficie")
+    );
+    this.$events.$on("verificarBloqueos-pigmentos-actinomiceto", (e) =>
+      this.verificarBloqueos("pigmento")
+    );
+    this.$events.$on("verificarBloqueos-texturas-actinomiceto", (e) =>
+      this.verificarBloqueos("textura")
+    );
+    this.$events.$on("verificarBloqueos-tincions-actinomiceto", (e) =>
+      this.verificarBloqueos("tincion")
+    );
+  },
+  destroyed() {
+    this.$events.$off("verificarBloqueos-bordes-actinomiceto");
+    this.$events.$off("verificarBloqueos-colors-actinomiceto");
+    this.$events.$off("verificarBloqueos-micelios-actinomiceto");
+    this.$events.$off("verificarBloqueos-conidioforos-actinomiceto");
+    this.$events.$off("verificarBloqueos-formas-macro-actinomiceto");
+    this.$events.$off("verificarBloqueos-formas-micro-actinomiceto");
+    this.$events.$off("verificarBloqueos-superficies-actinomiceto");
+    this.$events.$off("verificarBloqueos-pigmentos-actinomiceto");
+    this.$events.$off("verificarBloqueos-texturas-actinomiceto");
+    this.$events.$off("verificarBloqueos-tincions-actinomiceto");
+  },
 };
 </script>

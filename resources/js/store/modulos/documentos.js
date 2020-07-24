@@ -75,6 +75,13 @@ export default {
     actions: {
         obtenerDocumentos({ commit }) {
             axios.get("/info-panel/documentos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarDocumentos", res.data);
             });
         },

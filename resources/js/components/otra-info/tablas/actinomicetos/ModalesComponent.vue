@@ -46,7 +46,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn||bloquearBtnModal"
           >Agregar</button>
         </div>
       </div>
@@ -57,6 +57,7 @@
       :width="400"
       :height="450"
       @before-open="beforeOpenEditar"
+      @closed="closeEditar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -96,7 +97,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarNombre"
+            :disabled="validarBtn||bloquearBtnModal"
           >Editar</button>
         </div>
       </div>
@@ -107,6 +108,7 @@
       :width="400"
       :height="300"
       @before-open="beforeOpenEliminar"
+      @closed="closeEliminar"
     >
       <div class="modal-content">
         <div class="modal-header">
@@ -128,7 +130,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarTipo"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -137,36 +144,47 @@
 
 <script>
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import websocketsModalOtraInfo from "../../../../mixins/websocketsModalOtraInfo";
 export default {
   data() {
     return {
-      idTipoEditar: "",
-      idTipoEliminar: "",
-      modal: { nombre: "", tipo: "" },
-      errors: ""
+      id: "",
+      modal: { nombre: "", tipo: "", bloquearBtnModal: false },
+      errors: "",
     };
   },
+  mixins: [Toastr, websocketsModalOtraInfo("ActinomicetosInfo")],
   methods: {
     ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractActinomiceto",
       "accionEditarTipoCaractActinomiceto",
-      "accionEliminarTipoCaractActinomiceto"
+      "accionEliminarTipoCaractActinomiceto",
     ]),
     beforeOpenAgregar(data) {
       this.modal.nombre = "";
       this.modal.tipo = data.params.tipo;
     },
     agregarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .post("/info-caract-actinomicetos/agregar", this.modal)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionAgregarTipoCaractActinomiceto({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-actinomiceto", {
             accion: "agregar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$modal.hide("modal_agregar_tipo_actinomiceto");
           this.toastr(
@@ -175,7 +193,8 @@ export default {
             "success"
           );
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data.errors;
           }
@@ -183,24 +202,30 @@ export default {
         });
     },
     beforeOpenEditar(data) {
-      this.idTipoEditar = data.params.id;
+      this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
     },
     editarTipo() {
+      this.bloquearBtnModal = true;
       axios
-        .put(
-          `/info-caract-actinomicetos/editar/${this.idTipoEditar}`,
-          this.modal
-        )
-        .then(res => {
+        .put(`/info-caract-actinomicetos/editar/${this.id}`, this.modal)
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionEditarTipoCaractActinomiceto({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-actinomiceto", {
             accion: "editar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.toastr(
             `Editar ${this.primeraMayus(this.modal.tipo)}`,
@@ -210,7 +235,8 @@ export default {
           );
           this.$modal.hide("modal_editar_tipo_actinomiceto");
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data;
           }
@@ -218,22 +244,31 @@ export default {
         });
     },
     beforeOpenEliminar(data) {
-      this.idTipoEliminar = data.params.id;
+      this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo() {
+      this.bloquearBtnModal = true;
       axios
-        .delete(`/info-caract-actinomicetos/eliminar/${this.idTipoEliminar}`, {
-          data: this.modal
+        .delete(`/info-caract-actinomicetos/eliminar/${this.id}`, {
+          data: this.modal,
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionEliminarTipoCaractActinomiceto({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-actinomiceto", {
             accion: "eliminar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.toastr(
             `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
@@ -243,36 +278,14 @@ export default {
           );
           this.$modal.hide("modal_eliminar_tipo_actinomiceto");
         })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    },
   },
   computed: {
     validarNombre() {
@@ -286,11 +299,14 @@ export default {
           this.errors = "";
           return false;
         }
-      } else {
-        this.errors = "Este campo es obligatorio";
+      }
+    },
+    validarBtn() {
+      if (this.validarNombre || !this.modal.nombre) {
         return true;
       }
-    }
-  }
+      return false;
+    },
+  },
 };
 </script>

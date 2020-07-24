@@ -44,7 +44,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('my_modal_eliminarCepa')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarCepa">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarCepa"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -53,6 +58,7 @@
 
 <script>
 import FieldDefs from "./columnas-cepas-actinomicetos";
+import Toastr from "../../../../mixins/toastr";
 import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
   components: { MyVuetable },
@@ -64,39 +70,30 @@ export default {
       sortOrder: [
         {
           field: "codigo",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
+      bloquearBtnModal: false,
     };
   },
+  mixins: [Toastr],
   methods: {
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
     cambiarVariable() {
       this.refrescarTabla = false;
     },
     eliminarCepa() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/cepas/eliminar/${this.idCepaEliminar}`)
-        .then(res => {
+        .then((res) => {
+          this.bloquearBtnModal = false;
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           if (res.data === "negativo") {
             this.toastr(
               "Precaución!!",
@@ -115,21 +112,19 @@ export default {
           }
           this.$modal.hide("my_modal_eliminarCepa");
         })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
-          }
-          this.toastr("Error!!!", "", "error", 4000);
+        .catch((error) => {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "", "error");
         });
     },
     beforeOpen(data) {
       this.idCepaEliminar = data.params.id;
-    }
+    },
   },
   computed: {},
   mounted() {
     this.$emit("rutaHijo", window.location.pathname);
-  }
+  },
 };
 </script>
 

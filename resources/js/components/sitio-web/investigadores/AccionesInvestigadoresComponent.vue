@@ -41,7 +41,7 @@ export default {
     websocketsAccionesMixin("investigador", "Investigador", "investigadores")
   ],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"])
   }
 };
 </script>

@@ -48,15 +48,31 @@ class CepaController extends Controller
         $rules = [
             'codigo' => 'bail|required|min:4|unique:cepas,codigo',
             'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'bail|required|regex:/^[\pL\s\-]+$/u'
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
         ];
-        $messages = [
-            'codigo.min' => 'El codigo debe tener minimo :min caracteres.',
-            'codigo.unique' => 'El codigo ya se encuentra registrado.',
-            'estado.regex' => 'El estado solo puede contener letras.',
-            'origen.regex' => 'El origen solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
+        switch ($request->grupo_microbiano) {
+            case 1:
+                break;
+            case 2:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'phylum' => 'required'
+                ];
+                break;
+            case 3:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'division' => 'required'
+                ];
+                break;
+            case 4:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'reino' => 'required', 'phylum' => 'required'
+                ];
+                break;
+        }
+        $this->validate($request, $rules);
 
         $cepa = new Cepa();
         $cepa->codigo = $request->codigo;
@@ -111,38 +127,46 @@ class CepaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'codigo' => 'bail|required|min:4',
-            'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'bail|required|regex:/^[\pL\s\-]+$/u'
-        ];
-        $messages = [
-            'codigo.min' => 'El codigo debe tener minimo :min caracteres.',
-            'estado.regex' => 'El estado solo puede contener letras.',
-            'origen.regex' => 'El origen solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $cepa = Cepa::find($id);
-        $cepa2 = Cepa::where('codigo', $request->codigo)->first();
-
-        if (is_null($cepa2) || $cepa->id == $cepa2->id) {
-            $codigo = $cepa->codigo;
-            $cepa->codigo = $request->codigo;
-            $cepa->grupo_microbiano_id = $request->grupo_microbiano;
-            $cepa->genero_id = $request->genero;
-            $cepa->especie_id = $request->especie;
-            $cepa->estado = $request->estado;
-            $cepa->origen = $request->origen;
-            $cepa->publicar = $request->publicar;
-            $cepa->otras_caract = $request->otras_caracteristicas;
-            $cepa->save();
-        } else {
-            return response()->json([
-                'errors' =>
-                ['codigo' => ['El codigo ya se encuentra registrado']]
-            ], 422);
+        $rules = [
+            'codigo' => 'bail|required|min:4|unique:cepas,codigo,' . $cepa->id,
+            'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
+        ];
+        switch ($cepa->grupo_microbiano) {
+            case 1:
+                break;
+            case 2:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'phylum' => 'required'
+                ];
+                break;
+            case 3:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'division' => 'required'
+                ];
+                break;
+            case 4:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'reino' => 'required', 'phylum' => 'required'
+                ];
+                break;
         }
+        $this->validate($request, $rules);
+
+        $codigo = $cepa->codigo;
+        $cepa->codigo = $request->codigo;
+        $cepa->grupo_microbiano_id = $request->grupo_microbiano;
+        $cepa->genero_id = $request->genero;
+        $cepa->especie_id = $request->especie;
+        $cepa->estado = $request->estado;
+        $cepa->origen = $request->origen;
+        $cepa->publicar = $request->publicar;
+        $cepa->otras_caract = $request->otras_caracteristicas;
+        $cepa->save();
 
         switch ($cepa->grupo_microbiano_id) {
             case 1:

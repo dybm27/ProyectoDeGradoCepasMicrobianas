@@ -4,11 +4,8 @@ export default {
         imagenesLogin: []
     },
     getters: {
-        getImagenesLogin(state) {
-            return state.imagenesLogin;
-        },
-        getImagenLoginById: (state, getters) => id => {
-            return getters.getImagenesLogin.find(imagen => imagen.id == id);
+        getImagenLoginById: state => id => {
+            return state.imagenesLogin.find(imagen => imagen.id == id);
         }
     },
     mutations: {
@@ -38,6 +35,13 @@ export default {
     actions: {
         obtenerImagenesLogin({ commit }, data) {
             axios.get("/info-panel/login-imagenes").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarImagenesLogin", res.data);
             });
         },

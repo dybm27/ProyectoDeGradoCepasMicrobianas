@@ -107,11 +107,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsSinTabla__WEBPACK_IMPORTED_MODULE_1__["default"])("vision", "Vision"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("quienes_somos", ["getQuienesSomos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("quienes_somos", ["quienes_somos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
     verificarBtn: function verificarBtn() {
-      if (this.getQuienesSomos.vision) {
+      if (this.quienes_somos.vision) {
         if (this.parametros.cuerpo) {
-          if (this.getQuienesSomos.vision.cuerpo === this.parametros.cuerpo) {
+          if (this.quienes_somos.vision.cuerpo === this.parametros.cuerpo) {
             return true;
           }
 
@@ -132,6 +132,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios.put("/quienes-somos/vision/cambiar", this.parametros).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.accionCambiarQuienesSomos({
           data: res.data,
           tipo: "vision"
@@ -171,7 +177,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.getQuienesSomos
+      _vm.quienes_somos
         ? [
             _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "main-card mb-3 card" }, [
@@ -194,7 +200,7 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("Editor", {
-                                    attrs: { info: _vm.getQuienesSomos.vision },
+                                    attrs: { info: _vm.quienes_somos.vision },
                                     on: {
                                       contenido: _vm.aceptarContenido,
                                       modificar: _vm.modificarContenido
@@ -371,6 +377,101 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VisionComponent_vue_vue_type_template_id_ca91896a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsSinTabla.js":
+/*!***************************************************!*\
+  !*** ./resources/js/mixins/websocketsSinTabla.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsSinTablaMixin = function websocketsSinTablaMixin(tipo, tipoM) {
+  return {
+    data: function data() {
+      return {
+        ocupado: false,
+        user: "",
+        ordenEntrada: []
+      };
+    },
+    methods: {
+      bloquear: function bloquear(arrayUsers) {
+        if (this.ordenEntrada.length === 0) {
+          this.ordenEntrada = arrayUsers;
+        }
+
+        if (this.auth.id != this.ordenEntrada[0].id) {
+          this.ocupado = true;
+          this.user = this.ordenEntrada[0];
+        } else {
+          this.ocupado = false;
+          this.user = "";
+        }
+      },
+      borrarUsuario: function borrarUsuario(user) {
+        if (this.ordenEntrada.length > 1) {
+          var index = this.ordenEntrada.findIndex(function (userArray) {
+            return userArray.id === user.id;
+          });
+          this.ordenEntrada.splice(index, 1);
+
+          if (this.auth.id === this.ordenEntrada[0].id) {
+            this.ocupado = false;
+            this.user = "";
+          } else {
+            this.ocupado = true;
+            this.user = this.ordenEntrada[0];
+          }
+        }
+      },
+      verificarPush: function verificarPush(user) {
+        if (this.ordenEntrada.length === 0) {
+          this.ordenEntrada.push(this.auth);
+          this.ordenEntrada.push(user);
+        } else {
+          this.ordenEntrada.push(user);
+        }
+      }
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      window.Echo.join(tipo).joining(function (data) {
+        _this.verificarPush(data.user);
+
+        window.Echo["private"]("bloquear" + tipoM).whisper("bloquear" + tipoM + "-" + data.user.id, {
+          arrayUsers: _this.ordenEntrada
+        });
+      }).leaving(function (data) {
+        _this.borrarUsuario(data.user);
+      });
+    },
+    created: function created() {
+      var _this2 = this;
+
+      this.$emit("rutaHijo", window.location.pathname);
+      window.Echo["private"]("bloquear" + tipoM).listenForWhisper("bloquear" + tipoM + "-" + this.auth.id, function (e) {
+        _this2.bloquear(e.arrayUsers);
+      });
+      window.Echo["private"]("borrarBloqueo" + tipoM).listenForWhisper("borrarBloqueo" + tipoM, function (e) {
+        _this2.borrarUsuario(e.user);
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      window.Echo.leave(tipo);
+      window.Echo.leave("bloquear" + tipoM);
+    },
+    destroyed: function destroyed() {
+      window.Echo.leave("borrarBloqueo" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsSinTablaMixin);
 
 /***/ })
 

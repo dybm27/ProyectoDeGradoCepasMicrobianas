@@ -42,7 +42,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_publicacion')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarPublicacion">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarPublicacion"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -57,7 +62,7 @@ import vuex from "vuex";
 import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
   components: {
-    MyVuetable
+    MyVuetable,
   },
   data() {
     return {
@@ -65,21 +70,22 @@ export default {
       sortOrder: [
         {
           field: "nombre_documento",
-          direction: "asc"
-        }
+          direction: "asc",
+        },
       ],
-      id: ""
+      id: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, websocketsTabla("Publicacion")],
   computed: {
     ...vuex.mapGetters("documentos", ["getPublicaciones"]),
     mostrarTabla() {
-      if (this.getPublicaciones != "") {
+      if (this.getPublicaciones != "" && this.getPublicaciones != null) {
         return true;
       }
       return false;
-    }
+    },
   },
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
@@ -87,11 +93,20 @@ export default {
       this.id = data.params.id;
     },
     eliminarPublicacion() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/documentos/${this.id}`, {
-          data: { tipo: "publicacion" }
+          data: { tipo: "publicacion" },
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.$modal.hide("modal_eliminar_publicacion");
           this.toastr(
             "Eliminar Publicacion",
@@ -101,13 +116,14 @@ export default {
           this.accionPublicacion({ tipo: "eliminar", data: res.data });
           this.actualizarTabla();
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!!", "", "error");
         });
-    }
+    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-  }
+  },
 };
 </script>

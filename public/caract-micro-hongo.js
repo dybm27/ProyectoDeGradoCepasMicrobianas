@@ -367,14 +367,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -386,29 +378,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Imagenes: _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   props: ["info", "modificarInfo"],
-  watch: {
-    modificarInfo: function modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   data: function data() {
     return {
       parametros: {
         cepaId: "",
-        conidioforo: 1,
+        conidioforo: null,
         fialides: "Presencia",
         fialides_forma: "",
         fialides_otra_caracteristica: "",
         vesicula: "Presencia",
-        espora_asexual: 1,
+        espora_asexual: null,
         esporas_asexuales_conidios_tamano: "Grande",
         esporas_asexuales_conidios_color: "",
         esporas_asexuales_conidios_forma: "",
         esporas_asexuales_conidios_otras: "",
-        espora_sexual: 1,
+        espora_sexual: null,
         otras_estructuras: "",
         imagen1: "",
         imagen2: "",
@@ -423,13 +407,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractHongo"]), {
     evento: function evento() {
       var _this = this;
+
+      this.bloquearBtn = true;
 
       if (this.parametros.fialides === "Ausencia") {
         this.parametros.fialides_forma = "";
@@ -444,38 +432,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       if (this.tituloForm === "Agregar Característica") {
-        axios.post("/cepas/hongo/caract-micro", this.parametros).then(function (res) {
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-          _this.tituloForm = "Editar Característica";
-          _this.nomBtn = "Editar";
+        if (this.parametros.imagen1) {
+          axios.post("/cepas/hongo/caract-micro", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-          _this.$emit("agregar", res.data);
+              window.location.href = "/";
+            }
 
-          _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con éxito!", "success");
-        })["catch"](function (error) {
-          if (error.response) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+            _this.tituloForm = "Editar Característica";
+            _this.nomBtn = "Editar";
+
+            _this.$emit("agregar", res.data);
+
+            _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con éxito!", "success");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
             _this.toastr("Error!!", "", "error");
-          }
-        });
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija al menos una imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios.put("/cepas/hongo/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
           _this.errors = [];
 
           _this.$emit("editar", res.data);
 
           _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+          _this.bloquearBtn = false;
+          _this.errors = [];
+          _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-          }
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -504,11 +511,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         };
       } else {
+        this.bloquearBtnModal = true;
         var parametros = {
           tipo: this.modal.tipo,
           nombre: this.modal.input
         };
         axios.post("/info-caract-hongos/agregar", parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this2.bloquearBtnModal = false;
+
           _this2.accionAgregarTipoCaractHongo({
             info: res.data,
             tipo: _this2.modal.tipo
@@ -518,11 +534,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this2.modal.errors = error.response.data.errors;
-          }
+          _this2.bloquearBtnModal = false;
+          _this2.errors = [];
+          _this2.modal.errors = error.response.data.errors;
 
-          _this2.toastr("Error!!!!", "", "error");
+          _this2.toastr("Error!!", "", "error");
         });
       }
     },
@@ -547,6 +563,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     accionImagen: function accionImagen(data) {
       this.$emit("editar", data);
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerConidioforos.length > 0) {
+        this.parametros.conidioforo = this.obtenerConidioforos[0].id;
+      } else {
+        this.parametros.conidioforo = null;
+      }
+
+      if (this.obtenerEsporasAsexuales.length > 0) {
+        this.parametros.espora_asexual = this.obtenerEsporasAsexuales[0].id;
+      } else {
+        this.parametros.espora_asexual = null;
+      }
+
+      if (this.obtenerEsporasSexuales.length > 0) {
+        this.parametros.espora_sexual = this.obtenerEsporasSexuales[0].id;
+      } else {
+        this.parametros.espora_sexual = null;
+      }
     }
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
@@ -563,6 +598,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         return "btn-warning";
       }
+    },
+    obtenerConidioforos: function obtenerConidioforos() {
+      return this.getInfoCaractMicroHongos.conidioforos;
+    },
+    obtenerEsporasAsexuales: function obtenerEsporasAsexuales() {
+      return this.getInfoCaractMicroHongos.esporas_asexuales;
+    },
+    obtenerEsporasSexuales: function obtenerEsporasSexuales() {
+      return this.getInfoCaractMicroHongos.esporas_sexuales;
     }
   }),
   mounted: function mounted() {
@@ -579,6 +623,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.cepaId = this.$route.params.cepaHongoId;
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
+    }
+  },
+  created: function created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo: function modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerConidioforos: function obtenerConidioforos() {
+      if (this.obtenerConidioforos.length > 0) {
+        this.parametros.conidioforo = this.obtenerConidioforos[0].id;
+      } else {
+        this.parametros.conidioforo = null;
+      }
+    },
+    obtenerEsporasAsexuales: function obtenerEsporasAsexuales() {
+      if (this.obtenerEsporasAsexuales.length > 0) {
+        this.parametros.espora_asexual = this.obtenerEsporasAsexuales[0].id;
+      } else {
+        this.parametros.espora_asexual = null;
+      }
+    },
+    obtenerEsporasSexuales: function obtenerEsporasSexuales() {
+      if (this.obtenerEsporasSexuales.length > 0) {
+        this.parametros.espora_sexual = this.obtenerEsporasSexuales[0].id;
+      } else {
+        this.parametros.espora_sexual = null;
+      }
     }
   }
 });
@@ -704,6 +780,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios["delete"]("/cepas/hongo/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -716,10 +798,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
       })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-        }
+        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -801,6 +880,21 @@ var render = function() {
                   }
                 },
                 [
+                  _vm.errors != ""
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "alert alert-danger" },
+                          _vm._l(_vm.errors, function(item, index) {
+                            return _c("p", { key: index }, [
+                              _vm._v(_vm._s(item[0]))
+                            ])
+                          }),
+                          0
+                        )
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
                   _vm.getInfoCaractMicroHongos
                     ? [
                         _c("label", { attrs: { for: "conidioforo" } }, [
@@ -842,16 +936,13 @@ var render = function() {
                                 }
                               }
                             },
-                            _vm._l(
-                              _vm.getInfoCaractMicroHongos.conidioforos,
-                              function(f, index) {
-                                return _c(
-                                  "option",
-                                  { key: index, domProps: { value: f.id } },
-                                  [_vm._v(_vm._s(f.nombre))]
-                                )
-                              }
-                            ),
+                            _vm._l(_vm.obtenerConidioforos, function(f, index) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: f.id } },
+                                [_vm._v(_vm._s(f.nombre))]
+                              )
+                            }),
                             0
                           ),
                           _vm._v(" "),
@@ -1025,18 +1116,6 @@ var render = function() {
                                     }
                                   }),
                                   _vm._v(" "),
-                                  _vm.errors.fialides_forma
-                                    ? _c(
-                                        "span",
-                                        { staticClass: "text-danger" },
-                                        [
-                                          _vm._v(
-                                            _vm._s(_vm.errors.fialides_forma[0])
-                                          )
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
                                   _c(
                                     "label",
                                     {
@@ -1083,22 +1162,7 @@ var render = function() {
                                         )
                                       }
                                     }
-                                  }),
-                                  _vm._v(" "),
-                                  _vm.errors.fialides_otra_caracteristica
-                                    ? _c(
-                                        "span",
-                                        { staticClass: "text-danger" },
-                                        [
-                                          _vm._v(
-                                            _vm._s(
-                                              _vm.errors
-                                                .fialides_otra_caracteristica[0]
-                                            )
-                                          )
-                                        ]
-                                      )
-                                    : _vm._e()
+                                  })
                                 ]
                               )
                             : _vm._e()
@@ -1251,16 +1315,16 @@ var render = function() {
                                 }
                               }
                             },
-                            _vm._l(
-                              _vm.getInfoCaractMicroHongos.esporas_asexuales,
-                              function(b, index) {
-                                return _c(
-                                  "option",
-                                  { key: index, domProps: { value: b.id } },
-                                  [_vm._v(_vm._s(b.nombre))]
-                                )
-                              }
-                            ),
+                            _vm._l(_vm.obtenerEsporasAsexuales, function(
+                              b,
+                              index
+                            ) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: b.id } },
+                                [_vm._v(_vm._s(b.nombre))]
+                              )
+                            }),
                             0
                           ),
                           _vm._v(" "),
@@ -1528,17 +1592,6 @@ var render = function() {
                                   }
                                 }),
                                 _vm._v(" "),
-                                _vm.errors.esporas_asexuales_conidios_color
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.errors
-                                            .esporas_asexuales_conidios_color[0]
-                                        )
-                                      )
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
                                 _c(
                                   "label",
                                   {
@@ -1587,17 +1640,6 @@ var render = function() {
                                     }
                                   }
                                 }),
-                                _vm._v(" "),
-                                _vm.errors.esporas_asexuales_conidios_forma
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.errors
-                                            .esporas_asexuales_conidios_forma[0]
-                                        )
-                                      )
-                                    ])
-                                  : _vm._e(),
                                 _vm._v(" "),
                                 _c(
                                   "label",
@@ -1689,16 +1731,16 @@ var render = function() {
                                 }
                               }
                             },
-                            _vm._l(
-                              _vm.getInfoCaractMicroHongos.esporas_sexuales,
-                              function(b, index) {
-                                return _c(
-                                  "option",
-                                  { key: index, domProps: { value: b.id } },
-                                  [_vm._v(_vm._s(b.nombre))]
-                                )
-                              }
-                            ),
+                            _vm._l(_vm.obtenerEsporasSexuales, function(
+                              b,
+                              index
+                            ) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: b.id } },
+                                [_vm._v(_vm._s(b.nombre))]
+                              )
+                            }),
                             0
                           ),
                           _vm._v(" "),
@@ -1793,7 +1835,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.btnDisable }
+                      attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtn))]
                   )
@@ -1943,7 +1985,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarInfo }
                 },
                 [_vm._v("Agregar")]

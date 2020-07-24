@@ -31,7 +31,7 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view @rutaHijo="cambiarTipo"></router-view>
+      <Nav @rutaHijo="cambiarTipo"></Nav>
     </template>
     <template v-else>
       <div class="container">
@@ -54,8 +54,10 @@
 
 <script>
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import Nav from "./NavOtraInfoComponent.vue";
 import vuex from "vuex";
 export default {
+  components: { Nav },
   data() {
     return { tipo: "" };
   },
@@ -69,7 +71,16 @@ export default {
     ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractBacteria",
       "accionEditarTipoCaractBacteria",
-      "accionEliminarTipoCaractBacteria"
+      "accionEliminarTipoCaractBacteria",
+      "accionAgregarTipoCaractLevadura",
+      "accionEditarTipoCaractLevadura",
+      "accionEliminarTipoCaractLevadura",
+      "accionAgregarTipoCaractHongo",
+      "accionEditarTipoCaractHongo",
+      "accionEliminarTipoCaractHongo",
+      "accionAgregarTipoCaractActinomiceto",
+      "accionEditarTipoCaractActinomiceto",
+      "accionEliminarTipoCaractActinomiceto"
     ]),
     cambiarTipo(ruta) {
       if (ruta.includes("cepas")) {
@@ -86,6 +97,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", "otra-info");
     window.Echo.channel("cepas-info").listen("CepasInfoEvent", e => {
       switch (e.tipoAccion) {
         case "agregar":
@@ -131,19 +143,79 @@ export default {
           break;
       }
       this.$events.fire("actualizartabla" + e.tipoCaract);
-    }); /*
-    window.Echo.channel("hongos-info").listen("NovedadEvent", e => {
-      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
-      this.$events.fire("actualizartablaNovedad");
     });
-    window.Echo.channel("levaduras-info").listen("NovedadEvent", e => {
-      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
-      this.$events.fire("actualizartablaNovedad");
+    window.Echo.channel("hongos-info").listen("HongosInfoEvent", e => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+      }
+      this.$events.fire("actualizartabla" + e.tipoCaract);
     });
-    window.Echo.channel("actinomicetos-info").listen("NovedadEvent", e => {
-      this.accionNovedad({ tipo: e.tipo, data: e.novedad });
-      this.$events.fire("actualizartablaNovedad");
-    }); */
+    window.Echo.channel("levaduras-info").listen("LevadurasInfoEvent", e => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+          break;
+      }
+      this.$events.fire("actualizartabla" + e.tipoCaract);
+    });
+    window.Echo.channel("actinomicetos-info").listen(
+      "ActinomicetosInfoEvent",
+      e => {
+        switch (e.tipoAccion) {
+          case "agregar":
+            this.accionAgregarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract
+            });
+            break;
+          case "editar":
+            this.accionEditarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract
+            });
+            break;
+          case "eliminar":
+            this.accionEliminarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract
+            });
+            break;
+        }
+        this.$events.fire("actualizartabla" + e.tipoCaract);
+      }
+    );
   }
 };
 </script>

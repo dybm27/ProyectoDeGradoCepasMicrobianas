@@ -9,19 +9,19 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
                 "bloquearBtns" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             window.Echo.private("bloquearCheck" + tipoM).whisper(
                 "bloquearCheck" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoM, {
                 id: data.id,
-                idUser: this.getUserAuth.id
+                idUser: this.auth.id
             });
         },
         showModal(data) {
@@ -32,19 +32,19 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
                 "bloquearBtns" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             window.Echo.private("bloquearCheck" + tipoM).whisper(
                 "bloquearCheck" + tipoM,
                 {
                     id: data.id,
-                    idUser: this.getUserAuth.id
+                    idUser: this.auth.id
                 }
             );
             this.$events.fire("pushMisBloqueos" + tipoM, {
                 id: data.id,
-                idUser: this.getUserAuth.id
+                idUser: this.auth.id
             });
         },
         bloquearBtns() {
@@ -78,6 +78,8 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
     destroyed() {
         this.$events.$off(this.rowIndex + "-crearEventosBtns-" + tipoP);
         this.$events.$off(this.rowIndex + "-eliminarEventosBtns-" + tipoP);
+        this.$events.$off(this.rowData.id + "-bloquearBtns" + tipoM);
+        this.$events.$off(this.rowData.id + "-desbloquearBtns" + tipoM);
     }
 });
 export default websocketsAccionesMixin;

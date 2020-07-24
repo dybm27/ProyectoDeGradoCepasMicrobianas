@@ -36,6 +36,18 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
+      <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+        <li class="nav-item">
+          <router-link :to="{name:'tabla-usuarios'}" class="nav-link" active-class="active" exact>
+            <span>Tabla Usuarios</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{name:'tabla-seguimiento'}" class="nav-link" active-class="active">
+            <span>Tabla de seguimiento</span>
+          </router-link>
+        </li>
+      </ul>
       <router-view @rutaHijo="cambiarTipo" @cambiarTipo="cambiarTipo1"></router-view>
     </template>
     <template v-else>
@@ -87,6 +99,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     window.Echo.channel("usuario").listen("UsuarioEvent", e => {
       this.accionUsuario({ tipo: e.tipo, data: e.user });
       this.$events.fire("actualizartablaUsuario");

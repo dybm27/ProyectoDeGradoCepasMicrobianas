@@ -3,11 +3,6 @@ export default {
     state: {
         quienes_somos: null
     },
-    getters: {
-        getQuienesSomos(state) {
-            return state.quienes_somos;
-        }
-    },
     mutations: {
         llenarQuienesSomos(state, quienesSomos) {
             state.quienes_somos = quienesSomos;
@@ -29,6 +24,13 @@ export default {
     actions: {
         obtenerQuienesSomos({ commit }) {
             axios.get("/info-panel/quienes-somos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarQuienesSomos", res.data);
             });
         },

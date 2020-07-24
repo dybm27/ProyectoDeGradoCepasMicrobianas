@@ -7,6 +7,11 @@
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
               <form @submit.prevent="evento">
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
@@ -29,7 +34,7 @@
                       v-model="parametros.textura"
                     >
                       <option
-                        v-for="(e,index) in getInfoCaractMacroActinomicetos.texturas"
+                        v-for="(e,index) in obtenerTexturas"
                         :key="index"
                         :value="e.id"
                       >{{e.nombre}}</option>
@@ -52,7 +57,7 @@
                       v-model="parametros.color"
                     >
                       <option
-                        v-for="(c,index) in getInfoCaractMacroActinomicetos.colors"
+                        v-for="(c,index) in obtenerColores"
                         :key="index"
                         :value="c.id"
                       >{{c.nombre}}</option>
@@ -75,7 +80,7 @@
                       v-model="parametros.forma"
                     >
                       <option
-                        v-for="(f,index) in getInfoCaractMacroActinomicetos.formas_macros"
+                        v-for="(f,index) in obtenerFormas"
                         :key="index"
                         :value="f.id"
                       >{{f.nombre}}</option>
@@ -98,7 +103,7 @@
                       v-model="parametros.superficie"
                     >
                       <option
-                        v-for="(s,index) in getInfoCaractMacroActinomicetos.superficies"
+                        v-for="(s,index) in obtenerSuperficies"
                         :key="index"
                         :value="s.id"
                       >{{s.nombre}}</option>
@@ -121,7 +126,7 @@
                       v-model="parametros.borde"
                     >
                       <option
-                        v-for="(b,index) in getInfoCaractMacroActinomicetos.bordes"
+                        v-for="(b,index) in obtenerBordes"
                         :key="index"
                         :value="b.id"
                       >{{b.nombre}}</option>
@@ -144,7 +149,7 @@
                       v-model="parametros.pigmento"
                     >
                       <option
-                        v-for="(d,index) in getInfoCaractMacroActinomicetos.pigmentos"
+                        v-for="(d,index) in obtenerPigmentos"
                         :key="index"
                         :value="d.id"
                       >{{d.nombre}}</option>
@@ -197,7 +202,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </form>
             </div>
@@ -281,7 +286,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info-actinomiceto')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -301,81 +311,94 @@ export default {
       parametros: {
         cepaId: "",
         medio: "",
-        forma: 1,
-        borde: 1,
-        textura: 1,
-        color: 1,
-        pigmento: 1,
+        forma: null,
+        borde: null,
+        textura: null,
+        color: null,
+        pigmento: null,
         secrecion_geosminas: "",
-        superficie: 1,
+        superficie: null,
         otras_caract: "",
         imagen: "",
-        imagen_descripcion: ""
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopieCepasMixin],
-  watch: {
-    modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Medio") {
-        axios
-          .post("/cepas/actinomiceto/caract-macro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Medio";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Medio",
-              "Medio agregado con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/actinomiceto/caract-macro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.tituloForm = "Editar Medio";
+              this.nomBtn = "Editar";
+              this.$emit("agregar", res.data);
+              this.toastr(
+                "Agregar Medio",
+                "Medio agregado con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(
             `/cepas/actinomiceto/caract-macro/${this.info.id}`,
             this.parametros
           )
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.errors = [];
             this.$refs.inputImagen.value = "";
             this.$emit("editar", res.data);
             this.toastr("Editar Medio", "Medio editado con exito!!", "success");
           })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -415,16 +438,25 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-actinomicetos/agregar", parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtnModal = false;
             this.accionAgregarTipoCaractActinomiceto({
               info: res.data,
-              tipo: this.modal.tipo
+              tipo: this.modal.tipo,
             });
             this.$modal.hide("agregar-caract-info-actinomiceto");
             this.toastr(
@@ -433,14 +465,46 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
-              this.modal.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!!!", "", "error");
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            this.errors = [];
+            this.modal.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerFormas.length > 0) {
+        this.parametros.forma = this.obtenerFormas[0].id;
+      } else {
+        this.parametros.forma = null;
+      }
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+      if (this.obtenerSuperficies.length > 0) {
+        this.parametros.superficie = this.obtenerSuperficies[0].id;
+      } else {
+        this.parametros.superficie = null;
+      }
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+      if (this.obtenerBordes.length > 0) {
+        this.parametros.borde = this.obtenerBordes[0].id;
+      } else {
+        this.parametros.borde = null;
+      }
+      if (this.obtenerPigmentos.length > 0) {
+        this.parametros.pigmento = this.obtenerPigmentos[0].id;
+      } else {
+        this.parametros.pigmento = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]),
@@ -463,7 +527,25 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    }
+    },
+    obtenerFormas() {
+      return this.getInfoCaractMacroActinomicetos.formas_macros;
+    },
+    obtenerTexturas() {
+      return this.getInfoCaractMacroActinomicetos.texturas;
+    },
+    obtenerSuperficies() {
+      return this.getInfoCaractMacroActinomicetos.superficies;
+    },
+    obtenerColores() {
+      return this.getInfoCaractMacroActinomicetos.colors;
+    },
+    obtenerBordes() {
+      return this.getInfoCaractMacroActinomicetos.bordes;
+    },
+    obtenerPigmentos() {
+      return this.getInfoCaractMacroActinomicetos.pigmentos;
+    },
   },
   mounted() {
     if (this.info === undefined) {
@@ -479,6 +561,59 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerFormas() {
+      if (this.obtenerFormas.length > 0) {
+        this.parametros.forma = this.obtenerFormas[0].id;
+      } else {
+        this.parametros.forma = null;
+      }
+    },
+    obtenerTexturas() {
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    },
+    obtenerSuperficies() {
+      if (this.obtenerSuperficies.length > 0) {
+        this.parametros.superficie = this.obtenerSuperficies[0].id;
+      } else {
+        this.parametros.superficie = null;
+      }
+    },
+    obtenerColores() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+    },
+    obtenerBordes() {
+      if (this.obtenerBordes.length > 0) {
+        this.parametros.borde = this.obtenerBordes[0].id;
+      } else {
+        this.parametros.borde = null;
+      }
+    },
+    obtenerPigmentos() {
+      if (this.obtenerPigmentos.length > 0) {
+        this.parametros.pigmento = this.obtenerPigmentos[0].id;
+      } else {
+        this.parametros.pigmento = null;
+      }
+    },
+  },
 };
 </script>

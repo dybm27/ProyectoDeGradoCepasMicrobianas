@@ -13,6 +13,7 @@ class CaractMicroHongoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
 
         if (!is_null($request->imagen1)) {
@@ -78,6 +79,7 @@ class CaractMicroHongoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMicroHongo = CaracMicroHongo::find($id);
         $caractMicroHongo->conidioforo_id = $request->conidioforo;
         $caractMicroHongo->fialides = $request->fialides;
@@ -222,5 +224,25 @@ class CaractMicroHongoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'fialides' => 'required', 'vesicula' => 'required',
+            'espora_asexual' => 'required', 'conidioforo' => 'required',
+            'espora_sexual' => 'required'
+        ];
+        if ($request->fialides == 'Presencia') {
+            $rules += ['fialides_forma' => 'required'];
+        }
+        if ($request->espora_asexual == 2) {
+            $rules += [
+                'esporas_asexuales_conidios_tamano' => 'required',
+                'esporas_asexuales_conidios_color' => 'required',
+                'esporas_asexuales_conidios_forma' => 'required'
+            ];
+        }
+        $this->validate($request, $rules);
     }
 }

@@ -109,12 +109,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.$emit("rutaHijo", window.location.pathname);
   },
   watch: {
-    getCepa: function getCepa() {
-      if (this.getCepa) {
-        if (this.getCepa === "No Existe") {
+    cepa: function cepa() {
+      if (this.cepa) {
+        if (this.cepa === "No Existe") {
           this.tipo = 5;
         } else {
-          this.tipo = this.verificarUrl(this.getCepa.cepa.grupo_microbiano_id);
+          this.tipo = this.verificarUrl(this.cepa.cepa.grupo_microbiano_id);
         }
       }
     }
@@ -162,7 +162,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCepa"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("cepa", ["cepa"]), {
     getTipo: function getTipo() {
       return this.tipo;
     }

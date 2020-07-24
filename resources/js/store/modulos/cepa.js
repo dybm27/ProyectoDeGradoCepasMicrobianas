@@ -4,9 +4,6 @@ export default {
         cepa: null
     },
     getters: {
-        getCepa(state) {
-            return state.cepa;
-        },
         getCaractMacro(state) {
             return state.cepa.caract_macroscopicas;
         },
@@ -153,6 +150,13 @@ export default {
             axios
                 .get(`/info-panel/cepa/agregar-editar-caract/${id}`)
                 .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
                     commit("llenarCepa", res.data);
                 });
         },

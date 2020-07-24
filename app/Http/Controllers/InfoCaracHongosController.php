@@ -6,6 +6,7 @@ use App\ColorHongo;
 use App\ConidioforoHongo;
 use App\EsporaAsexualHongo;
 use App\EsporaSexualHongo;
+use App\Events\HongosInfoEvent;
 use App\Seguimiento;
 use App\TexturaHongo;
 use App\TipoMetodoConservacionHongo;
@@ -18,7 +19,7 @@ class InfoCaracHongosController extends Controller
     {
         return view('otra-info');
     }
-    
+
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {
@@ -109,7 +110,7 @@ class InfoCaracHongosController extends Controller
                     . $tipo->nombre);
                 break;
         }
-
+        broadcast(new HongosInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -195,7 +196,7 @@ class InfoCaracHongosController extends Controller
                     . $tipo1->nombre);
                 break;
         }
-
+        broadcast(new HongosInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -204,36 +205,42 @@ class InfoCaracHongosController extends Controller
         switch ($request->tipo) {
             case "color":
                 $tipo = ColorHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Color en Hongos: "
                     . $tipo->nombre);
                 break;
             case "textura":
                 $tipo = TexturaHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Textura en Hongos: "
                     . $tipo->nombre);
                 break;
             case "conidioforo":
                 $tipo = ConidioforoHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en Hongos: "
                     . $tipo->nombre);
                 break;
             case "espora_asexual":
                 $tipo = EsporaAsexualHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Espora Asexual en Hongos: "
                     . $tipo->nombre);
                 break;
             case "espora_sexual":
                 $tipo = EsporaSexualHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Espora Sexual en Hongos: "
                     . $tipo->nombre);
                 break;
             case "metodo_conser":
                 $tipo = TipoMetodoConservacionHongo::find($id);
+                broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                 $tipo->delete();
                 $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Hongos: "
                     . $tipo->nombre);

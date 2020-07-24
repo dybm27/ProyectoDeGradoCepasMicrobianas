@@ -54,7 +54,7 @@ export default {
   props: ["tipoG"],
   data() {
     return {
-      tipo: ""
+      tipo: "",
     };
   },
   created() {
@@ -78,15 +78,15 @@ export default {
     this.$emit("rutaHijo", window.location.pathname);
   },
   watch: {
-    getCepa() {
-      if (this.getCepa) {
-        if (this.getCepa === "No Existe") {
+    cepa() {
+      if (this.cepa) {
+        if (this.cepa === "No Existe") {
           this.tipo = 5;
         } else {
-          this.tipo = this.verificarUrl(this.getCepa.cepa.grupo_microbiano_id);
+          this.tipo = this.verificarUrl(this.cepa.cepa.grupo_microbiano_id);
         }
       }
-    }
+    },
   },
   methods: {
     ...vuex.mapActions("cepa", ["obtenerCepa", "limpiarCepa"]),
@@ -122,17 +122,17 @@ export default {
           }
           break;
       }
-    }
+    },
   },
   computed: {
-    ...vuex.mapGetters("cepa", ["getCepa"]),
+    ...vuex.mapState("cepa", ["cepa"]),
     getTipo() {
       return this.tipo;
-    }
+    },
   },
   destroyed() {
     this.limpiarCepa();
-  }
+  },
 };
 </script>
 

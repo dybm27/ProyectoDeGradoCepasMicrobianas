@@ -213,9 +213,9 @@ export default {
         imagen: "",
         titulo: "",
         nomLabel: "",
-        errors: ""
+        errors: "",
       },
-      imagenMiniatura: ""
+      imagenMiniatura: "",
     };
   },
   methods: {
@@ -258,14 +258,21 @@ export default {
         if (this.$refs.inputImagenModal.value) {
           let parametros = {
             numero: this.modalImagen.select_imagen,
-            imagen: this.modalImagen.imagen
+            imagen: this.modalImagen.imagen,
           };
           axios
             .put(
               `/cepas/${this.tipoCepa}/cambiar-imagen/${this.cepa.id}`,
               parametros
             )
-            .then(res => {
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -274,27 +281,31 @@ export default {
                 "success"
               );
             })
-            .catch(error => {
-              if (error.response) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
+            .catch((error) => {
+              this.modalImagen.errors = [];
+              this.modalImagen.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
         let parametros = {
-          numero: this.modalImagen.select_imagen
+          numero: this.modalImagen.select_imagen,
         };
         axios
           .put(
             `/cepas/${this.tipoCepa}/eliminar-imagen/${this.cepa.id}`,
             parametros
           )
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
             this.$emit("accionImagen", res.data);
             this.$modal.hide("eliminar_imagen");
             this.toastr(
@@ -303,27 +314,31 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
-              this.modalImagen.errors = [];
-              this.modalImagen.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.modalImagen.errors = [];
+            this.modalImagen.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       } else {
         if (this.$refs.inputImagenModal.value) {
           this.colocarNumeroAgregar();
           let parametros = {
             numero: this.modalImagen.select_imagen,
-            imagen: this.modalImagen.imagen
+            imagen: this.modalImagen.imagen,
           };
           axios
             .put(
               `/cepas/${this.tipoCepa}/agregar-imagen/${this.cepa.id}`,
               parametros
             )
-            .then(res => {
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -332,13 +347,10 @@ export default {
                 "success"
               );
             })
-            .catch(error => {
-              if (error.response) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
-                // console.log(error.response.data);
-              }
+            .catch((error) => {
+              this.modalImagen.errors = [];
+              this.modalImagen.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
@@ -375,7 +387,7 @@ export default {
     },
     cargarImagen(file) {
       let reader = new Image();
-      reader.onload = e => {
+      reader.onload = (e) => {
         this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
@@ -397,9 +409,9 @@ export default {
         onClicked: () => {},
         onClosed: () => {},
         onMouseOver: () => {},
-        onMouseOut: () => {}
+        onMouseOut: () => {},
       });
-    }
+    },
   },
   computed: {
     mostraImagenes() {
@@ -460,7 +472,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

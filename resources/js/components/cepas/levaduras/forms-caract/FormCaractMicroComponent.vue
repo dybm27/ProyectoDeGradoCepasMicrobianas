@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">{{tituloForm}}</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="position-relative form-group">
@@ -356,7 +361,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable"
+                :disabled="btnDisable||bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -414,7 +419,7 @@ export default {
         this.llenarInfo();
         this.$emit("cambiarVariable");
       }
-    }
+    },
   },
   data() {
     return {
@@ -433,42 +438,65 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: ""
+        imagen3: "",
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [obtenerImagenCroopie3ImagenesMixin, Toastr],
   methods: {
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Característica") {
-        axios
-          .post("/cepas/levadura/caract-micro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Característica";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Característica Microscópica",
-              "Característica Microscópica agregada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
+        if (this.parametros.imagen1) {
+          axios
+            .post("/cepas/levadura/caract-micro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.tituloForm = "Editar Característica";
+              this.nomBtn = "Editar";
+              this.$emit("agregar", res.data);
+              this.toastr(
+                "Agregar Característica Microscópica",
+                "Característica Microscópica agregada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija al menos una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/levadura/caract-micro/${this.info.id}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.errors = [];
             this.$emit("editar", res.data);
             this.toastr(
@@ -477,13 +505,11 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -507,7 +533,7 @@ export default {
     },
     accionImagen(data) {
       this.$emit("editar", data);
-    }
+    },
   },
   computed: {
     required() {
@@ -523,7 +549,7 @@ export default {
       } else {
         return "btn-warning";
       }
-    }
+    },
   },
   mounted() {
     if (this.info) {
@@ -539,6 +565,6 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>

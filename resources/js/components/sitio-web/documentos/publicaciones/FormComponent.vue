@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="nombre_documento" class>Nombre Publicación</label>
                 <input
@@ -89,7 +94,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -150,7 +155,7 @@ import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../../CroppieComponent.vue";
 export default {
   components: {
-    Croppie
+    Croppie,
   },
   props: ["idPublicacion"],
   data() {
@@ -163,23 +168,25 @@ export default {
         descripcion: "",
         imagen: "",
         publicar: false,
-        tipo: "publicacion"
+        tipo: "publicacion",
       },
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       archivoError: "",
       mensajeNombrePublicacion: "",
       mensajeNombreAutor: "",
-      traerValorImg: false
+      traerValorImg: false,
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Publicacion") {
         let form = new FormData();
         form.append("nombre_documento", this.parametros.nombre_documento);
@@ -196,10 +203,18 @@ export default {
         axios
           .post("/documentos", form, {
             headers: {
-              "content-type": "multipart/form-data"
-            }
+              "content-type": "multipart/form-data",
+            },
           })
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.toastr(
               "Agregar Publicacion",
               "Publicacion agregada con exito!!",
@@ -208,7 +223,8 @@ export default {
             this.accionPublicacion({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
               this.errors = [];
               this.errors = error.response.data.errors;
@@ -218,7 +234,15 @@ export default {
       } else {
         axios
           .put(`/documentos/${this.idPublicacion}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.toastr(
               "Editar Publicacion",
               "Publicacion editada con exito!!",
@@ -227,27 +251,27 @@ export default {
             window.Echo.private("desbloquearBtnsPublicacion").whisper(
               "desbloquearBtnsPublicacion",
               {
-                id: res.data.id
+                id: res.data.id,
               }
             );
             window.Echo.private("desbloquearCheckPublicacion").whisper(
               "desbloquearCheckPublicacion",
               {
-                id: res.data.id
+                id: res.data.id,
               }
             );
             this.$events.fire("spliceMisBloqueosPublicacion", {
-              id: res.data.id
+              id: res.data.id,
             });
             this.accionPublicacion({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
           });
       }
@@ -279,12 +303,12 @@ export default {
         this.parametros.archivo = "";
         this.$refs.inputArchivo.value = "";
       }
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("documentos", [
       "getPublicacionById",
-      "getPublicacionByNombre"
+      "getPublicacionByNombre",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Publicacion") {
@@ -351,7 +375,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idPublicacion === 0) {
@@ -365,6 +389,6 @@ export default {
       this.tituloForm = "Editar Publicacion";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

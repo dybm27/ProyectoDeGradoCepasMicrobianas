@@ -207,6 +207,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -221,8 +226,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       parametros: {
         cepaId: "",
         medio: "",
-        color: 1,
-        textura: 1,
+        color: null,
+        textura: null,
         caracteristicas_reverso: "",
         imagen: ""
       },
@@ -234,42 +239,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  watch: {
-    modificarInfo: function modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractHongo"]), {
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloForm === "Agregar Medio") {
-        axios.post("/cepas/hongo/caract-macro", this.parametros).then(function (res) {
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-          _this.tituloForm = "Editar Medio";
-          _this.nomBtn = "Editar";
+        if (this.parametros.imagen) {
+          axios.post("/cepas/hongo/caract-macro", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-          _this.$emit("agregar", res.data);
+              window.location.href = "/";
+            }
 
-          _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+            _this.tituloForm = "Editar Medio";
+            _this.nomBtn = "Editar";
+
+            _this.$emit("agregar", res.data);
+
+            _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
             _this.toastr("Error!!", "", "error");
-          }
-        });
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija una imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios.put("/cepas/hongo/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
           _this.errors = [];
           _this.$refs.inputImagen.value = "";
 
@@ -277,13 +299,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.toastr("Editar Medio", "Medio editado con éxito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+          _this.bloquearBtn = false;
+          _this.errors = [];
+          _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-          }
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -318,11 +338,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         };
       } else {
+        this.bloquearBtnModal = true;
         var parametros = {
           tipo: this.modal.tipo,
           nombre: this.modal.input
         };
         axios.post("/info-caract-hongos/agregar", parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this2.bloquearBtnModal = false;
+
           _this2.accionAgregarTipoCaractHongo({
             info: res.data,
             tipo: _this2.modal.tipo
@@ -332,12 +361,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this2.modal.errors = error.response.data.errors;
-          }
+          _this2.bloquearBtnModal = false;
+          _this2.errors = [];
+          _this2.modal.errors = error.response.data.errors;
 
-          _this2.toastr("Error!!!!", "", "error");
+          _this2.toastr("Error!!", "", "error");
         });
+      }
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
       }
     }
   }),
@@ -361,6 +403,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     nomBtnComputed: function nomBtnComputed() {
       return this.nomBtn;
+    },
+    obtenerColores: function obtenerColores() {
+      return this.getInfoCaractMacroHongos.colores;
+    },
+    obtenerTexturas: function obtenerTexturas() {
+      return this.getInfoCaractMacroHongos.texturas;
     }
   }),
   mounted: function mounted() {
@@ -377,6 +425,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.cepaId = this.$route.params.cepaHongoId;
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
+    }
+  },
+  created: function created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo: function modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerColores: function obtenerColores() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+    },
+    obtenerTexturas: function obtenerTexturas() {
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
     }
   }
 });
@@ -607,6 +680,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       axios["delete"]("/cepas/hongo/caract-macro/".concat(id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.mostrarBtnAgregar = true;
         _this.modificarForm = true;
 
@@ -621,9 +700,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Eliminar Medio", "Medio eliminado con éxito", "success");
       })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error");
-        }
+        _this.toastr("Error!!", "", "error");
       });
     }
   }),
@@ -670,6 +747,21 @@ var render = function() {
                     }
                   },
                   [
+                    _vm.errors != ""
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "alert alert-danger" },
+                            _vm._l(_vm.errors, function(item, index) {
+                              return _c("p", { key: index }, [
+                                _vm._v(_vm._s(item[0]))
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c("div", { staticClass: "position-relative form-group" }, [
                       _c("label", { attrs: { for: "medio" } }, [
                         _vm._v("Medio")
@@ -705,13 +797,7 @@ var render = function() {
                             )
                           }
                         }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.medio
-                        ? _c("span", { staticClass: "text-danger" }, [
-                            _vm._v(_vm._s(_vm.errors.medio[0]))
-                          ])
-                        : _vm._e()
+                      })
                     ]),
                     _vm._v(" "),
                     _vm.getInfoCaractMacroHongos
@@ -755,16 +841,13 @@ var render = function() {
                                   }
                                 }
                               },
-                              _vm._l(
-                                _vm.getInfoCaractMacroHongos.colores,
-                                function(f, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: f.id } },
-                                    [_vm._v(_vm._s(f.nombre))]
-                                  )
-                                }
-                              ),
+                              _vm._l(_vm.obtenerColores, function(f, index) {
+                                return _c(
+                                  "option",
+                                  { key: index, domProps: { value: f.id } },
+                                  [_vm._v(_vm._s(f.nombre))]
+                                )
+                              }),
                               0
                             ),
                             _vm._v(" "),
@@ -825,16 +908,13 @@ var render = function() {
                                   }
                                 }
                               },
-                              _vm._l(
-                                _vm.getInfoCaractMacroHongos.texturas,
-                                function(b, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: b.id } },
-                                    [_vm._v(_vm._s(b.nombre))]
-                                  )
-                                }
-                              ),
+                              _vm._l(_vm.obtenerTexturas, function(b, index) {
+                                return _c(
+                                  "option",
+                                  { key: index, domProps: { value: b.id } },
+                                  [_vm._v(_vm._s(b.nombre))]
+                                )
+                              }),
                               0
                             ),
                             _vm._v(" "),
@@ -926,7 +1006,7 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn }
+                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -1065,11 +1145,7 @@ var render = function() {
                 _vm._v(" "),
                 _vm.modal.errors.nombre
                   ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(_vm.modal.errors.nombre[0]) +
-                          "\n          "
-                      )
+                      _vm._v(_vm._s(_vm.modal.errors.nombre[0]))
                     ])
                   : _vm._e()
               ])
@@ -1094,7 +1170,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarInfo }
                 },
                 [_vm._v("Agregar")]
@@ -1766,342 +1842,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/mixins/infoCaractMacro.js":
-/*!************************************************!*\
-  !*** ./resources/js/mixins/infoCaractMacro.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var infoCaractMacroMixin = {
-  data: function data() {
-    return {
-      active1: "active",
-      active2: "",
-      active3: "",
-      mostrar1: false,
-      mostrar2: false,
-      mostrar3: false,
-      mostrarForm1: true,
-      mostrarForm2: false,
-      mostrarForm3: false,
-      mostrarBtnAgregar: true,
-      modificarForm: false
-    };
-  },
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.modificarForm = false;
-    },
-    cancelar: function cancelar() {
-      if (this.mostrarForm1) {
-        this.mostrarForm1 = false;
-        this.mostrar1 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm2) {
-        this.mostrarForm2 = false;
-        this.cambiarActive(1);
-        this.mostrar2 = false;
-        this.mostrarBtnAgregar = true;
-      } else if (this.mostrarForm3) {
-        this.mostrarForm3 = false;
-        this.cambiarActive(2);
-        this.mostrar3 = false;
-        this.mostrarBtnAgregar = true;
-      }
-    },
-    abrirForm: function abrirForm() {
-      if (!this.mostrar1) {
-        this.cambiarActive(1);
-        this.mostrar1 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[0] && !this.mostrar2) {
-        this.cambiarActive(2);
-        this.mostrar2 = true;
-        this.mostrarBtnAgregar = false;
-      } else if (this.getCaractMacro[1] && !this.mostrar3) {
-        this.cambiarActive(3);
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    llenarForms: function llenarForms() {
-      if (this.getCaractMacro[0]) {
-        this.medio1 = this.getCaractMacro[0].medio;
-        this.mostrar1 = true;
-      }
-
-      if (this.getCaractMacro[1]) {
-        this.medio2 = this.getCaractMacro[1].medio;
-        this.mostrar2 = true;
-      }
-
-      if (this.getCaractMacro[2]) {
-        this.medio3 = this.getCaractMacro[2].medio;
-        this.mostrar3 = true;
-        this.mostrarBtnAgregar = false;
-      }
-    },
-    cambiarActive: function cambiarActive(num) {
-      switch (num) {
-        case 1:
-          this.active1 = "active";
-          this.active2 = "";
-          this.active3 = "";
-          this.mostrarForm1 = true;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = false;
-          break;
-
-        case 2:
-          this.active1 = "";
-          this.active2 = "active";
-          this.active3 = "";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = true;
-          this.mostrarForm3 = false;
-          break;
-
-        case 3:
-          this.active1 = "";
-          this.active2 = "";
-          this.active3 = "active";
-          this.mostrarForm1 = false;
-          this.mostrarForm2 = false;
-          this.mostrarForm3 = true;
-          break;
-      }
-    },
-    formatear: function formatear(num) {
-      switch (num) {
-        case 1:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else if (this.mostrar2) {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          } else {
-            this.mostrar1 = false;
-            this.mostrarForm1 = false;
-          }
-
-          break;
-
-        case 2:
-          if (this.mostrar3) {
-            this.mostrar3 = false;
-            this.cambiarActive(2);
-          } else {
-            this.mostrar2 = false;
-            this.cambiarActive(1);
-          }
-
-          break;
-
-        case 3:
-          this.mostrar3 = false;
-          this.cambiarActive(2);
-          break;
-      }
-    }
-  },
-  computed: {
-    computedActive1: function computedActive1() {
-      return this.active1;
-    },
-    computedActive2: function computedActive2() {
-      return this.active2;
-    },
-    computedActive3: function computedActive3() {
-      return this.active3;
-    },
-    computedMostrarForm1: function computedMostrarForm1() {
-      return this.mostrarForm1;
-    },
-    computedMostrarForm2: function computedMostrarForm2() {
-      return this.mostrarForm2;
-    },
-    computedMostrarForm3: function computedMostrarForm3() {
-      return this.mostrarForm3;
-    },
-    mostrarForms: function mostrarForms() {
-      if (!this.getCaractMacro[0] && !this.mostrar1) {
-        this.mostrarForm1 = false;
-        return false;
-      } else {
-        this.llenarForms();
-        return true;
-      }
-    },
-    mostrarBtnEliminar: function mostrarBtnEliminar() {
-      if (this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnCancelar: function mostrarBtnCancelar() {
-      if (!this.getCaractMacro[0] && this.mostrarForm1) {
-        return true;
-      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
-        return true;
-      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
-      return this.mostrarBtnAgregar;
-    },
-    medio1: {
-      get: function get() {
-        if (this.getCaractMacro[0]) {
-          return this.getCaractMacro[0].medio;
-        }
-      },
-      set: function set() {}
-    },
-    medio2: {
-      get: function get() {
-        if (this.getCaractMacro[1]) {
-          return this.getCaractMacro[1].medio;
-        }
-      },
-      set: function set() {}
-    },
-    medio3: {
-      get: function get() {
-        if (this.getCaractMacro[2]) {
-          return this.getCaractMacro[2].medio;
-        }
-      },
-      set: function set() {}
-    }
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
-
-/***/ }),
-
-/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
-/*!**********************************************************!*\
-  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
-  \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var obtenerImagenCroopieCepasMixin = {
-  data: function data() {
-    return {
-      imagenMiniatura: "",
-      imagenError: ""
-    };
-  },
-  methods: {
-    cambiarValorImagen: function cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
-    obtenerImagen: function obtenerImagen(e) {
-      var file = e.target.files[0];
-      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen: function cargarImagen(file) {
-      var _this = this;
-
-      var reader = new Image();
-
-      reader.onload = function (e) {
-        _this.imagenMiniatura = reader.src;
-      };
-
-      reader.src = URL.createObjectURL(file);
-    }
-  },
-  computed: {
-    mostraImagen: function mostraImagen() {
-      return this.imagenMiniatura;
-    },
-    mostrarBtnCroppie: function mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie: function validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-
-      return false;
-    }
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
 
 /***/ })
 

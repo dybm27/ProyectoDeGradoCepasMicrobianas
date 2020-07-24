@@ -11,7 +11,7 @@
                   <tbody>
                     <tr>
                       <th>Codigo</th>
-                      <td>{{getCepa.cepa.codigo}}</td>
+                      <td>{{cepa.cepa.codigo}}</td>
                       <th>Grupo Microbiano</th>
                       <td>{{getGrupoCepa.nombre}}</td>
                     </tr>
@@ -23,14 +23,14 @@
                     </tr>
                     <tr>
                       <th>Estado</th>
-                      <td>{{getCepa.cepa.estado}}</td>
+                      <td>{{cepa.cepa.estado}}</td>
                       <th>Origen</th>
-                      <td>{{getCepa.cepa.origen}}</td>
+                      <td>{{cepa.cepa.origen}}</td>
                     </tr>
-                    <template v-if="getCepa.cepa.otras_caract">
+                    <template v-if="cepa.cepa.otras_caract">
                       <tr>
                         <th>Otras Características:</th>
-                        <td>{{getCepa.cepa.otras_caract}}</td>
+                        <td>{{cepa.cepa.otras_caract}}</td>
                       </tr>
                     </template>
                   </tbody>
@@ -729,7 +729,7 @@ export default {
       imagenes: {
         micro: [],
         bioqui: [],
-        fisio: []
+        fisio: [],
       },
       mostrarCaractMacro: false,
       mostrarCaractMicro: false,
@@ -740,38 +740,38 @@ export default {
       metodos: {
         fila1: [],
         fila2: [],
-        fila3: []
+        fila3: [],
       },
       btnTodo: false,
-      btnSeleccionado: false
+      btnSeleccionado: false,
     };
   },
   computed: {
+    ...vuex.mapState("cepa", ["cepa"]),
     ...vuex.mapGetters("cepa", [
-      "getCepa",
       "getCaractMacro",
       "getCaractMicro",
       "getCaractBioqui",
       "getCaractFisio",
       "getMetodoConser",
-      "getIdentiMolecu"
+      "getIdentiMolecu",
     ]),
     ...vuex.mapGetters("info_cepas", [
       "getGrupoCepa",
       "getGeneroCepa",
-      "getEspecieCepa"
+      "getEspecieCepa",
     ]),
     ...vuex.mapGetters("info_caract", [
       "getInfoCaractMacroBacteriasById",
       "getInfoCaractMicroBacteriasById",
-      "getInfoMetodoConserBacteriasById"
+      "getInfoMetodoConserBacteriasById",
     ]),
     btnTodoDisabled() {
       return this.btnTodo;
     },
     btnSeleccionadoDisabled() {
       return this.btnSeleccionado;
-    }
+    },
   },
   methods: {
     imprimir(tipo) {
@@ -799,11 +799,18 @@ export default {
           10000
         );
         axios
-          .get(`/cepa/imprimir/${this.getCepa.cepa.id}`, {
+          .get(`/cepa/imprimir/${this.cepa.cepa.id}`, {
             params: { imprimir: this.selectImprimir },
-            responseType: "blob"
+            responseType: "blob",
           })
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
             this.toastr(
               "Descarga!!",
               "La descarga se realizo con éxito",
@@ -815,19 +822,17 @@ export default {
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement("a");
             link.href = url;
-            link.setAttribute(
-              "download",
-              `Cepa-${this.getCepa.cepa.codigo}.pdf`
-            );
+            link.setAttribute("download", `Cepa-${this.cepa.cepa.codigo}.pdf`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             this.btnTodo = false;
             this.btnSeleccionado = false;
           })
-          .catch(error => {
+          .catch((error) => {
             this.btnTodo = false;
             this.btnSeleccionado = false;
+            this.toastr("Error!!", "", "error");
           });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -866,21 +871,21 @@ export default {
           this.imagenes.micro.push({
             num: num,
             source: imagen,
-            isActive: active
+            isActive: active,
           });
           break;
         case "bioqui":
           this.imagenes.bioqui.push({
             num: num,
             source: imagen,
-            isActive: active
+            isActive: active,
           });
           break;
         case "fisio":
           this.imagenes.fisio.push({
             num: num,
             source: imagen,
-            isActive: active
+            isActive: active,
           });
           break;
       }
@@ -947,9 +952,9 @@ export default {
         onClicked: () => {},
         onClosed: () => {},
         onMouseOver: () => {},
-        onMouseOut: () => {}
+        onMouseOut: () => {},
       });
-    }
+    },
   },
   created() {
     if (this.getCaractMicro) {
@@ -963,7 +968,7 @@ export default {
     }
     if (this.getMetodoConser) {
       this.llenarArreglosMetodos(
-        this.getMetodoConser.sort(function(a, b) {
+        this.getMetodoConser.sort(function (a, b) {
           if (a.created_at > b.created_at) {
             return -1;
           }
@@ -974,6 +979,6 @@ export default {
         })
       );
     }
-  }
+  },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="getQuienesSomos">
+    <template v-if="quienes_somos">
       <div class="container">
         <div class="main-card mb-3 card">
           <div class="card-body">
@@ -11,7 +11,7 @@
                   <Editor
                     @contenido="aceptarContenido"
                     @modificar="modificarContenido"
-                    :info="getQuienesSomos.vision"
+                    :info="quienes_somos.vision"
                   />
                 </div>
               </div>
@@ -80,18 +80,18 @@ export default {
       parametros: {
         cuerpo: "",
         imagenesEditor: [],
-        imagenesGuardadas: []
-      }
+        imagenesGuardadas: [],
+      },
     };
   },
   mixins: [websocketsSinTablaMixin("vision", "Vision"), Toastr],
   computed: {
-    ...vuex.mapGetters("quienes_somos", ["getQuienesSomos"]),
-    ...vuex.mapGetters(["getUserAuth"]),
+    ...vuex.mapState("quienes_somos", ["quienes_somos"]),
+    ...vuex.mapState(["auth"]),
     verificarBtn() {
-      if (this.getQuienesSomos.vision) {
+      if (this.quienes_somos.vision) {
         if (this.parametros.cuerpo) {
-          if (this.getQuienesSomos.vision.cuerpo === this.parametros.cuerpo) {
+          if (this.quienes_somos.vision.cuerpo === this.parametros.cuerpo) {
             return true;
           }
           return false;
@@ -100,7 +100,7 @@ export default {
       } else {
         return true;
       }
-    }
+    },
   },
   created() {
     this.$emit("rutaHijo", window.location.pathname);
@@ -108,13 +108,22 @@ export default {
   methods: {
     ...vuex.mapActions("quienes_somos", ["accionCambiarQuienesSomos"]),
     cambiarVision() {
-      axios.put("/quienes-somos/vision/cambiar", this.parametros).then(res => {
-        this.accionCambiarQuienesSomos({
-          data: res.data,
-          tipo: "vision"
+      axios
+        .put("/quienes-somos/vision/cambiar", this.parametros)
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.accionCambiarQuienesSomos({
+            data: res.data,
+            tipo: "vision",
+          });
+          this.toastr("Cambiar Visión", "Visión cambiada con exito", "success");
         });
-        this.toastr("Cambiar Visión", "Visión cambiada con exito", "success");
-      });
     },
     aceptarContenido(data) {
       this.parametros.cuerpo = data.contenido;
@@ -123,7 +132,7 @@ export default {
     },
     modificarContenido(data) {
       this.parametros.cuerpo = "";
-    }
-  }
+    },
+  },
 };
 </script>

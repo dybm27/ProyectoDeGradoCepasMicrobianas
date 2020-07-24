@@ -19,11 +19,11 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return { checkPublicar: false, disabled: false };
@@ -33,12 +33,23 @@ export default {
       this.disabled = true;
       axios
         .put(`/cepas/publicar/${data.id}`, { publicar: !this.checkPublicar })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           if (res.data.publicar) {
             this.toastr("Publicar", "Publicado con Exito!!");
           }
           this.checkPublicar = res.data.publicar;
           this.disabled = false;
+        })
+        .catch((error) => {
+          this.disabled = false;
+          this.toastr("Error!!", "", "error");
         });
     },
     toastr(titulo, msg) {
@@ -58,14 +69,14 @@ export default {
         onClicked: () => {},
         onClosed: () => {},
         onMouseOver: () => {},
-        onMouseOut: () => {}
+        onMouseOut: () => {},
       });
-    }
+    },
   },
   computed: {
     computedDisabled() {
       return this.disabled;
-    }
+    },
   },
   mounted() {
     if (this.rowData.publicar == 0) {
@@ -73,6 +84,6 @@ export default {
     } else {
       this.checkPublicar = true;
     }
-  }
+  },
 };
 </script>

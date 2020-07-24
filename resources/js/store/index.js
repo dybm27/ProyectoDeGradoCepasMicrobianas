@@ -23,11 +23,6 @@ export default new Vuex.Store({
         //  auth: JSON.parse(userLogueado.content)
         auth: null
     },
-    getters: {
-        getUserAuth(state) {
-            return state.auth;
-        }
-    },
     mutations: {
         mutacionModificarAuth(state, data) {
             state.auth = data.data;

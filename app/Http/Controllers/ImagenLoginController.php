@@ -17,6 +17,7 @@ class ImagenLoginController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         if ($this->verificarMostrar($request->mostrar)) {
             $imagen = ImagenLogin::find($id);
             if ($request->hasFile('imagen')) {
@@ -59,5 +60,13 @@ class ImagenLoginController extends Controller
             return false;
         }
         return true;
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'titulo' => 'required', 'descripcion' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

@@ -38,15 +38,17 @@
             >Agregar Nueva Cepa - Hongo</router-link>
             <router-link
               v-else
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              :to="{name: 'cepas-hongos'}"
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
+              :to="{name: 'hongos-tabla'}"
             >Volver</router-link>
           </template>
         </div>
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view :tipoG="2" @rutaHijo="ocultarLink" />
+      <div class="tabs-animation">
+        <router-view :tipoG="2" @rutaHijo="ocultarLink" />
+      </div>
     </template>
     <template v-else>
       <div class="container">
@@ -83,7 +85,7 @@ export default {
     ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractHongos"]),
     ocultarLink(ruta) {
-      if (ruta != "/hongos/tabla") {
+      if (ruta != "/hongos/" && ruta != "/hongos") {
         this.ruta = false;
         if (
           ruta.includes("caract") ||
@@ -110,6 +112,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerInfoCaractHongos();
     this.obtenerTiposCepas();
   }

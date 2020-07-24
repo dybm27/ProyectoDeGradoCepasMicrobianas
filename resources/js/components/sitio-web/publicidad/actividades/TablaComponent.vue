@@ -42,7 +42,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_actividad')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarActividad">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarActividad"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -63,10 +68,11 @@ export default {
       sortOrder: [
         {
           field: "titulo",
-          direction: "asc"
-        }
+          direction: "asc",
+        },
       ],
-      id: ""
+      id: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, websocketsTabla("Actividad")],
@@ -77,7 +83,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   methods: {
     ...vuex.mapActions("publicidad", ["accionActividad"]),
@@ -85,11 +91,20 @@ export default {
       this.id = data.params.id;
     },
     eliminarActividad() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/publicidad/${this.id}`, {
-          data: { tipo: "actividad" }
+          data: { tipo: "actividad" },
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.toastr(
             "Eliminar Actividad",
             "Actividad eliminada con exito!!",
@@ -99,13 +114,14 @@ export default {
           this.actualizarTabla();
           this.$modal.hide("modal_eliminar_actividad");
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!!", "", "error");
         });
-    }
+    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-  }
+  },
 };
 </script>

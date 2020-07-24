@@ -31,11 +31,11 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   mixins: [
     websocketsAccionesOtraInfoMixin(
@@ -43,10 +43,10 @@ export default {
       "bordes-bacteria",
       "bacteria",
       "BacteriasInfo"
-    )
+    ),
   ],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
-  }
+    ...vuex.mapState(["auth"]),
+  },
 };
 </script>

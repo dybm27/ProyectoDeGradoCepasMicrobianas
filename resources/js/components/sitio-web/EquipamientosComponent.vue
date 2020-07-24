@@ -80,6 +80,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerEquipamientos();
     window.Echo.channel("equipamiento").listen("EquipamientoEvent", e => {
       this.accionEquipamiento({ tipo: e.tipo, data: e.equipamiento });

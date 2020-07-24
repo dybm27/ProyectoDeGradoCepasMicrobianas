@@ -10,7 +10,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas_cepas_bacterias__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas-cepas-bacterias */ "./resources/js/components/cepas/bacterias/tablas/columnas-cepas-bacterias.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
 //
 //
 //
@@ -64,11 +65,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -81,27 +83,8 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: {
-    toastr: function toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
-    },
     cambiarVariable: function cambiarVariable() {
       this.refrescarTabla = false;
     },
@@ -119,10 +102,11 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.$modal.hide("my_modal_eliminarCepa");
       })["catch"](function (error) {
-        if (error.response) {//console.log(error.response.data);
+        if (error.response.status === 405) {
+          window.location.href = "/";
+        } else {
+          _this.toastr("Error!!", "", "error");
         }
-
-        _this.toastr("Error!!!", "", "error", 4000);
       });
     },
     beforeOpen: function beforeOpen(data) {

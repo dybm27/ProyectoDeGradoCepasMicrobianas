@@ -42,7 +42,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarBtn"
+            :disabled="validarBtn||bloquearBtnModal"
           >Agregar</button>
         </div>
       </div>
@@ -89,7 +89,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarBtn"
+            :disabled="validarBtn||bloquearBtnModal"
           >Editar</button>
         </div>
       </div>
@@ -118,7 +118,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_bacteria')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarTipo"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -133,8 +138,8 @@ export default {
   data() {
     return {
       id: "",
-      modal: { nombre: "", tipo: "" },
-      errors: ""
+      modal: { nombre: "", tipo: "", bloquearBtnModal: false },
+      errors: "",
     };
   },
   mixins: [Toastr, websocketsModalOtraInfo("BacteriasInfo")],
@@ -142,23 +147,32 @@ export default {
     ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractBacteria",
       "accionEditarTipoCaractBacteria",
-      "accionEliminarTipoCaractBacteria"
+      "accionEliminarTipoCaractBacteria",
     ]),
     beforeOpenAgregar(data) {
       this.modal.nombre = "";
       this.modal.tipo = data.params.tipo;
     },
     agregarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .post("/info-caract-bacterias/agregar", this.modal)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionAgregarTipoCaractBacteria({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-bacteria", {
             accion: "agregar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$modal.hide("modal_agregar_tipo_bacteria");
           this.toastr(
@@ -167,7 +181,8 @@ export default {
             "success"
           );
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data.errors;
           }
@@ -180,16 +195,25 @@ export default {
       this.modal.tipo = data.params.tipo;
     },
     editarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .put(`/info-caract-bacterias/editar/${this.id}`, this.modal)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionEditarTipoCaractBacteria({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-bacteria", {
             accion: "editar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.toastr(
             `Editar ${this.primeraMayus(this.modal.tipo)}`,
@@ -199,7 +223,8 @@ export default {
           );
           this.$modal.hide("modal_editar_tipo_bacteria");
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data;
           }
@@ -211,18 +236,27 @@ export default {
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/info-caract-bacterias/eliminar/${this.id}`, {
-          data: this.modal
+          data: this.modal,
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionEliminarTipoCaractBacteria({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$emit("accionModal-bacteria", {
             accion: "eliminar",
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.toastr(
             `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
@@ -232,16 +266,14 @@ export default {
           );
           this.$modal.hide("modal_eliminar_tipo_bacteria");
         })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    },
   },
   computed: {
     validarNombre() {
@@ -255,9 +287,6 @@ export default {
           this.errors = "";
           return false;
         }
-      } else {
-        this.errors = "Este campo es obligatorio";
-        return true;
       }
     },
     validarBtn() {
@@ -265,7 +294,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -21,7 +21,8 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'email' => 'required|unique:users,email'
+            'email' => 'required|unique:users,email', 'nombre' => 'required',
+            'pass' => 'required', 'tipo_user' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -46,6 +47,11 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
+        $rules = [
+            'email' => 'required|unique:users,email,' . $usuario->id, 'nombre' => 'required'
+        ];
+        $this->validate($request, $rules);
+
         if (!is_null($request->imagen)) {
             Storage::disk('local')->delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);

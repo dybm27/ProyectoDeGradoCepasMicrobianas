@@ -1,5 +1,97 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["metodo-conser-bacteria"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! croppie */ "./node_modules/croppie/croppie.js");
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(croppie__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["id", "imagen", "mostrarBtnCroppie", "zoom", "editar", "enableZoom", "boundaryHeigth", "viewportWidth"],
+  data: function data() {
+    return {
+      croppie: null,
+      btnAprobar: true
+    };
+  },
+  mounted: function mounted() {
+    this.crearCroppie();
+  },
+  methods: {
+    crearCroppie: function crearCroppie() {
+      var el = document.getElementById(this.id);
+      this.croppie = new croppie__WEBPACK_IMPORTED_MODULE_0___default.a(el, {
+        viewport: {
+          width: this.viewportWidth,
+          height: 200
+        },
+        boundary: {
+          height: this.boundaryHeigth
+        },
+        enableZoom: this.enableZoom
+      });
+      this.croppie.bind({
+        url: this.imagen,
+        zoom: this.zoom
+      });
+    },
+    resultado: function resultado() {
+      var _this = this;
+
+      this.croppie.result().then(function (res) {
+        _this.btnAprobar = false;
+
+        _this.$emit("cambiarValorImagen", res);
+      });
+    },
+    cancelar: function cancelar() {
+      this.btnAprobar = true;
+      this.$emit("cambiarValorImagen", "");
+    }
+  },
+  watch: {
+    imagen: function imagen() {
+      if (this.imagen) {
+        this.btnAprobar = true;
+        this.croppie.destroy();
+        this.crearCroppie();
+      }
+    }
+  },
+  computed: {
+    mostrarMensaje: function mostrarMensaje() {
+      if (this.btnAprobar && !this.editar) {
+        return true;
+      }
+
+      return false;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js& ***!
@@ -16,8 +108,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
 /* harmony import */ var _CroppieComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../CroppieComponent */ "./resources/js/components/CroppieComponent.vue");
-var _components$props$com;
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -238,190 +328,273 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_components$props$com = {
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["idMetodo"],
   components: {
+    DatePicker: vue2_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"],
     Croppie: _CroppieComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
-  props: ["idMetodo"]
-}, _defineProperty(_components$props$com, "components", {
-  DatePicker: vue2_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]
-}), _defineProperty(_components$props$com, "data", function data() {
-  return {
-    lang: vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2___default.a,
-    info: "",
-    parametros: {
-      cepaId: "",
-      tipo_metodo: 1,
-      tipo_agar: 2,
-      fecha: "",
-      numero_replicas: "",
-      recuento_microgota: "",
-      imagen: ""
-    },
-    modal: {
-      titulo: "",
-      input: "",
-      tipo: "",
-      errors: []
-    },
-    tituloForm: "",
-    imagenMiniatura: "",
-    nomBtn: "",
-    errors: [],
-    imagenError: ""
-  };
-}), _defineProperty(_components$props$com, "mixins", [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__["default"]]), _defineProperty(_components$props$com, "methods", _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]), {
-  evento: function evento() {
-    var _this = this;
+  data: function data() {
+    return {
+      lang: vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2___default.a,
+      info: "",
+      parametros: {
+        cepaId: "",
+        tipo_metodo: null,
+        tipo_agar: null,
+        fecha: "",
+        numero_replicas: "",
+        recuento_microgota: "",
+        imagen: ""
+      },
+      modal: {
+        titulo: "",
+        input: "",
+        tipo: "",
+        errors: []
+      },
+      tituloForm: "",
+      imagenMiniatura: "",
+      nomBtn: "",
+      errors: [],
+      imagenError: "",
+      bloquearBtn: false,
+      bloquearBtnModal: false
+    };
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__["default"]],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]), {
+    evento: function evento() {
+      var _this = this;
 
-    this.parametros.tipo_agar = this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
-    this.parametros.fecha = this.parametros.fecha === null ? "" : this.parametros.fecha;
+      this.bloquearBtn = true;
+      this.parametros.tipo_agar = this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
+      this.parametros.fecha = this.parametros.fecha === null ? "" : this.parametros.fecha;
 
-    if (this.tituloForm === "Agregar Método") {
-      axios.post("/cepas/bacteria/metodo-conser", this.parametros).then(function (res) {
-        _this.accionAgregarCaract({
-          tipo: "metodo",
-          data: res.data
-        });
+      if (this.tituloForm === "Agregar Método") {
+        if (this.parametros.imagen) {
+          axios.post("/cepas/bacteria/metodo-conser", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-        _this.toastr("Agregar Método", "Método agregado con exito!!", "success");
+              window.location.href = "/";
+            }
 
-        _this.$emit("cambiarVariable");
-      })["catch"](function (error) {
-        if (error.response) {
+            _this.bloquearBtn = false;
+
+            _this.accionAgregarCaract({
+              tipo: "metodo",
+              data: res.data
+            });
+
+            _this.toastr("Agregar Método", "Método agregado con exito!!", "success");
+
+            _this.$emit("cambiarVariable");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error");
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija una imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
+      } else {
+        axios.put("/cepas/bacteria/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
+          _this.accionEditarCaract({
+            tipo: "metodo",
+            data: res.data
+          });
+
+          _this.toastr("Editar Método", "Método editado con exito!!", "success");
+
+          _this.$emit("cambiarVariable");
+        })["catch"](function (error) {
+          _this.bloquearBtn = false;
           _this.errors = [];
           _this.errors = error.response.data.errors;
 
           _this.toastr("Error!!", "", "error");
-        }
-      });
-    } else {
-      axios.put("/cepas/bacteria/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
-        _this.accionEditarCaract({
-          tipo: "metodo",
-          data: res.data
         });
+      }
+    },
+    llenarInfo: function llenarInfo() {
+      this.parametros.tipo_metodo = this.info.tipo_id;
 
-        _this.toastr("Editar Método", "Método editado con exito!!", "success");
+      if (this.info.tipo_agar_id > 1) {
+        this.parametros.tipo_agar = this.info.tipo_agar_id;
+      }
 
-        _this.$emit("cambiarVariable");
-      })["catch"](function (error) {
-        if (error.response) {
-          _this.errors = [];
-          _this.errors = error.response.data.errors;
+      this.parametros.fecha = this.info.fecha;
+      this.parametros.numero_replicas = this.info.numero_replicas;
+      this.parametros.recuento_microgota = this.info.recuento_microgota;
+      this.parametros.imagen = this.info.imagen;
+      this.imagenMiniatura = this.info.imagenPublica;
+    },
+    showModal: function showModal(tipo) {
+      this.modal.input = "";
+      this.modal.errors = [];
+      this.modal.tipo = tipo;
 
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
+      if (tipo === "metodo_conser") {
+        this.modal.titulo = "Agregar Nueva Tipo de Método";
+      } else {
+        //tipo_agar
+        this.modal.titulo = "Agregar Nuevo Tipo de Agar";
+      }
 
-        }
-      });
-    }
-  },
-  llenarInfo: function llenarInfo() {
-    this.parametros.tipo_metodo = this.info.tipo_id;
-    this.parametros.tipo_agar = this.info.tipo_agar_id;
-    this.parametros.fecha = this.info.fecha;
-    this.parametros.numero_replicas = this.info.numero_replicas;
-    this.parametros.recuento_microgota = this.info.recuento_microgota;
-    this.parametros.imagen = this.info.imagen;
-    this.imagenMiniatura = this.info.imagenPublica;
-  },
-  showModal: function showModal(tipo) {
-    this.modal.input = "";
-    this.modal.errors = [];
-    this.modal.tipo = tipo;
+      this.$modal.show("agregar-caract-info");
+    },
+    agregarInfo: function agregarInfo() {
+      var _this2 = this;
 
-    if (tipo === "metodo_conser") {
-      this.modal.titulo = "Agregar Nueva Tipo de Método";
-    } else {
-      //tipo_agar
-      this.modal.titulo = "Agregar Nuevo Tipo de Agar";
-    }
+      if (this.modal.input === "") {
+        this.modal.errors = {
+          nombre: {
+            0: "Favor llenar este campo"
+          }
+        };
+      } else {
+        this.bloquearBtnModal = true;
+        var parametros = {
+          tipo: this.modal.tipo,
+          nombre: this.modal.input
+        };
+        axios.post("/info-caract-bacterias/agregar", parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-    this.$modal.show("agregar-caract-info");
-  },
-  agregarInfo: function agregarInfo() {
-    var _this2 = this;
+            window.location.href = "/";
+          }
 
-    if (this.modal.input === "") {
-      this.modal.errors = {
-        nombre: {
-          0: "Favor llenar este campo"
-        }
-      };
-    } else {
-      var parametros = {
-        tipo: this.modal.tipo,
-        nombre: this.modal.input
-      };
-      axios.post("/info-caract-bacterias/agregar", parametros).then(function (res) {
-        _this2.accionAgregarTipoCaractBacteria({
-          info: res.data,
-          tipo: _this2.modal.tipo
-        });
+          _this2.bloquearBtnModal = false;
 
-        _this2.$modal.hide("agregar-caract-info");
+          _this2.accionAgregarTipoCaractBacteria({
+            info: res.data,
+            tipo: _this2.modal.tipo
+          });
 
-        _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
-      })["catch"](function (error) {
-        if (error.response) {
+          _this2.$modal.hide("agregar-caract-info");
+
+          _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
+        })["catch"](function (error) {
+          _this2.bloquearBtnModal = false;
+          _this2.errors = [];
           _this2.modal.errors = error.response.data.errors;
-        }
 
-        _this2.toastr("Error!!!!", "", "error");
-      });
-    }
-  }
-})), _defineProperty(_components$props$com, "computed", _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getMetodoConserById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
-  mostrarAgar: function mostrarAgar() {
-    if (this.parametros.tipo_metodo === 4) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  btnClase: function btnClase() {
-    if (this.tituloForm === "Agregar Método") {
-      return "btn-success";
-    } else {
-      return "btn-warning";
-    }
-  },
-  required: function required() {
-    if (this.tituloForm === "Agregar Método") {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  titulo: function titulo() {
-    return this.tituloForm;
-  },
-  nomBtnComputed: function nomBtnComputed() {
-    return this.nomBtn;
-  }
-})), _defineProperty(_components$props$com, "created", function created() {
-  if (this.idMetodo === 0) {
-    this.tituloForm = "Agregar Método";
-    this.nomBtn = "Agregar";
-  } else {
-    this.info = this.getMetodoConserById(this.idMetodo);
-    this.llenarInfo();
-    this.tituloForm = "Editar Método";
-    this.nomBtn = "Editar";
-  }
+          _this2.toastr("Error!!", "", "error");
+        });
+      }
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
 
-  if (this.$route.params.cepaBacteriaId) {
-    this.parametros.cepaId = this.$route.params.cepaBacteriaId;
-  } else {
-    this.parametros.cepaId = this.$route.params.cepaId;
+      if (this.obtenerAgars.length > 0) {
+        this.parametros.tipo_agar = this.obtenerAgars[0].id;
+      } else {
+        this.parametros.tipo_agar = null;
+      }
+    }
+  }),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getMetodoConserById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
+    mostrarAgar: function mostrarAgar() {
+      if (this.parametros.tipo_metodo === 4) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    btnClase: function btnClase() {
+      if (this.tituloForm === "Agregar Método") {
+        return "btn-success";
+      } else {
+        return "btn-warning";
+      }
+    },
+    required: function required() {
+      if (this.tituloForm === "Agregar Método") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    titulo: function titulo() {
+      return this.tituloForm;
+    },
+    nomBtnComputed: function nomBtnComputed() {
+      return this.nomBtn;
+    },
+    obtenerMetodos: function obtenerMetodos() {
+      return this.getInfoMetodoConserBacterias.tipo_metodo;
+    },
+    obtenerAgars: function obtenerAgars() {
+      return this.getInfoMetodoConserBacterias.tipo_agar;
+    }
+  }),
+  created: function created() {
+    this.verificarSelects();
+
+    if (this.idMetodo === 0) {
+      this.tituloForm = "Agregar Método";
+      this.nomBtn = "Agregar";
+    } else {
+      this.info = this.getMetodoConserById(this.idMetodo);
+      this.llenarInfo();
+      this.tituloForm = "Editar Método";
+      this.nomBtn = "Editar";
+    }
+
+    if (this.$route.params.cepaBacteriaId) {
+      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
+    }
+  },
+  watch: {
+    obtenerMetodos: function obtenerMetodos() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
+    obtenerAgars: function obtenerAgars() {
+      if (this.obtenerAgars.length > 0) {
+        this.parametros.tipo_agar = this.obtenerAgars[0].id;
+      } else {
+        this.parametros.tipo_agar = null;
+      }
+    }
   }
-}), _components$props$com);
+});
 
 /***/ }),
 
@@ -521,8 +694,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _metodo_conser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./metodo-conser */ "./resources/js/components/cepas/bacterias/tablas/metodo-conser.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -581,12 +755,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -597,37 +777,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       sortOrder: [{
         field: "tipo_id",
         direction: "asc"
-      }]
+      }],
+      bloquearBtnModal: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("cepa", ["accionEliminarCaract"]), {
-    toastr: function toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
-    },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepa", ["accionEliminarCaract"]), {
     cambiarVariable: function cambiarVariable() {
       this.refrescarTabla = false;
     },
     eliminarMetodo: function eliminarMetodo() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/cepas/bacteria/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
+        _this.bloquearBtnModal = false;
+
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.refrescarTabla = true;
 
         _this.accionEliminarCaract({
@@ -639,17 +810,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.$modal.hide("my_modal_eliminar_metodo");
       })["catch"](function (error) {
-        if (error.response) {//console.log(error.response.data);
-        }
+        _this.bloquearBtnModal = false;
 
-        _this.toastr("Error!!!", "", "error", 4000);
+        _this.toastr("Error!!", "", "error");
       });
     },
     beforeOpen: function beforeOpen(data) {
       this.idMetodoEliminar = data.params.id;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getMetodoConser"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("cepa", ["getMetodoConser"])),
   created: function created() {
     if (this.$route.params.cepaBacteriaId) {
       this.url += this.$route.params.cepaBacteriaId;
@@ -658,6 +828,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { attrs: { id: _vm.id } }),
+      _vm._v(" "),
+      _vm.mostrarBtnCroppie
+        ? [
+            _vm.btnAprobar
+              ? [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      on: { click: _vm.resultado }
+                    },
+                    [_vm._v("Aprobar Imagen")]
+                  ),
+                  _vm._v(" "),
+                  _vm.mostrarMensaje
+                    ? _c("em", { staticClass: "text-danger small" }, [
+                        _vm._v("Debe Aprobar la imagen")
+                      ])
+                    : _vm._e()
+                ]
+              : [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger float-right",
+                      on: { click: _vm.cancelar }
+                    },
+                    [_vm._v("Cancelar")]
+                  )
+                ]
+          ]
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -701,6 +934,21 @@ var render = function() {
                       _c("h5", { staticClass: "card-title" }, [
                         _vm._v(_vm._s(_vm.titulo))
                       ]),
+                      _vm._v(" "),
+                      _vm.errors != ""
+                        ? [
+                            _c(
+                              "div",
+                              { staticClass: "alert alert-danger" },
+                              _vm._l(_vm.errors, function(item, index) {
+                                return _c("p", { key: index }, [
+                                  _vm._v(_vm._s(item[0]))
+                                ])
+                              }),
+                              0
+                            )
+                          ]
+                        : _vm._e(),
                       _vm._v(" "),
                       _vm.getInfoMetodoConserBacterias
                         ? [
@@ -746,16 +994,13 @@ var render = function() {
                                     }
                                   }
                                 },
-                                _vm._l(
-                                  _vm.getInfoMetodoConserBacterias.tipo_metodo,
-                                  function(m, index) {
-                                    return _c(
-                                      "option",
-                                      { key: index, domProps: { value: m.id } },
-                                      [_vm._v(_vm._s(m.nombre))]
-                                    )
-                                  }
-                                ),
+                                _vm._l(_vm.obtenerMetodos, function(m, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: m.id } },
+                                    [_vm._v(_vm._s(m.nombre))]
+                                  )
+                                }),
                                 0
                               ),
                               _vm._v(" "),
@@ -823,16 +1068,13 @@ var render = function() {
                                     }
                                   }
                                 },
-                                _vm._l(
-                                  _vm.getInfoMetodoConserBacterias.tipo_agar,
-                                  function(f, index) {
-                                    return _c(
-                                      "option",
-                                      { key: index, domProps: { value: f.id } },
-                                      [_vm._v(_vm._s(f.nombre))]
-                                    )
-                                  }
-                                ),
+                                _vm._l(_vm.obtenerAgars, function(f, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: f.id } },
+                                    [_vm._v(_vm._s(f.nombre))]
+                                  )
+                                }),
                                 0
                               ),
                               _vm._v(" "),
@@ -841,7 +1083,7 @@ var render = function() {
                                   "button",
                                   {
                                     staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                     on: {
                                       click: function($event) {
                                         $event.preventDefault()
@@ -879,13 +1121,7 @@ var render = function() {
                                     },
                                     expression: "parametros.fecha"
                                   }
-                                }),
-                                _vm._v(" "),
-                                _vm.errors.fecha
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.errors.fecha[0]))
-                                    ])
-                                  : _vm._e()
+                                })
                               ],
                               1
                             )
@@ -939,15 +1175,7 @@ var render = function() {
                                     return _vm.$forceUpdate()
                                   }
                                 }
-                              }),
-                              _vm._v(" "),
-                              _vm.errors.numero_replicas
-                                ? _c("span", { staticClass: "text-danger" }, [
-                                    _vm._v(
-                                      _vm._s(_vm.errors.numero_replicas[0])
-                                    )
-                                  ])
-                                : _vm._e()
+                              })
                             ]
                           )
                         ])
@@ -1033,7 +1261,7 @@ var render = function() {
                         {
                           staticClass: "mb-2 mr-2 btn btn-block",
                           class: _vm.btnClase,
-                          attrs: { disabled: _vm.validarBtn }
+                          attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                         },
                         [_vm._v(_vm._s(_vm.nomBtnComputed))]
                       )
@@ -1200,7 +1428,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarInfo }
                 },
                 [_vm._v("Agregar")]
@@ -1449,7 +1677,10 @@ var render = function() {
                       "button",
                       {
                         staticClass: "btn btn-success",
-                        attrs: { type: "button" },
+                        attrs: {
+                          type: "button",
+                          disabled: _vm.bloquearBtnModal
+                        },
                         on: { click: _vm.eliminarMetodo }
                       },
                       [_vm._v("Eliminar")]
@@ -1481,6 +1712,75 @@ var staticRenderFns = [
   }
 ]
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony import */ var _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CroppieComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

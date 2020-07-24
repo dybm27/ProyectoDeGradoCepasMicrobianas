@@ -161,6 +161,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -194,7 +197,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapGetters("info_caract", ["getInfoBacterias"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState("info_caract", ["info_caract_bacterias"])),
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapActions("info_caract", ["obtenerInfoCaractBacterias"]), {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
@@ -208,10 +211,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   created: function created() {
     var _this = this;
-
-    if (this.getInfoBacterias == "") {
-      this.obtenerInfoCaractBacterias();
-    }
 
     this.obtenerInfoCaractBacterias();
     this.$events.$on("verificarBloqueos-bordes-bacteria", function (e) {
@@ -233,7 +232,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _this.verificarBloqueos("forma_micro");
     });
     this.$events.$on("verificarBloqueos-superficies-bacteria", function (e) {
-      return _this.verificarBloqueos("superficies");
+      return _this.verificarBloqueos("superficie");
     });
     this.$events.$on("verificarBloqueos-tipos-agars-bacteria", function (e) {
       return _this.verificarBloqueos("tipo_agar");
@@ -252,6 +251,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.$events.$off("verificarBloqueos-superficies-bacteria");
     this.$events.$off("verificarBloqueos-tipos-agars-bacteria");
     this.$events.$off("verificarBloqueos-tipos-metodos-bacteria");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["tipoModal", "tipo"],
+  methods: {
+    mostrarTabla: function mostrarTabla() {
+      this.$emit("mostrarTabla");
+    }
   }
 });
 
@@ -402,6 +434,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -411,7 +448,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       id: "",
       modal: {
         nombre: "",
-        tipo: ""
+        tipo: "",
+        bloquearBtnModal: false
       },
       errors: ""
     };
@@ -425,7 +463,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     agregarTipo: function agregarTipo() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios.post("/info-caract-bacterias/agregar", this.modal).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this.bloquearBtnModal = false;
+
         _this.accionAgregarTipoCaractBacteria({
           info: res.data,
           tipo: _this.modal.tipo
@@ -440,6 +487,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
       })["catch"](function (error) {
+        _this.bloquearBtnModal = false;
+
         if (error.response) {
           _this.errors = error.response.data.errors;
         }
@@ -455,7 +504,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     editarTipo: function editarTipo() {
       var _this2 = this;
 
+      this.bloquearBtnModal = true;
       axios.put("/info-caract-bacterias/editar/".concat(this.id), this.modal).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this2.bloquearBtnModal = false;
+
         _this2.accionEditarTipoCaractBacteria({
           info: res.data,
           tipo: _this2.modal.tipo
@@ -470,6 +528,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this2.$modal.hide("modal_editar_tipo_bacteria");
       })["catch"](function (error) {
+        _this2.bloquearBtnModal = false;
+
         if (error.response) {
           _this2.errors = error.response.data;
         }
@@ -484,9 +544,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarTipo: function eliminarTipo() {
       var _this3 = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/info-caract-bacterias/eliminar/".concat(this.id), {
         data: this.modal
       }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this3.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this3.bloquearBtnModal = false;
+
         _this3.accionEliminarTipoCaractBacteria({
           info: res.data,
           tipo: _this3.modal.tipo
@@ -501,8 +570,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.$modal.hide("modal_eliminar_tipo_bacteria");
       })["catch"](function (error) {
-        if (error.response) {//console.log(error.response.data);
-        }
+        _this3.bloquearBtnModal = false;
 
         _this3.toastr("Error!!!", "", "error", 4000);
       });
@@ -524,9 +592,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.errors = "";
           return false;
         }
-      } else {
-        this.errors = "Este campo es obligatorio";
-        return true;
       }
     },
     validarBtn: function validarBtn() {
@@ -554,6 +619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/bordes/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -596,17 +662,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -621,7 +685,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.bordes) {
+        if (this.getInfoCaractMacroBacterias.bordes.length > 0) {
           return true;
         }
       }
@@ -646,6 +710,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/colors/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -688,17 +753,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -713,7 +776,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.colors) {
+        if (this.getInfoCaractMacroBacterias.colors.length > 0) {
           return true;
         }
       }
@@ -738,6 +801,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/detalles/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -780,17 +844,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -805,7 +867,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.detalle_opticos) {
+        if (this.getInfoCaractMacroBacterias.detalle_opticos.length > 0) {
           return true;
         }
       }
@@ -830,6 +892,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/elevacions/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -872,17 +935,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -897,7 +958,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.elevacions) {
+        if (this.getInfoCaractMacroBacterias.elevacions.length > 0) {
           return true;
         }
       }
@@ -922,6 +983,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/formas-macro/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -972,9 +1034,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -989,7 +1053,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.formas_macros) {
+        if (this.getInfoCaractMacroBacterias.formas_macros.length > 0) {
           return true;
         }
       }
@@ -1014,6 +1078,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/formas-micro/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1064,9 +1129,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -1081,7 +1148,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroBacterias != "" && this.getInfoCaractMicroBacterias != null) {
-        if (this.getInfoCaractMicroBacterias.formas_micros) {
+        if (this.getInfoCaractMicroBacterias.formas_micros.length > 0) {
           return true;
         }
       }
@@ -1106,6 +1173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/superficies/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1148,17 +1216,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -1173,7 +1239,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
-        if (this.getInfoCaractMacroBacterias.superficies) {
+        if (this.getInfoCaractMacroBacterias.superficies.length > 0) {
           return true;
         }
       }
@@ -1198,6 +1264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/tipos-agars/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1240,17 +1307,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -1265,7 +1330,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserBacterias != "" && this.getInfoMetodoConserBacterias != null) {
-        if (this.getInfoMetodoConserBacterias.tipo_agar) {
+        if (this.getInfoMetodoConserBacterias.tipo_agar.length > 0) {
           return true;
         }
       }
@@ -1290,6 +1355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas */ "./resources/js/components/otra-info/tablas/bacterias/tipos-metodos/columnas.js");
 /* harmony import */ var _mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsTablaOtraInfo */ "./resources/js/mixins/websocketsTablaOtraInfo.js");
 /* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AccionMostrar.vue */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1340,9 +1406,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    AccionMostrar: _AccionMostrar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -1357,7 +1425,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserBacterias != "" && this.getInfoMetodoConserBacterias != null) {
-        if (this.getInfoMetodoConserBacterias.tipo_metodo) {
+        if (this.getInfoMetodoConserBacterias.tipo_metodo.length > 0) {
           return true;
         }
       }
@@ -1388,7 +1456,7 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _vm.getInfoBacterias != ""
+      _vm.info_caract_bacterias != ""
         ? [
             _c("div", { staticClass: "row justify-content-md-center" }, [
               _c("div", { staticClass: "col-md-12" }, [
@@ -1404,7 +1472,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasCaractMacro }
                         })
@@ -1513,7 +1582,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasCaractMicro }
                         })
@@ -1557,7 +1627,8 @@ var render = function() {
                       [
                         _c("img", {
                           attrs: {
-                            src: "/iconos/icons8-vista-general-3-35.png"
+                            src:
+                              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                           },
                           on: { click: _vm.mostrarTablasMetodos }
                         })
@@ -1707,6 +1778,54 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass:
+          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+        on: {
+          click: function($event) {
+            return _vm.$modal.show("modal_agregar_tipo_" + _vm.tipoModal, {
+              tipo: _vm.tipo
+            })
+          }
+        }
+      },
+      [_vm._v("Agregar")]
+    ),
+    _vm._v(" "),
+    _c("img", {
+      attrs: {
+        src:
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
+      },
+      on: { click: _vm.mostrarTabla }
+    })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/bacterias/ModalesComponent.vue?vue&type=template&id=1c929ff6&":
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/otra-info/tablas/bacterias/ModalesComponent.vue?vue&type=template&id=1c929ff6& ***!
@@ -1833,7 +1952,10 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarBtn },
+                  attrs: {
+                    type: "button",
+                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
+                  },
                   on: { click: _vm.agregarTipo }
                 },
                 [_vm._v("Agregar")]
@@ -1950,7 +2072,10 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarBtn },
+                  attrs: {
+                    type: "button",
+                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
+                  },
                   on: { click: _vm.editarTipo }
                 },
                 [_vm._v("Editar")]
@@ -2034,7 +2159,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminarTipo }
                 },
                 [_vm._v("Eliminar")]
@@ -2074,28 +2199,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "borde"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "borde" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2183,28 +2297,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "color"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "color" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2292,28 +2395,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "detalle"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "detalle" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2401,28 +2493,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "elevacion"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "elevacion" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2510,28 +2591,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "forma_macro"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "forma_macro" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2619,28 +2689,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "forma_micro"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "forma_micro" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2728,28 +2787,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "superficie"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "superficie" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2837,28 +2885,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "tipo_agar"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "tipo_agar" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -2946,28 +2983,17 @@ var render = function() {
       _c("div", { staticClass: "card-header-tab card-header" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-              on: {
-                click: function($event) {
-                  return _vm.$modal.show("modal_agregar_tipo_bacteria", {
-                    tipo: "tipo_metodo"
-                  })
-                }
-              }
-            },
-            [_vm._v("Agregar")]
-          ),
-          _vm._v(" "),
-          _c("img", {
-            attrs: { src: "/iconos/icons8-vista-general-3-35.png" },
-            on: { click: _vm.mostrarTabla }
-          })
-        ])
+        _c(
+          "div",
+          { staticClass: "btn-actions-pane-right actions-icon-btn" },
+          [
+            _c("AccionMostrar", {
+              attrs: { tipoModal: "bacteria", tipo: "tipo_metodo" },
+              on: { mostrarTabla: _vm.mostrarTabla }
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _vm.tabla
@@ -3099,6 +3125,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BacteriasComponent_vue_vue_type_template_id_6b964472___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BacteriasComponent_vue_vue_type_template_id_6b964472___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionMostrar.vue?vue&type=template&id=07821ea6& */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&");
+/* harmony import */ var _AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionMostrar.vue?vue&type=script&lang=js& */ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/otra-info/tablas/AccionMostrar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionMostrar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionMostrar.vue?vue&type=template&id=07821ea6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/tablas/AccionMostrar.vue?vue&type=template&id=07821ea6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionMostrar_vue_vue_type_template_id_07821ea6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -4142,10 +4237,10 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
         }
       });
       this.$events.$on("pushMisBloqueos" + tipoInfo, function (e) {
-        return _this2.pushMisBloqueos(e);
+        _this2.pushMisBloqueos(e);
       });
       this.$events.$on("spliceMisBloqueos" + tipoInfo, function (e) {
-        return _this2.spliceMisBloqueos(e);
+        _this2.spliceMisBloqueos(e);
       });
     },
     destroyed: function destroyed() {

@@ -78,43 +78,43 @@ export default {
     Vuetable,
     FilterBar,
     VuetablePagination,
-    VuetablePaginationInfo
+    VuetablePaginationInfo,
   },
   props: {
     apiUrl: {
       type: String,
-      required: true
+      required: true,
     },
     fields: {
       type: Array,
-      required: true
+      required: true,
     },
     sortOrder: {
       type: Array,
       default() {
         return [];
-      }
+      },
     },
     detailRowComponent: {
-      type: String
+      type: String,
     },
     nameGet: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       appendParams: {
         per_page: 10,
-        filter: ""
+        filter: "",
       },
       css: {
         table: {
           tableClass: "table table-striped table-bordered",
           ascendingIcon: "fas fa-angle-double-up",
           descendingIcon: "fas fa-angle-double-down",
-          sortHandleIcon: "glyphicon glyphicon-menu-hamburger"
+          sortHandleIcon: "glyphicon glyphicon-menu-hamburger",
         },
         pagination: {
           wrapperClass: "pagination float-right",
@@ -129,13 +129,13 @@ export default {
             first: "fa fa-chevron-left",
             prev: "fa fa-chevron-left",
             next: "fa fa-chevron-right",
-            last: "fa fa-chevron-right"
+            last: "fa fa-chevron-right",
           },
-          infoClass: "pull-left"
-        }
+          infoClass: "pull-left",
+        },
       },
       disabledBtn: false,
-      dataAnterior: []
+      dataAnterior: [],
     };
   },
   methods: {
@@ -177,7 +177,6 @@ export default {
       this.$refs.vuetable.changePage(page);
     },
     onCellClicked(data, field, event) {
-      //console.log("cellClicked: ", field.name);
       this.$refs.vuetable.toggleDetailRow(data.id);
     },
     onFilterSet(filterText) {
@@ -227,9 +226,16 @@ export default {
       if (tipo === "todo") {
         axios
           .get(`/exportar/${this.nameGet}`, {
-            responseType: "blob"
+            responseType: "blob",
           })
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
             this.toastr(
               "Descarga!!",
               "La descarga se realizo con éxito",
@@ -244,7 +250,7 @@ export default {
             link.click();
             document.body.removeChild(link);
           })
-          .catch(error => {
+          .catch((error) => {
             if (error.response) {
             }
           });
@@ -253,9 +259,16 @@ export default {
         axios
           .get(`/exportar/tabla/${this.nameGet}`, {
             params: { datos: datos },
-            responseType: "blob"
+            responseType: "blob",
           })
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
             this.toastr(
               "Descarga!!",
               "La descarga se realizo con éxito",
@@ -270,7 +283,7 @@ export default {
             link.click();
             document.body.removeChild(link);
           })
-          .catch(error => {
+          .catch((error) => {
             if (error.response) {
             }
           });
@@ -293,19 +306,21 @@ export default {
         onClicked: () => {},
         onClosed: () => {},
         onMouseOver: () => {},
-        onMouseOut: () => {}
+        onMouseOut: () => {},
       });
-    }
+    },
   },
   mounted() {
-    this.$events.$on(this.nameGet + "-filter-set", eventData =>
+    this.$events.$on(this.nameGet + "-filter-set", (eventData) =>
       this.onFilterSet(eventData)
     );
-    this.$events.$on(this.nameGet + "-filter-reset", e => this.onFilterReset());
+    this.$events.$on(this.nameGet + "-filter-reset", (e) =>
+      this.onFilterReset()
+    );
   },
   destroyed() {
     this.$events.off(this.nameGet + "-filter-set");
     this.$events.off(this.nameGet + "-filter-reset");
-  }
+  },
 };
 </script>

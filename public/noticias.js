@@ -213,6 +213,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -240,7 +246,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nomBtn: "",
       imagenError: "",
       mensajeTitulo: "",
-      mensajeLink: ""
+      mensajeLink: "",
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -248,7 +256,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     evento: function evento() {
       var _this = this;
 
-      this.parametros.cuerpo = this.parametros.cuerpo === null ? "" : this.parametros.cuerpo;
+      this.bloquearBtn = true;
 
       if (this.tituloForm === "Agregar Noticia") {
         var form = new FormData();
@@ -271,6 +279,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             "content-type": "multipart/form-data"
           }
         }).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
+
           _this.toastr("Agregar Noticia", "Noticia agregada con exito!!", "success");
 
           _this.accionNoticia({
@@ -280,13 +296,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
+          _this.bloquearBtn = false;
+
           if (error.response) {
-            _this.toastr("Error!!", error.response.data.errors.titulo[0], "error");
+            _this.errors = error.response.data.errors;
+
+            _this.toastr("Error!!", "", "error");
           }
         });
       } else {
         if (this.parametros.imagen === this.info.imagen) {
           axios.put("/publicidad/".concat(this.idNoticia), this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+              window.location.href = "/";
+            }
+
+            _this.bloquearBtn = false;
+
             _this.toastr("Editar Noticia", "Noticia editada con exito!!", "success");
 
             window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
@@ -307,8 +335,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this.$emit("cambiarVariableFormulario");
           })["catch"](function (error) {
+            _this.bloquearBtn = false;
+
             if (error.response) {
-              _this.toastr("Error!!", error.response.data.errors.titulo[0], "error");
+              _this.errors = error.response.data.errors;
+
+              _this.toastr("Error!!", "", "error");
             }
           });
         } else {
@@ -431,6 +463,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     modificarContenido: function modificarContenido() {
       this.parametros.cuerpo = "";
       this.parametros.imagenesEditor = "";
+    },
+    cambiarDatos: function cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
     }
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"]), {
@@ -593,6 +632,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -609,7 +653,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         field: "titulo",
         direction: "asc"
       }],
-      id: ""
+      id: "",
+      bloquearBtnModal: false
     };
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("publicidad", ["getNoticias"]), {
@@ -629,11 +674,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarNoticia: function eliminarNoticia() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/publicidad/".concat(this.id), {
         data: {
           tipo: "noticia"
         }
       }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
+        _this.bloquearBtnModal = false;
+
         _this.toastr("Eliminar Noticia", "Noticia eliminada con exito!!", "success");
 
         _this.accionNoticia({
@@ -645,6 +699,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.$modal.hide("modal_eliminar_noticia");
       })["catch"](function (error) {
+        _this.bloquearBtnModal = false;
+
         _this.toastr("Error!!!!", "", "error");
       });
     }
@@ -798,6 +854,21 @@ var render = function() {
                       _vm._v(_vm._s(_vm.titulo))
                     ]),
                     _vm._v(" "),
+                    _vm.errors != ""
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "alert alert-danger" },
+                            _vm._l(_vm.errors, function(item, index) {
+                              return _c("p", { key: index }, [
+                                _vm._v(_vm._s(item[0]))
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c("div", { staticClass: "position-relative form-group" }, [
                       _c("label", { attrs: { for: "titulo" } }, [
                         _vm._v("Título")
@@ -868,19 +939,22 @@ var render = function() {
                             disabled: !_vm.required
                           },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.selectTipo = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            }
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.selectTipo = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              _vm.cambiarDatos
+                            ]
                           }
                         },
                         [
@@ -1048,7 +1122,7 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn }
+                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -1235,7 +1309,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminarNoticia }
                 },
                 [_vm._v("Eliminar")]
@@ -1512,6 +1586,266 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }]);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/abrirCerrarFormulario.js":
+/*!******************************************************!*\
+  !*** ./resources/js/mixins/abrirCerrarFormulario.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var abrirCerrarFormualrio = function abrirCerrarFormualrio(tipoM) {
+  return {
+    data: function data() {
+      return {
+        formulario: false,
+        id: 0
+      };
+    },
+    methods: {
+      abrirFormulario: function abrirFormulario(id) {
+        if (id != 0) {
+          this.id = id;
+        } else {
+          this.id = 0;
+        }
+
+        this.formulario = !this.formulario;
+      },
+      cerrarFormulario: function cerrarFormulario() {
+        window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
+          id: this.id
+        });
+        window.Echo["private"]("desbloquearCheck" + tipoM).whisper("desbloquearCheck" + tipoM, {
+          id: this.id
+        });
+        this.$events.fire("spliceMisBloqueos" + tipoM, {
+          id: this.id
+        });
+        this.id = 0;
+        this.formulario = !this.formulario;
+      },
+      cambiarVariableFormulario: function cambiarVariableFormulario() {
+        this.formulario = !this.formulario;
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.$on("abrirFormulario" + tipoM, function (e) {
+        return _this.abrirFormulario(e);
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      this.$events.$off("abrirFormulario" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (abrirCerrarFormualrio);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websockets.js":
+/*!*******************************************!*\
+  !*** ./resources/js/mixins/websockets.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
+  return {
+    data: function data() {
+      return {
+        bloqueos: [],
+        misBloqueos: []
+      };
+    },
+    methods: {
+      // Bloquear Btns
+      bloquearBtnsTabla: function bloquearBtnsTabla(e) {
+        this.bloqueos.push({
+          idUser: e.idUser,
+          id: e.id
+        });
+        this.$events.fire(e.id + "-bloquearBtns" + tipoM);
+      },
+      desbloquearBtnsTabla: function desbloquearBtnsTabla(e) {
+        this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+          return data.id === e.id;
+        }), 1);
+        this.$events.fire(e.id + "-desbloquearBtns" + tipoM);
+      },
+      // Bloquear Check
+      bloquearCheckTabla: function bloquearCheckTabla(e) {
+        this.bloqueos.push({
+          idUser: e.idUser,
+          id: e.id
+        });
+        this.$events.fire(e.id + "-bloquearCheck" + tipoM);
+      },
+      desbloquearCheckTabla: function desbloquearCheckTabla(e) {
+        this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+          return data.id === e.id;
+        }), 1);
+        this.$events.fire(e.id + "-desbloquearCheck" + tipoM);
+      },
+      // guardar mis bloqueos
+      pushMisBloqueos: function pushMisBloqueos(e) {
+        this.misBloqueos.push({
+          idUser: e.idUser,
+          id: e.id
+        });
+      },
+      spliceMisBloqueos: function spliceMisBloqueos(e) {
+        if (e.id != 0) {
+          this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
+            return data.id === e.id;
+          }), 1);
+        }
+      },
+      //borrar bloqueos
+      borrarBloqueos: function borrarBloqueos(e) {
+        var data = this.bloqueos.find(function (data) {
+          return data.idUser === e.id;
+        });
+
+        if (data) {
+          this.desbloquearBtnsTabla(data);
+          this.desbloquearCheckTabla(data);
+        }
+      },
+      // verificar bloqueos existentes
+      verificarBloqueos: function verificarBloqueos() {
+        for (var index = 0; index < this.bloqueos.length; index++) {
+          this.$events.fire(this.bloqueos[index].id + "-bloquearBtns" + tipoM);
+          this.$events.fire(this.bloqueos[index].id + "-bloquearCheck" + tipoM);
+        }
+      },
+      enviarBloqueos: function enviarBloqueos() {
+        window.Echo["private"]("recibirBtnsCheck" + tipoM).whisper("recibirBtnsCheck" + tipoM, {
+          bloqueos: this.misBloqueos
+        });
+      }
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      window.Echo.join(tipoP).joining(function (data) {
+        if (_this.misBloqueos.length > 0) {
+          _this.enviarBloqueos();
+        }
+      }).leaving(function (data) {
+        _this.borrarBloqueos(data.user);
+      });
+      window.Echo["private"]("bloquearBtns" + tipoM).listenForWhisper("bloquearBtns" + tipoM, function (e) {
+        _this.bloquearBtnsTabla(e);
+      });
+      window.Echo["private"]("desbloquearBtns" + tipoM).listenForWhisper("desbloquearBtns" + tipoM, function (e) {
+        if (e.id != 0) {
+          _this.desbloquearBtnsTabla(e);
+        }
+      });
+      window.Echo["private"]("bloquearCheck" + tipoM).listenForWhisper("bloquearCheck" + tipoM, function (e) {
+        _this.bloquearCheckTabla(e);
+      });
+      window.Echo["private"]("desbloquearCheck" + tipoM).listenForWhisper("desbloquearCheck" + tipoM, function (e) {
+        if (e.id != 0) {
+          _this.desbloquearCheckTabla(e);
+        }
+      });
+    },
+    created: function created() {
+      var _this2 = this;
+
+      window.Echo["private"]("recibirBtnsCheck" + tipoM).listenForWhisper("recibirBtnsCheck" + tipoM, function (e) {
+        if (e.bloqueos.length > 0) {
+          _this2.bloquearBtnsTabla(e.bloqueos[0]);
+
+          _this2.bloquearCheckTabla(e.bloqueos[0]);
+        }
+      });
+      this.$events.$on("pushMisBloqueos" + tipoM, function (e) {
+        return _this2.pushMisBloqueos(e);
+      });
+      this.$events.$on("spliceMisBloqueos" + tipoM, function (e) {
+        return _this2.spliceMisBloqueos(e);
+      });
+      this.$events.$on("verificarBloqueos-" + tipoP, function (e) {
+        return _this2.verificarBloqueos();
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.$off("pushMisBloqueos" + tipoM);
+      this.$events.$off("spliceMisBloqueos" + tipoM);
+      this.$events.$off("verificarBloqueos-" + tipoP);
+    },
+    beforeDestroy: function beforeDestroy() {
+      window.Echo.leave(tipoP);
+      window.Echo.leave("recibirBtnsCheck" + tipoM);
+      window.Echo.leave("bloquearCheck" + tipoM);
+      window.Echo.leave("desbloquearCheck" + tipoM);
+      window.Echo.leave("desbloquearBtns" + tipoM);
+      window.Echo.leave("bloquearBtns" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsTabla.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/websocketsTabla.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsTabla = function websocketsTabla(tipoM) {
+  return {
+    methods: {
+      closeEliminar: function closeEliminar() {
+        window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
+          id: this.id
+        });
+        window.Echo["private"]("desbloquearCheck" + tipoM).whisper("desbloquearCheck" + tipoM, {
+          id: this.id
+        });
+        this.$events.fire("spliceMisBloqueos" + tipoM, {
+          id: this.id
+        });
+      },
+      actualizarTabla: function actualizarTabla() {
+        if (this.mostrarTabla) {
+          if (this.$refs.tabla) {
+            this.$refs.tabla.refreshDatos();
+          }
+        }
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.on("actualizartabla" + tipoM, function (e) {
+        return _this.actualizarTabla();
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.off("actualizartabla" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsTabla);
 
 /***/ })
 

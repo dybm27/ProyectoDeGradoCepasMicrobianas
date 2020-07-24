@@ -7,6 +7,11 @@
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
               <form @submit.prevent="evento">
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
@@ -18,7 +23,6 @@
                     v-model="parametros.medio"
                     required
                   />
-                  <span v-if="errors.medio" class="text-danger">{{errors.medio[0]}}</span>
                 </div>
                 <template v-if="getInfoCaractMacroLevaduras">
                   <label for="color" class>Color</label>
@@ -30,7 +34,7 @@
                       v-model="parametros.color"
                     >
                       <option
-                        v-for="(c,index) in getInfoCaractMacroLevaduras.colors"
+                        v-for="(c,index) in obtenerColores"
                         :key="index"
                         :value="c.id"
                       >{{c.nombre}}</option>
@@ -53,7 +57,7 @@
                       v-model="parametros.textura"
                     >
                       <option
-                        v-for="(t,index) in getInfoCaractMacroLevaduras.texturas"
+                        v-for="(t,index) in obtenerTexturas"
                         :key="index"
                         :value="t.id"
                       >{{t.nombre}}</option>
@@ -93,10 +97,6 @@
                     v-model="parametros.topografia_superficie"
                     required
                   />
-                  <span
-                    v-if="errors.topografia_superficie"
-                    class="text-danger"
-                  >{{errors.topografia_superficie[0]}}</span>
                 </div>
                 <div class="position-relative form-group">
                   <label for="borde_colonia" class>Borde de la Colonia</label>
@@ -109,12 +109,11 @@
                     v-model="parametros.borde_colonia"
                     required
                   />
-                  <span v-if="errors.borde_colonia" class="text-danger">{{errors.borde_colonia[0]}}</span>
                 </div>
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </form>
             </div>
@@ -194,7 +193,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info-levadura')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -214,73 +218,87 @@ export default {
       parametros: {
         cepaId: "",
         medio: "",
-        color: 1,
-        textura: 1,
+        color: null,
+        textura: null,
         topografia_superficie: "",
         borde_colonia: "",
-        imagen: ""
+        imagen: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [obtenerImagenCroopieCepas, Toastr],
-  watch: {
-    modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractLevadura"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Medio") {
-        axios
-          .post("/cepas/levadura/caract-macro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Medio";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Medio",
-              "Medio agregado con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/levadura/caract-macro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                this.$ls.set(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              }
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.tituloForm = "Editar Medio";
+              this.nomBtn = "Editar";
+              this.$emit("agregar", res.data);
+              this.toastr(
+                "Agregar Medio",
+                "Medio agregado con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
               this.errors = [];
               this.errors = error.response.data.errors;
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/levadura/caract-macro/${this.info.id}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.errors = [];
             this.$refs.inputImagen.value = "";
             this.$emit("editar", res.data);
             this.toastr("Editar Medio", "Medio editado con exito!!", "success");
           })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
-            }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.errors = error.response.data.errors;
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -311,14 +329,21 @@ export default {
         this.modal.errors = [];
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-levaduras/agregar", parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
             this.accionAgregarTipoCaractLevadura({
               info: res.data,
-              tipo: this.modal.tipo
+              tipo: this.modal.tipo,
             });
             this.$modal.hide("agregar-caract-info-levadura");
             this.toastr(
@@ -327,14 +352,24 @@ export default {
               "success"
             );
           })
-          .catch(error => {
-            if (error.response) {
-              this.modal.errors = error.response.data.errors;
-            }
+          .catch((error) => {
+            this.modal.errors = error.response.data.errors;
             this.toastr("Error!!!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroLevaduras"]),
@@ -357,14 +392,18 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    }
+    },
+    obtenerColores() {
+      return this.getInfoCaractMacroLevaduras.colors;
+    },
+    obtenerTexturas() {
+      return this.getInfoCaractMacroLevaduras.texturas;
+    },
   },
   mounted() {
     if (this.info === undefined) {
       this.tituloForm = "Agregar Medio";
       this.nomBtn = "Agregar";
-      this.parametros.color = this.getInfoCaractMacroLevaduras.colors[0].id;
-      this.parametros.textura = this.getInfoCaractMacroLevaduras.texturas[0].id;
     } else {
       this.llenarInfo();
       this.tituloForm = "Editar Medio";
@@ -375,6 +414,31 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerColores() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+    },
+    obtenerTexturas() {
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    },
+  },
 };
 </script>

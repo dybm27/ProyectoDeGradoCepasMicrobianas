@@ -13,6 +13,7 @@ class IdentiBioquiActinomicetoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
 
         if (!is_null($request->imagen1)) {
@@ -77,6 +78,7 @@ class IdentiBioquiActinomicetoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $identiBioquiActinomiceto = IdentBioquiActinomiceto::find($id);
 
         $identiBioquiActinomiceto->oxidasa = $request->oxidasa;
@@ -225,5 +227,18 @@ class IdentiBioquiActinomicetoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'oxidasa' => 'required', 'fer_lactosa' => 'required',
+            'catalasa' => 'required', 'fer_inositol' => 'required',
+            'citrato' => 'required', 'fer_sacarosa' => 'required',
+            'caseina' => 'required', 'nitrato' => 'required',
+            'sensi_antibioticos' => 'required', 'hidro_gelatina' => 'required',
+            'fer_manitol' => 'required', 'hidro_urea' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

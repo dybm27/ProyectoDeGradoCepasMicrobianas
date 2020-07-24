@@ -13,6 +13,7 @@ class CaractMacroBacteriaController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
         $imagen = $this->guardarImagen($request->imagen, $bacteria->id);
@@ -45,6 +46,7 @@ class CaractMacroBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMacroBacteria = CaracMacroBacteria::find($id);
 
         if ($request->imagen != $caractMacroBacteria->imagen) {
@@ -107,5 +109,16 @@ class CaractMacroBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'medio' => 'required', 'forma' => 'required',
+            'elevacion' => 'required', 'borde' => 'required',
+            'detalle_optico' => 'required', 'superficie' => 'required',
+            'tamaño' => 'required', 'color' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

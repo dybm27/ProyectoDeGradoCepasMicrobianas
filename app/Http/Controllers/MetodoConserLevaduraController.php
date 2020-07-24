@@ -14,24 +14,7 @@ class MetodoConserLevaduraController extends Controller
 {
     public function store(Request $request)
     {
-        if (is_null($request->numero_pases)) {
-            $rules = [
-                'fecha' => 'required',
-                'numero_replicas' => 'bail|numeric|min:1|max:999999999'
-            ];
-        } else {
-            $rules = [
-                'fecha' => 'required',
-                'numero_pases' => 'bail|numeric|min:1|max:999999999'
-            ];
-        }
-
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!',
-            'numero_pases.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
+        $this->validarCampos($request);
 
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
@@ -65,24 +48,7 @@ class MetodoConserLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-        if (is_null($request->numero_pases)) {
-            $rules = [
-                'fecha' => 'required',
-                'numero_replicas' => 'bail|numeric|min:1|max:999999999'
-            ];
-        } else {
-            $rules = [
-                'fecha' => 'required',
-                'numero_pases' => 'bail|numeric|min:1|max:999999999'
-            ];
-        }
-
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!',
-            'numero_pases.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
+        $this->validarCampos($request);
 
         $metodoConserLevadura = MetodoConserLevadura::find($id);
 
@@ -146,5 +112,21 @@ class MetodoConserLevaduraController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = ['fecha' => 'required', 'tipo_metodo' => 'required'];
+        if ($request->tipo_metodo == 2 || $request->tipo_metodo == 3) {
+            $rules += ['medio_cultivo' => 'required'];
+        } else {
+            $rules += ['recuento_microgota' => 'required'];
+        }
+        if ($request->tipo_metodo != 3) {
+            $rules += ['numero_replicas' => 'bail|numeric|min:1|max:999999999'];
+        } else {
+            $rules  += ['numero_pases' => 'bail|numeric|min:1|max:999999999'];
+        }
+        $this->validate($request, $rules);
     }
 }

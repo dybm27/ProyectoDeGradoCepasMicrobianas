@@ -173,7 +173,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregarInfo(data) {
       this.accionAgregarCaract({ tipo: "macro", data: data });
@@ -199,7 +199,14 @@ export default {
       }
       axios
         .delete(`/cepas/actinomiceto/caract-macro/${id}`)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           this.mostrarBtnAgregar = true;
           this.modificarForm = true;
           this.$modal.hide("eliminar_caract_macro_actinomiceto");
@@ -211,15 +218,13 @@ export default {
             "success"
           );
         })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-          }
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
-    }
+    },
   },
   computed: {
-    ...vuex.mapGetters("cepa", ["getCaractMacro"])
-  }
+    ...vuex.mapGetters("cepa", ["getCaractMacro"]),
+  },
 };
 </script>

@@ -415,6 +415,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -454,7 +459,8 @@ __webpack_require__.r(__webpack_exports__);
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false
     };
   },
   mixins: [_mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
@@ -462,39 +468,60 @@ __webpack_require__.r(__webpack_exports__);
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.tituloForm === "Agregar Característica") {
-        axios.post("/cepas/levadura/caract-micro", this.parametros).then(function (res) {
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-          _this.tituloForm = "Editar Característica";
-          _this.nomBtn = "Editar";
+        if (this.parametros.imagen1) {
+          axios.post("/cepas/levadura/caract-micro", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
 
-          _this.$emit("agregar", res.data);
+              window.location.href = "/";
+            }
 
-          _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+            _this.tituloForm = "Editar Característica";
+            _this.nomBtn = "Editar";
+
+            _this.$emit("agregar", res.data);
+
+            _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
             _this.errors = [];
             _this.errors = error.response.data.errors;
 
             _this.toastr("Error!!", "", "error");
-          }
-        });
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija al menos una imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios.put("/cepas/levadura/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
+          _this.bloquearBtn = false;
           _this.errors = [];
 
           _this.$emit("editar", res.data);
 
           _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+          _this.bloquearBtn = false;
+          _this.errors = [];
+          _this.errors = error.response.data.errors;
 
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-          }
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -675,6 +702,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios["delete"]("/cepas/levadura/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this.mostrarBtnAgregar = true;
         _this.mostrarForm = false;
 
@@ -687,10 +720,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
       })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
-        }
+        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -769,6 +799,21 @@ var render = function() {
                 }
               },
               [
+                _vm.errors != ""
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "alert alert-danger" },
+                        _vm._l(_vm.errors, function(item, index) {
+                          return _c("p", { key: index }, [
+                            _vm._v(_vm._s(item[0]))
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-row" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("div", { staticClass: "position-relative form-group" }, [
@@ -1966,7 +2011,7 @@ var render = function() {
                   {
                     staticClass: "mb-2 mr-2 btn btn-block",
                     class: _vm.btnClase,
-                    attrs: { disabled: _vm.btnDisable }
+                    attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
                   },
                   [_vm._v(_vm._s(_vm.nomBtn))]
                 )

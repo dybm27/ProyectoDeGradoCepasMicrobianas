@@ -11,7 +11,7 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
             if (this.ordenEntrada.length === 0) {
                 this.ordenEntrada = arrayUsers;
             }
-            if (this.getUserAuth.id != this.ordenEntrada[0].id) {
+            if (this.auth.id != this.ordenEntrada[0].id) {
                 this.ocupado = true;
                 this.user = this.ordenEntrada[0];
             } else {
@@ -25,7 +25,7 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
                     userArray => userArray.id === user.id
                 );
                 this.ordenEntrada.splice(index, 1);
-                if (this.getUserAuth.id === this.ordenEntrada[0].id) {
+                if (this.auth.id === this.ordenEntrada[0].id) {
                     this.ocupado = false;
                     this.user = "";
                 } else {
@@ -36,7 +36,7 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
         },
         verificarPush(user) {
             if (this.ordenEntrada.length === 0) {
-                this.ordenEntrada.push(this.getUserAuth);
+                this.ordenEntrada.push(this.auth);
                 this.ordenEntrada.push(user);
             } else {
                 this.ordenEntrada.push(user);
@@ -62,7 +62,7 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
     created() {
         this.$emit("rutaHijo", window.location.pathname);
         window.Echo.private("bloquear" + tipoM).listenForWhisper(
-            "bloquear" + tipoM + "-" + this.getUserAuth.id,
+            "bloquear" + tipoM + "-" + this.auth.id,
             e => {
                 this.bloquear(e.arrayUsers);
             }

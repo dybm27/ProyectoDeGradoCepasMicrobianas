@@ -13,6 +13,7 @@ class CaractMicroLevaduraController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
 
@@ -76,7 +77,7 @@ class CaractMicroLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-
+        $this->validarCampos($request);
         $caractMicroLevadura = CaracMicroLevadura::find($id);
 
         $caractMicroLevadura->hifas = $request->hifas;
@@ -222,5 +223,17 @@ class CaractMicroLevaduraController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'hifas' => 'required', 'capsula' => 'required',
+            'pseudohifas' => 'required', 'balistoconidias' => 'required',
+            'produccion_tubo_germinativo' => 'required', 'blastoconidias' => 'required',
+            'produccion_clamidosporas' => 'required', 'induccion_filamentizacion' => 'required',
+            'artroconidias' => 'required', 'formacion_asco_y_ascosporas' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

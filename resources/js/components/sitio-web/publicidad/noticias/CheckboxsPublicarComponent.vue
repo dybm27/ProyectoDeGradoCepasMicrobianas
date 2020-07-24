@@ -22,23 +22,23 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
       checkPublicar: false,
-      disabled: false
+      disabled: false,
     };
   },
   mixins: [websocketsCheckMixin("Noticia", "noticias"), Toastr],
   computed: {
     computedDisabled() {
       return this.disabled;
-    }
+    },
   },
   methods: {
     publicar(data) {
@@ -46,9 +46,16 @@ export default {
       axios
         .put(`/publicidad/publicar/${data.id}`, {
           publicar: !this.checkPublicar,
-          tipo: "noticia"
+          tipo: "noticia",
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
           if (res.data.publicar) {
             this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -61,10 +68,10 @@ export default {
       } else {
         this.checkPublicar = true;
       }
-    }
+    },
   },
   created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
+  },
 };
 </script>

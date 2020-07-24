@@ -67,7 +67,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarBtn"
+            :disabled="validarBtn||bloquearBtnModal"
           >Agregar</button>
         </div>
       </div>
@@ -135,7 +135,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarBtn"
+            :disabled="validarBtn||bloquearBtnModal"
           >Editar</button>
         </div>
       </div>
@@ -164,7 +164,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_tipo_cepa')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarTipo">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarTipo"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -179,8 +184,14 @@ export default {
   data() {
     return {
       id: "",
-      modal: { grupo_microbiano: 1, nombre: "", tipo: "", genero: 1 },
-      errors: ""
+      modal: {
+        grupo_microbiano: 1,
+        nombre: "",
+        tipo: "",
+        genero: 1,
+        bloquearBtnModal: false,
+      },
+      errors: "",
     };
   },
   mixins: [Toastr, websocketsModalOtraInfo("CepasInfo")],
@@ -188,7 +199,7 @@ export default {
     ...vuex.mapActions("info_cepas", [
       "accionAgregarTipoCepa",
       "accionEditarTipoCepa",
-      "accionEliminarTipoCepa"
+      "accionEliminarTipoCepa",
     ]),
     beforeOpenAgregar(data) {
       this.modal.nombre = "";
@@ -197,12 +208,21 @@ export default {
       this.modal.genero = 1;
     },
     agregarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .post("/info-cepas/agregar", this.modal)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionAgregarTipoCepa({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$events.fire(
             "actualizartabla" + this.primeraMayus(this.modal.tipo)
@@ -214,7 +234,8 @@ export default {
             "success"
           );
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data.errors;
           }
@@ -235,12 +256,21 @@ export default {
       }
     },
     editarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .put(`/info-cepas/editar/${this.id}`, this.modal)
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           this.accionEditarTipoCepa({
             info: res.data,
-            tipo: this.modal.tipo
+            tipo: this.modal.tipo,
           });
           this.$events.fire(
             "actualizartabla" + this.primeraMayus(this.modal.tipo)
@@ -253,7 +283,8 @@ export default {
           );
           this.$modal.hide("modal_editar_tipo_cepa");
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           if (error.response) {
             this.errors = error.response.data;
           }
@@ -265,11 +296,20 @@ export default {
       this.modal.tipo = data.params.tipo;
     },
     eliminarTipo() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/info-cepas/eliminar/${this.id}`, {
-          data: this.modal
+          data: this.modal,
         })
-        .then(res => {
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            this.$ls.set(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+          this.bloquearBtnModal = false;
           if (res.data === "negativo") {
             this.toastr(
               "Precaución!!",
@@ -280,7 +320,7 @@ export default {
           } else {
             this.accionEliminarTipoCepa({
               info: res.data,
-              tipo: this.modal.tipo
+              tipo: this.modal.tipo,
             });
             this.toastr(
               `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
@@ -294,10 +334,8 @@ export default {
           }
           this.$modal.hide("modal_eliminar_tipo_cepa");
         })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
-          }
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
@@ -306,13 +344,13 @@ export default {
     },
     cambiarGeneroEspecie() {
       this.modal.genero = this.getGenerosId(this.modal.grupo_microbiano)[0].id;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_cepas", [
       "getGenerosId",
       "getGrupos",
-      "getGenerosById"
+      "getGenerosById",
     ]),
     validarNombre() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
@@ -332,7 +370,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -15,16 +15,7 @@ class MetodoConserBacteriaController extends Controller
 
     public function store(Request $request)
     {
-
-        $rules = [
-            'fecha' => 'required',
-            'numero_replicas' => 'bail|required|numeric|min:1|max:999999999'
-        ];
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
+        $this->validarCampos($request);
 
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
@@ -56,16 +47,7 @@ class MetodoConserBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'fecha' => 'required',
-            'numero_replicas' => 'bail|numeric|required'
-        ];
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
-
+        $this->validarCampos($request);
         $metodoConserBacteria = MetodoConserBacteria::find($id);
 
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
@@ -126,5 +108,15 @@ class MetodoConserBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'fecha' => 'required', 'recuento_microgota' => 'required',
+            'tipo_metodo' => 'required', 'tipo_agar' => 'required',
+            'numero_replicas' => 'bail|numeric|required'
+        ];
+        $this->validate($request, $rules);
     }
 }

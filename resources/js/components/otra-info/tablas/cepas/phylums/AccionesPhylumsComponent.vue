@@ -31,15 +31,17 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
-  mixins: [websocketsAccionesOtraInfoMixin("phylum", "phylums", "cepa", "CepasInfo")],
+  mixins: [
+    websocketsAccionesOtraInfoMixin("phylum", "phylums", "cepa", "CepasInfo"),
+  ],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
-  }
+    ...vuex.mapState(["auth"]),
+  },
 };
 </script>

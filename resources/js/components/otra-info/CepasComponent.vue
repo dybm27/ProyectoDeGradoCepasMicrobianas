@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <template v-if="getTipos!=''">
+    <template v-if="tipos!=''">
       <div class="row justify-content-md-center">
         <div class="col-md-10">
           <TablaGeneros />
@@ -86,41 +86,40 @@ export default {
     TablaPhylums,
     TablaClases,
     TablaReinos,
-    TablaFamilias
+    TablaFamilias,
   },
   mixins: [websocketsOtraInfoMixin("CepasInfo")],
   methods: {
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"])
+    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
   },
   computed: {
-    ...vuex.mapGetters("info_cepas", ["getTipos"])
+    ...vuex.mapState("info_cepas", ["tipos"]),
   },
   created() {
-    if (this.getTipos == "") {
-      this.obtenerTiposCepas();
-    }
-    this.$events.$on("verificarBloqueos-generos", e =>
+    this.obtenerTiposCepas();
+
+    this.$events.$on("verificarBloqueos-generos", (e) =>
       this.verificarBloqueos("genero")
     );
-    this.$events.$on("verificarBloqueos-especies", e =>
+    this.$events.$on("verificarBloqueos-especies", (e) =>
       this.verificarBloqueos("especie")
     );
-    this.$events.$on("verificarBloqueos-ordens", e =>
+    this.$events.$on("verificarBloqueos-ordens", (e) =>
       this.verificarBloqueos("orden")
     );
-    this.$events.$on("verificarBloqueos-clases", e =>
+    this.$events.$on("verificarBloqueos-clases", (e) =>
       this.verificarBloqueos("clase")
     );
-    this.$events.$on("verificarBloqueos-phylums", e =>
+    this.$events.$on("verificarBloqueos-phylums", (e) =>
       this.verificarBloqueos("phylum")
     );
-    this.$events.$on("verificarBloqueos-divisions", e =>
+    this.$events.$on("verificarBloqueos-divisions", (e) =>
       this.verificarBloqueos("division")
     );
-    this.$events.$on("verificarBloqueos-reinos", e =>
+    this.$events.$on("verificarBloqueos-reinos", (e) =>
       this.verificarBloqueos("reino")
     );
-    this.$events.$on("verificarBloqueos-familias", e =>
+    this.$events.$on("verificarBloqueos-familias", (e) =>
       this.verificarBloqueos("familia")
     );
   },
@@ -133,6 +132,6 @@ export default {
     this.$events.$off("verificarBloqueos-divisions");
     this.$events.$off("verificarBloqueos-reinos");
     this.$events.$off("verificarBloqueos-familias");
-  }
+  },
 };
 </script>

@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -25,6 +30,7 @@
                   name="select"
                   id="conidioforo"
                   class="form-control"
+                  @change="cambiarDatos"
                   v-model="selectTipo"
                   :disabled="!required"
                 >
@@ -61,7 +67,6 @@
                         value-type="format"
                         placeholder="..."
                       ></date-picker>
-                      <span v-if="errors.fecha" class="text-danger">{{errors.fecha[0]}}</span>
                     </div>
                   </div>
                 </div>
@@ -106,7 +111,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -188,7 +193,7 @@ import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
   components: {
     Croppie,
-    Editor
+    Editor,
   },
   props: ["idActividad"],
   data() {
@@ -205,7 +210,7 @@ export default {
         publicar: false,
         tipo: "actividad",
         imagenesEditor: [],
-        imagenesGuardadas: []
+        imagenesGuardadas: [],
       },
       selectTipo: "link",
       tituloForm: "",
@@ -214,17 +219,27 @@ export default {
       imagenError: "",
       mensajeTitulo: "",
       mensajeLink: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionActividad"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Actividad") {
         axios
           .post("/publicidad", this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.toastr(
               "Agregar Actividad",
               "Actividad agregada con exito!!",
@@ -233,22 +248,25 @@ export default {
             this.accionActividad({ tipo: "agregar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
-              if (error.response.data.errors.titulo) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
-                );
-              }
               this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             }
           });
       } else {
         axios
           .put(`/publicidad/${this.idActividad}`, this.parametros)
-          .then(res => {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              this.$ls.set(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+            this.bloquearBtn = false;
             this.toastr(
               "Editar Actividad",
               "Actividad editada con exito!!",
@@ -257,31 +275,26 @@ export default {
             window.Echo.private("desbloquearBtnsActividad").whisper(
               "desbloquearBtnsActividad",
               {
-                id: res.data.id
+                id: res.data.id,
               }
             );
             window.Echo.private("desbloquearCheckActividad").whisper(
               "desbloquearCheckActividad",
               {
-                id: res.data.id
+                id: res.data.id,
               }
             );
             this.$events.fire("spliceMisBloqueosActividad", {
-              id: res.data.id
+              id: res.data.id,
             });
             this.accionActividad({ tipo: "editar", data: res.data });
             this.$emit("cambiarVariableFormulario");
           })
-          .catch(error => {
+          .catch((error) => {
+            this.bloquearBtn = false;
             if (error.response) {
-              if (error.response.data.errors.titulo) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
-                );
-              }
               this.errors = error.response.data.errors;
+              this.toastr("Error!!", "", "error");
             }
           });
       }
@@ -308,12 +321,19 @@ export default {
     },
     modificarContenido() {
       this.parametros.cuerpo = "";
-    }
+    },
+    cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("publicidad", [
       "getActividadById",
-      "getActividadByTitulo"
+      "getActividadByTitulo",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Actividad") {
@@ -377,7 +397,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idActividad === 0) {
@@ -391,6 +411,6 @@ export default {
       this.tituloForm = "Editar Actividad";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>
