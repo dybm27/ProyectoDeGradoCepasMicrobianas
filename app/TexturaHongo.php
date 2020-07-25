@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class TexturaHongo extends Model
 {
-    public function caractMacro()
+    public function caractMacros()
     {
-        return $this->belongsTo(CaracMacroHongo::class);
+        return $this->hasMany(CaracMacroHongo::class, 'textura_id');
     }
 }

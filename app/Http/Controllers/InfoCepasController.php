@@ -248,8 +248,8 @@ class InfoCepasController extends Controller
         switch ($request->tipo) {
             case "genero":
                 $tipo = Genero::find($id);
-                if ($this->validarEliminar($tipo)) {
-                    return 'negativo';
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo1';
                 } else {
                     broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
@@ -258,45 +258,73 @@ class InfoCepasController extends Controller
                 break;
             case "especie":
                 $tipo = Especie::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Especie: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Especie: " . $tipo->nombre);
+                }
                 break;
             case "familia":
                 $tipo = Familia::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Familia: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Familia: " . $tipo->nombre);
+                }
                 break;
             case "orden":
                 $tipo = Orden::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Orden: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Orden: " . $tipo->nombre);
+                }
                 break;
             case "clase":
                 $tipo = Clase::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Clase: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Clase: " . $tipo->nombre);
+                }
                 break;
             case "phylum":
                 $tipo = Phylum::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Phylum: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Phylum: " . $tipo->nombre);
+                }
                 break;
             case "reino":
                 $tipo = Reino::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Reino: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Reino: " . $tipo->nombre);
+                }
                 break;
             case "division":
                 $tipo =  Division::find($id);
-                broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Division: " . $tipo->nombre);
+                if ($this->validarEliminar($tipo, $request->tipo)) {
+                    return 'negativo';
+                } else {
+                    broadcast(new CepasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Division: " . $tipo->nombre);
+                }
                 break;
         }
         return $tipo;
@@ -313,13 +341,68 @@ class InfoCepasController extends Controller
         $seguimiento->save();
     }
 
-    public function validarEliminar($tipo)
+    public function validarEliminar($tipoCaract, $tipo)
     {
         $res = false;
-        if (
-            count($tipo->especies) > 0
-        ) {
-            $res = true;
+        switch ($tipo) {
+            case "genero":
+                if (
+                    count($tipoCaract->cepas) > 0 || count($tipoCaract->especies) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "especie":
+                if (
+                    count($tipoCaract->cepas) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "familia":
+                if (
+                    count($tipoCaract->hongos) > 0 || count($tipoCaract->levaduras) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "orden":
+                if (
+                    count($tipoCaract->hongos) > 0 || count($tipoCaract->levaduras) > 0
+                    || count($tipoCaract->actinomicetos) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "clase":
+                if (
+                    count($tipoCaract->hongos) > 0 || count($tipoCaract->levaduras) > 0
+                    || count($tipoCaract->actinomicetos) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "phylum":
+                if (
+                    count($tipoCaract->hongos) > 0 || count($tipoCaract->actinomicetos) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "reino":
+                if (
+                    count($tipoCaract->actinomicetos) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "division":
+                if (
+                    count($tipoCaract->levaduras) > 0
+                ) {
+                    $res = true;
+                }
+                break;
         }
         return $res;
     }

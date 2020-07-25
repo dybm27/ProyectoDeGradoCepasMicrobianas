@@ -189,9 +189,9 @@ export default {
         nombre: "",
         tipo: "",
         genero: 1,
-        bloquearBtnModal: false,
       },
       errors: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, websocketsModalOtraInfo("CepasInfo")],
@@ -224,9 +224,7 @@ export default {
             info: res.data,
             tipo: this.modal.tipo,
           });
-          this.$events.fire(
-            "actualizartabla" + this.primeraMayus(this.modal.tipo)
-          );
+          this.$events.fire("actualizartabla" + this.modal.tipo);
           this.$modal.hide("modal_agregar_tipo_cepa");
           this.toastr(
             `Agregar ${this.primeraMayus(this.modal.tipo)}`,
@@ -272,9 +270,7 @@ export default {
             info: res.data,
             tipo: this.modal.tipo,
           });
-          this.$events.fire(
-            "actualizartabla" + this.primeraMayus(this.modal.tipo)
-          );
+          this.$events.fire("actualizartabla" + this.modal.tipo);
           this.toastr(
             `Editar ${this.primeraMayus(this.modal.tipo)}`,
             `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
@@ -313,7 +309,16 @@ export default {
           if (res.data === "negativo") {
             this.toastr(
               "Precaución!!",
-              "El Genero cuenta con especies registradas, favor eliminarlas",
+              "El/La " +
+                this.modal.tipo +
+                " cuenta con cepas vinculadas, favor eliminarlas",
+              "warning",
+              8000
+            );
+          } else if (res.data === "negativo1") {
+            this.toastr(
+              "Precaución!!",
+              "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas",
               "warning",
               8000
             );
@@ -328,9 +333,7 @@ export default {
               "success",
               5000
             );
-            this.$events.fire(
-              "actualizartabla" + this.primeraMayus(this.modal.tipo)
-            );
+            this.$events.fire("actualizartabla" + this.modal.tipo);
           }
           this.$modal.hide("modal_eliminar_tipo_cepa");
         })

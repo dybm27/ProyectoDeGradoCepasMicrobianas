@@ -8,6 +8,6 @@ class SuperficieActinomiceto extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMacroActinomiceto::class, 'superficie_id');
     }
 }

@@ -350,10 +350,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       id: "",
       modal: {
         nombre: "",
-        tipo: "",
-        bloquearBtnModal: false
+        tipo: ""
       },
-      errors: ""
+      errors: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("LevadurasInfo")],
@@ -380,10 +380,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this.modal.tipo
         });
 
-        _this.$emit("accionModal-levadura", {
-          accion: "agregar",
-          tipo: _this.modal.tipo
-        });
+        _this.$events.fire("actualizartabla" + _this.modal.tipo);
 
         _this.$modal.hide("modal_agregar_tipo_levadura");
 
@@ -421,10 +418,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this2.modal.tipo
         });
 
-        _this2.$emit("accionModal-levadura", {
-          accion: "editar",
-          tipo: _this2.modal.tipo
-        });
+        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
 
         _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
 
@@ -458,17 +452,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.bloquearBtnModal = false;
 
-        _this3.accionEliminarTipoCaractLevadura({
-          info: res.data,
-          tipo: _this3.modal.tipo
-        });
+        if (res.data === "macro") {
+          _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " se encuentra vinculado/a a características macroscópicas, favor eliminarlas", "warning", 8000);
+        } else if (res.data === "metodo") {
+          _this3.toastr("Precaución!!", "El " + _this3.modal.tipo + " se encuentra vinculado a metodos de conservación, favor eliminarlos", "warning", 8000);
+        } else {
+          _this3.accionEliminarTipoCaractLevadura({
+            info: res.data,
+            tipo: _this3.modal.tipo
+          });
 
-        _this3.$emit("accionModal-levadura", {
-          accion: "eliminar",
-          tipo: _this3.modal.tipo
-        });
+          _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
 
-        _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+          _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+        }
 
         _this3.$modal.hide("modal_eliminar_tipo_levadura");
       })["catch"](function (error) {
@@ -769,7 +766,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }]
     };
   },
-  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion")],
+  mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserLevaduras"]), {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserLevaduras != "" && this.getInfoMetodoConserLevaduras != null) {
@@ -2359,7 +2356,7 @@ var websocketsTablaOtraInfo = function websocketsTablaOtraInfo(tipo) {
         this.tabla = !this.tabla;
       },
       actualizarTabla: function actualizarTabla() {
-        if (this.mostrarTabla) {
+        if (this.tabla) {
           if (this.$refs.tabla) {
             this.$refs.tabla.refreshDatos();
           }

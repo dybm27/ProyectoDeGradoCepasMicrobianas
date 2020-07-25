@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class TexturaLevadura extends Model
 {
-    public function caractMacro()
+    public function caractMacros()
     {
-        return $this->belongsTo(CaracMacroLevadura::class);
+        return $this->hasMany(CaracMacroLevadura::class, 'textura_id');
     }
 }

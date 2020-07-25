@@ -8,6 +8,6 @@ class PigmentoActinomiceto extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMacroActinomiceto::class, 'pigmento_id');
     }
 }

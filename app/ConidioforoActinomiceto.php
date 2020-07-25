@@ -8,6 +8,6 @@ class ConidioforoActinomiceto extends Model
 {
     public function caractMicros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMicroActinomiceto::class, 'conidioforo_id');
     }
 }

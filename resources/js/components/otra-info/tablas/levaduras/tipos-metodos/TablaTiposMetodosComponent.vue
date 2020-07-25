@@ -57,7 +57,7 @@ export default {
       ]
     };
   },
-  mixins: [websocketsTablaOtraInfoMixin("tincion")],
+  mixins: [websocketsTablaOtraInfoMixin("tipo_metodo")],
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoMetodoConserLevaduras"]),
     siHayDatos() {

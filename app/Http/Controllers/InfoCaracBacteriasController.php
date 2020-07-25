@@ -111,7 +111,7 @@ class InfoCaracBacteriasController extends Controller
                 $this->crearSeguimiento("Agregó un Tipo de Forma Microscópica en Bacterias: "
                     . $tipo->nombre);
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $rules = [
                     'nombre' => 'bail|required|unique:tipo_metodo_conservacion_bacterias,nombre'
                 ];
@@ -239,7 +239,7 @@ class InfoCaracBacteriasController extends Controller
                 $this->crearSeguimiento("Editó un Tipo de Forma Microscópica en Bacterias: "
                     . $tipo1->nombre);
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $tipo1 = TipoMetodoConservacionBacteria::find($id);
                 $tipo2 = TipoMetodoConservacionBacteria::where('nombre', $request->nombre)->first();
                 if (!is_null($tipo2)) {
@@ -288,66 +288,102 @@ class InfoCaracBacteriasController extends Controller
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo = FormaCaractMacroBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "borde":
                 $tipo = BordeBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Borde en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Borde en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "detalle":
                 $tipo = DetalleOpticoBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Detalle Opctico en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Detalle Opctico en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "elevacion":
                 $tipo = ElevacionBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Elevación en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Elevación en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "superficie":
                 $tipo = SuperficieBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Superficie en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Superficie en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "forma_micro":
                 $tipo = FormaCaractMicroBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $tipo = TipoMetodoConservacionBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'metodo')) {
+                    return 'metodo';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "tipo_agar":
                 $tipo = TipoAgarBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Agar en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'metodo')) {
+                    return 'metodo';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Agar en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
             case "color":
                 $tipo = ColorBacteria::find($id);
-                broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Color en Bacterias: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new BacteriasInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Color en Bacterias: "
+                        . $tipo->nombre);
+                }
                 break;
         }
 
@@ -362,5 +398,34 @@ class InfoCaracBacteriasController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarEliminar($tipoCaract, $tipo)
+    {
+        $res = false;
+        switch ($tipo) {
+            case "macro":
+                if (
+                    count($tipoCaract->caractMacros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "micro":
+                if (
+                    count($tipoCaract->caractMicros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "metodo":
+                if (
+                    count($tipoCaract->metodosConservacion) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+        }
+        return $res;
     }
 }

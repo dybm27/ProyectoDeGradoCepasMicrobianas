@@ -8,6 +8,6 @@ class FormaCaractMacroBacteria extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroBacteria::class);
+        return $this->hasMany(CaracMacroBacteria::class, 'forma_id');
     }
 }

@@ -8,6 +8,6 @@ class TexturaActinomiceto extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMacroActinomiceto::class, 'textura_id');
     }
 }

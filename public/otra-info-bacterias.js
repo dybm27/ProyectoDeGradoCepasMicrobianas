@@ -448,10 +448,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       id: "",
       modal: {
         nombre: "",
-        tipo: "",
-        bloquearBtnModal: false
+        tipo: ""
       },
-      errors: ""
+      errors: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("BacteriasInfo")],
@@ -478,10 +478,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this.modal.tipo
         });
 
-        _this.$emit("accionModal-bacteria", {
-          accion: "agregar",
-          tipo: _this.modal.tipo
-        });
+        _this.$events.fire("actualizartabla" + _this.modal.tipo);
 
         _this.$modal.hide("modal_agregar_tipo_bacteria");
 
@@ -519,10 +516,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this2.modal.tipo
         });
 
-        _this2.$emit("accionModal-bacteria", {
-          accion: "editar",
-          tipo: _this2.modal.tipo
-        });
+        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
 
         _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
 
@@ -556,17 +550,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.bloquearBtnModal = false;
 
-        _this3.accionEliminarTipoCaractBacteria({
-          info: res.data,
-          tipo: _this3.modal.tipo
-        });
+        if (res.data === "macro") {
+          _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " se encuentra vinculado/a a características macroscópicas, favor eliminarlas", "warning", 8000);
+        } else if (res.data === "micro") {
+          _this3.toastr("Precaución!!", "La " + _this3.modal.tipo + " se encuentra vinculada a características microscópicas, favor eliminarlas", "warning", 8000);
+        } else if (res.data === "metodo") {
+          _this3.toastr("Precaución!!", "El " + _this3.modal.tipo + " se encuentra vinculado a metodos de conservación, favor eliminarlos", "warning", 8000);
+        } else {
+          _this3.accionEliminarTipoCaractBacteria({
+            info: res.data,
+            tipo: _this3.modal.tipo
+          });
 
-        _this3.$emit("accionModal-bacteria", {
-          accion: "eliminar",
-          tipo: _this3.modal.tipo
-        });
+          _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
 
-        _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+          _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+        }
 
         _this3.$modal.hide("modal_eliminar_tipo_bacteria");
       })["catch"](function (error) {
@@ -4281,7 +4280,7 @@ var websocketsTablaOtraInfo = function websocketsTablaOtraInfo(tipo) {
         this.tabla = !this.tabla;
       },
       actualizarTabla: function actualizarTabla() {
-        if (this.mostrarTabla) {
+        if (this.tabla) {
           if (this.$refs.tabla) {
             this.$refs.tabla.refreshDatos();
           }

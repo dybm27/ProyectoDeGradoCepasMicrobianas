@@ -316,78 +316,119 @@ class InfoCaracActinomicetosController extends Controller
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo = FormaCaractMacroActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "borde":
                 $tipo = BordeActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Borde en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Borde en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "textura":
                 $tipo = TexturaActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de textura en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de textura en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "pigmento":
                 $tipo = PigmentoActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Pigmento en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Pigmento en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "superficie":
                 $tipo = SuperficieActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Superficie en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Superficie en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "forma_micro":
                 $tipo = FormaCaractMicroActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "tincion":
                 $tipo = TincionGramActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de TincionGram en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de TincionGram en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "micelio":
                 $tipo = MicelioActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Micelio en actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Micelio en actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "conidioforo":
                 $tipo = ConidioforoActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "color":
                 $tipo = ColorActinomiceto::find($id);
-                broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Color en Actinomicetos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Color en Actinomicetos: "
+                        . $tipo->nombre);
+                }
                 break;
         }
 
         return $tipo;
     }
+
     public function crearSeguimiento($accion)
     {
         $seguimiento = new Seguimiento();
@@ -396,5 +437,27 @@ class InfoCaracActinomicetosController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarEliminar($tipoCaract, $tipo)
+    {
+        $res = false;
+        switch ($tipo) {
+            case "macro":
+                if (
+                    count($tipoCaract->caractMacros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "micro":
+                if (
+                    count($tipoCaract->caractMicros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+        }
+        return $res;
     }
 }

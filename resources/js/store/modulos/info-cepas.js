@@ -228,7 +228,7 @@ export default {
                     var indice = state.tipos.ordens.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.ordens.splice(indicei, 1);
+                    state.tipos.ordens.splice(indice, 1);
                     break;
                 case "clase":
                     var indice = state.tipos.clases.findIndex(
@@ -263,7 +263,7 @@ export default {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                     );
                     window.location.href = "/";
                 }

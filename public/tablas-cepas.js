@@ -401,10 +401,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         grupo_microbiano: 1,
         nombre: "",
         tipo: "",
-        genero: 1,
-        bloquearBtnModal: false
+        genero: 1
       },
-      errors: ""
+      errors: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("CepasInfo")],
@@ -433,7 +433,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this.modal.tipo
         });
 
-        _this.$events.fire("actualizartabla" + _this.primeraMayus(_this.modal.tipo));
+        _this.$events.fire("actualizartabla" + _this.modal.tipo);
 
         _this.$modal.hide("modal_agregar_tipo_cepa");
 
@@ -478,7 +478,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: _this2.modal.tipo
         });
 
-        _this2.$events.fire("actualizartabla" + _this2.primeraMayus(_this2.modal.tipo));
+        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
 
         _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
 
@@ -513,7 +513,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this3.bloquearBtnModal = false;
 
         if (res.data === "negativo") {
-          _this3.toastr("Precaución!!", "El Genero cuenta con especies registradas, favor eliminarlas", "warning", 8000);
+          _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " cuenta con cepas vinculadas, favor eliminarlas", "warning", 8000);
+        } else if (res.data === "negativo1") {
+          _this3.toastr("Precaución!!", "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas", "warning", 8000);
         } else {
           _this3.accionEliminarTipoCepa({
             info: res.data,
@@ -522,7 +524,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
 
-          _this3.$events.fire("actualizartabla" + _this3.primeraMayus(_this3.modal.tipo));
+          _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
         }
 
         _this3.$modal.hide("modal_eliminar_tipo_cepa");
@@ -3915,7 +3917,7 @@ var websocketsTablaOtraInfo = function websocketsTablaOtraInfo(tipo) {
         this.tabla = !this.tabla;
       },
       actualizarTabla: function actualizarTabla() {
-        if (this.mostrarTabla) {
+        if (this.tabla) {
           if (this.$refs.tabla) {
             this.$refs.tabla.refreshDatos();
           }

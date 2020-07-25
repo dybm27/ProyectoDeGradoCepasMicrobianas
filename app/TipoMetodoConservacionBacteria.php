@@ -8,6 +8,6 @@ class TipoMetodoConservacionBacteria extends Model
 {
     public function metodosConservacion()
     {
-        return $this->hasMany(MetodoConserBacteria::class);
+        return $this->hasMany(MetodoConserBacteria::class, 'tipo_id');
     }
 }

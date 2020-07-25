@@ -26,7 +26,6 @@ class CaractMacroHongoController extends Controller
         $caractMacroHongo->caracteristicas_reverso = $request->caracteristicas_reverso;
         $caractMacroHongo->imagen = $imagen['ruta'];
         $caractMacroHongo->imagenPublica = $imagen['rutaPublica'];
-        $caractMacroHongo->descripcion = $request->imagen_descripcion;
         $caractMacroHongo->save();
 
         $this->crearSeguimiento("Agregó la Característica Macroscópica a la Cepa: "
@@ -55,7 +54,6 @@ class CaractMacroHongoController extends Controller
         $caractMacroHongo->color_id = intval($request->color);
         $caractMacroHongo->textura_id = intval($request->textura);
         $caractMacroHongo->caracteristicas_reverso = $request->caracteristicas_reverso;
-        $caractMacroHongo->descripcion = $request->imagen_descripcion;
         $caractMacroHongo->save();
 
         $this->crearSeguimiento("Editó la Característica Macroscópica de la Cepa: "

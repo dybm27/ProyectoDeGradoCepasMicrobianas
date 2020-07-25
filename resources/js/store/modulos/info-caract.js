@@ -930,7 +930,7 @@ export default {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                     );
                     window.location.href = "/";
                 }
@@ -951,7 +951,7 @@ export default {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                     );
                     window.location.href = "/";
                 }
@@ -972,7 +972,7 @@ export default {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                     );
                     window.location.href = "/";
                 }
@@ -993,7 +993,7 @@ export default {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                     );
                     window.location.href = "/";
                 }
