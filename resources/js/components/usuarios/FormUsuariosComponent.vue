@@ -124,11 +124,12 @@
               <div class="card-body">
                 <h5 class="card-title">Imagen</h5>
                 <template v-if="mostraImagen">
-                  <template v-if="parametros.imagen===info.avatar">
+                  <template v-if="mostraImagen===info.avatarPublico">
                     <croppie
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
                       :mostrarBtn="mostrarBtn"
+                      :enableZoom="false"
                       :zoom="0"
                       :editar="true"
                     />
@@ -139,6 +140,7 @@
                       @cambiarValorImagen="cambiarValorImagen"
                       :mostrarBtn="mostrarBtn"
                       :zoom="1"
+                      :enableZoom="true"
                       :editar="false"
                     />
                   </template>
@@ -217,7 +219,16 @@ export default {
       "accionModificarAuth"
     ]),
     cambiarValorImagen(valor) {
-      this.parametros.imagen = valor;
+      if (valor === "cancelar") {
+        if (!this.required) {
+          this.parametros.imagen = this.info.avatar;
+          this.imageMiniatura = this.info.avatarPublico;
+        } else {
+          this.parametros.imagen = "";
+        }
+      } else {
+        this.parametros.imagen = valor;
+      }
     },
     evento() {
       this.parametros.pass =
@@ -404,6 +415,7 @@ export default {
       return false;
     },
     validarNombre() {
+      // solo numero /^([0-9])*$/
       let letters = /^[A-Za-z\s]+$/;
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {

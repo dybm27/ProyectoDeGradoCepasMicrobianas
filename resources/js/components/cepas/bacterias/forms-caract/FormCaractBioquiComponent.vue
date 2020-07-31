@@ -566,6 +566,19 @@ export default {
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
+    cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.parametros.imagen1 = datos.data;
+          break;
+        case 2:
+          this.parametros.imagen2 = datos.data;
+          break;
+        case 3:
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento() {
       this.bloquearBtn = true;
       if (this.parametros.tituloForm === "Agregar Característica") {
