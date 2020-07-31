@@ -98,21 +98,22 @@ export default {
         .delete(`/cepas/bacteria/caract-bioqui/${this.getCaractBioqui.id}`)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.mostrarForm = false;
+            this.$modal.hide("my_modal");
+            this.accionEliminarCaract({ tipo: "bioqui", data: res.data });
+            this.toastr(
+              "Eliminar Característica",
+              "Características Bioquímicas eliminadas con exito!!",
+              "success"
+            );
           }
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "bioqui", data: res.data });
-          this.toastr(
-            "Eliminar Característica",
-            "Características Bioquímicas eliminadas con exito!!",
-            "success"
-          );
         })
         .catch((error) => {
           this.toastr("Error!!", "", "error");

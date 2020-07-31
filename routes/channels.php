@@ -10,6 +10,25 @@
 | used to check if an authenticated user can listen to the channel.
 |
 */
+//cepas
+Broadcast::channel('cepas', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsCepa', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsCepa', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsCepa', function ($user) {
+    return true;
+});
+Broadcast::channel('cepa-caract-ver', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearCepa', function ($user) {
+    return true;
+});
 //otra-info
 //cepas
 Broadcast::channel('CepasInfo', function ($user) {
@@ -112,13 +131,7 @@ Broadcast::channel('bloquearBtnsNoticia', function ($user) {
 Broadcast::channel('desbloquearBtnsNoticia', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckNoticia', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckNoticia', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckNoticia', function ($user) {
+Broadcast::channel('recibirBtnsNoticia', function ($user) {
     return true;
 });
 //actividades
@@ -131,13 +144,7 @@ Broadcast::channel('bloquearBtnsActividad', function ($user) {
 Broadcast::channel('desbloquearBtnsActividad', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckActividad', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckActividad', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckActividad', function ($user) {
+Broadcast::channel('recibirBtnsActividad', function ($user) {
     return true;
 });
 //novedades
@@ -150,13 +157,7 @@ Broadcast::channel('bloquearBtnsNovedad', function ($user) {
 Broadcast::channel('desbloquearBtnsNovedad', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckNovedad', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckNovedad', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckNovedad', function ($user) {
+Broadcast::channel('recibirBtnsNovedad', function ($user) {
     return true;
 });
 //equipamientos
@@ -169,13 +170,7 @@ Broadcast::channel('bloquearBtnsEquipamiento', function ($user) {
 Broadcast::channel('desbloquearBtnsEquipamiento', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckEquipamiento', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckEquipamiento', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckEquipamiento', function ($user) {
+Broadcast::channel('recibirBtnsEquipamiento', function ($user) {
     return true;
 });
 //proyectos
@@ -188,13 +183,7 @@ Broadcast::channel('bloquearBtnsProyecto', function ($user) {
 Broadcast::channel('desbloquearBtnsProyecto', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckProyecto', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckProyecto', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckProyecto', function ($user) {
+Broadcast::channel('recibirBtnsProyecto', function ($user) {
     return true;
 });
 //publicaciones
@@ -207,13 +196,7 @@ Broadcast::channel('bloquearBtnsPublicacion', function ($user) {
 Broadcast::channel('desbloquearBtnsPublicacion', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckPublicacion', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckPublicacion', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckPublicacion', function ($user) {
+Broadcast::channel('recibirBtnsPublicacion', function ($user) {
     return true;
 });
 //investigadores
@@ -226,13 +209,7 @@ Broadcast::channel('bloquearBtnsInvestigador', function ($user) {
 Broadcast::channel('desbloquearBtnsInvestigador', function ($user) {
     return true;
 });
-Broadcast::channel('bloquearCheckInvestigador', function ($user) {
-    return true;
-});
-Broadcast::channel('desbloquearCheckInvestigador', function ($user) {
-    return true;
-});
-Broadcast::channel('recibirBtnsCheckInvestigador', function ($user) {
+Broadcast::channel('recibirBtnsInvestigador', function ($user) {
     return true;
 });
 //mision
@@ -242,9 +219,6 @@ Broadcast::channel('mision', function ($user) {
 Broadcast::channel('bloquearMision', function ($user) {
     return true;
 });
-Broadcast::channel('borrarBloqueoMision', function ($user) {
-    return true;
-});
 //vision
 Broadcast::channel('vision', function ($user) {
     return ['user' => $user];
@@ -252,16 +226,10 @@ Broadcast::channel('vision', function ($user) {
 Broadcast::channel('bloquearVision', function ($user) {
     return true;
 });
-Broadcast::channel('borrarBloqueoVision', function ($user) {
-    return true;
-});
 //bjetivos
 Broadcast::channel('objetivos', function ($user) {
     return ['user' => $user];
 });
 Broadcast::channel('bloquearObjetivos', function ($user) {
-    return true;
-});
-Broadcast::channel('borrarBloqueoObjetivos', function ($user) {
     return true;
 });

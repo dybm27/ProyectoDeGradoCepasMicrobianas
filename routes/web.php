@@ -387,12 +387,13 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
         //----------------------- CEPAS  ---------------------------------------------------------
-        //----------------------- urls tablas cepas  ---------------------------------------------
+        //----------------------- urls cepas  ---------------------------------------------
         Route::get('cepas', 'InfoPanelCepasController@cepas');
-        Route::get('cepas-bacterias', 'InfoPanelBacteriasController@bacterias');
-        Route::get('cepas-hongos', 'InfoPanelHongosController@hongos');
-        Route::get('cepas-levaduras', 'InfoPanelLevadurasController@levaduras');
-        Route::get('cepas-actinomicetos', 'InfoPanelActinomicetosController@actinomicetos');
+        Route::get('cepas-tabla', 'InfoPanelCepasController@cepasTabla');
+        Route::get('bacterias-tabla', 'InfoPanelBacteriasController@bacteriasTabla');
+        Route::get('hongos-tabla', 'InfoPanelHongosController@hongosTabla');
+        Route::get('levaduras-tabla', 'InfoPanelLevadurasController@levadurasTabla');
+        Route::get('actinomicetos-tabla', 'InfoPanelActinomicetosController@actinomicetosTabla');
         //----------------------- obtener cepa ---------------------------------------------------
         Route::get('cepa/{id}', 'InfoPanelCepasController@obtenerCepa');
         //--------------------- obtener caracteristicas cepas ------------------------------------

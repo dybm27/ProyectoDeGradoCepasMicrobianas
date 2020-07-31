@@ -102,20 +102,19 @@ __webpack_require__.r(__webpack_exports__);
         _this.bloquearBtnModal = false;
 
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
-
-        if (res.data === "negativo") {
-          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
         } else {
-          _this.refrescarTabla = true;
+          if (res.data === "negativo") {
+            _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+          } else {
+            _this.refrescarTabla = true;
 
-          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+            _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+          }
+
+          _this.$modal.hide("my_modal_eliminarCepa");
         }
-
-        _this.$modal.hide("my_modal_eliminarCepa");
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 

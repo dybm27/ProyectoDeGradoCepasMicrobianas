@@ -409,25 +409,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         if (this.parametros.imagen) {
           axios.post("/cepas/levadura/metodo-conser", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.accionAgregarCaract({
+                tipo: "metodo",
+                data: res.data
+              });
+
+              _this.toastr("Agregar Método", "Método agregado con exito!!", "success");
+
+              _this.$emit("cambiarVariable");
             }
-
-            _this.bloquearBtn = false;
-
-            _this.accionAgregarCaract({
-              tipo: "metodo",
-              data: res.data
-            });
-
-            _this.toastr("Agregar Método", "Método agregado con exito!!", "success");
-
-            _this.$emit("cambiarVariable");
           })["catch"](function (error) {
             _this.bloquearBtn = false;
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
             _this.toastr("Error!!", "", "error");
           });
@@ -441,25 +443,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         axios.put("/cepas/levadura/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.accionEditarCaract({
+              tipo: "metodo",
+              data: res.data
+            });
+
+            _this.toastr("Editar Método", "Método editado con exito!!", "success");
+
+            _this.$emit("cambiarVariable");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.accionEditarCaract({
-            tipo: "metodo",
-            data: res.data
-          });
-
-          _this.toastr("Editar Método", "Método editado con exito!!", "success");
-
-          _this.$emit("cambiarVariable");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.errors = error.response.data.errors;
+
+          if (error.response.status === 422) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+          }
 
           _this.toastr("Error!!", "", "error");
         });
@@ -519,8 +523,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           if (error.response.status === 405) {
             window.location.href = "/";
           } else {
-            _this2.errors = [];
-            _this2.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this2.errors = [];
+              _this2.modal.errors = error.response.data.errors;
+            }
 
             _this2.toastr("Error!!", "", "error");
           }
@@ -806,21 +812,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.bloquearBtnModal = false;
 
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.accionEliminarCaract({
+            tipo: "metodo",
+            data: res.data
+          });
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+
+          _this.$modal.hide("my_modal_eliminar_metodo");
         }
-
-        _this.refrescarTabla = true;
-
-        _this.accionEliminarCaract({
-          tipo: "metodo",
-          data: res.data
-        });
-
-        _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-
-        _this.$modal.hide("my_modal_eliminar_metodo");
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 

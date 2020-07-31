@@ -172,7 +172,7 @@ __webpack_require__.r(__webpack_exports__);
       window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
         id: this.id
       });
-      this.$events.fire("spliceMisBloqueosUsuario", {
+      this.$events.fire("eliminarMiBloqueoUsuario", {
         id: this.id
       });
       this.id = 0;
@@ -442,74 +442,72 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.tituloForm === "Agregar Usuario") {
         axios.post("/usuario/agregar", this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.accionUsuario({
+              tipo: "agregar",
+              data: res.data
+            });
+
+            _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
+
+            _this.$emit("cambiarVariableFormulario");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.accionUsuario({
-            tipo: "agregar",
-            data: res.data
-          });
-
-          _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
-
-          _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
-          }
+          } else {
+            _this.bloquearBtn = false;
 
-          _this.bloquearBtn = false;
+            if (_this.auth.id === res.data.id) {
+              _this.accionModificarAuth({
+                data: res.data
+              });
+            }
 
-          if (_this.auth.id === res.data.id) {
-            _this.accionModificarAuth({
+            _this.accionUsuario({
+              tipo: "editar",
               data: res.data
             });
+
+            _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+
+            _this.$emit("cambiarVariable", "tabla");
+
+            window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoUsuario", {
+              id: res.data.id
+            });
+
+            _this.$emit("cambiarVariableFormulario");
           }
-
-          _this.accionUsuario({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
-
-          _this.$emit("cambiarVariable", "tabla");
-
-          window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("spliceMisBloqueosUsuario", {
-            id: res.data.id
-          });
-
-          _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -678,7 +676,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _columnas_usuarios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas-usuarios */ "./resources/js/components/gestionar_usuarios/usuarios/columnas-usuarios.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../mixins/websocketsTabla */ "./resources/js/mixins/websocketsTabla.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -745,9 +744,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -769,7 +769,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return false;
     }
   }),
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_3__["default"])("Usuario")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("usuarios", ["accionUsuario"]), {
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.id = data.params.id;
@@ -780,55 +780,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.bloquearBtnModal = true;
       axios["delete"]("/usuario/eliminar/".concat(this.id)).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
+
+          _this.accionUsuario({
+            tipo: "eliminar",
+            data: res.data
+          });
+
+          _this.$modal.hide("modal_eliminar_usuario");
+
+          _this.actualizarTabla();
         }
-
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
-
-        _this.accionUsuario({
-          tipo: "eliminar",
-          data: res.data
-        });
-
-        _this.$modal.hide("modal_eliminar_usuario");
-
-        _this.actualizarTabla();
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 
         _this.toastr("Error!!!", "", "error", 4000);
       });
-    },
-    closeEliminar: function closeEliminar() {
-      window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
-        id: this.id
-      });
-      this.$events.fire("spliceMisBloqueosUsuario", {
-        id: this.id
-      });
-    },
-    actualizarTabla: function actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
     }
   }),
   created: function created() {
-    var _this2 = this;
-
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaUsuario", function (e) {
-      return _this2.actualizarTabla();
-    });
-  },
-  destroyed: function destroyed() {
-    this.$events.off("actualizartablaUsuario");
   }
 });
 
@@ -2092,7 +2068,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
     data: function data() {
       return {
         bloqueos: [],
-        misBloqueos: []
+        miBloqueo: []
       };
     },
     methods: {
@@ -2114,17 +2090,12 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
         this.$events.fire(data.id + "-desbloquearBtns" + tipoM);
       },
       // guardar mis bloqueos
-      pushMisBloqueos: function pushMisBloqueos(e) {
-        this.misBloqueos.push({
-          idUser: e.idUser,
-          id: e.id
-        });
+      agregarMiBloqueo: function agregarMiBloqueo(e) {
+        this.miBloqueo = e;
       },
-      spliceMisBloqueos: function spliceMisBloqueos(e) {
+      eliminarMiBloqueo: function eliminarMiBloqueo(e) {
         if (e.id != 0) {
-          this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-            return data.id === e.id;
-          }), 1);
+          this.miBloqueo = null;
         }
       },
       //borrar bloqueos
@@ -2145,7 +2116,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
       },
       enviarBloqueos: function enviarBloqueos() {
         window.Echo["private"]("recibirBtns" + tipoM).whisper("recibirBtns" + tipoM, {
-          bloqueos: this.misBloqueos
+          miBloqueo: this.miBloqueo
         });
       }
     },
@@ -2153,7 +2124,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
       var _this = this;
 
       window.Echo.join(tipoP).joining(function (data) {
-        if (_this.misBloqueos.length > 0) {
+        if (_this.miBloqueo) {
           _this.enviarBloqueos();
         }
       }).leaving(function (data) {
@@ -2172,23 +2143,23 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
       var _this2 = this;
 
       window.Echo["private"]("recibirBtns" + tipoM).listenForWhisper("recibirBtns" + tipoM, function (e) {
-        if (e.bloqueos.length > 0) {
+        if (_this2.bloqueos.length == 0) {
           _this2.bloquearBtnsTabla(e.bloqueos[0]);
         }
       });
-      this.$events.$on("pushMisBloqueos" + tipoM, function (e) {
-        return _this2.pushMisBloqueos(e);
+      this.$events.$on("agregarMiBloqueo" + tipoM, function (e) {
+        return _this2.agregarMiBloqueo(e);
       });
-      this.$events.$on("spliceMisBloqueos" + tipoM, function (e) {
-        return _this2.spliceMisBloqueos(e);
+      this.$events.$on("eliminarMiBloqueo" + tipoM, function (e) {
+        return _this2.eliminarMiBloqueo(e);
       });
       this.$events.$on("verificarBloqueos-" + tipoP, function (e) {
         return _this2.verificarBloqueos();
       });
     },
     destroyed: function destroyed() {
-      this.$events.$off("pushMisBloqueos" + tipoM);
-      this.$events.$off("spliceMisBloqueos" + tipoM);
+      this.$events.$off("agregarMiBloqueo" + tipoM);
+      this.$events.$off("eliminarMiBloqueo" + tipoM);
       this.$events.$off("verificarBloqueos-" + tipoP);
     },
     beforeDestroy: function beforeDestroy() {
@@ -2201,6 +2172,51 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (websocketsMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsTabla.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/websocketsTabla.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsTabla = function websocketsTabla(tipoM) {
+  return {
+    methods: {
+      closeEliminar: function closeEliminar() {
+        window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
+          id: this.id
+        });
+        this.$events.fire("eliminarMiBloqueo" + tipoM, {
+          id: this.id
+        });
+      },
+      actualizarTabla: function actualizarTabla() {
+        if (this.mostrarTabla) {
+          if (this.$refs.tabla) {
+            this.$refs.tabla.refreshDatos();
+          }
+        }
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.on("actualizartabla" + tipoM, function (e) {
+        return _this.actualizarTabla();
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.off("actualizartabla" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsTabla);
 
 /***/ })
 

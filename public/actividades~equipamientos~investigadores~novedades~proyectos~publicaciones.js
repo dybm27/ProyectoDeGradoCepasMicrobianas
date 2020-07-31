@@ -255,10 +255,7 @@ var abrirCerrarFormualrio = function abrirCerrarFormualrio(tipoM) {
         window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
           id: this.id
         });
-        window.Echo["private"]("desbloquearCheck" + tipoM).whisper("desbloquearCheck" + tipoM, {
-          id: this.id
-        });
-        this.$events.fire("spliceMisBloqueos" + tipoM, {
+        this.$events.fire("eliminarMiBloqueo" + tipoM, {
           id: this.id
         });
         this.id = 0;
@@ -372,50 +369,39 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
     data: function data() {
       return {
         bloqueos: [],
-        misBloqueos: []
+        miBloqueo: null
       };
     },
     methods: {
       // Bloquear Btns
-      bloquearBtnsTabla: function bloquearBtnsTabla(e) {
-        this.bloqueos.push({
-          idUser: e.idUser,
-          id: e.id
+      bloquearBtns: function bloquearBtns(e) {
+        var data = this.bloqueos.find(function (data) {
+          return data.id === e.id;
         });
-        this.$events.fire(e.id + "-bloquearBtns" + tipoM);
+
+        if (!data) {
+          this.bloqueos.push({
+            idUser: e.idUser,
+            id: e.id
+          });
+          this.$events.fire(e.id + "-bloquearBtns" + tipoM);
+          this.$events.fire(e.id + "-bloquearCheck" + tipoM);
+        }
       },
-      desbloquearBtnsTabla: function desbloquearBtnsTabla(e) {
+      desbloquearBtns: function desbloquearBtns(e) {
         this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
           return data.id === e.id;
         }), 1);
         this.$events.fire(e.id + "-desbloquearBtns" + tipoM);
-      },
-      // Bloquear Check
-      bloquearCheckTabla: function bloquearCheckTabla(e) {
-        this.bloqueos.push({
-          idUser: e.idUser,
-          id: e.id
-        });
-        this.$events.fire(e.id + "-bloquearCheck" + tipoM);
-      },
-      desbloquearCheckTabla: function desbloquearCheckTabla(e) {
-        this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
-          return data.id === e.id;
-        }), 1);
         this.$events.fire(e.id + "-desbloquearCheck" + tipoM);
       },
       // guardar mis bloqueos
-      pushMisBloqueos: function pushMisBloqueos(e) {
-        this.misBloqueos.push({
-          idUser: e.idUser,
-          id: e.id
-        });
+      agregarMiBloqueo: function agregarMiBloqueo(e) {
+        this.miBloqueo = e;
       },
-      spliceMisBloqueos: function spliceMisBloqueos(e) {
+      eliminarMiBloqueo: function eliminarMiBloqueo(e) {
         if (e.id != 0) {
-          this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-            return data.id === e.id;
-          }), 1);
+          this.miBloqueo = null;
         }
       },
       //borrar bloqueos
@@ -425,8 +411,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
         });
 
         if (data) {
-          this.desbloquearBtnsTabla(data);
-          this.desbloquearCheckTabla(data);
+          this.desbloquearBtns(data);
         }
       },
       // verificar bloqueos existentes
@@ -437,8 +422,8 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
         }
       },
       enviarBloqueos: function enviarBloqueos() {
-        window.Echo["private"]("recibirBtnsCheck" + tipoM).whisper("recibirBtnsCheck" + tipoM, {
-          bloqueos: this.misBloqueos
+        window.Echo["private"]("recibirBtns" + tipoM).whisper("recibirBtns" + tipoM, {
+          miBloqueo: this.miBloqueo
         });
       }
     },
@@ -446,59 +431,45 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
       var _this = this;
 
       window.Echo.join(tipoP).joining(function (data) {
-        if (_this.misBloqueos.length > 0) {
-          _this.enviarBloqueos();
-        }
+        _this.enviarBloqueos();
       }).leaving(function (data) {
         _this.borrarBloqueos(data.user);
       });
       window.Echo["private"]("bloquearBtns" + tipoM).listenForWhisper("bloquearBtns" + tipoM, function (e) {
-        _this.bloquearBtnsTabla(e);
+        _this.bloquearBtns(e);
       });
       window.Echo["private"]("desbloquearBtns" + tipoM).listenForWhisper("desbloquearBtns" + tipoM, function (e) {
         if (e.id != 0) {
-          _this.desbloquearBtnsTabla(e);
-        }
-      });
-      window.Echo["private"]("bloquearCheck" + tipoM).listenForWhisper("bloquearCheck" + tipoM, function (e) {
-        _this.bloquearCheckTabla(e);
-      });
-      window.Echo["private"]("desbloquearCheck" + tipoM).listenForWhisper("desbloquearCheck" + tipoM, function (e) {
-        if (e.id != 0) {
-          _this.desbloquearCheckTabla(e);
+          _this.desbloquearBtns(e);
         }
       });
     },
     created: function created() {
       var _this2 = this;
 
-      window.Echo["private"]("recibirBtnsCheck" + tipoM).listenForWhisper("recibirBtnsCheck" + tipoM, function (e) {
-        if (e.bloqueos.length > 0) {
-          _this2.bloquearBtnsTabla(e.bloqueos[0]);
-
-          _this2.bloquearCheckTabla(e.bloqueos[0]);
+      window.Echo["private"]("recibirBtns" + tipoM).listenForWhisper("recibirBtns" + tipoM, function (e) {
+        if (e.miBloqueo) {
+          _this2.bloquearBtns(e.miBloqueo);
         }
       });
-      this.$events.$on("pushMisBloqueos" + tipoM, function (e) {
-        return _this2.pushMisBloqueos(e);
+      this.$events.$on("agregarMiBloqueo" + tipoM, function (e) {
+        return _this2.agregarMiBloqueo(e);
       });
-      this.$events.$on("spliceMisBloqueos" + tipoM, function (e) {
-        return _this2.spliceMisBloqueos(e);
+      this.$events.$on("eliminarMiBloqueo" + tipoM, function (e) {
+        return _this2.eliminarMiBloqueo(e);
       });
       this.$events.$on("verificarBloqueos-" + tipoP, function (e) {
         return _this2.verificarBloqueos();
       });
     },
     destroyed: function destroyed() {
-      this.$events.$off("pushMisBloqueos" + tipoM);
-      this.$events.$off("spliceMisBloqueos" + tipoM);
+      this.$events.$off("agregarMiBloqueo" + tipoM);
+      this.$events.$off("eliminarMiBloqueo" + tipoM);
       this.$events.$off("verificarBloqueos-" + tipoP);
     },
     beforeDestroy: function beforeDestroy() {
       window.Echo.leave(tipoP);
-      window.Echo.leave("recibirBtnsCheck" + tipoM);
-      window.Echo.leave("bloquearCheck" + tipoM);
-      window.Echo.leave("desbloquearCheck" + tipoM);
+      window.Echo.leave("recibirBtns" + tipoM);
       window.Echo.leave("desbloquearBtns" + tipoM);
       window.Echo.leave("bloquearBtns" + tipoM);
     }
@@ -525,10 +496,7 @@ var websocketsTabla = function websocketsTabla(tipoM) {
         window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
           id: this.id
         });
-        window.Echo["private"]("desbloquearCheck" + tipoM).whisper("desbloquearCheck" + tipoM, {
-          id: this.id
-        });
-        this.$events.fire("spliceMisBloqueos" + tipoM, {
+        this.$events.fire("eliminarMiBloqueo" + tipoM, {
           id: this.id
         });
       },

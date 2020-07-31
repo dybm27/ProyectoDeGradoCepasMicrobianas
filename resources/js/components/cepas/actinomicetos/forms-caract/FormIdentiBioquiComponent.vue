@@ -352,7 +352,7 @@ export default {
             .post("/cepas/actinomiceto/identi-bioqui", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
@@ -372,8 +372,10 @@ export default {
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -389,25 +391,28 @@ export default {
           )
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Identificación Bioquímica",
+                "Identificación Bioquímica editada con exito!!",
+                "success"
+              );
             }
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Identificación Bioquímica",
-              "Identificación Bioquímica editada con exito!!",
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            this.errors = [];
-            this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }

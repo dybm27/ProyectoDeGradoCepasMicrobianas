@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col col-sm-8">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">{{nombre}}</h5>
-              <form @submit.prevent="evento" v-if="mostrarFormComputed">
+    <form @submit.prevent="evento">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-6">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">{{nombre}}</h5>
                 <template v-if="errors!=''">
                   <div class="alert alert-danger">
                     <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
@@ -226,6 +226,12 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
                 <div class="position-relative form-group">
                   <label for="estado" class>Estado</label>
                   <input
@@ -270,15 +276,17 @@
                   />
                   <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
                 </div>
-                <button class="mt-1 btn" :disabled="bloquearBtn" :class="classBtn">{{nombreBtn}}</button>
-                <!-- float-right -->
-              </form>
-              <div v-else>Cargando...</div>
+                <button
+                  class="mt-2 btn btn-block"
+                  :disabled="bloquearBtn"
+                  :class="classBtn"
+                >{{nombreBtn}}</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <modal name="agregar-otra-info" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -349,9 +357,10 @@
 import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
 export default {
-  props: ["tipoG"],
+  props: ["tipoG", "idCepa"],
   data() {
     return {
+      info: "",
       parametros: {
         codigo: "",
         grupo_microbiano: null,
@@ -382,39 +391,48 @@ export default {
       nombre: "",
       nombreBtn: "",
       classBtn: "",
-      mostrarForm: true,
       bloquearBtn: false,
       bloquearBtnModal: false,
     };
   },
   mixins: [Toastr],
   methods: {
+    ...vuex.mapActions("cepas", ["accionCepas"]),
     ...vuex.mapActions("info_cepas", ["accionAgregarTipoCepa"]),
     evento() {
       this.bloquearBtn = true;
       if (this.nombre === "Editar Cepa") {
         axios
-          .put(`/cepas/editar/${this.$route.params.cepaId}`, this.parametros)
+          .put(`/cepas/editar/${this.idCepa}`, this.parametros)
           .then((res) => {
             this.bloquearBtn = false;
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.accionCepas({ tipo: "editar", data: res.data });
+              window.Echo.private("desbloquearBtnsCepa").whisper(
+                "desbloquearBtnsCepa",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoCepa", {
+                id: res.data.id,
+              });
+              this.$emit("cambiarVariableFormulario");
+              this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
             }
-            this.errors = [];
-            this.redirect();
-            this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
@@ -422,24 +440,64 @@ export default {
           .then((res) => {
             this.bloquearBtn = false;
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.accionCepas({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+              this.toastr(
+                "Agregar Cepa",
+                "Cepa agregada con exito!!",
+                "success"
+              );
             }
-            this.errors = [];
-            this.redirect();
-            this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
+      }
+    },
+    llenarParametros(cepa) {
+      this.parametros.codigo = this.info.codigo;
+      this.parametros.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.modal.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.parametros.genero = this.info.genero_id;
+      this.modal.genero = this.info.genero_id;
+      this.parametros.especie = this.info.especie_id;
+      this.parametros.estado = this.info.estado;
+      this.parametros.origen = this.info.origen;
+      this.parametros.otras_caracteristicas = this.info.otras_caract;
+      switch (this.info.grupo_microbiano_id) {
+        case 1:
+          break;
+        case 2:
+          this.parametros.phylum = this.info.hongo.phylum_id;
+          this.parametros.clase = this.info.hongo.clase_id;
+          this.parametros.orden = this.info.hongo.orden_id;
+          this.parametros.familia = this.info.hongo.familia_id;
+          break;
+        case 3:
+          this.parametros.division = this.info.levadura.division_id;
+          this.parametros.clase = this.info.levadura.clase_id;
+          this.parametros.orden = this.info.levadura.orden_id;
+          this.parametros.familia = this.info.levadura.familia_id;
+          break;
+        case 4:
+          this.parametros.reino = this.info.actinomiceto.reino_id;
+          this.parametros.phylum = this.info.actinomiceto.phylum_id;
+          this.parametros.clase = this.info.actinomiceto.clase_id;
+          this.parametros.orden = this.info.actinomiceto.orden_id;
+          break;
+      }
+      if (this.info.publicar == 1) {
+        this.parametros.publicar = true;
       }
     },
     ocultarGrupoMicrobiano() {
@@ -449,90 +507,6 @@ export default {
         this.parametros.grupo_microbiano = this.tipoG;
         this.mostrarGrupos = false;
         this.cambiarGeneroEspecie();
-      }
-    },
-    redirect() {
-      switch (this.tipoG) {
-        case 0:
-          this.$router.push({ name: "cepas-tabla" });
-          break;
-        case 1:
-          this.$router.push({ name: "bacterias-tabla" });
-          break;
-        case 2:
-          this.$router.push({ name: "hongos-tabla" });
-          break;
-        case 3:
-          this.$router.push({ name: "levaduras-tabla" });
-          break;
-        case 4:
-          this.$router.push({ name: "actinomicetos-tabla" });
-          break;
-      }
-    },
-    verificarTipo() {
-      if (!this.$route.params.cepaId) {
-        this.nombre = "Agregar Nueva Cepa";
-        this.classBtn = "btn-success";
-        this.nombreBtn = "Guardar";
-        this.mostrarForm = true;
-      } else {
-        this.mostrarForm = false;
-        this.disabled = true;
-        this.nombre = "Editar Cepa";
-        this.classBtn = "btn-warning";
-        this.nombreBtn = "Editar";
-        this.bucarCepa();
-      }
-    },
-    bucarCepa() {
-      let id = this.$route.params.cepaId;
-      axios.get(`/info-panel/cepa/${id}`).then((res) => {
-        if (res.request.responseURL === process.env.MIX_LOGIN) {
-          this.$ls.set(
-            "mensajeLogin",
-            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-          );
-          window.location.href = "/";
-        }
-        this.llenarParametros(res.data);
-        this.mostrarForm = true;
-      });
-    },
-    llenarParametros(cepa) {
-      this.parametros.codigo = cepa.cepa.codigo;
-      this.parametros.grupo_microbiano = cepa.cepa.grupo_microbiano_id;
-      this.modal.grupo_microbiano = cepa.cepa.grupo_microbiano_id;
-      this.parametros.genero = cepa.cepa.genero_id;
-      this.modal.genero = cepa.cepa.genero_id;
-      this.parametros.especie = cepa.cepa.especie_id;
-      this.parametros.estado = cepa.cepa.estado;
-      this.parametros.origen = cepa.cepa.origen;
-      this.parametros.otras_caracteristicas = cepa.cepa.otras_caract;
-      switch (cepa.cepa.grupo_microbiano_id) {
-        case 1:
-          break;
-        case 2:
-          this.parametros.phylum = cepa.phylum_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          this.parametros.familia = cepa.familia_id;
-          break;
-        case 3:
-          this.parametros.division = cepa.division_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          this.parametros.familia = cepa.familia_id;
-          break;
-        case 4:
-          this.parametros.reino = cepa.reino_id;
-          this.parametros.phylum = cepa.phylum_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          break;
-      }
-      if (cepa.cepa.publicar == 1) {
-        this.parametros.publicar = true;
       }
     },
     cambiarGeneroEspecie() {
@@ -590,26 +564,29 @@ export default {
           .then((res) => {
             this.bloquearBtnModal = false;
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.accionAgregarTipoCepa({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-otra-info");
+              this.toastr(
+                "Agregar Info",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
             }
-            this.accionAgregarTipoCepa({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$modal.hide("agregar-otra-info");
-            this.toastr(
-              "Agregar Info",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtnModal = false;
-            this.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.modal.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }
@@ -663,6 +640,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters("cepas", ["getCepaById"]),
     ...vuex.mapGetters("info_cepas", [
       "getGrupos",
       "getGeneros",
@@ -684,18 +662,6 @@ export default {
       "getClaseByNombre",
       "getFamiliaByNombre",
     ]),
-    mostrarFormComputed() {
-      if (
-        this.getGrupos &&
-        this.getGeneros &&
-        this.getEspecies &&
-        this.mostrarForm
-      ) {
-        this.ocultarGrupoMicrobiano();
-        return true;
-      }
-      return false;
-    },
     validarNombreUnico() {
       if (this.modal.input) {
         switch (this.modal.tipo) {
@@ -746,27 +712,48 @@ export default {
   },
   created() {
     this.verificarSelects();
-    this.$emit("rutaHijo", window.location.pathname);
-    this.verificarTipo();
+    this.ocultarGrupoMicrobiano();
+    if (this.idCepa === 0) {
+      this.nombre = "Agregar Nueva Cepa";
+      this.classBtn = "btn-success";
+      this.nombreBtn = "Guardar";
+      this.$emit("cambiarTipo", "agregar");
+    } else {
+      this.info = this.getCepaById(this.idCepa);
+      this.disabled = true;
+      this.nombre = "Editar Cepa";
+      this.classBtn = "btn-warning";
+      this.nombreBtn = "Editar";
+      this.$emit("cambiarTipo", "editar");
+      this.llenarParametros();
+    }
   },
   watch: {
     getGrupos() {
       if (this.getGrupos.length > 0) {
-        this.parametros.grupo_microbiano = this.getGrupos[0].id;
+        if (this.tipoG === 0) {
+          this.parametros.grupo_microbiano = this.getGrupos[0].id;
+        } else {
+          this.parametros.grupo_microbiano = this.tipoG;
+        }
       } else {
         this.parametros.grupo_microbiano = null;
       }
     },
     getGeneros() {
       if (this.getGeneros.length > 0) {
-        this.parametros.genero = this.getGeneros[0].id;
+        this.parametros.genero = this.getGenerosId(
+          this.parametros.grupo_microbiano
+        )[0].id;
       } else {
         this.parametros.genero = null;
       }
     },
     getEspecies() {
       if (this.getEspecies.length > 0) {
-        this.parametros.especie = this.getEspecies[0].id;
+        this.parametros.especie = this.getEspeciesId(
+          this.parametros.genero
+        )[0].id;
       } else {
         this.parametros.especie = null;
       }

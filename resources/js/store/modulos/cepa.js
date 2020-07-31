@@ -146,20 +146,6 @@ export default {
         }
     },
     actions: {
-        obtenerCepa({ commit }, id) {
-            axios
-                .get(`/info-panel/cepa/agregar-editar-caract/${id}`)
-                .then(res => {
-                    if (res.request.responseURL === process.env.MIX_LOGIN) {
-                        localStorage.setItem(
-                            "mensajeLogin",
-                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                        );
-                        window.location.href = "/";
-                    }
-                    commit("llenarCepa", res.data);
-                });
-        },
         accionAgregarCaract({ commit }, data) {
             commit("mutacionAgregarCaract", data);
         },
@@ -171,6 +157,9 @@ export default {
         },
         limpiarCepa({ commit }) {
             commit("mutacionLimpiarCepa");
+        },
+        llenarCepa({ commit }, data) {
+            commit("llenarCepa", data);
         }
     }
 };

@@ -270,24 +270,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         if (this.parametros.imagen) {
           axios.post("/cepas/levadura/caract-macro", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+              _this.errors = [];
+              _this.$refs.inputImagen.value = "";
+              _this.tituloForm = "Editar Medio";
+              _this.nomBtn = "Editar";
+
+              _this.$emit("agregar", res.data);
+
+              _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
             }
-
-            _this.bloquearBtn = false;
-            _this.errors = [];
-            _this.$refs.inputImagen.value = "";
-            _this.tituloForm = "Editar Medio";
-            _this.nomBtn = "Editar";
-
-            _this.$emit("agregar", res.data);
-
-            _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
           })["catch"](function (error) {
             _this.bloquearBtn = false;
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
             _this.toastr("Error!!", "", "error");
           });
@@ -301,22 +303,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         axios.put("/cepas/levadura/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
           }
-
-          _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.errors = error.response.data.errors;
+
+          if (error.response.status === 422) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+          }
 
           _this.toastr("Error!!", "", "error");
         });
@@ -361,21 +365,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         };
         axios.post("/info-caract-levaduras/agregar", parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this2.accionAgregarTipoCaractLevadura({
+              info: res.data,
+              tipo: _this2.modal.tipo
+            });
+
+            _this2.$modal.hide("agregar-caract-info-levadura");
+
+            _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
           }
-
-          _this2.accionAgregarTipoCaractLevadura({
-            info: res.data,
-            tipo: _this2.modal.tipo
-          });
-
-          _this2.$modal.hide("agregar-caract-info-levadura");
-
-          _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
         })["catch"](function (error) {
-          _this2.modal.errors = error.response.data.errors;
+          if (error.response.status === 422) {
+            _this2.modal.errors = error.response.data.errors;
+          }
 
           _this2.toastr("Error!!!!", "", "error");
         });
@@ -694,24 +699,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios["delete"]("/cepas/levadura/caract-macro/".concat(id)).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.mostrarBtnAgregar = true;
+          _this.modificarForm = true;
+
+          _this.$modal.hide("eliminar_caract_macro_levadura");
+
+          _this.accionEliminarCaract({
+            tipo: "macro",
+            data: res.data
+          });
+
+          _this.formatear(num);
+
+          _this.toastr("Eliminar Medio", "Medio eliminado con exito!!", "success");
         }
-
-        _this.mostrarBtnAgregar = true;
-        _this.modificarForm = true;
-
-        _this.$modal.hide("eliminar_caract_macro_levadura");
-
-        _this.accionEliminarCaract({
-          tipo: "macro",
-          data: res.data
-        });
-
-        _this.formatear(num);
-
-        _this.toastr("Eliminar Medio", "Medio eliminado con exito!!", "success");
       })["catch"](function (error) {
         _this.toastr("Error!!", "", "error");
       });

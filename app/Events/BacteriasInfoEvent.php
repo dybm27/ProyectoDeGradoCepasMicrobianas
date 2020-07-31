@@ -36,6 +36,6 @@ class BacteriasInfoEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('bacterias-name');
+        return new Channel('bacterias-info');
     }
 }

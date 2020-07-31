@@ -42,13 +42,13 @@ export default [
         titleClass: "text-center"
     },
     {
-        name: "__component:checkboxs-publicar",
+        name: "__component:checkboxs_publicar_actinomicetos",
         title: "Publicar",
         titleClass: "text-center",
         dataClass: "text-center"
     },
     {
-        name: "__component:acciones_cepas",
+        name: "__component:acciones_cepas_actinomicetos",
         title: "Acciones",
         titleClass: "text-center"
     }

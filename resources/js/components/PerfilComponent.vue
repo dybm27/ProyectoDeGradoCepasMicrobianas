@@ -382,21 +382,22 @@ export default {
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                this.accionUsuario({ tipo: "editar", data: res.data });
+                this.accionModificarAuth({ data: res.data });
+                this.toastr(
+                  this.titulo,
+                  "Accion realizada con exito!!",
+                  "success"
+                );
+                this.$modal.hide("cambiarInfo");
               }
-              this.bloquearBtnModal = false;
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.accionModificarAuth({ data: res.data });
-              this.toastr(
-                this.titulo,
-                "Accion realizada con exito!!",
-                "success"
-              );
-              this.$modal.hide("cambiarInfo");
             })
             .catch((error) => {
               this.bloquearBtnModal = false;
@@ -407,21 +408,22 @@ export default {
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                this.accionModificarAuth({ data: res.data });
+                this.accionUsuario({ tipo: "editar", data: res.data });
+                this.toastr(
+                  this.titulo,
+                  "Accion realizada con exito!!",
+                  "success"
+                );
+                this.$modal.hide("cambiarImagen");
               }
-              this.bloquearBtnModal = false;
-              this.accionModificarAuth({ data: res.data });
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.toastr(
-                this.titulo,
-                "Accion realizada con exito!!",
-                "success"
-              );
-              this.$modal.hide("cambiarImagen");
             })
             .catch((error) => {
               this.bloquearBtnModal = false;
@@ -432,21 +434,22 @@ export default {
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                this.accionModificarAuth({ data: res.data });
+                this.accionUsuario({ tipo: "editar", data: res.data });
+                this.toastr(
+                  this.titulo,
+                  "Accion realizada con exito!!",
+                  "success"
+                );
+                this.$modal.hide("cambiarInfo");
               }
-              this.bloquearBtnModal = false;
-              this.accionModificarAuth({ data: res.data });
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.toastr(
-                this.titulo,
-                "Accion realizada con exito!!",
-                "success"
-              );
-              this.$modal.hide("cambiarInfo");
             })
             .catch((error) => {
               this.bloquearBtnModal = false;

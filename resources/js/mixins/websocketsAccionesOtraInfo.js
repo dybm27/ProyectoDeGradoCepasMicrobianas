@@ -10,38 +10,14 @@ const websocketsAccionesOtraInfoMixin = (tipo, tipoP, tipoModal, tipoInfo) => ({
                 grupo: data.grupo_microbiano_id,
                 tipo: tipo
             });
-            window.Echo.private("bloquearBtns" + tipoInfo).whisper(
-                "bloquearBtns" + tipoInfo,
-                {
-                    id: data.id,
-                    idUser: this.auth.id,
-                    tipo: tipo
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoInfo, {
-                id: data.id,
-                idUser: this.auth.id,
-                tipo: tipo
-            });
+            this.enviarBloqueo(data);
         },
         eliminar(data) {
             this.$modal.show("modal_eliminar_tipo_" + tipoModal, {
                 id: data.id,
                 tipo: tipo
             });
-            window.Echo.private("bloquearBtns" + tipoInfo).whisper(
-                "bloquearBtns" + tipoInfo,
-                {
-                    id: data.id,
-                    idUser: this.auth.id,
-                    tipo: tipo
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoInfo, {
-                id: data.id,
-                idUser: this.auth.id,
-                tipo: tipo
-            });
+            this.enviarBloqueo(data);
         },
         bloquearBtns() {
             this.disabledBtns = true;
@@ -61,6 +37,21 @@ const websocketsAccionesOtraInfoMixin = (tipo, tipoP, tipoModal, tipoInfo) => ({
             this.disabledBtns = false;
             this.$events.$off(id + "-bloquearBtns-" + tipo);
             this.$events.$off(id + "-desbloquearBtns-" + tipo);
+        },
+        enviarBloqueo(data) {
+            window.Echo.private("bloquearBtns" + tipoInfo).whisper(
+                "bloquearBtns" + tipoInfo,
+                {
+                    id: data.id,
+                    idUser: this.auth.id,
+                    tipo: tipo
+                }
+            );
+            this.$events.fire("agregarMiBloqueo" + tipoInfo, {
+                id: data.id,
+                idUser: this.auth.id,
+                tipo: tipo
+            });
         }
     },
     created() {

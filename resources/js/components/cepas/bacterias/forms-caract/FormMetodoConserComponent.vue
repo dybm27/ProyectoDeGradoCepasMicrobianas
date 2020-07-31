@@ -272,25 +272,28 @@ export default {
             .post("/cepas/bacteria/metodo-conser", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.accionAgregarCaract({ tipo: "metodo", data: res.data });
+                this.toastr(
+                  "Agregar Método",
+                  "Método agregado con exito!!",
+                  "success"
+                );
+                this.$emit("cambiarVariable");
               }
-              this.bloquearBtn = false;
-              this.accionAgregarCaract({ tipo: "metodo", data: res.data });
-              this.toastr(
-                "Agregar Método",
-                "Método agregado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable");
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -303,25 +306,28 @@ export default {
           .put(`/cepas/bacteria/metodo-conser/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
+              this.toastr(
+                "Editar Método",
+                "Método editado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable");
             }
-            this.bloquearBtn = false;
-            this.accionEditarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Editar Método",
-              "Método editado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            this.errors = [];
-            this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }
@@ -362,28 +368,31 @@ export default {
           .post("/info-caract-bacterias/agregar", parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractBacteria({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
             }
-            this.bloquearBtnModal = false;
-            this.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtnModal = false;
-            this.errors = [];
-            this.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.modal.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bacteria;
 use App\BordeBacteria;
+use App\Cepa;
 use App\ColorBacteria;
 use App\DetalleOpticoBacteria;
 use App\ElevacionBacteria;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\DB;
 
 class InfoPanelBacteriasController extends Controller
 {
-    public function bacterias(Request $request)
+    public function bacteriasTabla(Request $request)
     {
         $cepas = DB::table('cepas')
             ->join('bacterias', 'cepas.id', '=', 'bacterias.cepa_id')

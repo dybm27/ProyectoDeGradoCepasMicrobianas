@@ -10,7 +10,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/bloquearPestañas */ "./resources/js/mixins/bloquearPestañas.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _columnas_columnas_cepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./columnas/columnas-cepas */ "./resources/js/components/cepas/columnas/columnas-cepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -90,46 +91,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      ruta: true,
-      tipo: "Tabla"
+      tituloCepa: "",
+      tipoAccion: "",
+      mostrarBtnVolver: false,
+      fields: _columnas_columnas_cepas__WEBPACK_IMPORTED_MODULE_1__["default"]
     };
   },
-  mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepasTodas")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos", "obtenerInfoCaractBacterias", "obtenerInfoCaractLevaduras", "obtenerInfoCaractActinomicetos"]), {
-    ocultarLink: function ocultarLink(ruta) {
-      if (ruta != "/cepas/" && ruta != "/cepas") {
-        this.ruta = false;
-
-        if (ruta.includes("caract") || ruta.includes("identi") || ruta.includes("metodo")) {
-          this.tipo = "Características";
-        } else if (ruta.includes("ver")) {
-          this.tipo = "Ver Información";
-        } else if (ruta.includes("agregar")) {
-          this.tipo = "Agregar";
-        } else {
-          this.tipo = "Editar";
-        }
+  mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos", "obtenerInfoCaractBacterias", "obtenerInfoCaractLevaduras", "obtenerInfoCaractActinomicetos"]), {
+    cambiarTipo: function cambiarTipo(tipo) {
+      if (tipo === "ver") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Ver información";
+      } else if (tipo === "caract") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Modificar Características";
+      } else if (tipo === "agregar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Agregar";
+      } else if (tipo === "editar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Editar";
       } else {
-        this.ruta = true;
-        this.tipo = "Tabla";
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "tabla";
       }
+    },
+    volverTabla: function volverTabla() {
+      window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+        id: this.$route.params.cepaId
+      });
+      this.$events.fire("eliminarMiBloqueoCepa", {
+        id: this.$route.params.cepaId
+      });
+      this.$router.push({
+        name: "cepas"
+      });
     }
   }),
-  computed: {
-    ocultar: function ocultar() {
-      return this.ruta;
-    }
-  },
   created: function created() {
-    this.$emit("rutaSider", window.location.pathname);
+    this.$emit("rutaSider", this.$route.path);
+    this.obtenerCepas();
+    this.obtenerTiposCepas();
     this.obtenerInfoCaractActinomicetos();
     this.obtenerInfoCaractHongos();
     this.obtenerInfoCaractBacterias();
     this.obtenerInfoCaractLevaduras();
-    this.obtenerTiposCepas();
   }
 });
 
@@ -159,7 +170,11 @@ var render = function() {
             _vm._m(0),
             _vm._v(" "),
             _c("div", [
-              _vm._v("\n          Administrar Cepas Microbianas\n          "),
+              _vm._v(
+                "\n          Administrar Cepas Microbianas " +
+                  _vm._s(_vm.tituloCepa) +
+                  "\n          "
+              ),
               _c("div", { staticClass: "page-title-subheading opacity-10" }, [
                 _c("nav", [
                   _c(
@@ -172,7 +187,7 @@ var render = function() {
                       _vm._v(" "),
                       [
                         _c("li", { staticClass: "breadcrumb-item" }, [
-                          _c("a", [_vm._v(_vm._s(_vm.tipo))])
+                          _c("a", [_vm._v(_vm._s(_vm.tipoAccion))])
                         ])
                       ]
                     ],
@@ -187,27 +202,17 @@ var render = function() {
             "div",
             { staticClass: "page-title-actions" },
             [
-              _vm.numPestaña == 1
+              _vm.numPestaña == 1 && _vm.mostrarBtnVolver
                 ? [
-                    _vm.ocultar
-                      ? _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg",
-                            attrs: { to: "/cepas/agregar" }
-                          },
-                          [_vm._v("Agregar Nueva Cepa")]
-                        )
-                      : _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
-                            attrs: { to: { name: "cepas-tabla" } }
-                          },
-                          [_vm._v("Volver")]
-                        )
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
+                        on: { click: _vm.volverTabla }
+                      },
+                      [_vm._v("Volver")]
+                    )
                   ]
                 : _vm._e()
             ],
@@ -218,17 +223,17 @@ var render = function() {
       _vm._v(" "),
       _vm.numPestaña == 1
         ? [
-            _c(
-              "div",
-              { staticClass: "tabs-animation" },
-              [
-                _c("router-view", {
-                  attrs: { tipoG: 0 },
-                  on: { rutaHijo: _vm.ocultarLink }
-                })
-              ],
-              1
-            )
+            _c("router-view", {
+              attrs: {
+                tipoG: 0,
+                tipo: "cepa",
+                detailRowComponent: "my-detail-row-cepas",
+                titulo: "CEPAS",
+                tituloCepa: _vm.tituloCepa,
+                FieldDefs: _vm.fields
+              },
+              on: { cambiarTipo: _vm.cambiarTipo }
+            })
           ]
         : [_vm._m(3)]
     ],
@@ -356,6 +361,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasComponent_vue_vue_type_template_id_30981fb7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/columnas/columnas-cepas.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/cepas/columnas/columnas-cepas.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  name: "codigo",
+  sortField: "codigo",
+  title: "Código",
+  titleClass: "text-center"
+}, {
+  name: "nombre_grupo",
+  sortField: "grupo_microbiano_id",
+  title: "Grupo Microbiano",
+  titleClass: "text-center"
+}, {
+  name: "nombre_genero",
+  sortField: "genero_id",
+  title: "Género",
+  titleClass: "text-center"
+}, {
+  name: "nombre_especie",
+  sortField: "especie_id",
+  title: "Especie",
+  titleClass: "text-center"
+}, {
+  name: "estado",
+  sortField: "estado",
+  titleClass: "text-center"
+}, {
+  name: "origen",
+  sortField: "origen",
+  titleClass: "text-center"
+},, {
+  name: "__component:checkboxs_publicar",
+  title: "Publicar",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "__component:acciones_cepas",
+  title: "Acciones",
+  titleClass: "text-center"
+}]);
 
 /***/ }),
 

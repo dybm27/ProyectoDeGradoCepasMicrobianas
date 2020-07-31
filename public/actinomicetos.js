@@ -80,62 +80,64 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      ruta: true,
+      mostrarBtnVolver: false,
       tipo: ""
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepasActinomicetos")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]), {
-    ocultarLink: function ocultarLink(ruta) {
-      if (ruta != "/actinomicetos" && ruta != "/actinomicetos/") {
-        this.ruta = false;
-
-        if (ruta.includes("caract") || ruta.includes("identi") || ruta.includes("metodo")) {
-          this.tipo = "Características";
-        } else if (ruta.includes("ver")) {
-          this.tipo = "Ver Información";
-        } else if (ruta.includes("agregar")) {
-          this.tipo = "Agregar";
-        } else {
-          this.tipo = "Editar";
-        }
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("cepas", ["obtenerActinomicetos", "limpiarCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]), {
+    cambiarTipo: function cambiarTipo(tipo) {
+      if (tipo === "ver") {
+        this.mostrarBtnVolver = true;
+        this.tipo = "Ver información";
+      } else if (tipo === "caract") {
+        this.mostrarBtnVolver = true;
+        this.tipo = "Modificar Características";
+      } else if (tipo === "agregar") {
+        this.mostrarBtnVolver = false;
+        this.tipo = "Agregar";
+      } else if (tipo === "editar") {
+        this.mostrarBtnVolver = false;
+        this.tipo = "Editar";
       } else {
-        this.ruta = true;
-        this.tipo = "Tabla";
+        this.mostrarBtnVolver = false;
+        this.tipo = "tabla";
       }
+    },
+    volverTabla: function volverTabla() {
+      window.Echo["private"]("desbloquearBtnsActinomiceto").whisper("desbloquearBtnsActinomiceto", {
+        id: this.$route.params.cepaId
+      });
+      this.$events.fire("eliminarMiBloqueoActinomiceto", {
+        id: this.$route.params.cepaId
+      });
+      this.$router.push({
+        name: "actinomicetos"
+      });
     }
   }),
-  computed: {
-    ocultar: function ocultar() {
-      return this.ruta;
-    }
-  },
   created: function created() {
-    this.$emit("rutaSider", window.location.pathname);
+    this.$emit("tipoSider", window.location.pathname);
+    this.obtenerCepas();
     this.obtenerInfoCaractActinomicetos();
     this.obtenerTiposCepas();
+  },
+  destroyed: function destroyed() {
+    this.limpiarCepas();
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true&":
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -186,27 +188,17 @@ var render = function() {
             "div",
             { staticClass: "page-title-actions" },
             [
-              _vm.numPestaña == 1
+              _vm.numPestaña == 1 && _vm.mostrarBtnVolver
                 ? [
-                    _vm.ocultar
-                      ? _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg",
-                            attrs: { to: { name: "cepa-actinomiceto-agregar" } }
-                          },
-                          [_vm._v("Agregar Nueva Cepa - Actinomiceto")]
-                        )
-                      : _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
-                            attrs: { to: { name: "actinomicetos-tabla" } }
-                          },
-                          [_vm._v("Volver")]
-                        )
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
+                        on: { click: _vm.volverTabla }
+                      },
+                      [_vm._v("Volver")]
+                    )
                   ]
                 : _vm._e()
             ],
@@ -217,17 +209,10 @@ var render = function() {
       _vm._v(" "),
       _vm.numPestaña == 1
         ? [
-            _c(
-              "div",
-              { staticClass: "tabs-animation" },
-              [
-                _c("router-view", {
-                  attrs: { tipoG: 4 },
-                  on: { rutaHijo: _vm.ocultarLink }
-                })
-              ],
-              1
-            )
+            _c("router-view", {
+              attrs: { tipoG: 4 },
+              on: { cambiarTipo: _vm.cambiarTipo }
+            })
           ]
         : [_vm._m(3)]
     ],
@@ -298,7 +283,7 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true& */ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true&");
+/* harmony import */ var _ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActinomicetosComponent.vue?vue&type=template&id=294b30bc& */ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&");
 /* harmony import */ var _ActinomicetosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ActinomicetosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -310,11 +295,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _ActinomicetosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "294b30bc",
+  null,
   null
   
 )
@@ -340,19 +325,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true& ***!
-  \***************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc& ***!
+  \***************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ActinomicetosComponent.vue?vue&type=template&id=294b30bc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue?vue&type=template&id=294b30bc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActinomicetosComponent_vue_vue_type_template_id_294b30bc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

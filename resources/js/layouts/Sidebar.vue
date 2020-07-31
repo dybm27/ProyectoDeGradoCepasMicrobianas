@@ -17,28 +17,28 @@
             </a>
             <ul>
               <li>
-                <router-link :to="{name:'cepas-tabla'}" active-class="mm-active">
+                <router-link :to="{name:'cepas'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>Todas
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name:'bacterias-tabla'}" active-class="mm-active">
+                <router-link :to="{name:'bacterias'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>Bacterias
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name:'hongos-tabla'}" active-class="mm-active">
+                <router-link :to="{name:'hongos'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>Hongos Filamentosos
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name:'levaduras-tabla'}" active-class="mm-active">
+                <router-link :to="{name:'levaduras'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>
                   Levaduras
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name:'actinomicetos-tabla'}" active-class="mm-active">
+                <router-link :to="{name:'actinomicetos'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>
                   Actinomicetos
                 </router-link>
@@ -108,10 +108,10 @@ export default {
   props: ["ruta"],
   methods: {
     logout() {
-      axios.post("/logout").then(res => {
+      axios.post("/logout").then((res) => {
         window.location.href = "/";
       });
-    }
+    },
   },
   computed: {
     classActive() {
@@ -125,7 +125,7 @@ export default {
         return "mm-active";
       }
       return "";
-    }
-  }
+    },
+  },
 };
 </script>

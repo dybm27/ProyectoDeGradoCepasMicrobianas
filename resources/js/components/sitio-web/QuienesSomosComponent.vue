@@ -70,8 +70,8 @@ export default {
       "accionCambiarQuienesSomos"
     ]),
     cambiarTipo(ruta) {
-      if (ruta.includes("Objetivos")) {
-        this.tipo = "objetivos";
+      if (ruta.includes("objetivos")) {
+        this.tipo = "Objetivos";
       } else if (ruta.includes("vision")) {
         this.tipo = "Visión";
       } else {

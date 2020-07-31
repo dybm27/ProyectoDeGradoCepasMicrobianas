@@ -1,17 +1,41 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["cepas-levaduras"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _columnas_cepas_levaduras__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./columnas-cepas-levaduras */ "./resources/js/components/cepas/levaduras/tablas/columnas-cepas-levaduras.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/bloquearPestañas */ "./resources/js/mixins/bloquearPestañas.js");
+/* harmony import */ var _tablas_columnas_cepas_levaduras__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tablas/columnas-cepas-levaduras */ "./resources/js/components/cepas/levaduras/tablas/columnas-cepas-levaduras.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -69,61 +93,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
   data: function data() {
     return {
-      refrescarTabla: false,
-      idCepaEliminar: "",
-      fields: _columnas_cepas_levaduras__WEBPACK_IMPORTED_MODULE_0__["default"],
-      sortOrder: [{
-        field: "codigo",
-        direction: "asc"
-      }]
+      tituloCepa: "",
+      tipoAccion: "",
+      mostrarBtnVolver: false,
+      fields: _tablas_columnas_cepas_levaduras__WEBPACK_IMPORTED_MODULE_1__["default"]
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: {
-    cambiarVariable: function cambiarVariable() {
-      this.refrescarTabla = false;
+  mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractLevaduras"]), {
+    cambiarTipo: function cambiarTipo(tipo) {
+      if (tipo === "ver") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Ver información";
+      } else if (tipo === "caract") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Modificar Características";
+      } else if (tipo === "agregar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Agregar";
+      } else if (tipo === "editar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Editar";
+      } else {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "tabla";
+      }
     },
-    eliminarCepa: function eliminarCepa() {
-      var _this = this;
-
-      axios["delete"]("/cepas/eliminar/".concat(this.idCepaEliminar)).then(function (res) {
-        if (res.data === "negativo") {
-          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
-        } else {
-          _this.refrescarTabla = true;
-
-          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-        }
-
-        _this.$modal.hide("my_modal_eliminarCepa");
-      })["catch"](function (error) {
-        if (error.response) {//console.log(error.response.data);
-        }
-
-        _this.toastr("Error!!!", "", "error", 4000);
+    volverTabla: function volverTabla() {
+      window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+        id: this.$route.params.cepaLevaduraId
       });
-    },
-    beforeOpen: function beforeOpen(data) {
-      this.idCepaEliminar = data.params.id;
+      this.$events.fire("eliminarMiBloqueoCepa", {
+        id: this.$route.params.cepaLevaduraId
+      });
+      this.$router.push({
+        name: "levaduras"
+      });
     }
-  },
-  computed: {},
-  mounted: function mounted() {
-    this.$emit("rutaHijo", window.location.pathname);
+  }),
+  created: function created() {
+    this.tituloCepa = "- Levaduras";
+    this.$emit("rutaSider", this.$route.path);
+    this.obtenerCepas();
+    this.obtenerTiposCepas();
+    this.obtenerInfoCaractLevaduras();
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true&":
-/*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -138,105 +162,80 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "main-card mb-3 card" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "card-body" },
-          [
-            _c("MyVuetable", {
-              attrs: {
-                "api-url": "/info-panel/cepas-levaduras",
-                fields: _vm.fields,
-                "sort-order": _vm.sortOrder,
-                "detail-row-component": "my-detail-row-h-l-a",
-                refrescarTabla: _vm.refrescarTabla,
-                nameGet: "levaduras"
-              },
-              on: { cambiarVariable: _vm.cambiarVariable }
-            })
-          ],
-          1
-        )
+      _c("div", { staticClass: "app-page-title" }, [
+        _c("div", { staticClass: "page-title-wrapper" }, [
+          _c("div", { staticClass: "page-title-heading" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", [
+              _vm._v(
+                "\n          Administrar Cepas Microbianas " +
+                  _vm._s(_vm.tituloCepa) +
+                  "\n          "
+              ),
+              _c("div", { staticClass: "page-title-subheading opacity-10" }, [
+                _c("nav", [
+                  _c(
+                    "ol",
+                    { staticClass: "breadcrumb" },
+                    [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      [
+                        _c("li", { staticClass: "breadcrumb-item" }, [
+                          _c("a", [_vm._v(_vm._s(_vm.tipoAccion))])
+                        ])
+                      ]
+                    ],
+                    2
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "page-title-actions" },
+            [
+              _vm.numPestaña == 1 && _vm.mostrarBtnVolver
+                ? [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
+                        on: { click: _vm.volverTabla }
+                      },
+                      [_vm._v("Volver")]
+                    )
+                  ]
+                : _vm._e()
+            ],
+            2
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "my_modal_eliminarCepa",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          },
-          on: { "before-open": _vm.beforeOpen }
-        },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Cepa Microbiana")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal_eliminarCepa")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal_eliminarCepa")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: { click: _vm.eliminarCepa }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
-      )
+      _vm.numPestaña == 1
+        ? [
+            _c("router-view", {
+              attrs: {
+                tipoG: 3,
+                tipo: "levadura",
+                detailRowComponent: "my-detail-row-h-l-a",
+                titulo: "LEVADURAS",
+                tituloCepa: _vm.tituloCepa,
+                FieldDefs: _vm.fields
+              },
+              on: { cambiarTipo: _vm.cambiarTipo }
+            })
+          ]
+        : [_vm._m(3)]
     ],
-    1
+    2
   )
 }
 var staticRenderFns = [
@@ -244,25 +243,47 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header-tab card-header" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "card-header-title font-size-lg text-capitalize font-weight-normal"
-        },
-        [
-          _c("i", {
-            staticClass:
-              "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
-          }),
-          _vm._v(
-            "\n        Tabla Dinamica Cepas Microbianas - Levaduras\n      "
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "btn-actions-pane-right actions-icon-btn" })
+    return _c("div", { staticClass: "page-title-icon" }, [
+      _c("i", { staticClass: "pe-7s-science icon-gradient bg-mean-fruit" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "breadcrumb-item" }, [
+      _c("a", [_c("i", { staticClass: "fa fa-home" })])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "breadcrumb-item" }, [
+      _c("a", [_vm._v("Cepas Microbianas")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "main-card mb-3 card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-md-8" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "alert alert-danger mt-4 text-center",
+                  attrs: { role: "alert" }
+                },
+                [_vm._v("Ya has ingresado desde otra pestaña del navegador!!")]
+              )
+            ])
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -272,18 +293,18 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue ***!
+  \*****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true& */ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true&");
-/* harmony import */ var _TablaLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaLevadurasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CepasLevadurasComponent.vue?vue&type=template&id=34ebad38& */ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38&");
+/* harmony import */ var _CepasLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CepasLevadurasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -292,50 +313,50 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TablaLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CepasLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "4ac2288c",
+  null,
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue"
+component.options.__file = "resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************/
+/***/ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaLevadurasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CepasLevadurasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasLevadurasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true&":
-/*!*******************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true& ***!
-  \*******************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38& ***!
+  \************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue?vue&type=template&id=4ac2288c&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CepasLevadurasComponent.vue?vue&type=template&id=34ebad38& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue?vue&type=template&id=34ebad38&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaLevadurasComponent_vue_vue_type_template_id_4ac2288c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CepasLevadurasComponent_vue_vue_type_template_id_34ebad38___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -386,15 +407,94 @@ __webpack_require__.r(__webpack_exports__);
   title: "Familia",
   titleClass: "text-center"
 }, {
-  name: "__component:checkboxs-publicar",
+  name: "__component:checkboxs_publicar_levaduras",
   title: "Publicar",
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "__component:acciones_cepas",
+  name: "__component:acciones_cepas_levaduras",
   title: "Acciones",
   titleClass: "text-center"
 }]);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/bloquearPestañas.js":
+/*!*************************************************!*\
+  !*** ./resources/js/mixins/bloquearPestañas.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var bloquearPestañasMixin = function bloquearPestañasMixin(tipo) {
+  return {
+    data: function data() {
+      return {
+        numPestañas: 0,
+        numPestaña: 0
+      };
+    },
+    methods: {
+      obtenerValorPestañas: function obtenerValorPestaAs() {
+        var value = this.$ls.get(tipo);
+
+        if (value) {
+          this.numPestañas = value.numPestañas + 1;
+          this.numPestaña = this.numPestañas;
+          this.$ls.set(tipo, {
+            numPestañas: this.numPestañas,
+            numPestañaSaliente: 0
+          });
+        } else {
+          this.numPestañas = 1;
+          this.numPestaña = 1;
+          this.$ls.set(tipo, {
+            numPestañas: 1,
+            numPestañaSaliente: 0
+          });
+        }
+      },
+      modificarValorPestañas: function modificarValorPestaAs(val, oldVal) {
+        this.numPestañas = val.numPestañas;
+
+        if (val.numPestañas < oldVal.numPestañas) {
+          if (val.numPestañaSaliente < this.numPestaña) {
+            this.numPestaña = this.numPestaña - 1;
+          }
+        }
+      },
+      verificar: function verificar() {
+        if (this.numPestañas === 1) {
+          this.$ls.remove(tipo);
+        } else {
+          this.$ls.set(tipo, {
+            numPestañas: --this.numPestañas,
+            numPestañaSaliente: this.numPestaña
+          });
+        }
+      },
+      beforeunload: function beforeunload() {
+        this.verificar();
+      }
+    },
+    mounted: function mounted() {
+      this.obtenerValorPestañas();
+      window.addEventListener("beforeunload", this.beforeunload);
+    },
+    created: function created() {
+      this.$ls.on(tipo, this.modificarValorPestañas);
+    },
+    beforeDestroy: function beforeDestroy() {
+      this.verificar();
+      this.$ls.off(tipo, this.modificarValorPestañas);
+      window.removeEventListener("beforeunload", this.beforeunload);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (bloquearPestañasMixin);
 
 /***/ })
 

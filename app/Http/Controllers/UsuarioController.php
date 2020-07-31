@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UsuarioController extends Controller
 {
-    public function index()
-    {
-        return view('usuarios');
-    }
-
     public function store(Request $request)
     {
         $rules = [

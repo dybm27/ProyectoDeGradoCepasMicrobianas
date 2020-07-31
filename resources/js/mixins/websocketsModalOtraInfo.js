@@ -8,7 +8,7 @@ const websocketsModalOtraInfo = tipoInfo => ({
                     tipo: this.modal.tipo
                 }
             );
-            this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+            this.$events.fire("eliminarMiBloqueo" + tipoInfo, {
                 id: this.id,
                 tipo: this.modal.tipo
             });
@@ -21,7 +21,7 @@ const websocketsModalOtraInfo = tipoInfo => ({
                     tipo: this.modal.tipo
                 }
             );
-            this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+            this.$events.fire("eliminarMiBloqueo" + tipoInfo, {
                 id: this.id,
                 tipo: this.modal.tipo
             });

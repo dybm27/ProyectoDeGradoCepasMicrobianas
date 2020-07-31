@@ -59,7 +59,7 @@ export default {
           tipo: "especie",
         }
       );
-      this.$events.fire("pushMisBloqueosCepasInfo", {
+      this.$events.fire("agregarMiBloqueoCepasInfo", {
         id: data.id,
         idUser: this.auth.id,
         tipo: "especie",

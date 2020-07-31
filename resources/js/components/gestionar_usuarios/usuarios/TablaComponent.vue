@@ -58,6 +58,7 @@
 import FieldDefs from "./columnas-usuarios";
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
+import websocketsTabla from "../../../mixins/websocketsTabla";
 import MyVuetable from "../../vuetable/MyVuetableComponent.vue";
 export default {
   components: { MyVuetable },
@@ -83,7 +84,7 @@ export default {
       return false;
     },
   },
-  mixins: [Toastr],
+  mixins: [Toastr, websocketsTabla("Usuario")],
   methods: {
     ...vuex.mapActions("usuarios", ["accionUsuario"]),
     beforeOpenEliminar(data) {
@@ -95,53 +96,32 @@ export default {
         .delete(`/usuario/eliminar/${this.id}`)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr(
+              "Eliminar Usuario",
+              "Usuario eliminado con exito!!",
+              "success",
+              5000
+            );
+            this.accionUsuario({ tipo: "eliminar", data: res.data });
+            this.$modal.hide("modal_eliminar_usuario");
+            this.actualizarTabla();
           }
-          this.bloquearBtnModal = false;
-          this.toastr(
-            "Eliminar Usuario",
-            "Usuario eliminado con exito!!",
-            "success",
-            5000
-          );
-          this.accionUsuario({ tipo: "eliminar", data: res.data });
-          this.$modal.hide("modal_eliminar_usuario");
-          this.actualizarTabla();
         })
         .catch((error) => {
           this.bloquearBtnModal = false;
           this.toastr("Error!!!", "", "error", 4000);
         });
     },
-    closeEliminar() {
-      window.Echo.private("desbloquearBtnsUsuario").whisper(
-        "desbloquearBtnsUsuario",
-        {
-          id: this.id,
-        }
-      );
-      this.$events.fire("spliceMisBloqueosUsuario", {
-        id: this.id,
-      });
-    },
-    actualizarTabla() {
-      if (this.mostrarTabla) {
-        if (this.$refs.tabla) {
-          this.$refs.tabla.refreshDatos();
-        }
-      }
-    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-    this.$events.on("actualizartablaUsuario", (e) => this.actualizarTabla());
-  },
-  destroyed() {
-    this.$events.off("actualizartablaUsuario");
   },
 };
 </script>

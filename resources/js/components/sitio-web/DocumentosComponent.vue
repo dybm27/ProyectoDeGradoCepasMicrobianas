@@ -71,10 +71,10 @@ export default {
       "accionProyecto"
     ]),
     ruta(ruta) {
-      if (ruta.includes("proyecto")) {
-        this.tipo = "Tabla Proyectos";
-      } else {
+      if (ruta.includes("publicaciones")) {
         this.tipo = "Tabla Publicaciones";
+      } else {
+        this.tipo = "Tabla Proyectos";
       }
     },
     cambiarTipo(tipo) {

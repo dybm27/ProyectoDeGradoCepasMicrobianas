@@ -56,6 +56,7 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
                 );
             })
             .leaving(data => {
+                console.log("leaving");
                 this.borrarUsuario(data.user);
             });
     },
@@ -67,19 +68,10 @@ const websocketsSinTablaMixin = (tipo, tipoM) => ({
                 this.bloquear(e.arrayUsers);
             }
         );
-        window.Echo.private("borrarBloqueo" + tipoM).listenForWhisper(
-            "borrarBloqueo" + tipoM,
-            e => {
-                this.borrarUsuario(e.user);
-            }
-        );
     },
     beforeDestroy() {
         window.Echo.leave(tipo);
         window.Echo.leave("bloquear" + tipoM);
-    },
-    destroyed() {
-        window.Echo.leave("borrarBloqueo" + tipoM);
     }
 });
 export default websocketsSinTablaMixin;

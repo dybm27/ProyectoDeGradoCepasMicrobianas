@@ -112,21 +112,22 @@ export default {
         .put("/quienes-somos/objetivos/cambiar", this.parametros)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.accionCambiarQuienesSomos({
+              data: res.data,
+              tipo: "objetivos",
+            });
+            this.toastr(
+              "Cambiar Objetivos",
+              "Objetivos cambiados con exito",
+              "success"
+            );
           }
-          this.accionCambiarQuienesSomos({
-            data: res.data,
-            tipo: "objetivos",
-          });
-          this.toastr(
-            "Cambiar Objetivos",
-            "Objetivos cambiados con exito",
-            "success"
-          );
         });
     },
     aceptarContenido(data) {

@@ -97,6 +97,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -128,35 +133,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.parametros.imagen === this.info.imagen) {
         axios.put("/login/imagen/".concat(this.info.id), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
-          }
-
-          _this.bloquearBtn = false;
-
-          if (res.data.mostrar) {
-            res.data.mostrar = 1;
           } else {
-            res.data.mostrar = 0;
+            _this.bloquearBtn = false;
+
+            if (res.data.mostrar) {
+              res.data.mostrar = 1;
+            } else {
+              res.data.mostrar = 0;
+            }
+
+            _this.accionImagenLogin({
+              tipo: "editar",
+              data: res.data
+            });
+
+            _this.$emit("mostrarFrom");
+
+            _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
           }
-
-          _this.accionImagenLogin({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("mostrarFrom");
-
-          _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
-            _this.errors = error.response.data;
-
-            _this.toastr("Error!!", error.response.data.mostrar, "error");
+          if (error.response.status === 422) {
+            _this.errors = error.response.data.errors;
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         var form = new FormData();
@@ -177,29 +181,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Editar Imagen", "Imagen editada con exito!!", "success");
+
+            _this.accionImagenLogin({
+              tipo: "editar",
+              data: res.data
+            });
+
+            _this.$emit("mostrarFrom");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Imagen", "Imagen editada con exito!!", "success");
-
-          _this.accionImagenLogin({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("mostrarFrom");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
-            _this.errors = error.response.data;
-
-            _this.toastr("Error!!", error.response.data.mostrar, "error");
+          if (error.response.status === 422) {
+            _this.errors = error.response.data.errors;
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -389,7 +392,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       idImagen: 0,
       from: false,
       bloqueos: [],
-      misBloqueos: []
+      miBloqueo: null
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("imagenesLogin")],
@@ -400,7 +403,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         id: id,
         idUser: this.auth.id
       });
-      this.$events.fire("pushMiBloqueoImgLogin", {
+      this.$events.fire("agregarMiBloqueoImgLogin", {
         id: id,
         idUser: this.auth.id
       });
@@ -411,7 +414,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       window.Echo["private"]("desbloquearBtnImgLogin").whisper("desbloquearBtnImgLogin", {
         id: this.idImagen
       });
-      this.$events.fire("spliceMiBloqueoImgLogin", {
+      this.$events.fire("eliminarMiBloqueoImgLogin", {
         id: this.idImagen
       });
       this.idImagen = 0;
@@ -432,17 +435,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$events.fire(e.id + "-desbloquearBtnImgLogin");
     },
     // guardar mis bloqueos
-    pushMiBloqueo: function pushMiBloqueo(e) {
-      this.misBloqueos.push({
+    agregarMiBloqueo: function agregarMiBloqueo(e) {
+      this.miBloqueo = {
         idUser: e.idUser,
         id: e.id
-      });
+      };
     },
-    spliceMiBloqueo: function spliceMiBloqueo(e) {
+    eliminarMiBloqueo: function eliminarMiBloqueo(e) {
       if (e.id != 0) {
-        this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-          return data.id === e.id;
-        }), 1);
+        this.miBloqueo = null;
       }
     },
     //borrar bloqueos
@@ -463,7 +464,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     enviarBloqueo: function enviarBloqueo() {
       window.Echo["private"]("recibirBtnImgLogin").whisper("recibirBtnImgLogin", {
-        bloqueos: this.misBloqueos
+        miBloqueo: this.miBloqueo
       });
     }
   }),
@@ -471,7 +472,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this = this;
 
     window.Echo.join("ImgLogin").joining(function (data) {
-      if (_this.misBloqueos.length > 0) {
+      if (_this.miBloqueo) {
         _this.enviarBloqueo();
       }
     }).leaving(function (data) {
@@ -498,20 +499,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     });
     window.Echo["private"]("recibirBtnImgLogin").listenForWhisper("recibirBtnImgLogin", function (e) {
-      if (e.bloqueos.length > 0) {
-        _this2.bloquearBtn(e.bloqueos[0]);
+      if (e.miBloqueo) {
+        _this2.bloquearBtn(e.miBloqueo);
       }
     });
-    this.$events.$on("pushMiBloqueoImgLogin", function (e) {
-      _this2.pushMiBloqueo(e);
+    this.$events.$on("agregarMiBloqueoImgLogin", function (e) {
+      _this2.agregarMiBloqueo(e);
     });
-    this.$events.$on("spliceMiBloqueoImgLogin", function (e) {
-      _this2.spliceMiBloqueo(e);
+    this.$events.$on("eliminarMiBloqueoImgLogin", function (e) {
+      _this2.eliminarMiBloqueo(e);
     });
   },
   destroyed: function destroyed() {
-    this.$events.$off("pushMiBloqueoImgLogin");
-    this.$events.$off("spliceMiBloqueoImgLogin");
+    this.$events.$off("agregarMiBloqueoImgLogin");
+    this.$events.$off("eliminarMiBloqueoImgLogin");
   },
   beforeDestroy: function beforeDestroy() {
     window.Echo.leave("ImgLogin");
@@ -1023,6 +1024,21 @@ var render = function() {
                 }
               },
               [
+                _vm.errors != ""
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "alert alert-danger" },
+                        _vm._l(_vm.errors, function(item, index) {
+                          return _c("p", { key: index }, [
+                            _vm._v(_vm._s(item[0]))
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("div", { staticClass: "position-relative form-group" }, [
                   _c("label", { attrs: { for: "titulo" } }, [_vm._v("Título")]),
                   _vm._v(" "),
@@ -1181,7 +1197,8 @@ var render = function() {
                   },
                   [_vm._v("Editar")]
                 )
-              ]
+              ],
+              2
             )
           ])
         ])

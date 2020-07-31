@@ -100,21 +100,22 @@ export default {
         })
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.$modal.hide("modal_eliminar_publicacion");
+            this.toastr(
+              "Eliminar Publicacion",
+              "Publicacion eliminado con exito!!",
+              "success"
+            );
+            this.accionPublicacion({ tipo: "eliminar", data: res.data });
+            this.actualizarTabla();
           }
-          this.bloquearBtnModal = false;
-          this.$modal.hide("modal_eliminar_publicacion");
-          this.toastr(
-            "Eliminar Publicacion",
-            "Publicacion eliminado con exito!!",
-            "success"
-          );
-          this.accionPublicacion({ tipo: "eliminar", data: res.data });
-          this.actualizarTabla();
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

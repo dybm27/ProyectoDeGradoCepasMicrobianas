@@ -208,71 +208,65 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Publicacion",
+                "Publicacion agregada con exito!!",
+                "success"
+              );
+              this.accionPublicacion({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Agregar Publicacion",
-              "Publicacion agregada con exito!!",
-              "success"
-            );
-            this.accionPublicacion({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/documentos/${this.idPublicacion}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Publicacion",
+                "Publicacion editada con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsPublicacion").whisper(
+                "desbloquearBtnsPublicacion",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoPublicacion", {
+                id: res.data.id,
+              });
+              this.accionPublicacion({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Publicacion",
-              "Publicacion editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsPublicacion").whisper(
-              "desbloquearBtnsPublicacion",
-              {
-                id: res.data.id,
-              }
-            );
-            window.Echo.private("desbloquearCheckPublicacion").whisper(
-              "desbloquearCheckPublicacion",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("spliceMisBloqueosPublicacion", {
-              id: res.data.id,
-            });
-            this.accionPublicacion({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

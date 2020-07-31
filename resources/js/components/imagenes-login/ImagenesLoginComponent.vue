@@ -84,7 +84,7 @@ export default {
       idImagen: 0,
       from: false,
       bloqueos: [],
-      misBloqueos: [],
+      miBloqueo: null,
     };
   },
   mixins: [bloquearPestañasMixin("imagenesLogin")],
@@ -102,7 +102,7 @@ export default {
           idUser: this.auth.id,
         }
       );
-      this.$events.fire("pushMiBloqueoImgLogin", {
+      this.$events.fire("agregarMiBloqueoImgLogin", {
         id: id,
         idUser: this.auth.id,
       });
@@ -116,7 +116,7 @@ export default {
           id: this.idImagen,
         }
       );
-      this.$events.fire("spliceMiBloqueoImgLogin", {
+      this.$events.fire("eliminarMiBloqueoImgLogin", {
         id: this.idImagen,
       });
       this.idImagen = 0;
@@ -135,18 +135,15 @@ export default {
       this.$events.fire(e.id + "-desbloquearBtnImgLogin");
     },
     // guardar mis bloqueos
-    pushMiBloqueo(e) {
-      this.misBloqueos.push({
+    agregarMiBloqueo(e) {
+      this.miBloqueo = {
         idUser: e.idUser,
         id: e.id,
-      });
+      };
     },
-    spliceMiBloqueo(e) {
+    eliminarMiBloqueo(e) {
       if (e.id != 0) {
-        this.misBloqueos.splice(
-          this.misBloqueos.findIndex((data) => data.id === e.id),
-          1
-        );
+        this.miBloqueo = null;
       }
     },
     //borrar bloqueos
@@ -164,14 +161,14 @@ export default {
     },
     enviarBloqueo() {
       window.Echo.private("recibirBtnImgLogin").whisper("recibirBtnImgLogin", {
-        bloqueos: this.misBloqueos,
+        miBloqueo: this.miBloqueo,
       });
     },
   },
   mounted() {
     window.Echo.join("ImgLogin")
       .joining((data) => {
-        if (this.misBloqueos.length > 0) {
+        if (this.miBloqueo) {
           this.enviarBloqueo();
         }
       })
@@ -203,21 +200,21 @@ export default {
     window.Echo.private("recibirBtnImgLogin").listenForWhisper(
       "recibirBtnImgLogin",
       (e) => {
-        if (e.bloqueos.length > 0) {
-          this.bloquearBtn(e.bloqueos[0]);
+        if (e.miBloqueo) {
+          this.bloquearBtn(e.miBloqueo);
         }
       }
     );
-    this.$events.$on("pushMiBloqueoImgLogin", (e) => {
-      this.pushMiBloqueo(e);
+    this.$events.$on("agregarMiBloqueoImgLogin", (e) => {
+      this.agregarMiBloqueo(e);
     });
-    this.$events.$on("spliceMiBloqueoImgLogin", (e) => {
-      this.spliceMiBloqueo(e);
+    this.$events.$on("eliminarMiBloqueoImgLogin", (e) => {
+      this.eliminarMiBloqueo(e);
     });
   },
   destroyed() {
-    this.$events.$off("pushMiBloqueoImgLogin");
-    this.$events.$off("spliceMiBloqueoImgLogin");
+    this.$events.$off("agregarMiBloqueoImgLogin");
+    this.$events.$off("eliminarMiBloqueoImgLogin");
   },
   beforeDestroy() {
     window.Echo.leave("ImgLogin");

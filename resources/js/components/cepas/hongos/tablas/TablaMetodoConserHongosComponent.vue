@@ -90,21 +90,22 @@ export default {
         .then((res) => {
           this.bloquearBtnModal = false;
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.refrescarTabla = true;
+            this.accionEliminarCaract({ tipo: "metodo", data: res.data });
+            this.toastr(
+              "Eliminar Cepa",
+              "Cepa eliminada con exito!!",
+              "success",
+              5000
+            );
+            this.$modal.hide("my_modal_eliminar_metodo");
           }
-          this.refrescarTabla = true;
-          this.accionEliminarCaract({ tipo: "metodo", data: res.data });
-          this.toastr(
-            "Eliminar Cepa",
-            "Cepa eliminada con exito!!",
-            "success",
-            5000
-          );
-          this.$modal.hide("my_modal_eliminar_metodo");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

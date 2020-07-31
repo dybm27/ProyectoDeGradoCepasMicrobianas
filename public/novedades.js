@@ -291,67 +291,65 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.tituloForm === "Agregar Novedad") {
         axios.post("/publicidad", this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Agregar Novedad", "Novedad agregada con exito!!", "success");
+
+            _this.accionNovedad({
+              tipo: "agregar",
+              data: res.data
+            });
+
+            _this.$emit("cambiarVariableFormulario");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.toastr("Agregar Novedad", "Novedad agregada con exito!!", "success");
-
-          _this.accionNovedad({
-            tipo: "agregar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/publicidad/".concat(this.idNovedad), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Editar Novedad", "Novedad editada con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsNovedad").whisper("desbloquearBtnsNovedad", {
+              id: res.data.id
+            });
+            window.Echo["private"]("desbloquearCheckNovedad").whisper("desbloquearCheckNovedad", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoNovedad", {
+              id: res.data.id
+            });
+
+            _this.accionNovedad({
+              tipo: "editar",
+              data: res.data
+            });
+
+            _this.$emit("cambiarVariableFormulario");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Novedad", "Novedad editada con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsNovedad").whisper("desbloquearBtnsNovedad", {
-            id: res.data.id
-          });
-          window.Echo["private"]("desbloquearCheckNovedad").whisper("desbloquearCheckNovedad", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("spliceMisBloqueosNovedad", {
-            id: res.data.id
-          });
-
-          _this.accionNovedad({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -593,23 +591,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Eliminar Novedad", "Novedad eliminada con exito!!", "success");
+
+          _this.accionNovedad({
+            tipo: "eliminar",
+            data: res.data
+          });
+
+          _this.actualizarTabla();
+
+          _this.$modal.hide("modal_eliminar_novedad");
         }
-
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Eliminar Novedad", "Novedad eliminada con exito!!", "success");
-
-        _this.accionNovedad({
-          tipo: "eliminar",
-          data: res.data
-        });
-
-        _this.actualizarTabla();
-
-        _this.$modal.hide("modal_eliminar_novedad");
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 

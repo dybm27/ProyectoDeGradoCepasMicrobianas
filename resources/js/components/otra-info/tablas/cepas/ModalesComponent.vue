@@ -213,28 +213,29 @@ export default {
         .post("/info-cepas/agregar", this.modal)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.accionAgregarTipoCepa({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.$modal.hide("modal_agregar_tipo_cepa");
+            this.toastr(
+              `Agregar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
+              "success"
+            );
           }
-          this.bloquearBtnModal = false;
-          this.accionAgregarTipoCepa({
-            info: res.data,
-            tipo: this.modal.tipo,
-          });
-          this.$events.fire("actualizartabla" + this.modal.tipo);
-          this.$modal.hide("modal_agregar_tipo_cepa");
-          this.toastr(
-            `Agregar ${this.primeraMayus(this.modal.tipo)}`,
-            `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
-            "success"
-          );
         })
         .catch((error) => {
           this.bloquearBtnModal = false;
-          if (error.response) {
+          if (error.response.status === 422) {
             this.errors = error.response.data.errors;
           }
           this.toastr("Error!!!!", "", "error");
@@ -259,30 +260,31 @@ export default {
         .put(`/info-cepas/editar/${this.id}`, this.modal)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.accionEditarTipoCepa({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.toastr(
+              `Editar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
+              "success",
+              5000
+            );
+            this.$modal.hide("modal_editar_tipo_cepa");
           }
-          this.bloquearBtnModal = false;
-          this.accionEditarTipoCepa({
-            info: res.data,
-            tipo: this.modal.tipo,
-          });
-          this.$events.fire("actualizartabla" + this.modal.tipo);
-          this.toastr(
-            `Editar ${this.primeraMayus(this.modal.tipo)}`,
-            `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
-            "success",
-            5000
-          );
-          this.$modal.hide("modal_editar_tipo_cepa");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;
-          if (error.response) {
-            this.errors = error.response.data;
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
           }
           this.toastr("Error!!!", "", "error", 4000);
         });
@@ -299,43 +301,44 @@ export default {
         })
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
-          }
-          this.bloquearBtnModal = false;
-          if (res.data === "negativo") {
-            this.toastr(
-              "Precaución!!",
-              "El/La " +
-                this.modal.tipo +
-                " cuenta con cepas vinculadas, favor eliminarlas",
-              "warning",
-              8000
-            );
-          } else if (res.data === "negativo1") {
-            this.toastr(
-              "Precaución!!",
-              "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas",
-              "warning",
-              8000
-            );
           } else {
-            this.accionEliminarTipoCepa({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.toastr(
-              `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
-              `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
-              "success",
-              5000
-            );
-            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.bloquearBtnModal = false;
+            if (res.data === "negativo") {
+              this.toastr(
+                "Precaución!!",
+                "El/La " +
+                  this.modal.tipo +
+                  " cuenta con cepas vinculadas, favor eliminarlas",
+                "warning",
+                8000
+              );
+            } else if (res.data === "negativo1") {
+              this.toastr(
+                "Precaución!!",
+                "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas",
+                "warning",
+                8000
+              );
+            } else {
+              this.accionEliminarTipoCepa({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.toastr(
+                `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
+                `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
+                "success",
+                5000
+              );
+              this.$events.fire("actualizartabla" + this.modal.tipo);
+            }
+            this.$modal.hide("modal_eliminar_tipo_cepa");
           }
-          this.$modal.hide("modal_eliminar_tipo_cepa");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

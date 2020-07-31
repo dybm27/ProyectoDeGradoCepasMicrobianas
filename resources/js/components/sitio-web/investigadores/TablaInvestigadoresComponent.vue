@@ -96,21 +96,22 @@ export default {
         .delete(`/investigadores/${this.id}`)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.accionInvestigador({ tipo: "eliminar", data: res.data });
+            this.$modal.hide("modal_eliminar_investigador");
+            this.toastr(
+              "Eliminar Investigador",
+              "Investigador eliminado con exito!!",
+              "success"
+            );
+            this.actualizarTabla();
           }
-          this.bloquearBtnModal = false;
-          this.accionInvestigador({ tipo: "eliminar", data: res.data });
-          this.$modal.hide("modal_eliminar_investigador");
-          this.toastr(
-            "Eliminar Investigador",
-            "Investigador eliminado con exito!!",
-            "success"
-          );
-          this.actualizarTabla();
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

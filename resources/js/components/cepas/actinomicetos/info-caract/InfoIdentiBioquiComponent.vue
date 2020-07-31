@@ -99,21 +99,25 @@ export default {
         .delete(`/cepas/actinomiceto/identi-bioqui/${this.getIdentiBioqui.id}`)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.mostrarForm = false;
+            this.$modal.hide("my_modal");
+            this.accionEliminarCaract({
+              tipo: "identi_bioqui",
+              data: res.data,
+            });
+            this.toastr(
+              "Eliminar Característica",
+              "Identificación Bioquímica eliminadas con exito!!",
+              "success"
+            );
           }
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "identi_bioqui", data: res.data });
-          this.toastr(
-            "Eliminar Característica",
-            "Identificación Bioquímica eliminadas con exito!!",
-            "success"
-          );
         })
         .catch((error) => {
           this.toastr("Error!!", "", "error");

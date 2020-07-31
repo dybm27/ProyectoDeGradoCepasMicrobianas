@@ -1,18 +1,18 @@
 const websocketsCheck = (tipoM, tipoP) => ({
     methods: {
-        bloquearCheckNoticia(data) {
+        bloquearCheck(data) {
             this.disabled = true;
         },
-        desbloquearCheckNoticia(data) {
+        desbloquearCheck(data) {
             this.disabled = false;
         },
         crearEventosCheck() {
             this.verificarPublicar(this.rowData.publicar);
             this.$events.$on(this.rowData.id + "-bloquearCheck" + tipoM, e =>
-                this.bloquearCheckNoticia()
+                this.bloquearCheck()
             );
             this.$events.$on(this.rowData.id + "-desbloquearCheck" + tipoM, e =>
-                this.desbloquearCheckNoticia()
+                this.desbloquearCheck()
             );
             this.$events.$on(
                 this.rowData.id + "-actualizarPublicar" + tipoM,

@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CalendarioController extends Controller
 {
-    public function index()
-    {
-        return view('calendario');
-    }
-
     public function store(Request $request)
     {
         $rules = [

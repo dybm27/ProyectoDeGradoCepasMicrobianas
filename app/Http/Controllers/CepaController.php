@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actinomiceto;
 use App\Bacteria;
 use App\Cepa;
+use App\Events\CepasEvent;
 use App\HongoFilamentoso;
 use App\Levadura;
 use App\Seguimiento;
@@ -15,31 +16,6 @@ use PDF;
 
 class CepaController extends Controller
 {
-    public function index()
-    {
-        return view('cepa.index');
-    }
-
-    public function bacterias()
-    {
-        return view('cepa.bacterias');
-    }
-
-    public function levaduras()
-    {
-        return view('cepa.levaduras');
-    }
-
-    public function hongos()
-    {
-        return view('cepa.hongos');
-    }
-
-    public function actinomicetos()
-    {
-        return view('cepa.actinomicetos');
-    }
-
     public function store(Request $request)
     {
         //-- bail (si una de las reglas de validacion es negativa, deja de ejecutar las siguientes)
@@ -119,7 +95,6 @@ class CepaController extends Controller
                 $actinomiceto->save();
                 break;
         }
-
         $this->crearSeguimiento("Agregó la Cepa: " . $cepa->codigo);
 
         return $cepa;
@@ -198,6 +173,7 @@ class CepaController extends Controller
         }
         $cepa->save();
 
+        broadcast(new CepasEvent($cepa, 'editar'))->toOthers();
         $this->crearSeguimiento("Editó la Cepa: " . $codigo);
 
         return $cepa;
@@ -209,6 +185,7 @@ class CepaController extends Controller
         if ($this->validarEliminar($cepa)) {
             return 'negativo';
         } else {
+            broadcast(new CepasEvent($cepa, 'eliminar'))->toOthers();
             $cepa->delete();
             $this->crearSeguimiento("Eliminó la Cepa: " . $cepa->codigo);
             return $cepa;

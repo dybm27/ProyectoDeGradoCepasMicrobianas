@@ -241,7 +241,19 @@ export default {
       ],
       calendarWeekends: true,
       googleCalendarApiKey: process.env.MIX_GOOGLE_KEY,
-      eventos: { url: "/info-panel/eventos", className: "eventos" },
+      eventos: {
+        url: "/info-panel/eventos",
+        className: "eventos",
+        failure: function (error) {
+          if (error.xhr.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+        },
+      },
       eventSources: [
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
@@ -255,16 +267,43 @@ export default {
           url: "/info-panel/eventos-metodos-bacterias",
           className: "eventos-metodos-bacterias",
           color: "#16aaff",
+          failure: function (error) {
+            if (error.xhr.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+          },
         },
         {
           url: "/info-panel/eventos-metodos-levaduras",
           className: "eventos-metodos-levaduras",
           color: "#5EE220",
+          failure: function (error) {
+            if (error.xhr.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+          },
         },
         {
           url: "/info-panel/eventos-metodos-hongos",
           className: "eventos-metodos-hongos",
           color: "#794c8a",
+          failure: function (error) {
+            if (error.xhr.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+          },
         },
       ],
       header: {
@@ -432,25 +471,26 @@ export default {
             .post("eventos/agregar", this.modal)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
-              }
-              this.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
+              } else {
+                this.bloquearBtnModal = false;
+                calendarApi.refetchEvents();
 
-              this.toastr(
-                "Agregar Evento",
-                "El Evento fue agregado con exito!!",
-                "success"
-              );
-              this.$modal.hide("agregar-editar_eliminar-evento");
+                this.toastr(
+                  "Agregar Evento",
+                  "El Evento fue agregado con exito!!",
+                  "success"
+                );
+                this.$modal.hide("agregar-editar_eliminar-evento");
+              }
             })
             .catch((error) => {
               this.bloquearBtnModal = false;
-              if (error.response) {
+              if (error.response.status === 422) {
                 this.errors = error.response.data.errors;
               }
             });
@@ -460,24 +500,25 @@ export default {
             .put(`eventos/editar/${this.modal.id}`, this.modal)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                calendarApi.refetchEvents();
+                this.toastr(
+                  "Editar Evento",
+                  "El Evento fue editado con exito!!",
+                  "success"
+                );
+                this.$modal.hide("agregar-editar_eliminar-evento");
               }
-              this.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
-              this.toastr(
-                "Editar Evento",
-                "El Evento fue editado con exito!!",
-                "success"
-              );
-              this.$modal.hide("agregar-editar_eliminar-evento");
             })
             .catch((error) => {
               this.bloquearBtnModal = false;
-              if (error.response) {
+              if (error.response.status === 422) {
                 this.errors = error.response.data.errors;
               }
             });
@@ -487,24 +528,25 @@ export default {
             .delete(`eventos/eliminar/${this.modal.id}`)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                calendarApi.refetchEvents();
+                this.toastr(
+                  "Eliminar Evento",
+                  "El Evento fue eliminado con exito!!",
+                  "success"
+                );
+                this.$modal.hide("agregar-editar_eliminar-evento");
               }
-              this.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
-              this.toastr(
-                "Eliminar Evento",
-                "El Evento fue eliminado con exito!!",
-                "success"
-              );
-              this.$modal.hide("agregar-editar_eliminar-evento");
             })
             .catch((error) => {
               this.bloquearBtnModal = false;
-              if (error.response) {
+              if (error.response.status === 422) {
                 this.errors = error.response.data.errors;
               }
             });

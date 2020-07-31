@@ -304,69 +304,62 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Agregar Proyecto", "Proyecto agregado con exito!!", "success");
+
+            _this.accionProyecto({
+              tipo: "agregar",
+              data: res.data
+            });
+
+            _this.$emit("cambiarVariableCroppieulario");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.toastr("Agregar Proyecto", "Proyecto agregado con exito!!", "success");
-
-          _this.accionProyecto({
-            tipo: "agregar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableCroppieulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
-            _this.errors = [];
+          if (error.response.status === 422) {
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/documentos/".concat(this.idProyecto), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Editar Proyecto", "Proyecto editado con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsProyecto").whisper("desbloquearBtnsProyecto", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoProyecto", {
+              id: res.data.id
+            });
+
+            _this.accionProyecto({
+              tipo: "editar",
+              data: res.data
+            });
+
+            _this.$emit("cambiarVariableCroppieulario");
           }
-
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Proyecto", "Proyecto editado con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsProyecto").whisper("desbloquearBtnsProyecto", {
-            id: res.data.id
-          });
-          window.Echo["private"]("desbloquearCheckProyecto").whisper("desbloquearCheckProyecto", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("spliceMisBloqueosProyecto", {
-            id: res.data.id
-          });
-
-          _this.accionProyecto({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableCroppieulario");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
-            _this.errors = [];
+          if (error.response.status === 422) {
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -605,23 +598,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.$modal.hide("modal_eliminar_proyecto");
+
+          _this.toastr("Eliminar Proyecto", "Proyecto eliminado con exito!!", "success");
+
+          _this.accionProyecto({
+            tipo: "eliminar",
+            data: res.data
+          });
+
+          _this.actualizarTabla();
         }
-
-        _this.bloquearBtnModal = false;
-
-        _this.$modal.hide("modal_eliminar_proyecto");
-
-        _this.toastr("Eliminar Proyecto", "Proyecto eliminado con exito!!", "success");
-
-        _this.accionProyecto({
-          tipo: "eliminar",
-          data: res.data
-        });
-
-        _this.actualizarTabla();
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 

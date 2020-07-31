@@ -185,27 +185,28 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Noticia",
+                "Noticia agregada con exito!!",
+                "success"
+              );
+              this.accionNoticia({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Agregar Noticia",
-              "Noticia agregada con exito!!",
-              "success"
-            );
-            this.accionNoticia({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         if (this.parametros.imagen === this.info.imagen) {
@@ -213,42 +214,37 @@ export default {
             .put(`/publicidad/${this.idNoticia}`, this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Editar Noticia",
+                  "Noticia editada con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsNoticia").whisper(
+                  "desbloquearBtnsNoticia",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoNoticia", {
+                  id: res.data.id,
+                });
+                this.accionNoticia({ tipo: "editar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
               }
-              this.bloquearBtn = false;
-              this.toastr(
-                "Editar Noticia",
-                "Noticia editada con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsNoticia").whisper(
-                "desbloquearBtnsNoticia",
-                {
-                  id: res.data.id,
-                }
-              );
-              window.Echo.private("desbloquearCheckNoticia").whisper(
-                "desbloquearCheckNoticia",
-                {
-                  id: res.data.id,
-                }
-              );
-              this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id,
-              });
-              this.accionNoticia({ tipo: "editar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              if (error.response) {
+              if (error.response.status === 422) {
                 this.errors = error.response.data.errors;
-                this.toastr("Error!!", "", "error");
               }
+              this.toastr("Error!!", "", "error");
             });
         } else {
           let form = new FormData();
@@ -272,37 +268,38 @@ export default {
               },
             })
             .then((res) => {
-              this.toastr(
-                "Editar Noticia",
-                "Noticia editada con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsNoticia").whisper(
-                "desbloquearBtnsNoticia",
-                {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Editar Noticia",
+                  "Noticia editada con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsNoticia").whisper(
+                  "desbloquearBtnsNoticia",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoNoticia", {
                   id: res.data.id,
-                }
-              );
-              window.Echo.private("desbloquearCheckNoticia").whisper(
-                "desbloquearCheckNoticia",
-                {
-                  id: res.data.id,
-                }
-              );
-              this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id,
-              });
-              this.accionNoticia({ tipo: "editar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
+                });
+                this.accionNoticia({ tipo: "editar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+              }
             })
             .catch((error) => {
-              if (error.response) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
-                );
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
               }
+              this.toastr("Error!!", "", "error");
             });
         }
       }

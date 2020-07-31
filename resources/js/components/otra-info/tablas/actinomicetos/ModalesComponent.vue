@@ -172,28 +172,29 @@ export default {
         .post("/info-caract-actinomicetos/agregar", this.modal)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.accionAgregarTipoCaractActinomiceto({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.$modal.hide("modal_agregar_tipo_actinomiceto");
+            this.toastr(
+              `Agregar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
+              "success"
+            );
           }
-          this.bloquearBtnModal = false;
-          this.accionAgregarTipoCaractActinomiceto({
-            info: res.data,
-            tipo: this.modal.tipo,
-          });
-          this.$events.fire("actualizartabla" + this.modal.tipo);
-          this.$modal.hide("modal_agregar_tipo_actinomiceto");
-          this.toastr(
-            `Agregar ${this.primeraMayus(this.modal.tipo)}`,
-            `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
-            "success"
-          );
         })
         .catch((error) => {
           this.bloquearBtnModal = false;
-          if (error.response) {
+          if (error.response.status === 422) {
             this.errors = error.response.data.errors;
           }
           this.toastr("Error!!!!", "", "error");
@@ -210,30 +211,31 @@ export default {
         .put(`/info-caract-actinomicetos/editar/${this.id}`, this.modal)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.accionEditarTipoCaractActinomiceto({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.toastr(
+              `Editar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
+              "success",
+              5000
+            );
+            this.$modal.hide("modal_editar_tipo_actinomiceto");
           }
-          this.bloquearBtnModal = false;
-          this.accionEditarTipoCaractActinomiceto({
-            info: res.data,
-            tipo: this.modal.tipo,
-          });
-          this.$events.fire("actualizartabla" + this.modal.tipo);
-          this.toastr(
-            `Editar ${this.primeraMayus(this.modal.tipo)}`,
-            `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
-            "success",
-            5000
-          );
-          this.$modal.hide("modal_editar_tipo_actinomiceto");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;
-          if (error.response) {
-            this.errors = error.response.data;
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
           }
           this.toastr("Error!!!", "", "error", 4000);
         });
@@ -250,45 +252,46 @@ export default {
         })
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
-          }
-          this.bloquearBtnModal = false;
-          if (res.data === "macro") {
-            this.toastr(
-              "Precaución!!",
-              "El/La " +
-                this.modal.tipo +
-                " se encuentra vinculado/a a características macroscópicas, favor eliminarlas",
-              "warning",
-              8000
-            );
-          } else if (res.data === "micro") {
-            this.toastr(
-              "Precaución!!",
-              "El/La " +
-                this.modal.tipo +
-                " se encuentra vinculada a características microscópicas, favor eliminarlas",
-              "warning",
-              8000
-            );
           } else {
-            this.accionEliminarTipoCaractActinomiceto({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$events.fire("actualizartabla" + this.modal.tipo);
-            this.toastr(
-              `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
-              `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
-              "success",
-              5000
-            );
+            this.bloquearBtnModal = false;
+            if (res.data === "macro") {
+              this.toastr(
+                "Precaución!!",
+                "El/La " +
+                  this.modal.tipo +
+                  " se encuentra vinculado/a a características macroscópicas, favor eliminarlas",
+                "warning",
+                8000
+              );
+            } else if (res.data === "micro") {
+              this.toastr(
+                "Precaución!!",
+                "El/La " +
+                  this.modal.tipo +
+                  " se encuentra vinculada a características microscópicas, favor eliminarlas",
+                "warning",
+                8000
+              );
+            } else {
+              this.accionEliminarTipoCaractActinomiceto({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$events.fire("actualizartabla" + this.modal.tipo);
+              this.toastr(
+                `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
+                `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
+                "success",
+                5000
+              );
+            }
+            this.$modal.hide("modal_eliminar_tipo_actinomiceto");
           }
-          this.$modal.hide("modal_eliminar_tipo_actinomiceto");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

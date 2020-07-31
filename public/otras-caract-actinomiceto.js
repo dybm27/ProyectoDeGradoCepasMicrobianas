@@ -301,8 +301,7 @@ __webpack_require__.r(__webpack_exports__);
         if (this.parametros.imagen1) {
           axios.post("/cepas/actinomiceto/otras-caract", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
             }
 
@@ -317,8 +316,11 @@ __webpack_require__.r(__webpack_exports__);
             _this.toastr("Agregar Otras Característica", "Características agregadas con exito!!", "success");
           })["catch"](function (error) {
             _this.bloquearBtn = false;
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
             _this.toastr("Error!!", "", "error");
           });
@@ -332,21 +334,23 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         axios.put("/cepas/actinomiceto/otras-caract/".concat(this.info.id), this.parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Otras Característica", "Características editadas con exito!!", "success");
           }
-
-          _this.bloquearBtn = false;
-          _this.errors = [];
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Otras Característica", "Características editadas con exito!!", "success");
         })["catch"](function (error) {
           _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.errors = error.response.data.errors;
+
+          if (error.response.status === 422) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+          }
 
           _this.toastr("Error!!", "", "error");
         });
@@ -543,22 +547,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios["delete"]("/cepas/actinomiceto/otras-caract/".concat(this.getOtrasCaract.id)).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.mostrarBtnAgregar = true;
+          _this.mostrarForm = false;
+
+          _this.$modal.hide("otras_caract");
+
+          _this.accionEliminarCaract({
+            tipo: "otras",
+            data: res.data
+          });
+
+          _this.toastr("Eliminar Característica", "Otras Características de Interés eliminadas con exito!!", "success");
         }
-
-        _this.mostrarBtnAgregar = true;
-        _this.mostrarForm = false;
-
-        _this.$modal.hide("otras_caract");
-
-        _this.accionEliminarCaract({
-          tipo: "otras",
-          data: res.data
-        });
-
-        _this.toastr("Eliminar Característica", "Otras Características de Interés eliminadas con exito!!", "success");
       })["catch"](function (error) {
         _this.toastr("Error!!", "", "error");
       });

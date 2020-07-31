@@ -208,71 +208,65 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Proyecto",
+                "Proyecto agregado con exito!!",
+                "success"
+              );
+              this.accionProyecto({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableCroppieulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Agregar Proyecto",
-              "Proyecto agregado con exito!!",
-              "success"
-            );
-            this.accionProyecto({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableCroppieulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/documentos/${this.idProyecto}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Proyecto",
+                "Proyecto editado con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsProyecto").whisper(
+                "desbloquearBtnsProyecto",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoProyecto", {
+                id: res.data.id,
+              });
+              this.accionProyecto({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableCroppieulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Proyecto",
-              "Proyecto editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsProyecto").whisper(
-              "desbloquearBtnsProyecto",
-              {
-                id: res.data.id,
-              }
-            );
-            window.Echo.private("desbloquearCheckProyecto").whisper(
-              "desbloquearCheckProyecto",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("spliceMisBloqueosProyecto", {
-              id: res.data.id,
-            });
-            this.accionProyecto({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableCroppieulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = [];
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

@@ -59,7 +59,7 @@ export default {
       window.Echo.private(
         "desbloquearBtnsUsuario"
       ).whisper("desbloquearBtnsUsuario", { id: this.id });
-      this.$events.fire("spliceMisBloqueosUsuario", {
+      this.$events.fire("eliminarMiBloqueoUsuario", {
         id: this.id
       });
       this.id = 0;

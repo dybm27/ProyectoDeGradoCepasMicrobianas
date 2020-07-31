@@ -11,18 +11,11 @@ use Illuminate\Support\Facades\Storage;
 
 class PerfilController extends Controller
 {
-
-    public function __construct()
+    /**public function __construct()
     {
         $this->middleware('auth');
     }
-
-
-    public function index()
-    {
-        return view('perfil');
-    }
-
+     */
     public function cambiarNombre(Request $request)
     {
         $usuario = $request->user();

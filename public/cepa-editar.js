@@ -430,12 +430,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.post("/cepas/agregar", this.parametros).then(function (res) {
@@ -455,12 +455,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         })["catch"](function (error) {
           _this.bloquearBtn = false;
 
-          if (error.response) {
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error");
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -647,7 +647,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this3.toastr("Agregar Info", "".concat(_this3.modal.tipo, " agregado/a con exito"), "success");
         })["catch"](function (error) {
           _this3.bloquearBtnModal = false;
-          _this3.modal.errors = error.response.data.errors;
+
+          if (error.response.status === 422) {
+            _this3.modal.errors = error.response.data.errors;
+          }
 
           _this3.toastr("Error!!", "", "error");
         });

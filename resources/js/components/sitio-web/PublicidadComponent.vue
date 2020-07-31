@@ -72,12 +72,12 @@ export default {
       "accionNovedad",
     ]),
     ruta(ruta) {
-      if (ruta.includes("noticias")) {
-        this.tipo = "Tabla Noticias";
+      if (ruta.includes("novedades")) {
+        this.tipo = "Tabla Novedades";
       } else if (ruta.includes("actividades")) {
         this.tipo = "Tabla Actividades";
       } else {
-        this.tipo = "Tabla Novedades";
+        this.tipo = "Tabla Noticias";
       }
     },
     cambiarTipo(tipo) {

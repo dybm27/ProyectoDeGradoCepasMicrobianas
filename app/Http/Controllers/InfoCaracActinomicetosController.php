@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\BordeActinomiceto;
 use App\ColorActinomiceto;
 use App\ConidioforoActinomiceto;
-use App\Events\ActinomicetosEvent;
+use App\Events\ActinomicetosInfoEvent;
 use App\FormaCaractMacroActinomiceto;
 use App\FormaCaractMicroActinomiceto;
 use App\MicelioActinomiceto;
@@ -19,11 +19,6 @@ use Illuminate\Support\Facades\Auth;
 
 class InfoCaracActinomicetosController extends Controller
 {
-    public function index()
-    {
-        return view('otra-info');
-    }
-
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {
@@ -169,7 +164,7 @@ class InfoCaracActinomicetosController extends Controller
                     . $tipo->nombre);
                 break;
         }
-        broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'agregar'))->toOthers();
+        broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -307,7 +302,7 @@ class InfoCaracActinomicetosController extends Controller
                     . $tipo1->nombre);
                 break;
         }
-        broadcast(new ActinomicetosEvent($tipo1, $request->tipo, 'editar'))->toOthers();
+        broadcast(new ActinomicetosInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -319,7 +314,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Forma Macroscópica en Actinomicetos: "
                         . $tipo->nombre);
@@ -330,7 +325,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Borde en Actinomicetos: "
                         . $tipo->nombre);
@@ -341,7 +336,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de textura en Actinomicetos: "
                         . $tipo->nombre);
@@ -352,7 +347,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Pigmento en Actinomicetos: "
                         . $tipo->nombre);
@@ -363,7 +358,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Superficie en Actinomicetos: "
                         . $tipo->nombre);
@@ -374,7 +369,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'micro')) {
                     return 'micro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Forma Microscópica en Actinomicetos: "
                         . $tipo->nombre);
@@ -385,7 +380,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'micro')) {
                     return 'micro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de TincionGram en Actinomicetos: "
                         . $tipo->nombre);
@@ -396,7 +391,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'micro')) {
                     return 'micro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Micelio en actinomicetos: "
                         . $tipo->nombre);
@@ -407,7 +402,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'micro')) {
                     return 'micro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en actinomicetos: "
                         . $tipo->nombre);
@@ -418,7 +413,7 @@ class InfoCaracActinomicetosController extends Controller
                 if ($this->validarEliminar($tipo, 'macro')) {
                     return 'macro';
                 } else {
-                    broadcast(new ActinomicetosEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    broadcast(new ActinomicetosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
                     $tipo->delete();
                     $this->crearSeguimiento("Eliminó un Tipo de Color en Actinomicetos: "
                         . $tipo->nombre);

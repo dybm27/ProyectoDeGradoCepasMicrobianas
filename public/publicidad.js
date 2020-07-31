@@ -90,12 +90,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("publicidad")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["obtenerPublicidad", "accionNoticia", "accionActividad", "accionNovedad"]), {
     ruta: function ruta(_ruta) {
-      if (_ruta.includes("noticias")) {
-        this.tipo = "Tabla Noticias";
+      if (_ruta.includes("novedades")) {
+        this.tipo = "Tabla Novedades";
       } else if (_ruta.includes("actividades")) {
         this.tipo = "Tabla Actividades";
       } else {
-        this.tipo = "Tabla Novedades";
+        this.tipo = "Tabla Noticias";
       }
     },
     cambiarTipo: function cambiarTipo(tipo) {

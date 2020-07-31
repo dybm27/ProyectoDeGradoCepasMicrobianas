@@ -87,8 +87,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("quienesSomos")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("quienes_somos", ["obtenerQuienesSomos", "accionCambiarQuienesSomos"]), {
     cambiarTipo: function cambiarTipo(ruta) {
-      if (ruta.includes("Objetivos")) {
-        this.tipo = "objetivos";
+      if (ruta.includes("objetivos")) {
+        this.tipo = "Objetivos";
       } else if (ruta.includes("vision")) {
         this.tipo = "Visión";
       } else {

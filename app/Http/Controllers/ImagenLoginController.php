@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagenLoginController extends Controller
 {
-    public function index()
-    {
-        return view('imagenesLogin');
-    }
-
     public function update(Request $request, $id)
     {
         $this->validarCampos($request);

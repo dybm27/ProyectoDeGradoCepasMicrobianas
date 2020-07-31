@@ -271,7 +271,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       googleCalendarApiKey: "AIzaSyDO3AOsa4-imBxdCAcPSXjr8ui5cEOWlB8",
       eventos: {
         url: "/info-panel/eventos",
-        className: "eventos"
+        className: "eventos",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
       },
       eventSources: [{
         googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
@@ -281,15 +287,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         url: "/info-panel/eventos-metodos-bacterias",
         className: "eventos-metodos-bacterias",
-        color: "#16aaff"
+        color: "#16aaff",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
       }, {
         url: "/info-panel/eventos-metodos-levaduras",
         className: "eventos-metodos-levaduras",
-        color: "#5EE220"
+        color: "#5EE220",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
       }, {
         url: "/info-panel/eventos-metodos-hongos",
         className: "eventos-metodos-hongos",
-        color: "#794c8a"
+        color: "#794c8a",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
       }],
       header: {
         left: "prevYear,prev,next,nextYear today botonAgregarEvento",
@@ -463,21 +487,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           axios.post("eventos/agregar", this.modal).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
+
+              _this2.toastr("Agregar Evento", "El Evento fue agregado con exito!!", "success");
+
+              _this2.$modal.hide("agregar-editar_eliminar-evento");
             }
-
-            _this2.bloquearBtnModal = false;
-            calendarApi.refetchEvents();
-
-            _this2.toastr("Agregar Evento", "El Evento fue agregado con exito!!", "success");
-
-            _this2.$modal.hide("agregar-editar_eliminar-evento");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
 
-            if (error.response) {
+            if (error.response.status === 422) {
               _this2.errors = error.response.data.errors;
             }
           });
@@ -486,21 +509,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         case "editar":
           axios.put("eventos/editar/".concat(this.modal.id), this.modal).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
+
+              _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
+
+              _this2.$modal.hide("agregar-editar_eliminar-evento");
             }
-
-            _this2.bloquearBtnModal = false;
-            calendarApi.refetchEvents();
-
-            _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
-
-            _this2.$modal.hide("agregar-editar_eliminar-evento");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
 
-            if (error.response) {
+            if (error.response.status === 422) {
               _this2.errors = error.response.data.errors;
             }
           });
@@ -509,21 +531,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         case "eliminar":
           axios["delete"]("eventos/eliminar/".concat(this.modal.id)).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
+
+              _this2.toastr("Eliminar Evento", "El Evento fue eliminado con exito!!", "success");
+
+              _this2.$modal.hide("agregar-editar_eliminar-evento");
             }
-
-            _this2.bloquearBtnModal = false;
-            calendarApi.refetchEvents();
-
-            _this2.toastr("Eliminar Evento", "El Evento fue eliminado con exito!!", "success");
-
-            _this2.$modal.hide("agregar-editar_eliminar-evento");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
 
-            if (error.response) {
+            if (error.response.status === 422) {
               _this2.errors = error.response.data.errors;
             }
           });

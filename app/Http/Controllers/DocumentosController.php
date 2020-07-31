@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class DocumentosController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.documentos');
-    }
-
     public function store(Request $request)
     {
         $rules = [

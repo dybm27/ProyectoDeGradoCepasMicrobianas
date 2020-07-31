@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class InvestigadoresController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.investigadores');
-    }
-
     public function store(Request $request)
     {
         $rules = [

@@ -112,17 +112,22 @@ export default {
         .put("/quienes-somos/mision/cambiar", this.parametros)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.accionCambiarQuienesSomos({
+              data: res.data,
+              tipo: "mision",
+            });
+            this.toastr(
+              "Cambiar Misión",
+              "Misión cambiada con exito",
+              "success"
+            );
           }
-          this.accionCambiarQuienesSomos({
-            data: res.data,
-            tipo: "mision",
-          });
-          this.toastr("Cambiar Misión", "Misión cambiada con exito", "success");
         });
     },
     aceptarContenido(data) {

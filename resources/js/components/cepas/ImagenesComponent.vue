@@ -12,7 +12,7 @@
             <button
               v-show="btnAgregar"
               type="button"
-              class="mr-3 btn btn-info btn-block"
+              class="mr-3 btn btn-success btn-block"
               @click="showModalImagen('agregar')"
             >Agregar</button>
           </div>
@@ -156,7 +156,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="accionModal"
             :disabled="validarBtn"
           >{{modalImagen.nomBtn}}</button>
@@ -192,7 +192,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('eliminar_imagen')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="accionModal">{{modalImagen.nomBtn}}</button>
+          <button type="button" class="btn btn-success" @click="accionModal">{{modalImagen.nomBtn}}</button>
         </div>
       </div>
     </modal>
@@ -267,23 +267,26 @@ export default {
             )
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.$emit("accionImagen", res.data);
+                this.$modal.hide("agregar_cambiar_imagen");
+                this.toastr(
+                  "Cambiar Imagen",
+                  "La imagen fue cambiada con exito!!",
+                  "success"
+                );
               }
-              this.$emit("accionImagen", res.data);
-              this.$modal.hide("agregar_cambiar_imagen");
-              this.toastr(
-                "Cambiar Imagen",
-                "La imagen fue cambiada con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
-              this.modalImagen.errors = [];
-              this.modalImagen.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.modalImagen.errors = [];
+                this.modalImagen.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -300,23 +303,26 @@ export default {
           )
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.$emit("accionImagen", res.data);
+              this.$modal.hide("eliminar_imagen");
+              this.toastr(
+                "Eliminar Imagen",
+                "Imagen eliminada con exito!!",
+                "success"
+              );
             }
-            this.$emit("accionImagen", res.data);
-            this.$modal.hide("eliminar_imagen");
-            this.toastr(
-              "Eliminar Imagen",
-              "Imagen eliminada con exito!!",
-              "success"
-            );
           })
           .catch((error) => {
-            this.modalImagen.errors = [];
-            this.modalImagen.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.modalImagen.errors = [];
+              this.modalImagen.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       } else {
@@ -333,23 +339,26 @@ export default {
             )
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.$emit("accionImagen", res.data);
+                this.$modal.hide("agregar_cambiar_imagen");
+                this.toastr(
+                  "Agregar Imagen",
+                  "La imagen fue agregada con exito!!",
+                  "success"
+                );
               }
-              this.$emit("accionImagen", res.data);
-              this.$modal.hide("agregar_cambiar_imagen");
-              this.toastr(
-                "Agregar Imagen",
-                "La imagen fue agregada con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
-              this.modalImagen.errors = [];
-              this.modalImagen.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.modalImagen.errors = [];
+                this.modalImagen.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {

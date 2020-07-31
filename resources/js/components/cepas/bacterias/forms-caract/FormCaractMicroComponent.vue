@@ -303,28 +303,31 @@ export default {
             .post("/cepas/bacteria/caract-micro", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Característica Microscópica",
+                  "Característica Microscópica agregada con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Característica";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Característica Microscópica",
-                "Característica Microscópica agregada con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -337,25 +340,28 @@ export default {
           .put(`/cepas/bacteria/caract-micro/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
             }
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            this.errors = [];
-            this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }
@@ -382,28 +388,31 @@ export default {
           .post("/info-caract-bacterias/agregar", parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractBacteria({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
             }
-            this.bloquearBtnModal = false;
-            this.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtnModal = false;
-            this.errors = [];
-            this.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.modal.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }

@@ -535,29 +535,33 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.toastr(
+                "Descarga!!",
+                "La descarga se realizo con éxito",
+                "success",
+                5000
+              );
+              this.errorSelect = "";
+              this.selectImprimir = [];
+              const url = window.URL.createObjectURL(new Blob([res.data]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute(
+                "download",
+                `Cepa-${this.cepa.cepa.codigo}.pdf`
+              );
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              this.btnTodo = false;
+              this.btnSeleccionado = false;
             }
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            this.errorSelect = "";
-            this.selectImprimir = [];
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", `Cepa-${this.cepa.cepa.codigo}.pdf`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            this.btnTodo = false;
-            this.btnSeleccionado = false;
           })
           .catch((error) => {
             this.btnTodo = false;

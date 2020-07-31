@@ -36,6 +36,6 @@ class LevadurasInfoEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('levaduras-name');
+        return new Channel('levaduras-info');
     }
 }

@@ -7,7 +7,7 @@
             <i class="pe-7s-science icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
-            Administrar Cepas - Bacterias
+            Administrar Cepas Microbianas {{tituloCepa}}
             <div class="page-title-subheading opacity-10">
               <nav>
                 <ol class="breadcrumb">
@@ -17,11 +17,11 @@
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a>Bacterias</a>
+                    <a>Cepas Microbianas</a>
                   </li>
-                  <template v-show="tipo">
+                  <template v-show="tipoAccion">
                     <li class="breadcrumb-item">
-                      <a>{{tipo}}</a>
+                      <a>{{tipoAccion}}</a>
                     </li>
                   </template>
                 </ol>
@@ -30,25 +30,25 @@
           </div>
         </div>
         <div class="page-title-actions">
-          <template v-if="numPestaña==1">
-            <router-link
-              v-if="ocultar"
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              :to="{name: 'cepa-bacteria-agregar'}"
-            >Agregar Nueva Cepa - Bacteria</router-link>
-            <router-link
-              v-else
+          <template v-if="numPestaña==1&&mostrarBtnVolver">
+            <button
               class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
-              :to="{name: 'bacterias-tabla'}"
-            >Volver</router-link>
+              @click="volverTabla"
+            >Volver</button>
           </template>
         </div>
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <div class="tabs-animation">
-        <router-view :tipoG="1" @rutaHijo="ocultarLink" />
-      </div>
+      <router-view
+        :tipoG="1"
+        :tipo="'bacteria'"
+        :detailRowComponent="'my-detail-row-cepas'"
+        :titulo="'BACTERIAS'"
+        @cambiarTipo="cambiarTipo"
+        :tituloCepa="tituloCepa"
+        :FieldDefs="fields"
+      />
     </template>
     <template v-else>
       <div class="container">
@@ -71,53 +71,59 @@
 
 <script>
 import bloquearPestañasMixin from "../../../mixins/bloquearPestañas";
+import FieldDefs from "./tablas/columnas-cepas-bacterias";
 import vuex from "vuex";
-
 export default {
   data() {
     return {
-      ruta: true,
-      tipo: ""
+      tituloCepa: "",
+      tipoAccion: "",
+      mostrarBtnVolver: false,
+      fields: FieldDefs,
     };
   },
-  mixins: [bloquearPestañasMixin("cepasBacterias")],
+  mixins: [bloquearPestañasMixin("cepas")],
   methods: {
+    ...vuex.mapActions("cepas", ["obtenerCepas"]),
     ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractBacterias"]),
-    ocultarLink(ruta) {
-      if (ruta != "/bacterias/" && ruta != "/bacterias") {
-        this.ruta = false;
-        if (
-          ruta.includes("caract") ||
-          ruta.includes("identi") ||
-          ruta.includes("metodo")
-        ) {
-          this.tipo = "Características";
-        } else if (ruta.includes("ver")) {
-          this.tipo = "Ver Información";
-        } else if (ruta.includes("agregar")) {
-          this.tipo = "Agregar";
-        } else {
-          this.tipo = "Editar";
-        }
+    cambiarTipo(tipo) {
+      if (tipo === "ver") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Ver información";
+      } else if (tipo === "caract") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Modificar Características";
+      } else if (tipo === "agregar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Agregar";
+      } else if (tipo === "editar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Editar";
       } else {
-        this.ruta = true;
-        this.tipo = "Tabla";
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "tabla";
       }
-    }
-  },
-  computed: {
-    ocultar() {
-      return this.ruta;
-    }
+    },
+    volverTabla() {
+      window.Echo.private("desbloquearBtnsCepa").whisper(
+        "desbloquearBtnsCepa",
+        {
+          id: this.$route.params.cepaBacteriaId,
+        }
+      );
+      this.$events.fire("eliminarMiBloqueoCepa", {
+        id: this.$route.params.cepaBacteriaId,
+      });
+      this.$router.push({ name: "bacterias" });
+    },
   },
   created() {
-    this.$emit("rutaSider", window.location.pathname);
-    this.obtenerInfoCaractBacterias();
+    this.tituloCepa = "- Bacterias";
+    this.$emit("rutaSider", this.$route.path);
+    this.obtenerCepas();
     this.obtenerTiposCepas();
-  }
+    this.obtenerInfoCaractBacterias();
+  },
 };
 </script>
-
-<style scoped>
-</style>

@@ -201,69 +201,65 @@ export default {
           .post("/investigadores", this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Investigador",
+                "Investigador agregado con exito!!",
+                "success"
+              );
+              this.accionInvestigador({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Agregar Investigador",
-              "Investigador agregado con exito!!",
-              "success"
-            );
-            this.accionInvestigador({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.toastr("Error!!", "", "error");
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/investigadores/${this.idInvestigador}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Investigador",
+                "Investigador editado con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsInvestigador").whisper(
+                "desbloquearBtnsInvestigador",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoInvestigador", {
+                id: res.data.id,
+              });
+              this.accionInvestigador({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Investigador",
-              "Investigador editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsInvestigador").whisper(
-              "desbloquearBtnsInvestigador",
-              {
-                id: res.data.id,
-              }
-            );
-            window.Echo.private("desbloquearCheckInvestigador").whisper(
-              "desbloquearCheckInvestigador",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("spliceMisBloqueosInvestigador", {
-              id: res.data.id,
-            });
-            this.accionInvestigador({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.toastr("Error!!", "", "error");
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

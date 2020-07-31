@@ -226,69 +226,71 @@ export default {
           .post("/usuario/agregar", this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.accionUsuario({ tipo: "agregar", data: res.data });
+              this.toastr(
+                "Agregar Usuario",
+                "Usuario agregado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.accionUsuario({ tipo: "agregar", data: res.data });
-            this.toastr(
-              "Agregar Usuario",
-              "Usuario agregado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/usuario/editar/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
-            }
-            this.bloquearBtn = false;
-            if (this.auth.id === res.data.id) {
-              this.accionModificarAuth({ data: res.data });
-            }
-            this.accionUsuario({ tipo: "editar", data: res.data });
-            this.toastr(
-              "Editar Usuario",
-              "Usuario editado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable", "tabla");
-            window.Echo.private("desbloquearBtnsUsuario").whisper(
-              "desbloquearBtnsUsuario",
-              {
-                id: res.data.id,
+            } else {
+              this.bloquearBtn = false;
+              if (this.auth.id === res.data.id) {
+                this.accionModificarAuth({ data: res.data });
               }
-            );
-            this.$events.fire("spliceMisBloqueosUsuario", {
-              id: res.data.id,
-            });
-            this.$emit("cambiarVariableFormulario");
+              this.accionUsuario({ tipo: "editar", data: res.data });
+              this.toastr(
+                "Editar Usuario",
+                "Usuario editado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable", "tabla");
+              window.Echo.private("desbloquearBtnsUsuario").whisper(
+                "desbloquearBtnsUsuario",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoUsuario", {
+                id: res.data.id,
+              });
+              this.$emit("cambiarVariableFormulario");
+            }
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

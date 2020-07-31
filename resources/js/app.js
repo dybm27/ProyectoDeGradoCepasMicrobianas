@@ -17,14 +17,46 @@ Vue.use(VueToastr);
 Vue.use(Storage);
 
 Vue.component("app-majumba", require("./layouts/App.vue").default);
-
+// ------------- cepas-----------------------------------------
 Vue.component(
     "acciones_cepas",
     require("./components/cepas/AccionesCepasComponent.vue").default
 );
 Vue.component(
-    "checkboxs-publicar",
+    "checkboxs_publicar",
     require("./components/cepas/CheckboxsPublicarComponent.vue").default
+);
+Vue.component(
+    "acciones_cepas_bacterias",
+    require("./components/cepas/bacterias/tablas/AccionesCepasComponent.vue").default
+);
+Vue.component(
+    "checkboxs_publicar_bacterias",
+    require("./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue").default
+);
+Vue.component(
+    "acciones_cepas_levaduras",
+    require("./components/cepas/levaduras/tablas/AccionesCepasComponent.vue").default
+);
+Vue.component(
+    "checkboxs_publicar_levaduras",
+    require("./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue").default
+);
+Vue.component(
+    "acciones_cepas_hongos",
+    require("./components/cepas/hongos/tablas/AccionesCepasComponent.vue").default
+);
+Vue.component(
+    "checkboxs_publicar_hongos",
+    require("./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue").default
+);
+Vue.component(
+    "acciones_cepas_actinomicetos",
+    require("./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue").default
+);
+Vue.component(
+    "checkboxs_publicar_actinomicetos",
+    require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue").default
 );
 Vue.component(
     "my-detail-row-h-l-a",

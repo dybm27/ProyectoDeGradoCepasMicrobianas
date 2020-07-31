@@ -47,16 +47,17 @@ export default {
         })
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            if (res.data.publicar) {
+              this.toastr("Publicar", "Publicado con Exito!!");
+            }
+            this.disabled = false;
           }
-          if (res.data.publicar) {
-            this.toastr("Publicar", "Publicado con Exito!!");
-          }
-          this.disabled = false;
         });
     },
     verificarPublicar(e) {

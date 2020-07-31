@@ -20,7 +20,12 @@ use Illuminate\Http\Request;
 
 class InfoPanelCepasController extends Controller
 {
-    public function cepas(Request $request)
+    public function cepas()
+    {
+        return Cepa::with(['bacteria', 'hongo', 'actinomiceto', 'levadura'])->get();
+    }
+
+    public function cepasTabla(Request $request)
     {
         $cepas = Cepa::join('generos', 'cepas.genero_id', '=', 'generos.id')
             ->join('especies', 'cepas.especie_id', '=', 'especies.id')

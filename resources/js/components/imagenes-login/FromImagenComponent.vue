@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">Editar Imagen</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -105,32 +110,33 @@ export default {
           .put(`/login/imagen/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
-            }
-            this.bloquearBtn = false;
-            if (res.data.mostrar) {
-              res.data.mostrar = 1;
             } else {
-              res.data.mostrar = 0;
+              this.bloquearBtn = false;
+              if (res.data.mostrar) {
+                res.data.mostrar = 1;
+              } else {
+                res.data.mostrar = 0;
+              }
+              this.accionImagenLogin({ tipo: "editar", data: res.data });
+              this.$emit("mostrarFrom");
+              this.toastr(
+                "Editar Imagen",
+                "Imagen editado con exito!!",
+                "success"
+              );
             }
-            this.accionImagenLogin({ tipo: "editar", data: res.data });
-            this.$emit("mostrarFrom");
-            this.toastr(
-              "Editar Imagen",
-              "Imagen editado con exito!!",
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = error.response.data;
-              this.toastr("Error!!", error.response.data.mostrar, "error");
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         let form = new FormData();
@@ -149,27 +155,28 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Imagen",
+                "Imagen editada con exito!!",
+                "success"
+              );
+              this.accionImagenLogin({ tipo: "editar", data: res.data });
+              this.$emit("mostrarFrom");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Imagen",
-              "Imagen editada con exito!!",
-              "success"
-            );
-            this.accionImagenLogin({ tipo: "editar", data: res.data });
-            this.$emit("mostrarFrom");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.errors = error.response.data;
-              this.toastr("Error!!", error.response.data.mostrar, "error");
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

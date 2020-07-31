@@ -21,13 +21,13 @@ export default [
     { name: "origen", sortField: "origen", titleClass: "text-center" },
     ,
     {
-        name: "__component:checkboxs-publicar",
+        name: "__component:checkboxs_publicar_bacterias",
         title: "Publicar",
         titleClass: "text-center",
         dataClass: "text-center"
     },
     {
-        name: "__component:acciones_cepas",
+        name: "__component:acciones_cepas_bacterias",
         title: "Acciones",
         titleClass: "text-center"
     }

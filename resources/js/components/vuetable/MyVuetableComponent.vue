@@ -28,7 +28,7 @@
       <div class="col-sm-12">
         <div class="table-responsive">
           <vuetable
-            noDataTemplate="Datos no Disponibles"
+            noDataTemplate="Cargando informacion..."
             ref="vuetable"
             :css="css.table"
             :api-url="apiUrl"
@@ -41,6 +41,7 @@
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
             @vuetable:loaded="loaded"
+            @vuetable:load-success="loadSuccess"
           ></vuetable>
         </div>
       </div>
@@ -72,6 +73,7 @@ import Vuetable from "vuetable-2/src/components/Vuetable";
 import FilterBar from "./FilterBarComponent";
 import VuetablePagination from "./PaginationComponent";
 import VuetablePaginationInfo from "./PaginationInfoComponent";
+import Toastr from "../../mixins/toastr";
 export default {
   name: "my-vuetable",
   components: {
@@ -103,6 +105,7 @@ export default {
       required: true,
     },
   },
+  mixins: [Toastr],
   data() {
     return {
       appendParams: {
@@ -192,12 +195,14 @@ export default {
       Vue.nextTick(() => this.$refs.vuetable.refresh());
     },
     loaded() {
-      if (this.$refs.vuetable.tableData.length === 0) {
-        this.disabledBtn = true;
-      } else {
-        this.disabledBtn = false;
-        this.EventosCustomActions();
-        this.$events.fire("verificarBloqueos-" + this.nameGet);
+      if (this.$refs.vuetable.tableData) {
+        if (this.$refs.vuetable.tableData.length === 0) {
+          this.disabledBtn = true;
+        } else {
+          this.disabledBtn = false;
+          this.EventosCustomActions();
+          this.$events.fire("verificarBloqueos-" + this.nameGet);
+        }
       }
     },
     EventosCustomActions() {
@@ -230,25 +235,26 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.toastr(
+                "Descarga!!",
+                "La descarga se realizo con éxito",
+                "success",
+                5000
+              );
+              const url = window.URL.createObjectURL(new Blob([res.data]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute("download", this.nameGet + ".xlsx");
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
             }
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", this.nameGet + ".xlsx");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
           })
           .catch((error) => {
             if (error.response) {
@@ -263,25 +269,26 @@ export default {
           })
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.toastr(
+                "Descarga!!",
+                "La descarga se realizo con éxito",
+                "success",
+                5000
+              );
+              const url = window.URL.createObjectURL(new Blob([res.data]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute("download", this.nameGet + ".xlsx");
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
             }
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", this.nameGet + ".xlsx");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
           })
           .catch((error) => {
             if (error.response) {
@@ -289,25 +296,14 @@ export default {
           });
       }
     },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {},
-      });
+    loadSuccess(res) {
+      if (res.request.responseURL === process.env.MIX_LOGIN) {
+        localStorage.setItem(
+          "mensajeLogin",
+          "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+        );
+        window.location.href = "/";
+      }
     },
   },
   mounted() {

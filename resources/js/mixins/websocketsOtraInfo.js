@@ -1,6 +1,6 @@
 const websocketsOtraInfoMixin = tipoInfo => ({
     data() {
-        return { bloqueos: [], misBloqueos: [] };
+        return { bloqueos: [], miBloqueo: null };
     },
     methods: {
         // Bloquear Btns
@@ -18,19 +18,16 @@ const websocketsOtraInfoMixin = tipoInfo => ({
             this.$events.fire(e.id + "-desbloquearBtns-" + e.tipo);
         },
         // guardar mis bloqueos
-        pushMisBloqueos(e) {
-            this.misBloqueos.push({
+        agregarMiBloqueo(e) {
+            this.miBloqueo = {
                 idUser: e.idUser,
                 id: e.id,
                 tipo: e.tipo
-            });
+            };
         },
-        spliceMisBloqueos(e) {
+        eliminarMiBloqueo(e) {
             if (e.id != 0) {
-                this.misBloqueos.splice(
-                    this.misBloqueos.findIndex(data => data.id === e.id),
-                    1
-                );
+                this.miBloqueo = null;
             }
         },
         //borrar bloqueos
@@ -54,7 +51,7 @@ const websocketsOtraInfoMixin = tipoInfo => ({
             window.Echo.private("recibirBtns" + tipoInfo).whisper(
                 "recibirBtns" + tipoInfo,
                 {
-                    bloqueos: this.misBloqueos
+                    miBloqueo: this.miBloqueo
                 }
             );
         }
@@ -62,7 +59,7 @@ const websocketsOtraInfoMixin = tipoInfo => ({
     mounted() {
         window.Echo.join(tipoInfo)
             .joining(data => {
-                if (this.misBloqueos.length > 0) {
+                if (this.miBloqueo) {
                     this.enviarBloqueos();
                 }
             })
@@ -90,21 +87,21 @@ const websocketsOtraInfoMixin = tipoInfo => ({
         window.Echo.private("recibirBtns" + tipoInfo).listenForWhisper(
             "recibirBtns" + tipoInfo,
             e => {
-                if (e.bloqueos.length > 0) {
-                    this.bloquearBtnsTabla(e.bloqueos[0]);
+                if (e.miBloqueo) {
+                    this.bloquearBtnsTabla(e.miBloqueo);
                 }
             }
         );
-        this.$events.$on("pushMisBloqueos" + tipoInfo, e => {
-            this.pushMisBloqueos(e);
+        this.$events.$on("agregarMiBloqueo" + tipoInfo, e => {
+            this.agregarMiBloqueo(e);
         });
-        this.$events.$on("spliceMisBloqueos" + tipoInfo, e => {
-            this.spliceMisBloqueos(e);
+        this.$events.$on("eliminarMiBloqueo" + tipoInfo, e => {
+            this.eliminarMiBloqueo(e);
         });
     },
     destroyed() {
-        this.$events.$off("pushMisBloqueos" + tipoInfo);
-        this.$events.$off("spliceMisBloqueos" + tipoInfo);
+        this.$events.$off("agregarMiBloqueo" + tipoInfo);
+        this.$events.$off("eliminarMiBloqueo" + tipoInfo);
     },
     beforeDestroy() {
         window.Echo.leave(tipoInfo);

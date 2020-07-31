@@ -500,25 +500,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         case "nombre":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.accionUsuario({
+                tipo: "editar",
+                data: res.data
+              });
+
+              _this2.accionModificarAuth({
+                data: res.data
+              });
+
+              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+              _this2.$modal.hide("cambiarInfo");
             }
-
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionUsuario({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this2.accionModificarAuth({
-              data: res.data
-            });
-
-            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-            _this2.$modal.hide("cambiarInfo");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
           });
@@ -527,25 +526,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         case "imagen":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.accionModificarAuth({
+                data: res.data
+              });
+
+              _this2.accionUsuario({
+                tipo: "editar",
+                data: res.data
+              });
+
+              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+              _this2.$modal.hide("cambiarImagen");
             }
-
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionModificarAuth({
-              data: res.data
-            });
-
-            _this2.accionUsuario({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-            _this2.$modal.hide("cambiarImagen");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
           });
@@ -554,25 +552,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         case "contraseña":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.accionModificarAuth({
+                data: res.data
+              });
+
+              _this2.accionUsuario({
+                tipo: "editar",
+                data: res.data
+              });
+
+              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+              _this2.$modal.hide("cambiarInfo");
             }
-
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionModificarAuth({
-              data: res.data
-            });
-
-            _this2.accionUsuario({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-            _this2.$modal.hide("cambiarInfo");
           })["catch"](function (error) {
             _this2.bloquearBtnModal = false;
           });

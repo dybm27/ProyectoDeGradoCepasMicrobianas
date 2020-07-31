@@ -5,33 +5,13 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
     methods: {
         editar(data) {
             this.$events.fire("abrirFormulario" + tipoM, data.id);
-            window.Echo.private("bloquearBtns" + tipoM).whisper(
-                "bloquearBtns" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.auth.id
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoM, {
-                id: data.id,
-                idUser: this.auth.id
-            });
+            this.enviarBloqueo(data);
         },
         showModal(data) {
             this.$modal.show("modal_eliminar_" + tipo, {
                 id: data.id
             });
-            window.Echo.private("bloquearBtns" + tipoM).whisper(
-                "bloquearBtns" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.auth.id
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoM, {
-                id: data.id,
-                idUser: this.auth.id
-            });
+            this.enviarBloqueo(data);
         },
         bloquearBtns() {
             this.disabledBtns = true;
@@ -51,6 +31,19 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
             this.disabledBtns = false;
             this.$events.$off(id + "-bloquearBtns" + tipoM);
             this.$events.$off(id + "-desbloquearBtns" + tipoM);
+        },
+        enviarBloqueo(data) {
+            window.Echo.private("bloquearBtns" + tipoM).whisper(
+                "bloquearBtns" + tipoM,
+                {
+                    id: data.id,
+                    idUser: this.auth.id
+                }
+            );
+            this.$events.fire("agregarMiBloqueo" + tipoM, {
+                id: data.id,
+                idUser: this.auth.id
+            });
         }
     },
     created() {

@@ -10,23 +10,21 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ActinomicetosEvent implements ShouldBroadcast
+class CepasEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $data;
-    public $tipoCaract;
     public $tipoAccion;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($data, $tipoCaract, $tipoAccion)
+    public function __construct($data, $tipoAccion)
     {
         $this->data = $data;
-        $this->tipoCaract =  $tipoCaract;
-        $this->tipoAccion =  $tipoAccion;
+        $this->tipoAccion = $tipoAccion;
     }
 
     /**
@@ -36,6 +34,6 @@ class ActinomicetosEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('actinomicetos-name');
+        return new Channel('cepas');
     }
 }

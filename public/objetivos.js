@@ -133,17 +133,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios.put("/quienes-somos/objetivos/cambiar", this.parametros).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.accionCambiarQuienesSomos({
+            data: res.data,
+            tipo: "objetivos"
+          });
+
+          _this.toastr("Cambiar Objetivos", "Objetivos cambiados con exito", "success");
         }
-
-        _this.accionCambiarQuienesSomos({
-          data: res.data,
-          tipo: "objetivos"
-        });
-
-        _this.toastr("Cambiar Objetivos", "Objetivos cambiados con exito", "success");
       });
     },
     aceptarContenido: function aceptarContenido(data) {
@@ -449,6 +448,8 @@ var websocketsSinTablaMixin = function websocketsSinTablaMixin(tipo, tipoM) {
           arrayUsers: _this.ordenEntrada
         });
       }).leaving(function (data) {
+        console.log("leaving");
+
         _this.borrarUsuario(data.user);
       });
     },
@@ -459,16 +460,10 @@ var websocketsSinTablaMixin = function websocketsSinTablaMixin(tipo, tipoM) {
       window.Echo["private"]("bloquear" + tipoM).listenForWhisper("bloquear" + tipoM + "-" + this.auth.id, function (e) {
         _this2.bloquear(e.arrayUsers);
       });
-      window.Echo["private"]("borrarBloqueo" + tipoM).listenForWhisper("borrarBloqueo" + tipoM, function (e) {
-        _this2.borrarUsuario(e.user);
-      });
     },
     beforeDestroy: function beforeDestroy() {
       window.Echo.leave(tipo);
       window.Echo.leave("bloquear" + tipoM);
-    },
-    destroyed: function destroyed() {
-      window.Echo.leave("borrarBloqueo" + tipoM);
     }
   };
 };

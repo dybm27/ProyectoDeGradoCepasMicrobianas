@@ -421,27 +421,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.bloquearBtnModal = true;
       axios.post("/info-cepas/agregar", this.modal).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.accionAgregarTipoCepa({
+            info: res.data,
+            tipo: _this.modal.tipo
+          });
+
+          _this.$events.fire("actualizartabla" + _this.modal.tipo);
+
+          _this.$modal.hide("modal_agregar_tipo_cepa");
+
+          _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
         }
-
-        _this.bloquearBtnModal = false;
-
-        _this.accionAgregarTipoCepa({
-          info: res.data,
-          tipo: _this.modal.tipo
-        });
-
-        _this.$events.fire("actualizartabla" + _this.modal.tipo);
-
-        _this.$modal.hide("modal_agregar_tipo_cepa");
-
-        _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
 
-        if (error.response) {
+        if (error.response.status === 422) {
           _this.errors = error.response.data.errors;
         }
 
@@ -466,28 +465,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.bloquearBtnModal = true;
       axios.put("/info-cepas/editar/".concat(this.id), this.modal).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
+        } else {
+          _this2.bloquearBtnModal = false;
+
+          _this2.accionEditarTipoCepa({
+            info: res.data,
+            tipo: _this2.modal.tipo
+          });
+
+          _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
+
+          _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
+
+          _this2.$modal.hide("modal_editar_tipo_cepa");
         }
-
-        _this2.bloquearBtnModal = false;
-
-        _this2.accionEditarTipoCepa({
-          info: res.data,
-          tipo: _this2.modal.tipo
-        });
-
-        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
-
-        _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
-
-        _this2.$modal.hide("modal_editar_tipo_cepa");
       })["catch"](function (error) {
         _this2.bloquearBtnModal = false;
 
-        if (error.response) {
-          _this2.errors = error.response.data;
+        if (error.response.status === 422) {
+          _this2.errors = error.response.data.errors;
         }
 
         _this2.toastr("Error!!!", "", "error", 4000);
@@ -505,29 +503,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         data: this.modal
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this3.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
-
-        _this3.bloquearBtnModal = false;
-
-        if (res.data === "negativo") {
-          _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " cuenta con cepas vinculadas, favor eliminarlas", "warning", 8000);
-        } else if (res.data === "negativo1") {
-          _this3.toastr("Precaución!!", "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas", "warning", 8000);
         } else {
-          _this3.accionEliminarTipoCepa({
-            info: res.data,
-            tipo: _this3.modal.tipo
-          });
+          _this3.bloquearBtnModal = false;
 
-          _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+          if (res.data === "negativo") {
+            _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " cuenta con cepas vinculadas, favor eliminarlas", "warning", 8000);
+          } else if (res.data === "negativo1") {
+            _this3.toastr("Precaución!!", "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas", "warning", 8000);
+          } else {
+            _this3.accionEliminarTipoCepa({
+              info: res.data,
+              tipo: _this3.modal.tipo
+            });
 
-          _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
+            _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+
+            _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
+          }
+
+          _this3.$modal.hide("modal_eliminar_tipo_cepa");
         }
-
-        _this3.$modal.hide("modal_eliminar_tipo_cepa");
       })["catch"](function (error) {
         _this3.bloquearBtnModal = false;
 
@@ -3749,7 +3746,7 @@ var websocketsModalOtraInfo = function websocketsModalOtraInfo(tipoInfo) {
           id: this.id,
           tipo: this.modal.tipo
         });
-        this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+        this.$events.fire("eliminarMiBloqueo" + tipoInfo, {
           id: this.id,
           tipo: this.modal.tipo
         });
@@ -3759,7 +3756,7 @@ var websocketsModalOtraInfo = function websocketsModalOtraInfo(tipoInfo) {
           id: this.id,
           tipo: this.modal.tipo
         });
-        this.$events.fire("spliceMisBloqueos" + tipoInfo, {
+        this.$events.fire("eliminarMiBloqueo" + tipoInfo, {
           id: this.id,
           tipo: this.modal.tipo
         });
@@ -3786,7 +3783,7 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
     data: function data() {
       return {
         bloqueos: [],
-        misBloqueos: []
+        miBloqueo: null
       };
     },
     methods: {
@@ -3806,18 +3803,16 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
         this.$events.fire(e.id + "-desbloquearBtns-" + e.tipo);
       },
       // guardar mis bloqueos
-      pushMisBloqueos: function pushMisBloqueos(e) {
-        this.misBloqueos.push({
+      agregarMiBloqueo: function agregarMiBloqueo(e) {
+        this.miBloqueo = {
           idUser: e.idUser,
           id: e.id,
           tipo: e.tipo
-        });
+        };
       },
-      spliceMisBloqueos: function spliceMisBloqueos(e) {
+      eliminarMiBloqueo: function eliminarMiBloqueo(e) {
         if (e.id != 0) {
-          this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
-            return data.id === e.id;
-          }), 1);
+          this.miBloqueo = null;
         }
       },
       //borrar bloqueos
@@ -3840,7 +3835,7 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
       },
       enviarBloqueos: function enviarBloqueos() {
         window.Echo["private"]("recibirBtns" + tipoInfo).whisper("recibirBtns" + tipoInfo, {
-          bloqueos: this.misBloqueos
+          miBloqueo: this.miBloqueo
         });
       }
     },
@@ -3848,7 +3843,7 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
       var _this = this;
 
       window.Echo.join(tipoInfo).joining(function (data) {
-        if (_this.misBloqueos.length > 0) {
+        if (_this.miBloqueo) {
           _this.enviarBloqueos();
         }
       }).leaving(function (data) {
@@ -3868,20 +3863,20 @@ var websocketsOtraInfoMixin = function websocketsOtraInfoMixin(tipoInfo) {
 
       this.$emit("rutaHijo", window.location.pathname);
       window.Echo["private"]("recibirBtns" + tipoInfo).listenForWhisper("recibirBtns" + tipoInfo, function (e) {
-        if (e.bloqueos.length > 0) {
-          _this2.bloquearBtnsTabla(e.bloqueos[0]);
+        if (e.miBloqueo) {
+          _this2.bloquearBtnsTabla(e.miBloqueo);
         }
       });
-      this.$events.$on("pushMisBloqueos" + tipoInfo, function (e) {
-        _this2.pushMisBloqueos(e);
+      this.$events.$on("agregarMiBloqueo" + tipoInfo, function (e) {
+        _this2.agregarMiBloqueo(e);
       });
-      this.$events.$on("spliceMisBloqueos" + tipoInfo, function (e) {
-        _this2.spliceMisBloqueos(e);
+      this.$events.$on("eliminarMiBloqueo" + tipoInfo, function (e) {
+        _this2.eliminarMiBloqueo(e);
       });
     },
     destroyed: function destroyed() {
-      this.$events.$off("pushMisBloqueos" + tipoInfo);
-      this.$events.$off("spliceMisBloqueos" + tipoInfo);
+      this.$events.$off("agregarMiBloqueo" + tipoInfo);
+      this.$events.$off("eliminarMiBloqueo" + tipoInfo);
     },
     beforeDestroy: function beforeDestroy() {
       window.Echo.leave(tipoInfo);

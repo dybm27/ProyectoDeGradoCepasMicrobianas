@@ -35,7 +35,7 @@ export default new Vuex.Store({
     },
     modules: {
         usuarios,
-        // cepas,
+        cepas,
         cepa,
         info_caract,
         info_cepas,

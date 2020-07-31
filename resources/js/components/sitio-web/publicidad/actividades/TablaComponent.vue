@@ -98,21 +98,22 @@ export default {
         })
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr(
+              "Eliminar Actividad",
+              "Actividad eliminada con exito!!",
+              "success"
+            );
+            this.accionActividad({ tipo: "eliminar", data: res.data });
+            this.actualizarTabla();
+            this.$modal.hide("modal_eliminar_actividad");
           }
-          this.bloquearBtnModal = false;
-          this.toastr(
-            "Eliminar Actividad",
-            "Actividad eliminada con exito!!",
-            "success"
-          );
-          this.accionActividad({ tipo: "eliminar", data: res.data });
-          this.actualizarTabla();
-          this.$modal.hide("modal_eliminar_actividad");
         })
         .catch((error) => {
           this.bloquearBtnModal = false;

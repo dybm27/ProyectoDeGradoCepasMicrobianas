@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PublicidadController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.publicidad');
-    }
-
     public function store(Request $request)
     {
         switch ($request->tipo) {
@@ -40,6 +35,13 @@ class PublicidadController extends Controller
             $reglas += ['link' => 'required', 'imagen' => 'required'];
         }
         $this->validate($request, $reglas);
+
+        if ($request->publicar == 1) {
+            if (!$this->validarCheck($request->tipo)) {
+                return response(['errors' =>
+                ['publicar' => ['No es posible publicar la ' . $request->tipo]]], 422);
+            }
+        }
 
         switch ($request->tipo) {
             case 'noticia':
@@ -171,6 +173,12 @@ class PublicidadController extends Controller
 
     public function publicar(Request $request, $id)
     {
+        if ($request->publicar == 1) {
+            if (!$this->validarCheck($request->tipo)) {
+                return response('No es posible publicar la ' . $request->tipo, 422);
+            }
+        }
+
         switch ($request->tipo) {
             case 'noticia':
                 $publicidad = Noticia::find($id);
@@ -206,9 +214,9 @@ class PublicidadController extends Controller
         };
     }
 
-    public function ejecutarEvento($tipoDocumento, $publicidad, $tipoAccion)
+    public function ejecutarEvento($tipo, $publicidad, $tipoAccion)
     {
-        switch ($tipoDocumento) {
+        switch ($tipo) {
             case 'noticia':
                 //event(new Prueba('hola mores'));
                 broadcast(new NoticiaEvent($publicidad, $tipoAccion))->toOthers();
@@ -220,5 +228,31 @@ class PublicidadController extends Controller
                 broadcast(new NovedadEvent($publicidad, $tipoAccion))->toOthers();
                 break;
         }
+    }
+
+    public function validarCheck($tipo)
+    {
+        $res = false;
+        switch ($tipo) {
+            case 'noticia':
+                $cant = Noticia::where('publicar', 1)->count();
+                if ($cant < 5) {
+                    $res = true;
+                }
+                break;
+            case 'actividad':
+                $cant = Actividad::where('publicar', 1)->count();
+                if ($cant < 7) {
+                    $res = true;
+                }
+                break;
+            case 'novedad':
+                $cant = Novedad::where('publicar', 1)->count();
+                if ($cant < 7) {
+                    $res = true;
+                }
+                break;
+        }
+        return $res;
     }
 }

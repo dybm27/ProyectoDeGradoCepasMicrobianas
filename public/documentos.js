@@ -90,10 +90,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("documento")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["obtenerDocumentos", "accionPublicacion", "accionProyecto"]), {
     ruta: function ruta(_ruta) {
-      if (_ruta.includes("proyecto")) {
-        this.tipo = "Tabla Proyectos";
-      } else {
+      if (_ruta.includes("publicaciones")) {
         this.tipo = "Tabla Publicaciones";
+      } else {
+        this.tipo = "Tabla Proyectos";
       }
     },
     cambiarTipo: function cambiarTipo(tipo) {

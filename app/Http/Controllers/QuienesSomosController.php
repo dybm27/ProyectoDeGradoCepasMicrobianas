@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Storage;
 
 class QuienesSomosController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.quienes-somos');
-    }
-
     public function cambiarMision(Request $request)
     {
         $this->validarCampos($request);

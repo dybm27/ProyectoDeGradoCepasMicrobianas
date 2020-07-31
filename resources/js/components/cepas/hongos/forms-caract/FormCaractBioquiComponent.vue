@@ -150,28 +150,31 @@ export default {
             .post("/cepas/hongo/caract-bioqui", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Características Bioquímicas",
+                  "Características Bioquímicas agregadas con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Característica";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Características Bioquímicas",
-                "Características Bioquímicas agregadas con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -184,25 +187,28 @@ export default {
           .put(`/cepas/hongo/caract-bioqui/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Características Bioquímicas",
+                "Características Bioquímicas editadas con exito!!",
+                "success"
+              );
             }
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Características Bioquímicas",
-              "Características Bioquímicas editadas con exito!!",
-              "success"
-            );
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            this.errors = [];
-            this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }

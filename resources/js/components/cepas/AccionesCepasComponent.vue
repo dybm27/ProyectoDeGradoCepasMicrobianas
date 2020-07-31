@@ -5,7 +5,8 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"
           v-tooltip.left="'Agregar y Editar Caracteristicas'"
-          @click="itemAction('agregar-editar-caract', rowData, rowIndex)"
+          @click="caracteristicas( rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-file-alt"></i>
         </button>
@@ -13,7 +14,8 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
           v-tooltip="'Ver Cepa'"
-          @click="itemAction('ver-cepa', rowData, rowIndex)"
+          @click="ver( rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-eye"></i>
         </button>
@@ -24,7 +26,8 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar Cepa'"
-          @click="itemAction('editar-cepa', rowData, rowIndex)"
+          @click="editar(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="fas fa-pencil-alt"></i>
         </button>
@@ -33,6 +36,7 @@
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar Cepa'"
           @click="showModal(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
@@ -42,166 +46,100 @@
 </template>
 
   <script>
+import websocketsAccionesCepasMixin from "../../mixins/websocketsAccionesCepas";
+import vuex from "vuex";
 export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
-      mostrar: true
+      disabledBtns: false,
     };
   },
+  mixins: [websocketsAccionesCepasMixin],
+  computed: {
+    ...vuex.mapState(["auth"]),
+  },
   methods: {
-    itemAction(action, data, index) {
-      let ruta = window.location.pathname;
-      if (action == "agregar-editar-caract") {
-        switch (data.grupo_microbiano_id) {
-          case 1:
-            if (ruta.includes("bacterias")) {
-              this.$router.push({
-                name: "caract-macro-bacteria",
-                params: { cepaBacteriaId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-bacteria",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 2:
-            if (ruta.includes("hongos")) {
-              this.$router.push({
-                name: "caract-macro-hongo",
-                params: { cepaHongoId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-hongo",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 3:
-            if (ruta.includes("levaduras")) {
-              this.$router.push({
-                name: "caract-macro-levadura",
-                params: { cepaLevaduraId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-levadura",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 4:
-            if (ruta.includes("actinomicetos")) {
-              this.$router.push({
-                name: "caract-macro-actinomiceto",
-                params: { cepaActinomicetoId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-actinomiceto",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-        }
-      } else if (action == "ver-cepa") {
-        switch (data.grupo_microbiano_id) {
-          case 1:
-            if (ruta.includes("bacterias")) {
-              this.$router.push({
-                name: "ver-bacteria",
-                params: { cepaBacteriaId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-bacteria",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 2:
-            if (ruta.includes("hongos")) {
-              this.$router.push({
-                name: "ver-hongo",
-                params: { cepaHongoId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-hongo",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 3:
-            if (ruta.includes("levaduras")) {
-              this.$router.push({
-                name: "ver-levadura",
-                params: { cepaLevaduraId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-levadura",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-          case 4:
-            if (ruta.includes("actinomicetos")) {
-              this.$router.push({
-                name: "ver-actinomiceto",
-                params: { cepaActinomicetoId: data.id }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-actinomiceto",
-                params: { cepaId: data.id }
-              });
-            }
-            break;
-        }
-      } else {
-        if (ruta.includes("bacterias")) {
+    caracteristicas(data) {
+      let ruta = this.$route.path;
+      switch (data.grupo_microbiano_id) {
+        case 1:
           this.$router.push({
-            name: "cepa-bacteria-editar",
-            params: { cepaId: data.id }
+            name: "caract-macro-cepa-bacteria",
+            params: { cepaId: data.id },
           });
-        } else if (ruta.includes("hongos")) {
+          break;
+        case 2:
           this.$router.push({
-            name: "cepa-hongo-editar",
-            params: { cepaId: data.id }
+            name: "caract-macro-cepa-hongo",
+            params: { cepaId: data.id },
           });
-        } else if (ruta.includes("levaduras")) {
+          break;
+        case 3:
           this.$router.push({
-            name: "cepa-levadura-editar",
-            params: { cepaId: data.id }
+            name: "caract-macro-cepa-levadura",
+            params: { cepaId: data.id },
           });
-        } else if (ruta.includes("actinomicetos")) {
+          break;
+        case 4:
           this.$router.push({
-            name: "cepa-actinomiceto-editar",
-            params: { cepaId: data.id }
+            name: "caract-macro-cepa-actinomiceto",
+            params: { cepaId: data.id },
           });
-        } else {
-          this.$router.push({
-            name: "cepa-editar",
-            params: { cepaId: data.id }
-          });
-        }
+          break;
       }
+      this.enviarBloqueo(data);
     },
-    showModal(data) {
-      this.$modal.show("my_modal_eliminarCepa", { id: data.id });
-    }
-  }
+    ver(data) {
+      let ruta = window.location.pathname;
+      switch (data.grupo_microbiano_id) {
+        case 1:
+          this.$router.push({
+            name: "ver-cepa-bacteria",
+            params: { cepaId: data.id },
+          });
+          break;
+        case 2:
+          this.$router.push({
+            name: "ver-cepa-hongo",
+            params: { cepaId: data.id },
+          });
+          break;
+        case 3:
+          this.$router.push({
+            name: "ver-cepa-levadura",
+            params: { cepaId: data.id },
+          });
+          break;
+        case 4:
+          this.$router.push({
+            name: "ver-cepa-actinomiceto",
+            params: { cepaId: data.id },
+          });
+          break;
+      }
+      this.enviarBloqueo(data);
+    },
+  },
+  created() {
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-cepas", (e) =>
+      this.crearEventosBtns()
+    );
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-cepas", (e) =>
+      this.eliminarEventosBtns(e)
+    );
+  },
+  destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-cepas");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-cepas");
+  },
 };
 </script>

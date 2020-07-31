@@ -640,19 +640,20 @@ __webpack_require__.r(__webpack_exports__);
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/cambiar-imagen/").concat(this.cepa.id), parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this.$emit("accionImagen", res.data);
+
+              _this.$modal.hide("agregar_cambiar_imagen");
+
+              _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
             }
-
-            _this.$emit("accionImagen", res.data);
-
-            _this.$modal.hide("agregar_cambiar_imagen");
-
-            _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
           })["catch"](function (error) {
-            _this.modalImagen.errors = [];
-            _this.modalImagen.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.modalImagen.errors = [];
+              _this.modalImagen.errors = error.response.data.errors;
+            }
 
             _this.toastr("Error!!", "", "error");
           });
@@ -665,19 +666,20 @@ __webpack_require__.r(__webpack_exports__);
         };
         axios.put("/cepas/".concat(this.tipoCepa, "/eliminar-imagen/").concat(this.cepa.id), _parametros).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.$emit("accionImagen", res.data);
+
+            _this.$modal.hide("eliminar_imagen");
+
+            _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
           }
-
-          _this.$emit("accionImagen", res.data);
-
-          _this.$modal.hide("eliminar_imagen");
-
-          _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
         })["catch"](function (error) {
-          _this.modalImagen.errors = [];
-          _this.modalImagen.errors = error.response.data.errors;
+          if (error.response.status === 422) {
+            _this.modalImagen.errors = [];
+            _this.modalImagen.errors = error.response.data.errors;
+          }
 
           _this.toastr("Error!!", "", "error");
         });
@@ -690,19 +692,20 @@ __webpack_require__.r(__webpack_exports__);
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/agregar-imagen/").concat(this.cepa.id), _parametros2).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
+            } else {
+              _this.$emit("accionImagen", res.data);
+
+              _this.$modal.hide("agregar_cambiar_imagen");
+
+              _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
             }
-
-            _this.$emit("accionImagen", res.data);
-
-            _this.$modal.hide("agregar_cambiar_imagen");
-
-            _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
           })["catch"](function (error) {
-            _this.modalImagen.errors = [];
-            _this.modalImagen.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.modalImagen.errors = [];
+              _this.modalImagen.errors = error.response.data.errors;
+            }
 
             _this.toastr("Error!!", "", "error");
           });
@@ -1287,7 +1290,7 @@ var render = function() {
                           expression: "btnAgregar"
                         }
                       ],
-                      staticClass: "mr-3 btn btn-info btn-block",
+                      staticClass: "mr-3 btn btn-success btn-block",
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
@@ -1652,7 +1655,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: { type: "button", disabled: _vm.validarBtn },
                   on: { click: _vm.accionModal }
                 },
@@ -1785,7 +1788,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: { type: "button" },
                   on: { click: _vm.accionModal }
                 },

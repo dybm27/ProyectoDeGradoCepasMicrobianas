@@ -18,11 +18,6 @@ use Illuminate\Support\Facades\Auth;
 
 class InfoCaracBacteriasController extends Controller
 {
-    public function index()
-    {
-        return view('otra-info');
-    }
-
     public function agregarInfo(Request $request)
     {
         switch ($request->tipo) {

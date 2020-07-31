@@ -209,22 +209,23 @@ export default {
         .delete(`/cepas/bacteria/caract-macro/${id}`)
         .then((res) => {
           if (res.request.responseURL === process.env.MIX_LOGIN) {
-            this.$ls.set(
+            localStorage.setItem(
               "mensajeLogin",
               "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
             );
             window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.modificarForm = true;
+            this.$modal.hide("eliminar_caract_macro_bacteria");
+            this.accionEliminarCaract({ tipo: "macro", data: res.data });
+            this.formatear(num);
+            this.toastr(
+              "Eliminar Medio",
+              "Medio eliminado con exito!!",
+              "success"
+            );
           }
-          this.mostrarBtnAgregar = true;
-          this.modificarForm = true;
-          this.$modal.hide("eliminar_caract_macro_bacteria");
-          this.accionEliminarCaract({ tipo: "macro", data: res.data });
-          this.formatear(num);
-          this.toastr(
-            "Eliminar Medio",
-            "Medio eliminado con exito!!",
-            "success"
-          );
         })
         .catch((error) => {
           this.toastr("Error!!", "", "error");

@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hongos_VerHongoComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hongos/VerHongoComponent.vue */ "./resources/js/components/cepas/hongos/VerHongoComponent.vue");
 /* harmony import */ var _levaduras_VerLevaduraComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./levaduras/VerLevaduraComponent.vue */ "./resources/js/components/cepas/levaduras/VerLevaduraComponent.vue");
 /* harmony import */ var _actinomicetos_VerActinomicetoComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actinomicetos/VerActinomicetoComponent.vue */ "./resources/js/components/cepas/actinomicetos/VerActinomicetoComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_accionVer_accionCaract__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/accionVer-accionCaract */ "./resources/js/mixins/accionVer-accionCaract.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -70,6 +72,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     VerBacteria: _bacterias_VerBacteriaComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -77,98 +81,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     VerLevadura: _levaduras_VerLevaduraComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     VerActinomiceto: _actinomicetos_VerActinomicetoComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  props: ["tipoG"],
-  data: function data() {
-    return {
-      tipo: ""
-    };
-  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_accionVer_accionCaract__WEBPACK_IMPORTED_MODULE_6__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getUsuarioById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("cepa", ["cepa"])),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["llenarCepa", "limpiarCepa"])),
   created: function created() {
-    switch (this.tipoG) {
-      case 1:
-        this.obtenerCepa(this.$route.params.cepaBacteriaId);
-        break;
-
-      case 2:
-        this.obtenerCepa(this.$route.params.cepaHongoId);
-        break;
-
-      case 3:
-        this.obtenerCepa(this.$route.params.cepaLevaduraId);
-        break;
-
-      case 4:
-        this.obtenerCepa(this.$route.params.cepaActinomicetoId);
-        break;
-
-      case 0:
-        this.obtenerCepa(this.$route.params.cepaId);
-        break;
-    }
-
-    this.$emit("rutaHijo", window.location.pathname);
-  },
-  watch: {
-    cepa: function cepa() {
-      if (this.cepa) {
-        if (this.cepa === "No Existe") {
-          this.tipo = 5;
-        } else {
-          this.tipo = this.verificarUrl(this.cepa.cepa.grupo_microbiano_id);
-        }
-      }
-    }
-  },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["obtenerCepa", "limpiarCepa"]), {
-    verificarUrl: function verificarUrl(tipo) {
-      var ruta = window.location.pathname;
-
-      switch (tipo) {
-        case 1:
-          if (ruta.includes("bacteria")) {
-            return 1;
-          } else {
-            return 5;
-          }
-
-          break;
-
-        case 2:
-          if (ruta.includes("hongo")) {
-            return 2;
-          } else {
-            return 5;
-          }
-
-          break;
-
-        case 3:
-          if (ruta.includes("levadura")) {
-            return 3;
-          } else {
-            return 5;
-          }
-
-          break;
-
-        case 4:
-          if (ruta.includes("actinomiceto")) {
-            return 4;
-          } else {
-            return 5;
-          }
-
-          break;
-      }
-    }
-  }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("cepa", ["cepa"]), {
-    getTipo: function getTipo() {
-      return this.tipo;
-    }
-  }),
-  destroyed: function destroyed() {
-    this.limpiarCepa();
+    this.$emit("cambiarTipo", "ver");
   }
 });
 
@@ -711,24 +628,23 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+
+            _this.errorSelect = "";
+            _this.selectImprimir = [];
+            var url = window.URL.createObjectURL(new Blob([res.data]));
+            var link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
           }
-
-          _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
-
-          _this.errorSelect = "";
-          _this.selectImprimir = [];
-          var url = window.URL.createObjectURL(new Blob([res.data]));
-          var link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
         })["catch"](function (error) {
           _this.btnTodo = false;
           _this.btnSeleccionado = false;
@@ -1661,24 +1577,23 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+
+            _this.errorSelect = "";
+            _this.selectImprimir = [];
+            var url = window.URL.createObjectURL(new Blob([res.data]));
+            var link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
           }
-
-          _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
-
-          _this.errorSelect = "";
-          _this.selectImprimir = [];
-          var url = window.URL.createObjectURL(new Blob([res.data]));
-          var link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
         })["catch"](function (error) {
           _this.btnTodo = false;
           _this.btnSeleccionado = false;
@@ -2570,24 +2485,23 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+
+            _this.errorSelect = "";
+            _this.selectImprimir = [];
+            var url = window.URL.createObjectURL(new Blob([res.data]));
+            var link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
           }
-
-          _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
-
-          _this.errorSelect = "";
-          _this.selectImprimir = [];
-          var url = window.URL.createObjectURL(new Blob([res.data]));
-          var link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
         })["catch"](function (error) {
           _this.btnTodo = false;
           _this.btnSeleccionado = false;
@@ -3518,24 +3432,23 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
+          } else {
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+
+            _this.errorSelect = "";
+            _this.selectImprimir = [];
+            var url = window.URL.createObjectURL(new Blob([res.data]));
+            var link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
           }
-
-          _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
-
-          _this.errorSelect = "";
-          _this.selectImprimir = [];
-          var url = window.URL.createObjectURL(new Blob([res.data]));
-          var link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "Cepa-".concat(_this.cepa.cepa.codigo, ".pdf"));
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
         })["catch"](function (error) {
           _this.btnTodo = false;
           _this.btnSeleccionado = false;
@@ -4041,15 +3954,15 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.getTipo
+      _vm.numGrupo
         ? [
-            _vm.getTipo === 1
+            _vm.numGrupo === 1
               ? [_c("VerBacteria")]
-              : _vm.getTipo === 2
+              : _vm.numGrupo === 2
               ? [_c("VerHongo")]
-              : _vm.getTipo === 3
+              : _vm.numGrupo === 3
               ? [_c("VerLevadura")]
-              : _vm.getTipo === 4
+              : _vm.numGrupo === 4
               ? [_c("VerActinomiceto")]
               : [_vm._m(0)]
           ]
@@ -12208,6 +12121,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerLevaduraComponent_vue_vue_type_template_id_3a295870___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/accionVer-accionCaract.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/mixins/accionVer-accionCaract.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var accionVerYCaractmixin = {
+  props: ["tipoG", "bloqueos", "miBloqueo", "cantUser", "cantRecibirBtns", "tipo"],
+  data: function data() {
+    return {
+      numGrupo: "",
+      idCepa: 0
+    };
+  },
+  created: function created() {
+    this.buscarIdCepa();
+    this.obtenerCepa(this.idCepa);
+  },
+  watch: {
+    cepa: function cepa() {
+      if (this.cepa) {
+        if (this.cepa === "No Existe") {
+          this.numGrupo = 5;
+        } else {
+          this.numGrupo = this.verificarUrl(this.cepa.cepa.grupo_microbiano_id);
+        }
+      }
+    },
+    cantRecibirBtns: function cantRecibirBtns() {
+      if (this.cantRecibirBtns === this.cantUser - 1) {
+        if (!this.miBloqueo) {
+          this.verificarBloqueo(this.idCepa);
+        }
+      }
+    }
+  },
+  methods: {
+    buscarIdCepa: function buscarIdCepa() {
+      switch (this.tipoG) {
+        case 1:
+          this.idCepa = parseInt(this.$route.params.cepaBacteriaId);
+          break;
+
+        case 2:
+          this.idCepa = parseInt(this.$route.params.cepaHongoId);
+          break;
+
+        case 3:
+          this.idCepa = parseInt(this.$route.params.cepaLevaduraId);
+          break;
+
+        case 4:
+          this.idCepa = parseInt(this.$route.params.cepaActinomicetoId);
+          break;
+
+        case 0:
+          this.idCepa = parseInt(this.$route.params.cepaId);
+          break;
+      }
+    },
+    verificarUrl: function verificarUrl(tipo) {
+      var ruta = window.location.pathname;
+
+      switch (tipo) {
+        case 1:
+          if (ruta.includes("bacteria")) {
+            this.enviarBloqueo();
+            return 1;
+          }
+
+          break;
+
+        case 2:
+          if (ruta.includes("hongo")) {
+            this.enviarBloqueo();
+            return 2;
+          }
+
+          break;
+
+        case 3:
+          if (ruta.includes("levadura")) {
+            this.enviarBloqueo();
+            return 3;
+          }
+
+          break;
+
+        case 4:
+          if (ruta.includes("actinomiceto")) {
+            this.enviarBloqueo();
+            return 4;
+          }
+
+          break;
+      }
+
+      return 5;
+    },
+    verificarBloqueo: function verificarBloqueo(id) {
+      var data = this.bloqueos.find(function (btn) {
+        return btn.id === id;
+      });
+
+      if (data) {
+        this.$router.push({
+          name: this.tipo + "s"
+        });
+        this.toastr("Acción no disponible!!!", this.getUsuarioById(data.idUser).name + " se encuentra modificando esa Cepa!!!", "warning");
+      } else {
+        this.obtenerCepa(this.idCepa);
+      }
+    },
+    obtenerCepa: function obtenerCepa(id) {
+      var _this = this;
+
+      axios.get("/info-panel/cepa/agregar-editar-caract/".concat(id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        } else {
+          _this.llenarCepa(res.data);
+        }
+      });
+    },
+    enviarBloqueo: function enviarBloqueo() {
+      if (!this.miBloqueo) {
+        window.Echo["private"]("bloquearBtnsCepa").whisper("bloquearBtnsCepa", {
+          id: this.idCepa,
+          idUser: this.auth.id
+        });
+        this.$events.fire("agregarMiBloqueoCepa", {
+          id: this.idCepa,
+          idUser: this.auth.id
+        });
+      }
+    }
+  },
+  destroyed: function destroyed() {
+    this.limpiarCepa();
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (accionVerYCaractmixin);
 
 /***/ })
 

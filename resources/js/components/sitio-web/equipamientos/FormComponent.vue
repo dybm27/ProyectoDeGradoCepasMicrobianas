@@ -170,69 +170,65 @@ export default {
           .post("/equipamientos", this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Equipamiento",
+                "Equipamiento agregado con exito!!",
+                "success"
+              );
+              this.accionEquipamiento({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Agregar Equipamiento",
-              "Equipamiento agregado con exito!!",
-              "success"
-            );
-            this.accionEquipamiento({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.toastr("Error!!", "", "error");
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/equipamientos/${this.idEquipamiento}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Equipamiento",
+                "Equipamiento editado con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsEquipamiento").whisper(
+                "desbloquearBtnsEquipamiento",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoEquipamiento", {
+                id: res.data.id,
+              });
+              this.accionEquipamiento({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Equipamiento",
-              "Equipamiento editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsEquipamiento").whisper(
-              "desbloquearBtnsEquipamiento",
-              {
-                id: res.data.id,
-              }
-            );
-            window.Echo.private("desbloquearCheckEquipamiento").whisper(
-              "desbloquearCheckEquipamiento",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("spliceMisBloqueosEquipamiento", {
-              id: res.data.id,
-            });
-            this.accionEquipamiento({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            if (error.response) {
-              this.toastr("Error!!", "", "error");
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },

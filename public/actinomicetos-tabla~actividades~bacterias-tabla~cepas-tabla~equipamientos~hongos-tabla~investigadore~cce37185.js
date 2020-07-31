@@ -90,6 +90,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilterBarComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FilterBarComponent */ "./resources/js/components/vuetable/FilterBarComponent.vue");
 /* harmony import */ var _PaginationComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PaginationComponent */ "./resources/js/components/vuetable/PaginationComponent.vue");
 /* harmony import */ var _PaginationInfoComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PaginationInfoComponent */ "./resources/js/components/vuetable/PaginationInfoComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 //
 //
 //
@@ -158,6 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -194,6 +196,7 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_5__["default"]],
   data: function data() {
     return {
       appendParams: {
@@ -367,26 +370,6 @@ __webpack_require__.r(__webpack_exports__);
           if (error.response) {}
         });
       }
-    },
-    toastr: function toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
     }
   },
   mounted: function mounted() {
@@ -1035,7 +1018,7 @@ var render = function() {
             _c("vuetable", {
               ref: "vuetable",
               attrs: {
-                noDataTemplate: "Datos no Disponibles",
+                noDataTemplate: "Cargando informacion...",
                 css: _vm.css.table,
                 "api-url": _vm.apiUrl,
                 fields: _vm.fields,

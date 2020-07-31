@@ -27,7 +27,7 @@ export default [
     { name: "origen", sortField: "origen", titleClass: "text-center" },
     ,
     {
-        name: "__component:checkboxs-publicar",
+        name: "__component:checkboxs_publicar",
         title: "Publicar",
         titleClass: "text-center",
         dataClass: "text-center"

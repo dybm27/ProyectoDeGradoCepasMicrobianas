@@ -248,28 +248,31 @@ export default {
             .post("/cepas/levadura/caract-macro", this.parametros)
             .then((res) => {
               if (res.request.responseURL === process.env.MIX_LOGIN) {
-                this.$ls.set(
+                localStorage.setItem(
                   "mensajeLogin",
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Medio";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Medio",
+                  "Medio agregado con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Medio";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Medio",
-                "Medio agregado con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
             });
         } else {
@@ -282,22 +285,29 @@ export default {
           .put(`/cepas/levadura/caract-macro/${this.info.id}`, this.parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Medio",
+                "Medio editado con exito!!",
+                "success"
+              );
             }
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.$emit("editar", res.data);
-            this.toastr("Editar Medio", "Medio editado con exito!!", "success");
           })
           .catch((error) => {
             this.bloquearBtn = false;
-            this.errors = [];
-            this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.errors = [];
+              this.errors = error.response.data.errors;
+            }
             this.toastr("Error!!", "", "error");
           });
       }
@@ -335,25 +345,28 @@ export default {
           .post("/info-caract-levaduras/agregar", parametros)
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
-              this.$ls.set(
+              localStorage.setItem(
                 "mensajeLogin",
                 "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
               window.location.href = "/";
+            } else {
+              this.accionAgregarTipoCaractLevadura({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info-levadura");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
             }
-            this.accionAgregarTipoCaractLevadura({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$modal.hide("agregar-caract-info-levadura");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
           })
           .catch((error) => {
-            this.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              this.modal.errors = error.response.data.errors;
+            }
             this.toastr("Error!!!!", "", "error");
           });
       }

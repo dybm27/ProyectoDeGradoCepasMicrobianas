@@ -36,6 +36,6 @@ class HongosInfoEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('hongos-name');
+        return new Channel('hongos-info');
     }
 }

@@ -1,6 +1,6 @@
 const websocketsMixin = (tipoM, tipoP) => ({
     data() {
-        return { bloqueos: [], misBloqueos: [] };
+        return { bloqueos: [], miBloqueo: [] };
     },
     methods: {
         // Bloquear Btns
@@ -17,18 +17,12 @@ const websocketsMixin = (tipoM, tipoP) => ({
             this.$events.fire(data.id + "-desbloquearBtns" + tipoM);
         },
         // guardar mis bloqueos
-        pushMisBloqueos(e) {
-            this.misBloqueos.push({
-                idUser: e.idUser,
-                id: e.id
-            });
+        agregarMiBloqueo(e) {
+            this.miBloqueo = e;
         },
-        spliceMisBloqueos(e) {
+        eliminarMiBloqueo(e) {
             if (e.id != 0) {
-                this.misBloqueos.splice(
-                    this.misBloqueos.findIndex(data => data.id === e.id),
-                    1
-                );
+                this.miBloqueo = null;
             }
         },
         //borrar bloqueos
@@ -50,7 +44,7 @@ const websocketsMixin = (tipoM, tipoP) => ({
             window.Echo.private("recibirBtns" + tipoM).whisper(
                 "recibirBtns" + tipoM,
                 {
-                    bloqueos: this.misBloqueos
+                    miBloqueo: this.miBloqueo
                 }
             );
         }
@@ -58,7 +52,7 @@ const websocketsMixin = (tipoM, tipoP) => ({
     mounted() {
         window.Echo.join(tipoP)
             .joining(data => {
-                if (this.misBloqueos.length > 0) {
+                if (this.miBloqueo) {
                     this.enviarBloqueos();
                 }
             })
@@ -85,24 +79,24 @@ const websocketsMixin = (tipoM, tipoP) => ({
         window.Echo.private("recibirBtns" + tipoM).listenForWhisper(
             "recibirBtns" + tipoM,
             e => {
-                if (e.bloqueos.length > 0) {
+                if (this.bloqueos.length == 0) {
                     this.bloquearBtnsTabla(e.bloqueos[0]);
                 }
             }
         );
-        this.$events.$on("pushMisBloqueos" + tipoM, e =>
-            this.pushMisBloqueos(e)
+        this.$events.$on("agregarMiBloqueo" + tipoM, e =>
+            this.agregarMiBloqueo(e)
         );
-        this.$events.$on("spliceMisBloqueos" + tipoM, e =>
-            this.spliceMisBloqueos(e)
+        this.$events.$on("eliminarMiBloqueo" + tipoM, e =>
+            this.eliminarMiBloqueo(e)
         );
         this.$events.$on("verificarBloqueos-" + tipoP, e =>
             this.verificarBloqueos()
         );
     },
     destroyed() {
-        this.$events.$off("pushMisBloqueos" + tipoM);
-        this.$events.$off("spliceMisBloqueos" + tipoM);
+        this.$events.$off("agregarMiBloqueo" + tipoM);
+        this.$events.$off("eliminarMiBloqueo" + tipoM);
         this.$events.$off("verificarBloqueos-" + tipoP);
     },
     beforeDestroy() {

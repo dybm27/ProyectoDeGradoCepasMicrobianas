@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"actinomicetos":"actinomicetos","bacterias":"bacterias","caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-editar":"cepa-editar","cepa-hongo":"cepa-hongo","cepas-todas":"cepas-todas","documentos":"documentos","error-404":"error-404","hongos":"hongos","levaduras":"levaduras","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d":"vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8":"vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8","actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185":"actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185","actinomicetos-tabla":"actinomicetos-tabla","bacterias-tabla":"bacterias-tabla","cepas-tabla":"cepas-tabla","hongos-tabla":"hongos-tabla","levaduras-tabla":"levaduras-tabla","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2063,6 +2063,14 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2106,6 +2114,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -2118,213 +2132,112 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      mostrar: true
+      disabledBtns: false
     };
   },
+  mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
   methods: {
-    itemAction: function itemAction(action, data, index) {
+    caracteristicas: function caracteristicas(data) {
+      var ruta = this.$route.path;
+
+      switch (data.grupo_microbiano_id) {
+        case 1:
+          this.$router.push({
+            name: "caract-macro-cepa-bacteria",
+            params: {
+              cepaId: data.id
+            }
+          });
+          break;
+
+        case 2:
+          this.$router.push({
+            name: "caract-macro-cepa-hongo",
+            params: {
+              cepaId: data.id
+            }
+          });
+          break;
+
+        case 3:
+          this.$router.push({
+            name: "caract-macro-cepa-levadura",
+            params: {
+              cepaId: data.id
+            }
+          });
+          break;
+
+        case 4:
+          this.$router.push({
+            name: "caract-macro-cepa-actinomiceto",
+            params: {
+              cepaId: data.id
+            }
+          });
+          break;
+      }
+
+      this.enviarBloqueo(data);
+    },
+    ver: function ver(data) {
       var ruta = window.location.pathname;
 
-      if (action == "agregar-editar-caract") {
-        switch (data.grupo_microbiano_id) {
-          case 1:
-            if (ruta.includes("bacterias")) {
-              this.$router.push({
-                name: "caract-macro-bacteria",
-                params: {
-                  cepaBacteriaId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-bacteria",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 2:
-            if (ruta.includes("hongos")) {
-              this.$router.push({
-                name: "caract-macro-hongo",
-                params: {
-                  cepaHongoId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-hongo",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 3:
-            if (ruta.includes("levaduras")) {
-              this.$router.push({
-                name: "caract-macro-levadura",
-                params: {
-                  cepaLevaduraId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-levadura",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 4:
-            if (ruta.includes("actinomicetos")) {
-              this.$router.push({
-                name: "caract-macro-actinomiceto",
-                params: {
-                  cepaActinomicetoId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "caract-macro-cepa-actinomiceto",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-        }
-      } else if (action == "ver-cepa") {
-        switch (data.grupo_microbiano_id) {
-          case 1:
-            if (ruta.includes("bacterias")) {
-              this.$router.push({
-                name: "ver-bacteria",
-                params: {
-                  cepaBacteriaId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-bacteria",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 2:
-            if (ruta.includes("hongos")) {
-              this.$router.push({
-                name: "ver-hongo",
-                params: {
-                  cepaHongoId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-hongo",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 3:
-            if (ruta.includes("levaduras")) {
-              this.$router.push({
-                name: "ver-levadura",
-                params: {
-                  cepaLevaduraId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-levadura",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-
-          case 4:
-            if (ruta.includes("actinomicetos")) {
-              this.$router.push({
-                name: "ver-actinomiceto",
-                params: {
-                  cepaActinomicetoId: data.id
-                }
-              });
-            } else {
-              this.$router.push({
-                name: "ver-cepa-actinomiceto",
-                params: {
-                  cepaId: data.id
-                }
-              });
-            }
-
-            break;
-        }
-      } else {
-        if (ruta.includes("bacterias")) {
+      switch (data.grupo_microbiano_id) {
+        case 1:
           this.$router.push({
-            name: "cepa-bacteria-editar",
+            name: "ver-cepa-bacteria",
             params: {
               cepaId: data.id
             }
           });
-        } else if (ruta.includes("hongos")) {
+          break;
+
+        case 2:
           this.$router.push({
-            name: "cepa-hongo-editar",
+            name: "ver-cepa-hongo",
             params: {
               cepaId: data.id
             }
           });
-        } else if (ruta.includes("levaduras")) {
+          break;
+
+        case 3:
           this.$router.push({
-            name: "cepa-levadura-editar",
+            name: "ver-cepa-levadura",
             params: {
               cepaId: data.id
             }
           });
-        } else if (ruta.includes("actinomicetos")) {
+          break;
+
+        case 4:
           this.$router.push({
-            name: "cepa-actinomiceto-editar",
+            name: "ver-cepa-actinomiceto",
             params: {
               cepaId: data.id
             }
           });
-        } else {
-          this.$router.push({
-            name: "cepa-editar",
-            params: {
-              cepaId: data.id
-            }
-          });
-        }
+          break;
       }
-    },
-    showModal: function showModal(data) {
-      this.$modal.show("my_modal_eliminarCepa", {
-        id: data.id
-      });
+
+      this.enviarBloqueo(data);
     }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-cepas", function (e) {
+      return _this.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-cepas", function (e) {
+      return _this.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-cepas");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-cepas");
   }
 });
 
@@ -2339,6 +2252,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -2355,6 +2271,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -2365,70 +2284,20 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  data: function data() {
-    return {
-      checkPublicar: false,
-      disabled: false
-    };
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-cepas", function (e) {
+      return _this.crearEventosCheck();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-cepas", function (e) {
+      return _this.eliminarEventosCheck(e);
+    });
   },
-  methods: {
-    publicar: function publicar(data) {
-      var _this = this;
-
-      this.disabled = true;
-      axios.put("/cepas/publicar/".concat(data.id), {
-        publicar: !this.checkPublicar
-      }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
-          window.location.href = "/";
-        }
-
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
-        }
-
-        _this.checkPublicar = res.data.publicar;
-        _this.disabled = false;
-      })["catch"](function (error) {
-        _this.disabled = false;
-
-        _this.toastr("Error!!", "", "error");
-      });
-    },
-    toastr: function toastr(titulo, msg) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: "success",
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
-    }
-  },
-  computed: {
-    computedDisabled: function computedDisabled() {
-      return this.disabled;
-    }
-  },
-  mounted: function mounted() {
-    if (this.rowData.publicar == 0) {
-      this.checkPublicar = false;
-    } else {
-      this.checkPublicar = true;
-    }
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-cepas");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-cepas");
   }
 });
 
@@ -2572,6 +2441,308 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  methods: {
+    caracteristicas: function caracteristicas(data) {
+      this.$router.push({
+        name: "caract-macro-actinomiceto",
+        params: {
+          cepaActinomicetoId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    },
+    ver: function ver(data) {
+      this.$router.push({
+        name: "ver-actinomiceto",
+        params: {
+          cepaActinomicetoId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-actinomicetos", function (e) {
+      return _this.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-actinomicetos", function (e) {
+      return _this.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-actinomicetos");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-actinomicetos");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-actinomicetos", function (e) {
+      return _this.crearEventosCheck();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-actinomicetos", function (e) {
+      return _this.eliminarEventosCheck(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-actinomicetos");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-actinomicetos");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  methods: {
+    caracteristicas: function caracteristicas(data) {
+      this.$router.push({
+        name: "caract-macro-bacteria",
+        params: {
+          cepaBacteriaId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    },
+    ver: function ver(data) {
+      this.$router.push({
+        name: "ver-bacteria",
+        params: {
+          cepaBacteriaId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-bacterias", function (e) {
+      return _this.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-bacterias", function (e) {
+      return _this.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-bacterias");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-bacterias");
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=script&lang=js& ***!
@@ -2628,6 +2799,187 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {},
   created: function created() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-bacterias", function (e) {
+      return _this.crearEventosCheck();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-bacterias", function (e) {
+      return _this.eliminarEventosCheck(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-bacterias");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-bacterias");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  methods: {
+    caracteristicas: function caracteristicas(data) {
+      this.$router.push({
+        name: "caract-macro-hongo",
+        params: {
+          cepaHongoId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    },
+    ver: function ver(data) {
+      this.$router.push({
+        name: "ver-hongo",
+        params: {
+          cepaHongoId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-hongos", function (e) {
+      return _this.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-hongos", function (e) {
+      return _this.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-hongos");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-hongos");
+  }
 });
 
 /***/ }),
@@ -2692,6 +3044,187 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-hongos", function (e) {
+      return _this.crearEventosCheck();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-hongos", function (e) {
+      return _this.eliminarEventosCheck(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-hongos");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-hongos");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  methods: {
+    caracteristicas: function caracteristicas(data) {
+      this.$router.push({
+        name: "caract-macro-levadura",
+        params: {
+          cepaLevaduraId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    },
+    ver: function ver(data) {
+      this.$router.push({
+        name: "ver-levadura",
+        params: {
+          cepaLevaduraId: data.id
+        }
+      });
+      this.enviarBloqueo(data);
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-levaduras", function (e) {
+      return _this.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-levaduras", function (e) {
+      return _this.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-levaduras");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-levaduras");
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js& ***!
@@ -2748,6 +3281,66 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {},
   created: function created() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-levaduras", function (e) {
+      return _this.crearEventosCheck();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-levaduras", function (e) {
+      return _this.eliminarEventosCheck(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-levaduras");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-levaduras");
+  }
 });
 
 /***/ }),
@@ -4166,7 +4759,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         idUser: this.auth.id,
         tipo: "especie"
       });
-      this.$events.fire("pushMisBloqueosCepasInfo", {
+      this.$events.fire("agregarMiBloqueoCepasInfo", {
         id: data.id,
         idUser: this.auth.id,
         tipo: "especie"
@@ -4308,7 +4901,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         idUser: this.auth.id,
         tipo: "genero"
       });
-      this.$events.fire("pushMisBloqueosCepasInfo", {
+      this.$events.fire("agregarMiBloqueoCepasInfo", {
         id: data.id,
         idUser: this.auth.id,
         tipo: "genero"
@@ -5181,16 +5774,15 @@ __webpack_require__.r(__webpack_exports__);
         tipo: "proyecto"
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
-        _this.disabled = false;
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -5366,16 +5958,15 @@ __webpack_require__.r(__webpack_exports__);
         tipo: "publicacion"
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
-        _this.disabled = false;
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -5550,16 +6141,15 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
-        _this.disabled = false;
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -5700,16 +6290,15 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
-        _this.disabled = false;
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -5851,16 +6440,23 @@ __webpack_require__.r(__webpack_exports__);
         tipo: "actividad"
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
+      })["catch"](function (error) {
         _this.disabled = false;
+
+        if (error.response.status === 422) {
+          _this.checkPublicar = false;
+
+          _this.toastr("Error", error.response.data, "error");
+        }
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -6002,16 +6598,23 @@ __webpack_require__.r(__webpack_exports__);
         tipo: "noticia"
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
+      })["catch"](function (error) {
         _this.disabled = false;
+
+        if (error.response.status === 422) {
+          _this.checkPublicar = false;
+
+          _this.toastr("Error", error.response.data, "error");
+        }
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -6158,16 +6761,23 @@ __webpack_require__.r(__webpack_exports__);
         tipo: "novedad"
       }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
-        }
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
 
-        if (res.data.publicar) {
-          _this.toastr("Publicar", "Publicado con Exito!!");
+          _this.disabled = false;
         }
-
+      })["catch"](function (error) {
         _this.disabled = false;
+
+        if (error.response.status === 422) {
+          _this.checkPublicar = false;
+
+          _this.toastr("Error", error.response.data, "error");
+        }
       });
     },
     verificarPublicar: function verificarPublicar(e) {
@@ -58409,13 +59019,10 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
-                return _vm.itemAction(
-                  "agregar-editar-caract",
-                  _vm.rowData,
-                  _vm.rowIndex
-                )
+                return _vm.caracteristicas(_vm.rowData)
               }
             }
           },
@@ -58435,9 +59042,10 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
-                return _vm.itemAction("ver-cepa", _vm.rowData, _vm.rowIndex)
+                return _vm.ver(_vm.rowData)
               }
             }
           },
@@ -58462,9 +59070,10 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
-                return _vm.itemAction("editar-cepa", _vm.rowData, _vm.rowIndex)
+                return _vm.editar(_vm.rowData)
               }
             }
           },
@@ -58484,6 +59093,7 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.showModal(_vm.rowData)
@@ -58788,6 +59398,335 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Agregar y Editar Caracteristicas",
+                expression: "'Agregar y Editar Caracteristicas'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.caracteristicas(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-file-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Ver Cepa",
+                expression: "'Ver Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.ver(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-eye" })]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Editar Cepa",
+                expression: "'Editar Cepa'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.editar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Eliminar Cepa",
+                expression: "'Eliminar Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.showModal(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-trash-alt" })]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc&":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "custom-checkbox custom-control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.checkPublicar,
+            expression: "checkPublicar"
+          }
+        ],
+        staticClass: "custom-control-input",
+        attrs: {
+          type: "checkbox",
+          id: _vm.rowData.id,
+          disabled: _vm.computedDisabled
+        },
+        domProps: {
+          checked: Array.isArray(_vm.checkPublicar)
+            ? _vm._i(_vm.checkPublicar, null) > -1
+            : _vm.checkPublicar
+        },
+        on: {
+          click: function($event) {
+            return _vm.publicar(_vm.rowData)
+          },
+          change: function($event) {
+            var $$a = _vm.checkPublicar,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  (_vm.checkPublicar = $$a
+                    .slice(0, $$i)
+                    .concat($$a.slice($$i + 1)))
+              }
+            } else {
+              _vm.checkPublicar = $$c
+            }
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("label", {
+        staticClass: "custom-control-label",
+        attrs: { for: _vm.rowData.id }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Agregar y Editar Caracteristicas",
+                expression: "'Agregar y Editar Caracteristicas'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.caracteristicas(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-file-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Ver Cepa",
+                expression: "'Ver Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.ver(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-eye" })]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Editar Cepa",
+                expression: "'Editar Cepa'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.editar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Eliminar Cepa",
+                expression: "'Eliminar Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.showModal(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-trash-alt" })]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true& ***!
@@ -58849,6 +59788,209 @@ var render = function() {
       },
       [_c("i", { staticClass: "far fa-trash-alt" })]
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "custom-checkbox custom-control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.checkPublicar,
+            expression: "checkPublicar"
+          }
+        ],
+        staticClass: "custom-control-input",
+        attrs: {
+          type: "checkbox",
+          id: _vm.rowData.id,
+          disabled: _vm.computedDisabled
+        },
+        domProps: {
+          checked: Array.isArray(_vm.checkPublicar)
+            ? _vm._i(_vm.checkPublicar, null) > -1
+            : _vm.checkPublicar
+        },
+        on: {
+          click: function($event) {
+            return _vm.publicar(_vm.rowData)
+          },
+          change: function($event) {
+            var $$a = _vm.checkPublicar,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  (_vm.checkPublicar = $$a
+                    .slice(0, $$i)
+                    .concat($$a.slice($$i + 1)))
+              }
+            } else {
+              _vm.checkPublicar = $$c
+            }
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("label", {
+        staticClass: "custom-control-label",
+        attrs: { for: _vm.rowData.id }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Agregar y Editar Caracteristicas",
+                expression: "'Agregar y Editar Caracteristicas'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.caracteristicas(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-file-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Ver Cepa",
+                expression: "'Ver Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.ver(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-eye" })]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Editar Cepa",
+                expression: "'Editar Cepa'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.editar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Eliminar Cepa",
+                expression: "'Eliminar Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.showModal(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-trash-alt" })]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -58928,6 +60070,209 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30&":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30& ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "custom-checkbox custom-control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.checkPublicar,
+            expression: "checkPublicar"
+          }
+        ],
+        staticClass: "custom-control-input",
+        attrs: {
+          type: "checkbox",
+          id: _vm.rowData.id,
+          disabled: _vm.computedDisabled
+        },
+        domProps: {
+          checked: Array.isArray(_vm.checkPublicar)
+            ? _vm._i(_vm.checkPublicar, null) > -1
+            : _vm.checkPublicar
+        },
+        on: {
+          click: function($event) {
+            return _vm.publicar(_vm.rowData)
+          },
+          change: function($event) {
+            var $$a = _vm.checkPublicar,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  (_vm.checkPublicar = $$a
+                    .slice(0, $$i)
+                    .concat($$a.slice($$i + 1)))
+              }
+            } else {
+              _vm.checkPublicar = $$c
+            }
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("label", {
+        staticClass: "custom-control-label",
+        attrs: { for: _vm.rowData.id }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Agregar y Editar Caracteristicas",
+                expression: "'Agregar y Editar Caracteristicas'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.caracteristicas(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-file-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Ver Cepa",
+                expression: "'Ver Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.ver(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-eye" })]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip.left",
+                value: "Editar Cepa",
+                expression: "'Editar Cepa'",
+                modifiers: { left: true }
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.editar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Eliminar Cepa",
+                expression: "'Eliminar Cepa'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.showModal(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-trash-alt" })]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& ***!
@@ -58989,6 +60334,83 @@ var render = function() {
       },
       [_c("i", { staticClass: "far fa-trash-alt" })]
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "custom-checkbox custom-control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.checkPublicar,
+            expression: "checkPublicar"
+          }
+        ],
+        staticClass: "custom-control-input",
+        attrs: {
+          type: "checkbox",
+          id: _vm.rowData.id,
+          disabled: _vm.computedDisabled
+        },
+        domProps: {
+          checked: Array.isArray(_vm.checkPublicar)
+            ? _vm._i(_vm.checkPublicar, null) > -1
+            : _vm.checkPublicar
+        },
+        on: {
+          click: function($event) {
+            return _vm.publicar(_vm.rowData)
+          },
+          change: function($event) {
+            var $$a = _vm.checkPublicar,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  (_vm.checkPublicar = $$a
+                    .slice(0, $$i)
+                    .concat($$a.slice($$i + 1)))
+              }
+            } else {
+              _vm.checkPublicar = $$c
+            }
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("label", {
+        staticClass: "custom-control-label",
+        attrs: { for: _vm.rowData.id }
+      })
+    ])
   ])
 }
 var staticRenderFns = []
@@ -64362,7 +65784,7 @@ var render = function() {
                     "router-link",
                     {
                       attrs: {
-                        to: { name: "cepas-tabla" },
+                        to: { name: "cepas" },
                         "active-class": "mm-active"
                       }
                     },
@@ -64382,7 +65804,7 @@ var render = function() {
                     "router-link",
                     {
                       attrs: {
-                        to: { name: "bacterias-tabla" },
+                        to: { name: "bacterias" },
                         "active-class": "mm-active"
                       }
                     },
@@ -64402,7 +65824,7 @@ var render = function() {
                     "router-link",
                     {
                       attrs: {
-                        to: { name: "hongos-tabla" },
+                        to: { name: "hongos" },
                         "active-class": "mm-active"
                       }
                     },
@@ -64422,7 +65844,7 @@ var render = function() {
                     "router-link",
                     {
                       attrs: {
-                        to: { name: "levaduras-tabla" },
+                        to: { name: "levaduras" },
                         "active-class": "mm-active"
                       }
                     },
@@ -64442,7 +65864,7 @@ var render = function() {
                     "router-link",
                     {
                       attrs: {
-                        to: { name: "actinomicetos-tabla" },
+                        to: { name: "actinomicetos" },
                         "active-class": "mm-active"
                       }
                     },
@@ -82500,9 +83922,18 @@ Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_4___default.a);
 Vue.use(vue_events__WEBPACK_IMPORTED_MODULE_2___default.a);
 Vue.use(vue_toastr__WEBPACK_IMPORTED_MODULE_3__["default"]);
 Vue.use(vue_ls__WEBPACK_IMPORTED_MODULE_6___default.a);
-Vue.component("app-majumba", __webpack_require__(/*! ./layouts/App.vue */ "./resources/js/layouts/App.vue")["default"]);
+Vue.component("app-majumba", __webpack_require__(/*! ./layouts/App.vue */ "./resources/js/layouts/App.vue")["default"]); // ------------- cepas-----------------------------------------
+
 Vue.component("acciones_cepas", __webpack_require__(/*! ./components/cepas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/AccionesCepasComponent.vue")["default"]);
-Vue.component("checkboxs-publicar", __webpack_require__(/*! ./components/cepas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("checkboxs_publicar", __webpack_require__(/*! ./components/cepas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("acciones_cepas_bacterias", __webpack_require__(/*! ./components/cepas/bacterias/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue")["default"]);
+Vue.component("checkboxs_publicar_bacterias", __webpack_require__(/*! ./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("acciones_cepas_levaduras", __webpack_require__(/*! ./components/cepas/levaduras/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue")["default"]);
+Vue.component("checkboxs_publicar_levaduras", __webpack_require__(/*! ./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("acciones_cepas_hongos", __webpack_require__(/*! ./components/cepas/hongos/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue")["default"]);
+Vue.component("checkboxs_publicar_hongos", __webpack_require__(/*! ./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("acciones_cepas_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue")["default"]);
+Vue.component("checkboxs_publicar_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")["default"]);
 Vue.component("my-detail-row-h-l-a", __webpack_require__(/*! ./components/cepas/DetailRowHLAComponent.vue */ "./resources/js/components/cepas/DetailRowHLAComponent.vue")["default"]);
 Vue.component("my-detail-row-cepas", __webpack_require__(/*! ./components/cepas/DetailRowCepasComponent.vue */ "./resources/js/components/cepas/DetailRowCepasComponent.vue")["default"]);
 Vue.component("acciones_tabla_metodo_conser_hongo", __webpack_require__(/*! ./components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue */ "./resources/js/components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue")["default"]);
@@ -82907,6 +84338,213 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe& */ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe&");
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue?vue&type=template&id=36d6bdfe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_36d6bdfe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc& */ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc&");
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc& ***!
+  \**************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=0fb3fcfc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_0fb3fcfc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=template&id=eed867c6& */ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6&");
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=template&id=eed867c6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesCepasComponent.vue?vue&type=template&id=eed867c6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_eed867c6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue":
 /*!**************************************************************************************************!*\
   !*** ./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue ***!
@@ -82994,6 +84632,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4& */ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4&");
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=37bb82c4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=template&id=37919532& */ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532&");
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=template&id=37919532& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_37919532___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue":
 /*!********************************************************************************************!*\
   !*** ./resources/js/components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue ***!
@@ -83058,6 +84834,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserHongoComponent_vue_vue_type_template_id_303b2494___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserHongoComponent_vue_vue_type_template_id_303b2494___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30& */ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30&");
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30& ***!
+  \*******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=fc081a30&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_fc081a30___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=template&id=c182da64& */ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64&");
+/* harmony import */ var _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesCepasComponent.vue?vue&type=template&id=c182da64& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesCepasComponent.vue?vue&type=template&id=c182da64&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesCepasComponent_vue_vue_type_template_id_c182da64___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -83145,6 +85059,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662& */ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662&");
+/* harmony import */ var _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue?vue&type=template&id=f48f7662&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -87351,35 +89334,13 @@ var websocketsAccionesMixin = function websocketsAccionesMixin(tipo, tipoM, tipo
     methods: {
       editar: function editar(data) {
         this.$events.fire("abrirFormulario" + tipoM, data.id);
-        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        window.Echo["private"]("bloquearCheck" + tipoM).whisper("bloquearCheck" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        this.$events.fire("pushMisBloqueos" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
+        this.enviarBloqueo(data);
       },
       showModal: function showModal(data) {
         this.$modal.show("modal_eliminar_" + tipo, {
           id: data.id
         });
-        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        window.Echo["private"]("bloquearCheck" + tipoM).whisper("bloquearCheck" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        this.$events.fire("pushMisBloqueos" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
+        this.enviarBloqueo(data);
       },
       bloquearBtns: function bloquearBtns() {
         this.disabledBtns = true;
@@ -87401,6 +89362,16 @@ var websocketsAccionesMixin = function websocketsAccionesMixin(tipo, tipoM, tipo
         this.disabledBtns = false;
         this.$events.$off(id + "-bloquearBtns" + tipoM);
         this.$events.$off(id + "-desbloquearBtns" + tipoM);
+      },
+      enviarBloqueo: function enviarBloqueo(data) {
+        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
+          id: data.id,
+          idUser: this.auth.id
+        });
+        this.$events.fire("agregarMiBloqueo" + tipoM, {
+          id: data.id,
+          idUser: this.auth.id
+        });
       }
     },
     created: function created() {
@@ -87423,6 +89394,73 @@ var websocketsAccionesMixin = function websocketsAccionesMixin(tipo, tipoM, tipo
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (websocketsAccionesMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsAccionesCepas.js":
+/*!********************************************************!*\
+  !*** ./resources/js/mixins/websocketsAccionesCepas.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsAccionesCepas = {
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  methods: {
+    editar: function editar(data) {
+      this.$events.fire("abrirFormularioCepa", data.id);
+      this.enviarBloqueo(data);
+    },
+    showModal: function showModal(data) {
+      this.$modal.show("modal_eliminar_cepa", {
+        id: data.id
+      });
+      this.enviarBloqueo(data);
+    },
+    bloquearBtns: function bloquearBtns() {
+      this.disabledBtns = true;
+    },
+    desbloquearBtns: function desbloquearBtns() {
+      this.disabledBtns = false;
+    },
+    crearEventosBtns: function crearEventosBtns() {
+      var _this = this;
+
+      this.$events.$on(this.rowData.id + "-bloquearBtnsCepa", function (e) {
+        return _this.bloquearBtns();
+      });
+      this.$events.$on(this.rowData.id + "-desbloquearBtnsCepa", function (e) {
+        return _this.desbloquearBtns();
+      });
+    },
+    eliminarEventosBtns: function eliminarEventosBtns(id) {
+      this.disabledBtns = false;
+      this.$events.$off(id + "-bloquearBtnsCepa");
+      this.$events.$off(id + "-desbloquearBtnsCepa");
+    },
+    enviarBloqueo: function enviarBloqueo(data) {
+      window.Echo["private"]("bloquearBtnsCepa").whisper("bloquearBtnsCepa", {
+        id: data.id,
+        idUser: this.auth.id
+      });
+      this.$events.fire("agregarMiBloqueoCepa", {
+        id: data.id,
+        idUser: this.auth.id
+      });
+    }
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowData.id + "-bloquearBtnsCepa");
+    this.$events.$off(this.rowData.id + "-desbloquearBtnsCepa");
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (websocketsAccionesCepas);
 
 /***/ }),
 
@@ -87450,32 +89488,14 @@ var websocketsAccionesOtraInfoMixin = function websocketsAccionesOtraInfoMixin(t
           grupo: data.grupo_microbiano_id,
           tipo: tipo
         });
-        window.Echo["private"]("bloquearBtns" + tipoInfo).whisper("bloquearBtns" + tipoInfo, {
-          id: data.id,
-          idUser: this.auth.id,
-          tipo: tipo
-        });
-        this.$events.fire("pushMisBloqueos" + tipoInfo, {
-          id: data.id,
-          idUser: this.auth.id,
-          tipo: tipo
-        });
+        this.enviarBloqueo(data);
       },
       eliminar: function eliminar(data) {
         this.$modal.show("modal_eliminar_tipo_" + tipoModal, {
           id: data.id,
           tipo: tipo
         });
-        window.Echo["private"]("bloquearBtns" + tipoInfo).whisper("bloquearBtns" + tipoInfo, {
-          id: data.id,
-          idUser: this.auth.id,
-          tipo: tipo
-        });
-        this.$events.fire("pushMisBloqueos" + tipoInfo, {
-          id: data.id,
-          idUser: this.auth.id,
-          tipo: tipo
-        });
+        this.enviarBloqueo(data);
       },
       bloquearBtns: function bloquearBtns() {
         this.disabledBtns = true;
@@ -87497,6 +89517,18 @@ var websocketsAccionesOtraInfoMixin = function websocketsAccionesOtraInfoMixin(t
         this.disabledBtns = false;
         this.$events.$off(id + "-bloquearBtns-" + tipo);
         this.$events.$off(id + "-desbloquearBtns-" + tipo);
+      },
+      enviarBloqueo: function enviarBloqueo(data) {
+        window.Echo["private"]("bloquearBtns" + tipoInfo).whisper("bloquearBtns" + tipoInfo, {
+          id: data.id,
+          idUser: this.auth.id,
+          tipo: tipo
+        });
+        this.$events.fire("agregarMiBloqueo" + tipoInfo, {
+          id: data.id,
+          idUser: this.auth.id,
+          tipo: tipo
+        });
       }
     },
     created: function created() {
@@ -87541,27 +89573,13 @@ var websocketsAccionesSinCheckMixin = function websocketsAccionesSinCheckMixin(t
     methods: {
       editar: function editar(data) {
         this.$events.fire("abrirFormulario" + tipoM, data.id);
-        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        this.$events.fire("pushMisBloqueos" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
+        this.enviarBloqueo(data);
       },
       showModal: function showModal(data) {
         this.$modal.show("modal_eliminar_" + tipo, {
           id: data.id
         });
-        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
-        this.$events.fire("pushMisBloqueos" + tipoM, {
-          id: data.id,
-          idUser: this.auth.id
-        });
+        this.enviarBloqueo(data);
       },
       bloquearBtns: function bloquearBtns() {
         this.disabledBtns = true;
@@ -87583,6 +89601,16 @@ var websocketsAccionesSinCheckMixin = function websocketsAccionesSinCheckMixin(t
         this.disabledBtns = false;
         this.$events.$off(id + "-bloquearBtns" + tipoM);
         this.$events.$off(id + "-desbloquearBtns" + tipoM);
+      },
+      enviarBloqueo: function enviarBloqueo(data) {
+        window.Echo["private"]("bloquearBtns" + tipoM).whisper("bloquearBtns" + tipoM, {
+          id: data.id,
+          idUser: this.auth.id
+        });
+        this.$events.fire("agregarMiBloqueo" + tipoM, {
+          id: data.id,
+          idUser: this.auth.id
+        });
       }
     },
     created: function created() {
@@ -87620,10 +89648,10 @@ __webpack_require__.r(__webpack_exports__);
 var websocketsCheck = function websocketsCheck(tipoM, tipoP) {
   return {
     methods: {
-      bloquearCheckNoticia: function bloquearCheckNoticia(data) {
+      bloquearCheck: function bloquearCheck(data) {
         this.disabled = true;
       },
-      desbloquearCheckNoticia: function desbloquearCheckNoticia(data) {
+      desbloquearCheck: function desbloquearCheck(data) {
         this.disabled = false;
       },
       crearEventosCheck: function crearEventosCheck() {
@@ -87631,10 +89659,10 @@ var websocketsCheck = function websocketsCheck(tipoM, tipoP) {
 
         this.verificarPublicar(this.rowData.publicar);
         this.$events.$on(this.rowData.id + "-bloquearCheck" + tipoM, function (e) {
-          return _this.bloquearCheckNoticia();
+          return _this.bloquearCheck();
         });
         this.$events.$on(this.rowData.id + "-desbloquearCheck" + tipoM, function (e) {
-          return _this.desbloquearCheckNoticia();
+          return _this.desbloquearCheck();
         });
         this.$events.$on(this.rowData.id + "-actualizarPublicar" + tipoM, function (e) {
           return _this.verificarPublicar(e);
@@ -87671,6 +89699,95 @@ var websocketsCheck = function websocketsCheck(tipoM, tipoP) {
 
 /***/ }),
 
+/***/ "./resources/js/mixins/websocketsCheckCepas.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/mixins/websocketsCheckCepas.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsCheckCepas = {
+  data: function data() {
+    return {
+      checkPublicar: false,
+      disabled: false
+    };
+  },
+  computed: {
+    computedDisabled: function computedDisabled() {
+      return this.disabled;
+    }
+  },
+  methods: {
+    publicar: function publicar(data) {
+      var _this = this;
+
+      this.disabled = true;
+      axios.put("/cepas/publicar/".concat(data.id), {
+        publicar: !this.checkPublicar
+      }).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        } else {
+          if (res.data.publicar) {
+            _this.toastr("Publicar", "Publicado con Exito!!");
+          }
+
+          _this.checkPublicar = res.data.publicar;
+          _this.disabled = false;
+        }
+      });
+    },
+    verificarPublicar: function verificarPublicar(e) {
+      if (e == 0) {
+        this.checkPublicar = false;
+      } else {
+        this.checkPublicar = true;
+      }
+    },
+    bloquearCheck: function bloquearCheck() {
+      this.disabled = true;
+    },
+    desbloquearCheck: function desbloquearCheck() {
+      this.disabled = false;
+    },
+    crearEventosCheck: function crearEventosCheck() {
+      var _this2 = this;
+
+      this.verificarPublicar(this.rowData.publicar);
+      this.$events.$on(this.rowData.id + "-bloquearCheckCepa", function (e) {
+        return _this2.bloquearCheck();
+      });
+      this.$events.$on(this.rowData.id + "-desbloquearCheckCepa", function (e) {
+        return _this2.desbloquearCheck();
+      });
+      this.$events.$on(this.rowData.id + "-actualizarPublicarCepa", function (e) {
+        return _this2.verificarPublicar(e);
+      });
+    },
+    eliminarEventosCheck: function eliminarEventosCheck(id) {
+      this.disabled = false;
+      this.$events.$off(id + "-bloquearCheckCepa");
+      this.$events.$off(id + "-desbloquearCheckCepa");
+      this.$events.$off(id + "-actualizarPublicarCepa");
+    }
+  },
+  created: function created() {
+    this.verificarPublicar(this.rowData.publicar);
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowData.id + "-bloquearCheckCepa");
+    this.$events.$off(this.rowData.id + "-desbloquearCheckCepa");
+    this.$events.$off(this.rowData.id + "-actualizarPublicarCepa");
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (websocketsCheckCepas);
+
+/***/ }),
+
 /***/ "./resources/js/router/index.js":
 /*!**************************************!*\
   !*** ./resources/js/router/index.js ***!
@@ -87683,8 +89800,6 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/index */ "./resources/js/store/index.js");
-
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -87697,296 +89812,285 @@ var routes = [//-------------------------------TODAS----------------------------
   },
   children: [{
     path: "",
-    name: "cepas-tabla",
+    name: "",
     component: function component() {
-      return Promise.all(/*! import() | cepas-tabla */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("cepas-tabla")]).then(__webpack_require__.bind(null, /*! ../components/cepas/TableCepasComponent.vue */ "./resources/js/components/cepas/TableCepasComponent.vue"));
-    },
-    meta: {
-      title: "Tabla Cepas"
-    }
-  }, {
-    path: "agregar",
-    name: "cepa-agregar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-agregar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Agregar Cepa"
-    }
-  }, {
-    path: "editar/:cepaId",
-    name: "cepa-editar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-editar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Editar Cepa"
-    }
-  }, //bacterias
-  {
-    path: "bacteria/ver/:cepaId",
-    name: "ver-cepa-bacteria",
-    component: function component() {
-      return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Cepa"
-    }
-  }, {
-    path: "bacteria/:cepaId",
-    name: "cepa-bacteria",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      return __webpack_require__.e(/*! import() | cepas-todas-container */ "cepas-todas-container").then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerRouterComponent.vue */ "./resources/js/components/cepas/ContainerRouterComponent.vue"));
     },
     children: [{
-      path: "caract-macro",
-      name: "caract-macro-cepa-bacteria",
+      path: "",
+      name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Características Macroscópica"
+        title: "Cepas Microbianas"
+      }
+    }, //bacterias
+    {
+      path: "bacteria/ver/:cepaId",
+      name: "ver-cepa-bacteria",
+      component: function component() {
+        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+      },
+      meta: {
+        title: "Ver Cepa"
       }
     }, {
-      path: "caract-micro",
-      name: "caract-micro-cepa-bacteria",
+      path: "bacteria/:cepaId",
+      name: "cepa-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      },
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "caract-fisio",
+        name: "caract-fisio-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+        },
+        meta: {
+          title: "Características Fisiológicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-cepa-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
+    }, //hongos
+    {
+      path: "hongo/ver/:cepaId",
+      name: "ver-cepa-hongo",
+      component: function component() {
+        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Microscópica"
+        title: "Ver Cepa"
       }
     }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-cepa-bacteria",
+      path: "hongo/:cepaId",
+      name: "cepa-hongo",
       component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      },
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-cepa-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-cepa-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-cepa-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-cepa-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-cepa-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
+    }, //levaduras
+    {
+      path: "levadura/ver/:cepaId",
+      name: "ver-cepa-levadura",
+      component: function component() {
+        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Bioquímicas"
+        title: "Ver Cepa"
       }
     }, {
-      path: "caract-fisio",
-      name: "caract-fisio-cepa-bacteria",
+      path: "levadura/:cepaId",
+      name: "cepa-levadura",
       component: function component() {
-        return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      },
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-cepa-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-cepa-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-cepa-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-cepa-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-cepa-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
+    }, //actinomiceto
+    {
+      path: "actinomiceto/ver/:cepaId",
+      name: "ver-cepa-actinomiceto",
+      component: function component() {
+        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Fisiológicas"
+        title: "Ver Cepa"
       }
     }, {
-      path: "identi-molecu",
-      name: "identi-molecu-cepa-bacteria",
+      path: "actinomiceto/:cepaId",
+      name: "cepa-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-cepa-bacteria",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
-      }
-    }]
-  }, //hongos
-  {
-    path: "hongo/ver/:cepaId",
-    name: "ver-cepa-hongo",
-    component: function component() {
-      return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Cepa"
-    }
-  }, {
-    path: "hongo/:cepaId",
-    name: "cepa-hongo",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
-    },
-    children: [{
-      path: "caract-macro",
-      name: "caract-macro-cepa-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
-      },
-      meta: {
-        title: "Características Macroscópica"
-      }
-    }, {
-      path: "caract-micro",
-      name: "caract-micro-cepa-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
-      },
-      meta: {
-        title: "Características Microscópica"
-      }
-    }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-cepa-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
-      },
-      meta: {
-        title: "Características Bioquímicas"
-      }
-    }, {
-      path: "identi-molecu",
-      name: "identi-molecu-cepa-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-cepa-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
-      }
-    }]
-  }, //levaduras
-  {
-    path: "levadura/ver/:cepaId",
-    name: "ver-cepa-levadura",
-    component: function component() {
-      return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Cepa"
-    }
-  }, {
-    path: "levadura/:cepaId",
-    name: "cepa-levadura",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
-    },
-    children: [{
-      path: "caract-macro",
-      name: "caract-macro-cepa-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
-      },
-      meta: {
-        title: "Características Macroscópica"
-      }
-    }, {
-      path: "caract-micro",
-      name: "caract-micro-cepa-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
-      },
-      meta: {
-        title: "Características Microscópica"
-      }
-    }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-cepa-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
-      },
-      meta: {
-        title: "Características Bioquímicas"
-      }
-    }, {
-      path: "identi-molecu",
-      name: "identi-molecu-cepa-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-cepa-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
-      }
-    }]
-  }, //actinomiceto
-  {
-    path: "actinomiceto/ver/:cepaId",
-    name: "ver-cepa-actinomiceto",
-    component: function component() {
-      return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Cepa"
-    }
-  }, {
-    path: "actinomiceto/:cepaId",
-    name: "cepa-actinomiceto",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
-    },
-    children: [{
-      path: "caract-macro",
-      name: "caract-macro-cepa-actinomiceto",
-      component: function component() {
-        return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
-      },
-      meta: {
-        title: "Características Macroscópica"
-      }
-    }, {
-      path: "caract-micro",
-      name: "caract-micro-cepa-actinomiceto",
-      component: function component() {
-        return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
-      },
-      meta: {
-        title: "Características Microscópica"
-      }
-    }, {
-      path: "identi-bioqui",
-      name: "identi-bioqui-cepa-actinomiceto",
-      component: function component() {
-        return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Bioquímica"
-      }
-    }, {
-      path: "otras-caract",
-      name: "otras-caract-cepa-actinomiceto",
-      component: function component() {
-        return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
-      },
-      meta: {
-        title: "Otras Características"
-      }
-    }, {
-      path: "caract-molecu",
-      name: "caract-molecu-cepa-actinomiceto",
-      component: function component() {
-        return __webpack_require__.e(/*! import() | caract-molecu-cepa-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Características Moleculares"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-cepa-actinomiceto",
-      component: function component() {
-        return __webpack_require__.e(/*! import() | metodo-conser-cepa-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
-      }
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-cepa-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-cepa-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "identi-bioqui",
+        name: "identi-bioqui-cepa-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Bioquímica"
+        }
+      }, {
+        path: "otras-caract",
+        name: "otras-caract-cepa-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+        },
+        meta: {
+          title: "Otras Características"
+        }
+      }, {
+        path: "caract-molecu",
+        name: "caract-molecu-cepa-actinomiceto",
+        component: function component() {
+          return __webpack_require__.e(/*! import() | caract-molecu-cepa-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Características Moleculares"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-cepa-actinomiceto",
+        component: function component() {
+          return __webpack_require__.e(/*! import() | metodo-conser-cepa-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
     }]
   }]
 }, // ------------------------  BACTERIAS ------------------------------------------
@@ -87994,402 +90098,358 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/bacterias",
   name: "",
   component: function component() {
-    return __webpack_require__.e(/*! import() | bacterias */ "bacterias").then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/BacteriasComponent.vue */ "./resources/js/components/cepas/bacterias/BacteriasComponent.vue"));
+    return __webpack_require__.e(/*! import() | cepas-bacterias */ "cepas-bacterias").then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/CepasBacteriasComponent.vue */ "./resources/js/components/cepas/bacterias/CepasBacteriasComponent.vue"));
   },
   children: [{
     path: "",
-    name: "bacterias-tabla",
+    name: "",
     component: function component() {
-      return Promise.all(/*! import() | bacterias-tabla */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("bacterias-tabla")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/tablas/TablaBacteriasComponent.vue */ "./resources/js/components/cepas/bacterias/tablas/TablaBacteriasComponent.vue"));
-    },
-    meta: {
-      title: "Tabla Bacterias"
-    }
-  }, {
-    path: "agregar",
-    name: "cepa-bacteria-agregar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-bacteria-agregar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Agregar Bacteria"
-    }
-  }, {
-    path: "editar/:cepaId",
-    name: "cepa-bacteria-editar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-bacteria-editar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Editar Bacteria"
-    }
-  }, {
-    path: ":cepaBacteriaId",
-    name: "caract-bacteria",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      return __webpack_require__.e(/*! import() | cepas-bacterias-container */ "cepas-todas-container").then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerRouterComponent.vue */ "./resources/js/components/cepas/ContainerRouterComponent.vue"));
     },
     children: [{
-      path: "caract-macro",
-      name: "caract-macro-bacteria",
+      path: "",
+      name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Características Macroscópica"
+        title: "Cepas Microbianas - Bacterias"
       }
     }, {
-      path: "caract-micro",
-      name: "caract-micro-bacteria",
+      path: ":cepaBacteriaId",
+      name: "caract-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
-      meta: {
-        title: "Características Microscópica"
-      }
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "caract-fisio",
+        name: "caract-fisio-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+        },
+        meta: {
+          title: "Características Fisiológicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-bacteria",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
     }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-bacteria",
+      path: "ver/:cepaBacteriaId",
+      name: "ver-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Bioquímicas"
-      }
-    }, {
-      path: "caract-fisio",
-      name: "caract-fisio-bacteria",
-      component: function component() {
-        return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
-      },
-      meta: {
-        title: "Características Fisiológicas"
-      }
-    }, {
-      path: "identi-molecu",
-      name: "identi-molecu-bacteria",
-      component: function component() {
-        return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-bacteria",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
+        title: "Ver Bacteria"
       }
     }]
-  }, {
-    path: "ver/:cepaBacteriaId",
-    name: "ver-bacteria",
-    component: function component() {
-      return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Bacteria"
-    }
   }]
 }, // ---------------------- HONGOS ------------------------------------------------
 {
   path: "/hongos",
   name: "",
   component: function component() {
-    return __webpack_require__.e(/*! import() | hongos */ "hongos").then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/HongosComponent.vue */ "./resources/js/components/cepas/hongos/HongosComponent.vue"));
+    return __webpack_require__.e(/*! import() | cepas-hongos */ "cepas-hongos").then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/CepasHongosComponent.vue */ "./resources/js/components/cepas/hongos/CepasHongosComponent.vue"));
   },
   children: [{
     path: "",
-    name: "hongos-tabla",
+    name: "",
     component: function component() {
-      return Promise.all(/*! import() | hongos-tabla */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("hongos-tabla")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/tablas/TablaHongosComponent.vue */ "./resources/js/components/cepas/hongos/tablas/TablaHongosComponent.vue"));
-    },
-    meta: {
-      title: "Tabla Hongos"
-    }
-  }, {
-    path: "agregar",
-    name: "cepa-hongo-agregar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-hongo-agregar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Agregar Hongo"
-    }
-  }, {
-    path: "editar/:cepaId",
-    name: "cepa-hongo-editar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-hongo-editar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Editar Hongo"
-    }
-  }, {
-    path: ":cepaHongoId",
-    name: "caract-hongo",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      return __webpack_require__.e(/*! import() | cepas-hongos-container */ "cepas-todas-container").then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerRouterComponent.vue */ "./resources/js/components/cepas/ContainerRouterComponent.vue"));
     },
     children: [{
-      path: "caract-macro",
-      name: "caract-macro-hongo",
+      path: "",
+      name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Características Macroscópica"
+        title: "Cepas Microbianas - Hongos"
       }
     }, {
-      path: "caract-micro",
-      name: "caract-micro-hongo",
+      path: ":cepaHongoId",
+      name: "caract-hongo",
       component: function component() {
-        return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
-      meta: {
-        title: "Características Microscópica"
-      }
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-hongo",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
     }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-hongo",
+      path: "ver/:cepaHongoId",
+      name: "ver-hongo",
       component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Bioquímicas"
-      }
-    }, {
-      path: "identi-molecu",
-      name: "identi-molecu-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-hongo",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
+        title: "Ver Hongo"
       }
     }]
-  }, {
-    path: "ver/:cepaHongoId",
-    name: "ver-hongo",
-    component: function component() {
-      return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Hongo"
-    }
   }]
 }, // ---------------------- LEVADURAS ------------------------------------------------
 {
   path: "/levaduras",
   name: "",
   component: function component() {
-    return __webpack_require__.e(/*! import() | levaduras */ "levaduras").then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/LevadurasComponent.vue */ "./resources/js/components/cepas/levaduras/LevadurasComponent.vue"));
+    return __webpack_require__.e(/*! import() | cepas-levaduras */ "cepas-levaduras").then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/CepasLevadurasComponent.vue */ "./resources/js/components/cepas/levaduras/CepasLevadurasComponent.vue"));
   },
   children: [{
     path: "",
-    name: "levaduras-tabla",
+    name: "",
     component: function component() {
-      return Promise.all(/*! import() | levaduras-tabla */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("levaduras-tabla")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/tablas/TablaLevadurasComponent.vue */ "./resources/js/components/cepas/levaduras/tablas/TablaLevadurasComponent.vue"));
-    },
-    meta: {
-      title: "Tabla Levaduras"
-    }
-  }, {
-    path: "agregar",
-    name: "cepa-levadura-agregar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-levadura-agregar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Agregar Levadura"
-    }
-  }, {
-    path: "editar/:cepaId",
-    name: "cepa-levadura-editar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-levadura-editar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Editar Levadura"
-    }
-  }, {
-    path: ":cepaLevaduraId",
-    name: "caract-levadura",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      return __webpack_require__.e(/*! import() | cepas-levaduras-container */ "cepas-todas-container").then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerRouterComponent.vue */ "./resources/js/components/cepas/ContainerRouterComponent.vue"));
     },
     children: [{
-      path: "caract-macro",
-      name: "caract-macro-levadura",
+      path: "",
+      name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Características Macroscópica"
+        title: "Cepas Microbianas - Levaduras"
       }
     }, {
-      path: "caract-micro",
-      name: "caract-micro-levadura",
+      path: ":cepaLevaduraId",
+      name: "caract-levadura",
       component: function component() {
-        return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
-      meta: {
-        title: "Características Microscópica"
-      }
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "caract-bioqui",
+        name: "caract-bioqui-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Características Bioquímicas"
+        }
+      }, {
+        path: "identi-molecu",
+        name: "identi-molecu-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Molecular"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-levadura",
+        component: function component() {
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
     }, {
-      path: "caract-bioqui",
-      name: "caract-bioqui-levadura",
+      path: "ver/:cepaLevaduraId",
+      name: "ver-levadura",
       component: function component() {
-        return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Características Bioquímicas"
-      }
-    }, {
-      path: "identi-molecu",
-      name: "identi-molecu-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Identificación Molecular"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-levadura",
-      component: function component() {
-        return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
+        title: "Ver Levadura"
       }
     }]
-  }, {
-    path: "ver/:cepaLevaduraId",
-    name: "ver-levadura",
-    component: function component() {
-      return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Levadura"
-    }
   }]
 }, // ---------------------- ACTINOMICETOS ------------------------------------------------
 {
   path: "/actinomicetos",
   name: "",
   component: function component() {
-    return __webpack_require__.e(/*! import() | actinomicetos */ "actinomicetos").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/ActinomicetosComponent.vue */ "./resources/js/components/cepas/actinomicetos/ActinomicetosComponent.vue"));
+    return __webpack_require__.e(/*! import() | cepas-actinomicetos */ "cepas-actinomicetos").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/CepasActinomicetosComponent.vue */ "./resources/js/components/cepas/actinomicetos/CepasActinomicetosComponent.vue"));
   },
   children: [{
     path: "",
-    name: "actinomicetos-tabla",
+    name: "",
     component: function component() {
-      return Promise.all(/*! import() | actinomicetos-tabla */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actinomicetos-tabla")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/tablas/TablaActinomicetosComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/TablaActinomicetosComponent.vue"));
-    },
-    meta: {
-      title: "Tabla Actinomicetos"
-    }
-  }, {
-    path: "agregar",
-    name: "cepa-actinomiceto-agregar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-actinomiceto-agregar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Agregar Actinomiceto"
-    }
-  }, {
-    path: "editar/:cepaId",
-    name: "cepa-actinomiceto-editar",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | cepa-actinomiceto-editar */ "cepa-editar").then(__webpack_require__.bind(null, /*! ../components/cepas/FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue"));
-    },
-    meta: {
-      title: "Editar Actinomiceto"
-    }
-  }, {
-    path: ":cepaActinomicetoId",
-    name: "caract-actinomiceto",
-    component: function component() {
-      return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+      return __webpack_require__.e(/*! import() | cepas-actinomicetos-container */ "cepas-todas-container").then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerRouterComponent.vue */ "./resources/js/components/cepas/ContainerRouterComponent.vue"));
     },
     children: [{
-      path: "caract-macro",
-      name: "caract-macro-actinomiceto",
+      path: "",
+      name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Características Macroscópica"
+        title: "Cepas Microbianas - Actinomicetos"
       }
     }, {
-      path: "caract-micro",
-      name: "caract-micro-actinomiceto",
+      path: ":cepaActinomicetoId",
+      name: "caract-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
-      meta: {
-        title: "Características Microscópica"
-      }
+      children: [{
+        path: "caract-macro",
+        name: "caract-macro-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+        },
+        meta: {
+          title: "Características Macroscópica"
+        }
+      }, {
+        path: "caract-micro",
+        name: "caract-micro-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+        },
+        meta: {
+          title: "Características Microscópica"
+        }
+      }, {
+        path: "identi-bioqui",
+        name: "identi-bioqui-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+        },
+        meta: {
+          title: "Identificación Bioquímica"
+        }
+      }, {
+        path: "otras-caract",
+        name: "otras-caract-actinomiceto",
+        component: function component() {
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+        },
+        meta: {
+          title: "Otras Características"
+        }
+      }, {
+        path: "caract-molecu",
+        name: "caract-molecu-actinomiceto",
+        component: function component() {
+          return __webpack_require__.e(/*! import() | caract-molecu-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
+        },
+        meta: {
+          title: "Características Moleculares"
+        }
+      }, {
+        path: "metodo-conser",
+        name: "metodo-conser-actinomiceto",
+        component: function component() {
+          return __webpack_require__.e(/*! import() | metodo-conser-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
+        },
+        meta: {
+          title: "Métodos de Conservación"
+        }
+      }]
     }, {
-      path: "identi-bioqui",
-      name: "identi-bioqui-actinomiceto",
+      path: "ver/:cepaActinomicetoId",
+      name: "ver-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Identificación Bioquímica"
-      }
-    }, {
-      path: "otras-caract",
-      name: "otras-caract-actinomiceto",
-      component: function component() {
-        return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
-      },
-      meta: {
-        title: "Otras Características"
-      }
-    }, {
-      path: "caract-molecu",
-      name: "caract-molecu-actinomiceto",
-      component: function component() {
-        return __webpack_require__.e(/*! import() | caract-molecu-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
-      },
-      meta: {
-        title: "Características Moleculares"
-      }
-    }, {
-      path: "metodo-conser",
-      name: "metodo-conser-actinomiceto",
-      component: function component() {
-        return __webpack_require__.e(/*! import() | metodo-conser-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
-      },
-      meta: {
-        title: "Métodos de Conservación"
+        title: "Ver Actinomiceto"
       }
     }]
-  }, {
-    path: "ver/:cepaActinomicetoId",
-    name: "ver-actinomiceto",
-    component: function component() {
-      return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
-    },
-    meta: {
-      title: "Ver Actinomiceto"
-    }
   }]
 }, // ----------------------------------------------------------------------------------------------
 // ------------------------------- USUARIOS ------------------------------------------
@@ -88403,7 +90463,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Usuarios"
@@ -88412,7 +90472,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "tabla-seguimiento",
     name: "tabla-seguimiento",
     component: function component() {
-      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
+      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
     },
     meta: {
       title: "Tabla Seguimientos"
@@ -88429,7 +90489,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Cepas"
@@ -88438,7 +90498,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias"
@@ -88447,7 +90507,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos"
@@ -88456,7 +90516,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras"
@@ -88465,7 +90525,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos"
@@ -88517,7 +90577,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
       title: "Proyectos"
@@ -88526,7 +90586,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
       title: "Publicaciones"
@@ -88543,7 +90603,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "noticias",
     component: function component() {
-      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
+      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
       title: "Noticias"
@@ -88552,7 +90612,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
       title: "Actividades"
@@ -88561,7 +90621,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "novedades",
     name: "novedades",
     component: function component() {
-      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
       title: "Novedades"
@@ -88580,7 +90640,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/calendario",
   name: "calendario",
   component: function component() {
-    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
+    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
   },
   meta: {
     title: "Calendario"
@@ -88589,7 +90649,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/imagenes-login/ver",
   name: "imagenes-login",
   component: function component() {
-    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
+    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
     title: "Imagenes Login"
@@ -88598,7 +90658,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
     title: "Investigadores"
@@ -88607,7 +90667,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~calendario~cepas-tabla~equipamientos~hongos-~0019ab7d"), __webpack_require__.e("vendors~actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~inves~17beb6b8"), __webpack_require__.e("actinomicetos-tabla~actividades~bacterias-tabla~cepas-tabla~equipamientos~hongos-tabla~investigadore~cce37185"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
     title: "Equipamientos"
@@ -88693,7 +90753,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   },
   modules: {
     usuarios: _modulos_usuarios__WEBPACK_IMPORTED_MODULE_2__["default"],
-    // cepas,
+    cepas: _modulos_cepas__WEBPACK_IMPORTED_MODULE_4__["default"],
     cepa: _modulos_cepa__WEBPACK_IMPORTED_MODULE_3__["default"],
     info_caract: _modulos_info_caract__WEBPACK_IMPORTED_MODULE_5__["default"],
     info_cepas: _modulos_info_cepas__WEBPACK_IMPORTED_MODULE_6__["default"],
@@ -88881,32 +90941,25 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   actions: {
-    obtenerCepa: function obtenerCepa(_ref, id) {
+    accionAgregarCaract: function accionAgregarCaract(_ref, data) {
       var commit = _ref.commit;
-      axios.get("/info-panel/cepa/agregar-editar-caract/".concat(id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        }
-
-        commit("llenarCepa", res.data);
-      });
-    },
-    accionAgregarCaract: function accionAgregarCaract(_ref2, data) {
-      var commit = _ref2.commit;
       commit("mutacionAgregarCaract", data);
     },
-    accionEditarCaract: function accionEditarCaract(_ref3, data) {
-      var commit = _ref3.commit;
+    accionEditarCaract: function accionEditarCaract(_ref2, data) {
+      var commit = _ref2.commit;
       commit("mutacionEditarCaract", data);
     },
-    accionEliminarCaract: function accionEliminarCaract(_ref4, data) {
-      var commit = _ref4.commit;
+    accionEliminarCaract: function accionEliminarCaract(_ref3, data) {
+      var commit = _ref3.commit;
       commit("mutacionEliminarCaract", data);
     },
-    limpiarCepa: function limpiarCepa(_ref5) {
-      var commit = _ref5.commit;
+    limpiarCepa: function limpiarCepa(_ref4) {
+      var commit = _ref4.commit;
       commit("mutacionLimpiarCepa");
+    },
+    llenarCepa: function llenarCepa(_ref5, data) {
+      var commit = _ref5.commit;
+      commit("llenarCepa", data);
     }
   }
 });
@@ -88928,19 +90981,16 @@ __webpack_require__.r(__webpack_exports__);
     cepas: []
   },
   getters: {
-    getCepas: function getCepas(state) {
-      return state.cepa;
-    },
-    getCepaById: function getCepaById(state, getters) {
+    getCepaById: function getCepaById(state) {
       return function (id) {
-        return getters.getCepas.find(function (cepa) {
+        return state.cepas.find(function (cepa) {
           return cepa.id == id;
         });
       };
     }
   },
   mutations: {
-    llenarCepa: function llenarCepa(state, cepas) {
+    llenarCepas: function llenarCepas(state, cepas) {
       state.cepas = cepas;
     },
     mutacionCepas: function mutacionCepas(state, data) {
@@ -88966,7 +91016,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   actions: {
-    obtenerCepas: function obtenerCepas(_ref, id) {
+    obtenerCepas: function obtenerCepas(_ref) {
       var commit = _ref.commit;
       axios.get("/info-panel/cepas").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
