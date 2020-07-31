@@ -53,25 +53,45 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_37" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_37"
+                  />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">42°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_42" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_42"
+                  />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">45°C</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_45" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_45"
+                  />
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">otra°</span>
                   </div>
-                  <input type="text" class="form-control" v-model="parametros.termotolerancia_otra" />
+                  <input
+                    type="text"
+                    :class="['form-control', termotolerancia? 'is-invalid':'']"
+                    v-model="parametros.termotolerancia_otra"
+                  />
+                  <em
+                    v-if="termotolerancia"
+                    class="error invalid-feedback"
+                  >Llenar al menos una de las diferentes temperaturas.</em>
                 </div>
                 <span
                   v-if="termotolerancia"

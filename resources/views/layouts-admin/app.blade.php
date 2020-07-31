@@ -21,6 +21,7 @@
         <link href="{{asset('assets/styles/template.css')}}" rel="stylesheet">
         <link href="{{ asset('css/dumar.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
+        @yield('estilos')
     </head>
     <body><!--fixed-footer-->
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer" id="app" >

@@ -50,6 +50,9 @@
                         <h5 class="menu-header-title">{{auth.name}}</h5>
                       </div>
                     </div>
+                    <div>
+                      <h5 class="menu-header-title">{{getUserAuth.name}}</h5>
+                    </div>
                   </div>
                 </div>
                 <ul class="list-group list-group-flush">

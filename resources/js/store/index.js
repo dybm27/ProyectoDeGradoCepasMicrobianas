@@ -31,6 +31,9 @@ export default new Vuex.Store({
     actions: {
         accionModificarAuth({ commit }, data) {
             commit("mutacionModificarAuth", data);
+        },
+        limpiarCepa({ commit }) {
+            commit("mutacionLimpiarCepa");
         }
     },
     modules: {

@@ -90749,6 +90749,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     accionModificarAuth: function accionModificarAuth(_ref, data) {
       var commit = _ref.commit;
       commit("mutacionModificarAuth", data);
+    },
+    limpiarCepa: function limpiarCepa(_ref2) {
+      var commit = _ref2.commit;
+      commit("mutacionLimpiarCepa");
     }
   },
   modules: {

@@ -403,6 +403,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -814,7 +817,15 @@ var render = function() {
                                       )
                                     ])
                                   ]
-                                )
+                                ),
+                                _vm._v(" "),
+                                _c("div", [
+                                  _c(
+                                    "h5",
+                                    { staticClass: "menu-header-title" },
+                                    [_vm._v(_vm._s(_vm.getUserAuth.name))]
+                                  )
+                                ])
                               ]
                             )
                           ]),

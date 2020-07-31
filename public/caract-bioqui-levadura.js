@@ -204,6 +204,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -731,7 +751,10 @@ var render = function() {
                           expression: "parametros.termotolerancia_37"
                         }
                       ],
-                      staticClass: "form-control",
+                      class: [
+                        "form-control",
+                        _vm.termotolerancia ? "is-invalid" : ""
+                      ],
                       attrs: { type: "text" },
                       domProps: { value: _vm.parametros.termotolerancia_37 },
                       on: {
@@ -761,7 +784,10 @@ var render = function() {
                           expression: "parametros.termotolerancia_42"
                         }
                       ],
-                      staticClass: "form-control",
+                      class: [
+                        "form-control",
+                        _vm.termotolerancia ? "is-invalid" : ""
+                      ],
                       attrs: { type: "text" },
                       domProps: { value: _vm.parametros.termotolerancia_42 },
                       on: {
@@ -791,7 +817,10 @@ var render = function() {
                           expression: "parametros.termotolerancia_45"
                         }
                       ],
-                      staticClass: "form-control",
+                      class: [
+                        "form-control",
+                        _vm.termotolerancia ? "is-invalid" : ""
+                      ],
                       attrs: { type: "text" },
                       domProps: { value: _vm.parametros.termotolerancia_45 },
                       on: {
@@ -821,7 +850,10 @@ var render = function() {
                           expression: "parametros.termotolerancia_otra"
                         }
                       ],
-                      staticClass: "form-control",
+                      class: [
+                        "form-control",
+                        _vm.termotolerancia ? "is-invalid" : ""
+                      ],
                       attrs: { type: "text" },
                       domProps: { value: _vm.parametros.termotolerancia_otra },
                       on: {
@@ -836,7 +868,15 @@ var render = function() {
                           )
                         }
                       }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _vm.termotolerancia
+                      ? _c("em", { staticClass: "error invalid-feedback" }, [
+                          _vm._v(
+                            "Llenar al menos una de las diferentes temperaturas."
+                          )
+                        ])
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _vm.termotolerancia

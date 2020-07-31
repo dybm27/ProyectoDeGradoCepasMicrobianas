@@ -390,6 +390,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña1 = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
       }
     },
     validarEmail: function validarEmail() {
@@ -424,6 +431,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        this.mensajeNombre = "Este campo es obligatorio";
+        return true;
       }
     },
     validarContraseña: function validarContraseA() {
@@ -436,6 +446,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
+      }
+    },
+    validarBtn: function validarBtn() {
+      if (this.validarEmail || this.validarNombre || this.validarContraseña || this.validarContraseñas || !this.parametros.imagen) {
+        return true;
+      }
+
+      return false;
+    },
+    mostrarBtn: function mostrarBtn() {
+      if (this.imageMiniatura != this.info.avatarPublico) {
+        return true;
+      } else {
+        return false;
       }
     },
     validarBtn: function validarBtn() {
