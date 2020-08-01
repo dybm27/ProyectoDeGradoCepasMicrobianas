@@ -272,6 +272,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       eventos: {
         url: "/info-panel/eventos",
         className: "eventos",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -281,13 +282,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       eventSources: [{
         googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
-        color: "#ff0000e3",
-        className: "google"
+        color: "#ff0000",
+        className: "google",
+        textColor: "black"
       }, {//googleCalendarId: "dumaryekselbm@ufps.edu.co"
       }, {
         url: "/info-panel/eventos-metodos-bacterias",
         className: "eventos-metodos-bacterias",
-        color: "#16aaff",
+        color: "#38c172",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -297,7 +300,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         url: "/info-panel/eventos-metodos-levaduras",
         className: "eventos-metodos-levaduras",
-        color: "#5EE220",
+        color: "#38c172",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -307,7 +311,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         url: "/info-panel/eventos-metodos-hongos",
         className: "eventos-metodos-hongos",
-        color: "#794c8a",
+        color: "#38c172",
+        textColor: "black",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
+      }, {
+        url: "/info-panel/eventos-actividades",
+        className: "eventos-actividades",
+        color: "#16aaff",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -334,7 +350,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         fecha: "",
         descripcion: "",
         autor: "",
-        color: "#ff8000",
+        color: "#f7b924",
         tiempo: "",
         id: ""
       },
@@ -411,10 +427,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           html: true,
           container: "body"
         });
-      } else {
-        /**  $(info.el).tooltip({
-          title: info.event.title,
-        }); */
+      } else if (info.event.extendedProps.lugar) {
+        $(info.el).tooltip({
+          html: true,
+          title: "<b>Actividad: </b>".concat(info.event.title)
+        });
+      } else if (!info.event.extendedProps.idAutor) {
+        $(info.el).tooltip({
+          title: info.event.title
+        });
       }
     },
     abrirModal: function abrirModal(tipo) {

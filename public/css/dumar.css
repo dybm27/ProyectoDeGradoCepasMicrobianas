@@ -162,9 +162,8 @@
     padding: 0.5rem 0.75rem;
     margin-bottom: 0;
     font-size: 0.88rem;
-    color: inherit;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background-color: #38c172;
+    border-bottom: 1px solid #38c172;
     border-top-left-radius: calc(0.3rem - 1px);
     border-top-right-radius: calc(0.3rem - 1px);
 }
@@ -444,15 +443,21 @@
 .sidebar-mobile-open .app-sidebar .app-header__logo .logo-majumba-inicio > img {
     width: 150px !important;
     margin-left: auto;
-    margin-right: 0
+    margin-right: 0;
 }
 
-.fixed-sidebar.closed-sidebar:not(.fixed-header) .app-sidebar .app-header__logo .logo-majumba-inicio {
-	display: none
+.fixed-sidebar.closed-sidebar:not(.fixed-header)
+    .app-sidebar
+    .app-header__logo
+    .logo-majumba-inicio {
+    display: none;
 }
 
-.closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-majumba-inicio {
-	display: none
+.closed-sidebar:not(.closed-sidebar-mobile)
+    .app-header
+    .app-header__logo
+    .logo-majumba-inicio {
+    display: none;
 }
 
 .logo-majumba > img {

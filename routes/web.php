@@ -456,6 +456,8 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('eventos-metodos-hongos', 'InfoPanelEventosController@eventosHongos');
         //-------------------------url eventos ---------------------------------------------------
         Route::get('eventos', 'InfoPanelEventosController@eventos');
+        //-------------------------url actividades ---------------------------------------------------
+        Route::get('eventos-actividades', 'InfoPanelEventosController@eventosActividades');
         //------------------------ USUARIOS ------------------------------------------------------
         //------------------------- url tabla usuarios -------------------------------------------
         Route::get('usuarios-tabla', 'InfoPanelUsuariosController@tablaUsuarios');

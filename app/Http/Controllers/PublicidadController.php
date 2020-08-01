@@ -218,10 +218,10 @@ class PublicidadController extends Controller
     {
         switch ($tipo) {
             case 'noticia':
-                //event(new Prueba('hola mores'));
                 broadcast(new NoticiaEvent($publicidad, $tipoAccion))->toOthers();
                 break;
             case 'actividad':
+                broadcast(new RefrescarCalendarioEvent())->toOthers();
                 broadcast(new ActividadEvent($publicidad, $tipoAccion))->toOthers();
                 break;
             case 'novedad':
