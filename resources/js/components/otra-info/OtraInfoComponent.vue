@@ -66,7 +66,7 @@ export default {
     ...vuex.mapActions("info_cepas", [
       "accionAgregarTipoCepa",
       "accionEditarTipoCepa",
-      "accionEliminarTipoCepa"
+      "accionEliminarTipoCepa",
     ]),
     ...vuex.mapActions("info_caract", [
       "accionAgregarTipoCaractBacteria",
@@ -80,7 +80,7 @@ export default {
       "accionEliminarTipoCaractHongo",
       "accionAgregarTipoCaractActinomiceto",
       "accionEditarTipoCaractActinomiceto",
-      "accionEliminarTipoCaractActinomiceto"
+      "accionEliminarTipoCaractActinomiceto",
     ]),
     cambiarTipo(ruta) {
       if (ruta.includes("cepas")) {
@@ -94,97 +94,97 @@ export default {
       } else {
         this.tipo = "Actinomicetos";
       }
-    }
+    },
   },
   created() {
     this.$emit("rutaSider", "otra-info");
-    window.Echo.channel("cepas-info").listen("CepasInfoEvent", e => {
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", (e) => {
       switch (e.tipoAccion) {
         case "agregar":
           this.accionAgregarTipoCepa({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "editar":
           this.accionEditarTipoCepa({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "eliminar":
           this.accionEliminarTipoCepa({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
       }
       this.$events.fire("actualizartabla" + e.tipoCaract);
     });
-    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", e => {
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", (e) => {
       switch (e.tipoAccion) {
         case "agregar":
           this.accionAgregarTipoCaractBacteria({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "editar":
           this.accionEditarTipoCaractBacteria({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "eliminar":
           this.accionEliminarTipoCaractBacteria({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
       }
       this.$events.fire("actualizartabla" + e.tipoCaract);
     });
-    window.Echo.channel("hongos-info").listen("HongosInfoEvent", e => {
+    window.Echo.channel("hongos-info").listen("HongosInfoEvent", (e) => {
       switch (e.tipoAccion) {
         case "agregar":
           this.accionAgregarTipoCaractHongo({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "editar":
           this.accionEditarTipoCaractHongo({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "eliminar":
           this.accionEliminarTipoCaractHongo({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
       }
       this.$events.fire("actualizartabla" + e.tipoCaract);
     });
-    window.Echo.channel("levaduras-info").listen("LevadurasInfoEvent", e => {
+    window.Echo.channel("levaduras-info").listen("LevadurasInfoEvent", (e) => {
       switch (e.tipoAccion) {
         case "agregar":
           this.accionAgregarTipoCaractLevadura({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "editar":
           this.accionEditarTipoCaractLevadura({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
         case "eliminar":
           this.accionEliminarTipoCaractLevadura({
             info: e.data,
-            tipo: e.tipoCaract
+            tipo: e.tipoCaract,
           });
           break;
       }
@@ -192,30 +192,30 @@ export default {
     });
     window.Echo.channel("actinomicetos-info").listen(
       "ActinomicetosInfoEvent",
-      e => {
+      (e) => {
         switch (e.tipoAccion) {
           case "agregar":
             this.accionAgregarTipoCaractActinomiceto({
               info: e.data,
-              tipo: e.tipoCaract
+              tipo: e.tipoCaract,
             });
             break;
           case "editar":
             this.accionEditarTipoCaractActinomiceto({
               info: e.data,
-              tipo: e.tipoCaract
+              tipo: e.tipoCaract,
             });
             break;
           case "eliminar":
             this.accionEliminarTipoCaractActinomiceto({
               info: e.data,
-              tipo: e.tipoCaract
+              tipo: e.tipoCaract,
             });
             break;
         }
         this.$events.fire("actualizartabla" + e.tipoCaract);
       }
     );
-  }
+  },
 };
 </script>

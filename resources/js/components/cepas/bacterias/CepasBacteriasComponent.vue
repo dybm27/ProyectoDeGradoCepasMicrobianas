@@ -85,8 +85,18 @@ export default {
   mixins: [bloquearPestañasMixin("cepas")],
   methods: {
     ...vuex.mapActions("cepas", ["obtenerCepas", "accionCepas"]),
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
-    ...vuex.mapActions("info_caract", ["obtenerInfoCaractBacterias"]),
+    ...vuex.mapActions("info_cepas", [
+      "obtenerTiposCepas",
+      "accionAgregarTipoCepa",
+      "accionEditarTipoCepa",
+      "accionEliminarTipoCepa",
+    ]),
+    ...vuex.mapActions("info_caract", [
+      "obtenerInfoCaractBacterias",
+      "accionAgregarTipoCaractBacteria",
+      "accionEditarTipoCaractBacteria",
+      "accionEliminarTipoCaractBacteria",
+    ]),
     cambiarTipo(tipo) {
       if (tipo === "ver") {
         this.mostrarBtnVolver = true;
@@ -128,6 +138,50 @@ export default {
       this.accionCepas({ tipo: e.tipoAccion, data: e.data });
       this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
       this.$events.fire("actualizartablaCepa");
+    });
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
     });
   },
 };

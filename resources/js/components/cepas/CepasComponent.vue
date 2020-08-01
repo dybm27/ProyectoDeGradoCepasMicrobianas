@@ -85,12 +85,29 @@ export default {
   mixins: [bloquearPestañasMixin("cepas")],
   methods: {
     ...vuex.mapActions("cepas", ["obtenerCepas", "accionCepas"]),
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("info_cepas", [
+      "obtenerTiposCepas",
+      "accionAgregarTipoCepa",
+      "accionEditarTipoCepa",
+      "accionEliminarTipoCepa",
+    ]),
     ...vuex.mapActions("info_caract", [
       "obtenerInfoCaractHongos",
       "obtenerInfoCaractBacterias",
       "obtenerInfoCaractLevaduras",
       "obtenerInfoCaractActinomicetos",
+      "accionAgregarTipoCaractBacteria",
+      "accionEditarTipoCaractBacteria",
+      "accionEliminarTipoCaractBacteria",
+      "accionAgregarTipoCaractLevadura",
+      "accionEditarTipoCaractLevadura",
+      "accionEliminarTipoCaractLevadura",
+      "accionAgregarTipoCaractHongo",
+      "accionEditarTipoCaractHongo",
+      "accionEliminarTipoCaractHongo",
+      "accionAgregarTipoCaractActinomiceto",
+      "accionEditarTipoCaractActinomiceto",
+      "accionEliminarTipoCaractActinomiceto",
     ]),
     cambiarTipo(tipo) {
       if (tipo === "ver") {
@@ -136,6 +153,119 @@ export default {
       this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
       this.$events.fire("actualizartablaCepa");
     });
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("hongos-info").listen("HongosInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("levaduras-info").listen("LevadurasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("actinomicetos-info").listen(
+      "ActinomicetosInfoEvent",
+      (e) => {
+        switch (e.tipoAccion) {
+          case "agregar":
+            this.accionAgregarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+          case "editar":
+            this.accionEditarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+          case "eliminar":
+            this.accionEliminarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+        }
+      }
+    );
   },
 };
 </script>

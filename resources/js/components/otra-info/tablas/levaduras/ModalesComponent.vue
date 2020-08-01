@@ -151,6 +151,7 @@ export default {
       "accionEliminarTipoCaractLevadura",
     ]),
     beforeOpenAgregar(data) {
+      this.errors = "";
       this.modal.nombre = "";
       this.modal.tipo = data.params.tipo;
     },
@@ -190,6 +191,7 @@ export default {
         });
     },
     beforeOpenEditar(data) {
+      this.errors = "";
       this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
@@ -230,6 +232,7 @@ export default {
         });
     },
     beforeOpenEliminar(data) {
+      this.errors = "";
       this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },

@@ -85,8 +85,18 @@ export default {
   mixins: [bloquearPestañasMixin("cepas")],
   methods: {
     ...vuex.mapActions("cepas", ["obtenerCepas", "accionCepas"]),
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
-    ...vuex.mapActions("info_caract", ["obtenerInfoCaractHongos"]),
+    ...vuex.mapActions("info_cepas", [
+      "obtenerTiposCepas",
+      "accionAgregarTipoCepa",
+      "accionEditarTipoCepa",
+      "accionEliminarTipoCepa",
+    ]),
+    ...vuex.mapActions("info_caract", [
+      "obtenerInfoCaractHongos",
+      "accionAgregarTipoCaractHongo",
+      "accionEditarTipoCaractHongo",
+      "accionEliminarTipoCaractHongo",
+    ]),
     cambiarTipo(tipo) {
       if (tipo === "ver") {
         this.mostrarBtnVolver = true;
@@ -128,6 +138,50 @@ export default {
       this.accionCepas({ tipo: e.tipoAccion, data: e.data });
       this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
       this.$events.fire("actualizartablaCepa");
+    });
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("hongos-info").listen("HongosInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
     });
   },
 };

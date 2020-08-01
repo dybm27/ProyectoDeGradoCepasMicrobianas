@@ -148,7 +148,7 @@ export default {
                     state.tipos.reinos.push(data.info);
                     break;
                 case "division":
-                    state.tipos.divisions.push(data.info);
+                    state.tipos.divisiones.push(data.info);
                     break;
             }
         },
@@ -197,10 +197,10 @@ export default {
                     state.tipos.reinos.splice(indice, 1, data.info);
                     break;
                 case "division":
-                    var indice = state.tipos.divisions.findIndex(
+                    var indice = state.tipos.divisiones.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.divisions.splice(indice, 1, data.info);
+                    state.tipos.divisiones.splice(indice, 1, data.info);
                     break;
             }
         },
@@ -249,10 +249,10 @@ export default {
                     state.tipos.reinos.splice(indice, 1);
                     break;
                 case "division":
-                    var indice = state.tipos.divisions.findIndex(
+                    var indice = state.tipos.divisiones.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.divisions.splice(indice, 1);
+                    state.tipos.divisiones.splice(indice, 1);
                     break;
             }
         }

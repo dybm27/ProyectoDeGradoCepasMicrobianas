@@ -457,6 +457,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("BacteriasInfo")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria"]), {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
+      this.errors = "";
       this.modal.nombre = "";
       this.modal.tipo = data.params.tipo;
     },
@@ -493,6 +494,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
+      this.errors = "";
       this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
       this.modal.tipo = data.params.tipo;
@@ -530,6 +532,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
+      this.errors = "";
       this.id = data.params.id;
       this.modal.tipo = data.params.tipo;
     },

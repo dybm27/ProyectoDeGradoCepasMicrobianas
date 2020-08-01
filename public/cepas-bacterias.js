@@ -102,7 +102,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas", "accionCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractBacterias"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas", "accionCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas", "accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractBacterias", "accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria"]), {
     cambiarTipo: function cambiarTipo(tipo) {
       if (tipo === "ver") {
         this.mostrarBtnVolver = true;
@@ -150,6 +150,60 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       _this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
 
       _this.$events.fire("actualizartablaCepa");
+    });
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", function (e) {
+      switch (e.tipoAccion) {
+        case "agregar":
+          _this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+
+        case "editar":
+          _this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+
+        case "eliminar":
+          _this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+      }
+    });
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", function (e) {
+      switch (e.tipoAccion) {
+        case "agregar":
+          _this.accionAgregarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+
+        case "editar":
+          _this.accionEditarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+
+        case "eliminar":
+          _this.accionEliminarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract
+          });
+
+          break;
+      }
     });
   }
 });

@@ -92404,7 +92404,7 @@ __webpack_require__.r(__webpack_exports__);
           break;
 
         case "division":
-          state.tipos.divisions.push(data.info);
+          state.tipos.divisiones.push(data.info);
           break;
       }
     },
@@ -92460,10 +92460,10 @@ __webpack_require__.r(__webpack_exports__);
           break;
 
         case "division":
-          var indice = state.tipos.divisions.findIndex(function (tipo) {
+          var indice = state.tipos.divisiones.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
-          state.tipos.divisions.splice(indice, 1, data.info);
+          state.tipos.divisiones.splice(indice, 1, data.info);
           break;
       }
     },
@@ -92519,10 +92519,10 @@ __webpack_require__.r(__webpack_exports__);
           break;
 
         case "division":
-          var indice = state.tipos.divisions.findIndex(function (tipo) {
+          var indice = state.tipos.divisiones.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
-          state.tipos.divisions.splice(indice, 1);
+          state.tipos.divisiones.splice(indice, 1);
           break;
       }
     }
