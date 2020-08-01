@@ -1,15 +1,17 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col col-sm-8">
-          <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">{{nombre}}</h5>
-              <form
-                @submit.prevent="evento"
-                v-if="getGrupos&&getGeneros&&getEspecies&&mostrarFormComputed"
-              >
+    <form @submit.prevent="evento">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-6">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
+                <h5 class="card-title">{{nombre}}</h5>
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <div class="position-relative form-group">
                   <label for="codigo" class>Código</label>
                   <input
@@ -21,7 +23,6 @@
                     v-model="parametros.codigo"
                     required
                   />
-                  <span v-if="errors.codigo" class="text-danger">{{errors.codigo[0]}}</span>
                 </div>
                 <div class="position-relative form-group" v-if="mostrarGrupos">
                   <label for="grupo_microbiano" class>Grupo Microbiano</label>
@@ -57,7 +58,7 @@
                   </select>
                   <div class="input-group-append">
                     <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('genero')"
                     >
                       <i class="fas fa-plus"></i>
@@ -80,7 +81,7 @@
                   </select>
                   <div class="input-group-append">
                     <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('especie')"
                     >
                       <i class="fas fa-plus"></i>
@@ -104,7 +105,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('division')"
                       >
                         <i class="fas fa-plus"></i>
@@ -125,7 +126,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('reino')"
                       >
                         <i class="fas fa-plus"></i>
@@ -150,7 +151,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('phylum')"
                       >
                         <i class="fas fa-plus"></i>
@@ -173,7 +174,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('clase')"
                       >
                         <i class="fas fa-plus"></i>
@@ -192,7 +193,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('orden')"
                       >
                         <i class="fas fa-plus"></i>
@@ -217,7 +218,7 @@
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('familia')"
                       >
                         <i class="fas fa-plus"></i>
@@ -225,6 +226,12 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="main-card mb-3 card">
+              <div class="card-body">
                 <div class="position-relative form-group">
                   <label for="estado" class>Estado</label>
                   <input
@@ -236,7 +243,6 @@
                     v-model="parametros.estado"
                     required
                   />
-                  <span v-if="errors.estado" class="text-danger">{{errors.estado[0]}}</span>
                 </div>
                 <div class="position-relative form-group">
                   <label for="origen" class>Origen</label>
@@ -270,15 +276,17 @@
                   />
                   <label class="custom-control-label" for="publicar">Desea publicar la cepa?</label>
                 </div>
-                <button class="mt-1 btn" :class="classBtn">{{nombreBtn}}</button>
-                <!-- float-right -->
-              </form>
-              <div v-else>Cargando...</div>
+                <button
+                  class="mt-2 btn btn-block"
+                  :disabled="bloquearBtn"
+                  :class="classBtn"
+                >{{nombreBtn}}</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <modal name="agregar-otra-info" classes="my_modal" :width="450" :height="450">
       <div class="modal-content">
         <div class="modal-header">
@@ -317,11 +325,14 @@
               id="nombre"
               placeholder="..."
               type="text"
-              class="form-control"
+              :class="['form-control', validarNombreUnico? 'is-invalid':'']"
               v-model="modal.input"
               required
             />
-            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
+            <em
+              v-if="validarNombreUnico"
+              class="error invalid-feedback"
+            >Ya Existe un registro con ese nombre</em>
           </div>
         </div>
         <div class="modal-footer">
@@ -330,7 +341,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-otra-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal||validarNombreUnico"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -341,24 +357,25 @@
 import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
 export default {
-  props: ["tipoG"],
+  props: ["tipoG", "idCepa"],
   data() {
     return {
+      info: "",
       parametros: {
         codigo: "",
-        grupo_microbiano: 1,
-        genero: 1,
-        especie: 1,
-        phylum: 1,
-        clase: 1,
-        orden: 1,
-        reino: 1,
-        division: 1,
-        familia: 1,
+        grupo_microbiano: null,
+        genero: null,
+        especie: null,
+        phylum: null,
+        clase: null,
+        orden: null,
+        reino: null,
+        division: null,
+        familia: null,
         estado: "",
         origen: "Donación",
         publicar: false,
-        otras_caracteristicas: ""
+        otras_caracteristicas: "",
       },
       modal: {
         titulo: "",
@@ -366,7 +383,7 @@ export default {
         tipo: "",
         grupo_microbiano: 1,
         genero: 1,
-        errors: []
+        errors: [],
       },
       errors: [],
       mostrarGrupos: true,
@@ -374,45 +391,113 @@ export default {
       nombre: "",
       nombreBtn: "",
       classBtn: "",
-      mostrarForm: true
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr],
   methods: {
+    ...vuex.mapActions("cepas", ["accionCepas"]),
     ...vuex.mapActions("info_cepas", ["accionAgregarTipoCepa"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.nombre === "Editar Cepa") {
         axios
-          .put(`/cepas/editar/${this.$route.params.cepaId}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.redirect();
-            this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .put(`/cepas/editar/${this.idCepa}`, this.parametros)
+          .then((res) => {
+            this.bloquearBtn = false;
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.accionCepas({ tipo: "editar", data: res.data });
+              window.Echo.private("desbloquearBtnsCepa").whisper(
+                "desbloquearBtnsCepa",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoCepa", {
+                id: res.data.id,
+              });
+              this.$emit("cambiarVariableFormulario");
+              this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .post("/cepas/agregar", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.redirect();
-            this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .then((res) => {
+            this.bloquearBtn = false;
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.accionCepas({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+              this.toastr(
+                "Agregar Cepa",
+                "Cepa agregada con exito!!",
+                "success"
+              );
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
+      }
+    },
+    llenarParametros(cepa) {
+      this.parametros.codigo = this.info.codigo;
+      this.parametros.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.modal.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.parametros.genero = this.info.genero_id;
+      this.modal.genero = this.info.genero_id;
+      this.parametros.especie = this.info.especie_id;
+      this.parametros.estado = this.info.estado;
+      this.parametros.origen = this.info.origen;
+      this.parametros.otras_caracteristicas = this.info.otras_caract;
+      switch (this.info.grupo_microbiano_id) {
+        case 1:
+          break;
+        case 2:
+          this.parametros.phylum = this.info.hongo.phylum_id;
+          this.parametros.clase = this.info.hongo.clase_id;
+          this.parametros.orden = this.info.hongo.orden_id;
+          this.parametros.familia = this.info.hongo.familia_id;
+          break;
+        case 3:
+          this.parametros.division = this.info.levadura.division_id;
+          this.parametros.clase = this.info.levadura.clase_id;
+          this.parametros.orden = this.info.levadura.orden_id;
+          this.parametros.familia = this.info.levadura.familia_id;
+          break;
+        case 4:
+          this.parametros.reino = this.info.actinomiceto.reino_id;
+          this.parametros.phylum = this.info.actinomiceto.phylum_id;
+          this.parametros.clase = this.info.actinomiceto.clase_id;
+          this.parametros.orden = this.info.actinomiceto.orden_id;
+          break;
+      }
+      if (this.info.publicar == 1) {
+        this.parametros.publicar = true;
       }
     },
     ocultarGrupoMicrobiano() {
@@ -422,89 +507,6 @@ export default {
         this.parametros.grupo_microbiano = this.tipoG;
         this.mostrarGrupos = false;
         this.cambiarGeneroEspecie();
-      }
-    },
-    redirect() {
-      switch (this.tipoG) {
-        case 0:
-          this.$router.push("/cepas/tabla");
-          break;
-        case 1:
-          this.$router.push("/bacterias/tabla");
-          break;
-        case 2:
-          this.$router.push("/hongos/tabla");
-          break;
-        case 3:
-          this.$router.push("/levaduras/tabla");
-          break;
-        case 4:
-          this.$router.push("/actinomicetos/tabla");
-          break;
-      }
-    },
-    verificarTipo() {
-      if (!this.$route.params.cepaId) {
-        this.nombre = "Agregar Nueva Cepa";
-        this.classBtn = "btn-success";
-        this.nombreBtn = "Guardar";
-        this.mostrarForm = true;
-      } else {
-        this.mostrarForm = false;
-        this.disabled = true;
-        this.nombre = "Editar Cepa";
-        this.classBtn = "btn-warning";
-        this.nombreBtn = "Editar";
-        this.bucarCepa();
-      }
-    },
-    bucarCepa() {
-      let id = this.$route.params.cepaId;
-      axios
-        .get(`/info-panel/cepa/${id}`)
-        .then(res => {
-          this.llenarParametros(res.data);
-          this.mostrarForm = true;
-        })
-        .catch(error => {
-          if (error.response) {
-          }
-        });
-    },
-    llenarParametros(cepa) {
-      this.parametros.codigo = cepa.cepa.codigo;
-      this.parametros.grupo_microbiano = cepa.cepa.grupo_microbiano_id;
-      this.modal.grupo_microbiano = cepa.cepa.grupo_microbiano_id;
-      this.parametros.genero = cepa.cepa.genero_id;
-      this.modal.genero = cepa.cepa.genero_id;
-      this.parametros.especie = cepa.cepa.especie_id;
-      this.parametros.estado = cepa.cepa.estado;
-      this.parametros.origen = cepa.cepa.origen;
-      this.parametros.otras_caracteristicas = cepa.cepa.otras_caract;
-      switch (cepa.cepa.grupo_microbiano_id) {
-        case 1:
-          break;
-        case 2:
-          this.parametros.phylum = cepa.phylum_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          this.parametros.familia = cepa.familia_id;
-          break;
-        case 3:
-          this.parametros.division = cepa.division_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          this.parametros.familia = cepa.familia_id;
-          break;
-        case 4:
-          this.parametros.reino = cepa.reino_id;
-          this.parametros.phylum = cepa.phylum_id;
-          this.parametros.clase = cepa.clase_id;
-          this.parametros.orden = cepa.orden_id;
-          break;
-      }
-      if (cepa.cepa.publicar == 1) {
-        this.parametros.publicar = true;
       }
     },
     cambiarGeneroEspecie() {
@@ -550,36 +552,95 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
           nombre: this.modal.input,
           genero: this.modal.genero,
-          grupo_microbiano: this.modal.grupo_microbiano
+          grupo_microbiano: this.modal.grupo_microbiano,
         };
         axios
           .post("/info-cepas/agregar", parametros)
-          .then(res => {
-            this.accionAgregarTipoCepa({
-              info: res.data,
-              tipo: this.modal.tipo
-            });
-            this.$modal.hide("agregar-otra-info");
-            this.toastr(
-              "Agregar Info",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
+          .then((res) => {
+            this.bloquearBtnModal = false;
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.accionAgregarTipoCepa({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-otra-info");
+              this.toastr(
+                "Agregar Info",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
               this.modal.errors = error.response.data.errors;
             }
-            this.toastr("Error!!!!", "", "error");
+            this.toastr("Error!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.getGrupos.length > 0) {
+        this.parametros.grupo_microbiano = this.getGrupos[0].id;
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGeneros[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspecies[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
+      }
+    },
   },
   computed: {
+    ...vuex.mapGetters("cepas", ["getCepaById"]),
     ...vuex.mapGetters("info_cepas", [
       "getGrupos",
       "getGeneros",
@@ -591,18 +652,154 @@ export default {
       "getClases",
       "getFamilias",
       "getGenerosId",
-      "getEspeciesId"
+      "getEspeciesId",
+      "getGeneroByNombre",
+      "getEspecieByNombre",
+      "getPhylumByNombre",
+      "getOrdenByNombre",
+      "getReinoByNombre",
+      "getDivisionByNombre",
+      "getClaseByNombre",
+      "getFamiliaByNombre",
     ]),
-    mostrarFormComputed() {
-      return this.mostrarForm;
-    }
-  },
-  mounted() {
-    this.ocultarGrupoMicrobiano();
+    validarNombreUnico() {
+      if (this.modal.input) {
+        switch (this.modal.tipo) {
+          case "genero":
+            if (this.getGeneroByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "especie":
+            if (this.getEspecieByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "familia":
+            if (this.getFamiliaByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "orden":
+            if (this.getOrdenByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "clase":
+            if (this.getClaseByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "phylum":
+            if (this.getPhylumByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "reino":
+            if (this.getReinoByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+          case "division":
+            if (this.getDivisionByNombre(this.modal.input)) {
+              return true;
+            }
+            break;
+        }
+      }
+      return false;
+    },
   },
   created() {
-    this.$emit("rutaHijo", window.location.pathname);
-    this.verificarTipo();
-  }
+    this.verificarSelects();
+    this.ocultarGrupoMicrobiano();
+    if (this.idCepa === 0) {
+      this.nombre = "Agregar Nueva Cepa";
+      this.classBtn = "btn-success";
+      this.nombreBtn = "Guardar";
+      this.$emit("cambiarTipo", "agregar");
+    } else {
+      this.info = this.getCepaById(this.idCepa);
+      this.disabled = true;
+      this.nombre = "Editar Cepa";
+      this.classBtn = "btn-warning";
+      this.nombreBtn = "Editar";
+      this.$emit("cambiarTipo", "editar");
+      this.llenarParametros();
+    }
+  },
+  watch: {
+    getGrupos() {
+      if (this.getGrupos.length > 0) {
+        if (this.tipoG === 0) {
+          this.parametros.grupo_microbiano = this.getGrupos[0].id;
+        } else {
+          this.parametros.grupo_microbiano = this.tipoG;
+        }
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+    },
+    getGeneros() {
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGenerosId(
+          this.parametros.grupo_microbiano
+        )[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+    },
+    getEspecies() {
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspeciesId(
+          this.parametros.genero
+        )[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+    },
+    getPhylums() {
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+    },
+    getOrdens() {
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+    },
+    getReinos() {
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+    },
+    getDivisiones() {
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+    },
+    getClases() {
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+    },
+    getFamilias() {
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
+      }
+    },
+  },
 };
 </script>

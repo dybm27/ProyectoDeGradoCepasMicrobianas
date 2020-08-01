@@ -8,6 +8,6 @@ class BordeActinomiceto extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMacroActinomiceto::class, 'borde_id');
     }
 }

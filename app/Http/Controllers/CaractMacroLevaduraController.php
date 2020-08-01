@@ -13,6 +13,7 @@ class CaractMacroLevaduraController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
         //obtenemos el nombre de la imagen
         $imagen = $this->guardarImagen($request->imagen, $levadura->id);
@@ -41,6 +42,7 @@ class CaractMacroLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMacroLevadura = CaracMacroLevadura::find($id);
 
         if ($request->imagen != $caractMacroLevadura->imagen) {
@@ -99,5 +101,15 @@ class CaractMacroLevaduraController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'medio' => 'required', 'textura' => 'required',
+            'borde_colonia' => 'required', 'color' => 'required',
+            'topografia_superficie' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

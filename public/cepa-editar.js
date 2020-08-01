@@ -356,7 +356,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipoG"],
@@ -364,15 +371,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       parametros: {
         codigo: "",
-        grupo_microbiano: 1,
-        genero: 1,
-        especie: 1,
-        phylum: 1,
-        clase: 1,
-        orden: 1,
-        reino: 1,
-        division: 1,
-        familia: 1,
+        grupo_microbiano: null,
+        genero: null,
+        especie: null,
+        phylum: null,
+        clase: null,
+        orden: null,
+        reino: null,
+        division: null,
+        familia: null,
         estado: "",
         origen: "Donación",
         publicar: false,
@@ -392,7 +399,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nombre: "",
       nombreBtn: "",
       classBtn: "",
-      mostrarForm: true
+      mostrarForm: true,
+      bloquearBtn: false,
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -400,37 +409,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     evento: function evento() {
       var _this = this;
 
+      this.bloquearBtn = true;
+
       if (this.nombre === "Editar Cepa") {
         axios.put("/cepas/editar/".concat(this.$route.params.cepaId), this.parametros).then(function (res) {
+          _this.bloquearBtn = false;
+
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
           _this.errors = [];
 
           _this.redirect();
 
           _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
+          _this.bloquearBtn = false;
+
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.post("/cepas/agregar", this.parametros).then(function (res) {
+          _this.bloquearBtn = false;
+
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
           _this.errors = [];
 
           _this.redirect();
 
           _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response) {
+          _this.bloquearBtn = false;
+
+          if (error.response.status === 422) {
             _this.errors = [];
             _this.errors = error.response.data.errors;
-
-            _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
           }
+
+          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -446,23 +475,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     redirect: function redirect() {
       switch (this.tipoG) {
         case 0:
-          this.$router.push("/cepas/tabla");
+          this.$router.push({
+            name: "cepas-tabla"
+          });
           break;
 
         case 1:
-          this.$router.push("/bacterias/tabla");
+          this.$router.push({
+            name: "bacterias-tabla"
+          });
           break;
 
         case 2:
-          this.$router.push("/hongos/tabla");
+          this.$router.push({
+            name: "hongos-tabla"
+          });
           break;
 
         case 3:
-          this.$router.push("/levaduras/tabla");
+          this.$router.push({
+            name: "levaduras-tabla"
+          });
           break;
 
         case 4:
-          this.$router.push("/actinomicetos/tabla");
+          this.$router.push({
+            name: "actinomicetos-tabla"
+          });
           break;
       }
     },
@@ -486,11 +525,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       var id = this.$route.params.cepaId;
       axios.get("/info-panel/cepa/".concat(id)).then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          _this2.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+          window.location.href = "/";
+        }
+
         _this2.llenarParametros(res.data);
 
         _this2.mostrarForm = true;
-      })["catch"](function (error) {
-        if (error.response) {}
       });
     },
     llenarParametros: function llenarParametros(cepa) {
@@ -577,6 +620,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         };
       } else {
+        this.bloquearBtnModal = true;
         var parametros = {
           tipo: this.modal.tipo,
           nombre: this.modal.input,
@@ -584,6 +628,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           grupo_microbiano: this.modal.grupo_microbiano
         };
         axios.post("/info-cepas/agregar", parametros).then(function (res) {
+          _this3.bloquearBtnModal = false;
+
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            _this3.$ls.set("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+
+            window.location.href = "/";
+          }
+
           _this3.accionAgregarTipoCepa({
             info: res.data,
             tipo: _this3.modal.tipo
@@ -593,26 +645,214 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this3.toastr("Agregar Info", "".concat(_this3.modal.tipo, " agregado/a con exito"), "success");
         })["catch"](function (error) {
-          if (error.response) {
+          _this3.bloquearBtnModal = false;
+
+          if (error.response.status === 422) {
             _this3.modal.errors = error.response.data.errors;
           }
 
-          _this3.toastr("Error!!!!", "", "error");
+          _this3.toastr("Error!!", "", "error");
         });
+      }
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.getGrupos.length > 0) {
+        this.parametros.grupo_microbiano = this.getGrupos[0].id;
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGeneros[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspecies[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId", "getGeneroByNombre", "getEspecieByNombre", "getPhylumByNombre", "getOrdenByNombre", "getReinoByNombre", "getDivisionByNombre", "getClaseByNombre", "getFamiliaByNombre"]), {
     mostrarFormComputed: function mostrarFormComputed() {
-      return this.mostrarForm;
+      if (this.getGrupos && this.getGeneros && this.getEspecies && this.mostrarForm) {
+        this.ocultarGrupoMicrobiano();
+        return true;
+      }
+
+      return false;
+    },
+    validarNombreUnico: function validarNombreUnico() {
+      if (this.modal.input) {
+        switch (this.modal.tipo) {
+          case "genero":
+            if (this.getGeneroByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "especie":
+            if (this.getEspecieByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "familia":
+            if (this.getFamiliaByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "orden":
+            if (this.getOrdenByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "clase":
+            if (this.getClaseByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "phylum":
+            if (this.getPhylumByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "reino":
+            if (this.getReinoByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "division":
+            if (this.getDivisionByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+        }
+      }
+
+      return false;
     }
   }),
-  mounted: function mounted() {
-    this.ocultarGrupoMicrobiano();
-  },
   created: function created() {
+    this.verificarSelects();
     this.$emit("rutaHijo", window.location.pathname);
     this.verificarTipo();
+  },
+  watch: {
+    getGrupos: function getGrupos() {
+      if (this.getGrupos.length > 0) {
+        this.parametros.grupo_microbiano = this.getGrupos[0].id;
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+    },
+    getGeneros: function getGeneros() {
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGeneros[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+    },
+    getEspecies: function getEspecies() {
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspecies[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+    },
+    getPhylums: function getPhylums() {
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+    },
+    getOrdens: function getOrdens() {
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+    },
+    getReinos: function getReinos() {
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+    },
+    getDivisiones: function getDivisiones() {
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+    },
+    getClases: function getClases() {
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+    },
+    getFamilias: function getFamilias() {
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
+      }
+    }
   }
 });
 
@@ -645,9 +885,6 @@ var render = function() {
                   _vm._v(_vm._s(_vm.nombre))
                 ]),
                 _vm._v(" "),
-                _vm.getGrupos &&
-                _vm.getGeneros &&
-                _vm.getEspecies &&
                 _vm.mostrarFormComputed
                   ? _c(
                       "form",
@@ -660,6 +897,21 @@ var render = function() {
                         }
                       },
                       [
+                        _vm.errors != ""
+                          ? [
+                              _c(
+                                "div",
+                                { staticClass: "alert alert-danger" },
+                                _vm._l(_vm.errors, function(item, index) {
+                                  return _c("p", { key: index }, [
+                                    _vm._v(_vm._s(item[0]))
+                                  ])
+                                }),
+                                0
+                              )
+                            ]
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c(
                           "div",
                           { staticClass: "position-relative form-group" },
@@ -698,13 +950,7 @@ var render = function() {
                                   )
                                 }
                               }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.codigo
-                              ? _c("span", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.codigo[0]))
-                                ])
-                              : _vm._e()
+                            })
                           ]
                         ),
                         _vm._v(" "),
@@ -842,7 +1088,7 @@ var render = function() {
                               "button",
                               {
                                 staticClass:
-                                  "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                  "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -912,7 +1158,7 @@ var render = function() {
                               "button",
                               {
                                 staticClass:
-                                  "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                  "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -986,7 +1232,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1063,7 +1309,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1141,7 +1387,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1220,7 +1466,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1293,7 +1539,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1371,7 +1617,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "btn-icon btn-icon-only btn-pill btn btn-outline-info",
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
                                         on: {
                                           click: function($event) {
                                             $event.preventDefault()
@@ -1425,13 +1671,7 @@ var render = function() {
                                   )
                                 }
                               }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.estado
-                              ? _c("span", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.estado[0]))
-                                ])
-                              : _vm._e()
+                            })
                           ]
                         ),
                         _vm._v(" "),
@@ -1614,10 +1854,15 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "button",
-                          { staticClass: "mt-1 btn", class: _vm.classBtn },
+                          {
+                            staticClass: "mt-1 btn",
+                            class: _vm.classBtn,
+                            attrs: { disabled: _vm.bloquearBtn }
+                          },
                           [_vm._v(_vm._s(_vm.nombreBtn))]
                         )
-                      ]
+                      ],
+                      2
                     )
                   : _c("div", [_vm._v("Cargando...")])
               ])
@@ -1789,7 +2034,10 @@ var render = function() {
                       expression: "modal.input"
                     }
                   ],
-                  staticClass: "form-control",
+                  class: [
+                    "form-control",
+                    _vm.validarNombreUnico ? "is-invalid" : ""
+                  ],
                   attrs: {
                     name: "nombre",
                     id: "nombre",
@@ -1808,9 +2056,9 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _vm.modal.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(_vm._s(_vm.modal.errors.nombre[0]))
+                _vm.validarNombreUnico
+                  ? _c("em", { staticClass: "error invalid-feedback" }, [
+                      _vm._v("Ya Existe un registro con ese nombre")
                     ])
                   : _vm._e()
               ])
@@ -1834,8 +2082,11 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
+                  staticClass: "btn btn-success",
+                  attrs: {
+                    type: "button",
+                    disabled: _vm.bloquearBtnModal || _vm.validarNombreUnico
+                  },
                   on: { click: _vm.agregarInfo }
                 },
                 [_vm._v("Agregar")]

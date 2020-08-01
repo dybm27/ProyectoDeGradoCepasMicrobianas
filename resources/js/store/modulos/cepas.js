@@ -4,15 +4,12 @@ export default {
         cepas: []
     },
     getters: {
-        getCepas(state) {
-            return state.cepa;
-        },
-        getCepaById: (state, getters) => id => {
-            return getters.getCepas.find(cepa => cepa.id == id);
+        getCepaById: state => id => {
+            return state.cepas.find(cepa => cepa.id == id);
         }
     },
     mutations: {
-        llenarCepa(state, cepas) {
+        llenarCepas(state, cepas) {
             state.cepas = cepas;
         },
         mutacionCepas(state, data) {
@@ -36,12 +33,20 @@ export default {
         }
     },
     actions: {
-        obtenerCepas({ commit }, id) {
+        obtenerCepas({ commit }) {
             axios.get("/info-panel/cepas").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarCepas", res.data);
             });
         },
         accionCepas({ commit }, data) {
+            console.log('accionCepas');
             commit("mutacionCepas", data);
         }
     }

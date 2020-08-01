@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ImagenLogin extends Model
 {
-    protected $fillable = [
+    /* protected $fillable = [
         'titulo', 'descripcion', 'imagen', 'imagenPublica', 'mostrar'
-    ];
-}
+    ]; */ }

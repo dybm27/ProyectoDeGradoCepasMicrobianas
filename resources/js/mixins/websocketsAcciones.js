@@ -5,47 +5,13 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
     methods: {
         editar(data) {
             this.$events.fire("abrirFormulario" + tipoM, data.id);
-            window.Echo.private("bloquearBtns" + tipoM).whisper(
-                "bloquearBtns" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.getUserAuth.id
-                }
-            );
-            window.Echo.private("bloquearCheck" + tipoM).whisper(
-                "bloquearCheck" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.getUserAuth.id
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoM, {
-                id: data.id,
-                idUser: this.getUserAuth.id
-            });
+            this.enviarBloqueo(data);
         },
         showModal(data) {
             this.$modal.show("modal_eliminar_" + tipo, {
                 id: data.id
             });
-            window.Echo.private("bloquearBtns" + tipoM).whisper(
-                "bloquearBtns" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.getUserAuth.id
-                }
-            );
-            window.Echo.private("bloquearCheck" + tipoM).whisper(
-                "bloquearCheck" + tipoM,
-                {
-                    id: data.id,
-                    idUser: this.getUserAuth.id
-                }
-            );
-            this.$events.fire("pushMisBloqueos" + tipoM, {
-                id: data.id,
-                idUser: this.getUserAuth.id
-            });
+            this.enviarBloqueo(data);
         },
         bloquearBtns() {
             this.disabledBtns = true;
@@ -65,6 +31,19 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
             this.disabledBtns = false;
             this.$events.$off(id + "-bloquearBtns" + tipoM);
             this.$events.$off(id + "-desbloquearBtns" + tipoM);
+        },
+        enviarBloqueo(data) {
+            window.Echo.private("bloquearBtns" + tipoM).whisper(
+                "bloquearBtns" + tipoM,
+                {
+                    id: data.id,
+                    idUser: this.auth.id
+                }
+            );
+            this.$events.fire("agregarMiBloqueo" + tipoM, {
+                id: data.id,
+                idUser: this.auth.id
+            });
         }
     },
     created() {
@@ -78,6 +57,8 @@ const websocketsAccionesMixin = (tipo, tipoM, tipoP) => ({
     destroyed() {
         this.$events.$off(this.rowIndex + "-crearEventosBtns-" + tipoP);
         this.$events.$off(this.rowIndex + "-eliminarEventosBtns-" + tipoP);
+        this.$events.$off(this.rowData.id + "-bloquearBtns" + tipoM);
+        this.$events.$off(this.rowData.id + "-desbloquearBtns" + tipoM);
     }
 });
 export default websocketsAccionesMixin;

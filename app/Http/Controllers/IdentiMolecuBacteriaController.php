@@ -13,6 +13,7 @@ class IdentiMolecuBacteriaController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
         // img pcr
         $img_pcr = $this->guardarImagen($request->imagen1, $bacteria->id, 'pcr');
@@ -47,6 +48,7 @@ class IdentiMolecuBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $IdentiMolecuBacteria = IdentiMolecuBacteria::find($id);
 
         if ($request->imagen1 != $IdentiMolecuBacteria->img_pcr) {
@@ -109,5 +111,16 @@ class IdentiMolecuBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'nombre_forward' => 'required', 'produc_forward' => 'required',
+            'nombre_reversed' => 'required', 'produc_reversed' => 'required',
+            'secuen_forward' => 'required', 'obser_secuenciacion' => 'required',
+            'secuen_reversed' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-micro-actinomiceto
+          <FormCaratMicro
             :modificarInfo="modificarForm"
             :info="getCaractMicro"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-micro-actinomiceto>
+          ></FormCaratMicro>
         </template>
         <template v-else>
           <div class="text-center">
@@ -74,12 +74,14 @@
 import vuex from "vuex";
 
 import Toastr from "../../../../mixins/toastr";
+import FormCaratMicro from "../forms-caract/FormCaractMicroComponent.vue";
 export default {
+  components: { FormCaratMicro },
   data() {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
     };
   },
   mixins: [Toastr],
@@ -87,7 +89,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "micro", data: data });
@@ -99,22 +101,27 @@ export default {
     eliminar() {
       axios
         .delete(`/cepas/actinomiceto/caract-micro/${this.getCaractMicro.id}`)
-        .then(res => {
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("eliminar_caract_micro");
-          this.accionEliminarCaract({ tipo: "micro", data: res.data });
-          this.toastr(
-            "Eliminar Característica",
-            "Característica Microscópica eliminada con exito!!",
-            "success"
-          );
-        })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-            // console.log(error.response.data);
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.mostrarForm = false;
+            this.$modal.hide("eliminar_caract_micro");
+            this.accionEliminarCaract({ tipo: "micro", data: res.data });
+            this.toastr(
+              "Eliminar Característica",
+              "Característica Microscópica eliminada con exito!!",
+              "success"
+            );
           }
+        })
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
     },
     cambiarVariable() {
@@ -127,7 +134,7 @@ export default {
     cancelar() {
       this.mostrarForm = false;
       this.mostrarBtnAgregar = true;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getCaractMicro"]),
@@ -147,13 +154,13 @@ export default {
     },
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
-    }
+    },
   },
   mounted() {
     if (this.getCaractMicro) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
-  }
+  },
 };
 </script>

@@ -1,17 +1,17 @@
 <template>
   <div>
-    <template v-if="tipo">
-      <template v-if="tipo===1">
-        <nav-bacterias></nav-bacterias>
+    <template v-if="numGrupo">
+      <template v-if="numGrupo===1">
+        <NavBacterias></NavBacterias>
       </template>
-      <template v-else-if="tipo===2">
-        <nav-hongos></nav-hongos>
+      <template v-else-if="numGrupo===2">
+        <NavHongos></NavHongos>
       </template>
-      <template v-else-if="tipo===3">
-        <nav-levaduras></nav-levaduras>
+      <template v-else-if="numGrupo===3">
+        <NavLevaduras></NavLevaduras>
       </template>
-      <template v-else-if="tipo===4">
-        <nav-actinomicetos></nav-actinomicetos>
+      <template v-else-if="numGrupo===4">
+        <NavActinomicetos></NavActinomicetos>
       </template>
       <template v-else>
         <div class="flex-center position-ref full-height">
@@ -45,89 +45,26 @@
 
 <script>
 import vuex from "vuex";
+import NavBacterias from "./bacterias/NavBacteriasComponent.vue";
+import NavHongos from "./hongos/NavHongosComponent.vue";
+import NavLevaduras from "./levaduras/NavLevadurasComponent.vue";
+import NavActinomicetos from "./actinomicetos/NavActinomicetosComponent.vue";
+import Toastr from "../../mixins/toastr";
+import CaractCepaMixin from "../../mixins/accionVer-accionCaract";
 export default {
-  props: ["tipoG"],
-  data() {
-    return {
-      tipo: ""
-    };
-  },
-  created() {
-    switch (this.tipoG) {
-      case 1:
-        this.obtenerCepa(this.$route.params.cepaBacteriaId);
-        break;
-      case 2:
-        this.obtenerCepa(this.$route.params.cepaHongoId);
-        break;
-      case 3:
-        this.obtenerCepa(this.$route.params.cepaLevaduraId);
-        break;
-      case 4:
-        this.obtenerCepa(this.$route.params.cepaActinomicetoId);
-        break;
-      case 0:
-        this.obtenerCepa(this.$route.params.cepaId);
-        break;
-    }
-    this.$emit("rutaHijo", window.location.pathname);
-  },
-  watch: {
-    getCepa() {
-      if (this.getCepa) {
-        if (this.getCepa === "No Existe") {
-          this.tipo = 5;
-        } else {
-          this.tipo = this.verificarUrl(this.getCepa.cepa.grupo_microbiano_id);
-        }
-      }
-    }
+  components: { NavBacterias, NavHongos, NavLevaduras, NavActinomicetos },
+  mixins: [Toastr, CaractCepaMixin],
+  computed: {
+    ...vuex.mapState(["auth"]),
+    ...vuex.mapGetters("usuarios", ["getUsuarioById"]),
+    ...vuex.mapState("cepa", ["cepa"]),
   },
   methods: {
-    ...vuex.mapActions("cepa", ["obtenerCepa", "limpiarCepa"]),
-    verificarUrl(tipo) {
-      let ruta = window.location.pathname;
-      switch (tipo) {
-        case 1:
-          if (ruta.includes("bacteria")) {
-            return 1;
-          } else {
-            return 5;
-          }
-          break;
-        case 2:
-          if (ruta.includes("hongo")) {
-            return 2;
-          } else {
-            return 5;
-          }
-          break;
-        case 3:
-          if (ruta.includes("levadura")) {
-            return 3;
-          } else {
-            return 5;
-          }
-          break;
-        case 4:
-          if (ruta.includes("actinomiceto")) {
-            return 4;
-          } else {
-            return 5;
-          }
-          break;
-      }
-    }
+    ...vuex.mapActions("cepa", ["llenarCepa", "limpiarCepa"]),
   },
-  computed: {
-    ...vuex.mapGetters("cepa", ["getCepa"]),
-    getTipo() {
-      return this.tipo;
-    }
+  created() {
+    this.$emit("cambiarTipo", "caract");
   },
-  destroyed() {
-    this.limpiarCepa();
-  }
 };
 </script>
 

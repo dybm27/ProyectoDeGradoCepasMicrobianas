@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">{{ titulo }}</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="medio" class>Primers</label>
                 <div class="form-row">
@@ -216,7 +221,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{ nomBtnComputed }}</button>
             </form>
           </div>
@@ -274,7 +279,7 @@
             <template v-if="mostraImagen2">
               <h5 class="card-title">Imagen BLAST</h5>
               <template v-if="validarCroppie2">
-                <croppie
+                <Croppie
                   :id="'croppie2'"
                   :imagen="mostraImagen2"
                   @cambiarValorImagen="cambiarValorImagen2"
@@ -287,7 +292,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie2'"
                   :imagen="mostraImagen2"
                   @cambiarValorImagen="cambiarValorImagen2"
@@ -320,8 +325,9 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie2Imagenes from "../../../../mixins/obtenerImagenCroopie2Imagenes";
-
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: { Croppie },
   props: ["info", "modificarInfo"],
   data() {
     return {
@@ -338,11 +344,12 @@ export default {
         analisis_filogenetico: "",
         observaciones: "",
         imagen1: "",
-        imagen2: ""
+        imagen2: "",
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie2Imagenes],
@@ -352,54 +359,82 @@ export default {
         this.llenarInfo();
         this.$emit("cambiarVariable");
       }
-    }
+    },
   },
   methods: {
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Identificación") {
-        axios
-          .post("/cepas/hongo/identi-molecu", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen1.value = "";
-            this.$refs.inputImagen2.value = "";
-            this.tituloForm = "Editar Identificación";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Identificación",
-              "Identificación Molecular agregada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen1 && this.parametros.imagen2) {
+          axios
+            .post("/cepas/hongo/identi-molecu", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen1.value = "";
+                this.$refs.inputImagen2.value = "";
+                this.tituloForm = "Editar Identificación";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Identificación",
+                  "Identificación Molecular agregada con exito!!",
+                  "success"
+                );
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor agregre las respectivas imagenes."],
+          };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/hongo/identi-molecu/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen1.value = "";
-            this.$refs.inputImagen2.value = "";
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Identificación",
-              "Identificación Molecular editada con exito!!",
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen1.value = "";
+              this.$refs.inputImagen2.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Identificación",
+                "Identificación Molecular editada con exito!!",
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -418,7 +453,7 @@ export default {
       this.parametros.imagen2 = this.info.imagen_blast;
       this.imagenMiniatura1 = this.info.imagen_pcrPublica;
       this.imagenMiniatura2 = this.info.imagen_blastPublica;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"]),
@@ -441,7 +476,7 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    }
+    },
   },
   mounted() {
     if (this.info) {
@@ -457,6 +492,6 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="getQuienesSomos">
+    <template v-if="quienes_somos">
       <div class="container">
         <div class="main-card mb-3 card">
           <div class="card-body">
@@ -8,10 +8,10 @@
               <div class="row justify-content-center">
                 <div class="col-md-12">
                   <h5 class="card-title">Misión</h5>
-                  <editor-texto
+                  <Editor
                     @contenido="aceptarContenido"
                     @modificar="modificarContenido"
-                    :info="getQuienesSomos.mision"
+                    :info="quienes_somos.mision"
                   />
                 </div>
               </div>
@@ -72,24 +72,26 @@
 import websocketsSinTablaMixin from "../../../mixins/websocketsSinTabla";
 import Toastr from "../../../mixins/toastr";
 import vuex from "vuex";
+import Editor from "../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: { Editor },
   data() {
     return {
       parametros: {
         cuerpo: "",
         imagenesEditor: [],
-        imagenesGuardadas: []
-      }
+        imagenesGuardadas: [],
+      },
     };
   },
   mixins: [websocketsSinTablaMixin("mision", "Mision"), Toastr],
   computed: {
-    ...vuex.mapGetters("quienes_somos", ["getQuienesSomos"]),
-    ...vuex.mapGetters(["getUserAuth"]),
+    ...vuex.mapState("quienes_somos", ["quienes_somos"]),
+    ...vuex.mapState(["auth"]),
     verificarBtn() {
-      if (this.getQuienesSomos.mision) {
+      if (this.quienes_somos.mision) {
         if (this.parametros.cuerpo) {
-          if (this.getQuienesSomos.mision.cuerpo === this.parametros.cuerpo) {
+          if (this.quienes_somos.mision.cuerpo === this.parametros.cuerpo) {
             return true;
           }
           return false;
@@ -98,18 +100,35 @@ export default {
       } else {
         return true;
       }
-    }
+    },
+  },
+  created() {
+    this.$emit("rutaHijo", window.location.pathname);
   },
   methods: {
     ...vuex.mapActions("quienes_somos", ["accionCambiarQuienesSomos"]),
     cambiarMision() {
-      axios.put("/quienes-somos/mision/cambiar", this.parametros).then(res => {
-        this.accionCambiarQuienesSomos({
-          data: res.data,
-          tipo: "mision"
+      axios
+        .put("/quienes-somos/mision/cambiar", this.parametros)
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.accionCambiarQuienesSomos({
+              data: res.data,
+              tipo: "mision",
+            });
+            this.toastr(
+              "Cambiar Misión",
+              "Misión cambiada con exito",
+              "success"
+            );
+          }
         });
-        this.toastr("Cambiar Misión", "Misión cambiada con exito", "success");
-      });
     },
     aceptarContenido(data) {
       this.parametros.cuerpo = data.contenido;
@@ -118,7 +137,7 @@ export default {
     },
     modificarContenido(data) {
       this.parametros.cuerpo = "";
-    }
-  }
+    },
+  },
 };
 </script>

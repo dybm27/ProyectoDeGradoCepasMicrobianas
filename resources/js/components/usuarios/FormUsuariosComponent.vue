@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="validarForm">
+    <template v-if="getUsuarios">
       <div class="container mt-3 ml-2 mr-2">
         <div class="row justify-content-md-center">
           <div class="col-sm-6">
@@ -78,9 +78,9 @@
                       :required="required"
                     />
                     <div class="input-group-append">
-                      <span class="input-group-text" @click="showPass=!showPass">
-                        <i class="fas fa-eye" v-if="showPass"></i>
-                        <i class="fas fa-eye-slash" v-else></i>
+                      <span class="input-group-text">
+                        <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
+                        <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
                       </span>
                     </div>
                     <em
@@ -126,28 +126,22 @@
                 <template v-if="mostraImagen">
                   <template v-if="mostraImagen===info.avatarPublico">
                     <croppie
-                      :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="mostrarBtnCroppie"
+                      :mostrarBtn="mostrarBtn"
                       :enableZoom="false"
                       :zoom="0"
                       :editar="true"
-                      :boundaryHeigth="300"
-                      :viewportWidth="200"
                     />
                   </template>
                   <template v-else>
                     <croppie
-                      :id="'croppie'"
                       :imagen="mostraImagen"
                       @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="mostrarBtnCroppie"
+                      :mostrarBtn="mostrarBtn"
                       :zoom="1"
                       :enableZoom="true"
                       :editar="false"
-                      :boundaryHeigth="300"
-                      :viewportWidth="200"
                     />
                   </template>
                 </template>
@@ -179,6 +173,7 @@
                 <div></div>
                 <div></div>
                 <div></div>
+                <div></div>
               </div>
             </div>
           </div>
@@ -190,7 +185,7 @@
 
 <script>
 import vuex from "vuex";
-import Toastr from "../../mixins/toastr";
+
 export default {
   data() {
     return {
@@ -206,7 +201,7 @@ export default {
         imagen: ""
       },
       tituloForm: "",
-      imagenMiniatura: "",
+      imageMiniatura: "",
       nomBtn: "",
       errors: [],
       imagenError: "",
@@ -217,21 +212,22 @@ export default {
       traerValorImg: false
     };
   },
-  mixins: [Toastr],
   methods: {
-    ...vuex.mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]),
-    ...vuex.mapActions(["accionModificarAuth"]),
+    ...vuex.mapActions([
+      "accionTipoUsuario",
+      "accionUsuario",
+      "accionModificarAuth"
+    ]),
     cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
+      if (valor === "cancelar") {
         if (!this.required) {
           this.parametros.imagen = this.info.avatar;
-          this.imagenMiniatura = this.info.avatarPublico;
-          this.$refs.inputImagen.value = "";
+          this.imageMiniatura = this.info.avatarPublico;
         } else {
           this.parametros.imagen = "";
         }
+      } else {
+        this.parametros.imagen = valor;
       }
     },
     evento() {
@@ -287,58 +283,83 @@ export default {
           });
       }
     },
+    toastr(titulo, msg, tipo) {
+      this.$toastr.Add({
+        title: titulo,
+        msg: msg,
+        position: "toast-top-right",
+        type: tipo,
+        timeout: 5000,
+        progressbar: true,
+        //progressBarValue:"", // if you want set progressbar value
+        style: {},
+        classNames: ["animated", "zoomInUp"],
+        closeOnHover: true,
+        clickClose: true,
+        onCreated: () => {},
+        onClicked: () => {},
+        onClosed: () => {},
+        onMouseOver: () => {},
+        onMouseOut: () => {}
+      });
+    },
     llenarInfo() {
       this.parametros.nombre = this.info.name;
       this.parametros.tipo_user = this.info.tipouser_id;
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
-      this.imagenMiniatura = this.info.avatarPublico;
+      this.imageMiniatura = this.info.avatarPublico;
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
       //this.parametros.imagen = file;
       let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
+
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError =
             "La imagen debe ser en formato .jpg .png y menor a 2Mb.";
-          this.imagenMiniatura = this.info.avatarPublico;
+          this.imageMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
           this.parametros.imagen = this.info.avatar;
         } else {
           this.imagenError = "";
           this.cargarImagen(file);
         }
-      } else {
-        this.imagenMiniatura = this.info.avatarPublico;
-        this.$refs.inputImagen.value = "";
-        this.parametros.imagen = this.info.avatar;
       }
     },
     cargarImagen(file) {
       let reader = new Image();
       reader.onload = e => {
-        this.imagenMiniatura = reader.src;
+        /**if (e.path[0].height > 500 || e.path[0].width > 500) {
+          this.imagenError =
+            "La imagen debe tener una dimension maxima de 500x500 px ";
+          this.imageMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.imageMiniatura = reader.src;
+        } */
+        this.imageMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
     }
   },
   computed: {
-    ...vuex.mapGetters("usuarios", [
+    ...vuex.mapGetters([
       "getTipoUser",
       "getUsuarioById",
       "getUsuarioByEmail",
       "getUsuarios",
       "getUserAuth"
     ]),
-    ...vuex.mapGetters(["getUserAuth"]),
     mostraImagen() {
-      return this.imagenMiniatura;
+      return this.imageMiniatura;
     },
     btnClase() {
       if (this.tituloForm === "Agregar Usuario") {
-        return "btn-success";
+        return "btn-primary";
       } else {
         return "btn-warning";
       }
@@ -364,6 +385,12 @@ export default {
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña1 = "Este campo es obligatorio";
+          return true;
+        }
+        return false;
       }
     },
     validarEmail() {
@@ -380,13 +407,16 @@ export default {
             }
             return false;
           }
+        } else {
+          this.mensajeErrorEmail = "Este campo es obligatorio";
+          return true;
         }
       }
       return false;
     },
     validarNombre() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
+      // solo numero /^([0-9])*$/
+      let letters = /^[A-Za-z\s]+$/;
       if (this.parametros.nombre) {
         if (!letters.test(this.parametros.nombre)) {
           this.mensajeNombre = "Solo se admiten letras.";
@@ -394,10 +424,14 @@ export default {
         } else {
           return false;
         }
+      } else {
+        this.mensajeNombre = "Este campo es obligatorio";
+        return true;
       }
     },
     validarContraseña() {
       let regexp_password = /^(?=.*[A-Z])(?=.*\d)(?=.*[$@!%?&#()"'|_])([A-Za-z\d$@!%?&#()"'|_]){8,15}$/;
+
       if (this.parametros.pass) {
         if (!regexp_password.test(this.parametros.pass)) {
           this.mensajeContraseña = ` La contraseña debe tener:
@@ -409,6 +443,12 @@ export default {
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña = "Este campo es obligatorio";
+          return true;
+        }
+        return false;
       }
     },
     validarBtn() {
@@ -423,20 +463,12 @@ export default {
       }
       return false;
     },
-    mostrarBtnCroppie() {
-      if (this.imagenMiniatura != this.info.avatarPublico) {
+    mostrarBtn() {
+      if (this.imageMiniatura != this.info.avatarPublico) {
         return true;
       } else {
         return false;
       }
-    },
-    validarForm() {
-      if (!this.$route.params.usuarioId) {
-        return true;
-      } else if (this.parametros.email) {
-        return true;
-      }
-      return false;
     }
   },
   created() {
@@ -446,21 +478,9 @@ export default {
       this.nomBtn = "Agregar";
     } else {
       this.info = this.getUsuarioById(this.$route.params.usuarioId);
-      if (this.info) {
-        this.llenarInfo();
-      }
+      this.llenarInfo();
       this.tituloForm = "Editar Usuario";
       this.nomBtn = "Editar";
-    }
-  },
-  watch: {
-    getUsuarios() {
-      if (this.getUsuarios) {
-        if (this.$route.params.usuarioId) {
-          this.info = this.getUsuarioById(this.$route.params.usuarioId);
-          this.llenarInfo();
-        }
-      }
     }
   }
 };

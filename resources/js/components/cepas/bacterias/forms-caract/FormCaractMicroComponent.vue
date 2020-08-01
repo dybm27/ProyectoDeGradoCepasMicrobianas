@@ -6,12 +6,17 @@
           <div class="card-body">
             <h5 class="card-title">{{tituloForm}}</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <template v-if="getInfoCaractMicroBacterias">
                 <label for="forma" class>Forma</label>
                 <div class="input-group mb-3">
                   <select name="select" id="forma" class="form-control" v-model="parametros.forma">
                     <option
-                      v-for="(f,index) in getInfoCaractMicroBacterias.formas_micros"
+                      v-for="(f,index) in obtenerFormas"
                       :key="index"
                       :value="f.id"
                     >{{f.nombre}}</option>
@@ -37,7 +42,6 @@
                   v-model="parametros.ordenamiento"
                   required
                 />
-                <span v-if="errors.ordenamiento" class="text-danger">{{errors.ordenamiento[0]}}</span>
               </div>
               <div class="position-relative form-group">
                 <label>Tinción de Gram</label>
@@ -165,7 +169,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable"
+                :disabled="btnDisable||bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -177,7 +181,7 @@
             <h5 class="card-title">Imagenes</h5>
             <template v-if="required">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
-                <croppie-cepas
+                <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"
                   :posicion="'vertical'"
@@ -194,13 +198,13 @@
               </template>
             </template>
             <template v-else>
-              <imagenes
+              <Imagenes
                 :parametros="parametros"
                 :tipoCepa="'bacteria/caract-micro'"
                 :imagenes="imagenes"
                 :cepa="info"
                 @accionImagen="accionImagen"
-              ></imagenes>
+              ></Imagenes>
             </template>
           </div>
         </div>
@@ -235,7 +239,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -246,21 +255,16 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
+import CroppieCepas from "../../CroppieCepasComponent.vue";
+import Imagenes from "../../ImagenesComponent.vue";
 export default {
+  components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
-  watch: {
-    modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   data() {
     return {
       parametros: {
         cepaId: "",
-        forma: 1,
+        forma: null,
         ordenamiento: "",
         tincion_gram: "Positivo",
         tincion_esporas: "Presencia",
@@ -269,13 +273,13 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: ""
+        imagen3: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
@@ -283,54 +287,82 @@ export default {
       erroresImagenes: "",
       imagenesCroppie: [],
       imagenes: [],
-      cantImagenes: ""
+      cantImagenes: "",
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Característica") {
-        axios
-          .post("/cepas/bacteria/caract-micro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Característica";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Característica Microscópica",
-              "Característica Microscópica agregada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen1) {
+          axios
+            .post("/cepas/bacteria/caract-micro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Característica Microscópica",
+                  "Característica Microscópica agregada con exito!!",
+                  "success"
+                );
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/bacteria/caract-micro/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -347,29 +379,41 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-bacterias/agregar", parametros)
-          .then(res => {
-            this.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: this.modal.tipo
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractBacteria({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = [];
               this.modal.errors = error.response.data.errors;
             }
-            this.toastr("Error!!!!", "", "error");
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -392,7 +436,14 @@ export default {
     },
     accionImagen(data) {
       this.$emit("editar", data);
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerFormas.length > 0) {
+        this.parametros.forma = this.obtenerFormas[0].id;
+      } else {
+        this.parametros.forma = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroBacterias"]),
@@ -409,7 +460,10 @@ export default {
       } else {
         return "btn-warning";
       }
-    }
+    },
+    obtenerFormas() {
+      return this.getInfoCaractMicroBacterias.formas_micros;
+    },
   },
   mounted() {
     if (this.info) {
@@ -425,6 +479,24 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerFormas() {
+      if (this.obtenerFormas.length > 0) {
+        this.parametros.forma = this.obtenerFormas[0].id;
+      } else {
+        this.parametros.forma = null;
+      }
+    },
+  },
 };
 </script>

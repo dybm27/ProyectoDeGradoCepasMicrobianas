@@ -210,6 +210,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["bloqueos"],
   data: function data() {
     return {
       showPass: false,
@@ -231,12 +232,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mensajeErrorEmail: "",
       mensajeContraseña: "",
       mensajeContraseña1: "",
-      mensajeNombre: "",
-      traerValorImg: false
+      mensajeNombre: ""
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionTipoUsuario", "accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionModificarAuth"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionModificarAuth"]), {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       if (valor) {
         this.parametros.imagen = valor;
@@ -281,7 +281,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
           if (_this.getUserAuth.id === res.data.id) {
-            _this.accionModificarAuth(res.data);
+            _this.accionModificarAuth({
+              data: res.data
+            });
           }
 
           _this.accionUsuario({
@@ -292,6 +294,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
 
           _this.$emit("cambiarVariable", "tabla");
+
+          window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("spliceMisBloqueosUsuario", {
+            id: res.data.id
+          });
 
           _this.$router.push({
             name: "tabla-usuarios"
@@ -380,6 +390,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña1 = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
       }
     },
     validarEmail: function validarEmail() {
@@ -414,6 +431,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        this.mensajeNombre = "Este campo es obligatorio";
+        return true;
       }
     },
     validarContraseña: function validarContraseA() {
@@ -426,6 +446,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           return false;
         }
+      } else {
+        if (this.required) {
+          this.mensajeContraseña = "Este campo es obligatorio";
+          return true;
+        }
+
+        return false;
+      }
+    },
+    validarBtn: function validarBtn() {
+      if (this.validarEmail || this.validarNombre || this.validarContraseña || this.validarContraseñas || !this.parametros.imagen) {
+        return true;
+      }
+
+      return false;
+    },
+    mostrarBtn: function mostrarBtn() {
+      if (this.imageMiniatura != this.info.avatarPublico) {
+        return true;
+      } else {
+        return false;
       }
     },
     validarBtn: function validarBtn() {

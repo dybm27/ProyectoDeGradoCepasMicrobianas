@@ -1,29 +1,29 @@
 <template>
   <div>
-    <template v-if="getQuienesSomos">
+    <template v-if="quienes_somos">
       <div class="container">
         <div class="main-card mb-3 card">
           <div class="card-body">
             <template v-if="!ocupado">
-            <div class="row justify-content-center">
-              <div class="col-md-12">
-                <h5 class="card-title">Objetivos</h5>
-                <editor-texto
-                  @contenido="aceptarContenido"
-                  @modificar="modificarContenido"
-                  :info="getQuienesSomos.objetivos"
-                />
+              <div class="row justify-content-center">
+                <div class="col-md-12">
+                  <h5 class="card-title">Objetivos</h5>
+                  <Editor
+                    @contenido="aceptarContenido"
+                    @modificar="modificarContenido"
+                    :info="quienes_somos.objetivos"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-md-4 mt-3">
-                <button
-                  class="btn btn-block btn-success"
-                  :disabled="verificarBtn"
-                  @click="cambiarObjetivos"
-                >Cambiar</button>
+              <div class="row justify-content-center">
+                <div class="col-md-4 mt-3">
+                  <button
+                    class="btn btn-block btn-success"
+                    :disabled="verificarBtn"
+                    @click="cambiarObjetivos"
+                  >Cambiar</button>
+                </div>
               </div>
-            </div>
             </template>
             <template v-else>
               <div class="row justify-content-center">
@@ -72,26 +72,26 @@
 import vuex from "vuex";
 import websocketsSinTablaMixin from "../../../mixins/websocketsSinTabla";
 import Toastr from "../../../mixins/toastr";
+import Editor from "../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: { Editor },
   data() {
     return {
       parametros: {
         cuerpo: "",
         imagenesEditor: [],
-        imagenesGuardadas: []
-      }
+        imagenesGuardadas: [],
+      },
     };
   },
   mixins: [websocketsSinTablaMixin("objetivos", "Objetivos"), Toastr],
   computed: {
-    ...vuex.mapGetters("quienes_somos", ["getQuienesSomos"]),
-    ...vuex.mapGetters(["getUserAuth"]),
+    ...vuex.mapState("quienes_somos", ["quienes_somos"]),
+    ...vuex.mapState(["auth"]),
     verificarBtn() {
-      if (this.getQuienesSomos.objetivos) {
+      if (this.quienes_somos.objetivos) {
         if (this.parametros.cuerpo) {
-          if (
-            this.getQuienesSomos.objetivos.cuerpo === this.parametros.cuerpo
-          ) {
+          if (this.quienes_somos.objetivos.cuerpo === this.parametros.cuerpo) {
             return true;
           }
           return false;
@@ -100,7 +100,7 @@ export default {
       } else {
         return true;
       }
-    }
+    },
   },
   created() {
     this.$emit("rutaHijo", window.location.pathname);
@@ -110,16 +110,24 @@ export default {
     cambiarObjetivos() {
       axios
         .put("/quienes-somos/objetivos/cambiar", this.parametros)
-        .then(res => {
-          this.accionCambiarQuienesSomos({
-            data: res.data,
-            tipo: "objetivos"
-          });
-          this.toastr(
-            "Cambiar Objetivos",
-            "Objetivos cambiados con exito",
-            "success"
-          );
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.accionCambiarQuienesSomos({
+              data: res.data,
+              tipo: "objetivos",
+            });
+            this.toastr(
+              "Cambiar Objetivos",
+              "Objetivos cambiados con exito",
+              "success"
+            );
+          }
         });
     },
     aceptarContenido(data) {
@@ -129,7 +137,7 @@ export default {
     },
     modificarContenido(data) {
       this.parametros.cuerpo = "";
-    }
-  }
+    },
+  },
 };
 </script>

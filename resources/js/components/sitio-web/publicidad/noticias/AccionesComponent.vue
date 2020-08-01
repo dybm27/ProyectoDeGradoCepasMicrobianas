@@ -39,7 +39,7 @@ export default {
   },
   mixins: [websocketsAccionesMixin("noticia", "Noticia", "noticias")],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"])
   }
 };
 </script>

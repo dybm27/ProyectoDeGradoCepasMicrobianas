@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UsuarioEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,23 +11,17 @@ use Illuminate\Support\Facades\Storage;
 
 class PerfilController extends Controller
 {
-
-    public function __construct()
+    /**public function __construct()
     {
         $this->middleware('auth');
     }
-
-
-    public function index()
-    {
-        return view('perfil');
-    }
-
+     */
     public function cambiarNombre(Request $request)
     {
         $usuario = $request->user();
         $usuario->name = ucfirst($request->nombre);
         $usuario->save();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         return $usuario;
     }
 
@@ -38,6 +33,7 @@ class PerfilController extends Controller
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
         $usuario->save();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         return $usuario;
     }
 

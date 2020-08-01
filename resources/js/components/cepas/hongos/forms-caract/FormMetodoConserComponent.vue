@@ -1,12 +1,17 @@
 <template>
   <div>
-    <div class="container mt-3 ml-2 mr-2">
+    <div class="container mt-3">
       <div class="row justify-content-md-center">
         <div class="col-sm-6">
           <div class="main-card mb-3 card">
             <form @submit.prevent="evento">
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <template v-if="getInfoMetodoConserHongos">
                   <label for="forma" class>Método de Conservación</label>
                   <div class="input-group mb-3">
@@ -17,7 +22,7 @@
                       v-model.number="parametros.tipo_metodo"
                     >
                       <option
-                        v-for="(m,index) in getInfoMetodoConserHongos.tipo_metodo"
+                        v-for="(m,index) in obtenerMetodos"
                         :key="index"
                         :value="m.id"
                       >{{m.nombre}}</option>
@@ -46,7 +51,6 @@
                           value-type="format"
                           placeholder="..."
                         ></date-picker>
-                        <span v-if="errors.fecha" class="text-danger">{{errors.fecha[0]}}</span>
                       </div>
                     </div>
                   </div>
@@ -63,10 +67,6 @@
                           v-model.number="parametros.numero_replicas"
                           required
                         />
-                        <span
-                          v-if="errors.numero_replicas"
-                          class="text-danger"
-                        >{{errors.numero_replicas[0]}}</span>
                       </div>
                     </template>
                     <template v-else>
@@ -81,10 +81,6 @@
                           v-model.number="parametros.numero_pases"
                           required
                         />
-                        <span
-                          v-if="errors.numero_pases"
-                          class="text-danger"
-                        >{{errors.numero_pases[0]}}</span>
                       </div>
                     </template>
                   </div>
@@ -143,7 +139,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </div>
             </form>
@@ -155,7 +151,7 @@
               <h5 class="card-title">Imagen</h5>
               <template v-if="mostraImagen">
                 <template v-if="validarCroppie">
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -168,7 +164,7 @@
                   />
                 </template>
                 <template v-else>
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -224,7 +220,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -238,34 +239,36 @@ import Lang from "vue2-datepicker/locale/es";
 
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
-
+import Croppie from "../../../CroppieComponent.vue";
 export default {
   props: ["idMetodo"],
-  components: { DatePicker },
+  components: { DatePicker, Croppie },
   data() {
     return {
       lang: Lang,
       info: "",
       parametros: {
         cepaId: "",
-        tipo_metodo: 1,
+        tipo_metodo: null,
         fecha: "",
         numero_replicas: "",
         recuento_microgota: "",
         medio_cultivo: "",
         numero_pases: "",
         observaciones: "",
-        imagen: ""
+        imagen: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopieCepas],
@@ -273,46 +276,72 @@ export default {
     ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     evento() {
+      this.bloquearBtn = true;
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
       if (this.tituloForm === "Agregar Método") {
-        axios
-          .post("/cepas/hongo/metodo-conser", this.parametros)
-          .then(res => {
-            this.accionAgregarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Agregar Método",
-              "Método agregado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/hongo/metodo-conser", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.accionAgregarCaract({ tipo: "metodo", data: res.data });
+                this.toastr(
+                  "Agregar Método",
+                  "Método agregado con exito!!",
+                  "success"
+                );
+                this.$emit("cambiarVariable");
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/hongo/metodo-conser/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.accionEditarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Editar Método",
-              "Método editado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
+              this.toastr(
+                "Editar Método",
+                "Método editado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable");
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -340,32 +369,51 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-hongos/agregar", parametros)
-          .then(res => {
-            this.accionAgregarTipoCaractHongo({
-              info: res.data,
-              tipo: this.modal.tipo
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractHongo({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = [];
               this.modal.errors = error.response.data.errors;
             }
-            this.toastr("Error!!!!", "", "error");
+            this.toastr("Error!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
@@ -410,9 +458,13 @@ export default {
         this.parametros.medio_cultivo = "";
         return true;
       }
-    }
+    },
+    obtenerMetodos() {
+      return this.getInfoMetodoConserHongos.tipo_metodo;
+    },
   },
   created() {
+    this.verificarSelects();
     if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
@@ -427,6 +479,15 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  watch: {
+    obtenerMetodos() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
+  },
 };
 </script>

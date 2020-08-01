@@ -7,50 +7,69 @@
           Tabla Dinámica Pigmentos
         </div>
         <div class="btn-actions-pane-right actions-icon-btn">
-          <button
-            @click="$modal.show('modal_agregar_tipo_actinomiceto',{tipo:'pigmento'})"
-            class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
-          >Agregar</button>
-          <img @click="mostrarTabla" :src="'/iconos/icons8-vista-general-3-35.png'" />
+          <AccionMostrar
+            @mostrarTabla="mostrarTabla"
+            :tipoModal="'actinomiceto'"
+            :tipo="'pigmento'"
+          />
         </div>
       </div>
       <div class="card-body" v-if="tabla">
-        <my-vuetable
-          api-url="/info-panel/pigmentos-actinomiceto"
-          :fields="fields"
-          :sort-order="sortOrder"
-          :nameGet="'pigmentos-actinomiceto'"
-          @cambiarVariable="cambiarVariable"
-          :refrescarTabla="refrescarTabla"
-        ></my-vuetable>
+        <template v-if="siHayDatos">
+          <MyVuetable
+            ref="tabla"
+            api-url="/info-panel/pigmentos-actinomiceto"
+            :fields="fields"
+            :sort-order="sortOrder"
+            :nameGet="'pigmentos-actinomiceto'"
+          ></MyVuetable>
+        </template>
+        <template v-else>
+          <div class="text-center">
+            <h5 class="mt-5 mb-5">
+              <span class="pr-1">
+                <b class="text-success">AÚN NO SE HAN AGREGADO PIGMENTOS</b>
+              </span>
+            </h5>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import vuex from "vuex";
 import FieldDefs from "./columnas";
+import websocketsTablaOtraInfoMixin from "../../../../../mixins/websocketsTablaOtraInfo";
+import MyVuetable from "../../../../vuetable/MyVuetableComponent.vue";
+import AccionMostrar from "../../AccionMostrar.vue";
 export default {
-  props: ["refrescarTabla"],
+  components: { MyVuetable, AccionMostrar },
   data() {
     return {
-      idCepaEliminar: "",
       fields: FieldDefs,
       sortOrder: [
         {
           field: "nombre",
           direction: "asc"
         }
-      ],
-      tabla: false
+      ]
     };
   },
-  methods: {
-    cambiarVariable() {
-      this.$emit("cambiarVariable");
-    },
-    mostrarTabla() {
-      this.tabla = !this.tabla;
+  mixins: [websocketsTablaOtraInfoMixin("pigmento")],
+  computed: {
+    ...vuex.mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]),
+    siHayDatos() {
+      if (
+        this.getInfoCaractMacroActinomicetos != "" &&
+        this.getInfoCaractMacroActinomicetos != null
+      ) {
+        if (this.getInfoCaractMacroActinomicetos.pigmentos.length > 0) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 };

@@ -13,9 +13,8 @@ class CaractFisioBacteriaController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
-
-
         if (!is_null($request->imagen1)) {
             $imagen1 = $this->guardarImagen($request->imagen1, $bacteria->id, 1);
             $ruta1 =  $imagen1['ruta'];
@@ -70,6 +69,7 @@ class CaractFisioBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractFisioBacteria = CaracFisioBacteria::find($id);
 
         $caractFisioBacteria->acido_indolacetico = ucfirst($request->acido_indolacetico);
@@ -208,5 +208,14 @@ class CaractFisioBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'acido_indolacetico' => 'required', 'fosforo' => 'required',
+            'sideroforos' => 'required', 'nitrogeno' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

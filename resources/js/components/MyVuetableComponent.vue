@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <filter-bar @exportarExcel="exportarExcel" :disabled="disabledBtn" :nameGet="nameGet" />
+        <filter-bar></filter-bar>
       </div>
     </div>
     <div class="row">
@@ -33,14 +33,12 @@
             :css="css.table"
             :api-url="apiUrl"
             :fields="fields"
-            data-path="data"
             pagination-path
             :sort-order="sortOrder"
             :append-params="appendParams"
             :detail-row-component="detailRowComponent"
             @vuetable:pagination-data="onPaginationData"
             @vuetable:cell-clicked="onCellClicked"
-            @vuetable:loaded="loaded"
           ></vuetable>
         </div>
       </div>
@@ -68,6 +66,7 @@
 
 <script>
 import moment from "moment";
+
 export default {
   name: "my-vuetable",
   components: {
@@ -91,9 +90,8 @@ export default {
     detailRowComponent: {
       type: String
     },
-    nameGet: {
-      type: String,
-      required: true
+    refrescarTabla: {
+      type: Boolean
     }
   },
   data() {
@@ -126,10 +124,16 @@ export default {
           },
           infoClass: "pull-left"
         }
-      },
-      disabledBtn: false,
-      dataAnterior: []
+      }
     };
+  },
+  watch: {
+    refrescarTabla() {
+      if (this.refrescarTabla) {
+        this.refreshDatos();
+        this.$emit("cambiarVariable");
+      }
+    }
   },
   methods: {
     imagen(value) {
@@ -158,7 +162,7 @@ export default {
         ? '<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"><i class="pe-7s-male"></i> Male</span>'
         : '<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"><i class="pe-7s-female"></i> Female</span>';
     },
-    formatDate(value, fmt = "D-MMM-YYYY") {
+    formatDate(value, fmt = "D-MMM-YYYY hh:mma") {
       return value == null ? "" : moment(value).format(fmt);
     },
     onPaginationData(paginationData) {
@@ -166,7 +170,6 @@ export default {
       this.$refs.paginationInfo.setPaginationData(paginationData);
     },
     onChangePage(page) {
-      this.dataAnterior = this.$refs.vuetable.tableData;
       this.$refs.vuetable.changePage(page);
     },
     onCellClicked(data, field, event) {
@@ -182,123 +185,15 @@ export default {
       Vue.nextTick(() => this.$refs.vuetable.refresh());
     },
     refreshDatos() {
-      this.dataAnterior = this.$refs.vuetable.tableData;
       Vue.nextTick(() => this.$refs.vuetable.refresh());
-    },
-    loaded() {
-      if (this.$refs.vuetable.tableData.length === 0) {
-        this.disabledBtn = true;
-      } else {
-        this.disabledBtn = false;
-        this.EventosCustomActions();
-        this.$events.fire("verificarBloqueos-" + this.nameGet);
-      }
-    },
-    EventosCustomActions() {
-      if (this.dataAnterior.length != 0) {
-        for (let index = 0; index < this.dataAnterior.length; index++) {
-          this.$events.fire(
-            index + "-eliminarEventosBtns-" + this.nameGet,
-            this.dataAnterior[index].id
-          );
-          this.$events.fire(
-            index + "-eliminarEventosCheck-" + this.nameGet,
-            this.dataAnterior[index].id
-          );
-        }
-      }
-      for (
-        let index = 0;
-        index < this.$refs.vuetable.tableData.length;
-        index++
-      ) {
-        this.$events.fire(index + "-crearEventosBtns-" + this.nameGet);
-        this.$events.fire(index + "-crearEventosCheck-" + this.nameGet);
-      }
-    },
-    exportarExcel(tipo) {
-      if (tipo === "todo") {
-        axios
-          .get(`/exportar/${this.nameGet}`, {
-            responseType: "blob"
-          })
-          .then(res => {
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", this.nameGet + ".xlsx");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          })
-          .catch(error => {
-            if (error.response) {
-            }
-          });
-      } else {
-        let datos = this.$refs.vuetable.tableData;
-        axios
-          .get(`/exportar/tabla/${this.nameGet}`, {
-            params: { datos: datos },
-            responseType: "blob"
-          })
-          .then(res => {
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute("download", this.nameGet + ".xlsx");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          })
-          .catch(error => {
-            if (error.response) {
-            }
-          });
-      }
-    },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     }
   },
   mounted() {
-    this.$events.$on(this.nameGet + "-filter-set", eventData =>
-      this.onFilterSet(eventData)
-    );
-    this.$events.$on(this.nameGet + "-filter-reset", e => this.onFilterReset());
-  },
-  destroyed() {
-    this.$events.off(this.nameGet + "-filter-set");
-    this.$events.off(this.nameGet + "-filter-reset");
+    this.$events.$on("filter-set", eventData => this.onFilterSet(eventData));
+    this.$events.$on("filter-reset", e => this.onFilterReset());
   }
 };
 </script>
+
+<style scoped>
+</style>

@@ -11,7 +11,7 @@
                   <tbody>
                     <tr>
                       <th>Codigo</th>
-                      <td>{{getCepa.cepa.codigo}}</td>
+                      <td>{{cepa.cepa.codigo}}</td>
                       <th>Grupo Microbiano</th>
                       <td>{{getGrupoCepa.nombre}}</td>
                     </tr>
@@ -35,14 +35,14 @@
                     </tr>
                     <tr>
                       <th>Estado</th>
-                      <td>{{getCepa.cepa.estado}}</td>
+                      <td>{{cepa.cepa.estado}}</td>
                       <th>Origen</th>
-                      <td>{{getCepa.cepa.origen}}</td>
+                      <td>{{cepa.cepa.origen}}</td>
                     </tr>
-                    <template v-if="getCepa.cepa.otras_caract">
+                    <template v-if="cepa.cepa.otras_caract">
                       <tr>
                         <th>Otras Características:</th>
-                        <td>{{getCepa.cepa.otras_caract}}</td>
+                        <td>{{cepa.cepa.otras_caract}}</td>
                       </tr>
                     </template>
                   </tbody>
@@ -109,10 +109,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Macroscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('macro')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('macro')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMacro">
@@ -171,10 +168,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Microscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('micro')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('micro')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMicro">
@@ -183,7 +177,7 @@
               <div class="card">
                 <template v-if="imagenes.micro!=''">
                   <div class="mt-3 ml-5 mb-1 mr-5">
-                    <carousel :imagenes="imagenes.micro"></carousel>
+                    <Carousel :imagenes="imagenes.micro"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>
@@ -256,10 +250,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Bioquímicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('bioqui')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('bioqui')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractBioqui">
@@ -268,7 +259,7 @@
               <div class="card">
                 <template v-if="imagenes.bioqui!=''">
                   <div class="mt-2 ml-5 mb-2 mr-5">
-                    <carousel :imagenes="imagenes.bioqui"></carousel>
+                    <Carousel :imagenes="imagenes.bioqui"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>
@@ -370,10 +361,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Identificación Molecular</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('identi')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('identi')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarIdentiMolecu">
@@ -479,10 +467,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Métodos De Conservación</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('metodo')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('metodo')" />
           </div>
         </div>
         <div class="container mb-3 mt-3 ml-3 mr-3" v-if="mostrarMetodosConser">
@@ -668,15 +653,19 @@
 <script>
 import moment from "moment";
 import vuex from "vuex";
+import Toastr from "../../../mixins/toastr";
 moment.locale("es");
+import Carousel from "../../carousel/CarouselComponent.vue";
+import IconoMostrar from "../IconoMostrarInfoVer.vue";
 export default {
+  components: { Carousel, IconoMostrar },
   data() {
     return {
       selectImprimir: [],
       errorSelect: "",
       imagenes: {
         micro: [],
-        bioqui: []
+        bioqui: [],
       },
       mostrarCaractMacro: false,
       mostrarCaractMicro: false,
@@ -686,21 +675,22 @@ export default {
       metodos: {
         fila1: [],
         fila2: [],
-        fila3: []
+        fila3: [],
       },
       rowTermoData: "",
       btnTodo: false,
-      btnSeleccionado: false
+      btnSeleccionado: false,
     };
   },
+  mixins: [Toastr],
   computed: {
+    ...vuex.mapState("cepa", ["cepa"]),
     ...vuex.mapGetters("cepa", [
-      "getCepa",
       "getCaractMacro",
       "getCaractMicro",
       "getCaractBioqui",
       "getMetodoConser",
-      "getIdentiMolecu"
+      "getIdentiMolecu",
     ]),
     ...vuex.mapGetters("info_cepas", [
       "getGrupoCepa",
@@ -709,12 +699,12 @@ export default {
       "getOrdenCepa",
       "getClaseCepa",
       "getFamiliaCepa",
-      "getDivisionCepa"
+      "getDivisionCepa",
     ]),
     ...vuex.mapGetters("info_caract", [
       "getInfoCaractMacroLevadurasById",
       "getInfoCaractMicroLevadurasById",
-      "getInfoMetodoConserLevadurasById"
+      "getInfoMetodoConserLevadurasById",
     ]),
     rowTermo() {
       this.rowTermoData = 0;
@@ -737,7 +727,7 @@ export default {
     },
     btnSeleccionadoDisabled() {
       return this.btnSeleccionado;
-    }
+    },
   },
   methods: {
     imprimir(tipo) {
@@ -765,37 +755,44 @@ export default {
           10000
         );
         axios
-          .get(`/cepa/imprimir/${this.getCepa.cepa.id}`, {
+          .get(`/cepa/imprimir/${this.cepa.cepa.id}`, {
             params: { imprimir: this.selectImprimir },
-            responseType: "blob"
+            responseType: "blob",
           })
-          .then(res => {
-            this.toastr(
-              "Descarga!!",
-              "La descarga se realizo con éxito",
-              "success",
-              5000
-            );
-            this.errorSelect = "";
-            this.selectImprimir = [];
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement("a");
-            link.href = url;
-            link.setAttribute(
-              "download",
-              `Cepa-${this.getCepa.cepa.codigo}.pdf`
-            );
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            this.btnTodo = false;
-            this.btnSeleccionado = false;
-          })
-          .catch(error => {
-            if (error.response) {
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.toastr(
+                "Descarga!!",
+                "La descarga se realizo con éxito",
+                "success",
+                5000
+              );
+              this.errorSelect = "";
+              this.selectImprimir = [];
+              const url = window.URL.createObjectURL(new Blob([res.data]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute(
+                "download",
+                `Cepa-${this.cepa.cepa.codigo}.pdf`
+              );
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
               this.btnTodo = false;
               this.btnSeleccionado = false;
             }
+          })
+          .catch((error) => {
+            this.btnTodo = false;
+            this.btnSeleccionado = false;
+            this.toastr("Error!!", "", "error");
           });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -834,14 +831,14 @@ export default {
           this.imagenes.micro.push({
             num: num,
             source: imagen,
-            isActive: active
+            isActive: active,
           });
           break;
         case "bioqui":
           this.imagenes.bioqui.push({
             num: num,
             source: imagen,
-            isActive: active
+            isActive: active,
           });
           break;
       }
@@ -888,26 +885,6 @@ export default {
         }
       }
     },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    }
   },
   created() {
     if (this.getCaractMicro) {
@@ -918,7 +895,7 @@ export default {
     }
     if (this.getMetodoConser) {
       this.llenarArreglosMetodos(
-        this.getMetodoConser.sort(function(a, b) {
+        this.getMetodoConser.sort(function (a, b) {
           if (a.created_at > b.created_at) {
             return -1;
           }
@@ -929,6 +906,6 @@ export default {
         })
       );
     }
-  }
+  },
 };
 </script>

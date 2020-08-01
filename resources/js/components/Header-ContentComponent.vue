@@ -20,33 +20,15 @@
 <script>
 import vuex from "vuex";
 export default {
-  props: ["admin"],
-  data() {
-    return {
-      isIncognito: false
-    };
-  },
   methods: {
-    ...vuex.mapActions(["accionModificarAuth"]),
-    ...vuex.mapActions("usuarios", ["obtenerTiposUsers", "obtenerUsers"]),
-    beforeunload() {
-      axios.put("/usuario/borrarSessionId");
-    }
+    ...vuex.mapActions(["obtenerTiposUsers", "obtenerUsers"])
   },
   computed: {
-    ...vuex.mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]),
-    ...vuex.mapGetters(["getUserAuth"])
-  },
-  mounted() {
-    //window.addEventListener("beforeunload", this.beforeunload);
+    ...vuex.mapGetters(["getUserAuth", "getTipoUserById", "getTipoUser"])
   },
   created() {
-    this.accionModificarAuth({ data: this.admin });
     this.obtenerTiposUsers();
     this.obtenerUsers();
-  },
-  beforeDestroy() {
-   // window.removeEventListener("beforeunload", this.beforeunload);
   }
 };
 </script>

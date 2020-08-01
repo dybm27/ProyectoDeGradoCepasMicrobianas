@@ -1,7 +1,7 @@
 <template>
   <div id="carouselExampleControls" class="carousel slide">
     <div class="carousel-inner">
-      <carousel-item
+      <CarouselItem
         v-for="image in imagenes"
         :source="image.source"
         :text="image.text"
@@ -9,16 +9,19 @@
         :key="image.num"
         :active="image.isActive"
         :directionClass="directionClass"
-      ></carousel-item>
+      ></CarouselItem>
     </div>
-    <carousel-control :id="id" order="prev" v-show="validarPrev">Previous</carousel-control>
-    <carousel-control :id="id" order="next" v-show="validarNext">Next</carousel-control>
+    <CarouselControl :id="id" order="prev" v-show="validarPrev">Previous</CarouselControl>
+    <CarouselControl :id="id" order="next" v-show="validarNext">Next</CarouselControl>
   </div>
 </template>
 
 <script>
 import bus from "./event-bus";
+import CarouselItem from "./CarouselItemComponent.vue";
+import CarouselControl from "./CarouselControlComponent.vue";
 export default {
+  components: { CarouselItem, CarouselControl },
   props: ["imagenes", "id"],
   data() {
     return {

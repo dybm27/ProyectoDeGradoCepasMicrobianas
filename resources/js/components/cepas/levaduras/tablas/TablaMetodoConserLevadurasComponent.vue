@@ -2,14 +2,14 @@
   <div>
     <template v-if="getMetodoConser!=''">
       <div class="card-body mt-3 ml-2 mr-2">
-        <my-vuetable
+        <MyVuetable
           :api-url="url"
           :fields="fields"
           :sort-order="sortOrder"
           @cambiarVariable="cambiarVariable"
           :refrescarTabla="refrescarTabla"
           :nameGet="'metodos-levaduras'"
-        ></my-vuetable>
+        ></MyVuetable>
       </div>
       <modal
         name="my_modal_eliminar_metodo"
@@ -34,7 +34,12 @@
               class="btn btn-secondary"
               @click="$modal.hide('my_modal_eliminar_metodo')"
             >Cancelar</button>
-            <button type="button" class="btn btn-success" @click="eliminarMetodo">Eliminar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="eliminarMetodo"
+            >Eliminar</button>
           </div>
         </div>
       </modal>
@@ -52,8 +57,11 @@
 </template>
 <script>
 import FieldDefs from "./metodo-conser";
+import Toastr from "../../../../mixins/toastr";
 import vuex from "vuex";
+import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: { MyVuetable },
   data() {
     return {
       url: "/info-panel/cepa/levadura/metodos-conser/",
@@ -63,68 +71,54 @@ export default {
       sortOrder: [
         {
           field: "tipo_id",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
+      bloquearBtnModal: false,
     };
   },
+  mixins: [Toastr],
   methods: {
     ...vuex.mapActions("cepa", ["accionEliminarCaract"]),
-
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    },
-
     cambiarVariable() {
       this.refrescarTabla = false;
     },
-
     eliminarMetodo() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/cepas/levadura/metodo-conser/${this.idMetodoEliminar}`)
-        .then(res => {
-          this.refrescarTabla = true;
-          this.accionEliminarCaract({ tipo: "metodo", data: res.data });
-          this.toastr(
-            "Eliminar Cepa",
-            "Cepa eliminada con exito!!",
-            "success",
-            5000
-          );
-          this.$modal.hide("my_modal_eliminar_metodo");
-        })
-        .catch(error => {
-          if (error.response) {
-            //console.log(error.response.data);
+        .then((res) => {
+          this.bloquearBtnModal = false;
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.refrescarTabla = true;
+            this.accionEliminarCaract({ tipo: "metodo", data: res.data });
+            this.toastr(
+              "Eliminar Cepa",
+              "Cepa eliminada con exito!!",
+              "success",
+              5000
+            );
+            this.$modal.hide("my_modal_eliminar_metodo");
           }
-          this.toastr("Error!!!", "", "error", 4000);
+        })
+        .catch((error) => {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "", "error");
         });
     },
-
     beforeOpen(data) {
       this.idMetodoEliminar = data.params.id;
-    }
+    },
   },
 
   computed: {
-    ...vuex.mapGetters("cepa", ["getMetodoConser"])
+    ...vuex.mapGetters("cepa", ["getMetodoConser"]),
   },
   created() {
     if (this.$route.params.cepaLevaduraId) {
@@ -132,9 +126,6 @@ export default {
     } else {
       this.url += this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>
-
-<style scoped>
-</style>

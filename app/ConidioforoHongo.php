@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ConidioforoHongo extends Model
 {
-    public function caractMicroHongos(){
-        return $this->hasMany(CaracMicroHongo::class);
+    public function caractMicros()
+    {
+        return $this->hasMany(CaracMicroHongo::class, 'conidioforo_id');
     }
 }

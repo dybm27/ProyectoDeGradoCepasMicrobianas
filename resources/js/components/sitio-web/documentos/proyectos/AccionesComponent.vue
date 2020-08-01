@@ -39,7 +39,7 @@ export default {
   },
   mixins: [websocketsAccionesMixin("proyecto", "Proyecto", "proyectos")],
   computed: {
-    ...vuex.mapGetters(["getUserAuth"])
+    ...vuex.mapState(["auth"])
   }
 };
 </script>

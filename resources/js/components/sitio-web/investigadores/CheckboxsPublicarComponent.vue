@@ -22,11 +22,11 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return { checkPublicar: false, disabled: false };
@@ -35,20 +35,28 @@ export default {
   computed: {
     computedDisabled() {
       return this.disabled;
-    }
+    },
   },
   methods: {
     publicar(data) {
       this.disabled = true;
       axios
         .put(`/investigadores/publicar/${data.id}`, {
-          publicar: !this.checkPublicar
+          publicar: !this.checkPublicar,
         })
-        .then(res => {
-          if (res.data.publicar) {
-            this.toastr("Publicar", "Publicado con Exito!!");
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            if (res.data.publicar) {
+              this.toastr("Publicar", "Publicado con Exito!!");
+            }
+            this.disabled = false;
           }
-          this.disabled = false;
         });
     },
     verificarPublicar(e) {
@@ -57,10 +65,10 @@ export default {
       } else {
         this.checkPublicar = true;
       }
-    }
+    },
   },
   created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
+  },
 };
 </script>

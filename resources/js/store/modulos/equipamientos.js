@@ -4,14 +4,13 @@ export default {
         equipamientos: []
     },
     getters: {
-        getEquipamientos(state) {
-            return state.equipamientos;
+        getEquipamientoById: state => id => {
+            return state.equipamientos.find(
+                equipamiento => equipamiento.id === id
+            );
         },
-        getEquipamientoById: (state, getters) => id => {
-            return getters.getEquipamientos.find(equipamiento => equipamiento.id === id);
-        },
-        getEquipamientoByNombre: (state, getters) => nombre => {
-            return getters.getEquipamientos.find(
+        getEquipamientoByNombre: state => nombre => {
+            return state.equipamientos.find(
                 equipamiento => equipamiento.nombre === nombre
             );
         }
@@ -43,6 +42,13 @@ export default {
     actions: {
         obtenerEquipamientos({ commit }) {
             axios.get("/info-panel/equipamientos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarEquipamientos", res.data);
             });
         },

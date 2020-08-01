@@ -19,7 +19,6 @@
             <td>{{ $datoDecodificado->name }}</td>
             <td>{{ $datoDecodificado->email }}</td>
             <td>{{ $datoDecodificado->tipo_user }}</td>
-            <td><img src="{{public_path($datoDecodificado->avatarPublico)}}" width="100px"  height="100px"></td>
         </tr>
     @endforeach
     </tbody>

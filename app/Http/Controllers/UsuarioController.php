@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AuthEvent;
+use App\Events\UsuarioEvent;
 use App\Seguimiento;
 use App\User;
 use Illuminate\Http\Request;
@@ -11,15 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class UsuarioController extends Controller
 {
-    public function index()
-    {
-        return view('usuarios');
-    }
-
     public function store(Request $request)
     {
         $rules = [
-            'email' => 'required|unique:users,email'
+            'email' => 'required|unique:users,email', 'nombre' => 'required',
+            'pass' => 'required', 'tipo_user' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -33,7 +31,7 @@ class UsuarioController extends Controller
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
         $usuario->save();
-
+        broadcast(new UsuarioEvent($usuario, 'agregar'))->toOthers();
         $this->crearSeguimiento("Creó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -44,7 +42,12 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
-        if ($request->imagen != $usuario->avatar) {
+        $rules = [
+            'email' => 'required|unique:users,email,' . $usuario->id, 'nombre' => 'required'
+        ];
+        $this->validate($request, $rules);
+
+        if (!is_null($request->imagen)) {
             Storage::disk('local')->delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];
@@ -57,7 +60,8 @@ class UsuarioController extends Controller
             $usuario->password = Hash::make($request->pass);
         }
         $usuario->save();
-
+        broadcast(new AuthEvent($usuario))->toOthers();
+        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         $this->crearSeguimiento("Editó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -67,8 +71,8 @@ class UsuarioController extends Controller
     {
         $usuario = User::find($id);
         Storage::disk('local')->delete($usuario->avatar);
+        broadcast(new UsuarioEvent($usuario, 'eliminar'))->toOthers();
         $usuario->delete();
-
         $this->crearSeguimiento("Eliminó un usuario: " . $usuario->email);
 
         return $usuario;
@@ -93,11 +97,5 @@ class UsuarioController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
-    }
-
-    public function borrarSessionId()
-    {
-        Auth::user()->session_id = null;
-        Auth::user()->save();
     }
 }

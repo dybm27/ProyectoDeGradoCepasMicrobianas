@@ -13,6 +13,9 @@ export default {
         getGenerosById: state => id => {
             return state.tipos.generos.find(genero => genero.id === id);
         },
+        getGeneroByNombre: state => nombre => {
+            return state.tipos.generos.find(genero => genero.nombre === nombre);
+        },
         getGeneroCepa(state, getters, rootState) {
             return state.tipos.generos.find(
                 genero => genero.id === rootState.cepa.cepa.cepa.genero_id
@@ -24,6 +27,11 @@ export default {
         getEspeciesId: state => id => {
             return state.tipos.especies.filter(
                 especie => especie.genero_id === id
+            );
+        },
+        getEspecieByNombre: state => nombre => {
+            return state.tipos.especies.find(
+                especie => especie.nombre === nombre
             );
         },
         getEspecieCepa(state, getters, rootState) {
@@ -49,6 +57,9 @@ export default {
                 phylum => phylum.id === rootState.cepa.cepa.phylum_id
             );
         },
+        getPhylumByNombre: state => nombre => {
+            return state.tipos.phylums.find(phylum => phylum.nombre === nombre);
+        },
         getOrdens(state) {
             return state.tipos.ordens;
         },
@@ -56,6 +67,9 @@ export default {
             return state.tipos.ordens.find(
                 orden => orden.id === rootState.cepa.cepa.orden_id
             );
+        },
+        getOrdenByNombre: state => nombre => {
+            return state.tipos.ordens.find(orden => orden.nombre === nombre);
         },
         getReinos(state) {
             return state.tipos.reinos;
@@ -65,12 +79,20 @@ export default {
                 reino => reino.id === rootState.cepa.cepa.reino_id
             );
         },
+        getReinoByNombre: state => nombre => {
+            return state.tipos.reinos.find(reino => reino.nombre === nombre);
+        },
         getDivisiones(state) {
             return state.tipos.divisiones;
         },
         getDivisionCepa(state, getters, rootState) {
             return state.tipos.divisiones.find(
                 division => division.id === rootState.cepa.cepa.division_id
+            );
+        },
+        getDivisionByNombre: state => nombre => {
+            return state.tipos.divisiones.find(
+                division => division.nombre === nombre
             );
         },
         getClases(state) {
@@ -81,12 +103,20 @@ export default {
                 clase => clase.id === rootState.cepa.cepa.clase_id
             );
         },
+        getClaseByNombre: state => nombre => {
+            return state.tipos.clases.find(clase => clase.nombre === nombre);
+        },
         getFamilias(state) {
             return state.tipos.familias;
         },
         getFamiliaCepa(state, getters, rootState) {
             return state.tipos.familias.find(
                 familia => familia.id === rootState.cepa.cepa.familia_id
+            );
+        },
+        getFamiliaByNombre: state => nombre => {
+            return state.tipos.familias.find(
+                familia => familia.nombre === nombre
             );
         }
     },
@@ -118,7 +148,7 @@ export default {
                     state.tipos.reinos.push(data.info);
                     break;
                 case "division":
-                    state.tipos.divisions.push(data.info);
+                    state.tipos.divisiones.push(data.info);
                     break;
             }
         },
@@ -167,10 +197,10 @@ export default {
                     state.tipos.reinos.splice(indice, 1, data.info);
                     break;
                 case "division":
-                    var indice = state.tipos.divisions.findIndex(
+                    var indice = state.tipos.divisiones.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.divisions.splice(indice, 1, data.info);
+                    state.tipos.divisiones.splice(indice, 1, data.info);
                     break;
             }
         },
@@ -198,7 +228,7 @@ export default {
                     var indice = state.tipos.ordens.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.ordens.splice(indicei, 1);
+                    state.tipos.ordens.splice(indice, 1);
                     break;
                 case "clase":
                     var indice = state.tipos.clases.findIndex(
@@ -219,10 +249,10 @@ export default {
                     state.tipos.reinos.splice(indice, 1);
                     break;
                 case "division":
-                    var indice = state.tipos.divisions.findIndex(
+                    var indice = state.tipos.divisiones.findIndex(
                         tipo => tipo.id === data.info.id
                     );
-                    state.tipos.divisions.splice(indice, 1);
+                    state.tipos.divisiones.splice(indice, 1);
                     break;
             }
         }
@@ -230,6 +260,13 @@ export default {
     actions: {
         obtenerTiposCepas({ commit }) {
             axios.get("/info-panel/info-tipos-cepas").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarTipos", res.data);
             });
         },

@@ -32,7 +32,7 @@ const bloquearPestañasMixin = tipo => ({
                 }
             }
         },
-        beforeunload() {
+        verificar() {
             if (this.numPestañas === 1) {
                 this.$ls.remove(tipo);
             } else {
@@ -41,6 +41,9 @@ const bloquearPestañasMixin = tipo => ({
                     numPestañaSaliente: this.numPestaña
                 });
             }
+        },
+        beforeunload() {
+            this.verificar();
         }
     },
     mounted() {
@@ -51,7 +54,7 @@ const bloquearPestañasMixin = tipo => ({
         this.$ls.on(tipo, this.modificarValorPestañas);
     },
     beforeDestroy() {
-        this.$ls.remove(tipo);
+        this.verificar();
         this.$ls.off(tipo, this.modificarValorPestañas);
         window.removeEventListener("beforeunload", this.beforeunload);
     }

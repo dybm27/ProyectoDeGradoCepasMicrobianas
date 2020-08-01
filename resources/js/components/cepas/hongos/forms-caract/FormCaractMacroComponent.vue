@@ -7,6 +7,11 @@
             <div class="card-body">
               <h5 class="card-title">{{ titulo }}</h5>
               <form @submit.prevent="evento">
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <div class="position-relative form-group">
                   <label for="medio" class>Medio</label>
                   <input
@@ -18,7 +23,6 @@
                     v-model="parametros.medio"
                     required
                   />
-                  <span v-if="errors.medio" class="text-danger">{{ errors.medio[0] }}</span>
                 </div>
                 <template v-if="getInfoCaractMacroHongos">
                   <label for="color" class>Color</label>
@@ -30,7 +34,7 @@
                       v-model="parametros.color"
                     >
                       <option
-                        v-for="(f,index) in getInfoCaractMacroHongos.colores"
+                        v-for="(f,index) in obtenerColores"
                         :key="index"
                         :value="f.id"
                       >{{ f.nombre }}</option>
@@ -53,7 +57,7 @@
                       v-model="parametros.textura"
                     >
                       <option
-                        v-for="(b,index) in getInfoCaractMacroHongos.texturas"
+                        v-for="(b,index) in obtenerTexturas"
                         :key="index"
                         :value="b.id"
                       >{{ b.nombre }}</option>
@@ -95,7 +99,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{ nomBtnComputed }}</button>
               </form>
             </div>
@@ -106,7 +110,7 @@
             <div class="card-body">
               <template v-if="mostraImagen">
                 <template v-if="validarCroppie">
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -119,7 +123,7 @@
                   />
                 </template>
                 <template v-else>
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -167,11 +171,7 @@
               v-model="modal.input"
               required
             />
-            <span v-if="modal.errors.nombre" class="text-danger">
-              {{
-              modal.errors.nombre[0]
-              }}
-            </span>
+            <span v-if="modal.errors.nombre" class="text-danger">{{ modal.errors.nombre[0] }}</span>
           </div>
         </div>
         <div class="modal-footer">
@@ -180,7 +180,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -190,80 +195,105 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
-
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: { Croppie },
   props: ["info", "modificarInfo"],
   data() {
     return {
       parametros: {
         cepaId: "",
         medio: "",
-        color: 1,
-        textura: 1,
+        color: null,
+        textura: null,
         caracteristicas_reverso: "",
-        imagen: ""
+        imagen: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopieCepas],
-  watch: {
-    modificarInfo() {
-      if (this.modificarInfo) {
-        this.llenarInfo();
-        this.$emit("cambiarVariable");
-      }
-    }
-  },
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Medio") {
-        axios
-          .post("/cepas/hongo/caract-macro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Medio";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Medio",
-              "Medio agregado con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/hongo/caract-macro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Medio";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Medio",
+                  "Medio agregado con exito!!",
+                  "success"
+                );
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/hongo/caract-macro/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.$emit("editar", res.data);
-            this.toastr("Editar Medio", "Medio editado con éxito!!", "success");
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Medio",
+                "Medio editado con éxito!!",
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -292,35 +322,59 @@ export default {
     agregarInfo() {
       if (this.modal.input === "") {
         this.modal.errors = {
-          nombre: { 0: "Favor llenar este campo" }
+          nombre: { 0: "Favor llenar este campo" },
         };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-hongos/agregar", parametros)
-          .then(res => {
-            this.accionAgregarTipoCaractHongo({
-              info: res.data,
-              tipo: this.modal.tipo
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractHongo({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = [];
               this.modal.errors = error.response.data.errors;
             }
-            this.toastr("Error!!!!", "", "error");
+            this.toastr("Error!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroHongos"]),
@@ -343,7 +397,13 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    }
+    },
+    obtenerColores() {
+      return this.getInfoCaractMacroHongos.colores;
+    },
+    obtenerTexturas() {
+      return this.getInfoCaractMacroHongos.texturas;
+    },
   },
   mounted() {
     if (this.info === undefined) {
@@ -359,6 +419,31 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerColores() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+    },
+    obtenerTexturas() {
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    },
+  },
 };
 </script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actinomiceto;
 use App\Bacteria;
 use App\Cepa;
+use App\Events\CepasEvent;
 use App\HongoFilamentoso;
 use App\Levadura;
 use App\Seguimiento;
@@ -15,31 +16,6 @@ use PDF;
 
 class CepaController extends Controller
 {
-    public function index()
-    {
-        return view('cepa.index');
-    }
-
-    public function bacterias()
-    {
-        return view('cepa.bacterias');
-    }
-
-    public function levaduras()
-    {
-        return view('cepa.levaduras');
-    }
-
-    public function hongos()
-    {
-        return view('cepa.hongos');
-    }
-
-    public function actinomicetos()
-    {
-        return view('cepa.actinomicetos');
-    }
-
     public function store(Request $request)
     {
         //-- bail (si una de las reglas de validacion es negativa, deja de ejecutar las siguientes)
@@ -48,15 +24,31 @@ class CepaController extends Controller
         $rules = [
             'codigo' => 'bail|required|min:4|unique:cepas,codigo',
             'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'bail|required|regex:/^[\pL\s\-]+$/u'
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
         ];
-        $messages = [
-            'codigo.min' => 'El codigo debe tener minimo :min caracteres.',
-            'codigo.unique' => 'El codigo ya se encuentra registrado.',
-            'estado.regex' => 'El estado solo puede contener letras.',
-            'origen.regex' => 'El origen solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
+        switch ($request->grupo_microbiano) {
+            case 1:
+                break;
+            case 2:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'phylum' => 'required'
+                ];
+                break;
+            case 3:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'division' => 'required'
+                ];
+                break;
+            case 4:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'reino' => 'required', 'phylum' => 'required'
+                ];
+                break;
+        }
+        $this->validate($request, $rules);
 
         $cepa = new Cepa();
         $cepa->codigo = $request->codigo;
@@ -74,6 +66,7 @@ class CepaController extends Controller
                 $bacteria = new Bacteria();
                 $bacteria->cepa_id = $cepa->id;
                 $bacteria->save();
+                $cepa->load('bacteria');
                 break;
             case 2:
                 $hongo = new HongoFilamentoso();
@@ -83,6 +76,7 @@ class CepaController extends Controller
                 $hongo->familia_id = $request->familia;
                 $hongo->phylum_id = $request->phylum;
                 $hongo->save();
+                $cepa->load('hongo');
                 break;
             case 3:
                 $levadura = new Levadura();
@@ -92,6 +86,7 @@ class CepaController extends Controller
                 $levadura->orden_id = $request->orden;
                 $levadura->familia_id = $request->familia;
                 $levadura->save();
+                $cepa->load('levadura');
                 break;
             case 4:
                 $actinomiceto = new Actinomiceto();
@@ -101,51 +96,60 @@ class CepaController extends Controller
                 $actinomiceto->orden_id = $request->orden;
                 $actinomiceto->reino_id = $request->reino;
                 $actinomiceto->save();
+                $cepa->load('actinomiceto');
                 break;
         }
-
+        broadcast(new CepasEvent($cepa, 'agregar'))->toOthers();
         $this->crearSeguimiento("Agregó la Cepa: " . $cepa->codigo);
-
         return $cepa;
     }
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'codigo' => 'bail|required|min:4',
-            'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'bail|required|regex:/^[\pL\s\-]+$/u'
-        ];
-        $messages = [
-            'codigo.min' => 'El codigo debe tener minimo :min caracteres.',
-            'estado.regex' => 'El estado solo puede contener letras.',
-            'origen.regex' => 'El origen solo puede contener letras.'
-        ];
-        $this->validate($request, $rules, $messages);
-
         $cepa = Cepa::find($id);
-        $cepa2 = Cepa::where('codigo', $request->codigo)->first();
-
-        if (is_null($cepa2) || $cepa->id == $cepa2->id) {
-            $codigo = $cepa->codigo;
-            $cepa->codigo = $request->codigo;
-            $cepa->grupo_microbiano_id = $request->grupo_microbiano;
-            $cepa->genero_id = $request->genero;
-            $cepa->especie_id = $request->especie;
-            $cepa->estado = $request->estado;
-            $cepa->origen = $request->origen;
-            $cepa->publicar = $request->publicar;
-            $cepa->otras_caract = $request->otras_caracteristicas;
-            $cepa->save();
-        } else {
-            return response()->json([
-                'errors' =>
-                ['codigo' => ['El codigo ya se encuentra registrado']]
-            ], 422);
+        $rules = [
+            'codigo' => 'bail|required|min:4|unique:cepas,codigo,' . $cepa->id,
+            'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
+        ];
+        switch ($cepa->grupo_microbiano) {
+            case 1:
+                break;
+            case 2:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'phylum' => 'required'
+                ];
+                break;
+            case 3:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'familia' => 'required', 'division' => 'required'
+                ];
+                break;
+            case 4:
+                $rules += [
+                    'clase' => 'required', 'orden' => 'required',
+                    'reino' => 'required', 'phylum' => 'required'
+                ];
+                break;
         }
+        $this->validate($request, $rules);
+
+        $codigo = $cepa->codigo;
+        $cepa->codigo = $request->codigo;
+        $cepa->grupo_microbiano_id = $request->grupo_microbiano;
+        $cepa->genero_id = $request->genero;
+        $cepa->especie_id = $request->especie;
+        $cepa->estado = $request->estado;
+        $cepa->origen = $request->origen;
+        $cepa->publicar = $request->publicar;
+        $cepa->otras_caract = $request->otras_caracteristicas;
+        $cepa->save();
 
         switch ($cepa->grupo_microbiano_id) {
             case 1:
+                $cepa->load('bacteria');
                 break;
             case 2:
                 $hongo = HongoFilamentoso::where('cepa_id', $cepa->id)->first();
@@ -154,6 +158,7 @@ class CepaController extends Controller
                 $hongo->familia_id = $request->familia;
                 $hongo->phylum_id = $request->phylum;
                 $hongo->save();
+                $cepa->load('hongo');
                 break;
             case 3:
                 $levadura = Levadura::where('cepa_id', $cepa->id)->first();
@@ -162,6 +167,7 @@ class CepaController extends Controller
                 $levadura->orden_id = $request->orden;
                 $levadura->familia_id = $request->familia;
                 $levadura->save();
+                $cepa->load('levadura');
                 break;
             case 4:
                 $actinomiceto = Actinomiceto::where('cepa_id', $cepa->id)->first();
@@ -170,10 +176,12 @@ class CepaController extends Controller
                 $actinomiceto->orden_id = $request->orden;
                 $actinomiceto->reino_id = $request->reino;
                 $actinomiceto->save();
+                $cepa->load('actinomiceto');
                 break;
         }
         $cepa->save();
 
+        broadcast(new CepasEvent($cepa, 'editar'))->toOthers();
         $this->crearSeguimiento("Editó la Cepa: " . $codigo);
 
         return $cepa;
@@ -185,6 +193,7 @@ class CepaController extends Controller
         if ($this->validarEliminar($cepa)) {
             return 'negativo';
         } else {
+            broadcast(new CepasEvent($cepa, 'eliminar'))->toOthers();
             $cepa->delete();
             $this->crearSeguimiento("Eliminó la Cepa: " . $cepa->codigo);
             return $cepa;
@@ -291,6 +300,21 @@ class CepaController extends Controller
         $cepa = Cepa::find($id);
         $cepa->publicar = $request->publicar;
         $cepa->save();
+        switch ($cepa->grupo_microbiano_id) {
+            case 1:
+                $cepa->load('bacteria');
+                break;
+            case 2:
+                $cepa->load('hongo');
+                break;
+            case 3:
+                $cepa->load('levadura');
+                break;
+            case 4:
+                $cepa->load('actinomiceto');
+                break;
+        }
+        broadcast(new CepasEvent($cepa, 'editar'))->toOthers();
         return $cepa;
     }
 }

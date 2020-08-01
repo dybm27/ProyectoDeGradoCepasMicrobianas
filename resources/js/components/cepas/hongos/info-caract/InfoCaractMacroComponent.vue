@@ -79,13 +79,13 @@
                   <div class="tab-pane" :class="computedActive1">
                     <div class="card-body">
                       <template v-if="computedMostrarForm1">
-                        <form-carat-macro-hongo
+                        <FormCaractMacro
                           :info="getCaractMacro[0]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-hongo>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -95,13 +95,13 @@
                   <div class="tab-pane" :class="computedActive2">
                     <div class="card-body">
                       <template v-if="computedMostrarForm2">
-                        <form-carat-macro-hongo
+                        <FormCaractMacro
                           :info="getCaractMacro[1]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-hongo>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -111,13 +111,13 @@
                   <div class="tab-pane" :class="computedActive3">
                     <div class="card-body">
                       <template v-if="computedMostrarForm3">
-                        <form-carat-macro-hongo
+                        <FormCaractMacro
                           :info="getCaractMacro[2]"
                           :modificarInfo="modificarForm"
                           @agregar="agregarInfo"
                           @editar="editarInfo"
                           @cambiarVariable="cambiarVariable"
-                        ></form-carat-macro-hongo>
+                        ></FormCaractMacro>
                       </template>
                     </div>
                   </div>
@@ -166,13 +166,15 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import infoCaractMacroMixin from "../../../../mixins/infoCaractMacro";
+import FormCaractMacro from "../forms-caract/FormCaractMacroComponent.vue";
 export default {
+  components: { FormCaractMacro },
   mixins: [Toastr, infoCaractMacroMixin],
   methods: {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregarInfo(data) {
       this.accionAgregarCaract({ tipo: "macro", data: data });
@@ -196,23 +198,33 @@ export default {
       }
       axios
         .delete(`/cepas/hongo/caract-macro/${id}`)
-        .then(res => {
-          this.mostrarBtnAgregar = true;
-          this.modificarForm = true;
-          this.$modal.hide("eliminar_caract_macro_hongo");
-          this.accionEliminarCaract({ tipo: "macro", data: res.data });
-          this.formatear(num);
-          this.toastr("Eliminar Medio", "Medio eliminado con éxito", "success");
-        })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.modificarForm = true;
+            this.$modal.hide("eliminar_caract_macro_hongo");
+            this.accionEliminarCaract({ tipo: "macro", data: res.data });
+            this.formatear(num);
+            this.toastr(
+              "Eliminar Medio",
+              "Medio eliminado con éxito",
+              "success"
+            );
           }
+        })
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
-    }
+    },
   },
   computed: {
-    ...vuex.mapGetters("cepa", ["getCaractMacro"])
-  }
+    ...vuex.mapGetters("cepa", ["getCaractMacro"]),
+  },
 };
 </script>

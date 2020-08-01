@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">Editar Imagen</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -17,7 +22,6 @@
                   v-model="parametros.titulo"
                   required
                 />
-                <em v-if="errors.titulo" class="text-danger">{{errors.titulo[0]}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
@@ -46,12 +50,12 @@
                 <input
                   type="checkbox"
                   id="mostrar"
-                  class="custom-control-input"
+                  :class="['custom-control-input', errors.mostrar? 'is-invalid':'']"
                   v-model="parametros.mostrar"
                 />
                 <label class="custom-control-label" for="mostrar">Desea Mostrar la imagen?</label>
               </div>
-              <button class="mb-2 mr-2 btn btn-block btn-warning">Editar</button>
+              <button class="mb-2 mr-2 btn btn-block btn-warning" :disabled="bloquearBtn">Editar</button>
             </form>
           </div>
         </div>
@@ -92,31 +96,47 @@ export default {
       nomBtn: "",
       errors: [],
       imagenError: "",
-      info: ""
+      info: "",
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr],
   methods: {
     ...vuex.mapActions("imagenes_login", ["accionImagenLogin"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.parametros.imagen === this.info.imagen) {
         axios
           .put(`/login/imagen/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.$emit("mostrarFrom");
-            this.toastr(
-              "Editar Imagen",
-              "Imagen editado con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              if (res.data.mostrar) {
+                res.data.mostrar = 1;
+              } else {
+                res.data.mostrar = 0;
+              }
+              this.accionImagenLogin({ tipo: "editar", data: res.data });
+              this.$emit("mostrarFrom");
+              this.toastr(
+                "Editar Imagen",
+                "Imagen editado con exito!!",
+                "success"
+              );
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         let form = new FormData();
@@ -131,24 +151,32 @@ export default {
         form.append("_method", "PUT");
         axios
           .post(`/login/imagen/${this.info.id}`, form, {
-            headers: { "Content-Type": "multipart/form-data" }
+            headers: { "Content-Type": "multipart/form-data" },
           })
-          .then(res => {
-            this.toastr(
-              "Editar Imagen",
-              "Imagen editada con exito!!",
-              "success"
-            );
-            this.accionImagenLogin({ tipo: "editar", data: res.data });
-            this.$emit("mostrarFrom");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Imagen",
+                "Imagen editada con exito!!",
+                "success"
+              );
+              this.accionImagenLogin({ tipo: "editar", data: res.data });
+              this.$emit("mostrarFrom");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -193,7 +221,7 @@ export default {
     },
     cargarImagen(file) {
       let reader = new Image();
-      reader.onload = e => {
+      reader.onload = (e) => {
         if (e.path[0].height > e.path[0].width) {
           this.imagenMiniatura = reader.src;
         } else {
@@ -209,17 +237,18 @@ export default {
         }
       };
       reader.src = URL.createObjectURL(file);
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("imagenes_login", ["getImagenLoginById"]),
+    ...vuex.mapState(["auth"]),
     mostraImagen() {
       return this.imagenMiniatura;
-    }
+    },
   },
   mounted() {
     this.info = this.getImagenLoginById(this.idImagen);
     this.llenarInfo();
-  }
+  },
 };
 </script>

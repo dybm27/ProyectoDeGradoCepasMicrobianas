@@ -13,6 +13,7 @@ class caractBioquiLevaduraController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
         if (!is_null($request->imagen1)) {
@@ -73,7 +74,7 @@ class caractBioquiLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
-
+        $this->validarCampos($request);
         $caractBioquiLevadura = CaracBioquiLevadura::find($id);
 
         $caractBioquiLevadura->crecimiento = $request->crecimiento;
@@ -217,5 +218,15 @@ class caractBioquiLevaduraController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'crecimiento' => 'required', 'ureasa' => 'required',
+            'fenol_oxidasa' => 'required', 'nitratos' => 'required',
+            'produccion_acido' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

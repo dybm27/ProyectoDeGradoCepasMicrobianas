@@ -22,14 +22,14 @@
     </div>
     <div class="card-body">
       <template v-if="!formulario">
-        <tabla-proyectos @cambiarTipo="cambiarTipo"></tabla-proyectos>
+        <Tabla @cambiarTipo="cambiarTipo"></Tabla>
       </template>
       <template v-else>
-        <form-proyectos
+        <Form
           :idProyecto="id"
           @cambiarTipo="cambiarTipo"
           @cambiarVariableFormulario="cambiarVariableFormulario"
-        ></form-proyectos>
+        ></Form>
       </template>
     </div>
   </div>
@@ -39,7 +39,13 @@
 import vuex from "vuex";
 import websocketsMixin from "../../../../mixins/websockets";
 import abrirCerrarFormulario from "../../../../mixins/abrirCerrarFormulario";
+import Tabla from "./TablaComponent.vue";
+import Form from "./FormComponent.vue";
 export default {
+  components: {
+    Tabla,
+    Form
+  },
   mixins: [
     websocketsMixin("Proyecto", "proyectos"),
     abrirCerrarFormulario("Proyecto")

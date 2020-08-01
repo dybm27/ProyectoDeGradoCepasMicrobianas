@@ -13,6 +13,7 @@ class CaractBioquiHongoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
         if (!is_null($request->imagen1)) {
             $imagen1 = $this->guardarImagen($request->imagen1, $hongo->id, 1);
@@ -63,7 +64,7 @@ class CaractBioquiHongoController extends Controller
     }
     public function update(Request $request, $id)
     {
-
+        $this->validarCampos($request);
         $caractBioquiHongo = CaracBioquiHongo::find($id);
         $caractBioquiHongo->enzimas = ucfirst($request->enzimas);
         $caractBioquiHongo->azucares = ucfirst($request->azucares);
@@ -195,5 +196,13 @@ class CaractBioquiHongoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'enzimas' => 'required', 'azucares' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

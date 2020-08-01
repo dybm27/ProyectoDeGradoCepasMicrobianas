@@ -38,91 +38,15 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
-    //--------------------- CEPAS --------------------------------------------------------------------
-    //-- vistas cepas
-    Route::get('/cepas/tabla', 'CepaController@index')->name('cepas');
-    Route::get('/cepas/agregar', 'CepaController@index');
-    Route::get('/cepas/editar/{id}', 'CepaController@index');
-    //-- vistas caract - todas
-    //bacteria
-    Route::get('/cepas/bacteria/{id}', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/caract-bioqui', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/caract-fisio', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/identi-molecu', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/metodo-conser', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/metodo-conser/agregar', 'CepaController@index');
-    Route::get('/cepas/bacteria/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
-    //levadura
-    Route::get('/cepas/levadura/{id}', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/caract-bioqui', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/identi-molecu', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/metodo-conser', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/metodo-conser/agregar', 'CepaController@index');
-    Route::get('/cepas/levadura/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
-    //hongo
-    Route::get('/cepas/hongo/{id}', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/caract-bioqui', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/identi-molecu', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/metodo-conser', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/metodo-conser/agregar', 'CepaController@index');
-    Route::get('/cepas/hongo/{id}/metodo-conser/editar/{id2}', 'CepaController@index');
-    //actinomiceto
-    Route::get('/cepas/actinomiceto/{id}', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/caract-macro', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/caract-micro', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/identi-bioqui', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/otras-caract', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/caract-molecu', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/{id}/metodo-conser', 'CepaController@index');
-    //-- vista ver 
-    Route::get('/cepas/bacteria/ver/{id}', 'CepaController@index');
-    Route::get('/cepas/hongo/ver/{id}', 'CepaController@index');
-    Route::get('/cepas/levadura/ver/{id}', 'CepaController@index');
-    Route::get('/cepas/actinomiceto/ver/{id}', 'CepaController@index');
-
+    //--------------------- CEPAS -------------------------------------------------------------------
     //-- crud cepas
     Route::post('/cepas/agregar', 'CepaController@store');
     Route::put('/cepas/editar/{id}', 'CepaController@update');
     Route::delete('/cepas/eliminar/{id}', 'CepaController@destroy');
     Route::put('/cepas/publicar/{id}', 'CepaController@publicar');
-
-    //-- crud info-cepas
-    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
-    Route::put('/info-cepas/editar/{id}', 'InfoCepasController@editarInfo');
-    Route::delete('/info-cepas/eliminar/{id}', 'InfoCepasController@eliminarInfo');
-
     //-------------------------------------------------------------------------------------------
 
     //--------------------- BACTERIAS -----------------------------------------------------------
-
-    //-- vistas cepas-bacterias
-    Route::get('/bacterias/tabla', 'CepaController@bacterias')->name('cepas_bacterias');
-    Route::get('/bacterias/agregar', 'CepaController@bacterias');
-    Route::get('/bacterias/editar/{id}', 'CepaController@bacterias');
-    //-- vistas caract-bacterias
-    Route::get('/bacterias/{id}', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/caract-macro', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/caract-micro', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/caract-bioqui', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/caract-fisio', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/identi-molecu', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/metodo-conser', 'CepaController@bacterias');
-    Route::get('/bacterias/{id}/metodo-conser/agregar', 'CepaController@bacterias');
-    Route::get('bacterias/{id}/metodo-conser/editar/{id2}', 'CepaController@bacterias');
-    //-- vista ver 
-    Route::get('/bacterias/ver/{id}', 'CepaController@bacterias');
-
-    //-- crud info-bacterias
-    Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
-    Route::put('/info-caract-bacterias/editar/{id}', 'InfoCaracBacteriasController@editarInfo');
-    Route::delete('/info-caract-bacterias/eliminar/{id}', 'InfoCaracBacteriasController@eliminarInfo');
-
     //-- crud caract-bacterias
     //--- macro
     Route::post('/cepas/bacteria/caract-macro', 'CaractMacroBacteriaController@store');
@@ -159,28 +83,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::delete('/cepas/bacteria/metodo-conser/{id}', 'MetodoConserBacteriaController@destroy');
 
     //--------------------- LEVADURAS ----------------------------------------------------------
-
-    //-- vistas cepas-levaduras
-    Route::get('/levaduras/tabla', 'CepaController@levaduras')->name('cepas_levaduras');
-    Route::get('/levaduras/agregar', 'CepaController@levaduras');
-    Route::get('/levaduras/editar/{id}', 'CepaController@levaduras');
-    //-- vistas caract-levaduras
-    Route::get('/levaduras/{id}', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-macro', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-micro', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/caract-bioqui', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/identi-molecu', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser/agregar', 'CepaController@levaduras');
-    Route::get('/levaduras/{id}/metodo-conser/editar/{id2}', 'CepaController@levaduras');
-    //-- vista ver 
-    Route::get('/levaduras/ver/{id}', 'CepaController@levaduras');
-
-    //-- crud info-levaduras
-    Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
-    Route::put('/info-caract-levaduras/editar/{id}', 'InfoCaracLevadurasController@editarInfo');
-    Route::delete('/info-caract-levaduras/eliminar/{id}', 'InfoCaracLevadurasController@eliminarInfo');
-
     //-- crud caract-levaduras
     //--- macro
     Route::post('/cepas/levadura/caract-macro', 'CaractMacroLevaduraController@store');
@@ -210,28 +112,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::delete('/cepas/levadura/metodo-conser/{id}', 'MetodoConserLevaduraController@destroy');
 
     //--------------------- HONGOS -------------------------------------------------------------
-
-    //-- vistas cepas-hongos
-    Route::get('/hongos/tabla', 'CepaController@hongos')->name('cepas_hongos');
-    Route::get('/hongos/agregar', 'CepaController@hongos');
-    Route::get('/hongos/editar/{id}', 'CepaController@hongos');
-    //-- vistas caract-hongos
-    Route::get('/hongos/{id}', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-macro', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-micro', 'CepaController@hongos');
-    Route::get('/hongos/{id}/caract-bioqui', 'CepaController@hongos');
-    Route::get('/hongos/{id}/identi-molecu', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser/agregar', 'CepaController@hongos');
-    Route::get('/hongos/{id}/metodo-conser/editar/{id2}', 'CepaController@hongos');
-    //-- vista ver 
-    Route::get('/hongos/ver/{id}', 'CepaController@hongos');
-
-    //-- crud info-caract-hongos
-    Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
-    Route::put('/info-caract-hongos/editar/{id}', 'InfoCaracHongosController@editarInfo');
-    Route::delete('/info-caract-hongos/eliminar/{id}', 'InfoCaracHongosController@eliminarInfo');
-
     //crud caract-hongos
     //---macro
     Route::post('/cepas/hongo/caract-macro', 'CaractMacroHongoController@store');
@@ -261,27 +141,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::delete('/cepas/hongo/metodo-conser/{id}', 'MetodoConserHongoController@destroy');
 
     //--------------------- ACTINOMICETOS -----------------------------------------------------
-
-    //-- vistas cepas-actinomicetos
-    Route::get('/actinomicetos/tabla', 'CepaController@actinomicetos')->name('cepas_actinomicetos');
-    Route::get('/actinomicetos/agregar', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/editar/{id}', 'CepaController@actinomicetos');
-    //-- vistas caract-actinomicetos
-    Route::get('/actinomicetos/{id}', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/caract-macro', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/caract-micro', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/identi-bioqui', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/otras-caract', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/caract-molecu', 'CepaController@actinomicetos');
-    Route::get('/actinomicetos/{id}/metodo-conser', 'CepaController@actinomicetos');
-    //-- vista ver 
-    Route::get('/actinomicetos/ver/{id}', 'CepaController@actinomicetos');
-
-    //-- crud info-caract-actinomicetos
-    Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetoController@agregarInfo');
-    Route::put('/info-caract-actinomicetos/editar/{id}', 'InfoCaracActinomicetoController@editarInfo');
-    Route::delete('/info-caract-actinomicetos/eliminar/{id}', 'InfoCaracActinomicetoController@eliminarInfo');
-
     //crud caract-actinomicetos
     //---macro
     Route::post('/cepas/actinomiceto/caract-macro', 'CaractMacroActinomicetoController@store');
@@ -308,11 +167,9 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::put('/cepas/actinomiceto/otras-caract/agregar-imagen/{id}', 'OtrasCaractActinomicetoController@agregarImagen');
     Route::put('/cepas/actinomiceto/otras-caract/cambiar-imagen/{id}', 'OtrasCaractActinomicetoController@cambiarImagen');
     Route::put('/cepas/actinomiceto/otras-caract/eliminar-imagen/{id}', 'OtrasCaractActinomicetoController@elimarImagen');
-
     //---------------------- EVENTOS -------------------------------------------------------------
 
     //-- Calendario
-    Route::get('/calendario', 'CalendarioController@index')->name('calendario');
     //---crud
     Route::post('/eventos/agregar', 'CalendarioController@store');
     Route::put('/eventos/editar/{id}', 'CalendarioController@update');
@@ -320,21 +177,15 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //---------------------- USUARIOS ------------------------------------------------------------
     //-- Perfil
-    Route::get('/perfil', 'PerfilController@index')->name('home');
     Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
     Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
     Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
-    
-    //-- Usuarios
-    Route::get('/usuarios/tabla-usuarios', 'UsuarioController@index')->name('usuarios');
-    Route::get('/usuarios/tabla-usuarios/agregar', 'UsuarioController@index');
-    Route::get('/usuarios/tabla-usuarios/editar/{id}', 'UsuarioController@index');
-    Route::get('/usuarios/tabla-seguimiento', 'UsuarioController@index');
 
+    //-- Usuarios
     Route::post('/usuario/agregar', 'UsuarioController@store');
     Route::put('/usuario/editar/{id}', 'UsuarioController@update');
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy');
-   // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
+    // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
 
     Route::post('/tipo-user/agregar', 'TipoUsuarioController@store');
     Route::put('/tipo-user/editar/{id}', 'TipoUsuarioController@update');
@@ -474,50 +325,56 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::get('/exportar/tabla/novedades', 'ExportarExcelSitioWebController@novedadesTabla');
 
     //--------------------- OTRA INFORMACION -----------------------------------------------------
-    Route::get('/otra-info/cepas', 'OtraInfoController@index')->name('otra_info');
-    Route::get('/otra-info/bacterias', 'OtraInfoController@index');
-    Route::get('/otra-info/hongos', 'OtraInfoController@index');
-    Route::get('/otra-info/levaduras', 'OtraInfoController@index');
-    Route::get('/otra-info/actinomicetos', 'OtraInfoController@index');
+    //-- crud info-cepas
+    Route::post('/info-cepas/agregar', 'InfoCepasController@agregarInfo');
+    Route::put('/info-cepas/editar/{id}', 'InfoCepasController@editarInfo');
+    Route::delete('/info-cepas/eliminar/{id}', 'InfoCepasController@eliminarInfo');
+
+    //-- crud info-bacterias
+    Route::post('/info-caract-bacterias/agregar', 'InfoCaracBacteriasController@agregarInfo');
+    Route::put('/info-caract-bacterias/editar/{id}', 'InfoCaracBacteriasController@editarInfo');
+    Route::delete('/info-caract-bacterias/eliminar/{id}', 'InfoCaracBacteriasController@eliminarInfo');
+
+    //-- crud info-caract-hongos
+    Route::post('/info-caract-hongos/agregar', 'InfoCaracHongosController@agregarInfo');
+    Route::put('/info-caract-hongos/editar/{id}', 'InfoCaracHongosController@editarInfo');
+    Route::delete('/info-caract-hongos/eliminar/{id}', 'InfoCaracHongosController@eliminarInfo');
+
+    //-- crud info-levaduras
+    Route::post('/info-caract-levaduras/agregar', 'InfoCaracLevadurasController@agregarInfo');
+    Route::put('/info-caract-levaduras/editar/{id}', 'InfoCaracLevadurasController@editarInfo');
+    Route::delete('/info-caract-levaduras/eliminar/{id}', 'InfoCaracLevadurasController@eliminarInfo');
+
+    //-- crud info-caract-actinomicetos
+    Route::post('/info-caract-actinomicetos/agregar', 'InfoCaracActinomicetosController@agregarInfo');
+    Route::put('/info-caract-actinomicetos/editar/{id}', 'InfoCaracActinomicetosController@editarInfo');
+    Route::delete('/info-caract-actinomicetos/eliminar/{id}', 'InfoCaracActinomicetosController@eliminarInfo');
 
     //--------------------- IMAGENES LOGIN -----------------------------------------------------
-    Route::get('/imagenes-login/ver', 'ImagenLoginController@index')->name('imagenes');
-    Route::get('/imagenes-login/agregar', 'ImagenLoginController@index');
-    Route::get('/imagenes-login/editar/{id}', 'ImagenLoginController@index');
     Route::put('/login/imagen/{id}', 'ImagenLoginController@update');
 
 
     //--------------------- ADMINISTRAR SITIO WEB -----------------------------------------------
     //quienes somos
-    Route::get('/quienes-somos/mision', 'QuienesSomosController@index')->name('quienes-somos');
-    Route::get('/quienes-somos/vision', 'QuienesSomosController@index');
-    Route::get('/quienes-somos/objetivos', 'QuienesSomosController@index');
     Route::put('/quienes-somos/vision/cambiar', 'QuienesSomosController@cambiarVision');
     Route::put('/quienes-somos/mision/cambiar', 'QuienesSomosController@cambiarMision');
     Route::put('/quienes-somos/objetivos/cambiar', 'QuienesSomosController@cambiarObjetivos');
     //investigadores
-    Route::get('/investigadores', 'InvestigadoresController@index')->name('investigadores');
     Route::post('/investigadores', 'InvestigadoresController@store');
     Route::put('/investigadores/{id}', 'InvestigadoresController@update');
     Route::delete('/investigadores/{id}', 'InvestigadoresController@destroy');
     Route::put('/investigadores/publicar/{id}', 'InvestigadoresController@publicar');
     //documentos
-    Route::get('/documentos/proyectos', 'DocumentosController@index')->name('proyectos');
-    Route::get('/documentos/publicaciones', 'DocumentosController@index');
     Route::post('/documentos', 'DocumentosController@store');
     Route::put('/documentos/{id}', 'DocumentosController@update');
     Route::delete('/documentos/{id}', 'DocumentosController@destroy');
     Route::put('/documentos/publicar/{id}', 'DocumentosController@publicar');
     //equipamiento
-    Route::get('/equipamientos', 'EquipamientoController@index')->name('equipamiento');
     Route::post('/equipamientos', 'EquipamientoController@store');
     Route::put('/equipamientos/{id}', 'EquipamientoController@update');
     Route::delete('/equipamientos/{id}', 'EquipamientoController@destroy');
     Route::put('/equipamientos/publicar/{id}', 'EquipamientoController@publicar');
     //publicidad
-    Route::get('/publicidad/noticias', 'PublicidadController@index')->name('noticias');
-    Route::get('/publicidad/actividades', 'PublicidadController@index');
-    Route::get('/publicidad/novedades', 'PublicidadController@index');
     Route::post('/publicidad', 'PublicidadController@store');
     Route::put('/publicidad/{id}', 'PublicidadController@update');
     Route::delete('/publicidad/{id}', 'PublicidadController@destroy');
@@ -530,12 +387,13 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
         //----------------------- CEPAS  ---------------------------------------------------------
-        //----------------------- urls tablas cepas  ---------------------------------------------
+        //----------------------- urls cepas  ---------------------------------------------
         Route::get('cepas', 'InfoPanelCepasController@cepas');
-        Route::get('cepas-bacterias', 'InfoPanelBacteriasController@bacterias');
-        Route::get('cepas-hongos', 'InfoPanelHongosController@hongos');
-        Route::get('cepas-levaduras', 'InfoPanelLevadurasController@levaduras');
-        Route::get('cepas-actinomicetos', 'InfoPanelActinomicetosController@actinomicetos');
+        Route::get('cepas-tabla', 'InfoPanelCepasController@cepasTabla');
+        Route::get('bacterias-tabla', 'InfoPanelBacteriasController@bacteriasTabla');
+        Route::get('hongos-tabla', 'InfoPanelHongosController@hongosTabla');
+        Route::get('levaduras-tabla', 'InfoPanelLevadurasController@levadurasTabla');
+        Route::get('actinomicetos-tabla', 'InfoPanelActinomicetosController@actinomicetosTabla');
         //----------------------- obtener cepa ---------------------------------------------------
         Route::get('cepa/{id}', 'InfoPanelCepasController@obtenerCepa');
         //--------------------- obtener caracteristicas cepas ------------------------------------
@@ -600,7 +458,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('eventos', 'InfoPanelEventosController@eventos');
         //------------------------ USUARIOS ------------------------------------------------------
         //------------------------- url tabla usuarios -------------------------------------------
-        Route::get('usuarios', 'InfoPanelUsuariosController@tablaUsuarios');
+        Route::get('usuarios-tabla', 'InfoPanelUsuariosController@tablaUsuarios');
         //--------------------------- tiposUsuarios - usuairos -----------------------------------------
         Route::get('tipos-users', 'InfoPanelUsuariosController@tipoUsuarios');
         Route::get('users', 'InfoPanelUsuariosController@usuarios');
@@ -626,9 +484,6 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('publicidad', 'InfoPanelSitioWebController@publicidad');
     });
 
-
-    // 404 admin
-    Route::get('{vue_capture?}', 'ErroresController@error_404')->where('vue_capture', '[\/\w\.-]*');
+    // ruta vuejs
+    Route::get('{vue_capture?}', 'SpaController@index')->where('vue_capture', '[\/\w\.-]*');
 });
-
-// 404 admin

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BordeActinomiceto;
+use App\Cepa;
 use App\ColorActinomiceto;
 use App\ConidioforoActinomiceto;
 use App\FormaCaractMacroActinomiceto;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 
 class InfoPanelActinomicetosController extends Controller
 {
-    public function actinomicetos(Request $request)
+    public function actinomicetosTabla(Request $request)
     {
         $cepas = DB::table('cepas')
             ->join('actinomicetos', 'cepas.id', '=', 'actinomicetos.cepa_id')
@@ -90,7 +91,7 @@ class InfoPanelActinomicetosController extends Controller
 
         return $pagination;
     }
-    
+
     public function colors(Request $request)
     {
         $tipo = ColorActinomiceto::select(

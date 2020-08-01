@@ -6,6 +6,7 @@ use App\ColorHongo;
 use App\ConidioforoHongo;
 use App\EsporaAsexualHongo;
 use App\EsporaSexualHongo;
+use App\Events\HongosInfoEvent;
 use App\Seguimiento;
 use App\TexturaHongo;
 use App\TipoMetodoConservacionHongo;
@@ -61,7 +62,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Agregó un Tipo de Conidioforo en Hongos: "
                     . $tipo->nombre);
                 break;
-            case "espora_asexual":
+            case "esporaA":
                 $rules = [
                     'nombre' => 'bail|required|unique:espora_asexual_hongos,nombre'
                 ];
@@ -75,7 +76,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Agregó un Tipo de Espora Asexual en Hongos: "
                     . $tipo->nombre);
                 break;
-            case "espora_sexual":
+            case "esporaS":
                 $rules = [
                     'nombre' => 'bail|required|unique:espora_sexual_hongos,nombre'
                 ];
@@ -89,7 +90,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Agregó un Tipo de Espora Sexual en Hongos: "
                     . $tipo->nombre);
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $rules = [
                     'nombre' => 'bail|required|unique:tipo_metodo_conservacion_hongos,nombre'
                 ];
@@ -104,7 +105,7 @@ class InfoCaracHongosController extends Controller
                     . $tipo->nombre);
                 break;
         }
-
+        broadcast(new HongosInfoEvent($tipo, $request->tipo, 'agregar'))->toOthers();
         return $tipo;
     }
 
@@ -150,7 +151,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Editó un Tipo de Conidioforo en Hongos: "
                     . $tipo1->nombre);
                 break;
-            case "espora_asexual":
+            case "esporaA":
                 $tipo1 = EsporaAsexualHongo::find($id);
                 $tipo2 = EsporaAsexualHongo::where('nombre', $request->nombre)->first();
                 if (!is_null($tipo2)) {
@@ -163,7 +164,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Editó un Tipo de Espora Asexual en Hongos: "
                     . $tipo1->nombre);
                 break;
-            case "espora_sexual":
+            case "esporaS":
                 $tipo1 = EsporaSexualHongo::find($id);
                 $tipo2 = EsporaSexualHongo::where('nombre', $request->nombre)->first();
                 if (!is_null($tipo2)) {
@@ -176,7 +177,7 @@ class InfoCaracHongosController extends Controller
                 $this->crearSeguimiento("Editó un Tipo de Espora Sexual en Hongos: "
                     . $tipo1->nombre);
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $tipo1 = TipoMetodoConservacionHongo::find($id);
                 $tipo2 = TipoMetodoConservacionHongo::where('nombre', $request->nombre)->first();
                 if (!is_null($tipo2)) {
@@ -190,7 +191,7 @@ class InfoCaracHongosController extends Controller
                     . $tipo1->nombre);
                 break;
         }
-
+        broadcast(new HongosInfoEvent($tipo1, $request->tipo, 'editar'))->toOthers();
         return $tipo1;
     }
 
@@ -199,39 +200,69 @@ class InfoCaracHongosController extends Controller
         switch ($request->tipo) {
             case "color":
                 $tipo = ColorHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Color en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Color en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "textura":
                 $tipo = TexturaHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Textura en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'macro')) {
+                    return 'macro';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Textura en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
             case "conidioforo":
                 $tipo = ConidioforoHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Conidioforo en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
-            case "espora_asexual":
+            case "esporaA":
                 $tipo = EsporaAsexualHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Espora Asexual en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Espora Asexual en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
-            case "espora_sexual":
+            case "esporaS":
                 $tipo = EsporaSexualHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Espora Sexual en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'micro')) {
+                    return 'micro';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Espora Sexual en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
-            case "metodo_conser":
+            case "tipo_metodo":
                 $tipo = TipoMetodoConservacionHongo::find($id);
-                $tipo->delete();
-                $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Hongos: "
-                    . $tipo->nombre);
+                if ($this->validarEliminar($tipo, 'metodo')) {
+                    return 'metodo';
+                } else {
+                    broadcast(new HongosInfoEvent($tipo, $request->tipo, 'eliminar'))->toOthers();
+                    $tipo->delete();
+                    $this->crearSeguimiento("Eliminó un Tipo de Metodo de Conservación en Hongos: "
+                        . $tipo->nombre);
+                }
                 break;
         }
 
@@ -246,5 +277,34 @@ class InfoCaracHongosController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarEliminar($tipoCaract, $tipo)
+    {
+        $res = false;
+        switch ($tipo) {
+            case "macro":
+                if (
+                    count($tipoCaract->caractMacros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "micro":
+                if (
+                    count($tipoCaract->caractMicros) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+            case "metodo":
+                if (
+                    count($tipoCaract->metodosConservacion) > 0
+                ) {
+                    $res = true;
+                }
+                break;
+        }
+        return $res;
     }
 }

@@ -12,13 +12,9 @@ use Illuminate\Support\Facades\Storage;
 
 class QuienesSomosController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.quienes-somos');
-    }
-
     public function cambiarMision(Request $request)
     {
+        $this->validarCampos($request);
         $mision = QuienesSomos::where('quienes_somos_tipos_id', 1)->first();
         $mision->cuerpo = $request->cuerpo;
         $imagenesEditor = implode(",", $request->imagenesEditor);
@@ -31,6 +27,7 @@ class QuienesSomosController extends Controller
     }
     public function cambiarVision(Request $request)
     {
+        $this->validarCampos($request);
         $vision = QuienesSomos::where('quienes_somos_tipos_id', 2)->first();
         $vision->cuerpo = $request->cuerpo;
         $imagenesEditor = implode(",", $request->imagenesEditor);
@@ -43,6 +40,7 @@ class QuienesSomosController extends Controller
     }
     public function cambiarObjetivos(Request $request)
     {
+        $this->validarCampos($request);
         $objetivos = QuienesSomos::where('quienes_somos_tipos_id', 3)->first();
         $objetivos->cuerpo = $request->cuerpo;
         $imagenesEditor = implode(",", $request->imagenesEditor);
@@ -70,5 +68,11 @@ class QuienesSomosController extends Controller
         foreach ($array as  $resultado) {
             Storage::delete('/public' . $resultado);
         };
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = ['cuerpo' => 'required'];
+        $this->validate($request, $rules);
     }
 }

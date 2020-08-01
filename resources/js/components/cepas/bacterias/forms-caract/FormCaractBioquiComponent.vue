@@ -4,6 +4,11 @@
       <div class="card-body">
         <h5 class="card-title">{{tituloForm}}</h5>
         <form @submit.prevent="evento">
+          <template v-if="errors!=''">
+            <div class="alert alert-danger">
+              <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+            </div>
+          </template>
           <div class="container">
             <div class="row">
               <div class="col-md-6">
@@ -440,7 +445,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="btnDisable"
+                  :disabled="btnDisable||bloquearBtn"
                 >{{nomBtn}}</button>
               </div>
             </div>
@@ -456,7 +461,7 @@
               <div class="card-body">
                 <h5 class="card-title">Imagenes</h5>
                 <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
-                  <croppie-cepas
+                  <CroppieCepas
                     :imagenes="imagenesCroppie"
                     @cambiarValorImagen="cambiarValorImagen"
                     :posicion="'horizontal'"
@@ -480,13 +485,13 @@
             <div class="main-card mb-3 card">
               <div class="card-body">
                 <h5 class="card-title">Imagenes</h5>
-                <imagenes
+                <Imagenes
                   :parametros="parametros"
                   :tipoCepa="'bacteria/caract-bioqui'"
                   :imagenes="imagenes"
                   :cepa="info"
                   @accionImagen="accionImagen"
-                ></imagenes>
+                ></Imagenes>
               </div>
             </div>
           </div>
@@ -499,7 +504,10 @@
 <script>
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
+import CroppieCepas from "../../CroppieCepasComponent.vue";
+import Imagenes from "../../ImagenesComponent.vue";
 export default {
+  components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
   watch: {
     modificarInfo() {
@@ -507,7 +515,7 @@ export default {
         this.llenarInfo();
         this.$emit("cambiarVariable");
       }
-    }
+    },
   },
   data() {
     return {
@@ -548,57 +556,97 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: ""
+        imagen3: "",
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
+    cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.parametros.imagen1 = datos.data;
+          break;
+        case 2:
+          this.parametros.imagen2 = datos.data;
+          break;
+        case 3:
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento() {
-      if (this.tituloForm === "Agregar Característica") {
-        axios
-          .post("/cepas/bacteria/caract-bioqui", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Característica";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Características Bioquímicas",
-              "Características Bioquímicas agregadas con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+      this.bloquearBtn = true;
+      if (this.parametros.tituloForm === "Agregar Característica") {
+        if (this.imagen1) {
+          axios
+            .post("/cepas/bacteria/caract-bioqui", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Características Bioquímicas",
+                  "Características Bioquímicas agregadas con exito!!",
+                  "success"
+                );
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/bacteria/caract-bioqui/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Características Bioquímicas",
-              "Características Bioquímicas editadas con exito!!",
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Características Bioquímicas",
+                "Características Bioquímicas editadas con exito!!",
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -639,7 +687,7 @@ export default {
     },
     accionImagen(data) {
       this.$emit("editar", data);
-    }
+    },
   },
   computed: {
     required() {
@@ -662,7 +710,7 @@ export default {
       } else {
         return "col-md-6";
       }
-    }
+    },
   },
   mounted() {
     if (this.info) {
@@ -678,6 +726,6 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>

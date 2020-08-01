@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="nombre_documento" class>Nombre Proyecto</label>
                 <input
@@ -89,7 +94,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -101,7 +106,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -114,7 +119,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -147,7 +152,11 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: {
+    Croppie,
+  },
   props: ["idProyecto"],
   data() {
     return {
@@ -159,24 +168,26 @@ export default {
         descripcion: "",
         imagen: "",
         publicar: false,
-        tipo: "proyecto"
+        tipo: "proyecto",
       },
-      tituloForm: "",
+      tituloCroppie: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       archivoError: "",
       mensajeNombreProyecto: "",
       mensajeNombreAutor: "",
-      traerValorImg: false
+      traerValorImg: false,
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("documentos", ["accionProyecto"]),
     evento() {
-      if (this.tituloForm === "Agregar Proyecto") {
+      this.bloquearBtn = true;
+      if (this.tituloCroppie === "Agregar Proyecto") {
         let form = new FormData();
         form.append("nombre_documento", this.parametros.nombre_documento);
         form.append("nombre_autor", this.parametros.nombre_autor);
@@ -192,59 +203,70 @@ export default {
         axios
           .post("/documentos", form, {
             headers: {
-              "content-type": "multipart/form-data"
+              "content-type": "multipart/form-data",
+            },
+          })
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Proyecto",
+                "Proyecto agregado con exito!!",
+                "success"
+              );
+              this.accionProyecto({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableCroppieulario");
             }
           })
-          .then(res => {
-            this.toastr(
-              "Agregar Proyecto",
-              "Proyecto agregado con exito!!",
-              "success"
-            );
-            this.accionProyecto({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/documentos/${this.idProyecto}`, this.parametros)
-          .then(res => {
-            this.toastr(
-              "Editar Proyecto",
-              "Proyecto editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsProyecto").whisper(
-              "desbloquearBtnsProyecto",
-              {
-                id: res.data.id
-              }
-            );
-            window.Echo.private("desbloquearCheckProyecto").whisper(
-              "desbloquearCheckProyecto",
-              {
-                id: res.data.id
-              }
-            );
-            this.$events.fire("spliceMisBloqueosProyecto", {
-              id: res.data.id
-            });
-            this.accionProyecto({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Proyecto",
+                "Proyecto editado con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsProyecto").whisper(
+                "desbloquearBtnsProyecto",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoProyecto", {
+                id: res.data.id,
+              });
+              this.accionProyecto({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableCroppieulario");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -275,29 +297,29 @@ export default {
         this.parametros.archivo = "";
         this.$refs.inputArchivo.value = "";
       }
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("documentos", [
       "getProyectoById",
-      "getProyectoByNombre"
+      "getProyectoByNombre",
     ]),
     btnClase() {
-      if (this.tituloForm === "Agregar Proyecto") {
+      if (this.tituloCroppie === "Agregar Proyecto") {
         return "btn-success";
       } else {
         return "btn-warning";
       }
     },
     required() {
-      if (this.tituloForm === "Agregar Proyecto") {
+      if (this.tituloCroppie === "Agregar Proyecto") {
         return true;
       } else {
         return false;
       }
     },
     titulo() {
-      return this.tituloForm;
+      return this.tituloCroppie;
     },
     nomBtnComputed() {
       return this.nomBtn;
@@ -347,20 +369,20 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idProyecto === 0) {
-      this.tituloForm = "Agregar Proyecto";
+      this.tituloCroppie = "Agregar Proyecto";
       this.nomBtn = "Agregar";
       this.$emit("cambiarTipo", "agregar");
     } else {
       this.info = this.getProyectoById(this.idProyecto);
       this.llenarInfo();
       this.$emit("cambiarTipo", "editar");
-      this.tituloForm = "Editar Proyecto";
+      this.tituloCroppie = "Editar Proyecto";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

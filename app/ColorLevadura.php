@@ -8,6 +8,6 @@ class ColorLevadura extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroLevadura::class);
+        return $this->hasMany(CaracMacroLevadura::class, 'color_id');
     }
 }

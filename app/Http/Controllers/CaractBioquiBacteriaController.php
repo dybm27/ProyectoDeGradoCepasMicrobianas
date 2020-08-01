@@ -13,6 +13,7 @@ class CaractBioquiBacteriaController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
         if (!is_null($request->imagen1)) {
@@ -91,6 +92,7 @@ class CaractBioquiBacteriaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractBioquiBacteria = CaracBioquiBacteria::find($id);
 
         $caractBioquiBacteria->oxidasa = ucfirst($request->oxidasa);
@@ -253,5 +255,24 @@ class CaractBioquiBacteriaController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'oxidasa' => 'required', 'catalasa' => 'required',
+            'citrato' => 'required', 'tsi' => 'required',
+            'lia' => 'required', 'vp' => 'required',
+            'sim' => 'required', 'nitrato' => 'required',
+            'rm' => 'required', 'caldo_urea' => 'required',
+            'of' => 'required', 'glucosa' => 'required',
+            'lactosa' => 'required', 'lecitinasa' => 'required',
+            'manitol' => 'required', 'lipasa' => 'required',
+            'xilosa' => 'required', 'hidro_caseina' => 'required',
+            'arabinosa' => 'required', 'hidro_gelatina' => 'required',
+            'sacarosa' => 'required', 'hidro_urea' => 'required',
+            'almidon' => 'required', 'creci_nacl' => 'required', 'creci_dif_temp' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

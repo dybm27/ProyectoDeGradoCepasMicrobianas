@@ -15,10 +15,7 @@ const abrirCerrarFormualrio = tipoM => ({
             window.Echo.private(
                 "desbloquearBtns" + tipoM
             ).whisper("desbloquearBtns" + tipoM, { id: this.id });
-            window.Echo.private(
-                "desbloquearCheck" + tipoM
-            ).whisper("desbloquearCheck" + tipoM, { id: this.id });
-            this.$events.fire("spliceMisBloqueos" + tipoM, {
+            this.$events.fire("eliminarMiBloqueo" + tipoM, {
                 id: this.id
             });
             this.id = 0;

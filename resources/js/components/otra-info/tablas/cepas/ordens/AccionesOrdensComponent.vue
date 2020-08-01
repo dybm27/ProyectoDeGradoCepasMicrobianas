@@ -6,6 +6,7 @@
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
           @click="editar(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="fas fa-pencil-alt"></i>
         </button>
@@ -13,7 +14,8 @@
         <button
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
-          @click="showModal(rowData)"
+          @click="eliminar(rowData)"
+          :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
@@ -23,32 +25,23 @@
 </template>
 
   <script>
+import vuex from "vuex";
+import websocketsAccionesOtraInfoMixin from "../../../../../mixins/websocketsAccionesOtraInfo";
 export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
-  },
-  methods: {
-    editar(data) {
-      this.$modal.show("modal_editar_tipo_cepa", {
-        id: data.id,
-        nombre: data.nombre,
-        tipo: "orden"
-      });
+      type: Number,
     },
-    showModal(data) {
-      this.$modal.show("modal_eliminar_tipo_cepa", {
-        id: data.id,
-        tipo: "orden"
-      });
-    }
   },
-  computed: {},
-  created() {}
+  mixins: [
+    websocketsAccionesOtraInfoMixin("orden", "ordens", "cepa", "CepasInfo"),
+  ],
+  computed: {
+    ...vuex.mapState(["auth"]),
+  },
 };
 </script>

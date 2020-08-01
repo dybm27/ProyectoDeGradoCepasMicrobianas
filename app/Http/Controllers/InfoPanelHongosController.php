@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cepa;
 use App\ColorHongo;
 use App\ConidioforoHongo;
 use App\EsporaAsexualHongo;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class InfoPanelHongosController extends Controller
 {
-    public function hongos(Request $request)
+    public function hongosTabla(Request $request)
     {
         $cepas = DB::table('cepas')
             ->join('hongo_filamentosos', 'cepas.id', '=', 'hongo_filamentosos.cepa_id')

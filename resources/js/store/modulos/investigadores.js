@@ -4,16 +4,13 @@ export default {
         investigadores: []
     },
     getters: {
-        getInvestigadores(state) {
-            return state.investigadores;
-        },
         getInvestigadorById: state => id => {
             return state.investigadores.find(
                 investigador => investigador.id === id
             );
         },
-        getInvestigadorByEmail: (state, getters) => email => {
-            return getters.getInvestigadores.find(
+        getInvestigadorByEmail: state => email => {
+            return state.investigadores.find(
                 investigador => investigador.email === email
             );
         }
@@ -45,6 +42,13 @@ export default {
     actions: {
         obtenerInvestigadores({ commit }) {
             axios.get("/info-panel/investigadores").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarInvestigadores", res.data);
             });
         },

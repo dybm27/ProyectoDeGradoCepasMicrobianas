@@ -13,6 +13,7 @@ class OtrasCaractActinomicetoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
 
         if (!is_null($request->imagen1)) {
@@ -73,6 +74,7 @@ class OtrasCaractActinomicetoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $otrasCaractActinomiceto = OtrasCaracActinomiceto::find($id);
 
         $otrasCaractActinomiceto->fijacion_nitrogeno = $request->fijacion_nitrogeno;
@@ -217,5 +219,17 @@ class OtrasCaractActinomicetoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'fijacion_nitrogeno' => 'required', 'produccion_aia' => 'required',
+            'giberelinas' => 'required', 'solubili_fosforo' => 'required',
+            'produccion_sideroforos' => 'required', 'antagonismos' => 'required',
+            'activi_enzimaticas' => 'required', 'produccion_pha' => 'required',
+            'alta_produc_antibioticos' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

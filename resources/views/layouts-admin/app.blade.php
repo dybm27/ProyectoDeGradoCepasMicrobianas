@@ -25,29 +25,7 @@
     </head>
     <body><!--fixed-footer-->
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer" id="app" >
-
-            @include('layouts-admin.header')
-
-            <div class="app-main">
-
-                @include('layouts-admin.sliderbar')
-
-                <div class="app-main__outer">
-
-                    <div class="app-main__inner">
-
-                        @yield('contenido')
-
-                    </div>
-
-                    <div class="app-wrapper-footer">
-
-                        @include('layouts-admin.footer')
-
-                    </div>
-                </div>
-                
-            </div>
+            <app-majumba :admin="{{auth()->user()}}"/>
         </div>  
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

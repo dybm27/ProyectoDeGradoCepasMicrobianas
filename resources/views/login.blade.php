@@ -63,12 +63,13 @@
                             <div class="divider row"></div>
                             <div>
                                 <form method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    @if(session('message'))
-                                      <div class="alert alert-danger" role="alert">
-                                       {{session('message')}}
-                                      </div>
-                                    @endif
+                                  <div class="alert alert-danger" role="alert" id="mensajeLogin" style="display: none" ></div>
+                                  @csrf
+                                  @if(session('message'))
+                                    <div class="alert alert-danger" role="alert">
+                                      {{session('message')}}
+                                    </div>
+                                  @endif
                                 <div class="form-row">
                                   <div class="col-md-6">
                                     <div class="position-relative form-group">
@@ -136,5 +137,14 @@
         </div>
         <script src="{{asset('assets/scripts/template.js')}}"></script>  
         <script src="{{ asset('js/dumar.js') }}"></script>
+        <script>
+          let mensaje = localStorage.getItem("mensajeLogin");
+          if(mensaje){
+            let div= document.getElementById('mensajeLogin');
+            div.style.display='block';
+            div.innerText=mensaje; 
+            localStorage.removeItem("mensajeLogin");
+          }
+        </script>
     </body>
 </html>

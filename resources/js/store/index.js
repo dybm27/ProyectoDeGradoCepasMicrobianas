@@ -21,12 +21,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         //  auth: JSON.parse(userLogueado.content)
-        auth: ""
-    },
-    getters: {
-        getUserAuth(state) {
-            return state.auth;
-        }
+        auth: null
     },
     mutations: {
         mutacionModificarAuth(state, data) {
@@ -36,11 +31,14 @@ export default new Vuex.Store({
     actions: {
         accionModificarAuth({ commit }, data) {
             commit("mutacionModificarAuth", data);
+        },
+        limpiarCepa({ commit }) {
+            commit("mutacionLimpiarCepa");
         }
     },
     modules: {
         usuarios,
-        // cepas,
+        cepas,
         cepa,
         info_caract,
         info_cepas,

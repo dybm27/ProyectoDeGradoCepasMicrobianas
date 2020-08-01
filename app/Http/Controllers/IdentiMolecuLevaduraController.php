@@ -13,6 +13,7 @@ class IdentiMolecuLevaduraController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $levadura = Levadura::where('cepa_id', $request->cepaId)->first();
 
         $imagen_pcr = $this->guardarImagen($request->imagen1, $levadura->id, 'pcr');
@@ -50,6 +51,7 @@ class IdentiMolecuLevaduraController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $IdentiMolecuLevadura = IdentiMolecuLevadura::find($id);
 
         if ($request->imagen1 != $IdentiMolecuLevadura->imagen_pcr) {
@@ -115,5 +117,17 @@ class IdentiMolecuLevaduraController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'nombre_forward' => 'required', 'producto_forward' => 'required',
+            'nombre_reversed' => 'required', 'producto_reversed' => 'required',
+            'secuencia_forward' => 'required', 'condiciones_pcr' => 'required',
+            'secuencia_reversed' => 'required', 'blast' => 'required',
+            'analisis_filogenetico' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

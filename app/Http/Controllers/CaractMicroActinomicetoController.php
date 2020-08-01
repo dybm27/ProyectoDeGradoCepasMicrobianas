@@ -13,8 +13,8 @@ class CaractMicroActinomicetoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
-
 
         if (!is_null($request->imagen1)) {
             $imagen1 = $this->guardarImagen($request->imagen1, $actinomiceto->id, 1);
@@ -70,6 +70,7 @@ class CaractMicroActinomicetoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMicroActinomiceto = CaracMicroActinomiceto::find($id);
         $caractMicroActinomiceto->tinciongram_id = intval($request->tincion);
         $caractMicroActinomiceto->forma_id = intval($request->forma);
@@ -209,5 +210,15 @@ class CaractMicroActinomicetoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'tincion' => 'required', 'forma' => 'required',
+            'micelio' => 'required', 'conidioforo' => 'required',
+            'forma_estructura_reproduccion' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

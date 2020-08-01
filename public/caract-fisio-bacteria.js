@@ -1,5 +1,309 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-fisio-bacteria"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie3Imagenes */ "./resources/js/mixins/obtenerImagenCroopie3Imagenes.js");
+/* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
+/* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    CroppieCepas: _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Imagenes: _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  props: ["info", "modificarInfo"],
+  watch: {
+    modificarInfo: function modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    }
+  },
+  data: function data() {
+    return {
+      parametros: {
+        cepaId: "",
+        acido_indolacetico: "",
+        fosforo: "",
+        sideroforos: "",
+        nitrogeno: "",
+        otras_caract: "",
+        imagen1: "",
+        imagen2: "",
+        imagen3: "",
+        descripcion_imagenes: ""
+      },
+      tituloForm: "",
+      nomBtn: "",
+      errors: [],
+      bloquearBtn: false
+    };
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  methods: {
+    evento: function evento() {
+      var _this = this;
+
+      this.bloquearBtn = true;
+
+      if (this.tituloForm === "Agregar Característica") {
+        if (this.parametros.imagen1) {
+          axios.post("/cepas/bacteria/caract-fisio", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+              _this.errors = [];
+              _this.$refs.inputImagen.value = "";
+              _this.tituloForm = "Editar Característica";
+              _this.nomBtn = "Editar";
+
+              _this.$emit("agregar", res.data);
+
+              _this.toastr("Agregar Características Fisiológicas", "Características Fisiológicas agregada con exito!!", "success");
+            }
+          })["catch"](function (error) {
+            _this.bloquearBtn = false;
+
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
+          });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = {
+            imagen: ["Favor elija al menos 1 imagen."]
+          };
+          this.toastr("Error!!", "", "error");
+        }
+      } else {
+        axios.put("/cepas/bacteria/caract-fisio/".concat(this.info.id), this.parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          } else {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+          }
+        })["catch"](function (error) {
+          _this.bloquearBtn = false;
+
+          if (error.response.status === 422) {
+            _this.errors = [];
+            _this.errors = error.response.data.errors;
+          }
+
+          _this.toastr("Error!!", "", "error");
+        });
+      }
+    },
+    llenarInfo: function llenarInfo() {
+      this.imagenes = [];
+      this.parametros.acido_indolacetico = this.info.acido_indolacetico;
+      this.parametros.fosforo = this.info.fosforo;
+      this.parametros.sideroforos = this.info.sideroforos;
+      this.parametros.nitrogeno = this.info.nitrogeno;
+      this.parametros.otras_caract = this.info.otras_caract;
+      this.parametros.imagen1 = this.info.imagen1;
+      this.parametros.imagen2 = this.info.imagen2;
+      this.parametros.imagen3 = this.info.imagen3;
+      this.parametros.descripcion_imagenes = this.info.descripcion;
+      this.llenarArregloImagenes();
+    },
+    accionImagen: function accionImagen(data) {
+      this.$emit("editar", data);
+    }
+  },
+  computed: {
+    required: function required() {
+      if (this.tituloForm === "Agregar Característica") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    btnClase: function btnClase() {
+      if (this.tituloForm === "Agregar Característica") {
+        return "btn-success";
+      } else {
+        return "btn-warning";
+      }
+    }
+  },
+  mounted: function mounted() {
+    if (this.info) {
+      this.llenarInfo();
+      this.tituloForm = "Editar Característica";
+      this.nomBtn = "Editar";
+    } else {
+      this.tituloForm = "Agregar Característica";
+      this.nomBtn = "Agregar";
+    }
+
+    if (this.$route.params.cepaBacteriaId) {
+      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    } else {
+      this.parametros.cepaId = this.$route.params.cepaId;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue?vue&type=script&lang=js& ***!
@@ -11,6 +315,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _forms_caract_FormCaractFisioComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../forms-caract/FormCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -87,7 +392,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormCaractFisio: _forms_caract_FormCaractFisioComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   data: function data() {
     return {
       mostrarBtnAgregar: true,
@@ -114,22 +423,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios["delete"]("/cepas/bacteria/caract-fisio/".concat(this.getCaractFisio.id)).then(function (res) {
-        _this.mostrarBtnAgregar = true;
-        _this.mostrarForm = false;
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        } else {
+          _this.mostrarBtnAgregar = true;
+          _this.mostrarForm = false;
 
-        _this.$modal.hide("my_modal");
+          _this.$modal.hide("my_modal");
 
-        _this.accionEliminarCaract({
-          tipo: "fisio",
-          data: res.data
-        });
+          _this.accionEliminarCaract({
+            tipo: "fisio",
+            data: res.data
+          });
 
-        _this.toastr("Eliminar Característica", "Características Fisiológicass eliminadas con exito!!", "success");
-      })["catch"](function (error) {
-        if (error.response) {
-          _this.toastr("Error!!", "", "error"); // console.log(error.response.data);
-
+          _this.toastr("Eliminar Característica", "Características Fisiológicass eliminadas con exito!!", "success");
         }
+      })["catch"](function (error) {
+        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -170,6 +481,348 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661&":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mt-4 mr-4 ml-4" }, [
+    _c("div", { staticClass: "row justify-content-md-center" }, [
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c("div", { staticClass: "main-card mb-3 card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(_vm.tituloForm))
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.evento($event)
+                  }
+                }
+              },
+              [
+                _vm.errors != ""
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "alert alert-danger" },
+                        _vm._l(_vm.errors, function(item, index) {
+                          return _c("p", { key: index }, [
+                            _vm._v(_vm._s(item[0]))
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-group" }, [
+                  _c("label", { attrs: { for: "acido_indolacetico" } }, [
+                    _vm._v("Acido Indolacético")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.parametros.acido_indolacetico,
+                        expression: "parametros.acido_indolacetico"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "acido_indolacetico",
+                      id: "acido_indolacetico",
+                      placeholder: "...",
+                      type: "text",
+                      required: ""
+                    },
+                    domProps: { value: _vm.parametros.acido_indolacetico },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.parametros,
+                          "acido_indolacetico",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-group" }, [
+                  _c("label", { attrs: { for: "fosforo" } }, [
+                    _vm._v("Fósforo")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.parametros.fosforo,
+                        expression: "parametros.fosforo"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "fosforo",
+                      id: "fosforo",
+                      placeholder: "...",
+                      type: "text",
+                      required: ""
+                    },
+                    domProps: { value: _vm.parametros.fosforo },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.parametros, "fosforo", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-group" }, [
+                  _c("label", { attrs: { for: "sideroforos" } }, [
+                    _vm._v("Sideróforos")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.parametros.sideroforos,
+                        expression: "parametros.sideroforos"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "sideroforos",
+                      id: "sideroforos",
+                      placeholder: "...",
+                      type: "text",
+                      required: ""
+                    },
+                    domProps: { value: _vm.parametros.sideroforos },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.parametros,
+                          "sideroforos",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-group" }, [
+                  _c("label", { attrs: { for: "nitrogeno" } }, [
+                    _vm._v("Nitrógeno")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.parametros.nitrogeno,
+                        expression: "parametros.nitrogeno"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "nitrogeno",
+                      id: "nitrogeno",
+                      placeholder: "...",
+                      type: "text",
+                      required: ""
+                    },
+                    domProps: { value: _vm.parametros.nitrogeno },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.parametros,
+                          "nitrogeno",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm.required
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "imagen" } }, [
+                            _vm._v("Imágenes")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            ref: "inputImagen",
+                            staticClass: "form-control-file",
+                            attrs: {
+                              name: "imagen",
+                              id: "imagen",
+                              accept: "image/jpeg, image/png",
+                              type: "file",
+                              multiple: "",
+                              required: _vm.required
+                            },
+                            on: { change: _vm.obtenerImagenes }
+                          }),
+                          _vm._v(" "),
+                          _vm.erroresImagenes
+                            ? _c("span", { staticClass: "text-danger" }, [
+                                _vm._v(_vm._s(_vm.erroresImagenes))
+                              ])
+                            : _vm._e()
+                        ]
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "position-relative form-group" }, [
+                  _c("label", { attrs: { for: "otras_caract" } }, [
+                    _vm._v("Otras Características")
+                  ]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.parametros.otras_caract,
+                        expression: "parametros.otras_caract"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { name: "otras_caract", id: "otras_caract" },
+                    domProps: { value: _vm.parametros.otras_caract },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.parametros,
+                          "otras_caract",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "mb-2 mr-2 btn btn-block",
+                    class: _vm.btnClase,
+                    attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
+                  },
+                  [_vm._v(_vm._s(_vm.nomBtn))]
+                )
+              ],
+              2
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c("div", { staticClass: "main-card mb-3 card" }, [
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("h5", { staticClass: "card-title" }, [_vm._v("Imagenes")]),
+              _vm._v(" "),
+              _vm.required
+                ? [
+                    _vm.imagenesCroppie.length === _vm.cantImagenes &&
+                    _vm.$refs.inputImagen.value
+                      ? [
+                          _c("CroppieCepas", {
+                            attrs: {
+                              imagenes: _vm.imagenesCroppie,
+                              posicion: "vertical"
+                            },
+                            on: { cambiarValorImagen: _vm.cambiarValorImagen }
+                          })
+                        ]
+                      : [_vm._m(0)]
+                  ]
+                : [
+                    _c("Imagenes", {
+                      attrs: {
+                        parametros: _vm.parametros,
+                        tipoCepa: "bacteria/caract-fisio",
+                        imagenes: _vm.imagenes,
+                        cepa: _vm.info
+                      },
+                      on: { accionImagen: _vm.accionImagen }
+                    })
+                  ]
+            ],
+            2
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [_vm._v("SIN IMÁGENES")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -266,7 +919,7 @@ var render = function() {
             _vm._v(" "),
             _vm.mostrarForm
               ? [
-                  _c("form-carat-fisio-bacteria", {
+                  _c("FormCaractFisio", {
                     attrs: {
                       modificarInfo: _vm.modificarForm,
                       info: _vm.getCaractFisio
@@ -396,6 +1049,75 @@ var staticRenderFns = [
   }
 ]
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCaractFisioComponent.vue?vue&type=template&id=25545661& */ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661&");
+/* harmony import */ var _FormCaractFisioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCaractFisioComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormCaractFisioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractFisioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractFisioComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractFisioComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661& ***!
+  \**************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractFisioComponent.vue?vue&type=template&id=25545661& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormCaractFisioComponent.vue?vue&type=template&id=25545661&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractFisioComponent_vue_vue_type_template_id_25545661___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

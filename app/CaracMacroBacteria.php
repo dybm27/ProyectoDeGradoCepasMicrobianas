@@ -38,6 +38,10 @@ class CaracMacroBacteria extends Model
 
     public function detalleOptico()
     {
+<<<<<<< HEAD
         return $this->belongsTo(DetalleOpticoBacteria::class, 'detalleoptico_id');
+=======
+        return $this->belongsTo(DetalleOpticoBacteria::class,'detalleoptico_id');
+>>>>>>> 6747ab1... imprimir-vista-ver
     }
 }

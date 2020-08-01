@@ -12,7 +12,6 @@
     @include('imprimirVistaVer.header') 
 
     @include('imprimirVistaVer.footer') 
-
     <div class="contenido" style="font-size: 13px;">
         @yield('contenido-pdf')
     </div>

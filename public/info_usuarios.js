@@ -41,7 +41,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      variableAgregar: true
+      variableAgregar: true,
+      bloqueos: [],
+      misBloqueos: []
     };
   },
   methods: {
@@ -53,7 +55,21 @@ __webpack_require__.r(__webpack_exports__);
     },
     cancelar: function cancelar() {
       this.variableAgregar = true;
-      this.$router.go(-1);
+      var id = 0;
+
+      if (this.misBloqueos.length > 0) {
+        id = this.misBloqueos[0].id;
+      }
+
+      window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+        id: id
+      });
+      this.$events.fire("spliceMisBloqueosUsuario", {
+        id: id
+      });
+      this.$router.push({
+        name: "tabla-usuarios"
+      });
     },
     cambiarVariable: function cambiarVariable(tipo) {
       if (tipo === "agregar_editar") {
@@ -61,6 +77,73 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.variableAgregar = true;
       }
+    },
+    // Bloquear Btns
+    bloquearBtnsTabla: function bloquearBtnsTabla(e) {
+      this.bloqueos.push({
+        idUser: e.idUser,
+        id: e.id
+      });
+      this.crearEventoBtns(e.id);
+      this.$events.fire(e.id + "-bloquearBtnsUsuario");
+    },
+    desbloquearBtnsTabla: function desbloquearBtnsTabla(e) {
+      var data = this.bloqueos.find(function (data) {
+        return data.id === e.id;
+      });
+      this.eliminarEventoBtns(data.id);
+      this.bloqueos.splice(this.bloqueos.findIndex(function (data) {
+        return data.id === e.id;
+      }), 1);
+      this.$events.fire(data.id + "-desbloquearBtnsUsuario");
+    },
+    bloquearBtns: function bloquearBtns(id) {
+      this.$events.fire(id + "-bloquearBtnsUsuario");
+    },
+    crearEventoBtns: function crearEventoBtns(id) {
+      var _this = this;
+
+      this.$events.$on(id + "-verificarBloqueoBtnsUsuario", function (e) {
+        return _this.bloquearBtns(e.id);
+      });
+    },
+    eliminarEventoBtns: function eliminarEventoBtns(id) {
+      this.$events.off(id + "-verificarBloqueoBtnsUsuario");
+    },
+    // guardar mis bloqueos
+    pushMisBloqueos: function pushMisBloqueos(e) {
+      this.misBloqueos.push({
+        idUser: e.idUser,
+        id: e.id
+      });
+    },
+    spliceMisBloqueos: function spliceMisBloqueos(e) {
+      if (e.id != 0) {
+        this.misBloqueos.splice(this.misBloqueos.findIndex(function (data) {
+          return data.id === e.id;
+        }), 1);
+      }
+    },
+    //borrar bloqueos
+    borrarBloqueos: function borrarBloqueos(e) {
+      var data = this.bloqueos.find(function (data) {
+        return data.idUser === e.id;
+      });
+
+      if (data) {
+        this.desbloquearBtnsTabla(data);
+      }
+    },
+    // verificar bloqueos existentes
+    verificarBloqueos: function verificarBloqueos() {
+      for (var index = 0; index < this.bloqueos.length; index++) {
+        this.bloquearBtns(this.bloqueos[index].id);
+      }
+    },
+    enviarBloqueos: function enviarBloqueos() {
+      window.Echo["private"]("recibirBtnsUsuario").whisper("recibirBtnsUsuario", {
+        bloqueos: this.misBloqueos
+      });
     }
   },
   computed: {
@@ -69,7 +152,54 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
+    var _this2 = this;
+
+    console.log("info");
     this.$emit("rutaHijo", window.location.pathname);
+    window.Echo["private"]("recibirBtnsUsuario").listenForWhisper("recibirBtnsUsuario", function (e) {
+      if (e.bloqueos.length > 0) {
+        _this2.bloquearBtnsTabla(e.bloqueos[0]);
+      }
+    });
+    this.$events.$on("pushMisBloqueosUsuario", function (e) {
+      return _this2.pushMisBloqueos(e);
+    });
+    this.$events.$on("spliceMisBloqueosUsuario", function (e) {
+      return _this2.spliceMisBloqueos(e);
+    });
+    this.$events.$on("verificarBloqueos-usuarios", function (e) {
+      return _this2.verificarBloqueos();
+    });
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+
+    window.Echo.join("usuarios").joining(function (data) {
+      if (_this3.misBloqueos.length > 0) {
+        _this3.enviarBloqueos();
+      }
+    }).leaving(function (data) {
+      _this3.borrarBloqueos(data.user);
+    });
+    window.Echo["private"]("bloquearBtnsUsuario").listenForWhisper("bloquearBtnsUsuario", function (e) {
+      _this3.bloquearBtnsTabla(e);
+    });
+    window.Echo["private"]("desbloquearBtnsUsuario").listenForWhisper("desbloquearBtnsUsuario", function (e) {
+      if (e.id != 0) {
+        _this3.desbloquearBtnsTabla(e);
+      }
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off("pushMisBloqueosUsuario");
+    this.$events.$off("spliceMisBloqueosUsuario");
+    this.$events.$off("verificarBloqueos-usuarios");
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.Echo.leave("usuarios");
+    window.Echo.leave("recibirBtnsUsuario");
+    window.Echo.leave("desbloquearBtnsUsuario");
+    window.Echo.leave("bloquearBtnsUsuario");
   }
 });
 
@@ -130,7 +260,12 @@ var render = function() {
       _c(
         "div",
         { staticClass: "card-body" },
-        [_c("router-view", { on: { cambiarVariable: _vm.cambiarVariable } })],
+        [
+          _c("router-view", {
+            attrs: { bloqueos: _vm.bloqueos },
+            on: { cambiarVariable: _vm.cambiarVariable }
+          })
+        ],
         1
       )
     ])

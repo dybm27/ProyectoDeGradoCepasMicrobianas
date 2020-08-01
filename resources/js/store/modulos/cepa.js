@@ -4,9 +4,6 @@ export default {
         cepa: null
     },
     getters: {
-        getCepa(state) {
-            return state.cepa;
-        },
         getCaractMacro(state) {
             return state.cepa.caract_macroscopicas;
         },
@@ -149,13 +146,6 @@ export default {
         }
     },
     actions: {
-        obtenerCepa({ commit }, id) {
-            axios
-                .get(`/info-panel/cepa/agregar-editar-caract/${id}`)
-                .then(res => {
-                    commit("llenarCepa", res.data);
-                });
-        },
         accionAgregarCaract({ commit }, data) {
             commit("mutacionAgregarCaract", data);
         },
@@ -167,6 +157,9 @@ export default {
         },
         limpiarCepa({ commit }) {
             commit("mutacionLimpiarCepa");
+        },
+        llenarCepa({ commit }, data) {
+            commit("llenarCepa", data);
         }
     }
 };

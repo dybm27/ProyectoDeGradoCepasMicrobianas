@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-identi-molecu-bacteria
+          <FormIdentiMolecu
             :modificarInfo="modificarForm"
             :info="getIdentiMolecu"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-identi-molecu-bacteria>
+          ></FormIdentiMolecu>
         </template>
         <template v-else>
           <div class="text-center">
@@ -69,12 +69,14 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import FormIdentiMolecu from "../forms-caract/FormIdentiMolecuComponent.vue";
 export default {
+  components: { FormIdentiMolecu },
   data() {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
     };
   },
   mixins: [Toastr],
@@ -82,7 +84,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "identi", data: data });
@@ -95,22 +97,27 @@ export default {
     eliminar() {
       axios
         .delete(`/cepas/bacteria/identi-molecu/${this.getIdentiMolecu.id}`)
-        .then(res => {
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "identi", data: res.data });
-          this.toastr(
-            "Eliminar Identificación",
-            "Identificación Molecular eliminada con exito!!",
-            "success"
-          );
-        })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-            // console.log(error.response.data);
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.mostrarForm = false;
+            this.$modal.hide("my_modal");
+            this.accionEliminarCaract({ tipo: "identi", data: res.data });
+            this.toastr(
+              "Eliminar Identificación",
+              "Identificación Molecular eliminada con exito!!",
+              "success"
+            );
           }
+        })
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
     },
     cambiarVariable() {
@@ -123,7 +130,7 @@ export default {
     cancelar() {
       this.mostrarForm = false;
       this.mostrarBtnAgregar = true;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getIdentiMolecu"]),
@@ -143,13 +150,13 @@ export default {
     },
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
-    }
+    },
   },
   mounted() {
     if (this.getIdentiMolecu) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
-  }
+  },
 };
 </script>

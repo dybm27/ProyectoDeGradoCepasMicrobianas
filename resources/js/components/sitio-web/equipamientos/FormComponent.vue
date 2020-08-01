@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="nombre" class>Nombre</label>
                 <input
@@ -70,7 +75,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -82,7 +87,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -95,7 +100,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -128,7 +133,11 @@
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../CroppieComponent.vue";
 export default {
+  components: {
+    Croppie,
+  },
   props: ["idEquipamiento"],
   data() {
     return {
@@ -138,7 +147,7 @@ export default {
         funcion: "",
         caracteristicas: "",
         imagen: "",
-        publicar: false
+        publicar: false,
       },
       tituloForm: "",
       imagenMiniatura: "",
@@ -146,75 +155,80 @@ export default {
       errors: [],
       imagenError: "",
       mensajeNombre: "",
-      mensajeFuncion: ""
+      mensajeFuncion: "",
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Equipamiento") {
         axios
           .post("/equipamientos", this.parametros)
-          .then(res => {
-            this.toastr(
-              "Agregar Equipamiento",
-              "Equipamiento agregado con exito!!",
-              "success"
-            );
-            this.accionEquipamiento({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Equipamiento",
+                "Equipamiento agregado con exito!!",
+                "success"
+              );
+              this.accionEquipamiento({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            }
           })
-          .catch(error => {
-            if (error.response) {
-              if (error.response.data.errors.nombre) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.nombres[0],
-                  "error"
-                );
-              }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/equipamientos/${this.idEquipamiento}`, this.parametros)
-          .then(res => {
-            this.toastr(
-              "Editar Equipamiento",
-              "Equipamiento editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsEquipamiento").whisper(
-              "desbloquearBtnsEquipamiento",
-              {
-                id: res.data.id
-              }
-            );
-            window.Echo.private("desbloquearCheckEquipamiento").whisper(
-              "desbloquearCheckEquipamiento",
-              {
-                id: res.data.id
-              }
-            );
-            this.$events.fire("spliceMisBloqueosEquipamiento", {
-              id: res.data.id
-            });
-            this.accionEquipamiento({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Equipamiento",
+                "Equipamiento editado con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsEquipamiento").whisper(
+                "desbloquearBtnsEquipamiento",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoEquipamiento", {
+                id: res.data.id,
+              });
+              this.accionEquipamiento({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            }
           })
-          .catch(error => {
-            if (error.response) {
-              if (error.response.data.errors.nombre) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.nombres[0],
-                  "error"
-                );
-              }
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -227,12 +241,12 @@ export default {
       if (this.info.publicar == 1) {
         this.parametros.publicar = true;
       }
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("equipamientos", [
       "getEquipamientoById",
-      "getEquipamientoByNombre"
+      "getEquipamientoByNombre",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Equipamiento") {
@@ -299,7 +313,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idEquipamiento === 0) {
@@ -313,6 +327,6 @@ export default {
       this.tituloForm = "Editar Equipamiento";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

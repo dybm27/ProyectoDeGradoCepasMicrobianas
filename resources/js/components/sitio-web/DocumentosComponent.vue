@@ -33,7 +33,7 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></router-view>
+      <Nav @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></Nav>
     </template>
     <template v-else>
       <div class="container">
@@ -57,7 +57,9 @@
 <script>
 import vuex from "vuex";
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import Nav from "./documentos/NavComponent.vue";
 export default {
+  components: { Nav },
   data() {
     return { tipo: "", tipo2: "" };
   },
@@ -69,10 +71,10 @@ export default {
       "accionProyecto"
     ]),
     ruta(ruta) {
-      if (ruta.includes("proyecto")) {
-        this.tipo = "Tabla Proyectos";
-      } else {
+      if (ruta.includes("publicaciones")) {
         this.tipo = "Tabla Publicaciones";
+      } else {
+        this.tipo = "Tabla Proyectos";
       }
     },
     cambiarTipo(tipo) {
@@ -86,6 +88,7 @@ export default {
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerDocumentos();
     window.Echo.channel("publicacion").listen("PublicacionEvent", e => {
       this.accionPublicacion({ tipo: e.tipo, data: e.publicacion });

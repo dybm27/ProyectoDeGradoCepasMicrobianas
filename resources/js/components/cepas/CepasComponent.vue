@@ -7,7 +7,7 @@
             <i class="pe-7s-science icon-gradient bg-mean-fruit"></i>
           </div>
           <div>
-            Administrar Cepas Microbianas
+            Administrar Cepas Microbianas {{tituloCepa}}
             <div class="page-title-subheading opacity-10">
               <nav>
                 <ol class="breadcrumb">
@@ -19,9 +19,9 @@
                   <li class="breadcrumb-item">
                     <a>Cepas Microbianas</a>
                   </li>
-                  <template v-show="tipo">
+                  <template v-show="tipoAccion">
                     <li class="breadcrumb-item">
-                      <a>{{tipo}}</a>
+                      <a>{{tipoAccion}}</a>
                     </li>
                   </template>
                 </ol>
@@ -30,23 +30,25 @@
           </div>
         </div>
         <div class="page-title-actions">
-          <template v-if="numPestaña==1">
-            <router-link
-              v-if="ocultar"
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              to="/cepas/agregar"
-            >Agregar Nueva Cepa</router-link>
-            <router-link
-              v-else
-              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-success btn-lg"
-              to="/cepas/tabla"
-            >Volver</router-link>
+          <template v-if="numPestaña==1&&mostrarBtnVolver">
+            <button
+              class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
+              @click="volverTabla"
+            >Volver</button>
           </template>
         </div>
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view :tipoG="0" @rutaHijo="ocultarLink" />
+      <router-view
+        :tipoG="0"
+        :tipo="'cepa'"
+        :detailRowComponent="'my-detail-row-cepas'"
+        :titulo="'CEPAS'"
+        @cambiarTipo="cambiarTipo"
+        :tituloCepa="tituloCepa"
+        :FieldDefs="fields"
+      />
     </template>
     <template v-else>
       <div class="container">
@@ -69,56 +71,201 @@
 
 <script>
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import FieldDefs from "./columnas/columnas-cepas";
 import vuex from "vuex";
 export default {
   data() {
     return {
-      ruta: true,
-      tipo: "Tabla"
+      tituloCepa: "",
+      tipoAccion: "",
+      mostrarBtnVolver: false,
+      fields: FieldDefs,
     };
   },
-  mixins: [bloquearPestañasMixin("cepasTodas")],
+  mixins: [bloquearPestañasMixin("cepas")],
   methods: {
-    ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
+    ...vuex.mapActions("cepas", ["obtenerCepas", "accionCepas"]),
+    ...vuex.mapActions("info_cepas", [
+      "obtenerTiposCepas",
+      "accionAgregarTipoCepa",
+      "accionEditarTipoCepa",
+      "accionEliminarTipoCepa",
+    ]),
     ...vuex.mapActions("info_caract", [
       "obtenerInfoCaractHongos",
       "obtenerInfoCaractBacterias",
       "obtenerInfoCaractLevaduras",
-      "obtenerInfoCaractActinomicetos"
+      "obtenerInfoCaractActinomicetos",
+      "accionAgregarTipoCaractBacteria",
+      "accionEditarTipoCaractBacteria",
+      "accionEliminarTipoCaractBacteria",
+      "accionAgregarTipoCaractLevadura",
+      "accionEditarTipoCaractLevadura",
+      "accionEliminarTipoCaractLevadura",
+      "accionAgregarTipoCaractHongo",
+      "accionEditarTipoCaractHongo",
+      "accionEliminarTipoCaractHongo",
+      "accionAgregarTipoCaractActinomiceto",
+      "accionEditarTipoCaractActinomiceto",
+      "accionEliminarTipoCaractActinomiceto",
     ]),
-    ocultarLink(ruta) {
-      if (ruta != "/cepas/tabla") {
-        this.ruta = false;
-        if (
-          ruta.includes("caract") ||
-          ruta.includes("identi") ||
-          ruta.includes("metodo")
-        ) {
-          this.tipo = "Características";
-        } else if (ruta.includes("ver")) {
-          this.tipo = "Ver Información";
-        } else if (ruta.includes("agregar")) {
-          this.tipo = "Agregar";
-        } else {
-          this.tipo = "Editar";
-        }
+    cambiarTipo(tipo) {
+      if (tipo === "ver") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Ver información";
+      } else if (tipo === "caract") {
+        this.mostrarBtnVolver = true;
+        this.tipoAccion = "Modificar Características";
+      } else if (tipo === "agregar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Agregar";
+      } else if (tipo === "editar") {
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "Editar";
       } else {
-        this.ruta = true;
-        this.tipo = "Tabla";
+        this.mostrarBtnVolver = false;
+        this.tipoAccion = "tabla";
       }
-    }
-  },
-  computed: {
-    ocultar() {
-      return this.ruta;
-    }
+    },
+    volverTabla() {
+      window.Echo.private("desbloquearBtnsCepa").whisper(
+        "desbloquearBtnsCepa",
+        {
+          id: this.$route.params.cepaId,
+        }
+      );
+      this.$events.fire("eliminarMiBloqueoCepa", {
+        id: this.$route.params.cepaId,
+      });
+      this.$router.push({ name: "cepas" });
+    },
   },
   created() {
+    this.$emit("rutaSider", this.$route.path);
+    this.obtenerCepas();
+    this.obtenerTiposCepas();
     this.obtenerInfoCaractActinomicetos();
     this.obtenerInfoCaractHongos();
     this.obtenerInfoCaractBacterias();
     this.obtenerInfoCaractLevaduras();
-    this.obtenerTiposCepas();
-  }
+    window.Echo.channel("cepas").listen("CepasEvent", (e) => {
+      this.accionCepas({ tipo: e.tipoAccion, data: e.data });
+      this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
+      this.$events.fire("actualizartablaCepa");
+    });
+    window.Echo.channel("cepas-info").listen("CepasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCepa({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("bacterias-info").listen("BacteriasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractBacteria({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("hongos-info").listen("HongosInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractHongo({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("levaduras-info").listen("LevadurasInfoEvent", (e) => {
+      switch (e.tipoAccion) {
+        case "agregar":
+          this.accionAgregarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "editar":
+          this.accionEditarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+        case "eliminar":
+          this.accionEliminarTipoCaractLevadura({
+            info: e.data,
+            tipo: e.tipoCaract,
+          });
+          break;
+      }
+    });
+    window.Echo.channel("actinomicetos-info").listen(
+      "ActinomicetosInfoEvent",
+      (e) => {
+        switch (e.tipoAccion) {
+          case "agregar":
+            this.accionAgregarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+          case "editar":
+            this.accionEditarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+          case "eliminar":
+            this.accionEliminarTipoCaractActinomiceto({
+              info: e.data,
+              tipo: e.tipoCaract,
+            });
+            break;
+        }
+      }
+    );
+  },
 };
 </script>

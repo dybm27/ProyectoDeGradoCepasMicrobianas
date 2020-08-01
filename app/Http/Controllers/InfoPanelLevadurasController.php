@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class InfoPanelLevadurasController extends Controller
 {
-    public function levaduras(Request $request)
+    public function levadurasTabla(Request $request)
     {
         $cepas = DB::table('cepas')->join('levaduras', 'cepas.id', '=', 'levaduras.cepa_id')
             ->join('generos', 'cepas.genero_id', '=', 'generos.id')

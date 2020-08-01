@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -25,6 +30,7 @@
                   name="select"
                   id="conidioforo"
                   class="form-control"
+                  @change="cambiarDatos"
                   v-model="selectTipo"
                   :disabled="!required"
                 >
@@ -73,7 +79,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -105,7 +111,7 @@
           <div class="main-card mb-3 card">
             <div class="card-body">
               <h5 class="card-title">Elaborar Noticia</h5>
-              <editor-texto
+              <Editor
                 @contenido="aceptarContenido"
                 @modificar="modificarContenido"
                 :info="info"
@@ -122,7 +128,11 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: {
+    Editor,
+  },
   props: ["idNoticia"],
   data() {
     return {
@@ -135,7 +145,7 @@ export default {
         publicar: false,
         tipo: "noticia",
         imagenesEditor: [],
-        imagenesGuardadas: []
+        imagenesGuardadas: [],
       },
       selectTipo: "link",
       tituloForm: "",
@@ -143,15 +153,16 @@ export default {
       nomBtn: "",
       imagenError: "",
       mensajeTitulo: "",
-      mensajeLink: ""
+      mensajeLink: "",
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNoticia"]),
     evento() {
-      this.parametros.cuerpo =
-        this.parametros.cuerpo === null ? "" : this.parametros.cuerpo;
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Noticia") {
         let form = new FormData();
         form.append("titulo", this.parametros.titulo);
@@ -169,63 +180,71 @@ export default {
         axios
           .post("/publicidad", form, {
             headers: {
-              "content-type": "multipart/form-data"
-            }
+              "content-type": "multipart/form-data",
+            },
           })
-          .then(res => {
-            this.toastr(
-              "Agregar Noticia",
-              "Noticia agregada con exito!!",
-              "success"
-            );
-            this.accionNoticia({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.toastr(
-                "Error!!",
-                error.response.data.errors.titulo[0],
-                "error"
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Noticia",
+                "Noticia agregada con exito!!",
+                "success"
+              );
+              this.accionNoticia({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         if (this.parametros.imagen === this.info.imagen) {
           axios
             .put(`/publicidad/${this.idNoticia}`, this.parametros)
-            .then(res => {
-              this.toastr(
-                "Editar Noticia",
-                "Noticia editada con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsNoticia").whisper(
-                "desbloquearBtnsNoticia",
-                {
-                  id: res.data.id
-                }
-              );
-              window.Echo.private("desbloquearCheckNoticia").whisper(
-                "desbloquearCheckNoticia",
-                {
-                  id: res.data.id
-                }
-              );
-              this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id
-              });
-              this.accionNoticia({ tipo: "editar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
-            })
-            .catch(error => {
-              if (error.response) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Editar Noticia",
+                  "Noticia editada con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsNoticia").whisper(
+                  "desbloquearBtnsNoticia",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoNoticia", {
+                  id: res.data.id,
+                });
+                this.accionNoticia({ tipo: "editar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
               }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             });
         } else {
           let form = new FormData();
@@ -245,41 +264,42 @@ export default {
           axios
             .post(`/publicidad/${this.idNoticia}`, form, {
               headers: {
-                "content-type": "multipart/form-data"
-              }
+                "content-type": "multipart/form-data",
+              },
             })
-            .then(res => {
-              this.toastr(
-                "Editar Noticia",
-                "Noticia editada con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsNoticia").whisper(
-                "desbloquearBtnsNoticia",
-                {
-                  id: res.data.id
-                }
-              );
-              window.Echo.private("desbloquearCheckNoticia").whisper(
-                "desbloquearCheckNoticia",
-                {
-                  id: res.data.id
-                }
-              );
-              this.$events.fire("spliceMisBloqueosNoticia", {
-                id: res.data.id
-              });
-              this.accionNoticia({ tipo: "editar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
-            })
-            .catch(error => {
-              if (error.response) {
-                this.toastr(
-                  "Error!!",
-                  error.response.data.errors.titulo[0],
-                  "error"
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Editar Noticia",
+                  "Noticia editada con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsNoticia").whisper(
+                  "desbloquearBtnsNoticia",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoNoticia", {
+                  id: res.data.id,
+                });
+                this.accionNoticia({ tipo: "editar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
               }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             });
         }
       }
@@ -320,7 +340,7 @@ export default {
     },
     cargarImagen(file) {
       let reader = new Image();
-      reader.onload = e => {
+      reader.onload = (e) => {
         if (e.path[0].height < e.path[0].width) {
           this.imagenMiniatura = reader.src;
         } else {
@@ -340,7 +360,14 @@ export default {
     modificarContenido() {
       this.parametros.cuerpo = "";
       this.parametros.imagenesEditor = "";
-    }
+    },
+    cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo"]),
@@ -409,7 +436,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idNoticia === 0) {
@@ -423,6 +450,6 @@ export default {
       this.tituloForm = "Editar Noticia";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

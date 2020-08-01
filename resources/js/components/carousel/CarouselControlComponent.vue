@@ -43,6 +43,6 @@ export default {
 
 <style scoped>
 .color {
-  background-color: #3f6ad8;
+  background-color: #3ac47d;
 }
 </style>

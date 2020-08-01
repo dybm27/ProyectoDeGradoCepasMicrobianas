@@ -6,6 +6,11 @@
           <div class="card-body">
             <h5 class="card-title">{{tituloForm}}</h5>
             <form @submit.prevent="evento">
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="position-relative form-group">
@@ -356,7 +361,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable"
+                :disabled="btnDisable||bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -368,7 +373,7 @@
             <h5 class="card-title">Imagenes</h5>
             <template v-if="required">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
-                <croppie-cepas
+                <CroppieCepas
                   :imagenes="imagenesCroppie"
                   @cambiarValorImagen="cambiarValorImagen"
                   :posicion="'vertical'"
@@ -385,13 +390,13 @@
               </template>
             </template>
             <template v-else>
-              <imagenes
+              <Imagenes
                 :parametros="parametros"
                 :tipoCepa="'levadura/caract-micro'"
                 :imagenes="imagenes"
                 :cepa="info"
                 @accionImagen="accionImagen"
-              ></imagenes>
+              ></Imagenes>
             </template>
           </div>
         </div>
@@ -403,7 +408,10 @@
 <script>
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
+import CroppieCepas from "../../CroppieCepasComponent.vue";
+import Imagenes from "../../ImagenesComponent.vue";
 export default {
+  components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
   watch: {
     modificarInfo() {
@@ -411,7 +419,7 @@ export default {
         this.llenarInfo();
         this.$emit("cambiarVariable");
       }
-    }
+    },
   },
   data() {
     return {
@@ -430,57 +438,84 @@ export default {
         otras_caract: "",
         imagen1: "",
         imagen2: "",
-        imagen3: ""
+        imagen3: "",
       },
       tituloForm: "",
       nomBtn: "",
-      errors: []
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [obtenerImagenCroopie3ImagenesMixin, Toastr],
   methods: {
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Característica") {
-        axios
-          .post("/cepas/levadura/caract-micro", this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.tituloForm = "Editar Característica";
-            this.nomBtn = "Editar";
-            this.$emit("agregar", res.data);
-            this.toastr(
-              "Agregar Característica Microscópica",
-              "Característica Microscópica agregada con exito!!",
-              "success"
-            );
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen1) {
+          axios
+            .post("/cepas/levadura/caract-micro", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Característica Microscópica",
+                  "Característica Microscópica agregada con exito!!",
+                  "success"
+                );
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija al menos una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/levadura/caract-micro/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -504,7 +539,7 @@ export default {
     },
     accionImagen(data) {
       this.$emit("editar", data);
-    }
+    },
   },
   computed: {
     required() {
@@ -520,7 +555,7 @@ export default {
       } else {
         return "btn-warning";
       }
-    }
+    },
   },
   mounted() {
     if (this.info) {
@@ -536,6 +571,6 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
 };
 </script>

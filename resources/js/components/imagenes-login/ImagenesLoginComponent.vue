@@ -46,10 +46,10 @@
     <div class="tabs-animation">
       <template v-if="numPestaña==1">
         <template v-if="!from">
-          <ver-imagenes @editarImagen="editarImagen" />
+          <VerImagenes @editarImagen="editarImagen" :bloqueos="bloqueos" />
         </template>
         <template v-else>
-          <from-imagen :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+          <Form :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
         </template>
       </template>
       <template v-else>
@@ -75,32 +75,152 @@
 <script>
 import vuex from "vuex";
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
+import VerImagenes from "./VerImagenesComponent.vue";
+import Form from "./FromImagenComponent.vue";
 export default {
+  components: { Form, VerImagenes },
   data() {
     return {
-      idImagen: "",
-      from: false
+      idImagen: 0,
+      from: false,
+      bloqueos: [],
+      miBloqueo: null,
     };
   },
   mixins: [bloquearPestañasMixin("imagenesLogin")],
+  computed: { ...vuex.mapState(["auth"]) },
   methods: {
     ...vuex.mapActions("imagenes_login", [
       "obtenerImagenesLogin",
-      "accionImagenLogin"
+      "accionImagenLogin",
     ]),
     editarImagen(id) {
+      window.Echo.private("bloquearBtnImgLogin").whisper(
+        "bloquearBtnImgLogin",
+        {
+          id: id,
+          idUser: this.auth.id,
+        }
+      );
+      this.$events.fire("agregarMiBloqueoImgLogin", {
+        id: id,
+        idUser: this.auth.id,
+      });
       this.idImagen = id;
       this.from = !this.from;
     },
     mostrarFrom() {
+      window.Echo.private("desbloquearBtnImgLogin").whisper(
+        "desbloquearBtnImgLogin",
+        {
+          id: this.idImagen,
+        }
+      );
+      this.$events.fire("eliminarMiBloqueoImgLogin", {
+        id: this.idImagen,
+      });
+      this.idImagen = 0;
       this.from = !this.from;
-    }
+    },
+    // Bloquear Btns
+    bloquearBtn(e) {
+      this.bloqueos.push({ idUser: e.idUser, id: e.id });
+      this.$events.fire(e.id + "-bloquearBtnImgLogin");
+    },
+    desbloquearBtn(e) {
+      this.bloqueos.splice(
+        this.bloqueos.findIndex((data) => data.id === e.id),
+        1
+      );
+      this.$events.fire(e.id + "-desbloquearBtnImgLogin");
+    },
+    // guardar mis bloqueos
+    agregarMiBloqueo(e) {
+      this.miBloqueo = {
+        idUser: e.idUser,
+        id: e.id,
+      };
+    },
+    eliminarMiBloqueo(e) {
+      if (e.id != 0) {
+        this.miBloqueo = null;
+      }
+    },
+    //borrar bloqueos
+    borrarBloqueo(e) {
+      let data = this.bloqueos.find((data) => data.idUser === e.id);
+      if (data) {
+        this.desbloquearBtn(data);
+      }
+    },
+    // verificar bloqueos existentes
+    verificarBloqueos(tipo) {
+      for (let index = 0; index < this.bloqueos.length; index++) {
+        this.$events.fire(this.bloqueos[index].id + "-bloquearBtnImgLogin");
+      }
+    },
+    enviarBloqueo() {
+      window.Echo.private("recibirBtnImgLogin").whisper("recibirBtnImgLogin", {
+        miBloqueo: this.miBloqueo,
+      });
+    },
+  },
+  mounted() {
+    window.Echo.join("ImgLogin")
+      .joining((data) => {
+        if (this.miBloqueo) {
+          this.enviarBloqueo();
+        }
+      })
+      .leaving((data) => {
+        this.borrarBloqueo(data.user);
+      });
+
+    window.Echo.private("bloquearBtnImgLogin").listenForWhisper(
+      "bloquearBtnImgLogin",
+      (e) => {
+        this.bloquearBtn(e);
+      }
+    );
+    window.Echo.private("desbloquearBtnImgLogin").listenForWhisper(
+      "desbloquearBtnImgLogin",
+      (e) => {
+        if (e.id != 0) {
+          this.desbloquearBtn(e);
+        }
+      }
+    );
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerImagenesLogin();
-    window.Echo.channel("imagenesLogin").listen("ImagenesLoginEvent", e => {
+    window.Echo.channel("imagenesLogin").listen("ImagenesLoginEvent", (e) => {
       this.accionImagenLogin({ tipo: "editar", data: e.imagen });
     });
-  }
+    window.Echo.private("recibirBtnImgLogin").listenForWhisper(
+      "recibirBtnImgLogin",
+      (e) => {
+        if (e.miBloqueo) {
+          this.bloquearBtn(e.miBloqueo);
+        }
+      }
+    );
+    this.$events.$on("agregarMiBloqueoImgLogin", (e) => {
+      this.agregarMiBloqueo(e);
+    });
+    this.$events.$on("eliminarMiBloqueoImgLogin", (e) => {
+      this.eliminarMiBloqueo(e);
+    });
+  },
+  destroyed() {
+    this.$events.$off("agregarMiBloqueoImgLogin");
+    this.$events.$off("eliminarMiBloqueoImgLogin");
+  },
+  beforeDestroy() {
+    window.Echo.leave("ImgLogin");
+    window.Echo.leave("recibirBtnImgLogin");
+    window.Echo.leave("desbloquearBtnImgLogin");
+    window.Echo.leave("bloquearBtnImgLogin");
+  },
 };
 </script>

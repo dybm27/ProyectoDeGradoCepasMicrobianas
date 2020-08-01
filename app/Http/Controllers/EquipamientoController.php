@@ -10,13 +10,16 @@ use Illuminate\Support\Facades\Storage;
 
 class EquipamientoController extends Controller
 {
-    public function index()
-    {
-        return view('sitio-web.equipamientos');
-    }
-
     public function store(Request $request)
     {
+        $rules = [
+            'nombre' => 'required|unique:equipamientos,nombre',
+            'caracteristicas' => 'required', 'funcion' => 'required',
+        ];
+        $messages = [
+            'nombre.unique' => 'Ya se encuentra registrado un equipo con ese nombre.'
+        ];
+        $this->validate($request, $rules, $messages);
         $imagen = $this->agregarImagen($request->imagen);
 
         $equipo = new Equipamiento();
@@ -34,6 +37,14 @@ class EquipamientoController extends Controller
     public function update(Request $request, $id)
     {
         $equipo = Equipamiento::find($id);
+        $rules = [
+            'nombre' => 'required|unique:equipamientos,nombre,' . $equipo->id,
+            'caracteristicas' => 'required', 'funcion' => 'required',
+        ];
+        $messages = [
+            'nombre.unique' => 'Ya se encuentra registrado un equipo con ese nombre.'
+        ];
+        $this->validate($request, $rules, $messages);
 
         if ($request->imagen != $equipo->imagen) {
             Storage::delete($equipo->imagen);

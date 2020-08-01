@@ -8,6 +8,6 @@ class ElevacionBacteria extends Model
 {
     public function caractMacros()
     {
-        return $this->hasMany(CaracMacroBacteria::class);
+        return $this->hasMany(CaracMacroBacteria::class, 'elevacion_id');
     }
 }

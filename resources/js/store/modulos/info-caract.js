@@ -927,6 +927,13 @@ export default {
     actions: {
         obtenerInfoCaractBacterias({ commit }) {
             axios.get("/info-panel/info-caract-bacterias").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarInfoCaractBacterias", res.data);
             });
         },
@@ -941,6 +948,13 @@ export default {
         },
         obtenerInfoCaractLevaduras({ commit }) {
             axios.get("/info-panel/info-caract-levaduras").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarInfoCaractLevaduras", res.data);
             });
         },
@@ -955,6 +969,13 @@ export default {
         },
         obtenerInfoCaractHongos({ commit }) {
             axios.get("/info-panel/info-caract-hongos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarInfoCaractHongos", res.data);
             });
         },
@@ -969,6 +990,13 @@ export default {
         },
         obtenerInfoCaractActinomicetos({ commit }) {
             axios.get("/info-panel/info-caract-actinomicetos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
                 commit("llenarInfoCaractActinomicetos", res.data);
             });
         },

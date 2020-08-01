@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="titulo" class>Título</label>
                 <input
@@ -25,6 +30,7 @@
                   name="select"
                   id="conidioforo"
                   class="form-control"
+                  @change="cambiarDatos"
                   v-model="selectTipo"
                   :disabled="!required"
                 >
@@ -73,7 +79,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -85,7 +91,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -98,7 +104,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -130,7 +136,7 @@
           <div class="main-card mb-3 card">
             <div class="card-body">
               <h5 class="card-title">Elaborar Novedad</h5>
-              <editor-texto
+              <Editor
                 @contenido="aceptarContenido"
                 @modificar="modificarContenido"
                 :info="info"
@@ -148,7 +154,13 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
+import Editor from "../../../editor-texto/EditorTextoComponent.vue";
 export default {
+  components: {
+    Croppie,
+    Editor,
+  },
   props: ["idNovedad"],
   data() {
     return {
@@ -161,7 +173,7 @@ export default {
         publicar: false,
         tipo: "novedad",
         imagenesEditor: [],
-        imagenesGuardadas: []
+        imagenesGuardadas: [],
       },
       selectTipo: "link",
       tituloForm: "",
@@ -169,69 +181,86 @@ export default {
       nomBtn: "",
       imagenError: "",
       mensajeTitulo: "",
-      mensajeLink: ""
+      mensajeLink: "",
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNovedad"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Novedad") {
         axios
           .post("/publicidad", this.parametros)
-          .then(res => {
-            this.toastr(
-              "Agregar Novedad",
-              "Novedad agregada con exito!!",
-              "success"
-            );
-            this.accionNovedad({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.toastr(
-                "Error!!",
-                error.response.data.errors.titulo[0],
-                "error"
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Novedad",
+                "Novedad agregada con exito!!",
+                "success"
+              );
+              this.accionNovedad({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/publicidad/${this.idNovedad}`, this.parametros)
-          .then(res => {
-            this.toastr(
-              "Editar Novedad",
-              "Novedad editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsNovedad").whisper(
-              "desbloquearBtnsNovedad",
-              {
-                id: res.data.id
-              }
-            );
-            window.Echo.private("desbloquearCheckNovedad").whisper(
-              "desbloquearCheckNovedad",
-              {
-                id: res.data.id
-              }
-            );
-            this.$events.fire("spliceMisBloqueosNovedad", {
-              id: res.data.id
-            });
-            this.accionNovedad({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.toastr(
-                "Error!!",
-                error.response.data.errors.titulo[0],
-                "error"
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
               );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Novedad",
+                "Novedad editada con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsNovedad").whisper(
+                "desbloquearBtnsNovedad",
+                {
+                  id: res.data.id,
+                }
+              );
+              window.Echo.private("desbloquearCheckNovedad").whisper(
+                "desbloquearCheckNovedad",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoNovedad", {
+                id: res.data.id,
+              });
+              this.accionNovedad({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -255,7 +284,14 @@ export default {
     },
     modificarContenido() {
       this.parametros.cuerpo = "";
-    }
+    },
+    cambiarDatos() {
+      if (this.selectTipo === "texto") {
+        this.parametros.link = "";
+      } else {
+        this.parametros.cuerpo = "";
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("publicidad", ["getNovedadById", "getNovedadByTitulo"]),
@@ -321,7 +357,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idNovedad === 0) {
@@ -335,6 +371,6 @@ export default {
       this.tituloForm = "Editar Novedad";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

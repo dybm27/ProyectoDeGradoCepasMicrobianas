@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\RefrescarCalendarioEvent;
 use App\HongoFilamentoso;
 use App\MetodoConserHongo;
 use App\Seguimiento;
@@ -14,24 +15,7 @@ class MetodoConserHongoController extends Controller
 {
     public function store(Request $request)
     {
-        if (is_null($request->numero_pases)) {
-            $rules = [
-                'fecha' => 'required',
-                'numero_replicas' => 'bail|numeric|min:1|max:999999999'
-            ];
-        } else {
-            $rules = [
-                'fecha' => 'required',
-                'numero_pases' => 'bail|numeric|min:1|max:999999999'
-            ];
-        }
-
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!',
-            'numero_pases.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
+        $this->validarCampos($request);
 
         $hongo_filamentoso = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
 
@@ -55,6 +39,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
             . $hongo_filamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 
@@ -65,24 +50,7 @@ class MetodoConserHongoController extends Controller
 
     public function update(Request $request, $id)
     {
-        if (is_null($request->numero_pases)) {
-            $rules = [
-                'fecha' => 'required',
-                'numero_replicas' => 'bail|numeric|min:1|max:999999999'
-            ];
-        } else {
-            $rules = [
-                'fecha' => 'required',
-                'numero_pases' => 'bail|numeric|min:1|max:999999999'
-            ];
-        }
-
-        $messages = [
-            'fecha.required' => 'Favor agregar la FECHA.',
-            'numero_replicas.numeric' => 'Solo puede contener NUMEROS!!',
-            'numero_pases.numeric' => 'Solo puede contener NUMEROS!!'
-        ];
-        $this->validate($request, $rules, $messages);
+        $this->validarCampos($request);
 
         $MetodoConserHongo = MetodoConserHongo::find($id);
 
@@ -111,6 +79,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
             . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 
@@ -124,6 +93,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
             . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 
@@ -146,5 +116,21 @@ class MetodoConserHongoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = ['fecha' => 'required', 'tipo_metodo' => 'required'];
+        if ($request->tipo_metodo == 2 || $request->tipo_metodo == 3) {
+            $rules += ['medio_cultivo' => 'required'];
+        } else {
+            $rules += ['recuento_microgota' => 'required'];
+        }
+        if ($request->tipo_metodo != 3) {
+            $rules += ['numero_replicas' => 'bail|numeric|min:1|max:999999999'];
+        } else {
+            $rules  += ['numero_pases' => 'bail|numeric|min:1|max:999999999'];
+        }
+        $this->validate($request, $rules);
     }
 }

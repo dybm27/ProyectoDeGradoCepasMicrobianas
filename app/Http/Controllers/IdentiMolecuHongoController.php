@@ -13,6 +13,7 @@ class IdentiMolecuHongoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $hongo = HongoFilamentoso::where('cepa_id', $request->cepaId)->first();
         // img pcr
         $imagen_pcr = $this->guardarImagen($request->imagen1, $hongo->id, 'pcr');
@@ -52,6 +53,7 @@ class IdentiMolecuHongoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $IdentiMolecuHongo = IdentiMolecuHongo::find($id);
 
         if ($request->imagen1 != $IdentiMolecuHongo->imagen_pcr) {
@@ -119,5 +121,17 @@ class IdentiMolecuHongoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'nombre_forward' => 'required', 'producto_forward' => 'required',
+            'nombre_reversed' => 'required', 'producto_reversed' => 'required',
+            'secuencia_forward' => 'required', 'condiciones_pcr' => 'required',
+            'secuencia_reversed' => 'required', 'blast' => 'required',
+            'analisis_filogenetico' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

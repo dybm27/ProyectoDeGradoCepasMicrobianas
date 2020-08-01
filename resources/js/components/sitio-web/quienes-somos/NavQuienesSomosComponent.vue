@@ -2,7 +2,7 @@
   <div>
     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
       <li class="nav-item">
-        <router-link :to="{name:'mision'}" class="nav-link" active-class="active">
+        <router-link :to="{name:'mision'}" class="nav-link" active-class="active" exact>
           <span>Misión</span>
         </router-link>
       </li>

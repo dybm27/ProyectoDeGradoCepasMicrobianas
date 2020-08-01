@@ -6,6 +6,11 @@
           <form @submit.prevent="evento">
             <div class="card-body">
               <h5 class="card-title">{{titulo}}</h5>
+              <template v-if="errors!=''">
+                <div class="alert alert-danger">
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                </div>
+              </template>
               <div class="position-relative form-group">
                 <label for="nombre_documento" class>Nombre Publicación</label>
                 <input
@@ -89,7 +94,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn"
+                :disabled="validarBtn||bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -101,7 +106,7 @@
             <h5 class="card-title">Imagen</h5>
             <template v-if="mostraImagen">
               <template v-if="mostraImagen===info.imagenPublica">
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -114,7 +119,7 @@
                 />
               </template>
               <template v-else>
-                <croppie
+                <Croppie
                   :id="'croppie'"
                   :imagen="mostraImagen"
                   @cambiarValorImagen="cambiarValorImagen"
@@ -147,7 +152,11 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
+import Croppie from "../../../CroppieComponent.vue";
 export default {
+  components: {
+    Croppie,
+  },
   props: ["idPublicacion"],
   data() {
     return {
@@ -159,23 +168,25 @@ export default {
         descripcion: "",
         imagen: "",
         publicar: false,
-        tipo: "publicacion"
+        tipo: "publicacion",
       },
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
-      errors: [],
       imagenError: "",
       archivoError: "",
       mensajeNombrePublicacion: "",
       mensajeNombreAutor: "",
-      traerValorImg: false
+      traerValorImg: false,
+      errors: [],
+      bloquearBtn: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
     evento() {
+      this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Publicacion") {
         let form = new FormData();
         form.append("nombre_documento", this.parametros.nombre_documento);
@@ -192,81 +203,72 @@ export default {
         axios
           .post("/documentos", form, {
             headers: {
-              "content-type": "multipart/form-data"
+              "content-type": "multipart/form-data",
+            },
+          })
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Agregar Publicacion",
+                "Publicacion agregada con exito!!",
+                "success"
+              );
+              this.accionPublicacion({ tipo: "agregar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
           })
-          .then(res => {
-            this.toastr(
-              "Agregar Publicacion",
-              "Publicacion agregada con exito!!",
-              "success"
-            );
-            this.accionPublicacion({ tipo: "agregar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
             }
+            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/documentos/${this.idPublicacion}`, this.parametros)
-          .then(res => {
-            this.toastr(
-              "Editar Publicacion",
-              "Publicacion editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsPublicacion").whisper(
-              "desbloquearBtnsPublicacion",
-              {
-                id: res.data.id
-              }
-            );
-            window.Echo.private("desbloquearCheckPublicacion").whisper(
-              "desbloquearCheckPublicacion",
-              {
-                id: res.data.id
-              }
-            );
-            this.$events.fire("spliceMisBloqueosPublicacion", {
-              id: res.data.id
-            });
-            this.accionPublicacion({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Publicacion",
+                "Publicacion editada con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsPublicacion").whisper(
+                "desbloquearBtnsPublicacion",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoPublicacion", {
+                id: res.data.id,
+              });
+              this.accionPublicacion({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
             }
+          })
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!", "", "error");
           });
       }
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
     },
     llenarInfo() {
       this.parametros.nombre_documento = this.info.nombre_documento;
@@ -295,12 +297,12 @@ export default {
         this.parametros.archivo = "";
         this.$refs.inputArchivo.value = "";
       }
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("documentos", [
       "getPublicacionById",
-      "getPublicacionByNombre"
+      "getPublicacionByNombre",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Publicacion") {
@@ -367,7 +369,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
   created() {
     if (this.idPublicacion === 0) {
@@ -381,6 +383,6 @@ export default {
       this.tituloForm = "Editar Publicacion";
       this.nomBtn = "Editar";
     }
-  }
+  },
 };
 </script>

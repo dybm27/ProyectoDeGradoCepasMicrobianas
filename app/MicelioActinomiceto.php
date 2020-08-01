@@ -8,6 +8,6 @@ class MicelioActinomiceto extends Model
 {
     public function caractMicros()
     {
-        return $this->hasMany(CaracMacroActinomiceto::class);
+        return $this->hasMany(CaracMicroActinomiceto::class, 'micelio_id');
     }
 }

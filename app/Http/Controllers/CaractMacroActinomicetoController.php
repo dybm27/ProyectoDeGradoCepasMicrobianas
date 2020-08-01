@@ -13,6 +13,7 @@ class CaractMacroActinomicetoController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validarCampos($request);
         $actinomiceto = Actinomiceto::where('cepa_id', $request->cepaId)->first();
 
         $imagen = $this->guardarImagen($request->imagen, $actinomiceto->id);
@@ -45,6 +46,7 @@ class CaractMacroActinomicetoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validarCampos($request);
         $caractMacroActinomiceto = CaracMacroActinomiceto::find($id);
 
         if ($request->imagen != $caractMacroActinomiceto->imagen) {
@@ -107,5 +109,16 @@ class CaractMacroActinomicetoController extends Controller
         $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function validarCampos($request)
+    {
+        $rules = [
+            'medio' => 'required', 'forma' => 'required',
+            'textura' => 'required', 'borde' => 'required',
+            'pigmento' => 'required', 'secrecion_geosminas' => 'required',
+            'superficie' => 'required', 'color' => 'required'
+        ];
+        $this->validate($request, $rules);
     }
 }

@@ -1,13 +1,13 @@
 <template>
   <div>
     <template v-if="mostrarTabla">
-      <my-vuetable
+      <MyVuetable
         ref="tabla"
         api-url="/info-panel/proyectos-tabla"
         :fields="fields"
         :sort-order="sortOrder"
         :nameGet="'proyectos'"
-      ></my-vuetable>
+      ></MyVuetable>
     </template>
     <template v-else>
       <div class="text-center">
@@ -42,7 +42,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_proyecto')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarProyecto">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarProyecto"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -54,28 +59,33 @@ import FieldDefs from "./columnas";
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import websocketsTabla from "../../../../mixins/websocketsTabla";
+import MyVuetable from "../../../vuetable/MyVuetableComponent.vue";
 export default {
+  components: {
+    MyVuetable,
+  },
   data() {
     return {
       fields: FieldDefs,
       sortOrder: [
         {
           field: "nombre_documento",
-          direction: "asc"
-        }
+          direction: "asc",
+        },
       ],
-      id: ""
+      id: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, websocketsTabla("Proyecto")],
   computed: {
     ...vuex.mapGetters("documentos", ["getProyectos"]),
     mostrarTabla() {
-      if (this.getProyectos != "") {
+      if (this.getProyectos != "" && this.getProyectos != null) {
         return true;
       }
       return false;
-    }
+    },
   },
   methods: {
     ...vuex.mapActions("documentos", ["accionProyecto"]),
@@ -83,27 +93,38 @@ export default {
       this.id = data.params.id;
     },
     eliminarProyecto() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/documentos/${this.id}`, {
-          data: { tipo: "proyecto" }
+          data: { tipo: "proyecto" },
         })
-        .then(res => {
-          this.$modal.hide("modal_eliminar_proyecto");
-          this.toastr(
-            "Eliminar Proyecto",
-            "Proyecto eliminado con exito!!",
-            "success"
-          );
-          this.accionProyecto({ tipo: "eliminar", data: res.data });
-          this.actualizarTabla();
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.$modal.hide("modal_eliminar_proyecto");
+            this.toastr(
+              "Eliminar Proyecto",
+              "Proyecto eliminado con exito!!",
+              "success"
+            );
+            this.accionProyecto({ tipo: "eliminar", data: res.data });
+            this.actualizarTabla();
+          }
         })
-        .catch(error => {
+        .catch((error) => {
+          this.bloquearBtnModal = false;
           this.toastr("Error!!!!", "", "error");
         });
-    }
+    },
   },
   created() {
     this.$emit("cambiarTipo", "tabla");
-  }
+  },
 };
 </script>

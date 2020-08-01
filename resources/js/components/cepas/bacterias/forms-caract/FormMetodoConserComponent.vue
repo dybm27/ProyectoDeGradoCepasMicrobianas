@@ -7,6 +7,11 @@
             <form @submit.prevent="evento">
               <div class="card-body">
                 <h5 class="card-title">{{titulo}}</h5>
+                <template v-if="errors!=''">
+                  <div class="alert alert-danger">
+                    <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  </div>
+                </template>
                 <template v-if="getInfoMetodoConserBacterias">
                   <label for="forma" class>Método de Conservación</label>
                   <div class="input-group mb-3">
@@ -17,7 +22,7 @@
                       v-model.number="parametros.tipo_metodo"
                     >
                       <option
-                        v-for="(m,index) in getInfoMetodoConserBacterias.tipo_metodo"
+                        v-for="(m,index) in obtenerMetodos"
                         :key="index"
                         :value="m.id"
                       >{{m.nombre}}</option>
@@ -42,14 +47,14 @@
                       v-model.number="parametros.tipo_agar"
                     >
                       <option
-                        v-for="(f,index) in getInfoMetodoConserBacterias.tipo_agar"
+                        v-for="(f,index) in obtenerAgars"
                         :key="index"
                         :value="f.id"
                       >{{f.nombre}}</option>
                     </select>
                     <div class="input-group-append">
                       <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-info"
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('tipo_agar')"
                       >
                         <i class="fas fa-plus"></i>
@@ -71,7 +76,6 @@
                           value-type="format"
                           placeholder="..."
                         ></date-picker>
-                        <span v-if="errors.fecha" class="text-danger">{{errors.fecha[0]}}</span>
                       </div>
                     </div>
                   </div>
@@ -87,10 +91,6 @@
                         v-model.number="parametros.numero_replicas"
                         required
                       />
-                      <span
-                        v-if="errors.numero_replicas"
-                        class="text-danger"
-                      >{{errors.numero_replicas[0]}}</span>
                     </div>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn"
+                  :disabled="validarBtn||bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </div>
             </form>
@@ -135,7 +135,7 @@
               <h5 class="card-title">Imagen</h5>
               <template v-if="mostraImagen">
                 <template v-if="validarCroppie">
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -148,7 +148,7 @@
                   />
                 </template>
                 <template v-else>
-                  <croppie
+                  <Croppie
                     :id="'croppie'"
                     :imagen="mostraImagen"
                     @cambiarValorImagen="cambiarValorImagen"
@@ -205,7 +205,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('agregar-caract-info')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="agregarInfo">Agregar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="agregarInfo"
+          >Agregar</button>
         </div>
       </div>
     </modal>
@@ -219,33 +224,36 @@ import Lang from "vue2-datepicker/locale/es";
 
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
+import Croppie from "../../../CroppieComponent";
 export default {
   props: ["idMetodo"],
-  components: { DatePicker },
+  components: { DatePicker, Croppie },
   data() {
     return {
       lang: Lang,
       info: "",
       parametros: {
         cepaId: "",
-        tipo_metodo: 1,
-        tipo_agar: 2,
+        tipo_metodo: null,
+        tipo_agar: null,
         fecha: "",
         numero_replicas: "",
         recuento_microgota: "",
-        imagen: ""
+        imagen: "",
       },
       modal: {
         titulo: "",
         input: "",
         tipo: "",
-        errors: []
+        errors: [],
       },
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
       errors: [],
-      imagenError: ""
+      imagenError: "",
+      bloquearBtn: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr, obtenerImagenCroopieCepasMixin],
@@ -253,54 +261,82 @@ export default {
     ...vuex.mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"]),
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
+      this.bloquearBtn = true;
       this.parametros.tipo_agar =
         this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
       this.parametros.fecha =
         this.parametros.fecha === null ? "" : this.parametros.fecha;
       if (this.tituloForm === "Agregar Método") {
-        axios
-          .post("/cepas/bacteria/metodo-conser", this.parametros)
-          .then(res => {
-            this.accionAgregarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Agregar Método",
-              "Método agregado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
-          })
-          .catch(error => {
-            if (error.response) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+        if (this.parametros.imagen) {
+          axios
+            .post("/cepas/bacteria/metodo-conser", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.accionAgregarCaract({ tipo: "metodo", data: res.data });
+                this.toastr(
+                  "Agregar Método",
+                  "Método agregado con exito!!",
+                  "success"
+                );
+                this.$emit("cambiarVariable");
+              }
+            })
+            .catch((error) => {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
               this.toastr("Error!!", "", "error");
-            }
-          });
+            });
+        } else {
+          this.bloquearBtn = false;
+          this.errors = { imagen: ["Favor elija una imagen."] };
+          this.toastr("Error!!", "", "error");
+        }
       } else {
         axios
           .put(`/cepas/bacteria/metodo-conser/${this.info.id}`, this.parametros)
-          .then(res => {
-            this.accionEditarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Editar Método",
-              "Método editado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
+              this.toastr(
+                "Editar Método",
+                "Método editado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable");
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtn = false;
+            if (error.response.status === 422) {
               this.errors = [];
               this.errors = error.response.data.errors;
-              this.toastr("Error!!", "", "error");
-              // console.log(error.response.data);
             }
+            this.toastr("Error!!", "", "error");
           });
       }
     },
     llenarInfo() {
       this.parametros.tipo_metodo = this.info.tipo_id;
-      this.parametros.tipo_agar = this.info.tipo_agar_id;
+      if (this.info.tipo_agar_id > 1) {
+        this.parametros.tipo_agar = this.info.tipo_agar_id;
+      }
       this.parametros.fecha = this.info.fecha;
       this.parametros.numero_replicas = this.info.numero_replicas;
       this.parametros.recuento_microgota = this.info.recuento_microgota;
@@ -323,32 +359,56 @@ export default {
       if (this.modal.input === "") {
         this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
       } else {
+        this.bloquearBtnModal = true;
         let parametros = {
           tipo: this.modal.tipo,
-          nombre: this.modal.input
+          nombre: this.modal.input,
         };
         axios
           .post("/info-caract-bacterias/agregar", parametros)
-          .then(res => {
-            this.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: this.modal.tipo
-            });
-            this.$modal.hide("agregar-caract-info");
-            this.toastr(
-              "Agregar Informacion",
-              `${this.modal.tipo} agregado/a con exito`,
-              "success"
-            );
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractBacteria({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$modal.hide("agregar-caract-info");
+              this.toastr(
+                "Agregar Informacion",
+                `${this.modal.tipo} agregado/a con exito`,
+                "success"
+              );
+            }
           })
-          .catch(error => {
-            if (error.response) {
+          .catch((error) => {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = [];
               this.modal.errors = error.response.data.errors;
             }
-            this.toastr("Error!!!!", "", "error");
+            this.toastr("Error!!", "", "error");
           });
       }
-    }
+    },
+    verificarSelects() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+      if (this.obtenerAgars.length > 0) {
+        this.parametros.tipo_agar = this.obtenerAgars[0].id;
+      } else {
+        this.parametros.tipo_agar = null;
+      }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
@@ -379,9 +439,16 @@ export default {
     },
     nomBtnComputed() {
       return this.nomBtn;
-    }
+    },
+    obtenerMetodos() {
+      return this.getInfoMetodoConserBacterias.tipo_metodo;
+    },
+    obtenerAgars() {
+      return this.getInfoMetodoConserBacterias.tipo_agar;
+    },
   },
   created() {
+    this.verificarSelects();
     if (this.idMetodo === 0) {
       this.tituloForm = "Agregar Método";
       this.nomBtn = "Agregar";
@@ -396,6 +463,22 @@ export default {
     } else {
       this.parametros.cepaId = this.$route.params.cepaId;
     }
-  }
+  },
+  watch: {
+    obtenerMetodos() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    },
+    obtenerAgars() {
+      if (this.obtenerAgars.length > 0) {
+        this.parametros.tipo_agar = this.obtenerAgars[0].id;
+      } else {
+        this.parametros.tipo_agar = null;
+      }
+    },
+  },
 };
 </script>

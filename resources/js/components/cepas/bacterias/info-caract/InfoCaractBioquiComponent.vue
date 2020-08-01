@@ -26,13 +26,13 @@
           </div>
         </div>
         <template v-if="mostrarForm">
-          <form-carat-bioqui-bacteria
+          <FormCaractBioqui
             :modificarInfo="modificarForm"
             :info="getCaractBioqui"
             @agregar="agregar"
             @editar="editar"
             @cambiarVariable="cambiarVariable"
-          ></form-carat-bioqui-bacteria>
+          ></FormCaractBioqui>
         </template>
         <template v-else>
           <div class="text-center">
@@ -69,12 +69,14 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
+import FormCaractBioqui from "../forms-caract/FormCaractBioquiComponent.vue";
 export default {
+  components: { FormCaractBioqui },
   data() {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
     };
   },
   mixins: [Toastr],
@@ -82,7 +84,7 @@ export default {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
       "accionEditarCaract",
-      "accionEliminarCaract"
+      "accionEliminarCaract",
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "bioqui", data: data });
@@ -94,22 +96,27 @@ export default {
     eliminar() {
       axios
         .delete(`/cepas/bacteria/caract-bioqui/${this.getCaractBioqui.id}`)
-        .then(res => {
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("my_modal");
-          this.accionEliminarCaract({ tipo: "bioqui", data: res.data });
-          this.toastr(
-            "Eliminar Característica",
-            "Características Bioquímicas eliminadas con exito!!",
-            "success"
-          );
-        })
-        .catch(error => {
-          if (error.response) {
-            this.toastr("Error!!", "", "error");
-            // console.log(error.response.data);
+        .then((res) => {
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          } else {
+            this.mostrarBtnAgregar = true;
+            this.mostrarForm = false;
+            this.$modal.hide("my_modal");
+            this.accionEliminarCaract({ tipo: "bioqui", data: res.data });
+            this.toastr(
+              "Eliminar Característica",
+              "Características Bioquímicas eliminadas con exito!!",
+              "success"
+            );
           }
+        })
+        .catch((error) => {
+          this.toastr("Error!!", "", "error");
         });
     },
     cambiarVariable() {
@@ -122,7 +129,7 @@ export default {
     cancelar() {
       this.mostrarForm = false;
       this.mostrarBtnAgregar = true;
-    }
+    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getCaractBioqui"]),
@@ -142,13 +149,13 @@ export default {
     },
     mostrarBtnAgregarComputed() {
       return this.mostrarBtnAgregar;
-    }
+    },
   },
   mounted() {
     if (this.getCaractBioqui) {
       this.mostrarBtnAgregar = false;
       this.mostrarForm = true;
     }
-  }
+  },
 };
 </script>

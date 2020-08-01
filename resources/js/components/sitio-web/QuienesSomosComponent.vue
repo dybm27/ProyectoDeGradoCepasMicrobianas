@@ -31,7 +31,7 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <router-view @rutaHijo="cambiarTipo"></router-view>
+      <Nav @rutaHijo="cambiarTipo"></Nav>
     </template>
     <template v-else>
       <div class="container">
@@ -55,7 +55,9 @@
 <script>
 import bloquearPestañasMixin from "../../mixins/bloquearPestañas";
 import vuex from "vuex";
+import Nav from "./quienes-somos/NavQuienesSomosComponent.vue";
 export default {
+  components: { Nav },
   data() {
     return {
       tipo: ""
@@ -68,16 +70,17 @@ export default {
       "accionCambiarQuienesSomos"
     ]),
     cambiarTipo(ruta) {
-      if (ruta.includes("mision")) {
-        this.tipo = "Misión";
+      if (ruta.includes("objetivos")) {
+        this.tipo = "Objetivos";
       } else if (ruta.includes("vision")) {
         this.tipo = "Visión";
       } else {
-        this.tipo = "Objetivos";
+        this.tipo = "Misión";
       }
     }
   },
   created() {
+    this.$emit("rutaSider", window.location.pathname);
     this.obtenerQuienesSomos();
     window.Echo.channel("quienesSomos").listen("QuienesSomosEvent", e => {
       this.accionCambiarQuienesSomos({

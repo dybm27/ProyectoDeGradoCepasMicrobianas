@@ -15,64 +15,30 @@
 </template>
 
   <script>
+import Toastr from "../../mixins/toastr";
+import WebsocketsCheckCepas from "../../mixins/websocketsCheckCepas";
 export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
-  },
-  data() {
-    return { checkPublicar: false, disabled: false };
-  },
-  methods: {
-    publicar(data) {
-      this.disabled = true;
-      axios
-        .put(`/cepas/publicar/${data.id}`, { publicar: !this.checkPublicar })
-        .then(res => {
-          if (res.data.publicar) {
-            this.toastr("Publicar", "Publicado con Exito!!");
-          }
-          this.checkPublicar = res.data.publicar;
-          this.disabled = false;
-        });
+      type: Number,
     },
-    toastr(titulo, msg) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: "success",
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {}
-      });
-    }
   },
-  computed: {
-    computedDisabled() {
-      return this.disabled;
-    }
+  mixins: [Toastr, WebsocketsCheckCepas],
+  created() {
+    this.$events.$on(this.rowIndex + "-crearEventosCheck-cepas", (e) =>
+      this.crearEventosCheck()
+    );
+    this.$events.$on(this.rowIndex + "-eliminarEventosCheck-cepas", (e) =>
+      this.eliminarEventosCheck(e)
+    );
   },
-  mounted() {
-    if (this.rowData.publicar == 0) {
-      this.checkPublicar = false;
-    } else {
-      this.checkPublicar = true;
-    }
-  }
+  destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosCheck-cepas");
+    this.$events.$off(this.rowIndex + "-eliminarEventosCheck-cepas");
+  },
 };
 </script>
