@@ -2252,9 +2252,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -2271,7 +2270,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2284,7 +2282,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2571,9 +2569,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -2590,7 +2587,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2603,7 +2599,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2812,9 +2808,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -2831,7 +2826,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2844,7 +2838,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3053,9 +3047,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -3072,7 +3065,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3085,7 +3077,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3294,9 +3286,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
 //
 //
 //
@@ -3313,7 +3304,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3326,7 +3316,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
   created: function created() {
     var _this = this;
 
@@ -89708,6 +89698,14 @@ var websocketsCheck = function websocketsCheck(tipoM, tipoP) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 var websocketsCheckCepas = {
   data: function data() {
     return {
@@ -89720,7 +89718,7 @@ var websocketsCheckCepas = {
       return this.disabled;
     }
   },
-  methods: {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -89735,6 +89733,11 @@ var websocketsCheckCepas = {
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
+
+          _this.accionCepas({
+            tipo: "editar",
+            data: res.data
+          });
 
           _this.checkPublicar = res.data.publicar;
           _this.disabled = false;
@@ -89774,7 +89777,7 @@ var websocketsCheckCepas = {
       this.$events.$off(id + "-desbloquearCheckCepa");
       this.$events.$off(id + "-actualizarPublicarCepa");
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   },
@@ -91033,6 +91036,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     accionCepas: function accionCepas(_ref2, data) {
       var commit = _ref2.commit;
+      console.log('accionCepas');
       commit("mutacionCepas", data);
     }
   }

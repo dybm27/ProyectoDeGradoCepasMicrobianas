@@ -454,7 +454,7 @@ export default {
     },
     metodoModal(tipo) {
       this.bloquearBtnModal = true;
-      var calendarApi = this.$refs.fullCalendar.getApi();
+      let calendarApi = this.$refs.fullCalendar.getApi();
       switch (tipo) {
         case "agregar":
           if (this.allday) {
@@ -559,6 +559,15 @@ export default {
   },
   created() {
     this.$emit("rutaSider", window.location.pathname);
+    window.Echo.channel("calendario-refrescar").listen(
+      "RefrescarCalendarioEvent",
+      (e) => {
+        if (this.$refs.fullCalendar) {
+          let calendarApi = this.$refs.fullCalendar.getApi();
+          calendarApi.refetchEvents();
+        }
+      }
+    );
   },
 };
 </script>

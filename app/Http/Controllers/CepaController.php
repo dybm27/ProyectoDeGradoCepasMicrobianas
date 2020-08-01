@@ -66,6 +66,7 @@ class CepaController extends Controller
                 $bacteria = new Bacteria();
                 $bacteria->cepa_id = $cepa->id;
                 $bacteria->save();
+                $cepa->load('bacteria');
                 break;
             case 2:
                 $hongo = new HongoFilamentoso();
@@ -75,6 +76,7 @@ class CepaController extends Controller
                 $hongo->familia_id = $request->familia;
                 $hongo->phylum_id = $request->phylum;
                 $hongo->save();
+                $cepa->load('hongo');
                 break;
             case 3:
                 $levadura = new Levadura();
@@ -84,6 +86,7 @@ class CepaController extends Controller
                 $levadura->orden_id = $request->orden;
                 $levadura->familia_id = $request->familia;
                 $levadura->save();
+                $cepa->load('levadura');
                 break;
             case 4:
                 $actinomiceto = new Actinomiceto();
@@ -93,10 +96,11 @@ class CepaController extends Controller
                 $actinomiceto->orden_id = $request->orden;
                 $actinomiceto->reino_id = $request->reino;
                 $actinomiceto->save();
+                $cepa->load('actinomiceto');
                 break;
         }
+        broadcast(new CepasEvent($cepa, 'agregar'))->toOthers();
         $this->crearSeguimiento("Agregó la Cepa: " . $cepa->codigo);
-
         return $cepa;
     }
 
@@ -145,6 +149,7 @@ class CepaController extends Controller
 
         switch ($cepa->grupo_microbiano_id) {
             case 1:
+                $cepa->load('bacteria');
                 break;
             case 2:
                 $hongo = HongoFilamentoso::where('cepa_id', $cepa->id)->first();
@@ -153,6 +158,7 @@ class CepaController extends Controller
                 $hongo->familia_id = $request->familia;
                 $hongo->phylum_id = $request->phylum;
                 $hongo->save();
+                $cepa->load('hongo');
                 break;
             case 3:
                 $levadura = Levadura::where('cepa_id', $cepa->id)->first();
@@ -161,6 +167,7 @@ class CepaController extends Controller
                 $levadura->orden_id = $request->orden;
                 $levadura->familia_id = $request->familia;
                 $levadura->save();
+                $cepa->load('levadura');
                 break;
             case 4:
                 $actinomiceto = Actinomiceto::where('cepa_id', $cepa->id)->first();
@@ -169,6 +176,7 @@ class CepaController extends Controller
                 $actinomiceto->orden_id = $request->orden;
                 $actinomiceto->reino_id = $request->reino;
                 $actinomiceto->save();
+                $cepa->load('actinomiceto');
                 break;
         }
         $cepa->save();
@@ -292,6 +300,21 @@ class CepaController extends Controller
         $cepa = Cepa::find($id);
         $cepa->publicar = $request->publicar;
         $cepa->save();
+        switch ($cepa->grupo_microbiano_id) {
+            case 1:
+                $cepa->load('bacteria');
+                break;
+            case 2:
+                $cepa->load('hongo');
+                break;
+            case 3:
+                $cepa->load('levadura');
+                break;
+            case 4:
+                $cepa->load('actinomiceto');
+                break;
+        }
+        broadcast(new CepasEvent($cepa, 'editar'))->toOthers();
         return $cepa;
     }
 }

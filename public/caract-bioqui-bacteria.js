@@ -583,6 +583,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: {
+    cambiarValorImagen: function cambiarValorImagen(datos) {
+      switch (datos.num) {
+        case 1:
+          this.parametros.imagen1 = datos.data;
+          break;
+
+        case 2:
+          this.parametros.imagen2 = datos.data;
+          break;
+
+        case 3:
+          this.parametros.imagen3 = datos.data;
+          break;
+      }
+    },
     evento: function evento() {
       var _this = this;
 

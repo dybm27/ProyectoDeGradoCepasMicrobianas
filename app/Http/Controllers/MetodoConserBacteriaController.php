@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bacteria;
+use App\Events\RefrescarCalendarioEvent;
 use App\MetodoConserBacteria;
 use App\Seguimiento;
 use Carbon\Carbon;
@@ -36,7 +37,7 @@ class MetodoConserBacteriaController extends Controller
 
         $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
             . $bacteria->cepa->codigo);
-
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserBacteria;
     }
 
@@ -73,6 +74,7 @@ class MetodoConserBacteriaController extends Controller
         $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
             . $metodoConserBacteria->bacteria->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserBacteria;
     }
 
@@ -86,6 +88,7 @@ class MetodoConserBacteriaController extends Controller
         $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
             . $metodoConserBacteria->bacteria->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserBacteria;
     }
 

@@ -102,7 +102,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas", "accionCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]), {
     cambiarTipo: function cambiarTipo(tipo) {
       if (tipo === "ver") {
         this.mostrarBtnVolver = true;
@@ -134,11 +134,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   created: function created() {
+    var _this = this;
+
     this.tituloCepa = "- Actinomicetos";
     this.$emit("rutaSider", this.$route.path);
     this.obtenerCepas();
     this.obtenerTiposCepas();
     this.obtenerInfoCaractActinomicetos();
+    window.Echo.channel("cepas").listen("CepasEvent", function (e) {
+      _this.accionCepas({
+        tipo: e.tipoAccion,
+        data: e.data
+      });
+
+      _this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
+
+      _this.$events.fire("actualizartablaCepa");
+    });
   }
 });
 

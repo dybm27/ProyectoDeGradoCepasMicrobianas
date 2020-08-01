@@ -554,7 +554,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"])),
   created: function created() {
+    var _this3 = this;
+
     this.$emit("rutaSider", window.location.pathname);
+    window.Echo.channel("calendario-refrescar").listen("RefrescarCalendarioEvent", function (e) {
+      if (_this3.$refs.fullCalendar) {
+        var calendarApi = _this3.$refs.fullCalendar.getApi();
+
+        calendarApi.refetchEvents();
+      }
+    });
   }
 });
 

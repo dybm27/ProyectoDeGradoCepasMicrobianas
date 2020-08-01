@@ -46,6 +46,7 @@ export default {
             });
         },
         accionCepas({ commit }, data) {
+            console.log('accionCepas');
             commit("mutacionCepas", data);
         }
     }

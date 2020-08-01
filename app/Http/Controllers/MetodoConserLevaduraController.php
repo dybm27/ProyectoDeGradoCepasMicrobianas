@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\RefrescarCalendarioEvent;
 use App\Levadura;
 use App\MetodoConserLevadura;
 use App\Seguimiento;
@@ -38,6 +39,7 @@ class MetodoConserLevaduraController extends Controller
         $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
             . $levadura->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserLevadura;
     }
 
@@ -77,6 +79,7 @@ class MetodoConserLevaduraController extends Controller
         $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
             . $metodoConserLevadura->levadura->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserLevadura;
     }
 
@@ -90,6 +93,7 @@ class MetodoConserLevaduraController extends Controller
         $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
             . $metodoConserLevadura->levadura->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $metodoConserLevadura;
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\RefrescarCalendarioEvent;
 use App\HongoFilamentoso;
 use App\MetodoConserHongo;
 use App\Seguimiento;
@@ -38,6 +39,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Agregó un Método de Conservación a la Cepa: "
             . $hongo_filamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 
@@ -77,6 +79,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Editó un Método de Conservación de la Cepa: "
             . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 
@@ -90,6 +93,7 @@ class MetodoConserHongoController extends Controller
         $this->crearSeguimiento("Eliminó un Método de Conservación de la Cepa: "
             . $MetodoConserHongo->hongoFilamentoso->cepa->codigo);
 
+        broadcast(new RefrescarCalendarioEvent())->toOthers();
         return $MetodoConserHongo;
     }
 

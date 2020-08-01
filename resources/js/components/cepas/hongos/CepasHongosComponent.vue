@@ -84,7 +84,7 @@ export default {
   },
   mixins: [bloquearPestañasMixin("cepas")],
   methods: {
-    ...vuex.mapActions("cepas", ["obtenerCepas"]),
+    ...vuex.mapActions("cepas", ["obtenerCepas", "accionCepas"]),
     ...vuex.mapActions("info_cepas", ["obtenerTiposCepas"]),
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractHongos"]),
     cambiarTipo(tipo) {
@@ -124,6 +124,11 @@ export default {
     this.obtenerCepas();
     this.obtenerTiposCepas();
     this.obtenerInfoCaractHongos();
+    window.Echo.channel("cepas").listen("CepasEvent", (e) => {
+      this.accionCepas({ tipo: e.tipoAccion, data: e.data });
+      this.$events.fire(e.data.id + "-actualizarPublicarCepa", e.data.publicar);
+      this.$events.fire("actualizartablaCepa");
+    });
   },
 };
 </script>

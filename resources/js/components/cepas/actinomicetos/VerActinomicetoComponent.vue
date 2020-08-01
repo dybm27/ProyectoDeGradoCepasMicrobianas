@@ -106,10 +106,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Macroscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('macro')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('macro')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMacro">
@@ -186,10 +183,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Características Microscópicas</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('micro')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('micro')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarCaractMicro">
@@ -261,10 +255,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Identificación Bioquímica</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('identi')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('identi')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarIdentiBioqui">
@@ -363,10 +354,7 @@
             class="card-header-title font-size-lg text-capitalize font-weight-normal"
           >Otras Características</div>
           <div class="btn-actions-pane-right text-capitalize">
-            <img
-              :src="'/iconos/icons8-vista-general-3-35.png'"
-              @click="mostrarOcultarCaract('otras')"
-            />
+            <IconoMostrar @accionMostrar="mostrarOcultarCaract('otras')" />
           </div>
         </div>
         <div class="contaider mb-3 mt-3 ml-3 mr-3" v-if="mostrarOtrasCaract">
@@ -454,10 +442,12 @@
 <script>
 import moment from "moment";
 import Carousel from "../../carousel/CarouselComponent.vue";
+import IconoMostrar from "../IconoMostrarInfoVer.vue";
+import Toastr from "../../../mixins/toastr";
 import vuex from "vuex";
 moment.locale("es");
 export default {
-  components: { Carousel },
+  components: { Carousel, IconoMostrar },
   data() {
     return {
       selectImprimir: [],
@@ -475,6 +465,7 @@ export default {
       btnSeleccionado: false,
     };
   },
+  mixins: [Toastr],
   computed: {
     ...vuex.mapState("cepa", ["cepa"]),
     ...vuex.mapGetters("cepa", [
@@ -639,26 +630,6 @@ export default {
           this.mostrarOtrasCaract = !this.mostrarOtrasCaract;
           break;
       }
-    },
-    toastr(titulo, msg, tipo, time) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: time,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {},
-      });
     },
   },
   created() {

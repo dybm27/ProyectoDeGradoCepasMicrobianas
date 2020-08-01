@@ -15,7 +15,6 @@
 </template>
 
   <script>
-import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
 import WebsocketsCheckCepas from "../../mixins/websocketsCheckCepas";
 export default {

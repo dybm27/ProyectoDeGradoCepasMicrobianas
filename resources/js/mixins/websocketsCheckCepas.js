@@ -1,3 +1,4 @@
+import vuex from "vuex";
 const websocketsCheckCepas = {
     data() {
         return { checkPublicar: false, disabled: false };
@@ -8,6 +9,7 @@ const websocketsCheckCepas = {
         }
     },
     methods: {
+        ...vuex.mapActions("cepas", ["accionCepas"]),
         publicar(data) {
             this.disabled = true;
             axios
@@ -25,6 +27,7 @@ const websocketsCheckCepas = {
                         if (res.data.publicar) {
                             this.toastr("Publicar", "Publicado con Exito!!");
                         }
+                        this.accionCepas({ tipo: "editar", data: res.data });
                         this.checkPublicar = res.data.publicar;
                         this.disabled = false;
                     }
