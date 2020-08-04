@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\AuthEvent;
 use App\Events\UsuarioEvent;
 use App\Seguimiento;
 use App\User;
@@ -17,7 +16,7 @@ class UsuarioController extends Controller
     {
         $rules = [
             'email' => 'required|unique:users,email', 'nombre' => 'required',
-            'pass' => 'required', 'tipo_user' => 'required'
+            'pass' => 'required', 'rol' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -26,7 +25,7 @@ class UsuarioController extends Controller
         $usuario = new User();
         $usuario->name = ucfirst($request->nombre);
         $usuario->email = $request->email;
-        $usuario->tipouser_id = intval($request->tipo_user);
+        $usuario->rol_id = intval($request->rol);
         $usuario->password = Hash::make($request->pass);
         $usuario->avatar = $imagen['ruta'];
         $usuario->avatarPublico = $imagen['rutaPublica'];
@@ -43,7 +42,8 @@ class UsuarioController extends Controller
     {
         $usuario = User::find($id);
         $rules = [
-            'email' => 'required|unique:users,email,' . $usuario->id, 'nombre' => 'required'
+            'email' => 'required|unique:users,email,' . $usuario->id,
+            'nombre' => 'required', 'rol' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -55,12 +55,11 @@ class UsuarioController extends Controller
         }
         $usuario->name = ucfirst($request->nombre);
         $usuario->email = $request->email;
-        $usuario->tipouser_id = intval($request->tipo_user);
+        $usuario->rol_id = intval($request->rol);
         if (!is_null($request->pass)) {
             $usuario->password = Hash::make($request->pass);
         }
         $usuario->save();
-        broadcast(new AuthEvent($usuario))->toOthers();
         broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
         $this->crearSeguimiento("Editó un usuario: " . $usuario->email);
 
@@ -70,12 +69,15 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         $usuario = User::find($id);
-        Storage::disk('local')->delete($usuario->avatar);
-        broadcast(new UsuarioEvent($usuario, 'eliminar'))->toOthers();
-        $usuario->delete();
-        $this->crearSeguimiento("Eliminó un usuario: " . $usuario->email);
-
-        return $usuario;
+        if ($this->verificarEliminar($usuario)) {
+            Storage::disk('local')->delete($usuario->avatar);
+            broadcast(new UsuarioEvent($usuario, 'eliminar'))->toOthers();
+            $usuario->delete();
+            $this->crearSeguimiento("Eliminó un usuario: " . $usuario->email);
+            return $usuario;
+        } else {
+            return 'negativo';
+        }
     }
 
     public function guardarImagen($imagen)
@@ -94,8 +96,16 @@ class UsuarioController extends Controller
         $seguimiento = new Seguimiento();
         $seguimiento->nombre_responsable = Auth::user()->name;
         $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->rol = Auth::user()->rol->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
+    }
+
+    public function verificarEliminar($usuario)
+    {
+        if (is_null($usuario->session_id)) {
+            return true;
+        }
+        return false;
     }
 }

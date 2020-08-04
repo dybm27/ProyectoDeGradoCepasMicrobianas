@@ -102,8 +102,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsSinCheck */ "./resources/js/mixins/websocketsSinCheck.js");
-/* harmony import */ var _TablaComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaComponent */ "./resources/js/components/gestionar_usuarios/usuarios/TablaComponent.vue");
-/* harmony import */ var _FormComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormComponent */ "./resources/js/components/gestionar_usuarios/usuarios/FormComponent.vue");
+/* harmony import */ var _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/TablaComponent.vue");
+/* harmony import */ var _FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/FormComponent.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
@@ -148,8 +148,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Form: _FormComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Tabla: _TablaComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Form: _FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Tabla: _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -380,10 +380,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -399,7 +395,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       info: "",
       parametros: {
         nombre: "",
-        tipo_user: 2,
+        rol: 2,
         email: "",
         pass: "",
         pass1: "",
@@ -487,8 +483,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
 
-            _this.$emit("cambiarVariable", "tabla");
-
             window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
               id: res.data.id
             });
@@ -513,7 +507,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     llenarInfo: function llenarInfo() {
       this.parametros.nombre = this.info.name;
-      this.parametros.tipo_user = this.info.tipouser_id;
+      this.parametros.rol = this.info.rol_id;
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
@@ -552,7 +546,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.src = URL.createObjectURL(file);
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("usuarios", ["usuarios"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getTipoUser", "getUsuarioById", "getUsuarioByEmail"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("usuarios", ["usuarios"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRoles", "getUsuarioById", "getUsuarioByEmail"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     },
@@ -783,18 +777,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          if (res.data != "negativo") {
+            _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
+
+            _this.accionUsuario({
+              tipo: "eliminar",
+              data: res.data
+            });
+
+            _this.actualizarTabla();
+          } else {
+            _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning", 8000);
+          }
+
           _this.bloquearBtnModal = false;
 
-          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
-
-          _this.accionUsuario({
-            tipo: "eliminar",
-            data: res.data
-          });
-
           _this.$modal.hide("modal_eliminar_usuario");
-
-          _this.actualizarTabla();
         }
       })["catch"](function (error) {
         _this.bloquearBtnModal = false;
@@ -1074,14 +1072,14 @@ var render = function() {
                       : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _vm.getTipoUser
+                  _vm.getRoles
                     ? [
                         _c(
                           "div",
                           { staticClass: "osition-relative form-group" },
                           [
-                            _c("label", { attrs: { for: "tipo_user" } }, [
-                              _vm._v("Tipo de Usuario")
+                            _c("label", { attrs: { for: "rol" } }, [
+                              _vm._v("Rol de Usuario")
                             ]),
                             _vm._v(" "),
                             _c(
@@ -1091,13 +1089,13 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model.number",
-                                    value: _vm.parametros.tipo_user,
-                                    expression: "parametros.tipo_user",
+                                    value: _vm.parametros.rol,
+                                    expression: "parametros.rol",
                                     modifiers: { number: true }
                                   }
                                 ],
                                 staticClass: "form-control",
-                                attrs: { name: "select", id: "tipo_user" },
+                                attrs: { name: "select", id: "rol" },
                                 on: {
                                   change: function($event) {
                                     var $$selectedVal = Array.prototype.filter
@@ -1111,7 +1109,7 @@ var render = function() {
                                       })
                                     _vm.$set(
                                       _vm.parametros,
-                                      "tipo_user",
+                                      "rol",
                                       $event.target.multiple
                                         ? $$selectedVal
                                         : $$selectedVal[0]
@@ -1119,7 +1117,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              _vm._l(_vm.getTipoUser, function(tu, index) {
+                              _vm._l(_vm.getRoles, function(tu, index) {
                                 return _c(
                                   "option",
                                   { key: index, domProps: { value: tu.id } },
@@ -1723,7 +1721,7 @@ var staticRenderFns = [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
           _c("b", { staticClass: "text-success" }, [
-            _vm._v("AÚN NO SE HAN AGREGADO USUARIOS")
+            _vm._v("AÚN NO SE HAN AGREGADO NUEVOS USUARIOS")
           ])
         ])
       ])
@@ -2034,9 +2032,9 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "tipo_user",
-  sortField: "tipouser_id",
-  title: "Tipo de Usuario",
+  name: "rol",
+  sortField: "rol_id",
+  title: "Rol de Usuario",
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
@@ -2068,7 +2066,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
     data: function data() {
       return {
         bloqueos: [],
-        miBloqueo: []
+        miBloqueo: null
       };
     },
     methods: {
@@ -2144,7 +2142,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
 
       window.Echo["private"]("recibirBtns" + tipoM).listenForWhisper("recibirBtns" + tipoM, function (e) {
         if (_this2.bloqueos.length == 0) {
-          _this2.bloquearBtnsTabla(e.bloqueos[0]);
+          _this2.bloquearBtnsTabla(e.miBloqueo);
         }
       });
       this.$events.$on("agregarMiBloqueo" + tipoM, function (e) {

@@ -28,35 +28,43 @@ Vue.component(
 );
 Vue.component(
     "acciones_cepas_bacterias",
-    require("./components/cepas/bacterias/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/bacterias/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_bacterias",
-    require("./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_levaduras",
-    require("./components/cepas/levaduras/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/levaduras/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_levaduras",
-    require("./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_hongos",
-    require("./components/cepas/hongos/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/hongos/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_hongos",
-    require("./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_actinomicetos",
-    require("./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_actinomicetos",
-    require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "my-detail-row-h-l-a",
@@ -270,6 +278,11 @@ Vue.component(
 Vue.component(
     "acciones_tabla_usuarios",
     require("./components/gestionar_usuarios/usuarios/AccionesComponent.vue")
+        .default
+);
+Vue.component(
+    "acciones_tabla_roles",
+    require("./components/gestionar_usuarios/roles/AccionesComponent.vue")
         .default
 );
 // --------------- acciones investigadores -------------------

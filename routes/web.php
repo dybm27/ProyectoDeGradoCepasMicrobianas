@@ -187,9 +187,10 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy');
     // Route::put('/usuario/borrarSessionId', 'UsuarioController@borrarSessionId');
 
-    Route::post('/tipo-user/agregar', 'TipoUsuarioController@store');
-    Route::put('/tipo-user/editar/{id}', 'TipoUsuarioController@update');
-    Route::delete('/tipo-user/eliminar/{id}', 'TipoUsuarioController@destroy');
+    Route::post('/rol/agregar', 'RolController@store');
+    Route::put('/rol/editar/{id}', 'RolController@update');
+    Route::delete('/rol/eliminar/{id}', 'RolController@destroy');
+    Route::put('/rol/agregar-permisos/{id}', 'RolController@modificarPermisos');
 
     //---------------------- EXPORTAR PDF----------------------------------------------------------
     Route::get('/cepa/imprimir/{id}', 'CepaController@imprimirPDF');
@@ -459,10 +460,12 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         //-------------------------url actividades ---------------------------------------------------
         Route::get('eventos-actividades', 'InfoPanelEventosController@eventosActividades');
         //------------------------ USUARIOS ------------------------------------------------------
-        //------------------------- url tabla usuarios -------------------------------------------
+        //------------------------- url tabla usuarios - roles -----------------------------------
         Route::get('usuarios-tabla', 'InfoPanelUsuariosController@tablaUsuarios');
-        //--------------------------- tiposUsuarios - usuairos -----------------------------------------
-        Route::get('tipos-users', 'InfoPanelUsuariosController@tipoUsuarios');
+        Route::get('roles-tabla', 'InfoPanelUsuariosController@tablaRoles');
+        //--------------------------- roles - usuairos -----------------------------------------
+        Route::get('roles', 'InfoPanelUsuariosController@roles');
+        Route::get('permisos', 'InfoPanelUsuariosController@permisos');
         Route::get('users', 'InfoPanelUsuariosController@usuarios');
         //------------------------- url tabla seguimiento -------------------------------------
         Route::get('seguimientos', 'InfoPanelUsuariosController@tablaSeguimientos');

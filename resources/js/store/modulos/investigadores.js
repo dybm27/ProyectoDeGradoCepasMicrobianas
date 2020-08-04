@@ -11,7 +11,8 @@ export default {
         },
         getInvestigadorByEmail: state => email => {
             return state.investigadores.find(
-                investigador => investigador.email === email
+                investigador =>
+                    investigador.email.toUpperCase() === email.toUpperCase()
             );
         }
     },

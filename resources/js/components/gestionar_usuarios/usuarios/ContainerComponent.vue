@@ -37,8 +37,8 @@
 
 <script>
 import websocketsSinCheckMixin from "../../../mixins/websocketsSinCheck";
-import Tabla from "./TablaComponent";
-import Form from "./FormComponent";
+import Tabla from "./TablaComponent.vue";
+import Form from "./FormComponent.vue";
 import vuex from "vuex";
 export default {
   components: { Form, Tabla },
@@ -60,7 +60,7 @@ export default {
         "desbloquearBtnsUsuario"
       ).whisper("desbloquearBtnsUsuario", { id: this.id });
       this.$events.fire("eliminarMiBloqueoUsuario", {
-        id: this.id
+        id: this.id,
       });
       this.id = 0;
 
@@ -71,14 +71,14 @@ export default {
     },
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
+    },
   },
   created() {
     this.$emit("rutaHijo", window.location.pathname);
-    this.$events.$on("abrirFormularioUsuario", e => this.abrirFormulario(e));
+    this.$events.$on("abrirFormularioUsuario", (e) => this.abrirFormulario(e));
   },
   beforeDestroy() {
     this.$events.$off("abrirFormularioUsuario");
-  }
+  },
 };
 </script>

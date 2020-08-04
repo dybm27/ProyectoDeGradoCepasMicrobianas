@@ -10,19 +10,21 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class AuthEvent implements ShouldBroadcast
+class RolEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $auth;
+    public $rol;
+    public $tipo;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($auth)
+    public function __construct($rol, $tipo)
     {
-        $this->auth = $auth;
+        $this->rol = $rol;
+        $this->tipo = $tipo;
     }
 
     /**
@@ -32,6 +34,6 @@ class AuthEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('auth');
+        return new Channel('rol');
     }
 }

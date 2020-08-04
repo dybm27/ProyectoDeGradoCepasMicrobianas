@@ -25,7 +25,7 @@
     </head>
     <body><!--fixed-footer-->
         <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer" id="app" >
-            <app-majumba :admin="{{auth()->user()}}"/>
+            <app-majumba :admin="{{auth()->user()}}" :permisos="{{auth()->user()->rol->permisos}}"/>
         </div>  
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

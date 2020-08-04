@@ -1,29 +1,40 @@
 export default {
     namespaced: true,
     state: {
-        tipos_users: [],
-        usuarios: []
+        roles: [],
+        usuarios: [],
+        permisos: []
     },
     getters: {
-        getTipoUser(state) {
-            return state.tipos_users.filter(tipo => tipo.id != 1);
+        getRoles(state) {
+            return state.roles.filter(rol => rol.id != 1);
         },
-        getTipoUserById: state => id => {
-            return state.tipos_users.find(tipo => tipo.id == id);
+        getRolById: state => id => {
+            return state.roles.find(rol => rol.id == id);
+        },
+        getRolByNombre: state => nombre => {
+            return state.roles.find(
+                rol => rol.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getUsuarioById: state => id => {
             return state.usuarios.find(user => user.id == id);
         },
         getUsuarioByEmail: state => email => {
-            return state.usuarios.find(user => user.email == email);
+            return state.usuarios.find(
+                user => user.email.toUpperCase() === email.toUpperCase()
+            );
         }
     },
     mutations: {
         llenarUsuarios(state, users) {
             state.usuarios = users;
         },
-        llenarTiposUsers(state, tipos) {
-            state.tipos_users = tipos;
+        llenarRoles(state, roles) {
+            state.roles = roles;
+        },
+        llenarPermisos(state, permisos) {
+            state.permisos = permisos;
         },
         mutacionUsuario(state, data) {
             switch (data.tipo) {
@@ -44,25 +55,28 @@ export default {
                     break;
             }
         },
-        mutacionTipoUsuario(state, data) {
+        mutacionRol(state, data) {
             switch (data.tipo) {
                 case "agregar":
-                    state.tipos_users.push(data.info);
+                    state.roles.push(data.data);
                     break;
                 case "editar":
-                    var indice = state.tipos_users.findIndex(
-                        tipo => tipo.id === data.info.id
+                    var indice = state.roles.findIndex(
+                        rol => rol.id === data.data.id
                     );
-                    state.tipos_users.splice(indice, 1, data.info);
+                    state.roles.splice(indice, 1, data.data);
                     break;
                 case "eliminar":
-                    var indice = state.tipos_users.findIndex(
-                        tipo => tipo.id === data.info.id
+                    var indice = state.roles.findIndex(
+                        rol => rol.id === data.data.id
                     );
-                    state.tipos_users.splice(indice, 1);
-
+                    state.roles.splice(indice, 1);
                     break;
             }
+        },
+        mutacionModificarPermisos(state, data) {
+            var indice = state.roles.findIndex(rol => rol.id === data.id);
+            state.roles.splice(indice, 1, data);
         }
     },
     actions: {
@@ -78,8 +92,8 @@ export default {
                 commit("llenarUsuarios", res.data);
             });
         },
-        obtenerTiposUsers({ commit }) {
-            axios.get("/info-panel/tipos-users").then(res => {
+        obtenerRoles({ commit }) {
+            axios.get("/info-panel/roles").then(res => {
                 if (res.request.responseURL === process.env.MIX_LOGIN) {
                     localStorage.setItem(
                         "mensajeLogin",
@@ -87,14 +101,29 @@ export default {
                     );
                     window.location.href = "/";
                 }
-                commit("llenarTiposUsers", res.data);
+                commit("llenarRoles", res.data);
             });
         },
-        accionTipoUsuario({ commit }, data) {
-            commit("mutacionTipoUsuario", data);
+        obtenerPermisos({ commit }) {
+            axios.get("/info-panel/permisos").then(res => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                    localStorage.setItem(
+                        "mensajeLogin",
+                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                    );
+                    window.location.href = "/";
+                }
+                commit("llenarPermisos", res.data);
+            });
+        },
+        accionRol({ commit }, data) {
+            commit("mutacionRol", data);
         },
         accionUsuario({ commit }, data) {
             commit("mutacionUsuario", data);
+        },
+        accionModificarPermisos({ commit }, data) {
+            commit("mutacionModificarPermisos", data);
         }
     }
 };

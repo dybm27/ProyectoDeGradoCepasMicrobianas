@@ -43,6 +43,11 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link :to="{name:'tabla-roles'}" class="nav-link" active-class="active">
+            <span>Tabla Roles</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
           <router-link :to="{name:'tabla-seguimiento'}" class="nav-link" active-class="active">
             <span>Tabla de seguimiento</span>
           </router-link>
@@ -79,7 +84,7 @@ export default {
 
   mixins: [bloquearPestañasMixin("usuario")],
   methods: {
-    ...vuex.mapActions("usuarios", ["accionUsuario"]),
+    ...vuex.mapActions("usuarios", ["accionUsuario", "accionRol"]),
 
     cambiarTipo(ruta) {
       if (ruta.includes("seguimiento")) {
@@ -96,14 +101,10 @@ export default {
       } else {
         this.tipo2 = "";
       }
-    }
+    },
   },
   created() {
     this.$emit("rutaSider", window.location.pathname);
-    window.Echo.channel("usuario").listen("UsuarioEvent", e => {
-      this.accionUsuario({ tipo: e.tipo, data: e.user });
-      this.$events.fire("actualizartablaUsuario");
-    });
-  }
+  },
 };
 </script>

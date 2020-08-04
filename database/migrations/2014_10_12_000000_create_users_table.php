@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->unsignedBigInteger('tipouser_id');
+            $table->unsignedBigInteger('rol_id');
             $table->text('session_id')->nullable();
             $table->dateTime('lastActivityTime')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('tipouser_id')->references('id')->on('tipo_users');
+            $table->foreign('rol_id')->references('id')->on('rols');
         });
     }
 

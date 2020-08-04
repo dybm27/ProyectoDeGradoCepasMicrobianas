@@ -14,8 +14,8 @@
               </div>
               <div class="widget-content-left ml-3 header-user-info">
                 <div class="widget-heading">{{auth.name}}</div>
-                <template v-if="getTipoUser!=''">
-                  <div class="widget-subheading">{{getTipoUserById(auth.tipouser_id).nombre}}</div>
+                <template v-if="getRoles!=''">
+                  <div class="widget-subheading">{{getRolById(auth.rol_id).nombre}}</div>
                 </template>
               </div>
               <div class="widget-content-right header-user-info ml-3"></div>
@@ -46,7 +46,7 @@ export default {
     },
   },
   computed: {
-    ...vuex.mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]),
+    ...vuex.mapGetters("usuarios", ["getRolById", "getRoles"]),
     ...vuex.mapState(["auth"]),
   },
 };

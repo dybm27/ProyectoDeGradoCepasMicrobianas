@@ -20,7 +20,7 @@ import Sider from "./Sidebar.vue";
 import Footer from "./Footer.vue";
 import vuex from "vuex";
 export default {
-  props: ["admin"],
+  props: ["admin", "permisos"],
   data() {
     return { ruta: "" };
   },
@@ -30,23 +30,43 @@ export default {
     Footer,
   },
   methods: {
-    ...vuex.mapActions(["accionModificarAuth"]),
-    ...vuex.mapActions("usuarios", ["obtenerTiposUsers", "obtenerUsers"]),
+    ...vuex.mapActions(["accionModificarAuth", "guardarPermisosAuth"]),
+    ...vuex.mapActions("usuarios", [
+      "obtenerRoles",
+      "obtenerUsers",
+      "obtenerPermisos",
+      "accionRol",
+      "accionUsuario",
+    ]),
     rutaSider(ruta) {
       this.ruta = ruta;
     },
   },
   computed: {
     ...vuex.mapState(["auth"]),
+    ...vuex.mapGetters("usuarios", ["getRolById"]),
   },
   created() {
-    this.accionModificarAuth({ data: this.admin });
-    this.obtenerTiposUsers();
+    this.accionModificarAuth(this.admin);
+    this.guardarPermisosAuth(this.permisos);
+    this.obtenerPermisos();
+    this.obtenerRoles();
     this.obtenerUsers();
-    window.Echo.channel("auth").listen("AuthEvent", (e) => {
-      if (this.auth.id === e.auth.id) {
-        this.accionModificarAuth({ data: e.auth });
+    window.Echo.channel("usuario").listen("UsuarioEvent", (e) => {
+      if (this.auth.id === e.user.id) {
+        this.guardarPermisosAuth(this.getRolById(e.user.rol_id).permisos);
+        this.accionModificarAuth(e.user);
+      } else {
+        this.accionUsuario({ tipo: e.tipo, data: e.user });
+        this.$events.fire("actualizartablaUsuario");
       }
+    });
+    window.Echo.channel("rol").listen("RolEvent", (e) => {
+      if (this.auth.rol_id === e.rol.id) {
+        this.guardarPermisosAuth(e.rol.permisos);
+      }
+      this.accionRol({ tipo: e.tipo, data: e.rol });
+      this.$events.fire("actualizartablaRol");
     });
   },
 };

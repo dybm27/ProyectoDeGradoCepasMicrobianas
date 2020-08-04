@@ -14,8 +14,8 @@ export default [
         dataClass: "text-center"
     },
     {
-        name: "tipo_user",
-        sortField: "tipo_user",
+        name: "rol",
+        sortField: "rol",
         title: "Tipo de Usuario",
         titleClass: "text-center",
         dataClass: "text-center"

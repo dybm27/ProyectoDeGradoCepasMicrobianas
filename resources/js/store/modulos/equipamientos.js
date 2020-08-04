@@ -11,7 +11,7 @@ export default {
         },
         getEquipamientoByNombre: state => nombre => {
             return state.equipamientos.find(
-                equipamiento => equipamiento.nombre === nombre
+                equipamiento => equipamiento.nombre.toUpperCase() === nombre.toUpperCase()
             );
         }
     },

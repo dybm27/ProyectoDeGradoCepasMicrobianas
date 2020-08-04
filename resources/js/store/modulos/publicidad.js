@@ -12,7 +12,7 @@ export default {
         },
         getNoticiaByTitulo: (state, getters) => nombre => {
             return getters.getNoticias.find(
-                noticia => noticia.titulo === nombre
+                noticia => noticia.titulo.toUpperCase() === nombre.toUpperCase()
             );
         },
         getActividades(state) {
@@ -25,7 +25,8 @@ export default {
         },
         getActividadByTitulo: (state, getters) => nombre => {
             return getters.getActividades.find(
-                actividad => actividad.titulo === nombre
+                actividad =>
+                    actividad.titulo.toUpperCase() === nombre.toUpperCase()
             );
         },
         getNovedades(state) {
@@ -36,7 +37,7 @@ export default {
         },
         getNovedadByTitulo: (state, getters) => nombre => {
             return getters.getNovedades.find(
-                novedad => novedad.titulo === nombre
+                novedad => novedad.titulo.toUpperCase() === nombre.toUpperCase()
             );
         }
     },

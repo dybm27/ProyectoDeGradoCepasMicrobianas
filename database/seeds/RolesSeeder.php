@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TipoUserSeeder extends Seeder
+class RolesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,16 +11,16 @@ class TipoUserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tipo_users')->insert([
+        DB::table('rols')->insert([
             'nombre' => 'Super Administrador',
         ]);
-        DB::table('tipo_users')->insert([
+        DB::table('rols')->insert([
             'nombre' => 'Administrador',
         ]);
-        DB::table('tipo_users')->insert([
+        DB::table('rols')->insert([
             'nombre' => 'BecaTrabajo',
         ]);
-        DB::table('tipo_users')->insert([
+        DB::table('rols')->insert([
             'nombre' => 'Practicante',
         ]);
     }

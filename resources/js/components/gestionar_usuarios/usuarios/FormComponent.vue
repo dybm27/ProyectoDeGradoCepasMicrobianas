@@ -24,20 +24,16 @@
                 />
                 <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
               </div>
-              <template v-if="getTipoUser">
+              <template v-if="getRoles">
                 <div class="osition-relative form-group">
-                  <label for="tipo_user" class>Tipo de Usuario</label>
+                  <label for="rol" class>Rol de Usuario</label>
                   <select
                     name="select"
-                    id="tipo_user"
+                    id="rol"
                     class="form-control"
-                    v-model.number="parametros.tipo_user"
+                    v-model.number="parametros.rol"
                   >
-                    <option
-                      v-for="(tu,index) in getTipoUser"
-                      :key="index"
-                      :value="tu.id"
-                    >{{tu.nombre}}</option>
+                    <option v-for="(tu,index) in getRoles" :key="index" :value="tu.id">{{tu.nombre}}</option>
                   </select>
                 </div>
               </template>
@@ -178,7 +174,7 @@ export default {
       info: "",
       parametros: {
         nombre: "",
-        tipo_user: 2,
+        rol: 2,
         email: "",
         pass: "",
         pass1: "",
@@ -271,7 +267,6 @@ export default {
                 "Usuario editado con exito!!",
                 "success"
               );
-              this.$emit("cambiarVariable", "tabla");
               window.Echo.private("desbloquearBtnsUsuario").whisper(
                 "desbloquearBtnsUsuario",
                 {
@@ -296,7 +291,7 @@ export default {
     },
     llenarInfo() {
       this.parametros.nombre = this.info.name;
-      this.parametros.tipo_user = this.info.tipouser_id;
+      this.parametros.rol = this.info.rol_id;
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
@@ -334,7 +329,7 @@ export default {
   computed: {
     ...vuex.mapState("usuarios", ["usuarios"]),
     ...vuex.mapGetters("usuarios", [
-      "getTipoUser",
+      "getRoles",
       "getUsuarioById",
       "getUsuarioByEmail",
     ]),

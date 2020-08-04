@@ -885,6 +885,17 @@ const routes = [
                 meta: { title: "Tabla Usuarios" }
             },
             {
+                path: "tabla-roles",
+                name: "tabla-roles",
+                component: () =>
+                    import(
+                        /* webpackChunkName: "tabla-roles" */
+
+                        "../components/gestionar_usuarios/roles/ContainerComponent.vue"
+                    ),
+                meta: { title: "Tabla Usuarios" }
+            },
+            {
                 path: "tabla-seguimiento",
                 name: "tabla-seguimiento",
                 component: () =>

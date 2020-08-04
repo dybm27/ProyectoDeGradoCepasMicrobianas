@@ -14,7 +14,9 @@ export default {
             return state.tipos.generos.find(genero => genero.id === id);
         },
         getGeneroByNombre: state => nombre => {
-            return state.tipos.generos.find(genero => genero.nombre === nombre);
+            return state.tipos.generos.find(
+                genero => genero.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getGeneroCepa(state, getters, rootState) {
             return state.tipos.generos.find(
@@ -31,7 +33,7 @@ export default {
         },
         getEspecieByNombre: state => nombre => {
             return state.tipos.especies.find(
-                especie => especie.nombre === nombre
+                especie => especie.nombre.toUpperCase() === nombre.toUpperCase()
             );
         },
         getEspecieCepa(state, getters, rootState) {
@@ -58,7 +60,9 @@ export default {
             );
         },
         getPhylumByNombre: state => nombre => {
-            return state.tipos.phylums.find(phylum => phylum.nombre === nombre);
+            return state.tipos.phylums.find(
+                phylum => phylum.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getOrdens(state) {
             return state.tipos.ordens;
@@ -69,7 +73,9 @@ export default {
             );
         },
         getOrdenByNombre: state => nombre => {
-            return state.tipos.ordens.find(orden => orden.nombre === nombre);
+            return state.tipos.ordens.find(
+                orden => orden.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getReinos(state) {
             return state.tipos.reinos;
@@ -80,7 +86,9 @@ export default {
             );
         },
         getReinoByNombre: state => nombre => {
-            return state.tipos.reinos.find(reino => reino.nombre === nombre);
+            return state.tipos.reinos.find(
+                reino => reino.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getDivisiones(state) {
             return state.tipos.divisiones;
@@ -92,7 +100,8 @@ export default {
         },
         getDivisionByNombre: state => nombre => {
             return state.tipos.divisiones.find(
-                division => division.nombre === nombre
+                division =>
+                    division.nombre.toUpperCase() === nombre.toUpperCase()
             );
         },
         getClases(state) {
@@ -104,7 +113,9 @@ export default {
             );
         },
         getClaseByNombre: state => nombre => {
-            return state.tipos.clases.find(clase => clase.nombre === nombre);
+            return state.tipos.clases.find(
+                clase => clase.nombre.toUpperCase() === nombre.toUpperCase()
+            );
         },
         getFamilias(state) {
             return state.tipos.familias;
@@ -116,7 +127,7 @@ export default {
         },
         getFamiliaByNombre: state => nombre => {
             return state.tipos.familias.find(
-                familia => familia.nombre === nombre
+                familia => familia.nombre.toUpperCase() === nombre.toUpperCase()
             );
         }
     },

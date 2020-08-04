@@ -21,11 +21,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         //  auth: JSON.parse(userLogueado.content)
-        auth: null
+        auth: null,
+        permisos: []
     },
     mutations: {
         mutacionModificarAuth(state, data) {
-            state.auth = data.data;
+            state.auth = data;
+        },
+        guardarPermisos(state, data) {
+            state.permisos = data;
         }
     },
     actions: {
@@ -34,6 +38,9 @@ export default new Vuex.Store({
         },
         limpiarCepa({ commit }) {
             commit("mutacionLimpiarCepa");
+        },
+        guardarPermisosAuth({ commit }, data) {
+            commit("guardarPermisos", data);
         }
     },
     modules: {

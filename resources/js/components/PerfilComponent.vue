@@ -61,10 +61,8 @@
                           <div class="row">
                             <div class="col-md-12">
                               <span class="float-left">
-                                <b>Tipo de Usuario:</b>
-                                <template
-                                  v-if="getTipoUser!=''"
-                                >{{getTipoUserById(auth.tipouser_id).nombre}}</template>
+                                <b>Rol de Usuario:</b>
+                                <template v-if="getRoles!=''">{{getRolById(auth.rol_id).nombre}}</template>
                               </span>
                             </div>
                           </div>
@@ -318,7 +316,6 @@ export default {
   },
   mixins: [bloquearPestañasMixin("perfil"), Toastr],
   methods: {
-    ...vuex.mapActions("usuarios", ["accionUsuario"]),
     ...vuex.mapActions(["accionModificarAuth"]),
     cambiarValorImagen(valor) {
       this.imagen = valor;
@@ -389,7 +386,6 @@ export default {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionUsuario({ tipo: "editar", data: res.data });
                 this.accionModificarAuth({ data: res.data });
                 this.toastr(
                   this.titulo,
@@ -416,7 +412,6 @@ export default {
               } else {
                 this.bloquearBtnModal = false;
                 this.accionModificarAuth({ data: res.data });
-                this.accionUsuario({ tipo: "editar", data: res.data });
                 this.toastr(
                   this.titulo,
                   "Accion realizada con exito!!",
@@ -442,7 +437,6 @@ export default {
               } else {
                 this.bloquearBtnModal = false;
                 this.accionModificarAuth({ data: res.data });
-                this.accionUsuario({ tipo: "editar", data: res.data });
                 this.toastr(
                   this.titulo,
                   "Accion realizada con exito!!",
@@ -459,7 +453,7 @@ export default {
     },
   },
   computed: {
-    ...vuex.mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]),
+    ...vuex.mapGetters("usuarios", ["getRolById", "getRoles"]),
     ...vuex.mapState(["auth"]),
     validarNombre() {
       let letters = /^[A-Za-z\s]+$/;

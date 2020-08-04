@@ -13,7 +13,7 @@
       <div class="text-center">
         <h5 class="mt-5 mb-5">
           <span class="pr-1">
-            <b class="text-success">AÚN NO SE HAN AGREGADO USUARIOS</b>
+            <b class="text-success">AÚN NO SE HAN AGREGADO NUEVOS USUARIOS</b>
           </span>
         </h5>
       </div>
@@ -102,16 +102,25 @@ export default {
             );
             window.location.href = "/";
           } else {
+            if (res.data != "negativo") {
+              this.toastr(
+                "Eliminar Usuario",
+                "Usuario eliminado con exito!!",
+                "success",
+                5000
+              );
+              this.accionUsuario({ tipo: "eliminar", data: res.data });
+              this.actualizarTabla();
+            } else {
+              this.toastr(
+                "Precaución",
+                "El Usuario se encuentra Logueado y no es posible eliminarlo!!",
+                "warning",
+                8000
+              );
+            }
             this.bloquearBtnModal = false;
-            this.toastr(
-              "Eliminar Usuario",
-              "Usuario eliminado con exito!!",
-              "success",
-              5000
-            );
-            this.accionUsuario({ tipo: "eliminar", data: res.data });
             this.$modal.hide("modal_eliminar_usuario");
-            this.actualizarTabla();
           }
         })
         .catch((error) => {

@@ -88,6 +88,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -98,7 +103,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("usuario")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionUsuario"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionUsuario", "accionRol"]), {
     cambiarTipo: function cambiarTipo(ruta) {
       if (ruta.includes("seguimiento")) {
         this.tipo = "Tabla Seguimiento";
@@ -117,17 +122,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   created: function created() {
-    var _this = this;
-
     this.$emit("rutaSider", window.location.pathname);
-    window.Echo.channel("usuario").listen("UsuarioEvent", function (e) {
-      _this.accionUsuario({
-        tipo: e.tipo,
-        data: e.user
-      });
-
-      _this.$events.fire("actualizartablaUsuario");
-    });
   }
 });
 
@@ -215,6 +210,25 @@ var render = function() {
                         }
                       },
                       [_c("span", [_vm._v("Tabla Usuarios")])]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: { name: "tabla-roles" },
+                          "active-class": "active"
+                        }
+                      },
+                      [_c("span", [_vm._v("Tabla Roles")])]
                     )
                   ],
                   1

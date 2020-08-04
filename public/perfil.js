@@ -401,8 +401,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -429,7 +427,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("perfil"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("usuarios", ["accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions(["accionModificarAuth"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions(["accionModificarAuth"]), {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       this.imagen = valor;
     },
@@ -505,11 +503,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             } else {
               _this2.bloquearBtnModal = false;
 
-              _this2.accionUsuario({
-                tipo: "editar",
-                data: res.data
-              });
-
               _this2.accionModificarAuth({
                 data: res.data
               });
@@ -535,11 +528,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 data: res.data
               });
 
-              _this2.accionUsuario({
-                tipo: "editar",
-                data: res.data
-              });
-
               _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
 
               _this2.$modal.hide("cambiarImagen");
@@ -561,11 +549,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 data: res.data
               });
 
-              _this2.accionUsuario({
-                tipo: "editar",
-                data: res.data
-              });
-
               _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
 
               _this2.$modal.hide("cambiarInfo");
@@ -577,7 +560,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("usuarios", ["getRolById", "getRoles"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {
     validarNombre: function validarNombre() {
       var letters = /^[A-Za-z\s]+$/;
 
@@ -841,15 +824,15 @@ var render = function() {
                                               { staticClass: "float-left" },
                                               [
                                                 _c("b", [
-                                                  _vm._v("Tipo de Usuario:")
+                                                  _vm._v("Rol de Usuario:")
                                                 ]),
                                                 _vm._v(" "),
-                                                _vm.getTipoUser != ""
+                                                _vm.getRoles != ""
                                                   ? [
                                                       _vm._v(
                                                         _vm._s(
-                                                          _vm.getTipoUserById(
-                                                            _vm.auth.tipouser_id
+                                                          _vm.getRolById(
+                                                            _vm.auth.rol_id
                                                           ).nombre
                                                         )
                                                       )
