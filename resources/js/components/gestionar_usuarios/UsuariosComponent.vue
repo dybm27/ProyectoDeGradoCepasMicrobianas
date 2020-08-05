@@ -85,7 +85,6 @@ export default {
   mixins: [bloquearPestañasMixin("usuario")],
   methods: {
     ...vuex.mapActions("usuarios", ["accionUsuario", "accionRol"]),
-
     cambiarTipo(ruta) {
       if (ruta.includes("seguimiento")) {
         this.tipo = "Tabla Seguimiento";

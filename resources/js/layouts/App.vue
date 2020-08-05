@@ -20,7 +20,7 @@ import Sider from "./Sidebar.vue";
 import Footer from "./Footer.vue";
 import vuex from "vuex";
 export default {
-  props: ["admin", "permisos"],
+ // props: ["admin", "permisos"],
   data() {
     return { ruta: "" };
   },
@@ -47,8 +47,8 @@ export default {
     ...vuex.mapGetters("usuarios", ["getRolById"]),
   },
   created() {
-    this.accionModificarAuth(this.admin);
-    this.guardarPermisosAuth(this.permisos);
+   // this.accionModificarAuth(this.admin);
+  //  this.guardarPermisosAuth(this.permisos);
     this.obtenerPermisos();
     this.obtenerRoles();
     this.obtenerUsers();

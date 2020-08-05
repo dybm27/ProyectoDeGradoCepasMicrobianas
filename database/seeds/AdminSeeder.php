@@ -25,7 +25,7 @@ class AdminSeeder extends Seeder
             'rol_id' => 3
         ]);
 
-        for ($i = 0; $i < 35; $i++) {
+        for ($i = 0; $i < 36; $i++) {
             $id = $i + 1;
             DB::table('rol_permisos')->insert([
                 'rol_id' => 1, 'permiso_id' => $id

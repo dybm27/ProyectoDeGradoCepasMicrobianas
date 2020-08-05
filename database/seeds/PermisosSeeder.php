@@ -24,6 +24,9 @@ class PermisosSeeder extends Seeder
         DB::table('permisos')->insert([
             'nombre' => 'ver-cepa'
         ]);
+        DB::table('permisos')->insert([
+            'nombre' => 'caract-cepa'
+        ]);
         //otra
         DB::table('permisos')->insert([
             'nombre' => 'agregar-otra'
@@ -46,7 +49,7 @@ class PermisosSeeder extends Seeder
         ]);
         //img-login
         DB::table('permisos')->insert([
-            'nombre' => 'editar-login'
+            'nombre' => 'editar-imglogin'
         ]);
         //quines-somos
         DB::table('permisos')->insert([

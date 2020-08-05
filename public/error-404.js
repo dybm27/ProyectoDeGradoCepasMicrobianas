@@ -74,7 +74,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-6" }, [
-          _c("img", { attrs: { src: "/iconos/404.svg", width: "450px" } })
+          _c("img", {
+            attrs: { src: "/iconos/404.svg", width: "400px", height: "350px" }
+          })
         ])
       ]),
       _vm._v(" "),

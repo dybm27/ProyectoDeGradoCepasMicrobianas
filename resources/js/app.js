@@ -1,8 +1,8 @@
 require("./bootstrap");
 window.Vue = require("vue");
 
-import router from "./router/index";
 import store from "./store/index";
+import router from "./router/index";
 import VueEvents from "vue-events";
 import VueToastr from "vue-toastr";
 import VModal from "vue-js-modal";
@@ -372,6 +372,6 @@ Vue.component(
 
 const app = new Vue({
     el: "#app",
-    router,
-    store
+    store,
+    router
 });

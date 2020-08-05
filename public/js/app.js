@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -6963,7 +6963,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["admin", "permisos"],
+  // props: ["admin", "permisos"],
   data: function data() {
     return {
       ruta: ""
@@ -6983,8 +6983,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     var _this = this;
 
-    this.accionModificarAuth(this.admin);
-    this.guardarPermisosAuth(this.permisos);
+    // this.accionModificarAuth(this.admin);
+    //  this.guardarPermisosAuth(this.permisos);
     this.obtenerPermisos();
     this.obtenerRoles();
     this.obtenerUsers();
@@ -7065,6 +7065,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -7170,8 +7177,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["ruta"],
+  data: function data() {
+    return {
+      mostrarMenuCepas: false
+    };
+  },
   methods: {
     logout: function logout() {
       axios.post("/logout").then(function (res) {
@@ -7179,7 +7203,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
     classActive: function classActive() {
       if (this.ruta.includes("cepas") || this.ruta.includes("bacterias") || this.ruta.includes("levaduras") || this.ruta.includes("hongos") || this.ruta.includes("actinomicetos")) {
         return "mm-active";
@@ -7187,7 +7211,7 @@ __webpack_require__.r(__webpack_exports__);
 
       return "";
     }
-  }
+  })
 });
 
 /***/ }),
@@ -65989,7 +66013,7 @@ var render = function() {
   return _c("div", { staticClass: "app-sidebar sidebar-shadow" }, [
     _c("div", { staticClass: "scrollbar-sidebar" }, [
       _c("div", { staticClass: "app-sidebar__inner" }, [
-        _c("ul", { staticClass: "vertical-nav-menu" }, [
+        _c("ul", { staticClass: "vertical-nav-menu-majumba" }, [
           _c("li", { staticClass: "app-sidebar__heading" }, [
             _vm._v("Administrar Informacion")
           ]),
@@ -66011,137 +66035,176 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("li", [
-            _c("a", { class: _vm.classActive }, [
-              _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
-              _vm._v("\n            Cepas\n            "),
-              _c("i", {
-                staticClass: "metismenu-state-icon pe-7s-angle-down caret-left"
-              })
-            ]),
-            _vm._v(" "),
-            _c("ul", [
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "cepas" },
-                        "active-class": "mm-active"
+          _vm.getPermisoByNombres([
+            "agregar-cepa",
+            "ver-cepa",
+            "editar-cepa",
+            "eliminar-cepa",
+            "caract-cepa"
+          ])
+            ? _c("li", { class: _vm.mostrarMenuCepas ? "mm-active" : "" }, [
+                _c(
+                  "a",
+                  {
+                    class: _vm.classActive,
+                    on: {
+                      click: function($event) {
+                        _vm.mostrarMenuCepas = !_vm.mostrarMenuCepas
                       }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Todas\n              ")
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
+                    _vm._v("\n            Cepas\n            "),
+                    _c("i", {
+                      staticClass:
+                        "metismenu-state-icon pe-7s-angle-down caret-left"
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  {
+                    class: [
+                      "mm-collapse",
+                      _vm.mostrarMenuCepas ? "mm-show" : ""
                     ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "bacterias" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Bacterias\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "hongos" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Hongos Filamentosos\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "levaduras" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("\n                Levaduras\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "actinomicetos" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("\n                Actinomicetos\n              ")
-                    ]
-                  )
-                ],
-                1
-              )
-            ])
-          ]),
+                  },
+                  [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "cepas" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Todas\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "bacterias" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Bacterias\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "hongos" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Hongos Filamentosos\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "levaduras" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v(
+                              "\n                Levaduras\n              "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "actinomicetos" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v(
+                              "\n                Actinomicetos\n              "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "otra-info-cepas" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-otra",
+            "editar-otra",
+            "eliminar-otra"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-diskette" }),
-                  _vm._v("Otra Información\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "otra-info-cepas" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-diskette" }),
+                      _vm._v("Otra Información\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "li",
@@ -66163,146 +66226,202 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "tabla-usuarios" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-usuario",
+            "editar-usuario",
+            "eliminar-usuario"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-users" }),
-                  _vm._v("Usuarios\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "tabla-usuarios" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-users" }),
+                      _vm._v("Usuarios\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "imagenes-login" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres(["editar-imglogin"])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-photo" }),
-                  _vm._v("Imagenes Login\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "imagenes-login" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-photo" }),
+                      _vm._v("Imagenes Login\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c("li", { staticClass: "app-sidebar__heading" }, [
             _vm._v("Sitio Web Público")
           ]),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: { to: { name: "mision" }, "active-class": "mm-active" }
-                },
+          _vm.getPermisoByNombres([
+            "editar-mision",
+            "editar-vision",
+            "editar-objetivos"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
-                  _vm._v("Quienes Somos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "mision" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "investigadores" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-investigador",
+            "editar-investigador",
+            "eliminar-investigador"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-id" }),
-                  _vm._v("Investigadores\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "investigadores" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-id" }),
+                      _vm._v("Investigadores\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "proyectos" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-proyecto",
+            "editar-proyecto",
+            "eliminar-proyecto",
+            "agregar-publicacion",
+            "editar-publicacion",
+            "eliminar-publicacion"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-paperclip" }),
-                  _vm._v("Documentos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "proyectos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-paperclip"
+                      }),
+                      _vm._v("Documentos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "equipamientos" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-equipamiento",
+            "editar-equipamiento",
+            "eliminar-equipamiento"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-portfolio" }),
-                  _vm._v("Equipamientos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "equipamientos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-portfolio"
+                      }),
+                      _vm._v("Equipamientos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "noticias" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-noticia",
+            "editar-noticia",
+            "eliminar-noticia",
+            "agregar-novedad",
+            "editar-novedad",
+            "eliminar-novedad",
+            "agregar-actividad",
+            "editar-actividad",
+            "eliminar-actividad"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-news-paper" }),
-                  _vm._v("Publicidad\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "noticias" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
@@ -84134,8 +84253,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
-/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
 /* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-events */ "./node_modules/vue-events/dist/index.js");
 /* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_events__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vue_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toastr */ "./node_modules/vue-toastr/dist/vue-toastr.esm.js");
@@ -84246,8 +84365,8 @@ Vue.component("checkboxs_actividades", __webpack_require__(/*! ./components/siti
 Vue.component("checkboxs_investigadores", __webpack_require__(/*! ./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/investigadores/CheckboxsPublicarComponent.vue")["default"]);
 var app = new Vue({
   el: "#app",
-  router: _router_index__WEBPACK_IMPORTED_MODULE_0__["default"],
-  store: _store_index__WEBPACK_IMPORTED_MODULE_1__["default"]
+  store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"],
+  router: _router_index__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
@@ -90124,6 +90243,8 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/index */ "./resources/js/store/index.js");
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -90147,7 +90268,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas"
+        title: "Cepas Microbianas",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
       }
     }, //bacterias
     {
@@ -90157,7 +90279,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "bacteria/:cepaId",
@@ -90172,7 +90295,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90181,7 +90305,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90190,7 +90315,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-fisio",
@@ -90199,7 +90325,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
-          title: "Características Fisiológicas"
+          title: "Características Fisiológicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90208,7 +90335,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90217,7 +90345,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //hongos
@@ -90228,7 +90357,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "hongo/:cepaId",
@@ -90243,7 +90373,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90252,7 +90383,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90261,7 +90393,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90270,7 +90403,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90279,7 +90413,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //levaduras
@@ -90290,7 +90425,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "levadura/:cepaId",
@@ -90305,7 +90441,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90314,7 +90451,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90323,7 +90461,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90332,7 +90471,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90341,7 +90481,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //actinomiceto
@@ -90352,7 +90493,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "actinomiceto/:cepaId",
@@ -90367,7 +90509,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90376,7 +90519,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-bioqui",
@@ -90385,7 +90529,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
-          title: "Identificación Bioquímica"
+          title: "Identificación Bioquímica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "otras-caract",
@@ -90394,7 +90539,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
-          title: "Otras Características"
+          title: "Otras Características",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-molecu",
@@ -90403,7 +90549,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | caract-molecu-cepa-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
         },
         meta: {
-          title: "Características Moleculares"
+          title: "Características Moleculares",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90412,7 +90559,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | metodo-conser-cepa-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }]
@@ -90437,7 +90585,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Bacterias"
+        title: "Cepas Microbianas - Bacterias",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
       }
     }, {
       path: ":cepaBacteriaId",
@@ -90452,7 +90601,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90461,7 +90611,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90470,7 +90621,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-fisio",
@@ -90479,7 +90631,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
-          title: "Características Fisiológicas"
+          title: "Características Fisiológicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90488,7 +90641,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90497,7 +90651,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
@@ -90507,7 +90662,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Bacteria"
+        title: "Ver Bacteria",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90531,7 +90687,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Hongos"
+        title: "Cepas Microbianas - Hongos",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
       }
     }, {
       path: ":cepaHongoId",
@@ -90546,7 +90703,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90555,7 +90713,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90564,7 +90723,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90573,7 +90733,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90582,7 +90743,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
@@ -90592,7 +90754,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Hongo"
+        title: "Ver Hongo",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90616,7 +90779,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Levaduras"
+        title: "Cepas Microbianas - Levaduras",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
       }
     }, {
       path: ":cepaLevaduraId",
@@ -90631,7 +90795,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90640,7 +90805,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
@@ -90649,7 +90815,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
@@ -90658,7 +90825,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90667,7 +90835,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
@@ -90677,7 +90846,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Levadura"
+        title: "Ver Levadura",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90701,7 +90871,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Actinomicetos"
+        title: "Cepas Microbianas - Actinomicetos",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
       }
     }, {
       path: ":cepaActinomicetoId",
@@ -90716,7 +90887,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
@@ -90725,7 +90897,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-bioqui",
@@ -90734,7 +90907,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
-          title: "Identificación Bioquímica"
+          title: "Identificación Bioquímica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "otras-caract",
@@ -90743,7 +90917,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
-          title: "Otras Características"
+          title: "Otras Características",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-molecu",
@@ -90752,7 +90927,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | caract-molecu-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
         },
         meta: {
-          title: "Características Moleculares"
+          title: "Características Moleculares",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90761,7 +90937,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | metodo-conser-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
@@ -90771,7 +90948,8 @@ var routes = [//-------------------------------TODAS----------------------------
         return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Actinomiceto"
+        title: "Ver Actinomiceto",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90790,7 +90968,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
-      title: "Tabla Usuarios"
+      title: "Tabla Usuarios",
+      permisos: ["agregar-usuario", "editar-usuario", "eliminar-usuario"]
     }
   }, {
     path: "tabla-roles",
@@ -90799,7 +90978,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
     },
     meta: {
-      title: "Tabla Usuarios"
+      title: "Tabla Roles",
+      superAdmin: 1
     }
   }, {
     path: "tabla-seguimiento",
@@ -90808,7 +90988,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
     },
     meta: {
-      title: "Tabla Seguimientos"
+      title: "Tabla Seguimientos",
+      superAdmin: 1
     }
   }]
 }, // ------------------------------- OTRA INFORMACION ------------------------------------------
@@ -90825,7 +91006,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Cepas"
+      title: "Tablas Info Cepas",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "bacterias",
@@ -90834,7 +91016,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Bacterias"
+      title: "Tablas Info Bacterias",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "hongos",
@@ -90843,7 +91026,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Hongos"
+      title: "Tablas Info Hongos",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "levaduras",
@@ -90852,7 +91036,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Levaduras"
+      title: "Tablas Info Levaduras",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "actinomicetos",
@@ -90861,7 +91046,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Actinomicetos"
+      title: "Tablas Info Actinomicetos",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }]
 }, // ------------------------------- QUIENES SOMOS ------------------------------------------
@@ -90878,7 +91064,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
     },
     meta: {
-      title: "Misión"
+      title: "Misión",
+      permisos: ["editar-mision"]
     }
   }, {
     path: "vision",
@@ -90887,7 +91074,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
     },
     meta: {
-      title: "Visión"
+      title: "Visión",
+      permisos: ["editar-vision"]
     }
   }, {
     path: "objetivos",
@@ -90896,7 +91084,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
     },
     meta: {
-      title: "Objetivos"
+      title: "Objetivos",
+      permisos: ["editar-objetivos"]
     }
   }]
 }, // ------------------------------- DOCUMENTOS ------------------------------------------
@@ -90913,7 +91102,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
-      title: "Proyectos"
+      title: "Proyectos",
+      permisos: ["agregar-proyecto", "editar-proyecto", "eliminar-proyecto"]
     }
   }, {
     path: "publicaciones",
@@ -90922,7 +91112,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
-      title: "Publicaciones"
+      title: "Publicaciones",
+      permisos: ["agregar-publicacion", "editar-publicacion", "eliminar-publicacion"]
     }
   }]
 }, // ------------------------------- PUBLICIDAD ------------------------------------------
@@ -90939,7 +91130,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
-      title: "Noticias"
+      title: "Noticias",
+      permisos: ["agregar-noticia", "editar-noticia", "eliminar-noticia"]
     }
   }, {
     path: "actividades",
@@ -90948,7 +91140,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
-      title: "Actividades"
+      title: "Actividades",
+      permisos: ["agregar-actividad", "editar-actividad", "eliminar-actividad"]
     }
   }, {
     path: "novedades",
@@ -90957,7 +91150,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
-      title: "Novedades"
+      title: "Novedades",
+      permisos: ["agregar-novedad", "editar-novedad", "eliminar-novedad"]
     }
   }]
 }, {
@@ -90985,7 +91179,8 @@ var routes = [//-------------------------------TODAS----------------------------
     return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
-    title: "Imagenes Login"
+    title: "Imagenes Login",
+    permisos: ["editar-imglogin"]
   }
 }, {
   path: "/investigadores",
@@ -90994,7 +91189,8 @@ var routes = [//-------------------------------TODAS----------------------------
     return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
-    title: "Investigadores"
+    title: "Investigadores",
+    permisos: ["agregar-investigador", "editar-investigador", "eliminar-investigador"]
   }
 }, {
   path: "/equipamientos",
@@ -91003,7 +91199,17 @@ var routes = [//-------------------------------TODAS----------------------------
     return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
-    title: "Equipamientos"
+    title: "Equipamientos",
+    permisos: ["agregar-equipamiento", "editar-equipamiento", "eliminar-equipamiento"]
+  }
+}, {
+  path: "/sin-acceso",
+  name: "sin-acceso",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | error-403 */ "error-403").then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
+  },
+  meta: {
+    title: "Sin Accesso"
   }
 }, {
   path: "*",
@@ -91012,7 +91218,7 @@ var routes = [//-------------------------------TODAS----------------------------
     return __webpack_require__.e(/*! import() | error-404 */ "error-404").then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
   },
   meta: {
-    title: "Error 404"
+    title: "Esta Pagina No existe"
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -91022,7 +91228,26 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 router.beforeEach(function (to, from, next) {
   document.title = to.meta.title;
-  next();
+
+  if (to.matched.some(function (record) {
+    return record.meta.permisos;
+  })) {
+    if (_store_index__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getPermisoByNombres(to.meta.permisos)) {
+      return next();
+    } else {
+      return next("/sin-acceso");
+    }
+  } else if (to.matched.some(function (record) {
+    return record.meta.superAdmin;
+  })) {
+    if (_store_index__WEBPACK_IMPORTED_MODULE_2__["default"]._modules.root.state.auth.rol_id === to.meta.superAdmin) {
+      return next();
+    } else {
+      return next("/sin-acceso");
+    }
+  }
+
+  return next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
@@ -91065,14 +91290,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
 
+var user = document.head.querySelector('meta[name="user"]');
+var permisos = document.head.querySelector('meta[name="permisos-user"]');
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    //  auth: JSON.parse(userLogueado.content)
-    auth: null,
-    permisos: []
+    auth: JSON.parse(user.content),
+    permisos: JSON.parse(permisos.content)
+  },
+  getters: {
+    getPermiso: function getPermiso(state) {
+      return state.permisos;
+    },
+    getPermisoByNombre: function getPermisoByNombre(state) {
+      return function (nombre) {
+        return state.permisos.find(function (permiso) {
+          return permiso.nombre.toUpperCase() === nombre.toUpperCase();
+        });
+      };
+    },
+    getPermisoByNombres: function getPermisoByNombres(state, getters) {
+      return function (nombres) {
+        var res = false;
+        nombres.forEach(function (nombre) {
+          if (getters.getPermisoByNombre(nombre)) {
+            res = true;
+          }
+        });
+        return res;
+      };
+    }
   },
   mutations: {
     mutacionModificarAuth: function mutacionModificarAuth(state, data) {

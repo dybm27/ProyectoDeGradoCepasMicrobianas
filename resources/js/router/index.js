@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "../store/index";
 Vue.use(VueRouter);
 
 const routes = [
@@ -33,7 +34,15 @@ const routes = [
 
                                 "../components/cepas/ContainerFormTablaComponent.vue"
                             ),
-                        meta: { title: "Cepas Microbianas" }
+                        meta: {
+                            title: "Cepas Microbianas",
+                            permisos: [
+                                "agregar-cepa",
+                                "editar-cepa",
+                                "eliminar-cepa",
+                                "caract-cepa"
+                            ]
+                        }
                     },
                     //bacterias
                     {
@@ -45,7 +54,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Cepa" }
+                        meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
                         path: "bacteria/:cepaId",
@@ -66,7 +75,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -77,7 +89,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -88,7 +103,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-fisio",
@@ -99,7 +117,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"
                                     ),
-                                meta: { title: "Características Fisiológicas" }
+                                meta: {
+                                    title: "Características Fisiológicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -110,7 +131,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -121,7 +145,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -135,7 +162,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Cepa" }
+                        meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
                         path: "hongo/:cepaId",
@@ -156,7 +183,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -167,7 +197,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -178,7 +211,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -189,7 +225,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -200,7 +239,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -214,7 +256,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Cepa" }
+                        meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
                         path: "levadura/:cepaId",
@@ -235,7 +277,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -246,7 +291,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -257,7 +305,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -268,7 +319,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -279,7 +333,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -293,7 +350,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Cepa" }
+                        meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
                         path: "actinomiceto/:cepaId",
@@ -314,7 +371,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -325,7 +385,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-bioqui",
@@ -336,7 +399,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"
                                     ),
-                                meta: { title: "Identificación Bioquímica" }
+                                meta: {
+                                    title: "Identificación Bioquímica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "otras-caract",
@@ -347,7 +413,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"
                                     ),
-                                meta: { title: "Otras Características" }
+                                meta: {
+                                    title: "Otras Características",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-molecu",
@@ -358,7 +427,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"
                                     ),
-                                meta: { title: "Características Moleculares" }
+                                meta: {
+                                    title: "Características Moleculares",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -369,7 +441,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     }
@@ -408,7 +483,15 @@ const routes = [
 
                                 "../components/cepas/ContainerFormTablaComponent.vue"
                             ),
-                        meta: { title: "Cepas Microbianas - Bacterias" }
+                        meta: {
+                            title: "Cepas Microbianas - Bacterias",
+                            permisos: [
+                                "agregar-cepa",
+                                "editar-cepa",
+                                "eliminar-cepa",
+                                "caract-cepa"
+                            ]
+                        }
                     },
                     {
                         path: ":cepaBacteriaId",
@@ -429,7 +512,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -440,7 +526,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -451,7 +540,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-fisio",
@@ -462,7 +554,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"
                                     ),
-                                meta: { title: "Características Fisiológicas" }
+                                meta: {
+                                    title: "Características Fisiológicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -473,7 +568,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -484,7 +582,10 @@ const routes = [
 
                                         "../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -497,7 +598,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Bacteria" }
+                        meta: { title: "Ver Bacteria", permisos: ["ver-cepa"] }
                     }
                 ]
             }
@@ -534,7 +635,15 @@ const routes = [
 
                                 "../components/cepas/ContainerFormTablaComponent.vue"
                             ),
-                        meta: { title: "Cepas Microbianas - Hongos" }
+                        meta: {
+                            title: "Cepas Microbianas - Hongos",
+                            permisos: [
+                                "agregar-cepa",
+                                "editar-cepa",
+                                "eliminar-cepa",
+                                "caract-cepa"
+                            ]
+                        }
                     },
 
                     {
@@ -556,7 +665,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -567,7 +679,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -578,7 +693,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -589,7 +707,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -600,7 +721,10 @@ const routes = [
 
                                         "../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -613,7 +737,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Hongo" }
+                        meta: { title: "Ver Hongo", permisos: ["ver-cepa"] }
                     }
                 ]
             }
@@ -649,7 +773,15 @@ const routes = [
 
                                 "../components/cepas/ContainerFormTablaComponent.vue"
                             ),
-                        meta: { title: "Cepas Microbianas - Levaduras" }
+                        meta: {
+                            title: "Cepas Microbianas - Levaduras",
+                            permisos: [
+                                "agregar-cepa",
+                                "editar-cepa",
+                                "eliminar-cepa",
+                                "caract-cepa"
+                            ]
+                        }
                     },
 
                     {
@@ -671,7 +803,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -682,7 +817,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-bioqui",
@@ -693,7 +831,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"
                                     ),
-                                meta: { title: "Características Bioquímicas" }
+                                meta: {
+                                    title: "Características Bioquímicas",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-molecu",
@@ -704,7 +845,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"
                                     ),
-                                meta: { title: "Identificación Molecular" }
+                                meta: {
+                                    title: "Identificación Molecular",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -715,7 +859,10 @@ const routes = [
 
                                         "../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -728,7 +875,7 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Levadura" }
+                        meta: { title: "Ver Levadura", permisos: ["ver-cepa"] }
                     }
                 ]
             }
@@ -764,7 +911,15 @@ const routes = [
 
                                 "../components/cepas/ContainerFormTablaComponent.vue"
                             ),
-                        meta: { title: "Cepas Microbianas - Actinomicetos" }
+                        meta: {
+                            title: "Cepas Microbianas - Actinomicetos",
+                            permisos: [
+                                "agregar-cepa",
+                                "editar-cepa",
+                                "eliminar-cepa",
+                                "caract-cepa"
+                            ]
+                        }
                     },
                     {
                         path: ":cepaActinomicetoId",
@@ -785,7 +940,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"
                                     ),
-                                meta: { title: "Características Macroscópica" }
+                                meta: {
+                                    title: "Características Macroscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-micro",
@@ -796,7 +954,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"
                                     ),
-                                meta: { title: "Características Microscópica" }
+                                meta: {
+                                    title: "Características Microscópica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "identi-bioqui",
@@ -807,7 +968,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"
                                     ),
-                                meta: { title: "Identificación Bioquímica" }
+                                meta: {
+                                    title: "Identificación Bioquímica",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "otras-caract",
@@ -818,7 +982,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"
                                     ),
-                                meta: { title: "Otras Características" }
+                                meta: {
+                                    title: "Otras Características",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "caract-molecu",
@@ -829,7 +996,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"
                                     ),
-                                meta: { title: "Características Moleculares" }
+                                meta: {
+                                    title: "Características Moleculares",
+                                    permisos: ["caract-cepa"]
+                                }
                             },
                             {
                                 path: "metodo-conser",
@@ -840,7 +1010,10 @@ const routes = [
 
                                         "../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"
                                     ),
-                                meta: { title: "Métodos de Conservación" }
+                                meta: {
+                                    title: "Métodos de Conservación",
+                                    permisos: ["caract-cepa"]
+                                }
                             }
                         ]
                     },
@@ -853,7 +1026,10 @@ const routes = [
 
                                 "../components/cepas/VerCepaComponent.vue"
                             ),
-                        meta: { title: "Ver Actinomiceto" }
+                        meta: {
+                            title: "Ver Actinomiceto",
+                            permisos: ["ver-cepa"]
+                        }
                     }
                 ]
             }
@@ -882,7 +1058,14 @@ const routes = [
 
                         "../components/gestionar_usuarios/usuarios/ContainerComponent.vue"
                     ),
-                meta: { title: "Tabla Usuarios" }
+                meta: {
+                    title: "Tabla Usuarios",
+                    permisos: [
+                        "agregar-usuario",
+                        "editar-usuario",
+                        "eliminar-usuario"
+                    ]
+                }
             },
             {
                 path: "tabla-roles",
@@ -893,7 +1076,7 @@ const routes = [
 
                         "../components/gestionar_usuarios/roles/ContainerComponent.vue"
                     ),
-                meta: { title: "Tabla Usuarios" }
+                meta: { title: "Tabla Roles", superAdmin: 1 }
             },
             {
                 path: "tabla-seguimiento",
@@ -904,7 +1087,7 @@ const routes = [
 
                         "../components/gestionar_usuarios/seguimiento/TablaComponent.vue"
                     ),
-                meta: { title: "Tabla Seguimientos" }
+                meta: { title: "Tabla Seguimientos", superAdmin: 1 }
             }
         ]
     },
@@ -928,7 +1111,10 @@ const routes = [
 
                         "../components/otra-info/CepasComponent.vue"
                     ),
-                meta: { title: "Tablas Info Cepas" }
+                meta: {
+                    title: "Tablas Info Cepas",
+                    permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
+                }
             },
             {
                 path: "bacterias",
@@ -939,7 +1125,10 @@ const routes = [
 
                         "../components/otra-info/BacteriasComponent.vue"
                     ),
-                meta: { title: "Tablas Info Bacterias" }
+                meta: {
+                    title: "Tablas Info Bacterias",
+                    permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
+                }
             },
             {
                 path: "hongos",
@@ -950,7 +1139,10 @@ const routes = [
 
                         "../components/otra-info/HongosComponent.vue"
                     ),
-                meta: { title: "Tablas Info Hongos" }
+                meta: {
+                    title: "Tablas Info Hongos",
+                    permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
+                }
             },
             {
                 path: "levaduras",
@@ -961,7 +1153,10 @@ const routes = [
 
                         "../components/otra-info/LevadurasComponent.vue"
                     ),
-                meta: { title: "Tablas Info Levaduras" }
+                meta: {
+                    title: "Tablas Info Levaduras",
+                    permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
+                }
             },
             {
                 path: "actinomicetos",
@@ -972,7 +1167,10 @@ const routes = [
 
                         "../components/otra-info/ActinomicetosComponent.vue"
                     ),
-                meta: { title: "Tablas Info Actinomicetos" }
+                meta: {
+                    title: "Tablas Info Actinomicetos",
+                    permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
+                }
             }
         ]
     },
@@ -996,7 +1194,7 @@ const routes = [
 
                         "../components/sitio-web/quienes-somos/MisionComponent.vue"
                     ),
-                meta: { title: "Misión" }
+                meta: { title: "Misión", permisos: ["editar-mision"] }
             },
             {
                 path: "vision",
@@ -1007,7 +1205,7 @@ const routes = [
 
                         "../components/sitio-web/quienes-somos/VisionComponent.vue"
                     ),
-                meta: { title: "Visión" }
+                meta: { title: "Visión", permisos: ["editar-vision"] }
             },
             {
                 path: "objetivos",
@@ -1018,7 +1216,7 @@ const routes = [
 
                         "../components/sitio-web/quienes-somos/ObjetivosComponent.vue"
                     ),
-                meta: { title: "Objetivos" }
+                meta: { title: "Objetivos", permisos: ["editar-objetivos"] }
             }
         ]
     },
@@ -1043,7 +1241,14 @@ const routes = [
 
                         "../components/sitio-web/documentos/proyectos/ContainerComponent.vue"
                     ),
-                meta: { title: "Proyectos" }
+                meta: {
+                    title: "Proyectos",
+                    permisos: [
+                        "agregar-proyecto",
+                        "editar-proyecto",
+                        "eliminar-proyecto"
+                    ]
+                }
             },
             {
                 path: "publicaciones",
@@ -1054,7 +1259,14 @@ const routes = [
 
                         "../components/sitio-web/documentos/publicaciones/ContainerComponent.vue"
                     ),
-                meta: { title: "Publicaciones" }
+                meta: {
+                    title: "Publicaciones",
+                    permisos: [
+                        "agregar-publicacion",
+                        "editar-publicacion",
+                        "eliminar-publicacion"
+                    ]
+                }
             }
         ]
     },
@@ -1079,7 +1291,14 @@ const routes = [
 
                         "../components/sitio-web/publicidad/noticias/ContainerComponent.vue"
                     ),
-                meta: { title: "Noticias" }
+                meta: {
+                    title: "Noticias",
+                    permisos: [
+                        "agregar-noticia",
+                        "editar-noticia",
+                        "eliminar-noticia"
+                    ]
+                }
             },
             {
                 path: "actividades",
@@ -1090,7 +1309,14 @@ const routes = [
 
                         "../components/sitio-web/publicidad/actividades/ContainerComponent.vue"
                     ),
-                meta: { title: "Actividades" }
+                meta: {
+                    title: "Actividades",
+                    permisos: [
+                        "agregar-actividad",
+                        "editar-actividad",
+                        "eliminar-actividad"
+                    ]
+                }
             },
             {
                 path: "novedades",
@@ -1101,7 +1327,14 @@ const routes = [
 
                         "../components/sitio-web/publicidad/novedades/ContainerComponent.vue"
                     ),
-                meta: { title: "Novedades" }
+                meta: {
+                    title: "Novedades",
+                    permisos: [
+                        "agregar-novedad",
+                        "editar-novedad",
+                        "eliminar-novedad"
+                    ]
+                }
             }
         ]
     },
@@ -1136,7 +1369,7 @@ const routes = [
 
                 "../components/imagenes-login/ImagenesLoginComponent.vue"
             ),
-        meta: { title: "Imagenes Login" }
+        meta: { title: "Imagenes Login", permisos: ["editar-imglogin"] }
     },
     {
         path: "/investigadores",
@@ -1147,7 +1380,14 @@ const routes = [
 
                 "../components/sitio-web/InvestigadoresComponent.vue"
             ),
-        meta: { title: "Investigadores" }
+        meta: {
+            title: "Investigadores",
+            permisos: [
+                "agregar-investigador",
+                "editar-investigador",
+                "eliminar-investigador"
+            ]
+        }
     },
     {
         path: "/equipamientos",
@@ -1158,7 +1398,25 @@ const routes = [
 
                 "../components/sitio-web/EquipamientosComponent.vue"
             ),
-        meta: { title: "Equipamientos" }
+        meta: {
+            title: "Equipamientos",
+            permisos: [
+                "agregar-equipamiento",
+                "editar-equipamiento",
+                "eliminar-equipamiento"
+            ]
+        }
+    },
+    {
+        path: "/sin-acceso",
+        name: "sin-acceso",
+        component: () =>
+            import(
+                /* webpackChunkName: "error-403" */
+
+                "../components/errores/Error403Component.vue"
+            ),
+        meta: { title: "Sin Accesso" }
     },
     {
         path: "*",
@@ -1169,7 +1427,7 @@ const routes = [
 
                 "../components/errores/Error404Component.vue"
             ),
-        meta: { title: "Error 404" }
+        meta: { title: "Esta Pagina No existe" }
     }
 ];
 
@@ -1181,7 +1439,20 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
-    next();
+    if (to.matched.some(record => record.meta.permisos)) {
+        if (store.getters.getPermisoByNombres(to.meta.permisos)) {
+            return next();
+        } else {
+            return next("/sin-acceso");
+        }
+    } else if (to.matched.some(record => record.meta.superAdmin)) {
+        if (store._modules.root.state.auth.rol_id === to.meta.superAdmin) {
+            return next();
+        } else {
+            return next("/sin-acceso");
+        }
+    }
+    return next();
 });
 
 export default router;

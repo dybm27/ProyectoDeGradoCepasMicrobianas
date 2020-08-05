@@ -309,25 +309,25 @@
 .app-sidebar__heading {
     color: #38c172;
 }
-.vertical-nav-menu li a:hover {
+.vertical-nav-menu-majumba li a:hover {
     background: #06f37940;
 }
 
-.vertical-nav-menu li a.mm-active {
+.vertical-nav-menu-majumba li a.mm-active {
     color: #38c172;
     background: #06f37940;
 }
 
-.vertical-nav-menu ul > li > a.mm-active {
+.vertical-nav-menu-majumba ul > li > a.mm-active {
     color: #38c172;
     background: #06f37940;
 }
 
-.vertical-nav-menu ul:before {
+.vertical-nav-menu-majumba ul:before {
     background: #06f37940;
 }
 
-.vertical-nav-menu ul > li > a:hover {
+.vertical-nav-menu-majumba ul > li > a:hover {
     color: #38c172;
 }
 

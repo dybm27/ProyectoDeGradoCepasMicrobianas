@@ -11994,14 +11994,14 @@ button,
 	z-index: 12
 }
 
-.vertical-nav-menu {
+.vertical-nav-menu-majumba {
 	margin: 0;
 	padding: 0;
 	position: relative;
 	list-style: none
 }
 
-.vertical-nav-menu::after {
+.vertical-nav-menu-majumba::after {
 	content: " ";
 	pointer-events: none;
 	position: absolute;
@@ -12011,11 +12011,11 @@ button,
 	top: 0
 }
 
-.vertical-nav-menu .mm-collapse:not(.mm-show) {
+.vertical-nav-menu-majumba .mm-collapse:not(.mm-show) {
 	display: none
 }
 
-.vertical-nav-menu .mm-collapsing {
+.vertical-nav-menu-majumba .mm-collapsing {
 	position: relative;
 	height: 0;
 	overflow: hidden;
@@ -12024,19 +12024,19 @@ button,
 	transition-property: height, visibility
 }
 
-.vertical-nav-menu ul {
+.vertical-nav-menu-majumba ul {
 	margin: 0;
 	padding: 0;
 	position: relative;
 	list-style: none
 }
 
-.vertical-nav-menu:before {
+.vertical-nav-menu-majumba:before {
 	opacity: 0;
 	transition: opacity 300ms
 }
 
-.vertical-nav-menu li a {
+.vertical-nav-menu-majumba li a {
 	display: block;
 	line-height: 2.4rem;
 	height: 2.4rem;
@@ -12049,35 +12049,35 @@ button,
 	margin: .1rem 0
 }
 
-.vertical-nav-menu li a:hover {
+.vertical-nav-menu-majumba li a:hover {
 	background: #e0f3ff;
 	text-decoration: none
 }
 
-.vertical-nav-menu li a:hover i.metismenu-icon {
+.vertical-nav-menu-majumba li a:hover i.metismenu-icon {
 	opacity: .6
 }
 
-.vertical-nav-menu li a:hover i.metismenu-state-icon {
+.vertical-nav-menu-majumba li a:hover i.metismenu-state-icon {
 	opacity: 1
 }
 
-.vertical-nav-menu li.mm-active>a {
+.vertical-nav-menu-majumba li.mm-active>a {
 	font-weight: bold
 }
 
-.vertical-nav-menu li.mm-active>a i.metismenu-state-icon {
+.vertical-nav-menu-majumba li.mm-active>a i.metismenu-state-icon {
 	transform: rotate(-180deg)
 }
 
-.vertical-nav-menu li a.mm-active {
+.vertical-nav-menu-majumba li a.mm-active {
 	color: #3f6ad8;
 	background: #e0f3ff;
 	font-weight: bold
 }
 
-.vertical-nav-menu i.metismenu-state-icon,
-.vertical-nav-menu i.metismenu-icon {
+.vertical-nav-menu-majumba i.metismenu-state-icon,
+.vertical-nav-menu-majumba i.metismenu-icon {
 	text-align: center;
 	width: 34px;
 	height: 34px;
@@ -12091,18 +12091,18 @@ button,
 	transition: color 300ms
 }
 
-.vertical-nav-menu i.metismenu-state-icon {
+.vertical-nav-menu-majumba i.metismenu-state-icon {
 	transition: transform 300ms;
 	left: auto;
 	right: 0
 }
 
-.vertical-nav-menu ul {
+.vertical-nav-menu-majumba ul {
 	transition: padding 300ms;
 	padding: .5em 0 0 2rem
 }
 
-.vertical-nav-menu ul:before {
+.vertical-nav-menu-majumba ul:before {
 	content: '';
 	height: 100%;
 	opacity: 1;
@@ -12114,22 +12114,22 @@ button,
 	border-radius: 15px
 }
 
-.vertical-nav-menu ul>li>a {
+.vertical-nav-menu-majumba ul>li>a {
 	color: #6c757d;
 	height: 2rem;
 	line-height: 2rem;
 	padding: 0 1.5rem 0
 }
 
-.vertical-nav-menu ul>li>a:hover {
+.vertical-nav-menu-majumba ul>li>a:hover {
 	color: #3f6ad8
 }
 
-.vertical-nav-menu ul>li>a .metismenu-icon {
+.vertical-nav-menu-majumba ul>li>a .metismenu-icon {
 	display: none
 }
 
-.vertical-nav-menu ul>li>a.mm-active {
+.vertical-nav-menu-majumba ul>li>a.mm-active {
 	color: #3f6ad8;
 	background: #e0f3ff;
 	font-weight: bold
@@ -12147,49 +12147,49 @@ button,
 	background: rgba(255, 255, 255, 0.5) !important
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a {
 	color: rgba(255, 255, 255, 0.7)
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-icon {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a i.metismenu-icon {
 	opacity: .5
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-state-icon {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a i.metismenu-state-icon {
 	opacity: .5
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a:hover {
 	background: rgba(255, 255, 255, 0.15);
 	color: #fff
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-icon {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a:hover i.metismenu-icon {
 	opacity: .8
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-state-icon {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a:hover i.metismenu-state-icon {
 	opacity: 1
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu li a.mm-active {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba li a.mm-active {
 	color: rgba(255, 255, 255, 0.7);
 	background: rgba(255, 255, 255, 0.15)
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu ul:before {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba ul:before {
 	background: rgba(255, 255, 255, 0.1)
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu ul>li>a {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba ul>li>a {
 	color: rgba(255, 255, 255, 0.6)
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu ul>li>a:hover {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba ul>li>a:hover {
 	color: #fff
 }
 
-.app-sidebar.sidebar-text-light .vertical-nav-menu ul>li>a.mm-active {
+.app-sidebar.sidebar-text-light .vertical-nav-menu-majumba ul>li>a.mm-active {
 	color: #fff;
 	background: rgba(255, 255, 255, 0.15)
 }
@@ -12224,49 +12224,49 @@ button,
 	background: rgba(0, 0, 0, 0.5) !important
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a {
 	color: rgba(0, 0, 0, 0.6)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-icon {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a i.metismenu-icon {
 	opacity: .5
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-state-icon {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a i.metismenu-state-icon {
 	opacity: .5
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a:hover {
 	background: rgba(0, 0, 0, 0.15);
 	color: rgba(0, 0, 0, 0.7)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-icon {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a:hover i.metismenu-icon {
 	opacity: .7
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-state-icon {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a:hover i.metismenu-state-icon {
 	opacity: 1
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu li a.mm-active {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba li a.mm-active {
 	color: rgba(0, 0, 0, 0.7);
 	background: rgba(0, 0, 0, 0.15)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu ul:before {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba ul:before {
 	background: rgba(0, 0, 0, 0.1)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu ul>li>a {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba ul>li>a {
 	color: rgba(0, 0, 0, 0.4)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu ul>li>a:hover {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba ul>li>a:hover {
 	color: rgba(0, 0, 0, 0.7)
 }
 
-.app-sidebar.sidebar-text-dark .vertical-nav-menu ul>li>a.mm-active {
+.app-sidebar.sidebar-text-dark .vertical-nav-menu-majumba ul>li>a.mm-active {
 	color: rgba(0, 0, 0, 0.7);
 	background: rgba(0, 0, 0, 0.15)
 }
