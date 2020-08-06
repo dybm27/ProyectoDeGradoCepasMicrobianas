@@ -1,6 +1,10 @@
 <template>
   <div>
-    <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+    <ul
+      class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+      v-if="getPermisoByNombres(['agregar-proyecto','editar-proyecto','eliminar-proyecto'])
+      &&getPermisoByNombres(['agregar-publicacion','editar-publicacion','eliminar-publicacion'])"
+    >
       <li class="nav-item">
         <router-link :to="{name:'proyectos'}" class="nav-link" active-class="active" exact>
           <span>Proyectos</span>
@@ -19,6 +23,7 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   methods: {
     ruta(ruta) {
@@ -26,7 +31,10 @@ export default {
     },
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
-  }
+    },
+  },
+  computed: {
+    ...vuex.mapGetters(["getPermisoByNombres"]),
+  },
 };
 </script>

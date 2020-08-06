@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row" v-if="getPermisoByNombres(['editar-usuario','eliminar-usuario'])">
       <div class="col-md-12 col-lg-12">
         <button
+          v-if="getPermisoByNombre('editar-usuario')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
           @click="editar(rowData)"
@@ -12,6 +13,7 @@
         </button>
 
         <button
+          v-if="getPermisoByNombre('eliminar-usuario')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
           @click="showModal(rowData)"
@@ -21,13 +23,18 @@
         </button>
       </div>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
   <script>
 import websocketsAccionesSinCheckMixin from "../../../mixins/websocketsAccionesSinCheck";
 import vuex from "vuex";
+import IconoNoAccess from "../../IconoNoAccess.vue";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -40,6 +47,7 @@ export default {
   mixins: [websocketsAccionesSinCheckMixin("usuario", "Usuario", "usuarios")],
   computed: {
     ...vuex.mapState(["auth"]),
+    ...vuex.mapGetters(["getPermisoByNombre", "getPermisoByNombres"]),
   },
 };
 </script>

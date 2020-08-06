@@ -18,7 +18,8 @@ export default [
         name: "__component:checkboxs_noticias",
         title: "Publicar",
         titleClass: "text-center",
-        dataClass: "text-center"
+        dataClass: "text-center",
+        sortField: "publicar"
     },
     {
         name: "__component:acciones_noticias",

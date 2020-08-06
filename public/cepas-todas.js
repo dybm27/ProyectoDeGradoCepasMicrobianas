@@ -550,13 +550,15 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center"
 },, {
   name: "__component:checkboxs_publicar",
+  sortField: "publicar",
   title: "Publicar",
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
   name: "__component:acciones_cepas",
   title: "Acciones",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center"
 }]);
 
 /***/ }),

@@ -640,6 +640,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+moment__WEBPACK_IMPORTED_MODULE_1___default.a.locale("es");
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["bloqueos"],
   data: function data() {

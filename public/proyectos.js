@@ -14,6 +14,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/abrirCerrarFormulario */ "./resources/js/mixins/abrirCerrarFormulario.js");
 /* harmony import */ var _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TablaComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/TablaComponent.vue");
 /* harmony import */ var _FormComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/FormComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -61,6 +68,7 @@ __webpack_require__.r(__webpack_exports__);
     Tabla: _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     Form: _FormComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
   mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_1__["default"])("Proyecto", "proyectos"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto")],
   methods: {
     cambiarTipo: function cambiarTipo(tipo) {
@@ -316,7 +324,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               data: res.data
             });
 
-            _this.$emit("cambiarVariableCroppieulario");
+            _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
           _this.bloquearBtn = false;
@@ -350,7 +358,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               data: res.data
             });
 
-            _this.$emit("cambiarVariableCroppieulario");
+            _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
           _this.bloquearBtn = false;
@@ -653,19 +661,21 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-proyecto")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -1497,7 +1507,7 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-justify"
 }, {
-  name: "__component:descargar_proyecto",
+  name: "__component:descargar_documento",
   title: "Ver",
   titleClass: "text-center",
   dataClass: "text-center"
@@ -1505,7 +1515,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "__component:checkboxs_proyectos",
   title: "Publicar",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  sortField: "publicar"
 }, {
   name: "__component:acciones_proyectos",
   title: "Acciones",

@@ -32,6 +32,7 @@
     "/cepas-todas-container.js": "/cepas-todas-container.js",
     "/documentos.js": "/documentos.js",
     "/equipamientos.js": "/equipamientos.js",
+    "/error-403.js": "/error-403.js",
     "/error-404.js": "/error-404.js",
     "/identi-bioqui-actinomiceto.js": "/identi-bioqui-actinomiceto.js",
     "/identi-molecu-bacteria.js": "/identi-molecu-bacteria.js",
@@ -72,5 +73,5 @@
     "/vendors~tabla-roles.js": "/vendors~tabla-roles.js",
     "/ver-hongo.js": "/ver-hongo.js",
     "/vision.js": "/vision.js",
-    "/error-403.js": "/error-403.js"
+    "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js": "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js"
 }

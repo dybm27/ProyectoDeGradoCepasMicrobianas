@@ -28,7 +28,8 @@ export default [
         name: "__component:checkboxs_equipamientos",
         title: "Publicar",
         titleClass: "text-center",
-        dataClass: "text-center"
+        dataClass: "text-center",
+        sortField: "publicar"
     },
     {
         name: "__component:acciones_equipamientos",

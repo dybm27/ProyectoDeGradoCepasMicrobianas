@@ -64,6 +64,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -80,7 +81,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$emit("cambiarTipo", tipo);
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("info_cepas", ["tipos"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("info_cepas", ["tipos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre"]))
 });
 
 /***/ }),
@@ -1003,10 +1004,47 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("cepas", ["cepas"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("cepas", ["cepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("cepas", ["getCepasByGrupo"]), {
     mostrarTabla: function mostrarTabla() {
-      if (this.cepas != "" && this.cepas != null) {
+      if (this.cepas != "" && this.cepas != null && this.validarTipoCepa) {
         return true;
+      }
+
+      return false;
+    },
+    validarTipoCepa: function validarTipoCepa() {
+      switch (this.tipo) {
+        case "cepa":
+          return true;
+          break;
+
+        case "bacteria":
+          if (this.getCepasByGrupo(1).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "levadura":
+          if (this.getCepasByGrupo(3).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "hongo":
+          if (this.getCepasByGrupo(2).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "actinomiceto":
+          if (this.getCepasByGrupo(4).length > 0) {
+            return true;
+          }
+
+          break;
       }
 
       return false;
@@ -1123,20 +1161,22 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    attrs: { disabled: _vm.tipos == "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-cepa")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        attrs: { disabled: _vm.tipos == "" },
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(

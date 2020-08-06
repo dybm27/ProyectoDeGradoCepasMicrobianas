@@ -36,7 +36,10 @@
       </div>
     </div>
     <template v-if="numPestaña==1">
-      <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+      <ul
+        class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+        v-if="auth.rol_id===1"
+      >
         <li class="nav-item">
           <router-link :to="{name:'tabla-usuarios'}" class="nav-link" active-class="active" exact>
             <span>Tabla Usuarios</span>
@@ -81,7 +84,7 @@ export default {
   data() {
     return { tipo: "", tipo2: null };
   },
-
+  computed: { ...vuex.mapState(["auth"]) },
   mixins: [bloquearPestañasMixin("usuario")],
   methods: {
     ...vuex.mapActions("usuarios", ["accionUsuario", "accionRol"]),

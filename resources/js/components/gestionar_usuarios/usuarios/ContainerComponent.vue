@@ -8,6 +8,7 @@
       <div class="btn-actions-pane-right actions-icon-btn">
         <template v-if="!formulario">
           <button
+            v-if="getPermisoByNombre('agregar-usuario')"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
           >Agregar</button>
@@ -46,6 +47,7 @@ export default {
     return { formulario: false, id: 0 };
   },
   mixins: [websocketsSinCheckMixin("Usuario", "usuarios")],
+  computed: { ...vuex.mapGetters(["getPermisoByNombre"]) },
   methods: {
     abrirFormulario(id) {
       if (id != 0) {

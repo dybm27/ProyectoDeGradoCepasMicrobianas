@@ -5,7 +5,12 @@ export default {
     },
     getters: {
         getCepaById: state => id => {
-            return state.cepas.find(cepa => cepa.id == id);
+            return state.cepas.find(cepa => cepa.id === id);
+        },
+        getCepasByGrupo: state => grupo => {
+            return state.cepas.filter(
+                cepa => cepa.grupo_microbiano_id == grupo
+            );
         }
     },
     mutations: {
@@ -46,7 +51,6 @@ export default {
             });
         },
         accionCepas({ commit }, data) {
-            console.log('accionCepas');
             commit("mutacionCepas", data);
         }
     }

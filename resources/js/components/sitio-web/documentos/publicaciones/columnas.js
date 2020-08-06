@@ -19,7 +19,7 @@ export default [
         dataClass: "text-justify"
     },
     {
-        name: "__component:descargar_publicacion",
+        name: "__component:descargar_documento",
         title: "Ver",
         titleClass: "text-center",
         dataClass: "text-center"
@@ -28,7 +28,8 @@ export default [
         name: "__component:checkboxs_publicaciones",
         title: "Publicar",
         titleClass: "text-center",
-        dataClass: "text-center"
+        dataClass: "text-center",
+        sortField: "publicar"
     },
     {
         name: "__component:acciones_publicaciones",

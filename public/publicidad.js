@@ -165,6 +165,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -190,7 +197,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mostrarNoticia: false,
+      mostrarActividad: false,
+      mostrarNovedad: false
+    };
+  },
   methods: {
     ruta: function ruta(_ruta) {
       this.$emit("rutaHijo", _ruta);
@@ -198,7 +216,35 @@ __webpack_require__.r(__webpack_exports__);
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     }
-  }
+  },
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
+    verificarNav: function verificarNav() {
+      var num = 0;
+
+      if (this.getPermisoByNombres(["agregar-noticia", "editar-noticia", "eliminar-noticia"])) {
+        this.mostrarNoticia = true;
+        num++;
+      } else {
+        this.mostrarNoticia = false;
+      }
+
+      if (this.getPermisoByNombres(["agregar-actividad", "editar-actividad", "eliminar-actividad"])) {
+        this.mostrarActividad = true;
+        num++;
+      } else {
+        this.mostrarActividad = false;
+      }
+
+      if (this.getPermisoByNombres(["agregar-novedad", "editar-novedad", "eliminar-novedad"])) {
+        this.mostrarNovedad = true;
+        num++;
+      } else {
+        this.mostrarNovedad = false;
+      }
+
+      return num;
+    }
+  })
 });
 
 /***/ }),
@@ -333,66 +379,80 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "ul",
-      {
-        staticClass:
-          "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
-      },
-      [
-        _c(
-          "li",
-          { staticClass: "nav-item" },
+    _vm.verificarNav > 1
+      ? _c(
+          "ul",
+          {
+            staticClass:
+              "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+          },
           [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "noticias" },
-                  "active-class": "active",
-                  exact: ""
-                }
-              },
-              [_c("span", [_vm._v("Noticias")])]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "actividades" }, "active-class": "active" }
-              },
-              [_c("span", [_vm._v("Actividades")])]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: { to: { name: "novedades" }, "active-class": "active" }
-              },
-              [_c("span", [_vm._v("Novedades")])]
-            )
-          ],
-          1
+            _vm.mostrarNoticia
+              ? _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: { name: "noticias" },
+                          "active-class": "active",
+                          exact: ""
+                        }
+                      },
+                      [_c("span", [_vm._v("Noticias")])]
+                    )
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.mostrarActividad
+              ? _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: { name: "actividades" },
+                          "active-class": "active"
+                        }
+                      },
+                      [_c("span", [_vm._v("Actividades")])]
+                    )
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.mostrarNovedad
+              ? _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: { name: "novedades" },
+                          "active-class": "active"
+                        }
+                      },
+                      [_c("span", [_vm._v("Novedades")])]
+                    )
+                  ],
+                  1
+                )
+              : _vm._e()
+          ]
         )
-      ]
-    ),
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",

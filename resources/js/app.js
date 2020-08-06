@@ -304,6 +304,11 @@ Vue.component(
 );
 // --------------- acciones documentos -------------------
 Vue.component(
+    "descargar_documento",
+    require("./components/sitio-web/documentos/DescargarComponent.vue")
+        .default
+);
+Vue.component(
     "acciones_proyectos",
     require("./components/sitio-web/documentos/proyectos/AccionesComponent.vue")
         .default
@@ -314,11 +319,6 @@ Vue.component(
         .default
 );
 Vue.component(
-    "descargar_proyecto",
-    require("./components/sitio-web/documentos/proyectos/DescargarComponent.vue")
-        .default
-);
-Vue.component(
     "acciones_publicaciones",
     require("./components/sitio-web/documentos/publicaciones/AccionesComponent.vue")
         .default
@@ -326,11 +326,6 @@ Vue.component(
 Vue.component(
     "checkboxs_publicaciones",
     require("./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")
-        .default
-);
-Vue.component(
-    "descargar_publicacion",
-    require("./components/sitio-web/documentos/publicaciones/DescargarComponent.vue")
         .default
 );
 // --------------- acciones publicidad -------------------

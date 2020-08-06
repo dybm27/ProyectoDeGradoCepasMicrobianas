@@ -221,7 +221,7 @@ export default {
                 "success"
               );
               this.accionProyecto({ tipo: "agregar", data: res.data });
-              this.$emit("cambiarVariableCroppieulario");
+              this.$emit("cambiarVariableFormulario");
             }
           })
           .catch((error) => {
@@ -258,7 +258,7 @@ export default {
                 id: res.data.id,
               });
               this.accionProyecto({ tipo: "editar", data: res.data });
-              this.$emit("cambiarVariableCroppieulario");
+              this.$emit("cambiarVariableFormulario");
             }
           })
           .catch((error) => {

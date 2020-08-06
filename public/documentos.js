@@ -145,6 +145,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -165,6 +172,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     ruta: function ruta(_ruta) {
@@ -173,7 +185,8 @@ __webpack_require__.r(__webpack_exports__);
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
     }
-  }
+  },
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -308,53 +321,64 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "ul",
-      {
-        staticClass:
-          "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
-      },
-      [
-        _c(
-          "li",
-          { staticClass: "nav-item" },
+    _vm.getPermisoByNombres([
+      "agregar-proyecto",
+      "editar-proyecto",
+      "eliminar-proyecto"
+    ]) &&
+    _vm.getPermisoByNombres([
+      "agregar-publicacion",
+      "editar-publicacion",
+      "eliminar-publicacion"
+    ])
+      ? _c(
+          "ul",
+          {
+            staticClass:
+              "body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"
+          },
           [
             _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "proyectos" },
-                  "active-class": "active",
-                  exact: ""
-                }
-              },
-              [_c("span", [_vm._v("Proyectos")])]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
+              "li",
+              { staticClass: "nav-item" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: {
+                      to: { name: "proyectos" },
+                      "active-class": "active",
+                      exact: ""
+                    }
+                  },
+                  [_c("span", [_vm._v("Proyectos")])]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
             _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  to: { name: "publicaciones" },
-                  "active-class": "active"
-                }
-              },
-              [_c("span", [_vm._v("Publicaciones")])]
+              "li",
+              { staticClass: "nav-item" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: {
+                      to: { name: "publicaciones" },
+                      "active-class": "active"
+                    }
+                  },
+                  [_c("span", [_vm._v("Publicaciones")])]
+                )
+              ],
+              1
             )
-          ],
-          1
+          ]
         )
-      ]
-    ),
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",

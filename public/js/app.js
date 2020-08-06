@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2064,7 +2064,8 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2118,9 +2119,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2136,7 +2153,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       var ruta = this.$route.path;
@@ -2252,8 +2269,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2270,9 +2295,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2282,7 +2315,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2450,6 +2484,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2503,9 +2538,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2521,7 +2572,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -2569,8 +2620,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2587,9 +2646,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2599,7 +2666,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2629,6 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2682,9 +2751,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2700,7 +2785,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -2808,8 +2893,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2826,9 +2919,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2838,7 +2939,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2868,6 +2970,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2921,9 +3024,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2939,7 +3058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3047,8 +3166,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3065,9 +3192,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3077,7 +3212,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3107,6 +3243,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3160,9 +3297,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3178,7 +3331,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3286,8 +3439,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3304,9 +3465,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3316,7 +3485,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3484,6 +3654,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAccionesSinCheck */ "./resources/js/mixins/websocketsAccionesSinCheck.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3516,9 +3687,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3529,7 +3709,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("usuario", "Usuario", "usuarios")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3544,7 +3724,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3577,9 +3758,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3589,8 +3779,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3605,7 +3795,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3638,9 +3829,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3650,8 +3850,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3666,7 +3866,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3699,9 +3900,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3711,8 +3921,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3727,7 +3937,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3760,9 +3971,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3772,8 +3992,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3788,7 +4008,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3821,9 +4042,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3833,8 +4063,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3849,7 +4079,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3882,9 +4113,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3894,8 +4134,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3910,7 +4150,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3943,9 +4184,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3955,8 +4205,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3971,7 +4221,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4004,9 +4255,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4016,8 +4276,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4093,7 +4353,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4126,9 +4387,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4138,8 +4408,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4154,7 +4424,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4187,9 +4458,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4199,8 +4479,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4215,7 +4495,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4248,9 +4529,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4260,8 +4550,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4276,7 +4566,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4309,9 +4600,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4321,8 +4621,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4337,7 +4637,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4370,9 +4671,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4382,8 +4692,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4398,7 +4708,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4431,9 +4742,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4443,8 +4763,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4459,7 +4779,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4492,9 +4813,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4504,8 +4834,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4520,7 +4850,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4553,9 +4884,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4565,8 +4905,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4581,7 +4921,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4614,9 +4955,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4626,8 +4976,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4642,7 +4992,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4677,9 +5028,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4689,8 +5052,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4705,7 +5068,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4738,9 +5102,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4750,8 +5123,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("clase", "clases", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("clase", "clases", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4766,7 +5139,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4799,9 +5173,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4811,8 +5194,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("division", "divisions", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("division", "divisions", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4827,7 +5210,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4860,9 +5244,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4872,8 +5265,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("especie", "especies", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("especie", "especies", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -4908,7 +5301,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4941,9 +5335,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4953,8 +5356,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("familia", "familias", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("familia", "familias", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4968,8 +5371,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5002,9 +5406,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5014,8 +5427,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("genero", "generos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("genero", "generos", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -5050,7 +5463,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5083,9 +5497,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5095,8 +5518,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("orden", "ordens", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("orden", "ordens", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5111,7 +5534,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5144,9 +5568,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5156,8 +5589,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5172,7 +5605,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5205,9 +5639,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5217,8 +5660,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("reino", "reinos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("reino", "reinos", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5233,7 +5676,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5266,9 +5710,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5278,8 +5731,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5294,7 +5747,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5327,9 +5781,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5339,8 +5802,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5355,7 +5818,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5390,9 +5854,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5402,8 +5878,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5418,7 +5894,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5451,9 +5928,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5463,8 +5949,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5479,7 +5965,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5512,9 +5999,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5524,8 +6020,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5540,7 +6036,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5575,9 +6072,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5587,8 +6096,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5603,7 +6112,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5636,9 +6146,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5648,8 +6167,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5664,7 +6183,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5697,9 +6217,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5709,8 +6238,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5725,7 +6254,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5760,8 +6290,54 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -5772,8 +6348,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  methods: {
+    descargar: function descargar(data) {
+      window.open(data.rutaPublica);
+    }
+  }
 });
 
 /***/ }),
@@ -5787,8 +6366,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5821,9 +6401,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5833,8 +6422,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("proyecto", "Proyecto", "proyectos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("proyecto", "Proyecto", "proyectos")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5851,6 +6440,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -5867,10 +6463,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5887,12 +6490,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto", "proyectos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -5905,6 +6508,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionProyecto({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -5920,43 +6528,9 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    rowData: {
-      type: Object,
-      required: true
-    },
-    rowIndex: {
-      type: Number
-    }
-  },
-  methods: {
-    descargar: function descargar(data) {
-      window.open(data.rutaPublica);
-    }
   }
 });
 
@@ -5971,8 +6545,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6005,9 +6580,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6017,8 +6601,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("publicacion", "Publicacion", "publicaciones")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("publicacion", "Publicacion", "publicaciones")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6035,6 +6619,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6051,10 +6642,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6071,12 +6669,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Publicacion", "publicaciones"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6089,6 +6687,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionPublicacion({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6104,43 +6707,9 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    rowData: {
-      type: Object,
-      required: true
-    },
-    rowIndex: {
-      type: Number
-    }
-  },
-  methods: {
-    descargar: function descargar(data) {
-      window.open(data.rutaPublica);
-    }
   }
 });
 
@@ -6155,8 +6724,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6189,9 +6759,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6201,8 +6780,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("equipamiento", "Equipamiento", "equipamientos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("equipamiento", "Equipamiento", "equipamientos")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6219,6 +6798,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6235,10 +6821,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6255,12 +6848,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Equipamiento", "equipamientos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6272,6 +6865,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionEquipamiento({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6287,7 +6885,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6304,8 +6902,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6338,9 +6937,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6350,8 +6958,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("investigador", "Investigador", "investigadores")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("investigador", "Investigador", "investigadores")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6368,6 +6976,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6384,10 +6999,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6404,12 +7026,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Investigador", "investigadores"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6421,6 +7043,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionInvestigador({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6436,7 +7063,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6453,8 +7080,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6487,9 +7115,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6499,8 +7136,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("actividad", "Actividad", "actividades")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("actividad", "Actividad", "actividades")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6517,6 +7154,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6533,10 +7177,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6553,12 +7204,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Actividad", "actividades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6571,6 +7222,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionActividad({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6594,7 +7250,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6611,8 +7267,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6645,9 +7302,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6657,8 +7323,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("noticia", "Noticia", "noticias")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("noticia", "Noticia", "noticias")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6672,9 +7338,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6691,10 +7364,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6710,13 +7390,13 @@ __webpack_require__.r(__webpack_exports__);
       disabled: false
     };
   },
-  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6729,6 +7409,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionNoticia({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6752,7 +7437,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6769,8 +7454,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6803,9 +7489,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6815,13 +7510,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("novedad", "Novedad", "novedades")],
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("novedad", "Novedad", "novedades")],
   data: function data() {
     return {
       disabledBtns: false
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6835,9 +7530,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6854,10 +7556,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6873,13 +7582,13 @@ __webpack_require__.r(__webpack_exports__);
       disabled: false
     };
   },
-  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  computed: {
+  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6892,6 +7601,11 @@ __webpack_require__.r(__webpack_exports__);
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
+          _this.accionNovedad({
+            tipo: "editar",
+            data: res.data
+          });
+
           if (res.data.publicar) {
             _this.toastr("Publicar", "Publicado con Exito!!");
           }
@@ -6915,7 +7629,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -59158,6 +59872,45 @@ exports.default = plugin;
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("img", {
+        attrs: {
+          src:
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAB3ElEQVQ4ja2UMW9SURSAv3P75KHWAQeoJJUZYzQdbAfFMDUQktZfoYtLN/UX0NF06r9oTHgB0oHggokmrROjNBqkDtWE8ijl3eMgNBFBKfgNdzi55zvn3ntyhQkcp9OLQTicRWRNVGIAKtoCagu+X4xWKu1xeTIaaORykXCgLxV9DlydUM8XYadrTD5RKJxMFLYymXuKvAESkzof4Ys18iTuee//EB5nsytWqQKLU8qGtI2RVNTzDi6EjVwu4gb2EFi+pGzY1pHruvcje3vfDUAosK9mlgEot3v+2QsA+baxcSPonbeY/ADT0sEGUdM/62f/gwzgmoiTcRB9AGCSSUKpR6gxl7KItfSqb7H1OhhddUSIoxB+9hSzPNs1muQdOltbqErcoCjAYJ2NwfApVh2FpgDd3V1Cj1MzHrn6q1ORpoPwDgVbr9Ot1+doE1CtmQXfLwL+fCYAOmpt2UQrlbYIO/P79PVSuXxqALrG5BGO5rA1Qv3+NoABSBQKJ0ZkExj7x/2DtqjdvLm//+NCCBD1vANBHwKfpjUJfLbWpGOl0uEw9tuMxIrFj27YXRFlG+j8xdUByV/pn9+NlwsfRoqM5+v6+nURJ4OwpnBrsLkJtqbWlpbK5dNxeT8BBYOw3hzHxXEAAAAASUVORK5CYII=",
+          alt: ""
+        }
+      })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/AccionesCepasComponent.vue?vue&type=template&id=0c62416c&":
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/AccionesCepasComponent.vue?vue&type=template&id=0c62416c& ***!
@@ -59173,108 +59926,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59300,58 +60070,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59584,108 +60356,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59711,58 +60500,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59787,108 +60578,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59984,58 +60792,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60060,108 +60870,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60257,58 +61084,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60333,108 +61162,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60530,58 +61376,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60704,56 +61552,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-usuario")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-usuario")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.showModal(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60779,56 +61633,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60854,56 +61714,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60929,56 +61795,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61004,56 +61876,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61079,56 +61957,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61154,56 +62038,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61229,56 +62119,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61304,56 +62200,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61454,56 +62356,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61529,56 +62437,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61604,56 +62518,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61679,56 +62599,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61754,56 +62680,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61829,56 +62761,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61904,56 +62842,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61979,56 +62923,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62054,56 +63004,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62129,65 +63085,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 4
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 4
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62213,56 +63175,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62288,56 +63256,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62363,56 +63337,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62438,56 +63418,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62513,56 +63499,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62588,56 +63580,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62663,56 +63661,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62738,56 +63742,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62813,56 +63823,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62888,56 +63904,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62963,65 +63985,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63047,56 +64075,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63122,56 +64156,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63197,65 +64237,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2 && _vm.rowData.id != 3
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2 && _vm.rowData.id != 3
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63281,56 +64327,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63356,56 +64408,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63431,65 +64489,107 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2 && _vm.rowData.id != 3
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2 && _vm.rowData.id != 3
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("img", {
+      attrs: {
+        src:
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADdElEQVRoge2YzW8UZRzHP8+87OxOty/4hpU3Q1MSCCRgqG1dOEAkDVE42BjDgYAHSbz5D3j1LgexBwkaE7lIYsQQo0YDVsREEkxUBNIitdJh7dLusq+dmYfDxDUEgWH6PNsY93OaTJ7n+f4+O8/s88wDbdq0+U8j4jSSH597AeQYsGKxgYVjR8Yf/fT9bYsd52+MeM3kuygoHsCfvJyb3XPgWxVjQWwBVqoKNDOZSGLvq2dVjBdXQBmGk4okJn4bUiGxJAIqJVouIExLqUTrn4BlKpVouQCmoVSi9QKgVKL1U6ijM7q4j0ThpddirxMtF3Cee/6BEguXfs7FlYi5lfheJi85OWJ06IH1WTqC65d+Zf7EcYLiPJ27dpPdMaIjBtA0heaOf4Cf95D1GsXPPiGYv6kjBtAgEFbKzYJTff0gQxamp1THNFEuIBwHjGjqhuWy6uHvQr2AaWH3RptX35sBwOzqUR3TRMs7kNm8NbqQIRgG1hNP6ogBNAm4gzmEFf3B2StWI1IpHTGAJgGjI4uzbj0AwjRA6ltG9KzEoaQx9TsAjasTlM+e0RIDmgTqVy4SlooIM5pGxZMnCGbzOqL0CFTP/wBAdscu0hs3I+s1ZscOE5aKyrOUbyXC8i2qF86DIXCHtiOcNH/lPXzvOoWjR+jcvRc/P4Pv3UAGPsIQ2GvW4m55FsyH/z2VC5TPfI1s1Elv2IS57BH8mWmcvn587zqNa5PMjr19d6fvTtO4fJGefQcfOk+pgKzXKI9/A0RbCu+tN++Y+8K0kIH/T/jjy8G08GemqV74cWkFZOBT+vwkYSXaPjSuTkQBy3tJr9+Es2EjqTVrKZ/+itKXp5D1Gn7ea/ZP9fUnyl28gAypnBun9MUpgrkCAMJJk9kyQMfwduyVq+9ont05gju0jdovP+H/OY30F7CfWkXmmYHWC/g3POY+Okbj2mTznr3qaR57/Q2Ek75nP8PtwN06vJjoJokFGpNXKLz3DmG10rwnTIueV/bft3jVJFsHQsnND48SViuYXd0gomE6R17E7lVyBhybRE9ABn5zUQqK8wC4A8Nkd+r7dLwXiZ6AsG26R/dhdnVjdi+ja88oPS/vBxHrjEApid8BdzCHO5hTWUsiluZkTiH/G4E/tFbx78Q6yognYMhDtFZiChEeamFemzZtlorb+oIyI4Q5NRoAAAAASUVORK5CYII="
+      },
+      on: {
+        click: function($event) {
+          return _vm.descargar(_vm.rowData)
+        }
+      }
+    })
   ])
 }
 var staticRenderFns = []
@@ -63515,56 +64615,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-proyecto")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-proyecto")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63590,91 +64696,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-proyecto")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&":
-/*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9& ***!
-  \****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("img", {
-      attrs: { src: "/iconos/pdf.png" },
-      on: {
-        click: function($event) {
-          return _vm.descargar(_vm.rowData)
-        }
-      }
-    })
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63700,56 +64775,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-publicacion")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-publicacion")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63775,91 +64856,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-publicacion")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&":
-/*!********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908& ***!
-  \********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("img", {
-      attrs: { src: "/iconos/pdf.png" },
-      on: {
-        click: function($event) {
-          return _vm.descargar(_vm.rowData)
-        }
-      }
-    })
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63885,56 +64935,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-equipamiento")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-equipamiento")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63960,58 +65016,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-equipamiento")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64037,56 +65095,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-investigador")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-investigador")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64112,58 +65176,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-investigador")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64189,56 +65255,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-actividad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-actividad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64264,58 +65336,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-actividad")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64341,56 +65415,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-noticia")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-noticia")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64416,58 +65496,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-noticia")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64493,56 +65575,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-novedad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-novedad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64568,58 +65656,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-novedad")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -84349,12 +85439,11 @@ Vue.component("acciones_investigadores", __webpack_require__(/*! ./components/si
 Vue.component("acciones_equipamientos", __webpack_require__(/*! ./components/sitio-web/equipamientos/AccionesComponent.vue */ "./resources/js/components/sitio-web/equipamientos/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_equipamientos", __webpack_require__(/*! ./components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue")["default"]); // --------------- acciones documentos -------------------
 
+Vue.component("descargar_documento", __webpack_require__(/*! ./components/sitio-web/documentos/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue")["default"]);
 Vue.component("acciones_proyectos", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/AccionesComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_proyectos", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/CheckboxsPublicarComponent.vue")["default"]);
-Vue.component("descargar_proyecto", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue")["default"]);
 Vue.component("acciones_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/AccionesComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue")["default"]);
-Vue.component("checkboxs_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")["default"]);
-Vue.component("descargar_publicacion", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue")["default"]); // --------------- acciones publicidad -------------------
+Vue.component("checkboxs_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")["default"]); // --------------- acciones publicidad -------------------
 
 Vue.component("acciones_noticias", __webpack_require__(/*! ./components/sitio-web/publicidad/noticias/AccionesComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_noticias", __webpack_require__(/*! ./components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue")["default"]);
@@ -84420,6 +85509,59 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   disableStats: true,
   enabledTransports: ["ws", "wss"]
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/IconoNoAccess.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/IconoNoAccess.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IconoNoAccess.vue?vue&type=template&id=6beebc40& */ "./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/IconoNoAccess.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./IconoNoAccess.vue?vue&type=template&id=6beebc40& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -88116,6 +89258,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=6af67410& */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&");
+/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/sitio-web/documentos/DescargarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=6af67410& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue ***!
@@ -88254,75 +89465,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=5b355dd9& */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&");
-/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&":
-/*!**********************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9& ***!
-  \**********************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=5b355dd9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue":
 /*!******************************************************************************************!*\
   !*** ./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue ***!
@@ -88456,75 +89598,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_78a24e88___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_78a24e88___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue ***!
-  \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=4a154908& */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&");
-/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&":
-/*!**************************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908& ***!
-  \**************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=4a154908& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -90269,7 +91342,7 @@ var routes = [//-------------------------------TODAS----------------------------
       },
       meta: {
         title: "Cepas Microbianas",
-        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, //bacterias
     {
@@ -90586,7 +91659,7 @@ var routes = [//-------------------------------TODAS----------------------------
       },
       meta: {
         title: "Cepas Microbianas - Bacterias",
-        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaBacteriaId",
@@ -90688,7 +91761,7 @@ var routes = [//-------------------------------TODAS----------------------------
       },
       meta: {
         title: "Cepas Microbianas - Hongos",
-        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaHongoId",
@@ -90780,7 +91853,7 @@ var routes = [//-------------------------------TODAS----------------------------
       },
       meta: {
         title: "Cepas Microbianas - Levaduras",
-        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaLevaduraId",
@@ -90872,7 +91945,7 @@ var routes = [//-------------------------------TODAS----------------------------
       },
       meta: {
         title: "Cepas Microbianas - Actinomicetos",
-        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa"]
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaActinomicetoId",
@@ -91003,7 +92076,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Cepas",
@@ -91013,7 +92086,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias",
@@ -91023,7 +92096,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos",
@@ -91033,7 +92106,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras",
@@ -91043,7 +92116,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos",
@@ -91577,7 +92650,14 @@ __webpack_require__.r(__webpack_exports__);
     getCepaById: function getCepaById(state) {
       return function (id) {
         return state.cepas.find(function (cepa) {
-          return cepa.id == id;
+          return cepa.id === id;
+        });
+      };
+    },
+    getCepasByGrupo: function getCepasByGrupo(state) {
+      return function (grupo) {
+        return state.cepas.filter(function (cepa) {
+          return cepa.grupo_microbiano_id == grupo;
         });
       };
     }
@@ -91622,7 +92702,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     accionCepas: function accionCepas(_ref2, data) {
       var commit = _ref2.commit;
-      console.log('accionCepas');
       commit("mutacionCepas", data);
     }
   }

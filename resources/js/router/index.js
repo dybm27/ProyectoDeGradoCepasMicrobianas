@@ -40,7 +40,8 @@ const routes = [
                                 "agregar-cepa",
                                 "editar-cepa",
                                 "eliminar-cepa",
-                                "caract-cepa"
+                                "caract-cepa",
+                                "ver-cepa"
                             ]
                         }
                     },
@@ -489,7 +490,8 @@ const routes = [
                                 "agregar-cepa",
                                 "editar-cepa",
                                 "eliminar-cepa",
-                                "caract-cepa"
+                                "caract-cepa",
+                                "ver-cepa"
                             ]
                         }
                     },
@@ -641,7 +643,8 @@ const routes = [
                                 "agregar-cepa",
                                 "editar-cepa",
                                 "eliminar-cepa",
-                                "caract-cepa"
+                                "caract-cepa",
+                                "ver-cepa"
                             ]
                         }
                     },
@@ -779,7 +782,8 @@ const routes = [
                                 "agregar-cepa",
                                 "editar-cepa",
                                 "eliminar-cepa",
-                                "caract-cepa"
+                                "caract-cepa",
+                                "ver-cepa"
                             ]
                         }
                     },
@@ -917,7 +921,8 @@ const routes = [
                                 "agregar-cepa",
                                 "editar-cepa",
                                 "eliminar-cepa",
-                                "caract-cepa"
+                                "caract-cepa",
+                                "ver-cepa"
                             ]
                         }
                     },

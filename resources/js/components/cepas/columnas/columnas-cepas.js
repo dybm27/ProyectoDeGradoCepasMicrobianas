@@ -28,6 +28,7 @@ export default [
     ,
     {
         name: "__component:checkboxs_publicar",
+        sortField: "publicar",
         title: "Publicar",
         titleClass: "text-center",
         dataClass: "text-center"
@@ -35,6 +36,7 @@ export default [
     {
         name: "__component:acciones_cepas",
         title: "Acciones",
-        titleClass: "text-center"
+        titleClass: "text-center",
+        dataClass: "text-center"
     }
 ];

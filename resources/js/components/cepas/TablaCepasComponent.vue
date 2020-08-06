@@ -78,9 +78,38 @@ export default {
   mixins: [Toastr],
   computed: {
     ...vuex.mapState("cepas", ["cepas"]),
+    ...vuex.mapGetters("cepas", ["getCepasByGrupo"]),
     mostrarTabla() {
-      if (this.cepas != "" && this.cepas != null) {
+      if (this.cepas != "" && this.cepas != null && this.validarTipoCepa) {
         return true;
+      }
+      return false;
+    },
+    validarTipoCepa() {
+      switch (this.tipo) {
+        case "cepa":
+          return true;
+          break;
+        case "bacteria":
+          if (this.getCepasByGrupo(1).length > 0) {
+            return true;
+          }
+          break;
+        case "levadura":
+          if (this.getCepasByGrupo(3).length > 0) {
+            return true;
+          }
+          break;
+        case "hongo":
+          if (this.getCepasByGrupo(2).length > 0) {
+            return true;
+          }
+          break;
+        case "actinomiceto":
+          if (this.getCepasByGrupo(4).length > 0) {
+            return true;
+          }
+          break;
       }
       return false;
     },

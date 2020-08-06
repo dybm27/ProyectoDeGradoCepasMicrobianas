@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control">
+    <div class="custom-checkbox custom-control" v-if="getPermisoByNombre('editar-equipamiento')">
       <input
         type="checkbox"
         :id="rowData.id"
@@ -11,6 +11,9 @@
       />
       <label class="custom-control-label" :for="rowData.id"></label>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,9 @@
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import websocketsCheckMixin from "../../../mixins/websocketsCheck";
+import IconoNoAccess from "../../IconoNoAccess.vue";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -33,11 +38,13 @@ export default {
   },
   mixins: [websocketsCheckMixin("Equipamiento", "equipamientos"), Toastr],
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     computedDisabled() {
       return this.disabled;
     },
   },
   methods: {
+    ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -52,6 +59,7 @@ export default {
             );
             window.location.href = "/";
           } else {
+            this.accionEquipamiento({ tipo: "editar", data: res.data });
             if (res.data.publicar) {
               this.toastr("Publicar", "Publicado con Exito!!");
             }
