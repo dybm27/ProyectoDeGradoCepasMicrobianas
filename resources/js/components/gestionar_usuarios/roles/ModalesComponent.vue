@@ -195,31 +195,22 @@ export default {
       axios
         .put(`/rol/editar/${this.id}`, this.modal)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.bloquearBtnModal = false;
+          this.accionRol({ tipo: "editar", data: res.data });
+          this.$events.fire("actualizartablaRol");
+          this.toastr("Editar Rol", "Rol editado con exito!!", "success", 5000);
+          this.$modal.hide("modal_editar_rol");
+        })
+        .catch((error) => {
+          if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.accionRol({ tipo: "editar", data: res.data });
-            this.$events.fire("actualizartablaRol");
-            this.toastr(
-              "Editar Rol",
-              "Rol editado con exito!!",
-              "success",
-              5000
-            );
-            this.$modal.hide("modal_editar_rol");
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!", "", "error", 4000);
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          if (error.response.status === 422) {
-            this.errors = error.response.data.errors;
-          }
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
     beforeOpenEliminar(data) {
@@ -239,37 +230,33 @@ export default {
       axios
         .delete(`/rol/eliminar/${this.id}`)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          this.bloquearBtnModal = false;
+          if (res.data === "negativo") {
+            this.toastr(
+              "Precaución!!",
+              "El Rol se encuentra vinculado a Usuarios, favor eliminarlos",
+              "warning",
+              8000
             );
+          } else {
+            this.accionRol({ tipo: "eliminar", data: res.data });
+            this.$events.fire("actualizartablaRol");
+            this.toastr(
+              "Eliminar Rol",
+              "Rol eliminado con exito!!",
+              "success",
+              5000
+            );
+          }
+          this.$modal.hide("modal_eliminar_rol");
+        })
+        .catch((error) => {
+          if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            if (res.data === "negativo") {
-              this.toastr(
-                "Precaución!!",
-                "El Rol se encuentra vinculado a Usuarios, favor eliminarlos",
-                "warning",
-                8000
-              );
-            } else {
-              this.accionRol({ tipo: "eliminar", data: res.data });
-              this.$events.fire("actualizartablaRol");
-              this.toastr(
-                "Eliminar Rol",
-                "Rol eliminado con exito!!",
-                "success",
-                5000
-              );
-            }
-            this.$modal.hide("modal_eliminar_rol");
+            this.toastr("Error!!!", "", "error", 4000);
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
   },

@@ -926,16 +926,23 @@ export default {
     },
     actions: {
         obtenerInfoCaractBacterias({ commit }) {
-            axios.get("/info-panel/info-caract-bacterias").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarInfoCaractBacterias", res.data);
-            });
+            axios
+                .get("/info-panel/info-caract-bacterias")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarInfoCaractBacterias", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionAgregarTipoCaractBacteria({ commit }, data) {
             commit("mutacionAgregarTipoCaractBacteria", data);
@@ -947,16 +954,23 @@ export default {
             commit("mutacionEliminarTipoCaractBacteria", data);
         },
         obtenerInfoCaractLevaduras({ commit }) {
-            axios.get("/info-panel/info-caract-levaduras").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarInfoCaractLevaduras", res.data);
-            });
+            axios
+                .get("/info-panel/info-caract-levaduras")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarInfoCaractLevaduras", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionAgregarTipoCaractLevadura({ commit }, data) {
             commit("mutacionAgregarTipoCaractLevadura", data);
@@ -968,16 +982,23 @@ export default {
             commit("mutacionEliminarTipoCaractLevadura", data);
         },
         obtenerInfoCaractHongos({ commit }) {
-            axios.get("/info-panel/info-caract-hongos").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarInfoCaractHongos", res.data);
-            });
+            axios
+                .get("/info-panel/info-caract-hongos")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarInfoCaractHongos", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionAgregarTipoCaractHongo({ commit }, data) {
             commit("mutacionAgregarTipoCaractHongo", data);
@@ -989,16 +1010,23 @@ export default {
             commit("mutacionEliminarTipoCaractHongo", data);
         },
         obtenerInfoCaractActinomicetos({ commit }) {
-            axios.get("/info-panel/info-caract-actinomicetos").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarInfoCaractActinomicetos", res.data);
-            });
+            axios
+                .get("/info-panel/info-caract-actinomicetos")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarInfoCaractActinomicetos", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionAgregarTipoCaractActinomiceto({ commit }, data) {
             commit("mutacionAgregarTipoCaractActinomiceto", data);

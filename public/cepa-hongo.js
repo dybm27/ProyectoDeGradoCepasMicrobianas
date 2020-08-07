@@ -1742,6 +1742,10 @@ var accionVerYCaractmixin = {
         } else {
           _this.llenarCepa(res.data);
         }
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     enviarBloqueo: function enviarBloqueo() {

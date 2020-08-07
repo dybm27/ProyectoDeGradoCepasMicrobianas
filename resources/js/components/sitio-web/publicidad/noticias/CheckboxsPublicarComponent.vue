@@ -56,25 +56,23 @@ export default {
           tipo: "noticia",
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.accionNoticia({ tipo: "editar", data: res.data });
-            if (res.data.publicar) {
-              this.toastr("Publicar", "Publicado con Exito!!");
-            }
-            this.disabled = false;
+          this.accionNoticia({ tipo: "editar", data: res.data });
+          if (res.data.publicar) {
+            this.toastr("Publicar", "Publicado con Exito!!");
           }
+          this.disabled = false;
         })
         .catch((error) => {
-          this.disabled = false;
-          if (error.response.status === 422) {
-            this.checkPublicar = false;
-            this.toastr("Error", error.response.data, "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.disabled = false;
+            if (error.response.status === 422) {
+              this.checkPublicar = false;
+              this.toastr("Error", error.response.data, "error");
+            }
           }
         });
     },

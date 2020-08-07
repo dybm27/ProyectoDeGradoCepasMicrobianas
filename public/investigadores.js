@@ -433,47 +433,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/investigadores/".concat(this.idInvestigador), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
+
+          window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoInvestigador", {
+            id: res.data.id
+          });
+
+          _this.accionInvestigador({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
 
-            window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
-              id: res.data.id
-            });
-
-            _this.$events.fire("eliminarMiBloqueoInvestigador", {
-              id: res.data.id
-            });
-
-            _this.accionInvestigador({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.$emit("cambiarVariableFormulario");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -735,27 +740,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios["delete"]("/investigadores/".concat(this.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+
+        _this.accionInvestigador({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.$modal.hide("modal_eliminar_investigador");
+
+        _this.toastr("Eliminar Investigador", "Investigador eliminado con exito!!", "success");
+
+        _this.actualizarTabla();
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
 
-          _this.accionInvestigador({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.$modal.hide("modal_eliminar_investigador");
-
-          _this.toastr("Eliminar Investigador", "Investigador eliminado con exito!!", "success");
-
-          _this.actualizarTabla();
+          _this.toastr("Error!!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!!!", "", "error");
       });
     }
   }),

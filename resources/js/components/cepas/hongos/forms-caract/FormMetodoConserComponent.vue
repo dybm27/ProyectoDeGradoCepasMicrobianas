@@ -27,7 +27,7 @@
                         :value="m.id"
                       >{{m.nombre}}</option>
                     </select>
-                    <div class="input-group-append">
+                    <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
                       <button
                         class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                         @click.prevent="showModal('metodo_conser')"
@@ -302,12 +302,16 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -318,30 +322,28 @@ export default {
         axios
           .put(`/cepas/hongo/metodo-conser/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            this.accionEditarCaract({ tipo: "metodo", data: res.data });
+            this.toastr(
+              "Editar Método",
+              "Método editado con exito!!",
+              "success"
+            );
+            this.$emit("cambiarVariable");
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              this.accionEditarCaract({ tipo: "metodo", data: res.data });
-              this.toastr(
-                "Editar Método",
-                "Método editado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable");
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -398,12 +400,16 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.modal.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtnModal = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.modal.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -416,6 +422,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("cepa", ["getMetodoConserById"]),
     ...vuex.mapGetters("info_caract", ["getInfoMetodoConserHongos"]),
     btnClase() {

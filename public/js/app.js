@@ -6504,20 +6504,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         publicar: !this.checkPublicar,
         tipo: "proyecto"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionProyecto({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          _this.accionProyecto({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.disabled = false;
         }
       });
     },
@@ -6683,20 +6684,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         publicar: !this.checkPublicar,
         tipo: "publicacion"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionPublicacion({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          _this.accionPublicacion({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.disabled = false;
         }
       });
     },
@@ -6861,20 +6863,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.put("/equipamientos/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionEquipamiento({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          _this.accionEquipamiento({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.disabled = false;
         }
       });
     },
@@ -7039,20 +7042,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.put("/investigadores/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionInvestigador({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          _this.accionInvestigador({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.disabled = false;
         }
       });
     },
@@ -7218,28 +7222,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         publicar: !this.checkPublicar,
         tipo: "actividad"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionActividad({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.accionActividad({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -7405,28 +7410,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         publicar: !this.checkPublicar,
         tipo: "noticia"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionNoticia({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.accionNoticia({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -7597,28 +7603,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         publicar: !this.checkPublicar,
         tipo: "novedad"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionNovedad({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.accionNovedad({
-            tipo: "editar",
-            data: res.data
-          });
-
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -7786,6 +7793,35 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -67368,11 +67404,7 @@ var render = function() {
             _vm._v("Sitio Web Público")
           ]),
           _vm._v(" "),
-          _vm.getPermisoByNombres([
-            "editar-mision",
-            "editar-vision",
-            "editar-objetivos"
-          ])
+          _vm.getPermisoByNombres(["editar-mision"])
             ? _c(
                 "li",
                 [
@@ -67381,6 +67413,46 @@ var render = function() {
                     {
                       attrs: {
                         to: { name: "mision" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres(["editar-vision"])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "vision" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres(["editar-objetivos"])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "objetivos" },
                         "active-class": "mm-active"
                       }
                     },
@@ -67423,10 +67495,7 @@ var render = function() {
           _vm.getPermisoByNombres([
             "agregar-proyecto",
             "editar-proyecto",
-            "eliminar-proyecto",
-            "agregar-publicacion",
-            "editar-publicacion",
-            "eliminar-publicacion"
+            "eliminar-proyecto"
           ])
             ? _c(
                 "li",
@@ -67436,6 +67505,32 @@ var render = function() {
                     {
                       attrs: {
                         to: { name: "proyectos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-paperclip"
+                      }),
+                      _vm._v("Documentos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres([
+                "agregar-publicacion",
+                "editar-publicacion",
+                "eliminar-publicacion"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "publicaciones" },
                         "active-class": "mm-active"
                       }
                     },
@@ -67482,13 +67577,7 @@ var render = function() {
           _vm.getPermisoByNombres([
             "agregar-noticia",
             "editar-noticia",
-            "eliminar-noticia",
-            "agregar-novedad",
-            "editar-novedad",
-            "eliminar-novedad",
-            "agregar-actividad",
-            "editar-actividad",
-            "eliminar-actividad"
+            "eliminar-noticia"
           ])
             ? _c(
                 "li",
@@ -67498,6 +67587,58 @@ var render = function() {
                     {
                       attrs: {
                         to: { name: "noticias" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres([
+                "agregar-actividad",
+                "editar-actividad",
+                "eliminar-actividad"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "actividades" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres([
+                "agregar-novedad",
+                "editar-novedad",
+                "eliminar-novedad"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "novedades" },
                         "active-class": "mm-active"
                       }
                     },
@@ -91239,21 +91380,22 @@ var websocketsCheckCepas = {
       axios.put("/cepas/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.accionCepas({
+          tipo: "editar",
+          data: res.data
+        });
+
+        _this.checkPublicar = res.data.publicar;
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.accionCepas({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.checkPublicar = res.data.publicar;
-          _this.disabled = false;
         }
       });
     },
@@ -92690,6 +92832,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerCepas: function obtenerCepas(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/cepas").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92698,6 +92842,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarCepas", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionCepas: function accionCepas(_ref2, data) {
@@ -92808,6 +92956,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerDocumentos: function obtenerDocumentos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/documentos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92816,6 +92966,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarDocumentos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionProyecto: function accionProyecto(_ref2, data) {
@@ -92889,6 +93043,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerEquipamientos: function obtenerEquipamientos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/equipamientos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92897,6 +93053,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarEquipamientos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionEquipamiento: function accionEquipamiento(_ref2, data) {
@@ -92959,6 +93119,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerImagenesLogin: function obtenerImagenesLogin(_ref, data) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/login-imagenes").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92967,6 +93129,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarImagenesLogin", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionImagenLogin: function accionImagenLogin(_ref2, data) {
@@ -93773,6 +93939,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerInfoCaractBacterias: function obtenerInfoCaractBacterias(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/info-caract-bacterias").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -93781,6 +93949,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractBacterias", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractBacteria: function accionAgregarTipoCaractBacteria(_ref2, data) {
@@ -93796,6 +93968,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractBacteria", data);
     },
     obtenerInfoCaractLevaduras: function obtenerInfoCaractLevaduras(_ref5) {
+      var _this2 = this;
+
       var commit = _ref5.commit;
       axios.get("/info-panel/info-caract-levaduras").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -93804,6 +93978,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractLevaduras", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this2.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractLevadura: function accionAgregarTipoCaractLevadura(_ref6, data) {
@@ -93819,6 +93997,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractLevadura", data);
     },
     obtenerInfoCaractHongos: function obtenerInfoCaractHongos(_ref9) {
+      var _this3 = this;
+
       var commit = _ref9.commit;
       axios.get("/info-panel/info-caract-hongos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -93827,6 +94007,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractHongos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this3.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractHongo: function accionAgregarTipoCaractHongo(_ref10, data) {
@@ -93842,6 +94026,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractHongo", data);
     },
     obtenerInfoCaractActinomicetos: function obtenerInfoCaractActinomicetos(_ref13) {
+      var _this4 = this;
+
       var commit = _ref13.commit;
       axios.get("/info-panel/info-caract-actinomicetos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -93850,6 +94036,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractActinomicetos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this4.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractActinomiceto: function accionAgregarTipoCaractActinomiceto(_ref14, data) {
@@ -94194,6 +94384,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerTiposCepas: function obtenerTiposCepas(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/info-tipos-cepas").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -94202,6 +94394,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarTipos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCepa: function accionAgregarTipoCepa(_ref2, data) {
@@ -94279,6 +94475,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerInvestigadores: function obtenerInvestigadores(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/investigadores").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -94287,6 +94485,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInvestigadores", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionInvestigador: function accionInvestigador(_ref2, data) {
@@ -94435,6 +94637,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerPublicidad: function obtenerPublicidad(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/publicidad").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -94443,6 +94647,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarPublicidad", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionNoticia: function accionNoticia(_ref2, data) {
@@ -94498,6 +94706,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerQuienesSomos: function obtenerQuienesSomos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/quienes-somos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -94506,6 +94716,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarQuienesSomos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionCambiarQuienesSomos: function accionCambiarQuienesSomos(_ref2, data) {

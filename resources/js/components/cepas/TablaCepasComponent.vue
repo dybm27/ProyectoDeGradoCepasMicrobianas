@@ -125,37 +125,36 @@ export default {
         .delete(`/cepas/eliminar/${this.id}`)
         .then((res) => {
           this.bloquearBtnModal = false;
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+
+          if (res.data === "negativo") {
+            this.toastr(
+              "Precaución!!",
+              "La cepa cuenta con caracteristicas registradas, favor eliminarlas",
+              "warning",
+              8000
             );
-            window.location.href = "/";
           } else {
-            if (res.data === "negativo") {
-              this.toastr(
-                "Precaución!!",
-                "La cepa cuenta con caracteristicas registradas, favor eliminarlas",
-                "warning",
-                8000
-              );
-            } else {
-              this.refrescarTabla = true;
-              this.toastr(
-                "Eliminar Cepa",
-                "Cepa eliminada con exito!!",
-                "success",
-                5000
-              );
-            }
-            this.accionCepas({ tipo: "eliminar", data: res.data });
-            this.actualizarTabla();
-            this.$modal.hide("modal_eliminar_cepa");
+            this.refrescarTabla = true;
+            this.toastr(
+              "Eliminar Cepa",
+              "Cepa eliminada con exito!!",
+              "success",
+              5000
+            );
           }
+          this.accionCepas({ tipo: "eliminar", data: res.data });
+          this.actualizarTabla();
+          this.$modal.hide("modal_eliminar_cepa");
         })
         .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!", "", "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "", "error");
+          }
         });
     },
     closeEliminar() {

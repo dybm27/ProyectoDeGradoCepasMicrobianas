@@ -461,55 +461,60 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          if (_this.auth.id === res.data.id) {
+            _this.accionModificarAuth({
+              data: res.data
+            });
+          }
+
+          _this.accionUsuario({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+
+          window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoUsuario", {
+            id: res.data.id
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            if (_this.auth.id === res.data.id) {
-              _this.accionModificarAuth({
-                data: res.data
-              });
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
             }
 
-            _this.accionUsuario({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
-
-            window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
-              id: res.data.id
-            });
-
-            _this.$events.fire("eliminarMiBloqueoUsuario", {
-              id: res.data.id
-            });
-
-            _this.$emit("cambiarVariableFormulario");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -781,31 +786,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios["delete"]("/usuario/eliminar/".concat(this.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
+        if (res.data != "negativo") {
+          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
+
+          _this.accionUsuario({
+            tipo: "eliminar",
+            data: res.data
+          });
+
+          _this.actualizarTabla();
         } else {
-          if (res.data != "negativo") {
-            _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
-
-            _this.accionUsuario({
-              tipo: "eliminar",
-              data: res.data
-            });
-
-            _this.actualizarTabla();
-          } else {
-            _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning", 8000);
-          }
-
-          _this.bloquearBtnModal = false;
-
-          _this.$modal.hide("modal_eliminar_usuario");
+          _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning", 8000);
         }
-      })["catch"](function (error) {
+
         _this.bloquearBtnModal = false;
 
-        _this.toastr("Error!!!", "", "error", 4000);
+        _this.$modal.hide("modal_eliminar_usuario");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Error!!!", "", "error", 4000);
+        }
       });
     }
   }),

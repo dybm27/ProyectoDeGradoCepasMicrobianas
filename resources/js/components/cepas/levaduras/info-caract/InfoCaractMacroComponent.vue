@@ -154,7 +154,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('eliminar_caract_macro_levadura')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarMedio">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminarMedio"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -169,6 +174,11 @@ import FormCaractMacro from "../forms-caract/FormCaractMacroComponent.vue";
 export default {
   components: { FormCaractMacro },
   mixins: [Toastr, infoCaractMacroMixin],
+  data() {
+    return {
+      bloquearBtnModal: false,
+    };
+  },
   methods: {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
@@ -185,6 +195,7 @@ export default {
       this.modificarForm = true;
     },
     eliminarMedio() {
+      this.bloquearBtnModal = true;
       let id = 0;
       let num = 0;
       if (this.mostrarForm1) {
@@ -200,27 +211,27 @@ export default {
       axios
         .delete(`/cepas/levadura/caract-macro/${id}`)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.mostrarBtnAgregar = true;
-            this.modificarForm = true;
-            this.$modal.hide("eliminar_caract_macro_levadura");
-            this.accionEliminarCaract({ tipo: "macro", data: res.data });
-            this.formatear(num);
-            this.toastr(
-              "Eliminar Medio",
-              "Medio eliminado con exito!!",
-              "success"
-            );
-          }
+          this.bloquearBtnModal = false;
+          this.mostrarBtnAgregar = true;
+          this.modificarForm = true;
+          this.$modal.hide("eliminar_caract_macro_levadura");
+          this.accionEliminarCaract({ tipo: "macro", data: res.data });
+          this.formatear(num);
+          this.toastr(
+            "Eliminar Medio",
+            "Medio eliminado con exito!!",
+            "success"
+          );
         })
         .catch((error) => {
-          this.toastr("Error!!", "", "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "", "error");
+          }
         });
     },
   },

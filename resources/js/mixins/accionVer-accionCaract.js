@@ -116,6 +116,11 @@ const accionVerYCaractmixin = {
                     } else {
                         this.llenarCepa(res.data);
                     }
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
                 });
         },
         enviarBloqueo() {

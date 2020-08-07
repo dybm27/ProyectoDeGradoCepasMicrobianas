@@ -406,33 +406,32 @@ export default {
           .put(`/cepas/editar/${this.idCepa}`, this.parametros)
           .then((res) => {
             this.bloquearBtn = false;
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.accionCepas({ tipo: "editar", data: res.data });
-              window.Echo.private("desbloquearBtnsCepa").whisper(
-                "desbloquearBtnsCepa",
-                {
-                  id: res.data.id,
-                }
-              );
-              this.$events.fire("eliminarMiBloqueoCepa", {
+
+            this.accionCepas({ tipo: "editar", data: res.data });
+            window.Echo.private("desbloquearBtnsCepa").whisper(
+              "desbloquearBtnsCepa",
+              {
                 id: res.data.id,
-              });
-              this.$emit("cambiarVariableFormulario");
-              this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
-            }
+              }
+            );
+            this.$events.fire("eliminarMiBloqueoCepa", {
+              id: res.data.id,
+            });
+            this.$emit("cambiarVariableFormulario");
+            this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
@@ -456,11 +455,15 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -583,11 +586,15 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.modal.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtnModal = false;
+              if (error.response.status === 422) {
+                this.modal.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },

@@ -34,16 +34,23 @@ export default {
     },
     actions: {
         obtenerImagenesLogin({ commit }, data) {
-            axios.get("/info-panel/login-imagenes").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarImagenesLogin", res.data);
-            });
+            axios
+                .get("/info-panel/login-imagenes")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarImagenesLogin", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionImagenLogin({ commit }, data) {
             commit("mutacionImagenesLogin", data);

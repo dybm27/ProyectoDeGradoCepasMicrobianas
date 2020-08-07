@@ -378,75 +378,63 @@ export default {
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarInfo");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionModificarAuth({ data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarInfo");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
         case "imagen":
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarImagen");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionModificarAuth({ data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarImagen");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
         case "contraseña":
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarInfo");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionModificarAuth({ data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarInfo");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
       }

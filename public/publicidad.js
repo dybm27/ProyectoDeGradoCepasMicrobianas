@@ -108,7 +108,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     eliminarImagenesStorage: function eliminarImagenesStorage() {
-      axios.get("/editor/upload");
+      axios.get("/editor/upload").then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        }
+      });
     }
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),

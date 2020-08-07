@@ -270,16 +270,23 @@ export default {
     },
     actions: {
         obtenerTiposCepas({ commit }) {
-            axios.get("/info-panel/info-tipos-cepas").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarTipos", res.data);
-            });
+            axios
+                .get("/info-panel/info-tipos-cepas")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarTipos", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionAgregarTipoCepa({ commit }, data) {
             commit("mutacionAgregarTipoCepa", data);

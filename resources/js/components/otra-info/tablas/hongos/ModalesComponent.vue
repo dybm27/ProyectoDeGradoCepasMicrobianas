@@ -182,11 +182,15 @@ export default {
           }
         })
         .catch((error) => {
-          this.bloquearBtnModal = false;
-          if (error.response.status === 422) {
-            this.errors = error.response.data.errors;
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!!", "", "error");
           }
-          this.toastr("Error!!!!", "", "error");
         });
     },
     beforeOpenEditar(data) {
@@ -200,34 +204,31 @@ export default {
       axios
         .put(`/info-caract-hongos/editar/${this.id}`, this.modal)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.bloquearBtnModal = false;
+          this.accionEditarTipoCaractHongo({
+            info: res.data,
+            tipo: this.modal.tipo,
+          });
+          this.$events.fire("actualizartabla" + this.modal.tipo);
+          this.toastr(
+            `Editar ${this.primeraMayus(this.modal.tipo)}`,
+            `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
+            "success"
+          );
+          this.$modal.hide("modal_editar_tipo_hongo");
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.accionEditarTipoCaractHongo({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$events.fire("actualizartabla" + this.modal.tipo);
-            this.toastr(
-              `Editar ${this.primeraMayus(this.modal.tipo)}`,
-              `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
-              "success",
-              5000
-            );
-            this.$modal.hide("modal_editar_tipo_hongo");
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          if (error.response.status === 422) {
-            this.errors = error.response.data.errors;
-          }
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
     beforeOpenEliminar(data) {
@@ -242,60 +243,55 @@ export default {
           data: this.modal,
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          this.bloquearBtnModal = false;
+          if (res.data === "macro") {
+            this.toastr(
+              "Precaución!!",
+              "El/La " +
+                this.modal.tipo +
+                " se encuentra vinculado/a a características macroscópicas, favor eliminarlas",
+              "warning"
             );
+          } else if (res.data === "micro") {
+            this.toastr(
+              "Precaución!!",
+              "La " +
+                this.modal.tipo +
+                " se encuentra vinculada a características microscópicas, favor eliminarlas",
+              "warning"
+            );
+          } else if (res.data === "metodo") {
+            this.toastr(
+              "Precaución!!",
+              "El " +
+                this.modal.tipo +
+                " se encuentra vinculado a metodos de conservación, favor eliminarlos",
+              "warning"
+            );
+          } else {
+            this.accionEliminarTipoCaractHongo({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.toastr(
+              `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
+              "success",
+              5000
+            );
+          }
+          this.$modal.hide("modal_eliminar_tipo_hongo");
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            if (res.data === "macro") {
-              this.toastr(
-                "Precaución!!",
-                "El/La " +
-                  this.modal.tipo +
-                  " se encuentra vinculado/a a características macroscópicas, favor eliminarlas",
-                "warning",
-                8000
-              );
-            } else if (res.data === "micro") {
-              this.toastr(
-                "Precaución!!",
-                "La " +
-                  this.modal.tipo +
-                  " se encuentra vinculada a características microscópicas, favor eliminarlas",
-                "warning",
-                8000
-              );
-            } else if (res.data === "metodo") {
-              this.toastr(
-                "Precaución!!",
-                "El " +
-                  this.modal.tipo +
-                  " se encuentra vinculado a metodos de conservación, favor eliminarlos",
-                "warning",
-                8000
-              );
-            } else {
-              this.accionEliminarTipoCaractHongo({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$events.fire("actualizartabla" + this.modal.tipo);
-              this.toastr(
-                `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
-                `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
-                "success",
-                5000
-              );
-            }
-            this.$modal.hide("modal_eliminar_tipo_hongo");
+            this.toastr("Error!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
     primeraMayus(string) {

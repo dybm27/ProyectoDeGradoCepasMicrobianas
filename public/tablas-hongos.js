@@ -415,13 +415,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
         }
       })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else {
+          _this.bloquearBtnModal = false;
 
-        if (error.response.status === 422) {
-          _this.errors = error.response.data.errors;
+          if (error.response.status === 422) {
+            _this.errors = error.response.data.errors;
+          }
+
+          _this.toastr("Error!!!!", "", "error");
         }
-
-        _this.toastr("Error!!!!", "", "error");
       });
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
@@ -435,31 +439,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios.put("/info-caract-hongos/editar/".concat(this.id), this.modal).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this2.bloquearBtnModal = false;
+
+        _this2.accionEditarTipoCaractHongo({
+          info: res.data,
+          tipo: _this2.modal.tipo
+        });
+
+        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
+
+        _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success");
+
+        _this2.$modal.hide("modal_editar_tipo_hongo");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this2.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this2.bloquearBtnModal = false;
 
-          _this2.accionEditarTipoCaractHongo({
-            info: res.data,
-            tipo: _this2.modal.tipo
-          });
+          if (error.response.status === 422) {
+            _this2.errors = error.response.data.errors;
+          }
 
-          _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
-
-          _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success", 5000);
-
-          _this2.$modal.hide("modal_editar_tipo_hongo");
+          _this2.toastr("Error!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this2.bloquearBtnModal = false;
-
-        if (error.response.status === 422) {
-          _this2.errors = error.response.data.errors;
-        }
-
-        _this2.toastr("Error!!!", "", "error", 4000);
       });
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
@@ -474,35 +479,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios["delete"]("/info-caract-hongos/eliminar/".concat(this.id), {
         data: this.modal
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this3.bloquearBtnModal = false;
+
+        if (res.data === "macro") {
+          _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " se encuentra vinculado/a a características macroscópicas, favor eliminarlas", "warning");
+        } else if (res.data === "micro") {
+          _this3.toastr("Precaución!!", "La " + _this3.modal.tipo + " se encuentra vinculada a características microscópicas, favor eliminarlas", "warning");
+        } else if (res.data === "metodo") {
+          _this3.toastr("Precaución!!", "El " + _this3.modal.tipo + " se encuentra vinculado a metodos de conservación, favor eliminarlos", "warning");
+        } else {
+          _this3.accionEliminarTipoCaractHongo({
+            info: res.data,
+            tipo: _this3.modal.tipo
+          });
+
+          _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
+
+          _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
+        }
+
+        _this3.$modal.hide("modal_eliminar_tipo_hongo");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this3.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this3.bloquearBtnModal = false;
 
-          if (res.data === "macro") {
-            _this3.toastr("Precaución!!", "El/La " + _this3.modal.tipo + " se encuentra vinculado/a a características macroscópicas, favor eliminarlas", "warning", 8000);
-          } else if (res.data === "micro") {
-            _this3.toastr("Precaución!!", "La " + _this3.modal.tipo + " se encuentra vinculada a características microscópicas, favor eliminarlas", "warning", 8000);
-          } else if (res.data === "metodo") {
-            _this3.toastr("Precaución!!", "El " + _this3.modal.tipo + " se encuentra vinculado a metodos de conservación, favor eliminarlos", "warning", 8000);
-          } else {
-            _this3.accionEliminarTipoCaractHongo({
-              info: res.data,
-              tipo: _this3.modal.tipo
-            });
-
-            _this3.$events.fire("actualizartabla" + _this3.modal.tipo);
-
-            _this3.toastr("Eliminar ".concat(_this3.primeraMayus(_this3.modal.tipo)), "".concat(_this3.primeraMayus(_this3.modal.tipo), " eliminado/a con exito!!"), "success", 5000);
-          }
-
-          _this3.$modal.hide("modal_eliminar_tipo_hongo");
+          _this3.toastr("Error!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this3.bloquearBtnModal = false;
-
-        _this3.toastr("Error!!!", "", "error", 4000);
       });
     },
     primeraMayus: function primeraMayus(string) {

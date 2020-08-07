@@ -97,27 +97,25 @@ export default {
           data: { tipo: "actividad" },
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.bloquearBtnModal = false;
+          this.toastr(
+            "Eliminar Actividad",
+            "Actividad eliminada con exito!!",
+            "success"
+          );
+          this.accionActividad({ tipo: "eliminar", data: res.data });
+          this.actualizarTabla();
+          this.$modal.hide("modal_eliminar_actividad");
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.toastr(
-              "Eliminar Actividad",
-              "Actividad eliminada con exito!!",
-              "success"
-            );
-            this.accionActividad({ tipo: "eliminar", data: res.data });
-            this.actualizarTabla();
-            this.$modal.hide("modal_eliminar_actividad");
+            this.toastr("Error!!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!!", "", "error");
         });
     },
   },

@@ -370,6 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 //
 //
 //
@@ -571,6 +572,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -592,6 +594,7 @@ __webpack_require__.r(__webpack_exports__);
       imagenMiniatura: ""
     };
   },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       this.modalImagen.imagen = valor;
@@ -639,23 +642,24 @@ __webpack_require__.r(__webpack_exports__);
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/cambiar-imagen/").concat(this.cepa.id), parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this.$emit("accionImagen", res.data);
+
+            _this.$modal.hide("agregar_cambiar_imagen");
+
+            _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
-              _this.$emit("accionImagen", res.data);
+              if (error.response.status === 422) {
+                _this.modalImagen.errors = [];
+                _this.modalImagen.errors = error.response.data.errors;
+              }
 
-              _this.$modal.hide("agregar_cambiar_imagen");
-
-              _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
+              _this.toastr("Error!!", "", "error");
             }
-          })["catch"](function (error) {
-            if (error.response.status === 422) {
-              _this.modalImagen.errors = [];
-              _this.modalImagen.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
@@ -665,23 +669,24 @@ __webpack_require__.r(__webpack_exports__);
           numero: this.modalImagen.select_imagen
         };
         axios.put("/cepas/".concat(this.tipoCepa, "/eliminar-imagen/").concat(this.cepa.id), _parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.$emit("accionImagen", res.data);
+
+          _this.$modal.hide("eliminar_imagen");
+
+          _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
-            _this.$emit("accionImagen", res.data);
+            if (error.response.status === 422) {
+              _this.modalImagen.errors = [];
+              _this.modalImagen.errors = error.response.data.errors;
+            }
 
-            _this.$modal.hide("eliminar_imagen");
-
-            _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          if (error.response.status === 422) {
-            _this.modalImagen.errors = [];
-            _this.modalImagen.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         if (this.$refs.inputImagenModal.value) {
@@ -691,23 +696,24 @@ __webpack_require__.r(__webpack_exports__);
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/agregar-imagen/").concat(this.cepa.id), _parametros2).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this.$emit("accionImagen", res.data);
+
+            _this.$modal.hide("agregar_cambiar_imagen");
+
+            _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
-              _this.$emit("accionImagen", res.data);
+              if (error.response.status === 422) {
+                _this.modalImagen.errors = [];
+                _this.modalImagen.errors = error.response.data.errors;
+              }
 
-              _this.$modal.hide("agregar_cambiar_imagen");
-
-              _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
+              _this.toastr("Error!!", "", "error");
             }
-          })["catch"](function (error) {
-            if (error.response.status === 422) {
-              _this.modalImagen.errors = [];
-              _this.modalImagen.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
@@ -752,26 +758,6 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       reader.src = URL.createObjectURL(file);
-    },
-    toastr: function toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: function onCreated() {},
-        onClicked: function onClicked() {},
-        onClosed: function onClosed() {},
-        onMouseOver: function onMouseOver() {},
-        onMouseOut: function onMouseOut() {}
-      });
     }
   },
   computed: {

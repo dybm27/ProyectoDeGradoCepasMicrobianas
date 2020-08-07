@@ -52,18 +52,17 @@ export default {
           publicar: !this.checkPublicar,
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.accionEquipamiento({ tipo: "editar", data: res.data });
+          if (res.data.publicar) {
+            this.toastr("Publicar", "Publicado con Exito!!");
+          }
+          this.disabled = false;
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
-          } else {
-            this.accionEquipamiento({ tipo: "editar", data: res.data });
-            if (res.data.publicar) {
-              this.toastr("Publicar", "Publicado con Exito!!");
-            }
-            this.disabled = false;
           }
         });
     },

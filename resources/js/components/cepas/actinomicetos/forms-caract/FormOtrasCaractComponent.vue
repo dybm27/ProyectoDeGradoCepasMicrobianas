@@ -288,26 +288,31 @@ export default {
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Características";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Otras Característica",
+                  "Características agregadas con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Características";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Otras Característica",
-                "Características agregadas con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -321,30 +326,28 @@ export default {
             this.parametros
           )
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.$emit("editar", res.data);
+            this.toastr(
+              "Editar Otras Característica",
+              "Características editadas con exito!!",
+              "success"
+            );
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Otras Característica",
-                "Características editadas con exito!!",
-                "success"
-              );
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },

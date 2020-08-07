@@ -132,16 +132,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       axios.put("/quienes-somos/vision/cambiar", this.parametros).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.accionCambiarQuienesSomos({
-            data: res.data,
-            tipo: "vision"
-          });
+        _this.accionCambiarQuienesSomos({
+          data: res.data,
+          tipo: "vision"
+        });
 
-          _this.toastr("Cambiar Visión", "Visión cambiada con exito", "success");
+        _this.toastr("Cambiar Visión", "Visión cambiada con exito", "success");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
         }
       });
     },

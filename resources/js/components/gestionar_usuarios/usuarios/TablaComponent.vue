@@ -95,37 +95,35 @@ export default {
       axios
         .delete(`/usuario/eliminar/${this.id}`)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          if (res.data != "negativo") {
+            this.toastr(
+              "Eliminar Usuario",
+              "Usuario eliminado con exito!!",
+              "success",
+              5000
             );
-            window.location.href = "/";
+            this.accionUsuario({ tipo: "eliminar", data: res.data });
+            this.actualizarTabla();
           } else {
-            if (res.data != "negativo") {
-              this.toastr(
-                "Eliminar Usuario",
-                "Usuario eliminado con exito!!",
-                "success",
-                5000
-              );
-              this.accionUsuario({ tipo: "eliminar", data: res.data });
-              this.actualizarTabla();
-            } else {
-              this.toastr(
-                "Precaución",
-                "El Usuario se encuentra Logueado y no es posible eliminarlo!!",
-                "warning",
-                8000
-              );
-            }
-            this.bloquearBtnModal = false;
-            this.$modal.hide("modal_eliminar_usuario");
+            this.toastr(
+              "Precaución",
+              "El Usuario se encuentra Logueado y no es posible eliminarlo!!",
+              "warning",
+              8000
+            );
           }
+          this.bloquearBtnModal = false;
+          this.$modal.hide("modal_eliminar_usuario");
         })
         .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!", "", "error", 4000);
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!!", "", "error", 4000);
+          }
         });
     },
   },

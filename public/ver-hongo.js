@@ -642,7 +642,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       if (imprimir) {
         this.btnTodo = true;
         this.btnSeleccionado = true;
-        this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning", 10000);
+        this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
         axios.get("/cepa/imprimir/".concat(this.cepa.cepa.id), {
           params: {
             imprimir: this.selectImprimir
@@ -653,7 +653,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
-            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
             _this.selectImprimir = [];
@@ -668,10 +668,14 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
 
-          _this.toastr("Error!!", "", "error");
+            _this.toastr("Error!!", "", "error");
+          }
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -1559,7 +1563,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       if (imprimir) {
         this.btnTodo = true;
         this.btnSeleccionado = true;
-        this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning", 10000);
+        this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
         axios.get("/cepa/imprimir/".concat(this.cepa.cepa.id), {
           params: {
             imprimir: this.selectImprimir
@@ -1570,7 +1574,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
-            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
             _this.selectImprimir = [];
@@ -1585,10 +1589,14 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
 
-          _this.toastr("Error!!", "", "error");
+            _this.toastr("Error!!", "", "error");
+          }
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -2438,7 +2446,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       if (imprimir) {
         this.btnTodo = true;
         this.btnSeleccionado = true;
-        this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning", 10000);
+        this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
         axios.get("/cepa/imprimir/".concat(this.cepa.cepa.id), {
           params: {
             imprimir: this.selectImprimir
@@ -2449,7 +2457,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
-            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
             _this.selectImprimir = [];
@@ -2464,10 +2472,14 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
 
-          _this.toastr("Error!!", "", "error");
+            _this.toastr("Error!!", "", "error");
+          }
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -3356,7 +3368,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       if (imprimir) {
         this.btnTodo = true;
         this.btnSeleccionado = true;
-        this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning", 10000);
+        this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
         axios.get("/cepa/imprimir/".concat(this.cepa.cepa.id), {
           params: {
             imprimir: this.selectImprimir
@@ -3367,7 +3379,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
-            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success", 5000);
+            _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
             _this.selectImprimir = [];
@@ -3382,10 +3394,14 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          _this.btnTodo = false;
-          _this.btnSeleccionado = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.btnTodo = false;
+            _this.btnSeleccionado = false;
 
-          _this.toastr("Error!!", "", "error");
+            _this.toastr("Error!!", "", "error");
+          }
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -12262,6 +12278,10 @@ var accionVerYCaractmixin = {
           window.location.href = "/";
         } else {
           _this.llenarCepa(res.data);
+        }
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
         }
       });
     },

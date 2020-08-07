@@ -243,23 +243,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.put("/rol/agregar-permisos/".concat(this.idRol), {
         permisos: this.permisosRol
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this2.accionModificarPermisos(res.data);
+
+        _this2.toastr("Modificar Permisos", "Permisos modificados con exito!!", "success");
+
+        window.Echo["private"]("desbloquearBtnsRol").whisper("desbloquearBtnsRol", {
+          id: res.data.id
+        });
+
+        _this2.$events.fire("eliminarMiBloqueoRol", {
+          id: res.data.id
+        });
+
+        _this2.$emit("cambiarVariableFormulario");
+      })["catch"](function (error) {
+        if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          _this2.accionModificarPermisos(res.data);
-
-          _this2.toastr("Modificar Permisos", "Permisos modificados con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsRol").whisper("desbloquearBtnsRol", {
-            id: res.data.id
-          });
-
-          _this2.$events.fire("eliminarMiBloqueoRol", {
-            id: res.data.id
-          });
-
-          _this2.$emit("cambiarVariableFormulario");
         }
       });
     }
@@ -488,31 +487,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios.put("/rol/editar/".concat(this.id), this.modal).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this2.bloquearBtnModal = false;
+
+        _this2.accionRol({
+          tipo: "editar",
+          data: res.data
+        });
+
+        _this2.$events.fire("actualizartablaRol");
+
+        _this2.toastr("Editar Rol", "Rol editado con exito!!", "success", 5000);
+
+        _this2.$modal.hide("modal_editar_rol");
+      })["catch"](function (error) {
+        if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this2.bloquearBtnModal = false;
 
-          _this2.accionRol({
-            tipo: "editar",
-            data: res.data
-          });
+          if (error.response.status === 422) {
+            _this2.errors = error.response.data.errors;
+          }
 
-          _this2.$events.fire("actualizartablaRol");
-
-          _this2.toastr("Editar Rol", "Rol editado con exito!!", "success", 5000);
-
-          _this2.$modal.hide("modal_editar_rol");
+          _this2.toastr("Error!!!", "", "error", 4000);
         }
-      })["catch"](function (error) {
-        _this2.bloquearBtnModal = false;
-
-        if (error.response.status === 422) {
-          _this2.errors = error.response.data.errors;
-        }
-
-        _this2.toastr("Error!!!", "", "error", 4000);
       });
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
@@ -532,31 +530,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios["delete"]("/rol/eliminar/".concat(this.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this3.bloquearBtnModal = false;
+
+        if (res.data === "negativo") {
+          _this3.toastr("Precaución!!", "El Rol se encuentra vinculado a Usuarios, favor eliminarlos", "warning", 8000);
+        } else {
+          _this3.accionRol({
+            tipo: "eliminar",
+            data: res.data
+          });
+
+          _this3.$events.fire("actualizartablaRol");
+
+          _this3.toastr("Eliminar Rol", "Rol eliminado con exito!!", "success", 5000);
+        }
+
+        _this3.$modal.hide("modal_eliminar_rol");
+      })["catch"](function (error) {
+        if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this3.bloquearBtnModal = false;
 
-          if (res.data === "negativo") {
-            _this3.toastr("Precaución!!", "El Rol se encuentra vinculado a Usuarios, favor eliminarlos", "warning", 8000);
-          } else {
-            _this3.accionRol({
-              tipo: "eliminar",
-              data: res.data
-            });
-
-            _this3.$events.fire("actualizartablaRol");
-
-            _this3.toastr("Eliminar Rol", "Rol eliminado con exito!!", "success", 5000);
-          }
-
-          _this3.$modal.hide("modal_eliminar_rol");
+          _this3.toastr("Error!!!", "", "error", 4000);
         }
-      })["catch"](function (error) {
-        _this3.bloquearBtnModal = false;
-
-        _this3.toastr("Error!!!", "", "error", 4000);
       });
     }
   }),

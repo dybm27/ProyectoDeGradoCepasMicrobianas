@@ -6,7 +6,7 @@ use App\Actividad;
 use App\Events\ActividadEvent;
 use App\Events\NoticiaEvent;
 use App\Events\NovedadEvent;
-use App\Events\Prueba;
+use App\Events\RefrescarCalendarioEvent;
 use App\Noticia;
 use App\Novedad;
 use Illuminate\Http\Request;

@@ -497,64 +497,61 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       switch (this.tipo) {
         case "nombre":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this2.bloquearBtnModal = false;
+
+            _this2.accionModificarAuth({
+              data: res.data
+            });
+
+            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+            _this2.$modal.hide("cambiarInfo");
+          })["catch"](function (error) {
+            if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
-
-              _this2.accionModificarAuth({
-                data: res.data
-              });
-
-              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-              _this2.$modal.hide("cambiarInfo");
             }
-          })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
           });
           break;
 
         case "imagen":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this2.bloquearBtnModal = false;
+
+            _this2.accionModificarAuth({
+              data: res.data
+            });
+
+            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+            _this2.$modal.hide("cambiarImagen");
+          })["catch"](function (error) {
+            if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
-
-              _this2.accionModificarAuth({
-                data: res.data
-              });
-
-              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-              _this2.$modal.hide("cambiarImagen");
             }
-          })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
           });
           break;
 
         case "contraseña":
           axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this2.bloquearBtnModal = false;
+
+            _this2.accionModificarAuth({
+              data: res.data
+            });
+
+            _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
+
+            _this2.$modal.hide("cambiarInfo");
+          })["catch"](function (error) {
+            if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
-
-              _this2.accionModificarAuth({
-                data: res.data
-              });
-
-              _this2.toastr(_this2.titulo, "Accion realizada con exito!!", "success");
-
-              _this2.$modal.hide("cambiarInfo");
             }
-          })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
           });
           break;
       }

@@ -160,6 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -343,7 +344,9 @@ __webpack_require__.r(__webpack_exports__);
             document.body.removeChild(link);
           }
         })["catch"](function (error) {
-          if (error.response) {}
+          if (error.response.status === 403) {
+            _this4.$router.push("/sin-acceso");
+          }
         });
       } else {
         var datos = this.$refs.vuetable.tableData;
@@ -368,7 +371,9 @@ __webpack_require__.r(__webpack_exports__);
             document.body.removeChild(link);
           }
         })["catch"](function (error) {
-          if (error.response) {}
+          if (error.response.status === 403) {
+            _this4.$router.push("/sin-acceso");
+          }
         });
       }
     },
@@ -376,6 +381,11 @@ __webpack_require__.r(__webpack_exports__);
       if (res.request.responseURL === "http://127.0.0.1:8000/") {
         localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
         window.location.href = "/";
+      }
+    },
+    loadError: function loadError(error) {
+      if (error.response.status === 403) {
+        this.$router.push("/sin-acceso");
       }
     }
   },
@@ -1039,7 +1049,8 @@ var render = function() {
                 "vuetable:pagination-data": _vm.onPaginationData,
                 "vuetable:cell-clicked": _vm.onCellClicked,
                 "vuetable:loaded": _vm.loaded,
-                "vuetable:load-success": _vm.loadSuccess
+                "vuetable:load-success": _vm.loadSuccess,
+                "vuetable:load-error": _vm.loadError
               }
             })
           ],

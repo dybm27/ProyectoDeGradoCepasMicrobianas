@@ -111,22 +111,21 @@ export default {
       axios
         .put("/quienes-somos/objetivos/cambiar", this.parametros)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.accionCambiarQuienesSomos({
+            data: res.data,
+            tipo: "objetivos",
+          });
+          this.toastr(
+            "Cambiar Objetivos",
+            "Objetivos cambiados con exito",
+            "success"
+          );
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
-          } else {
-            this.accionCambiarQuienesSomos({
-              data: res.data,
-              tipo: "objetivos",
-            });
-            this.toastr(
-              "Cambiar Objetivos",
-              "Objetivos cambiados con exito",
-              "success"
-            );
           }
         });
     },

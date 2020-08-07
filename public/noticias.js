@@ -303,41 +303,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
-        });
-      } else {
-        if (this.parametros.imagen === this.info.imagen) {
-          axios.put("/publicidad/".concat(this.idNoticia), this.parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-              window.location.href = "/";
-            } else {
-              _this.bloquearBtn = false;
-
-              _this.toastr("Editar Noticia", "Noticia editada con exito!!", "success");
-
-              window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
-                id: res.data.id
-              });
-
-              _this.$events.fire("eliminarMiBloqueoNoticia", {
-                id: res.data.id
-              });
-
-              _this.accionNoticia({
-                tipo: "editar",
-                data: res.data
-              });
-
-              _this.$emit("cambiarVariableFormulario");
-            }
-          })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
             _this.bloquearBtn = false;
 
             if (error.response.status === 422) {
@@ -345,6 +313,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
 
             _this.toastr("Error!!", "", "error");
+          }
+        });
+      } else {
+        if (this.parametros.imagen === this.info.imagen) {
+          axios.put("/publicidad/".concat(this.idNoticia), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+
+            _this.toastr("Editar Noticia", "Noticia editada con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsNoticia").whisper("desbloquearBtnsNoticia", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoNoticia", {
+              id: res.data.id
+            });
+
+            _this.accionNoticia({
+              tipo: "editar",
+              data: res.data
+            });
+
+            _this.$emit("cambiarVariableFormulario");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
           });
         } else {
           var _form = new FormData();
@@ -400,13 +405,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.$emit("cambiarVariableFormulario");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         }
       }
@@ -691,27 +700,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: "noticia"
         }
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+
+        _this.toastr("Eliminar Noticia", "Noticia eliminada con exito!!", "success");
+
+        _this.accionNoticia({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.$modal.hide("modal_eliminar_noticia");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
 
-          _this.toastr("Eliminar Noticia", "Noticia eliminada con exito!!", "success");
-
-          _this.accionNoticia({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.actualizarTabla();
-
-          _this.$modal.hide("modal_eliminar_noticia");
+          _this.toastr("Error!!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!!!", "", "error");
       });
     }
   }),

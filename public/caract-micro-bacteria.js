@@ -341,14 +341,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.bloquearBtn = false;
@@ -359,26 +363,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       } else {
         axios.put("/cepas/bacteria/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+          _this.errors = [];
+
+          _this.$emit("editar", res.data);
+
+          _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
-            _this.errors = [];
 
-            _this.$emit("editar", res.data);
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -425,14 +430,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
           }
         })["catch"](function (error) {
-          _this2.bloquearBtnModal = false;
+          if (error.response.status === 403) {
+            _this2.$router.push("/sin-acceso");
+          } else {
+            _this2.bloquearBtnModal = false;
 
-          if (error.response.status === 422) {
-            _this2.errors = [];
-            _this2.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this2.errors = [];
+              _this2.modal.errors = error.response.data.errors;
+            }
+
+            _this2.toastr("Error!!", "", "error");
           }
-
-          _this2.toastr("Error!!", "", "error");
         });
       }
     },
@@ -461,7 +470,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
     required: function required() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
@@ -604,6 +613,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -615,7 +629,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -636,25 +651,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/cepas/bacteria/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+        _this.mostrarBtnAgregar = true;
+        _this.mostrarForm = false;
+
+        _this.$modal.hide("my_modal");
+
+        _this.accionEliminarCaract({
+          tipo: "micro",
+          data: res.data
+        });
+
+        _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.mostrarBtnAgregar = true;
-          _this.mostrarForm = false;
+          _this.bloquearBtnModal = false;
 
-          _this.$modal.hide("my_modal");
-
-          _this.accionEliminarCaract({
-            tipo: "micro",
-            data: res.data
-          });
-
-          _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
+          _this.toastr("Error!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -802,22 +822,24 @@ var render = function() {
                             0
                           ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "input-group-append" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.showModal("forma_micro")
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "fas fa-plus" })]
-                            )
-                          ])
+                          _vm.getPermisoByNombre("agregar-otra")
+                            ? _c("div", { staticClass: "input-group-append" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.showModal("forma_micro")
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-plus" })]
+                                )
+                              ])
+                            : _vm._e()
                         ])
                       ]
                     : _vm._e(),
@@ -1686,7 +1708,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminar }
                 },
                 [_vm._v("Eliminar")]

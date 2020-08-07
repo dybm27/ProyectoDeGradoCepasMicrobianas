@@ -90,7 +90,15 @@ export default {
       }
     },
     eliminarImagenesStorage() {
-      axios.get("/editor/upload");
+      axios.get("/editor/upload").then((res) => {
+        if (res.request.responseURL === process.env.MIX_LOGIN) {
+          localStorage.setItem(
+            "mensajeLogin",
+            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          );
+          window.location.href = "/";
+        }
+      });
     },
   },
   computed: {

@@ -621,14 +621,18 @@ __webpack_require__.r(__webpack_exports__);
               _this.toastr("Agregar Características Bioquímicas", "Características Bioquímicas agregadas con exito!!", "success");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.bloquearBtn = false;
@@ -639,26 +643,27 @@ __webpack_require__.r(__webpack_exports__);
         }
       } else {
         axios.put("/cepas/bacteria/caract-bioqui/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+          _this.errors = [];
+
+          _this.$emit("editar", res.data);
+
+          _this.toastr("Editar Características Bioquímicas", "Características Bioquímicas editadas con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
-            _this.errors = [];
 
-            _this.$emit("editar", res.data);
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.toastr("Editar Características Bioquímicas", "Características Bioquímicas editadas con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -830,6 +835,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -841,7 +851,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
-      modificarForm: false
+      modificarForm: false,
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -862,25 +873,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminar: function eliminar() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       axios["delete"]("/cepas/bacteria/caract-bioqui/".concat(this.getCaractBioqui.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+        _this.mostrarBtnAgregar = true;
+        _this.mostrarForm = false;
+
+        _this.$modal.hide("my_modal");
+
+        _this.accionEliminarCaract({
+          tipo: "bioqui",
+          data: res.data
+        });
+
+        _this.toastr("Eliminar Característica", "Características Bioquímicas eliminadas con exito!!", "success");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.mostrarBtnAgregar = true;
-          _this.mostrarForm = false;
+          _this.bloquearBtnModal = false;
 
-          _this.$modal.hide("my_modal");
-
-          _this.accionEliminarCaract({
-            tipo: "bioqui",
-            data: res.data
-          });
-
-          _this.toastr("Eliminar Característica", "Características Bioquímicas eliminadas con exito!!", "success");
+          _this.toastr("Error!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.toastr("Error!!", "", "error");
       });
     },
     cambiarVariable: function cambiarVariable() {
@@ -2529,7 +2545,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.eliminar }
                 },
                 [_vm._v("Eliminar")]

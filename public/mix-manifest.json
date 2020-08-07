@@ -50,6 +50,7 @@
     "/objetivos.js": "/objetivos.js",
     "/otra-info.js": "/otra-info.js",
     "/otra-info-bacterias.js": "/otra-info-bacterias.js",
+    "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js": "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js",
     "/otras-caract-actinomiceto.js": "/otras-caract-actinomiceto.js",
     "/perfil.js": "/perfil.js",
     "/proyectos.js": "/proyectos.js",
@@ -72,6 +73,5 @@
     "/vendors~calendario.js": "/vendors~calendario.js",
     "/vendors~tabla-roles.js": "/vendors~tabla-roles.js",
     "/ver-hongo.js": "/ver-hongo.js",
-    "/vision.js": "/vision.js",
-    "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js": "/otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras.js"
+    "/vision.js": "/vision.js"
 }

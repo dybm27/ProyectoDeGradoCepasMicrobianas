@@ -25,142 +25,160 @@
                   />
                 </div>
                 <template v-if="getInfoCaractMacroActinomicetos">
-                  <label for="textura" class>Textura</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="textura"
-                      class="form-control"
-                      v-model="parametros.textura"
-                    >
-                      <option
-                        v-for="(e,index) in obtenerTexturas"
-                        :key="index"
-                        :value="e.id"
-                      >{{e.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('textura')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="textura" class>Textura</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="textura"
+                          class="form-control"
+                          v-model="parametros.textura"
+                        >
+                          <option
+                            v-for="(e,index) in obtenerTexturas"
+                            :key="index"
+                            :value="e.id"
+                          >{{e.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('textura')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="color" class>Color</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="color"
+                          class="form-control"
+                          v-model="parametros.color"
+                        >
+                          <option
+                            v-for="(c,index) in obtenerColores"
+                            :key="index"
+                            :value="c.id"
+                          >{{c.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('color')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <label for="color" class>Color</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="color"
-                      class="form-control"
-                      v-model="parametros.color"
-                    >
-                      <option
-                        v-for="(c,index) in obtenerColores"
-                        :key="index"
-                        :value="c.id"
-                      >{{c.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('color')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="forma" class>Forma</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="forma"
+                          class="form-control"
+                          v-model="parametros.forma"
+                        >
+                          <option
+                            v-for="(f,index) in obtenerFormas"
+                            :key="index"
+                            :value="f.id"
+                          >{{f.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('forma_macro')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="superficie" class>Superficie</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="superficie"
+                          class="form-control"
+                          v-model="parametros.superficie"
+                        >
+                          <option
+                            v-for="(s,index) in obtenerSuperficies"
+                            :key="index"
+                            :value="s.id"
+                          >{{s.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('superficie')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <label for="forma" class>Forma</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="forma"
-                      class="form-control"
-                      v-model="parametros.forma"
-                    >
-                      <option
-                        v-for="(f,index) in obtenerFormas"
-                        :key="index"
-                        :value="f.id"
-                      >{{f.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('forma_macro')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="borde" class>Borde</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="borde"
+                          class="form-control"
+                          v-model="parametros.borde"
+                        >
+                          <option
+                            v-for="(b,index) in obtenerBordes"
+                            :key="index"
+                            :value="b.id"
+                          >{{b.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('borde')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <label for="superficie" class>Superficie</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="superficie"
-                      class="form-control"
-                      v-model="parametros.superficie"
-                    >
-                      <option
-                        v-for="(s,index) in obtenerSuperficies"
-                        :key="index"
-                        :value="s.id"
-                      >{{s.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('superficie')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <label for="borde" class>Borde</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="borde"
-                      class="form-control"
-                      v-model="parametros.borde"
-                    >
-                      <option
-                        v-for="(b,index) in obtenerBordes"
-                        :key="index"
-                        :value="b.id"
-                      >{{b.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('borde')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <label for="pigmento" class>Pigmento</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="pigmento"
-                      class="form-control"
-                      v-model="parametros.pigmento"
-                    >
-                      <option
-                        v-for="(d,index) in obtenerPigmentos"
-                        :key="index"
-                        :value="d.id"
-                      >{{d.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('pigmento')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                    <div class="col-md-6">
+                      <label for="pigmento" class>Pigmento</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="pigmento"
+                          class="form-control"
+                          v-model="parametros.pigmento"
+                        >
+                          <option
+                            v-for="(d,index) in obtenerPigmentos"
+                            :key="index"
+                            :value="d.id"
+                          >{{d.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('pigmento')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </template>
@@ -350,26 +368,31 @@ export default {
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Medio";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Medio",
+                  "Medio agregado con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Medio";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Medio",
-                "Medio agregado con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -383,13 +406,6 @@ export default {
             this.parametros
           )
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            }
             this.bloquearBtn = false;
             this.errors = [];
             this.$refs.inputImagen.value = "";
@@ -397,12 +413,18 @@ export default {
             this.toastr("Editar Medio", "Medio editado con exito!!", "success");
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -471,12 +493,16 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.modal.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtnModal = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.modal.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -514,6 +540,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]),
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {

@@ -701,8 +701,7 @@ export default {
           "Descarga!!",
           `La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. 
            favor esperar!!`,
-          "warning",
-          10000
+          "warning"
         );
         axios
           .get(`/cepa/imprimir/${this.cepa.cepa.id}`, {
@@ -720,8 +719,7 @@ export default {
               this.toastr(
                 "Descarga!!",
                 "La descarga se realizo con éxito",
-                "success",
-                5000
+                "success"
               );
               this.errorSelect = "";
               this.selectImprimir = [];
@@ -740,9 +738,13 @@ export default {
             }
           })
           .catch((error) => {
-            this.btnTodo = false;
-            this.btnSeleccionado = false;
-            this.toastr("Error!!", "", "error");
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.btnTodo = false;
+              this.btnSeleccionado = false;
+              this.toastr("Error!!", "", "error");
+            }
           });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";

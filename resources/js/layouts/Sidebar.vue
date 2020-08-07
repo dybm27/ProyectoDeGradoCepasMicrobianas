@@ -69,8 +69,18 @@
             </router-link>
           </li>
           <li class="app-sidebar__heading">Sitio Web Público</li>
-          <li v-if="getPermisoByNombres(['editar-mision','editar-vision','editar-objetivos'])">
+          <li v-if="getPermisoByNombres(['editar-mision'])">
             <router-link :to="{name:'mision'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
+            </router-link>
+          </li>
+          <li v-else-if="getPermisoByNombres(['editar-vision'])">
+            <router-link :to="{name:'vision'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
+            </router-link>
+          </li>
+          <li v-else-if="getPermisoByNombres(['editar-objetivos'])">
+            <router-link :to="{name:'objetivos'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
             </router-link>
           </li>
@@ -82,9 +92,16 @@
             </router-link>
           </li>
           <li
-            v-if="getPermisoByNombres(['agregar-proyecto','editar-proyecto','eliminar-proyecto','agregar-publicacion','editar-publicacion','eliminar-publicacion'])"
+            v-if="getPermisoByNombres(['agregar-proyecto','editar-proyecto','eliminar-proyecto'])"
           >
             <router-link :to="{name:'proyectos'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-paperclip"></i>Documentos
+            </router-link>
+          </li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-publicacion','editar-publicacion','eliminar-publicacion'])"
+          >
+            <router-link :to="{name:'publicaciones'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-paperclip"></i>Documentos
             </router-link>
           </li>
@@ -95,10 +112,22 @@
               <i class="metismenu-icon pe-7s-portfolio"></i>Equipamientos
             </router-link>
           </li>
-          <li
-            v-if="getPermisoByNombres(['agregar-noticia','editar-noticia','eliminar-noticia','agregar-novedad','editar-novedad','eliminar-novedad','agregar-actividad','editar-actividad','eliminar-actividad'])"
-          >
+          <li v-if="getPermisoByNombres(['agregar-noticia','editar-noticia','eliminar-noticia'])">
             <router-link :to="{name:'noticias'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
+            </router-link>
+          </li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-actividad','editar-actividad','eliminar-actividad'])"
+          >
+            <router-link :to="{name:'actividades'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
+            </router-link>
+          </li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-novedad','editar-novedad','eliminar-novedad'])"
+          >
+            <router-link :to="{name:'novedades'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
             </router-link>
           </li>

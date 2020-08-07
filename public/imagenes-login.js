@@ -132,35 +132,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.parametros.imagen === this.info.imagen) {
         axios.put("/login/imagen/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          if (res.data.mostrar) {
+            res.data.mostrar = 1;
+          } else {
+            res.data.mostrar = 0;
+          }
+
+          _this.accionImagenLogin({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.$emit("mostrarFrom");
+
+          _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            if (res.data.mostrar) {
-              res.data.mostrar = 1;
-            } else {
-              res.data.mostrar = 0;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
             }
 
-            _this.accionImagenLogin({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.$emit("mostrarFrom");
-
-            _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         var form = new FormData();
@@ -196,13 +197,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("mostrarFrom");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },

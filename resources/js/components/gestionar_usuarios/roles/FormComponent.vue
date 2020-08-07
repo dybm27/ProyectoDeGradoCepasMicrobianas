@@ -105,29 +105,26 @@ export default {
           permisos: this.permisosRol,
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.accionModificarPermisos(res.data);
-            this.toastr(
-              "Modificar Permisos",
-              "Permisos modificados con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsRol").whisper(
-              "desbloquearBtnsRol",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoRol", {
+          this.accionModificarPermisos(res.data);
+          this.toastr(
+            "Modificar Permisos",
+            "Permisos modificados con exito!!",
+            "success"
+          );
+          window.Echo.private("desbloquearBtnsRol").whisper(
+            "desbloquearBtnsRol",
+            {
               id: res.data.id,
-            });
-            this.$emit("cambiarVariableFormulario");
+            }
+          );
+          this.$events.fire("eliminarMiBloqueoRol", {
+            id: res.data.id,
+          });
+          this.$emit("cambiarVariableFormulario");
+        })
+        .catch((error) => {
+          if (error.response.status === 405) {
+            window.location.href = "/";
           }
         });
     },

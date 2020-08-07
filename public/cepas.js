@@ -510,35 +510,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         axios.put("/cepas/editar/".concat(this.idCepa), this.parametros).then(function (res) {
           _this.bloquearBtn = false;
 
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.accionCepas({
+            tipo: "editar",
+            data: res.data
+          });
+
+          window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoCepa", {
+            id: res.data.id
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+
+          _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
-            _this.accionCepas({
-              tipo: "editar",
-              data: res.data
-            });
+            _this.bloquearBtn = false;
 
-            window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
-              id: res.data.id
-            });
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.$events.fire("eliminarMiBloqueoCepa", {
-              id: res.data.id
-            });
-
-            _this.$emit("cambiarVariableFormulario");
-
-            _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.post("/cepas/agregar", this.parametros).then(function (res) {
@@ -558,13 +559,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -685,13 +690,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this2.toastr("Agregar Info", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
           }
         })["catch"](function (error) {
-          _this2.bloquearBtnModal = false;
+          if (error.response.status === 403) {
+            _this2.$router.push("/sin-acceso");
+          } else {
+            _this2.bloquearBtnModal = false;
 
-          if (error.response.status === 422) {
-            _this2.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this2.modal.errors = error.response.data.errors;
+            }
+
+            _this2.toastr("Error!!", "", "error");
           }
-
-          _this2.toastr("Error!!", "", "error");
         });
       }
     },
@@ -1061,31 +1070,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios["delete"]("/cepas/eliminar/".concat(this.id)).then(function (res) {
         _this.bloquearBtnModal = false;
 
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        if (res.data === "negativo") {
+          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+        }
+
+        _this.accionCepas({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.$modal.hide("modal_eliminar_cepa");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          if (res.data === "negativo") {
-            _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
-          } else {
-            _this.refrescarTabla = true;
+          _this.bloquearBtnModal = false;
 
-            _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-          }
-
-          _this.accionCepas({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.actualizarTabla();
-
-          _this.$modal.hide("modal_eliminar_cepa");
+          _this.toastr("Error!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!", "", "error");
       });
     },
     closeEliminar: function closeEliminar() {

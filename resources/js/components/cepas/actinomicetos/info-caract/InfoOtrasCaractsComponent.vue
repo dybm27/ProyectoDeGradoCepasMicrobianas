@@ -66,7 +66,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('otras_caract')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminar">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            :disabled="bloquearBtnModal"
+            @click="eliminar"
+          >Eliminar</button>
         </div>
       </div>
     </modal>
@@ -84,6 +89,7 @@ export default {
       mostrarBtnAgregar: true,
       mostrarForm: false,
       modificarForm: false,
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr],
@@ -101,29 +107,30 @@ export default {
       this.modificarForm = true;
     },
     eliminar() {
+      this.bloquearBtnModal = true;
       axios
         .delete(`/cepas/actinomiceto/otras-caract/${this.getOtrasCaract.id}`)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.mostrarBtnAgregar = true;
-            this.mostrarForm = false;
-            this.$modal.hide("otras_caract");
-            this.accionEliminarCaract({ tipo: "otras", data: res.data });
-            this.toastr(
-              "Eliminar Característica",
-              "Otras Características de Interés eliminadas con exito!!",
-              "success"
-            );
-          }
+          this.bloquearBtnModal = false;
+          this.mostrarBtnAgregar = true;
+          this.mostrarForm = false;
+          this.$modal.hide("otras_caract");
+          this.accionEliminarCaract({ tipo: "otras", data: res.data });
+          this.toastr(
+            "Eliminar Característica",
+            "Otras Características de Interés eliminadas con exito!!",
+            "success"
+          );
         })
         .catch((error) => {
-          this.toastr("Error!!", "", "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "", "error");
+          }
         });
     },
     cambiarVariable() {

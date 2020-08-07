@@ -239,53 +239,55 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/usuario/editar/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            if (this.auth.id === res.data.id) {
+              this.accionModificarAuth({ data: res.data });
+            }
+            this.accionUsuario({ tipo: "editar", data: res.data });
+            this.toastr(
+              "Editar Usuario",
+              "Usuario editado con exito!!",
+              "success"
+            );
+            window.Echo.private("desbloquearBtnsUsuario").whisper(
+              "desbloquearBtnsUsuario",
+              {
+                id: res.data.id,
+              }
+            );
+            this.$events.fire("eliminarMiBloqueoUsuario", {
+              id: res.data.id,
+            });
+            this.$emit("cambiarVariableFormulario");
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              if (this.auth.id === res.data.id) {
-                this.accionModificarAuth({ data: res.data });
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
               }
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.toastr(
-                "Editar Usuario",
-                "Usuario editado con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsUsuario").whisper(
-                "desbloquearBtnsUsuario",
-                {
-                  id: res.data.id,
-                }
-              );
-              this.$events.fire("eliminarMiBloqueoUsuario", {
-                id: res.data.id,
-              });
-              this.$emit("cambiarVariableFormulario");
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
