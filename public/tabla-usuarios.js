@@ -387,7 +387,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -596,18 +595,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     validarEmail: function validarEmail() {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      if (this.required) {
-        if (this.parametros.email) {
-          if (!re.test(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-            return true;
-          } else {
-            if (this.getUsuarioByEmail(this.parametros.email)) {
+      if (this.parametros.email) {
+        if (!re.test(this.parametros.email)) {
+          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+          return true;
+        } else {
+          if (this.getUsuarioByEmail(this.parametros.email)) {
+            if (this.getUsuarioByEmail(this.parametros.email).id != this.info.id) {
               this.mensajeErrorEmail = "El correo electrónico ya Existe";
               return true;
             }
-
-            return false;
           }
         }
       }
@@ -1057,7 +1054,7 @@ var render = function() {
                       ],
                       class: [
                         "form-control",
-                        _vm.validarNombre === true ? "is-invalid" : ""
+                        _vm.validarNombre ? "is-invalid" : ""
                       ],
                       attrs: {
                         name: "nombre",
@@ -1189,15 +1186,14 @@ var render = function() {
                       ],
                       class: [
                         "form-control",
-                        _vm.validarEmail === true ? "is-invalid" : ""
+                        _vm.validarEmail ? "is-invalid" : ""
                       ],
                       attrs: {
                         name: "email",
                         id: "email",
                         placeholder: "...",
                         type: "email",
-                        required: _vm.required,
-                        disabled: !_vm.required
+                        required: _vm.required
                       },
                       domProps: { value: _vm.parametros.email },
                       on: {
@@ -1222,7 +1218,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group mb-3" }, [
-                    (_vm.showPass == true ? "text" : "password") === "checkbox"
+                    (_vm.showPass ? "text" : "password") === "checkbox"
                       ? _c("input", {
                           directives: [
                             {
@@ -1234,7 +1230,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
@@ -1279,7 +1275,7 @@ var render = function() {
                             }
                           }
                         })
-                      : (_vm.showPass == true ? "text" : "password") === "radio"
+                      : (_vm.showPass ? "text" : "password") === "radio"
                       ? _c("input", {
                           directives: [
                             {
@@ -1291,7 +1287,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
@@ -1320,14 +1316,14 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
                             id: "pass",
                             placeholder: "...",
                             required: _vm.required,
-                            type: _vm.showPass == true ? "text" : "password"
+                            type: _vm.showPass ? "text" : "password"
                           },
                           domProps: { value: _vm.parametros.pass },
                           on: {
@@ -1387,7 +1383,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",
@@ -1445,7 +1441,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",
@@ -1474,7 +1470,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",

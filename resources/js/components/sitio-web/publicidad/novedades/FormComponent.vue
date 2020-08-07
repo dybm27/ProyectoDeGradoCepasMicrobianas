@@ -24,7 +24,7 @@
                 />
                 <em v-if="validarTitulo" class="error invalid-feedback">{{mensajeTitulo}}</em>
               </div>
-              <div class="position-relative form-group">
+              <div class="position-relative form-group" v-if="required">
                 <label for="select" class>Contenido de la Novedad:</label>
                 <select
                   name="select"
@@ -32,7 +32,6 @@
                   class="form-control"
                   @change="cambiarDatos"
                   v-model="selectTipo"
-                  :disabled="!required"
                 >
                   <option value="link">Link</option>
                   <option value="texto">Texto</option>

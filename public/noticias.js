@@ -226,7 +226,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -938,58 +937,63 @@ var render = function() {
                         : _vm._e()
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "position-relative form-group" }, [
-                      _c("label", { attrs: { for: "select" } }, [
-                        _vm._v("Contenido de la Noticia:")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.selectTipo,
-                              expression: "selectTipo"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "select",
-                            id: "conidioforo",
-                            disabled: !_vm.required
-                          },
-                          on: {
-                            change: [
-                              function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.selectTipo = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
+                    _vm.required
+                      ? _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "select" } }, [
+                              _vm._v("Contenido de la Noticia:")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.selectTipo,
+                                    expression: "selectTipo"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { name: "select", id: "conidioforo" },
+                                on: {
+                                  change: [
+                                    function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.selectTipo = $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    },
+                                    _vm.cambiarDatos
+                                  ]
+                                }
                               },
-                              _vm.cambiarDatos
-                            ]
-                          }
-                        },
-                        [
-                          _c("option", { attrs: { value: "link" } }, [
-                            _vm._v("Link")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "texto" } }, [
-                            _vm._v("Texto")
-                          ])
-                        ]
-                      )
-                    ]),
+                              [
+                                _c("option", { attrs: { value: "link" } }, [
+                                  _vm._v("Link")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "texto" } }, [
+                                  _vm._v("Texto")
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e(),
                     _vm._v(" "),
                     _vm.selectTipo == "link"
                       ? [

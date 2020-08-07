@@ -11,6 +11,11 @@ export default {
             return state.cepas.filter(
                 cepa => cepa.grupo_microbiano_id == grupo
             );
+        },
+        getCepaByCodigo: state => codigo => {
+            return state.cepas.find(
+                cepa => cepa.codigo.toUpperCase() === codigo.toUpperCase()
+            );
         }
     },
     mutations: {

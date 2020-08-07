@@ -92802,6 +92802,13 @@ __webpack_require__.r(__webpack_exports__);
           return cepa.grupo_microbiano_id == grupo;
         });
       };
+    },
+    getCepaByCodigo: function getCepaByCodigo(state) {
+      return function (codigo) {
+        return state.cepas.find(function (cepa) {
+          return cepa.codigo.toUpperCase() === codigo.toUpperCase();
+        });
+      };
     }
   },
   mutations: {

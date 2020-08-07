@@ -18,7 +18,7 @@
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombre===true? 'is-invalid':'']"
+                  :class="['form-control', validarNombre? 'is-invalid':'']"
                   v-model="parametros.nombre"
                   required
                 />
@@ -58,10 +58,9 @@
                   id="email"
                   placeholder="..."
                   type="email"
-                  :class="['form-control', validarEmail===true? 'is-invalid':'']"
+                  :class="['form-control', validarEmail? 'is-invalid':'']"
                   v-model="parametros.email"
                   :required="required"
-                  :disabled="!required"
                 />
                 <em v-if="validarEmail" class="error invalid-feedback">{{mensajeErrorEmail}}</em>
               </div>
@@ -71,8 +70,8 @@
                   name="pass"
                   id="pass"
                   placeholder="..."
-                  :type="showPass==true?'text':'password'"
-                  :class="['form-control',validarContraseña===true? 'is-invalid':'']"
+                  :type="showPass?'text':'password'"
+                  :class="['form-control',validarContraseña? 'is-invalid':'']"
                   v-model="parametros.pass"
                   :required="required"
                 />
@@ -91,7 +90,7 @@
                   id="pass1"
                   placeholder="..."
                   :type="showPass1==true?'text':'password'"
-                  :class="['form-control', validarContraseñas===true? 'is-invalid':'']"
+                  :class="['form-control', validarContraseñas? 'is-invalid':'']"
                   v-model="parametros.pass1"
                   :required="required"
                 />
@@ -371,17 +370,18 @@ export default {
     },
     validarEmail() {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (this.required) {
-        if (this.parametros.email) {
-          if (!re.test(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-            return true;
-          } else {
-            if (this.getUsuarioByEmail(this.parametros.email)) {
+      if (this.parametros.email) {
+        if (!re.test(this.parametros.email)) {
+          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+          return true;
+        } else {
+          if (this.getUsuarioByEmail(this.parametros.email)) {
+            if (
+              this.getUsuarioByEmail(this.parametros.email).id != this.info.id
+            ) {
               this.mensajeErrorEmail = "El correo electrónico ya Existe";
               return true;
             }
-            return false;
           }
         }
       }

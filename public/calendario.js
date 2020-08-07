@@ -239,6 +239,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -571,7 +573,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"]), {
+    tiempo: function tiempo() {
+      return this.modal.tiempo;
+    },
+    fecha: function fecha() {
+      return this.modal.fecha;
+    }
+  }),
   created: function created() {
     var _this3 = this;
 
@@ -584,6 +593,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     });
   }
+  /**
+  watch: {
+    fecha() {
+      this.$refs.datepickerFecha.closePopup();
+    },
+    tiempo() {
+      this.$refs.datepickerTiempo.closePopup();
+    },
+  }, */
+
 });
 
 /***/ }),
@@ -1049,6 +1068,7 @@ var render = function() {
                                       { staticClass: "row" },
                                       [
                                         _c("date-picker", {
+                                          ref: "datepickerFecha",
                                           attrs: {
                                             lang: _vm.lang,
                                             type: "datetime",
@@ -1094,6 +1114,7 @@ var render = function() {
                                       { staticClass: "row" },
                                       [
                                         _c("date-picker", {
+                                          ref: "datepickerTiempo",
                                           attrs: {
                                             type: "time",
                                             "value-type": "format",

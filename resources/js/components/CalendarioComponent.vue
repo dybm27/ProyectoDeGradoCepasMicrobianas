@@ -109,6 +109,7 @@
                     </div>
                     <div class="row">
                       <date-picker
+                        ref="datepickerFecha"
                         :lang="lang"
                         v-model="modal.fecha"
                         type="datetime"
@@ -127,6 +128,7 @@
                     </div>
                     <div class="row">
                       <date-picker
+                        ref="datepickerTiempo"
                         v-model="modal.tiempo"
                         type="time"
                         value-type="format"
@@ -573,6 +575,12 @@ export default {
   },
   computed: {
     ...vuex.mapState(["auth"]),
+    tiempo() {
+      return this.modal.tiempo;
+    },
+    fecha() {
+      return this.modal.fecha;
+    },
   },
   created() {
     this.$emit("rutaSider", window.location.pathname);
@@ -586,5 +594,14 @@ export default {
       }
     );
   },
+  /**
+  watch: {
+    fecha() {
+      this.$refs.datepickerFecha.closePopup();
+    },
+    tiempo() {
+      this.$refs.datepickerTiempo.closePopup();
+    },
+  }, */
 };
 </script>
