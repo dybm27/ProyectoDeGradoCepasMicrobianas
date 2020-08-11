@@ -581,8 +581,8 @@ export default {
     },
     evento() {
       this.bloquearBtn = true;
-      if (this.parametros.tituloForm === "Agregar Característica") {
-        if (this.imagen1) {
+      if (this.tituloForm === "Agregar Característica") {
+        if (this.parametros.imagen1) {
           axios
             .post("/cepas/bacteria/caract-bioqui", this.parametros)
             .then((res) => {

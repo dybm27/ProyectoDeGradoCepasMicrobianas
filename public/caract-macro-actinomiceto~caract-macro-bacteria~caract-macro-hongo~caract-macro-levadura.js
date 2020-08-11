@@ -1,16 +1,36 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! croppie */ "./node_modules/croppie/croppie.js");
-/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(croppie__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28,74 +48,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["id", "imagen", "mostrarBtnCroppie", "zoom", "editar", "enableZoom", "boundaryHeigth", "viewportWidth"],
+  props: ["tipo", "tipoCaract", "caract", "url"],
   data: function data() {
     return {
-      croppie: null,
-      btnAprobar: true
+      bloquearBtnModal: false
     };
   },
-  mounted: function mounted() {
-    this.crearCroppie();
-  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
   methods: {
-    crearCroppie: function crearCroppie() {
-      var el = document.getElementById(this.id);
-      this.croppie = new croppie__WEBPACK_IMPORTED_MODULE_0___default.a(el, {
-        viewport: {
-          width: this.viewportWidth,
-          height: 200
-        },
-        boundary: {
-          height: this.boundaryHeigth
-        },
-        enableZoom: this.enableZoom
-      });
-      this.croppie.bind({
-        url: this.imagen,
-        zoom: this.zoom
-      });
-    },
-    resultado: function resultado() {
+    eliminar: function eliminar() {
       var _this = this;
 
-      this.croppie.result().then(function (res) {
-        _this.btnAprobar = false;
+      this.bloquearBtnModal = true;
+      axios["delete"]("/cepas/".concat(this.url + "/" + this.caract.id)).then(function (res) {
+        _this.bloquearBtnModal = false;
 
-        _this.$emit("cambiarValorImagen", res);
+        _this.$modal.hide("modal_eliminar_caract");
+
+        _this.$emit("eliminar", res.data);
+
+        _this.toastr("Eliminar " + _this.tipo, _this.tipoCaract + " eliminadas con exito!!", "success");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Error!!", "", "error");
+        }
       });
-    },
-    cancelar: function cancelar() {
-      this.btnAprobar = true;
-      this.$emit("cambiarValorImagen", "");
-    }
-  },
-  watch: {
-    imagen: function imagen() {
-      if (this.imagen) {
-        this.btnAprobar = true;
-        this.croppie.destroy();
-        this.crearCroppie();
-      }
-    }
-  },
-  computed: {
-    mostrarMensaje: function mostrarMensaje() {
-      if (this.btnAprobar && !this.editar) {
-        return true;
-      }
-
-      return false;
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -109,43 +102,86 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
     [
-      _c("div", { attrs: { id: _vm.id } }),
-      _vm._v(" "),
-      _vm.mostrarBtnCroppie
-        ? [
-            _vm.btnAprobar
-              ? [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      on: { click: _vm.resultado }
-                    },
-                    [_vm._v("Aprobar Imagen")]
-                  ),
-                  _vm._v(" "),
-                  _vm.mostrarMensaje
-                    ? _c("em", { staticClass: "text-danger small" }, [
-                        _vm._v("Debe Aprobar la imagen")
-                      ])
-                    : _vm._e()
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "modal_eliminar_caract",
+            classes: "my_modal",
+            width: 400,
+            height: 300
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v("Eliminar " + _vm._s(_vm.tipoCaract))]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_eliminar_caract")
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
                 ]
-              : [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger float-right",
-                      on: { click: _vm.cancelar }
-                    },
-                    [_vm._v("Cancelar")]
-                  )
-                ]
-          ]
-        : _vm._e()
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", [
+                _vm._v(
+                  "Esta segura/o de eliminar la " + _vm._s(_vm.tipo) + "?."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_eliminar_caract")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                  on: { click: _vm.eliminar }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
+          ])
+        ]
+      )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -155,18 +191,18 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/components/CroppieComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/CroppieComponent.vue ***!
-  \******************************************************/
+/***/ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalEliminarCaractComponent.vue ***!
+  \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
-/* harmony import */ var _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a& */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a&");
+/* harmony import */ var _ModalEliminarCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalEliminarCaractComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -175,9 +211,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ModalEliminarCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -187,38 +223,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/CroppieComponent.vue"
+component.options.__file = "resources/js/components/cepas/ModalEliminarCaractComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/***/ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalEliminarCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ModalEliminarCaractComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalEliminarCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
-  \*************************************************************************************/
+/***/ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalEliminarCaractComponent.vue?vue&type=template&id=57913b2a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalEliminarCaractComponent_vue_vue_type_template_id_57913b2a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -246,10 +282,50 @@ var infoCaractMacroMixin = {
       mostrarForm2: false,
       mostrarForm3: false,
       mostrarBtnAgregar: true,
-      modificarForm: false
+      modificarForm: false,
+      caract: null,
+      num: 0
     };
   },
   methods: {
+    agregarInfo: function agregarInfo(data) {
+      this.accionAgregarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+    },
+    editarInfo: function editarInfo(data) {
+      this.accionEditarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.modificarForm = true;
+    },
+    eliminarInfo: function eliminarInfo(data) {
+      this.accionEliminarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+      this.formatear(this.num);
+    },
+    eliminarMedio: function eliminarMedio() {
+      if (this.mostrarForm1) {
+        this.caract = this.getCaractMacro[0];
+        this.num = 1;
+      } else if (this.mostrarForm2) {
+        this.caract = this.getCaractMacro[1];
+        this.num = 2;
+      } else {
+        this.caract = this.getCaractMacro[2];
+        this.num = 3;
+      }
+
+      this.$modal.show("modal_eliminar_caract");
+    },
     cambiarVariable: function cambiarVariable() {
       this.modificarForm = false;
     },
@@ -446,117 +522,6 @@ var infoCaractMacroMixin = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
-
-/***/ }),
-
-/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
-/*!**********************************************************!*\
-  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
-  \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var obtenerImagenCroopieCepasMixin = {
-  data: function data() {
-    return {
-      imagenMiniatura: "",
-      imagenError: ""
-    };
-  },
-  methods: {
-    cambiarValorImagen: function cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
-    obtenerImagen: function obtenerImagen(e) {
-      var file = e.target.files[0];
-      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen: function cargarImagen(file) {
-      var _this = this;
-
-      var reader = new Image();
-
-      reader.onload = function (e) {
-        _this.imagenMiniatura = reader.src;
-      };
-
-      reader.src = URL.createObjectURL(file);
-    }
-  },
-  computed: {
-    mostraImagen: function mostraImagen() {
-      return this.imagenMiniatura;
-    },
-    mostrarBtnCroppie: function mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie: function validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-
-      return false;
-    }
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
 
 /***/ })
 

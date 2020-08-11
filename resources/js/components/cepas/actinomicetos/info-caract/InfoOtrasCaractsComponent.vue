@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('otras_caract')"
+              @click="$modal.show('modal_eliminar_caract')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Característica</button>
             <button
@@ -45,54 +45,29 @@
         </template>
       </div>
     </div>
-
-    <modal name="otras_caract" :width="450" :height="200">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5
-            class="modal-title"
-            id="exampleModalLongTitle"
-          >Eliminar Otras Características de Interés</h5>
-          <button type="button" class="close" @click="$modal.hide('otras_caract')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar las Características?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('otras_caract')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminar"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalEliminar
+      @eliminar="eliminar"
+      :tipo="'Características'"
+      :tipoCaract="'Otras Características de Interés'"
+      :caract="getOtrasCaract"
+      :url="'actinomiceto/otras-caract'"
+    />
   </div>
 </template>
 
 <script>
 import vuex from "vuex";
-import Toastr from "../../../../mixins/toastr";
 import FormOtrasCaract from "../forms-caract/FormOtrasCaractComponent";
+import ModalEliminar from "../../ModalEliminarCaractComponent.vue";
 export default {
-  components: { FormOtrasCaract },
+  components: { FormOtrasCaract, ModalEliminar },
   data() {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
       modificarForm: false,
-      bloquearBtnModal: false,
     };
   },
-  mixins: [Toastr],
   methods: {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
@@ -106,32 +81,10 @@ export default {
       this.accionEditarCaract({ tipo: "otras", data: data });
       this.modificarForm = true;
     },
-    eliminar() {
-      this.bloquearBtnModal = true;
-      axios
-        .delete(`/cepas/actinomiceto/otras-caract/${this.getOtrasCaract.id}`)
-        .then((res) => {
-          this.bloquearBtnModal = false;
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("otras_caract");
-          this.accionEliminarCaract({ tipo: "otras", data: res.data });
-          this.toastr(
-            "Eliminar Característica",
-            "Otras Características de Interés eliminadas con exito!!",
-            "success"
-          );
-        })
-        .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            this.bloquearBtnModal = false;
-            this.toastr("Error!!", "", "error");
-          }
-        });
+    eliminar(data) {
+      this.accionEliminarCaract({ tipo: "otras", data: data });
+      this.mostrarBtnAgregar = true;
+      this.mostrarForm = false;
     },
     cambiarVariable() {
       this.modificarForm = false;

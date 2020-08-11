@@ -37,7 +37,7 @@ var staticRenderFns = [
                   staticClass:
                     "header-icon lnr-charts icon-gradient bg-happy-green"
                 }),
-                _vm._v("\n          Características Fisiológicas\n        ")
+                _vm._v("\n          Características Moleculares\n        ")
               ]
             ),
             _vm._v(" "),

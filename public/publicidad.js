@@ -106,15 +106,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         this.tipo2 = "";
       }
-    },
-    eliminarImagenesStorage: function eliminarImagenesStorage() {
-      axios.get("/editor/upload").then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+    }
+    /*
+    eliminarImagenesStorage() {
+    axios
+      .get("/editor/upload")
+      .then((res) => {
+        console.log(res.data);
+        if (res.request.responseURL === process.env.MIX_LOGIN) {
+          localStorage.setItem(
+            "mensajeLogin",
+            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          );
           window.location.href = "/";
         }
+      })
+      .catch((error) => {
+        if (error.response.status === 403) {
+          this.$router.push("/sin-acceso");
+        }
       });
-    }
+    },*/
+
   }),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
   created: function created() {
@@ -151,11 +164,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       _this.$events.fire("actualizartablaNoticia");
     });
-    this.obtenerPublicidad();
-
-    if (this.auth.tipouser_id === 1) {
-      this.eliminarImagenesStorage();
-    }
+    this.obtenerPublicidad(); //this.eliminarImagenesStorage();
   }
 });
 

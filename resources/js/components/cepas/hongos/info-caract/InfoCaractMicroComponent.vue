@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('my_modal')"
+              @click="$modal.show('modal_eliminar_caract')"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Características</button>
             <button
@@ -45,47 +45,29 @@
         </template>
       </div>
     </div>
-
-    <modal name="my_modal" classes="my_modal" :width="400" :height="300">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Microscópica</h5>
-          <button type="button" class="close" @click="$modal.hide('my_modal')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar la Característica?.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="$modal.hide('my_modal')">Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminar"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalEliminar
+      @eliminar="eliminar"
+      :tipo="'Característica'"
+      :tipoCaract="'Característica Microscópica'"
+      :caract="getCaractMicro"
+      :url="'hongo/caract-micro'"
+    />
   </div>
 </template>
 
 <script>
 import vuex from "vuex";
-import Toastr from "../../../../mixins/toastr";
 import FormCaractMicro from "../forms-caract/FormCaractMicroComponent.vue";
+import ModalEliminar from "../../ModalEliminarCaractComponent.vue";
 export default {
-  components: { FormCaractMicro },
+  components: { FormCaractMicro, ModalEliminar },
   data() {
     return {
       mostrarBtnAgregar: true,
       mostrarForm: false,
       modificarForm: false,
-      bloquearBtnModal: false,
     };
   },
-  mixins: [Toastr],
   methods: {
     ...vuex.mapActions("cepa", [
       "accionAgregarCaract",
@@ -99,35 +81,10 @@ export default {
       this.accionEditarCaract({ tipo: "micro", data: data });
       this.modificarForm = true;
     },
-    eliminar() {
-      this.bloquearBtnModal = true;
-      axios
-        .delete(`/cepas/hongo/caract-micro/${this.getCaractMicro.id}`)
-        .then((res) => {
-          this.bloquearBtnModal = false;
-          this.mostrarBtnAgregar = true;
-          this.mostrarForm = false;
-          this.$modal.hide("my_modal");
-          this.accionEliminarCaract({
-            tipo: "micro",
-            data: res.data,
-          });
-          this.toastr(
-            "Eliminar Característica",
-            "Característica Microscópica eliminada con exito!!",
-            "success"
-          );
-        })
-        .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            this.bloquearBtnModal = false;
-            this.toastr("Error!!", "", "error");
-          }
-        });
+    eliminar(data) {
+      this.accionEliminarCaract({ tipo: "micro", data: data });
+      this.mostrarBtnAgregar = true;
+      this.mostrarForm = false;
     },
     cambiarVariable() {
       this.modificarForm = false;

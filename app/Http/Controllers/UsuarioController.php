@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\UsuarioEvent;
 use App\Seguimiento;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -108,4 +109,12 @@ class UsuarioController extends Controller
         }
         return false;
     }
+
+    /* public function eliminarDatosTablaSeguimineto()
+    {
+        $fechaActual = date('Y-m-d H:m:s');
+        $fechaBorrado = date("Y-m-d H:m:s", strtotime($fechaActual . "- 30 days"));
+        $datos = Seguimiento::where('created_at', '<=', $fechaBorrado)->delete();
+        return $datos;
+    } */
 }

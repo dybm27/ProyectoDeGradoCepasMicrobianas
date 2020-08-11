@@ -240,7 +240,7 @@ export default {
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     state.info_caract_bacterias.metodo_conser.tipo_metodo.push(
                         data.info
                     );
@@ -324,7 +324,7 @@ export default {
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -411,7 +411,7 @@ export default {
                         1
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -443,7 +443,7 @@ export default {
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     state.info_caract_levaduras.metodo_conser.tipo_metodo.push(
                         data.info
                     );
@@ -472,7 +472,7 @@ export default {
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -504,7 +504,7 @@ export default {
                         1
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -532,17 +532,17 @@ export default {
                         data.info
                     );
                     break;
-                case "espora_asexual":
+                case "esporaA":
                     state.info_caract_hongos.caract_micro.esporas_asexuales.push(
                         data.info
                     );
                     break;
-                case "espora_sexual":
+                case "esporaS":
                     state.info_caract_hongos.caract_micro.esporas_sexuales.push(
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     state.info_caract_hongos.metodo_conser.tipo_metodo.push(
                         data.info
                     );
@@ -581,7 +581,7 @@ export default {
                         data.info
                     );
                     break;
-                case "espora_asexual":
+                case "esporaA":
                     var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -591,7 +591,7 @@ export default {
                         data.info
                     );
                     break;
-                case "espora_sexual":
+                case "esporaS":
                     var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -601,7 +601,7 @@ export default {
                         data.info
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -642,7 +642,7 @@ export default {
                         1
                     );
                     break;
-                case "espora_asexual":
+                case "esporaA":
                     var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -651,7 +651,7 @@ export default {
                         1
                     );
                     break;
-                case "espora_sexual":
+                case "esporaS":
                     var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(
                         tipo => tipo.id === data.info.id
                     );
@@ -660,7 +660,7 @@ export default {
                         1
                     );
                     break;
-                case "metodo_conser":
+                case "tipo_metodo":
                     var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(
                         tipo => tipo.id === data.info.id
                     );

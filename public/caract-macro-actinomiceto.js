@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -301,49 +302,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Croppie: _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Croppie: _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   props: ["info", "modificarInfo"],
   data: function data() {
@@ -361,12 +328,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         otras_caract: "",
         imagen: ""
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: []
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -375,7 +338,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto"]), {
+  methods: {
     evento: function evento() {
       var _this = this;
 
@@ -460,72 +423,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.imagenMiniatura = this.info.imagenPublica;
     },
     showModal: function showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
 
       if (tipo === "forma_macro") {
-        this.modal.titulo = "Agregar Nueva Forma";
+        this.tituloModal = "Agregar Nueva Forma";
       } else if (tipo === "borde") {
-        this.modal.titulo = "Agregar Nuevo Borde";
+        this.tituloModal = "Agregar Nuevo Borde";
       } else if (tipo === "pigmento") {
-        this.modal.titulo = "Agregar Nuevo Pigmento";
+        this.tituloModal = "Agregar Nuevo Pigmento";
       } else if (tipo === "textura") {
-        this.modal.titulo = "Agregar Nueva Textura";
+        this.tituloModal = "Agregar Nueva Textura";
       } else if (tipo === "color") {
-        this.modal.titulo = "Agregar Nuevo Color";
+        this.tituloModal = "Agregar Nuevo Color";
       } else {
-        this.modal.titulo = "Agregar Nueva Superficie";
+        this.tituloModal = "Agregar Nueva Superficie";
       }
 
-      this.$modal.show("agregar-caract-info-actinomiceto");
-    },
-    agregarInfo: function agregarInfo() {
-      var _this2 = this;
-
-      if (this.modal.input === "") {
-        this.modal.errors = {
-          nombre: {
-            0: "Favor llenar este campo"
-          }
-        };
-      } else {
-        this.bloquearBtnModal = true;
-        var parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input
-        };
-        axios.post("/info-caract-actinomicetos/agregar", parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionAgregarTipoCaractActinomiceto({
-              info: res.data,
-              tipo: _this2.modal.tipo
-            });
-
-            _this2.$modal.hide("agregar-caract-info-actinomiceto");
-
-            _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this2.$router.push("/sin-acceso");
-          } else {
-            _this2.bloquearBtnModal = false;
-
-            if (error.response.status === 422) {
-              _this2.errors = [];
-              _this2.modal.errors = error.response.data.errors;
-            }
-
-            _this2.toastr("Error!!", "", "error");
-          }
-        });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     verificarSelects: function verificarSelects() {
       if (this.obtenerFormas.length > 0) {
@@ -564,7 +478,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.parametros.pigmento = null;
       }
     }
-  }),
+  },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Medio") {
@@ -691,6 +605,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/infoCaractMacro */ "./resources/js/mixins/infoCaractMacro.js");
 /* harmony import */ var _forms_caract_FormCaractMacroComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../forms-caract/FormCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/forms-caract/FormCaractMacroComponent.vue");
+/* harmony import */ var _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalEliminarCaractComponent.vue */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -842,105 +757,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    FormCaratMacro: _forms_caract_FormCaractMacroComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    FormCaratMacro: _forms_caract_FormCaractMacroComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ModalEliminar: _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  data: function data() {
-    return {
-      bloquearBtnModal: false
-    };
-  },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
-    agregarInfo: function agregarInfo(data) {
-      this.accionAgregarCaract({
-        tipo: "macro",
-        data: data
-      });
-      this.mostrarBtnAgregar = true;
-      this.modificarForm = true;
-    },
-    editarInfo: function editarInfo(data) {
-      this.accionEditarCaract({
-        tipo: "macro",
-        data: data
-      });
-      this.modificarForm = true;
-    },
-    eliminarMedio: function eliminarMedio() {
-      var _this = this;
-
-      this.bloquearBtnModal = true;
-      var id = 0;
-      var num = 0;
-
-      if (this.mostrarForm1) {
-        id = this.getCaractMacro[0].id;
-        num = 1;
-      } else if (this.mostrarForm2) {
-        id = this.getCaractMacro[1].id;
-        num = 2;
-      } else {
-        id = this.getCaractMacro[2].id;
-        num = 3;
-      }
-
-      axios["delete"]("/cepas/actinomiceto/caract-macro/".concat(id)).then(function (res) {
-        _this.bloquearBtnModal = false;
-        _this.mostrarBtnAgregar = true;
-        _this.modificarForm = true;
-
-        _this.$modal.hide("eliminar_caract_macro_actinomiceto");
-
-        _this.accionEliminarCaract({
-          tipo: "macro",
-          data: res.data
-        });
-
-        _this.formatear(num);
-
-        _this.toastr("Eliminar Medio", "Medio eliminado con exito!!", "success");
-      })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
-          window.location.href = "/";
-        } else {
-          _this.bloquearBtnModal = false;
-
-          _this.toastr("Error!!", "", "error");
-        }
-      });
-    }
-  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"])),
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMacro"]))
 });
 
@@ -1713,115 +1541,14 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "agregar-caract-info-actinomiceto",
-            classes: "my_modal",
-            width: 450,
-            height: 450
-          }
-        },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v(_vm._s(_vm.modal.titulo))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info-actinomiceto")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.input,
-                      expression: "modal.input"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    name: "nombre",
-                    id: "nombre",
-                    placeholder: "...",
-                    type: "text",
-                    required: ""
-                  },
-                  domProps: { value: _vm.modal.input },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.modal, "input", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.modal.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(_vm._s(_vm.modal.errors.nombre[0]))
-                    ])
-                  : _vm._e()
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info-actinomiceto")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.agregarInfo }
-                },
-                [_vm._v("Agregar")]
-              )
-            ])
-          ])
-        ]
-      )
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-actinomicetos",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "actinomiceto"
+        }
+      })
     ],
     1
   )
@@ -1904,13 +1631,7 @@ var render = function() {
                     ],
                     staticClass:
                       "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.$modal.show(
-                          "eliminar_caract_macro_actinomiceto"
-                        )
-                      }
-                    }
+                    on: { click: _vm.eliminarMedio }
                   },
                   [_vm._v("Eliminar Medio")]
                 ),
@@ -2211,82 +1932,15 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "eliminar_caract_macro_actinomiceto",
-            width: 400,
-            height: 200
-          }
+      _c("ModalEliminar", {
+        attrs: {
+          tipo: "Característica",
+          tipoCaract: "Característica Macroscópica",
+          caract: _vm.caract,
+          url: "actinomiceto/caract-macro"
         },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Característica Macroscópica")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide(
-                        "eliminar_caract_macro_actinomiceto"
-                      )
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la característica?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide(
-                        "eliminar_caract_macro_actinomiceto"
-                      )
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.eliminarMedio }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
-      )
+        on: { eliminar: _vm.eliminarInfo }
+      })
     ],
     1
   )
@@ -2490,6 +2144,271 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_4f2b3c96___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/infoCaractMacro.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/infoCaractMacro.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var infoCaractMacroMixin = {
+  data: function data() {
+    return {
+      active1: "active",
+      active2: "",
+      active3: "",
+      mostrar1: false,
+      mostrar2: false,
+      mostrar3: false,
+      mostrarForm1: true,
+      mostrarForm2: false,
+      mostrarForm3: false,
+      mostrarBtnAgregar: true,
+      modificarForm: false,
+      caract: null,
+      num: 0
+    };
+  },
+  methods: {
+    agregarInfo: function agregarInfo(data) {
+      this.accionAgregarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+    },
+    editarInfo: function editarInfo(data) {
+      this.accionEditarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.modificarForm = true;
+    },
+    eliminarInfo: function eliminarInfo(data) {
+      this.accionEliminarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+      this.formatear(this.num);
+    },
+    eliminarMedio: function eliminarMedio() {
+      if (this.mostrarForm1) {
+        this.caract = this.getCaractMacro[0];
+        this.num = 1;
+      } else if (this.mostrarForm2) {
+        this.caract = this.getCaractMacro[1];
+        this.num = 2;
+      } else {
+        this.caract = this.getCaractMacro[2];
+        this.num = 3;
+      }
+
+      this.$modal.show("modal_eliminar_caract");
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.modificarForm = false;
+    },
+    cancelar: function cancelar() {
+      if (this.mostrarForm1) {
+        this.mostrarForm1 = false;
+        this.mostrar1 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm2) {
+        this.mostrarForm2 = false;
+        this.cambiarActive(1);
+        this.mostrar2 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm3) {
+        this.mostrarForm3 = false;
+        this.cambiarActive(2);
+        this.mostrar3 = false;
+        this.mostrarBtnAgregar = true;
+      }
+    },
+    abrirForm: function abrirForm() {
+      if (!this.mostrar1) {
+        this.cambiarActive(1);
+        this.mostrar1 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[0] && !this.mostrar2) {
+        this.cambiarActive(2);
+        this.mostrar2 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[1] && !this.mostrar3) {
+        this.cambiarActive(3);
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    llenarForms: function llenarForms() {
+      if (this.getCaractMacro[0]) {
+        this.medio1 = this.getCaractMacro[0].medio;
+        this.mostrar1 = true;
+      }
+
+      if (this.getCaractMacro[1]) {
+        this.medio2 = this.getCaractMacro[1].medio;
+        this.mostrar2 = true;
+      }
+
+      if (this.getCaractMacro[2]) {
+        this.medio3 = this.getCaractMacro[2].medio;
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    cambiarActive: function cambiarActive(num) {
+      switch (num) {
+        case 1:
+          this.active1 = "active";
+          this.active2 = "";
+          this.active3 = "";
+          this.mostrarForm1 = true;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = false;
+          break;
+
+        case 2:
+          this.active1 = "";
+          this.active2 = "active";
+          this.active3 = "";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = true;
+          this.mostrarForm3 = false;
+          break;
+
+        case 3:
+          this.active1 = "";
+          this.active2 = "";
+          this.active3 = "active";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = true;
+          break;
+      }
+    },
+    formatear: function formatear(num) {
+      switch (num) {
+        case 1:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else if (this.mostrar2) {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          } else {
+            this.mostrar1 = false;
+            this.mostrarForm1 = false;
+          }
+
+          break;
+
+        case 2:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          }
+
+          break;
+
+        case 3:
+          this.mostrar3 = false;
+          this.cambiarActive(2);
+          break;
+      }
+    }
+  },
+  computed: {
+    computedActive1: function computedActive1() {
+      return this.active1;
+    },
+    computedActive2: function computedActive2() {
+      return this.active2;
+    },
+    computedActive3: function computedActive3() {
+      return this.active3;
+    },
+    computedMostrarForm1: function computedMostrarForm1() {
+      return this.mostrarForm1;
+    },
+    computedMostrarForm2: function computedMostrarForm2() {
+      return this.mostrarForm2;
+    },
+    computedMostrarForm3: function computedMostrarForm3() {
+      return this.mostrarForm3;
+    },
+    mostrarForms: function mostrarForms() {
+      if (!this.getCaractMacro[0] && !this.mostrar1) {
+        this.mostrarForm1 = false;
+        return false;
+      } else {
+        this.llenarForms();
+        return true;
+      }
+    },
+    mostrarBtnEliminar: function mostrarBtnEliminar() {
+      if (this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnCancelar: function mostrarBtnCancelar() {
+      if (!this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
+      return this.mostrarBtnAgregar;
+    },
+    medio1: {
+      get: function get() {
+        if (this.getCaractMacro[0]) {
+          return this.getCaractMacro[0].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio2: {
+      get: function get() {
+        if (this.getCaractMacro[1]) {
+          return this.getCaractMacro[1].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio3: {
+      get: function get() {
+        if (this.getCaractMacro[2]) {
+          return this.getCaractMacro[2].medio;
+        }
+      },
+      set: function set() {}
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
 
 /***/ })
 

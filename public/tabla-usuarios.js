@@ -784,7 +784,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.bloquearBtnModal = true;
       axios["delete"]("/usuario/eliminar/".concat(this.id)).then(function (res) {
         if (res.data != "negativo") {
-          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
+          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success");
 
           _this.accionUsuario({
             tipo: "eliminar",
@@ -793,7 +793,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.actualizarTabla();
         } else {
-          _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning", 8000);
+          _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning");
         }
 
         _this.bloquearBtnModal = false;
@@ -807,7 +807,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         } else {
           _this.bloquearBtnModal = false;
 
-          _this.toastr("Error!!!", "", "error", 4000);
+          _this.toastr("Error!!!", "", "error");
         }
       });
     }

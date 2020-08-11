@@ -7,13 +7,13 @@
     "/actividades~mision~noticias~novedades~objetivos~vision.js": "/actividades~mision~noticias~novedades~objetivos~vision.js",
     "/calendario.js": "/calendario.js",
     "/caract-bioqui-bacteria.js": "/caract-bioqui-bacteria.js",
+    "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127.js": "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127.js",
     "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561.js": "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561.js",
     "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775.js": "/caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775.js",
     "/caract-bioqui-hongo.js": "/caract-bioqui-hongo.js",
     "/caract-bioqui-levadura.js": "/caract-bioqui-levadura.js",
     "/caract-fisio-bacteria.js": "/caract-fisio-bacteria.js",
     "/caract-macro-actinomiceto.js": "/caract-macro-actinomiceto.js",
-    "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura.js": "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura.js",
     "/caract-macro-bacteria.js": "/caract-macro-bacteria.js",
     "/caract-macro-hongo.js": "/caract-macro-hongo.js",
     "/caract-macro-levadura.js": "/caract-macro-levadura.js",
@@ -73,5 +73,6 @@
     "/vendors~calendario.js": "/vendors~calendario.js",
     "/vendors~tabla-roles.js": "/vendors~tabla-roles.js",
     "/ver-hongo.js": "/ver-hongo.js",
-    "/vision.js": "/vision.js"
+    "/vision.js": "/vision.js",
+    "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js": "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js"
 }

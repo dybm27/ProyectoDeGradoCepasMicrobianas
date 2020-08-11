@@ -11,10 +11,40 @@ const infoCaractMacroMixin = {
             mostrarForm2: false,
             mostrarForm3: false,
             mostrarBtnAgregar: true,
-            modificarForm: false
+            modificarForm: false,
+            caract: null,
+            num: 0
         };
     },
     methods: {
+        agregarInfo(data) {
+            this.accionAgregarCaract({ tipo: "macro", data: data });
+            this.mostrarBtnAgregar = true;
+            this.modificarForm = true;
+        },
+        editarInfo(data) {
+            this.accionEditarCaract({ tipo: "macro", data: data });
+            this.modificarForm = true;
+        },
+        eliminarInfo(data) {
+            this.accionEliminarCaract({ tipo: "macro", data: data });
+            this.mostrarBtnAgregar = true;
+            this.modificarForm = true;
+            this.formatear(this.num);
+        },
+        eliminarMedio() {
+            if (this.mostrarForm1) {
+                this.caract = this.getCaractMacro[0];
+                this.num = 1;
+            } else if (this.mostrarForm2) {
+                this.caract = this.getCaractMacro[1];
+                this.num = 2;
+            } else {
+                this.caract = this.getCaractMacro[2];
+                this.num = 3;
+            }
+            this.$modal.show("modal_eliminar_caract");
+        },
         cambiarVariable() {
             this.modificarForm = false;
         },

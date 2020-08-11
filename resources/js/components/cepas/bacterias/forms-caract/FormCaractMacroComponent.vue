@@ -299,44 +299,12 @@
         </div>
       </div>
     </div>
-    <modal name="agregar-caract-info-bacteria" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar-caract-info-bacteria')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              class="form-control"
-              v-model="modal.input"
-              required
-            />
-            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar-caract-info-bacteria')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="agregarInfo"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalAgregarInfo
+      :url="'info-caract-bacterias'"
+      :tipo="tipoModal"
+      :titulo="tituloModal"
+      :tipoForm="'bacteria'"
+    />
   </div>
 </template>
 
@@ -344,9 +312,10 @@
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
 import vuex from "vuex";
-import Croppie from "../../../CroppieComponent";
+import Croppie from "../../../CroppieComponent.vue";
+import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
 export default {
-  components: { Croppie },
+  components: { Croppie, ModalAgregarInfo },
   props: ["info", "radioId1", "radioId2", "radioId3", "modificarInfo"],
   data() {
     return {
@@ -363,12 +332,8 @@ export default {
         otras_caract: "",
         imagen: "",
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: [],
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -378,7 +343,6 @@ export default {
   },
   mixins: [Toastr, obtenerImagenCroopieCepasMixin],
   methods: {
-    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
       this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Medio") {
@@ -463,69 +427,21 @@ export default {
       this.imagenMiniatura = this.info.imagenPublica;
     },
     showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
       if (tipo === "forma_macro") {
-        this.modal.titulo = "Agregar Nueva Forma";
+        this.tituloModal = "Agregar Nueva Forma";
       } else if (tipo === "borde") {
-        this.modal.titulo = "Agregar Nuevo Borde";
+        this.tituloModal = "Agregar Nuevo Borde";
       } else if (tipo === "detalle") {
-        this.modal.titulo = "Agregar Nuevo Detalle Óptico";
+        this.tituloModal = "Agregar Nuevo Detalle Óptico";
       } else if (tipo === "elevacion") {
-        this.modal.titulo = "Agregar Nueva Elevación";
+        this.tituloModal = "Agregar Nueva Elevación";
       } else if (tipo === "color") {
-        this.modal.titulo = "Agregar Nuevo Color";
+        this.tituloModal = "Agregar Nuevo Color";
       } else {
-        this.modal.titulo = "Agregar Nueva Superficie";
+        this.tituloModal = "Agregar Nueva Superficie";
       }
-      this.$modal.show("agregar-caract-info-bacteria");
-    },
-    agregarInfo() {
-      if (this.modal.input === "") {
-        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
-      } else {
-        this.bloquearBtnModal = true;
-        let parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-        };
-        axios
-          .post("/info-caract-bacterias/agregar", parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.bloquearBtnModal = false;
-              this.accionAgregarTipoCaractBacteria({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$modal.hide("agregar-caract-info-bacteria");
-              this.toastr(
-                "Agregar Informacion",
-                `${this.modal.tipo} agregado/a con exito`,
-                "success"
-              );
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtnModal = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.modal.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     verificarSelects() {
       if (this.obtenerFormas.length > 0) {

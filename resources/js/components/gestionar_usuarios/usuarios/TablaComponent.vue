@@ -99,8 +99,7 @@ export default {
             this.toastr(
               "Eliminar Usuario",
               "Usuario eliminado con exito!!",
-              "success",
-              5000
+              "success"
             );
             this.accionUsuario({ tipo: "eliminar", data: res.data });
             this.actualizarTabla();
@@ -108,8 +107,7 @@ export default {
             this.toastr(
               "Precaución",
               "El Usuario se encuentra Logueado y no es posible eliminarlo!!",
-              "warning",
-              8000
+              "warning"
             );
           }
           this.bloquearBtnModal = false;
@@ -122,7 +120,7 @@ export default {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.toastr("Error!!!", "", "error", 4000);
+            this.toastr("Error!!!", "", "error");
           }
         });
     },

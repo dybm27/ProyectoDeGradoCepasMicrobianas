@@ -202,6 +202,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::post('/usuario/agregar', 'UsuarioController@store')->middleware('control_permisos:agregar-usuario');
     Route::put('/usuario/editar/{id}', 'UsuarioController@update')->middleware('control_permisos:editar-usuario');
     Route::delete('/usuario/eliminar/{id}', 'UsuarioController@destroy')->middleware('control_permisos:eliminar-usuario');
+    //Route::delete('/seguimiento/eliminar-datos', 'UsuarioController@eliminarDatosTablaSeguimineto');
 
     Route::post('/rol/agregar', 'RolController@store');
     Route::put('/rol/editar/{id}', 'RolController@update');
@@ -416,7 +417,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //editor
     Route::post('/editor/upload', 'ImagenesEditorController@uploadImagen');
-    Route::get('/editor/upload', 'ImagenesEditorController@eliminarImagenesDelStorage');
+    //Route::get('/editor/upload', 'ImagenesEditorController@eliminarImagenesDelStorage');
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
