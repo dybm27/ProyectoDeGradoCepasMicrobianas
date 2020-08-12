@@ -14,6 +14,8 @@
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login_vista');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');

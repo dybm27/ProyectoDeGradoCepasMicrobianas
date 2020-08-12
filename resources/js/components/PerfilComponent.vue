@@ -195,7 +195,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="eventBtn"
             :disabled="validarBoton||bloquearBtnModal"
           >Cambiar</button>
@@ -238,7 +238,7 @@
                 v-model="pass"
                 required
               />
-              <div class="input-group-append">
+              <div class="input-group-append verContraseña">
                 <span class="input-group-text">
                   <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
                   <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
@@ -257,7 +257,7 @@
                 v-model="pass1"
                 required
               />
-              <div class="input-group-append">
+              <div class="input-group-append verContraseña">
                 <span class="input-group-text">
                   <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
                   <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
@@ -278,7 +278,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="eventBtn"
             :disabled="validarBoton||bloquearBtnModal"
           >Cambiar</button>

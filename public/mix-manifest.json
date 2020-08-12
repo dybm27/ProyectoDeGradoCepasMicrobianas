@@ -14,6 +14,7 @@
     "/caract-bioqui-levadura.js": "/caract-bioqui-levadura.js",
     "/caract-fisio-bacteria.js": "/caract-fisio-bacteria.js",
     "/caract-macro-actinomiceto.js": "/caract-macro-actinomiceto.js",
+    "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js": "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js",
     "/caract-macro-bacteria.js": "/caract-macro-bacteria.js",
     "/caract-macro-hongo.js": "/caract-macro-hongo.js",
     "/caract-macro-levadura.js": "/caract-macro-levadura.js",
@@ -73,6 +74,5 @@
     "/vendors~calendario.js": "/vendors~calendario.js",
     "/vendors~tabla-roles.js": "/vendors~tabla-roles.js",
     "/ver-hongo.js": "/ver-hongo.js",
-    "/vision.js": "/vision.js",
-    "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js": "/caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa.js"
+    "/vision.js": "/vision.js"
 }

@@ -265,7 +265,8 @@ export default {
           textColor: "black",
         },
         {
-          //googleCalendarId: "dumaryekselbm@ufps.edu.co"
+          //se debe chulear la opcion de compartir publicamente el calendario en google calendar para poder mostrarlo
+          //googleCalendarId: "majumba.ufps@gmail.com"
         },
         {
           url: "/info-panel/eventos-metodos-bacterias",

@@ -1117,7 +1117,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: {
                     type: "button",
                     disabled: _vm.validarBoton || _vm.bloquearBtnModal
@@ -1351,27 +1351,31 @@ var render = function() {
                               }
                             }),
                         _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c("span", { staticClass: "input-group-text" }, [
-                            _vm.showPass
-                              ? _c("i", {
-                                  staticClass: "fas fa-eye",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showPass = !_vm.showPass
+                        _c(
+                          "div",
+                          { staticClass: "input-group-append verContraseña" },
+                          [
+                            _c("span", { staticClass: "input-group-text" }, [
+                              _vm.showPass
+                                ? _c("i", {
+                                    staticClass: "fas fa-eye",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showPass = !_vm.showPass
+                                      }
                                     }
-                                  }
-                                })
-                              : _c("i", {
-                                  staticClass: "fas fa-eye-slash",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showPass = !_vm.showPass
+                                  })
+                                : _c("i", {
+                                    staticClass: "fas fa-eye-slash",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showPass = !_vm.showPass
+                                      }
                                     }
-                                  }
-                                })
-                          ])
-                        ]),
+                                  })
+                            ])
+                          ]
+                        ),
                         _vm._v(" "),
                         _vm.validarContraseña
                           ? _c(
@@ -1503,27 +1507,31 @@ var render = function() {
                               }
                             }),
                         _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c("span", { staticClass: "input-group-text" }, [
-                            _vm.showPass1
-                              ? _c("i", {
-                                  staticClass: "fas fa-eye",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showPass1 = !_vm.showPass1
+                        _c(
+                          "div",
+                          { staticClass: "input-group-append verContraseña" },
+                          [
+                            _c("span", { staticClass: "input-group-text" }, [
+                              _vm.showPass1
+                                ? _c("i", {
+                                    staticClass: "fas fa-eye",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showPass1 = !_vm.showPass1
+                                      }
                                     }
-                                  }
-                                })
-                              : _c("i", {
-                                  staticClass: "fas fa-eye-slash",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showPass1 = !_vm.showPass1
+                                  })
+                                : _c("i", {
+                                    staticClass: "fas fa-eye-slash",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showPass1 = !_vm.showPass1
+                                      }
                                     }
-                                  }
-                                })
-                          ])
-                        ]),
+                                  })
+                            ])
+                          ]
+                        ),
                         _vm._v(" "),
                         _vm.validarContraseñas
                           ? _c(
@@ -1557,7 +1565,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-success",
                   attrs: {
                     type: "button",
                     disabled: _vm.validarBoton || _vm.bloquearBtnModal

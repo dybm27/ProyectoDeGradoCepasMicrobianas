@@ -75,7 +75,7 @@
                   v-model="parametros.pass"
                   :required="required"
                 />
-                <div class="input-group-append">
+                <div class="input-group-append verContraseña">
                   <span class="input-group-text" @click="showPass=!showPass">
                     <i class="fas fa-eye" v-if="showPass"></i>
                     <i class="fas fa-eye-slash" v-else></i>
@@ -94,7 +94,7 @@
                   v-model="parametros.pass1"
                   :required="required"
                 />
-                <div class="input-group-append">
+                <div class="input-group-append verContraseña">
                   <span class="input-group-text">
                     <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
                     <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>

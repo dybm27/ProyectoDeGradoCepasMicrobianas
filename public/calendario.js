@@ -270,7 +270,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_2__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_3__["default"], _fullcalendar_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_5__["default"], _fullcalendar_google_calendar__WEBPACK_IMPORTED_MODULE_6__["default"] // needed for dateClick
       ],
       calendarWeekends: true,
-      googleCalendarApiKey: "AIzaSyDO3AOsa4-imBxdCAcPSXjr8ui5cEOWlB8",
+      googleCalendarApiKey: "AIzaSyB-_iuLxkORNzEMJzYne-74WjvBiH4gysw",
       eventos: {
         url: "/info-panel/eventos",
         className: "eventos",
@@ -287,7 +287,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         color: "#ff0000",
         className: "google",
         textColor: "black"
-      }, {//googleCalendarId: "dumaryekselbm@ufps.edu.co"
+      }, {//se debe chulear la opcion de compartir publicamente el calendario en google calendar para poder mostrarlo
+        //googleCalendarId: "majumba.ufps@gmail.com"
       }, {
         url: "/info-panel/eventos-metodos-bacterias",
         className: "eventos-metodos-bacterias",

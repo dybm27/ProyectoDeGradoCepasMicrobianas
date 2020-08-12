@@ -1340,24 +1340,28 @@ var render = function() {
                           }
                         }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "input-group-text",
-                          on: {
-                            click: function($event) {
-                              _vm.showPass = !_vm.showPass
+                    _c(
+                      "div",
+                      { staticClass: "input-group-append verContraseña" },
+                      [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "input-group-text",
+                            on: {
+                              click: function($event) {
+                                _vm.showPass = !_vm.showPass
+                              }
                             }
-                          }
-                        },
-                        [
-                          _vm.showPass
-                            ? _c("i", { staticClass: "fas fa-eye" })
-                            : _c("i", { staticClass: "fas fa-eye-slash" })
-                        ]
-                      )
-                    ]),
+                          },
+                          [
+                            _vm.showPass
+                              ? _c("i", { staticClass: "fas fa-eye" })
+                              : _c("i", { staticClass: "fas fa-eye-slash" })
+                          ]
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _vm.validarContraseña
                       ? _c("em", { staticClass: "error invalid-feedback" }, [
@@ -1494,27 +1498,31 @@ var render = function() {
                           }
                         }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c("span", { staticClass: "input-group-text" }, [
-                        _vm.showPass1
-                          ? _c("i", {
-                              staticClass: "fas fa-eye",
-                              on: {
-                                click: function($event) {
-                                  _vm.showPass1 = !_vm.showPass1
+                    _c(
+                      "div",
+                      { staticClass: "input-group-append verContraseña" },
+                      [
+                        _c("span", { staticClass: "input-group-text" }, [
+                          _vm.showPass1
+                            ? _c("i", {
+                                staticClass: "fas fa-eye",
+                                on: {
+                                  click: function($event) {
+                                    _vm.showPass1 = !_vm.showPass1
+                                  }
                                 }
-                              }
-                            })
-                          : _c("i", {
-                              staticClass: "fas fa-eye-slash",
-                              on: {
-                                click: function($event) {
-                                  _vm.showPass1 = !_vm.showPass1
+                              })
+                            : _c("i", {
+                                staticClass: "fas fa-eye-slash",
+                                on: {
+                                  click: function($event) {
+                                    _vm.showPass1 = !_vm.showPass1
+                                  }
                                 }
-                              }
-                            })
-                      ])
-                    ]),
+                              })
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
                     _vm.validarContraseñas
                       ? _c("em", { staticClass: "error invalid-feedback" }, [
