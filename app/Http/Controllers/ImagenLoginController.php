@@ -29,7 +29,7 @@ class ImagenLoginController extends Controller
             broadcast(new ImagenesLoginEvent($imagen))->toOthers();
             return $imagen;
         } else {
-            return response(['mostrar' => 'Debe haber minimo una imagen para mostrar.'], 422);
+            return response(['errors' => ['mostrar' => 'Debe haber minimo una imagen para mostrar.']], 422);
         }
     }
 
@@ -51,7 +51,7 @@ class ImagenLoginController extends Controller
     public function verificarMostrar($mostrar)
     {
         $imagenesMostrar = ImagenLogin::where('mostrar', 1)->count();
-        if (!$mostrar && $imagenesMostrar == 1) {
+        if (!$mostrar && $imagenesMostrar <= 1) {
             return false;
         }
         return true;

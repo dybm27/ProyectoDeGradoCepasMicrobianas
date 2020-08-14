@@ -1036,9 +1036,7 @@ var render = function() {
                         "div",
                         { staticClass: "alert alert-danger" },
                         _vm._l(_vm.errors, function(item, index) {
-                          return _c("p", { key: index }, [
-                            _vm._v(_vm._s(item[0]))
-                          ])
+                          return _c("p", { key: index }, [_vm._v(_vm._s(item))])
                         }),
                         0
                       )

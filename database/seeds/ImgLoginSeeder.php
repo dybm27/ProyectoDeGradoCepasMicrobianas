@@ -14,6 +14,7 @@ class ImgLoginSeeder extends Seeder
         DB::table('imagen_logins')->insert([
             'titulo' => 'Imagen 1',
             'descripcion' => 'Imagen 1',
+            'mostrar' => 1,
             'imagen' => 'Imagen 1',
             'imagenPublica' => 'Imagen 1'
         ]);

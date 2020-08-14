@@ -8,7 +8,7 @@
             <form @submit.prevent="evento">
               <template v-if="errors!=''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">{{item}}</p>
                 </div>
               </template>
               <div class="position-relative form-group">
