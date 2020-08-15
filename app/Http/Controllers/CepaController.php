@@ -24,7 +24,8 @@ class CepaController extends Controller
         $rules = [
             'codigo' => 'bail|required|min:4|unique:cepas,codigo',
             'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required',
+            'grupo_microbiano' => 'required',
         ];
         switch ($request->grupo_microbiano) {
             case 1:

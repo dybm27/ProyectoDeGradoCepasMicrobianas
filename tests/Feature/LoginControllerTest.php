@@ -43,18 +43,12 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function validar_autenticacion()
     {
-        $this->seed(PermisosSeeder::class);
-        $this->seed(RolesSeeder::class);
-        $this->seed(AdminSeeder::class);
-
-        $user = User::first();
-        
         $response = $this->post('/login', [
-            'email' => $user->email,
+            'email' => $this->user->email,
             'password' => '12345678',
         ]);
 
         $response->assertRedirect('/perfil');
-        $this->assertAuthenticatedAs($user);
+        $this->assertAuthenticatedAs($this->user);
     }
 }
