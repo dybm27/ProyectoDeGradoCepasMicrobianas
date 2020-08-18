@@ -2,10 +2,16 @@
 
 namespace Tests\Feature;
 
+use App\CaracBioquiLevadura;
+use App\CaracMacroLevadura;
+use App\CaracMicroLevadura;
 use App\Cepa;
 use App\Events\CepasEvent;
+use App\IdentiMolecuLevadura;
 use App\Levadura;
+use App\MetodoConserLevadura;
 use App\Seguimiento;
+use CaractMacroLevaduraSeeder;
 use ClasesSeeder;
 use DivisionesSeeder;
 use EspeciesSeeder;
@@ -16,6 +22,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use OrdensSeeder;
 use Tests\TestCase;
+use TiposMetodosConservacionHLSeeder;
 
 class CepaControllerLevaduraTest extends TestCase
 {
@@ -125,5 +132,21 @@ class CepaControllerLevaduraTest extends TestCase
         $this->assertCount(0, Cepa::all());
         $this->assertCount(0, Levadura::all());
         $this->assertCount(1, Seguimiento::all());
+    }
+
+    /** @test */
+    public function imprimir_cepa_levadura()
+    {
+        $this->seed(CaractMacroLevaduraSeeder::class);
+        $this->seed(TiposMetodosConservacionHLSeeder::class);
+        $levadura = factory(Levadura::class)->create();
+        factory(CaracMacroLevadura::class)->create(['levadura_id' => 1]);
+        factory(CaracMicroLevadura::class)->create(['levadura_id' => 1]);
+        factory(CaracBioquiLevadura::class)->create(['levadura_id' => 1]);
+        factory(IdentiMolecuLevadura::class)->create(['levadura_id' => 1]);
+        factory(MetodoConserLevadura::class)->create(['levadura_id' => 1]);
+        $response = $this->actingAs($this->user)
+            ->get('/cepas/imprimir/' . $levadura->cepa_id);
+        $response->assertStatus(200);
     }
 }

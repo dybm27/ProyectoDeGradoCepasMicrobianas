@@ -17,8 +17,12 @@ class DatabaseSeeder extends Seeder
             'forma_caract_micro_bacterias', 'detalle_optico_bacterias', 'superficie_bacterias', 'tipo_metodo_conservacion_bacterias',
             'tipo_metodo_conservacion_hongos', 'tipo_metodo_conservacion_levaduras', 'color_hongos', 'textura_hongos', 'espora_asexual_hongos',
             'espora_sexual_hongos', 'conidioforo_hongos', 'cepas', 'tipo_agar_bacterias', 'permisos', 'imagen_logins', 'quienes_somos_tipos',
-            'tipo_documentos'
+            'tipo_documentos', 'color_bacterias','textura_actinomicetos', 'color_actinomicetos','borde_actinomicetos', 'pigmento_actinomicetos',
+            'superficie_actinomicetos', 'forma_caract_macro_actinomicetos','tincion_gram_actinomicetos', 'forma_caract_micro_actinomicetos',
+            'micelio_actinomicetos', 'conidioforo_actinomicetos','textura_levaduras', 'color_levaduras','textura_hongos', 'color_hongos',
+            'conidioforo_hongos', 'espora_asexual_hongos','espora_sexual_hongos'
         ]);
+        
         $this->call(RolesSeeder::class);
         $this->call(PermisosSeeder::class);
         $this->call(AdminSeeder::class);
@@ -29,12 +33,13 @@ class DatabaseSeeder extends Seeder
         $this->call(FamiliasSeeder::class);
         $this->call(PhylumsSeeder::class);
         $this->call(ReinosSeeder::class);
-        $this->call(FormaCaractMacrosSeeder::class);
-        $this->call(BordesSeeder::class);
-        $this->call(ElevacionsSeeder::class);
-        $this->call(SuperficiesSeeder::class);
-        $this->call(DetalleOpticosSeeder::class);
-        $this->call(FormaCaractMicrosSeeder::class);
+        $this->call(CaractMacroBacteriaSeeder::class);
+        $this->call(CaractMicroBacteriaSeeder::class);
+        $this->call(CaractMacroActinomicetoSeeder::class);
+        $this->call(CaractMicroActinomicetoSeeder::class);
+        $this->call(CaractMacroHongoSeeder::class);
+        $this->call(CaractMicroHongoSeeder::class);
+        $this->call(CaractMacroLevaduraSeeder::class);
         $this->call(TiposMetodosConservacionBacteriasSeeder::class);
         $this->call(TiposMetodosConservacionHLSeeder::class);
         $this->call(ColoresHongosSeeder::class);

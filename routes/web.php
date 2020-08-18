@@ -11,6 +11,7 @@
 */
 
 // Authentication Routes...
+
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login_vista');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -543,3 +544,5 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     // ruta vuejs
     Route::get('{vue_capture?}', 'SpaController@index')->where('vue_capture', '[\/\w\.-]*');
 });
+
+

@@ -3,15 +3,24 @@
 namespace Tests\Feature;
 
 use App\Bacteria;
+use App\CaracBioquiBacteria;
+use App\CaracFisioBacteria;
+use App\CaracMacroBacteria;
+use App\CaracMicroBacteria;
 use App\Cepa;
 use App\Events\CepasEvent;
+use App\IdentiMolecuBacteria;
+use App\MetodoConserBacteria;
 use App\Seguimiento;
+use CaractMacroBacteriaSeeder;
+use CaractMicroBacteriaSeeder;
 use EspeciesSeeder;
 use GenerosSeeder;
 use GruposMicrobianosSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
+use TiposMetodosConservacionBacteriasSeeder;
 
 class CepaControllerBacteriaTest extends TestCase
 {
@@ -25,7 +34,7 @@ class CepaControllerBacteriaTest extends TestCase
         $this->seed(EspeciesSeeder::class);
         $this->seed(GenerosSeeder::class);
     }
-    
+
     // --------------------- Bacterias ----------------------
     /** @test */
     public function verificar_validacion_de_campos_bacterias()
@@ -116,5 +125,23 @@ class CepaControllerBacteriaTest extends TestCase
         $this->assertCount(0, Cepa::all());
         $this->assertCount(0, Bacteria::all());
         $this->assertCount(1, Seguimiento::all());
+    }
+
+    /** @test */
+    public function imprimir_cepa_bacteria()
+    {
+        $this->seed(CaractMacroBacteriaSeeder::class);
+        $this->seed(CaractMicroBacteriaSeeder::class);
+        $this->seed(TiposMetodosConservacionBacteriasSeeder::class);
+        $bacteria = factory(Bacteria::class)->create();
+        factory(CaracMacroBacteria::class)->create(['bacteria_id' => 1]);
+        factory(CaracMicroBacteria::class)->create(['bacteria_id' => 1]);
+        factory(CaracBioquiBacteria::class)->create(['bacteria_id' => 1]);
+        factory(CaracFisioBacteria::class)->create(['bacteria_id' => 1]);
+        factory(IdentiMolecuBacteria::class)->create(['bacteria_id' => 1]);
+        factory(MetodoConserBacteria::class)->create(['bacteria_id' => 1]);
+        $response = $this->actingAs($this->user)
+            ->get('/cepas/imprimir/' . $bacteria->cepa_id);
+        $response->assertStatus(200);
     }
 }

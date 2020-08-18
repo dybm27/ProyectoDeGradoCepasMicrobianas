@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FormaCaractMicrosSeeder extends Seeder
+class CaractMicroBacteriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -3,9 +3,15 @@
 namespace Tests\Feature;
 
 use App\Actinomiceto;
+use App\CaracMacroActinomiceto;
+use App\CaracMicroActinomiceto;
 use App\Cepa;
 use App\Events\CepasEvent;
+use App\IdentBioquiActinomiceto;
+use App\OtrasCaracActinomiceto;
 use App\Seguimiento;
+use CaractMacroActinomicetoSeeder;
+use CaractMicroActinomicetoSeeder;
 use ClasesSeeder;
 use EspeciesSeeder;
 use GenerosSeeder;
@@ -125,5 +131,20 @@ class CepaControllerActinomicetoTest extends TestCase
         $this->assertCount(0, Cepa::all());
         $this->assertCount(0, Actinomiceto::all());
         $this->assertCount(1, Seguimiento::all());
+    }
+
+    /** @test */
+    public function imprimir_cepa_actinomiceto()
+    {
+        $this->seed(CaractMacroActinomicetoSeeder::class);
+        $this->seed(CaractMicroActinomicetoSeeder::class);
+        $actinomiceto = factory(Actinomiceto::class)->create();
+        factory(CaracMacroActinomiceto::class)->create(['actinomiceto_id' => 1]);
+        factory(CaracMicroActinomiceto::class)->create(['actinomiceto_id' => 1]);
+        factory(OtrasCaracActinomiceto::class)->create(['actinomiceto_id' => 1]);
+        factory(IdentBioquiActinomiceto::class)->create(['actinomiceto_id' => 1]);
+        $response = $this->actingAs($this->user)
+            ->get('/cepas/imprimir/' . $actinomiceto->cepa_id);
+        $response->assertStatus(200);
     }
 }

@@ -2,10 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\CaracBioquiHongo;
+use App\CaracMacroHongo;
+use App\CaracMicroHongo;
 use App\Cepa;
 use App\Events\CepasEvent;
 use App\HongoFilamentoso;
+use App\IdentiMolecuHongo;
+use App\MetodoConserHongo;
 use App\Seguimiento;
+use CaractMacroHongoSeeder;
+use CaractMicroHongoSeeder;
 use ClasesSeeder;
 use EspeciesSeeder;
 use FamiliasSeeder;
@@ -16,6 +23,7 @@ use Illuminate\Support\Facades\Event;
 use OrdensSeeder;
 use PhylumsSeeder;
 use Tests\TestCase;
+use TiposMetodosConservacionHLSeeder;
 
 class CepaControllerHongoTest extends TestCase
 {
@@ -123,5 +131,22 @@ class CepaControllerHongoTest extends TestCase
         $this->assertCount(0, Cepa::all());
         $this->assertCount(0, HongoFilamentoso::all());
         $this->assertCount(1, Seguimiento::all());
+    }
+
+    /** @test */
+    public function imprimir_cepa_hongo()
+    {
+        $this->seed(CaractMacroHongoSeeder::class);
+        $this->seed(CaractMicroHongoSeeder::class);
+        $this->seed(TiposMetodosConservacionHLSeeder::class);
+        $hongo = factory(HongoFilamentoso::class)->create();
+        factory(CaracMacroHongo::class)->create(['hongo_filamentoso_id' => 1]);
+        factory(CaracMicroHongo::class)->create(['hongo_filamentoso_id' => 1]);
+        factory(CaracBioquiHongo::class)->create(['hongo_filamentoso_id' => 1]);
+        factory(IdentiMolecuHongo::class)->create(['hongo_filamentoso_id' => 1]);
+        factory(MetodoConserHongo::class)->create(['hongo_filamentoso_id' => 1]);
+        $response = $this->actingAs($this->user)
+            ->get('/cepas/imprimir/' . $hongo->cepa_id);
+        $response->assertStatus(200);
     }
 }
