@@ -14,18 +14,41 @@ import documentos from "./modulos/documentos";
 import equipamientos from "./modulos/equipamientos";
 import publicidad from "./modulos/publicidad";
 
-//let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
+let user = document.head.querySelector('meta[name="user"]');
+let permisos = document.head.querySelector('meta[name="permisos-user"]');
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        //  auth: JSON.parse(userLogueado.content)
-        auth: null
+        auth: JSON.parse(user.content),
+        permisos: JSON.parse(permisos.content)
+    },
+    getters: {
+        getPermiso(state) {
+            return state.permisos;
+        },
+        getPermisoByNombre: state => nombre => {
+            return state.permisos.find(
+                permiso => permiso.nombre.toUpperCase() === nombre.toUpperCase()
+            );
+        },
+        getPermisoByNombres: (state, getters) => nombres => {
+            let res = false;
+            nombres.forEach(nombre => {
+                if (getters.getPermisoByNombre(nombre)) {
+                    res = true;
+                }
+            });
+            return res;
+        }
     },
     mutations: {
         mutacionModificarAuth(state, data) {
-            state.auth = data.data;
+            state.auth = data;
+        },
+        guardarPermisos(state, data) {
+            state.permisos = data;
         }
     },
     actions: {
@@ -34,6 +57,9 @@ export default new Vuex.Store({
         },
         limpiarCepa({ commit }) {
             commit("mutacionLimpiarCepa");
+        },
+        guardarPermisosAuth({ commit }, data) {
+            commit("guardarPermisos", data);
         }
     },
     modules: {

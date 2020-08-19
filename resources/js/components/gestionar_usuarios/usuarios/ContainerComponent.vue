@@ -8,6 +8,7 @@
       <div class="btn-actions-pane-right actions-icon-btn">
         <template v-if="!formulario">
           <button
+            v-if="getPermisoByNombre('agregar-usuario')"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
           >Agregar</button>
@@ -37,8 +38,8 @@
 
 <script>
 import websocketsSinCheckMixin from "../../../mixins/websocketsSinCheck";
-import Tabla from "./TablaComponent";
-import Form from "./FormComponent";
+import Tabla from "./TablaComponent.vue";
+import Form from "./FormComponent.vue";
 import vuex from "vuex";
 export default {
   components: { Form, Tabla },
@@ -46,6 +47,7 @@ export default {
     return { formulario: false, id: 0 };
   },
   mixins: [websocketsSinCheckMixin("Usuario", "usuarios")],
+  computed: { ...vuex.mapGetters(["getPermisoByNombre"]) },
   methods: {
     abrirFormulario(id) {
       if (id != 0) {
@@ -60,7 +62,7 @@ export default {
         "desbloquearBtnsUsuario"
       ).whisper("desbloquearBtnsUsuario", { id: this.id });
       this.$events.fire("eliminarMiBloqueoUsuario", {
-        id: this.id
+        id: this.id,
       });
       this.id = 0;
 
@@ -71,14 +73,14 @@ export default {
     },
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
+    },
   },
   created() {
     this.$emit("rutaHijo", window.location.pathname);
-    this.$events.$on("abrirFormularioUsuario", e => this.abrirFormulario(e));
+    this.$events.$on("abrirFormularioUsuario", (e) => this.abrirFormulario(e));
   },
   beforeDestroy() {
     this.$events.$off("abrirFormularioUsuario");
-  }
+  },
 };
 </script>

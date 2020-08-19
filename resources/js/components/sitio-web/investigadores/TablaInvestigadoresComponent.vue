@@ -95,27 +95,25 @@ export default {
       axios
         .delete(`/investigadores/${this.id}`)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.bloquearBtnModal = false;
+          this.accionInvestigador({ tipo: "eliminar", data: res.data });
+          this.$modal.hide("modal_eliminar_investigador");
+          this.toastr(
+            "Eliminar Investigador",
+            "Investigador eliminado con exito!!",
+            "success"
+          );
+          this.actualizarTabla();
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.accionInvestigador({ tipo: "eliminar", data: res.data });
-            this.$modal.hide("modal_eliminar_investigador");
-            this.toastr(
-              "Eliminar Investigador",
-              "Investigador eliminado con exito!!",
-              "success"
-            );
-            this.actualizarTabla();
+            this.toastr("Error!!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!!", "", "error");
         });
     },
   },

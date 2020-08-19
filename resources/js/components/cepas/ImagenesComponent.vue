@@ -202,6 +202,7 @@
 <script>
 import Carousel from "../carousel/CarouselComponent.vue";
 import Croppie from "../CroppieComponent.vue";
+import Toastr from "../../mixins/toastr";
 export default {
   components: { Carousel, Croppie },
   props: ["parametros", "tipoCepa", "imagenes", "cepa"],
@@ -218,6 +219,7 @@ export default {
       imagenMiniatura: "",
     };
   },
+  mixins: [Toastr],
   methods: {
     cambiarValorImagen(valor) {
       this.modalImagen.imagen = valor;
@@ -266,28 +268,26 @@ export default {
               parametros
             )
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
-                window.location.href = "/";
-              } else {
-                this.$emit("accionImagen", res.data);
-                this.$modal.hide("agregar_cambiar_imagen");
-                this.toastr(
-                  "Cambiar Imagen",
-                  "La imagen fue cambiada con exito!!",
-                  "success"
-                );
-              }
+              this.$emit("accionImagen", res.data);
+              this.$modal.hide("agregar_cambiar_imagen");
+              this.toastr(
+                "Cambiar Imagen",
+                "La imagen fue cambiada con exito!!",
+                "success"
+              );
             })
             .catch((error) => {
-              if (error.response.status === 422) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                if (error.response.status === 422) {
+                  this.modalImagen.errors = [];
+                  this.modalImagen.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
@@ -302,28 +302,26 @@ export default {
             parametros
           )
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.$emit("accionImagen", res.data);
-              this.$modal.hide("eliminar_imagen");
-              this.toastr(
-                "Eliminar Imagen",
-                "Imagen eliminada con exito!!",
-                "success"
-              );
-            }
+            this.$emit("accionImagen", res.data);
+            this.$modal.hide("eliminar_imagen");
+            this.toastr(
+              "Eliminar Imagen",
+              "Imagen eliminada con exito!!",
+              "success"
+            );
           })
           .catch((error) => {
-            if (error.response.status === 422) {
-              this.modalImagen.errors = [];
-              this.modalImagen.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              if (error.response.status === 422) {
+                this.modalImagen.errors = [];
+                this.modalImagen.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         if (this.$refs.inputImagenModal.value) {
@@ -338,28 +336,26 @@ export default {
               parametros
             )
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
-                window.location.href = "/";
-              } else {
-                this.$emit("accionImagen", res.data);
-                this.$modal.hide("agregar_cambiar_imagen");
-                this.toastr(
-                  "Agregar Imagen",
-                  "La imagen fue agregada con exito!!",
-                  "success"
-                );
-              }
+              this.$emit("accionImagen", res.data);
+              this.$modal.hide("agregar_cambiar_imagen");
+              this.toastr(
+                "Agregar Imagen",
+                "La imagen fue agregada con exito!!",
+                "success"
+              );
             })
             .catch((error) => {
-              if (error.response.status === 422) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                if (error.response.status === 422) {
+                  this.modalImagen.errors = [];
+                  this.modalImagen.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.modalImagen.errors = "Favor seleccionar una imagen.";
@@ -400,26 +396,6 @@ export default {
         this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
-    },
-    toastr(titulo, msg, tipo) {
-      this.$toastr.Add({
-        title: titulo,
-        msg: msg,
-        position: "toast-top-right",
-        type: tipo,
-        timeout: 5000,
-        progressbar: true,
-        //progressBarValue:"", // if you want set progressbar value
-        style: {},
-        classNames: ["animated", "zoomInUp"],
-        closeOnHover: true,
-        clickClose: true,
-        onCreated: () => {},
-        onClicked: () => {},
-        onClosed: () => {},
-        onMouseOver: () => {},
-        onMouseOut: () => {},
-      });
     },
   },
   computed: {

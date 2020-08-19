@@ -5,7 +5,17 @@ export default {
     },
     getters: {
         getCepaById: state => id => {
-            return state.cepas.find(cepa => cepa.id == id);
+            return state.cepas.find(cepa => cepa.id === id);
+        },
+        getCepasByGrupo: state => grupo => {
+            return state.cepas.filter(
+                cepa => cepa.grupo_microbiano_id == grupo
+            );
+        },
+        getCepaByCodigo: state => codigo => {
+            return state.cepas.find(
+                cepa => cepa.codigo.toUpperCase() === codigo.toUpperCase()
+            );
         }
     },
     mutations: {
@@ -34,19 +44,25 @@ export default {
     },
     actions: {
         obtenerCepas({ commit }) {
-            axios.get("/info-panel/cepas").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarCepas", res.data);
-            });
+            axios
+                .get("/info-panel/cepas")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarCepas", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionCepas({ commit }, data) {
-            console.log('accionCepas');
             commit("mutacionCepas", data);
         }
     }

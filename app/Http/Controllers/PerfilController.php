@@ -45,7 +45,6 @@ class PerfilController extends Controller
         return $usuario;
     }
 
-
     public function guardarImagen($imagen)
     {
         $imagen_array = explode(",", $imagen);

@@ -235,11 +235,15 @@ export default {
           }
         })
         .catch((error) => {
-          this.bloquearBtnModal = false;
-          if (error.response.status === 422) {
-            this.errors = error.response.data.errors;
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else {
+            this.bloquearBtnModal = false;
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!!", "", "error");
           }
-          this.toastr("Error!!!!", "", "error");
         });
     },
     beforeOpenEditar(data) {
@@ -261,34 +265,31 @@ export default {
       axios
         .put(`/info-cepas/editar/${this.id}`, this.modal)
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.bloquearBtnModal = false;
+          this.accionEditarTipoCepa({
+            info: res.data,
+            tipo: this.modal.tipo,
+          });
+          this.$events.fire("actualizartabla" + this.modal.tipo);
+          this.toastr(
+            `Editar ${this.primeraMayus(this.modal.tipo)}`,
+            `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
+            "success"
+          );
+          this.$modal.hide("modal_editar_tipo_cepa");
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            this.accionEditarTipoCepa({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$events.fire("actualizartabla" + this.modal.tipo);
-            this.toastr(
-              `Editar ${this.primeraMayus(this.modal.tipo)}`,
-              `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
-              "success",
-              5000
-            );
-            this.$modal.hide("modal_editar_tipo_cepa");
+            if (error.response.status === 422) {
+              this.errors = error.response.data.errors;
+            }
+            this.toastr("Error!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          if (error.response.status === 422) {
-            this.errors = error.response.data.errors;
-          }
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
     beforeOpenEliminar(data) {
@@ -303,49 +304,44 @@ export default {
           data: this.modal,
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          this.bloquearBtnModal = false;
+          if (res.data === "negativo") {
+            this.toastr(
+              "Precaución!!",
+              "El/La " +
+                this.modal.tipo +
+                " cuenta con cepas vinculadas, favor eliminarlas",
+              "warning"
             );
+          } else if (res.data === "negativo1") {
+            this.toastr(
+              "Precaución!!",
+              "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas",
+              "warning"
+            );
+          } else {
+            this.accionEliminarTipoCepa({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.toastr(
+              `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
+              "success"
+            );
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+          }
+          this.$modal.hide("modal_eliminar_tipo_cepa");
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
-            if (res.data === "negativo") {
-              this.toastr(
-                "Precaución!!",
-                "El/La " +
-                  this.modal.tipo +
-                  " cuenta con cepas vinculadas, favor eliminarlas",
-                "warning",
-                8000
-              );
-            } else if (res.data === "negativo1") {
-              this.toastr(
-                "Precaución!!",
-                "El Genero cuenta con cepas o especies vinculadas, favor eliminarlas",
-                "warning",
-                8000
-              );
-            } else {
-              this.accionEliminarTipoCepa({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.toastr(
-                `Eliminar ${this.primeraMayus(this.modal.tipo)}`,
-                `${this.primeraMayus(this.modal.tipo)} eliminado/a con exito!!`,
-                "success",
-                5000
-              );
-              this.$events.fire("actualizartabla" + this.modal.tipo);
-            }
-            this.$modal.hide("modal_eliminar_tipo_cepa");
+            this.toastr("Error!!!", "", "error");
           }
-        })
-        .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!!", "", "error", 4000);
         });
     },
     primeraMayus(string) {

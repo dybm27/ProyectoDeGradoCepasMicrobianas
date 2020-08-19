@@ -53,45 +53,25 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_37"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_37" />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">42°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_42"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_42" />
                 </div>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">45°C</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_45"
-                  />
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_45" />
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">otra°</span>
                   </div>
-                  <input
-                    type="text"
-                    :class="['form-control', termotolerancia? 'is-invalid':'']"
-                    v-model="parametros.termotolerancia_otra"
-                  />
-                  <em
-                    v-if="termotolerancia"
-                    class="error invalid-feedback"
-                  >Llenar al menos una de las diferentes temperaturas.</em>
+                  <input type="text" class="form-control" v-model="parametros.termotolerancia_otra" />
                 </div>
                 <span
                   v-if="termotolerancia"
@@ -279,12 +259,16 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -295,30 +279,28 @@ export default {
         axios
           .put(`/cepas/levadura/caract-bioqui/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.$emit("editar", res.data);
+            this.toastr(
+              "Editar Características Bioquímicas",
+              "Característica Bioquímica editada con exito!!",
+              "success"
+            );
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Características Bioquímicas",
-                "Característica Bioquímica editada con exito!!",
-                "success"
-              );
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },

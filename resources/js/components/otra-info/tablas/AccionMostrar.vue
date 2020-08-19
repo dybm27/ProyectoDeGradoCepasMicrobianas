@@ -1,6 +1,7 @@
 <template>
   <div>
     <button
+      v-if="getPermisoByNombre('agregar-otra')"
       @click="$modal.show('modal_agregar_tipo_'+tipoModal,{tipo: tipo})"
       class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
     >Agregar</button>
@@ -12,12 +13,16 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   props: ["tipoModal", "tipo"],
   methods: {
     mostrarTabla() {
       this.$emit("mostrarTabla");
-    }
-  }
+    },
+  },
+  computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
+  },
 };
 </script>

@@ -24,7 +24,7 @@
                 />
                 <em v-if="validarTitulo" class="error invalid-feedback">{{mensajeTitulo}}</em>
               </div>
-              <div class="position-relative form-group">
+              <div class="position-relative form-group" v-if="required">
                 <label for="select" class>Contenido de la Noticia:</label>
                 <select
                   name="select"
@@ -32,7 +32,6 @@
                   class="form-control"
                   @change="cambiarDatos"
                   v-model="selectTipo"
-                  :disabled="!required"
                 >
                   <option value="link">Link</option>
                   <option value="texto">Texto</option>
@@ -202,49 +201,51 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         if (this.parametros.imagen === this.info.imagen) {
           axios
             .put(`/publicidad/${this.idNoticia}`, this.parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtn = false;
+              this.toastr(
+                "Editar Noticia",
+                "Noticia editada con exito!!",
+                "success"
+              );
+              window.Echo.private("desbloquearBtnsNoticia").whisper(
+                "desbloquearBtnsNoticia",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoNoticia", {
+                id: res.data.id,
+              });
+              this.accionNoticia({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtn = false;
-                this.toastr(
-                  "Editar Noticia",
-                  "Noticia editada con exito!!",
-                  "success"
-                );
-                window.Echo.private("desbloquearBtnsNoticia").whisper(
-                  "desbloquearBtnsNoticia",
-                  {
-                    id: res.data.id,
-                  }
-                );
-                this.$events.fire("eliminarMiBloqueoNoticia", {
-                  id: res.data.id,
-                });
-                this.accionNoticia({ tipo: "editar", data: res.data });
-                this.$emit("cambiarVariableFormulario");
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           let form = new FormData();
@@ -295,11 +296,15 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         }
       }

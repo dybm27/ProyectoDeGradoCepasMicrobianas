@@ -17,7 +17,7 @@ class CreateSeguimientosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre_responsable');
             $table->string('email_responsable');
-            $table->string('tipo_user');
+            $table->string('rol');
             $table->string('accion');
             $table->timestamps();
         });

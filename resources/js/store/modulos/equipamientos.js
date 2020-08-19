@@ -11,7 +11,8 @@ export default {
         },
         getEquipamientoByNombre: state => nombre => {
             return state.equipamientos.find(
-                equipamiento => equipamiento.nombre === nombre
+                equipamiento =>
+                    equipamiento.nombre.toUpperCase() === nombre.toUpperCase()
             );
         }
     },
@@ -41,16 +42,23 @@ export default {
     },
     actions: {
         obtenerEquipamientos({ commit }) {
-            axios.get("/info-panel/equipamientos").then(res => {
-                if (res.request.responseURL === process.env.MIX_LOGIN) {
-                    localStorage.setItem(
-                        "mensajeLogin",
-                        "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                    );
-                    window.location.href = "/";
-                }
-                commit("llenarEquipamientos", res.data);
-            });
+            axios
+                .get("/info-panel/equipamientos")
+                .then(res => {
+                    if (res.request.responseURL === process.env.MIX_LOGIN) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
+                        window.location.href = "/";
+                    }
+                    commit("llenarEquipamientos", res.data);
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        this.$router.push("/sin-acceso");
+                    }
+                });
         },
         accionEquipamiento({ commit }, data) {
             commit("modificarEquipamiento", data);

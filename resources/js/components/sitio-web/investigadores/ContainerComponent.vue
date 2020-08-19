@@ -8,6 +8,7 @@
       <div class="btn-actions-pane-right actions-icon-btn">
         <template v-if="!formulario">
           <button
+            v-if="getPermisoByNombre('agregar-investigador')"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
           >Agregar</button>
@@ -44,16 +45,19 @@ import Form from "./FormInvestigadoresComponent.vue";
 export default {
   components: {
     Tabla,
-    Form
+    Form,
   },
   mixins: [
     websocketsMixin("Investigador", "investigadores"),
-    abrirCerrarFormulario("Investigador")
+    abrirCerrarFormulario("Investigador"),
   ],
+  computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
+  },
   methods: {
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
-  }
+    },
+  },
 };
 </script>

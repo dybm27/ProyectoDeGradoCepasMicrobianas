@@ -32,7 +32,7 @@ class ImagenesEditorController extends Controller
         ]);
     }
 
-    public function eliminarImagenesDelStorage()
+    /* public function eliminarImagenesDelStorage()
     {
         $arrayImagenes = [];
         $noticias = Noticia::all('imagenesEditor');
@@ -73,8 +73,10 @@ class ImagenesEditorController extends Controller
         }
         $files = Storage::files('/public/editor/imagenes');
         $resultados = array_diff($files, $arrayImagenes);
+
         foreach ($resultados as  $resultado) {
             Storage::delete($resultado);
         };
-    }
+        return $resultados;
+    } */
 }

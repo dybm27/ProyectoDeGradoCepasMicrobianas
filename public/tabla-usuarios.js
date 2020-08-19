@@ -102,9 +102,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsSinCheck */ "./resources/js/mixins/websocketsSinCheck.js");
-/* harmony import */ var _TablaComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaComponent */ "./resources/js/components/gestionar_usuarios/usuarios/TablaComponent.vue");
-/* harmony import */ var _FormComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormComponent */ "./resources/js/components/gestionar_usuarios/usuarios/FormComponent.vue");
+/* harmony import */ var _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/TablaComponent.vue");
+/* harmony import */ var _FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/FormComponent.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -148,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Form: _FormComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Tabla: _TablaComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Form: _FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Tabla: _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -158,6 +165,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsSinCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("Usuario", "usuarios")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters(["getPermisoByNombre"])),
   methods: {
     abrirFormulario: function abrirFormulario(id) {
       if (id != 0) {
@@ -379,11 +387,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -399,7 +402,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       info: "",
       parametros: {
         nombre: "",
-        tipo_user: 2,
+        rol: 2,
         email: "",
         pass: "",
         pass1: "",
@@ -457,63 +460,66 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          if (_this.auth.id === res.data.id) {
+            _this.accionModificarAuth({
+              data: res.data
+            });
+          }
+
+          _this.accionUsuario({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+
+          window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoUsuario", {
+            id: res.data.id
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            if (_this.auth.id === res.data.id) {
-              _this.accionModificarAuth({
-                data: res.data
-              });
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
             }
 
-            _this.accionUsuario({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
-
-            _this.$emit("cambiarVariable", "tabla");
-
-            window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
-              id: res.data.id
-            });
-
-            _this.$events.fire("eliminarMiBloqueoUsuario", {
-              id: res.data.id
-            });
-
-            _this.$emit("cambiarVariableFormulario");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
     llenarInfo: function llenarInfo() {
       this.parametros.nombre = this.info.name;
-      this.parametros.tipo_user = this.info.tipouser_id;
+      this.parametros.rol = this.info.rol_id;
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
@@ -552,7 +558,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.src = URL.createObjectURL(file);
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("usuarios", ["usuarios"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getTipoUser", "getUsuarioById", "getUsuarioByEmail"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("usuarios", ["usuarios"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRoles", "getUsuarioById", "getUsuarioByEmail"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     },
@@ -589,18 +595,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     validarEmail: function validarEmail() {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-      if (this.required) {
-        if (this.parametros.email) {
-          if (!re.test(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-            return true;
-          } else {
-            if (this.getUsuarioByEmail(this.parametros.email)) {
+      if (this.parametros.email) {
+        if (!re.test(this.parametros.email)) {
+          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+          return true;
+        } else {
+          if (this.getUsuarioByEmail(this.parametros.email)) {
+            if (this.getUsuarioByEmail(this.parametros.email).id != this.info.id) {
               this.mensajeErrorEmail = "El correo electrónico ya Existe";
               return true;
             }
-
-            return false;
           }
         }
       }
@@ -779,27 +783,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios["delete"]("/usuario/eliminar/".concat(this.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.bloquearBtnModal = false;
-
-          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success", 5000);
+        if (res.data != "negativo") {
+          _this.toastr("Eliminar Usuario", "Usuario eliminado con exito!!", "success");
 
           _this.accionUsuario({
             tipo: "eliminar",
             data: res.data
           });
 
-          _this.$modal.hide("modal_eliminar_usuario");
-
           _this.actualizarTabla();
+        } else {
+          _this.toastr("Precaución", "El Usuario se encuentra Logueado y no es posible eliminarlo!!", "warning");
         }
-      })["catch"](function (error) {
+
         _this.bloquearBtnModal = false;
 
-        _this.toastr("Error!!!", "", "error", 4000);
+        _this.$modal.hide("modal_eliminar_usuario");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Error!!!", "", "error");
+        }
       });
     }
   }),
@@ -898,19 +907,21 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-usuario")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -1043,7 +1054,7 @@ var render = function() {
                       ],
                       class: [
                         "form-control",
-                        _vm.validarNombre === true ? "is-invalid" : ""
+                        _vm.validarNombre ? "is-invalid" : ""
                       ],
                       attrs: {
                         name: "nombre",
@@ -1074,14 +1085,14 @@ var render = function() {
                       : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _vm.getTipoUser
+                  _vm.getRoles
                     ? [
                         _c(
                           "div",
                           { staticClass: "osition-relative form-group" },
                           [
-                            _c("label", { attrs: { for: "tipo_user" } }, [
-                              _vm._v("Tipo de Usuario")
+                            _c("label", { attrs: { for: "rol" } }, [
+                              _vm._v("Rol de Usuario")
                             ]),
                             _vm._v(" "),
                             _c(
@@ -1091,13 +1102,13 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model.number",
-                                    value: _vm.parametros.tipo_user,
-                                    expression: "parametros.tipo_user",
+                                    value: _vm.parametros.rol,
+                                    expression: "parametros.rol",
                                     modifiers: { number: true }
                                   }
                                 ],
                                 staticClass: "form-control",
-                                attrs: { name: "select", id: "tipo_user" },
+                                attrs: { name: "select", id: "rol" },
                                 on: {
                                   change: function($event) {
                                     var $$selectedVal = Array.prototype.filter
@@ -1111,7 +1122,7 @@ var render = function() {
                                       })
                                     _vm.$set(
                                       _vm.parametros,
-                                      "tipo_user",
+                                      "rol",
                                       $event.target.multiple
                                         ? $$selectedVal
                                         : $$selectedVal[0]
@@ -1119,7 +1130,7 @@ var render = function() {
                                   }
                                 }
                               },
-                              _vm._l(_vm.getTipoUser, function(tu, index) {
+                              _vm._l(_vm.getRoles, function(tu, index) {
                                 return _c(
                                   "option",
                                   { key: index, domProps: { value: tu.id } },
@@ -1175,15 +1186,14 @@ var render = function() {
                       ],
                       class: [
                         "form-control",
-                        _vm.validarEmail === true ? "is-invalid" : ""
+                        _vm.validarEmail ? "is-invalid" : ""
                       ],
                       attrs: {
                         name: "email",
                         id: "email",
                         placeholder: "...",
                         type: "email",
-                        required: _vm.required,
-                        disabled: !_vm.required
+                        required: _vm.required
                       },
                       domProps: { value: _vm.parametros.email },
                       on: {
@@ -1208,7 +1218,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group mb-3" }, [
-                    (_vm.showPass == true ? "text" : "password") === "checkbox"
+                    (_vm.showPass ? "text" : "password") === "checkbox"
                       ? _c("input", {
                           directives: [
                             {
@@ -1220,7 +1230,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
@@ -1265,7 +1275,7 @@ var render = function() {
                             }
                           }
                         })
-                      : (_vm.showPass == true ? "text" : "password") === "radio"
+                      : (_vm.showPass ? "text" : "password") === "radio"
                       ? _c("input", {
                           directives: [
                             {
@@ -1277,7 +1287,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
@@ -1306,14 +1316,14 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseña === true ? "is-invalid" : ""
+                            _vm.validarContraseña ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass",
                             id: "pass",
                             placeholder: "...",
                             required: _vm.required,
-                            type: _vm.showPass == true ? "text" : "password"
+                            type: _vm.showPass ? "text" : "password"
                           },
                           domProps: { value: _vm.parametros.pass },
                           on: {
@@ -1330,24 +1340,28 @@ var render = function() {
                           }
                         }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "input-group-text",
-                          on: {
-                            click: function($event) {
-                              _vm.showPass = !_vm.showPass
+                    _c(
+                      "div",
+                      { staticClass: "input-group-append verContraseña" },
+                      [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "input-group-text",
+                            on: {
+                              click: function($event) {
+                                _vm.showPass = !_vm.showPass
+                              }
                             }
-                          }
-                        },
-                        [
-                          _vm.showPass
-                            ? _c("i", { staticClass: "fas fa-eye" })
-                            : _c("i", { staticClass: "fas fa-eye-slash" })
-                        ]
-                      )
-                    ]),
+                          },
+                          [
+                            _vm.showPass
+                              ? _c("i", { staticClass: "fas fa-eye" })
+                              : _c("i", { staticClass: "fas fa-eye-slash" })
+                          ]
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _vm.validarContraseña
                       ? _c("em", { staticClass: "error invalid-feedback" }, [
@@ -1373,7 +1387,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",
@@ -1431,7 +1445,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",
@@ -1460,7 +1474,7 @@ var render = function() {
                           ],
                           class: [
                             "form-control",
-                            _vm.validarContraseñas === true ? "is-invalid" : ""
+                            _vm.validarContraseñas ? "is-invalid" : ""
                           ],
                           attrs: {
                             name: "pass1",
@@ -1484,27 +1498,31 @@ var render = function() {
                           }
                         }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c("span", { staticClass: "input-group-text" }, [
-                        _vm.showPass1
-                          ? _c("i", {
-                              staticClass: "fas fa-eye",
-                              on: {
-                                click: function($event) {
-                                  _vm.showPass1 = !_vm.showPass1
+                    _c(
+                      "div",
+                      { staticClass: "input-group-append verContraseña" },
+                      [
+                        _c("span", { staticClass: "input-group-text" }, [
+                          _vm.showPass1
+                            ? _c("i", {
+                                staticClass: "fas fa-eye",
+                                on: {
+                                  click: function($event) {
+                                    _vm.showPass1 = !_vm.showPass1
+                                  }
                                 }
-                              }
-                            })
-                          : _c("i", {
-                              staticClass: "fas fa-eye-slash",
-                              on: {
-                                click: function($event) {
-                                  _vm.showPass1 = !_vm.showPass1
+                              })
+                            : _c("i", {
+                                staticClass: "fas fa-eye-slash",
+                                on: {
+                                  click: function($event) {
+                                    _vm.showPass1 = !_vm.showPass1
+                                  }
                                 }
-                              }
-                            })
-                      ])
-                    ]),
+                              })
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
                     _vm.validarContraseñas
                       ? _c("em", { staticClass: "error invalid-feedback" }, [
@@ -1723,7 +1741,7 @@ var staticRenderFns = [
       _c("h5", { staticClass: "mt-5 mb-5" }, [
         _c("span", { staticClass: "pr-1" }, [
           _c("b", { staticClass: "text-success" }, [
-            _vm._v("AÚN NO SE HAN AGREGADO USUARIOS")
+            _vm._v("AÚN NO SE HAN AGREGADO NUEVOS USUARIOS")
           ])
         ])
       ])
@@ -2034,9 +2052,9 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
-  name: "tipo_user",
-  sortField: "tipouser_id",
-  title: "Tipo de Usuario",
+  name: "rol",
+  sortField: "rol_id",
+  title: "Rol de Usuario",
   titleClass: "text-center",
   dataClass: "text-center"
 }, {
@@ -2068,7 +2086,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
     data: function data() {
       return {
         bloqueos: [],
-        miBloqueo: []
+        miBloqueo: null
       };
     },
     methods: {
@@ -2144,7 +2162,7 @@ var websocketsMixin = function websocketsMixin(tipoM, tipoP) {
 
       window.Echo["private"]("recibirBtns" + tipoM).listenForWhisper("recibirBtns" + tipoM, function (e) {
         if (_this2.bloqueos.length == 0) {
-          _this2.bloquearBtnsTabla(e.bloqueos[0]);
+          _this2.bloquearBtnsTabla(e.miBloqueo);
         }
       });
       this.$events.$on("agregarMiBloqueo" + tipoM, function (e) {

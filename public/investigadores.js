@@ -132,6 +132,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _TablaInvestigadoresComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TablaInvestigadoresComponent.vue */ "./resources/js/components/sitio-web/investigadores/TablaInvestigadoresComponent.vue");
 /* harmony import */ var _FormInvestigadoresComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormInvestigadoresComponent.vue */ "./resources/js/components/sitio-web/investigadores/FormInvestigadoresComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -180,6 +187,7 @@ __webpack_require__.r(__webpack_exports__);
     Form: _FormInvestigadoresComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_0__["default"])("Investigador", "investigadores"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__["default"])("Investigador")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre"])),
   methods: {
     cambiarTipo: function cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
@@ -425,47 +433,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/investigadores/".concat(this.idInvestigador), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
+
+          window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoInvestigador", {
+            id: res.data.id
+          });
+
+          _this.accionInvestigador({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
 
-            window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
-              id: res.data.id
-            });
-
-            _this.$events.fire("eliminarMiBloqueoInvestigador", {
-              id: res.data.id
-            });
-
-            _this.accionInvestigador({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.$emit("cambiarVariableFormulario");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -727,27 +740,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.bloquearBtnModal = true;
       axios["delete"]("/investigadores/".concat(this.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+
+        _this.accionInvestigador({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.$modal.hide("modal_eliminar_investigador");
+
+        _this.toastr("Eliminar Investigador", "Investigador eliminado con exito!!", "success");
+
+        _this.actualizarTabla();
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
 
-          _this.accionInvestigador({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.$modal.hide("modal_eliminar_investigador");
-
-          _this.toastr("Eliminar Investigador", "Investigador eliminado con exito!!", "success");
-
-          _this.actualizarTabla();
+          _this.toastr("Error!!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!!!", "", "error");
       });
     }
   }),
@@ -899,19 +913,21 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-investigador")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -1877,7 +1893,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "__component:checkboxs_investigadores",
   title: "Publicar",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  sortField: "publicar"
 }, {
   name: "__component:acciones_investigadores",
   title: "Acciones",

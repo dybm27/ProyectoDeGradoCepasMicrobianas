@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tabla-seguimiento":"tabla-seguimiento","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2064,7 +2064,8 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2118,9 +2119,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2136,7 +2153,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       var ruta = this.$route.path;
@@ -2252,8 +2269,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2270,9 +2295,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2282,7 +2315,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2450,6 +2484,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2503,9 +2538,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2521,7 +2572,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -2569,8 +2620,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2587,9 +2646,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2599,7 +2666,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2629,6 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2682,9 +2751,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2700,7 +2785,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -2792,9 +2877,7 @@ __webpack_require__.r(__webpack_exports__);
         id: data.id
       });
     }
-  },
-  computed: {},
-  created: function created() {}
+  }
 });
 
 /***/ }),
@@ -2808,8 +2891,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2826,9 +2917,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2838,7 +2937,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -2868,6 +2968,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2921,9 +3022,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -2939,7 +3056,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3047,8 +3164,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3065,9 +3190,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3077,7 +3210,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3107,6 +3241,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAccionesCepas */ "./resources/js/mixins/websocketsAccionesCepas.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3160,9 +3295,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3178,7 +3329,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3286,8 +3437,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheckCepas */ "./resources/js/mixins/websocketsCheckCepas.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3304,9 +3463,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3316,7 +3483,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Number
     }
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])),
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_websocketsCheckCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   created: function created() {
     var _this = this;
 
@@ -3335,17 +3503,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAccionesSinCheck */ "./resources/js/mixins/websocketsAccionesSinCheck.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3378,7 +3545,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -3390,8 +3565,149 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
+  data: function data() {
+    return {
+      disabledBtns: false
+    };
+  },
+  methods: {
+    editar: function editar(data) {
+      this.$modal.show("modal_editar_rol", {
+        id: data.id,
+        nombre: data.nombre
+      });
+      this.enviarBloqueo(data);
+    },
+    eliminar: function eliminar(data) {
+      this.$modal.show("modal_eliminar_rol", {
+        id: data.id
+      });
+      this.enviarBloqueo(data);
+    },
+    modificarPermisos: function modificarPermisos(data) {
+      this.$events.fire("abrirFormularioRol", data.id);
+      this.enviarBloqueo(data);
+    },
+    bloquearBtns: function bloquearBtns() {
+      this.disabledBtns = true;
+    },
+    desbloquearBtns: function desbloquearBtns() {
+      this.disabledBtns = false;
+    },
+    crearEventosBtns: function crearEventosBtns() {
+      var _this = this;
+
+      this.$events.$on(this.rowData.id + "-bloquearBtnsRol", function (e) {
+        return _this.bloquearBtns();
+      });
+      this.$events.$on(this.rowData.id + "-desbloquearBtnsRol", function (e) {
+        return _this.desbloquearBtns();
+      });
+    },
+    eliminarEventosBtns: function eliminarEventosBtns(id) {
+      this.disabledBtns = false;
+      this.$events.$off(id + "-bloquearBtnsRol");
+      this.$events.$off(id + "-desbloquearBtnsRol");
+    },
+    enviarBloqueo: function enviarBloqueo(data) {
+      window.Echo["private"]("bloquearBtnsRol").whisper("bloquearBtnsRol", {
+        id: data.id,
+        idUser: this.auth.id
+      });
+      this.$events.fire("agregarMiBloqueoRol", {
+        id: data.id,
+        idUser: this.auth.id
+      });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    this.$events.$on(this.rowIndex + "-crearEventosBtns-roles", function (e) {
+      return _this2.crearEventosBtns();
+    });
+    this.$events.$on(this.rowIndex + "-eliminarEventosBtns-roles", function (e) {
+      return _this2.eliminarEventosBtns(e);
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off(this.rowIndex + "-crearEventosBtns-roles");
+    this.$events.$off(this.rowIndex + "-eliminarEventosBtns-roles");
+    this.$events.$off(this.rowData.id + "-bloquearBtnsRol");
+    this.$events.$off(this.rowData.id + "-desbloquearBtnsRol");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAccionesSinCheck */ "./resources/js/mixins/websocketsAccionesSinCheck.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
   mixins: [Object(_mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("usuario", "Usuario", "usuarios")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3406,7 +3722,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3439,9 +3756,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3451,8 +3777,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3467,7 +3793,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3500,9 +3827,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3512,8 +3848,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3528,7 +3864,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3561,9 +3898,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3573,8 +3919,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3589,7 +3935,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3622,9 +3969,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3634,8 +3990,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3650,7 +4006,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3683,9 +4040,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3695,8 +4061,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3711,7 +4077,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3744,9 +4111,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3756,8 +4132,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3772,7 +4148,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3805,9 +4182,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3817,8 +4203,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3833,7 +4219,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3866,9 +4253,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -3878,8 +4274,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3955,7 +4351,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3988,9 +4385,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4000,8 +4406,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4016,7 +4422,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4049,9 +4456,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4061,8 +4477,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4077,7 +4493,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4110,9 +4527,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4122,8 +4548,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4138,7 +4564,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4171,9 +4598,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4183,8 +4619,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4199,7 +4635,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4232,9 +4669,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4244,8 +4690,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4260,7 +4706,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4293,9 +4740,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4305,8 +4761,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4321,7 +4777,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4354,9 +4811,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4366,8 +4832,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4382,7 +4848,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4415,9 +4882,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4427,8 +4903,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4443,7 +4919,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4476,9 +4953,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4488,8 +4974,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4504,7 +4990,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4539,9 +5026,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4551,8 +5050,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4567,7 +5066,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4600,9 +5100,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4612,8 +5121,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("clase", "clases", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("clase", "clases", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4628,7 +5137,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4661,9 +5171,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4673,8 +5192,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("division", "divisions", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("division", "divisions", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4689,7 +5208,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4722,9 +5242,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4734,8 +5263,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("especie", "especies", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("especie", "especies", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -4770,7 +5299,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4803,9 +5333,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4815,8 +5354,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("familia", "familias", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("familia", "familias", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4830,8 +5369,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4864,9 +5404,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4876,8 +5425,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("genero", "generos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])),
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("genero", "generos", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -4912,7 +5461,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4945,9 +5495,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4957,8 +5516,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("orden", "ordens", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("orden", "ordens", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4973,7 +5532,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5006,9 +5566,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5018,8 +5587,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5034,7 +5603,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5067,9 +5637,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5079,8 +5658,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("reino", "reinos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("reino", "reinos", "cepa", "CepasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5095,7 +5674,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5128,9 +5708,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5140,8 +5729,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5156,7 +5745,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5189,9 +5779,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5201,8 +5800,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5217,7 +5816,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5252,9 +5852,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5264,8 +5876,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5280,7 +5892,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5313,9 +5926,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5325,8 +5947,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5341,7 +5963,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5374,9 +5997,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5386,8 +6018,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5402,7 +6034,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5437,9 +6070,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5449,8 +6094,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5465,7 +6110,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5498,9 +6144,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5510,8 +6165,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5526,7 +6181,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5559,9 +6215,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5571,8 +6236,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5587,7 +6252,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5622,8 +6288,54 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -5634,8 +6346,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  methods: {
+    descargar: function descargar(data) {
+      window.open(data.rutaPublica);
+    }
+  }
 });
 
 /***/ }),
@@ -5649,8 +6364,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5683,9 +6399,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5695,8 +6420,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("proyecto", "Proyecto", "proyectos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("proyecto", "Proyecto", "proyectos")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5713,6 +6438,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -5729,10 +6461,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5749,12 +6488,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto", "proyectos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -5763,15 +6502,21 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar,
         tipo: "proyecto"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
+        _this.accionProyecto({
+          tipo: "editar",
+          data: res.data
+        });
 
-          _this.disabled = false;
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
         }
       });
     },
@@ -5782,43 +6527,9 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    rowData: {
-      type: Object,
-      required: true
-    },
-    rowIndex: {
-      type: Number
-    }
-  },
-  methods: {
-    descargar: function descargar(data) {
-      window.open(data.rutaPublica);
-    }
   }
 });
 
@@ -5833,8 +6544,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5867,9 +6579,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5879,8 +6600,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("publicacion", "Publicacion", "publicaciones")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("publicacion", "Publicacion", "publicaciones")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5897,6 +6618,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -5913,10 +6641,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -5933,12 +6668,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Publicacion", "publicaciones"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -5947,15 +6682,21 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar,
         tipo: "publicacion"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
+        _this.accionPublicacion({
+          tipo: "editar",
+          data: res.data
+        });
 
-          _this.disabled = false;
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
         }
       });
     },
@@ -5966,43 +6707,9 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    rowData: {
-      type: Object,
-      required: true
-    },
-    rowIndex: {
-      type: Number
-    }
-  },
-  methods: {
-    descargar: function descargar(data) {
-      window.open(data.rutaPublica);
-    }
   }
 });
 
@@ -6017,8 +6724,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6051,9 +6759,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6063,8 +6780,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("equipamiento", "Equipamiento", "equipamientos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("equipamiento", "Equipamiento", "equipamientos")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6081,6 +6798,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6097,10 +6821,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6117,12 +6848,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Equipamiento", "equipamientos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6130,15 +6861,21 @@ __webpack_require__.r(__webpack_exports__);
       axios.put("/equipamientos/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
+        _this.accionEquipamiento({
+          tipo: "editar",
+          data: res.data
+        });
 
-          _this.disabled = false;
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
         }
       });
     },
@@ -6149,7 +6886,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6166,8 +6903,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6200,9 +6938,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6212,8 +6959,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("investigador", "Investigador", "investigadores")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("investigador", "Investigador", "investigadores")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6230,6 +6977,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6246,10 +7000,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6266,12 +7027,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Investigador", "investigadores"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6279,15 +7040,21 @@ __webpack_require__.r(__webpack_exports__);
       axios.put("/investigadores/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
+        _this.accionInvestigador({
+          tipo: "editar",
+          data: res.data
+        });
 
-          _this.disabled = false;
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
+          window.location.href = "/";
         }
       });
     },
@@ -6298,7 +7065,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6315,8 +7082,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6349,9 +7117,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6361,8 +7138,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("actividad", "Actividad", "actividades")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("actividad", "Actividad", "actividades")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6379,6 +7156,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6395,10 +7179,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6415,12 +7206,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Actividad", "actividades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6429,23 +7220,29 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar,
         tipo: "actividad"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionActividad({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -6456,7 +7253,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6473,8 +7270,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6507,9 +7305,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6519,8 +7326,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("noticia", "Noticia", "noticias")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("noticia", "Noticia", "noticias")],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6534,9 +7341,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6553,10 +7367,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6572,13 +7393,13 @@ __webpack_require__.r(__webpack_exports__);
       disabled: false
     };
   },
-  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: {
+  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6587,23 +7408,29 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar,
         tipo: "noticia"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionNoticia({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -6614,7 +7441,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6631,8 +7458,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsAcciones */ "./resources/js/mixins/websocketsAcciones.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -6665,9 +7493,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6677,13 +7514,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       type: Number
     }
   },
-  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_0__["default"])("novedad", "Novedad", "novedades")],
+  mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("novedad", "Novedad", "novedades")],
   data: function data() {
     return {
       disabledBtns: false
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6697,9 +7534,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsCheck */ "./resources/js/mixins/websocketsCheck.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -6716,10 +7560,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -6735,13 +7586,13 @@ __webpack_require__.r(__webpack_exports__);
       disabled: false
     };
   },
-  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  computed: {
+  mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
-  },
-  methods: {
+  }),
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6750,23 +7601,29 @@ __webpack_require__.r(__webpack_exports__);
         publicar: !this.checkPublicar,
         tipo: "novedad"
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionNovedad({
+          tipo: "editar",
+          data: res.data
+        });
+
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
           _this.disabled = false;
-        }
-      })["catch"](function (error) {
-        _this.disabled = false;
 
-        if (error.response.status === 422) {
-          _this.checkPublicar = false;
+          if (error.response.status === 422) {
+            _this.checkPublicar = false;
 
-          _this.toastr("Error", error.response.data, "error");
+            _this.toastr("Error", error.response.data, "error");
+          }
         }
       });
     },
@@ -6777,7 +7634,7 @@ __webpack_require__.r(__webpack_exports__);
         this.checkPublicar = true;
       }
     }
-  },
+  }),
   created: function created() {
     this.verificarPublicar(this.rowData.publicar);
   }
@@ -6825,7 +7682,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["admin"],
+  // props: ["admin", "permisos"],
   data: function data() {
     return {
       ruta: ""
@@ -6836,26 +7693,45 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Sider: _Sidebar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Footer: _Footer_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerTiposUsers", "obtenerUsers"]), {
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth", "guardarPermisosAuth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerRoles", "obtenerUsers", "obtenerPermisos", "accionRol", "accionUsuario"]), {
     rutaSider: function rutaSider(ruta) {
       this.ruta = ruta;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("usuarios", ["getRolById"])),
   created: function created() {
     var _this = this;
 
-    this.accionModificarAuth({
-      data: this.admin
-    });
-    this.obtenerTiposUsers();
+    // this.accionModificarAuth(this.admin);
+    //  this.guardarPermisosAuth(this.permisos);
+    this.obtenerPermisos();
+    this.obtenerRoles();
     this.obtenerUsers();
-    window.Echo.channel("auth").listen("AuthEvent", function (e) {
-      if (_this.auth.id === e.auth.id) {
-        _this.accionModificarAuth({
-          data: e.auth
+    window.Echo.channel("usuario").listen("UsuarioEvent", function (e) {
+      if (_this.auth.id === e.user.id) {
+        _this.guardarPermisosAuth(_this.getRolById(e.user.rol_id).permisos);
+
+        _this.accionModificarAuth(e.user);
+      } else {
+        _this.accionUsuario({
+          tipo: e.tipo,
+          data: e.user
         });
+
+        _this.$events.fire("actualizartablaUsuario");
       }
+    });
+    window.Echo.channel("rol").listen("RolEvent", function (e) {
+      if (_this.auth.rol_id === e.rol.id) {
+        _this.guardarPermisosAuth(e.rol.permisos);
+      }
+
+      _this.accionRol({
+        tipo: e.tipo,
+        data: e.rol
+      });
+
+      _this.$events.fire("actualizartablaRol");
     });
   }
 });
@@ -6908,6 +7784,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -7013,8 +7896,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["ruta"],
+  data: function data() {
+    return {
+      mostrarMenuCepas: false
+    };
+  },
   methods: {
     logout: function logout() {
       axios.post("/logout").then(function (res) {
@@ -7022,7 +7951,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  computed: {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
     classActive: function classActive() {
       if (this.ruta.includes("cepas") || this.ruta.includes("bacterias") || this.ruta.includes("levaduras") || this.ruta.includes("hongos") || this.ruta.includes("actinomicetos")) {
         return "mm-active";
@@ -7030,7 +7959,7 @@ __webpack_require__.r(__webpack_exports__);
 
       return "";
     }
-  }
+  })
 });
 
 /***/ }),
@@ -7097,7 +8026,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRolById", "getRoles"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
 });
 
 /***/ }),
@@ -13596,25 +14525,6 @@ function isnan (val) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.centrar[data-v-528304bc] {\r\n  align-content: center;\n}\r\n", ""]);
-
-// exports
-
 
 /***/ }),
 
@@ -52933,36 +53843,6 @@ runtime.setup(pusher_Pusher);
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
@@ -58977,6 +59857,45 @@ exports.default = plugin;
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("img", {
+        attrs: {
+          src:
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAB3ElEQVQ4ja2UMW9SURSAv3P75KHWAQeoJJUZYzQdbAfFMDUQktZfoYtLN/UX0NF06r9oTHgB0oHggokmrROjNBqkDtWE8ijl3eMgNBFBKfgNdzi55zvn3ntyhQkcp9OLQTicRWRNVGIAKtoCagu+X4xWKu1xeTIaaORykXCgLxV9DlydUM8XYadrTD5RKJxMFLYymXuKvAESkzof4Ys18iTuee//EB5nsytWqQKLU8qGtI2RVNTzDi6EjVwu4gb2EFi+pGzY1pHruvcje3vfDUAosK9mlgEot3v+2QsA+baxcSPonbeY/ADT0sEGUdM/62f/gwzgmoiTcRB9AGCSSUKpR6gxl7KItfSqb7H1OhhddUSIoxB+9hSzPNs1muQdOltbqErcoCjAYJ2NwfApVh2FpgDd3V1Cj1MzHrn6q1ORpoPwDgVbr9Ot1+doE1CtmQXfLwL+fCYAOmpt2UQrlbYIO/P79PVSuXxqALrG5BGO5rA1Qv3+NoABSBQKJ0ZkExj7x/2DtqjdvLm//+NCCBD1vANBHwKfpjUJfLbWpGOl0uEw9tuMxIrFj27YXRFlG+j8xdUByV/pn9+NlwsfRoqM5+v6+nURJ4OwpnBrsLkJtqbWlpbK5dNxeT8BBYOw3hzHxXEAAAAASUVORK5CYII=",
+          alt: ""
+        }
+      })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/AccionesCepasComponent.vue?vue&type=template&id=0c62416c&":
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/AccionesCepasComponent.vue?vue&type=template&id=0c62416c& ***!
@@ -58992,108 +59911,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59119,58 +60055,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59403,108 +60341,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59530,58 +60485,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59606,108 +60563,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59717,10 +60691,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -59803,58 +60777,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -59879,108 +60855,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60076,58 +61069,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60152,108 +61147,125 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Agregar y Editar Caracteristicas",
-                expression: "'Agregar y Editar Caracteristicas'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.caracteristicas(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-file-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Ver Cepa",
-                expression: "'Ver Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.ver(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-eye" })]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar Cepa",
-                expression: "'Editar Cepa'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar Cepa",
-                expression: "'Eliminar Cepa'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
+  return _c("div", [
+    _vm.getPermisoByNombres([
+      "ver-cepa",
+      "editar-cepa",
+      "eliminar-cepa",
+      "caract-cepa"
     ])
+      ? _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("caract-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Agregar y Editar Caracteristicas",
+                          expression: "'Agregar y Editar Caracteristicas'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.caracteristicas(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-file-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("ver-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Ver Cepa",
+                          expression: "'Ver Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.ver(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-eye" })]
+                  )
+                : _vm._e()
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+              _vm.getPermisoByNombre("editar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip.left",
+                          value: "Editar Cepa",
+                          expression: "'Editar Cepa'",
+                          modifiers: { left: true }
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.editar(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.getPermisoByNombre("eliminar-cepa")
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "tooltip",
+                          rawName: "v-tooltip",
+                          value: "Eliminar Cepa",
+                          expression: "'Eliminar Cepa'"
+                        }
+                      ],
+                      staticClass:
+                        "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                      attrs: { disabled: _vm.disabledBtns },
+                      on: {
+                        click: function($event) {
+                          return _vm.showModal(_vm.rowData)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "far fa-trash-alt" })]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60349,57 +61361,156 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-cepa")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Editar",
+                expression: "'Editar'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.editar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Eliminar",
+                expression: "'Eliminar'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.eliminar(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "far fa-trash-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "tooltip",
+                rawName: "v-tooltip",
+                value: "Modificar Permisos",
+                expression: "'Modificar Permisos'"
+              }
+            ],
+            staticClass:
+              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
+            attrs: { disabled: _vm.disabledBtns },
+            on: {
+              click: function($event) {
+                return _vm.modificarPermisos(_vm.rowData)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fas fa-user-cog" })]
+        )
+      ])
     ])
   ])
 }
@@ -60426,56 +61537,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-usuario")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-usuario")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.showModal(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60501,56 +61618,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60576,56 +61699,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60651,56 +61780,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60726,56 +61861,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60801,56 +61942,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60876,56 +62023,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60951,56 +62104,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61026,56 +62185,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61176,56 +62341,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61251,56 +62422,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61326,56 +62503,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61401,56 +62584,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61476,56 +62665,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61551,56 +62746,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61626,56 +62827,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61701,56 +62908,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61776,56 +62989,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61851,65 +63070,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 4
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 4
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61935,56 +63160,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62010,56 +63241,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62085,56 +63322,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62160,56 +63403,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62235,56 +63484,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62310,56 +63565,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62385,56 +63646,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62460,56 +63727,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62535,56 +63808,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62610,56 +63889,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62685,65 +63970,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62769,56 +64060,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62844,56 +64141,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62919,65 +64222,71 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2 && _vm.rowData.id != 3
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2 && _vm.rowData.id != 3
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63003,56 +64312,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63078,56 +64393,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-otra")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63153,65 +64474,107 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12 col-lg-12" },
-        [
-          _vm.rowData.id != 2 && _vm.rowData.id != 3
-            ? [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip.left",
-                        value: "Editar",
-                        expression: "'Editar'",
-                        modifiers: { left: true }
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.editar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value: "Eliminar",
-                        expression: "'Eliminar'"
-                      }
-                    ],
-                    staticClass:
-                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
-                    on: {
-                      click: function($event) {
-                        return _vm.eliminar(_vm.rowData)
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "far fa-trash-alt" })]
-                )
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+      ? _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-12 col-lg-12" },
+            [
+              _vm.rowData.id != 2 && _vm.rowData.id != 3
+                ? [
+                    _vm.getPermisoByNombre("editar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip.left",
+                                value: "Editar",
+                                expression: "'Editar'",
+                                modifiers: { left: true }
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.editar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.getPermisoByNombre("eliminar-otra")
+                      ? _c(
+                          "button",
+                          {
+                            directives: [
+                              {
+                                name: "tooltip",
+                                rawName: "v-tooltip",
+                                value: "Eliminar",
+                                expression: "'Eliminar'"
+                              }
+                            ],
+                            staticClass:
+                              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                            attrs: { disabled: _vm.disabledBtns },
+                            on: {
+                              click: function($event) {
+                                return _vm.eliminar(_vm.rowData)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "far fa-trash-alt" })]
+                        )
+                      : _vm._e()
+                  ]
+                : [_c("IconoNoAccess")]
+            ],
+            2
+          )
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("img", {
+      attrs: {
+        src:
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADdElEQVRoge2YzW8UZRzHP8+87OxOty/4hpU3Q1MSCCRgqG1dOEAkDVE42BjDgYAHSbz5D3j1LgexBwkaE7lIYsQQo0YDVsREEkxUBNIitdJh7dLusq+dmYfDxDUEgWH6PNsY93OaTJ7n+f4+O8/s88wDbdq0+U8j4jSSH597AeQYsGKxgYVjR8Yf/fT9bYsd52+MeM3kuygoHsCfvJyb3XPgWxVjQWwBVqoKNDOZSGLvq2dVjBdXQBmGk4okJn4bUiGxJAIqJVouIExLqUTrn4BlKpVouQCmoVSi9QKgVKL1U6ijM7q4j0ThpddirxMtF3Cee/6BEguXfs7FlYi5lfheJi85OWJ06IH1WTqC65d+Zf7EcYLiPJ27dpPdMaIjBtA0heaOf4Cf95D1GsXPPiGYv6kjBtAgEFbKzYJTff0gQxamp1THNFEuIBwHjGjqhuWy6uHvQr2AaWH3RptX35sBwOzqUR3TRMs7kNm8NbqQIRgG1hNP6ogBNAm4gzmEFf3B2StWI1IpHTGAJgGjI4uzbj0AwjRA6ltG9KzEoaQx9TsAjasTlM+e0RIDmgTqVy4SlooIM5pGxZMnCGbzOqL0CFTP/wBAdscu0hs3I+s1ZscOE5aKyrOUbyXC8i2qF86DIXCHtiOcNH/lPXzvOoWjR+jcvRc/P4Pv3UAGPsIQ2GvW4m55FsyH/z2VC5TPfI1s1Elv2IS57BH8mWmcvn587zqNa5PMjr19d6fvTtO4fJGefQcfOk+pgKzXKI9/A0RbCu+tN++Y+8K0kIH/T/jjy8G08GemqV74cWkFZOBT+vwkYSXaPjSuTkQBy3tJr9+Es2EjqTVrKZ/+itKXp5D1Gn7ea/ZP9fUnyl28gAypnBun9MUpgrkCAMJJk9kyQMfwduyVq+9ont05gju0jdovP+H/OY30F7CfWkXmmYHWC/g3POY+Okbj2mTznr3qaR57/Q2Ek75nP8PtwN06vJjoJokFGpNXKLz3DmG10rwnTIueV/bft3jVJFsHQsnND48SViuYXd0gomE6R17E7lVyBhybRE9ABn5zUQqK8wC4A8Nkd+r7dLwXiZ6AsG26R/dhdnVjdi+ja88oPS/vBxHrjEApid8BdzCHO5hTWUsiluZkTiH/G4E/tFbx78Q6yognYMhDtFZiChEeamFemzZtlorb+oIyI4Q5NRoAAAAASUVORK5CYII="
+      },
+      on: {
+        click: function($event) {
+          return _vm.descargar(_vm.rowData)
+        }
+      }
+    })
   ])
 }
 var staticRenderFns = []
@@ -63237,56 +64600,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-proyecto")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-proyecto")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63312,91 +64681,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-proyecto")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&":
-/*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9& ***!
-  \****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("img", {
-      attrs: { src: "/iconos/pdf.png" },
-      on: {
-        click: function($event) {
-          return _vm.descargar(_vm.rowData)
-        }
-      }
-    })
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63422,56 +64760,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-publicacion")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-publicacion")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63497,91 +64841,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-publicacion")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&":
-/*!********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908& ***!
-  \********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("img", {
-      attrs: { src: "/iconos/pdf.png" },
-      on: {
-        click: function($event) {
-          return _vm.descargar(_vm.rowData)
-        }
-      }
-    })
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63607,56 +64920,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-equipamiento")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-equipamiento")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63682,58 +65001,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-equipamiento")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63759,56 +65080,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-investigador")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-investigador")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63834,58 +65161,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-investigador")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63911,56 +65240,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-actividad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-actividad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -63986,58 +65321,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-actividad")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64063,56 +65400,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-noticia")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-noticia")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64138,58 +65481,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-noticia")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64215,56 +65560,62 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
-              {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.showModal(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"])
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _vm.getPermisoByNombre("editar-novedad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip.left",
+                        value: "Editar",
+                        expression: "'Editar'",
+                        modifiers: { left: true }
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.editar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-pencil-alt" })]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.getPermisoByNombre("eliminar-novedad")
+              ? _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "tooltip",
+                        rawName: "v-tooltip",
+                        value: "Eliminar",
+                        expression: "'Eliminar'"
+                      }
+                    ],
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                    attrs: { disabled: _vm.disabledBtns },
+                    on: {
+                      click: function($event) {
+                        return _vm.eliminar(_vm.rowData)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                )
+              : _vm._e()
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -64290,58 +65641,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "custom-checkbox custom-control" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.checkPublicar,
-            expression: "checkPublicar"
-          }
-        ],
-        staticClass: "custom-control-input",
-        attrs: {
-          type: "checkbox",
-          id: _vm.rowData.id,
-          disabled: _vm.computedDisabled
-        },
-        domProps: {
-          checked: Array.isArray(_vm.checkPublicar)
-            ? _vm._i(_vm.checkPublicar, null) > -1
-            : _vm.checkPublicar
-        },
-        on: {
-          click: function($event) {
-            return _vm.publicar(_vm.rowData)
-          },
-          change: function($event) {
-            var $$a = _vm.checkPublicar,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = null,
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.checkPublicar = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
+    _vm.getPermisoByNombre("editar-novedad")
+      ? _c("div", { staticClass: "custom-checkbox custom-control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.checkPublicar,
+                expression: "checkPublicar"
               }
-            } else {
-              _vm.checkPublicar = $$c
+            ],
+            staticClass: "custom-control-input",
+            attrs: {
+              type: "checkbox",
+              id: _vm.rowData.id,
+              disabled: _vm.computedDisabled
+            },
+            domProps: {
+              checked: Array.isArray(_vm.checkPublicar)
+                ? _vm._i(_vm.checkPublicar, null) > -1
+                : _vm.checkPublicar
+            },
+            on: {
+              click: function($event) {
+                return _vm.publicar(_vm.rowData)
+              },
+              change: function($event) {
+                var $$a = _vm.checkPublicar,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.checkPublicar = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.checkPublicar = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.checkPublicar = $$c
+                }
+              }
             }
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", {
-        staticClass: "custom-control-label",
-        attrs: { for: _vm.rowData.id }
-      })
-    ])
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-control-label",
+            attrs: { for: _vm.rowData.id }
+          })
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -65735,7 +67088,7 @@ var render = function() {
   return _c("div", { staticClass: "app-sidebar sidebar-shadow" }, [
     _c("div", { staticClass: "scrollbar-sidebar" }, [
       _c("div", { staticClass: "app-sidebar__inner" }, [
-        _c("ul", { staticClass: "vertical-nav-menu" }, [
+        _c("ul", { staticClass: "vertical-nav-menu-majumba" }, [
           _c("li", { staticClass: "app-sidebar__heading" }, [
             _vm._v("Administrar Informacion")
           ]),
@@ -65757,137 +67110,176 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("li", [
-            _c("a", { class: _vm.classActive }, [
-              _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
-              _vm._v("\n            Cepas\n            "),
-              _c("i", {
-                staticClass: "metismenu-state-icon pe-7s-angle-down caret-left"
-              })
-            ]),
-            _vm._v(" "),
-            _c("ul", [
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "cepas" },
-                        "active-class": "mm-active"
+          _vm.getPermisoByNombres([
+            "agregar-cepa",
+            "ver-cepa",
+            "editar-cepa",
+            "eliminar-cepa",
+            "caract-cepa"
+          ])
+            ? _c("li", { class: _vm.mostrarMenuCepas ? "mm-active" : "" }, [
+                _c(
+                  "a",
+                  {
+                    class: _vm.classActive,
+                    on: {
+                      click: function($event) {
+                        _vm.mostrarMenuCepas = !_vm.mostrarMenuCepas
                       }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Todas\n              ")
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "metismenu-icon pe-7s-science" }),
+                    _vm._v("\n            Cepas\n            "),
+                    _c("i", {
+                      staticClass:
+                        "metismenu-state-icon pe-7s-angle-down caret-left"
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  {
+                    class: [
+                      "mm-collapse",
+                      _vm.mostrarMenuCepas ? "mm-show" : ""
                     ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "bacterias" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Bacterias\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "hongos" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("Hongos Filamentosos\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "levaduras" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("\n                Levaduras\n              ")
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { name: "actinomicetos" },
-                        "active-class": "mm-active"
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "metismenu-icon" }),
-                      _vm._v("\n                Actinomicetos\n              ")
-                    ]
-                  )
-                ],
-                1
-              )
-            ])
-          ]),
+                  },
+                  [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "cepas" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Todas\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "bacterias" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Bacterias\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "hongos" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v("Hongos Filamentosos\n              ")
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "levaduras" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v(
+                              "\n                Levaduras\n              "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: { name: "actinomicetos" },
+                              "active-class": "mm-active"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "metismenu-icon" }),
+                            _vm._v(
+                              "\n                Actinomicetos\n              "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "otra-info-cepas" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-otra",
+            "editar-otra",
+            "eliminar-otra"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-diskette" }),
-                  _vm._v("Otra Información\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "otra-info-cepas" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-diskette" }),
+                      _vm._v("Otra Información\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "li",
@@ -65909,146 +67301,307 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "tabla-usuarios" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-usuario",
+            "editar-usuario",
+            "eliminar-usuario"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-users" }),
-                  _vm._v("Usuarios\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "tabla-usuarios" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-users" }),
+                      _vm._v("Usuarios\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "imagenes-login" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres(["editar-imglogin"])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-photo" }),
-                  _vm._v("Imagenes Login\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "imagenes-login" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-photo" }),
+                      _vm._v("Imagenes Login\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c("li", { staticClass: "app-sidebar__heading" }, [
             _vm._v("Sitio Web Público")
           ]),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: { to: { name: "mision" }, "active-class": "mm-active" }
-                },
+          _vm.getPermisoByNombres(["editar-mision"])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
-                  _vm._v("Quienes Somos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "mision" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm.getPermisoByNombres(["editar-vision"])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "vision" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres(["editar-objetivos"])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "objetivos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-notebook" }),
+                      _vm._v("Quienes Somos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "investigadores" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-investigador",
+            "editar-investigador",
+            "eliminar-investigador"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-id" }),
-                  _vm._v("Investigadores\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "investigadores" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "metismenu-icon pe-7s-id" }),
+                      _vm._v("Investigadores\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "proyectos" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-proyecto",
+            "editar-proyecto",
+            "eliminar-proyecto"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-paperclip" }),
-                  _vm._v("Documentos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "proyectos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-paperclip"
+                      }),
+                      _vm._v("Documentos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm.getPermisoByNombres([
+                "agregar-publicacion",
+                "editar-publicacion",
+                "eliminar-publicacion"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "publicaciones" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-paperclip"
+                      }),
+                      _vm._v("Documentos\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "equipamientos" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-equipamiento",
+            "editar-equipamiento",
+            "eliminar-equipamiento"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-portfolio" }),
-                  _vm._v("Equipamientos\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "equipamientos" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-portfolio"
+                      }),
+                      _vm._v("Equipamientos\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: { name: "noticias" },
-                    "active-class": "mm-active"
-                  }
-                },
+          _vm.getPermisoByNombres([
+            "agregar-noticia",
+            "editar-noticia",
+            "eliminar-noticia"
+          ])
+            ? _c(
+                "li",
                 [
-                  _c("i", { staticClass: "metismenu-icon pe-7s-news-paper" }),
-                  _vm._v("Publicidad\n          ")
-                ]
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "noticias" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm.getPermisoByNombres([
+                "agregar-actividad",
+                "editar-actividad",
+                "eliminar-actividad"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "actividades" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm.getPermisoByNombres([
+                "agregar-novedad",
+                "editar-novedad",
+                "eliminar-novedad"
+              ])
+            ? _c(
+                "li",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "novedades" },
+                        "active-class": "mm-active"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "metismenu-icon pe-7s-news-paper"
+                      }),
+                      _vm._v("Publicidad\n          ")
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
@@ -66133,14 +67686,11 @@ var render = function() {
                           _vm._v(_vm._s(_vm.auth.name))
                         ]),
                         _vm._v(" "),
-                        _vm.getTipoUser != ""
+                        _vm.getRoles != ""
                           ? [
                               _c("div", { staticClass: "widget-subheading" }, [
                                 _vm._v(
-                                  _vm._s(
-                                    _vm.getTipoUserById(_vm.auth.tipouser_id)
-                                      .nombre
-                                  )
+                                  _vm._s(_vm.getRolById(_vm.auth.rol_id).nombre)
                                 )
                               ])
                             ]
@@ -83883,8 +85433,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
-/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
 /* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-events */ "./node_modules/vue-events/dist/index.js");
 /* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_events__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vue_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toastr */ "./node_modules/vue-toastr/dist/vue-toastr.esm.js");
@@ -83971,19 +85521,19 @@ Vue.component("acciones_tincions_actinomiceto", __webpack_require__(/*! ./compon
 Vue.component("acciones_micelios_actinomiceto", __webpack_require__(/*! ./components/otra-info/tablas/actinomicetos/micelios/AccionesMiceliosComponent.vue */ "./resources/js/components/otra-info/tablas/actinomicetos/micelios/AccionesMiceliosComponent.vue")["default"]);
 Vue.component("acciones_conidioforos_actinomiceto", __webpack_require__(/*! ./components/otra-info/tablas/actinomicetos/conidioforos/AccionesConidioforosComponent.vue */ "./resources/js/components/otra-info/tablas/actinomicetos/conidioforos/AccionesConidioforosComponent.vue")["default"]); // --------------- acciones usuarios -------------------
 
-Vue.component("acciones_tabla_usuarios", __webpack_require__(/*! ./components/gestionar_usuarios/usuarios/AccionesComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue")["default"]); // --------------- acciones investigadores -------------------
+Vue.component("acciones_tabla_usuarios", __webpack_require__(/*! ./components/gestionar_usuarios/usuarios/AccionesComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/AccionesComponent.vue")["default"]);
+Vue.component("acciones_tabla_roles", __webpack_require__(/*! ./components/gestionar_usuarios/roles/AccionesComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue")["default"]); // --------------- acciones investigadores -------------------
 
 Vue.component("acciones_investigadores", __webpack_require__(/*! ./components/sitio-web/investigadores/AccionesInvestigadoresComponent.vue */ "./resources/js/components/sitio-web/investigadores/AccionesInvestigadoresComponent.vue")["default"]); // --------------- acciones equipaminetos -------------------
 
 Vue.component("acciones_equipamientos", __webpack_require__(/*! ./components/sitio-web/equipamientos/AccionesComponent.vue */ "./resources/js/components/sitio-web/equipamientos/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_equipamientos", __webpack_require__(/*! ./components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/equipamientos/CheckboxsPublicarComponent.vue")["default"]); // --------------- acciones documentos -------------------
 
+Vue.component("descargar_documento", __webpack_require__(/*! ./components/sitio-web/documentos/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue")["default"]);
 Vue.component("acciones_proyectos", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/AccionesComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_proyectos", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/CheckboxsPublicarComponent.vue")["default"]);
-Vue.component("descargar_proyecto", __webpack_require__(/*! ./components/sitio-web/documentos/proyectos/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue")["default"]);
 Vue.component("acciones_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/AccionesComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue")["default"]);
-Vue.component("checkboxs_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")["default"]);
-Vue.component("descargar_publicacion", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/DescargarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue")["default"]); // --------------- acciones publicidad -------------------
+Vue.component("checkboxs_publicaciones", __webpack_require__(/*! ./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")["default"]); // --------------- acciones publicidad -------------------
 
 Vue.component("acciones_noticias", __webpack_require__(/*! ./components/sitio-web/publicidad/noticias/AccionesComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_noticias", __webpack_require__(/*! ./components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/CheckboxsPublicarComponent.vue")["default"]);
@@ -83994,8 +85544,8 @@ Vue.component("checkboxs_actividades", __webpack_require__(/*! ./components/siti
 Vue.component("checkboxs_investigadores", __webpack_require__(/*! ./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/investigadores/CheckboxsPublicarComponent.vue")["default"]);
 var app = new Vue({
   el: "#app",
-  router: _router_index__WEBPACK_IMPORTED_MODULE_0__["default"],
-  store: _store_index__WEBPACK_IMPORTED_MODULE_1__["default"]
+  store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"],
+  router: _router_index__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
@@ -84049,6 +85599,59 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   disableStats: true,
   enabledTransports: ["ws", "wss"]
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/IconoNoAccess.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/IconoNoAccess.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IconoNoAccess.vue?vue&type=template&id=6beebc40& */ "./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/IconoNoAccess.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./IconoNoAccess.vue?vue&type=template&id=6beebc40& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IconoNoAccess.vue?vue&type=template&id=6beebc40&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IconoNoAccess_vue_vue_type_template_id_6beebc40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -84544,11 +86147,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true& */ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true&");
+/* harmony import */ var _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc& */ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&");
 /* harmony import */ var _AccionesMetodoConserBacteriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesMetodoConserBacteriaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& */ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -84556,13 +86157,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _AccionesMetodoConserBacteriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "528304bc",
+  null,
   null
   
 )
@@ -84588,35 +86189,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=style&index=0&id=528304bc&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_style_index_0_id_528304bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true&":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true& ***!
-  \*********************************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc& ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/AccionesMetodoConserBacteriaComponent.vue?vue&type=template&id=528304bc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserBacteriaComponent_vue_vue_type_template_id_528304bc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -85118,6 +86703,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_f48f7662___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesComponent.vue?vue&type=template&id=3ccde908& */ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908&");
+/* harmony import */ var _AccionesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AccionesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesComponent.vue?vue&type=template&id=3ccde908& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/gestionar_usuarios/roles/AccionesComponent.vue?vue&type=template&id=3ccde908&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesComponent_vue_vue_type_template_id_3ccde908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -87676,6 +89330,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=6af67410& */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&");
+/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/sitio-web/documentos/DescargarComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=6af67410& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/DescargarComponent.vue?vue&type=template&id=6af67410&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_6af67410___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/sitio-web/documentos/proyectos/AccionesComponent.vue ***!
@@ -87814,75 +89537,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=5b355dd9& */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&");
-/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&":
-/*!**********************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9& ***!
-  \**********************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=5b355dd9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/proyectos/DescargarComponent.vue?vue&type=template&id=5b355dd9&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_5b355dd9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue":
 /*!******************************************************************************************!*\
   !*** ./resources/js/components/sitio-web/documentos/publicaciones/AccionesComponent.vue ***!
@@ -88016,75 +89670,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_78a24e88___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_78a24e88___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue ***!
-  \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=template&id=4a154908& */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&");
-/* harmony import */ var _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DescargarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&":
-/*!**************************************************************************************************************************!*\
-  !*** ./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908& ***!
-  \**************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DescargarComponent.vue?vue&type=template&id=4a154908& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sitio-web/documentos/publicaciones/DescargarComponent.vue?vue&type=template&id=4a154908&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DescargarComponent_vue_vue_type_template_id_4a154908___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -89726,21 +91311,22 @@ var websocketsCheckCepas = {
       axios.put("/cepas/publicar/".concat(data.id), {
         publicar: !this.checkPublicar
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        if (res.data.publicar) {
+          _this.toastr("Publicar", "Publicado con Exito!!");
+        }
+
+        _this.accionCepas({
+          tipo: "editar",
+          data: res.data
+        });
+
+        _this.checkPublicar = res.data.publicar;
+        _this.disabled = false;
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
-        } else {
-          if (res.data.publicar) {
-            _this.toastr("Publicar", "Publicado con Exito!!");
-          }
-
-          _this.accionCepas({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.checkPublicar = res.data.publicar;
-          _this.disabled = false;
         }
       });
     },
@@ -89803,6 +91389,8 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/index */ "./resources/js/store/index.js");
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -89823,20 +91411,22 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas"
+        title: "Cepas Microbianas",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, //bacterias
     {
       path: "bacteria/ver/:cepaId",
       name: "ver-cepa-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "bacteria/:cepaId",
@@ -89848,55 +91438,61 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-fisio",
         name: "caract-fisio-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
-          title: "Características Fisiológicas"
+          title: "Características Fisiológicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //hongos
@@ -89904,10 +91500,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "hongo/ver/:cepaId",
       name: "ver-cepa-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "hongo/:cepaId",
@@ -89919,46 +91516,51 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //levaduras
@@ -89966,10 +91568,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "levadura/ver/:cepaId",
       name: "ver-cepa-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "levadura/:cepaId",
@@ -89981,46 +91584,51 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, //actinomiceto
@@ -90028,10 +91636,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "actinomiceto/ver/:cepaId",
       name: "ver-cepa-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Cepa"
+        title: "Ver Cepa",
+        permisos: ["ver-cepa"]
       }
     }, {
       path: "actinomiceto/:cepaId",
@@ -90043,37 +91652,41 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-bioqui",
         name: "identi-bioqui-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
-          title: "Identificación Bioquímica"
+          title: "Identificación Bioquímica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "otras-caract",
         name: "otras-caract-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
-          title: "Otras Características"
+          title: "Otras Características",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-molecu",
@@ -90082,7 +91695,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | caract-molecu-cepa-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
         },
         meta: {
-          title: "Características Moleculares"
+          title: "Características Moleculares",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90091,7 +91705,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | metodo-conser-cepa-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }]
@@ -90113,10 +91728,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Bacterias"
+        title: "Cepas Microbianas - Bacterias",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaBacteriaId",
@@ -90128,65 +91744,72 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-fisio",
         name: "caract-fisio-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
-          title: "Características Fisiológicas"
+          title: "Características Fisiológicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
       path: "ver/:cepaBacteriaId",
       name: "ver-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Bacteria"
+        title: "Ver Bacteria",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90207,10 +91830,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Hongos"
+        title: "Cepas Microbianas - Hongos",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaHongoId",
@@ -90222,56 +91846,62 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
       path: "ver/:cepaHongoId",
       name: "ver-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Hongo"
+        title: "Ver Hongo",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90292,10 +91922,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Levaduras"
+        title: "Cepas Microbianas - Levaduras",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaLevaduraId",
@@ -90307,56 +91938,62 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-bioqui",
         name: "caract-bioqui-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
-          title: "Características Bioquímicas"
+          title: "Características Bioquímicas",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-molecu",
         name: "identi-molecu-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
-          title: "Identificación Molecular"
+          title: "Identificación Molecular",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
         name: "metodo-conser-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
       path: "ver/:cepaLevaduraId",
       name: "ver-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Levadura"
+        title: "Ver Levadura",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90377,10 +92014,11 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
-        title: "Cepas Microbianas - Actinomicetos"
+        title: "Cepas Microbianas - Actinomicetos",
+        permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
       path: ":cepaActinomicetoId",
@@ -90392,37 +92030,41 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
-          title: "Características Macroscópica"
+          title: "Características Macroscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-micro",
         name: "caract-micro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
-          title: "Características Microscópica"
+          title: "Características Microscópica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "identi-bioqui",
         name: "identi-bioqui-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
-          title: "Identificación Bioquímica"
+          title: "Identificación Bioquímica",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "otras-caract",
         name: "otras-caract-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
-          title: "Otras Características"
+          title: "Otras Características",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "caract-molecu",
@@ -90431,7 +92073,8 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | caract-molecu-actinomiceto */ "caract-molecu-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMolecuComponent.vue"));
         },
         meta: {
-          title: "Características Moleculares"
+          title: "Características Moleculares",
+          permisos: ["caract-cepa"]
         }
       }, {
         path: "metodo-conser",
@@ -90440,17 +92083,19 @@ var routes = [//-------------------------------TODAS----------------------------
           return __webpack_require__.e(/*! import() | metodo-conser-actinomiceto */ "metodo-conser-actinomiceto").then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
-          title: "Métodos de Conservación"
+          title: "Métodos de Conservación",
+          permisos: ["caract-cepa"]
         }
       }]
     }, {
       path: "ver/:cepaActinomicetoId",
       name: "ver-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
-        title: "Ver Actinomiceto"
+        title: "Ver Actinomiceto",
+        permisos: ["ver-cepa"]
       }
     }]
   }]
@@ -90466,19 +92111,31 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
-      title: "Tabla Usuarios"
+      title: "Tabla Usuarios",
+      permisos: ["agregar-usuario", "editar-usuario", "eliminar-usuario"]
+    }
+  }, {
+    path: "tabla-roles",
+    name: "tabla-roles",
+    component: function component() {
+      return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
+    },
+    meta: {
+      title: "Tabla Roles",
+      superAdmin: 1
     }
   }, {
     path: "tabla-seguimiento",
     name: "tabla-seguimiento",
     component: function component() {
-      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
+      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
     },
     meta: {
-      title: "Tabla Seguimientos"
+      title: "Tabla Seguimientos",
+      superAdmin: 1
     }
   }]
 }, // ------------------------------- OTRA INFORMACION ------------------------------------------
@@ -90492,46 +92149,51 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Cepas"
+      title: "Tablas Info Cepas",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Bacterias"
+      title: "Tablas Info Bacterias",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Hongos"
+      title: "Tablas Info Hongos",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Levaduras"
+      title: "Tablas Info Levaduras",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }, {
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
-      title: "Tablas Info Actinomicetos"
+      title: "Tablas Info Actinomicetos",
+      permisos: ["agregar-otra", "editar-otra", "eliminar-otra"]
     }
   }]
 }, // ------------------------------- QUIENES SOMOS ------------------------------------------
@@ -90548,7 +92210,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
     },
     meta: {
-      title: "Misión"
+      title: "Misión",
+      permisos: ["editar-mision"]
     }
   }, {
     path: "vision",
@@ -90557,7 +92220,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
     },
     meta: {
-      title: "Visión"
+      title: "Visión",
+      permisos: ["editar-vision"]
     }
   }, {
     path: "objetivos",
@@ -90566,7 +92230,8 @@ var routes = [//-------------------------------TODAS----------------------------
       return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
     },
     meta: {
-      title: "Objetivos"
+      title: "Objetivos",
+      permisos: ["editar-objetivos"]
     }
   }]
 }, // ------------------------------- DOCUMENTOS ------------------------------------------
@@ -90580,19 +92245,21 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
-      title: "Proyectos"
+      title: "Proyectos",
+      permisos: ["agregar-proyecto", "editar-proyecto", "eliminar-proyecto"]
     }
   }, {
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
-      title: "Publicaciones"
+      title: "Publicaciones",
+      permisos: ["agregar-publicacion", "editar-publicacion", "eliminar-publicacion"]
     }
   }]
 }, // ------------------------------- PUBLICIDAD ------------------------------------------
@@ -90606,28 +92273,31 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "noticias",
     component: function component() {
-      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
+      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
-      title: "Noticias"
+      title: "Noticias",
+      permisos: ["agregar-noticia", "editar-noticia", "eliminar-noticia"]
     }
   }, {
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
-      title: "Actividades"
+      title: "Actividades",
+      permisos: ["agregar-actividad", "editar-actividad", "eliminar-actividad"]
     }
   }, {
     path: "novedades",
     name: "novedades",
     component: function component() {
-      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
-      title: "Novedades"
+      title: "Novedades",
+      permisos: ["agregar-novedad", "editar-novedad", "eliminar-novedad"]
     }
   }]
 }, {
@@ -90643,7 +92313,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/calendario",
   name: "calendario",
   component: function component() {
-    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
+    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
   },
   meta: {
     title: "Calendario"
@@ -90652,28 +92322,40 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/imagenes-login/ver",
   name: "imagenes-login",
   component: function component() {
-    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
+    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
-    title: "Imagenes Login"
+    title: "Imagenes Login",
+    permisos: ["editar-imglogin"]
   }
 }, {
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
-    title: "Investigadores"
+    title: "Investigadores",
+    permisos: ["agregar-investigador", "editar-investigador", "eliminar-investigador"]
   }
 }, {
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~57e450cf"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~0bf94218"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~f6146cdd"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
-    title: "Equipamientos"
+    title: "Equipamientos",
+    permisos: ["agregar-equipamiento", "editar-equipamiento", "eliminar-equipamiento"]
+  }
+}, {
+  path: "/sin-acceso",
+  name: "sin-acceso",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | error-403 */ "error-403").then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
+  },
+  meta: {
+    title: "Sin Accesso"
   }
 }, {
   path: "*",
@@ -90682,7 +92364,7 @@ var routes = [//-------------------------------TODAS----------------------------
     return __webpack_require__.e(/*! import() | error-404 */ "error-404").then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
   },
   meta: {
-    title: "Error 404"
+    title: "Esta Pagina No existe"
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -90692,7 +92374,26 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 router.beforeEach(function (to, from, next) {
   document.title = to.meta.title;
-  next();
+
+  if (to.matched.some(function (record) {
+    return record.meta.permisos;
+  })) {
+    if (_store_index__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getPermisoByNombres(to.meta.permisos)) {
+      return next();
+    } else {
+      return next("/sin-acceso");
+    }
+  } else if (to.matched.some(function (record) {
+    return record.meta.superAdmin;
+  })) {
+    if (_store_index__WEBPACK_IMPORTED_MODULE_2__["default"]._modules.root.state.auth.rol_id === to.meta.superAdmin) {
+      return next();
+    } else {
+      return next("/sin-acceso");
+    }
+  }
+
+  return next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
@@ -90735,17 +92436,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //let userLogueado = document.head.querySelector('meta[name="user-logueado"]');
 
+var user = document.head.querySelector('meta[name="user"]');
+var permisos = document.head.querySelector('meta[name="permisos-user"]');
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    //  auth: JSON.parse(userLogueado.content)
-    auth: null
+    auth: JSON.parse(user.content),
+    permisos: JSON.parse(permisos.content)
+  },
+  getters: {
+    getPermiso: function getPermiso(state) {
+      return state.permisos;
+    },
+    getPermisoByNombre: function getPermisoByNombre(state) {
+      return function (nombre) {
+        return state.permisos.find(function (permiso) {
+          return permiso.nombre.toUpperCase() === nombre.toUpperCase();
+        });
+      };
+    },
+    getPermisoByNombres: function getPermisoByNombres(state, getters) {
+      return function (nombres) {
+        var res = false;
+        nombres.forEach(function (nombre) {
+          if (getters.getPermisoByNombre(nombre)) {
+            res = true;
+          }
+        });
+        return res;
+      };
+    }
   },
   mutations: {
     mutacionModificarAuth: function mutacionModificarAuth(state, data) {
-      state.auth = data.data;
+      state.auth = data;
+    },
+    guardarPermisos: function guardarPermisos(state, data) {
+      state.permisos = data;
     }
   },
   actions: {
@@ -90756,6 +92484,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     limpiarCepa: function limpiarCepa(_ref2) {
       var commit = _ref2.commit;
       commit("mutacionLimpiarCepa");
+    },
+    guardarPermisosAuth: function guardarPermisosAuth(_ref3, data) {
+      var commit = _ref3.commit;
+      commit("guardarPermisos", data);
     }
   },
   modules: {
@@ -90991,7 +92723,21 @@ __webpack_require__.r(__webpack_exports__);
     getCepaById: function getCepaById(state) {
       return function (id) {
         return state.cepas.find(function (cepa) {
-          return cepa.id == id;
+          return cepa.id === id;
+        });
+      };
+    },
+    getCepasByGrupo: function getCepasByGrupo(state) {
+      return function (grupo) {
+        return state.cepas.filter(function (cepa) {
+          return cepa.grupo_microbiano_id == grupo;
+        });
+      };
+    },
+    getCepaByCodigo: function getCepaByCodigo(state) {
+      return function (codigo) {
+        return state.cepas.find(function (cepa) {
+          return cepa.codigo.toUpperCase() === codigo.toUpperCase();
         });
       };
     }
@@ -91024,6 +92770,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerCepas: function obtenerCepas(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/cepas").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -91032,11 +92780,14 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarCepas", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionCepas: function accionCepas(_ref2, data) {
       var commit = _ref2.commit;
-      console.log('accionCepas');
       commit("mutacionCepas", data);
     }
   }
@@ -91072,7 +92823,7 @@ __webpack_require__.r(__webpack_exports__);
     getProyectoByNombre: function getProyectoByNombre(state, getters) {
       return function (nombre) {
         return getters.getProyectos.find(function (proyecto) {
-          return proyecto.nombre_documento === nombre;
+          return proyecto.nombre_documento.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -91089,7 +92840,7 @@ __webpack_require__.r(__webpack_exports__);
     getPublicacionByNombre: function getPublicacionByNombre(state, getters) {
       return function (nombre) {
         return getters.getPublicaciones.find(function (publicacion) {
-          return publicacion.nombre_documento === nombre;
+          return publicacion.nombre_documento.toUpperCase() === nombre.toUpperCase();
         });
       };
     }
@@ -91143,6 +92894,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerDocumentos: function obtenerDocumentos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/documentos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -91151,6 +92904,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarDocumentos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionProyecto: function accionProyecto(_ref2, data) {
@@ -91191,7 +92948,7 @@ __webpack_require__.r(__webpack_exports__);
     getEquipamientoByNombre: function getEquipamientoByNombre(state) {
       return function (nombre) {
         return state.equipamientos.find(function (equipamiento) {
-          return equipamiento.nombre === nombre;
+          return equipamiento.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     }
@@ -91224,6 +92981,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerEquipamientos: function obtenerEquipamientos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/equipamientos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -91232,6 +92991,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarEquipamientos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionEquipamiento: function accionEquipamiento(_ref2, data) {
@@ -91294,6 +93057,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerImagenesLogin: function obtenerImagenesLogin(_ref, data) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/login-imagenes").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -91302,6 +93067,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarImagenesLogin", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionImagenLogin: function accionImagenLogin(_ref2, data) {
@@ -91595,7 +93364,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_bacterias.caract_micro.formas_micros.push(data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           state.info_caract_bacterias.metodo_conser.tipo_metodo.push(data.info);
           break;
 
@@ -91655,7 +93424,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_bacterias.caract_micro.formas_micros.splice(indice, 1, data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -91721,7 +93490,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_bacterias.caract_micro.formas_micros.splice(indice, 1);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_bacterias.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -91746,7 +93515,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_levaduras.caract_macro.texturas.push(data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           state.info_caract_levaduras.metodo_conser.tipo_metodo.push(data.info);
           break;
       }
@@ -91767,7 +93536,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_levaduras.caract_macro.texturas.splice(indice, 1, data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -91791,7 +93560,7 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_levaduras.caract_macro.texturas.splice(indice, 1);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_levaduras.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -91813,15 +93582,15 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_hongos.caract_micro.conidioforos.push(data.info);
           break;
 
-        case "espora_asexual":
+        case "esporaA":
           state.info_caract_hongos.caract_micro.esporas_asexuales.push(data.info);
           break;
 
-        case "espora_sexual":
+        case "esporaS":
           state.info_caract_hongos.caract_micro.esporas_sexuales.push(data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           state.info_caract_hongos.metodo_conser.tipo_metodo.push(data.info);
           break;
       }
@@ -91849,21 +93618,21 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_hongos.caract_micro.conidioforos.splice(indice, 1, data.info);
           break;
 
-        case "espora_asexual":
+        case "esporaA":
           var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
           state.info_caract_hongos.caract_micro.esporas_asexuales.splice(indice, 1, data.info);
           break;
 
-        case "espora_sexual":
+        case "esporaS":
           var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
           state.info_caract_hongos.caract_micro.esporas_sexuales.splice(indice, 1, data.info);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -91894,21 +93663,21 @@ __webpack_require__.r(__webpack_exports__);
           state.info_caract_hongos.caract_micro.conidioforos.splice(indice, 1);
           break;
 
-        case "espora_asexual":
+        case "esporaA":
           var indice = state.info_caract_hongos.caract_micro.esporas_asexuales.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
           state.info_caract_hongos.caract_micro.esporas_asexuales.splice(indice, 1);
           break;
 
-        case "espora_sexual":
+        case "esporaS":
           var indice = state.info_caract_hongos.caract_micro.esporas_sexuales.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
           state.info_caract_hongos.caract_micro.esporas_sexuales.splice(indice, 1);
           break;
 
-        case "metodo_conser":
+        case "tipo_metodo":
           var indice = state.info_caract_hongos.metodo_conser.tipo_metodo.findIndex(function (tipo) {
             return tipo.id === data.info.id;
           });
@@ -92108,6 +93877,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerInfoCaractBacterias: function obtenerInfoCaractBacterias(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/info-caract-bacterias").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92116,6 +93887,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractBacterias", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractBacteria: function accionAgregarTipoCaractBacteria(_ref2, data) {
@@ -92131,6 +93906,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractBacteria", data);
     },
     obtenerInfoCaractLevaduras: function obtenerInfoCaractLevaduras(_ref5) {
+      var _this2 = this;
+
       var commit = _ref5.commit;
       axios.get("/info-panel/info-caract-levaduras").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92139,6 +93916,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractLevaduras", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this2.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractLevadura: function accionAgregarTipoCaractLevadura(_ref6, data) {
@@ -92154,6 +93935,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractLevadura", data);
     },
     obtenerInfoCaractHongos: function obtenerInfoCaractHongos(_ref9) {
+      var _this3 = this;
+
       var commit = _ref9.commit;
       axios.get("/info-panel/info-caract-hongos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92162,6 +93945,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractHongos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this3.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractHongo: function accionAgregarTipoCaractHongo(_ref10, data) {
@@ -92177,6 +93964,8 @@ __webpack_require__.r(__webpack_exports__);
       commit("mutacionEliminarTipoCaractHongo", data);
     },
     obtenerInfoCaractActinomicetos: function obtenerInfoCaractActinomicetos(_ref13) {
+      var _this4 = this;
+
       var commit = _ref13.commit;
       axios.get("/info-panel/info-caract-actinomicetos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92185,6 +93974,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInfoCaractActinomicetos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this4.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCaractActinomiceto: function accionAgregarTipoCaractActinomiceto(_ref14, data) {
@@ -92239,7 +94032,7 @@ __webpack_require__.r(__webpack_exports__);
     getGeneroByNombre: function getGeneroByNombre(state) {
       return function (nombre) {
         return state.tipos.generos.find(function (genero) {
-          return genero.nombre === nombre;
+          return genero.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92261,7 +94054,7 @@ __webpack_require__.r(__webpack_exports__);
     getEspecieByNombre: function getEspecieByNombre(state) {
       return function (nombre) {
         return state.tipos.especies.find(function (especie) {
-          return especie.nombre === nombre;
+          return especie.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92289,7 +94082,7 @@ __webpack_require__.r(__webpack_exports__);
     getPhylumByNombre: function getPhylumByNombre(state) {
       return function (nombre) {
         return state.tipos.phylums.find(function (phylum) {
-          return phylum.nombre === nombre;
+          return phylum.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92304,7 +94097,7 @@ __webpack_require__.r(__webpack_exports__);
     getOrdenByNombre: function getOrdenByNombre(state) {
       return function (nombre) {
         return state.tipos.ordens.find(function (orden) {
-          return orden.nombre === nombre;
+          return orden.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92319,7 +94112,7 @@ __webpack_require__.r(__webpack_exports__);
     getReinoByNombre: function getReinoByNombre(state) {
       return function (nombre) {
         return state.tipos.reinos.find(function (reino) {
-          return reino.nombre === nombre;
+          return reino.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92334,7 +94127,7 @@ __webpack_require__.r(__webpack_exports__);
     getDivisionByNombre: function getDivisionByNombre(state) {
       return function (nombre) {
         return state.tipos.divisiones.find(function (division) {
-          return division.nombre === nombre;
+          return division.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92349,7 +94142,7 @@ __webpack_require__.r(__webpack_exports__);
     getClaseByNombre: function getClaseByNombre(state) {
       return function (nombre) {
         return state.tipos.clases.find(function (clase) {
-          return clase.nombre === nombre;
+          return clase.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92364,7 +94157,7 @@ __webpack_require__.r(__webpack_exports__);
     getFamiliaByNombre: function getFamiliaByNombre(state) {
       return function (nombre) {
         return state.tipos.familias.find(function (familia) {
-          return familia.nombre === nombre;
+          return familia.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     }
@@ -92529,6 +94322,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerTiposCepas: function obtenerTiposCepas(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/info-tipos-cepas").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92537,6 +94332,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarTipos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionAgregarTipoCepa: function accionAgregarTipoCepa(_ref2, data) {
@@ -92581,7 +94380,7 @@ __webpack_require__.r(__webpack_exports__);
     getInvestigadorByEmail: function getInvestigadorByEmail(state) {
       return function (email) {
         return state.investigadores.find(function (investigador) {
-          return investigador.email === email;
+          return investigador.email.toUpperCase() === email.toUpperCase();
         });
       };
     }
@@ -92614,6 +94413,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerInvestigadores: function obtenerInvestigadores(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/investigadores").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92622,6 +94423,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarInvestigadores", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionInvestigador: function accionInvestigador(_ref2, data) {
@@ -92661,7 +94466,7 @@ __webpack_require__.r(__webpack_exports__);
     getNoticiaByTitulo: function getNoticiaByTitulo(state, getters) {
       return function (nombre) {
         return getters.getNoticias.find(function (noticia) {
-          return noticia.titulo === nombre;
+          return noticia.titulo.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92678,7 +94483,7 @@ __webpack_require__.r(__webpack_exports__);
     getActividadByTitulo: function getActividadByTitulo(state, getters) {
       return function (nombre) {
         return getters.getActividades.find(function (actividad) {
-          return actividad.titulo === nombre;
+          return actividad.titulo.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92695,7 +94500,7 @@ __webpack_require__.r(__webpack_exports__);
     getNovedadByTitulo: function getNovedadByTitulo(state, getters) {
       return function (nombre) {
         return getters.getNovedades.find(function (novedad) {
-          return novedad.titulo === nombre;
+          return novedad.titulo.toUpperCase() === nombre.toUpperCase();
         });
       };
     }
@@ -92770,6 +94575,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerPublicidad: function obtenerPublicidad(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/publicidad").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92778,6 +94585,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarPublicidad", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionNoticia: function accionNoticia(_ref2, data) {
@@ -92833,6 +94644,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerQuienesSomos: function obtenerQuienesSomos(_ref) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/quienes-somos").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -92841,6 +94654,10 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarQuienesSomos", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        }
       });
     },
     accionCambiarQuienesSomos: function accionCambiarQuienesSomos(_ref2, data) {
@@ -92864,19 +94681,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   namespaced: true,
   state: {
-    tipos_users: [],
-    usuarios: []
+    roles: [],
+    usuarios: [],
+    permisos: []
   },
   getters: {
-    getTipoUser: function getTipoUser(state) {
-      return state.tipos_users.filter(function (tipo) {
-        return tipo.id != 1;
+    getRoles: function getRoles(state) {
+      return state.roles.filter(function (rol) {
+        return rol.id != 1;
       });
     },
-    getTipoUserById: function getTipoUserById(state) {
+    getRolById: function getRolById(state) {
       return function (id) {
-        return state.tipos_users.find(function (tipo) {
-          return tipo.id == id;
+        return state.roles.find(function (rol) {
+          return rol.id == id;
+        });
+      };
+    },
+    getRolByNombre: function getRolByNombre(state) {
+      return function (nombre) {
+        return state.roles.find(function (rol) {
+          return rol.nombre.toUpperCase() === nombre.toUpperCase();
         });
       };
     },
@@ -92890,7 +94715,7 @@ __webpack_require__.r(__webpack_exports__);
     getUsuarioByEmail: function getUsuarioByEmail(state) {
       return function (email) {
         return state.usuarios.find(function (user) {
-          return user.email == email;
+          return user.email.toUpperCase() === email.toUpperCase();
         });
       };
     }
@@ -92899,8 +94724,11 @@ __webpack_require__.r(__webpack_exports__);
     llenarUsuarios: function llenarUsuarios(state, users) {
       state.usuarios = users;
     },
-    llenarTiposUsers: function llenarTiposUsers(state, tipos) {
-      state.tipos_users = tipos;
+    llenarRoles: function llenarRoles(state, roles) {
+      state.roles = roles;
+    },
+    llenarPermisos: function llenarPermisos(state, permisos) {
+      state.permisos = permisos;
     },
     mutacionUsuario: function mutacionUsuario(state, data) {
       switch (data.tipo) {
@@ -92923,26 +94751,32 @@ __webpack_require__.r(__webpack_exports__);
           break;
       }
     },
-    mutacionTipoUsuario: function mutacionTipoUsuario(state, data) {
+    mutacionRol: function mutacionRol(state, data) {
       switch (data.tipo) {
         case "agregar":
-          state.tipos_users.push(data.info);
+          state.roles.push(data.data);
           break;
 
         case "editar":
-          var indice = state.tipos_users.findIndex(function (tipo) {
-            return tipo.id === data.info.id;
+          var indice = state.roles.findIndex(function (rol) {
+            return rol.id === data.data.id;
           });
-          state.tipos_users.splice(indice, 1, data.info);
+          state.roles.splice(indice, 1, data.data);
           break;
 
         case "eliminar":
-          var indice = state.tipos_users.findIndex(function (tipo) {
-            return tipo.id === data.info.id;
+          var indice = state.roles.findIndex(function (rol) {
+            return rol.id === data.data.id;
           });
-          state.tipos_users.splice(indice, 1);
+          state.roles.splice(indice, 1);
           break;
       }
+    },
+    mutacionModificarPermisos: function mutacionModificarPermisos(state, data) {
+      var indice = state.roles.findIndex(function (rol) {
+        return rol.id === data.id;
+      });
+      state.roles.splice(indice, 1, data);
     }
   },
   actions: {
@@ -92957,24 +94791,39 @@ __webpack_require__.r(__webpack_exports__);
         commit("llenarUsuarios", res.data);
       });
     },
-    obtenerTiposUsers: function obtenerTiposUsers(_ref2) {
+    obtenerRoles: function obtenerRoles(_ref2) {
       var commit = _ref2.commit;
-      axios.get("/info-panel/tipos-users").then(function (res) {
+      axios.get("/info-panel/roles").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
 
-        commit("llenarTiposUsers", res.data);
+        commit("llenarRoles", res.data);
       });
     },
-    accionTipoUsuario: function accionTipoUsuario(_ref3, data) {
+    obtenerPermisos: function obtenerPermisos(_ref3) {
       var commit = _ref3.commit;
-      commit("mutacionTipoUsuario", data);
+      axios.get("/info-panel/permisos").then(function (res) {
+        if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        }
+
+        commit("llenarPermisos", res.data);
+      });
     },
-    accionUsuario: function accionUsuario(_ref4, data) {
+    accionRol: function accionRol(_ref4, data) {
       var commit = _ref4.commit;
+      commit("mutacionRol", data);
+    },
+    accionUsuario: function accionUsuario(_ref5, data) {
+      var commit = _ref5.commit;
       commit("mutacionUsuario", data);
+    },
+    accionModificarPermisos: function accionModificarPermisos(_ref6, data) {
+      var commit = _ref6.commit;
+      commit("mutacionModificarPermisos", data);
     }
   }
 });

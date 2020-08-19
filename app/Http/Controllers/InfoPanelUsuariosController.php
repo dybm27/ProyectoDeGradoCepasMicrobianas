@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Permiso;
 use App\Seguimiento;
-use App\TipoUser;
+use App\Rol;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -11,12 +12,12 @@ class InfoPanelUsuariosController extends Controller
 {
     public function tablaUsuarios(Request $request)
     {
-        $cepas = User::where('tipouser_id', '!=', 1)
-            ->join('tipo_users', 'users.tipouser_id', '=', 'tipo_users.id');
+        $cepas = User::where('users.rol_id', '!=', 1)->where('users.id', '!=', auth()->user()->id)
+            ->join('rols', 'users.rol_id', '=', 'rols.id');
 
         $query = $cepas->select(
             'users.*',
-            'tipo_users.nombre As tipo_user'
+            'rols.nombre As rol'
         );
 
         if ($request->filled('sort')) {
@@ -56,7 +57,7 @@ class InfoPanelUsuariosController extends Controller
             $seguimientos = $seguimientos->where(function ($query) use ($value) {
                 return $query->where('Seguimientos.nombre_responsable', 'like', $value)
                     ->orWhere('Seguimientos.email_responsable', 'like', $value)
-                    ->orWhere('Seguimientos.tipo_user', 'like', $value)
+                    ->orWhere('Seguimientos.rol', 'like', $value)
                     ->orWhere('Seguimientos.accion', 'like', $value)
                     ->orWhere('Seguimientos.created_at', 'like', $value)
                     ->orWhere('Seguimientos.id', 'like', $value);
@@ -69,14 +70,42 @@ class InfoPanelUsuariosController extends Controller
 
         return $pagination;
     }
-    public function tipoUsuarios()
+    public function tablaRoles(Request $request)
     {
-        $tipos_users = TipoUser::all();
-        return $tipos_users;
+        $query = Rol::where('id', '!=', 1);
+
+        if ($request->filled('sort')) {
+            $sort = explode('|', $request->sort);
+            $query = $query->orderBy($sort[0], $sort[1]);
+        }
+
+        if ($request->filled('filter')) {
+            $value = "%{$request->filter}%";
+            $query = $query->where(function ($query) use ($value) {
+                return $query->where('rols.nombre', 'like', $value);
+            });
+        }
+
+        $perPage = request()->filled('per_page') ? (int) request()->per_page : null;
+
+        $pagination = $query->paginate($perPage);
+
+        return $pagination;
+    }
+    public function roles()
+    {
+        $roles = Rol::all();
+        return $roles->load('permisos');
     }
     public function usuarios()
     {
-        $user = User::all();
+        $user = User::where('users.rol_id', '!=', 1)
+            ->where('users.id', '!=', auth()->user()->id)->get();
         return $user;
+    }
+    public function permisos()
+    {
+        $permisos = Permiso::all();
+        return $permisos;
     }
 }

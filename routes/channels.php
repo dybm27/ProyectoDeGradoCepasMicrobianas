@@ -108,6 +108,19 @@ Broadcast::channel('desbloquearBtnsUsuario', function ($user) {
 Broadcast::channel('recibirBtnsUsuario', function ($user) {
     return true;
 });
+//roles
+Broadcast::channel('roles', function ($user) {
+    return ['user' => $user];
+});
+Broadcast::channel('bloquearBtnsRol', function ($user) {
+    return true;
+});
+Broadcast::channel('desbloquearBtnsRol', function ($user) {
+    return true;
+});
+Broadcast::channel('recibirBtnsRol', function ($user) {
+    return true;
+});
 //imagenes login
 Broadcast::channel('ImgLogin', function ($user) {
     return ['user' => $user];

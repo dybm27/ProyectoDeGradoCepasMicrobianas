@@ -476,11 +476,13 @@ __webpack_require__.r(__webpack_exports__);
   name: "__component:checkboxs_publicar_levaduras",
   title: "Publicar",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  sortField: "publicar"
 }, {
   name: "__component:acciones_cepas_levaduras",
   title: "Acciones",
-  titleClass: "text-center"
+  titleClass: "text-center",
+  dataClass: "text-center"
 }]);
 
 /***/ }),

@@ -26,7 +26,7 @@
                       :value="f.id"
                     >{{ f.nombre }}</option>
                   </select>
-                  <div class="input-group-append">
+                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
                       @click.prevent="showModal('conidioforo')"
@@ -124,10 +124,10 @@
                       :value="b.id"
                     >{{ b.nombre }}</option>
                   </select>
-                  <div class="input-group-append">
+                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('espora_asexual')"
+                      @click.prevent="showModal('esporaA')"
                     >
                       <i class="fas fa-plus"></i>
                     </button>
@@ -224,10 +224,10 @@
                       :value="b.id"
                     >{{ b.nombre }}</option>
                   </select>
-                  <div class="input-group-append">
+                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
                     <button
                       class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('espora_sexual')"
+                      @click.prevent="showModal('esporaS')"
                     >
                       <i class="fas fa-plus"></i>
                     </button>
@@ -303,45 +303,12 @@
         </div>
       </div>
     </div>
-
-    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{ modal.titulo }}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar-caract-info')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder=" ..."
-              type="text"
-              class="form-control"
-              v-model="modal.input"
-              required
-            />
-            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar-caract-info')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="agregarInfo"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalAgregarInfo
+      :url="'info-caract-hongos'"
+      :tipo="tipoModal"
+      :titulo="tituloModal"
+      :tipoForm="'hongo'"
+    />
   </div>
 </template>
 
@@ -351,8 +318,9 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3Imagenes from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
+import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
 export default {
-  components: { CroppieCepas, Imagenes },
+  components: { CroppieCepas, Imagenes, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
   data() {
     return {
@@ -375,12 +343,8 @@ export default {
         imagen3: "",
         descripcion_imagenes: "",
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: [],
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -390,7 +354,6 @@ export default {
   },
   mixins: [Toastr, obtenerImagenCroopie3Imagenes],
   methods: {
-    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractHongo"]),
     evento() {
       this.bloquearBtn = true;
       if (this.parametros.fialides === "Ausencia") {
@@ -429,12 +392,16 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -445,89 +412,41 @@ export default {
         axios
           .put(`/cepas/hongo/caract-micro/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.$emit("editar", res.data);
+            this.toastr(
+              "Editar Característica Microscópica",
+              "Característica Microscópica editada con exito!!",
+              "success"
+            );
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Característica Microscópica",
-                "Característica Microscópica editada con exito!!",
-                "success"
-              );
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
     showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
       if (tipo === "conidioforo") {
-        this.modal.titulo = "Agregar Nuevo Conidióforo";
-      } else if (tipo === "espora_asexual") {
-        this.modal.titulo = "Agregar Nueva Espora Asexual";
-      } else if (tipo === "espora_sexual") {
-        this.modal.titulo = "Agregar Nueva Espora Asexual";
+        this.tituloModal = "Agregar Nuevo Conidióforo";
+      } else if (tipo === "esporaA") {
+        this.tituloModal = "Agregar Nueva Espora Asexual";
+      } else if (tipo === "esporaS") {
+        this.tituloModal = "Agregar Nueva Espora Sexual";
       }
-      this.$modal.show("agregar-caract-info");
-    },
-    agregarInfo() {
-      if (this.modal.input === "") {
-        this.modal.errors = {
-          nombre: { 0: "Favor llenar este campo" },
-        };
-      } else {
-        this.bloquearBtnModal = true;
-        let parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-        };
-        axios
-          .post("/info-caract-hongos/agregar", parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.bloquearBtnModal = false;
-              this.accionAgregarTipoCaractHongo({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$modal.hide("agregar-caract-info");
-              this.toastr(
-                "Agregar Informacion",
-                `${this.modal.tipo} agregado/a con exito`,
-                "success"
-              );
-            }
-          })
-          .catch((error) => {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.modal.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
-          });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     llenarInfo() {
       this.imagenes = [];
@@ -573,6 +492,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroHongos"]),
     required() {
       if (this.tituloForm === "Agregar Característica") {

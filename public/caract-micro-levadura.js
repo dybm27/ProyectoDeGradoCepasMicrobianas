@@ -488,14 +488,18 @@ __webpack_require__.r(__webpack_exports__);
               _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.bloquearBtn = false;
@@ -506,26 +510,27 @@ __webpack_require__.r(__webpack_exports__);
         }
       } else {
         axios.put("/cepas/levadura/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+          _this.errors = [];
+
+          _this.$emit("editar", res.data);
+
+          _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
-            _this.errors = [];
 
-            _this.$emit("editar", res.data);
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -597,8 +602,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../forms-caract/FormCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/forms-caract/FormCaractMicroComponent.vue");
+/* harmony import */ var _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms-caract/FormCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/forms-caract/FormCaractMicroComponent.vue");
+/* harmony import */ var _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ModalEliminarCaractComponent.vue */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -662,23 +667,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    FormCaractMicro: _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    FormCaractMicro: _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ModalEliminar: _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -687,7 +682,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     agregar: function agregar(data) {
       this.accionAgregarCaract({
@@ -702,29 +696,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       this.modificarForm = true;
     },
-    eliminar: function eliminar() {
-      var _this = this;
-
-      axios["delete"]("/cepas/levadura/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.mostrarBtnAgregar = true;
-          _this.mostrarForm = false;
-
-          _this.$modal.hide("my_modal");
-
-          _this.accionEliminarCaract({
-            tipo: "micro",
-            data: res.data
-          });
-
-          _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
-        }
-      })["catch"](function (error) {
-        _this.toastr("Error!!", "", "error");
+    eliminar: function eliminar(data) {
+      this.accionEliminarCaract({
+        tipo: "micro",
+        data: data
       });
+      this.mostrarBtnAgregar = true;
+      this.mostrarForm = false;
     },
     cambiarVariable: function cambiarVariable() {
       this.modificarForm = false;
@@ -2150,7 +2128,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
-                          return _vm.$modal.show("my_modal")
+                          return _vm.$modal.show("modal_eliminar_caract")
                         }
                       }
                     },
@@ -2198,79 +2176,15 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "my_modal",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          }
+      _c("ModalEliminar", {
+        attrs: {
+          tipo: "Característica",
+          tipoCaract: "Característica Microscópica",
+          caract: _vm.getCaractMicro,
+          url: "levadura/caract-micro"
         },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Característica Microscópica")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la Característica?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: { click: _vm.eliminar }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
-      )
+        on: { eliminar: _vm.eliminar }
+      })
     ],
     1
   )

@@ -45,11 +45,13 @@ export default [
         name: "__component:checkboxs_publicar_actinomicetos",
         title: "Publicar",
         titleClass: "text-center",
-        dataClass: "text-center"
+        dataClass: "text-center",
+        sortField: "publicar"
     },
     {
         name: "__component:acciones_cepas_actinomicetos",
         title: "Acciones",
-        titleClass: "text-center"
+        titleClass: "text-center",
+        dataClass: "text-center"
     }
 ];

@@ -14,6 +14,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TablaComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/TablaComponent.vue");
 /* harmony import */ var _FormComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/FormComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
 //
 //
 //
@@ -61,6 +68,7 @@ __webpack_require__.r(__webpack_exports__);
     Tabla: _TablaComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     Form: _FormComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre"])),
   mixins: [Object(_mixins_websockets__WEBPACK_IMPORTED_MODULE_0__["default"])("Actividad", "actividades"), Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_1__["default"])("Actividad")],
   methods: {
     cambiarTipo: function cambiarTipo(tipo) {
@@ -97,7 +105,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
 //
 //
 //
@@ -346,47 +353,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.put("/publicidad/".concat(this.idActividad), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          _this.toastr("Editar Actividad", "Actividad editada con exito!!", "success");
+
+          window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoActividad", {
+            id: res.data.id
+          });
+
+          _this.accionActividad({
+            tipo: "editar",
+            data: res.data
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            _this.toastr("Editar Actividad", "Actividad editada con exito!!", "success");
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
 
-            window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
-              id: res.data.id
-            });
-
-            _this.$events.fire("eliminarMiBloqueoActividad", {
-              id: res.data.id
-            });
-
-            _this.accionActividad({
-              tipo: "editar",
-              data: res.data
-            });
-
-            _this.$emit("cambiarVariableFormulario");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -629,27 +641,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tipo: "actividad"
         }
       }).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.bloquearBtnModal = false;
+
+        _this.toastr("Eliminar Actividad", "Actividad eliminada con exito!!", "success");
+
+        _this.accionActividad({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.$modal.hide("modal_eliminar_actividad");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
 
-          _this.toastr("Eliminar Actividad", "Actividad eliminada con exito!!", "success");
-
-          _this.accionActividad({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.actualizarTabla();
-
-          _this.$modal.hide("modal_eliminar_actividad");
+          _this.toastr("Error!!!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!!!", "", "error");
       });
     }
   }),
@@ -685,19 +698,21 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-actividad")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -864,58 +879,63 @@ var render = function() {
                         : _vm._e()
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "position-relative form-group" }, [
-                      _c("label", { attrs: { for: "select" } }, [
-                        _vm._v("Contenido de la Actividad:")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.selectTipo,
-                              expression: "selectTipo"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            name: "select",
-                            id: "conidioforo",
-                            disabled: !_vm.required
-                          },
-                          on: {
-                            change: [
-                              function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.selectTipo = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
+                    _vm.required
+                      ? _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "select" } }, [
+                              _vm._v("Contenido de la Actividad:")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.selectTipo,
+                                    expression: "selectTipo"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { name: "select", id: "conidioforo" },
+                                on: {
+                                  change: [
+                                    function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.selectTipo = $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    },
+                                    _vm.cambiarDatos
+                                  ]
+                                }
                               },
-                              _vm.cambiarDatos
-                            ]
-                          }
-                        },
-                        [
-                          _c("option", { attrs: { value: "link" } }, [
-                            _vm._v("Link")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "texto" } }, [
-                            _vm._v("Texto")
-                          ])
-                        ]
-                      )
-                    ]),
+                              [
+                                _c("option", { attrs: { value: "link" } }, [
+                                  _vm._v("Link")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "texto" } }, [
+                                  _vm._v("Texto")
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e(),
                     _vm._v(" "),
                     _vm.selectTipo == "link"
                       ? [
@@ -1643,7 +1663,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "__component:checkboxs_actividades",
   title: "Publicar",
   titleClass: "text-center",
-  dataClass: "text-center"
+  dataClass: "text-center",
+  sortField: "publicar"
 }, {
   name: "__component:acciones_actividades",
   title: "Acciones",

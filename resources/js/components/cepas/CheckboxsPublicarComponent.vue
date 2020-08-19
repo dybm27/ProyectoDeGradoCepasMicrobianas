@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control">
+    <div class="custom-checkbox custom-control" v-if="getPermisoByNombre('editar-cepa')">
       <input
         type="checkbox"
         :id="rowData.id"
@@ -11,13 +11,19 @@
       />
       <label class="custom-control-label" :for="rowData.id"></label>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
   <script>
+import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
 import WebsocketsCheckCepas from "../../mixins/websocketsCheckCepas";
+import IconoNoAccess from "../IconoNoAccess.vue";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -26,6 +32,9 @@ export default {
     rowIndex: {
       type: Number,
     },
+  },
+  computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
   },
   mixins: [Toastr, WebsocketsCheckCepas],
   created() {

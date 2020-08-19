@@ -239,6 +239,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -268,10 +270,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_2__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_3__["default"], _fullcalendar_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], _fullcalendar_list__WEBPACK_IMPORTED_MODULE_5__["default"], _fullcalendar_google_calendar__WEBPACK_IMPORTED_MODULE_6__["default"] // needed for dateClick
       ],
       calendarWeekends: true,
-      googleCalendarApiKey: "AIzaSyDO3AOsa4-imBxdCAcPSXjr8ui5cEOWlB8",
+      googleCalendarApiKey: "AIzaSyB-_iuLxkORNzEMJzYne-74WjvBiH4gysw",
       eventos: {
         url: "/info-panel/eventos",
         className: "eventos",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -281,13 +284,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       eventSources: [{
         googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
-        color: "#ff0000e3",
-        className: "google"
-      }, {//googleCalendarId: "dumaryekselbm@ufps.edu.co"
+        color: "#ff0000",
+        className: "google",
+        textColor: "black"
+      }, {//se debe chulear la opcion de compartir publicamente el calendario en google calendar para poder mostrarlo
+        //googleCalendarId: "majumba.ufps@gmail.com"
       }, {
         url: "/info-panel/eventos-metodos-bacterias",
         className: "eventos-metodos-bacterias",
-        color: "#16aaff",
+        color: "#38c172",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -297,7 +303,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         url: "/info-panel/eventos-metodos-levaduras",
         className: "eventos-metodos-levaduras",
-        color: "#5EE220",
+        color: "#38c172",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -307,7 +314,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         url: "/info-panel/eventos-metodos-hongos",
         className: "eventos-metodos-hongos",
-        color: "#794c8a",
+        color: "#38c172",
+        textColor: "black",
+        failure: function failure(error) {
+          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          }
+        }
+      }, {
+        url: "/info-panel/eventos-actividades",
+        className: "eventos-actividades",
+        color: "#16aaff",
+        textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -334,7 +353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         fecha: "",
         descripcion: "",
         autor: "",
-        color: "#ff8000",
+        color: "#f7b924",
         tiempo: "",
         id: ""
       },
@@ -411,10 +430,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           html: true,
           container: "body"
         });
-      } else {
-        /**  $(info.el).tooltip({
-          title: info.event.title,
-        }); */
+      } else if (info.event.extendedProps.lugar) {
+        $(info.el).tooltip({
+          html: true,
+          title: "<b>Actividad: </b>".concat(info.event.title)
+        });
+      } else if (!info.event.extendedProps.idAutor) {
+        $(info.el).tooltip({
+          title: info.event.title
+        });
       }
     },
     abrirModal: function abrirModal(tipo) {
@@ -508,51 +532,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         case "editar":
           axios.put("eventos/editar/".concat(this.modal.id), this.modal).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this2.bloquearBtnModal = false;
+            calendarApi.refetchEvents();
+
+            _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
+
+            _this2.$modal.hide("agregar-editar_eliminar-evento");
+          })["catch"](function (error) {
+            if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
 
-              _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
-
-              _this2.$modal.hide("agregar-editar_eliminar-evento");
-            }
-          })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
-
-            if (error.response.status === 422) {
-              _this2.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this2.errors = error.response.data.errors;
+              }
             }
           });
           break;
 
         case "eliminar":
           axios["delete"]("eventos/eliminar/".concat(this.modal.id)).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            _this2.bloquearBtnModal = false;
+            calendarApi.refetchEvents();
+
+            _this2.toastr("Eliminar Evento", "El Evento fue eliminado con exito!!", "success");
+
+            _this2.$modal.hide("agregar-editar_eliminar-evento");
+          })["catch"](function (error) {
+            if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
 
-              _this2.toastr("Eliminar Evento", "El Evento fue eliminado con exito!!", "success");
-
-              _this2.$modal.hide("agregar-editar_eliminar-evento");
-            }
-          })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
-
-            if (error.response.status === 422) {
-              _this2.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this2.errors = error.response.data.errors;
+              }
             }
           });
           break;
       }
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"]), {
+    tiempo: function tiempo() {
+      return this.modal.tiempo;
+    },
+    fecha: function fecha() {
+      return this.modal.fecha;
+    }
+  }),
   created: function created() {
     var _this3 = this;
 
@@ -565,6 +594,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     });
   }
+  /**
+  watch: {
+    fecha() {
+      this.$refs.datepickerFecha.closePopup();
+    },
+    tiempo() {
+      this.$refs.datepickerTiempo.closePopup();
+    },
+  }, */
+
 });
 
 /***/ }),
@@ -1030,6 +1069,7 @@ var render = function() {
                                       { staticClass: "row" },
                                       [
                                         _c("date-picker", {
+                                          ref: "datepickerFecha",
                                           attrs: {
                                             lang: _vm.lang,
                                             type: "datetime",
@@ -1075,6 +1115,7 @@ var render = function() {
                                       { staticClass: "row" },
                                       [
                                         _c("date-picker", {
+                                          ref: "datepickerTiempo",
                                           attrs: {
                                             type: "time",
                                             "value-type": "format",

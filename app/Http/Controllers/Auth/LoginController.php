@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\ImagenLogin;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Socialite;
 
 class LoginController extends Controller
 {
@@ -65,6 +67,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::user()->session_id = null;
+        Auth::user()->lastActivityTime = null;
         Auth::user()->save();
 
         $this->guard()->logout();
@@ -74,5 +77,35 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return $this->loggedOut($request) ?: redirect('/');
+    }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            $findUser = User::where('email', $user->getEmail())->first();
+            if (!is_null($findUser)) {
+                Auth::login($findUser);
+                if (is_null(Auth::User()->session_id)) {
+                    Auth::user()->session_id = Session::getId();
+                    Auth::user()->save();
+                }
+                return redirect('/perfil');
+            } else {
+                return redirect('/')->with('errorLoginGoogle', 'No hay ningun registro con esa cuenta');
+            }
+        } catch (\Throwable $th) {
+            return redirect('/')->with('errorLoginGoogle', 'Error al intentar iniciar sesion con google');
+        }
     }
 }

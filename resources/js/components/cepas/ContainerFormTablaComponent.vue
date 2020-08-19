@@ -8,6 +8,7 @@
       <div class="btn-actions-pane-right actions-icon-btn">
         <template v-if="!formulario">
           <button
+            v-if="getPermisoByNombre('agregar-cepa')"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
             :disabled="tipos==''"
@@ -66,6 +67,7 @@ export default {
   },
   computed: {
     ...vuex.mapState("info_cepas", ["tipos"]),
+    ...vuex.mapGetters(["getPermisoByNombre"]),
   },
 };
 </script>

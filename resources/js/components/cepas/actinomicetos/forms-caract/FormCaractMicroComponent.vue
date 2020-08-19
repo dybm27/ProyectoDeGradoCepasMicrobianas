@@ -12,91 +12,108 @@
                 </div>
               </template>
               <template v-if="getInfoCaractMicroActinomicetos">
-                <label for="tincion" class>Tinción de Gram</label>
-                <div class="input-group mb-3">
-                  <select
-                    name="select"
-                    id="tincion"
-                    class="form-control"
-                    v-model="parametros.tincion"
-                  >
-                    <option
-                      v-for="(f,index) in obtenerTinciones"
-                      :key="index"
-                      :value="f.id"
-                    >{{f.nombre}}</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('tincion')"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="tincion" class>Tinción de Gram</label>
+                    <div class="input-group mb-3">
+                      <select
+                        name="select"
+                        id="tincion"
+                        class="form-control"
+                        v-model="parametros.tincion"
+                      >
+                        <option
+                          v-for="(f,index) in obtenerTinciones"
+                          :key="index"
+                          :value="f.id"
+                        >{{f.nombre}}</option>
+                      </select>
+                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <button
+                          class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                          @click.prevent="showModal('tincion')"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="forma" class>Forma</label>
+                    <div class="input-group mb-3">
+                      <select
+                        name="select"
+                        id="forma"
+                        class="form-control"
+                        v-model="parametros.forma"
+                      >
+                        <option
+                          v-for="(f,index) in obtenerFormas"
+                          :key="index"
+                          :value="f.id"
+                        >{{f.nombre}}</option>
+                      </select>
+                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <button
+                          class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                          @click.prevent="showModal('forma_micro')"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <label for="forma" class>Forma</label>
-                <div class="input-group mb-3">
-                  <select name="select" id="forma" class="form-control" v-model="parametros.forma">
-                    <option
-                      v-for="(f,index) in obtenerFormas"
-                      :key="index"
-                      :value="f.id"
-                    >{{f.nombre}}</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('forma_micro')"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label for="micelio" class>Micelío</label>
+                    <div class="input-group mb-3">
+                      <select
+                        name="select"
+                        id="micelio"
+                        class="form-control"
+                        v-model="parametros.micelio"
+                      >
+                        <option
+                          v-for="(f,index) in obtenerMicelios"
+                          :key="index"
+                          :value="f.id"
+                        >{{f.nombre}}</option>
+                      </select>
+                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <button
+                          class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                          @click.prevent="showModal('micelio')"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <label for="micelio" class>Micelío</label>
-                <div class="input-group mb-3">
-                  <select
-                    name="select"
-                    id="micelio"
-                    class="form-control"
-                    v-model="parametros.micelio"
-                  >
-                    <option
-                      v-for="(f,index) in obtenerMicelios"
-                      :key="index"
-                      :value="f.id"
-                    >{{f.nombre}}</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('micelio')"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <label for="conidioforo" class>Conidióforo</label>
-                <div class="input-group mb-3">
-                  <select
-                    name="select"
-                    id="conidioforo"
-                    class="form-control"
-                    v-model="parametros.conidioforo"
-                  >
-                    <option
-                      v-for="(f,index) in obtenerConidioforos"
-                      :key="index"
-                      :value="f.id"
-                    >{{f.nombre}}</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('conidioforo')"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
+                  <div class="col-md-6">
+                    <label for="conidioforo" class>Conidióforo</label>
+                    <div class="input-group mb-3">
+                      <select
+                        name="select"
+                        id="conidioforo"
+                        class="form-control"
+                        v-model="parametros.conidioforo"
+                      >
+                        <option
+                          v-for="(f,index) in obtenerConidioforos"
+                          :key="index"
+                          :value="f.id"
+                        >{{f.nombre}}</option>
+                      </select>
+                      <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                        <button
+                          class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                          @click.prevent="showModal('conidioforo')"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </template>
@@ -181,44 +198,12 @@
         </div>
       </div>
     </div>
-    <modal name="agregar-caract-info" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar-caract-info')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder=" ..."
-              type="text"
-              :class="['form-control',modal.errors.nombre!=undefined?'is-invalid':'']"
-              v-model="modal.input"
-              required
-            />
-            <em v-if="modal.errors.nombre" class="error invalid-feedback">{{modal.errors.nombre[0]}}</em>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar-caract-info')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="agregarInfo"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalAgregarInfo
+      :url="'info-caract-actinomicetos'"
+      :tipo="tipoModal"
+      :titulo="tituloModal"
+      :tipoForm="'actinomiceto'"
+    />
   </div>
 </template>
 
@@ -228,8 +213,9 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent";
 import Imagenes from "../../ImagenesComponent";
+import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
 export default {
-  components: { CroppieCepas, Imagenes },
+  components: { CroppieCepas, Imagenes, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
   data() {
     return {
@@ -245,12 +231,8 @@ export default {
         imagen2: "",
         imagen3: "",
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: [],
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -260,7 +242,6 @@ export default {
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
-    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto"]),
     evento() {
       this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Característica") {
@@ -274,26 +255,31 @@ export default {
                   "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
                 );
                 window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.errors = [];
+                this.$refs.inputImagen.value = "";
+                this.tituloForm = "Editar Característica";
+                this.nomBtn = "Editar";
+                this.$emit("agregar", res.data);
+                this.toastr(
+                  "Agregar Característica Microscópica",
+                  "Característica Microscópica agregada con exito!!",
+                  "success"
+                );
               }
-              this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.tituloForm = "Editar Característica";
-              this.nomBtn = "Editar";
-              this.$emit("agregar", res.data);
-              this.toastr(
-                "Agregar Característica Microscópica",
-                "Característica Microscópica agregada con exito!!",
-                "success"
-              );
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -307,13 +293,6 @@ export default {
             this.parametros
           )
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            }
             this.bloquearBtn = false;
             this.errors = [];
             this.$emit("editar", res.data);
@@ -324,72 +303,33 @@ export default {
             );
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
     showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
       if (tipo === "forma_micro") {
-        this.modal.titulo = "Agregar Nueva Forma";
+        this.tituloModal = "Agregar Nueva Forma";
       } else if (tipo === "tincion") {
-        this.modal.titulo = "Agregar Nueva Tincion";
+        this.tituloModal = "Agregar Nueva Tincion";
       } else if (tipo === "micelio") {
-        this.modal.titulo = "Agregar Nuevo Micelio";
+        this.tituloModal = "Agregar Nuevo Micelio";
       } else {
-        this.modal.titulo = "Agregar Nuevo Conodioforo";
+        this.tituloModal = "Agregar Nuevo Conodioforo";
       }
-
-      this.$modal.show("agregar-caract-info");
-    },
-    agregarInfo() {
-      if (this.modal.input === "") {
-        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
-      } else {
-        this.bloquearBtnModal = true;
-        let parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-        };
-        axios
-          .post("/info-caract-actinomicetos/agregar", parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.bloquearBtnModal = false;
-              this.accionAgregarTipoCaractActinomiceto({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$modal.hide("agregar-caract-info");
-              this.toastr(
-                "Agregar Informacion",
-                `${this.modal.tipo} agregado/a con exito`,
-                "success"
-              );
-            }
-          })
-          .catch((error) => {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.modal.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
-          });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     llenarInfo() {
       this.imagenes = [];
@@ -431,6 +371,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]),
     required() {
       if (this.tituloForm === "Agregar Característica") {

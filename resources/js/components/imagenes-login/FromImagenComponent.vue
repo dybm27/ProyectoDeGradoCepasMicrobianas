@@ -8,7 +8,7 @@
             <form @submit.prevent="evento">
               <template v-if="errors!=''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">{{item}}</p>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -109,34 +109,32 @@ export default {
         axios
           .put(`/login/imagen/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            if (res.data.mostrar) {
+              res.data.mostrar = 1;
+            } else {
+              res.data.mostrar = 0;
+            }
+            this.accionImagenLogin({ tipo: "editar", data: res.data });
+            this.$emit("mostrarFrom");
+            this.toastr(
+              "Editar Imagen",
+              "Imagen editado con exito!!",
+              "success"
+            );
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              if (res.data.mostrar) {
-                res.data.mostrar = 1;
-              } else {
-                res.data.mostrar = 0;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
               }
-              this.accionImagenLogin({ tipo: "editar", data: res.data });
-              this.$emit("mostrarFrom");
-              this.toastr(
-                "Editar Imagen",
-                "Imagen editado con exito!!",
-                "success"
-              );
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         let form = new FormData();
@@ -172,11 +170,15 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       }
     },

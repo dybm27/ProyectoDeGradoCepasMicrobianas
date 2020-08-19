@@ -6,7 +6,7 @@ use App\Actividad;
 use App\Events\ActividadEvent;
 use App\Events\NoticiaEvent;
 use App\Events\NovedadEvent;
-use App\Events\Prueba;
+use App\Events\RefrescarCalendarioEvent;
 use App\Noticia;
 use App\Novedad;
 use Illuminate\Http\Request;
@@ -218,10 +218,10 @@ class PublicidadController extends Controller
     {
         switch ($tipo) {
             case 'noticia':
-                //event(new Prueba('hola mores'));
                 broadcast(new NoticiaEvent($publicidad, $tipoAccion))->toOthers();
                 break;
             case 'actividad':
+                broadcast(new RefrescarCalendarioEvent())->toOthers();
                 broadcast(new ActividadEvent($publicidad, $tipoAccion))->toOthers();
                 break;
             case 'novedad':

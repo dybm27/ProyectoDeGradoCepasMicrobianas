@@ -8,6 +8,7 @@
       <div class="btn-actions-pane-right actions-icon-btn">
         <template v-if="!formulario">
           <button
+            v-if="getPermisoByNombre('agregar-equipamiento')"
             @click="abrirFormulario(0)"
             class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm"
           >Agregar</button>
@@ -44,16 +45,19 @@ import Form from "./FormComponent.vue";
 export default {
   components: {
     Tabla,
-    Form
+    Form,
   },
   mixins: [
     websocketsMixin("Equipamiento", "equipamientos"),
-    abrirCerrarFormulario("Equipamiento")
+    abrirCerrarFormulario("Equipamiento"),
   ],
+  computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
+  },
   methods: {
     cambiarTipo(tipo) {
       this.$emit("cambiarTipo", tipo);
-    }
-  }
+    },
+  },
 };
 </script>

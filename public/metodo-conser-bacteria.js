@@ -108,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
 /* harmony import */ var _CroppieComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../CroppieComponent */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -300,39 +301,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -343,7 +312,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   props: ["idMetodo"],
   components: {
     DatePicker: vue2_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Croppie: _CroppieComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
+    Croppie: _CroppieComponent__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
     return {
@@ -358,12 +328,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         recuento_microgota: "",
         imagen: ""
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: []
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       imagenMiniatura: "",
       nomBtn: "",
@@ -401,14 +367,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.$emit("cambiarVariable");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.bloquearBtn = false;
@@ -419,30 +389,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       } else {
         axios.put("/cepas/bacteria/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+
+          _this.accionEditarCaract({
+            tipo: "metodo",
+            data: res.data
+          });
+
+          _this.toastr("Editar Método", "Método editado con exito!!", "success");
+
+          _this.$emit("cambiarVariable");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
 
-            _this.accionEditarCaract({
-              tipo: "metodo",
-              data: res.data
-            });
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.toastr("Editar Método", "Método editado con exito!!", "success");
-
-            _this.$emit("cambiarVariable");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -460,61 +431,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.imagenMiniatura = this.info.imagenPublica;
     },
     showModal: function showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
 
-      if (tipo === "metodo_conser") {
-        this.modal.titulo = "Agregar Nueva Tipo de Método";
+      if (tipo === "tipo_metodo") {
+        this.tituloModal = "Agregar Nueva Tipo de Método";
       } else {
-        //tipo_agar
-        this.modal.titulo = "Agregar Nuevo Tipo de Agar";
+        this.tituloModal = "Agregar Nuevo Tipo de Agar";
       }
 
-      this.$modal.show("agregar-caract-info");
-    },
-    agregarInfo: function agregarInfo() {
-      var _this2 = this;
-
-      if (this.modal.input === "") {
-        this.modal.errors = {
-          nombre: {
-            0: "Favor llenar este campo"
-          }
-        };
-      } else {
-        this.bloquearBtnModal = true;
-        var parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input
-        };
-        axios.post("/info-caract-bacterias/agregar", parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: _this2.modal.tipo
-            });
-
-            _this2.$modal.hide("agregar-caract-info");
-
-            _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
-          }
-        })["catch"](function (error) {
-          _this2.bloquearBtnModal = false;
-
-          if (error.response.status === 422) {
-            _this2.errors = [];
-            _this2.modal.errors = error.response.data.errors;
-          }
-
-          _this2.toastr("Error!!", "", "error");
-        });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     verificarSelects: function verificarSelects() {
       if (this.obtenerMetodos.length > 0) {
@@ -530,7 +455,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getMetodoConserById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getMetodoConserById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
     mostrarAgar: function mostrarAgar() {
       if (this.parametros.tipo_metodo === 4) {
         return true;
@@ -765,7 +690,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -777,7 +701,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       url: "/info-panel/cepa/bacteria/metodos-conser/",
-      refrescarTabla: false,
       idMetodoEliminar: "",
       fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
       sortOrder: [{
@@ -799,32 +722,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios["delete"]("/cepas/bacteria/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
         _this.bloquearBtnModal = false;
 
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        _this.accionEliminarCaract({
+          tipo: "metodo",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.toastr("Eliminar Metodo", "Metodo eliminada con exito!!", "success");
+
+        _this.$modal.hide("my_modal_eliminar_metodo");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          _this.refrescarTabla = true;
+          _this.bloquearBtnModal = false;
 
-          _this.accionEliminarCaract({
-            tipo: "metodo",
-            data: res.data
-          });
-
-          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-
-          _this.$modal.hide("my_modal_eliminar_metodo");
+          _this.toastr("Error!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!", "", "error");
       });
     },
     beforeOpen: function beforeOpen(data) {
       this.idMetodoEliminar = data.params.id;
+    },
+    actualizarTabla: function actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("cepa", ["getMetodoConser"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("cepa", ["getMetodoConser"]), {
+    mostrarTabla: function mostrarTabla() {
+      if (this.getMetodoConser != "" && this.getMetodoConser != null) {
+        return true;
+      }
+
+      return false;
+    }
+  }),
   created: function created() {
     if (this.$route.params.cepaBacteriaId) {
       this.url += this.$route.params.cepaBacteriaId;
@@ -1009,22 +948,34 @@ var render = function() {
                                 0
                               ),
                               _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("metodo_conser")
-                                      }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
+                              _vm.getPermisoByNombre("agregar-otra")
+                                ? _c(
+                                    "div",
+                                    { staticClass: "input-group-append" },
+                                    [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.showModal(
+                                                "tipo_metodo"
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-plus"
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
                             ])
                           ]
                         : _vm._e(),
@@ -1083,22 +1034,32 @@ var render = function() {
                                 0
                               ),
                               _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("tipo_agar")
-                                      }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
+                              _vm.getPermisoByNombre("agregar-otra")
+                                ? _c(
+                                    "div",
+                                    { staticClass: "input-group-append" },
+                                    [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.showModal("tipo_agar")
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-plus"
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
                             ])
                           ]
                         : _vm._e(),
@@ -1333,115 +1294,14 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "agregar-caract-info",
-            classes: "my_modal",
-            width: 450,
-            height: 450
-          }
-        },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v(_vm._s(_vm.modal.titulo))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.input,
-                      expression: "modal.input"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    name: "nombre",
-                    id: "nombre",
-                    placeholder: "...",
-                    type: "text",
-                    required: ""
-                  },
-                  domProps: { value: _vm.modal.input },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.modal, "input", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.modal.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(_vm._s(_vm.modal.errors.nombre[0]))
-                    ])
-                  : _vm._e()
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.agregarInfo }
-                },
-                [_vm._v("Agregar")]
-              )
-            ])
-          ])
-        ]
-      )
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-bacterias",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "bacteria"
+        }
+      })
     ],
     1
   )
@@ -1597,21 +1457,20 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.getMetodoConser != ""
+      _vm.mostrarTabla
         ? [
             _c(
               "div",
               { staticClass: "card-body mt-3 ml-2 mr-2" },
               [
                 _c("MyVuetable", {
+                  ref: "tabla",
                   attrs: {
                     "api-url": _vm.url,
                     fields: _vm.fields,
                     "sort-order": _vm.sortOrder,
-                    refrescarTabla: _vm.refrescarTabla,
                     nameGet: "metodos-bacterias"
-                  },
-                  on: { cambiarVariable: _vm.cambiarVariable }
+                  }
                 })
               ],
               1
@@ -2050,117 +1909,6 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }]);
-
-/***/ }),
-
-/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
-/*!**********************************************************!*\
-  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
-  \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var obtenerImagenCroopieCepasMixin = {
-  data: function data() {
-    return {
-      imagenMiniatura: "",
-      imagenError: ""
-    };
-  },
-  methods: {
-    cambiarValorImagen: function cambiarValorImagen(valor) {
-      if (valor) {
-        this.parametros.imagen = valor;
-      } else {
-        if (!this.required) {
-          this.parametros.imagen = this.info.imagen;
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.$refs.inputImagen.value = "";
-        } else {
-          this.parametros.imagen = "";
-        }
-      }
-    },
-    obtenerImagen: function obtenerImagen(e) {
-      var file = e.target.files[0];
-      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-
-      if (file) {
-        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
-          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-          this.$refs.inputImagen.value = "";
-
-          if (this.info) {
-            this.imagenMiniatura = this.info.imagenPublica;
-            this.parametros.imagen = this.info.imagen;
-          } else {
-            this.imagenMiniatura = "";
-            this.parametros.imagen = "";
-          }
-        } else {
-          this.imagenError = "";
-          this.cargarImagen(file);
-        }
-      } else {
-        if (this.info) {
-          this.imagenMiniatura = this.info.imagenPublica;
-          this.parametros.imagen = this.info.imagen;
-        } else {
-          this.parametros.imagen = "";
-          this.imagenMiniatura = "";
-        }
-      }
-    },
-    cargarImagen: function cargarImagen(file) {
-      var _this = this;
-
-      var reader = new Image();
-
-      reader.onload = function (e) {
-        _this.imagenMiniatura = reader.src;
-      };
-
-      reader.src = URL.createObjectURL(file);
-    }
-  },
-  computed: {
-    mostraImagen: function mostraImagen() {
-      return this.imagenMiniatura;
-    },
-    mostrarBtnCroppie: function mostrarBtnCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura != this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return true;
-      }
-    },
-    validarCroppie: function validarCroppie() {
-      if (this.info) {
-        if (this.imagenMiniatura == this.info.imagenPublica) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (!this.parametros.imagen) {
-        return true;
-      }
-
-      return false;
-    }
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
 
 /***/ })
 

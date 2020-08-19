@@ -18,26 +18,22 @@
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombre===true? 'is-invalid':'']"
+                  :class="['form-control', validarNombre? 'is-invalid':'']"
                   v-model="parametros.nombre"
                   required
                 />
                 <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
               </div>
-              <template v-if="getTipoUser">
+              <template v-if="getRoles">
                 <div class="osition-relative form-group">
-                  <label for="tipo_user" class>Tipo de Usuario</label>
+                  <label for="rol" class>Rol de Usuario</label>
                   <select
                     name="select"
-                    id="tipo_user"
+                    id="rol"
                     class="form-control"
-                    v-model.number="parametros.tipo_user"
+                    v-model.number="parametros.rol"
                   >
-                    <option
-                      v-for="(tu,index) in getTipoUser"
-                      :key="index"
-                      :value="tu.id"
-                    >{{tu.nombre}}</option>
+                    <option v-for="(tu,index) in getRoles" :key="index" :value="tu.id">{{tu.nombre}}</option>
                   </select>
                 </div>
               </template>
@@ -62,10 +58,9 @@
                   id="email"
                   placeholder="..."
                   type="email"
-                  :class="['form-control', validarEmail===true? 'is-invalid':'']"
+                  :class="['form-control', validarEmail? 'is-invalid':'']"
                   v-model="parametros.email"
                   :required="required"
-                  :disabled="!required"
                 />
                 <em v-if="validarEmail" class="error invalid-feedback">{{mensajeErrorEmail}}</em>
               </div>
@@ -75,12 +70,12 @@
                   name="pass"
                   id="pass"
                   placeholder="..."
-                  :type="showPass==true?'text':'password'"
-                  :class="['form-control',validarContraseña===true? 'is-invalid':'']"
+                  :type="showPass?'text':'password'"
+                  :class="['form-control',validarContraseña? 'is-invalid':'']"
                   v-model="parametros.pass"
                   :required="required"
                 />
-                <div class="input-group-append">
+                <div class="input-group-append verContraseña">
                   <span class="input-group-text" @click="showPass=!showPass">
                     <i class="fas fa-eye" v-if="showPass"></i>
                     <i class="fas fa-eye-slash" v-else></i>
@@ -95,11 +90,11 @@
                   id="pass1"
                   placeholder="..."
                   :type="showPass1==true?'text':'password'"
-                  :class="['form-control', validarContraseñas===true? 'is-invalid':'']"
+                  :class="['form-control', validarContraseñas? 'is-invalid':'']"
                   v-model="parametros.pass1"
                   :required="required"
                 />
-                <div class="input-group-append">
+                <div class="input-group-append verContraseña">
                   <span class="input-group-text">
                     <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
                     <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
@@ -178,7 +173,7 @@ export default {
       info: "",
       parametros: {
         nombre: "",
-        tipo_user: 2,
+        rol: 2,
         email: "",
         pass: "",
         pass1: "",
@@ -243,60 +238,61 @@ export default {
             }
           })
           .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else {
+              this.bloquearBtn = false;
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-            this.toastr("Error!!", "", "error");
           });
       } else {
         axios
           .put(`/usuario/editar/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            if (this.auth.id === res.data.id) {
+              this.accionModificarAuth({ data: res.data });
+            }
+            this.accionUsuario({ tipo: "editar", data: res.data });
+            this.toastr(
+              "Editar Usuario",
+              "Usuario editado con exito!!",
+              "success"
+            );
+            window.Echo.private("desbloquearBtnsUsuario").whisper(
+              "desbloquearBtnsUsuario",
+              {
+                id: res.data.id,
+              }
+            );
+            this.$events.fire("eliminarMiBloqueoUsuario", {
+              id: res.data.id,
+            });
+            this.$emit("cambiarVariableFormulario");
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              if (this.auth.id === res.data.id) {
-                this.accionModificarAuth({ data: res.data });
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
               }
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.toastr(
-                "Editar Usuario",
-                "Usuario editado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariable", "tabla");
-              window.Echo.private("desbloquearBtnsUsuario").whisper(
-                "desbloquearBtnsUsuario",
-                {
-                  id: res.data.id,
-                }
-              );
-              this.$events.fire("eliminarMiBloqueoUsuario", {
-                id: res.data.id,
-              });
-              this.$emit("cambiarVariableFormulario");
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
     llenarInfo() {
       this.parametros.nombre = this.info.name;
-      this.parametros.tipo_user = this.info.tipouser_id;
+      this.parametros.rol = this.info.rol_id;
       this.parametros.email = this.info.email;
       this.parametros.pass = this.info.password;
       this.parametros.imagen = this.info.avatar;
@@ -334,7 +330,7 @@ export default {
   computed: {
     ...vuex.mapState("usuarios", ["usuarios"]),
     ...vuex.mapGetters("usuarios", [
-      "getTipoUser",
+      "getRoles",
       "getUsuarioById",
       "getUsuarioByEmail",
     ]),
@@ -374,17 +370,18 @@ export default {
     },
     validarEmail() {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (this.required) {
-        if (this.parametros.email) {
-          if (!re.test(this.parametros.email)) {
-            this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-            return true;
-          } else {
-            if (this.getUsuarioByEmail(this.parametros.email)) {
+      if (this.parametros.email) {
+        if (!re.test(this.parametros.email)) {
+          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+          return true;
+        } else {
+          if (this.getUsuarioByEmail(this.parametros.email)) {
+            if (
+              this.getUsuarioByEmail(this.parametros.email).id != this.info.id
+            ) {
               this.mensajeErrorEmail = "El correo electrónico ya Existe";
               return true;
             }
-            return false;
           }
         }
       }

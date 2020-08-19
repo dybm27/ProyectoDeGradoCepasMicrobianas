@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row" v-if="getPermisoByNombres(['editar-noticia','eliminar-noticia'])">
       <div class="col-md-12 col-lg-12">
         <button
+          v-if="getPermisoByNombre('editar-noticia')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
           @click="editar(rowData)"
@@ -12,22 +13,28 @@
         </button>
 
         <button
+          v-if="getPermisoByNombre('eliminar-noticia')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
-          @click="showModal(rowData)"
+          @click="eliminar(rowData)"
           :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
       </div>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
   <script>
-import websocketsAccionesMixin from "../../../../mixins/websocketsAcciones";
 import vuex from "vuex";
+import IconoNoAccess from "../../../IconoNoAccess.vue";
+import websocketsAccionesMixin from "../../../../mixins/websocketsAcciones";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -39,7 +46,8 @@ export default {
   },
   mixins: [websocketsAccionesMixin("noticia", "Noticia", "noticias")],
   computed: {
-    ...vuex.mapState(["auth"])
+    ...vuex.mapState(["auth"]),
+    ...vuex.mapGetters(["getPermisoByNombre", "getPermisoByNombres"]),
   }
 };
 </script>

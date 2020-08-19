@@ -2,20 +2,23 @@
   <div class="app-sidebar sidebar-shadow">
     <div class="scrollbar-sidebar">
       <div class="app-sidebar__inner">
-        <ul class="vertical-nav-menu">
+        <ul class="vertical-nav-menu-majumba">
           <li class="app-sidebar__heading">Administrar Informacion</li>
           <li>
             <router-link :to="{name:'perfil'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-user"></i>Perfil
             </router-link>
           </li>
-          <li>
-            <a :class="classActive">
+          <li
+            :class="mostrarMenuCepas?'mm-active':''"
+            v-if="getPermisoByNombres(['agregar-cepa','ver-cepa','editar-cepa','eliminar-cepa','caract-cepa'])"
+          >
+            <a :class="classActive" @click="mostrarMenuCepas=!mostrarMenuCepas">
               <i class="metismenu-icon pe-7s-science"></i>
               Cepas
               <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
             </a>
-            <ul>
+            <ul :class="['mm-collapse',mostrarMenuCepas?'mm-show':'']">
               <li>
                 <router-link :to="{name:'cepas'}" active-class="mm-active">
                   <i class="metismenu-icon"></i>Todas
@@ -45,7 +48,7 @@
               </li>
             </ul>
           </li>
-          <li>
+          <li v-if="getPermisoByNombres(['agregar-otra','editar-otra','eliminar-otra'])">
             <router-link :to="{name:'otra-info-cepas'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-diskette"></i>Otra Información
             </router-link>
@@ -55,39 +58,76 @@
               <i class="metismenu-icon pe-7s-date"></i>Calendario
             </router-link>
           </li>
-          <li>
+          <li v-if="getPermisoByNombres(['agregar-usuario','editar-usuario','eliminar-usuario'])">
             <router-link :to="{name:'tabla-usuarios'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-users"></i>Usuarios
             </router-link>
           </li>
-          <li>
+          <li v-if="getPermisoByNombres(['editar-imglogin'])">
             <router-link :to="{name:'imagenes-login'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-photo"></i>Imagenes Login
             </router-link>
           </li>
           <li class="app-sidebar__heading">Sitio Web Público</li>
-          <li>
+          <li v-if="getPermisoByNombres(['editar-mision'])">
             <router-link :to="{name:'mision'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
             </router-link>
           </li>
-          <li>
+          <li v-else-if="getPermisoByNombres(['editar-vision'])">
+            <router-link :to="{name:'vision'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
+            </router-link>
+          </li>
+          <li v-else-if="getPermisoByNombres(['editar-objetivos'])">
+            <router-link :to="{name:'objetivos'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-notebook"></i>Quienes Somos
+            </router-link>
+          </li>
+          <li
+            v-if="getPermisoByNombres(['agregar-investigador','editar-investigador','eliminar-investigador'])"
+          >
             <router-link :to="{name:'investigadores'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-id"></i>Investigadores
             </router-link>
           </li>
-          <li>
+          <li
+            v-if="getPermisoByNombres(['agregar-proyecto','editar-proyecto','eliminar-proyecto'])"
+          >
             <router-link :to="{name:'proyectos'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-paperclip"></i>Documentos
             </router-link>
           </li>
-          <li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-publicacion','editar-publicacion','eliminar-publicacion'])"
+          >
+            <router-link :to="{name:'publicaciones'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-paperclip"></i>Documentos
+            </router-link>
+          </li>
+          <li
+            v-if="getPermisoByNombres(['agregar-equipamiento','editar-equipamiento','eliminar-equipamiento'])"
+          >
             <router-link :to="{name:'equipamientos'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-portfolio"></i>Equipamientos
             </router-link>
           </li>
-          <li>
+          <li v-if="getPermisoByNombres(['agregar-noticia','editar-noticia','eliminar-noticia'])">
             <router-link :to="{name:'noticias'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
+            </router-link>
+          </li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-actividad','editar-actividad','eliminar-actividad'])"
+          >
+            <router-link :to="{name:'actividades'}" active-class="mm-active">
+              <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
+            </router-link>
+          </li>
+          <li
+            v-else-if="getPermisoByNombres(['agregar-novedad','editar-novedad','eliminar-novedad'])"
+          >
+            <router-link :to="{name:'novedades'}" active-class="mm-active">
               <i class="metismenu-icon pe-7s-news-paper"></i>Publicidad
             </router-link>
           </li>
@@ -104,8 +144,14 @@
 </template>
 
 <script>
+import vuex from "vuex";
 export default {
   props: ["ruta"],
+  data() {
+    return {
+      mostrarMenuCepas: false,
+    };
+  },
   methods: {
     logout() {
       axios.post("/logout").then((res) => {
@@ -114,6 +160,8 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapState(["permisos"]),
+    ...vuex.mapGetters(["getPermisoByNombres"]),
     classActive() {
       if (
         this.ruta.includes("cepas") ||

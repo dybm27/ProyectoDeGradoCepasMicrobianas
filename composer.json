@@ -13,6 +13,7 @@
         "beyondcode/laravel-websockets": "^1.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^1.1",
         "laraveles/spanish": "^1.4",

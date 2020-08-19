@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -37,9 +36,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function tipouser()
+    public function rol()
     {
-        return $this->belongsTo(TipoUser::class);
+        return $this->belongsTo(Rol::class);
     }
 
     public function hasRole($role)

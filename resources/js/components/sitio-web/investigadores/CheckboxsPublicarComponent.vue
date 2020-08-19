@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control">
+    <div class="custom-checkbox custom-control" v-if="getPermisoByNombre('editar-investigador')">
       <input
         type="checkbox"
         :id="rowData.id"
@@ -11,6 +11,9 @@
       />
       <label class="custom-control-label" :for="rowData.id"></label>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,9 @@
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import websocketsCheckMixin from "../../../mixins/websocketsCheck";
+import IconoNoAccess from "../../IconoNoAccess.vue";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -33,11 +38,13 @@ export default {
   },
   mixins: [websocketsCheckMixin("Investigador", "investigadores"), Toastr],
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     computedDisabled() {
       return this.disabled;
     },
   },
   methods: {
+    ...vuex.mapActions("investigadores", ["accionInvestigador"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -45,17 +52,17 @@ export default {
           publicar: !this.checkPublicar,
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
+          this.accionInvestigador({ tipo: "editar", data: res.data });
+          if (res.data.publicar) {
+            this.toastr("Publicar", "Publicado con Exito!!");
+          }
+          this.disabled = false;
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
-          } else {
-            if (res.data.publicar) {
-              this.toastr("Publicar", "Publicado con Exito!!");
-            }
-            this.disabled = false;
           }
         });
     },

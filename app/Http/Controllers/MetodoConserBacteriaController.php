@@ -102,13 +102,13 @@ class MetodoConserBacteriaController extends Controller
         $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
-
+    
     public function crearSeguimiento($accion)
     {
         $seguimiento = new Seguimiento();
         $seguimiento->nombre_responsable = Auth::user()->name;
         $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->rol = Auth::user()->rol->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actividad;
 use App\Evento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,9 +12,9 @@ class InfoPanelEventosController extends Controller
 {
     public function eventos(Request $request)
     {
-     //   $autor = Auth::user();
+        $autor = Auth::user();
         $eventos = Evento::join('users', 'users.id', '=', "eventos.autor")
-         //   ->where('eventos.autor', '=', $autor->id)
+            ->where('eventos.autor', '=', $autor->id)
             ->where('eventos.fecha', '>=', $request->start)
             ->where('eventos.fecha', '<=', $request->end)->select(
                 'eventos.id',
@@ -117,5 +118,17 @@ class InfoPanelEventosController extends Controller
             ->get();
 
         return $eventosLevaduras;
+    }
+    public function eventosActividades(Request $request)
+    {
+        $eventosActividades = Actividad::select(
+            'titulo As title',
+            'lugar',
+            'fecha As start'
+        )->where('fecha', '>=', $request->start)
+            ->where('fecha', '<=', $request->end)
+            ->get();
+
+        return $eventosActividades;
     }
 }

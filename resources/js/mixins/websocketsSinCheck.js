@@ -1,6 +1,6 @@
 const websocketsMixin = (tipoM, tipoP) => ({
     data() {
-        return { bloqueos: [], miBloqueo: [] };
+        return { bloqueos: [], miBloqueo: null };
     },
     methods: {
         // Bloquear Btns
@@ -80,7 +80,7 @@ const websocketsMixin = (tipoM, tipoP) => ({
             "recibirBtns" + tipoM,
             e => {
                 if (this.bloqueos.length == 0) {
-                    this.bloquearBtnsTabla(e.bloqueos[0]);
+                    this.bloquearBtnsTabla(e.miBloqueo);
                 }
             }
         );

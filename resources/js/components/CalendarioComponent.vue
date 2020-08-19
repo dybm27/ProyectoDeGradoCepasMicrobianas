@@ -109,6 +109,7 @@
                     </div>
                     <div class="row">
                       <date-picker
+                        ref="datepickerFecha"
                         :lang="lang"
                         v-model="modal.fecha"
                         type="datetime"
@@ -127,6 +128,7 @@
                     </div>
                     <div class="row">
                       <date-picker
+                        ref="datepickerTiempo"
                         v-model="modal.tiempo"
                         type="time"
                         value-type="format"
@@ -244,6 +246,7 @@ export default {
       eventos: {
         url: "/info-panel/eventos",
         className: "eventos",
+        textColor: "black",
         failure: function (error) {
           if (error.xhr.responseURL === process.env.MIX_LOGIN) {
             localStorage.setItem(
@@ -257,16 +260,19 @@ export default {
       eventSources: [
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
-          color: "#ff0000e3",
+          color: "#ff0000",
           className: "google",
+          textColor: "black",
         },
         {
-          //googleCalendarId: "dumaryekselbm@ufps.edu.co"
+          //se debe chulear la opcion de compartir publicamente el calendario en google calendar para poder mostrarlo
+          //googleCalendarId: "majumba.ufps@gmail.com"
         },
         {
           url: "/info-panel/eventos-metodos-bacterias",
           className: "eventos-metodos-bacterias",
-          color: "#16aaff",
+          color: "#38c172",
+          textColor: "black",
           failure: function (error) {
             if (error.xhr.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(
@@ -280,7 +286,8 @@ export default {
         {
           url: "/info-panel/eventos-metodos-levaduras",
           className: "eventos-metodos-levaduras",
-          color: "#5EE220",
+          color: "#38c172",
+          textColor: "black",
           failure: function (error) {
             if (error.xhr.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(
@@ -294,7 +301,23 @@ export default {
         {
           url: "/info-panel/eventos-metodos-hongos",
           className: "eventos-metodos-hongos",
-          color: "#794c8a",
+          color: "#38c172",
+          textColor: "black",
+          failure: function (error) {
+            if (error.xhr.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            }
+          },
+        },
+        {
+          url: "/info-panel/eventos-actividades",
+          className: "eventos-actividades",
+          color: "#16aaff",
+          textColor: "black",
           failure: function (error) {
             if (error.xhr.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(
@@ -323,7 +346,7 @@ export default {
         fecha: "",
         descripcion: "",
         autor: "",
-        color: "#ff8000",
+        color: "#f7b924",
         tiempo: "",
         id: "",
       },
@@ -401,10 +424,15 @@ export default {
           html: true,
           container: "body",
         });
-      } else {
-        /**  $(info.el).tooltip({
+      } else if (info.event.extendedProps.lugar) {
+        $(info.el).tooltip({
+          html: true,
+          title: `<b>Actividad: </b>${info.event.title}`,
+        });
+      } else if (!info.event.extendedProps.idAutor) {
+        $(info.el).tooltip({
           title: info.event.title,
-        }); */
+        });
       }
     },
     abrirModal(tipo) {
@@ -499,27 +527,23 @@ export default {
           axios
             .put(`eventos/editar/${this.modal.id}`, this.modal)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
+              this.toastr(
+                "Editar Evento",
+                "El Evento fue editado con exito!!",
+                "success"
+              );
+              this.$modal.hide("agregar-editar_eliminar-evento");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                calendarApi.refetchEvents();
-                this.toastr(
-                  "Editar Evento",
-                  "El Evento fue editado con exito!!",
-                  "success"
-                );
-                this.$modal.hide("agregar-editar_eliminar-evento");
-              }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors;
+                }
               }
             });
           break;
@@ -527,27 +551,23 @@ export default {
           axios
             .delete(`eventos/eliminar/${this.modal.id}`)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
+              this.toastr(
+                "Eliminar Evento",
+                "El Evento fue eliminado con exito!!",
+                "success"
+              );
+              this.$modal.hide("agregar-editar_eliminar-evento");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                calendarApi.refetchEvents();
-                this.toastr(
-                  "Eliminar Evento",
-                  "El Evento fue eliminado con exito!!",
-                  "success"
-                );
-                this.$modal.hide("agregar-editar_eliminar-evento");
-              }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors;
+                }
               }
             });
           break;
@@ -556,6 +576,12 @@ export default {
   },
   computed: {
     ...vuex.mapState(["auth"]),
+    tiempo() {
+      return this.modal.tiempo;
+    },
+    fecha() {
+      return this.modal.fecha;
+    },
   },
   created() {
     this.$emit("rutaSider", window.location.pathname);
@@ -569,5 +595,14 @@ export default {
       }
     );
   },
+  /**
+  watch: {
+    fecha() {
+      this.$refs.datepickerFecha.closePopup();
+    },
+    tiempo() {
+      this.$refs.datepickerTiempo.closePopup();
+    },
+  }, */
 };
 </script>

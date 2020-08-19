@@ -1,8 +1,8 @@
 require("./bootstrap");
 window.Vue = require("vue");
 
-import router from "./router/index";
 import store from "./store/index";
+import router from "./router/index";
 import VueEvents from "vue-events";
 import VueToastr from "vue-toastr";
 import VModal from "vue-js-modal";
@@ -28,35 +28,43 @@ Vue.component(
 );
 Vue.component(
     "acciones_cepas_bacterias",
-    require("./components/cepas/bacterias/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/bacterias/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_bacterias",
-    require("./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/bacterias/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_levaduras",
-    require("./components/cepas/levaduras/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/levaduras/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_levaduras",
-    require("./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/levaduras/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_hongos",
-    require("./components/cepas/hongos/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/hongos/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_hongos",
-    require("./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "acciones_cepas_actinomicetos",
-    require("./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue").default
+    require("./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue")
+        .default
 );
 Vue.component(
     "checkboxs_publicar_actinomicetos",
-    require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue").default
+    require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")
+        .default
 );
 Vue.component(
     "my-detail-row-h-l-a",
@@ -272,6 +280,11 @@ Vue.component(
     require("./components/gestionar_usuarios/usuarios/AccionesComponent.vue")
         .default
 );
+Vue.component(
+    "acciones_tabla_roles",
+    require("./components/gestionar_usuarios/roles/AccionesComponent.vue")
+        .default
+);
 // --------------- acciones investigadores -------------------
 Vue.component(
     "acciones_investigadores",
@@ -291,6 +304,11 @@ Vue.component(
 );
 // --------------- acciones documentos -------------------
 Vue.component(
+    "descargar_documento",
+    require("./components/sitio-web/documentos/DescargarComponent.vue")
+        .default
+);
+Vue.component(
     "acciones_proyectos",
     require("./components/sitio-web/documentos/proyectos/AccionesComponent.vue")
         .default
@@ -301,11 +319,6 @@ Vue.component(
         .default
 );
 Vue.component(
-    "descargar_proyecto",
-    require("./components/sitio-web/documentos/proyectos/DescargarComponent.vue")
-        .default
-);
-Vue.component(
     "acciones_publicaciones",
     require("./components/sitio-web/documentos/publicaciones/AccionesComponent.vue")
         .default
@@ -313,11 +326,6 @@ Vue.component(
 Vue.component(
     "checkboxs_publicaciones",
     require("./components/sitio-web/documentos/publicaciones/CheckboxsPublicarComponent.vue")
-        .default
-);
-Vue.component(
-    "descargar_publicacion",
-    require("./components/sitio-web/documentos/publicaciones/DescargarComponent.vue")
         .default
 );
 // --------------- acciones publicidad -------------------
@@ -359,6 +367,6 @@ Vue.component(
 
 const app = new Vue({
     el: "#app",
-    router,
-    store
+    store,
+    router
 });

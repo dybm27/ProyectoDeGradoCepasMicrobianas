@@ -88,10 +88,26 @@ export default {
       } else {
         this.tipo2 = "";
       }
-    },
+    } /*
     eliminarImagenesStorage() {
-      axios.get("/editor/upload");
-    },
+      axios
+        .get("/editor/upload")
+        .then((res) => {
+          console.log(res.data);
+          if (res.request.responseURL === process.env.MIX_LOGIN) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
+            window.location.href = "/";
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          }
+        });
+    },*/,
   },
   computed: {
     ...vuex.mapState(["auth"]),
@@ -123,9 +139,7 @@ export default {
       this.$events.fire("actualizartablaNoticia");
     });
     this.obtenerPublicidad();
-    if (this.auth.tipouser_id === 1) {
-      this.eliminarImagenesStorage();
-    }
+    //this.eliminarImagenesStorage();
   },
 };
 </script>

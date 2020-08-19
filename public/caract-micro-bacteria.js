@@ -1,5 +1,171 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-micro-bacteria"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["titulo", "tipo", "url", "tipoForm"],
+  data: function data() {
+    return {
+      nombre: "",
+      errors: [],
+      bloquearBtnModal: false
+    };
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionAgregarTipoCaractActinomiceto", "accionAgregarTipoCaractHongo", "accionAgregarTipoCaractBacteria"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {
+    closed: function closed() {
+      this.nombre = "";
+      this.errors = [];
+    },
+    agregarInfo: function agregarInfo() {
+      var _this = this;
+
+      if (this.nombre === "") {
+        this.errors = {
+          nombre: {
+            0: "Favor llenar este campo"
+          }
+        };
+      } else {
+        this.bloquearBtnModal = true;
+        var parametros = {
+          tipo: this.tipo,
+          nombre: this.nombre
+        };
+        axios.post("/".concat(this.url, "/agregar"), parametros).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          } else {
+            _this.bloquearBtnModal = false;
+
+            _this.guardarInfo(res.data);
+
+            _this.$modal.hide("modal_agregar_info_caract");
+
+            _this.toastr("Agregar Info!!", "".concat(_this.tipo, " agregado/a con exito"), "success");
+          }
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtnModal = false;
+
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
+          }
+        });
+      }
+    },
+    guardarInfo: function guardarInfo(data) {
+      switch (this.tipoForm) {
+        case "bacteria":
+          this.accionAgregarTipoCaractBacteria({
+            info: data,
+            tipo: this.tipo
+          });
+          break;
+
+        case "hongo":
+          this.accionAgregarTipoCaractHongo({
+            info: data,
+            tipo: this.tipo
+          });
+          break;
+
+        case "levadura":
+          this.accionAgregarTipoCaractLevadura({
+            info: data,
+            tipo: this.tipo
+          });
+          break;
+
+        case "actinomiceto":
+          this.accionAgregarTipoCaractActinomiceto({
+            info: data,
+            tipo: this.tipo
+          });
+          break;
+
+        case "cepa":
+          break;
+      }
+    }
+  })
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js& ***!
@@ -14,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie3Imagenes */ "./resources/js/mixins/obtenerImagenCroopie3Imagenes.js");
 /* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
 /* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -241,38 +408,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -281,7 +417,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     CroppieCepas: _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Imagenes: _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Imagenes: _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   props: ["info", "modificarInfo"],
   data: function data() {
@@ -299,12 +436,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         imagen2: "",
         imagen3: ""
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: []
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -341,14 +474,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            _this.bloquearBtn = false;
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
             }
-
-            _this.toastr("Error!!", "", "error");
           });
         } else {
           this.bloquearBtn = false;
@@ -359,82 +496,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       } else {
         axios.put("/cepas/bacteria/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.bloquearBtn = false;
+          _this.errors = [];
+
+          _this.$emit("editar", res.data);
+
+          _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
             _this.bloquearBtn = false;
-            _this.errors = [];
 
-            _this.$emit("editar", res.data);
+            if (error.response.status === 422) {
+              _this.errors = [];
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = [];
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
     showModal: function showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
 
       if (tipo === "forma_micro") {
-        this.modal.titulo = "Agregar Nueva Forma";
+        this.tituloModal = "Agregar Nueva Forma";
       }
 
-      this.$modal.show("agregar-caract-info");
-    },
-    agregarInfo: function agregarInfo() {
-      var _this2 = this;
-
-      if (this.modal.input === "") {
-        this.modal.errors = {
-          nombre: {
-            0: "Favor llenar este campo"
-          }
-        };
-      } else {
-        this.bloquearBtnModal = true;
-        var parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input
-        };
-        axios.post("/info-caract-bacterias/agregar", parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
-            _this2.bloquearBtnModal = false;
-
-            _this2.accionAgregarTipoCaractBacteria({
-              info: res.data,
-              tipo: _this2.modal.tipo
-            });
-
-            _this2.$modal.hide("agregar-caract-info");
-
-            _this2.toastr("Agregar Informacion", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
-          }
-        })["catch"](function (error) {
-          _this2.bloquearBtnModal = false;
-
-          if (error.response.status === 422) {
-            _this2.errors = [];
-            _this2.modal.errors = error.response.data.errors;
-          }
-
-          _this2.toastr("Error!!", "", "error");
-        });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     llenarInfo: function llenarInfo() {
       this.imagenes = [];
@@ -461,7 +554,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
     required: function required() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
@@ -528,8 +621,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../forms-caract/FormCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractMicroComponent.vue");
+/* harmony import */ var _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms-caract/FormCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/forms-caract/FormCaractMicroComponent.vue");
+/* harmony import */ var _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ModalEliminarCaractComponent.vue */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -593,23 +686,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    FormCaractMicro: _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    FormCaractMicro: _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ModalEliminar: _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -618,7 +701,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
     agregar: function agregar(data) {
       this.accionAgregarCaract({
@@ -633,29 +715,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       this.modificarForm = true;
     },
-    eliminar: function eliminar() {
-      var _this = this;
-
-      axios["delete"]("/cepas/bacteria/caract-micro/".concat(this.getCaractMicro.id)).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.mostrarBtnAgregar = true;
-          _this.mostrarForm = false;
-
-          _this.$modal.hide("my_modal");
-
-          _this.accionEliminarCaract({
-            tipo: "micro",
-            data: res.data
-          });
-
-          _this.toastr("Eliminar Característica", "Característica Microscópica eliminada con exito!!", "success");
-        }
-      })["catch"](function (error) {
-        _this.toastr("Error!!", "", "error");
+    eliminar: function eliminar(data) {
+      this.accionEliminarCaract({
+        tipo: "micro",
+        data: data
       });
+      this.mostrarBtnAgregar = true;
+      this.mostrarForm = false;
     },
     cambiarVariable: function cambiarVariable() {
       this.modificarForm = false;
@@ -695,6 +761,145 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "modal_agregar_info_caract",
+            classes: "my_modal",
+            width: 450,
+            height: 450
+          },
+          on: { closed: _vm.closed }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v(_vm._s(_vm.titulo))]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_agregar_info_caract")
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "position-relative form-group" }, [
+                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.nombre,
+                      expression: "nombre"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "nombre",
+                    id: "nombre",
+                    placeholder: "...",
+                    type: "text",
+                    required: ""
+                  },
+                  domProps: { value: _vm.nombre },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.nombre = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.nombre
+                  ? _c("span", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.nombre[0]))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_agregar_info_caract")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                  on: { click: _vm.agregarInfo }
+                },
+                [_vm._v("Agregar")]
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -802,22 +1007,24 @@ var render = function() {
                             0
                           ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "input-group-append" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.showModal("forma_micro")
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "fas fa-plus" })]
-                            )
-                          ])
+                          _vm.getPermisoByNombre("agregar-otra")
+                            ? _c("div", { staticClass: "input-group-append" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.showModal("forma_micro")
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-plus" })]
+                                )
+                              ])
+                            : _vm._e()
                         ])
                       ]
                     : _vm._e(),
@@ -1378,115 +1585,14 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "agregar-caract-info",
-            classes: "my_modal",
-            width: 450,
-            height: 450
-          }
-        },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v(_vm._s(_vm.modal.titulo))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.input,
-                      expression: "modal.input"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    name: "nombre",
-                    id: "nombre",
-                    placeholder: " ...",
-                    type: "text",
-                    required: ""
-                  },
-                  domProps: { value: _vm.modal.input },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.modal, "input", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.modal.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
-                      _vm._v(_vm._s(_vm.modal.errors.nombre[0]))
-                    ])
-                  : _vm._e()
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar-caract-info")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.agregarInfo }
-                },
-                [_vm._v("Agregar")]
-              )
-            ])
-          ])
-        ]
-      )
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-bacterias",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "bacteria"
+        }
+      })
     ],
     1
   )
@@ -1574,7 +1680,7 @@ var render = function() {
                         "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
                       on: {
                         click: function($event) {
-                          return _vm.$modal.show("my_modal")
+                          return _vm.$modal.show("modal_eliminar_caract")
                         }
                       }
                     },
@@ -1622,79 +1728,15 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "my_modal",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          }
+      _c("ModalEliminar", {
+        attrs: {
+          tipo: "Característica",
+          tipoCaract: "Característica Microscópica",
+          caract: _vm.getCaractMicro,
+          url: "bacteria/caract-micro"
         },
-        [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar Característica Microscópica")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Esta segura/o de eliminar la Característica?.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("my_modal")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: { click: _vm.eliminar }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
-      )
+        on: { eliminar: _vm.eliminar }
+      })
     ],
     1
   )
@@ -1734,6 +1776,75 @@ var staticRenderFns = [
   }
 ]
 render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6& */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6&");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ModalAgregarInfoCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalAgregarInfoCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalAgregarInfoCaractComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue?vue&type=template&id=eecf83d6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalAgregarInfoCaractComponent_vue_vue_type_template_id_eecf83d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

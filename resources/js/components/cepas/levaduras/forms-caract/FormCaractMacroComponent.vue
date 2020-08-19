@@ -25,50 +25,56 @@
                   />
                 </div>
                 <template v-if="getInfoCaractMacroLevaduras">
-                  <label for="color" class>Color</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="color"
-                      class="form-control"
-                      v-model="parametros.color"
-                    >
-                      <option
-                        v-for="(c,index) in obtenerColores"
-                        :key="index"
-                        :value="c.id"
-                      >{{c.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('color')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="color" class>Color</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="color"
+                          class="form-control"
+                          v-model="parametros.color"
+                        >
+                          <option
+                            v-for="(c,index) in obtenerColores"
+                            :key="index"
+                            :value="c.id"
+                          >{{c.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('color')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <label for="textura" class>Textura</label>
-                  <div class="input-group mb-3">
-                    <select
-                      name="select"
-                      id="textura"
-                      class="form-control"
-                      v-model="parametros.textura"
-                    >
-                      <option
-                        v-for="(t,index) in obtenerTexturas"
-                        :key="index"
-                        :value="t.id"
-                      >{{t.nombre}}</option>
-                    </select>
-                    <div class="input-group-append">
-                      <button
-                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                        @click.prevent="showModal('textura')"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
+                    <div class="col-md-6">
+                      <label for="textura" class>Textura</label>
+                      <div class="input-group mb-3">
+                        <select
+                          name="select"
+                          id="textura"
+                          class="form-control"
+                          v-model="parametros.textura"
+                        >
+                          <option
+                            v-for="(t,index) in obtenerTexturas"
+                            :key="index"
+                            :value="t.id"
+                          >{{t.nombre}}</option>
+                        </select>
+                        <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                          <button
+                            class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                            @click.prevent="showModal('textura')"
+                          >
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </template>
@@ -164,44 +170,12 @@
         </div>
       </div>
     </div>
-    <modal name="agregar-caract-info-levadura" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar-caract-info-levadura')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              class="form-control"
-              v-model="modal.input"
-              required
-            />
-            <span v-if="modal.errors.nombre" class="text-danger">{{modal.errors.nombre[0]}}</span>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar-caract-info-levadura')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="agregarInfo"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalAgregarInfo
+      :url="'info-caract-levaduras'"
+      :tipo="tipoModal"
+      :titulo="tituloModal"
+      :tipoForm="'levadura'"
+    />
   </div>
 </template>
 
@@ -210,8 +184,9 @@ import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent.vue";
+import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
 export default {
-  components: { Croppie },
+  components: { Croppie, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
   data() {
     return {
@@ -224,12 +199,8 @@ export default {
         borde_colonia: "",
         imagen: "",
       },
-      modal: {
-        titulo: "",
-        input: "",
-        tipo: "",
-        errors: [],
-      },
+      tituloModal: "",
+      tipoModal: "",
       tituloForm: "",
       nomBtn: "",
       errors: [],
@@ -239,7 +210,6 @@ export default {
   },
   mixins: [obtenerImagenCroopieCepas, Toastr],
   methods: {
-    ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractLevadura"]),
     evento() {
       this.bloquearBtn = true;
       if (this.tituloForm === "Agregar Medio") {
@@ -268,12 +238,16 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
               }
-              this.toastr("Error!!", "", "error");
             });
         } else {
           this.bloquearBtn = false;
@@ -284,31 +258,25 @@ export default {
         axios
           .put(`/cepas/levadura/caract-macro/${this.info.id}`, this.parametros)
           .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
+            this.bloquearBtn = false;
+            this.errors = [];
+            this.$refs.inputImagen.value = "";
+            this.$emit("editar", res.data);
+            this.toastr("Editar Medio", "Medio editado con exito!!", "success");
+          })
+          .catch((error) => {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
               window.location.href = "/";
             } else {
               this.bloquearBtn = false;
-              this.errors = [];
-              this.$refs.inputImagen.value = "";
-              this.$emit("editar", res.data);
-              this.toastr(
-                "Editar Medio",
-                "Medio editado con exito!!",
-                "success"
-              );
+              if (error.response.status === 422) {
+                this.errors = [];
+                this.errors = error.response.data.errors;
+              }
+              this.toastr("Error!!", "", "error");
             }
-          })
-          .catch((error) => {
-            this.bloquearBtn = false;
-            if (error.response.status === 422) {
-              this.errors = [];
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!", "", "error");
           });
       }
     },
@@ -322,54 +290,13 @@ export default {
       this.imagenMiniatura = this.info.imagenPublica;
     },
     showModal(tipo) {
-      this.modal.input = "";
-      this.modal.errors = [];
-      this.modal.tipo = tipo;
+      this.tipoModal = tipo;
       if (tipo === "color") {
-        this.modal.titulo = "Agregar Nuevo Color";
+        this.tituloModal = "Agregar Nuevo Color";
       } else if (tipo === "textura") {
-        this.modal.titulo = "Agregar Nueva Textura";
+        this.tituloModal = "Agregar Nueva Textura";
       }
-      this.$modal.show("agregar-caract-info-levadura");
-    },
-    agregarInfo() {
-      if (this.modal.input === "") {
-        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
-      } else {
-        this.modal.errors = [];
-        let parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-        };
-        axios
-          .post("/info-caract-levaduras/agregar", parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.accionAgregarTipoCaractLevadura({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$modal.hide("agregar-caract-info-levadura");
-              this.toastr(
-                "Agregar Informacion",
-                `${this.modal.tipo} agregado/a con exito`,
-                "success"
-              );
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 422) {
-              this.modal.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!!!", "", "error");
-          });
-      }
+      this.$modal.show("modal_agregar_info_caract");
     },
     verificarSelects() {
       if (this.obtenerColores.length > 0) {
@@ -385,6 +312,7 @@ export default {
     },
   },
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMacroLevaduras"]),
     btnClase() {
       if (this.tituloForm === "Agregar Medio") {

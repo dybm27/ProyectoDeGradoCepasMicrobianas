@@ -1,13 +1,12 @@
 <template>
   <div>
-    <template v-if="getMetodoConser!=''">
+    <template v-if="mostrarTabla">
       <div class="card-body mt-3 ml-2 mr-2">
         <MyVuetable
+          ref="tabla"
           :api-url="url"
           :fields="fields"
           :sort-order="sortOrder"
-          @cambiarVariable="cambiarVariable"
-          :refrescarTabla="refrescarTabla"
           :nameGet="'metodos-hongos'"
         ></MyVuetable>
       </div>
@@ -65,7 +64,6 @@ export default {
   data() {
     return {
       url: "/info-panel/cepa/hongo/metodos-conser/",
-      refrescarTabla: false,
       idMetodoEliminar: "",
       fields: FieldDefs,
       sortOrder: [
@@ -89,37 +87,46 @@ export default {
         .delete(`/cepas/hongo/metodo-conser/${this.idMetodoEliminar}`)
         .then((res) => {
           this.bloquearBtnModal = false;
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.refrescarTabla = true;
-            this.accionEliminarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Eliminar Cepa",
-              "Cepa eliminada con exito!!",
-              "success",
-              5000
-            );
-            this.$modal.hide("my_modal_eliminar_metodo");
-          }
+          this.accionEliminarCaract({ tipo: "metodo", data: res.data });
+          this.actualizarTabla();
+          this.toastr(
+            "Eliminar Metodo",
+            "Metodo eliminada con exito!!",
+            "success"
+          );
+          this.$modal.hide("my_modal_eliminar_metodo");
         })
         .catch((error) => {
-          this.bloquearBtnModal = false;
-          this.toastr("Error!!", "", "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "", "error");
+          }
         });
     },
-
     beforeOpen(data) {
       this.idMetodoEliminar = data.params.id;
+    },
+    actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
     },
   },
 
   computed: {
     ...vuex.mapGetters("cepa", ["getMetodoConser"]),
+    mostrarTabla() {
+      if (this.getMetodoConser != "" && this.getMetodoConser != null) {
+        return true;
+      }
+      return false;
+    },
   },
   created() {
     if (this.$route.params.cepaHongoId) {

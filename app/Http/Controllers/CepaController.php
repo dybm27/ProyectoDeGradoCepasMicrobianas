@@ -24,7 +24,8 @@ class CepaController extends Controller
         $rules = [
             'codigo' => 'bail|required|min:4|unique:cepas,codigo',
             'estado' => 'bail|required|regex:/^[\pL\s\-]+$/u',
-            'origen' => 'required', 'genero' => 'required', 'especie' => 'required'
+            'origen' => 'required', 'genero' => 'required', 'especie' => 'required',
+            'grupo_microbiano' => 'required',
         ];
         switch ($request->grupo_microbiano) {
             case 1:
@@ -252,7 +253,7 @@ class CepaController extends Controller
         $seguimiento = new Seguimiento();
         $seguimiento->nombre_responsable = Auth::user()->name;
         $seguimiento->email_responsable = Auth::user()->email;
-        $seguimiento->tipo_user = Auth::user()->tipouser->nombre;
+        $seguimiento->rol = Auth::user()->rol->nombre;
         $seguimiento->accion = $accion;
         $seguimiento->save();
     }

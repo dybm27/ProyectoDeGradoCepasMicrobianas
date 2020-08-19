@@ -64,6 +64,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -80,7 +81,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$emit("cambiarTipo", tipo);
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("info_cepas", ["tipos"]))
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("info_cepas", ["tipos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre"]))
 });
 
 /***/ }),
@@ -102,6 +103,40 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -495,7 +530,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nombreBtn: "",
       classBtn: "",
       bloquearBtn: false,
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajeCodigo: ""
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
@@ -509,35 +545,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         axios.put("/cepas/editar/".concat(this.idCepa), this.parametros).then(function (res) {
           _this.bloquearBtn = false;
 
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          _this.accionCepas({
+            tipo: "editar",
+            data: res.data
+          });
+
+          window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+            id: res.data.id
+          });
+
+          _this.$events.fire("eliminarMiBloqueoCepa", {
+            id: res.data.id
+          });
+
+          _this.$emit("cambiarVariableFormulario");
+
+          _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+        })["catch"](function (error) {
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
             window.location.href = "/";
           } else {
-            _this.accionCepas({
-              tipo: "editar",
-              data: res.data
-            });
+            _this.bloquearBtn = false;
 
-            window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
-              id: res.data.id
-            });
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
 
-            _this.$events.fire("eliminarMiBloqueoCepa", {
-              id: res.data.id
-            });
-
-            _this.$emit("cambiarVariableFormulario");
-
-            _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+            _this.toastr("Error!!", "", "error");
           }
-        })["catch"](function (error) {
-          _this.bloquearBtn = false;
-
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
-          }
-
-          _this.toastr("Error!!", "", "error");
         });
       } else {
         axios.post("/cepas/agregar", this.parametros).then(function (res) {
@@ -557,13 +594,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
           }
         })["catch"](function (error) {
-          _this.bloquearBtn = false;
+          if (error.response.status === 403) {
+            _this.$router.push("/sin-acceso");
+          } else {
+            _this.bloquearBtn = false;
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this.errors = error.response.data.errors;
+            }
+
+            _this.toastr("Error!!", "", "error");
           }
-
-          _this.toastr("Error!!", "", "error");
         });
       }
     },
@@ -684,13 +725,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this2.toastr("Agregar Info", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
           }
         })["catch"](function (error) {
-          _this2.bloquearBtnModal = false;
+          if (error.response.status === 403) {
+            _this2.$router.push("/sin-acceso");
+          } else {
+            _this2.bloquearBtnModal = false;
 
-          if (error.response.status === 422) {
-            _this2.modal.errors = error.response.data.errors;
+            if (error.response.status === 422) {
+              _this2.modal.errors = error.response.data.errors;
+            }
+
+            _this2.toastr("Error!!", "", "error");
           }
-
-          _this2.toastr("Error!!", "", "error");
         });
       }
     },
@@ -750,7 +795,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepas", ["getCepaById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId", "getGeneroByNombre", "getEspecieByNombre", "getPhylumByNombre", "getOrdenByNombre", "getReinoByNombre", "getDivisionByNombre", "getClaseByNombre", "getFamiliaByNombre"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepas", ["getCepaById", "getCepaByCodigo"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId", "getGeneroByNombre", "getEspecieByNombre", "getPhylumByNombre", "getOrdenByNombre", "getReinoByNombre", "getDivisionByNombre", "getClaseByNombre", "getFamiliaByNombre"]), {
     validarNombreUnico: function validarNombreUnico() {
       if (this.modal.input) {
         switch (this.modal.tipo) {
@@ -809,6 +854,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
 
             break;
+        }
+      }
+
+      return false;
+    },
+    validarCodigo: function validarCodigo() {
+      if (this.parametros.codigo) {
+        if (this.getCepaByCodigo(this.parametros.codigo)) {
+          if (this.getCepaByCodigo(this.parametros.codigo).id != this.info.id) {
+            this.mensajeCodigo = "Ya existe una cepa con ese codigo";
+            return true;
+          }
         }
       }
 
@@ -1003,10 +1060,47 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("cepas", ["cepas"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("cepas", ["cepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("cepas", ["getCepasByGrupo"]), {
     mostrarTabla: function mostrarTabla() {
-      if (this.cepas != "" && this.cepas != null) {
+      if (this.cepas != "" && this.cepas != null && this.validarTipoCepa) {
         return true;
+      }
+
+      return false;
+    },
+    validarTipoCepa: function validarTipoCepa() {
+      switch (this.tipo) {
+        case "cepa":
+          return true;
+          break;
+
+        case "bacteria":
+          if (this.getCepasByGrupo(1).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "levadura":
+          if (this.getCepasByGrupo(3).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "hongo":
+          if (this.getCepasByGrupo(2).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "actinomiceto":
+          if (this.getCepasByGrupo(4).length > 0) {
+            return true;
+          }
+
+          break;
       }
 
       return false;
@@ -1023,31 +1117,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios["delete"]("/cepas/eliminar/".concat(this.id)).then(function (res) {
         _this.bloquearBtnModal = false;
 
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        if (res.data === "negativo") {
+          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+        }
+
+        _this.accionCepas({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.$modal.hide("modal_eliminar_cepa");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405) {
           window.location.href = "/";
         } else {
-          if (res.data === "negativo") {
-            _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
-          } else {
-            _this.refrescarTabla = true;
+          _this.bloquearBtnModal = false;
 
-            _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
-          }
-
-          _this.accionCepas({
-            tipo: "eliminar",
-            data: res.data
-          });
-
-          _this.actualizarTabla();
-
-          _this.$modal.hide("modal_eliminar_cepa");
+          _this.toastr("Error!!", "", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        _this.toastr("Error!!", "", "error");
       });
     },
     closeEliminar: function closeEliminar() {
@@ -1123,20 +1218,22 @@ var render = function() {
         [
           !_vm.formulario
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
-                    attrs: { disabled: _vm.tipos == "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.abrirFormulario(0)
-                      }
-                    }
-                  },
-                  [_vm._v("Agregar")]
-                )
+                _vm.getPermisoByNombre("agregar-cepa")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        attrs: { disabled: _vm.tipos == "" },
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -1222,7 +1319,7 @@ var render = function() {
         [
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "row justify-content-md-center" }, [
-              _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "col-md-8" }, [
                 _c("div", { staticClass: "main-card mb-3 card" }, [
                   _c(
                     "div",
@@ -1264,7 +1361,10 @@ var render = function() {
                                 expression: "parametros.codigo"
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.validarCodigo === true ? "is-invalid" : ""
+                            ],
                             attrs: {
                               name: "codigo",
                               id: "codigo",
@@ -1285,11 +1385,19 @@ var render = function() {
                                 )
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.validarCodigo
+                            ? _c(
+                                "em",
+                                { staticClass: "error invalid-feedback" },
+                                [_vm._v(_vm._s(_vm.mensajeCodigo))]
+                              )
+                            : _vm._e()
                         ]
                       ),
                       _vm._v(" "),
-                      _vm.mostrarGrupos
+                      _vm.mostrarGrupos && !_vm.disabled
                         ? _c(
                             "div",
                             { staticClass: "position-relative form-group" },
@@ -1314,8 +1422,7 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     name: "select",
-                                    id: "grupo_microbiano",
-                                    disabled: _vm.disabled
+                                    id: "grupo_microbiano"
                                   },
                                   on: {
                                     change: [
@@ -1356,520 +1463,778 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _c("label", { attrs: { for: "genero" } }, [
-                        _vm._v("Género")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("label", { attrs: { for: "genero" } }, [
+                            _vm._v("Género")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "select",
                               {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.genero,
-                                expression: "parametros.genero"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { name: "select", id: "genero" },
-                            on: {
-                              change: [
-                                function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.parametros,
-                                    "genero",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  )
-                                },
-                                _vm.cambiarEspecie
-                              ]
-                            }
-                          },
-                          _vm._l(
-                            _vm.getGenerosId(_vm.parametros.grupo_microbiano),
-                            function(g, index) {
-                              return _c(
-                                "option",
-                                { key: index, domProps: { value: g.id } },
-                                [_vm._v(_vm._s(g.nombre))]
-                              )
-                            }
-                          ),
-                          0
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.showModal("genero")
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.genero,
+                                    expression: "parametros.genero"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { name: "select", id: "genero" },
+                                on: {
+                                  change: [
+                                    function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "genero",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    },
+                                    _vm.cambiarEspecie
+                                  ]
                                 }
-                              }
-                            },
-                            [_c("i", { staticClass: "fas fa-plus" })]
-                          )
+                              },
+                              _vm._l(
+                                _vm.getGenerosId(
+                                  _vm.parametros.grupo_microbiano
+                                ),
+                                function(g, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: g.id } },
+                                    [_vm._v(_vm._s(g.nombre))]
+                                  )
+                                }
+                              ),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _vm.getPermisoByNombre("agregar-otra")
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            return _vm.showModal("genero")
+                                          }
+                                        }
+                                      },
+                                      [_c("i", { staticClass: "fas fa-plus" })]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("label", { attrs: { for: "especie" } }, [
+                            _vm._v("Especie")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.especie,
+                                    expression: "parametros.especie"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { name: "select", id: "especie" },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.parametros,
+                                      "especie",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              _vm._l(
+                                _vm.getEspeciesId(_vm.parametros.genero),
+                                function(e, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: e.id } },
+                                    [_vm._v(_vm._s(e.nombre))]
+                                  )
+                                }
+                              ),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _vm.getPermisoByNombre("agregar-otra")
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            return _vm.showModal("especie")
+                                          }
+                                        }
+                                      },
+                                      [_c("i", { staticClass: "fas fa-plus" })]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("label", { attrs: { for: "especie" } }, [
-                        _vm._v("Especie")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.especie,
-                                expression: "parametros.especie"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { name: "select", id: "especie" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.parametros,
-                                  "especie",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          _vm._l(
-                            _vm.getEspeciesId(_vm.parametros.genero),
-                            function(e, index) {
-                              return _c(
-                                "option",
-                                { key: index, domProps: { value: e.id } },
-                                [_vm._v(_vm._s(e.nombre))]
-                              )
-                            }
-                          ),
-                          0
-                        ),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _vm.parametros.grupo_microbiano === 2 ||
+                          _vm.parametros.grupo_microbiano === 3
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "familia" } }, [
+                                  _vm._v("Familia")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.familia,
+                                          expression: "parametros.familia"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "familia" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "familia",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getFamilias, function(f, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: f.id }
+                                        },
+                                        [_vm._v(_vm._s(f.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "familia"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.parametros.grupo_microbiano === 4
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "reino" } }, [
+                                  _vm._v("Reino")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.reino,
+                                          expression: "parametros.reino"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "reino" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "reino",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getReinos, function(r, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: r.id }
+                                        },
+                                        [_vm._v(_vm._s(r.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("reino")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            : _vm._e()
+                        ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.showModal("especie")
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "fas fa-plus" })]
-                          )
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _vm.parametros.grupo_microbiano === 2 ||
+                          _vm.parametros.grupo_microbiano === 4
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "phylum" } }, [
+                                  _vm._v("Phylum")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.phylum,
+                                          expression: "parametros.phylum"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "phylum" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "phylum",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getPhylums, function(p, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: p.id }
+                                        },
+                                        [_vm._v(_vm._s(p.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("phylum")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.parametros.grupo_microbiano === 3
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "division" } }, [
+                                  _vm._v("Division")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.division,
+                                          expression: "parametros.division"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "division" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "division",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getDivisiones, function(
+                                      d,
+                                      index
+                                    ) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: d.id }
+                                        },
+                                        [_vm._v(_vm._s(d.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "division"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            : _vm._e()
                         ])
                       ]),
-                      _vm._v(" "),
-                      _vm.parametros.grupo_microbiano === 3
-                        ? _c("div", [
-                            _c("label", { attrs: { for: "division" } }, [
-                              _vm._v("Division")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.parametros.division,
-                                      expression: "parametros.division"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { name: "select", id: "division" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "division",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                _vm._l(_vm.getDivisiones, function(d, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: d.id } },
-                                    [_vm._v(_vm._s(d.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("division")
-                                      }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.parametros.grupo_microbiano === 4
-                        ? _c("div", [
-                            _c("label", { attrs: { for: "reino" } }, [
-                              _vm._v("Reino")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.parametros.reino,
-                                      expression: "parametros.reino"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { name: "select", id: "reino" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "reino",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                _vm._l(_vm.getReinos, function(r, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: r.id } },
-                                    [_vm._v(_vm._s(r.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("reino")
-                                      }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.parametros.grupo_microbiano === 2 ||
-                      _vm.parametros.grupo_microbiano === 4
-                        ? _c("div", [
-                            _c("label", { attrs: { for: "phylum" } }, [
-                              _vm._v("Phylum")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.parametros.phylum,
-                                      expression: "parametros.phylum"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { name: "select", id: "phylum" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "phylum",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                _vm._l(_vm.getPhylums, function(p, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: p.id } },
-                                    [_vm._v(_vm._s(p.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("phylum")
-                                      }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            ])
-                          ])
-                        : _vm._e(),
                       _vm._v(" "),
                       _vm.parametros.grupo_microbiano === 2 ||
                       _vm.parametros.grupo_microbiano === 3 ||
                       _vm.parametros.grupo_microbiano === 4
                         ? _c("div", [
-                            _c("label", { attrs: { for: "clase" } }, [
-                              _vm._v("Clase")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
+                            _c("div", { staticClass: "form-row" }, [
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("label", { attrs: { for: "clase" } }, [
+                                  _vm._v("Clase")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
                                     {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.parametros.clase,
-                                      expression: "parametros.clase"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { name: "select", id: "clase" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "clase",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                _vm._l(_vm.getClases, function(c, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: c.id } },
-                                    [_vm._v(_vm._s(c.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("clase")
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.clase,
+                                          expression: "parametros.clase"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "clase" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "clase",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
                                       }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("label", { attrs: { for: "orden" } }, [
-                              _vm._v("Orden")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
-                              _c(
-                                "select",
-                                {
-                                  directives: [
+                                    },
+                                    _vm._l(_vm.getClases, function(c, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: c.id }
+                                        },
+                                        [_vm._v(_vm._s(c.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("clase")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("label", { attrs: { for: "orden" } }, [
+                                  _vm._v("Orden")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
                                     {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.parametros.orden,
-                                      expression: "parametros.orden"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: { name: "select", id: "orden" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "orden",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      )
-                                    }
-                                  }
-                                },
-                                _vm._l(_vm.getOrdens, function(o, index) {
-                                  return _c(
-                                    "option",
-                                    { key: index, domProps: { value: o.id } },
-                                    [_vm._v(_vm._s(o.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("orden")
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.parametros.orden,
+                                          expression: "parametros.orden"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      attrs: { name: "select", id: "orden" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.parametros,
+                                            "orden",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
                                       }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
+                                    },
+                                    _vm._l(_vm.getOrdens, function(o, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: o.id }
+                                        },
+                                        [_vm._v(_vm._s(o.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("orden")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
                               ])
                             ])
                           ])
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.parametros.grupo_microbiano === 2 ||
-                      _vm.parametros.grupo_microbiano === 3
-                        ? _c("div", [
-                            _c("label", { attrs: { for: "familia" } }, [
-                              _vm._v("Familia")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "input-group mb-3" }, [
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "estado" } }, [
+                                _vm._v("Estado")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.estado,
+                                    expression: "parametros.estado"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  name: "estado",
+                                  id: "estado",
+                                  placeholder: "...",
+                                  type: "text",
+                                  required: ""
+                                },
+                                domProps: { value: _vm.parametros.estado },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.parametros,
+                                      "estado",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "origen" } }, [
+                                _vm._v("Origen")
+                              ]),
+                              _vm._v(" "),
                               _c(
                                 "select",
                                 {
@@ -1877,12 +2242,12 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.parametros.familia,
-                                      expression: "parametros.familia"
+                                      value: _vm.parametros.origen,
+                                      expression: "parametros.origen"
                                     }
                                   ],
                                   staticClass: "form-control",
-                                  attrs: { name: "select", id: "familia" },
+                                  attrs: { name: "select", id: "origen" },
                                   on: {
                                     change: function($event) {
                                       var $$selectedVal = Array.prototype.filter
@@ -1898,7 +2263,7 @@ var render = function() {
                                         })
                                       _vm.$set(
                                         _vm.parametros,
-                                        "familia",
+                                        "origen",
                                         $event.target.multiple
                                           ? $$selectedVal
                                           : $$selectedVal[0]
@@ -1906,249 +2271,157 @@ var render = function() {
                                     }
                                   }
                                 },
-                                _vm._l(_vm.getFamilias, function(f, index) {
-                                  return _c(
+                                [
+                                  _c(
                                     "option",
-                                    { key: index, domProps: { value: f.id } },
-                                    [_vm._v(_vm._s(f.nombre))]
-                                  )
-                                }),
-                                0
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("familia")
+                                    { attrs: { value: "Donación" } },
+                                    [_vm._v("Donación")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "Compra" } }, [
+                                    _vm._v("Compra")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Proyecto" } },
+                                    [_vm._v("Proyecto")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Aislamiento del Laboratorio"
                                       }
-                                    }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            ])
-                          ])
-                        : _vm._e()
-                    ],
-                    2
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "main-card mb-3 card" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("div", { staticClass: "position-relative form-group" }, [
-                      _c("label", { attrs: { for: "estado" } }, [
-                        _vm._v("Estado")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.estado,
-                            expression: "parametros.estado"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          name: "estado",
-                          id: "estado",
-                          placeholder: "...",
-                          type: "text",
-                          required: ""
-                        },
-                        domProps: { value: _vm.parametros.estado },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.parametros,
-                              "estado",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "position-relative form-group" }, [
-                      _c("label", { attrs: { for: "origen" } }, [
-                        _vm._v("Origen")
+                                    },
+                                    [_vm._v("Aislamiento del Laboratorio")]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
                       ]),
                       _vm._v(" "),
                       _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.origen,
-                              expression: "parametros.origen"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: { name: "select", id: "origen" },
-                          on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.parametros,
-                                "origen",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
-                            }
-                          }
-                        },
+                        "div",
+                        { staticClass: "position-relative form-group" },
                         [
-                          _c("option", { attrs: { value: "Donación" } }, [
-                            _vm._v("Donación")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "Compra" } }, [
-                            _vm._v("Compra")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", { attrs: { value: "Proyecto" } }, [
-                            _vm._v("Proyecto")
-                          ]),
-                          _vm._v(" "),
                           _c(
-                            "option",
-                            { attrs: { value: "Aislamiento del Laboratorio" } },
-                            [_vm._v("Aislamiento del Laboratorio")]
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "position-relative form-group" }, [
-                      _c("label", { attrs: { for: "otras_caracteristicas" } }, [
-                        _vm._v("Otras Caracteristicas")
-                      ]),
-                      _vm._v(" "),
-                      _c("textarea", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.otras_caracteristicas,
-                            expression: "parametros.otras_caracteristicas"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "text", id: "otras_caracteristicas" },
-                        domProps: {
-                          value: _vm.parametros.otras_caracteristicas
-                        },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.parametros,
-                              "otras_caracteristicas",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "custom-checkbox custom-control mb-2" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.publicar,
-                              expression: "parametros.publicar"
-                            }
-                          ],
-                          staticClass: "custom-control-input",
-                          attrs: { type: "checkbox", id: "publicar" },
-                          domProps: {
-                            checked: Array.isArray(_vm.parametros.publicar)
-                              ? _vm._i(_vm.parametros.publicar, null) > -1
-                              : _vm.parametros.publicar
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = _vm.parametros.publicar,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
+                            "label",
+                            { attrs: { for: "otras_caracteristicas" } },
+                            [_vm._v("Otras Caracteristicas")]
+                          ),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.parametros.otras_caracteristicas,
+                                expression: "parametros.otras_caracteristicas"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              name: "text",
+                              id: "otras_caracteristicas"
+                            },
+                            domProps: {
+                              value: _vm.parametros.otras_caracteristicas
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
                                 }
-                              } else {
-                                _vm.$set(_vm.parametros, "publicar", $$c)
+                                _vm.$set(
+                                  _vm.parametros,
+                                  "otras_caracteristicas",
+                                  $event.target.value
+                                )
                               }
                             }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "custom-control-label",
-                            attrs: { for: "publicar" }
-                          },
-                          [_vm._v("Desea publicar la cepa?")]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "mt-2 btn btn-block",
-                        class: _vm.classBtn,
-                        attrs: { disabled: _vm.bloquearBtn }
-                      },
-                      [_vm._v(_vm._s(_vm.nombreBtn))]
-                    )
-                  ])
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "custom-checkbox custom-control mb-2" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.parametros.publicar,
+                                expression: "parametros.publicar"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: { type: "checkbox", id: "publicar" },
+                            domProps: {
+                              checked: Array.isArray(_vm.parametros.publicar)
+                                ? _vm._i(_vm.parametros.publicar, null) > -1
+                                : _vm.parametros.publicar
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.parametros.publicar,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "publicar",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "publicar",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.parametros, "publicar", $$c)
+                                }
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "publicar" }
+                            },
+                            [_vm._v("Desea publicar la cepa?")]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "mt-2 btn btn-block",
+                          class: _vm.classBtn,
+                          attrs: { disabled: _vm.bloquearBtn }
+                        },
+                        [_vm._v(_vm._s(_vm.nombreBtn))]
+                      )
+                    ],
+                    2
+                  )
                 ])
               ])
             ])

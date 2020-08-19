@@ -61,10 +61,8 @@
                           <div class="row">
                             <div class="col-md-12">
                               <span class="float-left">
-                                <b>Tipo de Usuario:</b>
-                                <template
-                                  v-if="getTipoUser!=''"
-                                >{{getTipoUserById(auth.tipouser_id).nombre}}</template>
+                                <b>Rol de Usuario:</b>
+                                <template v-if="getRoles!=''">{{getRolById(auth.rol_id).nombre}}</template>
                               </span>
                             </div>
                           </div>
@@ -197,7 +195,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="eventBtn"
             :disabled="validarBoton||bloquearBtnModal"
           >Cambiar</button>
@@ -240,7 +238,7 @@
                 v-model="pass"
                 required
               />
-              <div class="input-group-append">
+              <div class="input-group-append verContraseña">
                 <span class="input-group-text">
                   <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
                   <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
@@ -259,7 +257,7 @@
                 v-model="pass1"
                 required
               />
-              <div class="input-group-append">
+              <div class="input-group-append verContraseña">
                 <span class="input-group-text">
                   <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
                   <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
@@ -280,7 +278,7 @@
           >Cancelar</button>
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             @click="eventBtn"
             :disabled="validarBoton||bloquearBtnModal"
           >Cambiar</button>
@@ -318,7 +316,6 @@ export default {
   },
   mixins: [bloquearPestañasMixin("perfil"), Toastr],
   methods: {
-    ...vuex.mapActions("usuarios", ["accionUsuario"]),
     ...vuex.mapActions(["accionModificarAuth"]),
     cambiarValorImagen(valor) {
       this.imagen = valor;
@@ -381,85 +378,70 @@ export default {
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarInfo");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionUsuario({ tipo: "editar", data: res.data });
-                this.accionModificarAuth({ data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarInfo");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
         case "imagen":
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarImagen");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionModificarAuth({ data: res.data });
-                this.accionUsuario({ tipo: "editar", data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarImagen");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
         case "contraseña":
           axios
             .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
             .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-                );
+              this.bloquearBtnModal = false;
+              this.accionModificarAuth({ data: res.data });
+              this.toastr(
+                this.titulo,
+                "Accion realizada con exito!!",
+                "success"
+              );
+              this.$modal.hide("cambiarInfo");
+            })
+            .catch((error) => {
+              if (error.response.status === 405) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
-                this.accionModificarAuth({ data: res.data });
-                this.accionUsuario({ tipo: "editar", data: res.data });
-                this.toastr(
-                  this.titulo,
-                  "Accion realizada con exito!!",
-                  "success"
-                );
-                this.$modal.hide("cambiarInfo");
               }
-            })
-            .catch((error) => {
-              this.bloquearBtnModal = false;
             });
           break;
       }
     },
   },
   computed: {
-    ...vuex.mapGetters("usuarios", ["getTipoUserById", "getTipoUser"]),
+    ...vuex.mapGetters("usuarios", ["getRolById", "getRoles"]),
     ...vuex.mapState(["auth"]),
     validarNombre() {
       let letters = /^[A-Za-z\s]+$/;

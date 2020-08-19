@@ -42,6 +42,7 @@
             @vuetable:cell-clicked="onCellClicked"
             @vuetable:loaded="loaded"
             @vuetable:load-success="loadSuccess"
+            @vuetable:load-error="loadError"
           ></vuetable>
         </div>
       </div>
@@ -257,7 +258,8 @@ export default {
             }
           })
           .catch((error) => {
-            if (error.response) {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
             }
           });
       } else {
@@ -291,7 +293,8 @@ export default {
             }
           })
           .catch((error) => {
-            if (error.response) {
+            if (error.response.status === 403) {
+              this.$router.push("/sin-acceso");
             }
           });
       }
@@ -303,6 +306,11 @@ export default {
           "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
         );
         window.location.href = "/";
+      }
+    },
+    loadError(error) {
+      if (error.response.status === 403) {
+        this.$router.push("/sin-acceso");
       }
     },
   },

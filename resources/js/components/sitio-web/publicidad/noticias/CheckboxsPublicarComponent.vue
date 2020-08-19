@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-checkbox custom-control">
+    <div class="custom-checkbox custom-control" v-if="getPermisoByNombre('editar-noticia')">
       <input
         type="checkbox"
         :id="rowData.id"
@@ -11,14 +11,19 @@
       />
       <label class="custom-control-label" :for="rowData.id"></label>
     </div>
+    <div v-else>
+      <IconoNoAccess />
+    </div>
   </div>
 </template>
 
 <script>
-import websocketsCheckMixin from "../../../../mixins/websocketsCheck";
-import Toastr from "../../../../mixins/toastr";
 import vuex from "vuex";
+import Toastr from "../../../../mixins/toastr";
+import websocketsCheckMixin from "../../../../mixins/websocketsCheck";
+import IconoNoAccess from "../../../IconoNoAccess.vue";
 export default {
+  components: { IconoNoAccess },
   props: {
     rowData: {
       type: Object,
@@ -36,11 +41,13 @@ export default {
   },
   mixins: [websocketsCheckMixin("Noticia", "noticias"), Toastr],
   computed: {
+    ...vuex.mapGetters(["getPermisoByNombre"]),
     computedDisabled() {
       return this.disabled;
     },
   },
   methods: {
+    ...vuex.mapActions("publicidad", ["accionNoticia"]),
     publicar(data) {
       this.disabled = true;
       axios
@@ -49,24 +56,23 @@ export default {
           tipo: "noticia",
         })
         .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            if (res.data.publicar) {
-              this.toastr("Publicar", "Publicado con Exito!!");
-            }
-            this.disabled = false;
+          this.accionNoticia({ tipo: "editar", data: res.data });
+          if (res.data.publicar) {
+            this.toastr("Publicar", "Publicado con Exito!!");
           }
+          this.disabled = false;
         })
         .catch((error) => {
-          this.disabled = false;
-          if (error.response.status === 422) {
-            this.checkPublicar = false;
-            this.toastr("Error", error.response.data, "error");
+          if (error.response.status === 403) {
+            this.$router.push("/sin-acceso");
+          } else if (error.response.status === 405) {
+            window.location.href = "/";
+          } else {
+            this.disabled = false;
+            if (error.response.status === 422) {
+              this.checkPublicar = false;
+              this.toastr("Error", error.response.data, "error");
+            }
           }
         });
     },

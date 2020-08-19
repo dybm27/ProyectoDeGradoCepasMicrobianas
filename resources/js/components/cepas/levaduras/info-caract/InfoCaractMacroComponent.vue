@@ -15,7 +15,7 @@
             >Cancelar</button>
             <button
               v-show="mostrarBtnEliminar"
-              @click="$modal.show('eliminar_caract_macro_levadura')"
+              @click="eliminarMedio"
               class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm"
             >Eliminar Medio</button>
             <button
@@ -133,31 +133,13 @@
         </div>
       </div>
     </div>
-    <modal name="eliminar_caract_macro_levadura" classes="my_modal" :width="400" :height="300">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Característica Macroscópica</h5>
-          <button
-            type="button"
-            class="close"
-            @click="$modal.hide('eliminar_caract_macro_levadura')"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar la característica?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('eliminar_caract_macro_levadura')"
-          >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="eliminarMedio">Eliminar</button>
-        </div>
-      </div>
-    </modal>
+    <ModalEliminar
+      @eliminar="eliminarInfo"
+      :tipo="'Característica'"
+      :tipoCaract="'Característica Macroscópica'"
+      :caract="caract"
+      :url="'levadura/caract-macro'"
+    />
   </div>
 </template>
 
@@ -166,8 +148,9 @@ import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import infoCaractMacroMixin from "../../../../mixins/infoCaractMacro";
 import FormCaractMacro from "../forms-caract/FormCaractMacroComponent.vue";
+import ModalEliminar from "../../ModalEliminarCaractComponent.vue";
 export default {
-  components: { FormCaractMacro },
+  components: { FormCaractMacro, ModalEliminar },
   mixins: [Toastr, infoCaractMacroMixin],
   methods: {
     ...vuex.mapActions("cepa", [
@@ -175,54 +158,6 @@ export default {
       "accionEditarCaract",
       "accionEliminarCaract",
     ]),
-    agregarInfo(data) {
-      this.accionAgregarCaract({ tipo: "macro", data: data });
-      this.mostrarBtnAgregar = true;
-      this.modificarForm = true;
-    },
-    editarInfo(data) {
-      this.accionEditarCaract({ tipo: "macro", data: data });
-      this.modificarForm = true;
-    },
-    eliminarMedio() {
-      let id = 0;
-      let num = 0;
-      if (this.mostrarForm1) {
-        id = this.getCaractMacro[0].id;
-        num = 1;
-      } else if (this.mostrarForm2) {
-        id = this.getCaractMacro[1].id;
-        num = 2;
-      } else {
-        id = this.getCaractMacro[2].id;
-        num = 3;
-      }
-      axios
-        .delete(`/cepas/levadura/caract-macro/${id}`)
-        .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.mostrarBtnAgregar = true;
-            this.modificarForm = true;
-            this.$modal.hide("eliminar_caract_macro_levadura");
-            this.accionEliminarCaract({ tipo: "macro", data: res.data });
-            this.formatear(num);
-            this.toastr(
-              "Eliminar Medio",
-              "Medio eliminado con exito!!",
-              "success"
-            );
-          }
-        })
-        .catch((error) => {
-          this.toastr("Error!!", "", "error");
-        });
-    },
   },
   computed: {
     ...vuex.mapGetters("cepa", ["getCaractMacro"]),

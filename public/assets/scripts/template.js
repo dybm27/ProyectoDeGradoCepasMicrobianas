@@ -29989,7 +29989,7 @@
 									if (n < 0 && a === t.contentHeight - t.containerHeight || n > 0 && 0 === a) return 0 === window.scrollY && n > 0 && w.isChrome
 								} else if (o > s && (i < 0 && r === t.contentWidth - t.containerWidth || i > 0 && 0 === r)) return !0;
 								return !0
-							}(p, f) && o.preventDefault()
+							}(p, f)
 					}
 				}
 
@@ -56342,7 +56342,7 @@
 		}, c.inherits(c.SVGCanvasElement, c.SVGElement), c.mixin(c.SVGCanvasElement, c.AbstractCanvasElement), c.SVGCanvasElement.prototype.setSize = function(t, e) {
 			this.width = t, this.height = e, this.node.setAttribute("width", t), this.node.setAttribute("height", e)
 		}, c.SVGCanvasElement.prototype.applyTransformParams = function(t, e, i) {
-			this.scale = t, this.transX = e, this.transY = i, this.rootElement.node.setAttribute("transform", "scale(" + t + ") translate(" + e + ", " + i + ")")
+			this.scale = t, this.transX = e, this.transY = i
 		}, c.SVGShapeElement = function(t, e) {
 			c.SVGShapeElement.parentClass.call(this, t, e), c.AbstractShapeElement.apply(this, arguments)
 		}, c.inherits(c.SVGShapeElement, c.SVGElement), c.mixin(c.SVGShapeElement, c.AbstractShapeElement), c.SVGShapeElement.prototype.applyAttr = function(t, e) {
