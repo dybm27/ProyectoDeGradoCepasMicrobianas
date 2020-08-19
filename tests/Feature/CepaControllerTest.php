@@ -8,6 +8,7 @@ use App\Cepa;
 use App\Events\CepasEvent;
 use App\HongoFilamentoso;
 use App\Levadura;
+use App\Permiso;
 use App\Seguimiento;
 use ClasesSeeder;
 use DivisionesSeeder;
@@ -39,6 +40,9 @@ class CepaControllerTest extends TestCase
         $this->seed(ClasesSeeder::class);
         $this->seed(OrdensSeeder::class);
         $this->seed(DivisionesSeeder::class);
+
+        $permiso = Permiso::where('nombre', 'editar-cepa')->first();
+        $this->user->rol->permisos()->sync([$permiso->id]);
     }
 
     /** @test */

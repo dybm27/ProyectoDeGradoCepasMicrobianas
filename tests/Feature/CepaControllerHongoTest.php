@@ -10,6 +10,7 @@ use App\Events\CepasEvent;
 use App\HongoFilamentoso;
 use App\IdentiMolecuHongo;
 use App\MetodoConserHongo;
+use App\Permiso;
 use App\Seguimiento;
 use CaractMacroHongoSeeder;
 use CaractMicroHongoSeeder;
@@ -40,6 +41,11 @@ class CepaControllerHongoTest extends TestCase
         $this->seed(PhylumsSeeder::class);
         $this->seed(ClasesSeeder::class);
         $this->seed(OrdensSeeder::class);
+
+        $permiso1 = Permiso::where('nombre', 'agregar-cepa')->first();
+        $permiso2 = Permiso::where('nombre', 'editar-cepa')->first();
+        $permiso3 = Permiso::where('nombre', 'eliminar-cepa')->first();
+        $this->user->rol->permisos()->sync([$permiso1->id,$permiso2->id,$permiso3->id]);
     }
 
     // --------------------- Hongos ----------------------

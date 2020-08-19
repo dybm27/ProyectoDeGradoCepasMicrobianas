@@ -11,6 +11,7 @@ use App\Cepa;
 use App\Events\CepasEvent;
 use App\IdentiMolecuBacteria;
 use App\MetodoConserBacteria;
+use App\Permiso;
 use App\Seguimiento;
 use CaractMacroBacteriaSeeder;
 use CaractMicroBacteriaSeeder;
@@ -33,6 +34,10 @@ class CepaControllerBacteriaTest extends TestCase
         $this->seed(GruposMicrobianosSeeder::class);
         $this->seed(EspeciesSeeder::class);
         $this->seed(GenerosSeeder::class);
+        $permiso1 = Permiso::where('nombre', 'agregar-cepa')->first();
+        $permiso2 = Permiso::where('nombre', 'editar-cepa')->first();
+        $permiso3 = Permiso::where('nombre', 'eliminar-cepa')->first();
+        $this->user->rol->permisos()->sync([$permiso1->id, $permiso2->id, $permiso3->id]);
     }
 
     // --------------------- Bacterias ----------------------

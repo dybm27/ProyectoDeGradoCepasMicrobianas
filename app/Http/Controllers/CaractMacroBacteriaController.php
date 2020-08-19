@@ -117,7 +117,7 @@ class CaractMacroBacteriaController extends Controller
             'medio' => 'required', 'forma' => 'required',
             'elevacion' => 'required', 'borde' => 'required',
             'detalle_optico' => 'required', 'superficie' => 'required',
-            'tamaño' => 'required', 'color' => 'required'
+            'tamaño' => 'required', 'color' => 'required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
     }

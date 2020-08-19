@@ -10,6 +10,7 @@ use App\Events\CepasEvent;
 use App\IdentiMolecuLevadura;
 use App\Levadura;
 use App\MetodoConserLevadura;
+use App\Permiso;
 use App\Seguimiento;
 use CaractMacroLevaduraSeeder;
 use ClasesSeeder;
@@ -39,6 +40,11 @@ class CepaControllerLevaduraTest extends TestCase
         $this->seed(ClasesSeeder::class);
         $this->seed(OrdensSeeder::class);
         $this->seed(DivisionesSeeder::class);
+
+        $permiso1 = Permiso::where('nombre', 'agregar-cepa')->first();
+        $permiso2 = Permiso::where('nombre', 'editar-cepa')->first();
+        $permiso3 = Permiso::where('nombre', 'eliminar-cepa')->first();
+        $this->user->rol->permisos()->sync([$permiso1->id,$permiso2->id,$permiso3->id]);
     }
 
     // --------------------- Levaduras ----------------------
