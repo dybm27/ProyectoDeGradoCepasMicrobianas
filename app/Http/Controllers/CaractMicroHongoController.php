@@ -81,17 +81,17 @@ class CaractMicroHongoController extends Controller
     {
         $this->validarCampos($request);
         $caractMicroHongo = CaracMicroHongo::find($id);
-        $caractMicroHongo->conidioforo_id = $request->conidioforo;
+        $caractMicroHongo->conidioforo_id = intval($request->conidioforo);
         $caractMicroHongo->fialides = $request->fialides;
         $caractMicroHongo->fialides_forma = $request->fialides_forma;
         $caractMicroHongo->fialides_otra_caracteristica = $request->fialides_otra_caracteristica;
         $caractMicroHongo->vesicula = $request->vesicula;
-        $caractMicroHongo->espora_asexual_id = $request->espora_asexual;
+        $caractMicroHongo->espora_asexual_id = intval($request->espora_asexual);
         $caractMicroHongo->esporas_asexuales_conidios_tamano = $request->esporas_asexuales_conidios_tamano;
         $caractMicroHongo->esporas_asexuales_conidios_color = $request->esporas_asexuales_conidios_color;
         $caractMicroHongo->esporas_asexuales_conidios_forma = $request->esporas_asexuales_conidios_forma;
         $caractMicroHongo->esporas_asexuales_conidios_otras = $request->esporas_asexuales_conidios_otras;
-        $caractMicroHongo->espora_sexual_id = $request->espora_sexual;
+        $caractMicroHongo->espora_sexual_id = intval($request->espora_sexual);
         $caractMicroHongo->otras_estructuras = $request->otras_estructuras;
         $caractMicroHongo->save();
 

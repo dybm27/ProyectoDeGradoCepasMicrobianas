@@ -21,7 +21,7 @@ class MetodoConserBacteriaController extends Controller
         $bacteria = Bacteria::where('cepa_id', $request->cepaId)->first();
 
         $imagen = $this->guardarImagen($request->imagen, $bacteria->id);
-
+        
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $metodoConserBacteria = new MetodoConserBacteria();
@@ -102,7 +102,7 @@ class MetodoConserBacteriaController extends Controller
         $rutaPublica = '/storage/bacterias/metodo_conser_img/' . $id . '/' . $image_name;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];
     }
-    
+
     public function crearSeguimiento($accion)
     {
         $seguimiento = new Seguimiento();
@@ -118,7 +118,7 @@ class MetodoConserBacteriaController extends Controller
         $rules = [
             'fecha' => 'required', 'recuento_microgota' => 'required',
             'tipo_metodo' => 'required', 'tipo_agar' => 'required',
-            'numero_replicas' => 'bail|numeric|required'
+            'numero_replicas' => 'bail|numeric|required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
     }

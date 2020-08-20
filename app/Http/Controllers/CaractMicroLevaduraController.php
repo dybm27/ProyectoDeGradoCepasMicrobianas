@@ -91,7 +91,6 @@ class CaractMicroLevaduraController extends Controller
         $caractMicroLevadura->induccion_filamentizacion = $request->induccion_filamentizacion;
         $caractMicroLevadura->formacion_asco_y_ascosporas = $request->formacion_asco_y_ascosporas;
         $caractMicroLevadura->otras_caract = $request->otras_caract;
-        $caractMicroLevadura->otras_caract = $request->otras_caracteristicas;
         $caractMicroLevadura->save();
 
         $this->crearSeguimiento("Editó la Característica Microscópica de la Cepa: "

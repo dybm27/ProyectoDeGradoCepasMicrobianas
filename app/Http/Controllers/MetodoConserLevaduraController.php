@@ -120,16 +120,16 @@ class MetodoConserLevaduraController extends Controller
 
     public function validarCampos($request)
     {
-        $rules = ['fecha' => 'required', 'tipo_metodo' => 'required'];
+        $rules = ['fecha' => 'required', 'tipo_metodo' => 'required', 'imagen' => 'required'];
         if ($request->tipo_metodo == 2 || $request->tipo_metodo == 3) {
             $rules += ['medio_cultivo' => 'required'];
         } else {
             $rules += ['recuento_microgota' => 'required'];
         }
         if ($request->tipo_metodo != 3) {
-            $rules += ['numero_replicas' => 'bail|numeric|min:1|max:999999999'];
+            $rules += ['numero_replicas' => 'bail|required|numeric|min:1|max:999999999'];
         } else {
-            $rules  += ['numero_pases' => 'bail|numeric|min:1|max:999999999'];
+            $rules  += ['numero_pases' => 'bail|required|numeric|min:1|max:999999999'];
         }
         $this->validate($request, $rules);
     }

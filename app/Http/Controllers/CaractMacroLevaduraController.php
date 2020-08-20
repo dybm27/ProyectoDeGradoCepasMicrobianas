@@ -20,7 +20,7 @@ class CaractMacroLevaduraController extends Controller
 
         $caractMacroLevadura = new CaracMacroLevadura();
         $caractMacroLevadura->levadura_id = $levadura->id;
-        $caractMacroLevadura->medio = $request->medio;
+        $caractMacroLevadura->medio = ucfirst($request->medio);
         $caractMacroLevadura->textura_id = intval($request->textura);
         $caractMacroLevadura->topografia_superficie = $request->topografia_superficie;
         $caractMacroLevadura->borde_colonia = $request->borde_colonia;
@@ -55,7 +55,7 @@ class CaractMacroLevaduraController extends Controller
             $caractMacroLevadura->imagenPublica = $imagen['rutaPublica'];
         }
 
-        $caractMacroLevadura->medio = $request->medio;
+        $caractMacroLevadura->medio = ucfirst($request->medio);
         $caractMacroLevadura->textura_id = intval($request->textura);
         $caractMacroLevadura->topografia_superficie = $request->topografia_superficie;
         $caractMacroLevadura->borde_colonia = $request->borde_colonia;
@@ -108,7 +108,7 @@ class CaractMacroLevaduraController extends Controller
         $rules = [
             'medio' => 'required', 'textura' => 'required',
             'borde_colonia' => 'required', 'color' => 'required',
-            'topografia_superficie' => 'required'
+            'topografia_superficie' => 'required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
     }

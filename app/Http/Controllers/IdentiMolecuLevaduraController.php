@@ -126,7 +126,7 @@ class IdentiMolecuLevaduraController extends Controller
             'nombre_reversed' => 'required', 'producto_reversed' => 'required',
             'secuencia_forward' => 'required', 'condiciones_pcr' => 'required',
             'secuencia_reversed' => 'required', 'blast' => 'required',
-            'analisis_filogenetico' => 'required'
+            'analisis_filogenetico' => 'required', 'imagen1' => 'required', 'imagen2' => 'required'
         ];
         $this->validate($request, $rules);
     }
