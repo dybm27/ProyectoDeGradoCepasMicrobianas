@@ -60,7 +60,8 @@ class ImagenLoginController extends Controller
     public function validarCampos($request)
     {
         $rules = [
-            'titulo' => 'required', 'descripcion' => 'required'
+            'titulo' => 'required', 'descripcion' => 'required', 'imagen' => 'required',
+            'mostrar' => 'required'
         ];
         $this->validate($request, $rules);
     }

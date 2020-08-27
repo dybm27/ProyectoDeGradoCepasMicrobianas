@@ -15,6 +15,7 @@ class EquipamientoController extends Controller
         $rules = [
             'nombre' => 'required|unique:equipamientos,nombre',
             'caracteristicas' => 'required', 'funcion' => 'required',
+            'imagen' => 'required'
         ];
         $messages = [
             'nombre.unique' => 'Ya se encuentra registrado un equipo con ese nombre.'

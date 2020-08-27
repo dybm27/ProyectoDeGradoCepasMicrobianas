@@ -265,10 +265,13 @@ export default {
       } else {
         let datos = this.$refs.vuetable.tableData;
         axios
-          .get(`/exportar/tabla/${this.nameGet}`, {
-            params: { datos: datos },
-            responseType: "blob",
-          })
+          .post(
+            `/exportar/tabla/${this.nameGet}`,
+            { datos: datos },
+            {
+              responseType: "blob",
+            }
+          )
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(

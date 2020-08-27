@@ -19,10 +19,12 @@ class InfoCepasController extends Controller
 {
     public function agregarInfo(Request $request)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "genero":
                 $rules = [
-                    'nombre' => 'bail|required|unique:generos,nombre'
+                    'nombre' => 'bail|required|unique:generos,nombre',
+                    'grupo_microbiano' => 'required'
                 ];
                 $messages = [
                     'nombre.unique' => 'Ya se encuentra registrado un Genero con ese nombre.'
@@ -36,7 +38,8 @@ class InfoCepasController extends Controller
                 break;
             case "especie":
                 $rules = [
-                    'nombre' => 'bail|required|unique:especies,nombre'
+                    'nombre' => 'bail|required|unique:especies,nombre',
+                    'genero' => 'required'
                 ];
                 $messages = [
                     'nombre.unique' => 'Ya se encuentra registrado una Especie con ese nombre.'
@@ -134,6 +137,7 @@ class InfoCepasController extends Controller
 
     public function editarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required', 'nombre' => 'required']);
         switch ($request->tipo) {
             case "genero":
                 $tipo1 = Genero::find($id);
@@ -240,6 +244,7 @@ class InfoCepasController extends Controller
 
     public function eliminarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "genero":
                 $tipo = Genero::find($id);

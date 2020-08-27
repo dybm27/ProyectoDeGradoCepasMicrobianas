@@ -9,11 +9,8 @@
     </thead>
     <tbody>
         @foreach($datos as $dato)
-        @php
-            $datoDecodificado= json_decode($dato);
-        @endphp
         <tr>
-            <td colspan="3">{{ $datoDecodificado->titulo }}</td>
+            <td colspan="3">{{ $dato['titulo'] }}</td>
         </tr>
     @endforeach
     </tbody>

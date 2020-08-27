@@ -13,23 +13,20 @@
     </thead>
     <tbody>
         @foreach($datos as $dato)
-            @php
-            $datoDecodificado= json_decode($dato);
-            @endphp
             <tr>
-                <td>{{ $datoDecodificado->nombre_tipo_metodo }}</td>
+                <td>{{ $dato['nombre_tipo_metodo'] }}</td>
                 <td>
-                    @if ($datoDecodificado->nombre_tipo_agar=='No')
+                    @if ($dato['nombre_tipo_agar']=='No')
                         No Aplica
                     @else
-                        {{$datoDecodificado->nombre_tipo_agar}}
+                        {{$dato['nombre_tipo_agar']}}
                     @endif
                 </td>
-                <td>{{ $datoDecodificado->numero_replicas }}</td>
-                <td>{{ $datoDecodificado->recuento_microgota }}</td>
+                <td>{{ $dato['numero_replicas'] }}</td>
+                <td>{{ $dato['recuento_microgota'] }}</td>
                 <td>
                     @php
-                        $fecha=date('d-m-Y', strtotime($datoDecodificado->fecha))
+                        $fecha=date('d-m-Y', strtotime($dato['fecha']))
                     @endphp
                     {{$fecha}}
                 </td>

@@ -12,13 +12,10 @@
     </thead>
     <tbody>
     @foreach($datos as $dato)
-        @php
-            $datoDecodificado= json_decode($dato);
-        @endphp
         <tr>
-            <td>{{ $datoDecodificado->name }}</td>
-            <td>{{ $datoDecodificado->email }}</td>
-            <td>{{ $datoDecodificado->tipo_user }}</td>
+            <td>{{ $dato['name'] }}</td>
+            <td>{{ $dato['email'] }}</td>
+            <td>{{ $dato['tipo_user'] }}</td>
         </tr>
     @endforeach
     </tbody>

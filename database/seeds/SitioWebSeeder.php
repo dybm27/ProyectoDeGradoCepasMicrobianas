@@ -21,15 +21,15 @@ class SitioWebSeeder extends Seeder
             'nombre' => 'Objetivos'
         ]);
 
-        DB::table('quienes_somos_tipos')->insert([
+        DB::table('quienes_somos')->insert([
             'quienes_somos_tipos_id' => 1,
             'cuerpo' => 'Mision'
         ]);
-        DB::table('quienes_somos_tipos')->insert([
+        DB::table('quienes_somos')->insert([
             'quienes_somos_tipos_id' => 2,
             'cuerpo' => 'Vision'
         ]);
-        DB::table('quienes_somos_tipos')->insert([
+        DB::table('quienes_somos')->insert([
             'quienes_somos_tipos_id' => 3,
             'cuerpo' => 'Objetivos'
         ]);

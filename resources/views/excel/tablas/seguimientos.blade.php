@@ -13,17 +13,14 @@
     </thead>
     <tbody>
     @foreach($datos as $dato)
-        @php
-            $datoDecodificado= json_decode($dato);
-        @endphp
         <tr>
-            <td>{{ $datoDecodificado->nombre_responsable }}</td>
-            <td>{{ $datoDecodificado->email_responsable }}</td>
-            <td>{{ $datoDecodificado->tipo_user }}</td>
-            <td>{{ $datoDecodificado->accion }}</td>
+            <td>{{ $dato['nombre_responsable'] }}</td>
+            <td>{{ $dato['email_responsable'] }}</td>
+            <td>{{ $dato['tipo_user'] }}</td>
+            <td>{{ $dato['accion'] }}</td>
             <td>
                 @php
-                    $fecha=date('d-m-Y', strtotime($datoDecodificado->created_at))
+                    $fecha=date('d-m-Y', strtotime($dato['created_at']))
                 @endphp
                 {{$fecha}}
             </td>

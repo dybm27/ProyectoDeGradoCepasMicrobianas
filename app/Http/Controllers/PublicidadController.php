@@ -159,12 +159,12 @@ class PublicidadController extends Controller
     {
         if ($tipo == 'noticia') {
             $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '-' . $imagen->getClientOriginalName();
-            Storage::put('/public/publicidad/' . $tipo . '/' . $nombre, file_get_contents($imagen));
+            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, file_get_contents($imagen));
         } else {
             $imagen_array = explode(",", $imagen);
             $data = base64_decode($imagen_array[1]);
             $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
-            Storage::put('/public/publicidad/' . $tipo . '/' . $nombre, $data);
+            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, $data);
         }
         $ruta = '/public/publicidad/' . $tipo . '/' . $nombre;
         $rutaPublica = '/storage/publicidad/' . $tipo . '/' . $nombre;

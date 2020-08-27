@@ -350,10 +350,9 @@ __webpack_require__.r(__webpack_exports__);
         });
       } else {
         var datos = this.$refs.vuetable.tableData;
-        axios.get("/exportar/tabla/".concat(this.nameGet), {
-          params: {
-            datos: datos
-          },
+        axios.post("/exportar/tabla/".concat(this.nameGet), {
+          datos: datos
+        }, {
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {

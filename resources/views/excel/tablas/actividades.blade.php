@@ -11,14 +11,11 @@
     </thead>
     <tbody>
         @foreach($datos as $dato)
-        @php
-            $datoDecodificado= json_decode($dato);
-        @endphp
         <tr>
-            <td>{{ $datoDecodificado->titulo }}</td>
-            <td>{{ $datoDecodificado->lugar }}</td>
+            <td>{{ $dato['titulo'] }}</td>
+            <td>{{ $dato['lugar'] }}</td>
             <td> @php
-                    $fecha=date('d-m-Y', strtotime($datoDecodificado->fecha))
+                    $fecha=date('d-m-Y', strtotime($dato['fecha']))
                 @endphp
                 {{$fecha}}
             </td>

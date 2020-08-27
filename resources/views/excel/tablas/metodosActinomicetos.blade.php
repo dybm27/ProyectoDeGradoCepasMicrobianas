@@ -14,18 +14,15 @@
     </thead>
     <tbody>
         @foreach($datos as $dato)
-            @php
-            $datoDecodificado= json_decode($dato);
-            @endphp
             <tr>
-                <td>{{ $datoDecodificado->codigo }}</td>
-                <td>{{ $datoDecodificado->nombre_genero }}</td>
-                <td>{{ $datoDecodificado->nombre_especie }}</td>
-                <td>{{ $datoDecodificado->nombre_reino }}</td>
-                <td>{{ $datoDecodificado->nombre_phylum }}</td>
-                <td>{{ $datoDecodificado->nombre_clase }}</td>
-                <td>{{ $datoDecodificado->nombre_orden }}</td>
-                <td>{{ $datoDecodificado->estado }}</td>
+                <td>{{ $dato['codigo'] }}</td>
+                <td>{{ $dato['nombre_genero'] }}</td>
+                <td>{{ $dato['nombre_especie'] }}</td>
+                <td>{{ $dato['nombre_reino'] }}</td>
+                <td>{{ $dato['nombre_phylum'] }}</td>
+                <td>{{ $dato['nombre_clase'] }}</td>
+                <td>{{ $dato['nombre_orden'] }}</td>
+                <td>{{ $dato['estado'] }}</td>
             </tr>
         @endforeach
     </tbody>
