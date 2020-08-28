@@ -17,7 +17,7 @@ class UsuarioController extends Controller
     {
         $rules = [
             'email' => 'required|unique:users,email', 'nombre' => 'required',
-            'pass' => 'required', 'rol' => 'required'
+            'pass' => 'required', 'rol' => 'required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -49,7 +49,7 @@ class UsuarioController extends Controller
         $this->validate($request, $rules);
 
         if (!is_null($request->imagen)) {
-            Storage::disk('local')->delete($usuario->avatar);
+            Storage::delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];
             $usuario->avatarPublico = $imagen['rutaPublica'];

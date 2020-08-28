@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Genero::class, function (Faker $faker) {
     return [
-        'nombre' => $faker->unique()->sentence(),
+        'nombre' => $faker->unique()->name,
         'grupo_microbiano_id' => 1
     ];
 });

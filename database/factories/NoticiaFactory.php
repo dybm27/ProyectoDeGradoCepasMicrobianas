@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Noticia::class, function (Faker $faker) {
     return [
-        'titulo' => $faker->unique()->sentence(),
+        'titulo' => $faker->unique()->name,
         'link' => 'qweqwe',
         'cuerpo' => 'qweqwe',
         'imagenesEditor' => 'qweqwe',

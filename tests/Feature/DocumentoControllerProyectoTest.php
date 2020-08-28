@@ -71,12 +71,15 @@ class DocumentoControllerProyectoTest extends TestCase
     /** @test */
     public function update_proyecto_documento()
     {
-        $this->withoutExceptionHandling();
         Event::fake();
         Storage::fake();
         $archivo = UploadedFile::fake()->create('document.pdf', 20000, 'application/pdf');
-        Storage::put('/public/documentos/1/archivos/qweqwe.pdf', $archivo);
         $proyecto = factory(Documento::class)->create(['tipo_documento_id' => 1]);
+        Storage::put('/public/documentos/1/archivos/' . $proyecto->nombre_documento . '.pdf', file_get_contents($archivo));
+        $imagen = UploadedFile::fake()->create('imagen.png', 2000);
+        Storage::put('/public/documentos/1/imagenes/imagen.png', file_get_contents($imagen));
+        $proyecto->imagen='/public/documentos/1/imagenes/imagen.png';
+        $proyecto->save();
         $response = $this->actingAs($this->user)
             ->putJson('/documentos/' . $proyecto->id, [
                 'nombre_documento' => 'asdads', 'nombre_autor' => 'qweqwe',
@@ -102,6 +105,13 @@ class DocumentoControllerProyectoTest extends TestCase
         Event::fake();
         Storage::fake();
         $proyecto = factory(Documento::class)->create(['tipo_documento_id' => 1]);
+        $archivo = UploadedFile::fake()->create('document.pdf', 20000, 'application/pdf');
+        $proyecto->ruta = '/public/documentos/1/archivos/document.pdf';
+        Storage::put('/public/documentos/1/archivos/' . $proyecto->nombre_documento . '.pdf', $archivo);
+        $imagen = UploadedFile::fake()->create('imagen.png', 2000);
+        Storage::put('/public/documentos/1/imagenes/imagen.png', file_get_contents($imagen));
+        $proyecto->imagen = '/public/documentos/1/imagenes/imagen.png';
+        $proyecto->save();
         $response = $this->actingAs($this->user)
             ->deleteJson('/documentos/' . $proyecto->id);
         $response->assertStatus(200);

@@ -58,7 +58,6 @@ class ImagenLoginControllerTest extends TestCase
     /** @test */
     public function update_imagen_login()
     {
-        $this->withoutExceptionHandling();
         Storage::fake();
         Event::fake();
         $imgLogin = ImagenLogin::first();

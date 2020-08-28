@@ -32,8 +32,9 @@ class PublicidadController extends Controller
                 break;
         }
         if (is_null($request->cuerpo)) {
-            $reglas += ['link' => 'required', 'imagen' => 'required'];
+            $reglas += ['link' => 'required'];
         }
+        $reglas += ['imagen' => 'required', 'publicar' => 'required'];
         $this->validate($request, $reglas);
 
         if ($request->publicar == 1) {
@@ -116,7 +117,16 @@ class PublicidadController extends Controller
         if (is_null($request->cuerpo)) {
             $reglas += ['link' => 'required'];
         }
+        $reglas += ['imagen' => 'required', 'publicar' => 'required'];
         $this->validate($request, $reglas);
+
+
+        if ($request->publicar == 1) {
+            if (!$this->validarCheck($request->tipo)) {
+                return response(['errors' =>
+                ['publicar' => ['No es posible publicar la ' . $request->tipo]]], 422);
+            }
+        }
 
         if ($request->imagen != $publicidad->imagen) {
             Storage::disk('local')->delete($publicidad->imagen);

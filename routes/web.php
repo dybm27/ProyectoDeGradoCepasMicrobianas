@@ -197,9 +197,9 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //---------------------- USUARIOS ------------------------------------------------------------
     //-- Perfil
-    Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
-    Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
-    Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
+    Route::put('/perfil/cambiar-nombre', 'PerfilController@cambiarNombre');
+    Route::put('/perfil/cambiar-imagen', 'PerfilController@cambiarImagen');
+    Route::put('/perfil/cambiar-contraseña', 'PerfilController@cambiarContraseña');
 
     //-- Usuarios
     Route::post('/usuario/agregar', 'UsuarioController@store')->middleware('control_permisos:agregar-usuario');

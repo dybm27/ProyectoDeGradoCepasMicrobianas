@@ -9,7 +9,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Cepa::class, function (Faker $faker) {
     return [
-        'codigo' => $faker->unique()->firstName,
+        'codigo' => $faker->unique()->name,
         'grupo_microbiano_id' =>  rand(1, 4),
         'genero_id' =>  function (array $cepa) {
             return Genero::where('grupo_microbiano_id', $cepa['grupo_microbiano_id'])->first()->id;

@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Especie::class, function (Faker $faker) {
     return [
-        'nombre' => $faker->unique()->sentence(),
+        'nombre' => $faker->unique()->name,
         'genero_id' => 1
     ];
 });

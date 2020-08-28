@@ -18,6 +18,7 @@ class RolController extends Controller
             'nombre.unique' => 'Ya se encuentra registrado un Rol con ese nombre.'
         ];
         $this->validate($request, $rules, $messages);
+
         $rol = new Rol();
         $rol->nombre = ucfirst($request->nombre);
         $rol->save();

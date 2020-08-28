@@ -376,7 +376,7 @@ export default {
       switch (this.tipo) {
         case "nombre":
           axios
-            .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
+            .put(`/perfil/cambiar-${this.tipo}`, parametros)
             .then((res) => {
               this.bloquearBtnModal = false;
               this.accionModificarAuth({ data: res.data });
@@ -397,7 +397,7 @@ export default {
           break;
         case "imagen":
           axios
-            .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
+            .put(`/perfil/cambiar-${this.tipo}`, parametros)
             .then((res) => {
               this.bloquearBtnModal = false;
               this.accionModificarAuth({ data: res.data });
@@ -418,7 +418,7 @@ export default {
           break;
         case "contraseña":
           axios
-            .put(`/perfil/cambiar-${this.tipo}/${this.auth.id}`, parametros)
+            .put(`/perfil/cambiar-${this.tipo}`, parametros)
             .then((res) => {
               this.bloquearBtnModal = false;
               this.accionModificarAuth({ data: res.data });

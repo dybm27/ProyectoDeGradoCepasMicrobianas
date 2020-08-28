@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Documento::class, function (Faker $faker) {
     return [
         'tipo_documento_id' => rand(1, 2),
-        'nombre_documento' => $faker->unique()->sentence(),
+        'nombre_documento' => $faker->unique()->name,
         'nombre_autor' => 'qweqwe',
         'descripcion' => 'qweqwe',
         'imagen' => 'qweqwe',

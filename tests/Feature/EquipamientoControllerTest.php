@@ -65,12 +65,13 @@ class EquipamientoControllerTest extends TestCase
     /** @test */
     public function update_equipamiento()
     {
-        $this->withoutExceptionHandling();
         Event::fake();
         Storage::fake();
-        $archivo = UploadedFile::fake()->create('document.pdf', 20000, 'application/pdf');
-        Storage::put('/public/equipamientos/2/archivos/qweqwe.pdf', $archivo);
         $equipamiento = factory(Equipamiento::class)->create();
+        $imagen = UploadedFile::fake()->create('imagen.jpg', 2000);
+        Storage::put('/public/equipos/imagen.jpg', file_get_contents($imagen));
+        $equipamiento->imagen = '/public/equipos/imagen.jpg';
+        $equipamiento->save();
         $response = $this->actingAs($this->user)
             ->putJson('/equipamientos/' . $equipamiento->id, [
                 'nombre' => 'qweqwe', 'caracteristicas' => 'qweqwe',
@@ -94,6 +95,10 @@ class EquipamientoControllerTest extends TestCase
         Event::fake();
         Storage::fake();
         $equipamiento = factory(Equipamiento::class)->create();
+        $imagen = UploadedFile::fake()->create('imagen.jpg', 2000);
+        Storage::put('/public/equipos/imagen.jpg', file_get_contents($imagen));
+        $equipamiento->imagen = '/public/equipos/imagen.jpg';
+        $equipamiento->save();
         $response = $this->actingAs($this->user)
             ->deleteJson('/equipamientos/' . $equipamiento->id);
         $response->assertStatus(200);
