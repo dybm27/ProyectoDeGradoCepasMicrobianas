@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -302,6 +304,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -334,8 +376,44 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo "
+      }
     };
+  },
+  validations: {
+    parametros: {
+      medio: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"],
+        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["minLength"])(4)
+      },
+      forma: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      borde: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      textura: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      color: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      pigmento: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      secrecion_geosminas: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      superficie: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
@@ -343,9 +421,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Medio") {
-        if (this.parametros.imagen) {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
           axios.post("/cepas/actinomiceto/caract-macro", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -376,37 +455,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor elija una imagen."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/actinomiceto/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
         }
       } else {
-        axios.put("/cepas/actinomiceto/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -487,7 +563,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Medio") {
         return true;
       } else {
@@ -836,33 +912,62 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.medio,
-                            expression: "parametros.medio"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.medio.$model,
+                            expression: "$v.parametros.medio.$model",
+                            modifiers: { trim: true }
                           }
                         ],
-                        staticClass: "form-control",
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.medio.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "medio",
                           id: "medio",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.medio },
+                        domProps: { value: _vm.$v.parametros.medio.$model },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "medio",
-                              $event.target.value
+                              _vm.$v.parametros.medio,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.medio.$error &&
+                      !_vm.$v.parametros.medio.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.medio.$error &&
+                      !_vm.$v.parametros.medio.minLength
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(
+                              _vm._s(
+                                _vm.mensajes.minLength +
+                                  _vm.$v.parametros.medio.$params.minLength
+                                    .min +
+                                  " letras"
+                              )
+                            )
+                          ])
+                        : _vm._e()
                     ]),
                     _vm._v(" "),
                     _vm.getInfoCaractMacroActinomicetos
@@ -880,12 +985,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.textura,
-                                        expression: "parametros.textura"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.textura.$model,
+                                        expression:
+                                          "$v.parametros.textura.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.textura.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "textura" },
                                     on: {
                                       change: function($event) {
@@ -901,8 +1013,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "textura",
+                                          _vm.$v.parametros.textura,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -949,7 +1061,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.textura.$error &&
+                              !_vm.$v.parametros.textura.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-md-6" }, [
@@ -964,12 +1085,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.color,
-                                        expression: "parametros.color"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.color.$model,
+                                        expression:
+                                          "$v.parametros.color.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.color.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "color" },
                                     on: {
                                       change: function($event) {
@@ -985,8 +1113,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "color",
+                                          _vm.$v.parametros.color,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1033,7 +1161,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.color.$error &&
+                              !_vm.$v.parametros.color.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ]),
                           _vm._v(" "),
@@ -1043,79 +1180,106 @@ var render = function() {
                                 _vm._v("Forma")
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "input-group mb-3" }, [
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.forma,
-                                        expression: "parametros.forma"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: { name: "select", id: "forma" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.$set(
-                                          _vm.parametros,
-                                          "forma",
-                                          $event.target.multiple
-                                            ? $$selectedVal
-                                            : $$selectedVal[0]
-                                        )
-                                      }
-                                    }
-                                  },
-                                  _vm._l(_vm.obtenerFormas, function(f, index) {
-                                    return _c(
-                                      "option",
-                                      { key: index, domProps: { value: f.id } },
-                                      [_vm._v(_vm._s(f.nombre))]
-                                    )
-                                  }),
-                                  0
-                                ),
-                                _vm._v(" "),
-                                _vm.getPermisoByNombre("agregar-otra")
-                                  ? _c(
-                                      "div",
-                                      { staticClass: "input-group-append" },
-                                      [
-                                        _c(
-                                          "button",
-                                          {
-                                            staticClass:
-                                              "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                            on: {
-                                              click: function($event) {
-                                                $event.preventDefault()
-                                                return _vm.showModal(
-                                                  "forma_macro"
-                                                )
+                              _c("div", { staticClass: "div-error-select" }, [
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.forma.$model,
+                                          expression:
+                                            "$v.parametros.forma.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.forma.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "forma" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
                                               }
-                                            }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass: "fas fa-plus"
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
                                             })
-                                          ]
-                                        )
-                                      ]
+                                          _vm.$set(
+                                            _vm.$v.parametros.forma,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.obtenerFormas, function(
+                                      f,
+                                      index
+                                    ) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: f.id }
+                                        },
+                                        [_vm._v(_vm._s(f.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "forma_macro"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.forma.$error &&
+                                !_vm.$v.parametros.forma.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
                                     )
                                   : _vm._e()
                               ])
@@ -1133,12 +1297,20 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.superficie,
-                                        expression: "parametros.superficie"
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.superficie.$model,
+                                        expression:
+                                          "$v.parametros.superficie.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.superficie.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "superficie" },
                                     on: {
                                       change: function($event) {
@@ -1154,8 +1326,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "superficie",
+                                          _vm.$v.parametros.superficie,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1204,7 +1376,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.superficie.$error &&
+                              !_vm.$v.parametros.superficie.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ]),
                           _vm._v(" "),
@@ -1221,12 +1402,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.borde,
-                                        expression: "parametros.borde"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.borde.$model,
+                                        expression:
+                                          "$v.parametros.borde.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.borde.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "borde" },
                                     on: {
                                       change: function($event) {
@@ -1242,8 +1430,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "borde",
+                                          _vm.$v.parametros.borde,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1287,7 +1475,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.borde.$error &&
+                              !_vm.$v.parametros.borde.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-md-6" }, [
@@ -1302,12 +1499,20 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.pigmento,
-                                        expression: "parametros.pigmento"
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.pigmento.$model,
+                                        expression:
+                                          "$v.parametros.pigmento.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.pigmento.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "pigmento" },
                                     on: {
                                       change: function($event) {
@@ -1323,8 +1528,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "pigmento",
+                                          _vm.$v.parametros.pigmento,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1371,7 +1576,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.pigmento.$error &&
+                              !_vm.$v.parametros.pigmento.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ])
                         ]
@@ -1386,33 +1600,51 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.secrecion_geosminas,
-                            expression: "parametros.secrecion_geosminas"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.secrecion_geosminas.$model,
+                            expression:
+                              "$v.parametros.secrecion_geosminas.$model",
+                            modifiers: { trim: true }
                           }
                         ],
-                        staticClass: "form-control",
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.secrecion_geosminas.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "secrecion_geosminas",
                           id: "secrecion_geosminas",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.secrecion_geosminas },
+                        domProps: {
+                          value: _vm.$v.parametros.secrecion_geosminas.$model
+                        },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "secrecion_geosminas",
-                              $event.target.value
+                              _vm.$v.parametros.secrecion_geosminas,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.secrecion_geosminas.$error &&
+                      !_vm.$v.parametros.secrecion_geosminas.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "position-relative form-group" }, [
@@ -1422,20 +1654,31 @@ var render = function() {
                       _vm._v(" "),
                       _c("input", {
                         ref: "inputImagen",
-                        staticClass: "form-control-file",
+                        class: [
+                          "form-control-file",
+                          _vm.$v.parametros.imagen.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "imagen",
                           id: "imagen",
                           accept: "image/jpeg, image/png",
-                          type: "file",
-                          required: _vm.required
+                          type: "file"
                         },
                         on: { change: _vm.obtenerImagen }
                       }),
                       _vm._v(" "),
                       _vm.imagenError
-                        ? _c("span", { staticClass: "text-danger" }, [
+                        ? _c("em", { staticClass: "text-error-input" }, [
                             _vm._v(_vm._s(_vm.imagenError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.imagen.$error &&
+                      !_vm.$v.parametros.imagen.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
                           ])
                         : _vm._e()
                     ]),
@@ -1477,7 +1720,7 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                        attrs: { disabled: _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )

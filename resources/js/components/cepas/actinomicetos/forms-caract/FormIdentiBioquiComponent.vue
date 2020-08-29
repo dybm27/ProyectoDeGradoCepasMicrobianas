@@ -21,10 +21,13 @@
                         id="oxidasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.oxidasa"
-                        required
+                        :class="['form-control', $v.parametros.oxidasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.oxidasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.oxidasa.$error&&!$v.parametros.oxidasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -35,10 +38,13 @@
                         id="catalasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.catalasa"
-                        required
+                        :class="['form-control', $v.parametros.catalasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.catalasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.catalasa.$error&&!$v.parametros.catalasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -49,10 +55,13 @@
                         id="citrato"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.citrato"
-                        required
+                        :class="['form-control', $v.parametros.citrato.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.citrato.$model"
                       />
+                      <em
+                        v-if="$v.parametros.citrato.$error&&!$v.parametros.citrato.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -65,10 +74,13 @@
                         id="nitrato"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.nitrato"
-                        required
+                        :class="['form-control', $v.parametros.nitrato.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.nitrato.$model"
                       />
+                      <em
+                        v-if="$v.parametros.nitrato.$error&&!$v.parametros.nitrato.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -79,10 +91,13 @@
                         id="caseina"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.caseina"
-                        required
+                        :class="['form-control', $v.parametros.caseina.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.caseina.$model"
                       />
+                      <em
+                        v-if="$v.parametros.caseina.$error&&!$v.parametros.caseina.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -93,10 +108,13 @@
                         id="hidro_urea"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.hidro_urea"
-                        required
+                        :class="['form-control', $v.parametros.hidro_urea.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.hidro_urea.$model"
                       />
+                      <em
+                        v-if="$v.parametros.hidro_urea.$error&&!$v.parametros.hidro_urea.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -109,13 +127,16 @@
                         id="hidro_gelatina"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.hidro_gelatina"
-                        required
+                        :class="['form-control', $v.parametros.hidro_gelatina.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.hidro_gelatina.$model"
                       />
+                      <em
+                        v-if="$v.parametros.hidro_gelatina.$error&&!$v.parametros.hidro_gelatina.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
-                  <template v-if="required">
+                  <template v-if="validarTipoForm">
                     <div class="col-md-4">
                       <div class="position-relative form-group">
                         <label for="imagen" class>Imágenes</label>
@@ -125,12 +146,26 @@
                           id="imagen"
                           type="file"
                           accept="image/jpeg, image/png"
-                          class="form-control-file"
+                          :class="['form-control-file', 
+                              $v.parametros.imagen1.$error
+                              ||$v.parametros.imagen2.$error
+                              ||$v.parametros.imagen3.$error
+                              ? 'error-input-select':'']"
                           ref="inputImagen"
                           multiple
-                          :required="required"
                         />
-                        <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                        <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                        <em
+                          v-if="($v.parametros.imagen1.$error
+                              &&!$v.parametros.imagen1.required)
+                              ||
+                              ($v.parametros.imagen2.$error
+                              &&!$v.parametros.imagen2.required) 
+                              ||
+                              ($v.parametros.imagen3.$error
+                              &&!$v.parametros.imagen3.required)"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                   </template>
@@ -142,10 +177,13 @@
                         id="sensi_antibioticos"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.sensi_antibioticos"
-                        required
+                        :class="['form-control', $v.parametros.sensi_antibioticos.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.sensi_antibioticos.$model"
                       />
+                      <em
+                        v-if="$v.parametros.sensi_antibioticos.$error&&!$v.parametros.sensi_antibioticos.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -163,10 +201,13 @@
                             id="fer_lactosa"
                             placeholder="..."
                             type="text"
-                            class="form-control"
-                            v-model="parametros.fer_lactosa"
-                            required
+                            :class="['form-control', $v.parametros.fer_lactosa.$error? 'error-input-select':'']"
+                            v-model.trim="$v.parametros.fer_lactosa.$model"
                           />
+                          <em
+                            v-if="$v.parametros.fer_lactosa.$error&&!$v.parametros.fer_lactosa.required"
+                            class="text-error-input"
+                          >{{mensajes.required}}</em>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -177,10 +218,13 @@
                             id="fer_manitol"
                             placeholder="..."
                             type="text"
-                            class="form-control"
-                            v-model="parametros.fer_manitol"
-                            required
+                            :class="['form-control', $v.parametros.fer_manitol.$error? 'error-input-select':'']"
+                            v-model.trim="$v.parametros.fer_manitol.$model"
                           />
+                          <em
+                            v-if="$v.parametros.fer_manitol.$error&&!$v.parametros.fer_manitol.required"
+                            class="text-error-input"
+                          >{{mensajes.required}}</em>
                         </div>
                       </div>
                     </div>
@@ -193,10 +237,13 @@
                             id="fer_inositol"
                             placeholder="..."
                             type="text"
-                            class="form-control"
-                            v-model="parametros.fer_inositol"
-                            required
+                            :class="['form-control', $v.parametros.fer_inositol.$error? 'error-input-select':'']"
+                            v-model.trim="$v.parametros.fer_inositol.$model"
                           />
+                          <em
+                            v-if="$v.parametros.fer_inositol.$error&&!$v.parametros.fer_inositol.required"
+                            class="text-error-input"
+                          >{{mensajes.required}}</em>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -207,18 +254,21 @@
                             id="fer_sacarosa"
                             placeholder="..."
                             type="text"
-                            class="form-control"
-                            v-model="parametros.fer_sacarosa"
-                            required
+                            :class="['form-control', $v.parametros.fer_sacarosa.$error? 'error-input-select':'']"
+                            v-model.trim="$v.parametros.fer_sacarosa.$model"
                           />
+                          <em
+                            v-if="$v.parametros.fer_sacarosa.$error&&!$v.parametros.fer_sacarosa.required"
+                            class="text-error-input"
+                          >{{mensajes.required}}</em>
                         </div>
                       </div>
                     </div>
                     <div class="position-relative form-group">
-                      <label for="fer_inositol" class>Otro Azúcar</label>
+                      <label for="fer_otro" class>Otra Fermentación</label>
                       <input
-                        name="fer_inositol"
-                        id="fer_inositol"
+                        name="fer_otro"
+                        id="fer_otro"
                         placeholder="..."
                         type="text"
                         class="form-control"
@@ -242,7 +292,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="btnDisable||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{nomBtn}}</button>
               </form>
             </div>
@@ -252,7 +302,7 @@
     </div>
     <div class="container">
       <div class="row justify-content-md-center">
-        <template v-if="required">
+        <template v-if="validarTipoForm">
           <div class="col-md-12">
             <div class="main-card mb-3 card">
               <div class="card-body">
@@ -303,6 +353,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent";
 import Imagenes from "../../ImagenesComponent";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
@@ -340,14 +391,47 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      oxidasa: { required },
+      catalasa: { required },
+      citrato: { required },
+      caseina: { required },
+      nitrato: { required },
+      sensi_antibioticos: { required },
+      fer_manitol: { required },
+      fer_lactosa: { required },
+      fer_inositol: { required },
+      fer_sacarosa: { required },
+      hidro_gelatina: { required },
+      hidro_urea: { required },
+      imagen1: { required },
+      imagen2: {
+        validarImagen2(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        validarImagen3(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Identificación") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Identificación") {
           axios
             .post("/cepas/actinomiceto/identi-bioqui", this.parametros)
             .then((res) => {
@@ -384,40 +468,43 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/actinomiceto/identi-bioqui/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Identificación Bioquímica",
+                "Identificación Bioquímica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(
-            `/cepas/actinomiceto/identi-bioqui/${this.info.id}`,
-            this.parametros
-          )
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Identificación Bioquímica",
-              "Identificación Bioquímica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -446,7 +533,7 @@ export default {
     },
   },
   computed: {
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Identificación") {
         return true;
       } else {

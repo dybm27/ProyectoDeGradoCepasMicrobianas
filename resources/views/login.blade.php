@@ -63,6 +63,7 @@
                             <div class="divider row"></div>
                             <div>
                               <form method="POST" action="{{ route('login') }}">
+                                <div class="alert alert-danger" role="alert" id="mensajeLogin" style="display: none" ></div>
                                   @csrf
                                   @if(session('errorLoginGoogle'))
                                     <div class="alert alert-danger" role="alert">

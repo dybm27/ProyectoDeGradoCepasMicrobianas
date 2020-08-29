@@ -121,63 +121,6 @@ const obtenerImagenCroopie3ImagenesMixin = {
                     break;
             }
         }
-    },
-    computed: {
-        btnDisable() {
-            if (this.imagenes != "") {
-                if (this.info) {
-                    if (this.info.imagen1) {
-                        if (this.imagenes[0] && !this.parametros.imagen1) {
-                            return true;
-                        }
-                        if (this.info.imagen2) {
-                            if (this.imagenes[1] && !this.parametros.imagen2) {
-                                return true;
-                            }
-                            if (this.info.imagen3) {
-                                if (
-                                    this.imagenes[2] &&
-                                    !this.parametros.imagen3
-                                ) {
-                                    return true;
-                                }
-                            }
-                        } else if (this.info.imagen3) {
-                            if (this.imagenes[1] && !this.parametros.imagen3) {
-                                return true;
-                            }
-                        }
-                    } else if (this.info.imagen2) {
-                        if (this.imagenes[0] && !this.parametros.imagen2) {
-                            return true;
-                        }
-                        if (this.info.imagen3) {
-                            if (this.imagenes[1] && !this.parametros.imagen3) {
-                                return true;
-                            }
-                        }
-                    } else if (this.info.imagen3) {
-                        if (this.imagenes[0] && !this.parametros.imagen3) {
-                            return true;
-                        }
-                    }
-                    return false;
-                } else {
-                    if (this.imagenes[0] && !this.parametros.imagen1) {
-                        return true;
-                    }
-                    if (this.imagenes[1] && !this.parametros.imagen2) {
-                        return true;
-                    }
-                    if (this.imagenes[2] && !this.parametros.imagen3) {
-                        return true;
-                    }
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
     }
 };
 export default obtenerImagenCroopie3ImagenesMixin;

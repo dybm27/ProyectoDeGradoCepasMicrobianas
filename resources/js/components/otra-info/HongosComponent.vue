@@ -11,6 +11,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasCaractMacro"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -43,6 +44,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasCaractMicro"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -80,6 +82,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasMetodos"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -138,18 +141,18 @@ export default {
     TablaMetodos,
     TablaEsporasAsexuales,
     TablaEsporasSexuales,
-    TablaConidioforos
+    TablaConidioforos,
   },
   data() {
     return {
       tablasCaractMacro: false,
       tablasCaractMicro: false,
-      tablasMetodos: false
+      tablasMetodos: false,
     };
   },
   mixins: [websocketsOtraInfoMixin("HongosInfo")],
   computed: {
-    ...vuex.mapState("info_caract", ["info_caract_hongos"])
+    ...vuex.mapState("info_caract", ["info_caract_hongos"]),
   },
   methods: {
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractHongos"]),
@@ -161,26 +164,26 @@ export default {
     },
     mostrarTablasMetodos() {
       this.tablasMetodos = !this.tablasMetodos;
-    }
+    },
   },
   created() {
     this.obtenerInfoCaractHongos();
-    this.$events.$on("verificarBloqueos-colors-hongo", e =>
+    this.$events.$on("verificarBloqueos-colors-hongo", (e) =>
       this.verificarBloqueos("color")
     );
-    this.$events.$on("verificarBloqueos-conidioforos-hongo", e =>
+    this.$events.$on("verificarBloqueos-conidioforos-hongo", (e) =>
       this.verificarBloqueos("conidioforo")
     );
-    this.$events.$on("verificarBloqueos-esporasA-hongo", e =>
+    this.$events.$on("verificarBloqueos-esporasA-hongo", (e) =>
       this.verificarBloqueos("esporaA")
     );
-    this.$events.$on("verificarBloqueos-esporasS-hongo", e =>
+    this.$events.$on("verificarBloqueos-esporasS-hongo", (e) =>
       this.verificarBloqueos("esporaS")
     );
-    this.$events.$on("verificarBloqueos-texturas-hongo", e =>
+    this.$events.$on("verificarBloqueos-texturas-hongo", (e) =>
       this.verificarBloqueos("textura")
     );
-    this.$events.$on("verificarBloqueos-tipos-metodos-hongo", e =>
+    this.$events.$on("verificarBloqueos-tipos-metodos-hongo", (e) =>
       this.verificarBloqueos("tipo_metodo")
     );
   },
@@ -191,6 +194,6 @@ export default {
     this.$events.$off("verificarBloqueos-esporasS-hongo");
     this.$events.$off("verificarBloqueos-texturas-hongo");
     this.$events.$off("verificarBloqueos-tipos-metodos-hongo");
-  }
+  },
 };
 </script>

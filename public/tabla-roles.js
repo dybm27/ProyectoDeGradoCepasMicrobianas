@@ -1938,7 +1938,7 @@ var websocketsTablaOtraInfo = function websocketsTablaOtraInfo(tipo) {
         this.tabla = !this.tabla;
       },
       actualizarTabla: function actualizarTabla() {
-        if (this.tabla) {
+        if (this.siHayDatos) {
           if (this.$refs.tabla) {
             this.$refs.tabla.refreshDatos();
           }

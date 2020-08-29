@@ -496,7 +496,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       switch (this.tipo) {
         case "nombre":
-          axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
+          axios.put("/perfil/cambiar-".concat(this.tipo), parametros).then(function (res) {
             _this2.bloquearBtnModal = false;
 
             _this2.accionModificarAuth({
@@ -516,7 +516,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "imagen":
-          axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
+          axios.put("/perfil/cambiar-".concat(this.tipo), parametros).then(function (res) {
             _this2.bloquearBtnModal = false;
 
             _this2.accionModificarAuth({
@@ -536,7 +536,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "contraseña":
-          axios.put("/perfil/cambiar-".concat(this.tipo, "/").concat(this.auth.id), parametros).then(function (res) {
+          axios.put("/perfil/cambiar-".concat(this.tipo), parametros).then(function (res) {
             _this2.bloquearBtnModal = false;
 
             _this2.accionModificarAuth({
