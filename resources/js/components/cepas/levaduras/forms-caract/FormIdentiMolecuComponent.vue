@@ -25,10 +25,13 @@
                           name="nombre_forward"
                           id="nombre_forward"
                           type="text"
-                          class="form-control"
-                          v-model="parametros.nombre_forward"
-                          required
+                          :class="['form-control', $v.parametros.nombre_forward.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.nombre_forward.$model"
                         />
+                        <em
+                          v-if="$v.parametros.nombre_forward.$error&&!$v.parametros.nombre_forward.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -38,10 +41,13 @@
                           id="secuencia_forward"
                           placeholder="secuencia..."
                           type="text"
-                          class="form-control"
-                          v-model="parametros.secuencia_forward"
-                          required
+                          :class="['form-control', $v.parametros.secuencia_forward.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.secuencia_forward.$model"
                         />
+                        <em
+                          v-if="$v.parametros.secuencia_forward.$error&&!$v.parametros.secuencia_forward.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -51,10 +57,13 @@
                           id="producto_forward"
                           placeholder="productoto..."
                           type="text"
-                          class="form-control"
-                          v-model="parametros.producto_forward"
-                          required
+                          :class="['form-control', $v.parametros.producto_forward.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.producto_forward.$model"
                         />
+                        <em
+                          v-if="$v.parametros.producto_forward.$error&&!$v.parametros.producto_forward.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                   </div>
@@ -69,10 +78,13 @@
                           name="nombre_reversed"
                           id="nombre_reversed"
                           type="text"
-                          class="form-control"
-                          v-model="parametros.nombre_reversed"
-                          required
+                          :class="['form-control', $v.parametros.nombre_reversed.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.nombre_reversed.$model"
                         />
+                        <em
+                          v-if="$v.parametros.nombre_reversed.$error&&!$v.parametros.nombre_reversed.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -82,10 +94,13 @@
                           id="secuencia_reversed"
                           placeholder="secuencia..."
                           type="text"
-                          class="form-control"
-                          v-model="parametros.secuencia_reversed"
-                          required
+                          :class="['form-control', $v.parametros.secuencia_reversed.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.secuencia_reversed.$model"
                         />
+                        <em
+                          v-if="$v.parametros.secuencia_reversed.$error&&!$v.parametros.secuencia_reversed.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -95,10 +110,13 @@
                           id="producto_reversed"
                           placeholder="productoto..."
                           type="text"
-                          class="form-control"
-                          v-model="parametros.producto_reversed"
-                          required
+                          :class="['form-control', $v.parametros.producto_reversed.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.producto_reversed.$model"
                         />
+                        <em
+                          v-if="$v.parametros.producto_reversed.$error&&!$v.parametros.producto_reversed.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                   </div>
@@ -141,11 +159,17 @@
                         id="imagen_pcr"
                         type="file"
                         accept="image/jpeg, image/png"
-                        class="form-control-file"
+                        :class="['form-control-file', $v.parametros.imagen2.$error? 'error-input-select':'']"
                         ref="inputImagen1"
-                        :required="required"
                       />
-                      <span v-if="imagenError.imagen1" class="text-danger">{{imagenError.imagen1}}</span>
+                      <em
+                        v-if="imagenError.imagen1"
+                        class="text-error-input"
+                      >{{imagenError.imagen1}}</em>
+                      <em
+                        v-if="$v.parametros.imagen1.$error&&!$v.parametros.imagen1.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -157,11 +181,17 @@
                         id="imagen_blast"
                         accept="image/jpeg, image/png"
                         type="file"
-                        class="form-control-file"
+                        :class="['form-control-file', $v.parametros.imagen2.$error? 'error-input-select':'']"
                         ref="inputImagen2"
-                        :required="required"
                       />
-                      <span v-if="imagenError.imagen2" class="text-danger">{{imagenError.imagen2}}</span>
+                      <em
+                        v-if="imagenError.imagen2"
+                        class="text-error-input"
+                      >{{imagenError.imagen2}}</em>
+                      <em
+                        v-if="$v.parametros.imagen2.$error&&!$v.parametros.imagen2.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -174,14 +204,13 @@
                         id="condiciones_pcr"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.condiciones_pcr"
-                        required
+                        :class="['form-control', $v.parametros.condiciones_pcr.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.condiciones_pcr.$model"
                       />
-                      <span
-                        v-if="errors.condiciones_pcr"
-                        class="text-danger"
-                      >{{errors.condiciones_pcr[0]}}</span>
+                      <em
+                        v-if="$v.parametros.condiciones_pcr.$error&&!$v.parametros.condiciones_pcr.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -192,11 +221,13 @@
                         id="blast"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.blast"
-                        required
+                        :class="['form-control', $v.parametros.blast.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.blast.$model"
                       />
-                      <span v-if="errors.blast" class="text-danger">{{errors.blast[0]}}</span>
+                      <em
+                        v-if="$v.parametros.blast.$error&&!$v.parametros.blast.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -207,10 +238,13 @@
                       <textarea
                         name="analisis_filogenetico"
                         id="analisis_filogenetico"
-                        class="form-control"
-                        v-model="parametros.analisis_filogenetico"
-                        required
+                        :class="['form-control', $v.parametros.analisis_filogenetico.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.analisis_filogenetico.$model"
                       ></textarea>
+                      <em
+                        v-if="$v.parametros.analisis_filogenetico.$error&&!$v.parametros.analisis_filogenetico.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -227,7 +261,7 @@
                 </div>
                 <button
                   class="mb-2 mr-2 btn btn-block"
-                  :disabled="validarBtn||bloquearBtn"
+                  :disabled="bloquearBtn"
                   :class="btnClase"
                 >{{nomBtnComputed}}</button>
               </form>
@@ -334,6 +368,7 @@ import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie2Imagenes from "../../../../mixins/obtenerImagenCroopie2Imagenes";
 import Croppie from "../../../CroppieComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie },
   props: ["info", "modificarInfo"],
@@ -358,7 +393,25 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      nombre_forward: { required },
+      nombre_reversed: { required },
+      secuencia_forward: { required },
+      secuencia_reversed: { required },
+      producto_forward: { required },
+      producto_reversed: { required },
+      condiciones_pcr: { required },
+      blast: { required },
+      analisis_filogenetico: { required },
+      imagen1: { required },
+      imagen2: { required },
+    },
   },
   mixins: [obtenerImagenCroopie2Imagenes, Toastr],
   watch: {
@@ -372,8 +425,9 @@ export default {
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Identificación") {
-        if (this.parametros.imagen1 && this.parametros.imagen2) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Identificación") {
           axios
             .post("/cepas/levadura/identi-molecu", this.parametros)
             .then((res) => {
@@ -411,41 +465,45 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor agregre las respectivas imagenes."],
-          };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/levadura/identi-molecu/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen1.value = "";
+              this.$refs.inputImagen2.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Identificación",
+                "Identificación Molecular editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/levadura/identi-molecu/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen1.value = "";
-            this.$refs.inputImagen2.value = "";
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Identificación",
-              "Identificación Molecular editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -463,6 +521,8 @@ export default {
       this.parametros.imagen2 = this.info.imagen_blast;
       this.imagenMiniatura1 = this.info.imagen_pcrPublica;
       this.imagenMiniatura2 = this.info.imagen_blastPublica;
+      this.imagenInfoPublica1 = this.info.imagen_pcrPublica;
+      this.imagenInfoPublica2 = this.info.imagen_blastPublica;
     },
   },
   computed: {
@@ -474,7 +534,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Identificación") {
         return true;
       } else {

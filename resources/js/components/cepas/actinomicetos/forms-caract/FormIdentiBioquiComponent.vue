@@ -412,13 +412,13 @@ export default {
       hidro_urea: { required },
       imagen1: { required },
       imagen2: {
-        validarImagen2(value) {
+        required(value) {
           if (value == "" && this.cantImagenes > 1) return false;
           return true;
         },
       },
       imagen3: {
-        validarImagen3(value) {
+        required(value) {
           if (value == "" && this.cantImagenes == 3) return false;
           return true;
         },

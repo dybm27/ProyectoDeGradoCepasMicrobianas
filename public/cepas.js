@@ -97,6 +97,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -492,6 +494,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -521,7 +570,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         tipo: "",
         grupo_microbiano: 1,
         genero: 1,
-        errors: []
+        errors: false
       },
       errors: [],
       mostrarGrupos: true,
@@ -531,8 +580,160 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       classBtn: "",
       bloquearBtn: false,
       bloquearBtnModal: false,
-      mensajeCodigo: ""
+      mensajeCodigo: "",
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+        unique: ""
+      }
     };
+  },
+  validations: function validations() {
+    if (this.parametros.grupo_microbiano == 1) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else if (this.parametros.grupo_microbiano == 2) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          phylum: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          familia: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else if (this.parametros.grupo_microbiano == 3) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          division: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          familia: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          phylum: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          reino: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa"]), {
@@ -540,72 +741,78 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.nombre === "Editar Cepa") {
-        axios.put("/cepas/editar/".concat(this.idCepa), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          _this.accionCepas({
-            tipo: "editar",
-            data: res.data
-          });
-
-          window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("eliminarMiBloqueoCepa", {
-            id: res.data.id
-          });
-
-          _this.$emit("cambiarVariableFormulario");
-
-          _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.nombre === "Editar Cepa") {
+          axios.put("/cepas/editar/".concat(this.idCepa), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
-      } else {
-        axios.post("/cepas/agregar", this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
             _this.accionCepas({
-              tipo: "agregar",
+              tipo: "editar",
               data: res.data
+            });
+
+            window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoCepa", {
+              id: res.data.id
             });
 
             _this.$emit("cambiarVariableFormulario");
 
-            _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
+            _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
+        } else {
+          axios.post("/cepas/agregar", this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.accionCepas({
+                tipo: "agregar",
+                data: res.data
+              });
 
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+              _this.$emit("cambiarVariableFormulario");
+
+              _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
+            }
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarParametros: function llenarParametros(cepa) {
@@ -667,8 +874,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.especie = this.getEspeciesId(this.parametros.genero)[0].id;
     },
     showModal: function showModal(tipo) {
+      this.modal.errors = false;
       this.modal.input = "";
-      this.modal.errors = [];
       this.modal.tipo = tipo;
 
       if (tipo === "genero") {
@@ -695,48 +902,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       if (this.modal.input === "") {
-        this.modal.errors = {
-          nombre: {
-            0: "Favor llenar este campo"
-          }
-        };
+        this.modal.errors = true;
       } else {
         this.bloquearBtnModal = true;
-        var parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-          genero: this.modal.genero,
-          grupo_microbiano: this.modal.grupo_microbiano
-        };
-        axios.post("/info-cepas/agregar", parametros).then(function (res) {
-          _this2.bloquearBtnModal = false;
 
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
-            _this2.accionAgregarTipoCepa({
-              info: res.data,
-              tipo: _this2.modal.tipo
-            });
-
-            _this2.$modal.hide("agregar-otra-info");
-
-            _this2.toastr("Agregar Info", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this2.$router.push("/sin-acceso");
-          } else {
+        if (!this.validarNombreUnico) {
+          var parametros = {
+            tipo: this.modal.tipo,
+            nombre: this.modal.input,
+            genero: this.modal.genero,
+            grupo_microbiano: this.modal.grupo_microbiano
+          };
+          axios.post("/info-cepas/agregar", parametros).then(function (res) {
             _this2.bloquearBtnModal = false;
 
-            if (error.response.status === 422) {
-              _this2.modal.errors = error.response.data.errors;
-            }
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this2.accionAgregarTipoCepa({
+                info: res.data,
+                tipo: _this2.modal.tipo
+              });
 
-            _this2.toastr("Error!!", "", "error");
-          }
-        });
+              _this2.$modal.hide("agregar-otra-info");
+
+              _this2.toastr("Agregar Info", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
+            }
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this2.$router.push("/sin-acceso");
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.toastr("Error!!", "", "error");
+            }
+          });
+        } else {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "favor arregla el error", "error");
+        }
       }
     },
     verificarSelects: function verificarSelects() {
@@ -863,13 +1068,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.parametros.codigo) {
         if (this.getCepaByCodigo(this.parametros.codigo)) {
           if (this.getCepaByCodigo(this.parametros.codigo).id != this.info.id) {
-            this.mensajeCodigo = "Ya existe una cepa con ese codigo";
+            this.mensajes.unique = "Ya existe una cepa con ese codigo";
             return true;
           }
         }
       }
 
       return false;
+    },
+    inputModal: function inputModal() {
+      return this.modal.input;
     }
   }),
   created: function created() {
@@ -957,6 +1165,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.parametros.familia = this.getFamilias[0].id;
       } else {
         this.parametros.familia = null;
+      }
+    },
+    inputModal: function inputModal() {
+      if (!this.inputModal) {
+        this.modal.errors = true;
+      } else {
+        this.modal.errors = false;
       }
     }
   }
@@ -1356,43 +1571,70 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.codigo,
-                                expression: "parametros.codigo"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.codigo.$model,
+                                expression: "$v.parametros.codigo.$model",
+                                modifiers: { trim: true }
                               }
                             ],
                             class: [
                               "form-control",
-                              _vm.validarCodigo === true ? "is-invalid" : ""
+                              _vm.$v.parametros.codigo.$error
+                                ? "error-input-select"
+                                : ""
                             ],
                             attrs: {
                               name: "codigo",
                               id: "codigo",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.codigo },
+                            domProps: {
+                              value: _vm.$v.parametros.codigo.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "codigo",
-                                  $event.target.value
+                                  _vm.$v.parametros.codigo,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
                           }),
                           _vm._v(" "),
-                          _vm.validarCodigo
-                            ? _c(
-                                "em",
-                                { staticClass: "error invalid-feedback" },
-                                [_vm._v(_vm._s(_vm.mensajeCodigo))]
-                              )
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.minLength
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.mensajes.minLength +
+                                      _vm.$v.parametros.codigo.$params.minLength
+                                        .min +
+                                      " letras."
+                                  )
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.unique
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.unique))
+                              ])
                             : _vm._e()
                         ]
                       ),
@@ -1476,12 +1718,18 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.genero,
-                                    expression: "parametros.genero"
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.genero.$model,
+                                    expression: "$v.parametros.genero.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
-                                staticClass: "form-control",
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.genero.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
                                 attrs: { name: "select", id: "genero" },
                                 on: {
                                   change: [
@@ -1498,8 +1746,8 @@ var render = function() {
                                           return val
                                         })
                                       _vm.$set(
-                                        _vm.parametros,
-                                        "genero",
+                                        _vm.$v.parametros.genero,
+                                        "$model",
                                         $event.target.multiple
                                           ? $$selectedVal
                                           : $$selectedVal[0]
@@ -1546,7 +1794,14 @@ var render = function() {
                                   ]
                                 )
                               : _vm._e()
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _vm.$v.parametros.genero.$error &&
+                          !_vm.$v.parametros.genero.required
+                            ? _c("em", { staticClass: "text-error-select" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-md-6" }, [
@@ -1561,12 +1816,18 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.especie,
-                                    expression: "parametros.especie"
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.especie.$model,
+                                    expression: "$v.parametros.especie.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
-                                staticClass: "form-control",
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.especie.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
                                 attrs: { name: "select", id: "especie" },
                                 on: {
                                   change: function($event) {
@@ -1580,8 +1841,8 @@ var render = function() {
                                         return val
                                       })
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "especie",
+                                      _vm.$v.parametros.especie,
+                                      "$model",
                                       $event.target.multiple
                                         ? $$selectedVal
                                         : $$selectedVal[0]
@@ -1624,7 +1885,14 @@ var render = function() {
                                   ]
                                 )
                               : _vm._e()
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _vm.$v.parametros.especie.$error &&
+                          !_vm.$v.parametros.especie.required
+                            ? _c("em", { staticClass: "text-error-select" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ])
                       ]),
                       _vm._v(" "),
@@ -1644,12 +1912,20 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.familia,
-                                          expression: "parametros.familia"
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.familia.$model,
+                                          expression:
+                                            "$v.parametros.familia.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.familia.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "familia" },
                                       on: {
                                         change: function($event) {
@@ -1668,8 +1944,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "familia",
+                                            _vm.$v.parametros.familia,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -1718,7 +1994,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.familia.$error &&
+                                !_vm.$v.parametros.familia.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ])
                             : _vm._e(),
                           _vm._v(" "),
@@ -1735,12 +2020,19 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.reino,
-                                          expression: "parametros.reino"
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.reino.$model,
+                                          expression:
+                                            "$v.parametros.reino.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.reino.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "reino" },
                                       on: {
                                         change: function($event) {
@@ -1759,8 +2051,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "reino",
+                                            _vm.$v.parametros.reino,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -1807,7 +2099,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.reino.$error &&
+                                !_vm.$v.parametros.reino.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ])
                             : _vm._e()
                         ]),
@@ -1827,12 +2128,20 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.phylum,
-                                          expression: "parametros.phylum"
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.phylum.$model,
+                                          expression:
+                                            "$v.parametros.phylum.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.phylum.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "phylum" },
                                       on: {
                                         change: function($event) {
@@ -1851,8 +2160,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "phylum",
+                                            _vm.$v.parametros.phylum,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -1899,7 +2208,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.phylum.$error &&
+                                !_vm.$v.parametros.phylum.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ])
                             : _vm._e(),
                           _vm._v(" "),
@@ -1916,12 +2234,20 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.division,
-                                          expression: "parametros.division"
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.division.$model,
+                                          expression:
+                                            "$v.parametros.division.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.division.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "division" },
                                       on: {
                                         change: function($event) {
@@ -1940,8 +2266,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "division",
+                                            _vm.$v.parametros.division,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -1993,7 +2319,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.division.$error &&
+                                !_vm.$v.parametros.division.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ])
                             : _vm._e()
                         ])
@@ -2016,12 +2351,19 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.clase,
-                                          expression: "parametros.clase"
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.clase.$model,
+                                          expression:
+                                            "$v.parametros.clase.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.clase.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "clase" },
                                       on: {
                                         change: function($event) {
@@ -2040,8 +2382,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "clase",
+                                            _vm.$v.parametros.clase,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -2088,7 +2430,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.clase.$error &&
+                                !_vm.$v.parametros.clase.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-md-6" }, [
@@ -2103,12 +2454,19 @@ var render = function() {
                                       directives: [
                                         {
                                           name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.parametros.orden,
-                                          expression: "parametros.orden"
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.orden.$model,
+                                          expression:
+                                            "$v.parametros.orden.$model",
+                                          modifiers: { trim: true }
                                         }
                                       ],
-                                      staticClass: "form-control",
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.orden.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
                                       attrs: { name: "select", id: "orden" },
                                       on: {
                                         change: function($event) {
@@ -2127,8 +2485,8 @@ var render = function() {
                                               return val
                                             })
                                           _vm.$set(
-                                            _vm.parametros,
-                                            "orden",
+                                            _vm.$v.parametros.orden,
+                                            "$model",
                                             $event.target.multiple
                                               ? $$selectedVal
                                               : $$selectedVal[0]
@@ -2175,7 +2533,16 @@ var render = function() {
                                         ]
                                       )
                                     : _vm._e()
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.orden.$error &&
+                                !_vm.$v.parametros.orden.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
                               ])
                             ])
                           ])
@@ -2195,33 +2562,52 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.estado,
-                                    expression: "parametros.estado"
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.estado.$model,
+                                    expression: "$v.parametros.estado.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
-                                staticClass: "form-control",
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.estado.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
                                 attrs: {
                                   name: "estado",
                                   id: "estado",
                                   placeholder: "...",
-                                  type: "text",
-                                  required: ""
+                                  type: "text"
                                 },
-                                domProps: { value: _vm.parametros.estado },
+                                domProps: {
+                                  value: _vm.$v.parametros.estado.$model
+                                },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "estado",
-                                      $event.target.value
+                                      _vm.$v.parametros.estado,
+                                      "$model",
+                                      $event.target.value.trim()
                                     )
+                                  },
+                                  blur: function($event) {
+                                    return _vm.$forceUpdate()
                                   }
                                 }
-                              })
+                              }),
+                              _vm._v(" "),
+                              _vm.$v.parametros.estado.$error &&
+                              !_vm.$v.parametros.estado.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]
                           )
                         ]),
@@ -2594,14 +2980,15 @@ var render = function() {
                   ],
                   class: [
                     "form-control",
-                    _vm.validarNombreUnico ? "is-invalid" : ""
+                    _vm.validarNombreUnico || _vm.modal.errors
+                      ? "error-input-select"
+                      : ""
                   ],
                   attrs: {
                     name: "nombre",
                     id: "nombre",
                     placeholder: "...",
-                    type: "text",
-                    required: ""
+                    type: "text"
                   },
                   domProps: { value: _vm.modal.input },
                   on: {
@@ -2615,8 +3002,14 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm.validarNombreUnico
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
-                      _vm._v("Ya Existe un registro con ese nombre")
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v("Ya existe un registro con ese nombre")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.modal.errors
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.required))
                     ])
                   : _vm._e()
               ])
@@ -2641,10 +3034,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.bloquearBtnModal || _vm.validarNombreUnico
-                  },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarInfo }
                 },
                 [_vm._v("Agregar")]

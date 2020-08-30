@@ -19,10 +19,13 @@
                     id="medio"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.medio"
-                    required
+                    :class="['form-control', $v.parametros.medio.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.medio.$model"
                   />
+                  <em
+                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <template v-if="getInfoCaractMacroBacterias">
                   <div class="form-row">
@@ -32,8 +35,8 @@
                         <select
                           name="select"
                           id="forma"
-                          class="form-control"
-                          v-model="parametros.forma"
+                          :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.forma.$model"
                         >
                           <option
                             v-for="(f,index) in obtenerFormas"
@@ -50,6 +53,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="borde" class>Borde</label>
@@ -57,8 +64,8 @@
                         <select
                           name="select"
                           id="borde"
-                          class="form-control"
-                          v-model="parametros.borde"
+                          :class="['form-control', $v.parametros.borde.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.borde.$model"
                         >
                           <option
                             v-for="(b,index) in obtenerBordes"
@@ -75,6 +82,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.borde.$error&&!$v.parametros.borde.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="form-row">
@@ -84,8 +95,8 @@
                         <select
                           name="select"
                           id="detalle_optico"
-                          class="form-control"
-                          v-model="parametros.detalle_optico"
+                          :class="['form-control', $v.parametros.detalle_optico.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.detalle_optico.$model"
                         >
                           <option
                             v-for="(d,index) in obtenerDetalles"
@@ -102,6 +113,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.detalle_optico.$error&&!$v.parametros.detalle_optico.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="elevacion" class>Elevación</label>
@@ -109,8 +124,8 @@
                         <select
                           name="select"
                           id="elevacion"
-                          class="form-control"
-                          v-model="parametros.elevacion"
+                          :class="['form-control', $v.parametros.elevacion.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.elevacion.$model"
                         >
                           <option
                             v-for="(e,index) in obtenerElevaciones"
@@ -127,6 +142,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.elevacion.$error&&!$v.parametros.elevacion.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="form-row">
@@ -136,8 +155,8 @@
                         <select
                           name="select"
                           id="superficie"
-                          class="form-control"
-                          v-model="parametros.superficie"
+                          :class="['form-control', $v.parametros.superficie.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.superficie.$model"
                         >
                           <option
                             v-for="(s,index) in obtenerSuperficies"
@@ -154,6 +173,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.superficie.$error&&!$v.parametros.superficie.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="color" class>Color</label>
@@ -161,8 +184,8 @@
                         <select
                           name="select"
                           id="color"
-                          class="form-control"
-                          v-model="parametros.color"
+                          :class="['form-control', $v.parametros.color.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.color.$model"
                         >
                           <option
                             v-for="(c,index) in obtenerColores"
@@ -179,6 +202,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.color.$error&&!$v.parametros.color.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </template>
@@ -190,11 +217,14 @@
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                     ref="inputImagen"
-                    :required="required"
                   />
-                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
+                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em
+                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <div class="position-relative form-group">
                   <label>Tamaño</label>
@@ -247,7 +277,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </form>
             </div>
@@ -314,6 +344,7 @@ import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroo
 import vuex from "vuex";
 import Croppie from "../../../CroppieComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie, ModalAgregarInfo },
   props: ["info", "radioId1", "radioId2", "radioId3", "modificarInfo"],
@@ -339,14 +370,31 @@ export default {
       errors: [],
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      medio: { required },
+      forma: { required },
+      borde: { required },
+      elevacion: { required },
+      color: { required },
+      detalle_optico: { required },
+      superficie: { required },
+      imagen: { required },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopieCepasMixin],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Medio") {
-        if (this.parametros.imagen) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
           axios
             .post("/cepas/bacteria/caract-macro", this.parametros)
             .then((res) => {
@@ -383,34 +431,44 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/caract-macro/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Medio",
+                "Medio editado con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/caract-macro/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.$emit("editar", res.data);
-            this.toastr("Editar Medio", "Medio editado con exito!!", "success");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -486,7 +544,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Medio") {
         return true;
       } else {

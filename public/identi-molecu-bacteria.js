@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_obtenerImagenCroopie2Imagenes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie2Imagenes */ "./resources/js/mixins/obtenerImagenCroopie2Imagenes.js");
 /* harmony import */ var _CroppieComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -292,6 +294,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -318,8 +348,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       tituloForm: "",
       nomBtn: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido"
+      }
     };
+  },
+  validations: {
+    parametros: {
+      nombre_forward: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      nombre_reversed: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      secuen_forward: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      secuen_reversed: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      produc_forward: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      produc_reversed: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      obser_secuenciacion: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      imagen1: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      imagen2: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie2Imagenes__WEBPACK_IMPORTED_MODULE_2__["default"]],
   watch: {
@@ -335,9 +399,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Identificación") {
-        if (this.parametros.imagen1 && this.parametros.imagen2) {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Identificación") {
           axios.post("/cepas/bacteria/identi-molecu", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -369,38 +434,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor agregre las respectivas imagenes."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/bacteria/identi-molecu/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen1.value = "";
+            _this.$refs.inputImagen2.value = "";
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Identificación", "Identificación Molecular editada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
         }
       } else {
-        axios.put("/cepas/bacteria/identi-molecu/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.$refs.inputImagen1.value = "";
-          _this.$refs.inputImagen2.value = "";
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Identificación", "Identificación Molecular editada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -415,6 +477,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.imagen2 = this.info.img_secuen;
       this.imagenMiniatura1 = this.info.img_pcrPublica;
       this.imagenMiniatura2 = this.info.img_secuenPublica;
+      this.imagenInfo1 = this.info.img_pcr;
+      this.imagenInfo2 = this.info.img_secuen;
+      this.imagenInfoPublica1 = this.info.img_pcrPublica;
+      this.imagenInfoPublica2 = this.info.img_secuenPublica;
     }
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"]), {
@@ -425,7 +491,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Identificación") {
         return true;
       } else {
@@ -675,33 +741,50 @@ var render = function() {
                           directives: [
                             {
                               name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.nombre_forward,
-                              expression: "parametros.nombre_forward"
+                              rawName: "v-model.trim",
+                              value: _vm.$v.parametros.nombre_forward.$model,
+                              expression: "$v.parametros.nombre_forward.$model",
+                              modifiers: { trim: true }
                             }
                           ],
-                          staticClass: "form-control",
+                          class: [
+                            "form-control",
+                            _vm.$v.parametros.nombre_forward.$error
+                              ? "error-input-select"
+                              : ""
+                          ],
                           attrs: {
                             placeholder: "Nombre..",
                             name: "nombre_forward",
                             id: "nombre_forward",
-                            type: "text",
-                            required: ""
+                            type: "text"
                           },
-                          domProps: { value: _vm.parametros.nombre_forward },
+                          domProps: {
+                            value: _vm.$v.parametros.nombre_forward.$model
+                          },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
                               _vm.$set(
-                                _vm.parametros,
-                                "nombre_forward",
-                                $event.target.value
+                                _vm.$v.parametros.nombre_forward,
+                                "$model",
+                                $event.target.value.trim()
                               )
+                            },
+                            blur: function($event) {
+                              return _vm.$forceUpdate()
                             }
                           }
-                        })
+                        }),
+                        _vm._v(" "),
+                        _vm.$v.parametros.nombre_forward.$error &&
+                        !_vm.$v.parametros.nombre_forward.required
+                          ? _c("em", { staticClass: "text-error-input" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e()
                       ])
                     ]),
                     _vm._v(" "),
@@ -714,33 +797,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.secuen_forward,
-                                expression: "parametros.secuen_forward"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.secuen_forward.$model,
+                                expression:
+                                  "$v.parametros.secuen_forward.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.secuen_forward.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "secuen_forward",
                               id: "secuen_forward",
                               placeholder: "Secuencia...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.secuen_forward },
+                            domProps: {
+                              value: _vm.$v.parametros.secuen_forward.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "secuen_forward",
-                                  $event.target.value
+                                  _vm.$v.parametros.secuen_forward,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.secuen_forward.$error &&
+                          !_vm.$v.parametros.secuen_forward.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -754,33 +855,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.produc_forward,
-                                expression: "parametros.produc_forward"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.produc_forward.$model,
+                                expression:
+                                  "$v.parametros.produc_forward.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.produc_forward.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "produc_forward",
                               id: "produc_forward",
                               placeholder: "Producto...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.produc_forward },
+                            domProps: {
+                              value: _vm.$v.parametros.produc_forward.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "produc_forward",
-                                  $event.target.value
+                                  _vm.$v.parametros.produc_forward,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.produc_forward.$error &&
+                          !_vm.$v.parametros.produc_forward.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -795,33 +914,51 @@ var render = function() {
                           directives: [
                             {
                               name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.nombre_reversed,
-                              expression: "parametros.nombre_reversed"
+                              rawName: "v-model.trim",
+                              value: _vm.$v.parametros.nombre_reversed.$model,
+                              expression:
+                                "$v.parametros.nombre_reversed.$model",
+                              modifiers: { trim: true }
                             }
                           ],
-                          staticClass: "form-control",
+                          class: [
+                            "form-control",
+                            _vm.$v.parametros.nombre_reversed.$error
+                              ? "error-input-select"
+                              : ""
+                          ],
                           attrs: {
                             placeholder: "Nombre..",
                             name: "nombre_reversed",
                             id: "nombre_reversed",
-                            type: "text",
-                            required: ""
+                            type: "text"
                           },
-                          domProps: { value: _vm.parametros.nombre_reversed },
+                          domProps: {
+                            value: _vm.$v.parametros.nombre_reversed.$model
+                          },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
                               _vm.$set(
-                                _vm.parametros,
-                                "nombre_reversed",
-                                $event.target.value
+                                _vm.$v.parametros.nombre_reversed,
+                                "$model",
+                                $event.target.value.trim()
                               )
+                            },
+                            blur: function($event) {
+                              return _vm.$forceUpdate()
                             }
                           }
-                        })
+                        }),
+                        _vm._v(" "),
+                        _vm.$v.parametros.nombre_reversed.$error &&
+                        !_vm.$v.parametros.nombre_reversed.required
+                          ? _c("em", { staticClass: "text-error-input" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e()
                       ])
                     ]),
                     _vm._v(" "),
@@ -834,33 +971,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.secuen_reversed,
-                                expression: "parametros.secuen_reversed"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.secuen_reversed.$model,
+                                expression:
+                                  "$v.parametros.secuen_reversed.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.secuen_reversed.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "secuen_reversed",
                               id: "secuen_reversed",
                               placeholder: "Secuencia...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.secuen_reversed },
+                            domProps: {
+                              value: _vm.$v.parametros.secuen_reversed.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "secuen_reversed",
-                                  $event.target.value
+                                  _vm.$v.parametros.secuen_reversed,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.secuen_reversed.$error &&
+                          !_vm.$v.parametros.secuen_reversed.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -874,33 +1029,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.produc_reversed,
-                                expression: "parametros.produc_reversed"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.produc_reversed.$model,
+                                expression:
+                                  "$v.parametros.produc_reversed.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.produc_reversed.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "produc_reversed",
                               id: "produc_reversed",
                               placeholder: "Producto...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.produc_reversed },
+                            domProps: {
+                              value: _vm.$v.parametros.produc_reversed.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "produc_reversed",
-                                  $event.target.value
+                                  _vm.$v.parametros.produc_reversed,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.produc_reversed.$error &&
+                          !_vm.$v.parametros.produc_reversed.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -952,20 +1125,31 @@ var render = function() {
                           _vm._v(" "),
                           _c("input", {
                             ref: "inputImagen1",
-                            staticClass: "form-control-file",
+                            class: [
+                              "form-control-file",
+                              _vm.$v.parametros.imagen1.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "imagen1",
                               id: "imagen1",
                               type: "file",
-                              accept: "image/jpeg, image/png",
-                              required: _vm.required
+                              accept: "image/jpeg, image/png"
                             },
                             on: { change: _vm.obtenerImagen1 }
                           }),
                           _vm._v(" "),
                           _vm.imagenError.imagen1
-                            ? _c("span", { staticClass: "text-danger" }, [
+                            ? _c("em", { staticClass: "text-error-input" }, [
                                 _vm._v(_vm._s(_vm.imagenError.imagen1))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.imagen1.$error &&
+                          !_vm.$v.parametros.imagen1.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
                               ])
                             : _vm._e()
                         ]
@@ -983,20 +1167,31 @@ var render = function() {
                           _vm._v(" "),
                           _c("input", {
                             ref: "inputImagen2",
-                            staticClass: "form-control-file",
+                            class: [
+                              "form-control-file",
+                              _vm.$v.parametros.imagen2.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "imagen2",
                               id: "imagen2",
                               type: "file",
-                              accept: "image/jpeg, image/png",
-                              required: _vm.required
+                              accept: "image/jpeg, image/png"
                             },
                             on: { change: _vm.obtenerImagen2 }
                           }),
                           _vm._v(" "),
                           _vm.imagenError.imagen2
-                            ? _c("span", { staticClass: "text-danger" }, [
+                            ? _c("em", { staticClass: "text-error-input" }, [
                                 _vm._v(_vm._s(_vm.imagenError.imagen2))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.imagen2.$error &&
+                          !_vm.$v.parametros.imagen2.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
                               ])
                             : _vm._e()
                         ]
@@ -1024,19 +1219,27 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.obser_secuenciacion,
-                                expression: "parametros.obser_secuenciacion"
+                                rawName: "v-model.trim",
+                                value:
+                                  _vm.$v.parametros.obser_secuenciacion.$model,
+                                expression:
+                                  "$v.parametros.obser_secuenciacion.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.obser_secuenciacion.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "obser_secuenciacion",
-                              id: "obser_secuenciacion",
-                              required: ""
+                              id: "obser_secuenciacion"
                             },
                             domProps: {
-                              value: _vm.parametros.obser_secuenciacion
+                              value:
+                                _vm.$v.parametros.obser_secuenciacion.$model
                             },
                             on: {
                               input: function($event) {
@@ -1044,13 +1247,23 @@ var render = function() {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "obser_secuenciacion",
-                                  $event.target.value
+                                  _vm.$v.parametros.obser_secuenciacion,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.obser_secuenciacion.$error &&
+                          !_vm.$v.parametros.obser_secuenciacion.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1062,7 +1275,7 @@ var render = function() {
                   {
                     staticClass: "mb-2 mr-2 btn btn-block",
                     class: _vm.btnClase,
-                    attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                    attrs: { disabled: _vm.bloquearBtn }
                   },
                   [_vm._v(_vm._s(_vm.nomBtnComputed))]
                 )
@@ -1564,7 +1777,11 @@ var obtenerImagenCroopie3ImagenesMixin = {
       imagenError: {
         imagen1: "",
         imagen2: ""
-      }
+      },
+      imagenInfo1: "",
+      imagenInfo2: "",
+      imagenInfoPublica1: "",
+      imagenInfoPublica2: ""
     };
   },
   methods: {
@@ -1572,9 +1789,9 @@ var obtenerImagenCroopie3ImagenesMixin = {
       if (valor) {
         this.parametros.imagen1 = valor;
       } else {
-        if (!this.required) {
-          this.parametros.imagen1 = this.info.img_pcr;
-          this.imagenMiniatura1 = this.info.img_pcrPublica;
+        if (!this.validarTipoForm) {
+          this.parametros.imagen1 = this.imagenInfo1;
+          this.imagenMiniatura1 = this.imagenInfoPublica1;
           this.$refs.inputImagen1.value = "";
         } else {
           this.parametros.imagen1 = "";
@@ -1585,9 +1802,9 @@ var obtenerImagenCroopie3ImagenesMixin = {
       if (valor) {
         this.parametros.imagen2 = valor;
       } else {
-        if (!this.required) {
-          this.parametros.imagen2 = this.info.img_secuen;
-          this.imagenMiniatura2 = this.info.img_secuenPublica;
+        if (!this.validarTipoForm) {
+          this.parametros.imagen2 = this.imagenInfo2;
+          this.imagenMiniatura2 = this.imagenInfoPublica2;
           this.$refs.inputImagen2.value = "";
         } else {
           this.parametros.imagen2 = "";
@@ -1602,12 +1819,12 @@ var obtenerImagenCroopie3ImagenesMixin = {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.imagen1 = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
 
-          if (this.required) {
+          if (this.validarTipoForm) {
             this.imagenMiniatura1 = "";
             this.parametros.imagen1 = "";
           } else {
-            this.imagenMiniatura1 = this.info.img_pcrPublica;
-            this.parametros.imagen1 = this.info.img_pcr;
+            this.imagenMiniatura1 = this.imagenInfoPublica1;
+            this.parametros.imagen1 = this.imagenInfo1;
           }
 
           this.$refs.inputImagen1.value = "";
@@ -1616,12 +1833,12 @@ var obtenerImagenCroopie3ImagenesMixin = {
           this.cargarImagen(file, "imagen1");
         }
       } else {
-        if (this.required) {
+        if (this.validarTipoForm) {
           this.imagenMiniatura1 = "";
           this.parametros.imagen1 = "";
         } else {
-          this.imagenMiniatura1 = this.info.img_pcrPublica;
-          this.parametros.imagen1 = this.info.img_pcr;
+          this.imagenMiniatura1 = this.imagenInfoPublica1;
+          this.parametros.imagen1 = this.imagenInfo1;
         }
       }
     },
@@ -1633,12 +1850,12 @@ var obtenerImagenCroopie3ImagenesMixin = {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
           this.imagenError.imagen2 = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
 
-          if (this.required) {
+          if (this.validarTipoForm) {
             this.imagenMiniatura2 = "";
             this.parametros.imagen2 = "";
           } else {
-            this.imagenMiniatura2 = this.info.img_secuenPublica;
-            this.parametros.imagen2 = this.info.img_secuen;
+            this.imagenMiniatura2 = this.imagenInfoPublica2;
+            this.parametros.imagen2 = this.imagenInfo2;
           }
 
           this.$refs.inputImagen2.value = "";
@@ -1647,12 +1864,12 @@ var obtenerImagenCroopie3ImagenesMixin = {
           this.cargarImagen(file, "imagen2");
         }
       } else {
-        if (this.required) {
+        if (this.validarTipoForm) {
           this.imagenMiniatura2 = "";
           this.parametros.imagen2 = "";
         } else {
-          this.imagenMiniatura2 = this.info.img_secuenPublica;
-          this.parametros.imagen2 = this.info.img_secuen;
+          this.imagenMiniatura2 = this.imagenInfoPublica2;
+          this.parametros.imagen2 = this.imagenInfo2;
         }
       }
     },
@@ -1685,7 +1902,7 @@ var obtenerImagenCroopie3ImagenesMixin = {
     },
     mostrarBtnCroppie1: function mostrarBtnCroppie1() {
       if (this.info) {
-        if (this.imagenMiniatura1 != this.info.img_pcrPublica) {
+        if (this.imagenMiniatura1 != this.imagenInfoPublica1) {
           return true;
         } else {
           return false;
@@ -1696,7 +1913,7 @@ var obtenerImagenCroopie3ImagenesMixin = {
     },
     mostrarBtnCroppie2: function mostrarBtnCroppie2() {
       if (this.info) {
-        if (this.imagenMiniatura2 != this.info.img_secuenPublica) {
+        if (this.imagenMiniatura2 != this.imagenInfoPublica2) {
           return true;
         } else {
           return false;
@@ -1707,7 +1924,7 @@ var obtenerImagenCroopie3ImagenesMixin = {
     },
     validarCroppie1: function validarCroppie1() {
       if (this.info) {
-        if (this.imagenMiniatura1 == this.info.img_pcrPublica) {
+        if (this.imagenMiniatura1 == this.imagenInfoPublica1) {
           return true;
         } else {
           return false;
@@ -1718,7 +1935,7 @@ var obtenerImagenCroopie3ImagenesMixin = {
     },
     validarCroppie2: function validarCroppie2() {
       if (this.info) {
-        if (this.imagenMiniatura2 == this.info.img_secuenPublica) {
+        if (this.imagenMiniatura2 == this.imagenInfoPublica2) {
           return true;
         } else {
           return false;
@@ -1726,13 +1943,6 @@ var obtenerImagenCroopie3ImagenesMixin = {
       } else {
         return false;
       }
-    },
-    validarBtn: function validarBtn() {
-      if (!this.parametros.imagen1 || !this.parametros.imagen2) {
-        return true;
-      }
-
-      return false;
     }
   }
 };

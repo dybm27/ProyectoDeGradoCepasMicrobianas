@@ -181,6 +181,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
 /* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
 /* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -501,6 +503,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -532,8 +581,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         otras_estructuras: "",
         imagen1: "",
         imagen2: "",
-        imagen3: "",
-        descripcion_imagenes: ""
+        imagen3: ""
       },
       tituloModal: "",
       tipoModal: "",
@@ -541,8 +589,148 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido"
+      }
     };
+  },
+  validations: function validations() {
+    if (this.mostrarConidios && this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          fialides_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else if (this.mostrarConidios && !this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else if (this.fialidesPresencia && !this.mostrarConidios) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          fialides_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
@@ -550,21 +738,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.parametros.fialides === "Ausencia") {
-        this.parametros.fialides_forma = "";
-        this.parametros.fialides_otra_caracteristica = "";
-      }
+      if (!this.$v.$invalid) {
+        if (this.parametros.fialides === "Ausencia") {
+          this.parametros.fialides_forma = "";
+          this.parametros.fialides_otra_caracteristica = "";
+        }
 
-      if (this.parametros.espora_asexual != 2) {
-        this.parametros.esporas_asexuales_conidios_tamano = "";
-        this.parametros.esporas_asexuales_conidios_color = "";
-        this.parametros.esporas_asexuales_conidios_forma = "";
-        this.parametros.esporas_asexuales_conidios_otras = "";
-      }
+        if (this.parametros.espora_asexual != 2) {
+          this.parametros.esporas_asexuales_conidios_tamano = "";
+          this.parametros.esporas_asexuales_conidios_color = "";
+          this.parametros.esporas_asexuales_conidios_forma = "";
+          this.parametros.esporas_asexuales_conidios_otras = "";
+        }
 
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+        if (this.tituloForm === "Agregar Característica") {
           axios.post("/cepas/hongo/caract-micro", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -595,36 +784,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor elija al menos una imagen."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/hongo/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
         }
       } else {
-        axios.put("/cepas/hongo/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     showModal: function showModal(tipo) {
@@ -683,7 +869,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -705,6 +891,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     obtenerEsporasSexuales: function obtenerEsporasSexuales() {
       return this.getInfoCaractMicroHongos.esporas_sexuales;
+    },
+    fialidesPresencia: function fialidesPresencia() {
+      if (this.parametros.fialides === "Presencia") {
+        return true;
+      }
+
+      return false;
+    },
+    mostrarConidios: function mostrarConidios() {
+      if (this.parametros.espora_asexual === 2) {
+        return true;
+      }
+
+      return false;
     }
   }),
   mounted: function mounted() {
@@ -985,7 +1185,10 @@ var render = function() {
                       expression: "nombre"
                     }
                   ],
-                  staticClass: "form-control",
+                  class: [
+                    "form-control",
+                    _vm.errors.nombre ? "error-input-select" : ""
+                  ],
                   attrs: {
                     name: "nombre",
                     id: "nombre",
@@ -1005,7 +1208,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
+                  ? _c("span", { staticClass: "text-error-input" }, [
                       _vm._v(_vm._s(_vm.errors.nombre[0]))
                     ])
                   : _vm._e()
@@ -1106,184 +1309,228 @@ var render = function() {
                   _vm._v(" "),
                   _vm.getInfoCaractMicroHongos
                     ? [
-                        _c("label", { attrs: { for: "conidioforo" } }, [
-                          _vm._v("Conidióforo")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group mb-3" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "conidioforo" } }, [
+                              _vm._v("Conidióforo")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "input-group mb-3" }, [
+                              _c(
+                                "select",
                                 {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.parametros.conidioforo,
-                                  expression: "parametros.conidioforo"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: { name: "select", id: "conidioforo" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.$set(
-                                    _vm.parametros,
-                                    "conidioforo",
-                                    $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model.trim",
+                                      value:
+                                        _vm.$v.parametros.conidioforo.$model,
+                                      expression:
+                                        "$v.parametros.conidioforo.$model",
+                                      modifiers: { trim: true }
+                                    }
+                                  ],
+                                  class: [
+                                    "form-control",
+                                    _vm.$v.parametros.conidioforo.$error
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
+                                  attrs: { name: "select", id: "conidioforo" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.$v.parametros.conidioforo,
+                                        "$model",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                _vm._l(_vm.obtenerConidioforos, function(
+                                  f,
+                                  index
+                                ) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: f.id } },
+                                    [_vm._v(_vm._s(f.nombre))]
                                   )
-                                }
-                              }
-                            },
-                            _vm._l(_vm.obtenerConidioforos, function(f, index) {
-                              return _c(
-                                "option",
-                                { key: index, domProps: { value: f.id } },
-                                [_vm._v(_vm._s(f.nombre))]
-                              )
-                            }),
-                            0
-                          ),
-                          _vm._v(" "),
-                          _vm.getPermisoByNombre("agregar-otra")
-                            ? _c("div", { staticClass: "input-group-append" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                }),
+                                0
+                              ),
+                              _vm._v(" "),
+                              _vm.getPermisoByNombre("agregar-otra")
+                                ? _c(
+                                    "div",
+                                    { staticClass: "input-group-append" },
+                                    [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.showModal(
+                                                "conidioforo"
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-plus"
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _vm.$v.parametros.conidioforo.$error &&
+                            !_vm.$v.parametros.conidioforo.required
+                              ? _c("em", { staticClass: "text-error-select" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "fialides" } }, [
+                              _vm._v("Fiálides")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "custom-radio custom-control custom-control-inline"
+                                },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.parametros.fialides,
+                                        expression: "parametros.fialides"
+                                      }
+                                    ],
+                                    staticClass: "custom-control-input",
+                                    attrs: {
+                                      type: "radio",
+                                      id: "fialides1",
+                                      name: "fialides",
+                                      value: "Presencia"
+                                    },
+                                    domProps: {
+                                      checked: _vm._q(
+                                        _vm.parametros.fialides,
+                                        "Presencia"
+                                      )
+                                    },
                                     on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.showModal("conidioforo")
+                                      change: function($event) {
+                                        return _vm.$set(
+                                          _vm.parametros,
+                                          "fialides",
+                                          "Presencia"
+                                        )
                                       }
                                     }
-                                  },
-                                  [_c("i", { staticClass: "fas fa-plus" })]
-                                )
-                              ])
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("label", { attrs: { for: "fialides" } }, [
-                          _vm._v("Fiálides")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "custom-radio custom-control custom-control-inline"
-                            },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fialides,
-                                    expression: "parametros.fialides"
-                                  }
-                                ],
-                                staticClass: "custom-control-input",
-                                attrs: {
-                                  type: "radio",
-                                  id: "fialides1",
-                                  name: "fialides",
-                                  value: "Presencia"
-                                },
-                                domProps: {
-                                  checked: _vm._q(
-                                    _vm.parametros.fialides,
-                                    "Presencia"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass: "custom-control-label",
+                                      attrs: { for: "fialides1" }
+                                    },
+                                    [_vm._v("Presencia")]
                                   )
-                                },
-                                on: {
-                                  change: function($event) {
-                                    return _vm.$set(
-                                      _vm.parametros,
-                                      "fialides",
-                                      "Presencia"
-                                    )
-                                  }
-                                }
-                              }),
+                                ]
+                              ),
                               _vm._v(" "),
                               _c(
-                                "label",
+                                "div",
                                 {
-                                  staticClass: "custom-control-label",
-                                  attrs: { for: "fialides1" }
+                                  staticClass:
+                                    "custom-radio custom-control custom-control-inline"
                                 },
-                                [_vm._v("Presencia")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "custom-radio custom-control custom-control-inline"
-                            },
-                            [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.fialides,
-                                    expression: "parametros.fialides"
-                                  }
-                                ],
-                                staticClass: "custom-control-input",
-                                attrs: {
-                                  type: "radio",
-                                  id: "fialides2",
-                                  name: "fialides",
-                                  value: "Ausencia"
-                                },
-                                domProps: {
-                                  checked: _vm._q(
-                                    _vm.parametros.fialides,
-                                    "Ausencia"
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.parametros.fialides,
+                                        expression: "parametros.fialides"
+                                      }
+                                    ],
+                                    staticClass: "custom-control-input",
+                                    attrs: {
+                                      type: "radio",
+                                      id: "fialides2",
+                                      name: "fialides",
+                                      value: "Ausencia"
+                                    },
+                                    domProps: {
+                                      checked: _vm._q(
+                                        _vm.parametros.fialides,
+                                        "Ausencia"
+                                      )
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.$set(
+                                          _vm.parametros,
+                                          "fialides",
+                                          "Ausencia"
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass: "custom-control-label",
+                                      attrs: { for: "fialides2" }
+                                    },
+                                    [_vm._v("Ausencia")]
                                   )
-                                },
-                                on: {
-                                  change: function($event) {
-                                    return _vm.$set(
-                                      _vm.parametros,
-                                      "fialides",
-                                      "Ausencia"
-                                    )
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "custom-control-label",
-                                  attrs: { for: "fialides2" }
-                                },
-                                [_vm._v("Ausencia")]
+                                ]
                               )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _vm.parametros.fialides === "Presencia"
-                            ? _c(
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm.fialidesPresencia
+                          ? _c("div", { staticClass: "ml-3 mr-3" }, [
+                              _c(
                                 "div",
                                 { staticClass: "position-relative form-group" },
                                 [
@@ -1297,21 +1544,30 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.fialides_forma,
-                                        expression: "parametros.fialides_forma"
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.fialides_forma
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.fialides_forma.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.fialides_forma.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: {
                                       name: "fialides_forma",
                                       id: "fialides_forma",
                                       placeholder: "...",
-                                      type: "text",
-                                      required: ""
+                                      type: "text"
                                     },
                                     domProps: {
-                                      value: _vm.parametros.fialides_forma
+                                      value:
+                                        _vm.$v.parametros.fialides_forma.$model
                                     },
                                     on: {
                                       input: function($event) {
@@ -1319,14 +1575,32 @@ var render = function() {
                                           return
                                         }
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "fialides_forma",
-                                          $event.target.value
+                                          _vm.$v.parametros.fialides_forma,
+                                          "$model",
+                                          $event.target.value.trim()
                                         )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
                                       }
                                     }
                                   }),
                                   _vm._v(" "),
+                                  _vm.$v.parametros.fialides_forma.$error &&
+                                  !_vm.$v.parametros.fialides_forma.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
                                   _c(
                                     "label",
                                     {
@@ -1376,8 +1650,8 @@ var render = function() {
                                   })
                                 ]
                               )
-                            : _vm._e()
-                        ]),
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
                         _c("label", { attrs: { for: "fialides" } }, [
                           _vm._v("Vesícula")
@@ -1498,12 +1772,20 @@ var render = function() {
                               directives: [
                                 {
                                   name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.parametros.espora_asexual,
-                                  expression: "parametros.espora_asexual"
+                                  rawName: "v-model.trim",
+                                  value:
+                                    _vm.$v.parametros.espora_asexual.$model,
+                                  expression:
+                                    "$v.parametros.espora_asexual.$model",
+                                  modifiers: { trim: true }
                                 }
                               ],
-                              staticClass: "form-control",
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.espora_asexual.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
                               attrs: { name: "select", id: "espora_asexual" },
                               on: {
                                 change: function($event) {
@@ -1517,8 +1799,8 @@ var render = function() {
                                       return val
                                     })
                                   _vm.$set(
-                                    _vm.parametros,
-                                    "espora_asexual",
+                                    _vm.$v.parametros.espora_asexual,
+                                    "$model",
                                     $event.target.multiple
                                       ? $$selectedVal
                                       : $$selectedVal[0]
@@ -1559,350 +1841,423 @@ var render = function() {
                             : _vm._e()
                         ]),
                         _vm._v(" "),
-                        _vm.parametros.espora_asexual === 2
-                          ? _c(
-                              "div",
-                              { staticClass: "position-relative form-group" },
-                              [
-                                _c(
-                                  "label",
-                                  {
-                                    attrs: {
-                                      for: "esporas_asexuales_conidios_tamano"
-                                    }
-                                  },
-                                  [_vm._v("Tamaño")]
-                                ),
-                                _vm._v(" "),
-                                _c("div", [
+                        _vm.$v.parametros.espora_asexual.$error &&
+                        !_vm.$v.parametros.espora_asexual.required
+                          ? _c("em", { staticClass: "text-error-select" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.mostrarConidios
+                          ? _c("div", { staticClass: "ml-3 mr-3" }, [
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
                                   _c(
-                                    "div",
+                                    "label",
                                     {
-                                      staticClass:
-                                        "custom-radio custom-control custom-control-inline"
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_tamano"
+                                      }
                                     },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value:
+                                    [_vm._v("Tamaño")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano1",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Grande"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
                                               _vm.parametros
                                                 .esporas_asexuales_conidios_tamano,
-                                            expression:
-                                              "parametros.esporas_asexuales_conidios_tamano"
-                                          }
-                                        ],
-                                        staticClass: "custom-control-input",
-                                        attrs: {
-                                          type: "radio",
-                                          id:
-                                            "esporas_asexuales_conidios_tamano1",
-                                          name:
-                                            "esporas_asexuales_conidios_tamano",
-                                          value: "Grande"
-                                        },
-                                        domProps: {
-                                          checked: _vm._q(
-                                            _vm.parametros
-                                              .esporas_asexuales_conidios_tamano,
-                                            "Grande"
-                                          )
-                                        },
-                                        on: {
-                                          change: function($event) {
-                                            return _vm.$set(
-                                              _vm.parametros,
-                                              "esporas_asexuales_conidios_tamano",
                                               "Grande"
                                             )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Grande"
+                                              )
+                                            }
                                           }
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom-control-label",
-                                          attrs: {
-                                            for:
-                                              "esporas_asexuales_conidios_tamano1"
-                                          }
-                                        },
-                                        [_vm._v("Grande")]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "custom-radio custom-control custom-control-inline"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
                                           {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value:
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano1"
+                                            }
+                                          },
+                                          [_vm._v("Grande")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano2",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Mediano"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
                                               _vm.parametros
                                                 .esporas_asexuales_conidios_tamano,
-                                            expression:
-                                              "parametros.esporas_asexuales_conidios_tamano"
-                                          }
-                                        ],
-                                        staticClass: "custom-control-input",
-                                        attrs: {
-                                          type: "radio",
-                                          id:
-                                            "esporas_asexuales_conidios_tamano2",
-                                          name:
-                                            "esporas_asexuales_conidios_tamano",
-                                          value: "Mediano"
-                                        },
-                                        domProps: {
-                                          checked: _vm._q(
-                                            _vm.parametros
-                                              .esporas_asexuales_conidios_tamano,
-                                            "Mediano"
-                                          )
-                                        },
-                                        on: {
-                                          change: function($event) {
-                                            return _vm.$set(
-                                              _vm.parametros,
-                                              "esporas_asexuales_conidios_tamano",
                                               "Mediano"
                                             )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Mediano"
+                                              )
+                                            }
                                           }
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom-control-label",
-                                          attrs: {
-                                            for:
-                                              "esporas_asexuales_conidios_tamano2"
-                                          }
-                                        },
-                                        [_vm._v("Mediano")]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "custom-radio custom-control custom-control-inline"
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
                                           {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value:
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano2"
+                                            }
+                                          },
+                                          [_vm._v("Mediano")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano3",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Pequeño"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
                                               _vm.parametros
                                                 .esporas_asexuales_conidios_tamano,
-                                            expression:
-                                              "parametros.esporas_asexuales_conidios_tamano"
-                                          }
-                                        ],
-                                        staticClass: "custom-control-input",
-                                        attrs: {
-                                          type: "radio",
-                                          id:
-                                            "esporas_asexuales_conidios_tamano3",
-                                          name:
-                                            "esporas_asexuales_conidios_tamano",
-                                          value: "Pequeño"
-                                        },
-                                        domProps: {
-                                          checked: _vm._q(
-                                            _vm.parametros
-                                              .esporas_asexuales_conidios_tamano,
-                                            "Pequeño"
-                                          )
-                                        },
-                                        on: {
-                                          change: function($event) {
-                                            return _vm.$set(
-                                              _vm.parametros,
-                                              "esporas_asexuales_conidios_tamano",
                                               "Pequeño"
                                             )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Pequeño"
+                                              )
+                                            }
                                           }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano3"
+                                            }
+                                          },
+                                          [_vm._v("Pequeño")]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_color"
+                                      }
+                                    },
+                                    [_vm._v("Color")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_color
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.esporas_asexuales_conidios_color.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros
+                                        .esporas_asexuales_conidios_color.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_color",
+                                      id: "esporas_asexuales_conidios_color",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.$v.parametros
+                                          .esporas_asexuales_conidios_color
+                                          .$model
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
                                         }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "custom-control-label",
-                                          attrs: {
-                                            for:
-                                              "esporas_asexuales_conidios_tamano3"
-                                          }
-                                        },
-                                        [_vm._v("Pequeño")]
-                                      )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "label",
-                                  {
-                                    attrs: {
-                                      for: "esporas_asexuales_conidios_color"
+                                        _vm.$set(
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_color,
+                                          "$model",
+                                          $event.target.value.trim()
+                                        )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
+                                      }
                                     }
-                                  },
-                                  [_vm._v("Color")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.$v.parametros
+                                    .esporas_asexuales_conidios_color.$error &&
+                                  !_vm.$v.parametros
+                                    .esporas_asexuales_conidios_color.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
                                     {
-                                      name: "model",
-                                      rawName: "v-model",
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_forma"
+                                      }
+                                    },
+                                    [_vm._v("Forma")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_forma
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.esporas_asexuales_conidios_forma.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros
+                                        .esporas_asexuales_conidios_forma.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_forma",
+                                      id: "esporas_asexuales_conidios_forma",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.$v.parametros
+                                          .esporas_asexuales_conidios_forma
+                                          .$model
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_forma,
+                                          "$model",
+                                          $event.target.value.trim()
+                                        )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.$v.parametros
+                                    .esporas_asexuales_conidios_forma.$error &&
+                                  !_vm.$v.parametros
+                                    .esporas_asexuales_conidios_forma.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_otras"
+                                      }
+                                    },
+                                    [_vm._v("Otras características")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value:
+                                          _vm.parametros
+                                            .esporas_asexuales_conidios_otras,
+                                        expression:
+                                          "parametros.esporas_asexuales_conidios_otras"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_otras",
+                                      id: "esporas_asexuales_conidios_otras",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
                                       value:
                                         _vm.parametros
-                                          .esporas_asexuales_conidios_color,
-                                      expression:
-                                        "parametros.esporas_asexuales_conidios_color"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    name: "esporas_asexuales_conidios_color",
-                                    id: "esporas_asexuales_conidios_color",
-                                    placeholder: "...",
-                                    type: "text",
-                                    required: ""
-                                  },
-                                  domProps: {
-                                    value:
-                                      _vm.parametros
-                                        .esporas_asexuales_conidios_color
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
+                                          .esporas_asexuales_conidios_otras
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.parametros,
+                                          "esporas_asexuales_conidios_otras",
+                                          $event.target.value
+                                        )
                                       }
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "esporas_asexuales_conidios_color",
-                                        $event.target.value
-                                      )
                                     }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "label",
-                                  {
-                                    attrs: {
-                                      for: "esporas_asexuales_conidios_forma"
-                                    }
-                                  },
-                                  [_vm._v("Forma")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value:
-                                        _vm.parametros
-                                          .esporas_asexuales_conidios_forma,
-                                      expression:
-                                        "parametros.esporas_asexuales_conidios_forma"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    name: "esporas_asexuales_conidios_forma",
-                                    id: "esporas_asexuales_conidios_forma",
-                                    placeholder: "...",
-                                    type: "text",
-                                    required: ""
-                                  },
-                                  domProps: {
-                                    value:
-                                      _vm.parametros
-                                        .esporas_asexuales_conidios_forma
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "esporas_asexuales_conidios_forma",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "label",
-                                  {
-                                    attrs: {
-                                      for: "esporas_asexuales_conidios_otras"
-                                    }
-                                  },
-                                  [_vm._v("Otras características")]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value:
-                                        _vm.parametros
-                                          .esporas_asexuales_conidios_otras,
-                                      expression:
-                                        "parametros.esporas_asexuales_conidios_otras"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    name: "esporas_asexuales_conidios_otras",
-                                    id: "esporas_asexuales_conidios_otras",
-                                    placeholder: "...",
-                                    type: "text"
-                                  },
-                                  domProps: {
-                                    value:
-                                      _vm.parametros
-                                        .esporas_asexuales_conidios_otras
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.parametros,
-                                        "esporas_asexuales_conidios_otras",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]
-                            )
+                                  })
+                                ]
+                              )
+                            ])
                           : _vm._e(),
                         _vm._v(" "),
                         _c("label", { attrs: { for: "espora_sexual" } }, [
@@ -1916,12 +2271,19 @@ var render = function() {
                               directives: [
                                 {
                                   name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.parametros.espora_sexual,
-                                  expression: "parametros.espora_sexual"
+                                  rawName: "v-model.trim",
+                                  value: _vm.$v.parametros.espora_sexual.$model,
+                                  expression:
+                                    "$v.parametros.espora_sexual.$model",
+                                  modifiers: { trim: true }
                                 }
                               ],
-                              staticClass: "form-control",
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.espora_sexual.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
                               attrs: { name: "select", id: "espora_sexual" },
                               on: {
                                 change: function($event) {
@@ -1935,8 +2297,8 @@ var render = function() {
                                       return val
                                     })
                                   _vm.$set(
-                                    _vm.parametros,
-                                    "espora_sexual",
+                                    _vm.$v.parametros.espora_sexual,
+                                    "$model",
                                     $event.target.multiple
                                       ? $$selectedVal
                                       : $$selectedVal[0]
@@ -1975,11 +2337,18 @@ var render = function() {
                                 )
                               ])
                             : _vm._e()
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _vm.$v.parametros.espora_sexual.$error &&
+                        !_vm.$v.parametros.espora_sexual.required
+                          ? _c("em", { staticClass: "text-error-select" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e()
                       ]
                     : _vm._e(),
                   _vm._v(" "),
-                  _vm.required
+                  _vm.validarTipoForm
                     ? [
                         _c(
                           "div",
@@ -1991,21 +2360,38 @@ var render = function() {
                             _vm._v(" "),
                             _c("input", {
                               ref: "inputImagen",
-                              staticClass: "form-control-file",
+                              class: [
+                                "form-control-file",
+                                _vm.$v.parametros.imagen1.$error ||
+                                _vm.$v.parametros.imagen2.$error ||
+                                _vm.$v.parametros.imagen3.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
                               attrs: {
                                 name: "imagen",
                                 id: "imagen",
                                 type: "file",
                                 accept: "image/jpeg, image/png",
-                                multiple: "",
-                                required: _vm.required
+                                multiple: ""
                               },
                               on: { change: _vm.obtenerImagenes }
                             }),
                             _vm._v(" "),
                             _vm.erroresImagenes
-                              ? _c("span", { staticClass: "text-danger" }, [
+                              ? _c("em", { staticClass: "text-error-input" }, [
                                   _vm._v(_vm._s(_vm.erroresImagenes))
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            (_vm.$v.parametros.imagen1.$error &&
+                              !_vm.$v.parametros.imagen1.required) ||
+                            (_vm.$v.parametros.imagen2.$error &&
+                              !_vm.$v.parametros.imagen2.required) ||
+                            (_vm.$v.parametros.imagen3.$error &&
+                              !_vm.$v.parametros.imagen3.required)
+                              ? _c("em", { staticClass: "text-error-input" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
                                 ])
                               : _vm._e()
                           ]
@@ -2050,7 +2436,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
+                      attrs: { disabled: _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtn))]
                   )
@@ -2067,7 +2453,7 @@ var render = function() {
               "div",
               { staticClass: "card-body" },
               [
-                _vm.required
+                _vm.validarTipoForm
                   ? [
                       _vm.imagenesCroppie.length === _vm.cantImagenes &&
                       _vm.$refs.inputImagen.value

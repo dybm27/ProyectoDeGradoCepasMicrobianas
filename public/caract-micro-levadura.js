@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie3Imagenes */ "./resources/js/mixins/obtenerImagenCroopie3Imagenes.js");
 /* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
 /* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -420,6 +422,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -460,8 +477,30 @@ __webpack_require__.r(__webpack_exports__);
       tituloForm: "",
       nomBtn: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido"
+      }
     };
+  },
+  validations: {
+    parametros: {
+      imagen1: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      imagen2: {
+        required: function required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        }
+      },
+      imagen3: {
+        required: function required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        }
+      }
+    }
   },
   mixins: [_mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
   methods: {
@@ -469,9 +508,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios.post("/cepas/levadura/caract-micro", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -502,36 +542,33 @@ __webpack_require__.r(__webpack_exports__);
             }
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor elija al menos una imagen."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/levadura/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
         }
       } else {
-        axios.put("/cepas/levadura/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -557,7 +594,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -1921,7 +1958,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm.required
+                _vm.validarTipoForm
                   ? [
                       _c(
                         "div",
@@ -1933,21 +1970,38 @@ var render = function() {
                           _vm._v(" "),
                           _c("input", {
                             ref: "inputImagen",
-                            staticClass: "form-control-file",
+                            class: [
+                              "form-control-file",
+                              _vm.$v.parametros.imagen1.$error ||
+                              _vm.$v.parametros.imagen2.$error ||
+                              _vm.$v.parametros.imagen3.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "imagen",
                               id: "imagen",
                               type: "file",
                               accept: "image/jpeg, image/png",
-                              multiple: "",
-                              required: _vm.required
+                              multiple: ""
                             },
                             on: { change: _vm.obtenerImagenes }
                           }),
                           _vm._v(" "),
                           _vm.erroresImagenes
-                            ? _c("span", { staticClass: "text-danger" }, [
+                            ? _c("em", { staticClass: "text-error-input" }, [
                                 _vm._v(_vm._s(_vm.erroresImagenes))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          (_vm.$v.parametros.imagen1.$error &&
+                            !_vm.$v.parametros.imagen1.required) ||
+                          (_vm.$v.parametros.imagen2.$error &&
+                            !_vm.$v.parametros.imagen2.required) ||
+                          (_vm.$v.parametros.imagen3.$error &&
+                            !_vm.$v.parametros.imagen3.required)
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
                               ])
                             : _vm._e()
                         ]
@@ -1992,7 +2046,7 @@ var render = function() {
                   {
                     staticClass: "mb-2 mr-2 btn btn-block",
                     class: _vm.btnClase,
-                    attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
+                    attrs: { disabled: _vm.bloquearBtn }
                   },
                   [_vm._v(_vm._s(_vm.nomBtn))]
                 )
@@ -2011,7 +2065,7 @@ var render = function() {
             [
               _c("h5", { staticClass: "card-title" }, [_vm._v("Imagenes")]),
               _vm._v(" "),
-              _vm.required
+              _vm.validarTipoForm
                 ? [
                     _vm.imagenesCroppie.length === _vm.cantImagenes &&
                     _vm.$refs.inputImagen.value

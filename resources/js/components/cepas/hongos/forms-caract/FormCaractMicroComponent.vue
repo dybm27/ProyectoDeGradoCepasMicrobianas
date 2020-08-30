@@ -12,68 +12,79 @@
                 </div>
               </template>
               <template v-if="getInfoCaractMicroHongos">
-                <label for="conidioforo" class>Conidióforo</label>
-                <div class="input-group mb-3">
-                  <select
-                    name="select"
-                    id="conidioforo"
-                    class="form-control"
-                    v-model="parametros.conidioforo"
-                  >
-                    <option
-                      v-for="(f,index) in obtenerConidioforos"
-                      :key="index"
-                      :value="f.id"
-                    >{{ f.nombre }}</option>
-                  </select>
-                  <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
-                    <button
-                      class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
-                      @click.prevent="showModal('conidioforo')"
+                <div class="position-relative form-group">
+                  <label for="conidioforo" class>Conidióforo</label>
+                  <div class="input-group mb-3">
+                    <select
+                      name="select"
+                      id="conidioforo"
+                      :class="['form-control', $v.parametros.conidioforo.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.conidioforo.$model"
                     >
-                      <i class="fas fa-plus"></i>
-                    </button>
+                      <option
+                        v-for="(f,index) in obtenerConidioforos"
+                        :key="index"
+                        :value="f.id"
+                      >{{ f.nombre }}</option>
+                    </select>
+                    <div class="input-group-append" v-if="getPermisoByNombre('agregar-otra')">
+                      <button
+                        class="btn-icon btn-icon-only btn-pill btn btn-outline-success"
+                        @click.prevent="showModal('conidioforo')"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <em
+                    v-if="$v.parametros.conidioforo.$error&&!$v.parametros.conidioforo.required"
+                    class="text-error-select"
+                  >{{mensajes.required}}</em>
+                </div>
+                <div class="position-relative form-group">
+                  <label for="fialides" class>Fiálides</label>
+                  <div>
+                    <div class="custom-radio custom-control custom-control-inline">
+                      <input
+                        type="radio"
+                        id="fialides1"
+                        name="fialides"
+                        class="custom-control-input"
+                        value="Presencia"
+                        v-model="parametros.fialides"
+                      />
+                      <label class="custom-control-label" for="fialides1">Presencia</label>
+                    </div>
+                    <div class="custom-radio custom-control custom-control-inline">
+                      <input
+                        type="radio"
+                        id="fialides2"
+                        name="fialides"
+                        class="custom-control-input"
+                        value="Ausencia"
+                        v-model="parametros.fialides"
+                      />
+                      <label class="custom-control-label" for="fialides2">Ausencia</label>
+                    </div>
                   </div>
                 </div>
-                <label for="fialides" class>Fiálides</label>
-                <div>
-                  <div class="custom-radio custom-control custom-control-inline">
-                    <input
-                      type="radio"
-                      id="fialides1"
-                      name="fialides"
-                      class="custom-control-input"
-                      value="Presencia"
-                      v-model="parametros.fialides"
-                    />
-                    <label class="custom-control-label" for="fialides1">Presencia</label>
-                  </div>
-                  <div class="custom-radio custom-control custom-control-inline">
-                    <input
-                      type="radio"
-                      id="fialides2"
-                      name="fialides"
-                      class="custom-control-input"
-                      value="Ausencia"
-                      v-model="parametros.fialides"
-                    />
-                    <label class="custom-control-label" for="fialides2">Ausencia</label>
-                  </div>
-
-                  <div
-                    class="position-relative form-group"
-                    v-if="parametros.fialides === 'Presencia'"
-                  >
+                <div v-if="fialidesPresencia" class="ml-3 mr-3">
+                  <div class="position-relative form-group">
                     <label for="fialides_forma" class>Forma</label>
                     <input
                       name="fialides_forma"
                       id="fialides_forma"
                       placeholder="..."
                       type="text"
-                      class="form-control"
-                      v-model="parametros.fialides_forma"
-                      required
+                      :class="['form-control', $v.parametros.fialides_forma.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.fialides_forma.$model"
                     />
+                    <em
+                      v-if="$v.parametros.fialides_forma.$error&&!$v.parametros.fialides_forma.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
+                  </div>
+                  <div class="position-relative form-group">
                     <label for="fialides_otra_caracteristica" class>Otras características</label>
                     <input
                       name="fialides_otra_caracteristica"
@@ -115,8 +126,8 @@
                   <select
                     name="select"
                     id="espora_asexual"
-                    class="form-control"
-                    v-model="parametros.espora_asexual"
+                    :class="['form-control', $v.parametros.espora_asexual.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.espora_asexual.$model"
                   >
                     <option
                       v-for="(b,index) in obtenerEsporasAsexuales"
@@ -133,90 +144,107 @@
                     </button>
                   </div>
                 </div>
-
-                <div class="position-relative form-group" v-if="parametros.espora_asexual===2">
-                  <label for="esporas_asexuales_conidios_tamano">Tamaño</label>
-                  <div>
-                    <div class="custom-radio custom-control custom-control-inline">
-                      <input
-                        type="radio"
-                        id="esporas_asexuales_conidios_tamano1"
-                        name="esporas_asexuales_conidios_tamano"
-                        class="custom-control-input"
-                        value="Grande"
-                        v-model="parametros.esporas_asexuales_conidios_tamano"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="esporas_asexuales_conidios_tamano1"
-                      >Grande</label>
-                    </div>
-                    <div class="custom-radio custom-control custom-control-inline">
-                      <input
-                        type="radio"
-                        id="esporas_asexuales_conidios_tamano2"
-                        name="esporas_asexuales_conidios_tamano"
-                        class="custom-control-input"
-                        value="Mediano"
-                        v-model="parametros.esporas_asexuales_conidios_tamano"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="esporas_asexuales_conidios_tamano2"
-                      >Mediano</label>
-                    </div>
-                    <div class="custom-radio custom-control custom-control-inline">
-                      <input
-                        type="radio"
-                        id="esporas_asexuales_conidios_tamano3"
-                        name="esporas_asexuales_conidios_tamano"
-                        class="custom-control-input"
-                        value="Pequeño"
-                        v-model="parametros.esporas_asexuales_conidios_tamano"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="esporas_asexuales_conidios_tamano3"
-                      >Pequeño</label>
+                <em
+                  v-if="$v.parametros.espora_asexual.$error&&!$v.parametros.espora_asexual.required"
+                  class="text-error-select"
+                >{{mensajes.required}}</em>
+                <div v-if="mostrarConidios" class="ml-3 mr-3">
+                  <div class="position-relative form-group">
+                    <label for="esporas_asexuales_conidios_tamano">Tamaño</label>
+                    <div>
+                      <div class="custom-radio custom-control custom-control-inline">
+                        <input
+                          type="radio"
+                          id="esporas_asexuales_conidios_tamano1"
+                          name="esporas_asexuales_conidios_tamano"
+                          class="custom-control-input"
+                          value="Grande"
+                          v-model="parametros.esporas_asexuales_conidios_tamano"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="esporas_asexuales_conidios_tamano1"
+                        >Grande</label>
+                      </div>
+                      <div class="custom-radio custom-control custom-control-inline">
+                        <input
+                          type="radio"
+                          id="esporas_asexuales_conidios_tamano2"
+                          name="esporas_asexuales_conidios_tamano"
+                          class="custom-control-input"
+                          value="Mediano"
+                          v-model="parametros.esporas_asexuales_conidios_tamano"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="esporas_asexuales_conidios_tamano2"
+                        >Mediano</label>
+                      </div>
+                      <div class="custom-radio custom-control custom-control-inline">
+                        <input
+                          type="radio"
+                          id="esporas_asexuales_conidios_tamano3"
+                          name="esporas_asexuales_conidios_tamano"
+                          class="custom-control-input"
+                          value="Pequeño"
+                          v-model="parametros.esporas_asexuales_conidios_tamano"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="esporas_asexuales_conidios_tamano3"
+                        >Pequeño</label>
+                      </div>
                     </div>
                   </div>
-                  <label for="esporas_asexuales_conidios_color" class>Color</label>
-                  <input
-                    name="esporas_asexuales_conidios_color"
-                    id="esporas_asexuales_conidios_color"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.esporas_asexuales_conidios_color"
-                    required
-                  />
-                  <label for="esporas_asexuales_conidios_forma" class>Forma</label>
-                  <input
-                    name="esporas_asexuales_conidios_forma"
-                    id="esporas_asexuales_conidios_forma"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.esporas_asexuales_conidios_forma"
-                    required
-                  />
-                  <label for="esporas_asexuales_conidios_otras" class>Otras características</label>
-                  <input
-                    name="esporas_asexuales_conidios_otras"
-                    id="esporas_asexuales_conidios_otras"
-                    placeholder="..."
-                    type="text"
-                    class="form-control"
-                    v-model="parametros.esporas_asexuales_conidios_otras"
-                  />
+                  <div class="position-relative form-group">
+                    <label for="esporas_asexuales_conidios_color" class>Color</label>
+                    <input
+                      name="esporas_asexuales_conidios_color"
+                      id="esporas_asexuales_conidios_color"
+                      placeholder="..."
+                      type="text"
+                      :class="['form-control', $v.parametros.esporas_asexuales_conidios_color.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.esporas_asexuales_conidios_color.$model"
+                    />
+                    <em
+                      v-if="$v.parametros.esporas_asexuales_conidios_color.$error&&!$v.parametros.esporas_asexuales_conidios_color.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
+                  </div>
+                  <div class="position-relative form-group">
+                    <label for="esporas_asexuales_conidios_forma" class>Forma</label>
+                    <input
+                      name="esporas_asexuales_conidios_forma"
+                      id="esporas_asexuales_conidios_forma"
+                      placeholder="..."
+                      type="text"
+                      :class="['form-control', $v.parametros.esporas_asexuales_conidios_forma.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.esporas_asexuales_conidios_forma.$model"
+                    />
+                    <em
+                      v-if="$v.parametros.esporas_asexuales_conidios_forma.$error&&!$v.parametros.esporas_asexuales_conidios_forma.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
+                  </div>
+                  <div class="position-relative form-group">
+                    <label for="esporas_asexuales_conidios_otras" class>Otras características</label>
+                    <input
+                      name="esporas_asexuales_conidios_otras"
+                      id="esporas_asexuales_conidios_otras"
+                      placeholder="..."
+                      type="text"
+                      class="form-control"
+                      v-model="parametros.esporas_asexuales_conidios_otras"
+                    />
+                  </div>
                 </div>
                 <label for="espora_sexual" class>Espora Sexual</label>
                 <div class="input-group mb-3">
                   <select
                     name="select"
                     id="espora_sexual"
-                    class="form-control"
-                    v-model="parametros.espora_sexual"
+                    :class="['form-control', $v.parametros.espora_sexual.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.espora_sexual.$model"
                   >
                     <option
                       v-for="(b,index) in obtenerEsporasSexuales"
@@ -233,8 +261,12 @@
                     </button>
                   </div>
                 </div>
+                <em
+                  v-if="$v.parametros.espora_sexual.$error&&!$v.parametros.espora_sexual.required"
+                  class="text-error-select"
+                >{{mensajes.required}}</em>
               </template>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
@@ -243,12 +275,26 @@
                     id="imagen"
                     type="file"
                     accept="image/jpeg, image/png"
-                    class="form-control-file"
+                    :class="['form-control-file', 
+                        $v.parametros.imagen1.$error
+                        ||$v.parametros.imagen2.$error
+                        ||$v.parametros.imagen3.$error
+                        ? 'error-input-select':'']"
                     ref="inputImagen"
                     multiple
-                    :required="required"
                   />
-                  <span v-if="erroresImagenes" class="text-danger">{{ erroresImagenes }}</span>
+                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em
+                    v-if="($v.parametros.imagen1.$error
+                    &&!$v.parametros.imagen1.required)
+                    ||
+                    ($v.parametros.imagen2.$error
+                    &&!$v.parametros.imagen2.required) 
+                    ||
+                    ($v.parametros.imagen3.$error
+                    &&!$v.parametros.imagen3.required)"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -263,7 +309,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{ nomBtn }}</button>
             </form>
           </div>
@@ -272,7 +318,7 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <template v-if="required">
+            <template v-if="validarTipoForm">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
@@ -319,6 +365,7 @@ import obtenerImagenCroopie3Imagenes from "../../../../mixins/obtenerImagenCroop
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -341,7 +388,6 @@ export default {
         imagen1: "",
         imagen2: "",
         imagen3: "",
-        descripcion_imagenes: "",
       },
       tituloModal: "",
       tipoModal: "",
@@ -350,24 +396,121 @@ export default {
       errors: [],
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations() {
+    if (this.mostrarConidios && this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: { required },
+          fialides_forma: { required },
+          espora_asexual: { required },
+          esporas_asexuales_conidios_color: { required },
+          esporas_asexuales_conidios_forma: { required },
+          espora_sexual: { required },
+          imagen1: { required },
+          imagen2: {
+            required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            },
+          },
+          imagen3: {
+            required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            },
+          },
+        },
+      };
+    } else if (this.mostrarConidios && !this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: { required },
+          espora_asexual: { required },
+          esporas_asexuales_conidios_color: { required },
+          esporas_asexuales_conidios_forma: { required },
+          espora_sexual: { required },
+          imagen1: { required },
+          imagen2: {
+            required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            },
+          },
+          imagen3: {
+            required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            },
+          },
+        },
+      };
+    } else if (this.fialidesPresencia && !this.mostrarConidios) {
+      return {
+        parametros: {
+          conidioforo: { required },
+          fialides_forma: { required },
+          espora_asexual: { required },
+          espora_sexual: { required },
+          imagen1: { required },
+          imagen2: {
+            required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            },
+          },
+          imagen3: {
+            required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            },
+          },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          conidioforo: { required },
+          espora_asexual: { required },
+          espora_sexual: { required },
+          imagen1: { required },
+          imagen2: {
+            required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            },
+          },
+          imagen3: {
+            required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            },
+          },
+        },
+      };
+    }
   },
   mixins: [Toastr, obtenerImagenCroopie3Imagenes],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.parametros.fialides === "Ausencia") {
-        this.parametros.fialides_forma = "";
-        this.parametros.fialides_otra_caracteristica = "";
-      }
-      if (this.parametros.espora_asexual != 2) {
-        this.parametros.esporas_asexuales_conidios_tamano = "";
-        this.parametros.esporas_asexuales_conidios_color = "";
-        this.parametros.esporas_asexuales_conidios_forma = "";
-        this.parametros.esporas_asexuales_conidios_otras = "";
-      }
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.parametros.fialides === "Ausencia") {
+          this.parametros.fialides_forma = "";
+          this.parametros.fialides_otra_caracteristica = "";
+        }
+        if (this.parametros.espora_asexual != 2) {
+          this.parametros.esporas_asexuales_conidios_tamano = "";
+          this.parametros.esporas_asexuales_conidios_color = "";
+          this.parametros.esporas_asexuales_conidios_forma = "";
+          this.parametros.esporas_asexuales_conidios_otras = "";
+        }
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/hongo/caract-micro", this.parametros)
             .then((res) => {
@@ -404,37 +547,40 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(`/cepas/hongo/caract-micro/${this.info.id}`, this.parametros)
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/hongo/caract-micro/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     showModal(tipo) {
@@ -494,7 +640,7 @@ export default {
   computed: {
     ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroHongos"]),
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -516,6 +662,18 @@ export default {
     },
     obtenerEsporasSexuales() {
       return this.getInfoCaractMicroHongos.esporas_sexuales;
+    },
+    fialidesPresencia() {
+      if (this.parametros.fialides === "Presencia") {
+        return true;
+      }
+      return false;
+    },
+    mostrarConidios() {
+      if (this.parametros.espora_asexual === 2) {
+        return true;
+      }
+      return false;
     },
   },
   mounted() {

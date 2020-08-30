@@ -339,10 +339,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -386,8 +382,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   validations: {
     parametros: {
       medio: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"],
-        minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["minLength"])(4)
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
       },
       forma: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
@@ -952,20 +947,6 @@ var render = function() {
                       !_vm.$v.parametros.medio.required
                         ? _c("em", { staticClass: "text-error-input" }, [
                             _vm._v(_vm._s(_vm.mensajes.required))
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.$v.parametros.medio.$error &&
-                      !_vm.$v.parametros.medio.minLength
-                        ? _c("em", { staticClass: "text-error-input" }, [
-                            _vm._v(
-                              _vm._s(
-                                _vm.mensajes.minLength +
-                                  _vm.$v.parametros.medio.$params.minLength
-                                    .min +
-                                  " letras"
-                              )
-                            )
                           ])
                         : _vm._e()
                     ]),

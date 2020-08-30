@@ -18,10 +18,13 @@
                   id="acido_indolacetico"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.acido_indolacetico"
-                  required
+                  :class="['form-control', $v.parametros.acido_indolacetico.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.acido_indolacetico.$model"
                 />
+                <em
+                  v-if="$v.parametros.acido_indolacetico.$error&&!$v.parametros.acido_indolacetico.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="fosforo" class>Fósforo</label>
@@ -30,10 +33,13 @@
                   id="fosforo"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.fosforo"
-                  required
+                  :class="['form-control', $v.parametros.fosforo.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.fosforo.$model"
                 />
+                <em
+                  v-if="$v.parametros.fosforo.$error&&!$v.parametros.fosforo.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="sideroforos" class>Sideróforos</label>
@@ -42,10 +48,13 @@
                   id="sideroforos"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.sideroforos"
-                  required
+                  :class="['form-control', $v.parametros.sideroforos.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.sideroforos.$model"
                 />
+                <em
+                  v-if="$v.parametros.sideroforos.$error&&!$v.parametros.sideroforos.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="nitrogeno" class>Nitrógeno</label>
@@ -54,12 +63,15 @@
                   id="nitrogeno"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.nitrogeno"
-                  required
+                  :class="['form-control', $v.parametros.nitrogeno.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nitrogeno.$model"
                 />
+                <em
+                  v-if="$v.parametros.nitrogeno.$error&&!$v.parametros.nitrogeno.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
@@ -68,12 +80,26 @@
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', 
+                      $v.parametros.imagen1.$error
+                      ||$v.parametros.imagen2.$error
+                      ||$v.parametros.imagen3.$error
+                      ? 'error-input-select':'']"
                     ref="inputImagen"
                     multiple
-                    :required="required"
                   />
-                  <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em
+                    v-if="($v.parametros.imagen1.$error
+                        &&!$v.parametros.imagen1.required)
+                        ||
+                        ($v.parametros.imagen2.$error
+                        &&!$v.parametros.imagen2.required) 
+                        ||
+                        ($v.parametros.imagen3.$error
+                        &&!$v.parametros.imagen3.required)"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -88,7 +114,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -98,7 +124,7 @@
         <div class="main-card mb-3 card">
           <div class="card-body">
             <h5 class="card-title">Imagenes</h5>
-            <template v-if="required">
+            <template v-if="validarTipoForm">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
@@ -137,6 +163,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
@@ -166,14 +193,39 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      acido_indolacetico: { required },
+      fosforo: { required },
+      sideroforos: { required },
+      nitrogeno: { required },
+      imagen1: { required },
+      imagen2: {
+        required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/bacteria/caract-fisio", this.parametros)
             .then((res) => {
@@ -210,37 +262,43 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/caract-fisio/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/caract-fisio/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -261,7 +319,7 @@ export default {
     },
   },
   computed: {
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {

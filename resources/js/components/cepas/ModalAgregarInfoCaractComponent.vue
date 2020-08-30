@@ -22,11 +22,11 @@
               id="nombre"
               placeholder="..."
               type="text"
-              class="form-control"
+              :class="['form-control', errors.nombre? 'error-input-select':'']"
               v-model="nombre"
               required
             />
-            <span v-if="errors.nombre" class="text-danger">{{errors.nombre[0]}}</span>
+            <span v-if="errors.nombre" class="text-error-input">{{errors.nombre[0]}}</span>
           </div>
         </div>
         <div class="modal-footer">

@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie3Imagenes */ "./resources/js/mixins/obtenerImagenCroopie3Imagenes.js");
 /* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
 /* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -516,6 +518,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -565,7 +657,6 @@ __webpack_require__.r(__webpack_exports__);
         hidro_urea: "",
         creci_nacl: "",
         creci_dif_temp: "",
-        ordenamiento: "",
         tincion_gram: "positivo",
         tincion_esporas: "presencia",
         ubicacion_esporas: "central",
@@ -578,8 +669,117 @@ __webpack_require__.r(__webpack_exports__);
       tituloForm: "",
       nomBtn: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido"
+      }
     };
+  },
+  validations: {
+    parametros: {
+      oxidasa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      catalasa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      citrato: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      tsi: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      lia: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      sim: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      rm: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      vp: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      nitrato: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      caldo_urea: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      of: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      glucosa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      lactosa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      manitol: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      xilosa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      arabinosa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      sacarosa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      almidon: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      lecitinasa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      lipasa: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      hidro_caseina: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      hidro_gelatina: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      hidro_urea: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      creci_nacl: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      creci_dif_temp: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      tincion_gram: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      tincion_esporas: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      ubicacion_esporas: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      tincion_capsula: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      imagen1: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      },
+      imagen2: {
+        required: function required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        }
+      },
+      imagen3: {
+        required: function required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        }
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: {
@@ -602,9 +802,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios.post("/cepas/bacteria/caract-bioqui", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -635,36 +836,33 @@ __webpack_require__.r(__webpack_exports__);
             }
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor elija al menos 1 imagen."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/bacteria/caract-bioqui/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Características Bioquímicas", "Características Bioquímicas editadas con exito!!", "success");
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this.$router.push("/sin-acceso");
+            } else if (error.response.status === 405) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              if (error.response.status === 422) {
+                _this.errors = [];
+                _this.errors = error.response.data.errors;
+              }
+
+              _this.toastr("Error!!", "", "error");
+            }
+          });
         }
       } else {
-        axios.put("/cepas/bacteria/caract-bioqui/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Características Bioquímicas", "Características Bioquímicas editadas con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -707,7 +905,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -965,33 +1163,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.oxidasa,
-                                expression: "parametros.oxidasa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.oxidasa.$model,
+                                expression: "$v.parametros.oxidasa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.oxidasa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "oxidasa",
                               id: "oxidasa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.oxidasa },
+                            domProps: {
+                              value: _vm.$v.parametros.oxidasa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "oxidasa",
-                                  $event.target.value
+                                  _vm.$v.parametros.oxidasa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.oxidasa.$error &&
+                          !_vm.$v.parametros.oxidasa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1009,33 +1224,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.catalasa,
-                                expression: "parametros.catalasa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.catalasa.$model,
+                                expression: "$v.parametros.catalasa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.catalasa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "catalasa",
                               id: "catalasa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.catalasa },
+                            domProps: {
+                              value: _vm.$v.parametros.catalasa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "catalasa",
-                                  $event.target.value
+                                  _vm.$v.parametros.catalasa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.catalasa.$error &&
+                          !_vm.$v.parametros.catalasa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1055,33 +1287,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.citrato,
-                                expression: "parametros.citrato"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.citrato.$model,
+                                expression: "$v.parametros.citrato.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.citrato.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "citrato",
                               id: "citrato",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.citrato },
+                            domProps: {
+                              value: _vm.$v.parametros.citrato.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "citrato",
-                                  $event.target.value
+                                  _vm.$v.parametros.citrato,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.citrato.$error &&
+                          !_vm.$v.parametros.citrato.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1099,33 +1348,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.tsi,
-                                expression: "parametros.tsi"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.tsi.$model,
+                                expression: "$v.parametros.tsi.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.tsi.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "tsi",
                               id: "tsi",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.tsi },
+                            domProps: { value: _vm.$v.parametros.tsi.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "tsi",
-                                  $event.target.value
+                                  _vm.$v.parametros.tsi,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.tsi.$error &&
+                          !_vm.$v.parametros.tsi.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1145,33 +1409,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.glucosa,
-                                expression: "parametros.glucosa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.glucosa.$model,
+                                expression: "$v.parametros.glucosa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.glucosa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "glucosa",
                               id: "glucosa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.glucosa },
+                            domProps: {
+                              value: _vm.$v.parametros.glucosa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "glucosa",
-                                  $event.target.value
+                                  _vm.$v.parametros.glucosa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.glucosa.$error &&
+                          !_vm.$v.parametros.glucosa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1189,33 +1470,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.lactosa,
-                                expression: "parametros.lactosa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.lactosa.$model,
+                                expression: "$v.parametros.lactosa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.lactosa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "lactosa",
                               id: "lactosa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.lactosa },
+                            domProps: {
+                              value: _vm.$v.parametros.lactosa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "lactosa",
-                                  $event.target.value
+                                  _vm.$v.parametros.lactosa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.lactosa.$error &&
+                          !_vm.$v.parametros.lactosa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1235,33 +1533,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.manitol,
-                                expression: "parametros.manitol"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.manitol.$model,
+                                expression: "$v.parametros.manitol.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.manitol.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "manitol",
                               id: "manitol",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.manitol },
+                            domProps: {
+                              value: _vm.$v.parametros.manitol.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "manitol",
-                                  $event.target.value
+                                  _vm.$v.parametros.manitol,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.manitol.$error &&
+                          !_vm.$v.parametros.manitol.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1279,33 +1594,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.xilosa,
-                                expression: "parametros.xilosa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.xilosa.$model,
+                                expression: "$v.parametros.xilosa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.xilosa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "xilosa",
                               id: "xilosa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.xilosa },
+                            domProps: {
+                              value: _vm.$v.parametros.xilosa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "xilosa",
-                                  $event.target.value
+                                  _vm.$v.parametros.xilosa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.xilosa.$error &&
+                          !_vm.$v.parametros.xilosa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1325,33 +1657,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.arabinosa,
-                                expression: "parametros.arabinosa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.arabinosa.$model,
+                                expression: "$v.parametros.arabinosa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.arabinosa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "arabinosa",
                               id: "arabinosa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.arabinosa },
+                            domProps: {
+                              value: _vm.$v.parametros.arabinosa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "arabinosa",
-                                  $event.target.value
+                                  _vm.$v.parametros.arabinosa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.arabinosa.$error &&
+                          !_vm.$v.parametros.arabinosa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1369,33 +1718,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.sacarosa,
-                                expression: "parametros.sacarosa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.sacarosa.$model,
+                                expression: "$v.parametros.sacarosa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.sacarosa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "sacarosa",
                               id: "sacarosa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.sacarosa },
+                            domProps: {
+                              value: _vm.$v.parametros.sacarosa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "sacarosa",
-                                  $event.target.value
+                                  _vm.$v.parametros.sacarosa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.sacarosa.$error &&
+                          !_vm.$v.parametros.sacarosa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1449,33 +1815,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.lia,
-                                expression: "parametros.lia"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.lia.$model,
+                                expression: "$v.parametros.lia.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.lia.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "lia",
                               id: "lia",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.lia },
+                            domProps: { value: _vm.$v.parametros.lia.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "lia",
-                                  $event.target.value
+                                  _vm.$v.parametros.lia,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.lia.$error &&
+                          !_vm.$v.parametros.lia.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1493,33 +1874,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.sim,
-                                expression: "parametros.sim"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.sim.$model,
+                                expression: "$v.parametros.sim.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.sim.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "sim",
                               id: "sim",
                               placeholder: "..",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.sim },
+                            domProps: { value: _vm.$v.parametros.sim.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "sim",
-                                  $event.target.value
+                                  _vm.$v.parametros.sim,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.sim.$error &&
+                          !_vm.$v.parametros.sim.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1537,33 +1933,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.rm,
-                                expression: "parametros.rm"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.rm.$model,
+                                expression: "$v.parametros.rm.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.rm.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "rm",
                               id: "rm",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.rm },
+                            domProps: { value: _vm.$v.parametros.rm.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "rm",
-                                  $event.target.value
+                                  _vm.$v.parametros.rm,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.rm.$error &&
+                          !_vm.$v.parametros.rm.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1579,33 +1990,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.vp,
-                                expression: "parametros.vp"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.vp.$model,
+                                expression: "$v.parametros.vp.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.vp.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "vp",
                               id: "vp",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.vp },
+                            domProps: { value: _vm.$v.parametros.vp.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "vp",
-                                  $event.target.value
+                                  _vm.$v.parametros.vp,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.vp.$error &&
+                          !_vm.$v.parametros.vp.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1625,33 +2051,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.nitrato,
-                                expression: "parametros.nitrato"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.nitrato.$model,
+                                expression: "$v.parametros.nitrato.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.nitrato.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "nitrato",
                               id: "nitrato",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.nitrato },
+                            domProps: {
+                              value: _vm.$v.parametros.nitrato.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "nitrato",
-                                  $event.target.value
+                                  _vm.$v.parametros.nitrato,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.nitrato.$error &&
+                          !_vm.$v.parametros.nitrato.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1669,33 +2112,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.caldo_urea,
-                                expression: "parametros.caldo_urea"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.caldo_urea.$model,
+                                expression: "$v.parametros.caldo_urea.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.caldo_urea.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "caldo_urea",
                               id: "caldo_urea",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.caldo_urea },
+                            domProps: {
+                              value: _vm.$v.parametros.caldo_urea.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "caldo_urea",
-                                  $event.target.value
+                                  _vm.$v.parametros.caldo_urea,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.caldo_urea.$error &&
+                          !_vm.$v.parametros.caldo_urea.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1713,33 +2173,48 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.of,
-                                expression: "parametros.of"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.of.$model,
+                                expression: "$v.parametros.of.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.of.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "of",
                               id: "of",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.of },
+                            domProps: { value: _vm.$v.parametros.of.$model },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "of",
-                                  $event.target.value
+                                  _vm.$v.parametros.of,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.of.$error &&
+                          !_vm.$v.parametros.of.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1757,33 +2232,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.almidon,
-                                expression: "parametros.almidon"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.almidon.$model,
+                                expression: "$v.parametros.almidon.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.almidon.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "almidon",
                               id: "almidon",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.almidon },
+                            domProps: {
+                              value: _vm.$v.parametros.almidon.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "almidon",
-                                  $event.target.value
+                                  _vm.$v.parametros.almidon,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.almidon.$error &&
+                          !_vm.$v.parametros.almidon.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1803,33 +2295,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.lecitinasa,
-                                expression: "parametros.lecitinasa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.lecitinasa.$model,
+                                expression: "$v.parametros.lecitinasa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.lecitinasa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "lecitinasa",
                               id: "lecitinasa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.lecitinasa },
+                            domProps: {
+                              value: _vm.$v.parametros.lecitinasa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "lecitinasa",
-                                  $event.target.value
+                                  _vm.$v.parametros.lecitinasa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.lecitinasa.$error &&
+                          !_vm.$v.parametros.lecitinasa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1847,33 +2356,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.lipasa,
-                                expression: "parametros.lipasa"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.lipasa.$model,
+                                expression: "$v.parametros.lipasa.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.lipasa.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "lipasa",
                               id: "lipasa",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.lipasa },
+                            domProps: {
+                              value: _vm.$v.parametros.lipasa.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "lipasa",
-                                  $event.target.value
+                                  _vm.$v.parametros.lipasa,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.lipasa.$error &&
+                          !_vm.$v.parametros.lipasa.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -1929,33 +2455,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.hidro_caseina,
-                                expression: "parametros.hidro_caseina"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.hidro_caseina.$model,
+                                expression:
+                                  "$v.parametros.hidro_caseina.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.hidro_caseina.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "hidro_caseina",
                               id: "hidro_caseina",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.hidro_caseina },
+                            domProps: {
+                              value: _vm.$v.parametros.hidro_caseina.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "hidro_caseina",
-                                  $event.target.value
+                                  _vm.$v.parametros.hidro_caseina,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.hidro_caseina.$error &&
+                          !_vm.$v.parametros.hidro_caseina.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -1973,33 +2517,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.hidro_gelatina,
-                                expression: "parametros.hidro_gelatina"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.hidro_gelatina.$model,
+                                expression:
+                                  "$v.parametros.hidro_gelatina.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.hidro_gelatina.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "hidro_gelatina",
                               id: "hidro_gelatina",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.hidro_gelatina },
+                            domProps: {
+                              value: _vm.$v.parametros.hidro_gelatina.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "hidro_gelatina",
-                                  $event.target.value
+                                  _vm.$v.parametros.hidro_gelatina,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.hidro_gelatina.$error &&
+                          !_vm.$v.parametros.hidro_gelatina.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -2019,33 +2581,50 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.hidro_urea,
-                                expression: "parametros.hidro_urea"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.hidro_urea.$model,
+                                expression: "$v.parametros.hidro_urea.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.hidro_urea.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "hidro_urea",
                               id: "hidro_urea",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.hidro_urea },
+                            domProps: {
+                              value: _vm.$v.parametros.hidro_urea.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "hidro_urea",
-                                  $event.target.value
+                                  _vm.$v.parametros.hidro_urea,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.hidro_urea.$error &&
+                          !_vm.$v.parametros.hidro_urea.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ]),
@@ -2063,33 +2642,51 @@ var render = function() {
                             directives: [
                               {
                                 name: "model",
-                                rawName: "v-model",
-                                value: _vm.parametros.creci_dif_temp,
-                                expression: "parametros.creci_dif_temp"
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.creci_dif_temp.$model,
+                                expression:
+                                  "$v.parametros.creci_dif_temp.$model",
+                                modifiers: { trim: true }
                               }
                             ],
-                            staticClass: "form-control",
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.creci_dif_temp.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
                             attrs: {
                               name: "creci_dif_temp",
                               id: "creci_dif_temp",
                               placeholder: "...",
-                              type: "text",
-                              required: ""
+                              type: "text"
                             },
-                            domProps: { value: _vm.parametros.creci_dif_temp },
+                            domProps: {
+                              value: _vm.$v.parametros.creci_dif_temp.$model
+                            },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "creci_dif_temp",
-                                  $event.target.value
+                                  _vm.$v.parametros.creci_dif_temp,
+                                  "$model",
+                                  $event.target.value.trim()
                                 )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.creci_dif_temp.$error &&
+                          !_vm.$v.parametros.creci_dif_temp.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
                         ]
                       )
                     ])
@@ -2112,38 +2709,55 @@ var render = function() {
                               directives: [
                                 {
                                   name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.parametros.creci_nacl,
-                                  expression: "parametros.creci_nacl"
+                                  rawName: "v-model.trim",
+                                  value: _vm.$v.parametros.creci_nacl.$model,
+                                  expression: "$v.parametros.creci_nacl.$model",
+                                  modifiers: { trim: true }
                                 }
                               ],
-                              staticClass: "form-control",
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.creci_nacl.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
                               attrs: {
                                 name: "creci_nacl",
                                 id: "creci_nacl",
                                 placeholder: "...",
-                                type: "text",
-                                required: ""
+                                type: "text"
                               },
-                              domProps: { value: _vm.parametros.creci_nacl },
+                              domProps: {
+                                value: _vm.$v.parametros.creci_nacl.$model
+                              },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
                                     return
                                   }
                                   _vm.$set(
-                                    _vm.parametros,
-                                    "creci_nacl",
-                                    $event.target.value
+                                    _vm.$v.parametros.creci_nacl,
+                                    "$model",
+                                    $event.target.value.trim()
                                   )
+                                },
+                                blur: function($event) {
+                                  return _vm.$forceUpdate()
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.$v.parametros.creci_nacl.$error &&
+                            !_vm.$v.parametros.creci_nacl.required
+                              ? _c("em", { staticClass: "text-error-input" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
                           ]
                         )
                       ]),
                       _vm._v(" "),
-                      _vm.required
+                      _vm.validarTipoForm
                         ? [
                             _c("div", { staticClass: "col-md-4" }, [
                               _c(
@@ -2156,23 +2770,42 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("input", {
                                     ref: "inputImagen",
-                                    staticClass: "form-control-file",
+                                    class: [
+                                      "form-control-file",
+                                      _vm.$v.parametros.imagen1.$error ||
+                                      _vm.$v.parametros.imagen2.$error ||
+                                      _vm.$v.parametros.imagen3.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: {
                                       name: "imagen",
                                       id: "imagen",
                                       type: "file",
                                       accept: "image/jpeg, image/png",
-                                      multiple: "",
-                                      required: _vm.required
+                                      multiple: ""
                                     },
                                     on: { change: _vm.obtenerImagenes }
                                   }),
                                   _vm._v(" "),
                                   _vm.erroresImagenes
                                     ? _c(
-                                        "span",
-                                        { staticClass: "text-danger" },
+                                        "em",
+                                        { staticClass: "text-error-input" },
                                         [_vm._v(_vm._s(_vm.erroresImagenes))]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  (_vm.$v.parametros.imagen1.$error &&
+                                    !_vm.$v.parametros.imagen1.required) ||
+                                  (_vm.$v.parametros.imagen2.$error &&
+                                    !_vm.$v.parametros.imagen2.required) ||
+                                  (_vm.$v.parametros.imagen3.$error &&
+                                    !_vm.$v.parametros.imagen3.required)
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
                                       )
                                     : _vm._e()
                                 ]
@@ -2230,7 +2863,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.btnDisable || _vm.bloquearBtn }
+                      attrs: { disabled: _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtn))]
                   )
@@ -2248,7 +2881,7 @@ var render = function() {
         "div",
         { staticClass: "row justify-content-md-center" },
         [
-          _vm.required
+          _vm.validarTipoForm
             ? [
                 _c("div", { staticClass: "col-md-12" }, [
                   _c("div", { staticClass: "main-card mb-3 card" }, [

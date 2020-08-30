@@ -457,13 +457,13 @@ __webpack_require__.r(__webpack_exports__);
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
       },
       imagen2: {
-        validarImagen2: function validarImagen2(value) {
+        required: function required(value) {
           if (value == "" && this.cantImagenes > 1) return false;
           return true;
         }
       },
       imagen3: {
-        validarImagen3: function validarImagen3(value) {
+        required: function required(value) {
           if (value == "" && this.cantImagenes == 3) return false;
           return true;
         }

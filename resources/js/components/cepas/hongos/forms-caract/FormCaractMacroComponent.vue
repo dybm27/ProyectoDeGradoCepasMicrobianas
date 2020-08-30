@@ -19,10 +19,13 @@
                     id="medio"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.medio"
-                    required
+                    :class="['form-control', $v.parametros.medio.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.medio.$model"
                   />
+                  <em
+                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <template v-if="getInfoCaractMacroHongos">
                   <div class="form-row">
@@ -32,8 +35,8 @@
                         <select
                           name="select"
                           id="color"
-                          class="form-control"
-                          v-model="parametros.color"
+                          :class="['form-control', $v.parametros.color.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.color.$model"
                         >
                           <option
                             v-for="(f,index) in obtenerColores"
@@ -50,6 +53,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.color.$error&&!$v.parametros.color.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="borde" class>Textura</label>
@@ -57,8 +64,8 @@
                         <select
                           name="select"
                           id="textura"
-                          class="form-control"
-                          v-model="parametros.textura"
+                          :class="['form-control', $v.parametros.textura.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.textura.$model"
                         >
                           <option
                             v-for="(b,index) in obtenerTexturas"
@@ -75,6 +82,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.textura.$error&&!$v.parametros.textura.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </template>
@@ -85,27 +96,33 @@
                     @change="obtenerImagen"
                     id="imagen"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                     accept="image/jpeg"
                     ref="inputImagen"
-                    :required="required"
                   />
-                  <span v-if="imagenError" class="text-danger">{{ imagenError }}</span>
+                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em
+                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <div class="position-relative form-group">
                   <label for="otras_caracteristicas">Características del reverso</label>
                   <textarea
                     name="text"
                     id="caracteristicas_reverso"
-                    class="form-control"
-                    v-model="parametros.caracteristicas_reverso"
-                    required
+                    :class="['form-control', $v.parametros.caracteristicas_reverso.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.caracteristicas_reverso.$model"
                   ></textarea>
+                  <em
+                    v-if="$v.parametros.caracteristicas_reverso.$error&&!$v.parametros.caracteristicas_reverso.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{ nomBtnComputed }}</button>
               </form>
             </div>
@@ -170,6 +187,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -190,14 +208,28 @@ export default {
       errors: [],
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      medio: { required },
+      color: { required },
+      textura: { required },
+      caracteristicas_reverso: { required },
+      imagen: { required },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopieCepas],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Medio") {
-        if (this.parametros.imagen) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
           axios
             .post("/cepas/hongo/caract-macro", this.parametros)
             .then((res) => {
@@ -234,34 +266,41 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(`/cepas/hongo/caract-macro/${this.info.id}`, this.parametros)
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Medio",
+                "Medio editado con éxito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/hongo/caract-macro/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.$emit("editar", res.data);
-            this.toastr("Editar Medio", "Medio editado con éxito!!", "success");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -307,7 +346,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Medio") {
         return true;
       } else {

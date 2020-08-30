@@ -26,10 +26,6 @@
                     v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
                     class="text-error-input"
                   >{{mensajes.required}}</em>
-                  <em
-                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.minLength"
-                    class="text-error-input"
-                  >{{mensajes.minLength + $v.parametros.medio.$params.minLength.min+' letras'}}</em>
                 </div>
                 <template v-if="getInfoCaractMacroActinomicetos">
                   <div class="form-row">
@@ -325,7 +321,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
-import { required, minLength } from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -359,7 +355,7 @@ export default {
   },
   validations: {
     parametros: {
-      medio: { required, minLength: minLength(4) },
+      medio: { required },
       forma: { required },
       borde: { required },
       textura: { required },

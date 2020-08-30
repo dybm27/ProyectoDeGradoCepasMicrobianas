@@ -21,10 +21,13 @@
                         id="oxidasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.oxidasa"
-                        required
+                        :class="['form-control', $v.parametros.oxidasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.oxidasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.oxidasa.$error&&!$v.parametros.oxidasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -35,10 +38,13 @@
                         id="catalasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.catalasa"
-                        required
+                        :class="['form-control', $v.parametros.catalasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.catalasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.catalasa.$error&&!$v.parametros.catalasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -51,10 +57,13 @@
                         id="citrato"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.citrato"
-                        required
+                        :class="['form-control', $v.parametros.citrato.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.citrato.$model"
                       />
+                      <em
+                        v-if="$v.parametros.citrato.$error&&!$v.parametros.citrato.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -65,10 +74,13 @@
                         id="tsi"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.tsi"
-                        required
+                        :class="['form-control', $v.parametros.tsi.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.tsi.$model"
                       />
+                      <em
+                        v-if="$v.parametros.tsi.$error&&!$v.parametros.tsi.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -81,10 +93,13 @@
                         id="glucosa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.glucosa"
-                        required
+                        :class="['form-control', $v.parametros.glucosa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.glucosa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.glucosa.$error&&!$v.parametros.glucosa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -95,10 +110,13 @@
                         id="lactosa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.lactosa"
-                        required
+                        :class="['form-control', $v.parametros.lactosa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.lactosa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.lactosa.$error&&!$v.parametros.lactosa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -111,10 +129,13 @@
                         id="manitol"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.manitol"
-                        required
+                        :class="['form-control', $v.parametros.manitol.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.manitol.$model"
                       />
+                      <em
+                        v-if="$v.parametros.manitol.$error&&!$v.parametros.manitol.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -125,10 +146,13 @@
                         id="xilosa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.xilosa"
-                        required
+                        :class="['form-control', $v.parametros.xilosa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.xilosa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.xilosa.$error&&!$v.parametros.xilosa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -141,10 +165,13 @@
                         id="arabinosa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.arabinosa"
-                        required
+                        :class="['form-control', $v.parametros.arabinosa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.arabinosa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.arabinosa.$error&&!$v.parametros.arabinosa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -155,10 +182,13 @@
                         id="sacarosa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.sacarosa"
-                        required
+                        :class="['form-control', $v.parametros.sacarosa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.sacarosa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.sacarosa.$error&&!$v.parametros.sacarosa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -182,10 +212,13 @@
                         id="lia"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.lia"
-                        required
+                        :class="['form-control', $v.parametros.lia.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.lia.$model"
                       />
+                      <em
+                        v-if="$v.parametros.lia.$error&&!$v.parametros.lia.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -196,10 +229,13 @@
                         id="sim"
                         placeholder=".."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.sim"
-                        required
+                        :class="['form-control', $v.parametros.sim.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.sim.$model"
                       />
+                      <em
+                        v-if="$v.parametros.sim.$error&&!$v.parametros.sim.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -212,10 +248,13 @@
                         id="rm"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.rm"
-                        required
+                        :class="['form-control', $v.parametros.rm.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.rm.$model"
                       />
+                      <em
+                        v-if="$v.parametros.rm.$error&&!$v.parametros.rm.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -226,10 +265,13 @@
                         id="vp"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.vp"
-                        required
+                        :class="['form-control', $v.parametros.vp.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.vp.$model"
                       />
+                      <em
+                        v-if="$v.parametros.vp.$error&&!$v.parametros.vp.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -242,10 +284,13 @@
                         id="nitrato"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.nitrato"
-                        required
+                        :class="['form-control', $v.parametros.nitrato.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.nitrato.$model"
                       />
+                      <em
+                        v-if="$v.parametros.nitrato.$error&&!$v.parametros.nitrato.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -256,10 +301,13 @@
                         id="caldo_urea"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.caldo_urea"
-                        required
+                        :class="['form-control', $v.parametros.caldo_urea.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.caldo_urea.$model"
                       />
+                      <em
+                        v-if="$v.parametros.caldo_urea.$error&&!$v.parametros.caldo_urea.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -272,10 +320,13 @@
                         id="of"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.of"
-                        required
+                        :class="['form-control', $v.parametros.of.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.of.$model"
                       />
+                      <em
+                        v-if="$v.parametros.of.$error&&!$v.parametros.of.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -286,10 +337,13 @@
                         id="almidon"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.almidon"
-                        required
+                        :class="['form-control', $v.parametros.almidon.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.almidon.$model"
                       />
+                      <em
+                        v-if="$v.parametros.almidon.$error&&!$v.parametros.almidon.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -302,10 +356,13 @@
                         id="lecitinasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.lecitinasa"
-                        required
+                        :class="['form-control', $v.parametros.lecitinasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.lecitinasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.lecitinasa.$error&&!$v.parametros.lecitinasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -316,10 +373,13 @@
                         id="lipasa"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.lipasa"
-                        required
+                        :class="['form-control', $v.parametros.lipasa.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.lipasa.$model"
                       />
+                      <em
+                        v-if="$v.parametros.lipasa.$error&&!$v.parametros.lipasa.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -345,10 +405,13 @@
                         id="hidro_caseina"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.hidro_caseina"
-                        required
+                        :class="['form-control', $v.parametros.hidro_caseina.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.hidro_caseina.$model"
                       />
+                      <em
+                        v-if="$v.parametros.hidro_caseina.$error&&!$v.parametros.hidro_caseina.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -359,10 +422,13 @@
                         id="hidro_gelatina"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.hidro_gelatina"
-                        required
+                        :class="['form-control', $v.parametros.hidro_gelatina.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.hidro_gelatina.$model"
                       />
+                      <em
+                        v-if="$v.parametros.hidro_gelatina.$error&&!$v.parametros.hidro_gelatina.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -375,10 +441,13 @@
                         id="hidro_urea"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.hidro_urea"
-                        required
+                        :class="['form-control', $v.parametros.hidro_urea.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.hidro_urea.$model"
                       />
+                      <em
+                        v-if="$v.parametros.hidro_urea.$error&&!$v.parametros.hidro_urea.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -389,10 +458,13 @@
                         id="creci_dif_temp"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.creci_dif_temp"
-                        required
+                        :class="['form-control', $v.parametros.creci_dif_temp.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.creci_dif_temp.$model"
                       />
+                      <em
+                        v-if="$v.parametros.creci_dif_temp.$error&&!$v.parametros.creci_dif_temp.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -405,13 +477,16 @@
                         id="creci_nacl"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.creci_nacl"
-                        required
+                        :class="['form-control', $v.parametros.creci_nacl.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.creci_nacl.$model"
                       />
+                      <em
+                        v-if="$v.parametros.creci_nacl.$error&&!$v.parametros.creci_nacl.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
-                  <template v-if="required">
+                  <template v-if="validarTipoForm">
                     <div class="col-md-4">
                       <div class="position-relative form-group">
                         <label for="imagen" class>Imágenes</label>
@@ -421,12 +496,26 @@
                           id="imagen"
                           type="file"
                           accept="image/jpeg, image/png"
-                          class="form-control-file"
+                          :class="['form-control-file', 
+                              $v.parametros.imagen1.$error
+                              ||$v.parametros.imagen2.$error
+                              ||$v.parametros.imagen3.$error
+                              ? 'error-input-select':'']"
                           ref="inputImagen"
                           multiple
-                          :required="required"
                         />
-                        <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                        <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                        <em
+                          v-if="($v.parametros.imagen1.$error
+                              &&!$v.parametros.imagen1.required)
+                              ||
+                              ($v.parametros.imagen2.$error
+                              &&!$v.parametros.imagen2.required) 
+                              ||
+                              ($v.parametros.imagen3.$error
+                              &&!$v.parametros.imagen3.required)"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                   </template>
@@ -445,7 +534,7 @@
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="btnDisable||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{nomBtn}}</button>
               </div>
             </div>
@@ -455,7 +544,7 @@
     </div>
     <div class="container">
       <div class="row justify-content-md-center">
-        <template v-if="required">
+        <template v-if="validarTipoForm">
           <div class="col-md-12">
             <div class="main-card mb-3 card">
               <div class="card-body">
@@ -506,6 +595,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
@@ -548,7 +638,6 @@ export default {
         hidro_urea: "",
         creci_nacl: "",
         creci_dif_temp: "",
-        ordenamiento: "",
         tincion_gram: "positivo",
         tincion_esporas: "presencia",
         ubicacion_esporas: "central",
@@ -562,7 +651,56 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      oxidasa: { required },
+      catalasa: { required },
+      citrato: { required },
+      tsi: { required },
+      lia: { required },
+      sim: { required },
+      rm: { required },
+      vp: { required },
+      nitrato: { required },
+      caldo_urea: { required },
+      of: { required },
+      glucosa: { required },
+      lactosa: { required },
+      manitol: { required },
+      xilosa: { required },
+      arabinosa: { required },
+      sacarosa: { required },
+      almidon: { required },
+      lecitinasa: { required },
+      lipasa: { required },
+      hidro_caseina: { required },
+      hidro_gelatina: { required },
+      hidro_urea: { required },
+      creci_nacl: { required },
+      creci_dif_temp: { required },
+      tincion_gram: { required },
+      tincion_esporas: { required },
+      ubicacion_esporas: { required },
+      tincion_capsula: { required },
+      imagen1: { required },
+      imagen2: {
+        required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
@@ -581,8 +719,9 @@ export default {
     },
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/bacteria/caract-bioqui", this.parametros)
             .then((res) => {
@@ -619,37 +758,43 @@ export default {
               }
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/caract-bioqui/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Características Bioquímicas",
+                "Características Bioquímicas editadas con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (error.response.status === 405) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                if (error.response.status === 422) {
+                  this.errors = [];
+                  this.errors = error.response.data.errors;
+                }
+                this.toastr("Error!!", "", "error");
+              }
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/caract-bioqui/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Características Bioquímicas",
-              "Características Bioquímicas editadas con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -692,7 +837,7 @@ export default {
     },
   },
   computed: {
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {

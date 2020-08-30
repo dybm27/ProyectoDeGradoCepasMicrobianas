@@ -239,7 +239,10 @@ var render = function() {
                       expression: "nombre"
                     }
                   ],
-                  staticClass: "form-control",
+                  class: [
+                    "form-control",
+                    _vm.errors.nombre ? "error-input-select" : ""
+                  ],
                   attrs: {
                     name: "nombre",
                     id: "nombre",
@@ -259,7 +262,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm.errors.nombre
-                  ? _c("span", { staticClass: "text-danger" }, [
+                  ? _c("span", { staticClass: "text-error-input" }, [
                       _vm._v(_vm._s(_vm.errors.nombre[0]))
                     ])
                   : _vm._e()
