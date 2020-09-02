@@ -12,10 +12,8 @@
         <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{asset('assets/styles/template.css')}}" rel="stylesheet">
         <link href="{{ asset('css/dumar.css') }}" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     </head>
 
     <body>

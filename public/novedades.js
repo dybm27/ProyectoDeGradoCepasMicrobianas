@@ -96,6 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie */ "./resources/js/mixins/obtenerImagenCroopie.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _editor_texto_EditorTextoComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../editor-texto/EditorTextoComponent.vue */ "./resources/js/components/editor-texto/EditorTextoComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -253,6 +255,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -285,8 +306,70 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mensajeTitulo: "",
       mensajeLink: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarPublicar: "No es posible publicar la Novedad. Sobrepasa el limite de 7 publicaciones.",
+        unique: "Ya existe un registro con ese titulo.",
+        url: "La url debe ser valida."
+      }
     };
+  },
+  validations: function validations() {
+    if (this.validarTipo) {
+      return {
+        parametros: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"],
+            unique: function unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            }
+          },
+          link: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"],
+            url: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["url"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+          },
+          publicar: {
+            validarPublicar: function validarPublicar(value) {
+              if (!value) return true;
+              if (this.validarPublicacion) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"],
+            unique: function unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            }
+          },
+          cuerpo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+          },
+          publicar: {
+            validarPublicar: function validarPublicar(value) {
+              if (value == "") return true;
+              if (this.validarPublicacion) return false;
+              return true;
+            }
+          }
+        }
+      };
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
@@ -294,53 +377,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Novedad") {
-        axios.post("/publicidad", this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Novedad") {
+          axios.post("/publicidad", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.toastr("Agregar Novedad", "Novedad agregada con exito!!", "success");
+
+              _this.accionNovedad({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.$emit("cambiarVariableFormulario");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/publicidad/".concat(this.idNovedad), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            _this.toastr("Agregar Novedad", "Novedad agregada con exito!!", "success");
+            _this.toastr("Editar Novedad", "Novedad editada con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsNovedad").whisper("desbloquearBtnsNovedad", {
+              id: res.data.id
+            });
+            window.Echo["private"]("desbloquearCheckNovedad").whisper("desbloquearCheckNovedad", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoNovedad", {
+              id: res.data.id
+            });
 
             _this.accionNovedad({
-              tipo: "agregar",
+              tipo: "editar",
               data: res.data
             });
 
             _this.$emit("cambiarVariableFormulario");
-          }
-        })["catch"](function (error) {
-          _this.verificarError(error.response.status, error.response.data.errors);
-        });
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
       } else {
-        axios.put("/publicidad/".concat(this.idNovedad), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Novedad", "Novedad editada con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsNovedad").whisper("desbloquearBtnsNovedad", {
-            id: res.data.id
-          });
-          window.Echo["private"]("desbloquearCheckNovedad").whisper("desbloquearCheckNovedad", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("eliminarMiBloqueoNovedad", {
-            id: res.data.id
-          });
-
-          _this.accionNovedad({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableFormulario");
-        })["catch"](function (error) {
-          _this.verificarError(error.response.status, error.response.data.errors);
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -368,14 +457,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.cuerpo = "";
     },
     cambiarDatos: function cambiarDatos() {
-      if (this.selectTipo === "texto") {
+      if (!this.validarTipo) {
         this.parametros.link = "";
       } else {
         this.parametros.cuerpo = "";
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNovedadById", "getNovedadByTitulo"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNovedadById", "getNovedadByTitulo", "getNovedadByPubliclar"]), {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Novedad") {
         return "btn-success";
@@ -383,12 +472,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Novedad") {
         return true;
       } else {
         return false;
       }
+    },
+    validarTipo: function validarTipo() {
+      if (this.selectTipo == "link") {
+        return true;
+      }
+
+      return false;
     },
     titulo: function titulo() {
       return this.tituloForm;
@@ -397,30 +493,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.nomBtn;
     },
     validarTitulo: function validarTitulo() {
-      if (this.parametros.titulo) {
-        var titulo = this.getNovedadByTitulo(this.parametros.titulo);
-
-        if (titulo) {
-          if (titulo.id != this.info.id) {
-            this.mensajeTitulo = "Ya existe una novedad con ese titulo";
-            return true;
-          }
-
-          return false;
-        }
-
-        return false;
-      }
-
-      return false;
-    },
-    validarLink: function validarLink() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
-
-      if (this.parametros.link) {
-        if (!letters.test(this.parametros.link)) {
-          this.mensajeLink = "El link no tiene un formato valido.";
+      if (this.getNovedadByTitulo(this.parametros.titulo)) {
+        if (this.getNovedadByTitulo(this.parametros.titulo).id != this.info.id) {
           return true;
         }
 
@@ -429,19 +503,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       return false;
     },
-    validarCuerpo: function validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
-        return true;
-      }
+    validarPublicacion: function validarPublicacion() {
+      var _this2 = this;
 
-      return false;
-    },
-    validarBtn: function validarBtn() {
-      if (this.validarTitulo || this.selectTipo == "link" && this.validarLink || this.validarCuerpo || !this.parametros.imagen) {
-        return true;
-      }
-
-      return false;
+      if (this.getNovedadByPubliclar.length < 7) return false;
+      if (this.validarTipoForm) return true;
+      if (this.getNovedadByPubliclar.find(function (novedad) {
+        return novedad.id == _this2.info.id;
+      })) return false;
+      return true;
     }
   }),
   created: function created() {
@@ -780,45 +850,58 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.titulo,
-                            expression: "parametros.titulo"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.titulo.$model,
+                            expression: "$v.parametros.titulo.$model",
+                            modifiers: { trim: true }
                           }
                         ],
                         class: [
                           "form-control",
-                          _vm.validarTitulo ? "is-invalid" : ""
+                          _vm.$v.parametros.titulo.$error
+                            ? "error-input-select"
+                            : ""
                         ],
                         attrs: {
                           name: "titulo",
                           id: "titulo",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.titulo },
+                        domProps: { value: _vm.$v.parametros.titulo.$model },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "titulo",
-                              $event.target.value
+                              _vm.$v.parametros.titulo,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
                       }),
                       _vm._v(" "),
-                      _vm.validarTitulo
-                        ? _c("em", { staticClass: "error invalid-feedback" }, [
-                            _vm._v(_vm._s(_vm.mensajeTitulo))
+                      _vm.$v.parametros.titulo.$error &&
+                      !_vm.$v.parametros.titulo.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.titulo.$error &&
+                      !_vm.$v.parametros.titulo.unique
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.unique))
                           ])
                         : _vm._e()
                     ]),
                     _vm._v(" "),
-                    _vm.required
+                    _vm.validarTipoForm
                       ? _c(
                           "div",
                           { staticClass: "position-relative form-group" },
@@ -876,7 +959,7 @@ var render = function() {
                         )
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.selectTipo == "link"
+                    _vm.validarTipo
                       ? [
                           _c(
                             "div",
@@ -890,42 +973,59 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.link,
-                                    expression: "parametros.link"
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.link.$model,
+                                    expression: "$v.parametros.link.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
                                 class: [
                                   "form-control",
-                                  _vm.validarLink ? "is-invalid" : ""
+                                  _vm.$v.parametros.link.$error
+                                    ? "error-input-select"
+                                    : ""
                                 ],
                                 attrs: {
                                   name: "link",
                                   id: "link",
                                   placeholder: "...",
-                                  type: "text",
-                                  required: ""
+                                  type: "text"
                                 },
-                                domProps: { value: _vm.parametros.link },
+                                domProps: {
+                                  value: _vm.$v.parametros.link.$model
+                                },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "link",
-                                      $event.target.value
+                                      _vm.$v.parametros.link,
+                                      "$model",
+                                      $event.target.value.trim()
                                     )
+                                  },
+                                  blur: function($event) {
+                                    return _vm.$forceUpdate()
                                   }
                                 }
                               }),
                               _vm._v(" "),
-                              _vm.validarLink
+                              _vm.$v.parametros.link.$error &&
+                              !_vm.$v.parametros.link.required
                                 ? _c(
                                     "em",
-                                    { staticClass: "error invalid-feedback" },
-                                    [_vm._v(_vm._s(_vm.mensajeLink))]
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.$v.parametros.link.$error &&
+                              !_vm.$v.parametros.link.url
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.url))]
                                   )
                                 : _vm._e()
                             ]
@@ -942,21 +1042,29 @@ var render = function() {
                         ref: "inputImagen",
                         class: [
                           "form-control-file",
-                          _vm.imagenError != "" ? "is-invalid" : ""
+                          _vm.$v.parametros.imagen.$error
+                            ? "error-input-select"
+                            : ""
                         ],
                         attrs: {
                           name: "imagen",
                           id: "imagen",
                           accept: "image/jpeg, image/png",
-                          type: "file",
-                          required: _vm.required
+                          type: "file"
                         },
                         on: { change: _vm.obtenerImagen }
                       }),
                       _vm._v(" "),
                       _vm.imagenError
-                        ? _c("em", { staticClass: "error invalid-feedback" }, [
+                        ? _c("em", { staticClass: "text-error-input" }, [
                             _vm._v(_vm._s(_vm.imagenError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.imagen.$error &&
+                      !_vm.$v.parametros.imagen.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
                           ])
                         : _vm._e()
                     ]),
@@ -969,21 +1077,32 @@ var render = function() {
                           directives: [
                             {
                               name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.publicar,
-                              expression: "parametros.publicar"
+                              rawName: "v-model.trim",
+                              value: _vm.$v.parametros.publicar.$model,
+                              expression: "$v.parametros.publicar.$model",
+                              modifiers: { trim: true }
                             }
                           ],
-                          staticClass: "custom-control-input",
+                          class: [
+                            "custom-control-input",
+                            _vm.$v.parametros.publicar.$error
+                              ? "is-invalid"
+                              : ""
+                          ],
                           attrs: { type: "checkbox", id: "publicar" },
                           domProps: {
-                            checked: Array.isArray(_vm.parametros.publicar)
-                              ? _vm._i(_vm.parametros.publicar, null) > -1
-                              : _vm.parametros.publicar
+                            checked: Array.isArray(
+                              _vm.$v.parametros.publicar.$model
+                            )
+                              ? _vm._i(
+                                  _vm.$v.parametros.publicar.$model,
+                                  null
+                                ) > -1
+                              : _vm.$v.parametros.publicar.$model
                           },
                           on: {
                             change: function($event) {
-                              var $$a = _vm.parametros.publicar,
+                              var $$a = _vm.$v.parametros.publicar.$model,
                                 $$el = $event.target,
                                 $$c = $$el.checked ? true : false
                               if (Array.isArray($$a)) {
@@ -992,22 +1111,26 @@ var render = function() {
                                 if ($$el.checked) {
                                   $$i < 0 &&
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
+                                      _vm.$v.parametros.publicar,
+                                      "$model",
                                       $$a.concat([$$v])
                                     )
                                 } else {
                                   $$i > -1 &&
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
+                                      _vm.$v.parametros.publicar,
+                                      "$model",
                                       $$a
                                         .slice(0, $$i)
                                         .concat($$a.slice($$i + 1))
                                     )
                                 }
                               } else {
-                                _vm.$set(_vm.parametros, "publicar", $$c)
+                                _vm.$set(
+                                  _vm.$v.parametros.publicar,
+                                  "$model",
+                                  $$c
+                                )
                               }
                             }
                           }
@@ -1024,12 +1147,19 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
+                    _vm.$v.parametros.publicar.$error &&
+                    !_vm.$v.parametros.publicar.validarPublicar
+                      ? _c("em", { staticClass: "text-error-select" }, [
+                          _vm._v(_vm._s(_vm.mensajes.validarPublicar))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c(
                       "button",
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                        attrs: { disabled: _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -1098,19 +1228,33 @@ var render = function() {
                 _c("div", { staticClass: "main-card mb-3 card" }, [
                   _c(
                     "div",
-                    { staticClass: "card-body" },
+                    {
+                      class: [
+                        "card-body",
+                        _vm.$v.parametros.cuerpo.$error
+                          ? "error-text-editor"
+                          : ""
+                      ]
+                    },
                     [
                       _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Elaborar Novedad")
+                        _vm._v("Elaborar Actividad")
                       ]),
                       _vm._v(" "),
                       _c("Editor", {
-                        attrs: { info: _vm.info, quienesSomos: false },
+                        attrs: { info: _vm.info },
                         on: {
                           contenido: _vm.aceptarContenido,
                           modificar: _vm.modificarContenido
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.cuerpo.$error &&
+                      !_vm.$v.parametros.cuerpo.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
                     ],
                     1
                   )

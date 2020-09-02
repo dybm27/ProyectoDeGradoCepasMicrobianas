@@ -11,7 +11,7 @@
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
       v-tooltip="'Eliminar Metodo'"
-      @click="showModal(rowData)"
+      @click="eliminar(rowData)"
     >
       <i class="far fa-trash-alt"></i>
     </button>
@@ -43,15 +43,9 @@ export default {
         });
       }
     },
-    showModal(data) {
+    eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });
     }
   }
 };
 </script>
-
-<style scoped>
-.centrar {
-  align-content: center;
-}
-</style>

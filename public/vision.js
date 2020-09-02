@@ -221,7 +221,7 @@ var render = function() {
                                           "btn btn-block btn-success",
                                         on: { click: _vm.cambiarVision }
                                       },
-                                      [_vm._v("Cambiar")]
+                                      [_vm._v("Guardar Cambios")]
                                     )
                                   ])
                                 ]

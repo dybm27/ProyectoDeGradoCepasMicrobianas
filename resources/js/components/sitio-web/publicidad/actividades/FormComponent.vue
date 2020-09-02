@@ -44,7 +44,25 @@
                 </select>
               </div>
               <template v-if="validarTipo">
-               
+                <div class="position-relative form-group">
+                  <label for="link" class>Link</label>
+                  <input
+                    name="link"
+                    id="link"
+                    placeholder="..."
+                    type="text"
+                    :class="['form-control', $v.parametros.link.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.link.$model"
+                  />
+                  <em
+                    v-if="$v.parametros.link.$error&&!$v.parametros.link.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
+                  <em
+                    v-if="$v.parametros.link.$error&&!$v.parametros.link.url"
+                    class="text-error-input"
+                  >{{mensajes.url}}</em>
+                </div>
               </template>
               <div class="form-row">
                 <div class="col-md-6">
@@ -174,14 +192,13 @@
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
-            <div class="card-body">
+            <div :class="['card-body',$v.parametros.cuerpo.$error?'error-text-editor':'']">
               <h5 class="card-title">Elaborar Actividad</h5>
-              <Editor
-                @contenido="aceptarContenido"
-                @modificar="modificarContenido"
-                :info="info"
-                :quienesSomos="false"
-              />
+              <Editor @contenido="aceptarContenido" @modificar="modificarContenido" :info="info" />
+              <em
+                v-if="$v.parametros.cuerpo.$error&&!$v.parametros.cuerpo.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
             </div>
           </div>
         </div>
@@ -198,7 +215,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../../CroppieComponent.vue";
 import Editor from "../../../editor-texto/EditorTextoComponent.vue";
-import { required, link } from "vuelidate/lib/validators";
+import { required, url } from "vuelidate/lib/validators";
 export default {
   components: { Croppie, Editor },
   props: ["idActividad"],
@@ -229,8 +246,8 @@ export default {
         required: "El campo es requerido.",
         validarPublicar:
           "No es posible publicar la Actividad. Sobrepasa el limite de 7 publicaciones.",
-        unique: "Ya existe un registro con ese email.",
-        link: "El link debe ser valido.",
+        unique: "Ya existe un registro con ese titulo.",
+        url: "La url debe ser valida.",
       },
     };
   },
@@ -246,14 +263,14 @@ export default {
               return true;
             },
           },
-          link: { required, link },
+          link: { required, url },
           imagen: { required },
           fecha: { required },
           lugar: { required },
           publicar: {
             validarPublicar(value) {
-              if (value == "") return true;
-              // if (this.validarPublicar) return false;
+              if (!value) return true;
+              if (this.validarPublicacion) return false;
               return true;
             },
           },
@@ -266,7 +283,7 @@ export default {
             required,
             unique(value) {
               if (value == "") return true;
-              if (!letters.test(value)) return false;
+              if (this.validarTitulo) return false;
               return true;
             },
           },
@@ -277,7 +294,7 @@ export default {
           publicar: {
             validarPublicar(value) {
               if (value == "") return true;
-              // if (this.validarPublicar) return false;
+              if (this.validarPublicacion) return false;
               return true;
             },
           },
@@ -381,7 +398,7 @@ export default {
       this.parametros.cuerpo = "";
     },
     cambiarDatos() {
-      if (this.selectTipo === "texto") {
+      if (!this.validarTipo) {
         this.parametros.link = "";
       } else {
         this.parametros.cuerpo = "";
@@ -392,6 +409,7 @@ export default {
     ...vuex.mapGetters("publicidad", [
       "getActividadById",
       "getActividadByTitulo",
+      "getActividadByPubliclar",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Actividad") {
@@ -430,12 +448,17 @@ export default {
       }
       return false;
     },
-    validarPublicar() {},
-    validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
-        return true;
-      }
-      return false;
+    validarPublicacion() {
+      if (this.getActividadByPubliclar.length < 7) return false;
+      if (this.validarTipoForm) return true;
+      if (
+        this.getActividadByPubliclar.find(
+          (actividad) => actividad.id == this.info.id
+        )
+      )
+        return false;
+
+      return true;
     },
   },
   created() {

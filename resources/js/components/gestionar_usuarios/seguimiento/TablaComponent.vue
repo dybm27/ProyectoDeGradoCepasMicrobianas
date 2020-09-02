@@ -47,7 +47,6 @@
             type="button"
             class="btn btn-success"
             :disabled="bloquearBtnModal"
-            @click="eliminarDatos"
           >Eliminar</button>
         </div>
       </div>

@@ -17,7 +17,7 @@
               </div>
               <div class="row justify-content-center" v-if="!verificarBtn">
                 <div class="col-md-4 mt-3">
-                  <button class="btn btn-block btn-success" @click="cambiarObjetivos">Cambiar</button>
+                  <button class="btn btn-block btn-success" @click="cambiarObjetivos">Guardar Cambios</button>
                 </div>
               </div>
             </template>

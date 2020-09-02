@@ -93,11 +93,13 @@
               id="titulo"
               placeholder="..."
               type="text"
-              class="form-control"
-              v-model="modal.titulo"
-              :disabled="!btnCancelar"
+              :class="['form-control',$v.modal.titulo.$error?'error-input-select':'']"
+              v-model.trim="$v.modal.titulo.$model"
             />
-            <span v-if="errors.titulo" class="text-danger">{{errors.titulo[0]}}</span>
+            <em
+              v-if="$v.modal.titulo.$error&&!$v.modal.titulo.required"
+              class="text-error-input"
+            >{{mensajes.required}}</em>
           </div>
           <template v-if="!diaSemana">
             <div class="form-row">
@@ -111,13 +113,16 @@
                       <date-picker
                         ref="datepickerFecha"
                         :lang="lang"
-                        v-model="modal.fecha"
+                        v-model.trim="$v.modal.fecha.$model"
+                        :class="$v.modal.fecha.$error?'error-input-select':''"
                         type="datetime"
                         value-type="format"
                         placeholder="..."
-                        :disabled="!btnCancelar"
                       ></date-picker>
-                      <span v-if="errors.fecha" class="text-danger">{{errors.fecha[0]}}</span>
+                      <em
+                        v-if="$v.modal.fecha.$error&&!$v.modal.fecha.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </template>
@@ -129,12 +134,16 @@
                     <div class="row">
                       <date-picker
                         ref="datepickerTiempo"
-                        v-model="modal.tiempo"
+                        v-model.trim="$v.modal.tiempo.$model"
+                        :class="$v.modal.tiempo.$error?'error-input-select':''"
                         type="time"
                         value-type="format"
                         placeholder="..."
                       ></date-picker>
-                      <span v-if="errors.tiempo" class="text-danger">{{errors.tiempo[0]}}</span>
+                      <em
+                        v-if="$v.modal.tiempo.$error&&!$v.modal.tiempo.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </template>
@@ -147,24 +156,44 @@
                     id="color"
                     placeholder="..."
                     type="color"
-                    class="form-control"
-                    v-model.number="modal.color"
-                    disabled
+                    :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
+                    v-model.trim="$v.modal.color.$model"
                   />
+                  <em
+                    v-if="$v.modal.color.$error&&!$v.modal.color.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </div>
             </div>
           </template>
+          <div class="position-relative form-group" v-else>
+            <label for="color" class>Color</label>
+            <input
+              name="color"
+              id="color"
+              placeholder="..."
+              type="color"
+              :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
+              v-model.trim="$v.modal.color.$model"
+            />
+            <em
+              v-if="$v.modal.color.$error&&!$v.modal.color.required"
+              class="text-error-input"
+            >{{mensajes.required}}</em>
+          </div>
           <div class="position-relative form-group">
             <label for="descrpcion">Descripción</label>
             <textarea
               name="text"
               id="descrpcion"
-              class="form-control"
-              :disabled="!btnCancelar"
-              v-model="modal.descripcion"
+              :class="['form-control',$v.modal.descripcion.$error?'error-input-select':'']"
+              v-model.trim="$v.modal.descripcion.$model"
             ></textarea>
-            <span v-if="errors.descripcion" class="text-danger">{{errors.descripcion[0]}}</span>
+            <em
+              v-if="$v.modal.descripcion.$error&&!$v.modal.descripcion.required"
+              class="text-error-input"
+            >{{mensajes.required}}</em>
           </div>
         </div>
         <div class="modal-footer">
@@ -193,14 +222,7 @@
             type="button"
             class="btn btn-secondary"
             @click="$modal.hide('agregar-editar_eliminar-evento')"
-            v-if="btnCancelar"
           >Cancelar</button>
-          <template v-if="!btnCancelar">
-            <p>
-              <b>Realizado por:</b>
-              {{modal.autor}}
-            </p>
-          </template>
         </div>
       </div>
     </modal>
@@ -224,6 +246,7 @@ import vuex from "vuex";
 
 import bloquearPestañasMixin from "../mixins/bloquearPestañas";
 import Toastr from "../mixins/toastr";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
@@ -245,7 +268,7 @@ export default {
       googleCalendarApiKey: process.env.MIX_GOOGLE_KEY,
       eventos: {
         url: "/info-panel/eventos",
-        className: "eventos",
+        className: "eventos mostrar-cursor",
         textColor: "black",
         failure: function (error) {
           if (error.xhr.responseURL === process.env.MIX_LOGIN) {
@@ -261,7 +284,7 @@ export default {
         {
           googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
           color: "#ff0000",
-          className: "google",
+          className: "google mostrar-cursor-default",
           textColor: "black",
         },
         {
@@ -270,7 +293,7 @@ export default {
         },
         {
           url: "/info-panel/eventos-metodos-bacterias",
-          className: "eventos-metodos-bacterias",
+          className: "eventos-metodos-bacterias mostrar-cursor-default",
           color: "#38c172",
           textColor: "black",
           failure: function (error) {
@@ -285,7 +308,7 @@ export default {
         },
         {
           url: "/info-panel/eventos-metodos-levaduras",
-          className: "eventos-metodos-levaduras",
+          className: "eventos-metodos-levaduras mostrar-cursor-default",
           color: "#38c172",
           textColor: "black",
           failure: function (error) {
@@ -300,7 +323,7 @@ export default {
         },
         {
           url: "/info-panel/eventos-metodos-hongos",
-          className: "eventos-metodos-hongos",
+          className: "eventos-metodos-hongos mostrar-cursor-default",
           color: "#38c172",
           textColor: "black",
           failure: function (error) {
@@ -315,7 +338,7 @@ export default {
         },
         {
           url: "/info-panel/eventos-actividades",
-          className: "eventos-actividades",
+          className: "eventos-actividades mostrar-cursor-default",
           color: "#16aaff",
           textColor: "black",
           failure: function (error) {
@@ -356,12 +379,41 @@ export default {
       btnAgregar: true,
       btnEditar: true,
       btnEliminar: true,
-      btnCancelar: true,
       allday: false,
       diaSemana: false,
       fechaCalendario: "",
       bloquearBtnModal: false,
+      mensajes: { required: "El campo es requerido." },
     };
+  },
+  validations() {
+    if (this.diaSemana) {
+      return {
+        modal: {
+          titulo: { required },
+          descripcion: { required },
+          color: { required },
+        },
+      };
+    } else if (this.allday) {
+      return {
+        modal: {
+          titulo: { required },
+          descripcion: { required },
+          tiempo: { required },
+          color: { required },
+        },
+      };
+    } else {
+      return {
+        modal: {
+          titulo: { required },
+          descripcion: { required },
+          fecha: { required },
+          color: { required },
+        },
+      };
+    }
   },
   mixins: [bloquearPestañasMixin("calendario"), Toastr],
   methods: {
@@ -377,11 +429,8 @@ export default {
         this.modal.descripcion = info.event.extendedProps.descripcion;
         this.modal.autor = info.event.extendedProps.autor;
         this.modal.id = info.event.id;
-        if (this.auth.id === info.event.extendedProps.idAutor) {
-          this.abrirModal("editar1");
-        } else {
-          this.abrirModal("editar2");
-        }
+
+        this.abrirModal("editar1");
       }
     },
     dateClick(info) {
@@ -443,11 +492,11 @@ export default {
           this.modal.titulo = "";
           this.modal.descripcion = "";
           this.modal.autor = "";
+          this.modal.color = "#f7b924";
           this.modal.time = "";
           this.btnAgregar = true;
           this.btnEditar = false;
           this.btnEliminar = false;
-          this.btnCancelar = true;
           this.allday = false;
           this.diaSemana = false;
           this.titulo_modal = "Agregar Evento";
@@ -456,26 +505,18 @@ export default {
           this.modal.titulo = "";
           this.modal.descripcion = "";
           this.modal.autor = "";
+          this.modal.color = "#f7b924";
           this.modal.tiempo = "";
           this.btnAgregar = true;
           this.btnEditar = false;
           this.btnEliminar = false;
-          this.btnCancelar = true;
           this.titulo_modal = "Agregar Evento";
           break;
         case "editar1":
           this.btnAgregar = false;
           this.btnEditar = true;
           this.btnEliminar = true;
-          this.btnCancelar = true;
           this.titulo_modal = "Editar o Eliminar Evento";
-          break;
-        case "editar2":
-          this.btnAgregar = false;
-          this.btnEditar = false;
-          this.btnEliminar = false;
-          this.btnCancelar = false;
-          this.titulo_modal = "Ver Evento";
           break;
       }
       this.$modal.show("agregar-editar_eliminar-evento");
@@ -485,77 +526,97 @@ export default {
       let calendarApi = this.$refs.fullCalendar.getApi();
       switch (tipo) {
         case "agregar":
-          if (this.allday) {
-            this.modal.fecha = this.fechaCalendario + " " + this.modal.tiempo;
-          } else {
-            if (this.diaSemana) {
-              this.modal.fecha = moment(this.fechaCalendario).format(
-                "YYYY-MM-DD HH:mm:ss"
-              );
-            }
-            this.modal.tiempo = "lo que sea";
-          }
-          axios
-            .post("eventos/agregar", this.modal)
-            .then((res) => {
-              if (res.request.responseURL === process.env.MIX_LOGIN) {
-                localStorage.setItem(
-                  "mensajeLogin",
-                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+          this.$v.modal.$touch();
+          if (!this.$v.$invalid) {
+            if (this.allday) {
+              this.modal.fecha = this.fechaCalendario + " " + this.modal.tiempo;
+            } else {
+              if (this.diaSemana) {
+                this.modal.fecha = moment(this.fechaCalendario).format(
+                  "YYYY-MM-DD HH:mm:ss"
                 );
-                window.location.href = "/";
-              } else {
+              }
+              this.modal.tiempo = "lo que sea";
+            }
+            axios
+              .post("eventos/agregar", this.modal)
+              .then((res) => {
+                if (res.request.responseURL === process.env.MIX_LOGIN) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
+                  window.location.href = "/";
+                } else {
+                  this.bloquearBtnModal = false;
+                  calendarApi.refetchEvents();
+
+                  this.toastr(
+                    "Agregar Evento",
+                    "El Evento fue agregado con exito!!",
+                    "success"
+                  );
+                  this.$modal.hide("agregar-editar_eliminar-evento");
+                }
+              })
+              .catch((error) => {
+                if (
+                  error.response.status === 405 ||
+                  error.response.status === 401
+                ) {
+                  window.location.href = "/";
+                } else {
+                  this.bloquearBtnModal = false;
+                  if (error.response.status === 422) {
+                    this.errors = error.response.data.errors;
+                  }
+                }
+              });
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr(
+              "Error!!",
+              "Favor llenar correctamente los campos",
+              "error"
+            );
+          }
+          break;
+        case "editar":
+          this.$v.modal.$touch();
+          if (!this.$v.$invalid) {
+            axios
+              .put(`eventos/editar/${this.modal.id}`, this.modal)
+              .then((res) => {
                 this.bloquearBtnModal = false;
                 calendarApi.refetchEvents();
-
                 this.toastr(
-                  "Agregar Evento",
-                  "El Evento fue agregado con exito!!",
+                  "Editar Evento",
+                  "El Evento fue editado con exito!!",
                   "success"
                 );
                 this.$modal.hide("agregar-editar_eliminar-evento");
-              }
-            })
-            .catch((error) => {
-              if (
-                error.response.status === 405 ||
-                error.response.status === 401
-              ) {
-                window.location.href = "/";
-              } else {
-                this.bloquearBtnModal = false;
-                if (error.response.status === 422) {
-                  this.errors = error.response.data.errors;
+              })
+              .catch((error) => {
+                if (
+                  error.response.status === 405 ||
+                  error.response.status === 401
+                ) {
+                  window.location.href = "/";
+                } else {
+                  this.bloquearBtnModal = false;
+                  if (error.response.status === 422) {
+                    this.errors = error.response.data.errors;
+                  }
                 }
-              }
-            });
-          break;
-        case "editar":
-          axios
-            .put(`eventos/editar/${this.modal.id}`, this.modal)
-            .then((res) => {
-              this.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
-              this.toastr(
-                "Editar Evento",
-                "El Evento fue editado con exito!!",
-                "success"
-              );
-              this.$modal.hide("agregar-editar_eliminar-evento");
-            })
-            .catch((error) => {
-              if (
-                error.response.status === 405 ||
-                error.response.status === 401
-              ) {
-                window.location.href = "/";
-              } else {
-                this.bloquearBtnModal = false;
-                if (error.response.status === 422) {
-                  this.errors = error.response.data.errors;
-                }
-              }
-            });
+              });
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr(
+              "Error!!",
+              "Favor llenar correctamente los campos",
+              "error"
+            );
+          }
           break;
         case "eliminar":
           axios

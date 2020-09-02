@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","tablas-cepas":"tablas-cepas","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794","imagenes-login":"imagenes-login","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","actividades":"actividades","perfil":"perfil","novedades":"novedades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8":"vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","cepa-hongo":"cepa-hongo","error-403":"error-403","error-404":"error-404","ver-hongo":"ver-hongo","tablas-cepas":"tablas-cepas","tabla-seguimiento":"tabla-seguimiento","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2127,10 +2127,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2546,10 +2542,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2759,10 +2751,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2872,7 +2860,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoBacteria", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -2975,10 +2963,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -3143,7 +3127,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoHongo", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -3248,10 +3232,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -3416,7 +3396,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoLevadura", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -3519,9 +3499,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
 //
 //
 //
@@ -3690,6 +3667,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -3730,8 +3708,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -3830,8 +3806,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -3872,8 +3846,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -3972,8 +3944,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4014,8 +3984,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -4114,8 +4082,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4156,8 +4122,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -4256,8 +4220,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4291,6 +4253,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4323,9 +4286,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4359,8 +4329,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -4459,8 +4427,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4501,8 +4467,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -4601,8 +4565,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4643,8 +4605,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -4814,8 +4774,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4885,8 +4843,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4927,8 +4883,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5032,8 +4986,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5074,8 +5026,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5174,8 +5124,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5216,8 +5164,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5336,8 +5282,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5378,8 +5322,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5498,8 +5440,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5540,8 +5480,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5640,8 +5578,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5711,8 +5647,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5753,8 +5687,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -5858,8 +5790,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5900,8 +5830,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -6000,8 +5928,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -6042,8 +5968,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
 //
 //
 //
@@ -6404,6 +6328,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6553,6 +6478,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -6764,6 +6690,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6943,6 +6870,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -7091,6 +7019,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -7310,6 +7239,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -7467,6 +7397,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -14525,112 +14456,6 @@ function isnan (val) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.centrar[data-v-3fba7148] {\r\n  align-content: center;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/lib/css-base.js":
-/*!*************************************************!*\
-  !*** ./node_modules/css-loader/lib/css-base.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
 
 /***/ }),
 
@@ -53843,545 +53668,6 @@ runtime.setup(pusher_Pusher);
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/lib/addStyles.js":
-/*!****************************************************!*\
-  !*** ./node_modules/style-loader/lib/addStyles.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-
-var stylesInDom = {};
-
-var	memoize = function (fn) {
-	var memo;
-
-	return function () {
-		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-		return memo;
-	};
-};
-
-var isOldIE = memoize(function () {
-	// Test for IE <= 9 as proposed by Browserhacks
-	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-	// Tests for existence of standard globals is to allow style-loader
-	// to operate correctly into non-standard environments
-	// @see https://github.com/webpack-contrib/style-loader/issues/177
-	return window && document && document.all && !window.atob;
-});
-
-var getTarget = function (target, parent) {
-  if (parent){
-    return parent.querySelector(target);
-  }
-  return document.querySelector(target);
-};
-
-var getElement = (function (fn) {
-	var memo = {};
-
-	return function(target, parent) {
-                // If passing function in options, then use it for resolve "head" element.
-                // Useful for Shadow Root style i.e
-                // {
-                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
-                // }
-                if (typeof target === 'function') {
-                        return target();
-                }
-                if (typeof memo[target] === "undefined") {
-			var styleTarget = getTarget.call(this, target, parent);
-			// Special case to return head of iframe instead of iframe itself
-			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-				try {
-					// This will throw an exception if access to iframe is blocked
-					// due to cross-origin restrictions
-					styleTarget = styleTarget.contentDocument.head;
-				} catch(e) {
-					styleTarget = null;
-				}
-			}
-			memo[target] = styleTarget;
-		}
-		return memo[target]
-	};
-})();
-
-var singleton = null;
-var	singletonCounter = 0;
-var	stylesInsertedAtTop = [];
-
-var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
-
-module.exports = function(list, options) {
-	if (typeof DEBUG !== "undefined" && DEBUG) {
-		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-	}
-
-	options = options || {};
-
-	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
-
-	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-	// tags it will allow on a page
-	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
-
-	// By default, add <style> tags to the <head> element
-        if (!options.insertInto) options.insertInto = "head";
-
-	// By default, add <style> tags to the bottom of the target
-	if (!options.insertAt) options.insertAt = "bottom";
-
-	var styles = listToStyles(list, options);
-
-	addStylesToDom(styles, options);
-
-	return function update (newList) {
-		var mayRemove = [];
-
-		for (var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-
-			domStyle.refs--;
-			mayRemove.push(domStyle);
-		}
-
-		if(newList) {
-			var newStyles = listToStyles(newList, options);
-			addStylesToDom(newStyles, options);
-		}
-
-		for (var i = 0; i < mayRemove.length; i++) {
-			var domStyle = mayRemove[i];
-
-			if(domStyle.refs === 0) {
-				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
-
-				delete stylesInDom[domStyle.id];
-			}
-		}
-	};
-};
-
-function addStylesToDom (styles, options) {
-	for (var i = 0; i < styles.length; i++) {
-		var item = styles[i];
-		var domStyle = stylesInDom[item.id];
-
-		if(domStyle) {
-			domStyle.refs++;
-
-			for(var j = 0; j < domStyle.parts.length; j++) {
-				domStyle.parts[j](item.parts[j]);
-			}
-
-			for(; j < item.parts.length; j++) {
-				domStyle.parts.push(addStyle(item.parts[j], options));
-			}
-		} else {
-			var parts = [];
-
-			for(var j = 0; j < item.parts.length; j++) {
-				parts.push(addStyle(item.parts[j], options));
-			}
-
-			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-		}
-	}
-}
-
-function listToStyles (list, options) {
-	var styles = [];
-	var newStyles = {};
-
-	for (var i = 0; i < list.length; i++) {
-		var item = list[i];
-		var id = options.base ? item[0] + options.base : item[0];
-		var css = item[1];
-		var media = item[2];
-		var sourceMap = item[3];
-		var part = {css: css, media: media, sourceMap: sourceMap};
-
-		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
-		else newStyles[id].parts.push(part);
-	}
-
-	return styles;
-}
-
-function insertStyleElement (options, style) {
-	var target = getElement(options.insertInto)
-
-	if (!target) {
-		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
-	}
-
-	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
-
-	if (options.insertAt === "top") {
-		if (!lastStyleElementInsertedAtTop) {
-			target.insertBefore(style, target.firstChild);
-		} else if (lastStyleElementInsertedAtTop.nextSibling) {
-			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
-		} else {
-			target.appendChild(style);
-		}
-		stylesInsertedAtTop.push(style);
-	} else if (options.insertAt === "bottom") {
-		target.appendChild(style);
-	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
-		var nextSibling = getElement(options.insertAt.before, target);
-		target.insertBefore(style, nextSibling);
-	} else {
-		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
-	}
-}
-
-function removeStyleElement (style) {
-	if (style.parentNode === null) return false;
-	style.parentNode.removeChild(style);
-
-	var idx = stylesInsertedAtTop.indexOf(style);
-	if(idx >= 0) {
-		stylesInsertedAtTop.splice(idx, 1);
-	}
-}
-
-function createStyleElement (options) {
-	var style = document.createElement("style");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-
-	if(options.attrs.nonce === undefined) {
-		var nonce = getNonce();
-		if (nonce) {
-			options.attrs.nonce = nonce;
-		}
-	}
-
-	addAttrs(style, options.attrs);
-	insertStyleElement(options, style);
-
-	return style;
-}
-
-function createLinkElement (options) {
-	var link = document.createElement("link");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-	options.attrs.rel = "stylesheet";
-
-	addAttrs(link, options.attrs);
-	insertStyleElement(options, link);
-
-	return link;
-}
-
-function addAttrs (el, attrs) {
-	Object.keys(attrs).forEach(function (key) {
-		el.setAttribute(key, attrs[key]);
-	});
-}
-
-function getNonce() {
-	if (false) {}
-
-	return __webpack_require__.nc;
-}
-
-function addStyle (obj, options) {
-	var style, update, remove, result;
-
-	// If a transform function was defined, run it on the css
-	if (options.transform && obj.css) {
-	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
-		 : options.transform.default(obj.css);
-
-	    if (result) {
-	    	// If transform returns a value, use that instead of the original css.
-	    	// This allows running runtime transformations on the css.
-	    	obj.css = result;
-	    } else {
-	    	// If the transform function returns a falsy value, don't add this css.
-	    	// This allows conditional loading of css
-	    	return function() {
-	    		// noop
-	    	};
-	    }
-	}
-
-	if (options.singleton) {
-		var styleIndex = singletonCounter++;
-
-		style = singleton || (singleton = createStyleElement(options));
-
-		update = applyToSingletonTag.bind(null, style, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-
-	} else if (
-		obj.sourceMap &&
-		typeof URL === "function" &&
-		typeof URL.createObjectURL === "function" &&
-		typeof URL.revokeObjectURL === "function" &&
-		typeof Blob === "function" &&
-		typeof btoa === "function"
-	) {
-		style = createLinkElement(options);
-		update = updateLink.bind(null, style, options);
-		remove = function () {
-			removeStyleElement(style);
-
-			if(style.href) URL.revokeObjectURL(style.href);
-		};
-	} else {
-		style = createStyleElement(options);
-		update = applyToTag.bind(null, style);
-		remove = function () {
-			removeStyleElement(style);
-		};
-	}
-
-	update(obj);
-
-	return function updateStyle (newObj) {
-		if (newObj) {
-			if (
-				newObj.css === obj.css &&
-				newObj.media === obj.media &&
-				newObj.sourceMap === obj.sourceMap
-			) {
-				return;
-			}
-
-			update(obj = newObj);
-		} else {
-			remove();
-		}
-	};
-}
-
-var replaceText = (function () {
-	var textStore = [];
-
-	return function (index, replacement) {
-		textStore[index] = replacement;
-
-		return textStore.filter(Boolean).join('\n');
-	};
-})();
-
-function applyToSingletonTag (style, index, remove, obj) {
-	var css = remove ? "" : obj.css;
-
-	if (style.styleSheet) {
-		style.styleSheet.cssText = replaceText(index, css);
-	} else {
-		var cssNode = document.createTextNode(css);
-		var childNodes = style.childNodes;
-
-		if (childNodes[index]) style.removeChild(childNodes[index]);
-
-		if (childNodes.length) {
-			style.insertBefore(cssNode, childNodes[index]);
-		} else {
-			style.appendChild(cssNode);
-		}
-	}
-}
-
-function applyToTag (style, obj) {
-	var css = obj.css;
-	var media = obj.media;
-
-	if(media) {
-		style.setAttribute("media", media)
-	}
-
-	if(style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		while(style.firstChild) {
-			style.removeChild(style.firstChild);
-		}
-
-		style.appendChild(document.createTextNode(css));
-	}
-}
-
-function updateLink (link, options, obj) {
-	var css = obj.css;
-	var sourceMap = obj.sourceMap;
-
-	/*
-		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
-		and there is no publicPath defined then lets turn convertToAbsoluteUrls
-		on by default.  Otherwise default to the convertToAbsoluteUrls option
-		directly
-	*/
-	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
-
-	if (options.convertToAbsoluteUrls || autoFixUrls) {
-		css = fixUrls(css);
-	}
-
-	if (sourceMap) {
-		// http://stackoverflow.com/a/26603875
-		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-	}
-
-	var blob = new Blob([css], { type: "text/css" });
-
-	var oldSrc = link.href;
-
-	link.href = URL.createObjectURL(blob);
-
-	if(oldSrc) URL.revokeObjectURL(oldSrc);
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/lib/urls.js":
-/*!***********************************************!*\
-  !*** ./node_modules/style-loader/lib/urls.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
-  }
-
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
-  }
-
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
-
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
-
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
-
-		// convert the url to a full url
-		var newUrl;
-
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
-
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
-
-	// send back the fixed css
-	return fixedCss;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -59917,7 +59203,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -59936,7 +59222,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -59961,7 +59246,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -59991,7 +59275,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60016,10 +59299,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60347,7 +59629,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60366,7 +59648,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60391,7 +59672,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60421,7 +59701,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60446,10 +59725,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60569,7 +59847,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60588,7 +59866,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60613,7 +59890,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60643,7 +59919,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60668,10 +59943,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60746,7 +60020,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -60861,7 +60135,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60880,7 +60154,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60905,7 +60178,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60935,7 +60207,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60960,10 +60231,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -61038,7 +60308,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -61153,7 +60423,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -61172,7 +60442,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -61197,7 +60466,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -61227,7 +60495,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -61252,10 +60519,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -61275,10 +60541,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61330,7 +60596,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -61455,7 +60721,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.editar(_vm.rowData)
@@ -61478,7 +60743,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.eliminar(_vm.rowData)
@@ -61501,7 +60765,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.modificarPermisos(_vm.rowData)
@@ -61537,7 +60800,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"])
+    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-usuario")
@@ -61555,7 +60819,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61580,10 +60843,9 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
-                        return _vm.showModal(_vm.rowData)
+                        return _vm.eliminar(_vm.rowData)
                       }
                     }
                   },
@@ -61618,7 +60880,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61636,7 +60899,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61661,7 +60923,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61699,7 +60960,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61717,7 +60979,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61742,7 +61003,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61780,7 +61040,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61798,7 +61059,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61823,7 +61083,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61861,7 +61120,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61879,7 +61139,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61904,7 +61163,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61942,7 +61200,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61960,7 +61219,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61985,7 +61243,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62023,7 +61280,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62041,7 +61299,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62066,7 +61323,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62104,7 +61360,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62122,7 +61379,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62147,7 +61403,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62185,7 +61440,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62203,7 +61459,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62228,7 +61483,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62266,56 +61520,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _c(
+              "button",
               {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
+                directives: [
+                  {
+                    name: "tooltip",
+                    rawName: "v-tooltip.left",
+                    value: "Editar",
+                    expression: "'Editar'",
+                    modifiers: { left: true }
+                  }
+                ],
+                staticClass:
+                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                attrs: { disabled: _vm.disabledBtns },
+                on: {
+                  click: function($event) {
+                    return _vm.editar(_vm.rowData)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fas fa-pencil-alt" })]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
               {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+                directives: [
+                  {
+                    name: "tooltip",
+                    rawName: "v-tooltip",
+                    value: "Eliminar",
+                    expression: "'Eliminar'"
+                  }
+                ],
+                staticClass:
+                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                attrs: { disabled: _vm.disabledBtns },
+                on: {
+                  click: function($event) {
+                    return _vm.eliminar(_vm.rowData)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "far fa-trash-alt" })]
+            )
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62341,7 +61598,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62359,7 +61617,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62384,7 +61641,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62422,7 +61678,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62440,7 +61697,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62465,7 +61721,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62503,7 +61758,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62521,7 +61777,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62546,7 +61801,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62584,7 +61838,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62602,7 +61857,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62627,7 +61881,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62665,7 +61918,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62683,7 +61937,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62708,7 +61961,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62827,7 +62079,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62845,7 +62098,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62870,7 +62122,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62908,7 +62159,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62926,7 +62178,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62951,7 +62202,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62989,7 +62239,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63007,7 +62258,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63032,7 +62282,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63070,7 +62319,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -63093,7 +62343,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -63118,7 +62367,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -63160,7 +62408,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63178,7 +62427,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63203,7 +62451,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63241,7 +62488,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63259,7 +62507,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63284,7 +62531,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63322,7 +62568,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63340,7 +62587,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63365,7 +62611,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63403,7 +62648,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63421,7 +62667,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63446,7 +62691,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63484,7 +62728,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63502,7 +62747,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63527,7 +62771,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63565,7 +62808,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63583,7 +62827,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63608,7 +62851,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63646,7 +62888,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63664,7 +62907,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63689,7 +62931,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63727,7 +62968,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63745,7 +62987,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63770,7 +63011,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63808,7 +63048,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63826,7 +63067,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63851,7 +63091,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63889,7 +63128,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63907,7 +63147,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63932,7 +63171,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63970,7 +63208,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -63993,7 +63232,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -64018,7 +63256,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -64060,7 +63297,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -64078,7 +63316,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64103,7 +63340,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64141,7 +63377,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -64159,7 +63396,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64184,7 +63420,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64222,7 +63457,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -64245,7 +63481,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -64270,7 +63505,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -64600,7 +63834,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"])
+    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-proyecto")
@@ -64618,7 +63853,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64643,7 +63877,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64760,7 +63993,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"])
+    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-publicacion")
@@ -64778,7 +64012,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64803,7 +64036,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64920,7 +64152,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"])
+    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-equipamiento")
@@ -64938,7 +64171,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64963,7 +64195,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65080,7 +64311,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"])
+    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-investigador")
@@ -65098,7 +64330,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65123,7 +64354,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65240,7 +64470,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"])
+    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-actividad")
@@ -65258,7 +64489,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65283,7 +64513,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65400,7 +64629,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"])
+    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-noticia")
@@ -65418,7 +64648,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65443,7 +64672,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65560,7 +64788,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"])
+    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-novedad")
@@ -65578,7 +64807,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65603,7 +64831,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65785,6 +65012,1229 @@ var staticRenderFns = [
                 "\n          SisWebMajumba UFPS © 2020. Version\n          "
               ),
               _c("b", [_vm._v("1.0")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "footer-dots" }, [
+            _c("div", { staticClass: "dropdown" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "dropdown-menu-xl rm-pointers dropdown-menu",
+                  staticStyle: { display: "none" },
+                  attrs: {
+                    tabindex: "-1",
+                    role: "menu",
+                    "aria-hidden": "false"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "tab-content" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane active",
+                        attrs: { id: "tab-messages-header1", role: "tabpanel" }
+                      },
+                      [
+                        _c("div", { staticClass: "scroll-area-sm" }, [
+                          _c("div", { staticClass: "scrollbar-container" }, [
+                            _c("div", { staticClass: "p-3" }, [
+                              _c("div", { staticClass: "notifications-box" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--one-column"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-danger vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [_vm._v("All Hands Meeting")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-warning vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c("p", [
+                                                _vm._v(
+                                                  "\n                                  Yet another one, at\n                                  "
+                                                ),
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticClass: "text-success"
+                                                  },
+                                                  [_vm._v("15:00 PM")]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-success vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                  Build the production release\n                                  "
+                                                  ),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "badge badge-danger ml-2"
+                                                    },
+                                                    [_vm._v("NEW")]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-primary vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                  Something not important\n                                  "
+                                                  ),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "avatar-wrapper mt-2 avatar-wrapper-overlap"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("img", {
+                                                                attrs: {
+                                                                  src: "",
+                                                                  alt: ""
+                                                                }
+                                                              })
+                                                            ]
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "avatar-icon-wrapper avatar-icon-sm avatar-icon-add"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "avatar-icon"
+                                                            },
+                                                            [
+                                                              _c("i", [
+                                                                _vm._v("+")
+                                                              ])
+                                                            ]
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-info vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "This dot has an info state"
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-danger vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [_vm._v("All Hands Meeting")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-warning vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c("p", [
+                                                _vm._v(
+                                                  "\n                                  Yet another one, at\n                                  "
+                                                ),
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticClass: "text-success"
+                                                  },
+                                                  [_vm._v("15:00 PM")]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-success vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                  Build the production release\n                                  "
+                                                  ),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "badge badge-danger ml-2"
+                                                    },
+                                                    [_vm._v("NEW")]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "vertical-timeline-item dot-dark vertical-timeline-element"
+                                      },
+                                      [
+                                        _c("div", [
+                                          _c("span", {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "vertical-timeline-element-content bounce-in"
+                                            },
+                                            [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass: "timeline-title"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "This dot has a dark state"
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("span", {
+                                                staticClass:
+                                                  "vertical-timeline-element-date"
+                                              })
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane",
+                        attrs: { id: "tab-events-header1", role: "tabpanel" }
+                      },
+                      [
+                        _c("div", { staticClass: "scroll-area-sm" }, [
+                          _c("div", { staticClass: "scrollbar-container" }, [
+                            _c("div", { staticClass: "p-3" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-success"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              { staticClass: "timeline-title" },
+                                              [_vm._v("All Hands Meeting")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Lorem ipsum dolor sic amet, today at\n                                "
+                                              ),
+                                              _c(
+                                                "a",
+                                                {
+                                                  attrs: {
+                                                    href: "javascript:void(0);"
+                                                  }
+                                                },
+                                                [_vm._v("12:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-warning"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Another meeting today, at\n                                "
+                                              ),
+                                              _c(
+                                                "b",
+                                                { staticClass: "text-danger" },
+                                                [_vm._v("12:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Yet another one, at\n                                "
+                                              ),
+                                              _c(
+                                                "span",
+                                                { staticClass: "text-success" },
+                                                [_vm._v("15:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-danger"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              { staticClass: "timeline-title" },
+                                              [
+                                                _vm._v(
+                                                  "Build the production release"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud"
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-primary"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              {
+                                                staticClass:
+                                                  "timeline-title text-success"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Something not important"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud"
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-success"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              { staticClass: "timeline-title" },
+                                              [_vm._v("All Hands Meeting")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Lorem ipsum dolor sic amet, today at\n                                "
+                                              ),
+                                              _c(
+                                                "a",
+                                                {
+                                                  attrs: {
+                                                    href: "javascript:void(0);"
+                                                  }
+                                                },
+                                                [_vm._v("12:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-warning"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Another meeting today, at\n                                "
+                                              ),
+                                              _c(
+                                                "b",
+                                                { staticClass: "text-danger" },
+                                                [_vm._v("12:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "\n                                Yet another one, at\n                                "
+                                              ),
+                                              _c(
+                                                "span",
+                                                { staticClass: "text-success" },
+                                                [_vm._v("15:00 PM")]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-danger"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              { staticClass: "timeline-title" },
+                                              [
+                                                _vm._v(
+                                                  "Build the production release"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud"
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "vertical-timeline-item vertical-timeline-element"
+                                    },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-icon bounce-in"
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "badge badge-dot badge-dot-xl badge-primary"
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "vertical-timeline-element-content bounce-in"
+                                          },
+                                          [
+                                            _c(
+                                              "h4",
+                                              {
+                                                staticClass:
+                                                  "timeline-title text-success"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Something not important"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("p", [
+                                              _vm._v(
+                                                "Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud"
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("span", {
+                                              staticClass:
+                                                "vertical-timeline-element-date"
+                                            })
+                                          ]
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane",
+                        attrs: { id: "tab-errors-header1", role: "tabpanel" }
+                      },
+                      [
+                        _c("div", { staticClass: "scroll-area-sm" }, [
+                          _c("div", { staticClass: "scrollbar-container" }, [
+                            _c("div", { staticClass: "no-results pt-3 pb-0" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "swal2-icon swal2-success swal2-animate-success-icon"
+                                },
+                                [
+                                  _c("div", {
+                                    staticClass:
+                                      "swal2-success-circular-line-left",
+                                    staticStyle: {
+                                      "background-color": "rgb(255, 255, 255)"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass: "swal2-success-line-tip"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass: "swal2-success-line-long"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "swal2-success-ring"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "swal2-success-fix",
+                                    staticStyle: {
+                                      "background-color": "rgb(255, 255, 255)"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass:
+                                      "swal2-success-circular-line-right",
+                                    staticStyle: {
+                                      "background-color": "rgb(255, 255, 255)"
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "results-subtitle" }, [
+                                _vm._v("All caught up!")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "results-title" }, [
+                                _vm._v("There are no system errors!")
+                              ])
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
             ])
           ])
         ]),
@@ -86310,11 +86760,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&");
+/* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&");
 /* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -86322,13 +86770,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _AccionesMetodoConserLevaduraComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "3fba7148",
+  null,
   null
   
 )
@@ -86354,35 +86802,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& ***!
-  \*********************************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -91193,7 +91625,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas",
@@ -91204,7 +91636,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "bacteria/ver/:cepaId",
       name: "ver-cepa-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91214,13 +91646,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "bacteria/:cepaId",
       name: "cepa-bacteria",
       component: function component() {
-        return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91230,7 +91662,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91240,7 +91672,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91250,7 +91682,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -91260,7 +91692,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91270,7 +91702,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91282,7 +91714,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "hongo/ver/:cepaId",
       name: "ver-cepa-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91292,13 +91724,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "hongo/:cepaId",
       name: "cepa-hongo",
       component: function component() {
-        return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91308,7 +91740,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91318,7 +91750,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91328,7 +91760,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91338,7 +91770,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91350,7 +91782,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "levadura/ver/:cepaId",
       name: "ver-cepa-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91360,13 +91792,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "levadura/:cepaId",
       name: "cepa-levadura",
       component: function component() {
-        return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91376,7 +91808,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91386,7 +91818,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91396,7 +91828,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91406,7 +91838,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91418,7 +91850,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "actinomiceto/ver/:cepaId",
       name: "ver-cepa-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91428,13 +91860,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "actinomiceto/:cepaId",
       name: "cepa-actinomiceto",
       component: function component() {
-        return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91444,7 +91876,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91454,7 +91886,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -91464,7 +91896,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -91510,7 +91942,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Bacterias",
@@ -91520,13 +91952,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaBacteriaId",
       name: "caract-bacteria",
       component: function component() {
-        return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | caract-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91536,7 +91968,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91546,7 +91978,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91556,7 +91988,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -91566,7 +91998,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91576,7 +92008,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91587,7 +92019,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaBacteriaId",
       name: "ver-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Bacteria",
@@ -91612,7 +92044,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Hongos",
@@ -91622,13 +92054,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaHongoId",
       name: "caract-hongo",
       component: function component() {
-        return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | caract-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91638,7 +92070,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91648,7 +92080,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91658,7 +92090,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91668,7 +92100,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91679,7 +92111,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaHongoId",
       name: "ver-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Hongo",
@@ -91704,7 +92136,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Levaduras",
@@ -91714,13 +92146,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaLevaduraId",
       name: "caract-levadura",
       component: function component() {
-        return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | caract-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91730,7 +92162,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91740,7 +92172,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91750,7 +92182,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91760,7 +92192,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91771,7 +92203,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaLevaduraId",
       name: "ver-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Levadura",
@@ -91796,7 +92228,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Actinomicetos",
@@ -91806,13 +92238,13 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaActinomicetoId",
       name: "caract-actinomiceto",
       component: function component() {
-        return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return Promise.all(/*! import() | caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
         name: "caract-macro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91822,7 +92254,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91832,7 +92264,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -91842,7 +92274,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -91873,7 +92305,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaActinomicetoId",
       name: "ver-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Actinomiceto",
@@ -91893,7 +92325,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Usuarios",
@@ -91903,7 +92335,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "tabla-roles",
     name: "tabla-roles",
     component: function component() {
-      return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Roles",
@@ -91913,7 +92345,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "tabla-seguimiento",
     name: "tabla-seguimiento",
     component: function component() {
-      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
+      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
     },
     meta: {
       title: "Tabla Seguimientos",
@@ -91931,7 +92363,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Cepas",
@@ -91941,7 +92373,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias",
@@ -91951,7 +92383,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos",
@@ -91961,7 +92393,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras",
@@ -91971,7 +92403,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos",
@@ -91989,7 +92421,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "mision",
     component: function component() {
-      return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
+      return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
     },
     meta: {
       title: "Misión",
@@ -91999,7 +92431,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "vision",
     name: "vision",
     component: function component() {
-      return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
+      return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
     },
     meta: {
       title: "Visión",
@@ -92009,7 +92441,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "objetivos",
     name: "objetivos",
     component: function component() {
-      return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
+      return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
     },
     meta: {
       title: "Objetivos",
@@ -92027,7 +92459,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
       title: "Proyectos",
@@ -92037,7 +92469,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
       title: "Publicaciones",
@@ -92055,7 +92487,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "noticias",
     component: function component() {
-      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
+      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
       title: "Noticias",
@@ -92065,7 +92497,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
       title: "Actividades",
@@ -92075,7 +92507,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "novedades",
     name: "novedades",
     component: function component() {
-      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
       title: "Novedades",
@@ -92086,7 +92518,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/perfil",
   name: "perfil",
   component: function component() {
-    return Promise.all(/*! import() | perfil */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("perfil")]).then(__webpack_require__.bind(null, /*! ../components/PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue"));
+    return Promise.all(/*! import() | perfil */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("perfil")]).then(__webpack_require__.bind(null, /*! ../components/PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue"));
   },
   meta: {
     title: "Perfil"
@@ -92095,7 +92527,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/calendario",
   name: "calendario",
   component: function component() {
-    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
+    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
   },
   meta: {
     title: "Calendario"
@@ -92104,7 +92536,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/imagenes-login/ver",
   name: "imagenes-login",
   component: function component() {
-    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
+    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
     title: "Imagenes Login",
@@ -92114,7 +92546,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
     title: "Investigadores",
@@ -92124,7 +92556,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~7ff2a8c8"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
     title: "Equipamientos",
@@ -92134,7 +92566,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/sin-acceso",
   name: "sin-acceso",
   component: function component() {
-    return __webpack_require__.e(/*! import() | error-403 */ "error-403").then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
+    return Promise.all(/*! import() | error-403 */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("error-403")]).then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
   },
   meta: {
     title: "Sin Accesso"
@@ -92143,7 +92575,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "*",
   name: "",
   component: function component() {
-    return __webpack_require__.e(/*! import() | error-404 */ "error-404").then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
+    return Promise.all(/*! import() | error-404 */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("error-404")]).then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
   },
   meta: {
     title: "Esta Pagina No existe"

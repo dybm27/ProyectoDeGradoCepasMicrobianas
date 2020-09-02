@@ -125,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editorDisabled: false,
       editor: _ckeditor_ckeditor5_editor_classic_src_classiceditor__WEBPACK_IMPORTED_MODULE_1__["default"],
-      editorData: "<p>Content of the editor.</p>",
+      editorData: "",
       editorConfig: {
         extraPlugins: [this.MyCustomUploadAdapterPlugin],
         plugins: [_ckeditor_ckeditor5_essentials_src_essentials__WEBPACK_IMPORTED_MODULE_2__["default"], _ckeditor_ckeditor5_basic_styles_src_bold__WEBPACK_IMPORTED_MODULE_3__["default"], _ckeditor_ckeditor5_basic_styles_src_italic__WEBPACK_IMPORTED_MODULE_4__["default"], _ckeditor_ckeditor5_basic_styles_src_underline__WEBPACK_IMPORTED_MODULE_5__["default"], _ckeditor_ckeditor5_basic_styles_src_strikethrough__WEBPACK_IMPORTED_MODULE_6__["default"], _ckeditor_ckeditor5_basic_styles_src_subscript__WEBPACK_IMPORTED_MODULE_7__["default"], _ckeditor_ckeditor5_basic_styles_src_superscript__WEBPACK_IMPORTED_MODULE_8__["default"], _ckeditor_ckeditor5_link_src_link__WEBPACK_IMPORTED_MODULE_9__["default"], _ckeditor_ckeditor5_paragraph_src_paragraph__WEBPACK_IMPORTED_MODULE_10__["default"], _ckeditor_ckeditor5_highlight_src_highlight__WEBPACK_IMPORTED_MODULE_11__["default"], _ckeditor_ckeditor5_image_src_image__WEBPACK_IMPORTED_MODULE_12__["default"], _ckeditor_ckeditor5_image_src_imagecaption__WEBPACK_IMPORTED_MODULE_13__["default"], _ckeditor_ckeditor5_image_src_imageresize__WEBPACK_IMPORTED_MODULE_14__["default"], _ckeditor_ckeditor5_image_src_imagestyle__WEBPACK_IMPORTED_MODULE_15__["default"], _ckeditor_ckeditor5_image_src_imagetoolbar__WEBPACK_IMPORTED_MODULE_16__["default"], _ckeditor_ckeditor5_image_src_imagetextalternative__WEBPACK_IMPORTED_MODULE_17__["default"], _ckeditor_ckeditor5_image_src_imageupload__WEBPACK_IMPORTED_MODULE_18__["default"], _ckeditor_ckeditor5_list_src_list__WEBPACK_IMPORTED_MODULE_19__["default"], _ckeditor_ckeditor5_alignment_src_alignment__WEBPACK_IMPORTED_MODULE_20__["default"], _ckeditor_ckeditor5_font_src_fontfamily__WEBPACK_IMPORTED_MODULE_21__["default"], _ckeditor_ckeditor5_font_src_fontsize__WEBPACK_IMPORTED_MODULE_22__["default"], _ckeditor_ckeditor5_font_src_fontcolor__WEBPACK_IMPORTED_MODULE_23__["default"], _ckeditor_ckeditor5_font_src_fontbackgroundcolor__WEBPACK_IMPORTED_MODULE_24__["default"], _ckeditor_ckeditor5_heading_src_heading__WEBPACK_IMPORTED_MODULE_25__["default"], _ckeditor_ckeditor5_horizontal_line_src_horizontalline__WEBPACK_IMPORTED_MODULE_26__["default"], _ckeditor_ckeditor5_indent_src_indent__WEBPACK_IMPORTED_MODULE_27__["default"], _ckeditor_ckeditor5_indent_src_indentblock__WEBPACK_IMPORTED_MODULE_28__["default"], _ckeditor_ckeditor5_media_embed_src_mediaembed__WEBPACK_IMPORTED_MODULE_29__["default"], _ckeditor_ckeditor5_special_characters_src_specialcharacters__WEBPACK_IMPORTED_MODULE_30__["default"], _ckeditor_ckeditor5_special_characters_src_specialcharactersessentials__WEBPACK_IMPORTED_MODULE_31__["default"], _ckeditor_ckeditor5_table_src_table__WEBPACK_IMPORTED_MODULE_32__["default"], _ckeditor_ckeditor5_table_src_tabletoolbar__WEBPACK_IMPORTED_MODULE_33__["default"], _ckeditor_ckeditor5_table_src_tableproperties__WEBPACK_IMPORTED_MODULE_34__["default"], _ckeditor_ckeditor5_table_src_tablecellproperties__WEBPACK_IMPORTED_MODULE_35__["default"], _ckeditor_ckeditor5_block_quote_src_blockquote__WEBPACK_IMPORTED_MODULE_36__["default"]],
@@ -301,15 +301,16 @@ var render = function() {
         [
           _vm.mostrarBtn
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-block btn-success",
-                    attrs: { disabled: _vm.validarBtn },
-                    on: { click: _vm.aceptarContenido }
-                  },
-                  [_vm._v("Aceptar Contenido")]
-                )
+                !_vm.validarBtn
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-block btn-success",
+                        on: { click: _vm.aceptarContenido }
+                      },
+                      [_vm._v("Aceptar Contenido")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(

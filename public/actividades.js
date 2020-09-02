@@ -299,6 +299,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -339,8 +356,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mensajes: {
         required: "El campo es requerido.",
         validarPublicar: "No es posible publicar la Actividad. Sobrepasa el limite de 7 publicaciones.",
-        unique: "Ya existe un registro con ese email.",
-        link: "El link debe ser valido."
+        unique: "Ya existe un registro con ese titulo.",
+        url: "La url debe ser valida."
       }
     };
   },
@@ -358,7 +375,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           },
           link: {
             required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
-            link: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["link"]
+            url: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["url"]
           },
           imagen: {
             required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
@@ -371,8 +388,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           },
           publicar: {
             validarPublicar: function validarPublicar(value) {
-              if (value == "") return true; // if (this.validarPublicar) return false;
-
+              if (!value) return true;
+              if (this.validarPublicacion) return false;
               return true;
             }
           }
@@ -385,7 +402,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
             unique: function unique(value) {
               if (value == "") return true;
-              if (!letters.test(value)) return false;
+              if (this.validarTitulo) return false;
               return true;
             }
           },
@@ -403,8 +420,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           },
           publicar: {
             validarPublicar: function validarPublicar(value) {
-              if (value == "") return true; // if (this.validarPublicar) return false;
-
+              if (value == "") return true;
+              if (this.validarPublicacion) return false;
               return true;
             }
           }
@@ -497,14 +514,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.parametros.cuerpo = "";
     },
     cambiarDatos: function cambiarDatos() {
-      if (this.selectTipo === "texto") {
+      if (!this.validarTipo) {
         this.parametros.link = "";
       } else {
         this.parametros.cuerpo = "";
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getActividadById", "getActividadByTitulo"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getActividadById", "getActividadByTitulo", "getActividadByPubliclar"]), {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Actividad") {
         return "btn-success";
@@ -543,13 +560,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       return false;
     },
-    validarPublicar: function validarPublicar() {},
-    validarCuerpo: function validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
-        return true;
-      }
+    validarPublicacion: function validarPublicacion() {
+      var _this2 = this;
 
-      return false;
+      if (this.getActividadByPubliclar.length < 7) return false;
+      if (this.validarTipoForm) return true;
+      if (this.getActividadByPubliclar.find(function (actividad) {
+        return actividad.id == _this2.info.id;
+      })) return false;
+      return true;
     }
   }),
   created: function created() {
@@ -997,7 +1016,79 @@ var render = function() {
                         )
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.validarTipo ? void 0 : _vm._e(),
+                    _vm.validarTipo
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "link" } }, [
+                                _vm._v("Link")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.link.$model,
+                                    expression: "$v.parametros.link.$model",
+                                    modifiers: { trim: true }
+                                  }
+                                ],
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.link.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
+                                attrs: {
+                                  name: "link",
+                                  id: "link",
+                                  placeholder: "...",
+                                  type: "text"
+                                },
+                                domProps: {
+                                  value: _vm.$v.parametros.link.$model
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.$v.parametros.link,
+                                      "$model",
+                                      $event.target.value.trim()
+                                    )
+                                  },
+                                  blur: function($event) {
+                                    return _vm.$forceUpdate()
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.$v.parametros.link.$error &&
+                              !_vm.$v.parametros.link.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.$v.parametros.link.$error &&
+                              !_vm.$v.parametros.link.url
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.url))]
+                                  )
+                                : _vm._e()
+                            ]
+                          )
+                        ]
+                      : _vm._e(),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-row" }, [
                       _c("div", { staticClass: "col-md-6" }, [
@@ -1302,19 +1393,33 @@ var render = function() {
                 _c("div", { staticClass: "main-card mb-3 card" }, [
                   _c(
                     "div",
-                    { staticClass: "card-body" },
+                    {
+                      class: [
+                        "card-body",
+                        _vm.$v.parametros.cuerpo.$error
+                          ? "error-text-editor"
+                          : ""
+                      ]
+                    },
                     [
                       _c("h5", { staticClass: "card-title" }, [
                         _vm._v("Elaborar Actividad")
                       ]),
                       _vm._v(" "),
                       _c("Editor", {
-                        attrs: { info: _vm.info, quienesSomos: false },
+                        attrs: { info: _vm.info },
                         on: {
                           contenido: _vm.aceptarContenido,
                           modificar: _vm.modificarContenido
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.cuerpo.$error &&
+                      !_vm.$v.parametros.cuerpo.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
                     ],
                     1
                   )

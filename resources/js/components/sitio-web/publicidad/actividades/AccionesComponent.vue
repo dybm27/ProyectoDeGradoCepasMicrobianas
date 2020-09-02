@@ -1,13 +1,15 @@
 <template>
   <div class="container">
-    <div class="row" v-if="getPermisoByNombres(['editar-actividad','eliminar-actividad'])">
+    <div
+      class="row"
+      v-if="getPermisoByNombres(['editar-actividad','eliminar-actividad'])&&!disabledBtns"
+    >
       <div class="col-md-12 col-lg-12">
         <button
           v-if="getPermisoByNombre('editar-actividad')"
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
           v-tooltip.left="'Editar'"
           @click="editar(rowData)"
-          :disabled="disabledBtns"
         >
           <i class="fas fa-pencil-alt"></i>
         </button>
@@ -17,7 +19,6 @@
           class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
           v-tooltip="'Eliminar'"
           @click="eliminar(rowData)"
-          :disabled="disabledBtns"
         >
           <i class="far fa-trash-alt"></i>
         </button>
@@ -38,16 +39,16 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   mixins: [websocketsAccionesMixin("actividad", "Actividad", "actividades")],
   computed: {
     ...vuex.mapState(["auth"]),
     ...vuex.mapGetters(["getPermisoByNombre", "getPermisoByNombres"]),
-  }
+  },
 };
 </script>

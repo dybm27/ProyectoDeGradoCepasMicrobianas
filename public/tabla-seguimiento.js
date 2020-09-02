@@ -67,7 +67,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -230,8 +229,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.eliminarDatos }
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal }
                 },
                 [_vm._v("Eliminar")]
               )

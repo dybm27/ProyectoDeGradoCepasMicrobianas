@@ -18,13 +18,19 @@
                   id="titulo"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarTitulo? 'is-invalid':'']"
-                  v-model="parametros.titulo"
-                  required
+                  :class="['form-control', $v.parametros.titulo.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.titulo.$model"
                 />
-                <em v-if="validarTitulo" class="error invalid-feedback">{{mensajeTitulo}}</em>
+                <em
+                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.unique"
+                  class="text-error-input"
+                >{{mensajes.unique}}</em>
               </div>
-              <div class="position-relative form-group" v-if="required">
+              <div class="position-relative form-group" v-if="validarTipoForm">
                 <label for="select" class>Contenido de la Novedad:</label>
                 <select
                   name="select"
@@ -37,7 +43,7 @@
                   <option value="texto">Texto</option>
                 </select>
               </div>
-              <template v-if="selectTipo=='link'">
+              <template v-if="validarTipo">
                 <div class="position-relative form-group">
                   <label for="link" class>Link</label>
                   <input
@@ -45,11 +51,17 @@
                     id="link"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', validarLink? 'is-invalid':'']"
-                    v-model="parametros.link"
-                    required
+                    :class="['form-control', $v.parametros.link.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.link.$model"
                   />
-                  <em v-if="validarLink" class="error invalid-feedback">{{mensajeLink}}</em>
+                  <em
+                    v-if="$v.parametros.link.$error&&!$v.parametros.link.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
+                  <em
+                    v-if="$v.parametros.link.$error&&!$v.parametros.link.url"
+                    class="text-error-input"
+                  >{{mensajes.url}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -60,25 +72,32 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
+                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                   ref="inputImagen"
-                  :required="required"
                 />
-                <em v-if="imagenError" class="error invalid-feedback">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em
+                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
                   type="checkbox"
                   id="publicar"
-                  class="custom-control-input"
-                  v-model="parametros.publicar"
+                  :class="['custom-control-input',$v.parametros.publicar.$error? 'is-invalid':'']"
+                  v-model.trim="$v.parametros.publicar.$model"
                 />
                 <label class="custom-control-label" for="publicar">Desea publicar la Novedad?</label>
               </div>
+              <em
+                v-if="$v.parametros.publicar.$error&&!$v.parametros.publicar.validarPublicar"
+                class="text-error-select"
+              >{{mensajes.validarPublicar}}</em>
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -133,14 +152,13 @@
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
-            <div class="card-body">
-              <h5 class="card-title">Elaborar Novedad</h5>
-              <Editor
-                @contenido="aceptarContenido"
-                @modificar="modificarContenido"
-                :info="info"
-                :quienesSomos="false"
-              />
+            <div :class="['card-body',$v.parametros.cuerpo.$error?'error-text-editor':'']">
+              <h5 class="card-title">Elaborar Actividad</h5>
+              <Editor @contenido="aceptarContenido" @modificar="modificarContenido" :info="info" />
+              <em
+                v-if="$v.parametros.cuerpo.$error&&!$v.parametros.cuerpo.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
             </div>
           </div>
         </div>
@@ -155,6 +173,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../../CroppieComponent.vue";
 import Editor from "../../../editor-texto/EditorTextoComponent.vue";
+import { required, url } from "vuelidate/lib/validators";
 export default {
   components: {
     Croppie,
@@ -183,74 +202,138 @@ export default {
       mensajeLink: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarPublicar:
+          "No es posible publicar la Novedad. Sobrepasa el limite de 7 publicaciones.",
+        unique: "Ya existe un registro con ese titulo.",
+        url: "La url debe ser valida.",
+      },
     };
+  },
+  validations() {
+    if (this.validarTipo) {
+      return {
+        parametros: {
+          titulo: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            },
+          },
+          link: { required, url },
+          imagen: { required },
+          publicar: {
+            validarPublicar(value) {
+              if (!value) return true;
+              if (this.validarPublicacion) return false;
+              return true;
+            },
+          },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          titulo: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            },
+          },
+          cuerpo: { required },
+          imagen: { required },
+          publicar: {
+            validarPublicar(value) {
+              if (value == "") return true;
+              if (this.validarPublicacion) return false;
+              return true;
+            },
+          },
+        },
+      };
+    }
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionNovedad"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Novedad") {
-        axios
-          .post("/publicidad", this.parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Novedad") {
+          axios
+            .post("/publicidad", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Agregar Novedad",
+                  "Novedad agregada con exito!!",
+                  "success"
+                );
+                this.accionNovedad({ tipo: "agregar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+              }
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
               );
-              window.location.href = "/";
-            } else {
+            });
+        } else {
+          axios
+            .put(`/publicidad/${this.idNovedad}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
               this.toastr(
-                "Agregar Novedad",
-                "Novedad agregada con exito!!",
+                "Editar Novedad",
+                "Novedad editada con exito!!",
                 "success"
               );
-              this.accionNovedad({ tipo: "agregar", data: res.data });
+              window.Echo.private("desbloquearBtnsNovedad").whisper(
+                "desbloquearBtnsNovedad",
+                {
+                  id: res.data.id,
+                }
+              );
+              window.Echo.private("desbloquearCheckNovedad").whisper(
+                "desbloquearCheckNovedad",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoNovedad", {
+                id: res.data.id,
+              });
+              this.accionNovedad({ tipo: "editar", data: res.data });
               this.$emit("cambiarVariableFormulario");
-            }
-          })
-          .catch((error) => {
-            this.verificarError(
-              error.response.status,
-              error.response.data.errors
-            );
-          });
-      } else {
-        axios
-          .put(`/publicidad/${this.idNovedad}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Novedad",
-              "Novedad editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsNovedad").whisper(
-              "desbloquearBtnsNovedad",
-              {
-                id: res.data.id,
-              }
-            );
-            window.Echo.private("desbloquearCheckNovedad").whisper(
-              "desbloquearCheckNovedad",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoNovedad", {
-              id: res.data.id,
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
-            this.accionNovedad({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch((error) => {
-            this.verificarError(
-              error.response.status,
-              error.response.data.errors
-            );
-          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -275,7 +358,7 @@ export default {
       this.parametros.cuerpo = "";
     },
     cambiarDatos() {
-      if (this.selectTipo === "texto") {
+      if (!this.validarTipo) {
         this.parametros.link = "";
       } else {
         this.parametros.cuerpo = "";
@@ -283,7 +366,11 @@ export default {
     },
   },
   computed: {
-    ...vuex.mapGetters("publicidad", ["getNovedadById", "getNovedadByTitulo"]),
+    ...vuex.mapGetters("publicidad", [
+      "getNovedadById",
+      "getNovedadByTitulo",
+      "getNovedadByPubliclar",
+    ]),
     btnClase() {
       if (this.tituloForm === "Agregar Novedad") {
         return "btn-success";
@@ -291,12 +378,18 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Novedad") {
         return true;
       } else {
         return false;
       }
+    },
+    validarTipo() {
+      if (this.selectTipo == "link") {
+        return true;
+      }
+      return false;
     },
     titulo() {
       return this.tituloForm;
@@ -305,47 +398,25 @@ export default {
       return this.nomBtn;
     },
     validarTitulo() {
-      if (this.parametros.titulo) {
-        let titulo = this.getNovedadByTitulo(this.parametros.titulo);
-        if (titulo) {
-          if (titulo.id != this.info.id) {
-            this.mensajeTitulo = "Ya existe una novedad con ese titulo";
-            return true;
-          }
-          return false;
-        }
-        return false;
-      }
-      return false;
-    },
-    validarLink() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
-      if (this.parametros.link) {
-        if (!letters.test(this.parametros.link)) {
-          this.mensajeLink = "El link no tiene un formato valido.";
+      if (this.getNovedadByTitulo(this.parametros.titulo)) {
+        if (
+          this.getNovedadByTitulo(this.parametros.titulo).id != this.info.id
+        ) {
           return true;
         }
         return false;
       }
       return false;
     },
-    validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
-        return true;
-      }
-      return false;
-    },
-    validarBtn() {
+    validarPublicacion() {
+      if (this.getNovedadByPubliclar.length < 7) return false;
+      if (this.validarTipoForm) return true;
       if (
-        this.validarTitulo ||
-        (this.selectTipo == "link" && this.validarLink) ||
-        this.validarCuerpo ||
-        !this.parametros.imagen
-      ) {
-        return true;
-      }
-      return false;
+        this.getNovedadByPubliclar.find((novedad) => novedad.id == this.info.id)
+      )
+        return false;
+
+      return true;
     },
   },
   created() {

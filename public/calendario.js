@@ -26,6 +26,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../mixins/bloquearPestañas */ "./resources/js/mixins/bloquearPestañas.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -241,6 +243,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -273,7 +298,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       googleCalendarApiKey: "AIzaSyB-_iuLxkORNzEMJzYne-74WjvBiH4gysw",
       eventos: {
         url: "/info-panel/eventos",
-        className: "eventos",
+        className: "eventos mostrar-cursor",
         textColor: "black",
         failure: function failure(error) {
           if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
@@ -285,13 +310,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       eventSources: [{
         googleCalendarId: "es.co#holiday@group.v.calendar.google.com",
         color: "#ff0000",
-        className: "google",
+        className: "google mostrar-cursor-default",
         textColor: "black"
       }, {//se debe chulear la opcion de compartir publicamente el calendario en google calendar para poder mostrarlo
         //googleCalendarId: "majumba.ufps@gmail.com"
       }, {
         url: "/info-panel/eventos-metodos-bacterias",
-        className: "eventos-metodos-bacterias",
+        className: "eventos-metodos-bacterias mostrar-cursor-default",
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
@@ -302,7 +327,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }, {
         url: "/info-panel/eventos-metodos-levaduras",
-        className: "eventos-metodos-levaduras",
+        className: "eventos-metodos-levaduras mostrar-cursor-default",
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
@@ -313,7 +338,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }, {
         url: "/info-panel/eventos-metodos-hongos",
-        className: "eventos-metodos-hongos",
+        className: "eventos-metodos-hongos mostrar-cursor-default",
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
@@ -324,7 +349,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }, {
         url: "/info-panel/eventos-actividades",
-        className: "eventos-actividades",
+        className: "eventos-actividades mostrar-cursor-default",
         color: "#16aaff",
         textColor: "black",
         failure: function failure(error) {
@@ -363,12 +388,65 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       btnAgregar: true,
       btnEditar: true,
       btnEliminar: true,
-      btnCancelar: true,
       allday: false,
       diaSemana: false,
       fechaCalendario: "",
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido."
+      }
     };
+  },
+  validations: function validations() {
+    if (this.diaSemana) {
+      return {
+        modal: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          descripcion: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          }
+        }
+      };
+    } else if (this.allday) {
+      return {
+        modal: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          descripcion: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          tiempo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          }
+        }
+      };
+    } else {
+      return {
+        modal: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          descripcion: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          },
+          color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_14__["required"]
+          }
+        }
+      };
+    }
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_12__["default"])("calendario"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_13__["default"]],
   methods: {
@@ -383,12 +461,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.modal.descripcion = info.event.extendedProps.descripcion;
         this.modal.autor = info.event.extendedProps.autor;
         this.modal.id = info.event.id;
-
-        if (this.auth.id === info.event.extendedProps.idAutor) {
-          this.abrirModal("editar1");
-        } else {
-          this.abrirModal("editar2");
-        }
+        this.abrirModal("editar1");
       }
     },
     dateClick: function dateClick(info) {
@@ -450,11 +523,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.modal.titulo = "";
           this.modal.descripcion = "";
           this.modal.autor = "";
+          this.modal.color = "#f7b924";
           this.modal.time = "";
           this.btnAgregar = true;
           this.btnEditar = false;
           this.btnEliminar = false;
-          this.btnCancelar = true;
           this.allday = false;
           this.diaSemana = false;
           this.titulo_modal = "Agregar Evento";
@@ -464,11 +537,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.modal.titulo = "";
           this.modal.descripcion = "";
           this.modal.autor = "";
+          this.modal.color = "#f7b924";
           this.modal.tiempo = "";
           this.btnAgregar = true;
           this.btnEditar = false;
           this.btnEliminar = false;
-          this.btnCancelar = true;
           this.titulo_modal = "Agregar Evento";
           break;
 
@@ -476,16 +549,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.btnAgregar = false;
           this.btnEditar = true;
           this.btnEliminar = true;
-          this.btnCancelar = true;
           this.titulo_modal = "Editar o Eliminar Evento";
-          break;
-
-        case "editar2":
-          this.btnAgregar = false;
-          this.btnEditar = false;
-          this.btnEliminar = false;
-          this.btnCancelar = false;
-          this.titulo_modal = "Ver Evento";
           break;
       }
 
@@ -499,60 +563,76 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       switch (tipo) {
         case "agregar":
-          if (this.allday) {
-            this.modal.fecha = this.fechaCalendario + " " + this.modal.tiempo;
-          } else {
-            if (this.diaSemana) {
-              this.modal.fecha = moment__WEBPACK_IMPORTED_MODULE_10___default()(this.fechaCalendario).format("YYYY-MM-DD HH:mm:ss");
+          this.$v.modal.$touch();
+
+          if (!this.$v.$invalid) {
+            if (this.allday) {
+              this.modal.fecha = this.fechaCalendario + " " + this.modal.tiempo;
+            } else {
+              if (this.diaSemana) {
+                this.modal.fecha = moment__WEBPACK_IMPORTED_MODULE_10___default()(this.fechaCalendario).format("YYYY-MM-DD HH:mm:ss");
+              }
+
+              this.modal.tiempo = "lo que sea";
             }
 
-            this.modal.tiempo = "lo que sea";
+            axios.post("eventos/agregar", this.modal).then(function (res) {
+              if (res.request.responseURL === "http://127.0.0.1:8000/") {
+                localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+                window.location.href = "/";
+              } else {
+                _this2.bloquearBtnModal = false;
+                calendarApi.refetchEvents();
+
+                _this2.toastr("Agregar Evento", "El Evento fue agregado con exito!!", "success");
+
+                _this2.$modal.hide("agregar-editar_eliminar-evento");
+              }
+            })["catch"](function (error) {
+              if (error.response.status === 405 || error.response.status === 401) {
+                window.location.href = "/";
+              } else {
+                _this2.bloquearBtnModal = false;
+
+                if (error.response.status === 422) {
+                  _this2.errors = error.response.data.errors;
+                }
+              }
+            });
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
           }
 
-          axios.post("eventos/agregar", this.modal).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
-              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-              window.location.href = "/";
-            } else {
-              _this2.bloquearBtnModal = false;
-              calendarApi.refetchEvents();
-
-              _this2.toastr("Agregar Evento", "El Evento fue agregado con exito!!", "success");
-
-              _this2.$modal.hide("agregar-editar_eliminar-evento");
-            }
-          })["catch"](function (error) {
-            if (error.response.status === 405 || error.response.status === 401) {
-              window.location.href = "/";
-            } else {
-              _this2.bloquearBtnModal = false;
-
-              if (error.response.status === 422) {
-                _this2.errors = error.response.data.errors;
-              }
-            }
-          });
           break;
 
         case "editar":
-          axios.put("eventos/editar/".concat(this.modal.id), this.modal).then(function (res) {
-            _this2.bloquearBtnModal = false;
-            calendarApi.refetchEvents();
+          this.$v.modal.$touch();
 
-            _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
-
-            _this2.$modal.hide("agregar-editar_eliminar-evento");
-          })["catch"](function (error) {
-            if (error.response.status === 405 || error.response.status === 401) {
-              window.location.href = "/";
-            } else {
+          if (!this.$v.$invalid) {
+            axios.put("eventos/editar/".concat(this.modal.id), this.modal).then(function (res) {
               _this2.bloquearBtnModal = false;
+              calendarApi.refetchEvents();
 
-              if (error.response.status === 422) {
-                _this2.errors = error.response.data.errors;
+              _this2.toastr("Editar Evento", "El Evento fue editado con exito!!", "success");
+
+              _this2.$modal.hide("agregar-editar_eliminar-evento");
+            })["catch"](function (error) {
+              if (error.response.status === 405 || error.response.status === 401) {
+                window.location.href = "/";
+              } else {
+                _this2.bloquearBtnModal = false;
+
+                if (error.response.status === 422) {
+                  _this2.errors = error.response.data.errors;
+                }
               }
-            }
-          });
+            });
+          } else {
+            this.bloquearBtnModal = false;
+            this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
+          }
+
           break;
 
         case "eliminar":
@@ -1021,33 +1101,43 @@ var render = function() {
                     directives: [
                       {
                         name: "model",
-                        rawName: "v-model",
-                        value: _vm.modal.titulo,
-                        expression: "modal.titulo"
+                        rawName: "v-model.trim",
+                        value: _vm.$v.modal.titulo.$model,
+                        expression: "$v.modal.titulo.$model",
+                        modifiers: { trim: true }
                       }
                     ],
-                    staticClass: "form-control",
+                    class: [
+                      "form-control",
+                      _vm.$v.modal.titulo.$error ? "error-input-select" : ""
+                    ],
                     attrs: {
                       name: "titulo",
                       id: "titulo",
                       placeholder: "...",
-                      type: "text",
-                      disabled: !_vm.btnCancelar
+                      type: "text"
                     },
-                    domProps: { value: _vm.modal.titulo },
+                    domProps: { value: _vm.$v.modal.titulo.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.modal, "titulo", $event.target.value)
+                        _vm.$set(
+                          _vm.$v.modal.titulo,
+                          "$model",
+                          $event.target.value.trim()
+                        )
+                      },
+                      blur: function($event) {
+                        return _vm.$forceUpdate()
                       }
                     }
                   }),
                   _vm._v(" "),
-                  _vm.errors.titulo
-                    ? _c("span", { staticClass: "text-danger" }, [
-                        _vm._v(_vm._s(_vm.errors.titulo[0]))
+                  _vm.$v.modal.titulo.$error && !_vm.$v.modal.titulo.required
+                    ? _c("em", { staticClass: "text-error-input" }, [
+                        _vm._v(_vm._s(_vm.mensajes.required))
                       ])
                     : _vm._e()
                 ]),
@@ -1074,29 +1164,40 @@ var render = function() {
                                       [
                                         _c("date-picker", {
                                           ref: "datepickerFecha",
+                                          class: _vm.$v.modal.fecha.$error
+                                            ? "error-input-select"
+                                            : "",
                                           attrs: {
                                             lang: _vm.lang,
                                             type: "datetime",
                                             "value-type": "format",
-                                            placeholder: "...",
-                                            disabled: !_vm.btnCancelar
+                                            placeholder: "..."
                                           },
                                           model: {
-                                            value: _vm.modal.fecha,
+                                            value: _vm.$v.modal.fecha.$model,
                                             callback: function($$v) {
-                                              _vm.$set(_vm.modal, "fecha", $$v)
+                                              _vm.$set(
+                                                _vm.$v.modal.fecha,
+                                                "$model",
+                                                typeof $$v === "string"
+                                                  ? $$v.trim()
+                                                  : $$v
+                                              )
                                             },
-                                            expression: "modal.fecha"
+                                            expression: "$v.modal.fecha.$model"
                                           }
                                         }),
                                         _vm._v(" "),
-                                        _vm.errors.fecha
+                                        _vm.$v.modal.fecha.$error &&
+                                        !_vm.$v.modal.fecha.required
                                           ? _c(
-                                              "span",
-                                              { staticClass: "text-danger" },
+                                              "em",
+                                              {
+                                                staticClass: "text-error-input"
+                                              },
                                               [
                                                 _vm._v(
-                                                  _vm._s(_vm.errors.fecha[0])
+                                                  _vm._s(_vm.mensajes.required)
                                                 )
                                               ]
                                             )
@@ -1120,27 +1221,39 @@ var render = function() {
                                       [
                                         _c("date-picker", {
                                           ref: "datepickerTiempo",
+                                          class: _vm.$v.modal.tiempo.$error
+                                            ? "error-input-select"
+                                            : "",
                                           attrs: {
                                             type: "time",
                                             "value-type": "format",
                                             placeholder: "..."
                                           },
                                           model: {
-                                            value: _vm.modal.tiempo,
+                                            value: _vm.$v.modal.tiempo.$model,
                                             callback: function($$v) {
-                                              _vm.$set(_vm.modal, "tiempo", $$v)
+                                              _vm.$set(
+                                                _vm.$v.modal.tiempo,
+                                                "$model",
+                                                typeof $$v === "string"
+                                                  ? $$v.trim()
+                                                  : $$v
+                                              )
                                             },
-                                            expression: "modal.tiempo"
+                                            expression: "$v.modal.tiempo.$model"
                                           }
                                         }),
                                         _vm._v(" "),
-                                        _vm.errors.tiempo
+                                        _vm.$v.modal.tiempo.$error &&
+                                        !_vm.$v.modal.tiempo.required
                                           ? _c(
-                                              "span",
-                                              { staticClass: "text-danger" },
+                                              "em",
+                                              {
+                                                staticClass: "text-error-input"
+                                              },
                                               [
                                                 _vm._v(
-                                                  _vm._s(_vm.errors.tiempo[0])
+                                                  _vm._s(_vm.mensajes.required)
                                                 )
                                               ]
                                             )
@@ -1167,43 +1280,104 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model.number",
-                                    value: _vm.modal.color,
-                                    expression: "modal.color",
-                                    modifiers: { number: true }
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.modal.color.$model,
+                                    expression: "$v.modal.color.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
-                                staticClass: "form-control",
+                                class: [
+                                  "form-control",
+                                  _vm.$v.modal.color.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
                                 attrs: {
                                   name: "color",
                                   id: "color",
                                   placeholder: "...",
-                                  type: "color",
-                                  disabled: ""
+                                  type: "color"
                                 },
-                                domProps: { value: _vm.modal.color },
+                                domProps: { value: _vm.$v.modal.color.$model },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
                                     _vm.$set(
-                                      _vm.modal,
-                                      "color",
-                                      _vm._n($event.target.value)
+                                      _vm.$v.modal.color,
+                                      "$model",
+                                      $event.target.value.trim()
                                     )
                                   },
                                   blur: function($event) {
                                     return _vm.$forceUpdate()
                                   }
                                 }
-                              })
+                              }),
+                              _vm._v(" "),
+                              _vm.$v.modal.color.$error &&
+                              !_vm.$v.modal.color.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]
                           )
                         ])
                       ])
                     ]
-                  : _vm._e(),
+                  : _c("div", { staticClass: "position-relative form-group" }, [
+                      _c("label", { attrs: { for: "color" } }, [
+                        _vm._v("Color")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value: _vm.$v.modal.color.$model,
+                            expression: "$v.modal.color.$model",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        class: [
+                          "form-control",
+                          _vm.$v.modal.color.$error ? "error-input-select" : ""
+                        ],
+                        attrs: {
+                          name: "color",
+                          id: "color",
+                          placeholder: "...",
+                          type: "color"
+                        },
+                        domProps: { value: _vm.$v.modal.color.$model },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$v.modal.color,
+                              "$model",
+                              $event.target.value.trim()
+                            )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.modal.color.$error && !_vm.$v.modal.color.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
+                    ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "position-relative form-group" }, [
                   _c("label", { attrs: { for: "descrpcion" } }, [
@@ -1214,31 +1388,41 @@ var render = function() {
                     directives: [
                       {
                         name: "model",
-                        rawName: "v-model",
-                        value: _vm.modal.descripcion,
-                        expression: "modal.descripcion"
+                        rawName: "v-model.trim",
+                        value: _vm.$v.modal.descripcion.$model,
+                        expression: "$v.modal.descripcion.$model",
+                        modifiers: { trim: true }
                       }
                     ],
-                    staticClass: "form-control",
-                    attrs: {
-                      name: "text",
-                      id: "descrpcion",
-                      disabled: !_vm.btnCancelar
-                    },
-                    domProps: { value: _vm.modal.descripcion },
+                    class: [
+                      "form-control",
+                      _vm.$v.modal.descripcion.$error
+                        ? "error-input-select"
+                        : ""
+                    ],
+                    attrs: { name: "text", id: "descrpcion" },
+                    domProps: { value: _vm.$v.modal.descripcion.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.modal, "descripcion", $event.target.value)
+                        _vm.$set(
+                          _vm.$v.modal.descripcion,
+                          "$model",
+                          $event.target.value.trim()
+                        )
+                      },
+                      blur: function($event) {
+                        return _vm.$forceUpdate()
                       }
                     }
                   }),
                   _vm._v(" "),
-                  _vm.errors.descripcion
-                    ? _c("span", { staticClass: "text-danger" }, [
-                        _vm._v(_vm._s(_vm.errors.descripcion[0]))
+                  _vm.$v.modal.descripcion.$error &&
+                  !_vm.$v.modal.descripcion.required
+                    ? _c("em", { staticClass: "text-error-input" }, [
+                        _vm._v(_vm._s(_vm.mensajes.required))
                       ])
                     : _vm._e()
                 ])
@@ -1246,100 +1430,69 @@ var render = function() {
               2
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "modal-footer" },
-              [
-                _vm.btnAgregar
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-success",
-                        attrs: {
-                          type: "button",
-                          disabled: _vm.bloquearBtnModal
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.metodoModal("agregar")
-                          }
+            _c("div", { staticClass: "modal-footer" }, [
+              _vm.btnAgregar
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: {
+                        click: function($event) {
+                          return _vm.metodoModal("agregar")
                         }
-                      },
-                      [_vm._v("Agregar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.btnEditar
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-warning",
-                        attrs: {
-                          type: "button",
-                          disabled: _vm.bloquearBtnModal
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.metodoModal("editar")
-                          }
+                      }
+                    },
+                    [_vm._v("Agregar")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.btnEditar
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-warning",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: {
+                        click: function($event) {
+                          return _vm.metodoModal("editar")
                         }
-                      },
-                      [_vm._v("Editar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.btnEliminar
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger",
-                        attrs: {
-                          type: "button",
-                          disabled: _vm.bloquearBtnModal
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.metodoModal("eliminar")
-                          }
+                      }
+                    },
+                    [_vm._v("Editar")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.btnEliminar
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: {
+                        click: function($event) {
+                          return _vm.metodoModal("eliminar")
                         }
-                      },
-                      [_vm._v("Eliminar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.btnCancelar
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-secondary",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            return _vm.$modal.hide(
-                              "agregar-editar_eliminar-evento"
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("Cancelar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.btnCancelar
-                  ? [
-                      _c("p", [
-                        _c("b", [_vm._v("Realizado por:")]),
-                        _vm._v(
-                          "\n            " +
-                            _vm._s(_vm.modal.autor) +
-                            "\n          "
-                        )
-                      ])
-                    ]
-                  : _vm._e()
-              ],
-              2
-            )
+                      }
+                    },
+                    [_vm._v("Eliminar")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("agregar-editar_eliminar-evento")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              )
+            ])
           ])
         ]
       )
