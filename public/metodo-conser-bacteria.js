@@ -457,18 +457,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.$emit("cambiarVariable");
             }
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         } else {
           axios.put("/cepas/bacteria/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
@@ -483,20 +472,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this.$emit("cambiarVariable");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         }
       } else {
@@ -822,7 +798,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
@@ -2132,6 +2108,110 @@ __webpack_require__.r(__webpack_exports__);
   titleClass: "text-center",
   dataClass: "text-center"
 }]);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var obtenerImagenCroopieCepasMixin = {
+  data: function data() {
+    return {
+      imagenMiniatura: "",
+      imagenError: ""
+    };
+  },
+  methods: {
+    cambiarValorImagen: function cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.validarTipoForm) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
+    obtenerImagen: function obtenerImagen(e) {
+      var file = e.target.files[0];
+      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
+
+      if (file) {
+        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
+          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
+          this.$refs.inputImagen.value = "";
+
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
+        } else {
+          this.imagenError = "";
+          this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
+        }
+      }
+    },
+    cargarImagen: function cargarImagen(file) {
+      var _this = this;
+
+      var reader = new Image();
+
+      reader.onload = function (e) {
+        _this.imagenMiniatura = reader.src;
+      };
+
+      reader.src = URL.createObjectURL(file);
+    }
+  },
+  computed: {
+    mostraImagen: function mostraImagen() {
+      return this.imagenMiniatura;
+    },
+    mostrarBtnCroppie: function mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie: function validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
 
 /***/ })
 

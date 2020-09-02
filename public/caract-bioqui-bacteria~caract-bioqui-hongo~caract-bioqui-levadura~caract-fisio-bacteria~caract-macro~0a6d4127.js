@@ -133,11 +133,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["tipo", "tipoCaract", "caract", "url"],
@@ -163,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;

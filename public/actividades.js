@@ -99,6 +99,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie */ "./resources/js/mixins/obtenerImagenCroopie.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _editor_texto_EditorTextoComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../editor-texto/EditorTextoComponent.vue */ "./resources/js/components/editor-texto/EditorTextoComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -288,6 +290,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -322,11 +334,83 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       imagenMiniatura: "",
       nomBtn: "",
       imagenError: "",
-      mensajeTitulo: "",
-      mensajeLink: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarPublicar: "No es posible publicar la Actividad. Sobrepasa el limite de 7 publicaciones.",
+        unique: "Ya existe un registro con ese email.",
+        link: "El link debe ser valido."
+      }
     };
+  },
+  validations: function validations() {
+    if (this.validarTipo) {
+      return {
+        parametros: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            unique: function unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            }
+          },
+          link: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            link: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["link"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          lugar: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          publicar: {
+            validarPublicar: function validarPublicar(value) {
+              if (value == "") return true; // if (this.validarPublicar) return false;
+
+              return true;
+            }
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          titulo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            unique: function unique(value) {
+              if (value == "") return true;
+              if (!letters.test(value)) return false;
+              return true;
+            }
+          },
+          cuerpo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          lugar: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          publicar: {
+            validarPublicar: function validarPublicar(value) {
+              if (value == "") return true; // if (this.validarPublicar) return false;
+
+              return true;
+            }
+          }
+        }
+      };
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_4__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
@@ -334,72 +418,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Actividad") {
-        axios.post("/publicidad", this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Actividad") {
+          axios.post("/publicidad", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.toastr("Agregar Actividad", "Actividad agregada con exito!!", "success");
+
+              _this.accionActividad({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.$emit("cambiarVariableFormulario");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/publicidad/".concat(this.idActividad), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            _this.toastr("Agregar Actividad", "Actividad agregada con exito!!", "success");
+            _this.toastr("Editar Actividad", "Actividad editada con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoActividad", {
+              id: res.data.id
+            });
 
             _this.accionActividad({
-              tipo: "agregar",
+              tipo: "editar",
               data: res.data
             });
 
             _this.$emit("cambiarVariableFormulario");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
       } else {
-        axios.put("/publicidad/".concat(this.idActividad), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Actividad", "Actividad editada con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsActividad").whisper("desbloquearBtnsActividad", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("eliminarMiBloqueoActividad", {
-            id: res.data.id
-          });
-
-          _this.accionActividad({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableFormulario");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -444,7 +512,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Actividad") {
         return true;
       } else {
@@ -458,30 +526,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.nomBtn;
     },
     validarTitulo: function validarTitulo() {
-      if (this.parametros.titulo) {
-        var titulo = this.getActividadByTitulo(this.parametros.titulo);
-
-        if (titulo) {
-          if (titulo.id != this.info.id) {
-            this.mensajeTitulo = "Ya existe una actividad con ese titulo";
-            return true;
-          }
-
-          return false;
-        }
-
-        return false;
-      }
-
-      return false;
-    },
-    validarLink: function validarLink() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
-
-      if (this.parametros.link) {
-        if (!letters.test(this.parametros.link)) {
-          this.mensajeLink = "El link no tiene un formato valido.";
+      if (this.getActividadByTitulo(this.parametros.titulo)) {
+        if (this.getActividadByTitulo(this.parametros.titulo).id != this.info.id) {
           return true;
         }
 
@@ -490,15 +536,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       return false;
     },
-    validarCuerpo: function validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
+    validarTipo: function validarTipo() {
+      if (this.selectTipo == "link") {
         return true;
       }
 
       return false;
     },
-    validarBtn: function validarBtn() {
-      if (this.validarTitulo || this.selectTipo == "link" && this.validarLink || this.validarCuerpo || !this.parametros.imagen) {
+    validarPublicar: function validarPublicar() {},
+    validarCuerpo: function validarCuerpo() {
+      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
         return true;
       }
 
@@ -656,7 +703,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
@@ -841,45 +888,58 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.titulo,
-                            expression: "parametros.titulo"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.titulo.$model,
+                            expression: "$v.parametros.titulo.$model",
+                            modifiers: { trim: true }
                           }
                         ],
                         class: [
                           "form-control",
-                          _vm.validarTitulo ? "is-invalid" : ""
+                          _vm.$v.parametros.titulo.$error
+                            ? "error-input-select"
+                            : ""
                         ],
                         attrs: {
                           name: "titulo",
                           id: "titulo",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.titulo },
+                        domProps: { value: _vm.$v.parametros.titulo.$model },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "titulo",
-                              $event.target.value
+                              _vm.$v.parametros.titulo,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
                       }),
                       _vm._v(" "),
-                      _vm.validarTitulo
-                        ? _c("em", { staticClass: "error invalid-feedback" }, [
-                            _vm._v(_vm._s(_vm.mensajeTitulo))
+                      _vm.$v.parametros.titulo.$error &&
+                      !_vm.$v.parametros.titulo.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.titulo.$error &&
+                      !_vm.$v.parametros.titulo.unique
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.unique))
                           ])
                         : _vm._e()
                     ]),
                     _vm._v(" "),
-                    _vm.required
+                    _vm.validarTipoForm
                       ? _c(
                           "div",
                           { staticClass: "position-relative form-group" },
@@ -937,62 +997,7 @@ var render = function() {
                         )
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.selectTipo == "link"
-                      ? [
-                          _c(
-                            "div",
-                            { staticClass: "position-relative form-group" },
-                            [
-                              _c("label", { attrs: { for: "link" } }, [
-                                _vm._v("Link")
-                              ]),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.parametros.link,
-                                    expression: "parametros.link"
-                                  }
-                                ],
-                                class: [
-                                  "form-control",
-                                  _vm.validarLink ? "is-invalid" : ""
-                                ],
-                                attrs: {
-                                  name: "link",
-                                  id: "link",
-                                  placeholder: "...",
-                                  type: "text",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.parametros.link },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "link",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _vm.validarLink
-                                ? _c(
-                                    "em",
-                                    { staticClass: "error invalid-feedback" },
-                                    [_vm._v(_vm._s(_vm.mensajeLink))]
-                                  )
-                                : _vm._e()
-                            ]
-                          )
-                        ]
-                      : _vm._e(),
+                    _vm.validarTipo ? void 0 : _vm._e(),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-row" }, [
                       _c("div", { staticClass: "col-md-6" }, [
@@ -1004,6 +1009,9 @@ var render = function() {
                             { staticClass: "row" },
                             [
                               _c("date-picker", {
+                                class: _vm.$v.parametros.fecha.$error
+                                  ? "error-input-select"
+                                  : "",
                                 attrs: {
                                   lang: _vm.lang,
                                   type: "datetime",
@@ -1011,13 +1019,26 @@ var render = function() {
                                   placeholder: "..."
                                 },
                                 model: {
-                                  value: _vm.parametros.fecha,
+                                  value: _vm.$v.parametros.fecha.$model,
                                   callback: function($$v) {
-                                    _vm.$set(_vm.parametros, "fecha", $$v)
+                                    _vm.$set(
+                                      _vm.$v.parametros.fecha,
+                                      "$model",
+                                      typeof $$v === "string" ? $$v.trim() : $$v
+                                    )
                                   },
-                                  expression: "parametros.fecha"
+                                  expression: "$v.parametros.fecha.$model"
                                 }
-                              })
+                              }),
+                              _vm._v(" "),
+                              _vm.$v.parametros.fecha.$error &&
+                              !_vm.$v.parametros.fecha.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ],
                             1
                           )
@@ -1037,37 +1058,50 @@ var render = function() {
                               directives: [
                                 {
                                   name: "model",
-                                  rawName: "v-model.number",
-                                  value: _vm.parametros.lugar,
-                                  expression: "parametros.lugar",
-                                  modifiers: { number: true }
+                                  rawName: "v-model.trim",
+                                  value: _vm.$v.parametros.lugar.$model,
+                                  expression: "$v.parametros.lugar.$model",
+                                  modifiers: { trim: true }
                                 }
                               ],
-                              staticClass: "form-control",
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.lugar.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
                               attrs: {
                                 name: "lugar",
                                 id: "lugar",
                                 placeholder: "...",
-                                type: "text",
-                                required: ""
+                                type: "text"
                               },
-                              domProps: { value: _vm.parametros.lugar },
+                              domProps: {
+                                value: _vm.$v.parametros.lugar.$model
+                              },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
                                     return
                                   }
                                   _vm.$set(
-                                    _vm.parametros,
-                                    "lugar",
-                                    _vm._n($event.target.value)
+                                    _vm.$v.parametros.lugar,
+                                    "$model",
+                                    $event.target.value.trim()
                                   )
                                 },
                                 blur: function($event) {
                                   return _vm.$forceUpdate()
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.$v.parametros.lugar.$error &&
+                            !_vm.$v.parametros.lugar.required
+                              ? _c("em", { staticClass: "text-error-input" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
                           ]
                         )
                       ])
@@ -1082,21 +1116,29 @@ var render = function() {
                         ref: "inputImagen",
                         class: [
                           "form-control-file",
-                          _vm.imagenError != "" ? "is-invalid" : ""
+                          _vm.$v.parametros.imagen.$error
+                            ? "error-input-select"
+                            : ""
                         ],
                         attrs: {
                           name: "imagen",
                           id: "imagen",
                           accept: "image/jpeg, image/png",
-                          type: "file",
-                          required: _vm.required
+                          type: "file"
                         },
                         on: { change: _vm.obtenerImagen }
                       }),
                       _vm._v(" "),
                       _vm.imagenError
-                        ? _c("em", { staticClass: "error invalid-feedback" }, [
+                        ? _c("em", { staticClass: "text-error-input" }, [
                             _vm._v(_vm._s(_vm.imagenError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.imagen.$error &&
+                      !_vm.$v.parametros.imagen.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
                           ])
                         : _vm._e()
                     ]),
@@ -1109,21 +1151,32 @@ var render = function() {
                           directives: [
                             {
                               name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.publicar,
-                              expression: "parametros.publicar"
+                              rawName: "v-model.trim",
+                              value: _vm.$v.parametros.publicar.$model,
+                              expression: "$v.parametros.publicar.$model",
+                              modifiers: { trim: true }
                             }
                           ],
-                          staticClass: "custom-control-input",
+                          class: [
+                            "custom-control-input",
+                            _vm.$v.parametros.publicar.$error
+                              ? "is-invalid"
+                              : ""
+                          ],
                           attrs: { type: "checkbox", id: "publicar" },
                           domProps: {
-                            checked: Array.isArray(_vm.parametros.publicar)
-                              ? _vm._i(_vm.parametros.publicar, null) > -1
-                              : _vm.parametros.publicar
+                            checked: Array.isArray(
+                              _vm.$v.parametros.publicar.$model
+                            )
+                              ? _vm._i(
+                                  _vm.$v.parametros.publicar.$model,
+                                  null
+                                ) > -1
+                              : _vm.$v.parametros.publicar.$model
                           },
                           on: {
                             change: function($event) {
-                              var $$a = _vm.parametros.publicar,
+                              var $$a = _vm.$v.parametros.publicar.$model,
                                 $$el = $event.target,
                                 $$c = $$el.checked ? true : false
                               if (Array.isArray($$a)) {
@@ -1132,22 +1185,26 @@ var render = function() {
                                 if ($$el.checked) {
                                   $$i < 0 &&
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
+                                      _vm.$v.parametros.publicar,
+                                      "$model",
                                       $$a.concat([$$v])
                                     )
                                 } else {
                                   $$i > -1 &&
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "publicar",
+                                      _vm.$v.parametros.publicar,
+                                      "$model",
                                       $$a
                                         .slice(0, $$i)
                                         .concat($$a.slice($$i + 1))
                                     )
                                 }
                               } else {
-                                _vm.$set(_vm.parametros, "publicar", $$c)
+                                _vm.$set(
+                                  _vm.$v.parametros.publicar,
+                                  "$model",
+                                  $$c
+                                )
                               }
                             }
                           }
@@ -1164,12 +1221,19 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
+                    _vm.$v.parametros.publicar.$error &&
+                    !_vm.$v.parametros.publicar.validarPublicar
+                      ? _c("em", { staticClass: "text-error-select" }, [
+                          _vm._v(_vm._s(_vm.mensajes.validarPublicar))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c(
                       "button",
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                        attrs: { disabled: _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -1231,7 +1295,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm.selectTipo == "texto"
+      !_vm.validarTipo
         ? [
             _c("div", { staticClass: "row justify-content-md-center" }, [
               _c("div", { staticClass: "col-md-12" }, [

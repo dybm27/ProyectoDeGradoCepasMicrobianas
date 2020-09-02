@@ -11,6 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -102,6 +104,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -120,8 +133,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       errors: [],
       imagenError: "",
       info: "",
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarMostrar: "Debe haber al menos 1 imagen para mostrar."
+      }
     };
+  },
+  validations: {
+    parametros: {
+      titulo: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+      },
+      descripcion: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+      },
+      mostrar: {
+        validarMostrar: function validarMostrar(value) {
+          if (value) return true;
+
+          if (this.getImagenLoginByMostrar.length == 1) {
+            if (this.getImagenLoginByMostrar[0].id == this.info.id) return false;
+          }
+
+          return true;
+        }
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("imagenes_login", ["accionImagenLogin"]), {
@@ -129,65 +167,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.parametros.imagen === this.info.imagen) {
-        axios.put("/login/imagen/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          if (res.data.mostrar) {
-            res.data.mostrar = 1;
-          } else {
-            res.data.mostrar = 0;
-          }
-
-          _this.accionImagenLogin({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("mostrarFrom");
-
-          _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.parametros.imagen === this.info.imagen) {
+          axios.put("/login/imagen/".concat(this.info.id), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
+            if (res.data.mostrar) {
+              res.data.mostrar = 1;
+            } else {
+              res.data.mostrar = 0;
             }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
-      } else {
-        var form = new FormData();
-        form.append("imagen", this.parametros.imagen);
-        form.append("descripcion", this.parametros.descripcion);
-        form.append("titulo", this.parametros.titulo);
-
-        if (this.parametros.mostrar) {
-          form.append("mostrar", 1);
-        } else {
-          form.append("mostrar", 0);
-        }
-
-        form.append("_method", "PUT");
-        axios.post("/login/imagen/".concat(this.info.id), form, {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        }).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            _this.toastr("Editar Imagen", "Imagen editada con exito!!", "success");
 
             _this.accionImagenLogin({
               tipo: "editar",
@@ -195,20 +186,51 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             });
 
             _this.$emit("mostrarFrom");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
+
+            _this.toastr("Editar Imagen", "Imagen editado con exito!!", "success");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          var form = new FormData();
+          form.append("imagen", this.parametros.imagen);
+          form.append("descripcion", this.parametros.descripcion);
+          form.append("titulo", this.parametros.titulo);
+
+          if (this.parametros.mostrar) {
+            form.append("mostrar", 1);
           } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
+            form.append("mostrar", 0);
           }
-        });
+
+          form.append("_method", "PUT");
+          axios.post("/login/imagen/".concat(this.info.id), form, {
+            headers: {
+              "Content-Type": "multipart/form-data"
+            }
+          }).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.toastr("Editar Imagen", "Imagen editada con exito!!", "success");
+
+              _this.accionImagenLogin({
+                tipo: "editar",
+                data: res.data
+              });
+
+              _this.$emit("mostrarFrom");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -277,7 +299,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.src = URL.createObjectURL(file);
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("imagenes_login", ["getImagenLoginById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("imagenes_login", ["getImagenLoginById", "getImagenLoginByMostrar"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     }
@@ -1036,7 +1058,9 @@ var render = function() {
                         "div",
                         { staticClass: "alert alert-danger" },
                         _vm._l(_vm.errors, function(item, index) {
-                          return _c("p", { key: index }, [_vm._v(_vm._s(item))])
+                          return _c("p", { key: index }, [
+                            _vm._v(_vm._s(item[0]))
+                          ])
                         }),
                         0
                       )
@@ -1050,29 +1074,48 @@ var render = function() {
                     directives: [
                       {
                         name: "model",
-                        rawName: "v-model",
-                        value: _vm.parametros.titulo,
-                        expression: "parametros.titulo"
+                        rawName: "v-model.trim",
+                        value: _vm.$v.parametros.titulo.$model,
+                        expression: "$v.parametros.titulo.$model",
+                        modifiers: { trim: true }
                       }
                     ],
-                    staticClass: "form-control",
+                    class: [
+                      "form-control",
+                      _vm.$v.parametros.titulo.$error
+                        ? "error-input-select"
+                        : ""
+                    ],
                     attrs: {
                       name: "titulo",
                       id: "titulo",
                       placeholder: "...",
-                      type: "text",
-                      required: ""
+                      type: "text"
                     },
-                    domProps: { value: _vm.parametros.titulo },
+                    domProps: { value: _vm.$v.parametros.titulo.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.parametros, "titulo", $event.target.value)
+                        _vm.$set(
+                          _vm.$v.parametros.titulo,
+                          "$model",
+                          $event.target.value.trim()
+                        )
+                      },
+                      blur: function($event) {
+                        return _vm.$forceUpdate()
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.$v.parametros.titulo.$error &&
+                  !_vm.$v.parametros.titulo.required
+                    ? _c("em", { staticClass: "text-error-input" }, [
+                        _vm._v(_vm._s(_vm.mensajes.required))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "position-relative form-group" }, [
@@ -1080,7 +1123,10 @@ var render = function() {
                   _vm._v(" "),
                   _c("input", {
                     ref: "inputImagen",
-                    staticClass: "form-control-file",
+                    class: [
+                      "form-control-file",
+                      _vm.imagenError ? "error-input-select" : ""
+                    ],
                     attrs: {
                       name: "imagen",
                       id: "imagen",
@@ -1091,7 +1137,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _vm.imagenError
-                    ? _c("em", { staticClass: "text-danger" }, [
+                    ? _c("em", { staticClass: "text-error-input" }, [
                         _vm._v(_vm._s(_vm.imagenError))
                       ])
                     : _vm._e()
@@ -1106,27 +1152,43 @@ var render = function() {
                     directives: [
                       {
                         name: "model",
-                        rawName: "v-model",
-                        value: _vm.parametros.descripcion,
-                        expression: "parametros.descripcion"
+                        rawName: "v-model.trim",
+                        value: _vm.$v.parametros.descripcion.$model,
+                        expression: "$v.parametros.descripcion.$model",
+                        modifiers: { trim: true }
                       }
                     ],
-                    staticClass: "form-control",
-                    attrs: { name: "text", id: "descripcion", required: "" },
-                    domProps: { value: _vm.parametros.descripcion },
+                    class: [
+                      "form-control",
+                      _vm.$v.parametros.descripcion.$error
+                        ? "error-input-select"
+                        : ""
+                    ],
+                    attrs: { name: "text", id: "descripcion" },
+                    domProps: { value: _vm.$v.parametros.descripcion.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
                         _vm.$set(
-                          _vm.parametros,
-                          "descripcion",
-                          $event.target.value
+                          _vm.$v.parametros.descripcion,
+                          "$model",
+                          $event.target.value.trim()
                         )
+                      },
+                      blur: function($event) {
+                        return _vm.$forceUpdate()
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.$v.parametros.descripcion.$error &&
+                  !_vm.$v.parametros.descripcion.required
+                    ? _c("em", { staticClass: "text-error-input" }, [
+                        _vm._v(_vm._s(_vm.mensajes.required))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c(
@@ -1137,24 +1199,25 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.mostrar,
-                          expression: "parametros.mostrar"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.mostrar.$model,
+                          expression: "$v.parametros.mostrar.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "custom-control-input",
-                        _vm.errors.mostrar ? "is-invalid" : ""
+                        _vm.$v.parametros.mostrar.$error ? "is-invalid" : ""
                       ],
                       attrs: { type: "checkbox", id: "mostrar" },
                       domProps: {
-                        checked: Array.isArray(_vm.parametros.mostrar)
-                          ? _vm._i(_vm.parametros.mostrar, null) > -1
-                          : _vm.parametros.mostrar
+                        checked: Array.isArray(_vm.$v.parametros.mostrar.$model)
+                          ? _vm._i(_vm.$v.parametros.mostrar.$model, null) > -1
+                          : _vm.$v.parametros.mostrar.$model
                       },
                       on: {
                         change: function($event) {
-                          var $$a = _vm.parametros.mostrar,
+                          var $$a = _vm.$v.parametros.mostrar.$model,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
@@ -1163,20 +1226,20 @@ var render = function() {
                             if ($$el.checked) {
                               $$i < 0 &&
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "mostrar",
+                                  _vm.$v.parametros.mostrar,
+                                  "$model",
                                   $$a.concat([$$v])
                                 )
                             } else {
                               $$i > -1 &&
                                 _vm.$set(
-                                  _vm.parametros,
-                                  "mostrar",
+                                  _vm.$v.parametros.mostrar,
+                                  "$model",
                                   $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                                 )
                             }
                           } else {
-                            _vm.$set(_vm.parametros, "mostrar", $$c)
+                            _vm.$set(_vm.$v.parametros.mostrar, "$model", $$c)
                           }
                         }
                       }
@@ -1192,6 +1255,13 @@ var render = function() {
                     )
                   ]
                 ),
+                _vm._v(" "),
+                _vm.$v.parametros.mostrar.$error &&
+                !_vm.$v.parametros.mostrar.validarMostrar
+                  ? _c("em", { staticClass: "text-error-select" }, [
+                      _vm._v(_vm._s(_vm.mensajes.validarMostrar))
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "button",

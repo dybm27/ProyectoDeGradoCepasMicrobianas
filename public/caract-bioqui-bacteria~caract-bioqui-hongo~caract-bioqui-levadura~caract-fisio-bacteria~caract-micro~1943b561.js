@@ -492,6 +492,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -511,7 +516,8 @@ __webpack_require__.r(__webpack_exports__);
         nomLabel: "",
         errors: ""
       },
-      imagenMiniatura: ""
+      imagenMiniatura: "",
+      bloquearBtnModal: false
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
@@ -553,6 +559,7 @@ __webpack_require__.r(__webpack_exports__);
     accionModal: function accionModal() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       this.modalImagen.errors = "";
 
       if (this.modalImagen.nomBtn === "Cambiar") {
@@ -562,26 +569,18 @@ __webpack_require__.r(__webpack_exports__);
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/cambiar-imagen/").concat(this.cepa.id), parametros).then(function (res) {
+            _this.bloquearBtnModal = false;
+
             _this.$emit("accionImagen", res.data);
 
             _this.$modal.hide("agregar_cambiar_imagen");
 
             _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                _this.modalImagen.errors = [];
-                _this.modalImagen.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarErrorAxios(error.response.status, error.response.data.errors);
           });
         } else {
+          this.bloquearBtnModal = false;
           this.modalImagen.errors = "Favor seleccionar una imagen.";
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
@@ -589,24 +588,15 @@ __webpack_require__.r(__webpack_exports__);
           numero: this.modalImagen.select_imagen
         };
         axios.put("/cepas/".concat(this.tipoCepa, "/eliminar-imagen/").concat(this.cepa.id), _parametros).then(function (res) {
+          _this.bloquearBtnModal = false;
+
           _this.$emit("accionImagen", res.data);
 
           _this.$modal.hide("eliminar_imagen");
 
           _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            if (error.response.status === 422) {
-              _this.modalImagen.errors = [];
-              _this.modalImagen.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorAxios(error.response.status, error.response.data.errors);
         });
       } else {
         if (this.$refs.inputImagenModal.value) {
@@ -616,26 +606,18 @@ __webpack_require__.r(__webpack_exports__);
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/agregar-imagen/").concat(this.cepa.id), _parametros2).then(function (res) {
+            _this.bloquearBtnModal = false;
+
             _this.$emit("accionImagen", res.data);
 
             _this.$modal.hide("agregar_cambiar_imagen");
 
             _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                _this.modalImagen.errors = [];
-                _this.modalImagen.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarErrorAxios(error.response.status, error.response.data.errors);
           });
         } else {
+          this.bloquearBtnModal = false;
           this.modalImagen.errors = "Favor seleccionar una imagen.";
         }
       }
@@ -678,6 +660,21 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       reader.src = URL.createObjectURL(file);
+    },
+    verificarErrorAxios: function verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.modalImagen.errors = [];
+          this.modalImagen.errors = errors;
+        }
+
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     }
   },
   computed: {
@@ -1671,7 +1668,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button" },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.accionModal }
                 },
                 [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]

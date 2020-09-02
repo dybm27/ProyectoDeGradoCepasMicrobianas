@@ -51,7 +51,7 @@ class ImagenLoginControllerTest extends TestCase
 
         $response->assertStatus(422);
         $response->assertJsonValidationErrors('mostrar');
-        $mensaje = $response->decodeResponseJson()['errors']['mostrar'];
+        $mensaje = $response->decodeResponseJson()['errors']['mostrar'][0];
         $this->assertEquals("Debe haber minimo una imagen para mostrar.", $mensaje);
     }
 

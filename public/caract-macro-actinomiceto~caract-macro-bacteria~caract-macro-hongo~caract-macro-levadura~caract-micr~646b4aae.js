@@ -11,6 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -67,6 +69,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -74,10 +83,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       nombre: "",
-      mostrarError: false,
       errors: [],
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        unique: "Ya existe un registro con ese nombre."
+      }
     };
+  },
+  validations: {
+    nombre: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+      unique: function unique(value) {
+        if (value == "") return true;
+        if (this.validarNombreUnico) return false;
+        return true;
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionAgregarTipoCaractActinomiceto", "accionAgregarTipoCaractHongo", "accionAgregarTipoCaractBacteria"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {
@@ -88,14 +110,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     agregarInfo: function agregarInfo() {
       var _this = this;
 
-      if (this.nombre === "") {
-        this.errors = {
-          nombre: {
-            0: "Campo requerido"
-          }
-        };
-      } else {
-        this.bloquearBtnModal = true;
+      this.bloquearBtnModal = true;
+      this.$v.nombre.$touch();
+
+      if (!this.$v.$invalid) {
         var parametros = {
           tipo: this.tipo,
           nombre: this.nombre
@@ -114,19 +132,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.toastr("Agregar Info!!", "".concat(_this.tipo, " agregado/a con exito"), "success");
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.bloquearBtnModal = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorAxios(error.response.status, error.response.data.errors);
         });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el Error.", "error");
       }
     },
     guardarInfo: function guardarInfo(data) {
@@ -160,6 +170,119 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "cepa":
+          break;
+      }
+    },
+    verificarErrorAxios: function verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.errors = [];
+          this.errors = errors;
+        }
+
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
+    }
+  }),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasByNombre", "getInfoCaractMicroBacteriasByNombre", "getInfoMetodoConserBacteriasByNombre", "getInfoCaractMacroHongosByNombre", "getInfoCaractMicroHongosByNombre", "getInfoMetodoConserHongosByNombre", "getInfoCaractMacroLevadurasByNombre", "getInfoMetodoConserLevadurasByNombre", "getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"]), {
+    validarNombreUnico: function validarNombreUnico() {
+      switch (this.tipoForm) {
+        case "bacteria":
+          if (this.tipo == "borde" || this.tipo == "color" || this.tipo == "detalle" || this.tipo == "elevacion" || this.tipo == "forma_macro" || this.tipo == "superficie") {
+            if (this.getInfoCaractMacroBacteriasByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else if (this.tipo == "forma_micro") {
+            if (this.getInfoCaractMicroBacteriasByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else {
+            if (this.getInfoMetodoConserBacteriasByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          }
+
+          return false;
+          break;
+
+        case "hongo":
+          if (this.tipo == "color" || this.tipo == "textura") {
+            if (this.getInfoCaractMacroHongosByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else if (this.tipo == "conidioforo" || this.tipo == "esporaA" || this.tipo == "esporaS") {
+            if (this.getInfoCaractMicroHongosByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else {
+            if (this.getInfoMetodoConserHongosByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          }
+
+          return false;
+          break;
+
+        case "levadura":
+          if (this.tipo == "color" || this.tipo == "textura") {
+            if (this.getInfoCaractMacroLevadurasByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else {
+            if (this.getInfoMetodoConserLevadurasByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          }
+
+          break;
+
+        case "actinomiceto":
+          if (this.tipo == "borde" || this.tipo == "color" || this.tipo == "textura" || this.tipo == "pigmento" || this.tipo == "forma_macro" || this.tipo == "superficie") {
+            if (this.getInfoCaractMacroActinomicetosByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          } else if (this.tipo == "forma_micro" || this.tipo == "conidioforo" || this.tipo == "tincion" || this.tipo == "micelio") {
+            if (this.getInfoCaractMicroActinomicetosByNombre({
+              nombre: this.nombre,
+              tipo: this.tipo
+            })) {
+              return true;
+            }
+          }
+
+          return false;
           break;
       }
     }
@@ -236,37 +359,57 @@ var render = function() {
                   directives: [
                     {
                       name: "model",
-                      rawName: "v-model",
-                      value: _vm.nombre,
-                      expression: "nombre"
+                      rawName: "v-model.trim",
+                      value: _vm.$v.nombre.$model,
+                      expression: "$v.nombre.$model",
+                      modifiers: { trim: true }
                     }
                   ],
-                  staticClass: "form-control",
                   class: [
                     "form-control",
-                    _vm.mostrarError ? "error-input-select" : ""
+                    _vm.errors.nombre || _vm.$v.nombre.$error
+                      ? "error-input-select"
+                      : ""
                   ],
                   attrs: {
                     name: "nombre",
                     id: "nombre",
                     placeholder: "...",
-                    type: "text",
-                    required: ""
+                    type: "text"
                   },
-                  domProps: { value: _vm.nombre },
+                  domProps: { value: _vm.$v.nombre.$model },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.nombre = $event.target.value
+                      _vm.$set(
+                        _vm.$v.nombre,
+                        "$model",
+                        $event.target.value.trim()
+                      )
+                    },
+                    blur: function($event) {
+                      return _vm.$forceUpdate()
                     }
                   }
                 }),
                 _vm._v(" "),
-                _vm.mostrarError
-                  ? _c("span", { staticClass: "text-danger" }, [
+                _vm.errors.nombre
+                  ? _c("em", { staticClass: "text-error-input" }, [
                       _vm._v(_vm._s(_vm.errors.nombre[0]))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.nombre.$error && !_vm.$v.nombre.required
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.required))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.nombre.$error && !_vm.$v.nombre.unique
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.unique))
                     ])
                   : _vm._e()
               ])

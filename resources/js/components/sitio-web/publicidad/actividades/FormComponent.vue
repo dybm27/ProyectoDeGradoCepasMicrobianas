@@ -18,13 +18,19 @@
                   id="titulo"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarTitulo? 'is-invalid':'']"
-                  v-model="parametros.titulo"
-                  required
+                  :class="['form-control', $v.parametros.titulo.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.titulo.$model"
                 />
-                <em v-if="validarTitulo" class="error invalid-feedback">{{mensajeTitulo}}</em>
+                <em
+                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.unique"
+                  class="text-error-input"
+                >{{mensajes.unique}}</em>
               </div>
-              <div class="position-relative form-group" v-if="required">
+              <div class="position-relative form-group" v-if="validarTipoForm">
                 <label for="select" class>Contenido de la Actividad:</label>
                 <select
                   name="select"
@@ -37,20 +43,8 @@
                   <option value="texto">Texto</option>
                 </select>
               </div>
-              <template v-if="selectTipo=='link'">
-                <div class="position-relative form-group">
-                  <label for="link" class>Link</label>
-                  <input
-                    name="link"
-                    id="link"
-                    placeholder="..."
-                    type="text"
-                    :class="['form-control', validarLink? 'is-invalid':'']"
-                    v-model="parametros.link"
-                    required
-                  />
-                  <em v-if="validarLink" class="error invalid-feedback">{{mensajeLink}}</em>
-                </div>
+              <template v-if="validarTipo">
+               
               </template>
               <div class="form-row">
                 <div class="col-md-6">
@@ -61,11 +55,16 @@
                     <div class="row">
                       <date-picker
                         :lang="lang"
-                        v-model="parametros.fecha"
+                        v-model.trim="$v.parametros.fecha.$model"
                         type="datetime"
                         value-type="format"
                         placeholder="..."
+                        :class="$v.parametros.fecha.$error? 'error-input-select':''"
                       ></date-picker>
+                      <em
+                        v-if="$v.parametros.fecha.$error&&!$v.parametros.fecha.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -77,10 +76,13 @@
                       id="lugar"
                       placeholder="..."
                       type="text"
-                      class="form-control"
-                      v-model.number="parametros.lugar"
-                      required
+                      :class="['form-control', $v.parametros.lugar.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.lugar.$model"
                     />
+                    <em
+                      v-if="$v.parametros.lugar.$error&&!$v.parametros.lugar.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
               </div>
@@ -92,25 +94,32 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
+                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                   ref="inputImagen"
-                  :required="required"
                 />
-                <em v-if="imagenError" class="error invalid-feedback">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em
+                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
                   type="checkbox"
                   id="publicar"
-                  class="custom-control-input"
-                  v-model="parametros.publicar"
+                  :class="['custom-control-input',$v.parametros.publicar.$error? 'is-invalid':'']"
+                  v-model.trim="$v.parametros.publicar.$model"
                 />
                 <label class="custom-control-label" for="publicar">Desea publicar la Actividad?</label>
               </div>
+              <em
+                v-if="$v.parametros.publicar.$error&&!$v.parametros.publicar.validarPublicar"
+                class="text-error-select"
+              >{{mensajes.validarPublicar}}</em>
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -161,7 +170,7 @@
         </div>
       </div>
     </div>
-    <template v-if="selectTipo=='texto'">
+    <template v-if="!validarTipo">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="main-card mb-3 card">
@@ -189,11 +198,9 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../../CroppieComponent.vue";
 import Editor from "../../../editor-texto/EditorTextoComponent.vue";
+import { required, link } from "vuelidate/lib/validators";
 export default {
-  components: {
-    Croppie,
-    Editor,
-  },
+  components: { Croppie, Editor },
   props: ["idActividad"],
   data() {
     return {
@@ -216,84 +223,138 @@ export default {
       imagenMiniatura: "",
       nomBtn: "",
       imagenError: "",
-      mensajeTitulo: "",
-      mensajeLink: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarPublicar:
+          "No es posible publicar la Actividad. Sobrepasa el limite de 7 publicaciones.",
+        unique: "Ya existe un registro con ese email.",
+        link: "El link debe ser valido.",
+      },
     };
+  },
+  validations() {
+    if (this.validarTipo) {
+      return {
+        parametros: {
+          titulo: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (this.validarTitulo) return false;
+              return true;
+            },
+          },
+          link: { required, link },
+          imagen: { required },
+          fecha: { required },
+          lugar: { required },
+          publicar: {
+            validarPublicar(value) {
+              if (value == "") return true;
+              // if (this.validarPublicar) return false;
+              return true;
+            },
+          },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          titulo: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (!letters.test(value)) return false;
+              return true;
+            },
+          },
+          cuerpo: { required },
+          imagen: { required },
+          fecha: { required },
+          lugar: { required },
+          publicar: {
+            validarPublicar(value) {
+              if (value == "") return true;
+              // if (this.validarPublicar) return false;
+              return true;
+            },
+          },
+        },
+      };
+    }
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("publicidad", ["accionActividad"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Actividad") {
-        axios
-          .post("/publicidad", this.parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Actividad") {
+          axios
+            .post("/publicidad", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Agregar Actividad",
+                  "Actividad agregada con exito!!",
+                  "success"
+                );
+                this.accionActividad({ tipo: "agregar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+              }
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
               );
-              window.location.href = "/";
-            } else {
+            });
+        } else {
+          axios
+            .put(`/publicidad/${this.idActividad}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
               this.toastr(
-                "Agregar Actividad",
-                "Actividad agregada con exito!!",
+                "Editar Actividad",
+                "Actividad editada con exito!!",
                 "success"
               );
-              this.accionActividad({ tipo: "agregar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        axios
-          .put(`/publicidad/${this.idActividad}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Actividad",
-              "Actividad editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsActividad").whisper(
-              "desbloquearBtnsActividad",
-              {
+              window.Echo.private("desbloquearBtnsActividad").whisper(
+                "desbloquearBtnsActividad",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoActividad", {
                 id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoActividad", {
-              id: res.data.id,
+              });
+              this.accionActividad({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
-            this.accionActividad({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -339,7 +400,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Actividad") {
         return true;
       } else {
@@ -353,44 +414,25 @@ export default {
       return this.nomBtn;
     },
     validarTitulo() {
-      if (this.parametros.titulo) {
-        let titulo = this.getActividadByTitulo(this.parametros.titulo);
-        if (titulo) {
-          if (titulo.id != this.info.id) {
-            this.mensajeTitulo = "Ya existe una actividad con ese titulo";
-            return true;
-          }
-          return false;
-        }
-        return false;
-      }
-      return false;
-    },
-    validarLink() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
-      if (this.parametros.link) {
-        if (!letters.test(this.parametros.link)) {
-          this.mensajeLink = "El link no tiene un formato valido.";
+      if (this.getActividadByTitulo(this.parametros.titulo)) {
+        if (
+          this.getActividadByTitulo(this.parametros.titulo).id != this.info.id
+        ) {
           return true;
         }
         return false;
       }
       return false;
     },
-    validarCuerpo() {
-      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
+    validarTipo() {
+      if (this.selectTipo == "link") {
         return true;
       }
       return false;
     },
-    validarBtn() {
-      if (
-        this.validarTitulo ||
-        (this.selectTipo == "link" && this.validarLink) ||
-        this.validarCuerpo ||
-        !this.parametros.imagen
-      ) {
+    validarPublicar() {},
+    validarCuerpo() {
+      if (this.selectTipo == "texto" && !this.parametros.cuerpo) {
         return true;
       }
       return false;

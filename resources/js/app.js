@@ -366,6 +366,9 @@ Vue.component(
         .default
 );
 
+import errorPeticionAxiosMixin from "./mixins/errorPeticionAxios";
+Vue.mixin(errorPeticionAxiosMixin);
+
 const app = new Vue({
     el: "#app",
     store,

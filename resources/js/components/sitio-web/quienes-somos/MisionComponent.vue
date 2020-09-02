@@ -15,13 +15,9 @@
                   />
                 </div>
               </div>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center" v-if="!verificarBtn">
                 <div class="col-md-4 mt-3">
-                  <button
-                    class="btn btn-block btn-success"
-                    :disabled="verificarBtn"
-                    @click="cambiarMision"
-                  >Cambiar</button>
+                  <button class="btn btn-block btn-success" @click="cambiarMision">Cambiar</button>
                 </div>
               </div>
             </template>
@@ -120,7 +116,10 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 401
+          ) {
             window.location.href = "/";
           }
         });

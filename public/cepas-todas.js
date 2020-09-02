@@ -89,6 +89,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -98,7 +99,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       tituloCepa: "",
       tipoAccion: "",
       mostrarBtnVolver: false,
-      fields: _columnas_columnas_cepas__WEBPACK_IMPORTED_MODULE_1__["default"]
+      fields: _columnas_columnas_cepas__WEBPACK_IMPORTED_MODULE_1__["default"],
+      bloquearBtnVolver: false
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
@@ -288,6 +290,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
       }
     });
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.$events.$on("bloquearBtnVolver", function (e) {
+      _this2.bloquearBtnVolver = !_this2.bloquearBtnVolver;
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.$off("bloquearBtnVolver");
   }
 });
 
@@ -356,6 +368,7 @@ var render = function() {
                       {
                         staticClass:
                           "btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg",
+                        attrs: { disabled: _vm.bloquearBtnVolver },
                         on: { click: _vm.volverTabla }
                       },
                       [_vm._v("Volver")]

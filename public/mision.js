@@ -85,10 +85,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -141,7 +137,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -212,23 +208,25 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-md-4 mt-3" }, [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-block btn-success",
-                                    attrs: { disabled: _vm.verificarBtn },
-                                    on: { click: _vm.cambiarMision }
-                                  },
-                                  [_vm._v("Cambiar")]
-                                )
-                              ])
-                            ]
-                          )
+                          !_vm.verificarBtn
+                            ? _c(
+                                "div",
+                                { staticClass: "row justify-content-center" },
+                                [
+                                  _c("div", { staticClass: "col-md-4 mt-3" }, [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn btn-block btn-success",
+                                        on: { click: _vm.cambiarMision }
+                                      },
+                                      [_vm._v("Cambiar")]
+                                    )
+                                  ])
+                                ]
+                              )
+                            : _vm._e()
                         ]
                       : [
                           _c(

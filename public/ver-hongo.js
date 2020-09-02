@@ -133,7 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _IconoMostrarInfoVer_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../IconoMostrarInfoVer.vue */ "./resources/js/components/cepas/IconoMostrarInfoVer.vue");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../mixins/errorPeticionAxiosVerCepa */ "./resources/js/mixins/errorPeticionAxiosVerCepa.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -586,6 +587,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -609,8 +611,8 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       btnSeleccionado: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_4__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_4__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getOtrasCaract", "getIdentiBioqui"]), {}, vuex__WEBPACK_IMPORTED_MODULE_4__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getPhylumCepa", "getOrdenCepa", "getReinoCepa", "getClaseCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_4__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosById", "getInfoCaractMicroActinomicetosById"]), {
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_4__["default"]],
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getOtrasCaract", "getIdentiBioqui"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getPhylumCepa", "getOrdenCepa", "getReinoCepa", "getClaseCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosById", "getInfoCaractMicroActinomicetosById"]), {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
     },
@@ -640,6 +642,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       }
 
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
@@ -653,6 +656,8 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
+            _this.$events.fire("bloquearBtnVolver");
+
             _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
@@ -668,14 +673,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.btnTodo = false;
-            _this.btnSeleccionado = false;
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorVerCepa(error.response.status);
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -790,6 +788,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _IconoMostrarInfoVer_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../IconoMostrarInfoVer.vue */ "./resources/js/components/cepas/IconoMostrarInfoVer.vue");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../mixins/errorPeticionAxiosVerCepa */ "./resources/js/mixins/errorPeticionAxiosVerCepa.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1501,6 +1500,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Carousel: _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -1530,7 +1530,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       btnSeleccionado: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_4__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getCaractFisio", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasById", "getInfoCaractMicroBacteriasById", "getInfoMetodoConserBacteriasById"]), {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
@@ -1561,6 +1561,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       }
 
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr("Descarga!!", "La descarga puede demorar unos segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
@@ -1574,6 +1575,8 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
+            _this.$events.fire("bloquearBtnVolver");
+
             _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
@@ -1589,14 +1592,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.btnTodo = false;
-            _this.btnSeleccionado = false;
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorVerCepa(error.response.status);
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -1755,6 +1751,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _IconoMostrarInfoVer_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../IconoMostrarInfoVer.vue */ "./resources/js/components/cepas/IconoMostrarInfoVer.vue");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
+/* harmony import */ var _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../mixins/errorPeticionAxiosVerCepa */ "./resources/js/mixins/errorPeticionAxiosVerCepa.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2386,6 +2383,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Carousel: _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -2413,7 +2411,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       btnSeleccionado: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getPhylumCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongosById", "getInfoCaractMicroHongosById", "getInfoMetodoConserHongosById"]), {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
@@ -2444,6 +2442,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       }
 
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
@@ -2457,6 +2456,8 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
+            _this.$events.fire("bloquearBtnVolver");
+
             _this.toastr("Descarga!!", "La descarga se realizo con éxito", "success");
 
             _this.errorSelect = "";
@@ -2472,14 +2473,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.btnTodo = false;
-            _this.btnSeleccionado = false;
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorVerCepa(error.response.status);
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -2622,6 +2616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _IconoMostrarInfoVer_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../IconoMostrarInfoVer.vue */ "./resources/js/components/cepas/IconoMostrarInfoVer.vue");
+/* harmony import */ var _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../mixins/errorPeticionAxiosVerCepa */ "./resources/js/mixins/errorPeticionAxiosVerCepa.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3286,6 +3281,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Carousel: _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -3314,7 +3310,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       btnSeleccionado: false
     };
   },
-  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getDivisionCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevadurasById", "getInfoCaractMicroLevadurasById", "getInfoMetodoConserLevadurasById"]), {
     rowTermo: function rowTermo() {
       this.rowTermoData = 0;
@@ -3366,6 +3362,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
       }
 
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr("Descarga!!", "La descarga puede demorar uno segundos, dependiendo de la cantidad de informacion. \n           favor esperar!!", "warning");
@@ -3375,6 +3372,8 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
           },
           responseType: "blob"
         }).then(function (res) {
+          _this.$events.fire("bloquearBtnVolver");
+
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
@@ -3394,14 +3393,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
             _this.btnSeleccionado = false;
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.btnTodo = false;
-            _this.btnSeleccionado = false;
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorVerCepa(error.response.status);
         });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";
@@ -12303,6 +12295,35 @@ var accionVerYCaractmixin = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (accionVerYCaractmixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/errorPeticionAxiosVerCepa.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/mixins/errorPeticionAxiosVerCepa.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var errorPeticionAxiosVerCepaMixin = {
+  methods: {
+    verificarErrorVerCepa: function verificarErrorVerCepa(codigo) {
+      if (codigo === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (codigo === 405 || codigo === 401) {
+        window.location.href = "/";
+      } else {
+        this.$events.fire("bloquearBtnVolver");
+        this.btnTodo = false;
+        this.btnSeleccionado = false;
+        this.toastr("Error!!", "", "error");
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (errorPeticionAxiosVerCepaMixin);
 
 /***/ })
 

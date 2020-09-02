@@ -528,18 +528,7 @@ __webpack_require__.r(__webpack_exports__);
               _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         } else {
           axios.put("/cepas/levadura/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
@@ -550,20 +539,7 @@ __webpack_require__.r(__webpack_exports__);
 
             _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         }
       } else {

@@ -48,7 +48,7 @@ class UsuarioController extends Controller
         ];
         $this->validate($request, $rules);
 
-        if (!is_null($request->imagen)) {
+        if ($request->imagen != $usuario->avatar) {
             Storage::delete($usuario->avatar);
             $imagen = $this->guardarImagen($request->imagen);
             $usuario->avatar = $imagen['ruta'];

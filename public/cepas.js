@@ -538,7 +538,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -765,19 +764,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         } else {
           axios.post("/cepas/agregar", this.parametros).then(function (res) {
@@ -797,17 +784,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         }
       } else {
@@ -932,6 +909,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           })["catch"](function (error) {
             if (error.response.status === 403) {
               _this2.$router.push("/sin-acceso");
+            } else if (error.response.status === 405 || error.response.status === 401) {
+              window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
 
@@ -1351,7 +1330,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
@@ -2875,11 +2854,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: {
-                          name: "select",
-                          id: "grupo_microbiano-modal",
-                          disabled: _vm.disabled
-                        },
+                        attrs: { name: "select", id: "grupo_microbiano-modal" },
                         on: {
                           change: function($event) {
                             var $$selectedVal = Array.prototype.filter

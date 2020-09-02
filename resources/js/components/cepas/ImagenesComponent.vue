@@ -192,7 +192,12 @@
             class="btn btn-secondary"
             @click="$modal.hide('eliminar_imagen')"
           >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="accionModal">{{modalImagen.nomBtn}}</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            @click="accionModal"
+            :disabled="bloquearBtnModal"
+          >{{modalImagen.nomBtn}}</button>
         </div>
       </div>
     </modal>
@@ -217,6 +222,7 @@ export default {
         errors: "",
       },
       imagenMiniatura: "",
+      bloquearBtnModal: false,
     };
   },
   mixins: [Toastr],
@@ -255,6 +261,7 @@ export default {
       }
     },
     accionModal() {
+      this.bloquearBtnModal = true;
       this.modalImagen.errors = "";
       if (this.modalImagen.nomBtn === "Cambiar") {
         if (this.$refs.inputImagenModal.value) {
@@ -268,6 +275,7 @@ export default {
               parametros
             )
             .then((res) => {
+              this.bloquearBtnModal = false;
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -277,19 +285,13 @@ export default {
               );
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                if (error.response.status === 422) {
-                  this.modalImagen.errors = [];
-                  this.modalImagen.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarErrorAxios(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
+          this.bloquearBtnModal = false;
           this.modalImagen.errors = "Favor seleccionar una imagen.";
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
@@ -302,6 +304,7 @@ export default {
             parametros
           )
           .then((res) => {
+            this.bloquearBtnModal = false;
             this.$emit("accionImagen", res.data);
             this.$modal.hide("eliminar_imagen");
             this.toastr(
@@ -311,17 +314,10 @@ export default {
             );
           })
           .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
+            this.verificarErrorAxios(
+              error.response.status,
+              error.response.data.errors
+            );
           });
       } else {
         if (this.$refs.inputImagenModal.value) {
@@ -336,6 +332,7 @@ export default {
               parametros
             )
             .then((res) => {
+              this.bloquearBtnModal = false;
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -345,19 +342,13 @@ export default {
               );
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                if (error.response.status === 422) {
-                  this.modalImagen.errors = [];
-                  this.modalImagen.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarErrorAxios(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
+          this.bloquearBtnModal = false;
           this.modalImagen.errors = "Favor seleccionar una imagen.";
         }
       }
@@ -396,6 +387,20 @@ export default {
         this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
+    },
+    verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.modalImagen.errors = [];
+          this.modalImagen.errors = errors;
+        }
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     },
   },
   computed: {

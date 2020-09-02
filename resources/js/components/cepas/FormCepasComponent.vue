@@ -382,7 +382,6 @@
               id="grupo_microbiano-modal"
               class="form-control"
               v-model="modal.grupo_microbiano"
-              :disabled="disabled"
             >
               <option v-for="(gm,index) in getGrupos" :key="index" :value="gm.id">{{gm.nombre}}</option>
             </select>
@@ -605,17 +604,10 @@ export default {
               this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
           axios
@@ -639,15 +631,10 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         }
       } else {
@@ -781,6 +768,11 @@ export default {
             .catch((error) => {
               if (error.response.status === 403) {
                 this.$router.push("/sin-acceso");
+              } else if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
+                window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
                 this.toastr("Error!!", "", "error");

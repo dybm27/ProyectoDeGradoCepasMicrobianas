@@ -210,6 +210,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mixins/obtenerImagenCroopie */ "./resources/js/mixins/obtenerImagenCroopie.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -374,10 +376,49 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
+
+var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Croppie: _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -399,14 +440,63 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       imagenMiniatura: "",
       nomBtn: "",
       imagenError: "",
-      mensajeErrorEmail: "",
-      mensajeCargo: "",
-      mensajeNivel: "",
-      mensajeNombres: "",
-      mensajeApellidos: "",
       errors: [],
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        alpha: "El campo solo puede contener letras.",
+        unique: "Ya existe un registro con ese email.",
+        email: "El email debe ser valido."
+      }
     };
+  },
+  validations: {
+    parametros: {
+      nombres: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"],
+        alpha: function alpha(value) {
+          if (value == "") return true;
+          if (!letters.test(value)) return false;
+          return true;
+        }
+      },
+      apellidos: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"],
+        alpha: function alpha(value) {
+          if (value == "") return true;
+          if (!letters.test(value)) return false;
+          return true;
+        }
+      },
+      email: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"],
+        email: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["email"],
+        unique: function unique(value) {
+          if (value == "") return true;
+          if (this.validarEmailUnique) return false;
+          return true;
+        }
+      },
+      nivel_estudio: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"],
+        alpha: function alpha(value) {
+          if (value == "") return true;
+          if (!letters.test(value)) return false;
+          return true;
+        }
+      },
+      cargo: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"],
+        alpha: function alpha(value) {
+          if (value == "") return true;
+          if (!letters.test(value)) return false;
+          return true;
+        }
+      },
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
@@ -414,72 +504,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Investigador") {
-        axios.post("/investigadores", this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Investigador") {
+          axios.post("/investigadores", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.toastr("Agregar Investigador", "Investigador agregado con exito!!", "success");
+
+              _this.accionInvestigador({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.$emit("cambiarVariableFormulario");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/investigadores/".concat(this.idInvestigador), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
 
-            _this.toastr("Agregar Investigador", "Investigador agregado con exito!!", "success");
+            _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoInvestigador", {
+              id: res.data.id
+            });
 
             _this.accionInvestigador({
-              tipo: "agregar",
+              tipo: "editar",
               data: res.data
             });
 
             _this.$emit("cambiarVariableFormulario");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
       } else {
-        axios.put("/investigadores/".concat(this.idInvestigador), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          _this.toastr("Editar Investigador", "Investigador editado con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsInvestigador").whisper("desbloquearBtnsInvestigador", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("eliminarMiBloqueoInvestigador", {
-            id: res.data.id
-          });
-
-          _this.accionInvestigador({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.$emit("cambiarVariableFormulario");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -504,7 +578,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Investigador") {
         return true;
       } else {
@@ -517,92 +591,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     nomBtnComputed: function nomBtnComputed() {
       return this.nomBtn;
     },
-    validarNombres: function validarNombres() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
-      if (this.parametros.nombres) {
-        if (!letters.test(this.parametros.nombres)) {
-          this.mensajeNombres = "Solo se admiten letras.";
+    validarEmailUnique: function validarEmailUnique() {
+      if (this.getInvestigadorByEmail(this.parametros.email)) {
+        if (this.getInvestigadorByEmail(this.parametros.email).id != this.info.id) {
           return true;
-        } else {
-          return false;
         }
-      }
 
-      return false;
-    },
-    validarEmail: function validarEmail() {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-      if (this.parametros.email) {
-        if (!re.test(this.parametros.email)) {
-          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
-          return true;
-        } else {
-          if (this.getInvestigadorByEmail(this.parametros.email)) {
-            if (this.getInvestigadorByEmail(this.parametros.email).id != this.info.id) {
-              this.mensajeErrorEmail = "El correo electrónico ya Existe";
-              return true;
-            }
-
-            return false;
-          }
-
-          return false;
-        }
-      }
-
-      return false;
-    },
-    validarCargo: function validarCargo() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
-      if (this.parametros.cargo) {
-        if (!letters.test(this.parametros.cargo)) {
-          this.mensajeCargo = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-
-      return false;
-    },
-    validarNivel: function validarNivel() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
-      if (this.parametros.nivel_estudio) {
-        if (!letters.test(this.parametros.nivel_estudio)) {
-          this.mensajeNivel = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-
-      return false;
-    },
-    validarApellidos: function validarApellidos() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
-      if (this.parametros.apellidos) {
-        if (!letters.test(this.parametros.apellidos)) {
-          this.mensajeApellidos = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-
-      return false;
-    },
-    validarBtn: function validarBtn() {
-      if (this.validarEmail || this.validarNombres || this.validarApellidos || this.validarCargo || this.validarNivel || !this.parametros.imagen) {
-        return true;
+        return false;
       }
 
       return false;
@@ -755,7 +750,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 405) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
@@ -1053,40 +1048,53 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.nombres,
-                          expression: "parametros.nombres"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.nombres.$model,
+                          expression: "$v.parametros.nombres.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarNombres ? "is-invalid" : ""
+                        _vm.$v.parametros.nombres.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "nombres",
                         id: "nombres",
                         placeholder: "...",
-                        type: "text",
-                        required: ""
+                        type: "text"
                       },
-                      domProps: { value: _vm.parametros.nombres },
+                      domProps: { value: _vm.$v.parametros.nombres.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.parametros,
-                            "nombres",
-                            $event.target.value
+                            _vm.$v.parametros.nombres,
+                            "$model",
+                            $event.target.value.trim()
                           )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarNombres
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeNombres))
+                    _vm.$v.parametros.nombres.$error &&
+                    !_vm.$v.parametros.nombres.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.nombres.$error &&
+                    !_vm.$v.parametros.nombres.alpha
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.alpha))
                         ])
                       : _vm._e()
                   ]),
@@ -1100,40 +1108,53 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.apellidos,
-                          expression: "parametros.apellidos"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.apellidos.$model,
+                          expression: "$v.parametros.apellidos.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarApellidos ? "is-invalid" : ""
+                        _vm.$v.parametros.apellidos.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "apellidos",
                         id: "apellidos",
                         placeholder: "...",
-                        type: "text",
-                        required: ""
+                        type: "text"
                       },
-                      domProps: { value: _vm.parametros.apellidos },
+                      domProps: { value: _vm.$v.parametros.apellidos.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.parametros,
-                            "apellidos",
-                            $event.target.value
+                            _vm.$v.parametros.apellidos,
+                            "$model",
+                            $event.target.value.trim()
                           )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarApellidos
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeApellidos))
+                    _vm.$v.parametros.apellidos.$error &&
+                    !_vm.$v.parametros.apellidos.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.apellidos.$error &&
+                    !_vm.$v.parametros.apellidos.alpha
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.alpha))
                         ])
                       : _vm._e()
                   ]),
@@ -1145,36 +1166,60 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.email,
-                          expression: "parametros.email"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.email.$model,
+                          expression: "$v.parametros.email.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarEmail ? "is-invalid" : ""
+                        _vm.$v.parametros.email.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "email",
                         id: "email",
                         placeholder: "...",
-                        type: "email",
-                        required: ""
+                        type: "email"
                       },
-                      domProps: { value: _vm.parametros.email },
+                      domProps: { value: _vm.$v.parametros.email.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.parametros, "email", $event.target.value)
+                          _vm.$set(
+                            _vm.$v.parametros.email,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarEmail
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeErrorEmail))
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.email
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.email))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.unique
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.unique))
                         ])
                       : _vm._e()
                   ]),
@@ -1188,40 +1233,55 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.nivel_estudio,
-                          expression: "parametros.nivel_estudio"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.nivel_estudio.$model,
+                          expression: "$v.parametros.nivel_estudio.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarNivel ? "is-invalid" : ""
+                        _vm.$v.parametros.nivel_estudio.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "nivel_estudio",
                         id: "nivel_estudio",
                         placeholder: "...",
-                        type: "text",
-                        required: ""
+                        type: "text"
                       },
-                      domProps: { value: _vm.parametros.nivel_estudio },
+                      domProps: {
+                        value: _vm.$v.parametros.nivel_estudio.$model
+                      },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.parametros,
-                            "nivel_estudio",
-                            $event.target.value
+                            _vm.$v.parametros.nivel_estudio,
+                            "$model",
+                            $event.target.value.trim()
                           )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarNivel
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeNivel))
+                    _vm.$v.parametros.nivel_estudio.$error &&
+                    !_vm.$v.parametros.nivel_estudio.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.nivel_estudio.$error &&
+                    !_vm.$v.parametros.nivel_estudio.alpha
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.alpha))
                         ])
                       : _vm._e()
                   ]),
@@ -1233,36 +1293,53 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.cargo,
-                          expression: "parametros.cargo"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.cargo.$model,
+                          expression: "$v.parametros.cargo.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarCargo ? "is-invalid" : ""
+                        _vm.$v.parametros.cargo.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "cargo",
                         id: "cargo",
                         placeholder: "...",
-                        type: "text",
-                        required: ""
+                        type: "text"
                       },
-                      domProps: { value: _vm.parametros.cargo },
+                      domProps: { value: _vm.$v.parametros.cargo.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.parametros, "cargo", $event.target.value)
+                          _vm.$set(
+                            _vm.$v.parametros.cargo,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarCargo
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeCargo))
+                    _vm.$v.parametros.cargo.$error &&
+                    !_vm.$v.parametros.cargo.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.cargo.$error &&
+                    !_vm.$v.parametros.cargo.alpha
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.alpha))
                         ])
                       : _vm._e()
                   ]),
@@ -1276,21 +1353,29 @@ var render = function() {
                       ref: "inputImagen",
                       class: [
                         "form-control-file",
-                        _vm.imagenError != "" ? "is-invalid" : ""
+                        _vm.$v.parametros.imagen.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "imagen",
                         id: "imagen",
                         accept: "image/jpeg, image/png",
-                        type: "file",
-                        required: _vm.required
+                        type: "file"
                       },
                       on: { change: _vm.obtenerImagen }
                     }),
                     _vm._v(" "),
                     _vm.imagenError
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
+                      ? _c("em", { staticClass: "text-error-input" }, [
                           _vm._v(_vm._s(_vm.imagenError))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.imagen.$error &&
+                    !_vm.$v.parametros.imagen.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
                         ])
                       : _vm._e()
                   ]),
@@ -1361,7 +1446,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                      attrs: { disabled: _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtnComputed))]
                   )

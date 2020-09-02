@@ -256,6 +256,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsModalOtraInfo */ "./resources/js/mixins/websocketsModalOtraInfo.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -406,6 +408,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -418,51 +430,65 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         tipo: ""
       },
       errors: "",
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        unique: "Ya existe un registro con ese nombre."
+      }
     };
+  },
+  validations: {
+    modal: {
+      nombre: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+        unique: function unique(value) {
+          if (value == "") return true;
+          if (this.validarNombreUnico) return false;
+          return true;
+        }
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("ActinomicetosInfo")],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"]), {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.errors = "";
       this.modal.nombre = "";
+      this.id = "";
       this.modal.tipo = data.params.tipo;
     },
     agregarTipo: function agregarTipo() {
       var _this = this;
 
       this.bloquearBtnModal = true;
-      axios.post("/info-caract-actinomicetos/agregar", this.modal).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.bloquearBtnModal = false;
+      this.$v.modal.$touch();
 
-          _this.accionAgregarTipoCaractActinomiceto({
-            info: res.data,
-            tipo: _this.modal.tipo
-          });
+      if (!this.$v.$invalid) {
+        axios.post("/info-caract-actinomicetos/agregar", this.modal).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          } else {
+            _this.bloquearBtnModal = false;
 
-          _this.$events.fire("actualizartabla" + _this.modal.tipo);
+            _this.accionAgregarTipoCaractActinomiceto({
+              info: res.data,
+              tipo: _this.modal.tipo
+            });
 
-          _this.$modal.hide("modal_agregar_tipo_actinomiceto");
+            _this.$events.fire("actualizartabla" + _this.modal.tipo);
 
-          _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
-        }
-      })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this.$router.push("/sin-acceso");
-        } else {
-          _this.bloquearBtnModal = false;
+            _this.$modal.hide("modal_agregar_tipo_actinomiceto");
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
           }
-
-          _this.toastr("Error!!!!", "", "error");
-        }
-      });
+        })["catch"](function (error) {
+          _this.verificarErrorAxios(error.response.status, error.response.data.errors);
+        });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
       this.errors = "";
@@ -474,34 +500,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       this.bloquearBtnModal = true;
-      axios.put("/info-caract-actinomicetos/editar/".concat(this.id), this.modal).then(function (res) {
-        _this2.bloquearBtnModal = false;
+      this.$v.modal.$touch();
 
-        _this2.accionEditarTipoCaractActinomiceto({
-          info: res.data,
-          tipo: _this2.modal.tipo
-        });
-
-        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
-
-        _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success");
-
-        _this2.$modal.hide("modal_editar_tipo_actinomiceto");
-      })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this2.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
-          window.location.href = "/";
-        } else {
+      if (!this.$v.$invalid) {
+        axios.put("/info-caract-actinomicetos/editar/".concat(this.id), this.modal).then(function (res) {
           _this2.bloquearBtnModal = false;
 
-          if (error.response.status === 422) {
-            _this2.errors = error.response.data.errors;
-          }
+          _this2.accionEditarTipoCaractActinomiceto({
+            info: res.data,
+            tipo: _this2.modal.tipo
+          });
 
-          _this2.toastr("Error!!!", "", "error");
-        }
-      });
+          _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
+
+          _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success");
+
+          _this2.$modal.hide("modal_editar_tipo_actinomiceto");
+        })["catch"](function (error) {
+          _this2.verificarErrorAxios(error.response.status, error.response.data.errors);
+        });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.errors = "";
@@ -534,44 +555,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.$modal.hide("modal_eliminar_tipo_actinomiceto");
       })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this3.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
-          window.location.href = "/";
-        } else {
-          _this3.bloquearBtnModal = false;
-
-          _this3.toastr("Error!!!", "", "error");
-        }
+        _this3.verificarErrorAxios(error.response.status, error.response.data.errors);
       });
     },
     primeraMayus: function primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+    verificarErrorAxios: function verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.errors = [];
+          this.errors = errors;
+        }
+
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     }
   }),
-  computed: {
-    validarNombre: function validarNombre() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"]), {
+    validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
-        if (!letters.test(this.modal.nombre)) {
-          this.errors = "Solo se admiten letras.";
-          return true;
-        } else {
-          this.errors = "";
-          return false;
+        if (this.modal.tipo == "borde" || this.modal.tipo == "color" || this.modal.tipo == "textura" || this.modal.tipo == "pigmento" || this.modal.tipo == "forma_macro" || this.modal.tipo == "superficie") {
+          if (this.getInfoCaractMacroActinomicetosByNombre({
+            nombre: this.modal.nombre,
+            tipo: this.modal.tipo
+          })) {
+            if (this.getInfoCaractMacroActinomicetosByNombre({
+              nombre: this.modal.nombre,
+              tipo: this.modal.tipo
+            }).id == this.id) return false;
+            return true;
+          }
+        } else if (this.modal.tipo == "forma_micro" || this.modal.tipo == "conidioforo" || this.modal.tipo == "tincion" || this.modal.tipo == "micelio") {
+          if (this.getInfoCaractMicroActinomicetosByNombre({
+            nombre: this.modal.nombre,
+            tipo: this.modal.tipo
+          })) {
+            if (this.getInfoCaractMicroActinomicetosByNombre({
+              nombre: this.modal.nombre,
+              tipo: this.modal.tipo
+            }).id == this.id) return false;
+            return true;
+          }
         }
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (this.validarNombre || !this.modal.nombre) {
-        return true;
-      }
 
-      return false;
+        return false;
+      }
     }
-  }
+  })
 });
 
 /***/ }),
@@ -1891,15 +1927,17 @@ var render = function() {
                   directives: [
                     {
                       name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.nombre,
-                      expression: "modal.nombre"
+                      rawName: "v-model.trim",
+                      value: _vm.$v.modal.nombre.$model,
+                      expression: "$v.modal.nombre.$model",
+                      modifiers: { trim: true }
                     }
                   ],
-                  staticClass: "form-control",
                   class: [
                     "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
+                    _vm.$v.modal.nombre.$error || _vm.errors
+                      ? "error-input-select"
+                      : ""
                   ],
                   attrs: {
                     name: "nombre",
@@ -1907,24 +1945,39 @@ var render = function() {
                     placeholder: "...",
                     type: "text"
                   },
-                  domProps: { value: _vm.modal.nombre },
+                  domProps: { value: _vm.$v.modal.nombre.$model },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.modal, "nombre", $event.target.value)
+                      _vm.$set(
+                        _vm.$v.modal.nombre,
+                        "$model",
+                        $event.target.value.trim()
+                      )
+                    },
+                    blur: function($event) {
+                      return _vm.$forceUpdate()
                     }
                   }
                 }),
                 _vm._v(" "),
-                _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
-                        )
-                      )
+                _vm.errors
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.errors.nombre[0]))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.required
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.required))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.unique
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.unique))
                     ])
                   : _vm._e()
               ])
@@ -1949,10 +2002,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarTipo }
                 },
                 [_vm._v("Agregar")]
@@ -2012,14 +2062,17 @@ var render = function() {
                   directives: [
                     {
                       name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.nombre,
-                      expression: "modal.nombre"
+                      rawName: "v-model.trim",
+                      value: _vm.$v.modal.nombre.$model,
+                      expression: "$v.modal.nombre.$model",
+                      modifiers: { trim: true }
                     }
                   ],
                   class: [
                     "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
+                    _vm.$v.modal.nombre.$error || _vm.errors
+                      ? "error-input-select"
+                      : ""
                   ],
                   attrs: {
                     name: "nombre",
@@ -2027,24 +2080,39 @@ var render = function() {
                     placeholder: "...",
                     type: "text"
                   },
-                  domProps: { value: _vm.modal.nombre },
+                  domProps: { value: _vm.$v.modal.nombre.$model },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.modal, "nombre", $event.target.value)
+                      _vm.$set(
+                        _vm.$v.modal.nombre,
+                        "$model",
+                        $event.target.value.trim()
+                      )
+                    },
+                    blur: function($event) {
+                      return _vm.$forceUpdate()
                     }
                   }
                 }),
                 _vm._v(" "),
-                _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
-                        )
-                      )
+                _vm.errors
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.errors.nombre[0]))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.required
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.required))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.unique
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.unique))
                     ])
                   : _vm._e()
               ])
@@ -2069,10 +2137,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.editarTipo }
                 },
                 [_vm._v("Editar")]

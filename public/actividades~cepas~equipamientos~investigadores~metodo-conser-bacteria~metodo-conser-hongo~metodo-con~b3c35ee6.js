@@ -346,6 +346,8 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           if (error.response.status === 403) {
             _this4.$router.push("/sin-acceso");
+          } else if (error.response.status === 405 || error.response.status === 401) {
+            window.location.href = "/";
           }
         });
       } else {
@@ -372,6 +374,8 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           if (error.response.status === 403) {
             _this4.$router.push("/sin-acceso");
+          } else if (error.response.status === 405 || error.response.status === 401) {
+            window.location.href = "/";
           }
         });
       }

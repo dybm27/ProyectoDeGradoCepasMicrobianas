@@ -517,9 +517,16 @@ export default {
               }
             })
             .catch((error) => {
-              this.bloquearBtnModal = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
+                window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors;
+                }
               }
             });
           break;
@@ -537,7 +544,10 @@ export default {
               this.$modal.hide("agregar-editar_eliminar-evento");
             })
             .catch((error) => {
-              if (error.response.status === 405) {
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
@@ -561,7 +571,10 @@ export default {
               this.$modal.hide("agregar-editar_eliminar-evento");
             })
             .catch((error) => {
-              if (error.response.status === 405) {
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;

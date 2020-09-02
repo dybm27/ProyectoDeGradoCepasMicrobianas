@@ -31,7 +31,7 @@ class GenerosSeeder extends Seeder
         ]);
         // Generos levaduras
         DB::table('generos')->insert([
-            'nombre' => 'Genero cinco  Levadura',
+            'nombre' => 'Genero cinco Levadura',
             'grupo_microbiano_id' => 3
         ]);
         DB::table('generos')->insert([

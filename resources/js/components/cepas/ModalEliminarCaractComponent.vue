@@ -1,11 +1,6 @@
 <template>
   <div>
-    <modal
-      name="modal_eliminar_caract"
-      classes="my_modal"
-      :width="400"
-      :height="300"
-    >
+    <modal name="modal_eliminar_caract" classes="my_modal" :width="400" :height="300">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{tipoCaract}}</h5>
@@ -62,7 +57,10 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 401
+          ) {
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;

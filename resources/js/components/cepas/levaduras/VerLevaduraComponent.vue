@@ -657,6 +657,7 @@ import Toastr from "../../../mixins/toastr";
 moment.locale("es");
 import Carousel from "../../carousel/CarouselComponent.vue";
 import IconoMostrar from "../IconoMostrarInfoVer.vue";
+import errorPeticionAxiosVerCepaMixin from "../../../mixins/errorPeticionAxiosVerCepa";
 export default {
   components: { Carousel, IconoMostrar },
   data() {
@@ -682,7 +683,7 @@ export default {
       btnSeleccionado: false,
     };
   },
-  mixins: [Toastr],
+  mixins: [Toastr, errorPeticionAxiosVerCepaMixin],
   computed: {
     ...vuex.mapState("cepa", ["cepa"]),
     ...vuex.mapGetters("cepa", [
@@ -745,6 +746,7 @@ export default {
           break;
       }
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr(
@@ -759,6 +761,7 @@ export default {
             responseType: "blob",
           })
           .then((res) => {
+            this.$events.fire("bloquearBtnVolver");
             if (res.request.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(
                 "mensajeLogin",
@@ -788,13 +791,7 @@ export default {
             }
           })
           .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.btnTodo = false;
-              this.btnSeleccionado = false;
-              this.toastr("Error!!", "", "error");
-            }
+            this.verificarErrorVerCepa(error.response.status);
           });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";

@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4":"vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4","cepas":"cepas","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","novedades":"novedades","actividades":"actividades","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","tablas-cepas":"tablas-cepas","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794","imagenes-login":"imagenes-login","cepas":"cepas","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","actividades":"actividades","perfil":"perfil","novedades":"novedades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -6515,7 +6515,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -6695,7 +6695,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -6874,7 +6874,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -7053,7 +7053,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -7233,7 +7233,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -7421,7 +7421,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -7614,7 +7614,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -65786,1229 +65786,6 @@ var staticRenderFns = [
               ),
               _c("b", [_vm._v("1.0")])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "footer-dots" }, [
-            _c("div", { staticClass: "dropdown" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown-menu-xl rm-pointers dropdown-menu",
-                  staticStyle: { display: "none" },
-                  attrs: {
-                    tabindex: "-1",
-                    role: "menu",
-                    "aria-hidden": "false"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "tab-content" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane active",
-                        attrs: { id: "tab-messages-header1", role: "tabpanel" }
-                      },
-                      [
-                        _c("div", { staticClass: "scroll-area-sm" }, [
-                          _c("div", { staticClass: "scrollbar-container" }, [
-                            _c("div", { staticClass: "p-3" }, [
-                              _c("div", { staticClass: "notifications-box" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--one-column"
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-danger vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [_vm._v("All Hands Meeting")]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-warning vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c("p", [
-                                                _vm._v(
-                                                  "\n                                  Yet another one, at\n                                  "
-                                                ),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass: "text-success"
-                                                  },
-                                                  [_vm._v("15:00 PM")]
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-success vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                  Build the production release\n                                  "
-                                                  ),
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "badge badge-danger ml-2"
-                                                    },
-                                                    [_vm._v("NEW")]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-primary vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                  Something not important\n                                  "
-                                                  ),
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "avatar-wrapper mt-2 avatar-wrapper-overlap"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src: "",
-                                                                  alt: ""
-                                                                }
-                                                              })
-                                                            ]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "avatar-icon-wrapper avatar-icon-sm avatar-icon-add"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "avatar-icon"
-                                                            },
-                                                            [
-                                                              _c("i", [
-                                                                _vm._v("+")
-                                                              ])
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-info vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "This dot has an info state"
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-danger vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [_vm._v("All Hands Meeting")]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-warning vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c("p", [
-                                                _vm._v(
-                                                  "\n                                  Yet another one, at\n                                  "
-                                                ),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass: "text-success"
-                                                  },
-                                                  [_vm._v("15:00 PM")]
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-success vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                  Build the production release\n                                  "
-                                                  ),
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "badge badge-danger ml-2"
-                                                    },
-                                                    [_vm._v("NEW")]
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "vertical-timeline-item dot-dark vertical-timeline-element"
-                                      },
-                                      [
-                                        _c("div", [
-                                          _c("span", {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "vertical-timeline-element-content bounce-in"
-                                            },
-                                            [
-                                              _c(
-                                                "h4",
-                                                {
-                                                  staticClass: "timeline-title"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "This dot has a dark state"
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("span", {
-                                                staticClass:
-                                                  "vertical-timeline-element-date"
-                                              })
-                                            ]
-                                          )
-                                        ])
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane",
-                        attrs: { id: "tab-events-header1", role: "tabpanel" }
-                      },
-                      [
-                        _c("div", { staticClass: "scroll-area-sm" }, [
-                          _c("div", { staticClass: "scrollbar-container" }, [
-                            _c("div", { staticClass: "p-3" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-success"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              { staticClass: "timeline-title" },
-                                              [_vm._v("All Hands Meeting")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Lorem ipsum dolor sic amet, today at\n                                "
-                                              ),
-                                              _c(
-                                                "a",
-                                                {
-                                                  attrs: {
-                                                    href: "javascript:void(0);"
-                                                  }
-                                                },
-                                                [_vm._v("12:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-warning"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Another meeting today, at\n                                "
-                                              ),
-                                              _c(
-                                                "b",
-                                                { staticClass: "text-danger" },
-                                                [_vm._v("12:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Yet another one, at\n                                "
-                                              ),
-                                              _c(
-                                                "span",
-                                                { staticClass: "text-success" },
-                                                [_vm._v("15:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-danger"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              { staticClass: "timeline-title" },
-                                              [
-                                                _vm._v(
-                                                  "Build the production release"
-                                                )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud"
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-primary"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              {
-                                                staticClass:
-                                                  "timeline-title text-success"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  "Something not important"
-                                                )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud"
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-success"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              { staticClass: "timeline-title" },
-                                              [_vm._v("All Hands Meeting")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Lorem ipsum dolor sic amet, today at\n                                "
-                                              ),
-                                              _c(
-                                                "a",
-                                                {
-                                                  attrs: {
-                                                    href: "javascript:void(0);"
-                                                  }
-                                                },
-                                                [_vm._v("12:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-warning"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Another meeting today, at\n                                "
-                                              ),
-                                              _c(
-                                                "b",
-                                                { staticClass: "text-danger" },
-                                                [_vm._v("12:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "\n                                Yet another one, at\n                                "
-                                              ),
-                                              _c(
-                                                "span",
-                                                { staticClass: "text-success" },
-                                                [_vm._v("15:00 PM")]
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-danger"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              { staticClass: "timeline-title" },
-                                              [
-                                                _vm._v(
-                                                  "Build the production release"
-                                                )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut labore et dolore magna elit enim at minim veniam quis nostrud"
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "vertical-timeline-item vertical-timeline-element"
-                                    },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-icon bounce-in"
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "badge badge-dot badge-dot-xl badge-primary"
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "vertical-timeline-element-content bounce-in"
-                                          },
-                                          [
-                                            _c(
-                                              "h4",
-                                              {
-                                                staticClass:
-                                                  "timeline-title text-success"
-                                              },
-                                              [
-                                                _vm._v(
-                                                  "Something not important"
-                                                )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("p", [
-                                              _vm._v(
-                                                "Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud"
-                                              )
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", {
-                                              staticClass:
-                                                "vertical-timeline-element-date"
-                                            })
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane",
-                        attrs: { id: "tab-errors-header1", role: "tabpanel" }
-                      },
-                      [
-                        _c("div", { staticClass: "scroll-area-sm" }, [
-                          _c("div", { staticClass: "scrollbar-container" }, [
-                            _c("div", { staticClass: "no-results pt-3 pb-0" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "swal2-icon swal2-success swal2-animate-success-icon"
-                                },
-                                [
-                                  _c("div", {
-                                    staticClass:
-                                      "swal2-success-circular-line-left",
-                                    staticStyle: {
-                                      "background-color": "rgb(255, 255, 255)"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("span", {
-                                    staticClass: "swal2-success-line-tip"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("span", {
-                                    staticClass: "swal2-success-line-long"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "swal2-success-ring"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass: "swal2-success-fix",
-                                    staticStyle: {
-                                      "background-color": "rgb(255, 255, 255)"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("div", {
-                                    staticClass:
-                                      "swal2-success-circular-line-right",
-                                    staticStyle: {
-                                      "background-color": "rgb(255, 255, 255)"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "results-subtitle" }, [
-                                _vm._v("All caught up!")
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "results-title" }, [
-                                _vm._v("There are no system errors!")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ])
           ])
         ]),
         _vm._v(" "),
@@ -86412,6 +85189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuelidate */ "./node_modules/vuelidate/lib/index.js");
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _mixins_errorPeticionAxios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./mixins/errorPeticionAxios */ "./resources/js/mixins/errorPeticionAxios.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -86511,6 +85289,8 @@ Vue.component("checkboxs_novedades", __webpack_require__(/*! ./components/sitio-
 Vue.component("acciones_actividades", __webpack_require__(/*! ./components/sitio-web/publicidad/actividades/AccionesComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_actividades", __webpack_require__(/*! ./components/sitio-web/publicidad/actividades/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/CheckboxsPublicarComponent.vue")["default"]);
 Vue.component("checkboxs_investigadores", __webpack_require__(/*! ./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/investigadores/CheckboxsPublicarComponent.vue")["default"]);
+
+Vue.mixin(_mixins_errorPeticionAxios__WEBPACK_IMPORTED_MODULE_9__["default"]);
 var app = new Vue({
   el: "#app",
   store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -91822,6 +90602,39 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/mixins/errorPeticionAxios.js":
+/*!***************************************************!*\
+  !*** ./resources/js/mixins/errorPeticionAxios.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var errorPeticionAxiosMixin = {
+  methods: {
+    verificarError: function verificarError(codigo, errors) {
+      if (codigo === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (codigo === 405 || codigo === 401) {
+        window.location.href = "/";
+      } else {
+        this.bloquearBtn = false;
+
+        if (codigo === 422) {
+          this.errors = [];
+          this.errors = errors;
+        }
+
+        this.toastr("Error!!", "", "error");
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (errorPeticionAxiosMixin);
+
+/***/ }),
+
 /***/ "./resources/js/mixins/toastr.js":
 /*!***************************************!*\
   !*** ./resources/js/mixins/toastr.js ***!
@@ -92380,7 +91193,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas",
@@ -92407,7 +91220,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92417,7 +91230,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92427,7 +91240,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92437,7 +91250,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -92447,7 +91260,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92457,7 +91270,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92485,7 +91298,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92495,7 +91308,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92505,7 +91318,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92515,7 +91328,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92525,7 +91338,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92553,7 +91366,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92563,7 +91376,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92573,7 +91386,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92583,7 +91396,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92593,7 +91406,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92621,7 +91434,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92631,7 +91444,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92641,7 +91454,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -92651,7 +91464,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -92697,7 +91510,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Bacterias",
@@ -92713,7 +91526,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92723,7 +91536,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92733,7 +91546,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92743,7 +91556,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -92753,7 +91566,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92763,7 +91576,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92799,7 +91612,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Hongos",
@@ -92815,7 +91628,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92825,7 +91638,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92835,7 +91648,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92845,7 +91658,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92855,7 +91668,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92891,7 +91704,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Levaduras",
@@ -92907,7 +91720,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92917,7 +91730,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92927,7 +91740,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92937,7 +91750,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -92947,7 +91760,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92983,7 +91796,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Actinomicetos",
@@ -92999,7 +91812,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -93009,7 +91822,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -93019,7 +91832,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -93029,7 +91842,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~cara~52d30ce4"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -93080,7 +91893,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Usuarios",
@@ -93128,7 +91941,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias",
@@ -93138,7 +91951,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos",
@@ -93148,7 +91961,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras",
@@ -93158,7 +91971,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos",
@@ -93214,7 +92027,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
       title: "Proyectos",
@@ -93224,7 +92037,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
       title: "Publicaciones",
@@ -93252,7 +92065,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
       title: "Actividades",
@@ -93291,7 +92104,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/imagenes-login/ver",
   name: "imagenes-login",
   component: function component() {
-    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
+    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
     title: "Imagenes Login",
@@ -93301,7 +92114,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
     title: "Investigadores",
@@ -93311,7 +92124,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~75c22794"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
     title: "Equipamientos",
@@ -93752,6 +92565,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -93876,6 +92691,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -93963,6 +92780,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -93996,6 +92815,11 @@ __webpack_require__.r(__webpack_exports__);
           return imagen.id == id;
         });
       };
+    },
+    getImagenLoginByMostrar: function getImagenLoginByMostrar(state) {
+      return state.imagenesLogin.filter(function (imagen) {
+        return imagen.mostrar == 1;
+      });
     }
   },
   mutations: {
@@ -94039,6 +92863,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -94107,6 +92933,41 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroBacteriasByNombre: function getInfoCaractMacroBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_macro":
+            return getters.getInfoCaractMacroBacterias.formas_macros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "borde":
+            return getters.getInfoCaractMacroBacterias.bordes.find(function (borde) {
+              return borde.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "detalle":
+            return getters.getInfoCaractMacroBacterias.detalle_opticos.find(function (detalle) {
+              return detalle.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "elevacion":
+            return getters.getInfoCaractMacroBacterias.elevacions.find(function (elevacion) {
+              return elevacion.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "superficie":
+            return getters.getInfoCaractMacroBacterias.superficies.find(function (superficie) {
+              return superficie.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroBacterias.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMicroBacterias: function getInfoCaractMicroBacterias(state) {
       return state.info_caract_bacterias.caract_micro;
     },
@@ -94116,6 +92977,16 @@ __webpack_require__.r(__webpack_exports__);
           case "forma":
             return getters.getInfoCaractMicroBacterias.formas_micros.find(function (forma) {
               return forma.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMicroBacteriasByNombre: function getInfoCaractMicroBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_micro":
+            return getters.getInfoCaractMicroBacterias.formas_micros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -94138,6 +93009,21 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoMetodoConserBacteriasByNombre: function getInfoMetodoConserBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserBacterias.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "tipo_agar":
+            return getters.getInfoMetodoConserBacterias.tipo_agar.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMacroLevaduras: function getInfoCaractMacroLevaduras(state) {
       return state.info_caract_levaduras.caract_macro;
     },
@@ -94156,6 +93042,21 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroLevadurasByNombre: function getInfoCaractMacroLevadurasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroLevaduras.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroLevaduras.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoMetodoConserLevaduras: function getInfoMetodoConserLevaduras(state) {
       return state.info_caract_levaduras.metodo_conser;
     },
@@ -94165,6 +93066,16 @@ __webpack_require__.r(__webpack_exports__);
           case "tipo_metodo":
             return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(function (tipo) {
               return tipo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoMetodoConserLevadurasByNombre: function getInfoMetodoConserLevadurasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -94183,6 +93094,21 @@ __webpack_require__.r(__webpack_exports__);
           case "color":
             return getters.getInfoCaractMacroHongos.colores.find(function (color) {
               return color.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMacroHongosByNombre: function getInfoCaractMacroHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroHongos.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroHongos.colores.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -94210,6 +93136,26 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMicroHongosByNombre: function getInfoCaractMicroHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "conidioforo":
+            return getters.getInfoCaractMicroHongos.conidioforos.find(function (conidioforo) {
+              return conidioforo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "esporaA":
+            return getters.getInfoCaractMicroHongos.esporas_asexuales.find(function (asexual) {
+              return asexual.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "esporaS":
+            return getters.getInfoCaractMicroHongos.esporas_sexuales.find(function (sexual) {
+              return sexual.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoMetodoConserHongos: function getInfoMetodoConserHongos(state) {
       return state.info_caract_hongos.metodo_conser;
     },
@@ -94219,6 +93165,16 @@ __webpack_require__.r(__webpack_exports__);
           case "tipo_metodo":
             return getters.getInfoMetodoConserHongos.tipo_metodo.find(function (tipo) {
               return tipo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoMetodoConserHongosByNombre: function getInfoMetodoConserHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserHongos.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -94261,6 +93217,41 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroActinomicetosByNombre: function getInfoCaractMacroActinomicetosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroActinomicetos.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroActinomicetos.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "forma_macro":
+            return getters.getInfoCaractMacroActinomicetos.formas_macros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "superficie":
+            return getters.getInfoCaractMacroActinomicetos.superficies.find(function (superficie) {
+              return superficie.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "borde":
+            return getters.getInfoCaractMacroActinomicetos.bordes.find(function (borde) {
+              return borde.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "pigmento":
+            return getters.getInfoCaractMacroActinomicetos.pigmentos.find(function (pigmento) {
+              return pigmento.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMicroActinomicetos: function getInfoCaractMicroActinomicetos(state) {
       return state.info_caract_actinomicetos.caract_micro;
     },
@@ -94285,6 +93276,31 @@ __webpack_require__.r(__webpack_exports__);
           case "conidioforo":
             return getters.getInfoCaractMicroActinomicetos.conidioforos.find(function (conidioforo) {
               return conidioforo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMicroActinomicetosByNombre: function getInfoCaractMicroActinomicetosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_micro":
+            return getters.getInfoCaractMicroActinomicetos.formas_micros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "tincion":
+            return getters.getInfoCaractMicroActinomicetos.tincions.find(function (tincion) {
+              return tincion.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "micelio":
+            return getters.getInfoCaractMicroActinomicetos.micelios.find(function (micelio) {
+              return micelio.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "conidioforo":
+            return getters.getInfoCaractMicroActinomicetos.conidioforos.find(function (conidioforo) {
+              return conidioforo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -94859,6 +93875,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -94888,6 +93906,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this2.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -94917,6 +93937,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this3.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -94946,6 +93968,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this4.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -95304,6 +94328,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -95395,6 +94421,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -95557,6 +94585,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },
@@ -95626,6 +94656,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          window.location.href = "/";
         }
       });
     },

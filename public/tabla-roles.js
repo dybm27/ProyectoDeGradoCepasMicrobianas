@@ -184,10 +184,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -257,7 +253,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this2.$emit("cambiarVariableFormulario");
       })["catch"](function (error) {
-        if (error.response.status === 405) {
+        if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         }
       });
@@ -415,8 +411,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -427,50 +421,61 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modal: {
         nombre: ""
       },
-      errors: "",
-      bloquearBtnModal: false
+      errors: false,
+      bloquearBtnModal: false,
+      mensajeValidarNombre: ""
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionRol"]), {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
-      this.errors = "";
+      this.errors = false;
       this.modal.nombre = "";
     },
     agregarRol: function agregarRol() {
       var _this = this;
 
-      this.bloquearBtnModal = true;
-      axios.post("/rol/agregar", this.modal).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.bloquearBtnModal = false;
+      if (this.modal.nombre === "") {
+        this.errors = true;
+      } else {
+        this.bloquearBtnModal = true;
 
-          _this.accionRol({
-            tipo: "agregar",
-            data: res.data
+        if (!this.validarNombre) {
+          axios.post("/rol/agregar", this.modal).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtnModal = false;
+
+              _this.accionRol({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.$events.fire("actualizartablaRol");
+
+              _this.$modal.hide("modal_agregar_rol");
+
+              _this.toastr("Agregar Rol", "Rol agregado con exito", "success");
+            }
+          })["catch"](function (error) {
+            if (error.response.status === 405 || error.response.status === 401) {
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtnModal = false;
+
+              _this.toastr("Error!!!!", "", "error");
+            }
           });
-
-          _this.$events.fire("actualizartablaRol");
-
-          _this.$modal.hide("modal_agregar_rol");
-
-          _this.toastr("Agregar Rol", "Rol agregado con exito", "success");
+        } else {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "favor arregla el error", "error");
         }
-      })["catch"](function (error) {
-        _this.bloquearBtnModal = false;
-
-        if (error.response.status === 422) {
-          _this.errors = error.response.data.errors;
-        }
-
-        _this.toastr("Error!!!!", "", "error");
-      });
+      }
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
-      this.errors = "";
+      this.errors = false;
       this.id = data.params.id;
       this.modal.nombre = data.params.nombre;
     },
@@ -485,36 +490,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     editarRol: function editarRol() {
       var _this2 = this;
 
-      this.bloquearBtnModal = true;
-      axios.put("/rol/editar/".concat(this.id), this.modal).then(function (res) {
-        _this2.bloquearBtnModal = false;
+      if (this.modal.nombre === "") {
+        this.errors = true;
+      } else {
+        this.bloquearBtnModal = true;
 
-        _this2.accionRol({
-          tipo: "editar",
-          data: res.data
-        });
+        if (!this.validarNombre) {
+          axios.put("/rol/editar/".concat(this.id), this.modal).then(function (res) {
+            _this2.bloquearBtnModal = false;
 
-        _this2.$events.fire("actualizartablaRol");
+            _this2.accionRol({
+              tipo: "editar",
+              data: res.data
+            });
 
-        _this2.toastr("Editar Rol", "Rol editado con exito!!", "success", 5000);
+            _this2.$events.fire("actualizartablaRol");
 
-        _this2.$modal.hide("modal_editar_rol");
-      })["catch"](function (error) {
-        if (error.response.status === 405) {
-          window.location.href = "/";
+            _this2.toastr("Editar Rol", "Rol editado con exito!!", "success");
+
+            _this2.$modal.hide("modal_editar_rol");
+          })["catch"](function (error) {
+            if (error.response.status === 405 || error.response.status === 401) {
+              window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.toastr("Error!!!", "", "error");
+            }
+          });
         } else {
-          _this2.bloquearBtnModal = false;
-
-          if (error.response.status === 422) {
-            _this2.errors = error.response.data.errors;
-          }
-
-          _this2.toastr("Error!!!", "", "error", 4000);
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "favor arregla el error", "error");
         }
-      });
+      }
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
-      this.errors = "";
+      this.errors = false;
       this.id = data.params.id;
     },
     closeEliminar: function closeEliminar() {
@@ -533,7 +544,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this3.bloquearBtnModal = false;
 
         if (res.data === "negativo") {
-          _this3.toastr("Precaución!!", "El Rol se encuentra vinculado a Usuarios, favor eliminarlos", "warning", 8000);
+          _this3.toastr("Precaución!!", "El Rol se encuentra vinculado a Usuarios, favor eliminarlos", "warning");
         } else {
           _this3.accionRol({
             tipo: "eliminar",
@@ -542,17 +553,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this3.$events.fire("actualizartablaRol");
 
-          _this3.toastr("Eliminar Rol", "Rol eliminado con exito!!", "success", 5000);
+          _this3.toastr("Eliminar Rol", "Rol eliminado con exito!!", "success");
         }
 
         _this3.$modal.hide("modal_eliminar_rol");
       })["catch"](function (error) {
-        if (error.response.status === 405) {
+        if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this3.bloquearBtnModal = false;
 
-          _this3.toastr("Error!!!", "", "error", 4000);
+          _this3.toastr("Error!!!", "", "error");
         }
       });
     }
@@ -563,31 +574,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.modal.nombre) {
         if (!letters.test(this.modal.nombre)) {
-          this.errors = "Solo se admiten letras.";
+          this.mensajeValidarNombre = "Solo se admiten letras.";
           return true;
         } else {
           if (this.getRolByNombre(this.modal.nombre)) {
             if (this.getRolByNombre(this.modal.nombre).id != this.id) {
-              this.errors = "Ya Existe un rol con ese Nombre";
+              this.mensajeValidarNombre = "Ya Existe un rol con ese Nombre";
               return true;
             }
 
             return false;
           }
 
-          this.errors = "";
           return false;
         }
       }
     },
-    validarBtn: function validarBtn() {
-      if (this.validarNombre || !this.modal.nombre) {
-        return true;
-      }
-
-      return false;
+    inputModal: function inputModal() {
+      return this.modal.nombre;
     }
-  })
+  }),
+  watch: {
+    inputModal: function inputModal() {
+      if (!this.inputModal) {
+        this.errors = true;
+      } else {
+        this.errors = false;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -866,19 +881,20 @@ var render = function() {
       _c("h4", { staticClass: "card-title" }, [_vm._v("Modificar Permisos")]),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row justify-content-center m-3" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success btn-block",
-                attrs: { disabled: _vm.bloquearBtn },
-                on: { click: _vm.modificarPermisos }
-              },
-              [_vm._v("Aceptar Cambios")]
-            )
-          ])
-        ]),
+        !_vm.bloquearBtn
+          ? _c("div", { staticClass: "row justify-content-center m-3" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success btn-block",
+                    on: { click: _vm.modificarPermisos }
+                  },
+                  [_vm._v("Aceptar Cambios")]
+                )
+              ])
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("div", { staticClass: "row justify-content-center" }, [
           _c(
@@ -1065,7 +1081,7 @@ var render = function() {
                   staticClass: "form-control",
                   class: [
                     "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
+                    _vm.validarNombre || _vm.errors ? "error-input-select" : ""
                   ],
                   attrs: {
                     name: "nombre",
@@ -1085,10 +1101,12 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
+                  ? _c("em", { staticClass: "text-error-input" }, [
                       _vm._v(
                         _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
+                          _vm.errors
+                            ? "Campo requerido."
+                            : _vm.mensajeValidarNombre
                         )
                       )
                     ])
@@ -1115,10 +1133,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.agregarRol }
                 },
                 [_vm._v("Agregar")]
@@ -1185,7 +1200,7 @@ var render = function() {
                   ],
                   class: [
                     "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
+                    _vm.validarNombre || _vm.errors ? "error-input-select" : ""
                   ],
                   attrs: {
                     name: "nombre",
@@ -1204,13 +1219,15 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
-                        )
-                      )
+                _vm.validarNombre
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajeValidarNombre))
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.errors
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v("Campo requerido.")
                     ])
                   : _vm._e()
               ])
@@ -1235,10 +1252,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.editarRol }
                 },
                 [_vm._v("Editar")]

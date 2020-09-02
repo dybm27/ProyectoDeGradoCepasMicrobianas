@@ -522,10 +522,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this2.$modal.hide("agregar-editar_eliminar-evento");
             }
           })["catch"](function (error) {
-            _this2.bloquearBtnModal = false;
+            if (error.response.status === 405 || error.response.status === 401) {
+              window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
 
-            if (error.response.status === 422) {
-              _this2.errors = error.response.data.errors;
+              if (error.response.status === 422) {
+                _this2.errors = error.response.data.errors;
+              }
             }
           });
           break;
@@ -539,7 +543,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this2.$modal.hide("agregar-editar_eliminar-evento");
           })["catch"](function (error) {
-            if (error.response.status === 405) {
+            if (error.response.status === 405 || error.response.status === 401) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;
@@ -560,7 +564,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this2.$modal.hide("agregar-editar_eliminar-evento");
           })["catch"](function (error) {
-            if (error.response.status === 405) {
+            if (error.response.status === 405 || error.response.status === 401) {
               window.location.href = "/";
             } else {
               _this2.bloquearBtnModal = false;

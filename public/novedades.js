@@ -313,17 +313,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.$emit("cambiarVariableFormulario");
           }
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarError(error.response.status, error.response.data.errors);
         });
       } else {
         axios.put("/publicidad/".concat(this.idNovedad), this.parametros).then(function (res) {
@@ -349,19 +339,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           _this.$emit("cambiarVariableFormulario");
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarError(error.response.status, error.response.data.errors);
         });
       }
     },
@@ -617,7 +595,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;

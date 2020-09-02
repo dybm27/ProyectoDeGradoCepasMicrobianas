@@ -297,7 +297,7 @@ var obtenerImagenCroopieMixin = {
       if (valor) {
         this.parametros.imagen = valor;
       } else {
-        if (!this.required) {
+        if (!this.validarTipoForm) {
           this.parametros.imagen = this.info.imagen;
           this.imagenMiniatura = this.info.imagenPublica;
           this.$refs.inputImagen.value = "";

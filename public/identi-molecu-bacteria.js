@@ -420,18 +420,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.toastr("Agregar Identificación", "Identificación Molecular agregada con exito!!", "success");
             }
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         } else {
           axios.put("/cepas/bacteria/identi-molecu/".concat(this.info.id), this.parametros).then(function (res) {
@@ -444,20 +433,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
             _this.toastr("Editar Identificación", "Identificación Molecular editada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         }
       } else {

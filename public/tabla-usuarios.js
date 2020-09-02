@@ -220,6 +220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _CroppieComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../CroppieComponent */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -387,6 +389,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -417,8 +459,112 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       mensajeContraseña: "",
       mensajeContraseña1: "",
       mensajeNombre: "",
-      bloquearBtn: false
+      bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        email: "El campo debe ser un email valido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres.",
+        unique: "Ya existe un registro con ese email"
+      }
     };
+  },
+  validations: function validations() {
+    if (this.validarTipoForm) {
+      return {
+        parametros: {
+          nombre: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            alpha: function alpha(value) {
+              if (value == "") return true;
+
+              if (this.validarNombre) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          rol: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+          },
+          email: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            email: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["email"],
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarEmail) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          pass: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["minLength"])(8),
+            maxLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["maxLength"])(15)
+          },
+          pass1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            sameAs: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["sameAs"])("pass")
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          nombre: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            alpha: function alpha(value) {
+              if (value == "") return true;
+
+              if (this.validarNombre) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          rol: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+          },
+          email: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+            email: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["email"],
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarEmail) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          pass: {
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["minLength"])(8),
+            maxLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["maxLength"])(15)
+          },
+          pass1: {
+            sameAs: function sameAs(value) {
+              if (value == "" && !this.parametros.pass) return true;
+              if (this.parametros.pass != this.parametros.pass1) return false;
+              return true;
+            }
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+          }
+        }
+      };
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("usuarios", ["accionUsuario"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions(["accionModificarAuth"]), {
@@ -426,7 +572,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (valor) {
         this.parametros.imagen = valor;
       } else {
-        if (!this.required) {
+        if (!this.validarTipoForm) {
           this.parametros.imagen = this.info.avatar;
           this.imagenMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
@@ -439,82 +585,62 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
-      this.parametros.pass = this.parametros.pass === undefined ? "" : this.parametros.pass;
-      this.parametros.imagen = this.parametros.imagen === this.info.avatar ? "" : this.parametros.imagen;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Usuario") {
-        axios.post("/usuario/agregar", this.parametros).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
-            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-            window.location.href = "/";
-          } else {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Usuario") {
+          axios.post("/usuario/agregar", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.accionUsuario({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
+
+              _this.$emit("cambiarVariableFormulario");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
             _this.bloquearBtn = false;
+
+            if (_this.auth.id === res.data.id) {
+              _this.accionModificarAuth({
+                data: res.data
+              });
+            }
 
             _this.accionUsuario({
-              tipo: "agregar",
+              tipo: "editar",
               data: res.data
             });
 
-            _this.toastr("Agregar Usuario", "Usuario agregado con exito!!", "success");
+            _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
+
+            window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoUsuario", {
+              id: res.data.id
+            });
 
             _this.$emit("cambiarVariableFormulario");
-          }
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
       } else {
-        axios.put("/usuario/editar/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-
-          if (_this.auth.id === res.data.id) {
-            _this.accionModificarAuth({
-              data: res.data
-            });
-          }
-
-          _this.accionUsuario({
-            tipo: "editar",
-            data: res.data
-          });
-
-          _this.toastr("Editar Usuario", "Usuario editado con exito!!", "success");
-
-          window.Echo["private"]("desbloquearBtnsUsuario").whisper("desbloquearBtnsUsuario", {
-            id: res.data.id
-          });
-
-          _this.$events.fire("eliminarMiBloqueoUsuario", {
-            id: res.data.id
-          });
-
-          _this.$emit("cambiarVariableFormulario");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -526,8 +652,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.imagenMiniatura = this.info.avatarPublico;
     },
     obtenerImagen: function obtenerImagen(e) {
-      var file = e.target.files[0]; //this.parametros.imagen = file;
-
+      var file = e.target.files[0];
       var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
 
       if (file) {
@@ -569,7 +694,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Usuario") {
         return true;
       } else {
@@ -582,66 +707,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     nomBtnComputed: function nomBtnComputed() {
       return this.nomBtn;
     },
-    validarContraseñas: function validarContraseAs() {
-      if (this.parametros.pass) {
-        if (this.parametros.pass != this.parametros.pass1) {
-          this.mensajeContraseña1 = "Las contraseñas no coinciden";
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
     validarEmail: function validarEmail() {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-      if (this.parametros.email) {
-        if (!re.test(this.parametros.email)) {
-          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+      if (this.getUsuarioByEmail(this.parametros.email)) {
+        if (this.getUsuarioByEmail(this.parametros.email).id != this.info.id) {
+          this.mensajeErrorEmail = "El correo electrónico ya Existe";
           return true;
-        } else {
-          if (this.getUsuarioByEmail(this.parametros.email)) {
-            if (this.getUsuarioByEmail(this.parametros.email).id != this.info.id) {
-              this.mensajeErrorEmail = "El correo electrónico ya Existe";
-              return true;
-            }
-          }
         }
       }
-
-      return false;
     },
     validarNombre: function validarNombre() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
 
-      if (this.parametros.nombre) {
-        if (!letters.test(this.parametros.nombre)) {
-          this.mensajeNombre = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    validarContraseña: function validarContraseA() {
-      var regexp_password = /^(?=.*[A-Z])(?=.*\d)(?=.*[$@!%?&#()"'|_])([A-Za-z\d$@!%?&#()"'|_]){8,15}$/;
-
-      if (this.parametros.pass) {
-        if (!regexp_password.test(this.parametros.pass)) {
-          this.mensajeContraseña = " La contrase\xF1a debe tener:\n                      1: M\xEDnimo 8 y M\xE1ximo 15 caracteres \n                      2: Al menos una letra may\xFAscula \n                      3: Al menos un d\xEDgito\n                      4: Al menos 1 car\xE1cter especial";
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (this.validarEmail || this.validarNombre || this.validarContraseña || this.validarContraseñas || !this.parametros.imagen) {
+      if (!letters.test(this.parametros.nombre)) {
         return true;
+      } else {
+        return false;
       }
-
-      return false;
     },
     mostrarBtnCroppie: function mostrarBtnCroppie() {
       if (this.imagenMiniatura != this.info.avatarPublico) {
@@ -802,7 +884,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
           window.location.href = "/";
         } else {
           _this.bloquearBtnModal = false;
@@ -1030,7 +1112,7 @@ var render = function() {
                           { staticClass: "alert alert-danger" },
                           _vm._l(_vm.errors, function(item, index) {
                             return _c("p", { key: index }, [
-                              _vm._v(_vm._s(item[0]))
+                              _vm._v(_vm._s(item))
                             ])
                           }),
                           0
@@ -1047,40 +1129,53 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.nombre,
-                          expression: "parametros.nombre"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.nombre.$model,
+                          expression: "$v.parametros.nombre.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarNombre ? "is-invalid" : ""
+                        _vm.$v.parametros.nombre.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "nombre",
                         id: "nombre",
                         placeholder: "...",
-                        type: "text",
-                        required: ""
+                        type: "text"
                       },
-                      domProps: { value: _vm.parametros.nombre },
+                      domProps: { value: _vm.$v.parametros.nombre.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.parametros,
-                            "nombre",
-                            $event.target.value
+                            _vm.$v.parametros.nombre,
+                            "$model",
+                            $event.target.value.trim()
                           )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarNombre
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeNombre))
+                    _vm.$v.parametros.nombre.$error &&
+                    !_vm.$v.parametros.nombre.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.nombre.$error &&
+                    !_vm.$v.parametros.nombre.alpha
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.alpha))
                         ])
                       : _vm._e()
                   ]),
@@ -1101,13 +1196,18 @@ var render = function() {
                                 directives: [
                                   {
                                     name: "model",
-                                    rawName: "v-model.number",
-                                    value: _vm.parametros.rol,
-                                    expression: "parametros.rol",
-                                    modifiers: { number: true }
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.rol.$model,
+                                    expression: "$v.parametros.rol.$model",
+                                    modifiers: { trim: true }
                                   }
                                 ],
-                                staticClass: "form-control",
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.rol.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
                                 attrs: { name: "select", id: "rol" },
                                 on: {
                                   change: function($event) {
@@ -1118,11 +1218,11 @@ var render = function() {
                                       .map(function(o) {
                                         var val =
                                           "_value" in o ? o._value : o.value
-                                        return _vm._n(val)
+                                        return val
                                       })
                                     _vm.$set(
-                                      _vm.parametros,
-                                      "rol",
+                                      _vm.$v.parametros.rol,
+                                      "$model",
                                       $event.target.multiple
                                         ? $$selectedVal
                                         : $$selectedVal[0]
@@ -1138,7 +1238,14 @@ var render = function() {
                                 )
                               }),
                               0
-                            )
+                            ),
+                            _vm._v(" "),
+                            _vm.$v.parametros.rol.$error &&
+                            !_vm.$v.parametros.rol.required
+                              ? _c("em", { staticClass: "text-error-select" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
                           ]
                         )
                       ]
@@ -1153,21 +1260,29 @@ var render = function() {
                       ref: "inputImagen",
                       class: [
                         "form-control-file",
-                        _vm.imagenError != "" ? "is-invalid" : ""
+                        _vm.$v.parametros.imagen.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "imagen",
                         id: "imagen",
                         accept: "image/jpeg, image/png",
-                        type: "file",
-                        required: _vm.required
+                        type: "file"
                       },
                       on: { change: _vm.obtenerImagen }
                     }),
                     _vm._v(" "),
                     _vm.imagenError
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
+                      ? _c("em", { staticClass: "text-error-input" }, [
                           _vm._v(_vm._s(_vm.imagenError))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.imagen.$error &&
+                    !_vm.$v.parametros.imagen.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
                         ])
                       : _vm._e()
                   ]),
@@ -1179,36 +1294,60 @@ var render = function() {
                       directives: [
                         {
                           name: "model",
-                          rawName: "v-model",
-                          value: _vm.parametros.email,
-                          expression: "parametros.email"
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.email.$model,
+                          expression: "$v.parametros.email.$model",
+                          modifiers: { trim: true }
                         }
                       ],
                       class: [
                         "form-control",
-                        _vm.validarEmail ? "is-invalid" : ""
+                        _vm.$v.parametros.email.$error
+                          ? "error-input-select"
+                          : ""
                       ],
                       attrs: {
                         name: "email",
                         id: "email",
                         placeholder: "...",
-                        type: "email",
-                        required: _vm.required
+                        type: "email"
                       },
-                      domProps: { value: _vm.parametros.email },
+                      domProps: { value: _vm.$v.parametros.email.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.parametros, "email", $event.target.value)
+                          _vm.$set(
+                            _vm.$v.parametros.email,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _vm.validarEmail
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeErrorEmail))
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.email
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.email))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.email.$error &&
+                    !_vm.$v.parametros.email.unique
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.unique))
                         ])
                       : _vm._e()
                   ]),
@@ -1218,127 +1357,45 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group mb-3" }, [
-                    (_vm.showPass ? "text" : "password") === "checkbox"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass,
-                              expression: "parametros.pass"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseña ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass",
-                            id: "pass",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: "checkbox"
-                          },
-                          domProps: {
-                            checked: Array.isArray(_vm.parametros.pass)
-                              ? _vm._i(_vm.parametros.pass, null) > -1
-                              : _vm.parametros.pass
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = _vm.parametros.pass,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "pass",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "pass",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(_vm.parametros, "pass", $$c)
-                              }
-                            }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.pass.$model,
+                          expression: "$v.parametros.pass.$model",
+                          modifiers: { trim: true }
+                        }
+                      ],
+                      class: [
+                        "form-control",
+                        _vm.$v.parametros.pass.$error
+                          ? "error-input-select"
+                          : ""
+                      ],
+                      attrs: {
+                        name: "pass",
+                        id: "pass",
+                        placeholder: "...",
+                        type: _vm.showPass ? "text" : "password"
+                      },
+                      domProps: { value: _vm.$v.parametros.pass.$model },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        })
-                      : (_vm.showPass ? "text" : "password") === "radio"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass,
-                              expression: "parametros.pass"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseña ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass",
-                            id: "pass",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: "radio"
-                          },
-                          domProps: {
-                            checked: _vm._q(_vm.parametros.pass, null)
-                          },
-                          on: {
-                            change: function($event) {
-                              return _vm.$set(_vm.parametros, "pass", null)
-                            }
-                          }
-                        })
-                      : _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass,
-                              expression: "parametros.pass"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseña ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass",
-                            id: "pass",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: _vm.showPass ? "text" : "password"
-                          },
-                          domProps: { value: _vm.parametros.pass },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.parametros,
-                                "pass",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
+                          _vm.$set(
+                            _vm.$v.parametros.pass,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
+                        }
+                      }
+                    }),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -1363,9 +1420,25 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm.validarContraseña
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeContraseña))
+                    _vm.$v.parametros.pass.$error &&
+                    !_vm.$v.parametros.pass.required &&
+                    _vm.validarTipoForm
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.pass.$error &&
+                    !_vm.$v.parametros.pass.minLength
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.minLength))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.pass.$error &&
+                    !_vm.$v.parametros.pass.maxLength
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.maxLength))
                         ])
                       : _vm._e()
                   ]),
@@ -1375,128 +1448,45 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "input-group mb-3" }, [
-                    (_vm.showPass1 == true ? "text" : "password") === "checkbox"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass1,
-                              expression: "parametros.pass1"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseñas ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass1",
-                            id: "pass1",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: "checkbox"
-                          },
-                          domProps: {
-                            checked: Array.isArray(_vm.parametros.pass1)
-                              ? _vm._i(_vm.parametros.pass1, null) > -1
-                              : _vm.parametros.pass1
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = _vm.parametros.pass1,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "pass1",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      _vm.parametros,
-                                      "pass1",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(_vm.parametros, "pass1", $$c)
-                              }
-                            }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model.trim",
+                          value: _vm.$v.parametros.pass1.$model,
+                          expression: "$v.parametros.pass1.$model",
+                          modifiers: { trim: true }
+                        }
+                      ],
+                      class: [
+                        "form-control",
+                        _vm.$v.parametros.pass1.$error
+                          ? "error-input-select"
+                          : ""
+                      ],
+                      attrs: {
+                        name: "pass1",
+                        id: "pass1",
+                        placeholder: "...",
+                        type: _vm.showPass1 == true ? "text" : "password"
+                      },
+                      domProps: { value: _vm.$v.parametros.pass1.$model },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        })
-                      : (_vm.showPass1 == true ? "text" : "password") ===
-                        "radio"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass1,
-                              expression: "parametros.pass1"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseñas ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass1",
-                            id: "pass1",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: "radio"
-                          },
-                          domProps: {
-                            checked: _vm._q(_vm.parametros.pass1, null)
-                          },
-                          on: {
-                            change: function($event) {
-                              return _vm.$set(_vm.parametros, "pass1", null)
-                            }
-                          }
-                        })
-                      : _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.parametros.pass1,
-                              expression: "parametros.pass1"
-                            }
-                          ],
-                          class: [
-                            "form-control",
-                            _vm.validarContraseñas ? "is-invalid" : ""
-                          ],
-                          attrs: {
-                            name: "pass1",
-                            id: "pass1",
-                            placeholder: "...",
-                            required: _vm.required,
-                            type: _vm.showPass1 == true ? "text" : "password"
-                          },
-                          domProps: { value: _vm.parametros.pass1 },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.parametros,
-                                "pass1",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
+                          _vm.$set(
+                            _vm.$v.parametros.pass1,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
+                        }
+                      }
+                    }),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -1524,9 +1514,18 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm.validarContraseñas
-                      ? _c("em", { staticClass: "error invalid-feedback" }, [
-                          _vm._v(_vm._s(_vm.mensajeContraseña1))
+                    _vm.$v.parametros.pass1.$error &&
+                    !_vm.$v.parametros.pass1.required &&
+                    _vm.validarTipoForm
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.parametros.pass1.$error &&
+                    !_vm.$v.parametros.pass1.sameAs
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.sameAs))
                         ])
                       : _vm._e()
                   ]),
@@ -1536,7 +1535,7 @@ var render = function() {
                     {
                       staticClass: "mb-2 mr-2 btn btn-block",
                       class: _vm.btnClase,
-                      attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                      attrs: { disabled: _vm.bloquearBtn }
                     },
                     [_vm._v(_vm._s(_vm.nomBtnComputed))]
                   )

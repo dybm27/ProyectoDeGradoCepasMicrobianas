@@ -65,7 +65,10 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 401
+          ) {
             window.location.href = "/";
           } else {
             this.disabled = false;

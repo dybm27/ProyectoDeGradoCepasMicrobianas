@@ -330,16 +330,10 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
           axios
@@ -358,18 +352,10 @@ export default {
               );
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         }
       } else {

@@ -38,6 +38,46 @@ export default {
                     );
             }
         },
+        getInfoCaractMacroBacteriasByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma_macro":
+                    return getters.getInfoCaractMacroBacterias.formas_macros.find(
+                        forma =>
+                            forma.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "borde":
+                    return getters.getInfoCaractMacroBacterias.bordes.find(
+                        borde =>
+                            borde.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "detalle":
+                    return getters.getInfoCaractMacroBacterias.detalle_opticos.find(
+                        detalle =>
+                            detalle.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "elevacion":
+                    return getters.getInfoCaractMacroBacterias.elevacions.find(
+                        elevacion =>
+                            elevacion.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "superficie":
+                    return getters.getInfoCaractMacroBacterias.superficies.find(
+                        superficie =>
+                            superficie.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroBacterias.colors.find(
+                        color =>
+                            color.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+            }
+        },
         getInfoCaractMicroBacterias(state) {
             return state.info_caract_bacterias.caract_micro;
         },
@@ -46,6 +86,16 @@ export default {
                 case "forma":
                     return getters.getInfoCaractMicroBacterias.formas_micros.find(
                         forma => forma.id === data.id
+                    );
+            }
+        },
+        getInfoCaractMicroBacteriasByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma_micro":
+                    return getters.getInfoCaractMicroBacterias.formas_micros.find(
+                        forma =>
+                            forma.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
                     );
             }
         },
@@ -64,6 +114,22 @@ export default {
                     );
             }
         },
+        getInfoMetodoConserBacteriasByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserBacterias.tipo_metodo.find(
+                        tipo =>
+                            tipo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "tipo_agar":
+                    return getters.getInfoMetodoConserBacterias.tipo_agar.find(
+                        tipo =>
+                            tipo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+            }
+        },
         getInfoCaractMacroLevaduras(state) {
             return state.info_caract_levaduras.caract_macro;
         },
@@ -79,6 +145,22 @@ export default {
                     );
             }
         },
+        getInfoCaractMacroLevadurasByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroLevaduras.texturas.find(
+                        textura =>
+                            textura.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroLevaduras.colors.find(
+                        color =>
+                            color.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+            }
+        },
         getInfoMetodoConserLevaduras(state) {
             return state.info_caract_levaduras.metodo_conser;
         },
@@ -87,6 +169,16 @@ export default {
                 case "tipo_metodo":
                     return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(
                         tipo => tipo.id === data.id
+                    );
+            }
+        },
+        getInfoMetodoConserLevadurasByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(
+                        tipo =>
+                            tipo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
                     );
             }
         },
@@ -102,6 +194,22 @@ export default {
                 case "color":
                     return getters.getInfoCaractMacroHongos.colores.find(
                         color => color.id === data.id
+                    );
+            }
+        },
+        getInfoCaractMacroHongosByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroHongos.texturas.find(
+                        textura =>
+                            textura.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroHongos.colores.find(
+                        color =>
+                            color.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
                     );
             }
         },
@@ -124,6 +232,28 @@ export default {
                     );
             }
         },
+        getInfoCaractMicroHongosByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "conidioforo":
+                    return getters.getInfoCaractMicroHongos.conidioforos.find(
+                        conidioforo =>
+                            conidioforo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "esporaA":
+                    return getters.getInfoCaractMicroHongos.esporas_asexuales.find(
+                        asexual =>
+                            asexual.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "esporaS":
+                    return getters.getInfoCaractMicroHongos.esporas_sexuales.find(
+                        sexual =>
+                            sexual.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+            }
+        },
         getInfoMetodoConserHongos(state) {
             return state.info_caract_hongos.metodo_conser;
         },
@@ -132,6 +262,16 @@ export default {
                 case "tipo_metodo":
                     return getters.getInfoMetodoConserHongos.tipo_metodo.find(
                         tipo => tipo.id === data.id
+                    );
+            }
+        },
+        getInfoMetodoConserHongosByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "tipo_metodo":
+                    return getters.getInfoMetodoConserHongos.tipo_metodo.find(
+                        tipo =>
+                            tipo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
                     );
             }
         },
@@ -166,6 +306,46 @@ export default {
                     );
             }
         },
+        getInfoCaractMacroActinomicetosByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "textura":
+                    return getters.getInfoCaractMacroActinomicetos.texturas.find(
+                        textura =>
+                            textura.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "color":
+                    return getters.getInfoCaractMacroActinomicetos.colors.find(
+                        color =>
+                            color.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "forma_macro":
+                    return getters.getInfoCaractMacroActinomicetos.formas_macros.find(
+                        forma =>
+                            forma.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "superficie":
+                    return getters.getInfoCaractMacroActinomicetos.superficies.find(
+                        superficie =>
+                            superficie.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "borde":
+                    return getters.getInfoCaractMacroActinomicetos.bordes.find(
+                        borde =>
+                            borde.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "pigmento":
+                    return getters.getInfoCaractMacroActinomicetos.pigmentos.find(
+                        pigmento =>
+                            pigmento.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+            }
+        },
         getInfoCaractMicroActinomicetos(state) {
             return state.info_caract_actinomicetos.caract_micro;
         },
@@ -186,6 +366,34 @@ export default {
                 case "conidioforo":
                     return getters.getInfoCaractMicroActinomicetos.conidioforos.find(
                         conidioforo => conidioforo.id === data.id
+                    );
+            }
+        },
+        getInfoCaractMicroActinomicetosByNombre: (state, getters) => data => {
+            switch (data.tipo) {
+                case "forma_micro":
+                    return getters.getInfoCaractMicroActinomicetos.formas_micros.find(
+                        forma =>
+                            forma.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "tincion":
+                    return getters.getInfoCaractMicroActinomicetos.tincions.find(
+                        tincion =>
+                            tincion.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "micelio":
+                    return getters.getInfoCaractMicroActinomicetos.micelios.find(
+                        micelio =>
+                            micelio.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
+                    );
+                case "conidioforo":
+                    return getters.getInfoCaractMicroActinomicetos.conidioforos.find(
+                        conidioforo =>
+                            conidioforo.nombre.toUpperCase() ===
+                            data.nombre.toUpperCase()
                     );
             }
         }
@@ -941,6 +1149,11 @@ export default {
                 .catch(error => {
                     if (error.response.status === 403) {
                         this.$router.push("/sin-acceso");
+                    } else if (
+                        error.response.status === 405 ||
+                        error.response.status === 401
+                    ) {
+                        window.location.href = "/";
                     }
                 });
         },
@@ -969,6 +1182,11 @@ export default {
                 .catch(error => {
                     if (error.response.status === 403) {
                         this.$router.push("/sin-acceso");
+                    } else if (
+                        error.response.status === 405 ||
+                        error.response.status === 401
+                    ) {
+                        window.location.href = "/";
                     }
                 });
         },
@@ -997,6 +1215,11 @@ export default {
                 .catch(error => {
                     if (error.response.status === 403) {
                         this.$router.push("/sin-acceso");
+                    } else if (
+                        error.response.status === 405 ||
+                        error.response.status === 401
+                    ) {
+                        window.location.href = "/";
                     }
                 });
         },
@@ -1025,6 +1248,11 @@ export default {
                 .catch(error => {
                     if (error.response.status === 403) {
                         this.$router.push("/sin-acceso");
+                    } else if (
+                        error.response.status === 405 ||
+                        error.response.status === 401
+                    ) {
+                        window.location.href = "/";
                     }
                 });
         },

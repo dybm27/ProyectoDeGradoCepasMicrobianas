@@ -388,7 +388,10 @@ export default {
               this.$modal.hide("cambiarInfo");
             })
             .catch((error) => {
-              if (error.response.status === 405) {
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
@@ -409,7 +412,10 @@ export default {
               this.$modal.hide("cambiarImagen");
             })
             .catch((error) => {
-              if (error.response.status === 405) {
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
@@ -430,7 +436,10 @@ export default {
               this.$modal.hide("cambiarInfo");
             })
             .catch((error) => {
-              if (error.response.status === 405) {
+              if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;

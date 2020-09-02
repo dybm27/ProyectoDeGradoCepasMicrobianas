@@ -26,14 +26,18 @@
               id="nombre"
               placeholder="..."
               type="text"
-              class="form-control"
-              :class="['form-control', validarNombre||errors? 'is-invalid':'']"
-              v-model="modal.nombre"
+              :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+              v-model.trim="$v.modal.nombre.$model"
             />
+            <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
             <em
-              v-if="validarNombre||errors"
-              class="error invalid-feedback"
-            >{{errors.nombre?errors.nombre[0]:errors}}</em>
+              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+              class="text-error-input"
+            >{{mensajes.required}}</em>
+            <em
+              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+              class="text-error-input"
+            >{{mensajes.unique}}</em>
           </div>
         </div>
         <div class="modal-footer">
@@ -46,7 +50,7 @@
             type="button"
             class="btn btn-success"
             @click="agregarTipo"
-            :disabled="validarBtn||bloquearBtnModal"
+            :disabled="bloquearBtnModal"
           >Agregar</button>
         </div>
       </div>
@@ -78,13 +82,18 @@
               id="nombre"
               placeholder="..."
               type="text"
-              :class="['form-control', validarNombre||errors? 'is-invalid':'']"
-              v-model="modal.nombre"
+              :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+              v-model.trim="$v.modal.nombre.$model"
             />
+            <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
             <em
-              v-if="validarNombre||errors"
-              class="error invalid-feedback"
-            >{{errors.nombre?errors.nombre[0]:errors}}</em>
+              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+              class="text-error-input"
+            >{{mensajes.required}}</em>
+            <em
+              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+              class="text-error-input"
+            >{{mensajes.unique}}</em>
           </div>
         </div>
         <div class="modal-footer">
@@ -97,7 +106,7 @@
             type="button"
             class="btn btn-success"
             @click="editarTipo"
-            :disabled="validarBtn||bloquearBtnModal"
+            :disabled="bloquearBtnModal"
           >Editar</button>
         </div>
       </div>
@@ -146,6 +155,7 @@
 import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import websocketsModalOtraInfo from "../../../../mixins/websocketsModalOtraInfo";
+import { required } from "vuelidate/lib/validators";
 export default {
   data() {
     return {
@@ -153,7 +163,23 @@ export default {
       modal: { nombre: "", tipo: "" },
       errors: "",
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        unique: "Ya existe un registro con ese nombre.",
+      },
     };
+  },
+  validations: {
+    modal: {
+      nombre: {
+        required,
+        unique(value) {
+          if (value == "") return true;
+          if (this.validarNombreUnico) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, websocketsModalOtraInfo("ActinomicetosInfo")],
   methods: {
@@ -165,45 +191,47 @@ export default {
     beforeOpenAgregar(data) {
       this.errors = "";
       this.modal.nombre = "";
+      this.id = "";
       this.modal.tipo = data.params.tipo;
     },
     agregarTipo() {
       this.bloquearBtnModal = true;
-      axios
-        .post("/info-caract-actinomicetos/agregar", this.modal)
-        .then((res) => {
-          if (res.request.responseURL === process.env.MIX_LOGIN) {
-            localStorage.setItem(
-              "mensajeLogin",
-              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-            );
-            window.location.href = "/";
-          } else {
-            this.bloquearBtnModal = false;
-            this.accionAgregarTipoCaractActinomiceto({
-              info: res.data,
-              tipo: this.modal.tipo,
-            });
-            this.$events.fire("actualizartabla" + this.modal.tipo);
-            this.$modal.hide("modal_agregar_tipo_actinomiceto");
-            this.toastr(
-              `Agregar ${this.primeraMayus(this.modal.tipo)}`,
-              `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
-              "success"
-            );
-          }
-        })
-        .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          } else {
-            this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
+      this.$v.modal.$touch();
+      if (!this.$v.$invalid) {
+        axios
+          .post("/info-caract-actinomicetos/agregar", this.modal)
+          .then((res) => {
+            if (res.request.responseURL === process.env.MIX_LOGIN) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
+            } else {
+              this.bloquearBtnModal = false;
+              this.accionAgregarTipoCaractActinomiceto({
+                info: res.data,
+                tipo: this.modal.tipo,
+              });
+              this.$events.fire("actualizartabla" + this.modal.tipo);
+              this.$modal.hide("modal_agregar_tipo_actinomiceto");
+              this.toastr(
+                `Agregar ${this.primeraMayus(this.modal.tipo)}`,
+                `${this.primeraMayus(this.modal.tipo)} agregado/a con exito`,
+                "success"
+              );
             }
-            this.toastr("Error!!!!", "", "error");
-          }
-        });
+          })
+          .catch((error) => {
+            this.verificarErrorAxios(
+              error.response.status,
+              error.response.data.errors
+            );
+          });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEditar(data) {
       this.errors = "";
@@ -213,35 +241,34 @@ export default {
     },
     editarTipo() {
       this.bloquearBtnModal = true;
-      axios
-        .put(`/info-caract-actinomicetos/editar/${this.id}`, this.modal)
-        .then((res) => {
-          this.bloquearBtnModal = false;
-          this.accionEditarTipoCaractActinomiceto({
-            info: res.data,
-            tipo: this.modal.tipo,
-          });
-          this.$events.fire("actualizartabla" + this.modal.tipo);
-          this.toastr(
-            `Editar ${this.primeraMayus(this.modal.tipo)}`,
-            `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
-            "success"
-          );
-          this.$modal.hide("modal_editar_tipo_actinomiceto");
-        })
-        .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
+      this.$v.modal.$touch();
+      if (!this.$v.$invalid) {
+        axios
+          .put(`/info-caract-actinomicetos/editar/${this.id}`, this.modal)
+          .then((res) => {
             this.bloquearBtnModal = false;
-            if (error.response.status === 422) {
-              this.errors = error.response.data.errors;
-            }
-            this.toastr("Error!!!", "", "error");
-          }
-        });
+            this.accionEditarTipoCaractActinomiceto({
+              info: res.data,
+              tipo: this.modal.tipo,
+            });
+            this.$events.fire("actualizartabla" + this.modal.tipo);
+            this.toastr(
+              `Editar ${this.primeraMayus(this.modal.tipo)}`,
+              `${this.primeraMayus(this.modal.tipo)} editado/a con exito!!`,
+              "success"
+            );
+            this.$modal.hide("modal_editar_tipo_actinomiceto");
+          })
+          .catch((error) => {
+            this.verificarErrorAxios(
+              error.response.status,
+              error.response.data.errors
+            );
+          });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEliminar(data) {
       this.errors = "";
@@ -287,39 +314,84 @@ export default {
           this.$modal.hide("modal_eliminar_tipo_actinomiceto");
         })
         .catch((error) => {
-          if (error.response.status === 403) {
-            this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            this.bloquearBtnModal = false;
-            this.toastr("Error!!!", "", "error");
-          }
+          this.verificarErrorAxios(
+            error.response.status,
+            error.response.data.errors
+          );
         });
     },
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
-  },
-  computed: {
-    validarNombre() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.modal.nombre) {
-        if (!letters.test(this.modal.nombre)) {
-          this.errors = "Solo se admiten letras.";
-          return true;
-        } else {
-          this.errors = "";
-          return false;
+    verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.errors = [];
+          this.errors = errors;
         }
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
       }
     },
-    validarBtn() {
-      if (this.validarNombre || !this.modal.nombre) {
-        return true;
+  },
+  computed: {
+    ...vuex.mapGetters("info_caract", [
+      "getInfoCaractMacroActinomicetosByNombre",
+      "getInfoCaractMicroActinomicetosByNombre",
+    ]),
+    validarNombreUnico() {
+      if (this.modal.nombre) {
+        if (
+          this.modal.tipo == "borde" ||
+          this.modal.tipo == "color" ||
+          this.modal.tipo == "textura" ||
+          this.modal.tipo == "pigmento" ||
+          this.modal.tipo == "forma_macro" ||
+          this.modal.tipo == "superficie"
+        ) {
+          if (
+            this.getInfoCaractMacroActinomicetosByNombre({
+              nombre: this.modal.nombre,
+              tipo: this.modal.tipo,
+            })
+          ) {
+            if (
+              this.getInfoCaractMacroActinomicetosByNombre({
+                nombre: this.modal.nombre,
+                tipo: this.modal.tipo,
+              }).id == this.id
+            )
+              return false;
+            return true;
+          }
+        } else if (
+          this.modal.tipo == "forma_micro" ||
+          this.modal.tipo == "conidioforo" ||
+          this.modal.tipo == "tincion" ||
+          this.modal.tipo == "micelio"
+        ) {
+          if (
+            this.getInfoCaractMicroActinomicetosByNombre({
+              nombre: this.modal.nombre,
+              tipo: this.modal.tipo,
+            })
+          ) {
+            if (
+              this.getInfoCaractMicroActinomicetosByNombre({
+                nombre: this.modal.nombre,
+                tipo: this.modal.tipo,
+              }).id == this.id
+            )
+              return false;
+            return true;
+          }
+        }
+        return false;
       }
-      return false;
     },
   },
 };

@@ -2,37 +2,37 @@
 
 @section('contenido-pdf')
 @if (in_array('todo',$imprimir)||in_array('cepa',$imprimir))
-<div class="div-cepa">
-    <table class="table tabla-cepa">
-        <thead>
-            <tr>
-                <th colspan="2">Cepa Microbiana</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
-                <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
-                <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Clase:</b> {{$cepa->hongo->clase->nombre}}</td>
-                <td><b>Orden:</b> {{$cepa->hongo->orden->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Familia:</b> {{$cepa->hongo->familia->nombre}}</td>
-                <td><b>Phylum:</b> {{$cepa->hongo->phylum->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Estado:</b> {{$cepa->estado}}</td>
-                <td><b>Origen:</b> {{$cepa->origen}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="div-cepa">
+        <table class="table tabla-cepa">
+            <thead>
+                <tr>
+                    <th colspan="2">Cepa Microbiana</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
+                    <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
+                    <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Clase:</b> {{$cepa->hongo->clase->nombre}}</td>
+                    <td><b>Orden:</b> {{$cepa->hongo->orden->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Familia:</b> {{$cepa->hongo->familia->nombre}}</td>
+                    <td><b>Phylum:</b> {{$cepa->hongo->phylum->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Estado:</b> {{$cepa->estado}}</td>
+                    <td><b>Origen:</b> {{$cepa->origen}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 @endif
 @if(count($cepa->hongo->caractMacroscopicas))
     @if (in_array('todo',$imprimir)||in_array('caract-macro',$imprimir))
@@ -81,6 +81,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->hongo->caractMicroscopica))
@@ -211,6 +212,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->hongo->identMolecular))
@@ -295,6 +297,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(count($cepa->hongo->metodosConservacion))
