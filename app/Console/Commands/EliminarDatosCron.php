@@ -39,6 +39,7 @@ class EliminarDatosCron extends Command
      */
     public function handle()
     {
+        Log::debug('Entro EliminarDatos');
         $fechaActual = date('Y-m-d H:m:s');
         $fechaBorrado = date("Y-m-d H:m:s", strtotime($fechaActual . "- 30 days"));
         Seguimiento::where('created_at', '<=', $fechaBorrado)->delete();

@@ -43,6 +43,7 @@ class EliminarImagenesEditorCron extends Command
      */
     public function handle()
     {
+        Log::debug('Entro EliminarImagenes');
         $arrayImagenes = [];
         $noticias = Noticia::all('imagenesEditor');
         $actividades = Actividad::all('imagenesEditor');
