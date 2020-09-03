@@ -7,7 +7,7 @@ const websocketsAccionesSinCheckMixin = (tipo, tipoM, tipoP) => ({
             this.$events.fire("abrirFormulario" + tipoM, data.id);
             this.enviarBloqueo(data);
         },
-        showModal(data) {
+        eliminar(data) {
             this.$modal.show("modal_eliminar_" + tipo, {
                 id: data.id
             });
