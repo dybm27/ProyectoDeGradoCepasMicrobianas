@@ -201,7 +201,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("BacteriasInfo")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState("info_caract", ["info_caract_bacterias"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapActions("info_caract", ["obtenerInfoCaractBacterias"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapActions("info_caract", ["obtenerInfoCaractBacterias"])), {}, {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
@@ -454,7 +454,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("BacteriasInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria"])), {}, {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.id = "";
       this.errors = "";
@@ -583,7 +583,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasByNombre", "getInfoCaractMicroBacteriasByNombre", "getInfoMetodoConserBacteriasByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasByNombre", "getInfoCaractMicroBacteriasByNombre", "getInfoMetodoConserBacteriasByNombre"])), {}, {
     validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
         if (this.modal.tipo == "borde" || this.modal.tipo == "color" || this.modal.tipo == "detalle" || this.modal.tipo == "elevacion" || this.modal.tipo == "forma_macro" || this.modal.tipo == "superficie") {
@@ -705,7 +705,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.bordes.length > 0) {
@@ -796,7 +796,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.colors.length > 0) {
@@ -887,7 +887,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("detalle")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.detalle_opticos.length > 0) {
@@ -978,7 +978,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("elevacion")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.elevacions.length > 0) {
@@ -1073,7 +1073,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.formas_macros.length > 0) {
@@ -1168,7 +1168,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroBacterias != "" && this.getInfoCaractMicroBacterias != null) {
         if (this.getInfoCaractMicroBacterias.formas_micros.length > 0) {
@@ -1259,7 +1259,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroBacterias != "" && this.getInfoCaractMacroBacterias != null) {
         if (this.getInfoCaractMacroBacterias.superficies.length > 0) {
@@ -1350,7 +1350,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_agar")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserBacterias != "" && this.getInfoMetodoConserBacterias != null) {
         if (this.getInfoMetodoConserBacterias.tipo_agar.length > 0) {
@@ -1445,7 +1445,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserBacterias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserBacterias != "" && this.getInfoMetodoConserBacterias != null) {
         if (this.getInfoMetodoConserBacterias.tipo_metodo.length > 0) {

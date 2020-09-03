@@ -88,7 +88,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("publicidad")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["obtenerPublicidad", "accionNoticia", "accionActividad", "accionNovedad"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["obtenerPublicidad", "accionNoticia", "accionActividad", "accionNovedad"])), {}, {
     ruta: function ruta(_ruta) {
       if (_ruta.includes("novedades")) {
         this.tipo = "Tabla Novedades";
@@ -231,7 +231,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$emit("cambiarTipo", tipo);
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"])), {}, {
     verificarNav: function verificarNav() {
       var num = 0;
 

@@ -492,7 +492,7 @@ var ruleAlpha = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
     }
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("perfil"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions(["accionModificarAuth"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions(["accionModificarAuth"])), {}, {
     cambiarValorImagen: function cambiarValorImagen(valor) {
       this.imagen = valor;
     },
@@ -641,7 +641,7 @@ var ruleAlpha = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("usuarios", ["getRolById", "getRoles"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("usuarios", ["getRolById", "getRoles"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"])), {}, {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     }

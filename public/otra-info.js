@@ -139,7 +139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("otraInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria", "accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura", "accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo", "accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"]), {
+  methods: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["accionAgregarTipoCaractBacteria", "accionEditarTipoCaractBacteria", "accionEliminarTipoCaractBacteria", "accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura", "accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo", "accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"])), {}, {
     cambiarTipo: function cambiarTipo(ruta) {
       if (ruta.includes("cepas")) {
         this.tipo = "Cepas";

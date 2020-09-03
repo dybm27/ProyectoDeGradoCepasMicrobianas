@@ -2,9 +2,9 @@
 //@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import "_variables.scss";
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
 
 // datapicker
 @import "~vue2-datepicker/scss/index.scss";

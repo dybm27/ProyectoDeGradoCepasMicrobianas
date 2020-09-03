@@ -177,7 +177,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("HongosInfo")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_8__["default"].mapState("info_caract", ["info_caract_hongos"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_8__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_8__["default"].mapActions("info_caract", ["obtenerInfoCaractHongos"])), {}, {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
@@ -418,7 +418,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("HongosInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractHongo", "accionEditarTipoCaractHongo", "accionEliminarTipoCaractHongo"])), {}, {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.errors = "";
       this.modal.nombre = "";
@@ -547,7 +547,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongosByNombre", "getInfoCaractMicroHongosByNombre", "getInfoMetodoConserHongosByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongosByNombre", "getInfoCaractMicroHongosByNombre", "getInfoMetodoConserHongosByNombre"])), {}, {
     validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
         if (this.modal.tipo == "color" || this.modal.tipo == "textura") {
@@ -669,7 +669,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroHongos != "" && this.getInfoCaractMacroHongos != null) {
         if (this.getInfoCaractMacroHongos.colores.length > 0) {
@@ -760,7 +760,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
         if (this.getInfoCaractMicroHongos.conidioforos.length > 0) {
@@ -851,7 +851,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
         if (this.getInfoCaractMicroHongos.esporas_asexuales.length > 0) {
@@ -942,7 +942,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroHongos != "" && this.getInfoCaractMicroHongos != null) {
         if (this.getInfoCaractMicroHongos.esporas_sexuales.length > 0) {
@@ -1033,7 +1033,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroHongos != "" && this.getInfoCaractMacroHongos != null) {
         if (this.getInfoCaractMacroHongos.texturas.length > 0) {
@@ -1124,7 +1124,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserHongos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserHongos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserHongos != "" && this.getInfoMetodoConserHongos != null) {
         if (this.getInfoMetodoConserHongos.tipo_metodo.length > 0) {

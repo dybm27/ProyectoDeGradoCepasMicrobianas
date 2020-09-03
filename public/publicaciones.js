@@ -369,7 +369,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"])), {}, {
     evento: function evento() {
       var _this = this;
 
@@ -474,7 +474,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("documentos", ["getPublicacionById", "getPublicacionByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("documentos", ["getPublicacionById", "getPublicacionByNombre"])), {}, {
     btnClase: function btnClase() {
       if (this.titulo === "Agregar Publicacion") {
         return "btn-success";
@@ -627,7 +627,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_2__["default"])("Publicacion")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("documentos", ["getPublicaciones"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("documentos", ["getPublicaciones"])), {}, {
     mostrarTabla: function mostrarTabla() {
       if (this.getPublicaciones != "" && this.getPublicaciones != null) {
         return true;
@@ -636,7 +636,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return false;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("documentos", ["accionPublicacion"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("documentos", ["accionPublicacion"])), {}, {
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.id = data.params.id;
     },

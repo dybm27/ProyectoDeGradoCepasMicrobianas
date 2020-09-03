@@ -129,7 +129,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("LevadurasInfo")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapState("info_caract", ["info_caract_levaduras"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapActions("info_caract", ["obtenerInfoCaractLevaduras"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapActions("info_caract", ["obtenerInfoCaractLevaduras"])), {}, {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
@@ -355,7 +355,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("LevadurasInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura"])), {}, {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.errors = "";
       this.id = "";
@@ -482,7 +482,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevadurasByNombre", "getInfoCaractMicroLevadurasByNombre", "getInfoMetodoConserLevadurasByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevadurasByNombre", "getInfoCaractMicroLevadurasByNombre", "getInfoMetodoConserLevadurasByNombre"])), {}, {
     validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
         if (this.modal.tipo == "color" || this.modal.tipo == "textura") {
@@ -593,7 +593,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevaduras"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevaduras"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroLevaduras != "" && this.getInfoCaractMacroLevaduras != null) {
         if (this.getInfoCaractMacroLevaduras.colors.length > 0) {
@@ -684,7 +684,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevaduras"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevaduras"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroLevaduras != "" && this.getInfoCaractMacroLevaduras != null) {
         if (this.getInfoCaractMacroLevaduras.texturas.length > 0) {
@@ -779,7 +779,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserLevaduras"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserLevaduras"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoMetodoConserLevaduras != "" && this.getInfoMetodoConserLevaduras != null) {
         if (this.getInfoMetodoConserLevaduras.tipo_metodo.length > 0) {

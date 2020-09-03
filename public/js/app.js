@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d":"vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","cepa-hongo":"cepa-hongo","error-403":"error-403","error-404":"error-404","ver-hongo":"ver-hongo","tabla-seguimiento":"tabla-seguimiento","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d":"vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","ver-hongo":"ver-hongo","tabla-seguimiento":"tabla-seguimiento","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","mision~objetivos~vision":"mision~objetivos~vision","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -1477,7 +1477,6 @@ module.exports = function isAbsoluteURL(url) {
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var isValidXss = __webpack_require__(/*! ./isValidXss */ "./node_modules/axios/lib/helpers/isValidXss.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1497,10 +1496,6 @@ module.exports = (
     */
       function resolveURL(url) {
         var href = url;
-
-        if (isValidXss(url)) {
-          throw new Error('URL contains XSS injection attempt');
-        }
 
         if (msie) {
         // IE needs attribute set twice to normalize properties
@@ -1547,25 +1542,6 @@ module.exports = (
       };
     })()
 );
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/isValidXss.js":
-/*!******************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/isValidXss.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isValidXss(requestURL) {
-  var xssRegex = /(\b)(on\w+)=|javascript|(<\s*)(\/*)script/gi;
-  return xssRegex.test(requestURL);
-};
-
 
 
 /***/ }),
@@ -2149,7 +2125,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       var ruta = this.$route.path;
@@ -2564,7 +2540,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -2773,7 +2749,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3040,7 +3016,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3309,7 +3285,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
@@ -3629,7 +3605,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAccionesSinCheck */ "./resources/js/mixins/websocketsAccionesSinCheck.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _IconoNoAccess__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3673,7 +3649,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    IconoNoAccess: _IconoNoAccess__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: {
     rowData: {
@@ -3685,7 +3661,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("usuario", "Usuario", "usuarios")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3754,7 +3730,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3823,7 +3799,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3892,7 +3868,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3961,7 +3937,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4030,7 +4006,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4099,7 +4075,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4168,7 +4144,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4237,7 +4213,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4375,7 +4351,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4444,7 +4420,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4513,7 +4489,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4582,7 +4558,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4651,7 +4627,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4722,7 +4698,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4791,7 +4767,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4860,7 +4836,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4929,7 +4905,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5003,7 +4979,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5072,7 +5048,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("clase", "clases", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5141,7 +5117,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("division", "divisions", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5210,7 +5186,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("especie", "especies", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -5299,7 +5275,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("familia", "familias", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5368,7 +5344,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("genero", "generos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -5457,7 +5433,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("orden", "ordens", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5526,7 +5502,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5595,7 +5571,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("reino", "reinos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5664,7 +5640,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5733,7 +5709,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5807,7 +5783,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5876,7 +5852,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5945,7 +5921,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6019,7 +5995,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6090,7 +6066,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6161,7 +6137,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6237,7 +6213,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6346,7 +6322,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("proyecto", "Proyecto", "proyectos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6413,12 +6389,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto", "proyectos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6527,7 +6503,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("publicacion", "Publicacion", "publicaciones")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6594,12 +6570,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Publicacion", "publicaciones"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6708,7 +6684,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("equipamiento", "Equipamiento", "equipamientos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6775,12 +6751,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Equipamiento", "equipamientos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6888,7 +6864,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("investigador", "Investigador", "investigadores")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6955,12 +6931,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Investigador", "investigadores"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7068,7 +7044,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("actividad", "Actividad", "actividades")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7135,12 +7111,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Actividad", "actividades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7257,7 +7233,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("noticia", "Noticia", "noticias")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7324,12 +7300,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7451,7 +7427,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       disabledBtns: false
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7518,12 +7494,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7624,12 +7600,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Sider: _Sidebar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Footer: _Footer_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth", "guardarPermisosAuth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerRoles", "obtenerUsers", "obtenerPermisos", "accionRol", "accionUsuario"]), {
+  methods: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth", "guardarPermisosAuth"])), vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerRoles", "obtenerUsers", "obtenerPermisos", "accionRol", "accionUsuario"])), {}, {
     rutaSider: function rutaSider(ruta) {
       this.ruta = ruta;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("usuarios", ["getRolById"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("usuarios", ["getRolById"])),
   created: function created() {
     var _this = this;
 
@@ -7882,7 +7858,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"])), {}, {
     classActive: function classActive() {
       if (this.ruta.includes("cepas") || this.ruta.includes("bacterias") || this.ruta.includes("levaduras") || this.ruta.includes("hongos") || this.ruta.includes("actinomicetos")) {
         return "mm-active";
@@ -7957,7 +7933,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRolById", "getRoles"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRolById", "getRoles"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
 });
 
 /***/ }),
@@ -8134,17 +8110,17 @@ function fromByteArray (uint8) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
-  * Bootstrap v4.4.1 (https://getbootstrap.com/)
-  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * Bootstrap v4.5.2 (https://getbootstrap.com/)
+  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
    true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
   undefined;
 }(this, (function (exports, $, Popper) { 'use strict';
 
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
-  Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
+  Popper = Popper && Object.prototype.hasOwnProperty.call(Popper, 'default') ? Popper['default'] : Popper;
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -8162,53 +8138,22 @@ function fromByteArray (uint8) {
     return Constructor;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
 
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
       }
-    }
 
-    return target;
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
   }
 
   function _inheritsLoose(subClass, superClass) {
@@ -8219,8 +8164,8 @@ function fromByteArray (uint8) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   /**
@@ -8234,6 +8179,10 @@ function fromByteArray (uint8) {
   var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
   function toType(obj) {
+    if (obj === null || typeof obj === 'undefined') {
+      return "" + obj;
+    }
+
     return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
   }
 
@@ -8246,7 +8195,7 @@ function fromByteArray (uint8) {
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
 
-        return undefined; // eslint-disable-line no-undefined
+        return undefined;
       }
     };
   }
@@ -8396,33 +8345,25 @@ function fromByteArray (uint8) {
    */
 
   var NAME = 'alert';
-  var VERSION = '4.4.1';
+  var VERSION = '4.5.2';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Selector = {
-    DISMISS: '[data-dismiss="alert"]'
-  };
-  var Event = {
-    CLOSE: "close" + EVENT_KEY,
-    CLOSED: "closed" + EVENT_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
-  };
-  var ClassName = {
-    ALERT: 'alert',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
+  var SELECTOR_DISMISS = '[data-dismiss="alert"]';
+  var EVENT_CLOSE = "close" + EVENT_KEY;
+  var EVENT_CLOSED = "closed" + EVENT_KEY;
+  var EVENT_CLICK_DATA_API = "click" + EVENT_KEY + DATA_API_KEY;
+  var CLASS_NAME_ALERT = 'alert';
+  var CLASS_NAME_FADE = 'fade';
+  var CLASS_NAME_SHOW = 'show';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Alert =
-  /*#__PURE__*/
-  function () {
+  var Alert = /*#__PURE__*/function () {
     function Alert(element) {
       this._element = element;
     } // Getters
@@ -8462,14 +8403,14 @@ function fromByteArray (uint8) {
       }
 
       if (!parent) {
-        parent = $(element).closest("." + ClassName.ALERT)[0];
+        parent = $(element).closest("." + CLASS_NAME_ALERT)[0];
       }
 
       return parent;
     };
 
     _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $.Event(Event.CLOSE);
+      var closeEvent = $.Event(EVENT_CLOSE);
       $(element).trigger(closeEvent);
       return closeEvent;
     };
@@ -8477,9 +8418,9 @@ function fromByteArray (uint8) {
     _proto._removeElement = function _removeElement(element) {
       var _this = this;
 
-      $(element).removeClass(ClassName.SHOW);
+      $(element).removeClass(CLASS_NAME_SHOW);
 
-      if (!$(element).hasClass(ClassName.FADE)) {
+      if (!$(element).hasClass(CLASS_NAME_FADE)) {
         this._destroyElement(element);
 
         return;
@@ -8492,7 +8433,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._destroyElement = function _destroyElement(element) {
-      $(element).detach().trigger(Event.CLOSED).remove();
+      $(element).detach().trigger(EVENT_CLOSED).remove();
     } // Static
     ;
 
@@ -8538,7 +8479,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
+  $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -8560,39 +8501,31 @@ function fromByteArray (uint8) {
    */
 
   var NAME$1 = 'button';
-  var VERSION$1 = '4.4.1';
+  var VERSION$1 = '4.5.2';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
   var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
-  var ClassName$1 = {
-    ACTIVE: 'active',
-    BUTTON: 'btn',
-    FOCUS: 'focus'
-  };
-  var Selector$1 = {
-    DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-    DATA_TOGGLES: '[data-toggle="buttons"]',
-    DATA_TOGGLE: '[data-toggle="button"]',
-    DATA_TOGGLES_BUTTONS: '[data-toggle="buttons"] .btn',
-    INPUT: 'input:not([type="hidden"])',
-    ACTIVE: '.active',
-    BUTTON: '.btn'
-  };
-  var Event$1 = {
-    CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
-    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1),
-    LOAD_DATA_API: "load" + EVENT_KEY$1 + DATA_API_KEY$1
-  };
+  var CLASS_NAME_ACTIVE = 'active';
+  var CLASS_NAME_BUTTON = 'btn';
+  var CLASS_NAME_FOCUS = 'focus';
+  var SELECTOR_DATA_TOGGLE_CARROT = '[data-toggle^="button"]';
+  var SELECTOR_DATA_TOGGLES = '[data-toggle="buttons"]';
+  var SELECTOR_DATA_TOGGLE = '[data-toggle="button"]';
+  var SELECTOR_DATA_TOGGLES_BUTTONS = '[data-toggle="buttons"] .btn';
+  var SELECTOR_INPUT = 'input:not([type="hidden"])';
+  var SELECTOR_ACTIVE = '.active';
+  var SELECTOR_BUTTON = '.btn';
+  var EVENT_CLICK_DATA_API$1 = "click" + EVENT_KEY$1 + DATA_API_KEY$1;
+  var EVENT_FOCUS_BLUR_DATA_API = "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1);
+  var EVENT_LOAD_DATA_API = "load" + EVENT_KEY$1 + DATA_API_KEY$1;
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Button =
-  /*#__PURE__*/
-  function () {
+  var Button = /*#__PURE__*/function () {
     function Button(element) {
       this._element = element;
     } // Getters
@@ -8604,33 +8537,30 @@ function fromByteArray (uint8) {
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
-      var rootElement = $(this._element).closest(Selector$1.DATA_TOGGLES)[0];
+      var rootElement = $(this._element).closest(SELECTOR_DATA_TOGGLES)[0];
 
       if (rootElement) {
-        var input = this._element.querySelector(Selector$1.INPUT);
+        var input = this._element.querySelector(SELECTOR_INPUT);
 
         if (input) {
           if (input.type === 'radio') {
-            if (input.checked && this._element.classList.contains(ClassName$1.ACTIVE)) {
+            if (input.checked && this._element.classList.contains(CLASS_NAME_ACTIVE)) {
               triggerChangeEvent = false;
             } else {
-              var activeElement = rootElement.querySelector(Selector$1.ACTIVE);
+              var activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
 
               if (activeElement) {
-                $(activeElement).removeClass(ClassName$1.ACTIVE);
+                $(activeElement).removeClass(CLASS_NAME_ACTIVE);
               }
             }
-          } else if (input.type === 'checkbox') {
-            if (this._element.tagName === 'LABEL' && input.checked === this._element.classList.contains(ClassName$1.ACTIVE)) {
-              triggerChangeEvent = false;
-            }
-          } else {
-            // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
-            triggerChangeEvent = false;
           }
 
           if (triggerChangeEvent) {
-            input.checked = !this._element.classList.contains(ClassName$1.ACTIVE);
+            // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
+            if (input.type === 'checkbox' || input.type === 'radio') {
+              input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
+            }
+
             $(input).trigger('change');
           }
 
@@ -8641,11 +8571,11 @@ function fromByteArray (uint8) {
 
       if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
         if (addAriaPressed) {
-          this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName$1.ACTIVE));
+          this._element.setAttribute('aria-pressed', !this._element.classList.contains(CLASS_NAME_ACTIVE));
         }
 
         if (triggerChangeEvent) {
-          $(this._element).toggleClass(ClassName$1.ACTIVE);
+          $(this._element).toggleClass(CLASS_NAME_ACTIVE);
         }
       }
     };
@@ -8687,17 +8617,18 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$1.CLICK_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
     var button = event.target;
+    var initialButton = button;
 
-    if (!$(button).hasClass(ClassName$1.BUTTON)) {
-      button = $(button).closest(Selector$1.BUTTON)[0];
+    if (!$(button).hasClass(CLASS_NAME_BUTTON)) {
+      button = $(button).closest(SELECTOR_BUTTON)[0];
     }
 
     if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
       event.preventDefault(); // work around Firefox bug #1540995
     } else {
-      var inputBtn = button.querySelector(Selector$1.INPUT);
+      var inputBtn = button.querySelector(SELECTOR_INPUT);
 
       if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
         event.preventDefault(); // work around Firefox bug #1540995
@@ -8705,38 +8636,40 @@ function fromByteArray (uint8) {
         return;
       }
 
-      Button._jQueryInterface.call($(button), 'toggle');
+      if (initialButton.tagName !== 'LABEL' || inputBtn && inputBtn.type !== 'checkbox') {
+        Button._jQueryInterface.call($(button), 'toggle');
+      }
     }
-  }).on(Event$1.FOCUS_BLUR_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
-    var button = $(event.target).closest(Selector$1.BUTTON)[0];
-    $(button).toggleClass(ClassName$1.FOCUS, /^focus(in)?$/.test(event.type));
+  }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
+    var button = $(event.target).closest(SELECTOR_BUTTON)[0];
+    $(button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
   });
-  $(window).on(Event$1.LOAD_DATA_API, function () {
+  $(window).on(EVENT_LOAD_DATA_API, function () {
     // ensure correct active class is set to match the controls' actual values/states
     // find all checkboxes/readio buttons inside data-toggle groups
-    var buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLES_BUTTONS));
+    var buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLES_BUTTONS));
 
     for (var i = 0, len = buttons.length; i < len; i++) {
       var button = buttons[i];
-      var input = button.querySelector(Selector$1.INPUT);
+      var input = button.querySelector(SELECTOR_INPUT);
 
       if (input.checked || input.hasAttribute('checked')) {
-        button.classList.add(ClassName$1.ACTIVE);
+        button.classList.add(CLASS_NAME_ACTIVE);
       } else {
-        button.classList.remove(ClassName$1.ACTIVE);
+        button.classList.remove(CLASS_NAME_ACTIVE);
       }
     } // find all button toggles
 
 
-    buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLE));
+    buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE));
 
     for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
       var _button = buttons[_i];
 
       if (_button.getAttribute('aria-pressed') === 'true') {
-        _button.classList.add(ClassName$1.ACTIVE);
+        _button.classList.add(CLASS_NAME_ACTIVE);
       } else {
-        _button.classList.remove(ClassName$1.ACTIVE);
+        _button.classList.remove(CLASS_NAME_ACTIVE);
       }
     }
   });
@@ -8761,7 +8694,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$2 = 'carousel';
-  var VERSION$2 = '4.4.1';
+  var VERSION$2 = '4.5.2';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
@@ -8789,48 +8722,39 @@ function fromByteArray (uint8) {
     wrap: 'boolean',
     touch: 'boolean'
   };
-  var Direction = {
-    NEXT: 'next',
-    PREV: 'prev',
-    LEFT: 'left',
-    RIGHT: 'right'
-  };
-  var Event$2 = {
-    SLIDE: "slide" + EVENT_KEY$2,
-    SLID: "slid" + EVENT_KEY$2,
-    KEYDOWN: "keydown" + EVENT_KEY$2,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$2,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$2,
-    TOUCHSTART: "touchstart" + EVENT_KEY$2,
-    TOUCHMOVE: "touchmove" + EVENT_KEY$2,
-    TOUCHEND: "touchend" + EVENT_KEY$2,
-    POINTERDOWN: "pointerdown" + EVENT_KEY$2,
-    POINTERUP: "pointerup" + EVENT_KEY$2,
-    DRAG_START: "dragstart" + EVENT_KEY$2,
-    LOAD_DATA_API: "load" + EVENT_KEY$2 + DATA_API_KEY$2,
-    CLICK_DATA_API: "click" + EVENT_KEY$2 + DATA_API_KEY$2
-  };
-  var ClassName$2 = {
-    CAROUSEL: 'carousel',
-    ACTIVE: 'active',
-    SLIDE: 'slide',
-    RIGHT: 'carousel-item-right',
-    LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
-    PREV: 'carousel-item-prev',
-    ITEM: 'carousel-item',
-    POINTER_EVENT: 'pointer-event'
-  };
-  var Selector$2 = {
-    ACTIVE: '.active',
-    ACTIVE_ITEM: '.active.carousel-item',
-    ITEM: '.carousel-item',
-    ITEM_IMG: '.carousel-item img',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
-    INDICATORS: '.carousel-indicators',
-    DATA_SLIDE: '[data-slide], [data-slide-to]',
-    DATA_RIDE: '[data-ride="carousel"]'
-  };
+  var DIRECTION_NEXT = 'next';
+  var DIRECTION_PREV = 'prev';
+  var DIRECTION_LEFT = 'left';
+  var DIRECTION_RIGHT = 'right';
+  var EVENT_SLIDE = "slide" + EVENT_KEY$2;
+  var EVENT_SLID = "slid" + EVENT_KEY$2;
+  var EVENT_KEYDOWN = "keydown" + EVENT_KEY$2;
+  var EVENT_MOUSEENTER = "mouseenter" + EVENT_KEY$2;
+  var EVENT_MOUSELEAVE = "mouseleave" + EVENT_KEY$2;
+  var EVENT_TOUCHSTART = "touchstart" + EVENT_KEY$2;
+  var EVENT_TOUCHMOVE = "touchmove" + EVENT_KEY$2;
+  var EVENT_TOUCHEND = "touchend" + EVENT_KEY$2;
+  var EVENT_POINTERDOWN = "pointerdown" + EVENT_KEY$2;
+  var EVENT_POINTERUP = "pointerup" + EVENT_KEY$2;
+  var EVENT_DRAG_START = "dragstart" + EVENT_KEY$2;
+  var EVENT_LOAD_DATA_API$1 = "load" + EVENT_KEY$2 + DATA_API_KEY$2;
+  var EVENT_CLICK_DATA_API$2 = "click" + EVENT_KEY$2 + DATA_API_KEY$2;
+  var CLASS_NAME_CAROUSEL = 'carousel';
+  var CLASS_NAME_ACTIVE$1 = 'active';
+  var CLASS_NAME_SLIDE = 'slide';
+  var CLASS_NAME_RIGHT = 'carousel-item-right';
+  var CLASS_NAME_LEFT = 'carousel-item-left';
+  var CLASS_NAME_NEXT = 'carousel-item-next';
+  var CLASS_NAME_PREV = 'carousel-item-prev';
+  var CLASS_NAME_POINTER_EVENT = 'pointer-event';
+  var SELECTOR_ACTIVE$1 = '.active';
+  var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
+  var SELECTOR_ITEM = '.carousel-item';
+  var SELECTOR_ITEM_IMG = '.carousel-item img';
+  var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
+  var SELECTOR_INDICATORS = '.carousel-indicators';
+  var SELECTOR_DATA_SLIDE = '[data-slide], [data-slide-to]';
+  var SELECTOR_DATA_RIDE = '[data-ride="carousel"]';
   var PointerType = {
     TOUCH: 'touch',
     PEN: 'pen'
@@ -8841,9 +8765,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Carousel =
-  /*#__PURE__*/
-  function () {
+  var Carousel = /*#__PURE__*/function () {
     function Carousel(element, config) {
       this._items = null;
       this._interval = null;
@@ -8855,7 +8777,7 @@ function fromByteArray (uint8) {
       this.touchDeltaX = 0;
       this._config = this._getConfig(config);
       this._element = element;
-      this._indicatorsElement = this._element.querySelector(Selector$2.INDICATORS);
+      this._indicatorsElement = this._element.querySelector(SELECTOR_INDICATORS);
       this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
       this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
 
@@ -8868,7 +8790,7 @@ function fromByteArray (uint8) {
     // Public
     _proto.next = function next() {
       if (!this._isSliding) {
-        this._slide(Direction.NEXT);
+        this._slide(DIRECTION_NEXT);
       }
     };
 
@@ -8882,7 +8804,7 @@ function fromByteArray (uint8) {
 
     _proto.prev = function prev() {
       if (!this._isSliding) {
-        this._slide(Direction.PREV);
+        this._slide(DIRECTION_PREV);
       }
     };
 
@@ -8891,7 +8813,7 @@ function fromByteArray (uint8) {
         this._isPaused = true;
       }
 
-      if (this._element.querySelector(Selector$2.NEXT_PREV)) {
+      if (this._element.querySelector(SELECTOR_NEXT_PREV)) {
         Util.triggerTransitionEnd(this._element);
         this.cycle(true);
       }
@@ -8918,7 +8840,7 @@ function fromByteArray (uint8) {
     _proto.to = function to(index) {
       var _this = this;
 
-      this._activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
+      this._activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
 
       var activeIndex = this._getItemIndex(this._activeElement);
 
@@ -8927,7 +8849,7 @@ function fromByteArray (uint8) {
       }
 
       if (this._isSliding) {
-        $(this._element).one(Event$2.SLID, function () {
+        $(this._element).one(EVENT_SLID, function () {
           return _this.to(index);
         });
         return;
@@ -8939,7 +8861,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
+      var direction = index > activeIndex ? DIRECTION_NEXT : DIRECTION_PREV;
 
       this._slide(direction, this._items[index]);
     };
@@ -8959,7 +8881,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default, {}, config);
+      config = _extends({}, Default, config);
       Util.typeCheckConfig(NAME$2, config, DefaultType);
       return config;
     };
@@ -8988,15 +8910,15 @@ function fromByteArray (uint8) {
       var _this2 = this;
 
       if (this._config.keyboard) {
-        $(this._element).on(Event$2.KEYDOWN, function (event) {
+        $(this._element).on(EVENT_KEYDOWN, function (event) {
           return _this2._keydown(event);
         });
       }
 
       if (this._config.pause === 'hover') {
-        $(this._element).on(Event$2.MOUSEENTER, function (event) {
+        $(this._element).on(EVENT_MOUSEENTER, function (event) {
           return _this2.pause(event);
-        }).on(Event$2.MOUSELEAVE, function (event) {
+        }).on(EVENT_MOUSELEAVE, function (event) {
           return _this2.cycle(event);
         });
       }
@@ -9057,27 +8979,27 @@ function fromByteArray (uint8) {
         }
       };
 
-      $(this._element.querySelectorAll(Selector$2.ITEM_IMG)).on(Event$2.DRAG_START, function (e) {
+      $(this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
         return e.preventDefault();
       });
 
       if (this._pointerEvent) {
-        $(this._element).on(Event$2.POINTERDOWN, function (event) {
+        $(this._element).on(EVENT_POINTERDOWN, function (event) {
           return start(event);
         });
-        $(this._element).on(Event$2.POINTERUP, function (event) {
+        $(this._element).on(EVENT_POINTERUP, function (event) {
           return end(event);
         });
 
-        this._element.classList.add(ClassName$2.POINTER_EVENT);
+        this._element.classList.add(CLASS_NAME_POINTER_EVENT);
       } else {
-        $(this._element).on(Event$2.TOUCHSTART, function (event) {
+        $(this._element).on(EVENT_TOUCHSTART, function (event) {
           return start(event);
         });
-        $(this._element).on(Event$2.TOUCHMOVE, function (event) {
+        $(this._element).on(EVENT_TOUCHMOVE, function (event) {
           return move(event);
         });
-        $(this._element).on(Event$2.TOUCHEND, function (event) {
+        $(this._element).on(EVENT_TOUCHEND, function (event) {
           return end(event);
         });
       }
@@ -9102,13 +9024,13 @@ function fromByteArray (uint8) {
     };
 
     _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector$2.ITEM)) : [];
+      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(SELECTOR_ITEM)) : [];
       return this._items.indexOf(element);
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
-      var isPrevDirection = direction === Direction.PREV;
+      var isNextDirection = direction === DIRECTION_NEXT;
+      var isPrevDirection = direction === DIRECTION_PREV;
 
       var activeIndex = this._getItemIndex(activeElement);
 
@@ -9119,7 +9041,7 @@ function fromByteArray (uint8) {
         return activeElement;
       }
 
-      var delta = direction === Direction.PREV ? -1 : 1;
+      var delta = direction === DIRECTION_PREV ? -1 : 1;
       var itemIndex = (activeIndex + delta) % this._items.length;
       return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
     };
@@ -9127,9 +9049,9 @@ function fromByteArray (uint8) {
     _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
       var targetIndex = this._getItemIndex(relatedTarget);
 
-      var fromIndex = this._getItemIndex(this._element.querySelector(Selector$2.ACTIVE_ITEM));
+      var fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM));
 
-      var slideEvent = $.Event(Event$2.SLIDE, {
+      var slideEvent = $.Event(EVENT_SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
@@ -9141,13 +9063,13 @@ function fromByteArray (uint8) {
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
-        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector$2.ACTIVE));
-        $(indicators).removeClass(ClassName$2.ACTIVE);
+        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
+        $(indicators).removeClass(CLASS_NAME_ACTIVE$1);
 
         var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
         if (nextIndicator) {
-          $(nextIndicator).addClass(ClassName$2.ACTIVE);
+          $(nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
         }
       }
     };
@@ -9155,7 +9077,7 @@ function fromByteArray (uint8) {
     _proto._slide = function _slide(direction, element) {
       var _this4 = this;
 
-      var activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
+      var activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
 
       var activeElementIndex = this._getItemIndex(activeElement);
 
@@ -9168,17 +9090,17 @@ function fromByteArray (uint8) {
       var orderClassName;
       var eventDirectionName;
 
-      if (direction === Direction.NEXT) {
-        directionalClassName = ClassName$2.LEFT;
-        orderClassName = ClassName$2.NEXT;
-        eventDirectionName = Direction.LEFT;
+      if (direction === DIRECTION_NEXT) {
+        directionalClassName = CLASS_NAME_LEFT;
+        orderClassName = CLASS_NAME_NEXT;
+        eventDirectionName = DIRECTION_LEFT;
       } else {
-        directionalClassName = ClassName$2.RIGHT;
-        orderClassName = ClassName$2.PREV;
-        eventDirectionName = Direction.RIGHT;
+        directionalClassName = CLASS_NAME_RIGHT;
+        orderClassName = CLASS_NAME_PREV;
+        eventDirectionName = DIRECTION_RIGHT;
       }
 
-      if (nextElement && $(nextElement).hasClass(ClassName$2.ACTIVE)) {
+      if (nextElement && $(nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
         this._isSliding = false;
         return;
       }
@@ -9202,14 +9124,14 @@ function fromByteArray (uint8) {
 
       this._setActiveIndicatorElement(nextElement);
 
-      var slidEvent = $.Event(Event$2.SLID, {
+      var slidEvent = $.Event(EVENT_SLID, {
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
         to: nextElementIndex
       });
 
-      if ($(this._element).hasClass(ClassName$2.SLIDE)) {
+      if ($(this._element).hasClass(CLASS_NAME_SLIDE)) {
         $(nextElement).addClass(orderClassName);
         Util.reflow(nextElement);
         $(activeElement).addClass(directionalClassName);
@@ -9225,16 +9147,16 @@ function fromByteArray (uint8) {
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
         $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName$2.ACTIVE);
-          $(activeElement).removeClass(ClassName$2.ACTIVE + " " + orderClassName + " " + directionalClassName);
+          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
+          $(activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
           _this4._isSliding = false;
           setTimeout(function () {
             return $(_this4._element).trigger(slidEvent);
           }, 0);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        $(activeElement).removeClass(ClassName$2.ACTIVE);
-        $(nextElement).addClass(ClassName$2.ACTIVE);
+        $(activeElement).removeClass(CLASS_NAME_ACTIVE$1);
+        $(nextElement).addClass(CLASS_NAME_ACTIVE$1);
         this._isSliding = false;
         $(this._element).trigger(slidEvent);
       }
@@ -9249,10 +9171,10 @@ function fromByteArray (uint8) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY$2);
 
-        var _config = _objectSpread2({}, Default, {}, $(this).data());
+        var _config = _extends({}, Default, $(this).data());
 
         if (typeof config === 'object') {
-          _config = _objectSpread2({}, _config, {}, config);
+          _config = _extends({}, _config, config);
         }
 
         var action = typeof config === 'string' ? config : _config.slide;
@@ -9286,11 +9208,11 @@ function fromByteArray (uint8) {
 
       var target = $(selector)[0];
 
-      if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
+      if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
         return;
       }
 
-      var config = _objectSpread2({}, $(target).data(), {}, $(this).data());
+      var config = _extends({}, $(target).data(), $(this).data());
 
       var slideIndex = this.getAttribute('data-slide-to');
 
@@ -9328,9 +9250,9 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$2.CLICK_DATA_API, Selector$2.DATA_SLIDE, Carousel._dataApiClickHandler);
-  $(window).on(Event$2.LOAD_DATA_API, function () {
-    var carousels = [].slice.call(document.querySelectorAll(Selector$2.DATA_RIDE));
+  $(document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
+  $(window).on(EVENT_LOAD_DATA_API$1, function () {
+    var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
 
     for (var i = 0, len = carousels.length; i < len; i++) {
       var $carousel = $(carousels[i]);
@@ -9359,7 +9281,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$3 = 'collapse';
-  var VERSION$3 = '4.4.1';
+  var VERSION$3 = '4.5.2';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
@@ -9372,42 +9294,32 @@ function fromByteArray (uint8) {
     toggle: 'boolean',
     parent: '(string|element)'
   };
-  var Event$3 = {
-    SHOW: "show" + EVENT_KEY$3,
-    SHOWN: "shown" + EVENT_KEY$3,
-    HIDE: "hide" + EVENT_KEY$3,
-    HIDDEN: "hidden" + EVENT_KEY$3,
-    CLICK_DATA_API: "click" + EVENT_KEY$3 + DATA_API_KEY$3
-  };
-  var ClassName$3 = {
-    SHOW: 'show',
-    COLLAPSE: 'collapse',
-    COLLAPSING: 'collapsing',
-    COLLAPSED: 'collapsed'
-  };
-  var Dimension = {
-    WIDTH: 'width',
-    HEIGHT: 'height'
-  };
-  var Selector$3 = {
-    ACTIVES: '.show, .collapsing',
-    DATA_TOGGLE: '[data-toggle="collapse"]'
-  };
+  var EVENT_SHOW = "show" + EVENT_KEY$3;
+  var EVENT_SHOWN = "shown" + EVENT_KEY$3;
+  var EVENT_HIDE = "hide" + EVENT_KEY$3;
+  var EVENT_HIDDEN = "hidden" + EVENT_KEY$3;
+  var EVENT_CLICK_DATA_API$3 = "click" + EVENT_KEY$3 + DATA_API_KEY$3;
+  var CLASS_NAME_SHOW$1 = 'show';
+  var CLASS_NAME_COLLAPSE = 'collapse';
+  var CLASS_NAME_COLLAPSING = 'collapsing';
+  var CLASS_NAME_COLLAPSED = 'collapsed';
+  var DIMENSION_WIDTH = 'width';
+  var DIMENSION_HEIGHT = 'height';
+  var SELECTOR_ACTIVES = '.show, .collapsing';
+  var SELECTOR_DATA_TOGGLE$1 = '[data-toggle="collapse"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Collapse =
-  /*#__PURE__*/
-  function () {
+  var Collapse = /*#__PURE__*/function () {
     function Collapse(element, config) {
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(Selector$3.DATA_TOGGLE));
+      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$1));
 
       for (var i = 0, len = toggleList.length; i < len; i++) {
         var elem = toggleList[i];
@@ -9439,7 +9351,7 @@ function fromByteArray (uint8) {
 
     // Public
     _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(ClassName$3.SHOW)) {
+      if ($(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         this.hide();
       } else {
         this.show();
@@ -9449,7 +9361,7 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._isTransitioning || $(this._element).hasClass(ClassName$3.SHOW)) {
+      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
@@ -9457,12 +9369,12 @@ function fromByteArray (uint8) {
       var activesData;
 
       if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(Selector$3.ACTIVES)).filter(function (elem) {
+        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES)).filter(function (elem) {
           if (typeof _this._config.parent === 'string') {
             return elem.getAttribute('data-parent') === _this._config.parent;
           }
 
-          return elem.classList.contains(ClassName$3.COLLAPSE);
+          return elem.classList.contains(CLASS_NAME_COLLAPSE);
         });
 
         if (actives.length === 0) {
@@ -9478,7 +9390,7 @@ function fromByteArray (uint8) {
         }
       }
 
-      var startEvent = $.Event(Event$3.SHOW);
+      var startEvent = $.Event(EVENT_SHOW);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -9495,22 +9407,22 @@ function fromByteArray (uint8) {
 
       var dimension = this._getDimension();
 
-      $(this._element).removeClass(ClassName$3.COLLAPSE).addClass(ClassName$3.COLLAPSING);
+      $(this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
       this._element.style[dimension] = 0;
 
       if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(ClassName$3.COLLAPSED).attr('aria-expanded', true);
+        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
       }
 
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).addClass(ClassName$3.SHOW);
+        $(_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
         _this._element.style[dimension] = '';
 
         _this.setTransitioning(false);
 
-        $(_this._element).trigger(Event$3.SHOWN);
+        $(_this._element).trigger(EVENT_SHOWN);
       };
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
@@ -9523,11 +9435,11 @@ function fromByteArray (uint8) {
     _proto.hide = function hide() {
       var _this2 = this;
 
-      if (this._isTransitioning || !$(this._element).hasClass(ClassName$3.SHOW)) {
+      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
-      var startEvent = $.Event(Event$3.HIDE);
+      var startEvent = $.Event(EVENT_HIDE);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -9538,7 +9450,7 @@ function fromByteArray (uint8) {
 
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
-      $(this._element).addClass(ClassName$3.COLLAPSING).removeClass(ClassName$3.COLLAPSE).removeClass(ClassName$3.SHOW);
+      $(this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -9549,8 +9461,8 @@ function fromByteArray (uint8) {
           if (selector !== null) {
             var $elem = $([].slice.call(document.querySelectorAll(selector)));
 
-            if (!$elem.hasClass(ClassName$3.SHOW)) {
-              $(trigger).addClass(ClassName$3.COLLAPSED).attr('aria-expanded', false);
+            if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
+              $(trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
             }
           }
         }
@@ -9561,7 +9473,7 @@ function fromByteArray (uint8) {
       var complete = function complete() {
         _this2.setTransitioning(false);
 
-        $(_this2._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).trigger(Event$3.HIDDEN);
+        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
       };
 
       this._element.style[dimension] = '';
@@ -9584,7 +9496,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$1, {}, config);
+      config = _extends({}, Default$1, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
 
       Util.typeCheckConfig(NAME$3, config, DefaultType$1);
@@ -9592,8 +9504,8 @@ function fromByteArray (uint8) {
     };
 
     _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(Dimension.WIDTH);
-      return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT;
+      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH);
+      return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT;
     };
 
     _proto._getParent = function _getParent() {
@@ -9620,10 +9532,10 @@ function fromByteArray (uint8) {
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(ClassName$3.SHOW);
+      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$1);
 
       if (triggerArray.length) {
-        $(triggerArray).toggleClass(ClassName$3.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
+        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
       }
     } // Static
     ;
@@ -9638,9 +9550,9 @@ function fromByteArray (uint8) {
         var $this = $(this);
         var data = $this.data(DATA_KEY$3);
 
-        var _config = _objectSpread2({}, Default$1, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
 
-        if (!data && _config.toggle && /show|hide/.test(config)) {
+        if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
           _config.toggle = false;
         }
 
@@ -9680,7 +9592,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
@@ -9718,7 +9630,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.4.1';
+  var VERSION$4 = '4.5.2';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
@@ -9736,43 +9648,32 @@ function fromByteArray (uint8) {
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
   var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-  var Event$4 = {
-    HIDE: "hide" + EVENT_KEY$4,
-    HIDDEN: "hidden" + EVENT_KEY$4,
-    SHOW: "show" + EVENT_KEY$4,
-    SHOWN: "shown" + EVENT_KEY$4,
-    CLICK: "click" + EVENT_KEY$4,
-    CLICK_DATA_API: "click" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYDOWN_DATA_API: "keydown" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYUP_DATA_API: "keyup" + EVENT_KEY$4 + DATA_API_KEY$4
-  };
-  var ClassName$4 = {
-    DISABLED: 'disabled',
-    SHOW: 'show',
-    DROPUP: 'dropup',
-    DROPRIGHT: 'dropright',
-    DROPLEFT: 'dropleft',
-    MENURIGHT: 'dropdown-menu-right',
-    MENULEFT: 'dropdown-menu-left',
-    POSITION_STATIC: 'position-static'
-  };
-  var Selector$4 = {
-    DATA_TOGGLE: '[data-toggle="dropdown"]',
-    FORM_CHILD: '.dropdown form',
-    MENU: '.dropdown-menu',
-    NAVBAR_NAV: '.navbar-nav',
-    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
-  };
-  var AttachmentMap = {
-    TOP: 'top-start',
-    TOPEND: 'top-end',
-    BOTTOM: 'bottom-start',
-    BOTTOMEND: 'bottom-end',
-    RIGHT: 'right-start',
-    RIGHTEND: 'right-end',
-    LEFT: 'left-start',
-    LEFTEND: 'left-end'
-  };
+  var EVENT_HIDE$1 = "hide" + EVENT_KEY$4;
+  var EVENT_HIDDEN$1 = "hidden" + EVENT_KEY$4;
+  var EVENT_SHOW$1 = "show" + EVENT_KEY$4;
+  var EVENT_SHOWN$1 = "shown" + EVENT_KEY$4;
+  var EVENT_CLICK = "click" + EVENT_KEY$4;
+  var EVENT_CLICK_DATA_API$4 = "click" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var EVENT_KEYDOWN_DATA_API = "keydown" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var EVENT_KEYUP_DATA_API = "keyup" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var CLASS_NAME_DISABLED = 'disabled';
+  var CLASS_NAME_SHOW$2 = 'show';
+  var CLASS_NAME_DROPUP = 'dropup';
+  var CLASS_NAME_DROPRIGHT = 'dropright';
+  var CLASS_NAME_DROPLEFT = 'dropleft';
+  var CLASS_NAME_MENURIGHT = 'dropdown-menu-right';
+  var CLASS_NAME_POSITION_STATIC = 'position-static';
+  var SELECTOR_DATA_TOGGLE$2 = '[data-toggle="dropdown"]';
+  var SELECTOR_FORM_CHILD = '.dropdown form';
+  var SELECTOR_MENU = '.dropdown-menu';
+  var SELECTOR_NAVBAR_NAV = '.navbar-nav';
+  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
+  var PLACEMENT_TOP = 'top-start';
+  var PLACEMENT_TOPEND = 'top-end';
+  var PLACEMENT_BOTTOM = 'bottom-start';
+  var PLACEMENT_BOTTOMEND = 'bottom-end';
+  var PLACEMENT_RIGHT = 'right-start';
+  var PLACEMENT_LEFT = 'left-start';
   var Default$2 = {
     offset: 0,
     flip: true,
@@ -9795,9 +9696,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Dropdown =
-  /*#__PURE__*/
-  function () {
+  var Dropdown = /*#__PURE__*/function () {
     function Dropdown(element, config) {
       this._element = element;
       this._popper = null;
@@ -9813,11 +9712,11 @@ function fromByteArray (uint8) {
 
     // Public
     _proto.toggle = function toggle() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED)) {
         return;
       }
 
-      var isActive = $(this._menu).hasClass(ClassName$4.SHOW);
+      var isActive = $(this._menu).hasClass(CLASS_NAME_SHOW$2);
 
       Dropdown._clearMenus();
 
@@ -9833,14 +9732,14 @@ function fromByteArray (uint8) {
         usePopper = false;
       }
 
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || $(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var showEvent = $.Event(Event$4.SHOW, relatedTarget);
+      var showEvent = $.Event(EVENT_SHOW$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
@@ -9876,7 +9775,7 @@ function fromByteArray (uint8) {
 
 
         if (this._config.boundary !== 'scrollParent') {
-          $(parent).addClass(ClassName$4.POSITION_STATIC);
+          $(parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
         this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
@@ -9886,7 +9785,7 @@ function fromByteArray (uint8) {
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
-      if ('ontouchstart' in document.documentElement && $(parent).closest(Selector$4.NAVBAR_NAV).length === 0) {
+      if ('ontouchstart' in document.documentElement && $(parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
         $(document.body).children().on('mouseover', null, $.noop);
       }
 
@@ -9894,19 +9793,19 @@ function fromByteArray (uint8) {
 
       this._element.setAttribute('aria-expanded', true);
 
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_SHOWN$1, relatedTarget));
     };
 
     _proto.hide = function hide() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || !$(this._menu).hasClass(ClassName$4.SHOW)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || !$(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
+      var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
@@ -9920,8 +9819,8 @@ function fromByteArray (uint8) {
         this._popper.destroy();
       }
 
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
     };
 
     _proto.dispose = function dispose() {
@@ -9949,7 +9848,7 @@ function fromByteArray (uint8) {
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
 
-      $(this._element).on(Event$4.CLICK, function (event) {
+      $(this._element).on(EVENT_CLICK, function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -9958,7 +9857,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, this.constructor.Default, {}, $(this._element).data(), {}, config);
+      config = _extends({}, this.constructor.Default, $(this._element).data(), config);
       Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
       return config;
     };
@@ -9968,7 +9867,7 @@ function fromByteArray (uint8) {
         var parent = Dropdown._getParentFromElement(this._element);
 
         if (parent) {
-          this._menu = parent.querySelector(Selector$4.MENU);
+          this._menu = parent.querySelector(SELECTOR_MENU);
         }
       }
 
@@ -9977,20 +9876,16 @@ function fromByteArray (uint8) {
 
     _proto._getPlacement = function _getPlacement() {
       var $parentDropdown = $(this._element.parentNode);
-      var placement = AttachmentMap.BOTTOM; // Handle dropup
+      var placement = PLACEMENT_BOTTOM; // Handle dropup
 
-      if ($parentDropdown.hasClass(ClassName$4.DROPUP)) {
-        placement = AttachmentMap.TOP;
-
-        if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-          placement = AttachmentMap.TOPEND;
-        }
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPRIGHT)) {
-        placement = AttachmentMap.RIGHT;
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPLEFT)) {
-        placement = AttachmentMap.LEFT;
-      } else if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-        placement = AttachmentMap.BOTTOMEND;
+      if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
+        placement = $(this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPRIGHT)) {
+        placement = PLACEMENT_RIGHT;
+      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPLEFT)) {
+        placement = PLACEMENT_LEFT;
+      } else if ($(this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
+        placement = PLACEMENT_BOTTOMEND;
       }
 
       return placement;
@@ -10007,7 +9902,7 @@ function fromByteArray (uint8) {
 
       if (typeof this._config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2({}, data.offsets, {}, _this2._config.offset(data.offsets, _this2._element) || {});
+          data.offsets = _extends({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
           return data;
         };
       } else {
@@ -10037,7 +9932,7 @@ function fromByteArray (uint8) {
         };
       }
 
-      return _objectSpread2({}, popperConfig, {}, this._config.popperConfig);
+      return _extends({}, popperConfig, this._config.popperConfig);
     } // Static
     ;
 
@@ -10067,7 +9962,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var toggles = [].slice.call(document.querySelectorAll(Selector$4.DATA_TOGGLE));
+      var toggles = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$2));
 
       for (var i = 0, len = toggles.length; i < len; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
@@ -10087,7 +9982,7 @@ function fromByteArray (uint8) {
 
         var dropdownMenu = context._menu;
 
-        if (!$(parent).hasClass(ClassName$4.SHOW)) {
+        if (!$(parent).hasClass(CLASS_NAME_SHOW$2)) {
           continue;
         }
 
@@ -10095,7 +9990,7 @@ function fromByteArray (uint8) {
           continue;
         }
 
-        var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
+        var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
         $(parent).trigger(hideEvent);
 
         if (hideEvent.isDefaultPrevented()) {
@@ -10114,8 +10009,8 @@ function fromByteArray (uint8) {
           context._popper.destroy();
         }
 
-        $(dropdownMenu).removeClass(ClassName$4.SHOW);
-        $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
+        $(dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $(parent).removeClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
       }
     };
 
@@ -10139,36 +10034,35 @@ function fromByteArray (uint8) {
       //  - If key is other than escape
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(Selector$4.MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+        return;
+      }
+
+      if (this.disabled || $(this).hasClass(CLASS_NAME_DISABLED)) {
+        return;
+      }
+
+      var parent = Dropdown._getParentFromElement(this);
+
+      var isActive = $(parent).hasClass(CLASS_NAME_SHOW$2);
+
+      if (!isActive && event.which === ESCAPE_KEYCODE) {
         return;
       }
 
       event.preventDefault();
       event.stopPropagation();
 
-      if (this.disabled || $(this).hasClass(ClassName$4.DISABLED)) {
-        return;
-      }
-
-      var parent = Dropdown._getParentFromElement(this);
-
-      var isActive = $(parent).hasClass(ClassName$4.SHOW);
-
-      if (!isActive && event.which === ESCAPE_KEYCODE) {
-        return;
-      }
-
       if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
         if (event.which === ESCAPE_KEYCODE) {
-          var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
-          $(toggle).trigger('focus');
+          $(parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
         }
 
         $(this).trigger('click');
         return;
       }
 
-      var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS)).filter(function (item) {
+      var items = [].slice.call(parent.querySelectorAll(SELECTOR_VISIBLE_ITEMS)).filter(function (item) {
         return $(item).is(':visible');
       });
 
@@ -10221,12 +10115,12 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$4.KEYDOWN_DATA_API, Selector$4.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event$4.KEYDOWN_DATA_API, Selector$4.MENU, Dropdown._dataApiKeydownHandler).on(Event$4.CLICK_DATA_API + " " + Event$4.KEYUP_DATA_API, Dropdown._clearMenus).on(Event$4.CLICK_DATA_API, Selector$4.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
     event.preventDefault();
     event.stopPropagation();
 
     Dropdown._jQueryInterface.call($(this), 'toggle');
-  }).on(Event$4.CLICK_DATA_API, Selector$4.FORM_CHILD, function (e) {
+  }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
     e.stopPropagation();
   });
   /**
@@ -10250,7 +10144,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$5 = 'modal';
-  var VERSION$5 = '4.4.1';
+  var VERSION$5 = '4.5.2';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
@@ -10269,50 +10163,42 @@ function fromByteArray (uint8) {
     focus: 'boolean',
     show: 'boolean'
   };
-  var Event$5 = {
-    HIDE: "hide" + EVENT_KEY$5,
-    HIDE_PREVENTED: "hidePrevented" + EVENT_KEY$5,
-    HIDDEN: "hidden" + EVENT_KEY$5,
-    SHOW: "show" + EVENT_KEY$5,
-    SHOWN: "shown" + EVENT_KEY$5,
-    FOCUSIN: "focusin" + EVENT_KEY$5,
-    RESIZE: "resize" + EVENT_KEY$5,
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$5,
-    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY$5,
-    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY$5,
-    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY$5,
-    CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
-  };
-  var ClassName$5 = {
-    SCROLLABLE: 'modal-dialog-scrollable',
-    SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
-    BACKDROP: 'modal-backdrop',
-    OPEN: 'modal-open',
-    FADE: 'fade',
-    SHOW: 'show',
-    STATIC: 'modal-static'
-  };
-  var Selector$5 = {
-    DIALOG: '.modal-dialog',
-    MODAL_BODY: '.modal-body',
-    DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
-    FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
-    STICKY_CONTENT: '.sticky-top'
-  };
+  var EVENT_HIDE$2 = "hide" + EVENT_KEY$5;
+  var EVENT_HIDE_PREVENTED = "hidePrevented" + EVENT_KEY$5;
+  var EVENT_HIDDEN$2 = "hidden" + EVENT_KEY$5;
+  var EVENT_SHOW$2 = "show" + EVENT_KEY$5;
+  var EVENT_SHOWN$2 = "shown" + EVENT_KEY$5;
+  var EVENT_FOCUSIN = "focusin" + EVENT_KEY$5;
+  var EVENT_RESIZE = "resize" + EVENT_KEY$5;
+  var EVENT_CLICK_DISMISS = "click.dismiss" + EVENT_KEY$5;
+  var EVENT_KEYDOWN_DISMISS = "keydown.dismiss" + EVENT_KEY$5;
+  var EVENT_MOUSEUP_DISMISS = "mouseup.dismiss" + EVENT_KEY$5;
+  var EVENT_MOUSEDOWN_DISMISS = "mousedown.dismiss" + EVENT_KEY$5;
+  var EVENT_CLICK_DATA_API$5 = "click" + EVENT_KEY$5 + DATA_API_KEY$5;
+  var CLASS_NAME_SCROLLABLE = 'modal-dialog-scrollable';
+  var CLASS_NAME_SCROLLBAR_MEASURER = 'modal-scrollbar-measure';
+  var CLASS_NAME_BACKDROP = 'modal-backdrop';
+  var CLASS_NAME_OPEN = 'modal-open';
+  var CLASS_NAME_FADE$1 = 'fade';
+  var CLASS_NAME_SHOW$3 = 'show';
+  var CLASS_NAME_STATIC = 'modal-static';
+  var SELECTOR_DIALOG = '.modal-dialog';
+  var SELECTOR_MODAL_BODY = '.modal-body';
+  var SELECTOR_DATA_TOGGLE$3 = '[data-toggle="modal"]';
+  var SELECTOR_DATA_DISMISS = '[data-dismiss="modal"]';
+  var SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
+  var SELECTOR_STICKY_CONTENT = '.sticky-top';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Modal =
-  /*#__PURE__*/
-  function () {
+  var Modal = /*#__PURE__*/function () {
     function Modal(element, config) {
       this._config = this._getConfig(config);
       this._element = element;
-      this._dialog = element.querySelector(Selector$5.DIALOG);
+      this._dialog = element.querySelector(SELECTOR_DIALOG);
       this._backdrop = null;
       this._isShown = false;
       this._isBodyOverflowing = false;
@@ -10336,11 +10222,11 @@ function fromByteArray (uint8) {
         return;
       }
 
-      if ($(this._element).hasClass(ClassName$5.FADE)) {
+      if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
         this._isTransitioning = true;
       }
 
-      var showEvent = $.Event(Event$5.SHOW, {
+      var showEvent = $.Event(EVENT_SHOW$2, {
         relatedTarget: relatedTarget
       });
       $(this._element).trigger(showEvent);
@@ -10361,11 +10247,11 @@ function fromByteArray (uint8) {
 
       this._setResizeEvent();
 
-      $(this._element).on(Event$5.CLICK_DISMISS, Selector$5.DATA_DISMISS, function (event) {
+      $(this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
         return _this.hide(event);
       });
-      $(this._dialog).on(Event$5.MOUSEDOWN_DISMISS, function () {
-        $(_this._element).one(Event$5.MOUSEUP_DISMISS, function (event) {
+      $(this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
+        $(_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
           if ($(event.target).is(_this._element)) {
             _this._ignoreBackdropClick = true;
           }
@@ -10388,7 +10274,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var hideEvent = $.Event(Event$5.HIDE);
+      var hideEvent = $.Event(EVENT_HIDE$2);
       $(this._element).trigger(hideEvent);
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
@@ -10396,7 +10282,7 @@ function fromByteArray (uint8) {
       }
 
       this._isShown = false;
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
 
       if (transition) {
         this._isTransitioning = true;
@@ -10406,10 +10292,10 @@ function fromByteArray (uint8) {
 
       this._setResizeEvent();
 
-      $(document).off(Event$5.FOCUSIN);
-      $(this._element).removeClass(ClassName$5.SHOW);
-      $(this._element).off(Event$5.CLICK_DISMISS);
-      $(this._dialog).off(Event$5.MOUSEDOWN_DISMISS);
+      $(document).off(EVENT_FOCUSIN);
+      $(this._element).removeClass(CLASS_NAME_SHOW$3);
+      $(this._element).off(EVENT_CLICK_DISMISS);
+      $(this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
 
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -10426,12 +10312,12 @@ function fromByteArray (uint8) {
         return $(htmlElement).off(EVENT_KEY$5);
       });
       /**
-       * `document` has 2 events `Event.FOCUSIN` and `Event.CLICK_DATA_API`
+       * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
        * Do not move `document` in `htmlElements` array
-       * It will remove `Event.CLICK_DATA_API` event that should remain
+       * It will remove `EVENT_CLICK_DATA_API` event that should remain
        */
 
-      $(document).off(Event$5.FOCUSIN);
+      $(document).off(EVENT_FOCUSIN);
       $.removeData(this._element, DATA_KEY$5);
       this._config = null;
       this._element = null;
@@ -10450,7 +10336,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$3, {}, config);
+      config = _extends({}, Default$3, config);
       Util.typeCheckConfig(NAME$5, config, DefaultType$3);
       return config;
     };
@@ -10459,18 +10345,31 @@ function fromByteArray (uint8) {
       var _this3 = this;
 
       if (this._config.backdrop === 'static') {
-        var hideEventPrevented = $.Event(Event$5.HIDE_PREVENTED);
+        var hideEventPrevented = $.Event(EVENT_HIDE_PREVENTED);
         $(this._element).trigger(hideEventPrevented);
 
         if (hideEventPrevented.defaultPrevented) {
           return;
         }
 
-        this._element.classList.add(ClassName$5.STATIC);
+        var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
-        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+        if (!isModalOverflowing) {
+          this._element.style.overflowY = 'hidden';
+        }
+
+        this._element.classList.add(CLASS_NAME_STATIC);
+
+        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        $(this._element).off(Util.TRANSITION_END);
         $(this._element).one(Util.TRANSITION_END, function () {
-          _this3._element.classList.remove(ClassName$5.STATIC);
+          _this3._element.classList.remove(CLASS_NAME_STATIC);
+
+          if (!isModalOverflowing) {
+            $(_this3._element).one(Util.TRANSITION_END, function () {
+              _this3._element.style.overflowY = '';
+            }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
+          }
         }).emulateTransitionEnd(modalTransitionDuration);
 
         this._element.focus();
@@ -10482,8 +10381,8 @@ function fromByteArray (uint8) {
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
 
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
-      var modalBody = this._dialog ? this._dialog.querySelector(Selector$5.MODAL_BODY) : null;
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+      var modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -10496,7 +10395,9 @@ function fromByteArray (uint8) {
 
       this._element.setAttribute('aria-modal', true);
 
-      if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE) && modalBody) {
+      this._element.setAttribute('role', 'dialog');
+
+      if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
         modalBody.scrollTop = 0;
       } else {
         this._element.scrollTop = 0;
@@ -10506,13 +10407,13 @@ function fromByteArray (uint8) {
         Util.reflow(this._element);
       }
 
-      $(this._element).addClass(ClassName$5.SHOW);
+      $(this._element).addClass(CLASS_NAME_SHOW$3);
 
       if (this._config.focus) {
         this._enforceFocus();
       }
 
-      var shownEvent = $.Event(Event$5.SHOWN, {
+      var shownEvent = $.Event(EVENT_SHOWN$2, {
         relatedTarget: relatedTarget
       });
 
@@ -10536,8 +10437,8 @@ function fromByteArray (uint8) {
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
 
-      $(document).off(Event$5.FOCUSIN) // Guard against infinite focus loop
-      .on(Event$5.FOCUSIN, function (event) {
+      $(document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
+      .on(EVENT_FOCUSIN, function (event) {
         if (document !== event.target && _this5._element !== event.target && $(_this5._element).has(event.target).length === 0) {
           _this5._element.focus();
         }
@@ -10547,14 +10448,18 @@ function fromByteArray (uint8) {
     _proto._setEscapeEvent = function _setEscapeEvent() {
       var _this6 = this;
 
-      if (this._isShown && this._config.keyboard) {
-        $(this._element).on(Event$5.KEYDOWN_DISMISS, function (event) {
-          if (event.which === ESCAPE_KEYCODE$1) {
+      if (this._isShown) {
+        $(this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
+          if (_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
+            event.preventDefault();
+
+            _this6.hide();
+          } else if (!_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
             _this6._triggerBackdropTransition();
           }
         });
       } else if (!this._isShown) {
-        $(this._element).off(Event$5.KEYDOWN_DISMISS);
+        $(this._element).off(EVENT_KEYDOWN_DISMISS);
       }
     };
 
@@ -10562,11 +10467,11 @@ function fromByteArray (uint8) {
       var _this7 = this;
 
       if (this._isShown) {
-        $(window).on(Event$5.RESIZE, function (event) {
+        $(window).on(EVENT_RESIZE, function (event) {
           return _this7.handleUpdate(event);
         });
       } else {
-        $(window).off(Event$5.RESIZE);
+        $(window).off(EVENT_RESIZE);
       }
     };
 
@@ -10579,16 +10484,18 @@ function fromByteArray (uint8) {
 
       this._element.removeAttribute('aria-modal');
 
+      this._element.removeAttribute('role');
+
       this._isTransitioning = false;
 
       this._showBackdrop(function () {
-        $(document.body).removeClass(ClassName$5.OPEN);
+        $(document.body).removeClass(CLASS_NAME_OPEN);
 
         _this8._resetAdjustments();
 
         _this8._resetScrollbar();
 
-        $(_this8._element).trigger(Event$5.HIDDEN);
+        $(_this8._element).trigger(EVENT_HIDDEN$2);
       });
     };
 
@@ -10602,18 +10509,18 @@ function fromByteArray (uint8) {
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
 
-      var animate = $(this._element).hasClass(ClassName$5.FADE) ? ClassName$5.FADE : '';
+      var animate = $(this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
-        this._backdrop.className = ClassName$5.BACKDROP;
+        this._backdrop.className = CLASS_NAME_BACKDROP;
 
         if (animate) {
           this._backdrop.classList.add(animate);
         }
 
         $(this._backdrop).appendTo(document.body);
-        $(this._element).on(Event$5.CLICK_DISMISS, function (event) {
+        $(this._element).on(EVENT_CLICK_DISMISS, function (event) {
           if (_this9._ignoreBackdropClick) {
             _this9._ignoreBackdropClick = false;
             return;
@@ -10630,7 +10537,7 @@ function fromByteArray (uint8) {
           Util.reflow(this._backdrop);
         }
 
-        $(this._backdrop).addClass(ClassName$5.SHOW);
+        $(this._backdrop).addClass(CLASS_NAME_SHOW$3);
 
         if (!callback) {
           return;
@@ -10644,7 +10551,7 @@ function fromByteArray (uint8) {
         var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
         $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
-        $(this._backdrop).removeClass(ClassName$5.SHOW);
+        $(this._backdrop).removeClass(CLASS_NAME_SHOW$3);
 
         var callbackRemove = function callbackRemove() {
           _this9._removeBackdrop();
@@ -10654,7 +10561,7 @@ function fromByteArray (uint8) {
           }
         };
 
-        if ($(this._element).hasClass(ClassName$5.FADE)) {
+        if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
           var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
           $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
@@ -10689,7 +10596,7 @@ function fromByteArray (uint8) {
 
     _proto._checkScrollbar = function _checkScrollbar() {
       var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+      this._isBodyOverflowing = Math.round(rect.left + rect.right) < window.innerWidth;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
@@ -10699,8 +10606,8 @@ function fromByteArray (uint8) {
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
-        var stickyContent = [].slice.call(document.querySelectorAll(Selector$5.STICKY_CONTENT)); // Adjust fixed content padding
+        var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
+        var stickyContent = [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)); // Adjust fixed content padding
 
         $(fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
@@ -10719,19 +10626,19 @@ function fromByteArray (uint8) {
         $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
 
-      $(document.body).addClass(ClassName$5.OPEN);
+      $(document.body).addClass(CLASS_NAME_OPEN);
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
-      var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
+      var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
       $(fixedContent).each(function (index, element) {
         var padding = $(element).data('padding-right');
         $(element).removeData('padding-right');
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
-      var elements = [].slice.call(document.querySelectorAll("" + Selector$5.STICKY_CONTENT));
+      var elements = [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT));
       $(elements).each(function (index, element) {
         var margin = $(element).data('margin-right');
 
@@ -10748,7 +10655,7 @@ function fromByteArray (uint8) {
     _proto._getScrollbarWidth = function _getScrollbarWidth() {
       // thx d.walsh
       var scrollDiv = document.createElement('div');
-      scrollDiv.className = ClassName$5.SCROLLBAR_MEASURER;
+      scrollDiv.className = CLASS_NAME_SCROLLBAR_MEASURER;
       document.body.appendChild(scrollDiv);
       var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
@@ -10760,7 +10667,7 @@ function fromByteArray (uint8) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY$5);
 
-        var _config = _objectSpread2({}, Default$3, {}, $(this).data(), {}, typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$3, $(this).data(), typeof config === 'object' && config ? config : {});
 
         if (!data) {
           data = new Modal(this, _config);
@@ -10800,7 +10707,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
     var _this11 = this;
 
     var target;
@@ -10810,19 +10717,19 @@ function fromByteArray (uint8) {
       target = document.querySelector(selector);
     }
 
-    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
+    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $(target).data(), $(this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
-    var $target = $(target).one(Event$5.SHOW, function (showEvent) {
+    var $target = $(target).one(EVENT_SHOW$2, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
         // Only register focus restorer if modal will actually get shown
         return;
       }
 
-      $target.one(Event$5.HIDDEN, function () {
+      $target.one(EVENT_HIDDEN$2, function () {
         if ($(_this11).is(':visible')) {
           _this11.focus();
         }
@@ -10847,8 +10754,8 @@ function fromByteArray (uint8) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
@@ -10872,7 +10779,7 @@ function fromByteArray (uint8) {
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -10892,14 +10799,14 @@ function fromByteArray (uint8) {
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi;
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
 
   function allowedAttribute(attr, allowedAttributeList) {
     var attrName = attr.nodeName.toLowerCase();
@@ -10916,7 +10823,7 @@ function fromByteArray (uint8) {
       return attrRegex instanceof RegExp;
     }); // Check if a regular expression validates the attribute.
 
-    for (var i = 0, l = regExp.length; i < l; i++) {
+    for (var i = 0, len = regExp.length; i < len; i++) {
       if (attrName.match(regExp[i])) {
         return true;
       }
@@ -10973,7 +10880,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.4.1';
+  var VERSION$6 = '4.5.2';
   var DATA_KEY$6 = 'bs.tooltip';
   var EVENT_KEY$6 = "." + DATA_KEY$6;
   var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
@@ -10998,7 +10905,7 @@ function fromByteArray (uint8) {
     whiteList: 'object',
     popperConfig: '(null|object)'
   };
-  var AttachmentMap$1 = {
+  var AttachmentMap = {
     AUTO: 'auto',
     TOP: 'top',
     RIGHT: 'right',
@@ -11023,11 +10930,9 @@ function fromByteArray (uint8) {
     whiteList: DefaultWhitelist,
     popperConfig: null
   };
-  var HoverState = {
-    SHOW: 'show',
-    OUT: 'out'
-  };
-  var Event$6 = {
+  var HOVER_STATE_SHOW = 'show';
+  var HOVER_STATE_OUT = 'out';
+  var Event = {
     HIDE: "hide" + EVENT_KEY$6,
     HIDDEN: "hidden" + EVENT_KEY$6,
     SHOW: "show" + EVENT_KEY$6,
@@ -11039,30 +10944,21 @@ function fromByteArray (uint8) {
     MOUSEENTER: "mouseenter" + EVENT_KEY$6,
     MOUSELEAVE: "mouseleave" + EVENT_KEY$6
   };
-  var ClassName$6 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$6 = {
-    TOOLTIP: '.tooltip',
-    TOOLTIP_INNER: '.tooltip-inner',
-    ARROW: '.arrow'
-  };
-  var Trigger = {
-    HOVER: 'hover',
-    FOCUS: 'focus',
-    CLICK: 'click',
-    MANUAL: 'manual'
-  };
+  var CLASS_NAME_FADE$2 = 'fade';
+  var CLASS_NAME_SHOW$4 = 'show';
+  var SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
+  var SELECTOR_ARROW = '.arrow';
+  var TRIGGER_HOVER = 'hover';
+  var TRIGGER_FOCUS = 'focus';
+  var TRIGGER_CLICK = 'click';
+  var TRIGGER_MANUAL = 'manual';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Tooltip =
-  /*#__PURE__*/
-  function () {
+  var Tooltip = /*#__PURE__*/function () {
     function Tooltip(element, config) {
       if (typeof Popper === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
@@ -11120,7 +11016,7 @@ function fromByteArray (uint8) {
           context._leave(null, context);
         }
       } else {
-        if ($(this.getTipElement()).hasClass(ClassName$6.SHOW)) {
+        if ($(this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
           this._leave(null, this);
 
           return;
@@ -11180,7 +11076,7 @@ function fromByteArray (uint8) {
         this.setContent();
 
         if (this.config.animation) {
-          $(tip).addClass(ClassName$6.FADE);
+          $(tip).addClass(CLASS_NAME_FADE$2);
         }
 
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
@@ -11199,7 +11095,7 @@ function fromByteArray (uint8) {
 
         $(this.element).trigger(this.constructor.Event.INSERTED);
         this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
-        $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
+        $(tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
@@ -11217,12 +11113,12 @@ function fromByteArray (uint8) {
           _this._hoverState = null;
           $(_this.element).trigger(_this.constructor.Event.SHOWN);
 
-          if (prevHoverState === HoverState.OUT) {
+          if (prevHoverState === HOVER_STATE_OUT) {
             _this._leave(null, _this);
           }
         };
 
-        if ($(this.tip).hasClass(ClassName$6.FADE)) {
+        if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
           var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
           $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
         } else {
@@ -11238,7 +11134,7 @@ function fromByteArray (uint8) {
       var hideEvent = $.Event(this.constructor.Event.HIDE);
 
       var complete = function complete() {
-        if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
+        if (_this2._hoverState !== HOVER_STATE_SHOW && tip.parentNode) {
           tip.parentNode.removeChild(tip);
         }
 
@@ -11263,18 +11159,18 @@ function fromByteArray (uint8) {
         return;
       }
 
-      $(tip).removeClass(ClassName$6.SHOW); // If this is a touch-enabled device we remove the extra
+      $(tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ('ontouchstart' in document.documentElement) {
         $(document.body).children().off('mouseover', null, $.noop);
       }
 
-      this._activeTrigger[Trigger.CLICK] = false;
-      this._activeTrigger[Trigger.FOCUS] = false;
-      this._activeTrigger[Trigger.HOVER] = false;
+      this._activeTrigger[TRIGGER_CLICK] = false;
+      this._activeTrigger[TRIGGER_FOCUS] = false;
+      this._activeTrigger[TRIGGER_HOVER] = false;
 
-      if ($(this.tip).hasClass(ClassName$6.FADE)) {
+      if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
         var transitionDuration = Util.getTransitionDurationFromElement(tip);
         $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
@@ -11306,8 +11202,8 @@ function fromByteArray (uint8) {
 
     _proto.setContent = function setContent() {
       var tip = this.getTipElement();
-      this.setElementContent($(tip.querySelectorAll(Selector$6.TOOLTIP_INNER)), this.getTitle());
-      $(tip).removeClass(ClassName$6.FADE + " " + ClassName$6.SHOW);
+      this.setElementContent($(tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
+      $(tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
@@ -11357,7 +11253,7 @@ function fromByteArray (uint8) {
             behavior: this.config.fallbackPlacement
           },
           arrow: {
-            element: Selector$6.ARROW
+            element: SELECTOR_ARROW
           },
           preventOverflow: {
             boundariesElement: this.config.boundary
@@ -11372,7 +11268,7 @@ function fromByteArray (uint8) {
           return _this3._handlePopperPlacementChange(data);
         }
       };
-      return _objectSpread2({}, defaultBsConfig, {}, this.config.popperConfig);
+      return _extends({}, defaultBsConfig, this.config.popperConfig);
     };
 
     _proto._getOffset = function _getOffset() {
@@ -11382,7 +11278,7 @@ function fromByteArray (uint8) {
 
       if (typeof this.config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2({}, data.offsets, {}, _this4.config.offset(data.offsets, _this4.element) || {});
+          data.offsets = _extends({}, data.offsets, _this4.config.offset(data.offsets, _this4.element) || {});
           return data;
         };
       } else {
@@ -11405,7 +11301,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
-      return AttachmentMap$1[placement.toUpperCase()];
+      return AttachmentMap[placement.toUpperCase()];
     };
 
     _proto._setListeners = function _setListeners() {
@@ -11417,9 +11313,9 @@ function fromByteArray (uint8) {
           $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
             return _this5.toggle(event);
           });
-        } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+        } else if (trigger !== TRIGGER_MANUAL) {
+          var eventIn = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
+          var eventOut = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
           $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
             return _this5._enter(event);
           }).on(eventOut, _this5.config.selector, function (event) {
@@ -11437,7 +11333,7 @@ function fromByteArray (uint8) {
       $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
 
       if (this.config.selector) {
-        this.config = _objectSpread2({}, this.config, {
+        this.config = _extends({}, this.config, {
           trigger: 'manual',
           selector: ''
         });
@@ -11465,16 +11361,16 @@ function fromByteArray (uint8) {
       }
 
       if (event) {
-        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
+        context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
       }
 
-      if ($(context.getTipElement()).hasClass(ClassName$6.SHOW) || context._hoverState === HoverState.SHOW) {
-        context._hoverState = HoverState.SHOW;
+      if ($(context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
+        context._hoverState = HOVER_STATE_SHOW;
         return;
       }
 
       clearTimeout(context._timeout);
-      context._hoverState = HoverState.SHOW;
+      context._hoverState = HOVER_STATE_SHOW;
 
       if (!context.config.delay || !context.config.delay.show) {
         context.show();
@@ -11482,7 +11378,7 @@ function fromByteArray (uint8) {
       }
 
       context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.SHOW) {
+        if (context._hoverState === HOVER_STATE_SHOW) {
           context.show();
         }
       }, context.config.delay.show);
@@ -11498,7 +11394,7 @@ function fromByteArray (uint8) {
       }
 
       if (event) {
-        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
+        context._activeTrigger[event.type === 'focusout' ? TRIGGER_FOCUS : TRIGGER_HOVER] = false;
       }
 
       if (context._isWithActiveTrigger()) {
@@ -11506,7 +11402,7 @@ function fromByteArray (uint8) {
       }
 
       clearTimeout(context._timeout);
-      context._hoverState = HoverState.OUT;
+      context._hoverState = HOVER_STATE_OUT;
 
       if (!context.config.delay || !context.config.delay.hide) {
         context.hide();
@@ -11514,7 +11410,7 @@ function fromByteArray (uint8) {
       }
 
       context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.OUT) {
+        if (context._hoverState === HOVER_STATE_OUT) {
           context.hide();
         }
       }, context.config.delay.hide);
@@ -11537,7 +11433,7 @@ function fromByteArray (uint8) {
           delete dataAttributes[dataAttr];
         }
       });
-      config = _objectSpread2({}, this.constructor.Default, {}, dataAttributes, {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
 
       if (typeof config.delay === 'number') {
         config.delay = {
@@ -11587,8 +11483,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      var popperInstance = popperData.instance;
-      this.tip = popperInstance.popper;
+      this.tip = popperData.instance.popper;
 
       this._cleanTipClass();
 
@@ -11603,7 +11498,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      $(tip).removeClass(ClassName$6.FADE);
+      $(tip).removeClass(CLASS_NAME_FADE$2);
       this.config.animation = false;
       this.hide();
       this.show();
@@ -11659,7 +11554,7 @@ function fromByteArray (uint8) {
     }, {
       key: "Event",
       get: function get() {
-        return Event$6;
+        return Event;
       }
     }, {
       key: "EVENT_KEY",
@@ -11697,33 +11592,29 @@ function fromByteArray (uint8) {
    */
 
   var NAME$7 = 'popover';
-  var VERSION$7 = '4.4.1';
+  var VERSION$7 = '4.5.2';
   var DATA_KEY$7 = 'bs.popover';
   var EVENT_KEY$7 = "." + DATA_KEY$7;
   var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
   var CLASS_PREFIX$1 = 'bs-popover';
   var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
 
-  var Default$5 = _objectSpread2({}, Tooltip.Default, {
+  var Default$5 = _extends({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
   });
 
-  var DefaultType$5 = _objectSpread2({}, Tooltip.DefaultType, {
+  var DefaultType$5 = _extends({}, Tooltip.DefaultType, {
     content: '(string|element|function)'
   });
 
-  var ClassName$7 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$7 = {
-    TITLE: '.popover-header',
-    CONTENT: '.popover-body'
-  };
-  var Event$7 = {
+  var CLASS_NAME_FADE$3 = 'fade';
+  var CLASS_NAME_SHOW$5 = 'show';
+  var SELECTOR_TITLE = '.popover-header';
+  var SELECTOR_CONTENT = '.popover-body';
+  var Event$1 = {
     HIDE: "hide" + EVENT_KEY$7,
     HIDDEN: "hidden" + EVENT_KEY$7,
     SHOW: "show" + EVENT_KEY$7,
@@ -11741,9 +11632,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Popover =
-  /*#__PURE__*/
-  function (_Tooltip) {
+  var Popover = /*#__PURE__*/function (_Tooltip) {
     _inheritsLoose(Popover, _Tooltip);
 
     function Popover() {
@@ -11769,7 +11658,7 @@ function fromByteArray (uint8) {
     _proto.setContent = function setContent() {
       var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
 
-      this.setElementContent($tip.find(Selector$7.TITLE), this.getTitle());
+      this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
 
       var content = this._getContent();
 
@@ -11777,8 +11666,8 @@ function fromByteArray (uint8) {
         content = content.call(this.element);
       }
 
-      this.setElementContent($tip.find(Selector$7.CONTENT), content);
-      $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
+      this.setElementContent($tip.find(SELECTOR_CONTENT), content);
+      $tip.removeClass(CLASS_NAME_FADE$3 + " " + CLASS_NAME_SHOW$5);
     } // Private
     ;
 
@@ -11845,7 +11734,7 @@ function fromByteArray (uint8) {
     }, {
       key: "Event",
       get: function get() {
-        return Event$7;
+        return Event$1;
       }
     }, {
       key: "EVENT_KEY",
@@ -11883,7 +11772,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.4.1';
+  var VERSION$8 = '4.5.2';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
@@ -11898,52 +11787,40 @@ function fromByteArray (uint8) {
     method: 'string',
     target: '(string|element)'
   };
-  var Event$8 = {
-    ACTIVATE: "activate" + EVENT_KEY$8,
-    SCROLL: "scroll" + EVENT_KEY$8,
-    LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
-  };
-  var ClassName$8 = {
-    DROPDOWN_ITEM: 'dropdown-item',
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active'
-  };
-  var Selector$8 = {
-    DATA_SPY: '[data-spy="scroll"]',
-    ACTIVE: '.active',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    NAV_LINKS: '.nav-link',
-    NAV_ITEMS: '.nav-item',
-    LIST_ITEMS: '.list-group-item',
-    DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
-    DROPDOWN_TOGGLE: '.dropdown-toggle'
-  };
-  var OffsetMethod = {
-    OFFSET: 'offset',
-    POSITION: 'position'
-  };
+  var EVENT_ACTIVATE = "activate" + EVENT_KEY$8;
+  var EVENT_SCROLL = "scroll" + EVENT_KEY$8;
+  var EVENT_LOAD_DATA_API$2 = "load" + EVENT_KEY$8 + DATA_API_KEY$6;
+  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
+  var CLASS_NAME_ACTIVE$2 = 'active';
+  var SELECTOR_DATA_SPY = '[data-spy="scroll"]';
+  var SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
+  var SELECTOR_NAV_LINKS = '.nav-link';
+  var SELECTOR_NAV_ITEMS = '.nav-item';
+  var SELECTOR_LIST_ITEMS = '.list-group-item';
+  var SELECTOR_DROPDOWN = '.dropdown';
+  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
+  var SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
+  var METHOD_OFFSET = 'offset';
+  var METHOD_POSITION = 'position';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var ScrollSpy =
-  /*#__PURE__*/
-  function () {
+  var ScrollSpy = /*#__PURE__*/function () {
     function ScrollSpy(element, config) {
       var _this = this;
 
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.DROPDOWN_ITEMS);
+      this._selector = this._config.target + " " + SELECTOR_NAV_LINKS + "," + (this._config.target + " " + SELECTOR_LIST_ITEMS + ",") + (this._config.target + " " + SELECTOR_DROPDOWN_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
-      $(this._scrollElement).on(Event$8.SCROLL, function (event) {
+      $(this._scrollElement).on(EVENT_SCROLL, function (event) {
         return _this._process(event);
       });
       this.refresh();
@@ -11958,9 +11835,9 @@ function fromByteArray (uint8) {
     _proto.refresh = function refresh() {
       var _this2 = this;
 
-      var autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
+      var autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
       var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
+      var offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollTop() : 0;
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
@@ -12009,9 +11886,9 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$6, {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
 
-      if (typeof config.target !== 'string') {
+      if (typeof config.target !== 'string' && Util.isElement(config.target)) {
         var id = $(config.target).attr('id');
 
         if (!id) {
@@ -12067,9 +11944,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var offsetLength = this._offsets.length;
-
-      for (var i = offsetLength; i--;) {
+      for (var i = this._offsets.length; i--;) {
         var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
         if (isActiveTarget) {
@@ -12089,29 +11964,29 @@ function fromByteArray (uint8) {
 
       var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
 
-      if ($link.hasClass(ClassName$8.DROPDOWN_ITEM)) {
-        $link.closest(Selector$8.DROPDOWN).find(Selector$8.DROPDOWN_TOGGLE).addClass(ClassName$8.ACTIVE);
-        $link.addClass(ClassName$8.ACTIVE);
+      if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
+        $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
+        $link.addClass(CLASS_NAME_ACTIVE$2);
       } else {
         // Set triggered link as active
-        $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
+        $link.addClass(CLASS_NAME_ACTIVE$2); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE$2); // Handle special case when .nav-link is inside .nav-item
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
       }
 
-      $(this._scrollElement).trigger(Event$8.ACTIVATE, {
+      $(this._scrollElement).trigger(EVENT_ACTIVATE, {
         relatedTarget: target
       });
     };
 
     _proto._clear = function _clear() {
       [].slice.call(document.querySelectorAll(this._selector)).filter(function (node) {
-        return node.classList.contains(ClassName$8.ACTIVE);
+        return node.classList.contains(CLASS_NAME_ACTIVE$2);
       }).forEach(function (node) {
-        return node.classList.remove(ClassName$8.ACTIVE);
+        return node.classList.remove(CLASS_NAME_ACTIVE$2);
       });
     } // Static
     ;
@@ -12158,8 +12033,8 @@ function fromByteArray (uint8) {
    */
 
 
-  $(window).on(Event$8.LOAD_DATA_API, function () {
-    var scrollSpys = [].slice.call(document.querySelectorAll(Selector$8.DATA_SPY));
+  $(window).on(EVENT_LOAD_DATA_API$2, function () {
+    var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     var scrollSpysLength = scrollSpys.length;
 
     for (var i = scrollSpysLength; i--;) {
@@ -12189,43 +12064,35 @@ function fromByteArray (uint8) {
    */
 
   var NAME$9 = 'tab';
-  var VERSION$9 = '4.4.1';
+  var VERSION$9 = '4.5.2';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
   var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
-  var Event$9 = {
-    HIDE: "hide" + EVENT_KEY$9,
-    HIDDEN: "hidden" + EVENT_KEY$9,
-    SHOW: "show" + EVENT_KEY$9,
-    SHOWN: "shown" + EVENT_KEY$9,
-    CLICK_DATA_API: "click" + EVENT_KEY$9 + DATA_API_KEY$7
-  };
-  var ClassName$9 = {
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active',
-    DISABLED: 'disabled',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$9 = {
-    DROPDOWN: '.dropdown',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    ACTIVE: '.active',
-    ACTIVE_UL: '> li > .active',
-    DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-    DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
-  };
+  var EVENT_HIDE$3 = "hide" + EVENT_KEY$9;
+  var EVENT_HIDDEN$3 = "hidden" + EVENT_KEY$9;
+  var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
+  var EVENT_SHOWN$3 = "shown" + EVENT_KEY$9;
+  var EVENT_CLICK_DATA_API$6 = "click" + EVENT_KEY$9 + DATA_API_KEY$7;
+  var CLASS_NAME_DROPDOWN_MENU = 'dropdown-menu';
+  var CLASS_NAME_ACTIVE$3 = 'active';
+  var CLASS_NAME_DISABLED$1 = 'disabled';
+  var CLASS_NAME_FADE$4 = 'fade';
+  var CLASS_NAME_SHOW$6 = 'show';
+  var SELECTOR_DROPDOWN$1 = '.dropdown';
+  var SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
+  var SELECTOR_ACTIVE$2 = '.active';
+  var SELECTOR_ACTIVE_UL = '> li > .active';
+  var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
+  var SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
+  var SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Tab =
-  /*#__PURE__*/
-  function () {
+  var Tab = /*#__PURE__*/function () {
     function Tab(element) {
       this._element = element;
     } // Getters
@@ -12237,25 +12104,25 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName$9.ACTIVE) || $(this._element).hasClass(ClassName$9.DISABLED)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(CLASS_NAME_ACTIVE$3) || $(this._element).hasClass(CLASS_NAME_DISABLED$1)) {
         return;
       }
 
       var target;
       var previous;
-      var listElement = $(this._element).closest(Selector$9.NAV_LIST_GROUP)[0];
+      var listElement = $(this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
-        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector$9.ACTIVE_UL : Selector$9.ACTIVE;
+        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
         previous = $.makeArray($(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = $.Event(Event$9.HIDE, {
+      var hideEvent = $.Event(EVENT_HIDE$3, {
         relatedTarget: this._element
       });
-      var showEvent = $.Event(Event$9.SHOW, {
+      var showEvent = $.Event(EVENT_SHOW$3, {
         relatedTarget: previous
       });
 
@@ -12276,10 +12143,10 @@ function fromByteArray (uint8) {
       this._activate(this._element, listElement);
 
       var complete = function complete() {
-        var hiddenEvent = $.Event(Event$9.HIDDEN, {
+        var hiddenEvent = $.Event(EVENT_HIDDEN$3, {
           relatedTarget: _this._element
         });
-        var shownEvent = $.Event(Event$9.SHOWN, {
+        var shownEvent = $.Event(EVENT_SHOWN$3, {
           relatedTarget: previous
         });
         $(previous).trigger(hiddenEvent);
@@ -12302,9 +12169,9 @@ function fromByteArray (uint8) {
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector$9.ACTIVE_UL) : $(container).children(Selector$9.ACTIVE);
+      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(SELECTOR_ACTIVE_UL) : $(container).children(SELECTOR_ACTIVE$2);
       var active = activeElements[0];
-      var isTransitioning = callback && active && $(active).hasClass(ClassName$9.FADE);
+      var isTransitioning = callback && active && $(active).hasClass(CLASS_NAME_FADE$4);
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
@@ -12312,7 +12179,7 @@ function fromByteArray (uint8) {
 
       if (active && isTransitioning) {
         var transitionDuration = Util.getTransitionDurationFromElement(active);
-        $(active).removeClass(ClassName$9.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $(active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -12320,11 +12187,11 @@ function fromByteArray (uint8) {
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
-        $(active).removeClass(ClassName$9.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector$9.DROPDOWN_ACTIVE_CHILD)[0];
+        $(active).removeClass(CLASS_NAME_ACTIVE$3);
+        var dropdownChild = $(active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName$9.ACTIVE);
+          $(dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -12332,7 +12199,7 @@ function fromByteArray (uint8) {
         }
       }
 
-      $(element).addClass(ClassName$9.ACTIVE);
+      $(element).addClass(CLASS_NAME_ACTIVE$3);
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
@@ -12340,16 +12207,16 @@ function fromByteArray (uint8) {
 
       Util.reflow(element);
 
-      if (element.classList.contains(ClassName$9.FADE)) {
-        element.classList.add(ClassName$9.SHOW);
+      if (element.classList.contains(CLASS_NAME_FADE$4)) {
+        element.classList.add(CLASS_NAME_SHOW$6);
       }
 
-      if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
+      if (element.parentNode && $(element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
+        var dropdownElement = $(element).closest(SELECTOR_DROPDOWN$1)[0];
 
         if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector$9.DROPDOWN_TOGGLE));
-          $(dropdownToggleList).addClass(ClassName$9.ACTIVE);
+          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
+          $(dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -12397,7 +12264,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$9.CLICK_DATA_API, Selector$9.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
     event.preventDefault();
 
     Tab._jQueryInterface.call($(this), 'show');
@@ -12423,23 +12290,19 @@ function fromByteArray (uint8) {
    */
 
   var NAME$a = 'toast';
-  var VERSION$a = '4.4.1';
+  var VERSION$a = '4.5.2';
   var DATA_KEY$a = 'bs.toast';
   var EVENT_KEY$a = "." + DATA_KEY$a;
   var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
-  var Event$a = {
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$a,
-    HIDE: "hide" + EVENT_KEY$a,
-    HIDDEN: "hidden" + EVENT_KEY$a,
-    SHOW: "show" + EVENT_KEY$a,
-    SHOWN: "shown" + EVENT_KEY$a
-  };
-  var ClassName$a = {
-    FADE: 'fade',
-    HIDE: 'hide',
-    SHOW: 'show',
-    SHOWING: 'showing'
-  };
+  var EVENT_CLICK_DISMISS$1 = "click.dismiss" + EVENT_KEY$a;
+  var EVENT_HIDE$4 = "hide" + EVENT_KEY$a;
+  var EVENT_HIDDEN$4 = "hidden" + EVENT_KEY$a;
+  var EVENT_SHOW$4 = "show" + EVENT_KEY$a;
+  var EVENT_SHOWN$4 = "shown" + EVENT_KEY$a;
+  var CLASS_NAME_FADE$5 = 'fade';
+  var CLASS_NAME_HIDE = 'hide';
+  var CLASS_NAME_SHOW$7 = 'show';
+  var CLASS_NAME_SHOWING = 'showing';
   var DefaultType$7 = {
     animation: 'boolean',
     autohide: 'boolean',
@@ -12450,18 +12313,14 @@ function fromByteArray (uint8) {
     autohide: true,
     delay: 500
   };
-  var Selector$a = {
-    DATA_DISMISS: '[data-dismiss="toast"]'
-  };
+  var SELECTOR_DATA_DISMISS$1 = '[data-dismiss="toast"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Toast =
-  /*#__PURE__*/
-  function () {
+  var Toast = /*#__PURE__*/function () {
     function Toast(element, config) {
       this._element = element;
       this._config = this._getConfig(config);
@@ -12477,23 +12336,25 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      var showEvent = $.Event(Event$a.SHOW);
+      var showEvent = $.Event(EVENT_SHOW$4);
       $(this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
         return;
       }
 
+      this._clearTimeout();
+
       if (this._config.animation) {
-        this._element.classList.add(ClassName$a.FADE);
+        this._element.classList.add(CLASS_NAME_FADE$5);
       }
 
       var complete = function complete() {
-        _this._element.classList.remove(ClassName$a.SHOWING);
+        _this._element.classList.remove(CLASS_NAME_SHOWING);
 
-        _this._element.classList.add(ClassName$a.SHOW);
+        _this._element.classList.add(CLASS_NAME_SHOW$7);
 
-        $(_this._element).trigger(Event$a.SHOWN);
+        $(_this._element).trigger(EVENT_SHOWN$4);
 
         if (_this._config.autohide) {
           _this._timeout = setTimeout(function () {
@@ -12502,11 +12363,11 @@ function fromByteArray (uint8) {
         }
       };
 
-      this._element.classList.remove(ClassName$a.HIDE);
+      this._element.classList.remove(CLASS_NAME_HIDE);
 
       Util.reflow(this._element);
 
-      this._element.classList.add(ClassName$a.SHOWING);
+      this._element.classList.add(CLASS_NAME_SHOWING);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -12517,11 +12378,11 @@ function fromByteArray (uint8) {
     };
 
     _proto.hide = function hide() {
-      if (!this._element.classList.contains(ClassName$a.SHOW)) {
+      if (!this._element.classList.contains(CLASS_NAME_SHOW$7)) {
         return;
       }
 
-      var hideEvent = $.Event(Event$a.HIDE);
+      var hideEvent = $.Event(EVENT_HIDE$4);
       $(this._element).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
@@ -12532,14 +12393,13 @@ function fromByteArray (uint8) {
     };
 
     _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
+      this._clearTimeout();
 
-      if (this._element.classList.contains(ClassName$a.SHOW)) {
-        this._element.classList.remove(ClassName$a.SHOW);
+      if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
+        this._element.classList.remove(CLASS_NAME_SHOW$7);
       }
 
-      $(this._element).off(Event$a.CLICK_DISMISS);
+      $(this._element).off(EVENT_CLICK_DISMISS$1);
       $.removeData(this._element, DATA_KEY$a);
       this._element = null;
       this._config = null;
@@ -12547,7 +12407,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$7, {}, $(this._element).data(), {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
       Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
       return config;
     };
@@ -12555,7 +12415,7 @@ function fromByteArray (uint8) {
     _proto._setListeners = function _setListeners() {
       var _this2 = this;
 
-      $(this._element).on(Event$a.CLICK_DISMISS, Selector$a.DATA_DISMISS, function () {
+      $(this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
         return _this2.hide();
       });
     };
@@ -12564,12 +12424,12 @@ function fromByteArray (uint8) {
       var _this3 = this;
 
       var complete = function complete() {
-        _this3._element.classList.add(ClassName$a.HIDE);
+        _this3._element.classList.add(CLASS_NAME_HIDE);
 
-        $(_this3._element).trigger(Event$a.HIDDEN);
+        $(_this3._element).trigger(EVENT_HIDDEN$4);
       };
 
-      this._element.classList.remove(ClassName$a.SHOW);
+      this._element.classList.remove(CLASS_NAME_SHOW$7);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -12577,6 +12437,11 @@ function fromByteArray (uint8) {
       } else {
         complete();
       }
+    };
+
+    _proto._clearTimeout = function _clearTimeout() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
     } // Static
     ;
 
@@ -14578,7 +14443,7 @@ module.exports = Array.isArray || function (arr) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.5.0
+ * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -14588,7 +14453,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2020-04-10T15:07Z
+ * Date: 2020-05-04T22:49Z
  */
 ( function( global, factory ) {
 
@@ -14726,7 +14591,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.5.0",
+	version = "3.5.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -18823,7 +18688,7 @@ Data.prototype = {
 
 		// If not, create one
 		if ( !value ) {
-			value = Object.create( null );
+			value = {};
 
 			// We can accept data for non-element nodes in modern browsers,
 			// but we should not, see #8335.
@@ -26943,7 +26808,7 @@ var Echo = /*#__PURE__*/function () {
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.19';
+  var VERSION = '4.17.20';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -42519,7 +42384,7 @@ var Echo = /*#__PURE__*/function () {
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
      *
      * // Checking for several possible values
-     * _.filter(users, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * _.filter(objects, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
@@ -42556,7 +42421,7 @@ var Echo = /*#__PURE__*/function () {
      * // => { 'a': 4, 'b': 5, 'c': 6 }
      *
      * // Checking for several possible values
-     * _.filter(users, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * _.filter(objects, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
@@ -44098,7 +43963,7 @@ var Echo = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -44444,7 +44309,7 @@ function getBordersSize(styles, axis) {
   var sideA = axis === 'x' ? 'Left' : 'Top';
   var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+  return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
 }
 
 function getSize(axis, body, html, computedStyle) {
@@ -44599,8 +44464,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   var scrollParent = getScrollParent(children);
 
   var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+  var borderTopWidth = parseFloat(styles.borderTopWidth);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
   // In cases where the parent is fixed, we must ignore negative scroll in offset calc
   if (fixedPosition && isHTML) {
@@ -44621,8 +44486,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
+    var marginTop = parseFloat(styles.marginTop);
+    var marginLeft = parseFloat(styles.marginLeft);
 
     offsets.top -= borderTopWidth - marginTop;
     offsets.bottom -= borderTopWidth - marginTop;
@@ -45561,8 +45426,8 @@ function arrow(data, options) {
   // Compute the sideValue using the updated popper offsets
   // take popper margin in account because we don't have this info available
   var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
   var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
   // prevent arrowElement from being placed not contiguously to its popper
@@ -67187,7 +67052,12 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
       : injectStyles
   }
 
@@ -67196,7 +67066,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -71540,8 +71410,8 @@ const __vue_script__$3 = VueToastr;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
  * Released under the MIT License.
  */
 
@@ -76980,7 +76850,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.6.11';
+Vue.version = '2.6.12';
 
 /*  */
 
@@ -79186,7 +79056,7 @@ function updateDOMProps (oldVnode, vnode) {
       // skip the update if old and new VDOM state is the same.
       // `value` is handled separately because the DOM value may be temporarily
       // out of sync with VDOM state due to focus, composition and modifiers.
-      // This  #4521 by skipping the unnecesarry `checked` update.
+      // This  #4521 by skipping the unnecessary `checked` update.
       cur !== oldProps[key]
     ) {
       // some property updates can throw
@@ -81431,7 +81301,7 @@ function parse (
       }
     },
     comment: function comment (text, start, end) {
-      // adding anyting as a sibling to the root node is forbidden
+      // adding anything as a sibling to the root node is forbidden
       // comments should still be allowed, but ignored
       if (currentParent) {
         var child = {
@@ -91517,7 +91387,7 @@ var websocketsCheckCepas = {
       return this.disabled;
     }
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -91625,7 +91495,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas",
@@ -91636,7 +91506,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "bacteria/ver/:cepaId",
       name: "ver-cepa-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91646,7 +91516,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "bacteria/:cepaId",
       name: "cepa-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -91662,7 +91532,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91672,7 +91542,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91682,7 +91552,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -91702,7 +91572,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91714,7 +91584,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "hongo/ver/:cepaId",
       name: "ver-cepa-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91724,7 +91594,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "hongo/:cepaId",
       name: "cepa-hongo",
       component: function component() {
-        return Promise.all(/*! import() | cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -91740,7 +91610,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91750,7 +91620,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91770,7 +91640,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91782,7 +91652,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "levadura/ver/:cepaId",
       name: "ver-cepa-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91792,7 +91662,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "levadura/:cepaId",
       name: "cepa-levadura",
       component: function component() {
-        return Promise.all(/*! import() | cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -91808,7 +91678,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91818,7 +91688,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91838,7 +91708,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91850,7 +91720,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "actinomiceto/ver/:cepaId",
       name: "ver-cepa-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Cepa",
@@ -91860,7 +91730,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "actinomiceto/:cepaId",
       name: "cepa-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -91876,7 +91746,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91886,7 +91756,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -91896,7 +91766,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -91942,7 +91812,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Bacterias",
@@ -91952,7 +91822,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaBacteriaId",
       name: "caract-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | caract-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -91968,7 +91838,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91978,7 +91848,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91988,7 +91858,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -92008,7 +91878,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92019,7 +91889,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaBacteriaId",
       name: "ver-bacteria",
       component: function component() {
-        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Bacteria",
@@ -92044,7 +91914,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Hongos",
@@ -92054,7 +91924,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaHongoId",
       name: "caract-hongo",
       component: function component() {
-        return Promise.all(/*! import() | caract-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -92070,7 +91940,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92080,7 +91950,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92100,7 +91970,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92111,7 +91981,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaHongoId",
       name: "ver-hongo",
       component: function component() {
-        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Hongo",
@@ -92136,7 +92006,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Levaduras",
@@ -92146,7 +92016,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaLevaduraId",
       name: "caract-levadura",
       component: function component() {
-        return Promise.all(/*! import() | caract-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -92162,7 +92032,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92172,7 +92042,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -92192,7 +92062,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -92203,7 +92073,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaLevaduraId",
       name: "ver-levadura",
       component: function component() {
-        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Levadura",
@@ -92228,7 +92098,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Actinomicetos",
@@ -92238,7 +92108,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: ":cepaActinomicetoId",
       name: "caract-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("cepa-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
+        return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
       },
       children: [{
         path: "caract-macro",
@@ -92254,7 +92124,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92264,7 +92134,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -92274,7 +92144,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -92305,7 +92175,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "ver/:cepaActinomicetoId",
       name: "ver-actinomiceto",
       component: function component() {
-        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
+        return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
       },
       meta: {
         title: "Ver Actinomiceto",
@@ -92325,7 +92195,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Usuarios",
@@ -92335,7 +92205,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "tabla-roles",
     name: "tabla-roles",
     component: function component() {
-      return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-roles */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~tabla-roles"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-roles")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/roles/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/roles/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Roles",
@@ -92345,7 +92215,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "tabla-seguimiento",
     name: "tabla-seguimiento",
     component: function component() {
-      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
+      return Promise.all(/*! import() | tabla-seguimiento */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-seguimiento")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/seguimiento/TablaComponent.vue */ "./resources/js/components/gestionar_usuarios/seguimiento/TablaComponent.vue"));
     },
     meta: {
       title: "Tabla Seguimientos",
@@ -92363,7 +92233,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Cepas",
@@ -92373,7 +92243,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias",
@@ -92383,7 +92253,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos",
@@ -92393,7 +92263,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras",
@@ -92403,7 +92273,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos",
@@ -92421,7 +92291,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "mision",
     component: function component() {
-      return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
+      return Promise.all(/*! import() | mision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision~objetivos~vision"), __webpack_require__.e("mision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/MisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/MisionComponent.vue"));
     },
     meta: {
       title: "Misión",
@@ -92431,7 +92301,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "vision",
     name: "vision",
     component: function component() {
-      return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
+      return Promise.all(/*! import() | vision */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision~objetivos~vision"), __webpack_require__.e("vision")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/VisionComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/VisionComponent.vue"));
     },
     meta: {
       title: "Visión",
@@ -92441,7 +92311,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "objetivos",
     name: "objetivos",
     component: function component() {
-      return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
+      return Promise.all(/*! import() | objetivos */[__webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("mision~objetivos~vision"), __webpack_require__.e("objetivos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/quienes-somos/ObjetivosComponent.vue */ "./resources/js/components/sitio-web/quienes-somos/ObjetivosComponent.vue"));
     },
     meta: {
       title: "Objetivos",
@@ -92459,7 +92329,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
       title: "Proyectos",
@@ -92469,7 +92339,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
       title: "Publicaciones",
@@ -92487,7 +92357,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "noticias",
     component: function component() {
-      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
+      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
       title: "Noticias",
@@ -92497,7 +92367,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
       title: "Actividades",
@@ -92507,7 +92377,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "novedades",
     name: "novedades",
     component: function component() {
-      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
       title: "Novedades",
@@ -92546,7 +92416,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
     title: "Investigadores",
@@ -92556,7 +92426,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
     title: "Equipamientos",
@@ -92566,7 +92436,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/sin-acceso",
   name: "sin-acceso",
   component: function component() {
-    return Promise.all(/*! import() | error-403 */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("error-403")]).then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
+    return __webpack_require__.e(/*! import() | error-403 */ "error-403").then(__webpack_require__.bind(null, /*! ../components/errores/Error403Component.vue */ "./resources/js/components/errores/Error403Component.vue"));
   },
   meta: {
     title: "Sin Accesso"
@@ -92575,7 +92445,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "*",
   name: "",
   component: function component() {
-    return Promise.all(/*! import() | error-404 */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~68cd9de0"), __webpack_require__.e("error-404")]).then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
+    return __webpack_require__.e(/*! import() | error-404 */ "error-404").then(__webpack_require__.bind(null, /*! ../components/errores/Error404Component.vue */ "./resources/js/components/errores/Error404Component.vue"));
   },
   meta: {
     title: "Esta Pagina No existe"

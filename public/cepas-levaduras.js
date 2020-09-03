@@ -104,7 +104,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("cepas")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas", "accionCepas"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas", "accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractLevaduras", "accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura"]), {
+  methods: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepas", ["obtenerCepas", "accionCepas"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_cepas", ["obtenerTiposCepas", "accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("info_caract", ["obtenerInfoCaractLevaduras", "accionAgregarTipoCaractLevadura", "accionEditarTipoCaractLevadura", "accionEliminarTipoCaractLevadura"])), {}, {
     cambiarTipo: function cambiarTipo(tipo) {
       if (tipo === "ver") {
         this.mostrarBtnVolver = true;

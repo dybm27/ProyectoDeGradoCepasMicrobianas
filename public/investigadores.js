@@ -87,7 +87,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("investigador")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("investigadores", ["obtenerInvestigadores", "accionInvestigador"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("investigadores", ["obtenerInvestigadores", "accionInvestigador"])), {}, {
     cambiarTipo: function cambiarTipo(tipo) {
       if (tipo === "agregar") {
         this.tipo = "Agregar";
@@ -499,7 +499,7 @@ var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"])), {}, {
     evento: function evento() {
       var _this = this;
 
@@ -570,7 +570,7 @@ var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("investigadores", ["getInvestigadorById", "getInvestigadorByEmail"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("investigadores", ["getInvestigadorById", "getInvestigadorByEmail"])), {}, {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Investigador") {
         return "btn-success";
@@ -717,7 +717,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_2__["default"])("Investigador")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("investigadores", ["investigadores"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("investigadores", ["investigadores"])), {}, {
     mostrarTabla: function mostrarTabla() {
       if (this.investigadores != "" && this.investigadores != null) {
         return true;
@@ -726,7 +726,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return false;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("investigadores", ["accionInvestigador"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("investigadores", ["accionInvestigador"])), {}, {
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.id = data.params.id;
     },

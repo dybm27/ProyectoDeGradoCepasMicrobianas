@@ -1013,7 +1013,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"])), {}, {
     agregar: function agregar(data) {
       this.accionAgregarCaract({
         tipo: "bioqui",
@@ -1047,7 +1047,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.mostrarBtnAgregar = true;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractBioqui"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractBioqui"])), {}, {
     mostrarBtnEliminar: function mostrarBtnEliminar() {
       if (this.getCaractBioqui) {
         return true;

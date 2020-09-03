@@ -185,7 +185,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mixins: [Object(_mixins_websocketsOtraInfo__WEBPACK_IMPORTED_MODULE_0__["default"])("ActinomicetosInfo")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_12__["default"].mapState("info_caract", ["info_caract_actinomicetos"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_12__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_12__["default"].mapActions("info_caract", ["obtenerInfoCaractActinomicetos"])), {}, {
     mostrarTablasCaractMacro: function mostrarTablasCaractMacro() {
       this.tablasCaractMacro = !this.tablasCaractMacro;
     },
@@ -450,7 +450,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("ActinomicetosInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_caract", ["accionAgregarTipoCaractActinomiceto", "accionEditarTipoCaractActinomiceto", "accionEliminarTipoCaractActinomiceto"])), {}, {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
       this.errors = "";
       this.modal.nombre = "";
@@ -577,7 +577,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"])), {}, {
     validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
         if (this.modal.tipo == "borde" || this.modal.tipo == "color" || this.modal.tipo == "textura" || this.modal.tipo == "pigmento" || this.modal.tipo == "forma_macro" || this.modal.tipo == "superficie") {
@@ -688,7 +688,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.bordes.length > 0) {
@@ -779,7 +779,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.colors.length > 0) {
@@ -875,7 +875,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroActinomicetos != "" && this.getInfoCaractMicroActinomicetos != null) {
         if (this.getInfoCaractMicroActinomicetos.conidioforos.length > 0) {
@@ -970,7 +970,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.formas_macros.length > 0) {
@@ -1065,7 +1065,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroActinomicetos != "" && this.getInfoCaractMicroActinomicetos != null) {
         if (this.getInfoCaractMicroActinomicetos.formas_micros.length > 0) {
@@ -1160,7 +1160,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("micelio")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroActinomicetos != "" && this.getInfoCaractMicroActinomicetos != null) {
         if (this.getInfoCaractMicroActinomicetos.micelios.length > 0) {
@@ -1255,7 +1255,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("pigmento")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.pigmentos.length > 0) {
@@ -1350,7 +1350,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.superficies.length > 0) {
@@ -1445,7 +1445,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMacroActinomicetos != "" && this.getInfoCaractMacroActinomicetos != null) {
         if (this.getInfoCaractMacroActinomicetos.texturas.length > 0) {
@@ -1540,7 +1540,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getInfoCaractMicroActinomicetos != "" && this.getInfoCaractMicroActinomicetos != null) {
         if (this.getInfoCaractMicroActinomicetos.tincions.length > 0) {

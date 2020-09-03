@@ -87,7 +87,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("equipamiento")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("equipamientos", ["obtenerEquipamientos", "accionEquipamiento"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("equipamientos", ["obtenerEquipamientos", "accionEquipamiento"])), {}, {
     cambiarTipo: function cambiarTipo(tipo) {
       if (tipo === "agregar") {
         this.tipo = "Agregar";
@@ -429,7 +429,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"])), {}, {
     evento: function evento() {
       var _this = this;
 
@@ -498,7 +498,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("equipamientos", ["getEquipamientoById", "getEquipamientoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("equipamientos", ["getEquipamientoById", "getEquipamientoByNombre"])), {}, {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Equipamiento") {
         return "btn-success";
@@ -654,7 +654,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_2__["default"])("Equipamiento")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("equipamientos", ["equipamientos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("equipamientos", ["equipamientos"])), {}, {
     mostrarTabla: function mostrarTabla() {
       if (this.equipamientos != "" && this.equipamientos != null) {
         return true;
@@ -663,7 +663,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return false;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("equipamientos", ["accionEquipamiento"])), {}, {
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.id = data.params.id;
     },

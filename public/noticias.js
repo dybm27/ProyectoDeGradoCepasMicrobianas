@@ -342,7 +342,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"])), {}, {
     evento: function evento() {
       var _this = this;
 
@@ -548,7 +548,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo", "getNoticiaByPubliclar"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("publicidad", ["getNoticiaById", "getNoticiaByTitulo", "getNoticiaByPubliclar"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getUserAuth"])), {}, {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     },
@@ -714,7 +714,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       bloquearBtnModal: false
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("publicidad", ["getNoticias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("publicidad", ["getNoticias"])), {}, {
     mostrarTabla: function mostrarTabla() {
       if (this.getNoticias != "" && this.getNoticias != null) {
         return true;
@@ -724,7 +724,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_3__["default"])("Noticia")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("publicidad", ["accionNoticia"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("publicidad", ["accionNoticia"])), {}, {
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.id = data.params.id;
     },

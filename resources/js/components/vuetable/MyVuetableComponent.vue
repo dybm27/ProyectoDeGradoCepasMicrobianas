@@ -76,7 +76,6 @@ import VuetablePagination from "./PaginationComponent";
 import VuetablePaginationInfo from "./PaginationInfoComponent";
 import Toastr from "../../mixins/toastr";
 export default {
-  name: "my-vuetable",
   components: {
     Vuetable,
     FilterBar,

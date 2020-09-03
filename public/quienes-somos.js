@@ -85,7 +85,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_0__["default"])("quienesSomos")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("quienes_somos", ["obtenerQuienesSomos", "accionCambiarQuienesSomos"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("quienes_somos", ["obtenerQuienesSomos", "accionCambiarQuienesSomos"])), {}, {
     cambiarTipo: function cambiarTipo(ruta) {
       if (ruta.includes("objetivos")) {
         this.tipo = "Objetivos";
@@ -168,7 +168,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$emit("rutaHijo", ruta);
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     verificarNav: function verificarNav() {
       var num = 0;
 

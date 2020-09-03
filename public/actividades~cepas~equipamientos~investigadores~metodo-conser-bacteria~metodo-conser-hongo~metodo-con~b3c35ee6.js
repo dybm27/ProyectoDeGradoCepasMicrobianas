@@ -168,7 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "my-vuetable",
   components: {
     Vuetable: vuetable_2_src_components_Vuetable__WEBPACK_IMPORTED_MODULE_1__["default"],
     FilterBar: _FilterBarComponent__WEBPACK_IMPORTED_MODULE_2__["default"],

@@ -102,7 +102,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionAgregarTipoCaractActinomiceto", "accionAgregarTipoCaractHongo", "accionAgregarTipoCaractBacteria"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", []), {
+  methods: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", ["accionAgregarTipoCaractLevadura", "accionAgregarTipoCaractActinomiceto", "accionAgregarTipoCaractHongo", "accionAgregarTipoCaractBacteria"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", [])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", [])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapActions("info_caract", [])), {}, {
     closed: function closed() {
       this.nombre = "";
       this.errors = [];
@@ -189,7 +189,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasByNombre", "getInfoCaractMicroBacteriasByNombre", "getInfoMetodoConserBacteriasByNombre", "getInfoCaractMacroHongosByNombre", "getInfoCaractMicroHongosByNombre", "getInfoMetodoConserHongosByNombre", "getInfoCaractMacroLevadurasByNombre", "getInfoMetodoConserLevadurasByNombre", "getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasByNombre", "getInfoCaractMicroBacteriasByNombre", "getInfoMetodoConserBacteriasByNombre", "getInfoCaractMacroHongosByNombre", "getInfoCaractMicroHongosByNombre", "getInfoMetodoConserHongosByNombre", "getInfoCaractMacroLevadurasByNombre", "getInfoMetodoConserLevadurasByNombre", "getInfoCaractMacroActinomicetosByNombre", "getInfoCaractMicroActinomicetosByNombre"])), {}, {
     validarNombreUnico: function validarNombreUnico() {
       switch (this.tipoForm) {
         case "bacteria":

@@ -658,7 +658,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_11__["default"].mapState(["auth"])), {}, {
     tiempo: function tiempo() {
       return this.modal.tiempo;
     },

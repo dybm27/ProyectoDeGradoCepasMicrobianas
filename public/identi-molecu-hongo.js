@@ -520,7 +520,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.imagenInfoPublica2 = this.info.imagen_blastPublica;
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGeneroCepa", "getEspecieCepa"])), {}, {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Identificación") {
         return "btn-success";
@@ -652,7 +652,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       modificarForm: false
     };
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"])), {}, {
     agregar: function agregar(data) {
       this.accionAgregarCaract({
         tipo: "identi",
@@ -686,7 +686,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.mostrarBtnAgregar = true;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getIdentiMolecu"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getIdentiMolecu"])), {}, {
     mostrarBtnEliminar: function mostrarBtnEliminar() {
       if (this.getIdentiMolecu) {
         return true;

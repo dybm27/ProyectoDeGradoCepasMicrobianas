@@ -162,7 +162,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("imagenes_login", ["accionImagenLogin"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("imagenes_login", ["accionImagenLogin"])), {}, {
     evento: function evento() {
       var _this = this;
 
@@ -299,7 +299,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.src = URL.createObjectURL(file);
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("imagenes_login", ["getImagenLoginById", "getImagenLoginByMostrar"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("imagenes_login", ["getImagenLoginById", "getImagenLoginByMostrar"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), {}, {
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
     }
@@ -424,7 +424,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mixins: [Object(_mixins_bloquearPesta_as__WEBPACK_IMPORTED_MODULE_1__["default"])("imagenesLogin")],
   computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("imagenes_login", ["obtenerImagenesLogin", "accionImagenLogin"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("imagenes_login", ["obtenerImagenesLogin", "accionImagenLogin"])), {}, {
     editarImagen: function editarImagen(id) {
       window.Echo["private"]("bloquearBtnImgLogin").whisper("bloquearBtnImgLogin", {
         id: id,

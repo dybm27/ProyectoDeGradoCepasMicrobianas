@@ -38,8 +38,8 @@
 
 <script>
 import websocketsSinCheckMixin from "../../../mixins/websocketsSinCheck";
-import Tabla from "./TablaComponent.vue";
-import Form from "./FormComponent.vue";
+import Tabla from "./TablaComponent";
+import Form from "./FormComponent";
 import vuex from "vuex";
 export default {
   components: { Form, Tabla },

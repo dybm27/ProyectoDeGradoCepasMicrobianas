@@ -33,7 +33,7 @@
   <script>
 import websocketsAccionesSinCheckMixin from "../../../mixins/websocketsAccionesSinCheck";
 import vuex from "vuex";
-import IconoNoAccess from "../../IconoNoAccess.vue";
+import IconoNoAccess from "../../IconoNoAccess";
 export default {
   components: { IconoNoAccess },
   props: {

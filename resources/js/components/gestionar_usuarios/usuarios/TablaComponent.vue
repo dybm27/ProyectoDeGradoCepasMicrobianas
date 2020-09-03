@@ -59,7 +59,7 @@ import FieldDefs from "./columnas-usuarios";
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import websocketsTabla from "../../../mixins/websocketsTabla";
-import MyVuetable from "../../vuetable/MyVuetableComponent.vue";
+import MyVuetable from "../../vuetable/MyVuetableComponent";
 export default {
   components: { MyVuetable },
   data() {

@@ -110,7 +110,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     VerActinomiceto: _actinomicetos_VerActinomicetoComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_accionVer_accionCaract__WEBPACK_IMPORTED_MODULE_6__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getUsuarioById"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("cepa", ["cepa"])),
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getUsuarioById"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState("cepa", ["cepa"])),
   methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["llenarCepa", "limpiarCepa"])),
   created: function created() {
     this.$emit("cambiarTipo", "ver");
@@ -612,7 +612,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_4__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getOtrasCaract", "getIdentiBioqui"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getPhylumCepa", "getOrdenCepa", "getReinoCepa", "getClaseCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosById", "getInfoCaractMicroActinomicetosById"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapState("cepa", ["cepa"])), vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getOtrasCaract", "getIdentiBioqui"])), vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getPhylumCepa", "getOrdenCepa", "getReinoCepa", "getClaseCepa"])), vuex__WEBPACK_IMPORTED_MODULE_5__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetosById", "getInfoCaractMicroActinomicetosById"])), {}, {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
     },
@@ -1531,7 +1531,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getCaractFisio", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasById", "getInfoCaractMicroBacteriasById", "getInfoMetodoConserBacteriasById"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getCaractFisio", "getMetodoConser", "getIdentiMolecu"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroBacteriasById", "getInfoCaractMicroBacteriasById", "getInfoMetodoConserBacteriasById"])), {}, {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
     },
@@ -2412,7 +2412,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getPhylumCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongosById", "getInfoCaractMicroHongosById", "getInfoMetodoConserHongosById"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getPhylumCepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongosById", "getInfoCaractMicroHongosById", "getInfoMetodoConserHongosById"])), {}, {
     btnTodoDisabled: function btnTodoDisabled() {
       return this.btnTodo;
     },
@@ -3311,7 +3311,7 @@ moment__WEBPACK_IMPORTED_MODULE_0___default.a.locale("es");
     };
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_errorPeticionAxiosVerCepa__WEBPACK_IMPORTED_MODULE_5__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getDivisionCepa"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevadurasById", "getInfoCaractMicroLevadurasById", "getInfoMetodoConserLevadurasById"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("cepa", ["cepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("cepa", ["getCaractMacro", "getCaractMicro", "getCaractBioqui", "getMetodoConser", "getIdentiMolecu"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_cepas", ["getGrupoCepa", "getGeneroCepa", "getEspecieCepa", "getOrdenCepa", "getClaseCepa", "getFamiliaCepa", "getDivisionCepa"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters("info_caract", ["getInfoCaractMacroLevadurasById", "getInfoCaractMicroLevadurasById", "getInfoMetodoConserLevadurasById"])), {}, {
     rowTermo: function rowTermo() {
       this.rowTermoData = 0;
 
@@ -3533,7 +3533,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.full-height[data-v-fef4403e] {\r\n  height: 40vh;\n}\n.flex-center[data-v-fef4403e] {\r\n  -webkit-box-align: center;\r\n          align-items: center;\r\n  display: -webkit-box;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n          justify-content: center;\n}\n.position-ref[data-v-fef4403e] {\r\n  position: relative;\n}\n.code[data-v-fef4403e] {\r\n  border-right: 4px solid;\r\n  font-size: 60px;\r\n  padding: 0 15px 0 15px;\r\n  text-align: center;\n}\n.message[data-v-fef4403e] {\r\n  font-size: 40px;\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.full-height[data-v-fef4403e] {\r\n  height: 40vh;\n}\n.flex-center[data-v-fef4403e] {\r\n  align-items: center;\r\n  display: flex;\r\n  justify-content: center;\n}\n.position-ref[data-v-fef4403e] {\r\n  position: relative;\n}\n.code[data-v-fef4403e] {\r\n  border-right: 4px solid;\r\n  font-size: 60px;\r\n  padding: 0 15px 0 15px;\r\n  text-align: center;\n}\n.message[data-v-fef4403e] {\r\n  font-size: 40px;\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -3826,33 +3826,32 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&");
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&");
+            content = content.__esModule ? content.default : content;
 
-if(typeof content === 'string') content = [[module.i, content, '']];
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
 
-var transform;
-var insertInto;
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
 
 
 
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -11844,10 +11843,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/VerCepaComponent.vue?vue&type=style&index=0&id=fef4403e&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VerCepaComponent_vue_vue_type_style_index_0_id_fef4403e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
