@@ -25,7 +25,6 @@ export default [
     },
     { name: "estado", sortField: "estado", titleClass: "text-center" },
     { name: "origen", sortField: "origen", titleClass: "text-center" },
-    ,
     {
         name: "__component:checkboxs_publicar",
         sortField: "publicar",

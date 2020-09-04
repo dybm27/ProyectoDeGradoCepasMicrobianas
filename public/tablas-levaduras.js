@@ -573,6 +573,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -664,6 +665,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -719,6 +721,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1433,9 +1436,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/colors-levadura",
+                        apiUrl: "/info-panel/colors-levadura",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "colors-levadura"
                       }
                     })
@@ -1531,9 +1535,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/texturas-levadura",
+                        apiUrl: "/info-panel/texturas-levadura",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "texturas-levadura"
                       }
                     })
@@ -1629,9 +1634,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/tipos-metodos-levadura",
+                        apiUrl: "/info-panel/tipos-metodos-levadura",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "tipos-metodos-levadura"
                       }
                     })

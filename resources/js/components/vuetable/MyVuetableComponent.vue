@@ -76,35 +76,12 @@ import VuetablePagination from "./PaginationComponent";
 import VuetablePaginationInfo from "./PaginationInfoComponent";
 import Toastr from "../../mixins/toastr";
 export default {
+  props:['apiUrl','fields','sortOrder','detailRowComponent','nameGet'],
   components: {
     Vuetable,
     FilterBar,
     VuetablePagination,
     VuetablePaginationInfo,
-  },
-  props: {
-    apiUrl: {
-      type: String,
-      required: true,
-    },
-    fields: {
-      type: Array,
-      required: true,
-    },
-    sortOrder: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    detailRowComponent: {
-      type: String,
-      required: false,
-    },
-    nameGet: {
-      type: String,
-      required: true,
-    },
   },
   mixins: [Toastr],
   data() {

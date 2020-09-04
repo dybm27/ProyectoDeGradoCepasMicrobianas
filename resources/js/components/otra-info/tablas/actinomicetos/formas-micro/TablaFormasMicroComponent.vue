@@ -18,9 +18,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/formas-micro-actinomiceto"
+            :apiUrl="'/info-panel/formas-micro-actinomiceto'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :detailRowComponent="''"
+            :sortOrder="sortOrder"
             :nameGet="'formas-micro-actinomiceto'"
           ></MyVuetable>
         </template>
@@ -52,9 +53,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("forma_micro")],
@@ -70,7 +71,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

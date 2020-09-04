@@ -685,6 +685,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -867,6 +868,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -958,6 +960,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1013,6 +1016,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1148,6 +1152,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1203,6 +1208,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1330,6 +1336,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1385,6 +1392,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -2230,9 +2238,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/bordes-bacteria",
+                        apiUrl: "/info-panel/bordes-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "bordes-bacteria"
                       }
                     })
@@ -2426,9 +2435,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/detalles-bacteria",
+                        apiUrl: "/info-panel/detalles-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "detalles-bacteria"
                       }
                     })
@@ -2524,9 +2534,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/elevacions-bacteria",
+                        apiUrl: "/info-panel/elevacions-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "elevacions-bacteria"
                       }
                     })
@@ -2622,9 +2633,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/formas-macro-bacteria",
+                        detailRowComponent: "",
+                        apiUrl: "/info-panel/formas-macro-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
                         nameGet: "formas-macro-bacteria"
                       }
                     })
@@ -2720,9 +2732,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/formas-micro-bacteria",
+                        detailRowComponent: "",
+                        apiUrl: "/info-panel/formas-micro-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
                         nameGet: "formas-micro-bacteria"
                       }
                     })
@@ -2818,9 +2831,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/superficies-bacteria",
+                        apiUrl: "/info-panel/superficies-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "superficies-bacteria"
                       }
                     })
@@ -2916,9 +2930,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/tipos-agars-bacteria",
+                        apiUrl: "/info-panel/tipos-agars-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "tipos-agars-bacteria"
                       }
                     })
@@ -3014,9 +3029,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/tipos-metodos-bacteria",
+                        apiUrl: "/info-panel/tipos-metodos-bacteria",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "tipos-metodos-bacteria"
                       }
                     })

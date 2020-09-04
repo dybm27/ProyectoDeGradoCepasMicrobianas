@@ -561,7 +561,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "origen",
   sortField: "origen",
   titleClass: "text-center"
-},, {
+}, {
   name: "__component:checkboxs_publicar",
   sortField: "publicar",
   title: "Publicar",

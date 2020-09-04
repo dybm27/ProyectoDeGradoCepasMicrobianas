@@ -3052,10 +3052,10 @@ var render = function() {
             _c("MyVuetable", {
               ref: "tabla",
               attrs: {
-                "api-url": "/info-panel/" + _vm.tipo + "s-tabla",
+                apiUrl: "/info-panel/" + _vm.tipo + "s-tabla",
                 fields: _vm.FieldDefs,
-                "sort-order": _vm.sortOrder,
-                "detail-row-component": _vm.detailRowComponent,
+                sortOrder: _vm.sortOrder,
+                detailRowComponent: _vm.detailRowComponent,
                 nameGet: _vm.tipo + "s"
               }
             })

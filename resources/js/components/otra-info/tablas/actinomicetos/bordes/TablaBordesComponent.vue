@@ -14,10 +14,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/bordes-actinomiceto"
+            :apiUrl="'/info-panel/bordes-actinomiceto'"
             :fields="fields"
-            :sort-order="sortOrder"
-            :detail-row-component="''"
+            :sortOrder="sortOrder"
+            :detailRowComponent="''"
             :nameGet="'bordes-actinomiceto'"
           ></MyVuetable>
         </template>

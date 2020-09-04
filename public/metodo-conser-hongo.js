@@ -810,6 +810,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1866,10 +1867,11 @@ var render = function() {
                 _c("MyVuetable", {
                   ref: "tabla",
                   attrs: {
-                    "api-url": _vm.url,
+                    apiUrl: _vm.url,
                     fields: _vm.fields,
-                    "sort-order": _vm.sortOrder,
-                    nameGet: "metodos-hongos"
+                    sortOrder: _vm.sortOrder,
+                    nameGet: "metodos-hongos",
+                    detailRowComponent: ""
                   }
                 })
               ],

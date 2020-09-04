@@ -19,9 +19,10 @@
       <div class="card-body">
         <MyVuetable
           ref="tabla"
-          api-url="/info-panel/seguimientos"
+          :apiUrl="'/info-panel/seguimientos'"
           :fields="fields"
-          :sort-order="sortOrder"
+          :sortOrder="sortOrder"
+          :detailRowComponent="''"
           :nameGet="'seguimientos'"
         />
       </div>
@@ -43,11 +44,7 @@
             class="btn btn-secondary"
             @click="$modal.hide('modal_eliminar_datos')"
           >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-          >Eliminar</button>
+          <button type="button" class="btn btn-success" :disabled="bloquearBtnModal">Eliminar</button>
         </div>
       </div>
     </modal>

@@ -663,6 +663,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -716,6 +717,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -842,6 +844,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -895,6 +898,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1020,6 +1024,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1073,6 +1078,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1198,6 +1204,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1251,6 +1258,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1996,10 +2004,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/clases",
+                        apiUrl: "/info-panel/clases",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "clases"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "clases",
+                        detailRowComponent: ""
                       }
                     })
                   ]
@@ -2094,9 +2103,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/divisions",
+                        apiUrl: "/info-panel/divisions",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "divisions"
                       }
                     })
@@ -2192,9 +2202,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/especies",
+                        apiUrl: "/info-panel/especies",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "especies"
                       }
                     })
@@ -2290,10 +2301,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/familias",
+                        apiUrl: "/info-panel/familias",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "familias"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "familias",
+                        detailRowComponent: ""
                       }
                     })
                   ]
@@ -2388,9 +2400,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/generos",
+                        apiUrl: "/info-panel/generos",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "generos"
                       }
                     })
@@ -2486,9 +2499,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/ordens",
+                        apiUrl: "/info-panel/ordens",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "ordens"
                       }
                     })
@@ -2584,9 +2598,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/phylums",
+                        apiUrl: "/info-panel/phylums",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "phylums"
                       }
                     })
@@ -2682,10 +2697,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/reinos",
+                        apiUrl: "/info-panel/reinos",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "reinos"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "reinos",
+                        detailRowComponent: ""
                       }
                     })
                   ]

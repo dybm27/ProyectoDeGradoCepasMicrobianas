@@ -4,9 +4,10 @@
       <div class="card-body mt-3 ml-2 mr-2">
         <MyVuetable
           ref="tabla"
-          :api-url="url"
+          :apiUrl="url"
           :fields="fields"
-          :sort-order="sortOrder"
+          :sortOrder="sortOrder"
+          :detailRowComponent="''"
           :nameGet="'metodos-levaduras'"
         ></MyVuetable>
       </div>

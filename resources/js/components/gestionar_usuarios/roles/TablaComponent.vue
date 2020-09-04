@@ -3,9 +3,10 @@
     <template v-if="mostrarTabla">
       <MyVuetable
         ref="tabla"
-        api-url="/info-panel/roles-tabla"
+        :apiUrl="'/info-panel/roles-tabla'"
         :fields="fields"
-        :sort-order="sortOrder"
+        :sortOrder="sortOrder"
+        :detailRowComponent="''"
         :nameGet="'roles'"
       />
     </template>

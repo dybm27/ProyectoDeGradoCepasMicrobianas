@@ -64,9 +64,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -154,9 +151,10 @@ var render = function() {
             _c("MyVuetable", {
               ref: "tabla",
               attrs: {
-                "api-url": "/info-panel/seguimientos",
+                apiUrl: "/info-panel/seguimientos",
                 fields: _vm.fields,
-                "sort-order": _vm.sortOrder,
+                sortOrder: _vm.sortOrder,
+                detailRowComponent: "",
                 nameGet: "seguimientos"
               }
             })

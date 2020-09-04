@@ -649,6 +649,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -704,6 +705,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -831,6 +833,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -886,6 +889,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1013,6 +1017,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1068,6 +1073,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -1870,9 +1876,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/colors-hongo",
+                        apiUrl: "/info-panel/colors-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "colors-hongo"
                       }
                     })
@@ -1968,9 +1975,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/conidioforos-hongo",
+                        apiUrl: "/info-panel/conidioforos-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "conidioforos-hongo"
                       }
                     })
@@ -2066,9 +2074,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/esporasA-hongo",
+                        apiUrl: "/info-panel/esporasA-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "esporasA-hongo"
                       }
                     })
@@ -2164,9 +2173,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/esporasS-hongo",
+                        apiUrl: "/info-panel/esporasS-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "esporasS-hongo"
                       }
                     })
@@ -2262,9 +2272,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/texturas-hongo",
+                        apiUrl: "/info-panel/texturas-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "texturas-hongo"
                       }
                     })
@@ -2360,9 +2371,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/tipos-metodos-hongo",
+                        apiUrl: "/info-panel/tipos-metodos-hongo",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "tipos-metodos-hongo"
                       }
                     })

@@ -14,10 +14,11 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/familias"
+            :apiUrl="'/info-panel/familias'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
             :nameGet="'familias'"
+            :detailRowComponent="''"
           ></MyVuetable>
         </template>
         <template v-else>
@@ -48,9 +49,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("familia")],
@@ -61,7 +62,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -606,6 +606,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1266,9 +1267,10 @@ var render = function() {
             _c("MyVuetable", {
               ref: "tabla",
               attrs: {
-                "api-url": "/info-panel/proyectos-tabla",
+                apiUrl: "/info-panel/proyectos-tabla",
                 fields: _vm.fields,
-                "sort-order": _vm.sortOrder,
+                sortOrder: _vm.sortOrder,
+                detailRowComponent: "",
                 nameGet: "proyectos"
               }
             })

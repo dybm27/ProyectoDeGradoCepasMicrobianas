@@ -168,35 +168,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['apiUrl', 'fields', 'sortOrder', 'detailRowComponent', 'nameGet'],
   components: {
     Vuetable: vuetable_2_src_components_Vuetable__WEBPACK_IMPORTED_MODULE_1__["default"],
     FilterBar: _FilterBarComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
     VuetablePagination: _PaginationComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
     VuetablePaginationInfo: _PaginationInfoComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
-  },
-  props: {
-    apiUrl: {
-      type: String,
-      required: true
-    },
-    fields: {
-      type: Array,
-      required: true
-    },
-    sortOrder: {
-      type: Array,
-      "default": function _default() {
-        return [];
-      }
-    },
-    detailRowComponent: {
-      type: String,
-      required: false
-    },
-    nameGet: {
-      type: String,
-      required: true
-    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_5__["default"]],
   data: function data() {
