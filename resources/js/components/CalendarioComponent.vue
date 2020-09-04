@@ -265,7 +265,7 @@ export default {
         googleCalendarPlugin, // needed for dateClick
       ],
       calendarWeekends: true,
-      googleCalendarApiKey: process.env.MIX_GOOGLE_KEY,
+      googleCalendarApiKey: process.env.MIX_GOOGLE_KEY_CALENDAR,
       eventos: {
         url: "/info-panel/eventos",
         className: "eventos mostrar-cursor",

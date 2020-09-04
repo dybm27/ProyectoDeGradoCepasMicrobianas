@@ -7,7 +7,7 @@
       role="button"
       :data-slide="order"
     >
-      <span :class="iconClass" aria-hidden="true" class="color"></span>
+      <span :class="iconClass" aria-hidden="true" style="background-color: #3ac47d;"></span>
       <span class="sr-only">
         <slot></slot>
       </span>
@@ -40,9 +40,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.color {
-  background-color: #3ac47d;
-}
-</style>

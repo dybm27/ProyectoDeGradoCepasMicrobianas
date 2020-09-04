@@ -465,7 +465,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (!this.$v.$invalid) {
         axios.post("/info-caract-actinomicetos/agregar", this.modal).then(function (res) {
-          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+          if (res.request.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           } else {
@@ -632,6 +632,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -2287,6 +2288,7 @@ var render = function() {
                         "api-url": "/info-panel/bordes-actinomiceto",
                         fields: _vm.fields,
                         "sort-order": _vm.sortOrder,
+                        "detail-row-component": "",
                         nameGet: "bordes-actinomiceto"
                       }
                     })

@@ -20,12 +20,3 @@ export default {
   props: ["source", "text", "active", "directionClass", "num"]
 };
 </script>
-
-<style scoped>
-.centrar {
-  width: 60%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>

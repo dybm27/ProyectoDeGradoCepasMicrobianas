@@ -547,3 +547,47 @@ span.buttonText {
 .mostrar-cursor {
     cursor: pointer;
 }
+
+/*mensaje central*/
+.full-height {
+    height: 40vh;
+}
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.position-ref {
+    position: relative;
+}
+.code {
+    border-right: 4px solid;
+    font-size: 60px;
+    padding: 0 15px 0 15px;
+    text-align: center;
+}
+.message {
+    font-size: 40px;
+    text-align: center;
+}
+
+/*list roles*/
+.flip-list-move {
+    transition: transform 0.5s;
+}
+.no-move {
+    transition: transform 0s;
+}
+.ghost {
+    opacity: 0.5;
+    background: #c8ebfb;
+}
+.list-group {
+    min-height: 20px;
+}
+.list-group-item {
+    cursor: move;
+}
+.list-group-item i {
+    cursor: pointer;
+}

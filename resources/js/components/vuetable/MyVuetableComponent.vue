@@ -99,6 +99,7 @@ export default {
     },
     detailRowComponent: {
       type: String,
+      required: false,
     },
     nameGet: {
       type: String,

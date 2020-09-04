@@ -12,10 +12,3 @@
     </div>
   </div>
 </template>
-
-<style lang="css" scoped>
-.message {
-  font-size: 40px;
-  text-align: center;
-}
-</style>

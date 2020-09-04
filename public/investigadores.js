@@ -509,7 +509,7 @@ var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
       if (!this.$v.$invalid) {
         if (this.tituloForm === "Agregar Investigador") {
           axios.post("/investigadores", this.parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            if (res.request.responseURL === "http://127.0.0.1") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
             } else {

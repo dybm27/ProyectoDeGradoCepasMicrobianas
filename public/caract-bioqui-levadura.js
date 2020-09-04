@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.$v.$invalid && !this.termotolerancia) {
         if (this.tituloForm === "Agregar Característica") {
           axios.post("/cepas/levadura/caract-bioqui", this.parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            if (res.request.responseURL === "http://127.0.0.1") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
             } else {

@@ -507,7 +507,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         if (this.tituloForm === "Agregar Método") {
           axios.post("/cepas/hongo/metodo-conser", this.parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            if (res.request.responseURL === "http://127.0.0.1") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
             } else {

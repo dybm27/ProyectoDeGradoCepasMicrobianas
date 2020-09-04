@@ -394,7 +394,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.$v.$invalid) {
         if (this.tituloForm === "Agregar Características") {
           axios.post("/cepas/actinomiceto/otras-caract", this.parametros).then(function (res) {
-            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            if (res.request.responseURL === "http://127.0.0.1") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
               window.location.href = "/";
             } else {

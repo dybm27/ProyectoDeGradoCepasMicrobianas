@@ -177,7 +177,7 @@
               <div class="card">
                 <template v-if="imagenes.micro!=''">
                   <div class="mt-3 ml-5 mb-1 mr-5">
-                    <Carousel :imagenes="imagenes.micro"></Carousel>
+                    <Carousel :id="1" :imagenes="imagenes.micro"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>
@@ -259,7 +259,7 @@
               <div class="card">
                 <template v-if="imagenes.bioqui!=''">
                   <div class="mt-2 ml-5 mb-2 mr-5">
-                    <Carousel :imagenes="imagenes.bioqui"></Carousel>
+                    <Carousel :id="2" :imagenes="imagenes.bioqui"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>

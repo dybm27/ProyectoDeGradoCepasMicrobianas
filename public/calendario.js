@@ -301,7 +301,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         className: "eventos mostrar-cursor",
         textColor: "black",
         failure: function failure(error) {
-          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+          if (error.xhr.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           }
@@ -320,7 +320,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
-          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+          if (error.xhr.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           }
@@ -331,7 +331,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
-          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+          if (error.xhr.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           }
@@ -342,7 +342,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         color: "#38c172",
         textColor: "black",
         failure: function failure(error) {
-          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+          if (error.xhr.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           }
@@ -353,7 +353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         color: "#16aaff",
         textColor: "black",
         failure: function failure(error) {
-          if (error.xhr.responseURL === "http://127.0.0.1:8000/") {
+          if (error.xhr.responseURL === "http://127.0.0.1") {
             localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
             window.location.href = "/";
           }
@@ -577,7 +577,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
 
             axios.post("eventos/agregar", this.modal).then(function (res) {
-              if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              if (res.request.responseURL === "http://127.0.0.1") {
                 localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
                 window.location.href = "/";
               } else {
@@ -752,8 +752,6 @@ var map = {
 	"./dv.js": "./node_modules/moment/locale/dv.js",
 	"./el": "./node_modules/moment/locale/el.js",
 	"./el.js": "./node_modules/moment/locale/el.js",
-	"./en-SG": "./node_modules/moment/locale/en-SG.js",
-	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
 	"./en-au": "./node_modules/moment/locale/en-au.js",
 	"./en-au.js": "./node_modules/moment/locale/en-au.js",
 	"./en-ca": "./node_modules/moment/locale/en-ca.js",
@@ -764,8 +762,12 @@ var map = {
 	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
 	"./en-il": "./node_modules/moment/locale/en-il.js",
 	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/moment/locale/en-in.js",
 	"./en-nz": "./node_modules/moment/locale/en-nz.js",
 	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
 	"./eo": "./node_modules/moment/locale/eo.js",
 	"./eo.js": "./node_modules/moment/locale/eo.js",
 	"./es": "./node_modules/moment/locale/es.js",
@@ -782,6 +784,8 @@ var map = {
 	"./fa.js": "./node_modules/moment/locale/fa.js",
 	"./fi": "./node_modules/moment/locale/fi.js",
 	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/moment/locale/fil.js",
 	"./fo": "./node_modules/moment/locale/fo.js",
 	"./fo.js": "./node_modules/moment/locale/fo.js",
 	"./fr": "./node_modules/moment/locale/fr.js",
@@ -798,6 +802,8 @@ var map = {
 	"./gd.js": "./node_modules/moment/locale/gd.js",
 	"./gl": "./node_modules/moment/locale/gl.js",
 	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
 	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
 	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
 	"./gu": "./node_modules/moment/locale/gu.js",
@@ -876,6 +882,8 @@ var map = {
 	"./nl.js": "./node_modules/moment/locale/nl.js",
 	"./nn": "./node_modules/moment/locale/nn.js",
 	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
 	"./pa-in": "./node_modules/moment/locale/pa-in.js",
 	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
 	"./pl": "./node_modules/moment/locale/pl.js",
@@ -920,6 +928,8 @@ var map = {
 	"./tg.js": "./node_modules/moment/locale/tg.js",
 	"./th": "./node_modules/moment/locale/th.js",
 	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
 	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
 	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
 	"./tlh": "./node_modules/moment/locale/tlh.js",
@@ -952,6 +962,8 @@ var map = {
 	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
 	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
 	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
 	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
 	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
 };
