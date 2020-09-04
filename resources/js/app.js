@@ -1,6 +1,7 @@
 require("./bootstrap");
 window.Vue = require("vue");
 
+import fake from "../sass/fake.scss";
 import store from "./store/index";
 import router from "./router/index";
 import VueEvents from "vue-events";
