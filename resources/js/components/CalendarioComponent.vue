@@ -73,159 +73,167 @@
         </div>
       </template>
     </div>
-    <modal name="agregar-editar_eliminar-evento" width="400" height="auto">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{titulo_modal}}</h5>
-          <button
-            type="button"
-            class="close"
-            @click="$modal.hide('agregar-editar_eliminar-evento')"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="titulo" class>Título</label>
-            <input
-              name="titulo"
-              id="titulo"
-              placeholder="..."
-              type="text"
-              :class="['form-control',$v.modal.titulo.$error?'error-input-select':'']"
-              v-model.trim="$v.modal.titulo.$model"
-            />
-            <em
-              v-if="$v.modal.titulo.$error&&!$v.modal.titulo.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
+    <transition name="fade">
+      <modal
+        name="agregar-editar_eliminar-evento"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{titulo_modal}}</h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('agregar-editar_eliminar-evento')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <template v-if="!diaSemana">
-            <div class="form-row">
-              <div class="col-md-6">
-                <template v-if="!allday">
-                  <div class="container">
-                    <div class="row">
-                      <label for="fecha" class>Fecha</label>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="titulo" class>Título</label>
+              <input
+                name="titulo"
+                id="titulo"
+                placeholder="..."
+                type="text"
+                :class="['form-control',$v.modal.titulo.$error?'error-input-select':'']"
+                v-model.trim="$v.modal.titulo.$model"
+              />
+              <em
+                v-if="$v.modal.titulo.$error&&!$v.modal.titulo.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
+            </div>
+            <template v-if="!diaSemana">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <template v-if="!allday">
+                    <div class="container">
+                      <div class="row">
+                        <label for="fecha" class>Fecha</label>
+                      </div>
+                      <div class="row">
+                        <date-picker
+                          ref="datepickerFecha"
+                          :lang="lang"
+                          v-model.trim="$v.modal.fecha.$model"
+                          :class="$v.modal.fecha.$error?'error-input-select':''"
+                          type="datetime"
+                          value-type="format"
+                          placeholder="..."
+                        ></date-picker>
+                        <em
+                          v-if="$v.modal.fecha.$error&&!$v.modal.fecha.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
+                      </div>
                     </div>
-                    <div class="row">
-                      <date-picker
-                        ref="datepickerFecha"
-                        :lang="lang"
-                        v-model.trim="$v.modal.fecha.$model"
-                        :class="$v.modal.fecha.$error?'error-input-select':''"
-                        type="datetime"
-                        value-type="format"
-                        placeholder="..."
-                      ></date-picker>
-                      <em
-                        v-if="$v.modal.fecha.$error&&!$v.modal.fecha.required"
-                        class="text-error-input"
-                      >{{mensajes.required}}</em>
+                  </template>
+                  <template v-else>
+                    <div class="container">
+                      <div class="row">
+                        <label for="hora" class>Hora</label>
+                      </div>
+                      <div class="row">
+                        <date-picker
+                          ref="datepickerTiempo"
+                          v-model.trim="$v.modal.tiempo.$model"
+                          :class="$v.modal.tiempo.$error?'error-input-select':''"
+                          type="time"
+                          value-type="format"
+                          placeholder="..."
+                        ></date-picker>
+                        <em
+                          v-if="$v.modal.tiempo.$error&&!$v.modal.tiempo.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
+                      </div>
                     </div>
+                  </template>
+                </div>
+                <div class="col-md-6">
+                  <div class="position-relative form-group">
+                    <label for="color" class>Color</label>
+                    <input
+                      name="color"
+                      id="color"
+                      placeholder="..."
+                      type="color"
+                      :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
+                      v-model.trim="$v.modal.color.$model"
+                    />
+                    <em
+                      v-if="$v.modal.color.$error&&!$v.modal.color.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
-                </template>
-                <template v-else>
-                  <div class="container">
-                    <div class="row">
-                      <label for="hora" class>Hora</label>
-                    </div>
-                    <div class="row">
-                      <date-picker
-                        ref="datepickerTiempo"
-                        v-model.trim="$v.modal.tiempo.$model"
-                        :class="$v.modal.tiempo.$error?'error-input-select':''"
-                        type="time"
-                        value-type="format"
-                        placeholder="..."
-                      ></date-picker>
-                      <em
-                        v-if="$v.modal.tiempo.$error&&!$v.modal.tiempo.required"
-                        class="text-error-input"
-                      >{{mensajes.required}}</em>
-                    </div>
-                  </div>
-                </template>
-              </div>
-              <div class="col-md-6">
-                <div class="position-relative form-group">
-                  <label for="color" class>Color</label>
-                  <input
-                    name="color"
-                    id="color"
-                    placeholder="..."
-                    type="color"
-                    :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
-                    v-model.trim="$v.modal.color.$model"
-                  />
-                  <em
-                    v-if="$v.modal.color.$error&&!$v.modal.color.required"
-                    class="text-error-input"
-                  >{{mensajes.required}}</em>
                 </div>
               </div>
+            </template>
+            <div class="position-relative form-group" v-else>
+              <label for="color" class>Color</label>
+              <input
+                name="color"
+                id="color"
+                placeholder="..."
+                type="color"
+                :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
+                v-model.trim="$v.modal.color.$model"
+              />
+              <em
+                v-if="$v.modal.color.$error&&!$v.modal.color.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
             </div>
-          </template>
-          <div class="position-relative form-group" v-else>
-            <label for="color" class>Color</label>
-            <input
-              name="color"
-              id="color"
-              placeholder="..."
-              type="color"
-              :class="['form-control',$v.modal.color.$error?'error-input-select':'']"
-              v-model.trim="$v.modal.color.$model"
-            />
-            <em
-              v-if="$v.modal.color.$error&&!$v.modal.color.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
+            <div class="position-relative form-group">
+              <label for="descrpcion">Descripción</label>
+              <textarea
+                name="text"
+                id="descrpcion"
+                :class="['form-control',$v.modal.descripcion.$error?'error-input-select':'']"
+                v-model.trim="$v.modal.descripcion.$model"
+              ></textarea>
+              <em
+                v-if="$v.modal.descripcion.$error&&!$v.modal.descripcion.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
+            </div>
           </div>
-          <div class="position-relative form-group">
-            <label for="descrpcion">Descripción</label>
-            <textarea
-              name="text"
-              id="descrpcion"
-              :class="['form-control',$v.modal.descripcion.$error?'error-input-select':'']"
-              v-model.trim="$v.modal.descripcion.$model"
-            ></textarea>
-            <em
-              v-if="$v.modal.descripcion.$error&&!$v.modal.descripcion.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="metodoModal('agregar')"
+              :disabled="bloquearBtnModal"
+              v-if="btnAgregar"
+            >Agregar</button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              @click="metodoModal('editar')"
+              :disabled="bloquearBtnModal"
+              v-if="btnEditar"
+            >Editar</button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click="metodoModal('eliminar')"
+              :disabled="bloquearBtnModal"
+              v-if="btnEliminar"
+            >Eliminar</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('agregar-editar_eliminar-evento')"
+            >Cancelar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="metodoModal('agregar')"
-            :disabled="bloquearBtnModal"
-            v-if="btnAgregar"
-          >Agregar</button>
-          <button
-            type="button"
-            class="btn btn-warning"
-            @click="metodoModal('editar')"
-            :disabled="bloquearBtnModal"
-            v-if="btnEditar"
-          >Editar</button>
-          <button
-            type="button"
-            class="btn btn-danger"
-            @click="metodoModal('eliminar')"
-            :disabled="bloquearBtnModal"
-            v-if="btnEliminar"
-          >Eliminar</button>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar-editar_eliminar-evento')"
-          >Cancelar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -564,6 +572,10 @@ export default {
                   error.response.status === 405 ||
                   error.response.status === 401
                 ) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
                   window.location.href = "/";
                 } else {
                   this.bloquearBtnModal = false;
@@ -601,6 +613,10 @@ export default {
                   error.response.status === 405 ||
                   error.response.status === 401
                 ) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
                   window.location.href = "/";
                 } else {
                   this.bloquearBtnModal = false;
@@ -636,6 +652,10 @@ export default {
                 error.response.status === 405 ||
                 error.response.status === 401
               ) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;

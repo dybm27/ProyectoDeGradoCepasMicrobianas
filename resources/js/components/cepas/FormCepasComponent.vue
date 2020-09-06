@@ -366,7 +366,14 @@
         </div>
       </div>
     </form>
-    <modal name="agregar-otra-info" classes="my_modal" :width="450" :height="450">
+    <modal
+      name="agregar-otra-info"
+      classes="my_modal"
+      :maxWidth="450"
+      :adaptive="true"
+      height="auto"
+      :scrollable="true"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
@@ -772,6 +779,10 @@ export default {
                 error.response.status === 405 ||
                 error.response.status === 401
               ) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;

@@ -27,7 +27,14 @@ const websocketsCheckCepas = {
                 .catch(error => {
                     if (error.response.status === 403) {
                         this.$router.push("/sin-acceso");
-                    } else if (error.response.status === 405) {
+                    } else if (
+                        error.response.status === 405 ||
+                        error.response.status === 401
+                    ) {
+                        localStorage.setItem(
+                            "mensajeLogin",
+                            "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                        );
                         window.location.href = "/";
                     }
                 });

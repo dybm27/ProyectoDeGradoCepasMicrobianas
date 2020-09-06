@@ -56,7 +56,9 @@
           </router-link>
         </li>
       </ul>
-      <router-view @rutaHijo="cambiarTipo" @cambiarTipo="cambiarTipo1"></router-view>
+      <transition enter-active-class="slideInLeft">
+        <router-view @rutaHijo="cambiarTipo" @cambiarTipo="cambiarTipo1"></router-view>
+      </transition>
     </template>
     <template v-else>
       <div class="container">

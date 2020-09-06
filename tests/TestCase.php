@@ -21,6 +21,7 @@ abstract class TestCase extends BaseTestCase
         $this->seed(AdminSeeder::class);
 
         $this->user = User::where('id', 2)->first();
+        $this->user->email_verified_at = '2020-09-05 22:42:04';
         $this->imagen = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA5UlEQVQ4jcXSPU5CQRSG4UeD2lxotVA6F0HQBeg+lLAP4wIICSsAWQExlq5DxQSptLSASoqZm1zHuVgZ3+Yk5+ebM/MNf8A5plhijTfcofvbYAMjPOMKx9iL8RovGMa+LCPMUNTUC9xHkezaT1uGS5qYy1xnGteucotP3CT5HiapwFK4a5U1TrFK8m3hYX807ye5rySWHFRFd2P8wGGqmhmGI7ynAo+4yDTvZHKXsf8bZ4L/zcxAlRZe0ckVh4LPdSItPGBQp96IInPBqhPhYdvox5MHtvzEkq7g80JwZ4Fx3dr/zwb6EyxHQUhZMwAAAABJRU5ErkJggg==";
     }
 }

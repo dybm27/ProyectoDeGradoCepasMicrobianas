@@ -1,56 +1,60 @@
 <template>
   <div>
-    <modal
-      name="modal_agregar_info_caract"
-      @closed="closed"
-      classes="my_modal"
-      :width="450"
-      :height="450"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_agregar_info_caract')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              :class="['form-control', errors.nombre||$v.nombre.$error? 'error-input-select':'']"
-              v-model.trim="$v.nombre.$model"
-            />
-            <em v-if="errors.nombre" class="text-error-input">{{errors.nombre[0]}}</em>
-            <em
-              v-if="$v.nombre.$error&&!$v.nombre.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
-            <em
-              v-if="$v.nombre.$error&&!$v.nombre.unique"
-              class="text-error-input"
-            >{{mensajes.unique}}</em>
+    <transition name="fade">
+      <modal
+        name="modal_agregar_info_caract"
+        @closed="closed"
+        classes="my_modal"
+        :maxWidth="450"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('modal_agregar_info_caract')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="nombre" class>Nombre</label>
+              <input
+                name="nombre"
+                id="nombre"
+                placeholder="..."
+                type="text"
+                :class="['form-control', errors.nombre||$v.nombre.$error? 'error-input-select':'']"
+                v-model.trim="$v.nombre.$model"
+              />
+              <em v-if="errors.nombre" class="text-error-input">{{errors.nombre[0]}}</em>
+              <em
+                v-if="$v.nombre.$error&&!$v.nombre.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
+              <em
+                v-if="$v.nombre.$error&&!$v.nombre.unique"
+                class="text-error-input"
+              >{{mensajes.unique}}</em>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_agregar_info_caract')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="agregarInfo"
+            >Agregar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_agregar_info_caract')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="agregarInfo"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 

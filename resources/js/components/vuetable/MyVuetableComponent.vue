@@ -76,7 +76,7 @@ import VuetablePagination from "./PaginationComponent";
 import VuetablePaginationInfo from "./PaginationInfoComponent";
 import Toastr from "../../mixins/toastr";
 export default {
-  props:['apiUrl','fields','sortOrder','detailRowComponent','nameGet'],
+  props: ["apiUrl", "fields", "sortOrder", "detailRowComponent", "nameGet"],
   components: {
     Vuetable,
     FilterBar,
@@ -241,6 +241,10 @@ export default {
               error.response.status === 405 ||
               error.response.status === 401
             ) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
               window.location.href = "/";
             }
           });
@@ -284,6 +288,10 @@ export default {
               error.response.status === 405 ||
               error.response.status === 401
             ) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
               window.location.href = "/";
             }
           });
@@ -301,6 +309,15 @@ export default {
     loadError(error) {
       if (error.response.status === 403) {
         this.$router.push("/sin-acceso");
+      } else if (
+        error.response.status === 405 ||
+        error.response.status === 401
+      ) {
+        localStorage.setItem(
+          "mensajeLogin",
+          "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+        );
+        window.location.href = "/";
       }
     },
   },

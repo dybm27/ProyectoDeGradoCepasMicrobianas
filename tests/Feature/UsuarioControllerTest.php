@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Events\UsuarioEvent;
+use App\Notifications\VerifyEmailNotification;
 use App\Permiso;
 use App\Seguimiento;
 use App\User;
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
@@ -44,8 +46,10 @@ class UsuarioControllerTest extends TestCase
     /** @test */
     public function store_usuario()
     {
+        $this->withoutExceptionHandling();
         Event::fake();
         Storage::fake();
+        Notification::fake();
         $cant = User::all()->count();
         $response = $this->actingAs($this->user)
             ->postJson('/usuario/agregar', [
@@ -62,32 +66,55 @@ class UsuarioControllerTest extends TestCase
         $this->assertEquals($usuario->rol_id, 2);
         $this->assertEquals(true, Hash::check('asdasd', $usuario->password));
         $this->assertCount($cant + 1, User::all());
+        Notification::assertSentTo(
+            [$usuario],
+            VerifyEmailNotification::class
+        );
     }
 
     /** @test */
-    public function update_usuario()
+    public function verificar_update_usuario()
     {
-        Event::fake();
-        Storage::fake();
-        $imagen = UploadedFile::fake()->create('imagen.jpg', 21000);
-        Storage::put('/public/usuarios/avatar_img/imagen.jpg', file_get_contents($imagen));
-        $this->user->avatar = '/public/usuarios/avatar_img/imagen.jpg';
-
         $response = $this->actingAs($this->user)
             ->putJson('/usuario/editar/' . $this->user->id, [
                 'email' => 'asdasd', 'nombre' => 'asdasd',
                 'pass' => 'asdasd', 'rol' => 2, 'imagen' => $this->imagen
             ]);
         $response->assertStatus(200);
+        $this->assertEquals($response->getContent(), 'negativo');
+    }
+
+    /** @test */
+    public function update_usuario()
+    {
+        Notification::fake();
+        Event::fake();
+        Storage::fake();
+        $imagen = UploadedFile::fake()->create('imagen.jpg', 21000);
+        Storage::put('/public/usuarios/avatar_img/imagen.jpg', file_get_contents($imagen));
+        $usuario = User::first();
+        $usuario->avatar = '/public/usuarios/avatar_img/imagen.jpg';
+        $usuario->save();
+
+        $response = $this->actingAs($this->user)
+            ->putJson('/usuario/editar/' . $usuario->id, [
+                'email' => 'asdasd', 'nombre' => 'asdasd',
+                'pass' => 'asdasd', 'rol' => 2, 'imagen' => $this->imagen
+            ]);
+        $response->assertStatus(200);
         Storage::assertMissing($this->user->avatar);
         Event::assertDispatched(UsuarioEvent::class);
-        $usuario = $this->user->fresh();
+        $usuario = $usuario->fresh();
         Storage::assertExists($usuario->avatar);
         $this->assertCount(1, Seguimiento::all());
         $this->assertEquals($usuario->name, 'Asdasd');
         $this->assertEquals($usuario->email, 'asdasd');
         $this->assertEquals($usuario->rol_id, 2);
         $this->assertEquals(true, Hash::check('asdasd', $usuario->password));
+        Notification::assertSentTo(
+            [$usuario],
+            VerifyEmailNotification::class
+        );
     }
 
     /** @test */

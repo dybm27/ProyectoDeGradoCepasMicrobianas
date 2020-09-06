@@ -64,7 +64,8 @@ class ControlSesion
                 }
             }
         } else {
-            return redirect('/');
+            $message = "Se ha cerrado la sesión.";
+            return redirect('/')->with('message', $message);
         }
         $auth->lastActivityTime = now();
         $auth->save();

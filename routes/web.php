@@ -18,27 +18,18 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
-// Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
-
 // Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-
-// Password Confirmation Routes...
-Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
+Route::get('contraseña/from-restablecer', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('contraseña/enviar-email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('contraseña/restablecer/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('contraseña/restablecer', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 // Email Verification Routes...
-Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/verificar', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verificar/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-//, 'verified'
 
-Route::group(['middleware' => ['auth', 'control_sesion']], function () {
+Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function () {
     //--------------------- CEPAS -------------------------------------------------------------------
     //-- crud cepas
     Route::post('/cepas/agregar', 'CepaController@store')->middleware('control_permisos:agregar-cepa');

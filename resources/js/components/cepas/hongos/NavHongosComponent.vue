@@ -108,6 +108,8 @@
         </li>
       </ul>
     </template>
-    <router-view></router-view>
+    <transition enter-active-class="slideInLeft">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>

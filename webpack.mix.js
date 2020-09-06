@@ -40,8 +40,7 @@ mix.webpackConfig({
     plugins: [
         new CKEditorWebpackPlugin({
             language: "es",
-            addMainLanguageTranslationsToAllAssets: true,
-            buildAllTranslationsToSeparateFiles: true,
+            addMainLanguageTranslationsToAllAssets: true
         }),
     ],
     module: {

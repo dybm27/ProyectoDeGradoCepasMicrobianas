@@ -257,34 +257,91 @@
 }
 
 .logo-majumba > img {
+    width: 630px;
     height: 250px;
-    width: 500px;
 }
-@media (max-width: 990px) {
+@media (max-width: 1178px) {
     .logo-majumba > img {
-        height: 300px;
         width: 600px;
+    }
+}
+@media (max-width: 1087px) {
+    .logo-majumba > img {
+        width: 550px;
     }
 }
 @media (max-width: 772px) {
     .logo-majumba > img {
-        height: 250px;
-        width: 500px;
+        width: 480px;
+        height: 200px;
     }
 }
-@media (max-width: 529px) {
+@media (max-width: 590px) {
     .logo-majumba > img {
+        width: 450px;
         height: 200px;
+    }
+}
+@media (max-width: 503px) {
+    .logo-majumba > img {
         width: 400px;
     }
 }
 @media (max-width: 429px) {
     .logo-majumba > img {
-        height: 150px;
         width: 330px;
     }
 }
+@media (max-width: 370px) {
+    .logo-majumba > img {
+        width: 270px;
+        height: 150px;
+    }
+}
 
+
+.logo-majumba-reset > img {
+    width: 500px;
+    height: 250px;
+}
+@media (max-width: 1178px) {
+    .logo-majumba-reset > img {
+        width: 600px;
+    }
+}
+@media (max-width: 1087px) {
+    .logo-majumba-reset > img {
+        width: 550px;
+    }
+}
+@media (max-width: 772px) {
+    .logo-majumba-reset > img {
+        width: 480px;
+        height: 200px;
+    }
+}
+@media (max-width: 590px) {
+    .logo-majumba-reset > img {
+        width: 450px;
+        height: 200px;
+    }
+}
+@media (max-width: 503px) {
+    .logo-majumba-reset > img {
+        width: 400px;
+    }
+}
+@media (max-width: 429px) {
+    .logo-majumba-reset > img {
+        width: 330px;
+    }
+}
+@media (max-width: 370px) {
+    .logo-majumba-reset > img {
+        width: 270px;
+        height: 150px;
+    }
+}
 .dropdown-menu {
     min-width: 10rem;
 }
@@ -460,11 +517,6 @@
     display: none;
 }
 
-.logo-majumba > img {
-    height: 200px;
-    width: 400px;
-}
-
 /* btn login con google*/
 #btnGoogle {
     display: inline-block;
@@ -590,4 +642,20 @@ span.buttonText {
 }
 .list-group-item i {
     cursor: pointer;
+}
+
+/* page title*/
+.app-theme-white .app-page-title {
+    /*rgba(255, 255, 255, 0.45);*/
+    background: #06f37940;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+        0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+        0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+        0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+
+.card-header.card-header-tab .card-header-title {
+    align-items: center;
+    white-space: inherit;
+    margin-bottom: 0.5em;
 }

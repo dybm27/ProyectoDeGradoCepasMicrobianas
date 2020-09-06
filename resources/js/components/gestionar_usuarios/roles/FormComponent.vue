@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center m-3" v-if="!bloquearBtn">
           <div class="col-md-4">
-            <button class="btn btn-success btn-block" @click="modificarPermisos">Aceptar Cambios</button>
+            <button class="btn btn-success btn-lg" @click="modificarPermisos">Aceptar Cambios</button>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -120,6 +120,10 @@ export default {
         })
         .catch((error) => {
           if (error.response.status === 405 || error.response.status === 401) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           }
         });

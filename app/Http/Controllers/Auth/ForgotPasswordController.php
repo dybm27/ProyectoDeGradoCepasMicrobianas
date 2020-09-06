@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\ImagenLogin;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Support\Facades\Password;
+
+use function GuzzleHttp\Promise\all;
 
 class ForgotPasswordController extends Controller
 {
@@ -19,4 +24,10 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+
+    public function showLinkRequestForm()
+    {
+        $imagenes = ImagenLogin::where('mostrar', 1)->get();
+        return view('resetPass', compact('imagenes'));
+    }
 }

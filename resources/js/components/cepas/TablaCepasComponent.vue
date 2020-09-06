@@ -22,8 +22,10 @@
     <modal
       :name="'modal_eliminar_cepa'"
       classes="my_modal"
-      :width="400"
-      :height="300"
+      :maxWidth="400"
+      :adaptive="true"
+      height="auto"
+      :scrollable="true"
       @before-open="beforeOpenEliminar"
       @closed="closeEliminar"
     >
@@ -153,6 +155,10 @@ export default {
             error.response.status === 405 ||
             error.response.status === 401
           ) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;

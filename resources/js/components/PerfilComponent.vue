@@ -131,182 +131,200 @@
         </div>
       </template>
     </div>
-    <modal name="cambiarImagen" classes="my_modal" :width="700" :height="485">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('cambiarImagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <template v-if="tipo==='imagen'">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Imagen</label>
-                    <input
-                      name="imagen"
-                      @change="obtenerImagen"
-                      id="imagen"
-                      accept="image/jpeg"
-                      type="file"
-                      :class="['form-control-file', $v.imagen.$error!=''? 'error-input-select':'']"
-                      ref="inputImagen"
-                    />
-                    <em v-if="errorImagen" class="text-error-input">{{errorImagen}}</em>
-                    <em
-                      v-if="$v.imagen.$error&&!$v.imagen.required"
-                      class="text-error-input"
-                    >{{mensajes.required}}</em>
+    <transition name="fade">
+      <modal
+        name="cambiarImagen"
+        classes="my_modal"
+        :adaptive="true"
+        :maxWidth="700"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('cambiarImagen')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <template v-if="tipo==='imagen'">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Imagen</label>
+                      <input
+                        name="imagen"
+                        @change="obtenerImagen"
+                        id="imagen"
+                        accept="image/jpeg"
+                        type="file"
+                        :class="['form-control-file', $v.imagen.$error!=''? 'error-input-select':'']"
+                        ref="inputImagen"
+                      />
+                      <em v-if="errorImagen" class="text-error-input">{{errorImagen}}</em>
+                      <em
+                        v-if="$v.imagen.$error&&!$v.imagen.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <template v-if="mostraImagen">
+                      <Croppie
+                        :id="'croppie'"
+                        :imagen="mostraImagen"
+                        @cambiarValorImagen="cambiarValorImagen"
+                        :mostrarBtnCroppie="true"
+                        :zoom="1"
+                        :enableZoom="true"
+                        :editar="false"
+                        :boundaryHeigth="230"
+                        :viewportWidth="200"
+                      />
+                    </template>
+                    <template v-else>
+                      <div class="text-center">
+                        <h5 class="mt-5 mb-5">
+                          <span class="pr-1">
+                            <b class="text-warning">SIN IMAGEN</b>
+                          </span>
+                        </h5>
+                      </div>
+                    </template>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <template v-if="mostraImagen">
-                    <Croppie
-                      :id="'croppie'"
-                      :imagen="mostraImagen"
-                      @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="true"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="230"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <div class="text-center">
-                      <h5 class="mt-5 mb-5">
-                        <span class="pr-1">
-                          <b class="text-warning">SIN IMAGEN</b>
-                        </span>
-                      </h5>
-                    </div>
-                  </template>
+              </div>
+            </template>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('cambiarImagen')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="eventBtn"
+              :disabled="bloquearBtnModal"
+            >Cambiar</button>
+          </div>
+        </div>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="cambiarInfo"
+        classes="my_modal"
+        :maxWidth="450"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('cambiarInfo')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <template v-if="tipo==='nombre'">
+              <div class="position-relative form-group">
+                <label for="nombre" class>Nombre</label>
+                <input
+                  name="nombre"
+                  id="nombre"
+                  placeholder="..."
+                  type="text"
+                  :class="['form-control', $v.nombre.$error? 'error-input-select':'']"
+                  v-model.trim="$v.nombre.$model"
+                />
+                <em
+                  v-if="$v.nombre.$error&&!$v.nombre.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.nombre.$error&&!$v.nombre.alpha"
+                  class="text-error-input"
+                >{{mensajes.alpha}}</em>
+              </div>
+            </template>
+            <template v-if="tipo==='contraseña'">
+              <label for="pass" class>Contraseña</label>
+              <div class="input-group mb-3">
+                <input
+                  name="pass"
+                  id="pass"
+                  placeholder="..."
+                  :type="showPass==true?'text':'password'"
+                  :class="['form-control', $v.pass.$error? 'error-input-select':'']"
+                  v-model.trim="$v.pass.$model"
+                />
+                <div class="input-group-append verContraseña">
+                  <span class="input-group-text">
+                    <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
+                    <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
+                  </span>
                 </div>
+                <em
+                  v-if="$v.pass.$error&&!$v.pass.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.pass.$error&&!$v.pass.minLength"
+                  class="text-error-input"
+                >{{mensajes.minLength}}</em>
+                <em
+                  v-if="$v.pass.$error&&!$v.pass.maxLength"
+                  class="text-error-input"
+                >{{mensajes.maxLength}}</em>
               </div>
-            </div>
-          </template>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('cambiarImagen')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="eventBtn"
-            :disabled="bloquearBtnModal"
-          >Cambiar</button>
-        </div>
-      </div>
-    </modal>
-    <modal name="cambiarInfo" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('cambiarInfo')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <template v-if="tipo==='nombre'">
-            <div class="position-relative form-group">
-              <label for="nombre" class>Nombre</label>
-              <input
-                name="nombre"
-                id="nombre"
-                placeholder="..."
-                type="text"
-                :class="['form-control', $v.nombre.$error? 'error-input-select':'']"
-                v-model.trim="$v.nombre.$model"
-              />
-              <em
-                v-if="$v.nombre.$error&&!$v.nombre.required"
-                class="text-error-input"
-              >{{mensajes.required}}</em>
-              <em
-                v-if="$v.nombre.$error&&!$v.nombre.alpha"
-                class="text-error-input"
-              >{{mensajes.alpha}}</em>
-            </div>
-          </template>
-          <template v-if="tipo==='contraseña'">
-            <label for="pass" class>Contraseña</label>
-            <div class="input-group mb-3">
-              <input
-                name="pass"
-                id="pass"
-                placeholder="..."
-                :type="showPass==true?'text':'password'"
-                :class="['form-control', $v.pass.$error? 'error-input-select':'']"
-                v-model.trim="$v.pass.$model"
-              />
-              <div class="input-group-append verContraseña">
-                <span class="input-group-text">
-                  <i class="fas fa-eye" v-if="showPass" @click="showPass=!showPass"></i>
-                  <i class="fas fa-eye-slash" v-else @click="showPass=!showPass"></i>
-                </span>
+              <label for="pass1" class>Confirmar Contraseña</label>
+              <div class="input-group mb-3">
+                <input
+                  name="pass1"
+                  id="pass1"
+                  placeholder="..."
+                  :type="showPass1==true?'text':'password'"
+                  :class="['form-control', $v.pass1.$error? 'error-input-select':'']"
+                  v-model.trim="$v.pass1.$model"
+                />
+                <div class="input-group-append verContraseña">
+                  <span class="input-group-text">
+                    <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
+                    <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
+                  </span>
+                </div>
+                <em
+                  v-if="$v.pass1.$error&&!$v.pass1.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.pass1.$error&&!$v.pass1.sameAs"
+                  class="text-error-input"
+                >{{mensajes.sameAs}}</em>
               </div>
-              <em
-                v-if="$v.pass.$error&&!$v.pass.required"
-                class="text-error-input"
-              >{{mensajes.required}}</em>
-              <em
-                v-if="$v.pass.$error&&!$v.pass.minLength"
-                class="text-error-input"
-              >{{mensajes.minLength}}</em>
-              <em
-                v-if="$v.pass.$error&&!$v.pass.maxLength"
-                class="text-error-input"
-              >{{mensajes.maxLength}}</em>
-            </div>
-            <label for="pass1" class>Confirmar Contraseña</label>
-            <div class="input-group mb-3">
-              <input
-                name="pass1"
-                id="pass1"
-                placeholder="..."
-                :type="showPass1==true?'text':'password'"
-                :class="['form-control', $v.pass1.$error? 'error-input-select':'']"
-                v-model.trim="$v.pass1.$model"
-              />
-              <div class="input-group-append verContraseña">
-                <span class="input-group-text">
-                  <i class="fas fa-eye" v-if="showPass1" @click="showPass1=!showPass1"></i>
-                  <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
-                </span>
-              </div>
-              <em
-                v-if="$v.pass1.$error&&!$v.pass1.required"
-                class="text-error-input"
-              >{{mensajes.required}}</em>
-              <em
-                v-if="$v.pass1.$error&&!$v.pass1.sameAs"
-                class="text-error-input"
-              >{{mensajes.sameAs}}</em>
-            </div>
-          </template>
+            </template>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('cambiarInfo')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="eventBtn"
+              :disabled="bloquearBtnModal"
+            >Cambiar</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('cambiarInfo')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="eventBtn"
-            :disabled="bloquearBtnModal"
-          >Cambiar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -386,6 +404,7 @@ export default {
       this.imagen = valor;
     },
     showModal(tipo) {
+      this.imagenMiniatura = "";
       this.nombre = "";
       this.pass = "";
       this.imagen = "";
@@ -459,6 +478,10 @@ export default {
                   error.response.status === 405 ||
                   error.response.status === 401
                 ) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
                   window.location.href = "/";
                 } else {
                   this.bloquearBtnModal = false;
@@ -493,6 +516,10 @@ export default {
                   error.response.status === 405 ||
                   error.response.status === 401
                 ) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
                   window.location.href = "/";
                 } else {
                   this.bloquearBtnModal = false;
@@ -528,6 +555,10 @@ export default {
                   error.response.status === 405 ||
                   error.response.status === 401
                 ) {
+                  localStorage.setItem(
+                    "mensajeLogin",
+                    "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                  );
                   window.location.href = "/";
                 } else {
                   this.bloquearBtnModal = false;

@@ -377,22 +377,31 @@ export default {
               if (this.auth.id === res.data.id) {
                 this.accionModificarAuth({ data: res.data });
               }
-              this.accionUsuario({ tipo: "editar", data: res.data });
-              this.toastr(
-                "Editar Usuario",
-                "Usuario editado con exito!!",
-                "success"
-              );
-              window.Echo.private("desbloquearBtnsUsuario").whisper(
-                "desbloquearBtnsUsuario",
-                {
+              if (res.data != "negativo") {
+                this.accionUsuario({ tipo: "editar", data: res.data });
+                this.toastr(
+                  "Editar Usuario",
+                  "Usuario editado con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsUsuario").whisper(
+                  "desbloquearBtnsUsuario",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoUsuario", {
                   id: res.data.id,
-                }
-              );
-              this.$events.fire("eliminarMiBloqueoUsuario", {
-                id: res.data.id,
-              });
-              this.$emit("cambiarVariableFormulario");
+                });
+                this.$emit("cambiarVariableFormulario");
+              } else {
+                this.toastr(
+                  "Precaución",
+                  "El Usuario se encuentra Logueado y no es posible Editarlo!!",
+                  "warning"
+                );
+                this.bloquearBtn = false;
+              }
             })
             .catch((error) => {
               this.verificarError(

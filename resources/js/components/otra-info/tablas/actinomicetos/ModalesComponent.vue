@@ -1,153 +1,165 @@
 <template >
   <div>
-    <modal
-      name="modal_agregar_tipo_actinomiceto"
-      classes="my_modal"
-      :width="450"
-      :height="450"
-      @before-open="beforeOpenAgregar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Agregar {{primeraMayus(modal.tipo)}}</h5>
-          <button
-            type="button"
-            class="close"
-            @click="$modal.hide('modal_agregar_tipo_actinomiceto')"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
-              v-model.trim="$v.modal.nombre.$model"
-            />
-            <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
-            <em
-              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
-            <em
-              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
-              class="text-error-input"
-            >{{mensajes.unique}}</em>
+    <transition name="fade">
+      <modal
+        name="modal_agregar_tipo_actinomiceto"
+        classes="my_modal"
+        :maxWidth="450"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenAgregar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar {{primeraMayus(modal.tipo)}}</h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_agregar_tipo_actinomiceto')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="nombre" class>Nombre</label>
+              <input
+                name="nombre"
+                id="nombre"
+                placeholder="..."
+                type="text"
+                :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+                v-model.trim="$v.modal.nombre.$model"
+              />
+              <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
+              <em
+                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
+              <em
+                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+                class="text-error-input"
+              >{{mensajes.unique}}</em>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_agregar_tipo_actinomiceto')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="agregarTipo"
+              :disabled="bloquearBtnModal"
+            >Agregar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_agregar_tipo_actinomiceto')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="agregarTipo"
-            :disabled="bloquearBtnModal"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
-    <modal
-      name="modal_editar_tipo_actinomiceto"
-      classes="my_modal"
-      :width="400"
-      :height="450"
-      @before-open="beforeOpenEditar"
-      @closed="closeEditar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Editar {{primeraMayus(modal.tipo)}}</h5>
-          <button
-            type="button"
-            class="close"
-            @click="$modal.hide('modal_editar_tipo_actinomiceto')"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre">Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
-              v-model.trim="$v.modal.nombre.$model"
-            />
-            <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
-            <em
-              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
-              class="text-error-input"
-            >{{mensajes.required}}</em>
-            <em
-              v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
-              class="text-error-input"
-            >{{mensajes.unique}}</em>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="modal_editar_tipo_actinomiceto"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEditar"
+        @closed="closeEditar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar {{primeraMayus(modal.tipo)}}</h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_editar_tipo_actinomiceto')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                name="nombre"
+                id="nombre"
+                placeholder="..."
+                type="text"
+                :class="['form-control', $v.modal.nombre.$error||errors? 'error-input-select':'']"
+                v-model.trim="$v.modal.nombre.$model"
+              />
+              <em v-if="errors" class="text-error-input">{{errors.nombre[0]}}</em>
+              <em
+                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.required"
+                class="text-error-input"
+              >{{mensajes.required}}</em>
+              <em
+                v-if="$v.modal.nombre.$error&&!$v.modal.nombre.unique"
+                class="text-error-input"
+              >{{mensajes.unique}}</em>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_editar_tipo_actinomiceto')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="editarTipo"
+              :disabled="bloquearBtnModal"
+            >Editar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_editar_tipo_actinomiceto')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="editarTipo"
-            :disabled="bloquearBtnModal"
-          >Editar</button>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="modal_eliminar_tipo_actinomiceto"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEliminar"
+        @closed="closeEliminar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{primeraMayus(modal.tipo)}}</h5>
+            <button
+              type="button"
+              class="close"
+              @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Esta segura/o de eliminar el/la {{primeraMayus(modal.tipo)}}?.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="eliminarTipo"
+            >Eliminar</button>
+          </div>
         </div>
-      </div>
-    </modal>
-    <modal
-      name="modal_eliminar_tipo_actinomiceto"
-      classes="my_modal"
-      :width="400"
-      :height="300"
-      @before-open="beforeOpenEliminar"
-      @closed="closeEliminar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar {{primeraMayus(modal.tipo)}}</h5>
-          <button
-            type="button"
-            class="close"
-            @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar el/la {{primeraMayus(modal.tipo)}}?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_eliminar_tipo_actinomiceto')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminarTipo"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -223,7 +235,7 @@ export default {
             }
           })
           .catch((error) => {
-            this.verificarErrorAxios(
+            this.verificarErrorAxiosModal(
               error.response.status,
               error.response.data.errors
             );
@@ -260,7 +272,7 @@ export default {
             this.$modal.hide("modal_editar_tipo_actinomiceto");
           })
           .catch((error) => {
-            this.verificarErrorAxios(
+            this.verificarErrorAxiosModal(
               error.response.status,
               error.response.data.errors
             );
@@ -314,7 +326,7 @@ export default {
           this.$modal.hide("modal_eliminar_tipo_actinomiceto");
         })
         .catch((error) => {
-          this.verificarErrorAxios(
+          this.verificarErrorAxiosModal(
             error.response.status,
             error.response.data.errors
           );
@@ -323,10 +335,14 @@ export default {
     primeraMayus(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
-    verificarErrorAxios(code, errors) {
+    verificarErrorAxiosModal(code, errors) {
       if (code === 403) {
         this.$router.push("/sin-acceso");
       } else if (code === 405 || code === 401) {
+        localStorage.setItem(
+          "mensajeLogin",
+          "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+        );
         window.location.href = "/";
       } else {
         if (code === 422) {

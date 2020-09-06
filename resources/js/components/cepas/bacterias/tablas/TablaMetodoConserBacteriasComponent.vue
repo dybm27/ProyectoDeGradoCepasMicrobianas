@@ -11,38 +11,42 @@
           :nameGet="'metodos-bacterias'"
         ></MyVuetable>
       </div>
-      <modal
-        name="my_modal_eliminar_metodo"
-        classes="my_modal"
-        :width="400"
-        :height="300"
-        @before-open="beforeOpen"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Método de Conservación</h5>
-            <button type="button" class="close" @click="$modal.hide('my_modal_eliminar_metodo')">
-              <span aria-hidden="true">&times;</span>
-            </button>
+      <transition name="fade">
+        <modal
+          name="my_modal_eliminar_metodo"
+          classes="my_modal"
+          :maxWidth="400"
+          :adaptive="true"
+          height="auto"
+          :scrollable="true"
+          @before-open="beforeOpen"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Método de Conservación</h5>
+              <button type="button" class="close" @click="$modal.hide('my_modal_eliminar_metodo')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Esta segura/o de eliminar el Método?.</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                @click="$modal.hide('my_modal_eliminar_metodo')"
+              >Cancelar</button>
+              <button
+                type="button"
+                class="btn btn-success"
+                :disabled="bloquearBtnModal"
+                @click="eliminarMetodo"
+              >Eliminar</button>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Esta segura/o de eliminar el Método?.</p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              @click="$modal.hide('my_modal_eliminar_metodo')"
-            >Cancelar</button>
-            <button
-              type="button"
-              class="btn btn-success"
-              :disabled="bloquearBtnModal"
-              @click="eliminarMetodo"
-            >Eliminar</button>
-          </div>
-        </div>
-      </modal>
+        </modal>
+      </transition>
     </template>
     <template v-else>
       <div class="text-center">
@@ -104,6 +108,10 @@ export default {
             error.response.status === 405 ||
             error.response.status === 401
           ) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;

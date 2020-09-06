@@ -5,7 +5,7 @@
       <template v-if="imagenesLogin!=''">
         <div class="container">
           <div class="row justify-content-md-center">
-            <div class="col-md-4" v-for="(imagen, index) in imagenesLogin" :key="index">
+            <div class="col-md-4 mb-3" v-for="(imagen, index) in imagenesLogin" :key="index">
               <div class="card">
                 <img class="card-img-top" :src="imagen.imagenPublica" />
                 <div class="card-body">

@@ -20,7 +20,9 @@
         </router-link>
       </li>
     </ul>
-    <router-view @rutaHijo="cambiarTipo"></router-view>
+    <transition enter-active-class="slideInLeft">
+      <router-view @rutaHijo="cambiarTipo"></router-view>
+    </transition>
   </div>
 </template>
 

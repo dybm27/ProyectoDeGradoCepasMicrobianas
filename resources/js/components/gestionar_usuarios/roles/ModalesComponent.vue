@@ -1,130 +1,142 @@
 <template >
   <div>
-    <modal
-      name="modal_agregar_rol"
-      classes="my_modal"
-      :width="450"
-      :height="450"
-      @before-open="beforeOpenAgregar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Agregar Rol</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_agregar_rol')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre" class>Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              class="form-control"
-              :class="['form-control', validarNombre||errors? 'error-input-select':'']"
-              v-model="modal.nombre"
-            />
-            <em
-              v-if="validarNombre||errors"
-              class="text-error-input"
-            >{{errors?"Campo requerido.":mensajeValidarNombre}}</em>
+    <transition name="fade">
+      <modal
+        name="modal_agregar_rol"
+        classes="my_modal"
+        :maxWidth="450"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenAgregar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar Rol</h5>
+            <button type="button" class="close" @click="$modal.hide('modal_agregar_rol')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="nombre" class>Nombre</label>
+              <input
+                name="nombre"
+                id="nombre"
+                placeholder="..."
+                type="text"
+                class="form-control"
+                :class="['form-control', validarNombre||errors? 'error-input-select':'']"
+                v-model="modal.nombre"
+              />
+              <em
+                v-if="validarNombre||errors"
+                class="text-error-input"
+              >{{errors?"Campo requerido.":mensajeValidarNombre}}</em>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_agregar_rol')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="agregarRol"
+              :disabled="bloquearBtnModal"
+            >Agregar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_agregar_rol')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="agregarRol"
-            :disabled="bloquearBtnModal"
-          >Agregar</button>
-        </div>
-      </div>
-    </modal>
-    <modal
-      name="modal_editar_rol"
-      classes="my_modal"
-      :width="400"
-      :height="450"
-      @before-open="beforeOpenEditar"
-      @closed="closeEditar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Editar Rol</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_editar_rol')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="nombre">Nombre</label>
-            <input
-              name="nombre"
-              id="nombre"
-              placeholder="..."
-              type="text"
-              :class="['form-control', validarNombre||errors? 'error-input-select':'']"
-              v-model="modal.nombre"
-            />
-            <em v-if="validarNombre" class="text-error-input">{{mensajeValidarNombre}}</em>
-            <em v-if="errors" class="text-error-input">Campo requerido.</em>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="modal_editar_rol"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEditar"
+        @closed="closeEditar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Rol</h5>
+            <button type="button" class="close" @click="$modal.hide('modal_editar_rol')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                name="nombre"
+                id="nombre"
+                placeholder="..."
+                type="text"
+                :class="['form-control', validarNombre||errors? 'error-input-select':'']"
+                v-model="modal.nombre"
+              />
+              <em v-if="validarNombre" class="text-error-input">{{mensajeValidarNombre}}</em>
+              <em v-if="errors" class="text-error-input">Campo requerido.</em>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_editar_rol')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="editarRol"
+              :disabled="bloquearBtnModal"
+            >Editar</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_editar_rol')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="editarRol"
-            :disabled="bloquearBtnModal"
-          >Editar</button>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="modal_eliminar_rol"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEliminar"
+        @closed="closeEliminar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Rol</h5>
+            <button type="button" class="close" @click="$modal.hide('modal_eliminar_rol')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Esta segura/o de eliminar el/la Rol?.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_eliminar_rol')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="eliminarRol"
+            >Eliminar</button>
+          </div>
         </div>
-      </div>
-    </modal>
-    <modal
-      name="modal_eliminar_rol"
-      classes="my_modal"
-      :width="400"
-      :height="300"
-      @before-open="beforeOpenEliminar"
-      @closed="closeEliminar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Rol</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_eliminar_rol')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar el/la Rol?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_eliminar_rol')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminarRol"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -177,6 +189,10 @@ export default {
                 error.response.status === 405 ||
                 error.response.status === 401
               ) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
@@ -222,6 +238,10 @@ export default {
                 error.response.status === 405 ||
                 error.response.status === 401
               ) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
                 window.location.href = "/";
               } else {
                 this.bloquearBtnModal = false;
@@ -267,6 +287,10 @@ export default {
         })
         .catch((error) => {
           if (error.response.status === 405 || error.response.status === 401) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
