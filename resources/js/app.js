@@ -70,6 +70,10 @@ Vue.component(
         .default
 );
 Vue.component(
+    "my-detail-row-bacterias",
+    require("./components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue").default
+);
+Vue.component(
     "my-detail-row-h-l-a",
     require("./components/cepas/DetailRowHLAComponent.vue").default
 );

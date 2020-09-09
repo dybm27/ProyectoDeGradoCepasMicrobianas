@@ -76,6 +76,7 @@ export default {
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "otras", data: data });
+      this.modificarForm = true;
     },
     editar(data) {
       this.accionEditarCaract({ tipo: "otras", data: data });

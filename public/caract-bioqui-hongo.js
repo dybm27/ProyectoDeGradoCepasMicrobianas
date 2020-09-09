@@ -294,10 +294,14 @@ __webpack_require__.r(__webpack_exports__);
       this.nomBtn = "Agregar";
     }
 
-    if (this.$route.params.cepaHongoId) {
-      this.parametros.cepaId = this.$route.params.cepaHongoId;
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   }
 });
@@ -400,6 +404,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         tipo: "bioqui",
         data: data
       });
+      this.modificarForm = true;
     },
     editar: function editar(data) {
       this.accionEditarCaract({
@@ -512,7 +517,7 @@ var render = function() {
                     _vm._v("Enzimas")
                   ]),
                   _vm._v(" "),
-                  _c("input", {
+                  _c("textarea", {
                     directives: [
                       {
                         name: "model",
@@ -565,7 +570,7 @@ var render = function() {
                     _vm._v("Azúcares")
                   ]),
                   _vm._v(" "),
-                  _c("input", {
+                  _c("textarea", {
                     directives: [
                       {
                         name: "model",

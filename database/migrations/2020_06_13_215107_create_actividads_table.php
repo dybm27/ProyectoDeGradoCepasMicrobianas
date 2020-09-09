@@ -15,12 +15,13 @@ class CreateActividadsTable extends Migration
     {
         Schema::create('actividads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titulo');
+            $table->string('titulo')->unique();
             $table->string('lugar');
             $table->string('link')->nullable();
             $table->longText('cuerpo')->nullable();
             $table->dateTime('fecha');
             $table->boolean('publicar')->default(0);
+            $table->string('slug')->unique();
             $table->string('imagen');
             $table->string('imagenPublica');
             $table->longText('imagenesEditor')->nullable();

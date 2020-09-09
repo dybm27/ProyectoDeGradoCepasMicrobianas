@@ -26,7 +26,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="table-responsive">
+        <div class="table-responsive fixed ">
           <vuetable
             noDataTemplate="Cargando informacion..."
             ref="vuetable"

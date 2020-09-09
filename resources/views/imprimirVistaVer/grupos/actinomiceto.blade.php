@@ -163,7 +163,7 @@
         <table class="table tabla-identi-bioqui">
             <tbody>
                 <tr>
-                    <td colspan="5" class="thead-identi-bioqui"><b>Características Bioquímicas</b></td>
+                    <td colspan="5" class="thead-identi-bioqui"><b>Identificaciones Bioquímicas</b></td>
                 </tr>
                 <tr>
                     <td colspan="2"><b>Oxidasa</b></td>

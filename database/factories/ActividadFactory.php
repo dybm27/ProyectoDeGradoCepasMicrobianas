@@ -3,7 +3,9 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Actividad;
+use App\Documento;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Actividad::class, function (Faker $faker) {
     return [
@@ -11,11 +13,14 @@ $factory->define(Actividad::class, function (Faker $faker) {
         'link' => 'qweqwe',
         'cuerpo' => 'qweqwe',
         'lugar' => 'qweqwe',
-        'fecha' => 'qweqwe',
+        'fecha' => now(),
         'imagenesEditor' => 'qweqwe',
         'imagen' => 'asdads',
         'imagenPublica' => 'asdads',
-        'publicar' => 0
-        
+        'publicar' => 0,
+        'slug' => function (array $activiad) {
+            return Str::slug($activiad['titulo'], "-");
+        },
+
     ];
 });

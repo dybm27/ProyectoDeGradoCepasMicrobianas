@@ -631,10 +631,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Editar";
     }
 
-    if (this.$route.params.cepaHongoId) {
-      this.parametros.cepaId = this.$route.params.cepaHongoId;
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   watch: {
@@ -892,10 +896,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   created: function created() {
+    var array = [];
+
     if (this.$route.params.cepaHongoId) {
-      this.url += this.$route.params.cepaHongoId;
+      array = this.$route.params.cepaHongoId.split("-");
+      this.url += parseInt(array[array.length - 1]);
     } else {
-      this.url += this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     }
   }
 });

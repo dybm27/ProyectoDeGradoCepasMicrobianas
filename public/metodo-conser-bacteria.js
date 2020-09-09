@@ -567,10 +567,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Editar";
     }
 
-    if (this.$route.params.cepaBacteriaId) {
-      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    var array = [];
+
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   watch: {
@@ -835,10 +839,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   created: function created() {
-    if (this.$route.params.cepaBacteriaId) {
-      this.url += this.$route.params.cepaBacteriaId;
+    var array = [];
+
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     } else {
-      this.url += this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     }
   }
 });

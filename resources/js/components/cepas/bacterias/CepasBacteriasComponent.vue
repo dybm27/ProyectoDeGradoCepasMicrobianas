@@ -44,7 +44,7 @@
       <router-view
         :tipoG="1"
         :tipo="'bacteria'"
-        :detailRowComponent="'my-detail-row-cepas'"
+        :detailRowComponent="'my-detail-row-bacterias'"
         :titulo="'BACTERIAS'"
         @cambiarTipo="cambiarTipo"
         :tituloCepa="tituloCepa"

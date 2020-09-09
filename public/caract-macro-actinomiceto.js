@@ -577,10 +577,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Editar";
     }
 
-    if (this.$route.params.cepaActinomicetoId) {
-      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    var array = [];
+
+    if (this.$route.params.cepaActinomicetoSlug) {
+      array = this.$route.params.cepaActinomicetoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created: function created() {

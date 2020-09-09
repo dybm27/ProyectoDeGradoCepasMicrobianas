@@ -35,7 +35,14 @@
         </div>
       </div>
     </template>
-    <modal name="agregar_cambiar_imagen" classes="my_modal" :width="700" :height="490">
+    <modal
+      name="agregar_cambiar_imagen"
+      classes="my_modal"
+      :adaptive="true"
+      :maxWidth="700"
+      height="auto"
+      :scrollable="true"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
@@ -55,11 +62,15 @@
                       @change="verificarImagen"
                       id="imagen"
                       type="file"
-                      class="form-control-file"
+                      :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
                       ref="inputImagenModal"
                       accept="image/jpeg, image/png"
                     />
-                    <span v-if="modalImagen.errors" class="text-danger">{{modalImagen.errors}}</span>
+                    <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                    <em
+                      v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -113,11 +124,15 @@
                       @change="verificarImagen"
                       id="imagen"
                       type="file"
-                      class="form-control-file"
+                      :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
                       ref="inputImagenModal"
                       accept="image/jpeg, image/png"
                     />
-                    <span v-if="modalImagen.errors" class="text-danger">{{modalImagen.errors}}</span>
+                    <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                    <em
+                      v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -156,14 +171,21 @@
           >Cancelar</button>
           <button
             type="button"
+            :disabled="bloquearBtnModal"
             class="btn btn-success"
             @click="accionModal"
-            :disabled="validarBtn"
           >{{modalImagen.nomBtn}}</button>
         </div>
       </div>
     </modal>
-    <modal name="eliminar_imagen" classes="my_modal" :width="450" :height="450">
+    <modal
+      name="eliminar_imagen"
+      classes="my_modal"
+      :adaptive="true"
+      :maxWidth="450"
+      height="auto"
+      :scrollable="true"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
@@ -208,6 +230,7 @@
 import Carousel from "../carousel/CarouselComponent.vue";
 import Croppie from "../CroppieComponent.vue";
 import Toastr from "../../mixins/toastr";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Carousel, Croppie },
   props: ["parametros", "tipoCepa", "imagenes", "cepa"],
@@ -223,7 +246,17 @@ export default {
       },
       imagenMiniatura: "",
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres.",
+      },
     };
+  },
+  validations: {
+    modalImagen: { imagen: { required } },
   },
   mixins: [Toastr],
   methods: {
@@ -262,9 +295,11 @@ export default {
     },
     accionModal() {
       this.bloquearBtnModal = true;
+
       this.modalImagen.errors = "";
       if (this.modalImagen.nomBtn === "Cambiar") {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+        if (!this.$v.$invalid) {
           let parametros = {
             numero: this.modalImagen.select_imagen,
             imagen: this.modalImagen.imagen,
@@ -292,7 +327,7 @@ export default {
             });
         } else {
           this.bloquearBtnModal = false;
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
         let parametros = {
@@ -320,7 +355,8 @@ export default {
             );
           });
       } else {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+        if (!this.$v.$invalid) {
           this.colocarNumeroAgregar();
           let parametros = {
             numero: this.modalImagen.select_imagen,
@@ -349,7 +385,7 @@ export default {
             });
         } else {
           this.bloquearBtnModal = false;
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       }
     },
@@ -456,12 +492,6 @@ export default {
     },
     mostraImagen() {
       return this.imagenMiniatura;
-    },
-    validarBtn() {
-      if (!this.modalImagen.imagen) {
-        return true;
-      }
-      return false;
     },
   },
 };

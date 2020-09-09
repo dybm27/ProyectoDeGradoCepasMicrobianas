@@ -4,6 +4,7 @@
 
 use App\Noticia;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Noticia::class, function (Faker $faker) {
     return [
@@ -13,6 +14,9 @@ $factory->define(Noticia::class, function (Faker $faker) {
         'imagenesEditor' => 'qweqwe',
         'imagen' => 'asdads',
         'imagenPublica' => 'asdads',
-        'publicar' => 0
+        'publicar' => 0,
+        'slug' => function (array $noticia) {
+            return Str::slug($noticia['titulo'], "-");
+        },
     ];
 });

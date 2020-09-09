@@ -257,17 +257,17 @@
 }
 
 .logo-majumba > img {
-    width: 630px;
-    height: 250px;
+    width: 560px;
+    height: 200px;
 }
 @media (max-width: 1178px) {
     .logo-majumba > img {
-        width: 600px;
+        width: 520px;
     }
 }
 @media (max-width: 1087px) {
     .logo-majumba > img {
-        width: 550px;
+        width: 500px;
     }
 }
 @media (max-width: 772px) {
@@ -298,7 +298,6 @@
         height: 150px;
     }
 }
-
 
 .logo-majumba-reset > img {
     width: 500px;
@@ -658,4 +657,10 @@ span.buttonText {
     align-items: center;
     white-space: inherit;
     margin-bottom: 0.5em;
+}
+
+@media (max-width: 991.98px) {
+    .app-main-verificar-email {
+        display: flex;
+    }
 }

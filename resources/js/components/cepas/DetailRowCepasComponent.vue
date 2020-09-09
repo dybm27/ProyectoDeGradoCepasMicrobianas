@@ -1,62 +1,85 @@
 <template>
   <div @click="onClick">
-    <div class="container">
-      <template v-if="rowData.grupo_microbiano_id===2">
-        <div class="row">
-          <div class="col-md-3">
-            <label>Clase: {{rowData.hongo.clase.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Orden: {{rowData.hongo.orden.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Familia: {{rowData.hongo.familia.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Phylum: {{rowData.hongo.phylum.nombre}}</label>
-          </div>
-        </div>
-      </template>
-      <template v-else-if="rowData.grupo_microbiano_id===3">
-        <div class="row">
-          <div class="col-md-3">
-            <label>Division: {{rowData.levadura.division.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Clase: {{rowData.levadura.clase.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Orden: {{rowData.levadura.orden.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Familia: {{rowData.levadura.familia.nombre}}</label>
-          </div>
-        </div>
-      </template>
-      <template v-else-if="rowData.grupo_microbiano_id===4">
-        <div class="row">
-          <div class="col-md-3">
-            <label>Clase: {{rowData.actinomiceto.clase.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Orden: {{rowData.actinomiceto.orden.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Phylum: {{rowData.actinomiceto.phylum.nombre}}</label>
-          </div>
-          <div class="col-md-3">
-            <label>Reino: {{rowData.actinomiceto.reino.nombre}}</label>
-          </div>
-        </div>
-      </template>
-      <template v-if="rowData.otras_caract">
-        <div class="row">
-          <div class="col-md-12">
-            <label>Otras Caracteristicas: {{rowData.otras_caract}}</label>
-          </div>
-        </div>
-      </template>
-    </div>
+    <table class="table table-bordered">
+      <tbody>
+        <template v-if="rowData.grupo_microbiano_id===2">
+          <tr>
+            <td>
+              <b>Clase:</b>
+            </td>
+            <td>{{rowData.hongo.clase.nombre}}</td>
+            <td>
+              <b>Orden:</b>
+            </td>
+            <td>{{rowData.hongo.orden.nombre}}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Familia:</b>
+            </td>
+            <td>{{rowData.hongo.familia.nombre}}</td>
+            <td>
+              <b>Phylum:</b>
+            </td>
+            <td>{{rowData.hongo.phylum.nombre}}</td>
+          </tr>
+        </template>
+        <template v-else-if="rowData.grupo_microbiano_id===3">
+          <tr>
+            <td>
+              <b>Clase:</b>
+            </td>
+            <td>{{rowData.levadura.clase.nombre}}</td>
+            <td>
+              <b>Orden:</b>
+            </td>
+            <td>{{rowData.levadura.orden.nombre}}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Familia:</b>
+            </td>
+            <td>{{rowData.levadura.familia.nombre}}</td>
+            <td>
+              <b>Division:</b>
+            </td>
+            <td>{{rowData.levadura.division.nombre}}</td>
+          </tr>
+        </template>
+        <template v-else-if="rowData.grupo_microbiano_id===4">
+          <tr>
+            <td>
+              <b>Clase:</b>
+            </td>
+            <td>{{rowData.actinomiceto.clase.nombre}}</td>
+            <td>
+              <b>Orden:</b>
+            </td>
+            <td>{{rowData.actinomiceto.orden.nombre}}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Reino:</b>
+            </td>
+            <td>{{rowData.actinomiceto.reino.nombre}}</td>
+            <td>
+              <b>Phylum:</b>
+            </td>
+            <td>{{rowData.actinomiceto.phylum.nombre}}</td>
+          </tr>
+        </template>
+        <template v-if="rowData.otras_caract">
+          <tr>
+            <td colspan="4" v-if="rowData.otras_caract">
+              <b>Otras características:</b>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" v-if="rowData.otras_caract">{{rowData.otras_caract}}</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -65,16 +88,16 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   methods: {
     onClick(event) {
       //console.log("my-detail-row: on-click", event.target);
-    }
-  }
+    },
+  },
 };
 </script>

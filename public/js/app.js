@@ -2136,7 +2136,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-bacteria",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2145,7 +2145,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-hongo",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2154,7 +2154,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-levadura",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2163,7 +2163,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-actinomiceto",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2179,7 +2179,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-bacteria",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2188,7 +2188,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-hongo",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2197,7 +2197,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-levadura",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2206,7 +2206,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-actinomiceto",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2379,6 +2379,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -2406,6 +2429,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2547,7 +2575,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "caract-macro-actinomiceto",
         params: {
-          cepaActinomicetoId: data.id
+          cepaActinomicetoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2556,7 +2584,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-actinomiceto",
         params: {
-          cepaActinomicetoId: data.id
+          cepaActinomicetoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2756,7 +2784,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "caract-macro-bacteria",
         params: {
-          cepaBacteriaId: data.id
+          cepaBacteriaSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2765,7 +2793,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-bacteria",
         params: {
-          cepaBacteriaId: data.id
+          cepaBacteriaSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2922,6 +2950,50 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  methods: {
+    onClick: function onClick(event) {}
+  },
+  computed: {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
@@ -3023,7 +3095,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "caract-macro-hongo",
         params: {
-          cepaHongoId: data.id
+          cepaHongoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3032,7 +3104,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-hongo",
         params: {
-          cepaHongoId: data.id
+          cepaHongoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3292,7 +3364,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "caract-macro-levadura",
         params: {
-          cepaLevaduraId: data.id
+          cepaLevaduraSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3301,7 +3373,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-levadura",
         params: {
-          cepaLevaduraId: data.id
+          cepaLevaduraSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -59778,136 +59850,189 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.onClick } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _vm.rowData.grupo_microbiano_id === 2
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Clase: " + _vm._s(_vm.rowData.hongo.clase.nombre))
-                  ])
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c(
+        "tbody",
+        [
+          _vm.rowData.grupo_microbiano_id === 2
+            ? [
+                _c("tr", [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.clase.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.orden.nombre))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Orden: " + _vm._s(_vm.rowData.hongo.orden.nombre))
-                  ])
+                _c("tr", [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.familia.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.phylum.nombre))])
+                ])
+              ]
+            : _vm.rowData.grupo_microbiano_id === 3
+            ? [
+                _c("tr", [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.levadura.clase.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.levadura.orden.nombre))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Familia: " + _vm._s(_vm.rowData.hongo.familia.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Phylum: " + _vm._s(_vm.rowData.hongo.phylum.nombre))
+                _c("tr", [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.levadura.familia.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.levadura.division.nombre))
                   ])
                 ])
-              ])
-            ]
-          : _vm.rowData.grupo_microbiano_id === 3
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Division: " +
-                        _vm._s(_vm.rowData.levadura.division.nombre)
-                    )
+              ]
+            : _vm.rowData.grupo_microbiano_id === 4
+            ? [
+                _c("tr", [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.clase.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.orden.nombre))
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Clase: " + _vm._s(_vm.rowData.levadura.clase.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Orden: " + _vm._s(_vm.rowData.levadura.orden.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Familia: " + _vm._s(_vm.rowData.levadura.familia.nombre)
-                    )
+                _c("tr", [
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.reino.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.phylum.nombre))
                   ])
                 ])
-              ])
-            ]
-          : _vm.rowData.grupo_microbiano_id === 4
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Clase: " + _vm._s(_vm.rowData.actinomiceto.clase.nombre)
-                    )
-                  ])
+              ]
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.rowData.otras_caract
+            ? [
+                _c("tr", [
+                  _vm.rowData.otras_caract
+                    ? _c("td", { attrs: { colspan: "4" } }, [
+                        _c("b", [_vm._v("Otras características:")])
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Orden: " + _vm._s(_vm.rowData.actinomiceto.orden.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Phylum: " +
-                        _vm._s(_vm.rowData.actinomiceto.phylum.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Reino: " + _vm._s(_vm.rowData.actinomiceto.reino.nombre)
-                    )
-                  ])
+                _c("tr", [
+                  _vm.rowData.otras_caract
+                    ? _c("td", { attrs: { colspan: "4" } }, [
+                        _vm._v(_vm._s(_vm.rowData.otras_caract))
+                      ])
+                    : _vm._e()
                 ])
-              ])
-            ]
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.rowData.otras_caract
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Otras Caracteristicas: " +
-                        _vm._s(_vm.rowData.otras_caract)
-                    )
-                  ])
-                ])
-              ])
-            ]
-          : _vm._e()
-      ],
-      2
-    )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Familia:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Phylum:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Familia:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Division:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Reino:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Phylum:")])])
+  }
+]
 render._withStripped = true
 
 
@@ -59930,40 +60055,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.onClick } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("label", [_vm._v("Estado: " + _vm._s(_vm.rowData.estado))])
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c(
+        "tbody",
+        [
+          _c("tr", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.rowData.estado))]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.rowData.origen))])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("label", [_vm._v("Origen: " + _vm._s(_vm.rowData.origen))])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm.rowData.otras_caract
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Otras Caracteristicas: " +
-                        _vm._s(_vm.rowData.otras_caract)
-                    )
+          _vm.rowData.otras_caract
+            ? [
+                _c("tr", [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("td", { attrs: { colspan: "3" } }, [
+                    _vm._v(_vm._s(_vm.rowData.otras_caract))
                   ])
                 ])
-              ])
-            ]
-          : _vm._e()
-      ],
-      2
-    )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Estado:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Origen:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Otras características:")])])
+  }
+]
 render._withStripped = true
 
 
@@ -60467,6 +60609,46 @@ var render = function() {
           })
         ])
       : _c("div", [_c("IconoNoAccess")], 1)
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { on: { click: _vm.onClick } }, [
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c("tbody", [
+        _c("tr", [
+          _vm.rowData.otras_caract
+            ? _c("td", [_c("b", [_vm._v("Otras Caracteristicas:")])])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _vm.rowData.otras_caract
+            ? _c("td", [_vm._v(_vm._s(_vm.rowData.otras_caract))])
+            : _vm._e()
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -86467,6 +86649,7 @@ Vue.component("acciones_cepas_hongos", __webpack_require__(/*! ./components/cepa
 Vue.component("checkboxs_publicar_hongos", __webpack_require__(/*! ./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue")["default"]);
 Vue.component("acciones_cepas_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue")["default"]);
 Vue.component("checkboxs_publicar_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("my-detail-row-bacterias", __webpack_require__(/*! ./components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue")["default"]);
 Vue.component("my-detail-row-h-l-a", __webpack_require__(/*! ./components/cepas/DetailRowHLAComponent.vue */ "./resources/js/components/cepas/DetailRowHLAComponent.vue")["default"]);
 Vue.component("my-detail-row-cepas", __webpack_require__(/*! ./components/cepas/DetailRowCepasComponent.vue */ "./resources/js/components/cepas/DetailRowCepasComponent.vue")["default"]);
 Vue.component("acciones_tabla_metodo_conser_hongo", __webpack_require__(/*! ./components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue */ "./resources/js/components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue")["default"]);
@@ -87266,6 +87449,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxsPublicarComponent_vue_vue_type_template_id_37bb82c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&");
+/* harmony import */ var _DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DetailRowBacteriasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailRowBacteriasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -92447,7 +92699,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }
     }, //bacterias
     {
-      path: "bacteria/ver/:cepaId",
+      path: "bacteria/ver/:cepaSlug",
       name: "ver-cepa-bacteria",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92457,7 +92709,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "bacteria/:cepaId",
+      path: "bacteria/:cepaSlug",
       name: "cepa-bacteria",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92525,7 +92777,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //hongos
     {
-      path: "hongo/ver/:cepaId",
+      path: "hongo/ver/:cepaSlug",
       name: "ver-cepa-hongo",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92535,7 +92787,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "hongo/:cepaId",
+      path: "hongo/:cepaSlug",
       name: "cepa-hongo",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92593,7 +92845,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //levaduras
     {
-      path: "levadura/ver/:cepaId",
+      path: "levadura/ver/:cepaSlug",
       name: "ver-cepa-levadura",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92603,7 +92855,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "levadura/:cepaId",
+      path: "levadura/:cepaSlug",
       name: "cepa-levadura",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92661,7 +92913,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //actinomiceto
     {
-      path: "actinomiceto/ver/:cepaId",
+      path: "actinomiceto/ver/:cepaSlug",
       name: "ver-cepa-actinomiceto",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92671,7 +92923,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "actinomiceto/:cepaId",
+      path: "actinomiceto/:cepaSlug",
       name: "cepa-actinomiceto",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92763,7 +93015,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaBacteriaId",
+      path: ":cepaBacteriaSlug",
       name: "caract-bacteria",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92830,7 +93082,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaBacteriaId",
+      path: "ver/:cepaBacteriaSlug",
       name: "ver-bacteria",
       component: function component() {
         return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92865,7 +93117,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaHongoId",
+      path: ":cepaHongoSlug",
       name: "caract-hongo",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92922,7 +93174,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaHongoId",
+      path: "ver/:cepaHongoSlug",
       name: "ver-hongo",
       component: function component() {
         return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92957,7 +93209,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaLevaduraId",
+      path: ":cepaLevaduraSlug",
       name: "caract-levadura",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -93014,7 +93266,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaLevaduraId",
+      path: "ver/:cepaLevaduraSlug",
       name: "ver-levadura",
       component: function component() {
         return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -93049,7 +93301,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaActinomicetoId",
+      path: ":cepaActinomicetoSlug",
       name: "caract-actinomiceto",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -93116,7 +93368,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaActinomicetoId",
+      path: "ver/:cepaActinomicetoSlug",
       name: "ver-actinomiceto",
       component: function component() {
         return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));

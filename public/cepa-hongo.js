@@ -199,7 +199,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.$route.params.cepaId
+      _vm.$route.params.cepaSlug
         ? [
             _c(
               "ul",
@@ -496,7 +496,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.$route.params.cepaId
+      _vm.$route.params.cepaSlug
         ? [
             _c(
               "ul",
@@ -793,7 +793,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.$route.params.cepaId
+      _vm.$route.params.cepaSlug
         ? [
             _c(
               "ul",
@@ -1050,7 +1050,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.$route.params.cepaId
+      _vm.$route.params.cepaSlug
         ? [
             _c(
               "ul",
@@ -1584,12 +1584,13 @@ var accionVerYCaractmixin = {
   data: function data() {
     return {
       numGrupo: "",
-      idCepa: 0
+      idCepa: 0,
+      slugCepa: ""
     };
   },
   created: function created() {
-    this.buscarIdCepa();
-    this.obtenerCepa(this.idCepa);
+    this.buscarSlugCepa();
+    this.obtenerCepa();
   },
   watch: {
     cepa: function cepa() {
@@ -1610,26 +1611,26 @@ var accionVerYCaractmixin = {
     }
   },
   methods: {
-    buscarIdCepa: function buscarIdCepa() {
+    buscarSlugCepa: function buscarSlugCepa() {
       switch (this.tipoG) {
         case 1:
-          this.idCepa = parseInt(this.$route.params.cepaBacteriaId);
+          this.splitSlug(this.$route.params.cepaBacteriaSlug);
           break;
 
         case 2:
-          this.idCepa = parseInt(this.$route.params.cepaHongoId);
+          this.splitSlug(this.$route.params.cepaHongoSlug);
           break;
 
         case 3:
-          this.idCepa = parseInt(this.$route.params.cepaLevaduraId);
+          this.splitSlug(this.$route.params.cepaLevaduraSlug);
           break;
 
         case 4:
-          this.idCepa = parseInt(this.$route.params.cepaActinomicetoId);
+          this.splitSlug(this.$route.params.cepaActinomicetoSlug);
           break;
 
         case 0:
-          this.idCepa = parseInt(this.$route.params.cepaId);
+          this.splitSlug(this.$route.params.cepaSlug);
           break;
       }
     },
@@ -1683,13 +1684,18 @@ var accionVerYCaractmixin = {
         });
         this.toastr("Acción no disponible!!!", this.getUsuarioById(data.idUser).name + " se encuentra modificando esa Cepa!!!", "warning");
       } else {
-        this.obtenerCepa(this.idCepa);
+        this.obtenerCepa();
       }
     },
-    obtenerCepa: function obtenerCepa(id) {
+    obtenerCepa: function obtenerCepa() {
       var _this = this;
 
-      axios.get("/info-panel/cepa/agregar-editar-caract/".concat(id)).then(function (res) {
+      axios.get("/info-panel/cepa/agregar-editar-caract", {
+        params: {
+          id: this.idCepa,
+          slug: this.slugCepa
+        }
+      }).then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
           localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
@@ -1713,6 +1719,12 @@ var accionVerYCaractmixin = {
           idUser: this.auth.id
         });
       }
+    },
+    splitSlug: function splitSlug(slug) {
+      var array = slug.split("-");
+      this.idCepa = parseInt(array[array.length - 1]);
+      array.pop();
+      this.slugCepa = array.join("-");
     }
   },
   destroyed: function destroyed() {

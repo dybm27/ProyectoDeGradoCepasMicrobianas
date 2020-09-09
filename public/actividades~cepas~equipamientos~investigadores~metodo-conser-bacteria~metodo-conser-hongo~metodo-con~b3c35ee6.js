@@ -1033,7 +1033,7 @@ var render = function() {
       _c("div", { staticClass: "col-sm-12" }, [
         _c(
           "div",
-          { staticClass: "table-responsive" },
+          { staticClass: "table-responsive fixed " },
           [
             _c("vuetable", {
               ref: "vuetable",

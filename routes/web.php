@@ -427,7 +427,7 @@ Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function 
         });
         Route::group(['middleware' => ['control_permisos:ver-cepa,caract-cepa']], function () {
             //--------------------- obtener caracteristicas cepas ------------------------------------
-            Route::get('cepa/agregar-editar-caract/{id}', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
+            Route::get('cepa/agregar-editar-caract', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
             //----------- urls tablas metodos de conservacion ----------------------------------------
             Route::get('cepa/bacteria/metodos-conser/{id}', 'InfoPanelBacteriasController@metodos');
             Route::get('cepa/levadura/metodos-conser/{id}', 'InfoPanelLevadurasController@metodos');

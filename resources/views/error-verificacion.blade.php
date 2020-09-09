@@ -67,7 +67,7 @@
                     </div>
                   </div>
             </div>
-            <div class="app-main">
+            <div class="app-main app-main-verificar-email">
                 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="container">

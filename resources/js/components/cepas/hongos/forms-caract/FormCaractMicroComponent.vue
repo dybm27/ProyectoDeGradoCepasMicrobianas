@@ -671,10 +671,13 @@ export default {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaHongoId) {
-      this.parametros.cepaId = this.$route.params.cepaHongoId;
+    let array = [];
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created() {

@@ -82,14 +82,14 @@ export default {
     caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-bacteria",
-        params: { cepaBacteriaId: data.id },
+        params: { cepaBacteriaSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },
     ver(data) {
       this.$router.push({
         name: "ver-bacteria",
-        params: { cepaBacteriaId: data.id },
+        params: { cepaBacteriaSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },

@@ -85,25 +85,25 @@ export default {
         case 1:
           this.$router.push({
             name: "caract-macro-cepa-bacteria",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 2:
           this.$router.push({
             name: "caract-macro-cepa-hongo",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 3:
           this.$router.push({
             name: "caract-macro-cepa-levadura",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 4:
           this.$router.push({
             name: "caract-macro-cepa-actinomiceto",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
       }
@@ -115,25 +115,25 @@ export default {
         case 1:
           this.$router.push({
             name: "ver-cepa-bacteria",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 2:
           this.$router.push({
             name: "ver-cepa-hongo",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 3:
           this.$router.push({
             name: "ver-cepa-levadura",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
         case 4:
           this.$router.push({
             name: "ver-cepa-actinomiceto",
-            params: { cepaId: data.id },
+            params: { cepaSlug: data.slug + "-" + data.id },
           });
           break;
       }

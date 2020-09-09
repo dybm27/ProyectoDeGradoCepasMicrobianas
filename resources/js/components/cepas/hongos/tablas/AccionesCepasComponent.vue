@@ -82,14 +82,14 @@ export default {
     caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-hongo",
-        params: { cepaHongoId: data.id },
+        params: { cepaHongoSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },
     ver(data) {
       this.$router.push({
         name: "ver-hongo",
-        params: { cepaHongoId: data.id },
+        params: { cepaHongoSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },

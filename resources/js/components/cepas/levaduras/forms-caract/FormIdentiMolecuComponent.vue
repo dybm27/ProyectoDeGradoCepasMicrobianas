@@ -543,10 +543,13 @@ export default {
       this.tituloForm = "Agregar Identificación";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaLevaduraId) {
-      this.parametros.cepaId = this.$route.params.cepaLevaduraId;
+    let array = [];
+    if (this.$route.params.cepaLevaduraSlug) {
+      array = this.$route.params.cepaLevaduraSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
 };

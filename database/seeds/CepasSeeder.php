@@ -1,6 +1,10 @@
 <?php
 
+use App\Actinomiceto;
+use App\Bacteria;
 use App\Cepa;
+use App\HongoFilamentoso;
+use App\Levadura;
 use Illuminate\Database\Seeder;
 
 class CepasSeeder extends Seeder
@@ -12,6 +16,9 @@ class CepasSeeder extends Seeder
      */
     public function run()
     {
-        factory(Cepa::class, 200)->create();
+        factory(Bacteria::class, 200)->create();
+        factory(Levadura::class, 200)->create();
+        factory(HongoFilamentoso::class, 200)->create();
+        factory(Actinomiceto::class, 200)->create();
     }
 }

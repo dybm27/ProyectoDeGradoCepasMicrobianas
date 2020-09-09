@@ -22,6 +22,7 @@ class CreateCepasTable extends Migration
             $table->string('estado', 50);
             $table->string('origen', 50);
             $table->boolean('publicar')->default(0);
+            $table->string('slug')->unique();
             $table->longText('otras_caract')->nullable();
             $table->timestamps();
 

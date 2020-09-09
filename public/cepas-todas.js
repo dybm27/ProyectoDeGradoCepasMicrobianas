@@ -615,11 +615,20 @@ var bloquearPestañasMixin = function bloquearPestañasMixin(tipo) {
         }
       },
       modificarValorPestañas: function modificarValorPestaAs(val, oldVal) {
-        this.numPestañas = val.numPestañas;
+        if (val && oldVal) {
+          this.numPestañas = val.numPestañas;
 
-        if (val.numPestañas < oldVal.numPestañas) {
-          if (val.numPestañaSaliente < this.numPestaña) {
-            this.numPestaña = this.numPestaña - 1;
+          if (val.numPestañas < oldVal.numPestañas) {
+            if (val.numPestañaSaliente < this.numPestaña) {
+              this.numPestaña = this.numPestaña - 1;
+            }
+          }
+        } else {
+          if (this.numPestaña == 1) {
+            this.$ls.set(tipo, {
+              numPestañas: this.numPestañas,
+              numPestañaSaliente: 0
+            });
           }
         }
       },

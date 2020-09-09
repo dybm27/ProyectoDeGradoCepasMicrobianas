@@ -68,7 +68,7 @@ class CepaControllerLevaduraTest extends TestCase
     /** @test */
     public function agregar_cepa_levadura()
     {
-        Event::fake();
+        Event::fake([CepaObserve::class,CepasEvent::class]);
         $response = $this->actingAs($this->user)
             ->postJson('/cepas/agregar', [
                 'grupo_microbiano' => 3, 'codigo' => 'qwer', 'estado' => 'dead',

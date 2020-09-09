@@ -82,14 +82,14 @@ export default {
     caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-levadura",
-        params: { cepaLevaduraId: data.id },
+        params: { cepaLevaduraSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },
     ver(data) {
       this.$router.push({
         name: "ver-levadura",
-        params: { cepaLevaduraId: data.id },
+        params: { cepaLevaduraSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },

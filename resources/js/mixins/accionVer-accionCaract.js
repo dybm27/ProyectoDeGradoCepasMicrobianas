@@ -10,12 +10,13 @@ const accionVerYCaractmixin = {
     data() {
         return {
             numGrupo: "",
-            idCepa: 0
+            idCepa: 0,
+            slugCepa: ""
         };
     },
     created() {
-        this.buscarIdCepa();
-        this.obtenerCepa(this.idCepa);
+        this.buscarSlugCepa();
+        this.obtenerCepa();
     },
     watch: {
         cepa() {
@@ -38,24 +39,22 @@ const accionVerYCaractmixin = {
         }
     },
     methods: {
-        buscarIdCepa() {
+        buscarSlugCepa() {
             switch (this.tipoG) {
                 case 1:
-                    this.idCepa = parseInt(this.$route.params.cepaBacteriaId);
+                    this.splitSlug(this.$route.params.cepaBacteriaSlug);
                     break;
                 case 2:
-                    this.idCepa = parseInt(this.$route.params.cepaHongoId);
+                    this.splitSlug(this.$route.params.cepaHongoSlug);
                     break;
                 case 3:
-                    this.idCepa = parseInt(this.$route.params.cepaLevaduraId);
+                    this.splitSlug(this.$route.params.cepaLevaduraSlug);
                     break;
                 case 4:
-                    this.idCepa = parseInt(
-                        this.$route.params.cepaActinomicetoId
-                    );
+                    this.splitSlug(this.$route.params.cepaActinomicetoSlug);
                     break;
                 case 0:
-                    this.idCepa = parseInt(this.$route.params.cepaId);
+                    this.splitSlug(this.$route.params.cepaSlug);
                     break;
             }
         },
@@ -100,12 +99,17 @@ const accionVerYCaractmixin = {
                     "warning"
                 );
             } else {
-                this.obtenerCepa(this.idCepa);
+                this.obtenerCepa();
             }
         },
-        obtenerCepa(id) {
+        obtenerCepa() {
             axios
-                .get(`/info-panel/cepa/agregar-editar-caract/${id}`)
+                .get(`/info-panel/cepa/agregar-editar-caract`, {
+                    params: {
+                        id: this.idCepa,
+                        slug: this.slugCepa
+                    }
+                })
                 .then(res => {
                     if (res.request.responseURL === process.env.MIX_LOGIN) {
                         localStorage.setItem(
@@ -137,6 +141,12 @@ const accionVerYCaractmixin = {
                     idUser: this.auth.id
                 });
             }
+        },
+        splitSlug(slug) {
+            let array = slug.split("-");
+            this.idCepa = parseInt(array[array.length - 1]);
+            array.pop();
+            this.slugCepa = array.join("-");
         }
     },
     destroyed() {

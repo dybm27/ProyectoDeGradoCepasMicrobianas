@@ -67,7 +67,7 @@ class CepaControllerActinomicetoTest extends TestCase
     /** @test */
     public function agregar_cepa_actinomiceto()
     {
-        Event::fake();
+        Event::fake([CepaObserve::class,CepasEvent::class]);
         $response = $this->actingAs($this->user)
             ->postJson('/cepas/agregar', [
                 'grupo_microbiano' => 4, 'codigo' => 'qwer3', 'estado' => 'dead',

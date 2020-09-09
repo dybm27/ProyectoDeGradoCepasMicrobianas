@@ -48,7 +48,7 @@
                   <template v-if="mostrar2">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive2" @click="cambiarActive(2)">
-                        <div class="widget-number text-warning">Medio 2</div>
+                        <div class="widget-number text-success">Medio 2</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>
@@ -62,7 +62,7 @@
                   <template v-if="mostrar3">
                     <li class="nav-item">
                       <a class="nav-link" :class="computedActive3" @click="cambiarActive(3)">
-                        <div class="widget-number text-danger">Medio 3</div>
+                        <div class="widget-number text-success">Medio 3</div>
                         <div class="tab-subheading">
                           <span class="pr-2 opactiy-6">
                             <i class="pe-7s-note2"></i>

@@ -141,10 +141,13 @@ export default {
     },
   },
   created() {
+    let array = [];
     if (this.$route.params.cepaHongoId) {
-      this.url += this.$route.params.cepaHongoId;
+      array = this.$route.params.cepaHongoId.split("-");
+      this.url += parseInt(array[array.length - 1]);
     } else {
-      this.url += this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     }
   },
 };

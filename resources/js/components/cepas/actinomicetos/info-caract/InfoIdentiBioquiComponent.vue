@@ -76,6 +76,7 @@ export default {
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "identi_bioqui", data: data });
+      this.modificarForm = true;
     },
     editar(data) {
       this.accionEditarCaract({ tipo: "identi_bioqui", data: data });

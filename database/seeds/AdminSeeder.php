@@ -15,6 +15,7 @@ class AdminSeeder extends Seeder
             'name' => 'Dumar Basto',
             'email' => 'majumba.ufps@gmail.com',
             'password' => Hash::make('12345678'),
+            'email_verified_at' => now(),
             'rol_id' => 1
         ]);
 

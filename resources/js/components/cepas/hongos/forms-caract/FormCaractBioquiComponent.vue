@@ -13,7 +13,7 @@
               </template>
               <div class="position-relative form-group">
                 <label for="enzimas" class>Enzimas</label>
-                <input
+                <textarea
                   name="enzimas"
                   id="enzimas"
                   placeholder="..."
@@ -28,7 +28,7 @@
               </div>
               <div class="position-relative form-group">
                 <label for="azucares" class>Azúcares</label>
-                <input
+                <textarea
                   name="azucares"
                   id="azucares"
                   placeholder="..."
@@ -214,7 +214,7 @@ export default {
               }
             })
             .catch((error) => {
-             this.verificarError(
+              this.verificarError(
                 error.response.status,
                 error.response.data.errors
               );
@@ -233,7 +233,7 @@ export default {
               );
             })
             .catch((error) => {
-             this.verificarError(
+              this.verificarError(
                 error.response.status,
                 error.response.data.errors
               );
@@ -287,10 +287,13 @@ export default {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaHongoId) {
-      this.parametros.cepaId = this.$route.params.cepaHongoId;
+    let array = [];
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
 };

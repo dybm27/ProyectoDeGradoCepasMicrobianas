@@ -445,10 +445,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Agregar";
     }
 
-    if (this.$route.params.cepaBacteriaId) {
-      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    var array = [];
+
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created: function created() {
@@ -569,6 +573,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         tipo: "micro",
         data: data
       });
+      this.modificarForm = true;
     },
     editar: function editar(data) {
       this.accionEditarCaract({

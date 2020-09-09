@@ -69,7 +69,7 @@ class CepaControllerHongoTest extends TestCase
     /** @test */
     public function agregar_cepa_hongo()
     {
-        Event::fake();
+        Event::fake([CepaObserve::class,CepasEvent::class]);
         $response = $this->actingAs($this->user)
             ->postJson('/cepas/agregar', [
                 'grupo_microbiano' => 2, 'codigo' => 'qwer', 'estado' => 'dead',

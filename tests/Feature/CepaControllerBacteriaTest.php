@@ -11,6 +11,7 @@ use App\Cepa;
 use App\Events\CepasEvent;
 use App\IdentiMolecuBacteria;
 use App\MetodoConserBacteria;
+use App\Observers\CepaObserve;
 use App\Permiso;
 use App\Seguimiento;
 use CaractMacroBacteriaSeeder;
@@ -57,7 +58,7 @@ class CepaControllerBacteriaTest extends TestCase
     /** @test */
     public function agregar_cepa_bacteria()
     {
-        Event::fake();
+        Event::fake([CepaObserve::class,CepasEvent::class]);
         $response = $this->actingAs($this->user)
             ->postJson('/cepas/agregar', [
                 'grupo_microbiano' => 1, 'codigo' => 'qwer', 'estado' => 'dead',

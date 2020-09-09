@@ -292,6 +292,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -498,6 +500,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -518,8 +543,22 @@ __webpack_require__.r(__webpack_exports__);
         errors: ""
       },
       imagenMiniatura: "",
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres."
+      }
     };
+  },
+  validations: {
+    modalImagen: {
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
@@ -564,7 +603,9 @@ __webpack_require__.r(__webpack_exports__);
       this.modalImagen.errors = "";
 
       if (this.modalImagen.nomBtn === "Cambiar") {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+
+        if (!this.$v.$invalid) {
           var parametros = {
             numero: this.modalImagen.select_imagen,
             imagen: this.modalImagen.imagen
@@ -582,7 +623,7 @@ __webpack_require__.r(__webpack_exports__);
           });
         } else {
           this.bloquearBtnModal = false;
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
         var _parametros = {
@@ -600,7 +641,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.verificarErrorAxios(error.response.status, error.response.data.errors);
         });
       } else {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+
+        if (!this.$v.$invalid) {
           this.colocarNumeroAgregar();
           var _parametros2 = {
             numero: this.modalImagen.select_imagen,
@@ -619,7 +662,7 @@ __webpack_require__.r(__webpack_exports__);
           });
         } else {
           this.bloquearBtnModal = false;
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       }
     },
@@ -723,13 +766,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
-    },
-    validarBtn: function validarBtn() {
-      if (!this.modalImagen.imagen) {
-        return true;
-      }
-
-      return false;
     }
   }
 });
@@ -1240,8 +1276,10 @@ var render = function() {
           attrs: {
             name: "agregar_cambiar_imagen",
             classes: "my_modal",
-            width: 700,
-            height: 490
+            adaptive: true,
+            maxWidth: 700,
+            height: "auto",
+            scrollable: true
           }
         },
         [
@@ -1294,7 +1332,12 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("input", {
                                   ref: "inputImagenModal",
-                                  staticClass: "form-control-file",
+                                  class: [
+                                    "form-control-file",
+                                    _vm.$v.modalImagen.imagen.$error != ""
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
                                   attrs: {
                                     name: "imagen",
                                     id: "imagen",
@@ -1305,9 +1348,20 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _vm.modalImagen.errors
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.modalImagen.errors))
-                                    ])
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.modalImagen.errors))]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.$v.modalImagen.imagen.$error &&
+                                !_vm.$v.modalImagen.imagen.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
                                   : _vm._e()
                               ]
                             )
@@ -1451,7 +1505,12 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("input", {
                                   ref: "inputImagenModal",
-                                  staticClass: "form-control-file",
+                                  class: [
+                                    "form-control-file",
+                                    _vm.$v.modalImagen.imagen.$error != ""
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
                                   attrs: {
                                     name: "imagen",
                                     id: "imagen",
@@ -1462,9 +1521,20 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _vm.modalImagen.errors
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.modalImagen.errors))
-                                    ])
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.modalImagen.errors))]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.$v.modalImagen.imagen.$error &&
+                                !_vm.$v.modalImagen.imagen.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
                                   : _vm._e()
                               ]
                             )
@@ -1536,7 +1606,7 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarBtn },
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
                   on: { click: _vm.accionModal }
                 },
                 [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]
@@ -1552,8 +1622,10 @@ var render = function() {
           attrs: {
             name: "eliminar_imagen",
             classes: "my_modal",
-            width: 450,
-            height: 450
+            adaptive: true,
+            maxWidth: 450,
+            height: "auto",
+            scrollable: true
           }
         },
         [

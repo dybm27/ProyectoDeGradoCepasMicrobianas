@@ -7,7 +7,11 @@ use App\Events\ActividadEvent;
 use App\Noticia;
 use App\Events\NoticiaEvent;
 use App\Events\NovedadEvent;
+use App\Events\RefrescarCalendarioEvent;
 use App\Novedad;
+use App\Observers\ActividadObserve;
+use App\Observers\NoticiaObserve;
+use App\Observers\NovedadObserve;
 use App\Permiso;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -70,7 +74,7 @@ class PublicidadControllerTest extends TestCase
     /** @test */
     public function store_noticia_publicidad()
     {
-        Event::fake();
+        Event::fake([NoticiaObserve::class, NoticiaEvent::class]);
         Storage::fake();
         $imagen = UploadedFile::fake()->create('imagen.jpg', 2000);
         $response = $this->actingAs($this->user)
@@ -180,7 +184,7 @@ class PublicidadControllerTest extends TestCase
     /** @test */
     public function store_novedad_publicidad()
     {
-        Event::fake();
+        Event::fake([NovedadObserve::class, NovedadEvent::class]);
         Storage::fake();
         $response = $this->actingAs($this->user)
             ->postJson('/publicidad', [
@@ -293,7 +297,8 @@ class PublicidadControllerTest extends TestCase
     /** @test */
     public function store_actividad_publicidad()
     {
-        Event::fake();
+        $this->withoutExceptionHandling();
+        Event::fake([ActividadObserve::class, ActividadEvent::class, RefrescarCalendarioEvent::class]);
         Storage::fake();
         $response = $this->actingAs($this->user)
             ->postJson('/publicidad', [

@@ -517,6 +517,7 @@ class InfoCaracBacteriasControllerTest extends TestCase
     /** @test */
     public function eliminar_tipo_agar_bacterias()
     {
+        $this->withoutExceptionHandling();
         Event::fake();
         $forma = TipoAgarBacteria::first();
         $cantidad = TipoAgarBacteria::all()->count();
