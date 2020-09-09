@@ -35,194 +35,198 @@
         </div>
       </div>
     </template>
-    <modal
-      name="agregar_cambiar_imagen"
-      classes="my_modal"
-      :adaptive="true"
-      :maxWidth="700"
-      height="auto"
-      :scrollable="true"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar_cambiar_imagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <template v-if="modalImagen.nomBtn==='Agregar'">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Seleccione la nueva Imagen</label>
-                    <input
-                      name="imagen"
-                      @change="verificarImagen"
-                      id="imagen"
-                      type="file"
-                      :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
-                      ref="inputImagenModal"
-                      accept="image/jpeg, image/png"
-                    />
-                    <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
-                    <em
-                      v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
-                      class="text-error-input"
-                    >{{mensajes.required}}</em>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <template v-if="mostraImagen">
-                    <Croppie
-                      :id="'croppie'"
-                      :imagen="mostraImagen"
-                      @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="true"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="230"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <div class="text-center">
-                      <h5 class="mt-5 mb-5">
-                        <span class="pr-1">
-                          <b class="text-warning">SIN IMAGEN</b>
-                        </span>
-                      </h5>
+    <transition name="fade">
+      <modal
+        name="agregar_cambiar_imagen"
+        classes="my_modal"
+        :adaptive="true"
+        :maxWidth="700"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('agregar_cambiar_imagen')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <template v-if="modalImagen.nomBtn==='Agregar'">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Seleccione la nueva Imagen</label>
+                      <input
+                        name="imagen"
+                        @change="verificarImagen"
+                        id="imagen"
+                        type="file"
+                        :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
+                        ref="inputImagenModal"
+                        accept="image/jpeg, image/png"
+                      />
+                      <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                      <em
+                        v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
-                  </template>
+                  </div>
+                  <div class="col-sm-6">
+                    <template v-if="mostraImagen">
+                      <Croppie
+                        :id="'croppie'"
+                        :imagen="mostraImagen"
+                        @cambiarValorImagen="cambiarValorImagen"
+                        :mostrarBtnCroppie="true"
+                        :zoom="1"
+                        :enableZoom="true"
+                        :editar="false"
+                        :boundaryHeigth="230"
+                        :viewportWidth="200"
+                      />
+                    </template>
+                    <template v-else>
+                      <div class="text-center">
+                        <h5 class="mt-5 mb-5">
+                          <span class="pr-1">
+                            <b class="text-warning">SIN IMAGEN</b>
+                          </span>
+                        </h5>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-          <template v-if="modalImagen.nomBtn==='Cambiar'">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="position-relative form-group">
-                    <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
-                    <select
-                      name="select_imagen"
-                      id="select_imagen"
-                      v-model.number="modalImagen.select_imagen"
-                      class="form-control"
-                    >
-                      <option value="1" v-if="parametros.imagen1">Primera</option>
-                      <option value="2" v-if="parametros.imagen2">Segunda</option>
-                      <option value="3" v-if="parametros.imagen3">Tercera</option>
-                    </select>
-                  </div>
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Seleccione la nueva Imagen</label>
-                    <input
-                      name="imagen"
-                      @change="verificarImagen"
-                      id="imagen"
-                      type="file"
-                      :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
-                      ref="inputImagenModal"
-                      accept="image/jpeg, image/png"
-                    />
-                    <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
-                    <em
-                      v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
-                      class="text-error-input"
-                    >{{mensajes.required}}</em>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <template v-if="mostraImagen">
-                    <Croppie
-                      :id="'croppie'"
-                      :imagen="mostraImagen"
-                      @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="true"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="230"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <div class="text-center">
-                      <h5 class="mt-5 mb-5">
-                        <span class="pr-1">
-                          <b class="text-warning">SIN IMAGEN</b>
-                        </span>
-                      </h5>
+            </template>
+            <template v-if="modalImagen.nomBtn==='Cambiar'">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="position-relative form-group">
+                      <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
+                      <select
+                        name="select_imagen"
+                        id="select_imagen"
+                        v-model.number="modalImagen.select_imagen"
+                        class="form-control"
+                      >
+                        <option value="1" v-if="parametros.imagen1">Primera</option>
+                        <option value="2" v-if="parametros.imagen2">Segunda</option>
+                        <option value="3" v-if="parametros.imagen3">Tercera</option>
+                      </select>
                     </div>
-                  </template>
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Seleccione la nueva Imagen</label>
+                      <input
+                        name="imagen"
+                        @change="verificarImagen"
+                        id="imagen"
+                        type="file"
+                        :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
+                        ref="inputImagenModal"
+                        accept="image/jpeg, image/png"
+                      />
+                      <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                      <em
+                        v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <template v-if="mostraImagen">
+                      <Croppie
+                        :id="'croppie'"
+                        :imagen="mostraImagen"
+                        @cambiarValorImagen="cambiarValorImagen"
+                        :mostrarBtnCroppie="true"
+                        :zoom="1"
+                        :enableZoom="true"
+                        :editar="false"
+                        :boundaryHeigth="230"
+                        :viewportWidth="200"
+                      />
+                    </template>
+                    <template v-else>
+                      <div class="text-center">
+                        <h5 class="mt-5 mb-5">
+                          <span class="pr-1">
+                            <b class="text-warning">SIN IMAGEN</b>
+                          </span>
+                        </h5>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar_cambiar_imagen')"
-          >Cancelar</button>
-          <button
-            type="button"
-            :disabled="bloquearBtnModal"
-            class="btn btn-success"
-            @click="accionModal"
-          >{{modalImagen.nomBtn}}</button>
-        </div>
-      </div>
-    </modal>
-    <modal
-      name="eliminar_imagen"
-      classes="my_modal"
-      :adaptive="true"
-      :maxWidth="450"
-      height="auto"
-      :scrollable="true"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('eliminar_imagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
-            <select
-              name="select_imagen"
-              id="select_imagen"
-              v-model.number="modalImagen.select_imagen"
-              class="form-control"
-            >
-              <option value="1" v-if="parametros.imagen1">Primera</option>
-              <option value="2" v-if="parametros.imagen2">Segunda</option>
-              <option value="3" v-if="parametros.imagen3">Tercera</option>
-            </select>
+            </template>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('agregar_cambiar_imagen')"
+            >Cancelar</button>
+            <button
+              type="button"
+              :disabled="bloquearBtnModal"
+              class="btn btn-success"
+              @click="accionModal"
+            >{{modalImagen.nomBtn}}</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('eliminar_imagen')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="accionModal"
-            :disabled="bloquearBtnModal"
-          >{{modalImagen.nomBtn}}</button>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="eliminar_imagen"
+        classes="my_modal"
+        :adaptive="true"
+        :maxWidth="450"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('eliminar_imagen')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
+              <select
+                name="select_imagen"
+                id="select_imagen"
+                v-model.number="modalImagen.select_imagen"
+                class="form-control"
+              >
+                <option value="1" v-if="parametros.imagen1">Primera</option>
+                <option value="2" v-if="parametros.imagen2">Segunda</option>
+                <option value="3" v-if="parametros.imagen3">Tercera</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('eliminar_imagen')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="accionModal"
+              :disabled="bloquearBtnModal"
+            >{{modalImagen.nomBtn}}</button>
+          </div>
         </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 

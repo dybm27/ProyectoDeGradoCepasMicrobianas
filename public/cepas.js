@@ -1,1 +1,3492 @@
-!function(e){const t=e.es=e.es||{};t.dictionary=Object.assign(t.dictionary||{},{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto",'The color is invalid. Try "#FF0000" or "rgb(255,0,0)" or "red".':"","The URL must not be empty.":"La URL no debe estar vacía",'The value is invalid. Try "10px" or "2em" or simply "2".':"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}),t.getPluralForm=function(e){return 1!=e}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={})),(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{12:function(e,t,r){"use strict";var a=r(7),i=r.n(a),o=r(385),n={props:["disabled","nameGet"],data:function(){return{filterText:"",show:!1}},computed:{validarBtn:function(){return this.disabled}},methods:{doFilter:function(){this.$events.fire(this.nameGet+"-filter-set",this.filterText)},resetFilter:function(){this.filterText="",this.$events.fire(this.nameGet+"-filter-reset")},abrirMenu:function(){this.show=!this.show},exportar:function(e){this.show=!this.show,this.$emit("exportarExcel",e)}}},s=r(1),l=Object(s.a)(n,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{staticClass:"dataTables_filter"},[r("div",{staticClass:"position-relative form-group"},[r("label",[e._v("Buscar:")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model",value:e.filterText,expression:"filterText"}],staticClass:"form-control form-control-sm",attrs:{placeholder:"...","aria-controls":"example"},domProps:{value:e.filterText},on:{keyup:function(t){return!t.type.indexOf("key")&&e._k(t.keyCode,"enter",13,t.key,"Enter")?null:e.doFilter(t)},input:function(t){t.target.composing||(e.filterText=t.target.value)}}}),e._v(" "),r("button",{directives:[{name:"tooltip",rawName:"v-tooltip",value:"Deshacer",expression:"'Deshacer'"}],staticClass:"btn btn-danger",on:{click:e.resetFilter}},[r("i",{staticClass:"fas fa-redo"})]),e._v(" "),r("div",{class:["dropleft d-inline-block",e.show?"show":""]},[r("button",{directives:[{name:"tooltip",rawName:"v-tooltip",value:"Imprimir",expression:"'Imprimir'"}],staticClass:"mr-2 dropdown-toggle btn btn-outline-success",attrs:{type:"button"},on:{click:e.abrirMenu}},[r("i",{staticClass:"fas fa-print"})]),e._v(" "),r("div",{class:["dropdown-menu",e.show?"show":""]},[r("button",{staticClass:"dropdown-item",on:{click:function(t){return e.exportar("todo")}}},[e._v("Todo")]),e._v(" "),r("button",{staticClass:"dropdown-item",attrs:{disabled:e.validarBtn},on:{click:function(t){return e.exportar("tabla")}}},[e._v("Tabla")])])])])])}),[],!1,null,null,null).exports,c={mixins:[r(386).a]},u=Object(s.a)(c,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("nav",[r("ul",{staticClass:"pagination"},[r("li",{class:["page-item",{disabled:e.isOnFirstPage}]},[r("a",{staticClass:"page-link",on:{click:function(t){return t.preventDefault(),e.loadPage("prev")}}},[r("span",[e._v("«")])])]),e._v(" "),e.notEnoughPages?e._l(e.totalPage,(function(t){return r("li",{key:t,class:["page-item",{active:e.isCurrentPage(t)}]},[r("a",{staticClass:"page-link",domProps:{innerHTML:e._s(t)},on:{click:function(r){return r.preventDefault(),e.loadPage(t)}}})])})):e._l(e.windowSize,(function(t){return r("li",{key:t,class:["page-item",{active:e.isCurrentPage(e.windowStart+t-1)}]},[r("a",{staticClass:"page-link",domProps:{innerHTML:e._s(e.windowStart+t-1)},on:{click:function(r){return r.preventDefault(),e.loadPage(e.windowStart+t-1)}}})])})),e._v(" "),r("li",{class:["page-item",{disabled:e.isOnLastPage}]},[r("a",{staticClass:"page-link",attrs:{href:""},on:{click:function(t){return t.preventDefault(),e.loadPage("next")}}},[r("span",[e._v("»")])])])],2)])}),[],!1,null,null,null).exports,d={props:{css:{type:Object,default:function(){return{infoClass:"left floated left aligned six wide column"}}},infoTemplate:{type:String,default:function(){return"Displaying {from} to {to} of {total} items"}},noDataTemplate:{type:String,default:function(){return"No relevant data"}}},data:function(){return{tablePagination:null}},computed:{paginationInfo:function(){return null==this.tablePagination||0==this.tablePagination.total?this.noDataTemplate:this.infoTemplate.replace("{from}",this.tablePagination.from||0).replace("{to}",this.tablePagination.to||0).replace("{total}",this.tablePagination.total||0)}},methods:{setPaginationData:function(e){this.tablePagination=e},resetData:function(){this.tablePagination=null}}},m=Object(s.a)(d,(function(){var e=this.$createElement;return(this._self._c||e)("div",{class:["",this.css.infoClass],domProps:{innerHTML:this._s(this.paginationInfo)}})}),[],!1,null,null,null).exports,p=r(6),f={props:["apiUrl","fields","sortOrder","detailRowComponent","nameGet"],components:{Vuetable:o.a,FilterBar:l,VuetablePagination:u,VuetablePaginationInfo:m},mixins:[p.a],data:function(){return{appendParams:{per_page:10,filter:""},css:{table:{tableClass:"table table-striped table-bordered",ascendingIcon:"fas fa-angle-double-up",descendingIcon:"fas fa-angle-double-down",sortHandleIcon:"glyphicon glyphicon-menu-hamburger"},pagination:{wrapperClass:"pagination float-right",activeClass:"active",disabledClass:"disabled",pageClass:"page-item",linkClass:"page-link",paginationClass:"pagination",paginationInfoClass:"float-left",dropdownClass:"form-control",icons:{first:"fa fa-chevron-left",prev:"fa fa-chevron-left",next:"fa fa-chevron-right",last:"fa fa-chevron-right"},infoClass:"pull-left"}},disabledBtn:!1,dataAnterior:[]}},methods:{imagen:function(e){return'<img width="80" heigth="80" src="'+e+'"></i>'},tipoAgar:function(e){return"No"===e?'<i class="fas fa-times"></i>':e},numeroReplicas:function(e){return 0===e?'<i class="fas fa-times"></i>':e},recuentoMicorgota:function(e){return null===e?'<i class="fas fa-times"></i>':e},medioCultivo:function(e){return null===e?'<i class="fas fa-times"></i>':e},numeroPases:function(e){return 0===e?'<i class="fas fa-times"></i>':e},allcap:function(e){return e.toUpperCase()},genderLabel:function(e){return"M"===e?'<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"><i class="pe-7s-male"></i> Male</span>':'<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"><i class="pe-7s-female"></i> Female</span>'},formatDate:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"D-MMM-YYYY";return null==e?"":i()(e).format(t)},onPaginationData:function(e){this.$refs.pagination.setPaginationData(e),this.$refs.paginationInfo.setPaginationData(e)},onChangePage:function(e){this.dataAnterior=this.$refs.vuetable.tableData,this.$refs.vuetable.changePage(e)},onCellClicked:function(e,t,r){this.$refs.vuetable.toggleDetailRow(e.id)},onFilterSet:function(e){var t=this;this.appendParams.filter=e,Vue.nextTick((function(){return t.$refs.vuetable.refresh()}))},onFilterReset:function(){var e=this;delete this.appendParams.filter,Vue.nextTick((function(){return e.$refs.vuetable.refresh()}))},refreshDatos:function(){var e=this;this.dataAnterior=this.$refs.vuetable.tableData,Vue.nextTick((function(){return e.$refs.vuetable.refresh()}))},loaded:function(){this.$refs.vuetable.tableData&&(0===this.$refs.vuetable.tableData.length?this.disabledBtn=!0:(this.disabledBtn=!1,this.EventosCustomActions(),this.$events.fire("verificarBloqueos-"+this.nameGet)))},EventosCustomActions:function(){if(0!=this.dataAnterior.length)for(var e=0;e<this.dataAnterior.length;e++)this.$events.fire(e+"-eliminarEventosBtns-"+this.nameGet,this.dataAnterior[e].id),this.$events.fire(e+"-eliminarEventosCheck-"+this.nameGet,this.dataAnterior[e].id);for(var t=0;t<this.$refs.vuetable.tableData.length;t++)this.$events.fire(t+"-crearEventosBtns-"+this.nameGet),this.$events.fire(t+"-crearEventosCheck-"+this.nameGet)},exportarExcel:function(e){var t=this;if("todo"===e)axios.get("/exportar/".concat(this.nameGet),{responseType:"blob"}).then((function(e){if("http://127.0.0.1:8000/"===e.request.responseURL)localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/";else{t.toastr("Descarga!!","La descarga se realizo con éxito","success",5e3);var r=window.URL.createObjectURL(new Blob([e.data])),a=document.createElement("a");a.href=r,a.setAttribute("download",t.nameGet+".xlsx"),document.body.appendChild(a),a.click(),document.body.removeChild(a)}})).catch((function(e){403===e.response.status?t.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}));else{var r=this.$refs.vuetable.tableData;axios.post("/exportar/tabla/".concat(this.nameGet),{datos:r},{responseType:"blob"}).then((function(e){if("http://127.0.0.1:8000/"===e.request.responseURL)localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/";else{t.toastr("Descarga!!","La descarga se realizo con éxito","success",5e3);var r=window.URL.createObjectURL(new Blob([e.data])),a=document.createElement("a");a.href=r,a.setAttribute("download",t.nameGet+".xlsx"),document.body.appendChild(a),a.click(),document.body.removeChild(a)}})).catch((function(e){403===e.response.status?t.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}))}},loadSuccess:function(e){"http://127.0.0.1:8000/"===e.request.responseURL&&(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")},loadError:function(e){403===e.response.status?this.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}},mounted:function(){var e=this;this.$events.$on(this.nameGet+"-filter-set",(function(t){return e.onFilterSet(t)})),this.$events.$on(this.nameGet+"-filter-reset",(function(t){return e.onFilterReset()}))},destroyed:function(){this.$events.off(this.nameGet+"-filter-set"),this.$events.off(this.nameGet+"-filter-reset")}},v=Object(s.a)(f,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{staticClass:"dataTables_wrapper dt-bootstrap4"},[r("div",{staticClass:"row"},[r("div",{staticClass:"col-sm-12 col-md-6"},[r("div",{staticClass:"dataTables_length",attrs:{id:"example_length"}},[r("label",[e._v("\n          Buscar\n          "),r("select",{directives:[{name:"model",rawName:"v-model.number",value:e.appendParams.per_page,expression:"appendParams.per_page",modifiers:{number:!0}}],staticClass:"custom-select custom-select-sm form-control form-control-sm",attrs:{name:"example_length","aria-controls":"example"},on:{change:[function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(t){var r="_value"in t?t._value:t.value;return e._n(r)}));e.$set(e.appendParams,"per_page",t.target.multiple?r:r[0])},e.refreshDatos]}},[r("option",{attrs:{value:"10"}},[e._v("10")]),e._v(" "),r("option",{attrs:{value:"25"}},[e._v("25")]),e._v(" "),r("option",{attrs:{value:"50"}},[e._v("50")]),e._v(" "),r("option",{attrs:{value:"100"}},[e._v("100")])]),e._v(" Resultados\n        ")])])]),e._v(" "),r("div",{staticClass:"col-sm-12 col-md-6"},[r("filter-bar",{attrs:{disabled:e.disabledBtn,nameGet:e.nameGet},on:{exportarExcel:e.exportarExcel}})],1)]),e._v(" "),r("div",{staticClass:"row"},[r("div",{staticClass:"col-sm-12"},[r("div",{staticClass:"table-responsive fixed "},[r("vuetable",{ref:"vuetable",attrs:{noDataTemplate:"Cargando informacion...",css:e.css.table,"api-url":e.apiUrl,fields:e.fields,"data-path":"data","pagination-path":"","sort-order":e.sortOrder,"append-params":e.appendParams,"detail-row-component":e.detailRowComponent},on:{"vuetable:pagination-data":e.onPaginationData,"vuetable:cell-clicked":e.onCellClicked,"vuetable:loaded":e.loaded,"vuetable:load-success":e.loadSuccess,"vuetable:load-error":e.loadError}})],1)])]),e._v(" "),r("div",{staticClass:"row"},[r("div",{staticClass:"col-sm-12 col-md-5"},[r("vuetable-pagination-info",{ref:"paginationInfo",attrs:{css:e.css.infoclass,"info-template":"Mostrando del {from} al {to} de {total} registros",noDataTemplate:"Sin registros"}})],1),e._v(" "),r("div",{staticClass:"col-sm-12 col-md-7"},[r("vuetable-pagination",{ref:"pagination",staticClass:"pull-right",attrs:{css:e.css.pagination},on:{"vuetable-pagination:change-page":e.onChangePage}})],1)])])}),[],!1,null,null,null);t.a=v.exports},189:function(e,t,r){"use strict";r.r(t);var a=r(77),i=r(0),o=r(12),n=r(6);r(67);function s(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);t&&(a=a.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,a)}return r}function l(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?s(Object(r),!0).forEach((function(t){c(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):s(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function c(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var u={props:["FieldDefs","detailRowComponent","tipo","titulo"],components:{MyVuetable:o.a},data:function(){return{id:"",sortOrder:[{field:"codigo",direction:"asc"}],bloquearBtnModal:!1}},mixins:[n.a],computed:l(l(l({},i.a.mapState("cepas",["cepas"])),i.a.mapGetters("cepas",["getCepasByGrupo"])),{},{mostrarTabla:function(){return!(""==this.cepas||null==this.cepas||!this.validarTipoCepa)},validarTipoCepa:function(){switch(this.tipo){case"cepa":return!0;case"bacteria":if(this.getCepasByGrupo(1).length>0)return!0;break;case"levadura":if(this.getCepasByGrupo(3).length>0)return!0;break;case"hongo":if(this.getCepasByGrupo(2).length>0)return!0;break;case"actinomiceto":if(this.getCepasByGrupo(4).length>0)return!0}return!1}}),methods:l(l({},i.a.mapActions("cepas",["accionCepas"])),{},{beforeOpenEliminar:function(e){this.id=e.params.id},eliminarCepa:function(){var e=this;this.bloquearBtnModal=!0,axios.delete("/cepas/eliminar/".concat(this.id)).then((function(t){e.bloquearBtnModal=!1,"negativo"===t.data?e.toastr("Precaución!!","La cepa cuenta con caracteristicas registradas, favor eliminarlas","warning",8e3):(e.refrescarTabla=!0,e.toastr("Eliminar Cepa","Cepa eliminada con exito!!","success",5e3)),e.accionCepas({tipo:"eliminar",data:t.data}),e.actualizarTabla(),e.$modal.hide("modal_eliminar_cepa")})).catch((function(t){403===t.response.status?e.$router.push("/sin-acceso"):405===t.response.status||401===t.response.status?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtnModal=!1,e.toastr("Error!!","","error"))}))},closeEliminar:function(){window.Echo.private("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa",{id:this.id}),this.$events.fire("eliminarMiBloqueoCepa",{id:this.id})},actualizarTabla:function(){this.mostrarTabla&&this.$refs.tabla&&this.$refs.tabla.refreshDatos()}}),created:function(){var e=this;this.$emit("cambiarTipo","tabla"),this.$events.on("actualizartablaCepa",(function(t){return e.actualizarTabla()}))},destroyed:function(){this.$events.off("actualizartablaCepa")}},d=r(1),m=Object(d.a)(u,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",[e.mostrarTabla?[r("MyVuetable",{ref:"tabla",attrs:{apiUrl:"/info-panel/"+e.tipo+"s-tabla",fields:e.FieldDefs,sortOrder:e.sortOrder,detailRowComponent:e.detailRowComponent,nameGet:e.tipo+"s"}})]:[r("div",{staticClass:"text-center"},[r("h5",{staticClass:"mt-5 mb-5"},[r("span",{staticClass:"pr-1"},[r("b",{staticClass:"text-success"},[e._v("AÚN NO SE HAN AGREGADO "+e._s(e.titulo))])])])])],e._v(" "),r("modal",{attrs:{name:"modal_eliminar_cepa",classes:"my_modal",maxWidth:400,adaptive:!0,height:"auto",scrollable:!0},on:{"before-open":e.beforeOpenEliminar,closed:e.closeEliminar}},[r("div",{staticClass:"modal-content"},[r("div",{staticClass:"modal-header"},[r("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[e._v("Eliminar Cepa Microbiana")]),e._v(" "),r("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("modal_eliminar_cepa")}}},[r("span",{attrs:{"aria-hidden":"true"}},[e._v("×")])])]),e._v(" "),r("div",{staticClass:"modal-body"},[r("p",[e._v("Esta segura/o de eliminar la Cepa?.")])]),e._v(" "),r("div",{staticClass:"modal-footer"},[r("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("modal_eliminar_cepa")}}},[e._v("Cancelar")]),e._v(" "),r("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:e.bloquearBtnModal},on:{click:e.eliminarCepa}},[e._v("Eliminar")])])])])],2)}),[],!1,null,null,null).exports,p=r(2);function f(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);t&&(a=a.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,a)}return r}function v(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?f(Object(r),!0).forEach((function(t){g(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):f(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function g(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var h={props:["tipoG","idCepa"],data:function(){return{info:"",parametros:{codigo:"",grupo_microbiano:null,genero:null,especie:null,phylum:null,clase:null,orden:null,reino:null,division:null,familia:null,estado:"",origen:"Donación",publicar:!1,otras_caracteristicas:""},modal:{titulo:"",input:"",tipo:"",grupo_microbiano:1,genero:1,errors:!1},errors:[],mostrarGrupos:!0,disabled:!1,nombre:"",nombreBtn:"",classBtn:"",bloquearBtn:!1,bloquearBtnModal:!1,mensajeCodigo:"",mensajes:{required:"El campo es requerido",minLength:"El campo debe tener como minimo ",unique:""}}},validations:function(){return 1==this.parametros.grupo_microbiano?{parametros:{codigo:{required:p.required,minLength:Object(p.minLength)(4),unique:function(e){return""==e||!this.validarCodigo}},genero:{required:p.required},especie:{required:p.required},estado:{required:p.required}}}:2==this.parametros.grupo_microbiano?{parametros:{codigo:{required:p.required,minLength:Object(p.minLength)(4),unique:function(e){return""==e||!this.validarCodigo}},genero:{required:p.required},especie:{required:p.required},phylum:{required:p.required},clase:{required:p.required},orden:{required:p.required},familia:{required:p.required},estado:{required:p.required}}}:3==this.parametros.grupo_microbiano?{parametros:{codigo:{required:p.required,minLength:Object(p.minLength)(4),unique:function(e){return""==e||!this.validarCodigo}},genero:{required:p.required},especie:{required:p.required},clase:{required:p.required},orden:{required:p.required},division:{required:p.required},familia:{required:p.required},estado:{required:p.required}}}:{parametros:{codigo:{required:p.required,minLength:Object(p.minLength)(4),unique:function(e){return""==e||!this.validarCodigo}},genero:{required:p.required},especie:{required:p.required},phylum:{required:p.required},clase:{required:p.required},orden:{required:p.required},reino:{required:p.required},estado:{required:p.required}}}},mixins:[n.a],methods:v(v(v({},i.a.mapActions("cepas",["accionCepas"])),i.a.mapActions("info_cepas",["accionAgregarTipoCepa"])),{},{evento:function(){var e=this;this.bloquearBtn=!0,this.$v.parametros.$touch(),this.$v.$invalid?(this.bloquearBtn=!1,this.toastr("Error!!","Favor llenar correctamente los campos","error")):"Editar Cepa"===this.nombre?axios.put("/cepas/editar/".concat(this.idCepa),this.parametros).then((function(t){e.bloquearBtn=!1,e.accionCepas({tipo:"editar",data:t.data}),window.Echo.private("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa",{id:t.data.id}),e.$events.fire("eliminarMiBloqueoCepa",{id:t.data.id}),e.$emit("cambiarVariableFormulario"),e.toastr("Editar Cepa","Cepa editada con exito!!","success")})).catch((function(t){e.verificarError(t.response.status,t.response.data.errors)})):axios.post("/cepas/agregar",this.parametros).then((function(t){e.bloquearBtn=!1,"http://127.0.0.1:8000/"===t.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.accionCepas({tipo:"agregar",data:t.data}),e.$emit("cambiarVariableFormulario"),e.toastr("Agregar Cepa","Cepa agregada con exito!!","success"))})).catch((function(t){e.verificarError(t.response.status,t.response.data.errors)}))},llenarParametros:function(e){switch(this.parametros.codigo=this.info.codigo,this.parametros.grupo_microbiano=this.info.grupo_microbiano_id,this.modal.grupo_microbiano=this.info.grupo_microbiano_id,this.parametros.genero=this.info.genero_id,this.modal.genero=this.info.genero_id,this.parametros.especie=this.info.especie_id,this.parametros.estado=this.info.estado,this.parametros.origen=this.info.origen,this.parametros.otras_caracteristicas=this.info.otras_caract,this.info.grupo_microbiano_id){case 1:break;case 2:this.parametros.phylum=this.info.hongo.phylum_id,this.parametros.clase=this.info.hongo.clase_id,this.parametros.orden=this.info.hongo.orden_id,this.parametros.familia=this.info.hongo.familia_id;break;case 3:this.parametros.division=this.info.levadura.division_id,this.parametros.clase=this.info.levadura.clase_id,this.parametros.orden=this.info.levadura.orden_id,this.parametros.familia=this.info.levadura.familia_id;break;case 4:this.parametros.reino=this.info.actinomiceto.reino_id,this.parametros.phylum=this.info.actinomiceto.phylum_id,this.parametros.clase=this.info.actinomiceto.clase_id,this.parametros.orden=this.info.actinomiceto.orden_id}1==this.info.publicar&&(this.parametros.publicar=!0)},ocultarGrupoMicrobiano:function(){0===this.tipoG?this.mostrarGrupos=!0:(this.parametros.grupo_microbiano=this.tipoG,this.mostrarGrupos=!1,this.cambiarGeneroEspecie())},cambiarGeneroEspecie:function(){this.parametros.genero=this.getGenerosId(this.parametros.grupo_microbiano)[0].id,this.parametros.especie=this.getEspeciesId(this.parametros.genero)[0].id,this.modal.genero=this.getGenerosId(this.parametros.grupo_microbiano)[0].id},cambiarEspecie:function(){this.parametros.especie=this.getEspeciesId(this.parametros.genero)[0].id},showModal:function(e){this.modal.errors=!1,this.modal.input="",this.modal.tipo=e,this.modal.titulo="genero"===e?"Agregar Nuevo Género":"especie"===e?"Agregar Nueva Especie":"familia"===e?"Agregar Nueva Familia":"orden"===e?"Agregar Nuevo Orden":"clase"===e?"Agregar Nueva Clase":"phylum"===e?"Agregar Nuevo Phylum":"reino"===e?"Agregar Nuevo Reino":"Agregar Nueva Division",this.$modal.show("agregar-otra-info")},agregarInfo:function(){var e=this;if(""===this.modal.input)this.modal.errors=!0;else if(this.bloquearBtnModal=!0,this.validarNombreUnico)this.bloquearBtnModal=!1,this.toastr("Error!!","favor arregla el error","error");else{var t={tipo:this.modal.tipo,nombre:this.modal.input,genero:this.modal.genero,grupo_microbiano:this.modal.grupo_microbiano};axios.post("/info-cepas/agregar",t).then((function(t){e.bloquearBtnModal=!1,"http://127.0.0.1:8000/"===t.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.accionAgregarTipoCepa({info:t.data,tipo:e.modal.tipo}),e.$modal.hide("agregar-otra-info"),e.toastr("Agregar Info","".concat(e.modal.tipo," agregado/a con exito"),"success"))})).catch((function(t){403===t.response.status?e.$router.push("/sin-acceso"):405===t.response.status||401===t.response.status?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtnModal=!1,e.toastr("Error!!","","error"))}))}},verificarSelects:function(){this.getGrupos.length>0?this.parametros.grupo_microbiano=this.getGrupos[0].id:this.parametros.grupo_microbiano=null,this.getGeneros.length>0?this.parametros.genero=this.getGeneros[0].id:this.parametros.genero=null,this.getEspecies.length>0?this.parametros.especie=this.getEspecies[0].id:this.parametros.especie=null,this.getPhylums.length>0?this.parametros.phylum=this.getPhylums[0].id:this.parametros.phylum=null,this.getOrdens.length>0?this.parametros.orden=this.getOrdens[0].id:this.parametros.orden=null,this.getReinos.length>0?this.parametros.reino=this.getReinos[0].id:this.parametros.reino=null,this.getDivisiones.length>0?this.parametros.division=this.getDivisiones[0].id:this.parametros.division=null,this.getClases.length>0?this.parametros.clase=this.getClases[0].id:this.parametros.clase=null,this.getFamilias.length>0?this.parametros.familia=this.getFamilias[0].id:this.parametros.familia=null}}),computed:v(v(v(v({},i.a.mapGetters(["getPermisoByNombre"])),i.a.mapGetters("cepas",["getCepaById","getCepaByCodigo"])),i.a.mapGetters("info_cepas",["getGrupos","getGeneros","getEspecies","getPhylums","getOrdens","getReinos","getDivisiones","getClases","getFamilias","getGenerosId","getEspeciesId","getGeneroByNombre","getEspecieByNombre","getPhylumByNombre","getOrdenByNombre","getReinoByNombre","getDivisionByNombre","getClaseByNombre","getFamiliaByNombre"])),{},{validarNombreUnico:function(){if(this.modal.input)switch(this.modal.tipo){case"genero":if(this.getGeneroByNombre(this.modal.input))return!0;break;case"especie":if(this.getEspecieByNombre(this.modal.input))return!0;break;case"familia":if(this.getFamiliaByNombre(this.modal.input))return!0;break;case"orden":if(this.getOrdenByNombre(this.modal.input))return!0;break;case"clase":if(this.getClaseByNombre(this.modal.input))return!0;break;case"phylum":if(this.getPhylumByNombre(this.modal.input))return!0;break;case"reino":if(this.getReinoByNombre(this.modal.input))return!0;break;case"division":if(this.getDivisionByNombre(this.modal.input))return!0}return!1},validarCodigo:function(){return!(!this.parametros.codigo||!this.getCepaByCodigo(this.parametros.codigo)||this.getCepaByCodigo(this.parametros.codigo).id==this.info.id)&&(this.mensajes.unique="Ya existe una cepa con ese codigo",!0)},inputModal:function(){return this.modal.input}}),created:function(){this.verificarSelects(),this.ocultarGrupoMicrobiano(),0===this.idCepa?(this.nombre="Agregar Nueva Cepa",this.classBtn="btn-success",this.nombreBtn="Guardar",this.$emit("cambiarTipo","agregar")):(this.info=this.getCepaById(this.idCepa),this.disabled=!0,this.nombre="Editar Cepa",this.classBtn="btn-warning",this.nombreBtn="Editar",this.$emit("cambiarTipo","editar"),this.llenarParametros())},watch:{getGrupos:function(){this.getGrupos.length>0?0===this.tipoG?this.parametros.grupo_microbiano=this.getGrupos[0].id:this.parametros.grupo_microbiano=this.tipoG:this.parametros.grupo_microbiano=null},getGeneros:function(){this.getGeneros.length>0?this.parametros.genero=this.getGenerosId(this.parametros.grupo_microbiano)[0].id:this.parametros.genero=null},getEspecies:function(){this.getEspecies.length>0?this.parametros.especie=this.getEspeciesId(this.parametros.genero)[0].id:this.parametros.especie=null},getPhylums:function(){this.getPhylums.length>0?this.parametros.phylum=this.getPhylums[0].id:this.parametros.phylum=null},getOrdens:function(){this.getOrdens.length>0?this.parametros.orden=this.getOrdens[0].id:this.parametros.orden=null},getReinos:function(){this.getReinos.length>0?this.parametros.reino=this.getReinos[0].id:this.parametros.reino=null},getDivisiones:function(){this.getDivisiones.length>0?this.parametros.division=this.getDivisiones[0].id:this.parametros.division=null},getClases:function(){this.getClases.length>0?this.parametros.clase=this.getClases[0].id:this.parametros.clase=null},getFamilias:function(){this.getFamilias.length>0?this.parametros.familia=this.getFamilias[0].id:this.parametros.familia=null},inputModal:function(){this.inputModal?this.modal.errors=!1:this.modal.errors=!0}}};function b(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);t&&(a=a.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,a)}return r}function _(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?b(Object(r),!0).forEach((function(t){y(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):b(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function y(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var C={components:{Tabla:m,Form:Object(d.a)(h,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",[r("form",{on:{submit:function(t){return t.preventDefault(),e.evento(t)}}},[r("div",{staticClass:"container"},[r("div",{staticClass:"row justify-content-md-center"},[r("div",{staticClass:"col-md-8"},[r("div",{staticClass:"main-card mb-3 card"},[r("div",{staticClass:"card-body"},[r("h5",{staticClass:"card-title"},[e._v(e._s(e.nombre))]),e._v(" "),""!=e.errors?[r("div",{staticClass:"alert alert-danger"},e._l(e.errors,(function(t,a){return r("p",{key:a},[e._v(e._s(t[0]))])})),0)]:e._e(),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"codigo"}},[e._v("Código")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.codigo.$model,expression:"$v.parametros.codigo.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.codigo.$error?"error-input-select":""],attrs:{name:"codigo",id:"codigo",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.codigo.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.codigo,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.codigo.$error&&!e.$v.parametros.codigo.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.$v.parametros.codigo.$error&&!e.$v.parametros.codigo.minLength?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.minLength+e.$v.parametros.codigo.$params.minLength.min+" letras."))]):e._e(),e._v(" "),e.$v.parametros.codigo.$error&&!e.$v.parametros.codigo.unique?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.unique))]):e._e()]),e._v(" "),e.mostrarGrupos&&!e.disabled?r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"grupo_microbiano"}},[e._v("Grupo Microbiano")]),e._v(" "),r("select",{directives:[{name:"model",rawName:"v-model",value:e.parametros.grupo_microbiano,expression:"parametros.grupo_microbiano"}],staticClass:"form-control",attrs:{name:"select",id:"grupo_microbiano"},on:{change:[function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.parametros,"grupo_microbiano",t.target.multiple?r:r[0])},e.cambiarGeneroEspecie]}},e._l(e.getGrupos,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0)]):e._e(),e._v(" "),r("div",{staticClass:"form-row"},[r("div",{staticClass:"col-md-6"},[r("label",{attrs:{for:"genero"}},[e._v("Género")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.genero.$model,expression:"$v.parametros.genero.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.genero.$error?"error-input-select":""],attrs:{name:"select",id:"genero"},on:{change:[function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.genero,"$model",t.target.multiple?r:r[0])},e.cambiarEspecie]}},e._l(e.getGenerosId(e.parametros.grupo_microbiano),(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("genero")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.genero.$error&&!e.$v.parametros.genero.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"col-md-6"},[r("label",{attrs:{for:"especie"}},[e._v("Especie")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.especie.$model,expression:"$v.parametros.especie.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.especie.$error?"error-input-select":""],attrs:{name:"select",id:"especie"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.especie,"$model",t.target.multiple?r:r[0])}}},e._l(e.getEspeciesId(e.parametros.genero),(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("especie")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.especie.$error&&!e.$v.parametros.especie.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()])]),e._v(" "),r("div",{staticClass:"form-row"},[r("div",{staticClass:"col-md-6"},[2===e.parametros.grupo_microbiano||3===e.parametros.grupo_microbiano?r("div",[r("label",{attrs:{for:"familia"}},[e._v("Familia")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.familia.$model,expression:"$v.parametros.familia.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.familia.$error?"error-input-select":""],attrs:{name:"select",id:"familia"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.familia,"$model",t.target.multiple?r:r[0])}}},e._l(e.getFamilias,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("familia")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.familia.$error&&!e.$v.parametros.familia.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]):e._e(),e._v(" "),4===e.parametros.grupo_microbiano?r("div",[r("label",{attrs:{for:"reino"}},[e._v("Reino")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.reino.$model,expression:"$v.parametros.reino.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.reino.$error?"error-input-select":""],attrs:{name:"select",id:"reino"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.reino,"$model",t.target.multiple?r:r[0])}}},e._l(e.getReinos,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("reino")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.reino.$error&&!e.$v.parametros.reino.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]):e._e()]),e._v(" "),r("div",{staticClass:"col-md-6"},[2===e.parametros.grupo_microbiano||4===e.parametros.grupo_microbiano?r("div",[r("label",{attrs:{for:"phylum"}},[e._v("Phylum")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.phylum.$model,expression:"$v.parametros.phylum.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.phylum.$error?"error-input-select":""],attrs:{name:"select",id:"phylum"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.phylum,"$model",t.target.multiple?r:r[0])}}},e._l(e.getPhylums,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("phylum")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.phylum.$error&&!e.$v.parametros.phylum.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]):e._e(),e._v(" "),3===e.parametros.grupo_microbiano?r("div",[r("label",{attrs:{for:"division"}},[e._v("Division")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.division.$model,expression:"$v.parametros.division.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.division.$error?"error-input-select":""],attrs:{name:"select",id:"division"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.division,"$model",t.target.multiple?r:r[0])}}},e._l(e.getDivisiones,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("division")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.division.$error&&!e.$v.parametros.division.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]):e._e()])]),e._v(" "),2===e.parametros.grupo_microbiano||3===e.parametros.grupo_microbiano||4===e.parametros.grupo_microbiano?r("div",[r("div",{staticClass:"form-row"},[r("div",{staticClass:"col-md-6"},[r("label",{attrs:{for:"clase"}},[e._v("Clase")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.clase.$model,expression:"$v.parametros.clase.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.clase.$error?"error-input-select":""],attrs:{name:"select",id:"clase"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.clase,"$model",t.target.multiple?r:r[0])}}},e._l(e.getClases,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("clase")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.clase.$error&&!e.$v.parametros.clase.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"col-md-6"},[r("label",{attrs:{for:"orden"}},[e._v("Orden")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.orden.$model,expression:"$v.parametros.orden.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.orden.$error?"error-input-select":""],attrs:{name:"select",id:"orden"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.orden,"$model",t.target.multiple?r:r[0])}}},e._l(e.getOrdens,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("orden")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.orden.$error&&!e.$v.parametros.orden.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()])])]):e._e(),e._v(" "),r("div",{staticClass:"form-row"},[r("div",{staticClass:"col-md-6"},[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"estado"}},[e._v("Estado")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.estado.$model,expression:"$v.parametros.estado.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.estado.$error?"error-input-select":""],attrs:{name:"estado",id:"estado",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.estado.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.estado,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.estado.$error&&!e.$v.parametros.estado.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()])]),e._v(" "),r("div",{staticClass:"col-md-6"},[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"origen"}},[e._v("Origen")]),e._v(" "),r("select",{directives:[{name:"model",rawName:"v-model",value:e.parametros.origen,expression:"parametros.origen"}],staticClass:"form-control",attrs:{name:"select",id:"origen"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.parametros,"origen",t.target.multiple?r:r[0])}}},[r("option",{attrs:{value:"Donación"}},[e._v("Donación")]),e._v(" "),r("option",{attrs:{value:"Compra"}},[e._v("Compra")]),e._v(" "),r("option",{attrs:{value:"Proyecto"}},[e._v("Proyecto")]),e._v(" "),r("option",{attrs:{value:"Aislamiento del Laboratorio"}},[e._v("Aislamiento del Laboratorio")])])])])]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"otras_caracteristicas"}},[e._v("Otras Caracteristicas")]),e._v(" "),r("textarea",{directives:[{name:"model",rawName:"v-model",value:e.parametros.otras_caracteristicas,expression:"parametros.otras_caracteristicas"}],staticClass:"form-control",attrs:{name:"text",id:"otras_caracteristicas"},domProps:{value:e.parametros.otras_caracteristicas},on:{input:function(t){t.target.composing||e.$set(e.parametros,"otras_caracteristicas",t.target.value)}}})]),e._v(" "),r("div",{staticClass:"custom-checkbox custom-control mb-2"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.publicar,expression:"parametros.publicar"}],staticClass:"custom-control-input",attrs:{type:"checkbox",id:"publicar"},domProps:{checked:Array.isArray(e.parametros.publicar)?e._i(e.parametros.publicar,null)>-1:e.parametros.publicar},on:{change:function(t){var r=e.parametros.publicar,a=t.target,i=!!a.checked;if(Array.isArray(r)){var o=e._i(r,null);a.checked?o<0&&e.$set(e.parametros,"publicar",r.concat([null])):o>-1&&e.$set(e.parametros,"publicar",r.slice(0,o).concat(r.slice(o+1)))}else e.$set(e.parametros,"publicar",i)}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"publicar"}},[e._v("Desea publicar la cepa?")])]),e._v(" "),r("button",{staticClass:"mt-2 btn btn-block",class:e.classBtn,attrs:{disabled:e.bloquearBtn}},[e._v(e._s(e.nombreBtn))])],2)])])])])]),e._v(" "),r("modal",{attrs:{name:"agregar-otra-info",classes:"my_modal",maxWidth:450,adaptive:!0,height:"auto",scrollable:!0}},[r("div",{staticClass:"modal-content"},[r("div",{staticClass:"modal-header"},[r("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[e._v(e._s(e.modal.titulo))]),e._v(" "),r("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("agregar-otra-info")}}},[r("span",{attrs:{"aria-hidden":"true"}},[e._v("×")])])]),e._v(" "),r("div",{staticClass:"modal-body"},["genero"===e.modal.tipo?r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"grupo_microbiano-modal"}},[e._v("Grupo Microbiano")]),e._v(" "),r("select",{directives:[{name:"model",rawName:"v-model",value:e.modal.grupo_microbiano,expression:"modal.grupo_microbiano"}],staticClass:"form-control",attrs:{name:"select",id:"grupo_microbiano-modal"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.modal,"grupo_microbiano",t.target.multiple?r:r[0])}}},e._l(e.getGrupos,(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0)]):e._e(),e._v(" "),"especie"===e.modal.tipo?r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"genero-modal"}},[e._v("Genero")]),e._v(" "),r("select",{directives:[{name:"model",rawName:"v-model",value:e.modal.genero,expression:"modal.genero"}],staticClass:"form-control",attrs:{name:"select",id:"genero-modal"},on:{change:function(t){var r=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.modal,"genero",t.target.multiple?r:r[0])}}},e._l(e.getGenerosId(e.parametros.grupo_microbiano),(function(t,a){return r("option",{key:a,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0)]):e._e(),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"nombre"}},[e._v("Nombre")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model",value:e.modal.input,expression:"modal.input"}],class:["form-control",e.validarNombreUnico||e.modal.errors?"error-input-select":""],attrs:{name:"nombre",id:"nombre",placeholder:"...",type:"text"},domProps:{value:e.modal.input},on:{input:function(t){t.target.composing||e.$set(e.modal,"input",t.target.value)}}}),e._v(" "),e.validarNombreUnico?r("em",{staticClass:"text-error-input"},[e._v("Ya existe un registro con ese nombre")]):e._e(),e._v(" "),e.modal.errors?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()])]),e._v(" "),r("div",{staticClass:"modal-footer"},[r("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("agregar-otra-info")}}},[e._v("Cancelar")]),e._v(" "),r("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:e.bloquearBtnModal},on:{click:e.agregarInfo}},[e._v("Agregar")])])])])],1)}),[],!1,null,null,null).exports},props:["tipoG","tipo","detailRowComponent","titulo","tituloCepa","FieldDefs"],mixins:[Object(a.a)("Cepa")],methods:{cambiarTipo:function(e){this.$emit("cambiarTipo",e)}},computed:_(_({},i.a.mapState("info_cepas",["tipos"])),i.a.mapGetters(["getPermisoByNombre"]))},j=Object(d.a)(C,(function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{staticClass:"main-card mb-3 card"},[r("div",{staticClass:"card-header-tab card-header"},[r("div",{staticClass:"card-header-title font-size-lg text-capitalize font-weight-normal"},[r("i",{staticClass:"header-icon lnr-laptop-phone mr-3 text-muted opacity-6"}),e._v("\n      Tabla Dinámica Cepas Microbianas "+e._s(e.tituloCepa)+"\n    ")]),e._v(" "),r("div",{staticClass:"btn-actions-pane-right actions-icon-btn"},[e.formulario?[r("button",{staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:e.cerrarFormulario}},[e._v("Cancelar")])]:[e.getPermisoByNombre("agregar-cepa")?r("button",{staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",attrs:{disabled:""==e.tipos},on:{click:function(t){return e.abrirFormulario(0)}}},[e._v("Agregar")]):e._e()]],2)]),e._v(" "),r("div",{staticClass:"card-body"},[r("transition",{attrs:{"enter-active-class":"zoomInUp"}},[e.formulario?r("Form",{attrs:{tipoG:e.tipoG,idCepa:e.id},on:{cambiarTipo:e.cambiarTipo,cambiarVariableFormulario:e.cambiarVariableFormulario}}):r("Tabla",{attrs:{FieldDefs:e.FieldDefs,detailRowComponent:e.detailRowComponent,tipo:e.tipo,titulo:e.titulo},on:{cambiarTipo:e.cambiarTipo}})],1)],1)])}),[],!1,null,null,null);t.default=j.exports},2:function(e,t,r){"use strict";function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"alpha",{enumerable:!0,get:function(){return i.default}}),Object.defineProperty(t,"alphaNum",{enumerable:!0,get:function(){return o.default}}),Object.defineProperty(t,"numeric",{enumerable:!0,get:function(){return n.default}}),Object.defineProperty(t,"between",{enumerable:!0,get:function(){return s.default}}),Object.defineProperty(t,"email",{enumerable:!0,get:function(){return l.default}}),Object.defineProperty(t,"ipAddress",{enumerable:!0,get:function(){return c.default}}),Object.defineProperty(t,"macAddress",{enumerable:!0,get:function(){return u.default}}),Object.defineProperty(t,"maxLength",{enumerable:!0,get:function(){return d.default}}),Object.defineProperty(t,"minLength",{enumerable:!0,get:function(){return m.default}}),Object.defineProperty(t,"required",{enumerable:!0,get:function(){return p.default}}),Object.defineProperty(t,"requiredIf",{enumerable:!0,get:function(){return f.default}}),Object.defineProperty(t,"requiredUnless",{enumerable:!0,get:function(){return v.default}}),Object.defineProperty(t,"sameAs",{enumerable:!0,get:function(){return g.default}}),Object.defineProperty(t,"url",{enumerable:!0,get:function(){return h.default}}),Object.defineProperty(t,"or",{enumerable:!0,get:function(){return b.default}}),Object.defineProperty(t,"and",{enumerable:!0,get:function(){return _.default}}),Object.defineProperty(t,"not",{enumerable:!0,get:function(){return y.default}}),Object.defineProperty(t,"minValue",{enumerable:!0,get:function(){return C.default}}),Object.defineProperty(t,"maxValue",{enumerable:!0,get:function(){return j.default}}),Object.defineProperty(t,"integer",{enumerable:!0,get:function(){return $.default}}),Object.defineProperty(t,"decimal",{enumerable:!0,get:function(){return w.default}}),t.helpers=void 0;var i=x(r(483)),o=x(r(486)),n=x(r(487)),s=x(r(488)),l=x(r(489)),c=x(r(490)),u=x(r(491)),d=x(r(492)),m=x(r(493)),p=x(r(494)),f=x(r(495)),v=x(r(496)),g=x(r(497)),h=x(r(498)),b=x(r(499)),_=x(r(500)),y=x(r(501)),C=x(r(502)),j=x(r(503)),$=x(r(504)),w=x(r(505)),P=function(e){if(e&&e.__esModule)return e;if(null===e||"object"!==a(e)&&"function"!=typeof e)return{default:e};var t=O();if(t&&t.has(e))return t.get(e);var r={},i=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var o in e)if(Object.prototype.hasOwnProperty.call(e,o)){var n=i?Object.getOwnPropertyDescriptor(e,o):null;n&&(n.get||n.set)?Object.defineProperty(r,o,n):r[o]=e[o]}r.default=e,t&&t.set(e,r);return r}(r(54));function O(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return O=function(){return e},e}function x(e){return e&&e.__esModule?e:{default:e}}t.helpers=P},482:function(e,t,r){var a={"./af":252,"./af.js":252,"./ar":253,"./ar-dz":254,"./ar-dz.js":254,"./ar-kw":255,"./ar-kw.js":255,"./ar-ly":256,"./ar-ly.js":256,"./ar-ma":257,"./ar-ma.js":257,"./ar-sa":258,"./ar-sa.js":258,"./ar-tn":259,"./ar-tn.js":259,"./ar.js":253,"./az":260,"./az.js":260,"./be":261,"./be.js":261,"./bg":262,"./bg.js":262,"./bm":263,"./bm.js":263,"./bn":264,"./bn.js":264,"./bo":265,"./bo.js":265,"./br":266,"./br.js":266,"./bs":267,"./bs.js":267,"./ca":268,"./ca.js":268,"./cs":269,"./cs.js":269,"./cv":270,"./cv.js":270,"./cy":271,"./cy.js":271,"./da":272,"./da.js":272,"./de":273,"./de-at":274,"./de-at.js":274,"./de-ch":275,"./de-ch.js":275,"./de.js":273,"./dv":276,"./dv.js":276,"./el":277,"./el.js":277,"./en-au":278,"./en-au.js":278,"./en-ca":279,"./en-ca.js":279,"./en-gb":280,"./en-gb.js":280,"./en-ie":281,"./en-ie.js":281,"./en-il":282,"./en-il.js":282,"./en-in":283,"./en-in.js":283,"./en-nz":284,"./en-nz.js":284,"./en-sg":285,"./en-sg.js":285,"./eo":286,"./eo.js":286,"./es":287,"./es-do":288,"./es-do.js":288,"./es-us":289,"./es-us.js":289,"./es.js":287,"./et":290,"./et.js":290,"./eu":291,"./eu.js":291,"./fa":292,"./fa.js":292,"./fi":293,"./fi.js":293,"./fil":294,"./fil.js":294,"./fo":295,"./fo.js":295,"./fr":296,"./fr-ca":297,"./fr-ca.js":297,"./fr-ch":298,"./fr-ch.js":298,"./fr.js":296,"./fy":299,"./fy.js":299,"./ga":300,"./ga.js":300,"./gd":301,"./gd.js":301,"./gl":302,"./gl.js":302,"./gom-deva":303,"./gom-deva.js":303,"./gom-latn":304,"./gom-latn.js":304,"./gu":305,"./gu.js":305,"./he":306,"./he.js":306,"./hi":307,"./hi.js":307,"./hr":308,"./hr.js":308,"./hu":309,"./hu.js":309,"./hy-am":310,"./hy-am.js":310,"./id":311,"./id.js":311,"./is":312,"./is.js":312,"./it":313,"./it-ch":314,"./it-ch.js":314,"./it.js":313,"./ja":315,"./ja.js":315,"./jv":316,"./jv.js":316,"./ka":317,"./ka.js":317,"./kk":318,"./kk.js":318,"./km":319,"./km.js":319,"./kn":320,"./kn.js":320,"./ko":321,"./ko.js":321,"./ku":322,"./ku.js":322,"./ky":323,"./ky.js":323,"./lb":324,"./lb.js":324,"./lo":325,"./lo.js":325,"./lt":326,"./lt.js":326,"./lv":327,"./lv.js":327,"./me":328,"./me.js":328,"./mi":329,"./mi.js":329,"./mk":330,"./mk.js":330,"./ml":331,"./ml.js":331,"./mn":332,"./mn.js":332,"./mr":333,"./mr.js":333,"./ms":334,"./ms-my":335,"./ms-my.js":335,"./ms.js":334,"./mt":336,"./mt.js":336,"./my":337,"./my.js":337,"./nb":338,"./nb.js":338,"./ne":339,"./ne.js":339,"./nl":340,"./nl-be":341,"./nl-be.js":341,"./nl.js":340,"./nn":342,"./nn.js":342,"./oc-lnc":343,"./oc-lnc.js":343,"./pa-in":344,"./pa-in.js":344,"./pl":345,"./pl.js":345,"./pt":346,"./pt-br":347,"./pt-br.js":347,"./pt.js":346,"./ro":348,"./ro.js":348,"./ru":349,"./ru.js":349,"./sd":350,"./sd.js":350,"./se":351,"./se.js":351,"./si":352,"./si.js":352,"./sk":353,"./sk.js":353,"./sl":354,"./sl.js":354,"./sq":355,"./sq.js":355,"./sr":356,"./sr-cyrl":357,"./sr-cyrl.js":357,"./sr.js":356,"./ss":358,"./ss.js":358,"./sv":359,"./sv.js":359,"./sw":360,"./sw.js":360,"./ta":361,"./ta.js":361,"./te":362,"./te.js":362,"./tet":363,"./tet.js":363,"./tg":364,"./tg.js":364,"./th":365,"./th.js":365,"./tk":366,"./tk.js":366,"./tl-ph":367,"./tl-ph.js":367,"./tlh":368,"./tlh.js":368,"./tr":369,"./tr.js":369,"./tzl":370,"./tzl.js":370,"./tzm":371,"./tzm-latn":372,"./tzm-latn.js":372,"./tzm.js":371,"./ug-cn":373,"./ug-cn.js":373,"./uk":374,"./uk.js":374,"./ur":375,"./ur.js":375,"./uz":376,"./uz-latn":377,"./uz-latn.js":377,"./uz.js":376,"./vi":378,"./vi.js":378,"./x-pseudo":379,"./x-pseudo.js":379,"./yo":380,"./yo.js":380,"./zh-cn":381,"./zh-cn.js":381,"./zh-hk":382,"./zh-hk.js":382,"./zh-mo":383,"./zh-mo.js":383,"./zh-tw":384,"./zh-tw.js":384};function i(e){var t=o(e);return r(t)}function o(e){if(!r.o(a,e)){var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}return a[e]}i.keys=function(){return Object.keys(a)},i.resolve=o,e.exports=i,i.id=482},483:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("alpha",/^[a-zA-Z]*$/);t.default=a},484:function(e,t,r){"use strict";(function(e){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a="web"===e.env.BUILD?r(485).withParams:r(387).withParams;t.default=a}).call(this,r(187))},485:function(e,t,r){"use strict";(function(e){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.withParams=void 0;var a="undefined"!=typeof window?window:void 0!==e?e:{},i=a.vuelidate?a.vuelidate.withParams:function(e,t){return"object"===r(e)&&void 0!==t?t:e((function(){}))};t.withParams=i}).call(this,r(86))},486:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("alphaNum",/^[a-zA-Z0-9]*$/);t.default=a},487:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("numeric",/^[0-9]*$/);t.default=a},488:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e,t){return(0,a.withParams)({type:"between",min:e,max:t},(function(r){return!(0,a.req)(r)||(!/\s/.test(r)||r instanceof Date)&&+e<=+r&&+t>=+r}))}},489:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("email",/(^$|^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$)/);t.default=a},490:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54),i=(0,a.withParams)({type:"ipAddress"},(function(e){if(!(0,a.req)(e))return!0;if("string"!=typeof e)return!1;var t=e.split(".");return 4===t.length&&t.every(o)}));t.default=i;var o=function(e){if(e.length>3||0===e.length)return!1;if("0"===e[0]&&"0"!==e)return!1;if(!e.match(/^\d+$/))return!1;var t=0|+e;return t>=0&&t<=255}},491:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:":";return(0,a.withParams)({type:"macAddress"},(function(t){if(!(0,a.req)(t))return!0;if("string"!=typeof t)return!1;var r="string"==typeof e&&""!==e?t.split(e):12===t.length||16===t.length?t.match(/.{2}/g):null;return null!==r&&(6===r.length||8===r.length)&&r.every(i)}))};var i=function(e){return e.toLowerCase().match(/^[0-9a-f]{2}$/)}},492:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"maxLength",max:e},(function(t){return!(0,a.req)(t)||(0,a.len)(t)<=e}))}},493:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"minLength",min:e},(function(t){return!(0,a.req)(t)||(0,a.len)(t)>=e}))}},494:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54),i=(0,a.withParams)({type:"required"},(function(e){return"string"==typeof e?(0,a.req)(e.trim()):(0,a.req)(e)}));t.default=i},495:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"requiredIf",prop:e},(function(t,r){return!(0,a.ref)(e,this,r)||(0,a.req)(t)}))}},496:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"requiredUnless",prop:e},(function(t,r){return!!(0,a.ref)(e,this,r)||(0,a.req)(t)}))}},497:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"sameAs",eq:e},(function(t,r){return t===(0,a.ref)(e,this,r)}))}},498:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("url",/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i);t.default=a},499:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return(0,a.withParams)({type:"or"},(function(){for(var e=this,r=arguments.length,a=new Array(r),i=0;i<r;i++)a[i]=arguments[i];return t.length>0&&t.reduce((function(t,r){return t||r.apply(e,a)}),!1)}))}},500:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return(0,a.withParams)({type:"and"},(function(){for(var e=this,r=arguments.length,a=new Array(r),i=0;i<r;i++)a[i]=arguments[i];return t.length>0&&t.reduce((function(t,r){return t&&r.apply(e,a)}),!0)}))}},501:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"not"},(function(t,r){return!(0,a.req)(t)||!e.call(this,t,r)}))}},502:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"minValue",min:e},(function(t){return!(0,a.req)(t)||(!/\s/.test(t)||t instanceof Date)&&+t>=+e}))}},503:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=r(54);t.default=function(e){return(0,a.withParams)({type:"maxValue",max:e},(function(t){return!(0,a.req)(t)||(!/\s/.test(t)||t instanceof Date)&&+t<=+e}))}},504:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("integer",/(^[0-9]*$)|(^-[0-9]+$)/);t.default=a},505:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=(0,r(54).regex)("decimal",/^[-]?\d*(\.\d+)?$/);t.default=a},54:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"withParams",{enumerable:!0,get:function(){return i.default}}),t.regex=t.ref=t.len=t.req=void 0;var a,i=(a=r(484))&&a.__esModule?a:{default:a};function o(e){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var n=function(e){if(Array.isArray(e))return!!e.length;if(null==e)return!1;if(!1===e)return!0;if(e instanceof Date)return!isNaN(e.getTime());if("object"===o(e)){for(var t in e)return!0;return!1}return!!String(e).length};t.req=n;t.len=function(e){return Array.isArray(e)?e.length:"object"===o(e)?Object.keys(e).length:String(e).length};t.ref=function(e,t,r){return"function"==typeof e?e.call(t,r):r[e]};t.regex=function(e,t){return(0,i.default)({type:e},(function(e){return!n(e)||t.test(e)}))}},67:function(e,t,r){"use strict";t.a=function(e){return{methods:{closeEliminar:function(){window.Echo.private("desbloquearBtns"+e).whisper("desbloquearBtns"+e,{id:this.id}),this.$events.fire("eliminarMiBloqueo"+e,{id:this.id})},actualizarTabla:function(){this.mostrarTabla&&this.$refs.tabla&&this.$refs.tabla.refreshDatos()}},created:function(){var t=this;this.$events.on("actualizartabla"+e,(function(e){return t.actualizarTabla()}))},destroyed:function(){this.$events.off("actualizartabla"+e)}}}},77:function(e,t,r){"use strict";t.a=function(e){return{data:function(){return{formulario:!1,id:0}},methods:{abrirFormulario:function(e){this.id=0!=e?e:0,this.formulario=!this.formulario},cerrarFormulario:function(){window.Echo.private("desbloquearBtns"+e).whisper("desbloquearBtns"+e,{id:this.id}),this.$events.fire("eliminarMiBloqueo"+e,{id:this.id}),this.id=0,this.formulario=!this.formulario},cambiarVariableFormulario:function(){this.formulario=!this.formulario}},created:function(){var t=this;this.$events.$on("abrirFormulario"+e,(function(e){return t.abrirFormulario(e)}))},beforeDestroy:function(){this.$events.$off("abrirFormulario"+e)}}}}}]);
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["cepas"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/abrirCerrarFormulario */ "./resources/js/mixins/abrirCerrarFormulario.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _TablaCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TablaCepasComponent.vue */ "./resources/js/components/cepas/TablaCepasComponent.vue");
+/* harmony import */ var _FormCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormCepasComponent.vue */ "./resources/js/components/cepas/FormCepasComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Tabla: _TablaCepasComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Form: _FormCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  props: ["tipoG", "tipo", "detailRowComponent", "titulo", "tituloCepa", "FieldDefs"],
+  mixins: [Object(_mixins_abrirCerrarFormulario__WEBPACK_IMPORTED_MODULE_0__["default"])("Cepa")],
+  methods: {
+    cambiarTipo: function cambiarTipo(tipo) {
+      this.$emit("cambiarTipo", tipo);
+    }
+  },
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState("info_cepas", ["tipos"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre"]))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["tipoG", "idCepa"],
+  data: function data() {
+    return {
+      info: "",
+      parametros: {
+        codigo: "",
+        grupo_microbiano: null,
+        genero: null,
+        especie: null,
+        phylum: null,
+        clase: null,
+        orden: null,
+        reino: null,
+        division: null,
+        familia: null,
+        estado: "",
+        origen: "Donación",
+        publicar: false,
+        otras_caracteristicas: ""
+      },
+      modal: {
+        titulo: "",
+        input: "",
+        tipo: "",
+        grupo_microbiano: 1,
+        genero: 1,
+        errors: false
+      },
+      errors: [],
+      mostrarGrupos: true,
+      disabled: false,
+      nombre: "",
+      nombreBtn: "",
+      classBtn: "",
+      bloquearBtn: false,
+      bloquearBtnModal: false,
+      mensajeCodigo: "",
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+        unique: ""
+      }
+    };
+  },
+  validations: function validations() {
+    if (this.parametros.grupo_microbiano == 1) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else if (this.parametros.grupo_microbiano == 2) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          phylum: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          familia: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else if (this.parametros.grupo_microbiano == 3) {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          division: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          familia: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          codigo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"],
+            minLength: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["minLength"])(4),
+            unique: function unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+
+              return true;
+            }
+          },
+          genero: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          especie: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          phylum: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          clase: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          orden: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          reino: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          },
+          estado: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_2__["required"]
+          }
+        }
+      };
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  methods: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa"])), {}, {
+    evento: function evento() {
+      var _this = this;
+
+      this.bloquearBtn = true;
+      this.$v.parametros.$touch();
+
+      if (!this.$v.$invalid) {
+        if (this.nombre === "Editar Cepa") {
+          axios.put("/cepas/editar/".concat(this.idCepa), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+
+            _this.accionCepas({
+              tipo: "editar",
+              data: res.data
+            });
+
+            window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+              id: res.data.id
+            });
+
+            _this.$events.fire("eliminarMiBloqueoCepa", {
+              id: res.data.id
+            });
+
+            _this.$emit("cambiarVariableFormulario");
+
+            _this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.post("/cepas/agregar", this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.accionCepas({
+                tipo: "agregar",
+                data: res.data
+              });
+
+              _this.$emit("cambiarVariableFormulario");
+
+              _this.toastr("Agregar Cepa", "Cepa agregada con exito!!", "success");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
+      }
+    },
+    llenarParametros: function llenarParametros(cepa) {
+      this.parametros.codigo = this.info.codigo;
+      this.parametros.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.modal.grupo_microbiano = this.info.grupo_microbiano_id;
+      this.parametros.genero = this.info.genero_id;
+      this.modal.genero = this.info.genero_id;
+      this.parametros.especie = this.info.especie_id;
+      this.parametros.estado = this.info.estado;
+      this.parametros.origen = this.info.origen;
+      this.parametros.otras_caracteristicas = this.info.otras_caract;
+
+      switch (this.info.grupo_microbiano_id) {
+        case 1:
+          break;
+
+        case 2:
+          this.parametros.phylum = this.info.hongo.phylum_id;
+          this.parametros.clase = this.info.hongo.clase_id;
+          this.parametros.orden = this.info.hongo.orden_id;
+          this.parametros.familia = this.info.hongo.familia_id;
+          break;
+
+        case 3:
+          this.parametros.division = this.info.levadura.division_id;
+          this.parametros.clase = this.info.levadura.clase_id;
+          this.parametros.orden = this.info.levadura.orden_id;
+          this.parametros.familia = this.info.levadura.familia_id;
+          break;
+
+        case 4:
+          this.parametros.reino = this.info.actinomiceto.reino_id;
+          this.parametros.phylum = this.info.actinomiceto.phylum_id;
+          this.parametros.clase = this.info.actinomiceto.clase_id;
+          this.parametros.orden = this.info.actinomiceto.orden_id;
+          break;
+      }
+
+      if (this.info.publicar == 1) {
+        this.parametros.publicar = true;
+      }
+    },
+    ocultarGrupoMicrobiano: function ocultarGrupoMicrobiano() {
+      if (this.tipoG === 0) {
+        this.mostrarGrupos = true;
+      } else {
+        this.parametros.grupo_microbiano = this.tipoG;
+        this.mostrarGrupos = false;
+        this.cambiarGeneroEspecie();
+      }
+    },
+    cambiarGeneroEspecie: function cambiarGeneroEspecie() {
+      this.parametros.genero = this.getGenerosId(this.parametros.grupo_microbiano)[0].id;
+      this.parametros.especie = this.getEspeciesId(this.parametros.genero)[0].id;
+      this.modal.genero = this.getGenerosId(this.parametros.grupo_microbiano)[0].id;
+    },
+    cambiarEspecie: function cambiarEspecie() {
+      this.parametros.especie = this.getEspeciesId(this.parametros.genero)[0].id;
+    },
+    showModal: function showModal(tipo) {
+      this.modal.errors = false;
+      this.modal.input = "";
+      this.modal.tipo = tipo;
+
+      if (tipo === "genero") {
+        this.modal.titulo = "Agregar Nuevo Género";
+      } else if (tipo === "especie") {
+        this.modal.titulo = "Agregar Nueva Especie";
+      } else if (tipo === "familia") {
+        this.modal.titulo = "Agregar Nueva Familia";
+      } else if (tipo === "orden") {
+        this.modal.titulo = "Agregar Nuevo Orden";
+      } else if (tipo === "clase") {
+        this.modal.titulo = "Agregar Nueva Clase";
+      } else if (tipo === "phylum") {
+        this.modal.titulo = "Agregar Nuevo Phylum";
+      } else if (tipo === "reino") {
+        this.modal.titulo = "Agregar Nuevo Reino";
+      } else {
+        this.modal.titulo = "Agregar Nueva Division";
+      }
+
+      this.$modal.show("agregar-otra-info");
+    },
+    agregarInfo: function agregarInfo() {
+      var _this2 = this;
+
+      if (this.modal.input === "") {
+        this.modal.errors = true;
+      } else {
+        this.bloquearBtnModal = true;
+
+        if (!this.validarNombreUnico) {
+          var parametros = {
+            tipo: this.modal.tipo,
+            nombre: this.modal.input,
+            genero: this.modal.genero,
+            grupo_microbiano: this.modal.grupo_microbiano
+          };
+          axios.post("/info-cepas/agregar", parametros).then(function (res) {
+            _this2.bloquearBtnModal = false;
+
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this2.accionAgregarTipoCepa({
+                info: res.data,
+                tipo: _this2.modal.tipo
+              });
+
+              _this2.$modal.hide("agregar-otra-info");
+
+              _this2.toastr("Agregar Info", "".concat(_this2.modal.tipo, " agregado/a con exito"), "success");
+            }
+          })["catch"](function (error) {
+            if (error.response.status === 403) {
+              _this2.$router.push("/sin-acceso");
+            } else if (error.response.status === 405 || error.response.status === 401) {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this2.bloquearBtnModal = false;
+
+              _this2.toastr("Error!!", "", "error");
+            }
+          });
+        } else {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "favor arregla el error", "error");
+        }
+      }
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.getGrupos.length > 0) {
+        this.parametros.grupo_microbiano = this.getGrupos[0].id;
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGeneros[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspecies[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
+      }
+    }
+  }),
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepas", ["getCepaById", "getCepaByCodigo"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId", "getGeneroByNombre", "getEspecieByNombre", "getPhylumByNombre", "getOrdenByNombre", "getReinoByNombre", "getDivisionByNombre", "getClaseByNombre", "getFamiliaByNombre"])), {}, {
+    validarNombreUnico: function validarNombreUnico() {
+      if (this.modal.input) {
+        switch (this.modal.tipo) {
+          case "genero":
+            if (this.getGeneroByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "especie":
+            if (this.getEspecieByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "familia":
+            if (this.getFamiliaByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "orden":
+            if (this.getOrdenByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "clase":
+            if (this.getClaseByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "phylum":
+            if (this.getPhylumByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "reino":
+            if (this.getReinoByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+
+          case "division":
+            if (this.getDivisionByNombre(this.modal.input)) {
+              return true;
+            }
+
+            break;
+        }
+      }
+
+      return false;
+    },
+    validarCodigo: function validarCodigo() {
+      if (this.parametros.codigo) {
+        if (this.getCepaByCodigo(this.parametros.codigo)) {
+          if (this.getCepaByCodigo(this.parametros.codigo).id != this.info.id) {
+            this.mensajes.unique = "Ya existe una cepa con ese codigo";
+            return true;
+          }
+        }
+      }
+
+      return false;
+    },
+    inputModal: function inputModal() {
+      return this.modal.input;
+    }
+  }),
+  created: function created() {
+    this.verificarSelects();
+    this.ocultarGrupoMicrobiano();
+
+    if (this.idCepa === 0) {
+      this.nombre = "Agregar Nueva Cepa";
+      this.classBtn = "btn-success";
+      this.nombreBtn = "Guardar";
+      this.$emit("cambiarTipo", "agregar");
+    } else {
+      this.info = this.getCepaById(this.idCepa);
+      this.disabled = true;
+      this.nombre = "Editar Cepa";
+      this.classBtn = "btn-warning";
+      this.nombreBtn = "Editar";
+      this.$emit("cambiarTipo", "editar");
+      this.llenarParametros();
+    }
+  },
+  watch: {
+    getGrupos: function getGrupos() {
+      if (this.getGrupos.length > 0) {
+        if (this.tipoG === 0) {
+          this.parametros.grupo_microbiano = this.getGrupos[0].id;
+        } else {
+          this.parametros.grupo_microbiano = this.tipoG;
+        }
+      } else {
+        this.parametros.grupo_microbiano = null;
+      }
+    },
+    getGeneros: function getGeneros() {
+      if (this.getGeneros.length > 0) {
+        this.parametros.genero = this.getGenerosId(this.parametros.grupo_microbiano)[0].id;
+      } else {
+        this.parametros.genero = null;
+      }
+    },
+    getEspecies: function getEspecies() {
+      if (this.getEspecies.length > 0) {
+        this.parametros.especie = this.getEspeciesId(this.parametros.genero)[0].id;
+      } else {
+        this.parametros.especie = null;
+      }
+    },
+    getPhylums: function getPhylums() {
+      if (this.getPhylums.length > 0) {
+        this.parametros.phylum = this.getPhylums[0].id;
+      } else {
+        this.parametros.phylum = null;
+      }
+    },
+    getOrdens: function getOrdens() {
+      if (this.getOrdens.length > 0) {
+        this.parametros.orden = this.getOrdens[0].id;
+      } else {
+        this.parametros.orden = null;
+      }
+    },
+    getReinos: function getReinos() {
+      if (this.getReinos.length > 0) {
+        this.parametros.reino = this.getReinos[0].id;
+      } else {
+        this.parametros.reino = null;
+      }
+    },
+    getDivisiones: function getDivisiones() {
+      if (this.getDivisiones.length > 0) {
+        this.parametros.division = this.getDivisiones[0].id;
+      } else {
+        this.parametros.division = null;
+      }
+    },
+    getClases: function getClases() {
+      if (this.getClases.length > 0) {
+        this.parametros.clase = this.getClases[0].id;
+      } else {
+        this.parametros.clase = null;
+      }
+    },
+    getFamilias: function getFamilias() {
+      if (this.getFamilias.length > 0) {
+        this.parametros.familia = this.getFamilias[0].id;
+      } else {
+        this.parametros.familia = null;
+      }
+    },
+    inputModal: function inputModal() {
+      if (!this.inputModal) {
+        this.modal.errors = true;
+      } else {
+        this.modal.errors = false;
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_websocketsTabla__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/websocketsTabla */ "./resources/js/mixins/websocketsTabla.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["FieldDefs", "detailRowComponent", "tipo", "titulo"],
+  components: {
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      id: "",
+      sortOrder: [{
+        field: "codigo",
+        direction: "asc"
+      }],
+      bloquearBtnModal: false
+    };
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState("cepas", ["cepas"])), vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("cepas", ["getCepasByGrupo"])), {}, {
+    mostrarTabla: function mostrarTabla() {
+      if (this.cepas != "" && this.cepas != null && this.validarTipoCepa) {
+        return true;
+      }
+
+      return false;
+    },
+    validarTipoCepa: function validarTipoCepa() {
+      switch (this.tipo) {
+        case "cepa":
+          return true;
+          break;
+
+        case "bacteria":
+          if (this.getCepasByGrupo(1).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "levadura":
+          if (this.getCepasByGrupo(3).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "hongo":
+          if (this.getCepasByGrupo(2).length > 0) {
+            return true;
+          }
+
+          break;
+
+        case "actinomiceto":
+          if (this.getCepasByGrupo(4).length > 0) {
+            return true;
+          }
+
+          break;
+      }
+
+      return false;
+    }
+  }),
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("cepas", ["accionCepas"])), {}, {
+    beforeOpenEliminar: function beforeOpenEliminar(data) {
+      this.id = data.params.id;
+    },
+    eliminarCepa: function eliminarCepa() {
+      var _this = this;
+
+      this.bloquearBtnModal = true;
+      axios["delete"]("/cepas/eliminar/".concat(this.id)).then(function (res) {
+        _this.bloquearBtnModal = false;
+
+        if (res.data === "negativo") {
+          _this.toastr("Precaución!!", "La cepa cuenta con caracteristicas registradas, favor eliminarlas", "warning", 8000);
+        } else {
+          _this.refrescarTabla = true;
+
+          _this.toastr("Eliminar Cepa", "Cepa eliminada con exito!!", "success", 5000);
+        }
+
+        _this.accionCepas({
+          tipo: "eliminar",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.$modal.hide("modal_eliminar_cepa");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Error!!", "", "error");
+        }
+      });
+    },
+    closeEliminar: function closeEliminar() {
+      window.Echo["private"]("desbloquearBtnsCepa").whisper("desbloquearBtnsCepa", {
+        id: this.id
+      });
+      this.$events.fire("eliminarMiBloqueoCepa", {
+        id: this.id
+      });
+    },
+    actualizarTabla: function actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
+    }
+  }),
+  created: function created() {
+    var _this2 = this;
+
+    this.$emit("cambiarTipo", "tabla");
+    this.$events.on("actualizartablaCepa", function (e) {
+      return _this2.actualizarTabla();
+    });
+  },
+  destroyed: function destroyed() {
+    this.$events.off("actualizartablaCepa");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "main-card mb-3 card" }, [
+    _c("div", { staticClass: "card-header-tab card-header" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "card-header-title font-size-lg text-capitalize font-weight-normal"
+        },
+        [
+          _c("i", {
+            staticClass:
+              "header-icon lnr-laptop-phone mr-3 text-muted opacity-6"
+          }),
+          _vm._v(
+            "\n      Tabla Dinámica Cepas Microbianas " +
+              _vm._s(_vm.tituloCepa) +
+              "\n    "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "btn-actions-pane-right actions-icon-btn" },
+        [
+          !_vm.formulario
+            ? [
+                _vm.getPermisoByNombre("agregar-cepa")
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        attrs: { disabled: _vm.tipos == "" },
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  : _vm._e()
+              ]
+            : [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                    on: { click: _vm.cerrarFormulario }
+                  },
+                  [_vm._v("Cancelar")]
+                )
+              ]
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "card-body" },
+      [
+        _c(
+          "transition",
+          { attrs: { "enter-active-class": "zoomInUp" } },
+          [
+            !_vm.formulario
+              ? _c("Tabla", {
+                  attrs: {
+                    FieldDefs: _vm.FieldDefs,
+                    detailRowComponent: _vm.detailRowComponent,
+                    tipo: _vm.tipo,
+                    titulo: _vm.titulo
+                  },
+                  on: { cambiarTipo: _vm.cambiarTipo }
+                })
+              : _c("Form", {
+                  attrs: { tipoG: _vm.tipoG, idCepa: _vm.id },
+                  on: {
+                    cambiarTipo: _vm.cambiarTipo,
+                    cambiarVariableFormulario: _vm.cambiarVariableFormulario
+                  }
+                })
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.evento($event)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-md-center" }, [
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("div", { staticClass: "main-card mb-3 card" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card-body" },
+                    [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(_vm.nombre))
+                      ]),
+                      _vm._v(" "),
+                      _vm.errors != ""
+                        ? [
+                            _c(
+                              "div",
+                              { staticClass: "alert alert-danger" },
+                              _vm._l(_vm.errors, function(item, index) {
+                                return _c("p", { key: index }, [
+                                  _vm._v(_vm._s(item[0]))
+                                ])
+                              }),
+                              0
+                            )
+                          ]
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "codigo" } }, [
+                            _vm._v("Código")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model.trim",
+                                value: _vm.$v.parametros.codigo.$model,
+                                expression: "$v.parametros.codigo.$model",
+                                modifiers: { trim: true }
+                              }
+                            ],
+                            class: [
+                              "form-control",
+                              _vm.$v.parametros.codigo.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
+                            attrs: {
+                              name: "codigo",
+                              id: "codigo",
+                              placeholder: "...",
+                              type: "text"
+                            },
+                            domProps: {
+                              value: _vm.$v.parametros.codigo.$model
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.$v.parametros.codigo,
+                                  "$model",
+                                  $event.target.value.trim()
+                                )
+                              },
+                              blur: function($event) {
+                                return _vm.$forceUpdate()
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.minLength
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.mensajes.minLength +
+                                      _vm.$v.parametros.codigo.$params.minLength
+                                        .min +
+                                      " letras."
+                                  )
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.codigo.$error &&
+                          !_vm.$v.parametros.codigo.unique
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.unique))
+                              ])
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm.mostrarGrupos && !_vm.disabled
+                        ? _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c(
+                                "label",
+                                { attrs: { for: "grupo_microbiano" } },
+                                [_vm._v("Grupo Microbiano")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.grupo_microbiano,
+                                      expression: "parametros.grupo_microbiano"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    name: "select",
+                                    id: "grupo_microbiano"
+                                  },
+                                  on: {
+                                    change: [
+                                      function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.parametros,
+                                          "grupo_microbiano",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      },
+                                      _vm.cambiarGeneroEspecie
+                                    ]
+                                  }
+                                },
+                                _vm._l(_vm.getGrupos, function(gm, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: gm.id } },
+                                    [_vm._v(_vm._s(gm.nombre))]
+                                  )
+                                }),
+                                0
+                              )
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("label", { attrs: { for: "genero" } }, [
+                            _vm._v("Género")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.genero.$model,
+                                    expression: "$v.parametros.genero.$model",
+                                    modifiers: { trim: true }
+                                  }
+                                ],
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.genero.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
+                                attrs: { name: "select", id: "genero" },
+                                on: {
+                                  change: [
+                                    function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.$v.parametros.genero,
+                                        "$model",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    },
+                                    _vm.cambiarEspecie
+                                  ]
+                                }
+                              },
+                              _vm._l(
+                                _vm.getGenerosId(
+                                  _vm.parametros.grupo_microbiano
+                                ),
+                                function(g, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: g.id } },
+                                    [_vm._v(_vm._s(g.nombre))]
+                                  )
+                                }
+                              ),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _vm.getPermisoByNombre("agregar-otra")
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            return _vm.showModal("genero")
+                                          }
+                                        }
+                                      },
+                                      [_c("i", { staticClass: "fas fa-plus" })]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _vm.$v.parametros.genero.$error &&
+                          !_vm.$v.parametros.genero.required
+                            ? _c("em", { staticClass: "text-error-select" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("label", { attrs: { for: "especie" } }, [
+                            _vm._v("Especie")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.especie.$model,
+                                    expression: "$v.parametros.especie.$model",
+                                    modifiers: { trim: true }
+                                  }
+                                ],
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.especie.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
+                                attrs: { name: "select", id: "especie" },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.$v.parametros.especie,
+                                      "$model",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              _vm._l(
+                                _vm.getEspeciesId(_vm.parametros.genero),
+                                function(e, index) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: e.id } },
+                                    [_vm._v(_vm._s(e.nombre))]
+                                  )
+                                }
+                              ),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _vm.getPermisoByNombre("agregar-otra")
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            return _vm.showModal("especie")
+                                          }
+                                        }
+                                      },
+                                      [_c("i", { staticClass: "fas fa-plus" })]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _vm.$v.parametros.especie.$error &&
+                          !_vm.$v.parametros.especie.required
+                            ? _c("em", { staticClass: "text-error-select" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _vm.parametros.grupo_microbiano === 2 ||
+                          _vm.parametros.grupo_microbiano === 3
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "familia" } }, [
+                                  _vm._v("Familia")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.familia.$model,
+                                          expression:
+                                            "$v.parametros.familia.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.familia.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "familia" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.familia,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getFamilias, function(f, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: f.id }
+                                        },
+                                        [_vm._v(_vm._s(f.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "familia"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.familia.$error &&
+                                !_vm.$v.parametros.familia.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.parametros.grupo_microbiano === 4
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "reino" } }, [
+                                  _vm._v("Reino")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.reino.$model,
+                                          expression:
+                                            "$v.parametros.reino.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.reino.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "reino" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.reino,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getReinos, function(r, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: r.id }
+                                        },
+                                        [_vm._v(_vm._s(r.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("reino")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.reino.$error &&
+                                !_vm.$v.parametros.reino.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ])
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _vm.parametros.grupo_microbiano === 2 ||
+                          _vm.parametros.grupo_microbiano === 4
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "phylum" } }, [
+                                  _vm._v("Phylum")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.phylum.$model,
+                                          expression:
+                                            "$v.parametros.phylum.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.phylum.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "phylum" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.phylum,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getPhylums, function(p, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: p.id }
+                                        },
+                                        [_vm._v(_vm._s(p.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("phylum")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.phylum.$error &&
+                                !_vm.$v.parametros.phylum.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.parametros.grupo_microbiano === 3
+                            ? _c("div", [
+                                _c("label", { attrs: { for: "division" } }, [
+                                  _vm._v("Division")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value:
+                                            _vm.$v.parametros.division.$model,
+                                          expression:
+                                            "$v.parametros.division.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.division.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "division" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.division,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getDivisiones, function(
+                                      d,
+                                      index
+                                    ) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: d.id }
+                                        },
+                                        [_vm._v(_vm._s(d.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "division"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.division.$error &&
+                                !_vm.$v.parametros.division.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ])
+                            : _vm._e()
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm.parametros.grupo_microbiano === 2 ||
+                      _vm.parametros.grupo_microbiano === 3 ||
+                      _vm.parametros.grupo_microbiano === 4
+                        ? _c("div", [
+                            _c("div", { staticClass: "form-row" }, [
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("label", { attrs: { for: "clase" } }, [
+                                  _vm._v("Clase")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.clase.$model,
+                                          expression:
+                                            "$v.parametros.clase.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.clase.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "clase" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.clase,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getClases, function(c, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: c.id }
+                                        },
+                                        [_vm._v(_vm._s(c.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("clase")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.clase.$error &&
+                                !_vm.$v.parametros.clase.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-6" }, [
+                                _c("label", { attrs: { for: "orden" } }, [
+                                  _vm._v("Orden")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.orden.$model,
+                                          expression:
+                                            "$v.parametros.orden.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.orden.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "orden" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            _vm.$v.parametros.orden,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.getOrdens, function(o, index) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: o.id }
+                                        },
+                                        [_vm._v(_vm._s(o.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal("orden")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.orden.$error &&
+                                !_vm.$v.parametros.orden.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ])
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "estado" } }, [
+                                _vm._v("Estado")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model.trim",
+                                    value: _vm.$v.parametros.estado.$model,
+                                    expression: "$v.parametros.estado.$model",
+                                    modifiers: { trim: true }
+                                  }
+                                ],
+                                class: [
+                                  "form-control",
+                                  _vm.$v.parametros.estado.$error
+                                    ? "error-input-select"
+                                    : ""
+                                ],
+                                attrs: {
+                                  name: "estado",
+                                  id: "estado",
+                                  placeholder: "...",
+                                  type: "text"
+                                },
+                                domProps: {
+                                  value: _vm.$v.parametros.estado.$model
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.$v.parametros.estado,
+                                      "$model",
+                                      $event.target.value.trim()
+                                    )
+                                  },
+                                  blur: function($event) {
+                                    return _vm.$forceUpdate()
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.$v.parametros.estado.$error &&
+                              !_vm.$v.parametros.estado.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-input" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "origen" } }, [
+                                _vm._v("Origen")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.parametros.origen,
+                                      expression: "parametros.origen"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { name: "select", id: "origen" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "origen",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Donación" } },
+                                    [_vm._v("Donación")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "Compra" } }, [
+                                    _vm._v("Compra")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    { attrs: { value: "Proyecto" } },
+                                    [_vm._v("Proyecto")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        value: "Aislamiento del Laboratorio"
+                                      }
+                                    },
+                                    [_vm._v("Aislamiento del Laboratorio")]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c(
+                            "label",
+                            { attrs: { for: "otras_caracteristicas" } },
+                            [_vm._v("Otras Caracteristicas")]
+                          ),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.parametros.otras_caracteristicas,
+                                expression: "parametros.otras_caracteristicas"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              name: "text",
+                              id: "otras_caracteristicas"
+                            },
+                            domProps: {
+                              value: _vm.parametros.otras_caracteristicas
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.parametros,
+                                  "otras_caracteristicas",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "custom-checkbox custom-control mb-2" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.parametros.publicar,
+                                expression: "parametros.publicar"
+                              }
+                            ],
+                            staticClass: "custom-control-input",
+                            attrs: { type: "checkbox", id: "publicar" },
+                            domProps: {
+                              checked: Array.isArray(_vm.parametros.publicar)
+                                ? _vm._i(_vm.parametros.publicar, null) > -1
+                                : _vm.parametros.publicar
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.parametros.publicar,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "publicar",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.parametros,
+                                        "publicar",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.parametros, "publicar", $$c)
+                                }
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "custom-control-label",
+                              attrs: { for: "publicar" }
+                            },
+                            [_vm._v("Desea publicar la cepa?")]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "mt-2 btn btn-block",
+                          class: _vm.classBtn,
+                          attrs: { disabled: _vm.bloquearBtn }
+                        },
+                        [_vm._v(_vm._s(_vm.nombreBtn))]
+                      )
+                    ],
+                    2
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "agregar-otra-info",
+            classes: "my_modal",
+            maxWidth: 450,
+            adaptive: true,
+            height: "auto",
+            scrollable: true
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v(_vm._s(_vm.modal.titulo))]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("agregar-otra-info")
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _vm.modal.tipo === "genero"
+                ? _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "grupo_microbiano-modal" } }, [
+                      _vm._v("Grupo Microbiano")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.modal.grupo_microbiano,
+                            expression: "modal.grupo_microbiano"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { name: "select", id: "grupo_microbiano-modal" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.modal,
+                              "grupo_microbiano",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.getGrupos, function(gm, index) {
+                        return _c(
+                          "option",
+                          { key: index, domProps: { value: gm.id } },
+                          [_vm._v(_vm._s(gm.nombre))]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.modal.tipo === "especie"
+                ? _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "genero-modal" } }, [
+                      _vm._v("Genero")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.modal.genero,
+                            expression: "modal.genero"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { name: "select", id: "genero-modal" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.modal,
+                              "genero",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(
+                        _vm.getGenerosId(_vm.parametros.grupo_microbiano),
+                        function(g, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: g.id } },
+                            [_vm._v(_vm._s(g.nombre))]
+                          )
+                        }
+                      ),
+                      0
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "position-relative form-group" }, [
+                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.modal.input,
+                      expression: "modal.input"
+                    }
+                  ],
+                  class: [
+                    "form-control",
+                    _vm.validarNombreUnico || _vm.modal.errors
+                      ? "error-input-select"
+                      : ""
+                  ],
+                  attrs: {
+                    name: "nombre",
+                    id: "nombre",
+                    placeholder: "...",
+                    type: "text"
+                  },
+                  domProps: { value: _vm.modal.input },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.modal, "input", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.validarNombreUnico
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v("Ya existe un registro con ese nombre")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.modal.errors
+                  ? _c("em", { staticClass: "text-error-input" }, [
+                      _vm._v(_vm._s(_vm.mensajes.required))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("agregar-otra-info")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                  on: { click: _vm.agregarInfo }
+                },
+                [_vm._v("Agregar")]
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.mostrarTabla
+        ? [
+            _c("MyVuetable", {
+              ref: "tabla",
+              attrs: {
+                apiUrl: "/info-panel/" + _vm.tipo + "s-tabla",
+                fields: _vm.FieldDefs,
+                sortOrder: _vm.sortOrder,
+                detailRowComponent: _vm.detailRowComponent,
+                nameGet: _vm.tipo + "s"
+              }
+            })
+          ]
+        : [
+            _c("div", { staticClass: "text-center" }, [
+              _c("h5", { staticClass: "mt-5 mb-5" }, [
+                _c("span", { staticClass: "pr-1" }, [
+                  _c("b", { staticClass: "text-success" }, [
+                    _vm._v("AÚN NO SE HAN AGREGADO " + _vm._s(_vm.titulo))
+                  ])
+                ])
+              ])
+            ])
+          ],
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: {
+            name: "modal_eliminar_cepa",
+            classes: "my_modal",
+            maxWidth: 400,
+            adaptive: true,
+            height: "auto",
+            scrollable: true
+          },
+          on: {
+            "before-open": _vm.beforeOpenEliminar,
+            closed: _vm.closeEliminar
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "exampleModalLongTitle" }
+                },
+                [_vm._v("Eliminar Cepa Microbiana")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_eliminar_cepa")
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("×")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("p", [_vm._v("Esta segura/o de eliminar la Cepa?.")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.$modal.hide("modal_eliminar_cepa")
+                    }
+                  }
+                },
+                [_vm._v("Cancelar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                  on: { click: _vm.eliminarCepa }
+                },
+                [_vm._v("Eliminar")]
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ContainerFormTablaComponent.vue":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/cepas/ContainerFormTablaComponent.vue ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae& */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae&");
+/* harmony import */ var _ContainerFormTablaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContainerFormTablaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ContainerFormTablaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/ContainerFormTablaComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContainerFormTablaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ContainerFormTablaComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContainerFormTablaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/ContainerFormTablaComponent.vue?vue&type=template&id=15bcfaae&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContainerFormTablaComponent_vue_vue_type_template_id_15bcfaae___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/FormCepasComponent.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/cepas/FormCepasComponent.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCepasComponent.vue?vue&type=template&id=9c23e2ca& */ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&");
+/* harmony import */ var _FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/FormCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCepasComponent.vue?vue&type=template&id=9c23e2ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/FormCepasComponent.vue?vue&type=template&id=9c23e2ca&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCepasComponent_vue_vue_type_template_id_9c23e2ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/TablaCepasComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/cepas/TablaCepasComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaCepasComponent.vue?vue&type=template&id=17d5da46& */ "./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46&");
+/* harmony import */ var _TablaCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaCepasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TablaCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/TablaCepasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaCepasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaCepasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaCepasComponent.vue?vue&type=template&id=17d5da46& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/TablaCepasComponent.vue?vue&type=template&id=17d5da46&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaCepasComponent_vue_vue_type_template_id_17d5da46___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/mixins/abrirCerrarFormulario.js":
+/*!******************************************************!*\
+  !*** ./resources/js/mixins/abrirCerrarFormulario.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var abrirCerrarFormualrio = function abrirCerrarFormualrio(tipoM) {
+  return {
+    data: function data() {
+      return {
+        formulario: false,
+        id: 0
+      };
+    },
+    methods: {
+      abrirFormulario: function abrirFormulario(id) {
+        if (id != 0) {
+          this.id = id;
+        } else {
+          this.id = 0;
+        }
+
+        this.formulario = !this.formulario;
+      },
+      cerrarFormulario: function cerrarFormulario() {
+        window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
+          id: this.id
+        });
+        this.$events.fire("eliminarMiBloqueo" + tipoM, {
+          id: this.id
+        });
+        this.id = 0;
+        this.formulario = !this.formulario;
+      },
+      cambiarVariableFormulario: function cambiarVariableFormulario() {
+        this.formulario = !this.formulario;
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.$on("abrirFormulario" + tipoM, function (e) {
+        return _this.abrirFormulario(e);
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      this.$events.$off("abrirFormulario" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (abrirCerrarFormualrio);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/websocketsTabla.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/websocketsTabla.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var websocketsTabla = function websocketsTabla(tipoM) {
+  return {
+    methods: {
+      closeEliminar: function closeEliminar() {
+        window.Echo["private"]("desbloquearBtns" + tipoM).whisper("desbloquearBtns" + tipoM, {
+          id: this.id
+        });
+        this.$events.fire("eliminarMiBloqueo" + tipoM, {
+          id: this.id
+        });
+      },
+      actualizarTabla: function actualizarTabla() {
+        if (this.mostrarTabla) {
+          if (this.$refs.tabla) {
+            this.$refs.tabla.refreshDatos();
+          }
+        }
+      }
+    },
+    created: function created() {
+      var _this = this;
+
+      this.$events.on("actualizartabla" + tipoM, function (e) {
+        return _this.actualizarTabla();
+      });
+    },
+    destroyed: function destroyed() {
+      this.$events.off("actualizartabla" + tipoM);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (websocketsTabla);
+
+/***/ })
+
+}]);

@@ -142,8 +142,8 @@ export default {
   },
   created() {
     let array = [];
-    if (this.$route.params.cepaLevaduraId) {
-      array = this.$route.params.cepaLevaduraId.split("-");
+    if (this.$route.params.cepaLevaduraSlug) {
+      array = this.$route.params.cepaLevaduraSlug.split("-");
       this.url += parseInt(array[array.length - 1]);
     } else {
       array = this.$route.params.cepaSlug.split("-");

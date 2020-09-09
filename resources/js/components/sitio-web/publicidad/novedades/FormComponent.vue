@@ -369,7 +369,7 @@ export default {
     ...vuex.mapGetters("publicidad", [
       "getNovedadById",
       "getNovedadByTitulo",
-      "getNovedadByPubliclar",
+      "getNovedadByPublicar",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Novedad") {
@@ -409,10 +409,10 @@ export default {
       return false;
     },
     validarPublicacion() {
-      if (this.getNovedadByPubliclar.length < 7) return false;
+      if (this.getNovedadByPublicar.length < 7) return false;
       if (this.validarTipoForm) return true;
       if (
-        this.getNovedadByPubliclar.find((novedad) => novedad.id == this.info.id)
+        this.getNovedadByPublicar.find((novedad) => novedad.id == this.info.id)
       )
         return false;
 

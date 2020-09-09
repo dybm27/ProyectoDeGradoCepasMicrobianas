@@ -1,1 +1,2051 @@
-!function(t){const r=t.es=t.es||{};r.dictionary=Object.assign(r.dictionary||{},{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto",'The color is invalid. Try "#FF0000" or "rgb(255,0,0)" or "red".':"","The URL must not be empty.":"La URL no debe estar vacía",'The value is invalid. Try "10px" or "2em" or simply "2".':"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}),r.getPluralForm=function(t){return 1!=t}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={})),(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{139:function(t,r,e){"use strict";r.a={data:function(){return{active1:"active",active2:"",active3:"",mostrar1:!1,mostrar2:!1,mostrar3:!1,mostrarForm1:!0,mostrarForm2:!1,mostrarForm3:!1,mostrarBtnAgregar:!0,modificarForm:!1,caract:null,num:0}},methods:{agregarInfo:function(t){this.accionAgregarCaract({tipo:"macro",data:t}),this.mostrarBtnAgregar=!0,this.modificarForm=!0},editarInfo:function(t){this.accionEditarCaract({tipo:"macro",data:t}),this.modificarForm=!0},eliminarInfo:function(t){this.accionEliminarCaract({tipo:"macro",data:t}),this.mostrarBtnAgregar=!0,this.modificarForm=!0,this.formatear(this.num)},eliminarMedio:function(){this.mostrarForm1?(this.caract=this.getCaractMacro[0],this.num=1):this.mostrarForm2?(this.caract=this.getCaractMacro[1],this.num=2):(this.caract=this.getCaractMacro[2],this.num=3),this.$modal.show("modal_eliminar_caract")},cambiarVariable:function(){this.modificarForm=!1},cancelar:function(){this.mostrarForm1?(this.mostrarForm1=!1,this.mostrar1=!1,this.mostrarBtnAgregar=!0):this.mostrarForm2?(this.mostrarForm2=!1,this.cambiarActive(1),this.mostrar2=!1,this.mostrarBtnAgregar=!0):this.mostrarForm3&&(this.mostrarForm3=!1,this.cambiarActive(2),this.mostrar3=!1,this.mostrarBtnAgregar=!0)},abrirForm:function(){this.mostrar1?this.getCaractMacro[0]&&!this.mostrar2?(this.cambiarActive(2),this.mostrar2=!0,this.mostrarBtnAgregar=!1):this.getCaractMacro[1]&&!this.mostrar3&&(this.cambiarActive(3),this.mostrar3=!0,this.mostrarBtnAgregar=!1):(this.cambiarActive(1),this.mostrar1=!0,this.mostrarBtnAgregar=!1)},llenarForms:function(){this.getCaractMacro[0]&&(this.medio1=this.getCaractMacro[0].medio,this.mostrar1=!0),this.getCaractMacro[1]&&(this.medio2=this.getCaractMacro[1].medio,this.mostrar2=!0),this.getCaractMacro[2]&&(this.medio3=this.getCaractMacro[2].medio,this.mostrar3=!0,this.mostrarBtnAgregar=!1)},cambiarActive:function(t){switch(t){case 1:this.active1="active",this.active2="",this.active3="",this.mostrarForm1=!0,this.mostrarForm2=!1,this.mostrarForm3=!1;break;case 2:this.active1="",this.active2="active",this.active3="",this.mostrarForm1=!1,this.mostrarForm2=!0,this.mostrarForm3=!1;break;case 3:this.active1="",this.active2="",this.active3="active",this.mostrarForm1=!1,this.mostrarForm2=!1,this.mostrarForm3=!0}},formatear:function(t){switch(t){case 1:this.mostrar3?(this.mostrar3=!1,this.cambiarActive(2)):this.mostrar2?(this.mostrar2=!1,this.cambiarActive(1)):(this.mostrar1=!1,this.mostrarForm1=!1);break;case 2:this.mostrar3?(this.mostrar3=!1,this.cambiarActive(2)):(this.mostrar2=!1,this.cambiarActive(1));break;case 3:this.mostrar3=!1,this.cambiarActive(2)}}},computed:{computedActive1:function(){return this.active1},computedActive2:function(){return this.active2},computedActive3:function(){return this.active3},computedMostrarForm1:function(){return this.mostrarForm1},computedMostrarForm2:function(){return this.mostrarForm2},computedMostrarForm3:function(){return this.mostrarForm3},mostrarForms:function(){return this.getCaractMacro[0]||this.mostrar1?(this.llenarForms(),!0):(this.mostrarForm1=!1,!1)},mostrarBtnEliminar:function(){return!(!this.getCaractMacro[0]||!this.mostrarForm1)||(!(!this.getCaractMacro[1]||!this.mostrarForm2)||!(!this.getCaractMacro[2]||!this.mostrarForm3))},mostrarBtnCancelar:function(){return!(this.getCaractMacro[0]||!this.mostrarForm1)||(!(this.getCaractMacro[1]||!this.mostrarForm2)||!(this.getCaractMacro[2]||!this.mostrarForm3))},mostrarBtnAgregarComputed:function(){return this.mostrarBtnAgregar},medio1:{get:function(){if(this.getCaractMacro[0])return this.getCaractMacro[0].medio},set:function(){}},medio2:{get:function(){if(this.getCaractMacro[1])return this.getCaractMacro[1].medio},set:function(){}},medio3:{get:function(){if(this.getCaractMacro[2])return this.getCaractMacro[2].medio},set:function(){}}}}},31:function(t,r,e){"use strict";var a=e(157),i=e.n(a),o={props:["id","imagen","mostrarBtnCroppie","zoom","editar","enableZoom","boundaryHeigth","viewportWidth"],data:function(){return{croppie:null,btnAprobar:!0}},mounted:function(){this.crearCroppie()},methods:{crearCroppie:function(){var t=document.getElementById(this.id);this.croppie=new i.a(t,{viewport:{width:this.viewportWidth,height:200},boundary:{height:this.boundaryHeigth},enableZoom:this.enableZoom}),this.croppie.bind({url:this.imagen,zoom:this.zoom})},resultado:function(){var t=this;this.croppie.result().then((function(r){t.btnAprobar=!1,t.$emit("cambiarValorImagen",r)}))},cancelar:function(){this.btnAprobar=!0,this.$emit("cambiarValorImagen","")}},watch:{imagen:function(){this.imagen&&(this.btnAprobar=!0,this.croppie.destroy(),this.crearCroppie())}},computed:{mostrarMensaje:function(){return!(!this.btnAprobar||this.editar)}}},s=e(1),n=Object(s.a)(o,(function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",{staticClass:"container"},[e("div",{attrs:{id:t.id}}),t._v(" "),t.mostrarBtnCroppie?[t.btnAprobar?[e("button",{staticClass:"btn btn-success",on:{click:t.resultado}},[t._v("Aprobar Imagen")]),t._v(" "),t.mostrarMensaje?e("em",{staticClass:"text-danger small"},[t._v("Debe Aprobar la imagen")]):t._e()]:[e("button",{staticClass:"btn btn-danger float-right",on:{click:t.cancelar}},[t._v("Cancelar")])]]:t._e()],2)}),[],!1,null,null,null);r.a=n.exports},33:function(t,r,e){"use strict";var a={props:["tipo","tipoCaract","caract","url"],data:function(){return{bloquearBtnModal:!1}},mixins:[e(6).a],methods:{eliminar:function(){var t=this;this.bloquearBtnModal=!0,axios.delete("/cepas/".concat(this.url+"/"+this.caract.id)).then((function(r){t.bloquearBtnModal=!1,t.$modal.hide("modal_eliminar_caract"),t.$emit("eliminar",r.data),t.toastr("Eliminar "+t.tipo,t.tipoCaract+" eliminadas con exito!!","success")})).catch((function(r){403===r.response.status?t.$router.push("/sin-acceso"):405===r.response.status||401===r.response.status?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(t.bloquearBtnModal=!1,t.toastr("Error!!","","error"))}))}}},i=e(1),o=Object(i.a)(a,(function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",[e("transition",{attrs:{name:"fade"}},[e("modal",{attrs:{name:"modal_eliminar_caract",classes:"my_modal",maxWidth:400,adaptive:!0,height:"auto",scrollable:!0}},[e("div",{staticClass:"modal-content"},[e("div",{staticClass:"modal-header"},[e("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[t._v("Eliminar "+t._s(t.tipoCaract))]),t._v(" "),e("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(r){return t.$modal.hide("modal_eliminar_caract")}}},[e("span",{attrs:{"aria-hidden":"true"}},[t._v("×")])])]),t._v(" "),e("div",{staticClass:"modal-body"},[e("p",[t._v("Esta segura/o de eliminar la "+t._s(t.tipo)+"?.")])]),t._v(" "),e("div",{staticClass:"modal-footer"},[e("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(r){return t.$modal.hide("modal_eliminar_caract")}}},[t._v("Cancelar")]),t._v(" "),e("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:t.bloquearBtnModal},on:{click:t.eliminar}},[t._v("Eliminar")])])])])],1)],1)}),[],!1,null,null,null);r.a=o.exports},445:function(t,r,e){"use strict";e.r(r);var a=e(0),i=e(6),o=e(139),s=e(87),n=e(31),c=e(60),l=e(2);function m(t,r){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),e.push.apply(e,a)}return e}function d(t){for(var r=1;r<arguments.length;r++){var e=null!=arguments[r]?arguments[r]:{};r%2?m(Object(e),!0).forEach((function(r){u(t,r,e[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):m(Object(e)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(e,r))}))}return t}function u(t,r,e){return r in t?Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[r]=e,t}var h={components:{Croppie:n.a,ModalAgregarInfo:c.a},props:["info","modificarInfo"],data:function(){return{parametros:{cepaId:"",medio:"",color:null,textura:null,caracteristicas_reverso:"",imagen:""},tituloModal:"",tipoModal:"",tituloForm:"",nomBtn:"",errors:[],bloquearBtn:!1,bloquearBtnModal:!1,mensajes:{required:"El campo es requerido",minLength:"El campo debe tener como minimo "}}},validations:{parametros:{medio:{required:l.required},color:{required:l.required},textura:{required:l.required},caracteristicas_reverso:{required:l.required},imagen:{required:l.required}}},mixins:[i.a,s.a],methods:{evento:function(){var t=this;this.bloquearBtn=!0,this.$v.parametros.$touch(),this.$v.$invalid?(this.bloquearBtn=!1,this.toastr("Error!!","Favor llenar correctamente los campos","error")):"Agregar Medio"===this.tituloForm?axios.post("/cepas/hongo/caract-macro",this.parametros).then((function(r){"http://127.0.0.1:8000/"===r.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(t.bloquearBtn=!1,t.errors=[],t.$refs.inputImagen.value="",t.tituloForm="Editar Medio",t.nomBtn="Editar",t.$emit("agregar",r.data),t.toastr("Agregar Medio","Medio agregado con exito!!","success"))})).catch((function(r){t.verificarError(r.response.status,r.response.data.errors)})):axios.put("/cepas/hongo/caract-macro/".concat(this.info.id),this.parametros).then((function(r){t.bloquearBtn=!1,t.errors=[],t.$refs.inputImagen.value="",t.$emit("editar",r.data),t.toastr("Editar Medio","Medio editado con éxito!!","success")})).catch((function(r){t.verificarError(r.response.status,r.response.data.errors)}))},llenarInfo:function(){this.parametros.medio=this.info.medio,this.parametros.color=this.info.color_id,this.parametros.textura=this.info.textura_id,this.parametros.caracteristicas_reverso="null"===this.info.caracteristicas_reverso?"":this.info.caracteristicas_reverso,this.parametros.imagen=this.info.imagen,this.imagenMiniatura=this.info.imagenPublica},showModal:function(t){this.tipoModal=t,"color"===t?this.tituloModal="Agregar Nuevo Color":"textura"===t&&(this.tituloModal="Agregar Nueva Textura"),this.$modal.show("modal_agregar_info_caract")},verificarSelects:function(){this.obtenerColores.length>0?this.parametros.color=this.obtenerColores[0].id:this.parametros.color=null,this.obtenerTexturas.length>0?this.parametros.textura=this.obtenerTexturas[0].id:this.parametros.textura=null}},computed:d(d(d({},a.a.mapGetters(["getPermisoByNombre"])),a.a.mapGetters("info_caract",["getInfoCaractMacroHongos"])),{},{btnClase:function(){return"Agregar Medio"===this.tituloForm?"btn-success":"btn-warning"},validarTipoForm:function(){return"Agregar Medio"===this.tituloForm},titulo:function(){return this.tituloForm},nomBtnComputed:function(){return this.nomBtn},obtenerColores:function(){return this.getInfoCaractMacroHongos.colores},obtenerTexturas:function(){return this.getInfoCaractMacroHongos.texturas}}),mounted:function(){void 0===this.info?(this.tituloForm="Agregar Medio",this.nomBtn="Agregar"):(this.llenarInfo(),this.tituloForm="Editar Medio",this.nomBtn="Editar");var t=[];this.$route.params.cepaHongoSlug?(t=this.$route.params.cepaHongoSlug.split("-"),this.parametros.cepaId=parseInt(t[t.length-1])):(t=this.$route.params.cepaSlug.split("-"),this.parametros.cepaId=parseInt(t[t.length-1]))},created:function(){this.verificarSelects()},watch:{modificarInfo:function(){this.modificarInfo&&(this.llenarInfo(),this.$emit("cambiarVariable"))},obtenerColores:function(){this.obtenerColores.length>0?this.parametros.color=this.obtenerColores[0].id:this.parametros.color=null},obtenerTexturas:function(){this.obtenerTexturas.length>0?this.parametros.textura=this.obtenerTexturas[0].id:this.parametros.textura=null}}},p=e(1);function g(t,r){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),e.push.apply(e,a)}return e}function b(t){for(var r=1;r<arguments.length;r++){var e=null!=arguments[r]?arguments[r]:{};r%2?g(Object(e),!0).forEach((function(r){v(t,r,e[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):g(Object(e)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(e,r))}))}return t}function v(t,r,e){return r in t?Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[r]=e,t}var f={components:{FormCaractMacro:Object(p.a)(h,(function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",[e("div",{staticClass:"container"},[e("div",{staticClass:"row justify-content-md-center"},[e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"main-card mb-3 card"},[e("div",{staticClass:"card-body"},[e("h5",{staticClass:"card-title"},[t._v(t._s(t.titulo))]),t._v(" "),e("form",{on:{submit:function(r){return r.preventDefault(),t.evento(r)}}},[""!=t.errors?[e("div",{staticClass:"alert alert-danger"},t._l(t.errors,(function(r,a){return e("p",{key:a},[t._v(t._s(r[0]))])})),0)]:t._e(),t._v(" "),e("div",{staticClass:"position-relative form-group"},[e("label",{attrs:{for:"medio"}},[t._v("Medio")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model.trim",value:t.$v.parametros.medio.$model,expression:"$v.parametros.medio.$model",modifiers:{trim:!0}}],class:["form-control",t.$v.parametros.medio.$error?"error-input-select":""],attrs:{name:"medio",id:"medio",placeholder:"...",type:"text"},domProps:{value:t.$v.parametros.medio.$model},on:{input:function(r){r.target.composing||t.$set(t.$v.parametros.medio,"$model",r.target.value.trim())},blur:function(r){return t.$forceUpdate()}}}),t._v(" "),t.$v.parametros.medio.$error&&!t.$v.parametros.medio.required?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.mensajes.required))]):t._e()]),t._v(" "),t.getInfoCaractMacroHongos?[e("div",{staticClass:"form-row"},[e("div",{staticClass:"col-md-6"},[e("label",{attrs:{for:"color"}},[t._v("Color")]),t._v(" "),e("div",{staticClass:"input-group mb-3"},[e("select",{directives:[{name:"model",rawName:"v-model.trim",value:t.$v.parametros.color.$model,expression:"$v.parametros.color.$model",modifiers:{trim:!0}}],class:["form-control",t.$v.parametros.color.$error?"error-input-select":""],attrs:{name:"select",id:"color"},on:{change:function(r){var e=Array.prototype.filter.call(r.target.options,(function(t){return t.selected})).map((function(t){return"_value"in t?t._value:t.value}));t.$set(t.$v.parametros.color,"$model",r.target.multiple?e:e[0])}}},t._l(t.obtenerColores,(function(r,a){return e("option",{key:a,domProps:{value:r.id}},[t._v(t._s(r.nombre))])})),0),t._v(" "),t.getPermisoByNombre("agregar-otra")?e("div",{staticClass:"input-group-append"},[e("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(r){return r.preventDefault(),t.showModal("color")}}},[e("i",{staticClass:"fas fa-plus"})])]):t._e()]),t._v(" "),t.$v.parametros.color.$error&&!t.$v.parametros.color.required?e("em",{staticClass:"text-error-select"},[t._v(t._s(t.mensajes.required))]):t._e()]),t._v(" "),e("div",{staticClass:"col-md-6"},[e("label",{attrs:{for:"borde"}},[t._v("Textura")]),t._v(" "),e("div",{staticClass:"input-group mb-3"},[e("select",{directives:[{name:"model",rawName:"v-model.trim",value:t.$v.parametros.textura.$model,expression:"$v.parametros.textura.$model",modifiers:{trim:!0}}],class:["form-control",t.$v.parametros.textura.$error?"error-input-select":""],attrs:{name:"select",id:"textura"},on:{change:function(r){var e=Array.prototype.filter.call(r.target.options,(function(t){return t.selected})).map((function(t){return"_value"in t?t._value:t.value}));t.$set(t.$v.parametros.textura,"$model",r.target.multiple?e:e[0])}}},t._l(t.obtenerTexturas,(function(r,a){return e("option",{key:a,domProps:{value:r.id}},[t._v(t._s(r.nombre))])})),0),t._v(" "),t.getPermisoByNombre("agregar-otra")?e("div",{staticClass:"input-group-append"},[e("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(r){return r.preventDefault(),t.showModal("textura")}}},[e("i",{staticClass:"fas fa-plus"})])]):t._e()]),t._v(" "),t.$v.parametros.textura.$error&&!t.$v.parametros.textura.required?e("em",{staticClass:"text-error-select"},[t._v(t._s(t.mensajes.required))]):t._e()])])]:t._e(),t._v(" "),e("div",{staticClass:"position-relative form-group"},[e("label",{attrs:{for:"imagen"}},[t._v("Imagen")]),t._v(" "),e("input",{ref:"inputImagen",class:["form-control-file",t.$v.parametros.imagen.$error?"error-input-select":""],attrs:{name:"imagen",id:"imagen",type:"file",accept:"image/jpeg"},on:{change:t.obtenerImagen}}),t._v(" "),t.imagenError?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.imagenError))]):t._e(),t._v(" "),t.$v.parametros.imagen.$error&&!t.$v.parametros.imagen.required?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.mensajes.required))]):t._e()]),t._v(" "),e("div",{staticClass:"position-relative form-group"},[e("label",{attrs:{for:"otras_caracteristicas"}},[t._v("Características del reverso")]),t._v(" "),e("textarea",{directives:[{name:"model",rawName:"v-model.trim",value:t.$v.parametros.caracteristicas_reverso.$model,expression:"$v.parametros.caracteristicas_reverso.$model",modifiers:{trim:!0}}],class:["form-control",t.$v.parametros.caracteristicas_reverso.$error?"error-input-select":""],attrs:{name:"text",id:"caracteristicas_reverso"},domProps:{value:t.$v.parametros.caracteristicas_reverso.$model},on:{input:function(r){r.target.composing||t.$set(t.$v.parametros.caracteristicas_reverso,"$model",r.target.value.trim())},blur:function(r){return t.$forceUpdate()}}}),t._v(" "),t.$v.parametros.caracteristicas_reverso.$error&&!t.$v.parametros.caracteristicas_reverso.required?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.mensajes.required))]):t._e()]),t._v(" "),e("button",{staticClass:"mb-2 mr-2 btn btn-block",class:t.btnClase,attrs:{disabled:t.bloquearBtn}},[t._v(t._s(t.nomBtnComputed))])],2)])])]),t._v(" "),e("div",{staticClass:"col-sm-6"},[e("div",{staticClass:"main-card mb-3 card"},[e("div",{staticClass:"card-body"},[t.mostraImagen?[t.validarCroppie?[e("Croppie",{attrs:{id:"croppie",imagen:t.mostraImagen,mostrarBtnCroppie:t.mostrarBtnCroppie,enableZoom:!1,zoom:0,editar:!0,boundaryHeigth:300,viewportWidth:200},on:{cambiarValorImagen:t.cambiarValorImagen}})]:[e("Croppie",{attrs:{id:"croppie",imagen:t.mostraImagen,mostrarBtnCroppie:t.mostrarBtnCroppie,zoom:1,enableZoom:!0,editar:!1,boundaryHeigth:300,viewportWidth:200},on:{cambiarValorImagen:t.cambiarValorImagen}})]]:[t._m(0)]],2)])])])]),t._v(" "),e("ModalAgregarInfo",{attrs:{url:"info-caract-hongos",tipo:t.tipoModal,titulo:t.tituloModal,tipoForm:"hongo"}})],1)}),[function(){var t=this.$createElement,r=this._self._c||t;return r("div",{staticClass:"text-center"},[r("h5",{staticClass:"mt-5 mb-5"},[r("span",{staticClass:"pr-1"},[r("b",{staticClass:"text-success"},[this._v("SIN IMAGEN")])])])])}],!1,null,null,null).exports,ModalEliminar:e(33).a},mixins:[i.a,o.a],methods:b({},a.a.mapActions("cepa",["accionAgregarCaract","accionEditarCaract","accionEliminarCaract"])),computed:b({},a.a.mapGetters("cepa",["getCaractMacro"]))},C=Object(p.a)(f,(function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",[e("div",{staticClass:"tabs-animation"},[e("div",{staticClass:"mb-3 card"},[e("div",{staticClass:"card-header-tab card-header"},[t._m(0),t._v(" "),e("div",{staticClass:"btn-actions-pane-right text-capitalize"},[e("button",{directives:[{name:"show",rawName:"v-show",value:t.mostrarBtnCancelar,expression:"mostrarBtnCancelar"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:t.cancelar}},[t._v("Cancelar")]),t._v(" "),e("button",{directives:[{name:"show",rawName:"v-show",value:t.mostrarBtnEliminar,expression:"mostrarBtnEliminar"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:t.eliminarMedio}},[t._v("Eliminar Medio")]),t._v(" "),e("button",{directives:[{name:"show",rawName:"v-show",value:t.mostrarBtnAgregarComputed,expression:"mostrarBtnAgregarComputed"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",on:{click:t.abrirForm}},[t._v("Agregar Medio")])])]),t._v(" "),e("div",{staticClass:"row"},[e("div",{staticClass:"col-md-12"},[t.mostrarForms?[e("div",{staticClass:"tabs-lg-alternate card-header"},[e("ul",{staticClass:"nav nav-justified"},[t.mostrar1?[e("li",{staticClass:"nav-item"},[e("a",{staticClass:"nav-link",class:t.computedActive1,on:{click:function(r){return t.cambiarActive(1)}}},[e("div",{staticClass:"widget-number text-success"},[t._v("Medio 1")]),t._v(" "),e("div",{staticClass:"tab-subheading"},[t._m(1),t._v("\n                        "+t._s(t.medio1)+"\n                      ")])])])]:t._e(),t._v(" "),t.mostrar2?[e("li",{staticClass:"nav-item"},[e("a",{staticClass:"nav-link",class:t.computedActive2,on:{click:function(r){return t.cambiarActive(2)}}},[e("div",{staticClass:"widget-number text-success"},[t._v("Medio 2")]),t._v(" "),e("div",{staticClass:"tab-subheading"},[t._m(2),t._v("\n                        "+t._s(t.medio2)+"\n                      ")])])])]:t._e(),t._v(" "),t.mostrar3?[e("li",{staticClass:"nav-item"},[e("a",{staticClass:"nav-link",class:t.computedActive3,on:{click:function(r){return t.cambiarActive(3)}}},[e("div",{staticClass:"widget-number text-success"},[t._v("Medio 3")]),t._v(" "),e("div",{staticClass:"tab-subheading"},[t._m(3),t._v("\n                        "+t._s(t.medio3)+"\n                      ")])])])]:t._e()],2)]),t._v(" "),e("div",{staticClass:"tab-content"},[t.mostrar1?[e("div",{staticClass:"tab-pane",class:t.computedActive1},[e("div",{staticClass:"card-body"},[t.computedMostrarForm1?[e("FormCaractMacro",{attrs:{info:t.getCaractMacro[0],modificarInfo:t.modificarForm},on:{agregar:t.agregarInfo,editar:t.editarInfo,cambiarVariable:t.cambiarVariable}})]:t._e()],2)])]:t._e(),t._v(" "),t.mostrar2?[e("div",{staticClass:"tab-pane",class:t.computedActive2},[e("div",{staticClass:"card-body"},[t.computedMostrarForm2?[e("FormCaractMacro",{attrs:{info:t.getCaractMacro[1],modificarInfo:t.modificarForm},on:{agregar:t.agregarInfo,editar:t.editarInfo,cambiarVariable:t.cambiarVariable}})]:t._e()],2)])]:t._e(),t._v(" "),t.mostrar3?[e("div",{staticClass:"tab-pane",class:t.computedActive3},[e("div",{staticClass:"card-body"},[t.computedMostrarForm3?[e("FormCaractMacro",{attrs:{info:t.getCaractMacro[2],modificarInfo:t.modificarForm},on:{agregar:t.agregarInfo,editar:t.editarInfo,cambiarVariable:t.cambiarVariable}})]:t._e()],2)])]:t._e()],2)]:[t._m(4)]],2)])])]),t._v(" "),e("ModalEliminar",{attrs:{tipo:"Característica",tipoCaract:"Característica Macroscópica",caract:t.caract,url:"hongo/caract-macro"},on:{eliminar:t.eliminarInfo}})],1)}),[function(){var t=this.$createElement,r=this._self._c||t;return r("div",{staticClass:"card-header-title font-size-lg text-capitalize font-weight-normal"},[r("i",{staticClass:"header-icon lnr-charts icon-gradient bg-happy-green"}),this._v("\n          Características Macroscópicas\n        ")])},function(){var t=this.$createElement,r=this._self._c||t;return r("span",{staticClass:"pr-2 opactiy-6"},[r("i",{staticClass:"pe-7s-note2"})])},function(){var t=this.$createElement,r=this._self._c||t;return r("span",{staticClass:"pr-2 opactiy-6"},[r("i",{staticClass:"pe-7s-note2"})])},function(){var t=this.$createElement,r=this._self._c||t;return r("span",{staticClass:"pr-2 opactiy-6"},[r("i",{staticClass:"pe-7s-note2"})])},function(){var t=this.$createElement,r=this._self._c||t;return r("div",{staticClass:"text-center"},[r("h5",{staticClass:"mt-5 mb-5"},[r("span",{staticClass:"pr-1"},[r("b",{staticClass:"text-success"},[this._v("NO SE HA AGREGADO NINGÚN MEDIO")])])])])}],!1,null,null,null);r.default=C.exports},60:function(t,r,e){"use strict";var a=e(6),i=e(0);function o(t,r){var e=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),e.push.apply(e,a)}return e}function s(t){for(var r=1;r<arguments.length;r++){var e=null!=arguments[r]?arguments[r]:{};r%2?o(Object(e),!0).forEach((function(r){n(t,r,e[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(e)):o(Object(e)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(e,r))}))}return t}function n(t,r,e){return r in t?Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}):t[r]=e,t}var c={props:["titulo","tipo","url","tipoForm"],data:function(){return{nombre:"",errors:[],bloquearBtnModal:!1,mensajes:{required:"El campo es requerido.",unique:"Ya existe un registro con ese nombre."}}},validations:{nombre:{required:e(2).required,unique:function(t){return""==t||!this.validarNombreUnico}}},mixins:[a.a],methods:s(s(s(s(s({},i.a.mapActions("info_caract",["accionAgregarTipoCaractLevadura","accionAgregarTipoCaractActinomiceto","accionAgregarTipoCaractHongo","accionAgregarTipoCaractBacteria"])),i.a.mapActions("info_caract",[])),i.a.mapActions("info_caract",[])),i.a.mapActions("info_caract",[])),{},{closed:function(){this.nombre="",this.errors=[]},agregarInfo:function(){var t=this;if(this.bloquearBtnModal=!0,this.$v.nombre.$touch(),this.$v.$invalid)this.bloquearBtnModal=!1,this.toastr("Error!!","Favor corregir el Error.","error");else{var r={tipo:this.tipo,nombre:this.nombre};axios.post("/".concat(this.url,"/agregar"),r).then((function(r){"http://127.0.0.1:8000/"===r.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(t.bloquearBtnModal=!1,t.guardarInfo(r.data),t.$modal.hide("modal_agregar_info_caract"),t.toastr("Agregar Info!!","".concat(t.tipo," agregado/a con exito"),"success"))})).catch((function(r){t.verificarErrorAxios(r.response.status,r.response.data.errors)}))}},guardarInfo:function(t){switch(this.tipoForm){case"bacteria":this.accionAgregarTipoCaractBacteria({info:t,tipo:this.tipo});break;case"hongo":this.accionAgregarTipoCaractHongo({info:t,tipo:this.tipo});break;case"levadura":this.accionAgregarTipoCaractLevadura({info:t,tipo:this.tipo});break;case"actinomiceto":this.accionAgregarTipoCaractActinomiceto({info:t,tipo:this.tipo})}},verificarErrorAxios:function(t,r){403===t?this.$router.push("/sin-acceso"):405===t||401===t?window.location.href="/":(422===t&&(this.errors=[],this.errors=r),this.bloquearBtnModal=!1,this.toastr("Error!!","","error"))}}),computed:s(s({},i.a.mapGetters("info_caract",["getInfoCaractMacroBacteriasByNombre","getInfoCaractMicroBacteriasByNombre","getInfoMetodoConserBacteriasByNombre","getInfoCaractMacroHongosByNombre","getInfoCaractMicroHongosByNombre","getInfoMetodoConserHongosByNombre","getInfoCaractMacroLevadurasByNombre","getInfoMetodoConserLevadurasByNombre","getInfoCaractMacroActinomicetosByNombre","getInfoCaractMicroActinomicetosByNombre"])),{},{validarNombreUnico:function(){switch(this.tipoForm){case"bacteria":if("borde"==this.tipo||"color"==this.tipo||"detalle"==this.tipo||"elevacion"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("forma_micro"==this.tipo){if(this.getInfoCaractMicroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"hongo":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("conidioforo"==this.tipo||"esporaA"==this.tipo||"esporaS"==this.tipo){if(this.getInfoCaractMicroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"levadura":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;break;case"actinomiceto":if("borde"==this.tipo||"color"==this.tipo||"textura"==this.tipo||"pigmento"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(("forma_micro"==this.tipo||"conidioforo"==this.tipo||"tincion"==this.tipo||"micelio"==this.tipo)&&this.getInfoCaractMicroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1}}})},l=e(1),m=Object(l.a)(c,(function(){var t=this,r=t.$createElement,e=t._self._c||r;return e("div",[e("transition",{attrs:{name:"fade"}},[e("modal",{attrs:{name:"modal_agregar_info_caract",classes:"my_modal",maxWidth:450,adaptive:!0,height:"auto",scrollable:!0},on:{closed:t.closed}},[e("div",{staticClass:"modal-content"},[e("div",{staticClass:"modal-header"},[e("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[t._v(t._s(t.titulo))]),t._v(" "),e("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(r){return t.$modal.hide("modal_agregar_info_caract")}}},[e("span",{attrs:{"aria-hidden":"true"}},[t._v("×")])])]),t._v(" "),e("div",{staticClass:"modal-body"},[e("div",{staticClass:"position-relative form-group"},[e("label",{attrs:{for:"nombre"}},[t._v("Nombre")]),t._v(" "),e("input",{directives:[{name:"model",rawName:"v-model.trim",value:t.$v.nombre.$model,expression:"$v.nombre.$model",modifiers:{trim:!0}}],class:["form-control",t.errors.nombre||t.$v.nombre.$error?"error-input-select":""],attrs:{name:"nombre",id:"nombre",placeholder:"...",type:"text"},domProps:{value:t.$v.nombre.$model},on:{input:function(r){r.target.composing||t.$set(t.$v.nombre,"$model",r.target.value.trim())},blur:function(r){return t.$forceUpdate()}}}),t._v(" "),t.errors.nombre?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.errors.nombre[0]))]):t._e(),t._v(" "),t.$v.nombre.$error&&!t.$v.nombre.required?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.mensajes.required))]):t._e(),t._v(" "),t.$v.nombre.$error&&!t.$v.nombre.unique?e("em",{staticClass:"text-error-input"},[t._v(t._s(t.mensajes.unique))]):t._e()])]),t._v(" "),e("div",{staticClass:"modal-footer"},[e("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(r){return t.$modal.hide("modal_agregar_info_caract")}}},[t._v("Cancelar")]),t._v(" "),e("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:t.bloquearBtnModal},on:{click:t.agregarInfo}},[t._v("Agregar")])])])])],1)],1)}),[],!1,null,null,null);r.a=m.exports},87:function(t,r,e){"use strict";var a={data:function(){return{imagenMiniatura:"",imagenError:""}},methods:{cambiarValorImagen:function(t){t?this.parametros.imagen=t:this.validarTipoForm?this.parametros.imagen="":(this.parametros.imagen=this.info.imagen,this.imagenMiniatura=this.info.imagenPublica,this.$refs.inputImagen.value="")},obtenerImagen:function(t){var r=t.target.files[0];r?!/(.jpg|.jpeg|.png)$/i.exec(r.name)||r.size>2e6?(this.imagenError="La imagen debe ser en formato .png .jpg y menor a 2Mb.",this.$refs.inputImagen.value="",this.info?(this.imagenMiniatura=this.info.imagenPublica,this.parametros.imagen=this.info.imagen):(this.imagenMiniatura="",this.parametros.imagen="")):(this.imagenError="",this.cargarImagen(r)):this.info?(this.imagenMiniatura=this.info.imagenPublica,this.parametros.imagen=this.info.imagen):(this.parametros.imagen="",this.imagenMiniatura="")},cargarImagen:function(t){var r=this,e=new Image;e.onload=function(t){r.imagenMiniatura=e.src},e.src=URL.createObjectURL(t)}},computed:{mostraImagen:function(){return this.imagenMiniatura},mostrarBtnCroppie:function(){return!this.info||this.imagenMiniatura!=this.info.imagenPublica},validarCroppie:function(){return!!this.info&&this.imagenMiniatura==this.info.imagenPublica}}};r.a=a}}]);
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-macro-hongo"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
+/* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Croppie: _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  props: ["info", "modificarInfo"],
+  data: function data() {
+    return {
+      parametros: {
+        cepaId: "",
+        medio: "",
+        color: null,
+        textura: null,
+        caracteristicas_reverso: "",
+        imagen: ""
+      },
+      tituloModal: "",
+      tipoModal: "",
+      tituloForm: "",
+      nomBtn: "",
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo "
+      }
+    };
+  },
+  validations: {
+    parametros: {
+      medio: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      color: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      textura: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      caracteristicas_reverso: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      }
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  methods: {
+    evento: function evento() {
+      var _this = this;
+
+      this.bloquearBtn = true;
+      this.$v.parametros.$touch();
+
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
+          axios.post("/cepas/hongo/caract-macro", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+              _this.errors = [];
+              _this.$refs.inputImagen.value = "";
+              _this.tituloForm = "Editar Medio";
+              _this.nomBtn = "Editar";
+
+              _this.$emit("agregar", res.data);
+
+              _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/cepas/hongo/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Medio", "Medio editado con éxito!!", "success");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
+      }
+    },
+    llenarInfo: function llenarInfo() {
+      this.parametros.medio = this.info.medio;
+      this.parametros.color = this.info.color_id;
+      this.parametros.textura = this.info.textura_id;
+      this.parametros.caracteristicas_reverso = this.info.caracteristicas_reverso === "null" ? "" : this.info.caracteristicas_reverso;
+      this.parametros.imagen = this.info.imagen;
+      this.imagenMiniatura = this.info.imagenPublica;
+    },
+    showModal: function showModal(tipo) {
+      this.tipoModal = tipo;
+
+      if (tipo === "color") {
+        this.tituloModal = "Agregar Nuevo Color";
+      } else if (tipo === "textura") {
+        this.tituloModal = "Agregar Nueva Textura";
+      }
+
+      this.$modal.show("modal_agregar_info_caract");
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    }
+  },
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroHongos"])), {}, {
+    btnClase: function btnClase() {
+      if (this.tituloForm === "Agregar Medio") {
+        return "btn-success";
+      } else {
+        return "btn-warning";
+      }
+    },
+    validarTipoForm: function validarTipoForm() {
+      if (this.tituloForm === "Agregar Medio") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    titulo: function titulo() {
+      return this.tituloForm;
+    },
+    nomBtnComputed: function nomBtnComputed() {
+      return this.nomBtn;
+    },
+    obtenerColores: function obtenerColores() {
+      return this.getInfoCaractMacroHongos.colores;
+    },
+    obtenerTexturas: function obtenerTexturas() {
+      return this.getInfoCaractMacroHongos.texturas;
+    }
+  }),
+  mounted: function mounted() {
+    if (this.info === undefined) {
+      this.tituloForm = "Agregar Medio";
+      this.nomBtn = "Agregar";
+    } else {
+      this.llenarInfo();
+      this.tituloForm = "Editar Medio";
+      this.nomBtn = "Editar";
+    }
+
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    } else {
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    }
+  },
+  created: function created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo: function modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerColores: function obtenerColores() {
+      if (this.obtenerColores.length > 0) {
+        this.parametros.color = this.obtenerColores[0].id;
+      } else {
+        this.parametros.color = null;
+      }
+    },
+    obtenerTexturas: function obtenerTexturas() {
+      if (this.obtenerTexturas.length > 0) {
+        this.parametros.textura = this.obtenerTexturas[0].id;
+      } else {
+        this.parametros.textura = null;
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/infoCaractMacro */ "./resources/js/mixins/infoCaractMacro.js");
+/* harmony import */ var _forms_caract_FormCaractMacroComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../forms-caract/FormCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue");
+/* harmony import */ var _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalEliminarCaractComponent.vue */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormCaractMacro: _forms_caract_FormCaractMacroComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ModalEliminar: _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_infoCaractMacro__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"])),
+  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMacro"]))
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-md-center" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", { staticClass: "main-card mb-3 card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(_vm.titulo))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.evento($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm.errors != ""
+                      ? [
+                          _c(
+                            "div",
+                            { staticClass: "alert alert-danger" },
+                            _vm._l(_vm.errors, function(item, index) {
+                              return _c("p", { key: index }, [
+                                _vm._v(_vm._s(item[0]))
+                              ])
+                            }),
+                            0
+                          )
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "position-relative form-group" }, [
+                      _c("label", { attrs: { for: "medio" } }, [
+                        _vm._v("Medio")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.medio.$model,
+                            expression: "$v.parametros.medio.$model",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.medio.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
+                        attrs: {
+                          name: "medio",
+                          id: "medio",
+                          placeholder: "...",
+                          type: "text"
+                        },
+                        domProps: { value: _vm.$v.parametros.medio.$model },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$v.parametros.medio,
+                              "$model",
+                              $event.target.value.trim()
+                            )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.medio.$error &&
+                      !_vm.$v.parametros.medio.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _vm.getInfoCaractMacroHongos
+                      ? [
+                          _c("div", { staticClass: "form-row" }, [
+                            _c("div", { staticClass: "col-md-6" }, [
+                              _c("label", { attrs: { for: "color" } }, [
+                                _vm._v("Color")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "input-group mb-3" }, [
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.color.$model,
+                                        expression:
+                                          "$v.parametros.color.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.color.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: { name: "select", id: "color" },
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.$v.parametros.color,
+                                          "$model",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      }
+                                    }
+                                  },
+                                  _vm._l(_vm.obtenerColores, function(
+                                    f,
+                                    index
+                                  ) {
+                                    return _c(
+                                      "option",
+                                      { key: index, domProps: { value: f.id } },
+                                      [_vm._v(_vm._s(f.nombre))]
+                                    )
+                                  }),
+                                  0
+                                ),
+                                _vm._v(" "),
+                                _vm.getPermisoByNombre("agregar-otra")
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group-append" },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.showModal("color")
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fas fa-plus"
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.color.$error &&
+                              !_vm.$v.parametros.color.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-6" }, [
+                              _c("label", { attrs: { for: "borde" } }, [
+                                _vm._v("Textura")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "input-group mb-3" }, [
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.textura.$model,
+                                        expression:
+                                          "$v.parametros.textura.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.textura.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: { name: "select", id: "textura" },
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.$v.parametros.textura,
+                                          "$model",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      }
+                                    }
+                                  },
+                                  _vm._l(_vm.obtenerTexturas, function(
+                                    b,
+                                    index
+                                  ) {
+                                    return _c(
+                                      "option",
+                                      { key: index, domProps: { value: b.id } },
+                                      [_vm._v(_vm._s(b.nombre))]
+                                    )
+                                  }),
+                                  0
+                                ),
+                                _vm._v(" "),
+                                _vm.getPermisoByNombre("agregar-otra")
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group-append" },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.showModal("textura")
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fas fa-plus"
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.textura.$error &&
+                              !_vm.$v.parametros.textura.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
+                            ])
+                          ])
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "position-relative form-group" }, [
+                      _c("label", { attrs: { for: "imagen" } }, [
+                        _vm._v("Imagen")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        ref: "inputImagen",
+                        class: [
+                          "form-control-file",
+                          _vm.$v.parametros.imagen.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
+                        attrs: {
+                          name: "imagen",
+                          id: "imagen",
+                          type: "file",
+                          accept: "image/jpeg"
+                        },
+                        on: { change: _vm.obtenerImagen }
+                      }),
+                      _vm._v(" "),
+                      _vm.imagenError
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.imagenError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.imagen.$error &&
+                      !_vm.$v.parametros.imagen.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "position-relative form-group" }, [
+                      _c("label", { attrs: { for: "otras_caracteristicas" } }, [
+                        _vm._v("Características del reverso")
+                      ]),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value:
+                              _vm.$v.parametros.caracteristicas_reverso.$model,
+                            expression:
+                              "$v.parametros.caracteristicas_reverso.$model",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.caracteristicas_reverso.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
+                        attrs: { name: "text", id: "caracteristicas_reverso" },
+                        domProps: {
+                          value:
+                            _vm.$v.parametros.caracteristicas_reverso.$model
+                        },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$v.parametros.caracteristicas_reverso,
+                              "$model",
+                              $event.target.value.trim()
+                            )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.caracteristicas_reverso.$error &&
+                      !_vm.$v.parametros.caracteristicas_reverso.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "mb-2 mr-2 btn btn-block",
+                        class: _vm.btnClase,
+                        attrs: { disabled: _vm.bloquearBtn }
+                      },
+                      [_vm._v(_vm._s(_vm.nomBtnComputed))]
+                    )
+                  ],
+                  2
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", { staticClass: "main-card mb-3 card" }, [
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [
+                  _vm.mostraImagen
+                    ? [
+                        _vm.validarCroppie
+                          ? [
+                              _c("Croppie", {
+                                attrs: {
+                                  id: "croppie",
+                                  imagen: _vm.mostraImagen,
+                                  mostrarBtnCroppie: _vm.mostrarBtnCroppie,
+                                  enableZoom: false,
+                                  zoom: 0,
+                                  editar: true,
+                                  boundaryHeigth: 300,
+                                  viewportWidth: 200
+                                },
+                                on: {
+                                  cambiarValorImagen: _vm.cambiarValorImagen
+                                }
+                              })
+                            ]
+                          : [
+                              _c("Croppie", {
+                                attrs: {
+                                  id: "croppie",
+                                  imagen: _vm.mostraImagen,
+                                  mostrarBtnCroppie: _vm.mostrarBtnCroppie,
+                                  zoom: 1,
+                                  enableZoom: true,
+                                  editar: false,
+                                  boundaryHeigth: 300,
+                                  viewportWidth: 200
+                                },
+                                on: {
+                                  cambiarValorImagen: _vm.cambiarValorImagen
+                                }
+                              })
+                            ]
+                      ]
+                    : [_vm._m(0)]
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-hongos",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "hongo"
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [_vm._v("SIN IMAGEN")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "tabs-animation" }, [
+        _c("div", { staticClass: "mb-3 card" }, [
+          _c("div", { staticClass: "card-header-tab card-header" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "btn-actions-pane-right text-capitalize" },
+              [
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostrarBtnCancelar,
+                        expression: "mostrarBtnCancelar"
+                      }
+                    ],
+                    staticClass:
+                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                    on: { click: _vm.cancelar }
+                  },
+                  [_vm._v("Cancelar")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostrarBtnEliminar,
+                        expression: "mostrarBtnEliminar"
+                      }
+                    ],
+                    staticClass:
+                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                    on: { click: _vm.eliminarMedio }
+                  },
+                  [_vm._v("Eliminar Medio")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostrarBtnAgregarComputed,
+                        expression: "mostrarBtnAgregarComputed"
+                      }
+                    ],
+                    staticClass:
+                      "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                    on: { click: _vm.abrirForm }
+                  },
+                  [_vm._v("Agregar Medio")]
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-md-12" },
+              [
+                _vm.mostrarForms
+                  ? [
+                      _c(
+                        "div",
+                        { staticClass: "tabs-lg-alternate card-header" },
+                        [
+                          _c(
+                            "ul",
+                            { staticClass: "nav nav-justified" },
+                            [
+                              _vm.mostrar1
+                                ? [
+                                    _c("li", { staticClass: "nav-item" }, [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "nav-link",
+                                          class: _vm.computedActive1,
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.cambiarActive(1)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "widget-number text-success"
+                                            },
+                                            [_vm._v("Medio 1")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "tab-subheading" },
+                                            [
+                                              _vm._m(1),
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.medio1) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ]
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.mostrar2
+                                ? [
+                                    _c("li", { staticClass: "nav-item" }, [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "nav-link",
+                                          class: _vm.computedActive2,
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.cambiarActive(2)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "widget-number text-success"
+                                            },
+                                            [_vm._v("Medio 2")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "tab-subheading" },
+                                            [
+                                              _vm._m(2),
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.medio2) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ]
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _vm.mostrar3
+                                ? [
+                                    _c("li", { staticClass: "nav-item" }, [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "nav-link",
+                                          class: _vm.computedActive3,
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.cambiarActive(3)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "widget-number text-success"
+                                            },
+                                            [_vm._v("Medio 3")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "tab-subheading" },
+                                            [
+                                              _vm._m(3),
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.medio3) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ]
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "tab-content" },
+                        [
+                          _vm.mostrar1
+                            ? [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane",
+                                    class: _vm.computedActive1
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "card-body" },
+                                      [
+                                        _vm.computedMostrarForm1
+                                          ? [
+                                              _c("FormCaractMacro", {
+                                                attrs: {
+                                                  info: _vm.getCaractMacro[0],
+                                                  modificarInfo:
+                                                    _vm.modificarForm
+                                                },
+                                                on: {
+                                                  agregar: _vm.agregarInfo,
+                                                  editar: _vm.editarInfo,
+                                                  cambiarVariable:
+                                                    _vm.cambiarVariable
+                                                }
+                                              })
+                                            ]
+                                          : _vm._e()
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              ]
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.mostrar2
+                            ? [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane",
+                                    class: _vm.computedActive2
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "card-body" },
+                                      [
+                                        _vm.computedMostrarForm2
+                                          ? [
+                                              _c("FormCaractMacro", {
+                                                attrs: {
+                                                  info: _vm.getCaractMacro[1],
+                                                  modificarInfo:
+                                                    _vm.modificarForm
+                                                },
+                                                on: {
+                                                  agregar: _vm.agregarInfo,
+                                                  editar: _vm.editarInfo,
+                                                  cambiarVariable:
+                                                    _vm.cambiarVariable
+                                                }
+                                              })
+                                            ]
+                                          : _vm._e()
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              ]
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.mostrar3
+                            ? [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane",
+                                    class: _vm.computedActive3
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "card-body" },
+                                      [
+                                        _vm.computedMostrarForm3
+                                          ? [
+                                              _c("FormCaractMacro", {
+                                                attrs: {
+                                                  info: _vm.getCaractMacro[2],
+                                                  modificarInfo:
+                                                    _vm.modificarForm
+                                                },
+                                                on: {
+                                                  agregar: _vm.agregarInfo,
+                                                  editar: _vm.editarInfo,
+                                                  cambiarVariable:
+                                                    _vm.cambiarVariable
+                                                }
+                                              })
+                                            ]
+                                          : _vm._e()
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              ]
+                            : _vm._e()
+                        ],
+                        2
+                      )
+                    ]
+                  : [_vm._m(4)]
+              ],
+              2
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ModalEliminar", {
+        attrs: {
+          tipo: "Característica",
+          tipoCaract: "Característica Macroscópica",
+          caract: _vm.caract,
+          url: "hongo/caract-macro"
+        },
+        on: { eliminar: _vm.eliminarInfo }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-charts icon-gradient bg-happy-green"
+        }),
+        _vm._v("\n          Características Macroscópicas\n        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "pr-2 opactiy-6" }, [
+      _c("i", { staticClass: "pe-7s-note2" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "pr-2 opactiy-6" }, [
+      _c("i", { staticClass: "pe-7s-note2" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "pr-2 opactiy-6" }, [
+      _c("i", { staticClass: "pe-7s-note2" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("NO SE HA AGREGADO NINGÚN MEDIO")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCaractMacroComponent.vue?vue&type=template&id=058df2d5& */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5&");
+/* harmony import */ var _FormCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCaractMacroComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractMacroComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractMacroComponent.vue?vue&type=template&id=058df2d5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMacroComponent.vue?vue&type=template&id=058df2d5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMacroComponent_vue_vue_type_template_id_058df2d5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoCaractMacroComponent.vue?vue&type=template&id=66f20970& */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970&");
+/* harmony import */ var _InfoCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InfoCaractMacroComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InfoCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoCaractMacroComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoCaractMacroComponent.vue?vue&type=template&id=66f20970& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue?vue&type=template&id=66f20970&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMacroComponent_vue_vue_type_template_id_66f20970___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/mixins/infoCaractMacro.js":
+/*!************************************************!*\
+  !*** ./resources/js/mixins/infoCaractMacro.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var infoCaractMacroMixin = {
+  data: function data() {
+    return {
+      active1: "active",
+      active2: "",
+      active3: "",
+      mostrar1: false,
+      mostrar2: false,
+      mostrar3: false,
+      mostrarForm1: true,
+      mostrarForm2: false,
+      mostrarForm3: false,
+      mostrarBtnAgregar: true,
+      modificarForm: false,
+      caract: null,
+      num: 0
+    };
+  },
+  methods: {
+    agregarInfo: function agregarInfo(data) {
+      this.accionAgregarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+    },
+    editarInfo: function editarInfo(data) {
+      this.accionEditarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.modificarForm = true;
+    },
+    eliminarInfo: function eliminarInfo(data) {
+      this.accionEliminarCaract({
+        tipo: "macro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.modificarForm = true;
+      this.formatear(this.num);
+    },
+    eliminarMedio: function eliminarMedio() {
+      if (this.mostrarForm1) {
+        this.caract = this.getCaractMacro[0];
+        this.num = 1;
+      } else if (this.mostrarForm2) {
+        this.caract = this.getCaractMacro[1];
+        this.num = 2;
+      } else {
+        this.caract = this.getCaractMacro[2];
+        this.num = 3;
+      }
+
+      this.$modal.show("modal_eliminar_caract");
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.modificarForm = false;
+    },
+    cancelar: function cancelar() {
+      if (this.mostrarForm1) {
+        this.mostrarForm1 = false;
+        this.mostrar1 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm2) {
+        this.mostrarForm2 = false;
+        this.cambiarActive(1);
+        this.mostrar2 = false;
+        this.mostrarBtnAgregar = true;
+      } else if (this.mostrarForm3) {
+        this.mostrarForm3 = false;
+        this.cambiarActive(2);
+        this.mostrar3 = false;
+        this.mostrarBtnAgregar = true;
+      }
+    },
+    abrirForm: function abrirForm() {
+      if (!this.mostrar1) {
+        this.cambiarActive(1);
+        this.mostrar1 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[0] && !this.mostrar2) {
+        this.cambiarActive(2);
+        this.mostrar2 = true;
+        this.mostrarBtnAgregar = false;
+      } else if (this.getCaractMacro[1] && !this.mostrar3) {
+        this.cambiarActive(3);
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    llenarForms: function llenarForms() {
+      if (this.getCaractMacro[0]) {
+        this.medio1 = this.getCaractMacro[0].medio;
+        this.mostrar1 = true;
+      }
+
+      if (this.getCaractMacro[1]) {
+        this.medio2 = this.getCaractMacro[1].medio;
+        this.mostrar2 = true;
+      }
+
+      if (this.getCaractMacro[2]) {
+        this.medio3 = this.getCaractMacro[2].medio;
+        this.mostrar3 = true;
+        this.mostrarBtnAgregar = false;
+      }
+    },
+    cambiarActive: function cambiarActive(num) {
+      switch (num) {
+        case 1:
+          this.active1 = "active";
+          this.active2 = "";
+          this.active3 = "";
+          this.mostrarForm1 = true;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = false;
+          break;
+
+        case 2:
+          this.active1 = "";
+          this.active2 = "active";
+          this.active3 = "";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = true;
+          this.mostrarForm3 = false;
+          break;
+
+        case 3:
+          this.active1 = "";
+          this.active2 = "";
+          this.active3 = "active";
+          this.mostrarForm1 = false;
+          this.mostrarForm2 = false;
+          this.mostrarForm3 = true;
+          break;
+      }
+    },
+    formatear: function formatear(num) {
+      switch (num) {
+        case 1:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else if (this.mostrar2) {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          } else {
+            this.mostrar1 = false;
+            this.mostrarForm1 = false;
+          }
+
+          break;
+
+        case 2:
+          if (this.mostrar3) {
+            this.mostrar3 = false;
+            this.cambiarActive(2);
+          } else {
+            this.mostrar2 = false;
+            this.cambiarActive(1);
+          }
+
+          break;
+
+        case 3:
+          this.mostrar3 = false;
+          this.cambiarActive(2);
+          break;
+      }
+    }
+  },
+  computed: {
+    computedActive1: function computedActive1() {
+      return this.active1;
+    },
+    computedActive2: function computedActive2() {
+      return this.active2;
+    },
+    computedActive3: function computedActive3() {
+      return this.active3;
+    },
+    computedMostrarForm1: function computedMostrarForm1() {
+      return this.mostrarForm1;
+    },
+    computedMostrarForm2: function computedMostrarForm2() {
+      return this.mostrarForm2;
+    },
+    computedMostrarForm3: function computedMostrarForm3() {
+      return this.mostrarForm3;
+    },
+    mostrarForms: function mostrarForms() {
+      if (!this.getCaractMacro[0] && !this.mostrar1) {
+        this.mostrarForm1 = false;
+        return false;
+      } else {
+        this.llenarForms();
+        return true;
+      }
+    },
+    mostrarBtnEliminar: function mostrarBtnEliminar() {
+      if (this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnCancelar: function mostrarBtnCancelar() {
+      if (!this.getCaractMacro[0] && this.mostrarForm1) {
+        return true;
+      } else if (!this.getCaractMacro[1] && this.mostrarForm2) {
+        return true;
+      } else if (!this.getCaractMacro[2] && this.mostrarForm3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
+      return this.mostrarBtnAgregar;
+    },
+    medio1: {
+      get: function get() {
+        if (this.getCaractMacro[0]) {
+          return this.getCaractMacro[0].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio2: {
+      get: function get() {
+        if (this.getCaractMacro[1]) {
+          return this.getCaractMacro[1].medio;
+        }
+      },
+      set: function set() {}
+    },
+    medio3: {
+      get: function get() {
+        if (this.getCaractMacro[2]) {
+          return this.getCaractMacro[2].medio;
+        }
+      },
+      set: function set() {}
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var obtenerImagenCroopieCepasMixin = {
+  data: function data() {
+    return {
+      imagenMiniatura: "",
+      imagenError: ""
+    };
+  },
+  methods: {
+    cambiarValorImagen: function cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.validarTipoForm) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
+    obtenerImagen: function obtenerImagen(e) {
+      var file = e.target.files[0];
+      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
+
+      if (file) {
+        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
+          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
+          this.$refs.inputImagen.value = "";
+
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
+        } else {
+          this.imagenError = "";
+          this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
+        }
+      }
+    },
+    cargarImagen: function cargarImagen(file) {
+      var _this = this;
+
+      var reader = new Image();
+
+      reader.onload = function (e) {
+        _this.imagenMiniatura = reader.src;
+      };
+
+      reader.src = URL.createObjectURL(file);
+    }
+  },
+  computed: {
+    mostraImagen: function mostraImagen() {
+      return this.imagenMiniatura;
+    },
+    mostrarBtnCroppie: function mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie: function validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
+
+/***/ })
+
+}]);

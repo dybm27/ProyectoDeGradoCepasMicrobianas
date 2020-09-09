@@ -20,7 +20,7 @@ class ImagenesEditorControllerTest extends TestCase
         $response = $this->actingAs($this->user)->post('/editor/upload', ['upload' => $imagen]);
         $response->assertStatus(200);
         $response->assertJsonCount(2);
-        $data = explode("http://127.0.0.1/storage", $response->decodeResponseJson()['url']);
+        $data = explode(env('APP_URL') . "/storage", $response->decodeResponseJson()['url']);
         Storage::assertExists('public' . $data[1]);
     }
 }

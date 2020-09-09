@@ -15,6 +15,11 @@ export default {
                 noticia => noticia.titulo.toUpperCase() === nombre.toUpperCase()
             );
         },
+        getNoticiaByPublicar: (state, getters) => {
+            return getters.getNoticias.filter(
+                noticia => noticia.publicar === 1
+            );
+        },
         getActividades(state) {
             return state.publicidad.actividades;
         },
@@ -29,6 +34,11 @@ export default {
                     actividad.titulo.toUpperCase() === nombre.toUpperCase()
             );
         },
+        getActividadByPublicar: (state, getters) => {
+            return getters.getActividades.filter(
+                actividad => actividad.publicar === 1
+            );
+        },
         getNovedades(state) {
             return state.publicidad.novedades;
         },
@@ -39,6 +49,11 @@ export default {
             return getters.getNovedades.find(
                 novedad => novedad.titulo.toUpperCase() === nombre.toUpperCase()
             );
+        },
+        getNovedadByPublicar: (state, getters) => {
+            return getters.getNovedades.filter(
+                novedad => novedad.publicar === 1
+            );
         }
     },
     mutations: {
@@ -46,6 +61,11 @@ export default {
             state.publicidad = publicidad;
         },
         modificarNoticia(state, data) {
+            if (data.data.publicar) {
+                data.data.publicar = 1;
+            } else {
+                data.data.publicar = 0;
+            }
             switch (data.tipo) {
                 case "agregar":
                     state.publicidad.noticias.push(data.data);
@@ -65,6 +85,11 @@ export default {
             }
         },
         modificarActividad(state, data) {
+            if (data.data.publicar) {
+                data.data.publicar = 1;
+            } else {
+                data.data.publicar = 0;
+            }
             switch (data.tipo) {
                 case "agregar":
                     state.publicidad.actividades.push(data.data);
@@ -84,6 +109,11 @@ export default {
             }
         },
         modificarNovedad(state, data) {
+            if (data.data.publicar) {
+                data.data.publicar = 1;
+            } else {
+                data.data.publicar = 0;
+            }
             switch (data.tipo) {
                 case "agregar":
                     state.publicidad.novedades.push(data.data);

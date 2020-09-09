@@ -1,1 +1,2460 @@
-!function(e){const t=e.es=e.es||{};t.dictionary=Object.assign(t.dictionary||{},{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto",'The color is invalid. Try "#FF0000" or "rgb(255,0,0)" or "red".':"","The URL must not be empty.":"La URL no debe estar vacía",'The value is invalid. Try "10px" or "2em" or simply "2".':"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}),t.getPluralForm=function(e){return 1!=e}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={})),(window.webpackJsonp=window.webpackJsonp||[]).push([[31],{12:function(e,t,a){"use strict";var r=a(7),o=a.n(r),i=a(385),s={props:["disabled","nameGet"],data:function(){return{filterText:"",show:!1}},computed:{validarBtn:function(){return this.disabled}},methods:{doFilter:function(){this.$events.fire(this.nameGet+"-filter-set",this.filterText)},resetFilter:function(){this.filterText="",this.$events.fire(this.nameGet+"-filter-reset")},abrirMenu:function(){this.show=!this.show},exportar:function(e){this.show=!this.show,this.$emit("exportarExcel",e)}}},n=a(1),l=Object(n.a)(s,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",{staticClass:"dataTables_filter"},[a("div",{staticClass:"position-relative form-group"},[a("label",[e._v("Buscar:")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model",value:e.filterText,expression:"filterText"}],staticClass:"form-control form-control-sm",attrs:{placeholder:"...","aria-controls":"example"},domProps:{value:e.filterText},on:{keyup:function(t){return!t.type.indexOf("key")&&e._k(t.keyCode,"enter",13,t.key,"Enter")?null:e.doFilter(t)},input:function(t){t.target.composing||(e.filterText=t.target.value)}}}),e._v(" "),a("button",{directives:[{name:"tooltip",rawName:"v-tooltip",value:"Deshacer",expression:"'Deshacer'"}],staticClass:"btn btn-danger",on:{click:e.resetFilter}},[a("i",{staticClass:"fas fa-redo"})]),e._v(" "),a("div",{class:["dropleft d-inline-block",e.show?"show":""]},[a("button",{directives:[{name:"tooltip",rawName:"v-tooltip",value:"Imprimir",expression:"'Imprimir'"}],staticClass:"mr-2 dropdown-toggle btn btn-outline-success",attrs:{type:"button"},on:{click:e.abrirMenu}},[a("i",{staticClass:"fas fa-print"})]),e._v(" "),a("div",{class:["dropdown-menu",e.show?"show":""]},[a("button",{staticClass:"dropdown-item",on:{click:function(t){return e.exportar("todo")}}},[e._v("Todo")]),e._v(" "),a("button",{staticClass:"dropdown-item",attrs:{disabled:e.validarBtn},on:{click:function(t){return e.exportar("tabla")}}},[e._v("Tabla")])])])])])}),[],!1,null,null,null).exports,c={mixins:[a(386).a]},m=Object(n.a)(c,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("nav",[a("ul",{staticClass:"pagination"},[a("li",{class:["page-item",{disabled:e.isOnFirstPage}]},[a("a",{staticClass:"page-link",on:{click:function(t){return t.preventDefault(),e.loadPage("prev")}}},[a("span",[e._v("«")])])]),e._v(" "),e.notEnoughPages?e._l(e.totalPage,(function(t){return a("li",{key:t,class:["page-item",{active:e.isCurrentPage(t)}]},[a("a",{staticClass:"page-link",domProps:{innerHTML:e._s(t)},on:{click:function(a){return a.preventDefault(),e.loadPage(t)}}})])})):e._l(e.windowSize,(function(t){return a("li",{key:t,class:["page-item",{active:e.isCurrentPage(e.windowStart+t-1)}]},[a("a",{staticClass:"page-link",domProps:{innerHTML:e._s(e.windowStart+t-1)},on:{click:function(a){return a.preventDefault(),e.loadPage(e.windowStart+t-1)}}})])})),e._v(" "),a("li",{class:["page-item",{disabled:e.isOnLastPage}]},[a("a",{staticClass:"page-link",attrs:{href:""},on:{click:function(t){return t.preventDefault(),e.loadPage("next")}}},[a("span",[e._v("»")])])])],2)])}),[],!1,null,null,null).exports,d={props:{css:{type:Object,default:function(){return{infoClass:"left floated left aligned six wide column"}}},infoTemplate:{type:String,default:function(){return"Displaying {from} to {to} of {total} items"}},noDataTemplate:{type:String,default:function(){return"No relevant data"}}},data:function(){return{tablePagination:null}},computed:{paginationInfo:function(){return null==this.tablePagination||0==this.tablePagination.total?this.noDataTemplate:this.infoTemplate.replace("{from}",this.tablePagination.from||0).replace("{to}",this.tablePagination.to||0).replace("{total}",this.tablePagination.total||0)}},methods:{setPaginationData:function(e){this.tablePagination=e},resetData:function(){this.tablePagination=null}}},u=Object(n.a)(d,(function(){var e=this.$createElement;return(this._self._c||e)("div",{class:["",this.css.infoClass],domProps:{innerHTML:this._s(this.paginationInfo)}})}),[],!1,null,null,null).exports,p=a(6),h={props:["apiUrl","fields","sortOrder","detailRowComponent","nameGet"],components:{Vuetable:i.a,FilterBar:l,VuetablePagination:m,VuetablePaginationInfo:u},mixins:[p.a],data:function(){return{appendParams:{per_page:10,filter:""},css:{table:{tableClass:"table table-striped table-bordered",ascendingIcon:"fas fa-angle-double-up",descendingIcon:"fas fa-angle-double-down",sortHandleIcon:"glyphicon glyphicon-menu-hamburger"},pagination:{wrapperClass:"pagination float-right",activeClass:"active",disabledClass:"disabled",pageClass:"page-item",linkClass:"page-link",paginationClass:"pagination",paginationInfoClass:"float-left",dropdownClass:"form-control",icons:{first:"fa fa-chevron-left",prev:"fa fa-chevron-left",next:"fa fa-chevron-right",last:"fa fa-chevron-right"},infoClass:"pull-left"}},disabledBtn:!1,dataAnterior:[]}},methods:{imagen:function(e){return'<img width="80" heigth="80" src="'+e+'"></i>'},tipoAgar:function(e){return"No"===e?'<i class="fas fa-times"></i>':e},numeroReplicas:function(e){return 0===e?'<i class="fas fa-times"></i>':e},recuentoMicorgota:function(e){return null===e?'<i class="fas fa-times"></i>':e},medioCultivo:function(e){return null===e?'<i class="fas fa-times"></i>':e},numeroPases:function(e){return 0===e?'<i class="fas fa-times"></i>':e},allcap:function(e){return e.toUpperCase()},genderLabel:function(e){return"M"===e?'<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"><i class="pe-7s-male"></i> Male</span>':'<span class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"><i class="pe-7s-female"></i> Female</span>'},formatDate:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"D-MMM-YYYY";return null==e?"":o()(e).format(t)},onPaginationData:function(e){this.$refs.pagination.setPaginationData(e),this.$refs.paginationInfo.setPaginationData(e)},onChangePage:function(e){this.dataAnterior=this.$refs.vuetable.tableData,this.$refs.vuetable.changePage(e)},onCellClicked:function(e,t,a){this.$refs.vuetable.toggleDetailRow(e.id)},onFilterSet:function(e){var t=this;this.appendParams.filter=e,Vue.nextTick((function(){return t.$refs.vuetable.refresh()}))},onFilterReset:function(){var e=this;delete this.appendParams.filter,Vue.nextTick((function(){return e.$refs.vuetable.refresh()}))},refreshDatos:function(){var e=this;this.dataAnterior=this.$refs.vuetable.tableData,Vue.nextTick((function(){return e.$refs.vuetable.refresh()}))},loaded:function(){this.$refs.vuetable.tableData&&(0===this.$refs.vuetable.tableData.length?this.disabledBtn=!0:(this.disabledBtn=!1,this.EventosCustomActions(),this.$events.fire("verificarBloqueos-"+this.nameGet)))},EventosCustomActions:function(){if(0!=this.dataAnterior.length)for(var e=0;e<this.dataAnterior.length;e++)this.$events.fire(e+"-eliminarEventosBtns-"+this.nameGet,this.dataAnterior[e].id),this.$events.fire(e+"-eliminarEventosCheck-"+this.nameGet,this.dataAnterior[e].id);for(var t=0;t<this.$refs.vuetable.tableData.length;t++)this.$events.fire(t+"-crearEventosBtns-"+this.nameGet),this.$events.fire(t+"-crearEventosCheck-"+this.nameGet)},exportarExcel:function(e){var t=this;if("todo"===e)axios.get("/exportar/".concat(this.nameGet),{responseType:"blob"}).then((function(e){if("http://127.0.0.1:8000/"===e.request.responseURL)localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/";else{t.toastr("Descarga!!","La descarga se realizo con éxito","success",5e3);var a=window.URL.createObjectURL(new Blob([e.data])),r=document.createElement("a");r.href=a,r.setAttribute("download",t.nameGet+".xlsx"),document.body.appendChild(r),r.click(),document.body.removeChild(r)}})).catch((function(e){403===e.response.status?t.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}));else{var a=this.$refs.vuetable.tableData;axios.post("/exportar/tabla/".concat(this.nameGet),{datos:a},{responseType:"blob"}).then((function(e){if("http://127.0.0.1:8000/"===e.request.responseURL)localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/";else{t.toastr("Descarga!!","La descarga se realizo con éxito","success",5e3);var a=window.URL.createObjectURL(new Blob([e.data])),r=document.createElement("a");r.href=a,r.setAttribute("download",t.nameGet+".xlsx"),document.body.appendChild(r),r.click(),document.body.removeChild(r)}})).catch((function(e){403===e.response.status?t.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}))}},loadSuccess:function(e){"http://127.0.0.1:8000/"===e.request.responseURL&&(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")},loadError:function(e){403===e.response.status?this.$router.push("/sin-acceso"):405!==e.response.status&&401!==e.response.status||(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/")}},mounted:function(){var e=this;this.$events.$on(this.nameGet+"-filter-set",(function(t){return e.onFilterSet(t)})),this.$events.$on(this.nameGet+"-filter-reset",(function(t){return e.onFilterReset()}))},destroyed:function(){this.$events.off(this.nameGet+"-filter-set"),this.$events.off(this.nameGet+"-filter-reset")}},f=Object(n.a)(h,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",{staticClass:"dataTables_wrapper dt-bootstrap4"},[a("div",{staticClass:"row"},[a("div",{staticClass:"col-sm-12 col-md-6"},[a("div",{staticClass:"dataTables_length",attrs:{id:"example_length"}},[a("label",[e._v("\n          Buscar\n          "),a("select",{directives:[{name:"model",rawName:"v-model.number",value:e.appendParams.per_page,expression:"appendParams.per_page",modifiers:{number:!0}}],staticClass:"custom-select custom-select-sm form-control form-control-sm",attrs:{name:"example_length","aria-controls":"example"},on:{change:[function(t){var a=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(t){var a="_value"in t?t._value:t.value;return e._n(a)}));e.$set(e.appendParams,"per_page",t.target.multiple?a:a[0])},e.refreshDatos]}},[a("option",{attrs:{value:"10"}},[e._v("10")]),e._v(" "),a("option",{attrs:{value:"25"}},[e._v("25")]),e._v(" "),a("option",{attrs:{value:"50"}},[e._v("50")]),e._v(" "),a("option",{attrs:{value:"100"}},[e._v("100")])]),e._v(" Resultados\n        ")])])]),e._v(" "),a("div",{staticClass:"col-sm-12 col-md-6"},[a("filter-bar",{attrs:{disabled:e.disabledBtn,nameGet:e.nameGet},on:{exportarExcel:e.exportarExcel}})],1)]),e._v(" "),a("div",{staticClass:"row"},[a("div",{staticClass:"col-sm-12"},[a("div",{staticClass:"table-responsive fixed "},[a("vuetable",{ref:"vuetable",attrs:{noDataTemplate:"Cargando informacion...",css:e.css.table,"api-url":e.apiUrl,fields:e.fields,"data-path":"data","pagination-path":"","sort-order":e.sortOrder,"append-params":e.appendParams,"detail-row-component":e.detailRowComponent},on:{"vuetable:pagination-data":e.onPaginationData,"vuetable:cell-clicked":e.onCellClicked,"vuetable:loaded":e.loaded,"vuetable:load-success":e.loadSuccess,"vuetable:load-error":e.loadError}})],1)])]),e._v(" "),a("div",{staticClass:"row"},[a("div",{staticClass:"col-sm-12 col-md-5"},[a("vuetable-pagination-info",{ref:"paginationInfo",attrs:{css:e.css.infoclass,"info-template":"Mostrando del {from} al {to} de {total} registros",noDataTemplate:"Sin registros"}})],1),e._v(" "),a("div",{staticClass:"col-sm-12 col-md-7"},[a("vuetable-pagination",{ref:"pagination",staticClass:"pull-right",attrs:{css:e.css.pagination},on:{"vuetable-pagination:change-page":e.onChangePage}})],1)])])}),[],!1,null,null,null);t.a=f.exports},31:function(e,t,a){"use strict";var r=a(157),o=a.n(r),i={props:["id","imagen","mostrarBtnCroppie","zoom","editar","enableZoom","boundaryHeigth","viewportWidth"],data:function(){return{croppie:null,btnAprobar:!0}},mounted:function(){this.crearCroppie()},methods:{crearCroppie:function(){var e=document.getElementById(this.id);this.croppie=new o.a(e,{viewport:{width:this.viewportWidth,height:200},boundary:{height:this.boundaryHeigth},enableZoom:this.enableZoom}),this.croppie.bind({url:this.imagen,zoom:this.zoom})},resultado:function(){var e=this;this.croppie.result().then((function(t){e.btnAprobar=!1,e.$emit("cambiarValorImagen",t)}))},cancelar:function(){this.btnAprobar=!0,this.$emit("cambiarValorImagen","")}},watch:{imagen:function(){this.imagen&&(this.btnAprobar=!0,this.croppie.destroy(),this.crearCroppie())}},computed:{mostrarMensaje:function(){return!(!this.btnAprobar||this.editar)}}},s=a(1),n=Object(s.a)(i,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",{staticClass:"container"},[a("div",{attrs:{id:e.id}}),e._v(" "),e.mostrarBtnCroppie?[e.btnAprobar?[a("button",{staticClass:"btn btn-success",on:{click:e.resultado}},[e._v("Aprobar Imagen")]),e._v(" "),e.mostrarMensaje?a("em",{staticClass:"text-danger small"},[e._v("Debe Aprobar la imagen")]):e._e()]:[a("button",{staticClass:"btn btn-danger float-right",on:{click:e.cancelar}},[e._v("Cancelar")])]]:e._e()],2)}),[],!1,null,null,null);t.a=n.exports},442:function(e,t,a){"use strict";a.r(t);var r=a(0),o=a(113),i=a(114),s=a.n(i),n=a(6),l=a(87),c=a(31),m=a(60),d=a(2);function u(e,t){var a=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),a.push.apply(a,r)}return a}function p(e){for(var t=1;t<arguments.length;t++){var a=null!=arguments[t]?arguments[t]:{};t%2?u(Object(a),!0).forEach((function(t){h(e,t,a[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(a)):u(Object(a)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(a,t))}))}return e}function h(e,t,a){return t in e?Object.defineProperty(e,t,{value:a,enumerable:!0,configurable:!0,writable:!0}):e[t]=a,e}var f={props:["idMetodo"],components:{DatePicker:o.default,Croppie:c.a,ModalAgregarInfo:m.a},data:function(){return{lang:s.a,info:"",parametros:{cepaId:"",tipo_metodo:null,fecha:"",numero_replicas:"",recuento_microgota:"",medio_cultivo:"",numero_pases:"",observaciones:"",imagen:""},tituloModal:"",tipoModal:"",tituloForm:"",nomBtn:"",errors:[],bloquearBtn:!1,bloquearBtnModal:!1,mensajes:{required:"El campo es requerido",numeric:"El campo debe ser un numero.",between:"Debe estar en el rango de "}}},validations:function(){return this.mostrarNumReplicas&&this.mostrarRecuentoMicrogota?{parametros:{tipo_metodo:{required:d.required},fecha:{required:d.required},numero_replicas:{required:d.required,numeric:d.numeric,between:Object(d.between)(1,1e4)},recuento_microgota:{required:d.required},imagen:{required:d.required}}}:this.mostrarNumReplicas&&!this.mostrarRecuentoMicrogota?{parametros:{tipo_metodo:{required:d.required},fecha:{required:d.required},numero_replicas:{required:d.required,numeric:d.numeric,between:Object(d.between)(1,1e4)},medio_cultivo:{required:d.required},imagen:{required:d.required}}}:!this.mostrarNumReplicas&&this.mostrarRecuentoMicrogota?{parametros:{tipo_metodo:{required:d.required},fecha:{required:d.required},numero_pases:{required:d.required,numeric:d.numeric,between:Object(d.between)(1,1e4)},recuento_microgota:{required:d.required},imagen:{required:d.required}}}:{parametros:{tipo_metodo:{required:d.required},fecha:{required:d.required},numero_pases:{required:d.required,numeric:d.numeric,between:Object(d.between)(1,1e4)},medio_cultivo:{required:d.required},imagen:{required:d.required}}}},mixins:[n.a,l.a],methods:p(p({},r.a.mapActions("cepa",["accionAgregarCaract","accionEditarCaract"])),{},{evento:function(){var e=this;this.bloquearBtn=!0,this.$v.parametros.$touch(),this.$v.$invalid?(this.bloquearBtn=!1,this.toastr("Error!!","Favor llenar correctamente los campos","error")):(this.parametros.fecha=null===this.parametros.fecha?"":this.parametros.fecha,"Agregar Método"===this.tituloForm?axios.post("/cepas/hongo/metodo-conser",this.parametros).then((function(t){"http://127.0.0.1:8000/"===t.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtn=!1,e.accionAgregarCaract({tipo:"metodo",data:t.data}),e.toastr("Agregar Método","Método agregado con exito!!","success"),e.$emit("cambiarVariable"))})).catch((function(t){e.verificarError(t.response.status,t.response.data.errors)})):axios.put("/cepas/hongo/metodo-conser/".concat(this.info.id),this.parametros).then((function(t){e.bloquearBtn=!1,e.accionEditarCaract({tipo:"metodo",data:t.data}),e.toastr("Editar Método","Método editado con exito!!","success"),e.$emit("cambiarVariable")})).catch((function(t){e.verificarError(t.response.status,t.response.data.errors)})))},llenarInfo:function(){this.parametros.tipo_metodo=this.info.tipo_id,this.parametros.medio_cultivo=this.info.medio_cultivo,this.parametros.numero_pases=this.info.numero_pases,this.parametros.observaciones=this.info.observaciones,this.parametros.fecha=this.info.fecha,this.parametros.numero_replicas=this.info.numero_replicas,this.parametros.recuento_microgota=this.info.recuento_microgota,this.parametros.imagen=this.info.imagen,this.imagenMiniatura=this.info.imagenPublica},showModal:function(e){this.tipoModal=e,"tipo_metodo"===e&&(this.tituloModal="Agregar Nueva Tipo de Método"),this.$modal.show("modal_agregar_info_caract")},verificarSelects:function(){this.obtenerMetodos.length>0?this.parametros.tipo_metodo=this.obtenerMetodos[0].id:this.parametros.tipo_metodo=null}}),computed:p(p(p(p({},r.a.mapGetters(["getPermisoByNombre"])),r.a.mapGetters("cepa",["getMetodoConserById"])),r.a.mapGetters("info_caract",["getInfoMetodoConserHongos"])),{},{btnClase:function(){return"Agregar Método"===this.tituloForm?"btn-success":"btn-warning"},validarTipoForm:function(){return"Agregar Método"===this.tituloForm},titulo:function(){return this.tituloForm},nomBtnComputed:function(){return this.nomBtn},mostrarNumReplicas:function(){return 3!=this.parametros.tipo_metodo?(this.parametros.numero_pases="",!0):(this.parametros.numero_replicas="",!1)},mostrarRecuentoMicrogota:function(){return 2===this.parametros.tipo_metodo||3===this.parametros.tipo_metodo?(this.parametros.recuento_microgota="",!1):(this.parametros.medio_cultivo="",!0)},obtenerMetodos:function(){return this.getInfoMetodoConserHongos.tipo_metodo}}),created:function(){this.verificarSelects(),0===this.idMetodo?(this.tituloForm="Agregar Método",this.nomBtn="Agregar"):(this.info=this.getMetodoConserById(this.idMetodo),this.llenarInfo(),this.tituloForm="Editar Método",this.nomBtn="Editar");var e=[];this.$route.params.cepaHongoSlug?(e=this.$route.params.cepaHongoSlug.split("-"),this.parametros.cepaId=parseInt(e[e.length-1])):(e=this.$route.params.cepaSlug.split("-"),this.parametros.cepaId=parseInt(e[e.length-1]))},watch:{obtenerMetodos:function(){this.obtenerMetodos.length>0?this.parametros.tipo_metodo=this.obtenerMetodos[0].id:this.parametros.tipo_metodo=null}}},g=a(1),v=Object(g.a)(f,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",[a("div",{staticClass:"container mt-3"},[a("div",{staticClass:"row justify-content-md-center"},[a("div",{staticClass:"col-sm-6"},[a("div",{staticClass:"main-card mb-3 card"},[a("form",{on:{submit:function(t){return t.preventDefault(),e.evento(t)}}},[a("div",{staticClass:"card-body"},[a("h5",{staticClass:"card-title"},[e._v(e._s(e.titulo))]),e._v(" "),""!=e.errors?[a("div",{staticClass:"alert alert-danger"},e._l(e.errors,(function(t,r){return a("p",{key:r},[e._v(e._s(t[0]))])})),0)]:e._e(),e._v(" "),e.getInfoMetodoConserHongos?a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"forma"}},[e._v("Método de Conservación")]),e._v(" "),a("div",{staticClass:"input-group mb-3"},[a("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.tipo_metodo.$model,expression:"$v.parametros.tipo_metodo.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.tipo_metodo.$error?"error-input-select":""],attrs:{name:"select",id:"forma"},on:{change:function(t){var a=Array.prototype.filter.call(t.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.tipo_metodo,"$model",t.target.multiple?a:a[0])}}},e._l(e.obtenerMetodos,(function(t,r){return a("option",{key:r,domProps:{value:t.id}},[e._v(e._s(t.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?a("div",{staticClass:"input-group-append"},[a("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(t){return t.preventDefault(),e.showModal("tipo_metodo")}}},[a("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.tipo_metodo.$error&&!e.$v.parametros.tipo_metodo.required?a("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]):e._e(),e._v(" "),a("div",{staticClass:"form-row"},[a("div",{staticClass:"col-md-6"},[a("div",{staticClass:"container"},[e._m(0),e._v(" "),a("div",{staticClass:"row"},[a("date-picker",{class:e.$v.parametros.fecha.$error?"error-input-select":"",attrs:{lang:e.lang,type:"datetime","value-type":"format",placeholder:"..."},model:{value:e.$v.parametros.fecha.$model,callback:function(t){e.$set(e.$v.parametros.fecha,"$model","string"==typeof t?t.trim():t)},expression:"$v.parametros.fecha.$model"}}),e._v(" "),e.$v.parametros.fecha.$error&&!e.$v.parametros.fecha.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()],1)])]),e._v(" "),a("div",{staticClass:"col-md-6"},[e.mostrarNumReplicas?[a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"numero_replicas"}},[e._v("Número de Réplicas")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.numero_replicas.$model,expression:"$v.parametros.numero_replicas.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.numero_replicas.$error?"error-input-select":""],attrs:{name:"numero_replicas",id:"numero_replicas",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.numero_replicas.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.numero_replicas,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.numero_replicas.$error&&!e.$v.parametros.numero_replicas.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.$v.parametros.numero_replicas.$error&&!e.$v.parametros.numero_replicas.numeric?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.numeric))]):e._e(),e._v(" "),e.$v.parametros.numero_replicas.$error&&!e.$v.parametros.numero_replicas.between?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.between+e.$v.parametros.numero_replicas.$params.between.min+" a "+e.$v.parametros.numero_replicas.$params.between.max))]):e._e()])]:[a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"numero_pases"}},[e._v("Número de Pases")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.numero_pases.$model,expression:"$v.parametros.numero_pases.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.numero_pases.$error?"error-input-select":""],attrs:{name:"numero_pases",id:"numero_pases",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.numero_pases.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.numero_pases,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.numero_pases.$error&&!e.$v.parametros.numero_pases.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.$v.parametros.numero_pases.$error&&!e.$v.parametros.numero_pases.numeric?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.numeric))]):e._e(),e._v(" "),e.$v.parametros.numero_pases.$error&&!e.$v.parametros.numero_pases.between?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.between+e.$v.parametros.numero_pases.$params.between.min+" a "+e.$v.parametros.numero_pases.$params.between.max))]):e._e()])]],2)]),e._v(" "),e.mostrarRecuentoMicrogota?[a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"recuento_microgota"}},[e._v("Recuento Microgota")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.recuento_microgota.$model,expression:"$v.parametros.recuento_microgota.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.recuento_microgota.$error?"error-input-select":""],attrs:{name:"recuento_microgota",id:"recuento_microgota",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.recuento_microgota.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.recuento_microgota,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.recuento_microgota.$error&&!e.$v.parametros.recuento_microgota.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()])]:[a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"medio_cultivo"}},[e._v("Medio de Cultivo")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.medio_cultivo.$model,expression:"$v.parametros.medio_cultivo.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.medio_cultivo.$error?"error-input-select":""],attrs:{name:"medio_cultivo",id:"medio_cultivo",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.medio_cultivo.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.parametros.medio_cultivo,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.medio_cultivo.$error&&!e.$v.parametros.medio_cultivo.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()])],e._v(" "),a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"imagen"}},[e._v("Imagen")]),e._v(" "),a("input",{ref:"inputImagen",class:["form-control-file",e.$v.parametros.imagen.$error?"error-input-select":""],attrs:{name:"imagen",accept:"image/jpeg, image/png",id:"imagen",type:"file"},on:{change:e.obtenerImagen}}),e._v(" "),e.imagenError?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.imagenError))]):e._e(),e._v(" "),e.$v.parametros.imagen.$error&&!e.$v.parametros.imagen.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"observaciones"}},[e._v("Observaciones")]),e._v(" "),a("textarea",{directives:[{name:"model",rawName:"v-model",value:e.parametros.observaciones,expression:"parametros.observaciones"}],staticClass:"form-control",attrs:{name:"text",id:"observaciones"},domProps:{value:e.parametros.observaciones},on:{input:function(t){t.target.composing||e.$set(e.parametros,"observaciones",t.target.value)}}})]),e._v(" "),a("button",{staticClass:"mb-2 mr-2 btn btn-block",class:e.btnClase,attrs:{disabled:e.bloquearBtn}},[e._v(e._s(e.nomBtnComputed))])],2)])])]),e._v(" "),a("div",{staticClass:"col-sm-6"},[a("div",{staticClass:"main-card mb-3 card"},[a("div",{staticClass:"card-body"},[a("h5",{staticClass:"card-title"},[e._v("Imagen")]),e._v(" "),e.mostraImagen?[e.validarCroppie?[a("Croppie",{attrs:{id:"croppie",imagen:e.mostraImagen,mostrarBtnCroppie:e.mostrarBtnCroppie,enableZoom:!1,zoom:0,editar:!0,boundaryHeigth:300,viewportWidth:200},on:{cambiarValorImagen:e.cambiarValorImagen}})]:[a("Croppie",{attrs:{id:"croppie",imagen:e.mostraImagen,mostrarBtnCroppie:e.mostrarBtnCroppie,zoom:1,enableZoom:!0,editar:!1,boundaryHeigth:300,viewportWidth:200},on:{cambiarValorImagen:e.cambiarValorImagen}})]]:[e._m(1)]],2)])])])]),e._v(" "),a("ModalAgregarInfo",{attrs:{url:"info-caract-hongos",tipo:e.tipoModal,titulo:e.tituloModal,tipoForm:"hongo"}})],1)}),[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"row"},[t("label",{attrs:{for:"fecha"}},[this._v("Fecha")])])},function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"text-center"},[t("h5",{staticClass:"mt-5 mb-5"},[t("span",{staticClass:"pr-1"},[t("b",{staticClass:"text-success"},[this._v("SIN IMAGEN")])])])])}],!1,null,null,null).exports,b=[{name:"nombre_tipo_metodo",sortField:"tipo_id",title:"Tipo de Método",titleClass:"text-center",dataClass:"text-center"},{name:"numero_replicas",sortField:"numero_replicas",title:"Número de Replicas",titleClass:"text-center",dataClass:"text-center",callback:"numeroReplicas"},{name:"recuento_microgota",sortField:"recuento_microgota",title:"Recuento Microgota",titleClass:"text-center",dataClass:"text-center",callback:"recuentoMicorgota"},{name:"medio_cultivo",sortField:"medio_cultivo",title:"Medio de Cultivo",titleClass:"text-center",dataClass:"text-center",callback:"medioCultivo"},{name:"numero_pases",sortField:"numero_pases",title:"Número de Pases",titleClass:"text-center",dataClass:"text-center",callback:"numeroPases"},{name:"fecha",sortField:"fecha",title:"Fecha",titleClass:"text-center",dataClass:"text-center",callback:"formatDate"},{name:"imagenPublica",title:"Imagen",titleClass:"text-center",dataClass:"text-center",callback:"imagen"},{name:"__component:acciones_tabla_metodo_conser_hongo",title:"Acciones",titleClass:"text-center",dataClass:"text-center"}];function _(e,t){var a=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),a.push.apply(a,r)}return a}function C(e){for(var t=1;t<arguments.length;t++){var a=null!=arguments[t]?arguments[t]:{};t%2?_(Object(a),!0).forEach((function(t){j(e,t,a[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(a)):_(Object(a)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(a,t))}))}return e}function j(e,t,a){return t in e?Object.defineProperty(e,t,{value:a,enumerable:!0,configurable:!0,writable:!0}):e[t]=a,e}var $={components:{MyVuetable:a(12).a},data:function(){return{url:"/info-panel/cepa/hongo/metodos-conser/",idMetodoEliminar:"",fields:b,sortOrder:[{field:"tipo_id",direction:"asc"}],bloquearBtnModal:!1}},mixins:[n.a],methods:C(C({},r.a.mapActions("cepa",["accionEliminarCaract"])),{},{cambiarVariable:function(){this.refrescarTabla=!1},eliminarMetodo:function(){var e=this;this.bloquearBtnModal=!0,axios.delete("/cepas/hongo/metodo-conser/".concat(this.idMetodoEliminar)).then((function(t){e.bloquearBtnModal=!1,e.accionEliminarCaract({tipo:"metodo",data:t.data}),e.actualizarTabla(),e.toastr("Eliminar Metodo","Metodo eliminada con exito!!","success"),e.$modal.hide("my_modal_eliminar_metodo")})).catch((function(t){403===t.response.status?e.$router.push("/sin-acceso"):405===t.response.status||401===t.response.status?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtnModal=!1,e.toastr("Error!!","","error"))}))},beforeOpen:function(e){this.idMetodoEliminar=e.params.id},actualizarTabla:function(){this.mostrarTabla&&this.$refs.tabla&&this.$refs.tabla.refreshDatos()}}),computed:C(C({},r.a.mapGetters("cepa",["getMetodoConser"])),{},{mostrarTabla:function(){return""!=this.getMetodoConser&&null!=this.getMetodoConser}}),created:function(){var e=[];this.$route.params.cepaHongoId?(e=this.$route.params.cepaHongoId.split("-"),this.url+=parseInt(e[e.length-1])):(e=this.$route.params.cepaSlug.split("-"),this.url+=parseInt(e[e.length-1]))}},w={components:{FormMetodoConser:v,TablaMetodo:Object(g.a)($,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",[e.mostrarTabla?[a("div",{staticClass:"card-body mt-3 ml-2 mr-2"},[a("MyVuetable",{ref:"tabla",attrs:{apiUrl:e.url,fields:e.fields,sortOrder:e.sortOrder,nameGet:"metodos-hongos",detailRowComponent:""}})],1),e._v(" "),a("transition",{attrs:{name:"fade"}},[a("modal",{attrs:{name:"my_modal_eliminar_metodo",classes:"my_modal",maxWidth:400,adaptive:!0,height:"auto",scrollable:!0},on:{"before-open":e.beforeOpen}},[a("div",{staticClass:"modal-content"},[a("div",{staticClass:"modal-header"},[a("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[e._v("Eliminar Método de Conservación")]),e._v(" "),a("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("my_modal_eliminar_metodo")}}},[a("span",{attrs:{"aria-hidden":"true"}},[e._v("×")])])]),e._v(" "),a("div",{staticClass:"modal-body"},[a("p",[e._v("Esta segura/o de eliminar el Método?.")])]),e._v(" "),a("div",{staticClass:"modal-footer"},[a("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("my_modal_eliminar_metodo")}}},[e._v("Cancelar")]),e._v(" "),a("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:e.bloquearBtnModal},on:{click:e.eliminarMetodo}},[e._v("Eliminar")])])])])],1)]:[e._m(0)]],2)}),[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"text-center"},[t("h5",{staticClass:"mt-5 mb-5"},[t("span",{staticClass:"pr-1"},[t("b",{staticClass:"text-success"},[this._v("NO SE HA AGREGADO NINGÚN MÉTODO")])])])])}],!1,null,null,null).exports},data:function(){return{formulario:!1,id:0}},methods:{abrirFormulario:function(e){this.id=0!=e?e:0,this.formulario=!this.formulario},cambiarVariableFormulario:function(){this.formulario=!this.formulario}},created:function(){var e=this;this.$events.$on("abrirFormularioMetodoHongo",(function(t){return e.abrirFormulario(t)}))}},x=Object(g.a)(w,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",[a("div",{staticClass:"tabs-animation"},[a("div",{staticClass:"mb-3 card"},[a("div",{staticClass:"card-header-tab card-header"},[e._m(0),e._v(" "),a("div",{staticClass:"btn-actions-pane-right text-capitalize"},[e.formulario?[a("button",{staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:function(t){return e.abrirFormulario(0)}}},[e._v("Cancelar")])]:[a("button",{staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",on:{click:function(t){return e.abrirFormulario(0)}}},[e._v("Agregar")])]],2)]),e._v(" "),a("div",[e.formulario?[a("FormMetodoConser",{attrs:{idMetodo:e.id},on:{cambiarVariable:e.cambiarVariableFormulario}})]:[a("TablaMetodo")]],2)])])])}),[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"card-header-title font-size-lg text-capitalize font-weight-normal"},[t("i",{staticClass:"header-icon lnr-charts icon-gradient bg-happy-green"}),this._v("\n          Métodos de Conservación\n        ")])}],!1,null,null,null);t.default=x.exports},482:function(e,t,a){var r={"./af":252,"./af.js":252,"./ar":253,"./ar-dz":254,"./ar-dz.js":254,"./ar-kw":255,"./ar-kw.js":255,"./ar-ly":256,"./ar-ly.js":256,"./ar-ma":257,"./ar-ma.js":257,"./ar-sa":258,"./ar-sa.js":258,"./ar-tn":259,"./ar-tn.js":259,"./ar.js":253,"./az":260,"./az.js":260,"./be":261,"./be.js":261,"./bg":262,"./bg.js":262,"./bm":263,"./bm.js":263,"./bn":264,"./bn.js":264,"./bo":265,"./bo.js":265,"./br":266,"./br.js":266,"./bs":267,"./bs.js":267,"./ca":268,"./ca.js":268,"./cs":269,"./cs.js":269,"./cv":270,"./cv.js":270,"./cy":271,"./cy.js":271,"./da":272,"./da.js":272,"./de":273,"./de-at":274,"./de-at.js":274,"./de-ch":275,"./de-ch.js":275,"./de.js":273,"./dv":276,"./dv.js":276,"./el":277,"./el.js":277,"./en-au":278,"./en-au.js":278,"./en-ca":279,"./en-ca.js":279,"./en-gb":280,"./en-gb.js":280,"./en-ie":281,"./en-ie.js":281,"./en-il":282,"./en-il.js":282,"./en-in":283,"./en-in.js":283,"./en-nz":284,"./en-nz.js":284,"./en-sg":285,"./en-sg.js":285,"./eo":286,"./eo.js":286,"./es":287,"./es-do":288,"./es-do.js":288,"./es-us":289,"./es-us.js":289,"./es.js":287,"./et":290,"./et.js":290,"./eu":291,"./eu.js":291,"./fa":292,"./fa.js":292,"./fi":293,"./fi.js":293,"./fil":294,"./fil.js":294,"./fo":295,"./fo.js":295,"./fr":296,"./fr-ca":297,"./fr-ca.js":297,"./fr-ch":298,"./fr-ch.js":298,"./fr.js":296,"./fy":299,"./fy.js":299,"./ga":300,"./ga.js":300,"./gd":301,"./gd.js":301,"./gl":302,"./gl.js":302,"./gom-deva":303,"./gom-deva.js":303,"./gom-latn":304,"./gom-latn.js":304,"./gu":305,"./gu.js":305,"./he":306,"./he.js":306,"./hi":307,"./hi.js":307,"./hr":308,"./hr.js":308,"./hu":309,"./hu.js":309,"./hy-am":310,"./hy-am.js":310,"./id":311,"./id.js":311,"./is":312,"./is.js":312,"./it":313,"./it-ch":314,"./it-ch.js":314,"./it.js":313,"./ja":315,"./ja.js":315,"./jv":316,"./jv.js":316,"./ka":317,"./ka.js":317,"./kk":318,"./kk.js":318,"./km":319,"./km.js":319,"./kn":320,"./kn.js":320,"./ko":321,"./ko.js":321,"./ku":322,"./ku.js":322,"./ky":323,"./ky.js":323,"./lb":324,"./lb.js":324,"./lo":325,"./lo.js":325,"./lt":326,"./lt.js":326,"./lv":327,"./lv.js":327,"./me":328,"./me.js":328,"./mi":329,"./mi.js":329,"./mk":330,"./mk.js":330,"./ml":331,"./ml.js":331,"./mn":332,"./mn.js":332,"./mr":333,"./mr.js":333,"./ms":334,"./ms-my":335,"./ms-my.js":335,"./ms.js":334,"./mt":336,"./mt.js":336,"./my":337,"./my.js":337,"./nb":338,"./nb.js":338,"./ne":339,"./ne.js":339,"./nl":340,"./nl-be":341,"./nl-be.js":341,"./nl.js":340,"./nn":342,"./nn.js":342,"./oc-lnc":343,"./oc-lnc.js":343,"./pa-in":344,"./pa-in.js":344,"./pl":345,"./pl.js":345,"./pt":346,"./pt-br":347,"./pt-br.js":347,"./pt.js":346,"./ro":348,"./ro.js":348,"./ru":349,"./ru.js":349,"./sd":350,"./sd.js":350,"./se":351,"./se.js":351,"./si":352,"./si.js":352,"./sk":353,"./sk.js":353,"./sl":354,"./sl.js":354,"./sq":355,"./sq.js":355,"./sr":356,"./sr-cyrl":357,"./sr-cyrl.js":357,"./sr.js":356,"./ss":358,"./ss.js":358,"./sv":359,"./sv.js":359,"./sw":360,"./sw.js":360,"./ta":361,"./ta.js":361,"./te":362,"./te.js":362,"./tet":363,"./tet.js":363,"./tg":364,"./tg.js":364,"./th":365,"./th.js":365,"./tk":366,"./tk.js":366,"./tl-ph":367,"./tl-ph.js":367,"./tlh":368,"./tlh.js":368,"./tr":369,"./tr.js":369,"./tzl":370,"./tzl.js":370,"./tzm":371,"./tzm-latn":372,"./tzm-latn.js":372,"./tzm.js":371,"./ug-cn":373,"./ug-cn.js":373,"./uk":374,"./uk.js":374,"./ur":375,"./ur.js":375,"./uz":376,"./uz-latn":377,"./uz-latn.js":377,"./uz.js":376,"./vi":378,"./vi.js":378,"./x-pseudo":379,"./x-pseudo.js":379,"./yo":380,"./yo.js":380,"./zh-cn":381,"./zh-cn.js":381,"./zh-hk":382,"./zh-hk.js":382,"./zh-mo":383,"./zh-mo.js":383,"./zh-tw":384,"./zh-tw.js":384};function o(e){var t=i(e);return a(t)}function i(e){if(!a.o(r,e)){var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}return r[e]}o.keys=function(){return Object.keys(r)},o.resolve=i,e.exports=o,o.id=482},60:function(e,t,a){"use strict";var r=a(6),o=a(0);function i(e,t){var a=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),a.push.apply(a,r)}return a}function s(e){for(var t=1;t<arguments.length;t++){var a=null!=arguments[t]?arguments[t]:{};t%2?i(Object(a),!0).forEach((function(t){n(e,t,a[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(a)):i(Object(a)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(a,t))}))}return e}function n(e,t,a){return t in e?Object.defineProperty(e,t,{value:a,enumerable:!0,configurable:!0,writable:!0}):e[t]=a,e}var l={props:["titulo","tipo","url","tipoForm"],data:function(){return{nombre:"",errors:[],bloquearBtnModal:!1,mensajes:{required:"El campo es requerido.",unique:"Ya existe un registro con ese nombre."}}},validations:{nombre:{required:a(2).required,unique:function(e){return""==e||!this.validarNombreUnico}}},mixins:[r.a],methods:s(s(s(s(s({},o.a.mapActions("info_caract",["accionAgregarTipoCaractLevadura","accionAgregarTipoCaractActinomiceto","accionAgregarTipoCaractHongo","accionAgregarTipoCaractBacteria"])),o.a.mapActions("info_caract",[])),o.a.mapActions("info_caract",[])),o.a.mapActions("info_caract",[])),{},{closed:function(){this.nombre="",this.errors=[]},agregarInfo:function(){var e=this;if(this.bloquearBtnModal=!0,this.$v.nombre.$touch(),this.$v.$invalid)this.bloquearBtnModal=!1,this.toastr("Error!!","Favor corregir el Error.","error");else{var t={tipo:this.tipo,nombre:this.nombre};axios.post("/".concat(this.url,"/agregar"),t).then((function(t){"http://127.0.0.1:8000/"===t.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtnModal=!1,e.guardarInfo(t.data),e.$modal.hide("modal_agregar_info_caract"),e.toastr("Agregar Info!!","".concat(e.tipo," agregado/a con exito"),"success"))})).catch((function(t){e.verificarErrorAxios(t.response.status,t.response.data.errors)}))}},guardarInfo:function(e){switch(this.tipoForm){case"bacteria":this.accionAgregarTipoCaractBacteria({info:e,tipo:this.tipo});break;case"hongo":this.accionAgregarTipoCaractHongo({info:e,tipo:this.tipo});break;case"levadura":this.accionAgregarTipoCaractLevadura({info:e,tipo:this.tipo});break;case"actinomiceto":this.accionAgregarTipoCaractActinomiceto({info:e,tipo:this.tipo})}},verificarErrorAxios:function(e,t){403===e?this.$router.push("/sin-acceso"):405===e||401===e?window.location.href="/":(422===e&&(this.errors=[],this.errors=t),this.bloquearBtnModal=!1,this.toastr("Error!!","","error"))}}),computed:s(s({},o.a.mapGetters("info_caract",["getInfoCaractMacroBacteriasByNombre","getInfoCaractMicroBacteriasByNombre","getInfoMetodoConserBacteriasByNombre","getInfoCaractMacroHongosByNombre","getInfoCaractMicroHongosByNombre","getInfoMetodoConserHongosByNombre","getInfoCaractMacroLevadurasByNombre","getInfoMetodoConserLevadurasByNombre","getInfoCaractMacroActinomicetosByNombre","getInfoCaractMicroActinomicetosByNombre"])),{},{validarNombreUnico:function(){switch(this.tipoForm){case"bacteria":if("borde"==this.tipo||"color"==this.tipo||"detalle"==this.tipo||"elevacion"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("forma_micro"==this.tipo){if(this.getInfoCaractMicroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"hongo":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("conidioforo"==this.tipo||"esporaA"==this.tipo||"esporaS"==this.tipo){if(this.getInfoCaractMicroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"levadura":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;break;case"actinomiceto":if("borde"==this.tipo||"color"==this.tipo||"textura"==this.tipo||"pigmento"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(("forma_micro"==this.tipo||"conidioforo"==this.tipo||"tincion"==this.tipo||"micelio"==this.tipo)&&this.getInfoCaractMicroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1}}})},c=a(1),m=Object(c.a)(l,(function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",[a("transition",{attrs:{name:"fade"}},[a("modal",{attrs:{name:"modal_agregar_info_caract",classes:"my_modal",maxWidth:450,adaptive:!0,height:"auto",scrollable:!0},on:{closed:e.closed}},[a("div",{staticClass:"modal-content"},[a("div",{staticClass:"modal-header"},[a("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[e._v(e._s(e.titulo))]),e._v(" "),a("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("modal_agregar_info_caract")}}},[a("span",{attrs:{"aria-hidden":"true"}},[e._v("×")])])]),e._v(" "),a("div",{staticClass:"modal-body"},[a("div",{staticClass:"position-relative form-group"},[a("label",{attrs:{for:"nombre"}},[e._v("Nombre")]),e._v(" "),a("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.nombre.$model,expression:"$v.nombre.$model",modifiers:{trim:!0}}],class:["form-control",e.errors.nombre||e.$v.nombre.$error?"error-input-select":""],attrs:{name:"nombre",id:"nombre",placeholder:"...",type:"text"},domProps:{value:e.$v.nombre.$model},on:{input:function(t){t.target.composing||e.$set(e.$v.nombre,"$model",t.target.value.trim())},blur:function(t){return e.$forceUpdate()}}}),e._v(" "),e.errors.nombre?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.errors.nombre[0]))]):e._e(),e._v(" "),e.$v.nombre.$error&&!e.$v.nombre.required?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.$v.nombre.$error&&!e.$v.nombre.unique?a("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.unique))]):e._e()])]),e._v(" "),a("div",{staticClass:"modal-footer"},[a("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(t){return e.$modal.hide("modal_agregar_info_caract")}}},[e._v("Cancelar")]),e._v(" "),a("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:e.bloquearBtnModal},on:{click:e.agregarInfo}},[e._v("Agregar")])])])])],1)],1)}),[],!1,null,null,null);t.a=m.exports},87:function(e,t,a){"use strict";var r={data:function(){return{imagenMiniatura:"",imagenError:""}},methods:{cambiarValorImagen:function(e){e?this.parametros.imagen=e:this.validarTipoForm?this.parametros.imagen="":(this.parametros.imagen=this.info.imagen,this.imagenMiniatura=this.info.imagenPublica,this.$refs.inputImagen.value="")},obtenerImagen:function(e){var t=e.target.files[0];t?!/(.jpg|.jpeg|.png)$/i.exec(t.name)||t.size>2e6?(this.imagenError="La imagen debe ser en formato .png .jpg y menor a 2Mb.",this.$refs.inputImagen.value="",this.info?(this.imagenMiniatura=this.info.imagenPublica,this.parametros.imagen=this.info.imagen):(this.imagenMiniatura="",this.parametros.imagen="")):(this.imagenError="",this.cargarImagen(t)):this.info?(this.imagenMiniatura=this.info.imagenPublica,this.parametros.imagen=this.info.imagen):(this.parametros.imagen="",this.imagenMiniatura="")},cargarImagen:function(e){var t=this,a=new Image;a.onload=function(e){t.imagenMiniatura=a.src},a.src=URL.createObjectURL(e)}},computed:{mostraImagen:function(){return this.imagenMiniatura},mostrarBtnCroppie:function(){return!this.info||this.imagenMiniatura!=this.info.imagenPublica},validarCroppie:function(){return!!this.info&&this.imagenMiniatura==this.info.imagenPublica}}};t.a=r}}]);
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["metodo-conser-hongo"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! croppie */ "./node_modules/croppie/croppie.js");
+/* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(croppie__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["id", "imagen", "mostrarBtnCroppie", "zoom", "editar", "enableZoom", "boundaryHeigth", "viewportWidth"],
+  data: function data() {
+    return {
+      croppie: null,
+      btnAprobar: true
+    };
+  },
+  mounted: function mounted() {
+    this.crearCroppie();
+  },
+  methods: {
+    crearCroppie: function crearCroppie() {
+      var el = document.getElementById(this.id);
+      this.croppie = new croppie__WEBPACK_IMPORTED_MODULE_0___default.a(el, {
+        viewport: {
+          width: this.viewportWidth,
+          height: 200
+        },
+        boundary: {
+          height: this.boundaryHeigth
+        },
+        enableZoom: this.enableZoom
+      });
+      this.croppie.bind({
+        url: this.imagen,
+        zoom: this.zoom
+      });
+    },
+    resultado: function resultado() {
+      var _this = this;
+
+      this.croppie.result().then(function (res) {
+        _this.btnAprobar = false;
+
+        _this.$emit("cambiarValorImagen", res);
+      });
+    },
+    cancelar: function cancelar() {
+      this.btnAprobar = true;
+      this.$emit("cambiarValorImagen", "");
+    }
+  },
+  watch: {
+    imagen: function imagen() {
+      if (this.imagen) {
+        this.btnAprobar = true;
+        this.croppie.destroy();
+        this.crearCroppie();
+      }
+    }
+  },
+  computed: {
+    mostrarMensaje: function mostrarMensaje() {
+      if (this.btnAprobar && !this.editar) {
+        return true;
+      }
+
+      return false;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue2_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-datepicker */ "./node_modules/vue2-datepicker/index.esm.js");
+/* harmony import */ var vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue2-datepicker/locale/es */ "./node_modules/vue2-datepicker/locale/es.js");
+/* harmony import */ var vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
+/* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["idMetodo"],
+  components: {
+    DatePicker: vue2_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Croppie: _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  data: function data() {
+    return {
+      lang: vue2_datepicker_locale_es__WEBPACK_IMPORTED_MODULE_2___default.a,
+      info: "",
+      parametros: {
+        cepaId: "",
+        tipo_metodo: null,
+        fecha: "",
+        numero_replicas: "",
+        recuento_microgota: "",
+        medio_cultivo: "",
+        numero_pases: "",
+        observaciones: "",
+        imagen: ""
+      },
+      tituloModal: "",
+      tipoModal: "",
+      tituloForm: "",
+      nomBtn: "",
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        numeric: "El campo debe ser un numero.",
+        between: "Debe estar en el rango de "
+      }
+    };
+  },
+  validations: function validations() {
+    if (this.mostrarNumReplicas && this.mostrarRecuentoMicrogota) {
+      return {
+        parametros: {
+          tipo_metodo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          numero_replicas: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["numeric"],
+            between: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["between"])(1, 10000)
+          },
+          recuento_microgota: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          }
+        }
+      };
+    } else if (this.mostrarNumReplicas && !this.mostrarRecuentoMicrogota) {
+      return {
+        parametros: {
+          tipo_metodo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          numero_replicas: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["numeric"],
+            between: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["between"])(1, 10000)
+          },
+          medio_cultivo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          }
+        }
+      };
+    } else if (!this.mostrarNumReplicas && this.mostrarRecuentoMicrogota) {
+      return {
+        parametros: {
+          tipo_metodo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          numero_pases: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["numeric"],
+            between: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["between"])(1, 10000)
+          },
+          recuento_microgota: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          tipo_metodo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          fecha: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          numero_pases: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"],
+            numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["numeric"],
+            between: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["between"])(1, 10000)
+          },
+          medio_cultivo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          },
+          imagen: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_7__["required"]
+          }
+        }
+      };
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_4__["default"]],
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract"])), {}, {
+    evento: function evento() {
+      var _this = this;
+
+      this.bloquearBtn = true;
+      this.$v.parametros.$touch();
+
+      if (!this.$v.$invalid) {
+        this.parametros.fecha = this.parametros.fecha === null ? "" : this.parametros.fecha;
+
+        if (this.tituloForm === "Agregar Método") {
+          axios.post("/cepas/hongo/metodo-conser", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+
+              _this.accionAgregarCaract({
+                tipo: "metodo",
+                data: res.data
+              });
+
+              _this.toastr("Agregar Método", "Método agregado con exito!!", "success");
+
+              _this.$emit("cambiarVariable");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/cepas/hongo/metodo-conser/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+
+            _this.accionEditarCaract({
+              tipo: "metodo",
+              data: res.data
+            });
+
+            _this.toastr("Editar Método", "Método editado con exito!!", "success");
+
+            _this.$emit("cambiarVariable");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
+      }
+    },
+    llenarInfo: function llenarInfo() {
+      this.parametros.tipo_metodo = this.info.tipo_id;
+      this.parametros.medio_cultivo = this.info.medio_cultivo;
+      this.parametros.numero_pases = this.info.numero_pases;
+      this.parametros.observaciones = this.info.observaciones;
+      this.parametros.fecha = this.info.fecha;
+      this.parametros.numero_replicas = this.info.numero_replicas;
+      this.parametros.recuento_microgota = this.info.recuento_microgota;
+      this.parametros.imagen = this.info.imagen;
+      this.imagenMiniatura = this.info.imagenPublica;
+    },
+    showModal: function showModal(tipo) {
+      this.tipoModal = tipo;
+
+      if (tipo === "tipo_metodo") {
+        this.tituloModal = "Agregar Nueva Tipo de Método";
+      }
+
+      this.$modal.show("modal_agregar_info_caract");
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    }
+  }),
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getMetodoConserById"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoMetodoConserHongos"])), {}, {
+    btnClase: function btnClase() {
+      if (this.tituloForm === "Agregar Método") {
+        return "btn-success";
+      } else {
+        return "btn-warning";
+      }
+    },
+    validarTipoForm: function validarTipoForm() {
+      if (this.tituloForm === "Agregar Método") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    titulo: function titulo() {
+      return this.tituloForm;
+    },
+    nomBtnComputed: function nomBtnComputed() {
+      return this.nomBtn;
+    },
+    mostrarNumReplicas: function mostrarNumReplicas() {
+      if (this.parametros.tipo_metodo != 3) {
+        this.parametros.numero_pases = "";
+        return true;
+      } else {
+        this.parametros.numero_replicas = "";
+        return false;
+      }
+    },
+    mostrarRecuentoMicrogota: function mostrarRecuentoMicrogota() {
+      if (this.parametros.tipo_metodo === 2 || this.parametros.tipo_metodo === 3) {
+        this.parametros.recuento_microgota = "";
+        return false;
+      } else {
+        this.parametros.medio_cultivo = "";
+        return true;
+      }
+    },
+    obtenerMetodos: function obtenerMetodos() {
+      return this.getInfoMetodoConserHongos.tipo_metodo;
+    }
+  }),
+  created: function created() {
+    this.verificarSelects();
+
+    if (this.idMetodo === 0) {
+      this.tituloForm = "Agregar Método";
+      this.nomBtn = "Agregar";
+    } else {
+      this.info = this.getMetodoConserById(this.idMetodo);
+      this.llenarInfo();
+      this.tituloForm = "Editar Método";
+      this.nomBtn = "Editar";
+    }
+
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    } else {
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    }
+  },
+  watch: {
+    obtenerMetodos: function obtenerMetodos() {
+      if (this.obtenerMetodos.length > 0) {
+        this.parametros.tipo_metodo = this.obtenerMetodos[0].id;
+      } else {
+        this.parametros.tipo_metodo = null;
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _forms_caract_FormMetodoConserComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../forms-caract/FormMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue");
+/* harmony import */ var _tablas_TablaMetodoConserHongosComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tablas/TablaMetodoConserHongosComponent.vue */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormMetodoConser: _forms_caract_FormMetodoConserComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    TablaMetodo: _tablas_TablaMetodoConserHongosComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      formulario: false,
+      id: 0
+    };
+  },
+  methods: {
+    abrirFormulario: function abrirFormulario(id) {
+      if (id != 0) {
+        this.id = id;
+      } else {
+        this.id = 0;
+      }
+
+      this.formulario = !this.formulario;
+    },
+    cambiarVariableFormulario: function cambiarVariableFormulario() {
+      this.formulario = !this.formulario;
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on("abrirFormularioMetodoHongo", function (e) {
+      return _this.abrirFormulario(e);
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _metodo_conser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./metodo-conser */ "./resources/js/components/cepas/hongos/tablas/metodo-conser.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../vuetable/MyVuetableComponent.vue */ "./resources/js/components/vuetable/MyVuetableComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    MyVuetable: _vuetable_MyVuetableComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      url: "/info-panel/cepa/hongo/metodos-conser/",
+      idMetodoEliminar: "",
+      fields: _metodo_conser__WEBPACK_IMPORTED_MODULE_0__["default"],
+      sortOrder: [{
+        field: "tipo_id",
+        direction: "asc"
+      }],
+      bloquearBtnModal: false
+    };
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapActions("cepa", ["accionEliminarCaract"])), {}, {
+    cambiarVariable: function cambiarVariable() {
+      this.refrescarTabla = false;
+    },
+    eliminarMetodo: function eliminarMetodo() {
+      var _this = this;
+
+      this.bloquearBtnModal = true;
+      axios["delete"]("/cepas/hongo/metodo-conser/".concat(this.idMetodoEliminar)).then(function (res) {
+        _this.bloquearBtnModal = false;
+
+        _this.accionEliminarCaract({
+          tipo: "metodo",
+          data: res.data
+        });
+
+        _this.actualizarTabla();
+
+        _this.toastr("Eliminar Metodo", "Metodo eliminada con exito!!", "success");
+
+        _this.$modal.hide("my_modal_eliminar_metodo");
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        } else {
+          _this.bloquearBtnModal = false;
+
+          _this.toastr("Error!!", "", "error");
+        }
+      });
+    },
+    beforeOpen: function beforeOpen(data) {
+      this.idMetodoEliminar = data.params.id;
+    },
+    actualizarTabla: function actualizarTabla() {
+      if (this.mostrarTabla) {
+        if (this.$refs.tabla) {
+          this.$refs.tabla.refreshDatos();
+        }
+      }
+    }
+  }),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters("cepa", ["getMetodoConser"])), {}, {
+    mostrarTabla: function mostrarTabla() {
+      if (this.getMetodoConser != "" && this.getMetodoConser != null) {
+        return true;
+      }
+
+      return false;
+    }
+  }),
+  created: function created() {
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
+    } else {
+      array = this.$route.params.cepaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { attrs: { id: _vm.id } }),
+      _vm._v(" "),
+      _vm.mostrarBtnCroppie
+        ? [
+            _vm.btnAprobar
+              ? [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      on: { click: _vm.resultado }
+                    },
+                    [_vm._v("Aprobar Imagen")]
+                  ),
+                  _vm._v(" "),
+                  _vm.mostrarMensaje
+                    ? _c("em", { staticClass: "text-danger small" }, [
+                        _vm._v("Debe Aprobar la imagen")
+                      ])
+                    : _vm._e()
+                ]
+              : [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger float-right",
+                      on: { click: _vm.cancelar }
+                    },
+                    [_vm._v("Cancelar")]
+                  )
+                ]
+          ]
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a&":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a& ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "container mt-3" }, [
+        _c("div", { staticClass: "row justify-content-md-center" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", { staticClass: "main-card mb-3 card" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.evento($event)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "card-body" },
+                    [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(_vm.titulo))
+                      ]),
+                      _vm._v(" "),
+                      _vm.errors != ""
+                        ? [
+                            _c(
+                              "div",
+                              { staticClass: "alert alert-danger" },
+                              _vm._l(_vm.errors, function(item, index) {
+                                return _c("p", { key: index }, [
+                                  _vm._v(_vm._s(item[0]))
+                                ])
+                              }),
+                              0
+                            )
+                          ]
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.getInfoMetodoConserHongos
+                        ? _c(
+                            "div",
+                            { staticClass: "position-relative form-group" },
+                            [
+                              _c("label", { attrs: { for: "forma" } }, [
+                                _vm._v("Método de Conservación")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "input-group mb-3" }, [
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.tipo_metodo.$model,
+                                        expression:
+                                          "$v.parametros.tipo_metodo.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.tipo_metodo.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: { name: "select", id: "forma" },
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.$v.parametros.tipo_metodo,
+                                          "$model",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      }
+                                    }
+                                  },
+                                  _vm._l(_vm.obtenerMetodos, function(
+                                    m,
+                                    index
+                                  ) {
+                                    return _c(
+                                      "option",
+                                      { key: index, domProps: { value: m.id } },
+                                      [_vm._v(_vm._s(m.nombre))]
+                                    )
+                                  }),
+                                  0
+                                ),
+                                _vm._v(" "),
+                                _vm.getPermisoByNombre("agregar-otra")
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group-append" },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.showModal(
+                                                  "tipo_metodo"
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fas fa-plus"
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.tipo_metodo.$error &&
+                              !_vm.$v.parametros.tipo_metodo.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "container" }, [
+                            _vm._m(0),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "row" },
+                              [
+                                _c("date-picker", {
+                                  class: _vm.$v.parametros.fecha.$error
+                                    ? "error-input-select"
+                                    : "",
+                                  attrs: {
+                                    lang: _vm.lang,
+                                    type: "datetime",
+                                    "value-type": "format",
+                                    placeholder: "..."
+                                  },
+                                  model: {
+                                    value: _vm.$v.parametros.fecha.$model,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.$v.parametros.fecha,
+                                        "$model",
+                                        typeof $$v === "string"
+                                          ? $$v.trim()
+                                          : $$v
+                                      )
+                                    },
+                                    expression: "$v.parametros.fecha.$model"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _vm.$v.parametros.fecha.$error &&
+                                !_vm.$v.parametros.fecha.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ],
+                              1
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-md-6" },
+                          [
+                            _vm.mostrarNumReplicas
+                              ? [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "position-relative form-group"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        { attrs: { for: "numero_replicas" } },
+                                        [_vm._v("Número de Réplicas")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model.trim",
+                                            value:
+                                              _vm.$v.parametros.numero_replicas
+                                                .$model,
+                                            expression:
+                                              "$v.parametros.numero_replicas.$model",
+                                            modifiers: { trim: true }
+                                          }
+                                        ],
+                                        class: [
+                                          "form-control",
+                                          _vm.$v.parametros.numero_replicas
+                                            .$error
+                                            ? "error-input-select"
+                                            : ""
+                                        ],
+                                        attrs: {
+                                          name: "numero_replicas",
+                                          id: "numero_replicas",
+                                          placeholder: "...",
+                                          type: "text"
+                                        },
+                                        domProps: {
+                                          value:
+                                            _vm.$v.parametros.numero_replicas
+                                              .$model
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.$v.parametros.numero_replicas,
+                                              "$model",
+                                              $event.target.value.trim()
+                                            )
+                                          },
+                                          blur: function($event) {
+                                            return _vm.$forceUpdate()
+                                          }
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_replicas
+                                        .$error &&
+                                      !_vm.$v.parametros.numero_replicas
+                                        .required
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.mensajes.required)
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_replicas
+                                        .$error &&
+                                      !_vm.$v.parametros.numero_replicas.numeric
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.mensajes.numeric)
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_replicas
+                                        .$error &&
+                                      !_vm.$v.parametros.numero_replicas.between
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.mensajes.between +
+                                                    _vm.$v.parametros
+                                                      .numero_replicas.$params
+                                                      .between.min +
+                                                    " a " +
+                                                    _vm.$v.parametros
+                                                      .numero_replicas.$params
+                                                      .between.max
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ]
+                              : [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "position-relative form-group"
+                                    },
+                                    [
+                                      _c(
+                                        "label",
+                                        { attrs: { for: "numero_pases" } },
+                                        [_vm._v("Número de Pases")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model.trim",
+                                            value:
+                                              _vm.$v.parametros.numero_pases
+                                                .$model,
+                                            expression:
+                                              "$v.parametros.numero_pases.$model",
+                                            modifiers: { trim: true }
+                                          }
+                                        ],
+                                        class: [
+                                          "form-control",
+                                          _vm.$v.parametros.numero_pases.$error
+                                            ? "error-input-select"
+                                            : ""
+                                        ],
+                                        attrs: {
+                                          name: "numero_pases",
+                                          id: "numero_pases",
+                                          placeholder: "...",
+                                          type: "text"
+                                        },
+                                        domProps: {
+                                          value:
+                                            _vm.$v.parametros.numero_pases
+                                              .$model
+                                        },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.$set(
+                                              _vm.$v.parametros.numero_pases,
+                                              "$model",
+                                              $event.target.value.trim()
+                                            )
+                                          },
+                                          blur: function($event) {
+                                            return _vm.$forceUpdate()
+                                          }
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_pases.$error &&
+                                      !_vm.$v.parametros.numero_pases.required
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.mensajes.required)
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_pases.$error &&
+                                      !_vm.$v.parametros.numero_pases.numeric
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(_vm.mensajes.numeric)
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _vm.$v.parametros.numero_pases.$error &&
+                                      !_vm.$v.parametros.numero_pases.between
+                                        ? _c(
+                                            "em",
+                                            { staticClass: "text-error-input" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.mensajes.between +
+                                                    _vm.$v.parametros
+                                                      .numero_pases.$params
+                                                      .between.min +
+                                                    " a " +
+                                                    _vm.$v.parametros
+                                                      .numero_pases.$params
+                                                      .between.max
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ]
+                          ],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.mostrarRecuentoMicrogota
+                        ? [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "recuento_microgota" } },
+                                  [_vm._v("Recuento Microgota")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model.trim",
+                                      value:
+                                        _vm.$v.parametros.recuento_microgota
+                                          .$model,
+                                      expression:
+                                        "$v.parametros.recuento_microgota.$model",
+                                      modifiers: { trim: true }
+                                    }
+                                  ],
+                                  class: [
+                                    "form-control",
+                                    _vm.$v.parametros.recuento_microgota.$error
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
+                                  attrs: {
+                                    name: "recuento_microgota",
+                                    id: "recuento_microgota",
+                                    placeholder: "...",
+                                    type: "text"
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.$v.parametros.recuento_microgota
+                                        .$model
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$v.parametros.recuento_microgota,
+                                        "$model",
+                                        $event.target.value.trim()
+                                      )
+                                    },
+                                    blur: function($event) {
+                                      return _vm.$forceUpdate()
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _vm.$v.parametros.recuento_microgota.$error &&
+                                !_vm.$v.parametros.recuento_microgota.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ]
+                            )
+                          ]
+                        : [
+                            _c(
+                              "div",
+                              { staticClass: "position-relative form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "medio_cultivo" } },
+                                  [_vm._v("Medio de Cultivo")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model.trim",
+                                      value:
+                                        _vm.$v.parametros.medio_cultivo.$model,
+                                      expression:
+                                        "$v.parametros.medio_cultivo.$model",
+                                      modifiers: { trim: true }
+                                    }
+                                  ],
+                                  class: [
+                                    "form-control",
+                                    _vm.$v.parametros.medio_cultivo.$error
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
+                                  attrs: {
+                                    name: "medio_cultivo",
+                                    id: "medio_cultivo",
+                                    placeholder: "...",
+                                    type: "text"
+                                  },
+                                  domProps: {
+                                    value:
+                                      _vm.$v.parametros.medio_cultivo.$model
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$v.parametros.medio_cultivo,
+                                        "$model",
+                                        $event.target.value.trim()
+                                      )
+                                    },
+                                    blur: function($event) {
+                                      return _vm.$forceUpdate()
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _vm.$v.parametros.medio_cultivo.$error &&
+                                !_vm.$v.parametros.medio_cultivo.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-input" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
+                                    )
+                                  : _vm._e()
+                              ]
+                            )
+                          ],
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "imagen" } }, [
+                            _vm._v("Imagen")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            ref: "inputImagen",
+                            class: [
+                              "form-control-file",
+                              _vm.$v.parametros.imagen.$error
+                                ? "error-input-select"
+                                : ""
+                            ],
+                            attrs: {
+                              name: "imagen",
+                              accept: "image/jpeg, image/png",
+                              id: "imagen",
+                              type: "file"
+                            },
+                            on: { change: _vm.obtenerImagen }
+                          }),
+                          _vm._v(" "),
+                          _vm.imagenError
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.imagenError))
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$v.parametros.imagen.$error &&
+                          !_vm.$v.parametros.imagen.required
+                            ? _c("em", { staticClass: "text-error-input" }, [
+                                _vm._v(_vm._s(_vm.mensajes.required))
+                              ])
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "observaciones" } }, [
+                            _vm._v("Observaciones")
+                          ]),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.parametros.observaciones,
+                                expression: "parametros.observaciones"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { name: "text", id: "observaciones" },
+                            domProps: { value: _vm.parametros.observaciones },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.parametros,
+                                  "observaciones",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "mb-2 mr-2 btn btn-block",
+                          class: _vm.btnClase,
+                          attrs: { disabled: _vm.bloquearBtn }
+                        },
+                        [_vm._v(_vm._s(_vm.nomBtnComputed))]
+                      )
+                    ],
+                    2
+                  )
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", { staticClass: "main-card mb-3 card" }, [
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [
+                  _c("h5", { staticClass: "card-title" }, [_vm._v("Imagen")]),
+                  _vm._v(" "),
+                  _vm.mostraImagen
+                    ? [
+                        _vm.validarCroppie
+                          ? [
+                              _c("Croppie", {
+                                attrs: {
+                                  id: "croppie",
+                                  imagen: _vm.mostraImagen,
+                                  mostrarBtnCroppie: _vm.mostrarBtnCroppie,
+                                  enableZoom: false,
+                                  zoom: 0,
+                                  editar: true,
+                                  boundaryHeigth: 300,
+                                  viewportWidth: 200
+                                },
+                                on: {
+                                  cambiarValorImagen: _vm.cambiarValorImagen
+                                }
+                              })
+                            ]
+                          : [
+                              _c("Croppie", {
+                                attrs: {
+                                  id: "croppie",
+                                  imagen: _vm.mostraImagen,
+                                  mostrarBtnCroppie: _vm.mostrarBtnCroppie,
+                                  zoom: 1,
+                                  enableZoom: true,
+                                  editar: false,
+                                  boundaryHeigth: 300,
+                                  viewportWidth: 200
+                                },
+                                on: {
+                                  cambiarValorImagen: _vm.cambiarValorImagen
+                                }
+                              })
+                            ]
+                      ]
+                    : [_vm._m(1)]
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-hongos",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "hongo"
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("label", { attrs: { for: "fecha" } }, [_vm._v("Fecha")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [_vm._v("SIN IMAGEN")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "tabs-animation" }, [
+      _c("div", { staticClass: "mb-3 card" }, [
+        _c("div", { staticClass: "card-header-tab card-header" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "btn-actions-pane-right text-capitalize" },
+            [
+              !_vm.formulario
+                ? [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Agregar")]
+                    )
+                  ]
+                : [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirFormulario(0)
+                          }
+                        }
+                      },
+                      [_vm._v("Cancelar")]
+                    )
+                  ]
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            !_vm.formulario
+              ? [_c("TablaMetodo")]
+              : [
+                  _c("FormMetodoConser", {
+                    attrs: { idMetodo: _vm.id },
+                    on: { cambiarVariable: _vm.cambiarVariableFormulario }
+                  })
+                ]
+          ],
+          2
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-charts icon-gradient bg-happy-green"
+        }),
+        _vm._v("\n          Métodos de Conservación\n        ")
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.mostrarTabla
+        ? [
+            _c(
+              "div",
+              { staticClass: "card-body mt-3 ml-2 mr-2" },
+              [
+                _c("MyVuetable", {
+                  ref: "tabla",
+                  attrs: {
+                    apiUrl: _vm.url,
+                    fields: _vm.fields,
+                    sortOrder: _vm.sortOrder,
+                    nameGet: "metodos-hongos",
+                    detailRowComponent: ""
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "transition",
+              { attrs: { name: "fade" } },
+              [
+                _c(
+                  "modal",
+                  {
+                    attrs: {
+                      name: "my_modal_eliminar_metodo",
+                      classes: "my_modal",
+                      maxWidth: 400,
+                      adaptive: true,
+                      height: "auto",
+                      scrollable: true
+                    },
+                    on: { "before-open": _vm.beforeOpen }
+                  },
+                  [
+                    _c("div", { staticClass: "modal-content" }, [
+                      _c("div", { staticClass: "modal-header" }, [
+                        _c(
+                          "h5",
+                          {
+                            staticClass: "modal-title",
+                            attrs: { id: "exampleModalLongTitle" }
+                          },
+                          [_vm._v("Eliminar Método de Conservación")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "close",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.$modal.hide(
+                                  "my_modal_eliminar_metodo"
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c("span", { attrs: { "aria-hidden": "true" } }, [
+                              _vm._v("×")
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-body" }, [
+                        _c("p", [
+                          _vm._v("Esta segura/o de eliminar el Método?.")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "modal-footer" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-secondary",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.$modal.hide(
+                                  "my_modal_eliminar_metodo"
+                                )
+                              }
+                            }
+                          },
+                          [_vm._v("Cancelar")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-success",
+                            attrs: {
+                              type: "button",
+                              disabled: _vm.bloquearBtnModal
+                            },
+                            on: { click: _vm.eliminarMetodo }
+                          },
+                          [_vm._v("Eliminar")]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ],
+              1
+            )
+          ]
+        : [_vm._m(0)]
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("NO SE HA AGREGADO NINGÚN MÉTODO")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony import */ var _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CroppieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CroppieComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CroppieComponent.vue?vue&type=template&id=2cc1e54c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CroppieComponent.vue?vue&type=template&id=2cc1e54c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CroppieComponent_vue_vue_type_template_id_2cc1e54c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a& */ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a&");
+/* harmony import */ var _FormMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormMetodoConserComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormMetodoConserComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a& ***!
+  \************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormMetodoConserComponent.vue?vue&type=template&id=3ebe886a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormMetodoConserComponent_vue_vue_type_template_id_3ebe886a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0& */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0&");
+/* harmony import */ var _InfoMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InfoMetodoConserComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InfoMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoMetodoConserComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoMetodoConserComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue?vue&type=template&id=a8810ee0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoMetodoConserComponent_vue_vue_type_template_id_a8810ee0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&");
+/* harmony import */ var _TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/TablaMetodoConserHongosComponent.vue?vue&type=template&id=19d607b0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TablaMetodoConserHongosComponent_vue_vue_type_template_id_19d607b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/tablas/metodo-conser.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/tablas/metodo-conser.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  name: "nombre_tipo_metodo",
+  sortField: "tipo_id",
+  title: "Tipo de Método",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}, {
+  name: "numero_replicas",
+  sortField: "numero_replicas",
+  title: "Número de Replicas",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "numeroReplicas"
+}, {
+  name: "recuento_microgota",
+  sortField: "recuento_microgota",
+  title: "Recuento Microgota",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "recuentoMicorgota"
+}, {
+  name: "medio_cultivo",
+  sortField: "medio_cultivo",
+  title: "Medio de Cultivo",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "medioCultivo"
+}, {
+  name: "numero_pases",
+  sortField: "numero_pases",
+  title: "Número de Pases",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "numeroPases"
+}, {
+  name: "fecha",
+  sortField: "fecha",
+  title: "Fecha",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "formatDate"
+}, {
+  name: "imagenPublica",
+  title: "Imagen",
+  titleClass: "text-center",
+  dataClass: "text-center",
+  callback: "imagen"
+}, {
+  name: "__component:acciones_tabla_metodo_conser_hongo",
+  title: "Acciones",
+  titleClass: "text-center",
+  dataClass: "text-center"
+}]);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var obtenerImagenCroopieCepasMixin = {
+  data: function data() {
+    return {
+      imagenMiniatura: "",
+      imagenError: ""
+    };
+  },
+  methods: {
+    cambiarValorImagen: function cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.validarTipoForm) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
+    obtenerImagen: function obtenerImagen(e) {
+      var file = e.target.files[0];
+      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
+
+      if (file) {
+        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
+          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
+          this.$refs.inputImagen.value = "";
+
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
+        } else {
+          this.imagenError = "";
+          this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
+        }
+      }
+    },
+    cargarImagen: function cargarImagen(file) {
+      var _this = this;
+
+      var reader = new Image();
+
+      reader.onload = function (e) {
+        _this.imagenMiniatura = reader.src;
+      };
+
+      reader.src = URL.createObjectURL(file);
+    }
+  },
+  computed: {
+    mostraImagen: function mostraImagen() {
+      return this.imagenMiniatura;
+    },
+    mostrarBtnCroppie: function mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie: function validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
+
+/***/ })
+
+}]);

@@ -444,7 +444,7 @@ export default {
     ...vuex.mapGetters("publicidad", [
       "getNoticiaById",
       "getNoticiaByTitulo",
-      "getNoticiaByPubliclar",
+      "getNoticiaByPublicar",
     ]),
     ...vuex.mapGetters(["getUserAuth"]),
     mostraImagen() {
@@ -488,11 +488,9 @@ export default {
       return false;
     },
     validarPublicacion() {
-      if (this.getNoticiaByPubliclar.length < 5) return false;
+      if (this.getNoticiaByPublicar.length < 5) return false;
       if (this.validarTipoForm) return true;
-      if (
-        this.getNoticiaByPubliclar.find((notica) => notica.id == this.info.id)
-      )
+      if (this.getNoticiaByPublicar.find((notica) => notica.id == this.info.id))
         return false;
 
       return true;

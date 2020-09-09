@@ -142,8 +142,8 @@ export default {
   },
   created() {
     let array = [];
-    if (this.$route.params.cepaHongoId) {
-      array = this.$route.params.cepaHongoId.split("-");
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
       this.url += parseInt(array[array.length - 1]);
     } else {
       array = this.$route.params.cepaSlug.split("-");

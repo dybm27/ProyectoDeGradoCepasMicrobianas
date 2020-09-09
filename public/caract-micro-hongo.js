@@ -1,1 +1,2497 @@
-!function(e){const a=e.es=e.es||{};a.dictionary=Object.assign(a.dictionary||{},{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto",'The color is invalid. Try "#FF0000" or "rgb(255,0,0)" or "red".':"","The URL must not be empty.":"La URL no debe estar vacía",'The value is invalid. Try "10px" or "2em" or simply "2".':"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}),a.getPluralForm=function(e){return 1!=e}}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={})),(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{455:function(e,a,r){"use strict";r.r(a);var t=r(0),o=r(6),s=r(61),i=r(64),n=r(63),c=r(60),l=r(2);function m(e,a){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var t=Object.getOwnPropertySymbols(e);a&&(t=t.filter((function(a){return Object.getOwnPropertyDescriptor(e,a).enumerable}))),r.push.apply(r,t)}return r}function u(e){for(var a=1;a<arguments.length;a++){var r=null!=arguments[a]?arguments[a]:{};a%2?m(Object(r),!0).forEach((function(a){d(e,a,r[a])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):m(Object(r)).forEach((function(a){Object.defineProperty(e,a,Object.getOwnPropertyDescriptor(r,a))}))}return e}function d(e,a,r){return a in e?Object.defineProperty(e,a,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[a]=r,e}var p={components:{CroppieCepas:i.a,Imagenes:n.a,ModalAgregarInfo:c.a},props:["info","modificarInfo"],data:function(){return{parametros:{cepaId:"",conidioforo:null,fialides:"Presencia",fialides_forma:"",fialides_otra_caracteristica:"",vesicula:"Presencia",espora_asexual:null,esporas_asexuales_conidios_tamano:"Grande",esporas_asexuales_conidios_color:"",esporas_asexuales_conidios_forma:"",esporas_asexuales_conidios_otras:"",espora_sexual:null,otras_estructuras:"",imagen1:"",imagen2:"",imagen3:""},tituloModal:"",tipoModal:"",tituloForm:"",nomBtn:"",errors:[],bloquearBtn:!1,bloquearBtnModal:!1,mensajes:{required:"El campo es requerido"}}},validations:function(){return this.mostrarConidios&&this.fialidesPresencia?{parametros:{conidioforo:{required:l.required},fialides_forma:{required:l.required},espora_asexual:{required:l.required},esporas_asexuales_conidios_color:{required:l.required},esporas_asexuales_conidios_forma:{required:l.required},espora_sexual:{required:l.required},imagen1:{required:l.required},imagen2:{required:function(e){return!(""==e&&this.cantImagenes>1)}},imagen3:{required:function(e){return""!=e||3!=this.cantImagenes}}}}:this.mostrarConidios&&!this.fialidesPresencia?{parametros:{conidioforo:{required:l.required},espora_asexual:{required:l.required},esporas_asexuales_conidios_color:{required:l.required},esporas_asexuales_conidios_forma:{required:l.required},espora_sexual:{required:l.required},imagen1:{required:l.required},imagen2:{required:function(e){return!(""==e&&this.cantImagenes>1)}},imagen3:{required:function(e){return""!=e||3!=this.cantImagenes}}}}:this.fialidesPresencia&&!this.mostrarConidios?{parametros:{conidioforo:{required:l.required},fialides_forma:{required:l.required},espora_asexual:{required:l.required},espora_sexual:{required:l.required},imagen1:{required:l.required},imagen2:{required:function(e){return!(""==e&&this.cantImagenes>1)}},imagen3:{required:function(e){return""!=e||3!=this.cantImagenes}}}}:{parametros:{conidioforo:{required:l.required},espora_asexual:{required:l.required},espora_sexual:{required:l.required},imagen1:{required:l.required},imagen2:{required:function(e){return!(""==e&&this.cantImagenes>1)}},imagen3:{required:function(e){return""!=e||3!=this.cantImagenes}}}}},mixins:[o.a,s.a],methods:{evento:function(){var e=this;this.bloquearBtn=!0,this.$v.parametros.$touch(),this.$v.$invalid?(this.bloquearBtn=!1,this.toastr("Error!!","Favor llenar correctamente los campos","error")):("Ausencia"===this.parametros.fialides&&(this.parametros.fialides_forma="",this.parametros.fialides_otra_caracteristica=""),2!=this.parametros.espora_asexual&&(this.parametros.esporas_asexuales_conidios_tamano="",this.parametros.esporas_asexuales_conidios_color="",this.parametros.esporas_asexuales_conidios_forma="",this.parametros.esporas_asexuales_conidios_otras=""),"Agregar Característica"===this.tituloForm?axios.post("/cepas/hongo/caract-micro",this.parametros).then((function(a){"http://127.0.0.1:8000/"===a.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtn=!1,e.errors=[],e.$refs.inputImagen.value="",e.tituloForm="Editar Característica",e.nomBtn="Editar",e.$emit("agregar",a.data),e.toastr("Agregar Característica Microscópica","Característica Microscópica agregada con éxito!","success"))})).catch((function(a){e.verificarError(a.response.status,a.response.data.errors)})):axios.put("/cepas/hongo/caract-micro/".concat(this.info.id),this.parametros).then((function(a){e.bloquearBtn=!1,e.errors=[],e.$emit("editar",a.data),e.toastr("Editar Característica Microscópica","Característica Microscópica editada con exito!!","success")})).catch((function(a){e.verificarError(a.response.status,a.response.data.errors)})))},showModal:function(e){this.tipoModal=e,"conidioforo"===e?this.tituloModal="Agregar Nuevo Conidióforo":"esporaA"===e?this.tituloModal="Agregar Nueva Espora Asexual":"esporaS"===e&&(this.tituloModal="Agregar Nueva Espora Sexual"),this.$modal.show("modal_agregar_info_caract")},llenarInfo:function(){this.imagenes=[],this.parametros.conidioforo=this.info.conidioforo_id,this.parametros.fialides=this.info.fialides,this.parametros.fialides_forma=this.info.fialides_forma,this.parametros.fialides_otra_caracteristica=this.info.fialides_otra_caracteristica,this.parametros.vesicula=this.info.vesicula,this.parametros.espora_asexual=this.info.espora_asexual_id,this.parametros.esporas_asexuales_conidios_tamano=null===this.info.esporas_asexuales_conidios_tamano?"Grande":this.info.esporas_asexuales_conidios_tamano,this.parametros.esporas_asexuales_conidios_color=this.info.esporas_asexuales_conidios_color,this.parametros.esporas_asexuales_conidios_forma=this.info.esporas_asexuales_conidios_forma,this.parametros.esporas_asexuales_conidios_otras=this.info.esporas_asexuales_conidios_otras,this.parametros.espora_sexual=this.info.espora_sexual_id,this.parametros.otras_estructuras=this.info.otras_estructuras,this.parametros.imagen1=this.info.imagen1,this.parametros.imagen2=this.info.imagen2,this.parametros.imagen3=this.info.imagen3,this.llenarArregloImagenes()},accionImagen:function(e){this.$emit("editar",e)},verificarSelects:function(){this.obtenerConidioforos.length>0?this.parametros.conidioforo=this.obtenerConidioforos[0].id:this.parametros.conidioforo=null,this.obtenerEsporasAsexuales.length>0?this.parametros.espora_asexual=this.obtenerEsporasAsexuales[0].id:this.parametros.espora_asexual=null,this.obtenerEsporasSexuales.length>0?this.parametros.espora_sexual=this.obtenerEsporasSexuales[0].id:this.parametros.espora_sexual=null}},computed:u(u(u({},t.a.mapGetters(["getPermisoByNombre"])),t.a.mapGetters("info_caract",["getInfoCaractMicroHongos"])),{},{validarTipoForm:function(){return"Agregar Característica"===this.tituloForm},btnClase:function(){return"Agregar Característica"===this.tituloForm?"btn-success":"btn-warning"},obtenerConidioforos:function(){return this.getInfoCaractMicroHongos.conidioforos},obtenerEsporasAsexuales:function(){return this.getInfoCaractMicroHongos.esporas_asexuales},obtenerEsporasSexuales:function(){return this.getInfoCaractMicroHongos.esporas_sexuales},fialidesPresencia:function(){return"Presencia"===this.parametros.fialides},mostrarConidios:function(){return 2===this.parametros.espora_asexual}}),mounted:function(){this.info?(this.llenarInfo(),this.tituloForm="Editar Característica",this.nomBtn="Editar"):(this.tituloForm="Agregar Característica",this.nomBtn="Agregar");var e=[];this.$route.params.cepaHongoSlug?(e=this.$route.params.cepaHongoSlug.split("-"),this.parametros.cepaId=parseInt(e[e.length-1])):(e=this.$route.params.cepaSlug.split("-"),this.parametros.cepaId=parseInt(e[e.length-1]))},created:function(){this.verificarSelects()},watch:{modificarInfo:function(){this.modificarInfo&&(this.llenarInfo(),this.$emit("cambiarVariable"))},obtenerConidioforos:function(){this.obtenerConidioforos.length>0?this.parametros.conidioforo=this.obtenerConidioforos[0].id:this.parametros.conidioforo=null},obtenerEsporasAsexuales:function(){this.obtenerEsporasAsexuales.length>0?this.parametros.espora_asexual=this.obtenerEsporasAsexuales[0].id:this.parametros.espora_asexual=null},obtenerEsporasSexuales:function(){this.obtenerEsporasSexuales.length>0?this.parametros.espora_sexual=this.obtenerEsporasSexuales[0].id:this.parametros.espora_sexual=null}}},_=r(1);function f(e,a){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var t=Object.getOwnPropertySymbols(e);a&&(t=t.filter((function(a){return Object.getOwnPropertyDescriptor(e,a).enumerable}))),r.push.apply(r,t)}return r}function g(e){for(var a=1;a<arguments.length;a++){var r=null!=arguments[a]?arguments[a]:{};a%2?f(Object(r),!0).forEach((function(a){v(e,a,r[a])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):f(Object(r)).forEach((function(a){Object.defineProperty(e,a,Object.getOwnPropertyDescriptor(r,a))}))}return e}function v(e,a,r){return a in e?Object.defineProperty(e,a,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[a]=r,e}var h={components:{FormCaractMicro:Object(_.a)(p,(function(){var e=this,a=e.$createElement,r=e._self._c||a;return r("div",{staticClass:"mt-4 mr-4 ml-4"},[r("div",{staticClass:"row justify-content-md-center"},[r("div",{staticClass:"col-sm-6"},[r("div",{staticClass:"main-card mb-3 card"},[r("div",{staticClass:"card-body"},[r("h5",{staticClass:"card-title"},[e._v(e._s(e.tituloForm))]),e._v(" "),r("form",{on:{submit:function(a){return a.preventDefault(),e.evento(a)}}},[""!=e.errors?[r("div",{staticClass:"alert alert-danger"},e._l(e.errors,(function(a,t){return r("p",{key:t},[e._v(e._s(a[0]))])})),0)]:e._e(),e._v(" "),e.getInfoCaractMicroHongos?[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"conidioforo"}},[e._v("Conidióforo")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.conidioforo.$model,expression:"$v.parametros.conidioforo.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.conidioforo.$error?"error-input-select":""],attrs:{name:"select",id:"conidioforo"},on:{change:function(a){var r=Array.prototype.filter.call(a.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.conidioforo,"$model",a.target.multiple?r:r[0])}}},e._l(e.obtenerConidioforos,(function(a,t){return r("option",{key:t,domProps:{value:a.id}},[e._v(e._s(a.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(a){return a.preventDefault(),e.showModal("conidioforo")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.conidioforo.$error&&!e.$v.parametros.conidioforo.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"fialides"}},[e._v("Fiálides")]),e._v(" "),r("div",[r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.fialides,expression:"parametros.fialides"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"fialides1",name:"fialides",value:"Presencia"},domProps:{checked:e._q(e.parametros.fialides,"Presencia")},on:{change:function(a){return e.$set(e.parametros,"fialides","Presencia")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"fialides1"}},[e._v("Presencia")])]),e._v(" "),r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.fialides,expression:"parametros.fialides"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"fialides2",name:"fialides",value:"Ausencia"},domProps:{checked:e._q(e.parametros.fialides,"Ausencia")},on:{change:function(a){return e.$set(e.parametros,"fialides","Ausencia")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"fialides2"}},[e._v("Ausencia")])])])]),e._v(" "),e.fialidesPresencia?r("div",{staticClass:"ml-3 mr-3"},[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"fialides_forma"}},[e._v("Forma")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.fialides_forma.$model,expression:"$v.parametros.fialides_forma.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.fialides_forma.$error?"error-input-select":""],attrs:{name:"fialides_forma",id:"fialides_forma",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.fialides_forma.$model},on:{input:function(a){a.target.composing||e.$set(e.$v.parametros.fialides_forma,"$model",a.target.value.trim())},blur:function(a){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.fialides_forma.$error&&!e.$v.parametros.fialides_forma.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"fialides_otra_caracteristica"}},[e._v("Otras características")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.fialides_otra_caracteristica,expression:"parametros.fialides_otra_caracteristica"}],staticClass:"form-control",attrs:{name:"fialides_otra_caracteristica",id:"fialides_otra_caracteristica",placeholder:"...",type:"text"},domProps:{value:e.parametros.fialides_otra_caracteristica},on:{input:function(a){a.target.composing||e.$set(e.parametros,"fialides_otra_caracteristica",a.target.value)}}})])]):e._e(),e._v(" "),r("label",{attrs:{for:"fialides"}},[e._v("Vesícula")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.vesicula,expression:"parametros.vesicula"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"vesicula1",name:"vesicula",value:"Presencia"},domProps:{checked:e._q(e.parametros.vesicula,"Presencia")},on:{change:function(a){return e.$set(e.parametros,"vesicula","Presencia")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"vesicula1"}},[e._v("Presencia")])]),e._v(" "),r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.vesicula,expression:"parametros.vesicula"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"vesicula2",name:"vesicula",value:"Ausencia"},domProps:{checked:e._q(e.parametros.vesicula,"Ausencia")},on:{change:function(a){return e.$set(e.parametros,"vesicula","Ausencia")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"vesicula2"}},[e._v("Ausencia")])])]),e._v(" "),r("label",{attrs:{for:"espora_asexual"}},[e._v("Espora Asexual")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.espora_asexual.$model,expression:"$v.parametros.espora_asexual.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.espora_asexual.$error?"error-input-select":""],attrs:{name:"select",id:"espora_asexual"},on:{change:function(a){var r=Array.prototype.filter.call(a.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.espora_asexual,"$model",a.target.multiple?r:r[0])}}},e._l(e.obtenerEsporasAsexuales,(function(a,t){return r("option",{key:t,domProps:{value:a.id}},[e._v(e._s(a.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(a){return a.preventDefault(),e.showModal("esporaA")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.espora_asexual.$error&&!e.$v.parametros.espora_asexual.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.mostrarConidios?r("div",{staticClass:"ml-3 mr-3"},[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"esporas_asexuales_conidios_tamano"}},[e._v("Tamaño")]),e._v(" "),r("div",[r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.esporas_asexuales_conidios_tamano,expression:"parametros.esporas_asexuales_conidios_tamano"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"esporas_asexuales_conidios_tamano1",name:"esporas_asexuales_conidios_tamano",value:"Grande"},domProps:{checked:e._q(e.parametros.esporas_asexuales_conidios_tamano,"Grande")},on:{change:function(a){return e.$set(e.parametros,"esporas_asexuales_conidios_tamano","Grande")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"esporas_asexuales_conidios_tamano1"}},[e._v("Grande")])]),e._v(" "),r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.esporas_asexuales_conidios_tamano,expression:"parametros.esporas_asexuales_conidios_tamano"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"esporas_asexuales_conidios_tamano2",name:"esporas_asexuales_conidios_tamano",value:"Mediano"},domProps:{checked:e._q(e.parametros.esporas_asexuales_conidios_tamano,"Mediano")},on:{change:function(a){return e.$set(e.parametros,"esporas_asexuales_conidios_tamano","Mediano")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"esporas_asexuales_conidios_tamano2"}},[e._v("Mediano")])]),e._v(" "),r("div",{staticClass:"custom-radio custom-control custom-control-inline"},[r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.esporas_asexuales_conidios_tamano,expression:"parametros.esporas_asexuales_conidios_tamano"}],staticClass:"custom-control-input",attrs:{type:"radio",id:"esporas_asexuales_conidios_tamano3",name:"esporas_asexuales_conidios_tamano",value:"Pequeño"},domProps:{checked:e._q(e.parametros.esporas_asexuales_conidios_tamano,"Pequeño")},on:{change:function(a){return e.$set(e.parametros,"esporas_asexuales_conidios_tamano","Pequeño")}}}),e._v(" "),r("label",{staticClass:"custom-control-label",attrs:{for:"esporas_asexuales_conidios_tamano3"}},[e._v("Pequeño")])])])]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"esporas_asexuales_conidios_color"}},[e._v("Color")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.esporas_asexuales_conidios_color.$model,expression:"$v.parametros.esporas_asexuales_conidios_color.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.esporas_asexuales_conidios_color.$error?"error-input-select":""],attrs:{name:"esporas_asexuales_conidios_color",id:"esporas_asexuales_conidios_color",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.esporas_asexuales_conidios_color.$model},on:{input:function(a){a.target.composing||e.$set(e.$v.parametros.esporas_asexuales_conidios_color,"$model",a.target.value.trim())},blur:function(a){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.esporas_asexuales_conidios_color.$error&&!e.$v.parametros.esporas_asexuales_conidios_color.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"esporas_asexuales_conidios_forma"}},[e._v("Forma")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.esporas_asexuales_conidios_forma.$model,expression:"$v.parametros.esporas_asexuales_conidios_forma.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.esporas_asexuales_conidios_forma.$error?"error-input-select":""],attrs:{name:"esporas_asexuales_conidios_forma",id:"esporas_asexuales_conidios_forma",placeholder:"...",type:"text"},domProps:{value:e.$v.parametros.esporas_asexuales_conidios_forma.$model},on:{input:function(a){a.target.composing||e.$set(e.$v.parametros.esporas_asexuales_conidios_forma,"$model",a.target.value.trim())},blur:function(a){return e.$forceUpdate()}}}),e._v(" "),e.$v.parametros.esporas_asexuales_conidios_forma.$error&&!e.$v.parametros.esporas_asexuales_conidios_forma.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()]),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"esporas_asexuales_conidios_otras"}},[e._v("Otras características")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model",value:e.parametros.esporas_asexuales_conidios_otras,expression:"parametros.esporas_asexuales_conidios_otras"}],staticClass:"form-control",attrs:{name:"esporas_asexuales_conidios_otras",id:"esporas_asexuales_conidios_otras",placeholder:"...",type:"text"},domProps:{value:e.parametros.esporas_asexuales_conidios_otras},on:{input:function(a){a.target.composing||e.$set(e.parametros,"esporas_asexuales_conidios_otras",a.target.value)}}})])]):e._e(),e._v(" "),r("label",{attrs:{for:"espora_sexual"}},[e._v("Espora Sexual")]),e._v(" "),r("div",{staticClass:"input-group mb-3"},[r("select",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.parametros.espora_sexual.$model,expression:"$v.parametros.espora_sexual.$model",modifiers:{trim:!0}}],class:["form-control",e.$v.parametros.espora_sexual.$error?"error-input-select":""],attrs:{name:"select",id:"espora_sexual"},on:{change:function(a){var r=Array.prototype.filter.call(a.target.options,(function(e){return e.selected})).map((function(e){return"_value"in e?e._value:e.value}));e.$set(e.$v.parametros.espora_sexual,"$model",a.target.multiple?r:r[0])}}},e._l(e.obtenerEsporasSexuales,(function(a,t){return r("option",{key:t,domProps:{value:a.id}},[e._v(e._s(a.nombre))])})),0),e._v(" "),e.getPermisoByNombre("agregar-otra")?r("div",{staticClass:"input-group-append"},[r("button",{staticClass:"btn-icon btn-icon-only btn-pill btn btn-outline-success",on:{click:function(a){return a.preventDefault(),e.showModal("esporaS")}}},[r("i",{staticClass:"fas fa-plus"})])]):e._e()]),e._v(" "),e.$v.parametros.espora_sexual.$error&&!e.$v.parametros.espora_sexual.required?r("em",{staticClass:"text-error-select"},[e._v(e._s(e.mensajes.required))]):e._e()]:e._e(),e._v(" "),e.validarTipoForm?[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"imagen"}},[e._v("Imágenes")]),e._v(" "),r("input",{ref:"inputImagen",class:["form-control-file",e.$v.parametros.imagen1.$error||e.$v.parametros.imagen2.$error||e.$v.parametros.imagen3.$error?"error-input-select":""],attrs:{name:"imagen",id:"imagen",type:"file",accept:"image/jpeg, image/png",multiple:""},on:{change:e.obtenerImagenes}}),e._v(" "),e.erroresImagenes?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.erroresImagenes))]):e._e(),e._v(" "),e.$v.parametros.imagen1.$error&&!e.$v.parametros.imagen1.required||e.$v.parametros.imagen2.$error&&!e.$v.parametros.imagen2.required||e.$v.parametros.imagen3.$error&&!e.$v.parametros.imagen3.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e()])]:e._e(),e._v(" "),r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"otras_estructuras"}},[e._v("Otras estructuras")]),e._v(" "),r("textarea",{directives:[{name:"model",rawName:"v-model",value:e.parametros.otras_estructuras,expression:"parametros.otras_estructuras"}],staticClass:"form-control",attrs:{name:"text",id:"otras_estructuras"},domProps:{value:e.parametros.otras_estructuras},on:{input:function(a){a.target.composing||e.$set(e.parametros,"otras_estructuras",a.target.value)}}})]),e._v(" "),r("button",{staticClass:"mb-2 mr-2 btn btn-block",class:e.btnClase,attrs:{disabled:e.bloquearBtn}},[e._v(e._s(e.nomBtn))])],2)])])]),e._v(" "),r("div",{staticClass:"col-sm-6"},[r("div",{staticClass:"main-card mb-3 card"},[r("div",{staticClass:"card-body"},[e.validarTipoForm?[e.imagenesCroppie.length===e.cantImagenes&&e.$refs.inputImagen.value?[r("CroppieCepas",{attrs:{imagenes:e.imagenesCroppie,posicion:"vertical"},on:{cambiarValorImagen:e.cambiarValorImagen}})]:[e._m(0)]]:[r("Imagenes",{attrs:{parametros:e.parametros,tipoCepa:"hongo/caract-micro",imagenes:e.imagenes,cepa:e.info},on:{accionImagen:e.accionImagen}})]],2)])])]),e._v(" "),r("ModalAgregarInfo",{attrs:{url:"info-caract-hongos",tipo:e.tipoModal,titulo:e.tituloModal,tipoForm:"hongo"}})],1)}),[function(){var e=this.$createElement,a=this._self._c||e;return a("div",{staticClass:"text-center"},[a("h5",{staticClass:"mt-5 mb-5"},[a("span",{staticClass:"pr-1"},[a("b",{staticClass:"text-success"},[this._v("SIN IMÁGENES")])])])])}],!1,null,null,null).exports,ModalEliminar:r(33).a},data:function(){return{mostrarBtnAgregar:!0,mostrarForm:!1,modificarForm:!1}},methods:g(g({},t.a.mapActions("cepa",["accionAgregarCaract","accionEditarCaract","accionEliminarCaract"])),{},{agregar:function(e){this.accionAgregarCaract({tipo:"micro",data:e}),this.modificarForm=!0},editar:function(e){this.accionEditarCaract({tipo:"micro",data:e}),this.modificarForm=!0},eliminar:function(e){this.accionEliminarCaract({tipo:"micro",data:e}),this.mostrarBtnAgregar=!0,this.mostrarForm=!1},cambiarVariable:function(){this.modificarForm=!1},btnAgregar:function(){this.mostrarForm=!0,this.mostrarBtnAgregar=!1},cancelar:function(){this.mostrarForm=!1,this.mostrarBtnAgregar=!0}}),computed:g(g({},t.a.mapGetters("cepa",["getCaractMicro"])),{},{mostrarBtnEliminar:function(){return!!this.getCaractMicro},mostrarBtnCancelar:function(){return!(!this.mostrarForm||this.getCaractMicro)},mostrarBtnAgregarComputed:function(){return this.mostrarBtnAgregar}}),mounted:function(){this.getCaractMicro&&(this.mostrarBtnAgregar=!1,this.mostrarForm=!0)}},b=Object(_.a)(h,(function(){var e=this,a=e.$createElement,r=e._self._c||a;return r("div",[r("div",{staticClass:"tabs-animation"},[r("div",{staticClass:"mb-3 card"},[r("div",{staticClass:"card-header-tab card-header"},[e._m(0),e._v(" "),r("div",{staticClass:"btn-actions-pane-right text-capitalize"},[r("button",{directives:[{name:"show",rawName:"v-show",value:e.mostrarBtnCancelar,expression:"mostrarBtnCancelar"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:e.cancelar}},[e._v("Cancelar")]),e._v(" "),r("button",{directives:[{name:"show",rawName:"v-show",value:e.mostrarBtnEliminar,expression:"mostrarBtnEliminar"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",on:{click:function(a){return e.$modal.show("modal_eliminar_caract")}}},[e._v("Eliminar Características")]),e._v(" "),r("button",{directives:[{name:"show",rawName:"v-show",value:e.mostrarBtnAgregarComputed,expression:"mostrarBtnAgregarComputed"}],staticClass:"btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",on:{click:e.btnAgregar}},[e._v("Agregar Características")])])]),e._v(" "),e.mostrarForm?[r("FormCaractMicro",{attrs:{modificarInfo:e.modificarForm,info:e.getCaractMicro},on:{agregar:e.agregar,editar:e.editar,cambiarVariable:e.cambiarVariable}})]:[e._m(1)]],2)]),e._v(" "),r("ModalEliminar",{attrs:{tipo:"Característica",tipoCaract:"Característica Microscópica",caract:e.getCaractMicro,url:"hongo/caract-micro"},on:{eliminar:e.eliminar}})],1)}),[function(){var e=this.$createElement,a=this._self._c||e;return a("div",{staticClass:"card-header-title font-size-lg text-capitalize font-weight-normal"},[a("i",{staticClass:"header-icon lnr-charts icon-gradient bg-happy-green"}),this._v("\n          Características Microscópicas\n        ")])},function(){var e=this.$createElement,a=this._self._c||e;return a("div",{staticClass:"text-center"},[a("h5",{staticClass:"mt-5 mb-5"},[a("span",{staticClass:"pr-1"},[a("b",{staticClass:"text-success"},[this._v("AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS")])])])])}],!1,null,null,null);a.default=b.exports},60:function(e,a,r){"use strict";var t=r(6),o=r(0);function s(e,a){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var t=Object.getOwnPropertySymbols(e);a&&(t=t.filter((function(a){return Object.getOwnPropertyDescriptor(e,a).enumerable}))),r.push.apply(r,t)}return r}function i(e){for(var a=1;a<arguments.length;a++){var r=null!=arguments[a]?arguments[a]:{};a%2?s(Object(r),!0).forEach((function(a){n(e,a,r[a])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):s(Object(r)).forEach((function(a){Object.defineProperty(e,a,Object.getOwnPropertyDescriptor(r,a))}))}return e}function n(e,a,r){return a in e?Object.defineProperty(e,a,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[a]=r,e}var c={props:["titulo","tipo","url","tipoForm"],data:function(){return{nombre:"",errors:[],bloquearBtnModal:!1,mensajes:{required:"El campo es requerido.",unique:"Ya existe un registro con ese nombre."}}},validations:{nombre:{required:r(2).required,unique:function(e){return""==e||!this.validarNombreUnico}}},mixins:[t.a],methods:i(i(i(i(i({},o.a.mapActions("info_caract",["accionAgregarTipoCaractLevadura","accionAgregarTipoCaractActinomiceto","accionAgregarTipoCaractHongo","accionAgregarTipoCaractBacteria"])),o.a.mapActions("info_caract",[])),o.a.mapActions("info_caract",[])),o.a.mapActions("info_caract",[])),{},{closed:function(){this.nombre="",this.errors=[]},agregarInfo:function(){var e=this;if(this.bloquearBtnModal=!0,this.$v.nombre.$touch(),this.$v.$invalid)this.bloquearBtnModal=!1,this.toastr("Error!!","Favor corregir el Error.","error");else{var a={tipo:this.tipo,nombre:this.nombre};axios.post("/".concat(this.url,"/agregar"),a).then((function(a){"http://127.0.0.1:8000/"===a.request.responseURL?(localStorage.setItem("mensajeLogin","Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"),window.location.href="/"):(e.bloquearBtnModal=!1,e.guardarInfo(a.data),e.$modal.hide("modal_agregar_info_caract"),e.toastr("Agregar Info!!","".concat(e.tipo," agregado/a con exito"),"success"))})).catch((function(a){e.verificarErrorAxios(a.response.status,a.response.data.errors)}))}},guardarInfo:function(e){switch(this.tipoForm){case"bacteria":this.accionAgregarTipoCaractBacteria({info:e,tipo:this.tipo});break;case"hongo":this.accionAgregarTipoCaractHongo({info:e,tipo:this.tipo});break;case"levadura":this.accionAgregarTipoCaractLevadura({info:e,tipo:this.tipo});break;case"actinomiceto":this.accionAgregarTipoCaractActinomiceto({info:e,tipo:this.tipo})}},verificarErrorAxios:function(e,a){403===e?this.$router.push("/sin-acceso"):405===e||401===e?window.location.href="/":(422===e&&(this.errors=[],this.errors=a),this.bloquearBtnModal=!1,this.toastr("Error!!","","error"))}}),computed:i(i({},o.a.mapGetters("info_caract",["getInfoCaractMacroBacteriasByNombre","getInfoCaractMicroBacteriasByNombre","getInfoMetodoConserBacteriasByNombre","getInfoCaractMacroHongosByNombre","getInfoCaractMicroHongosByNombre","getInfoMetodoConserHongosByNombre","getInfoCaractMacroLevadurasByNombre","getInfoMetodoConserLevadurasByNombre","getInfoCaractMacroActinomicetosByNombre","getInfoCaractMicroActinomicetosByNombre"])),{},{validarNombreUnico:function(){switch(this.tipoForm){case"bacteria":if("borde"==this.tipo||"color"==this.tipo||"detalle"==this.tipo||"elevacion"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("forma_micro"==this.tipo){if(this.getInfoCaractMicroBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserBacteriasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"hongo":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if("conidioforo"==this.tipo||"esporaA"==this.tipo||"esporaS"==this.tipo){if(this.getInfoCaractMicroHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserHongosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1;case"levadura":if("color"==this.tipo||"textura"==this.tipo){if(this.getInfoCaractMacroLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(this.getInfoMetodoConserLevadurasByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;break;case"actinomiceto":if("borde"==this.tipo||"color"==this.tipo||"textura"==this.tipo||"pigmento"==this.tipo||"forma_macro"==this.tipo||"superficie"==this.tipo){if(this.getInfoCaractMacroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0}else if(("forma_micro"==this.tipo||"conidioforo"==this.tipo||"tincion"==this.tipo||"micelio"==this.tipo)&&this.getInfoCaractMicroActinomicetosByNombre({nombre:this.nombre,tipo:this.tipo}))return!0;return!1}}})},l=r(1),m=Object(l.a)(c,(function(){var e=this,a=e.$createElement,r=e._self._c||a;return r("div",[r("transition",{attrs:{name:"fade"}},[r("modal",{attrs:{name:"modal_agregar_info_caract",classes:"my_modal",maxWidth:450,adaptive:!0,height:"auto",scrollable:!0},on:{closed:e.closed}},[r("div",{staticClass:"modal-content"},[r("div",{staticClass:"modal-header"},[r("h5",{staticClass:"modal-title",attrs:{id:"exampleModalLongTitle"}},[e._v(e._s(e.titulo))]),e._v(" "),r("button",{staticClass:"close",attrs:{type:"button"},on:{click:function(a){return e.$modal.hide("modal_agregar_info_caract")}}},[r("span",{attrs:{"aria-hidden":"true"}},[e._v("×")])])]),e._v(" "),r("div",{staticClass:"modal-body"},[r("div",{staticClass:"position-relative form-group"},[r("label",{attrs:{for:"nombre"}},[e._v("Nombre")]),e._v(" "),r("input",{directives:[{name:"model",rawName:"v-model.trim",value:e.$v.nombre.$model,expression:"$v.nombre.$model",modifiers:{trim:!0}}],class:["form-control",e.errors.nombre||e.$v.nombre.$error?"error-input-select":""],attrs:{name:"nombre",id:"nombre",placeholder:"...",type:"text"},domProps:{value:e.$v.nombre.$model},on:{input:function(a){a.target.composing||e.$set(e.$v.nombre,"$model",a.target.value.trim())},blur:function(a){return e.$forceUpdate()}}}),e._v(" "),e.errors.nombre?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.errors.nombre[0]))]):e._e(),e._v(" "),e.$v.nombre.$error&&!e.$v.nombre.required?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.required))]):e._e(),e._v(" "),e.$v.nombre.$error&&!e.$v.nombre.unique?r("em",{staticClass:"text-error-input"},[e._v(e._s(e.mensajes.unique))]):e._e()])]),e._v(" "),r("div",{staticClass:"modal-footer"},[r("button",{staticClass:"btn btn-secondary",attrs:{type:"button"},on:{click:function(a){return e.$modal.hide("modal_agregar_info_caract")}}},[e._v("Cancelar")]),e._v(" "),r("button",{staticClass:"btn btn-success",attrs:{type:"button",disabled:e.bloquearBtnModal},on:{click:e.agregarInfo}},[e._v("Agregar")])])])])],1)],1)}),[],!1,null,null,null);a.a=m.exports}}]);
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-micro-hongo"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopie3Imagenes */ "./resources/js/mixins/obtenerImagenCroopie3Imagenes.js");
+/* harmony import */ var _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../CroppieCepasComponent.vue */ "./resources/js/components/cepas/CroppieCepasComponent.vue");
+/* harmony import */ var _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ImagenesComponent.vue */ "./resources/js/components/cepas/ImagenesComponent.vue");
+/* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    CroppieCepas: _CroppieCepasComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Imagenes: _ImagenesComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ModalAgregarInfo: _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  props: ["info", "modificarInfo"],
+  data: function data() {
+    return {
+      parametros: {
+        cepaId: "",
+        conidioforo: null,
+        fialides: "Presencia",
+        fialides_forma: "",
+        fialides_otra_caracteristica: "",
+        vesicula: "Presencia",
+        espora_asexual: null,
+        esporas_asexuales_conidios_tamano: "Grande",
+        esporas_asexuales_conidios_color: "",
+        esporas_asexuales_conidios_forma: "",
+        esporas_asexuales_conidios_otras: "",
+        espora_sexual: null,
+        otras_estructuras: "",
+        imagen1: "",
+        imagen2: "",
+        imagen3: ""
+      },
+      tituloModal: "",
+      tipoModal: "",
+      tituloForm: "",
+      nomBtn: "",
+      errors: [],
+      bloquearBtn: false,
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido"
+      }
+    };
+  },
+  validations: function validations() {
+    if (this.mostrarConidios && this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          fialides_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else if (this.mostrarConidios && !this.fialidesPresencia) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_color: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          esporas_asexuales_conidios_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else if (this.fialidesPresencia && !this.mostrarConidios) {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          fialides_forma: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    } else {
+      return {
+        parametros: {
+          conidioforo: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_asexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          espora_sexual: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen1: {
+            required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_6__["required"]
+          },
+          imagen2: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes > 1) return false;
+              return true;
+            }
+          },
+          imagen3: {
+            required: function required(value) {
+              if (value == "" && this.cantImagenes == 3) return false;
+              return true;
+            }
+          }
+        }
+      };
+    }
+  },
+  mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopie3Imagenes__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  methods: {
+    evento: function evento() {
+      var _this = this;
+
+      this.bloquearBtn = true;
+      this.$v.parametros.$touch();
+
+      if (!this.$v.$invalid) {
+        if (this.parametros.fialides === "Ausencia") {
+          this.parametros.fialides_forma = "";
+          this.parametros.fialides_otra_caracteristica = "";
+        }
+
+        if (this.parametros.espora_asexual != 2) {
+          this.parametros.esporas_asexuales_conidios_tamano = "";
+          this.parametros.esporas_asexuales_conidios_color = "";
+          this.parametros.esporas_asexuales_conidios_forma = "";
+          this.parametros.esporas_asexuales_conidios_otras = "";
+        }
+
+        if (this.tituloForm === "Agregar Característica") {
+          axios.post("/cepas/hongo/caract-micro", this.parametros).then(function (res) {
+            if (res.request.responseURL === "http://127.0.0.1:8000/") {
+              localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+              window.location.href = "/";
+            } else {
+              _this.bloquearBtn = false;
+              _this.errors = [];
+              _this.$refs.inputImagen.value = "";
+              _this.tituloForm = "Editar Característica";
+              _this.nomBtn = "Editar";
+
+              _this.$emit("agregar", res.data);
+
+              _this.toastr("Agregar Característica Microscópica", "Característica Microscópica agregada con éxito!", "success");
+            }
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        } else {
+          axios.put("/cepas/hongo/caract-micro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Característica Microscópica", "Característica Microscópica editada con exito!!", "success");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
+      }
+    },
+    showModal: function showModal(tipo) {
+      this.tipoModal = tipo;
+
+      if (tipo === "conidioforo") {
+        this.tituloModal = "Agregar Nuevo Conidióforo";
+      } else if (tipo === "esporaA") {
+        this.tituloModal = "Agregar Nueva Espora Asexual";
+      } else if (tipo === "esporaS") {
+        this.tituloModal = "Agregar Nueva Espora Sexual";
+      }
+
+      this.$modal.show("modal_agregar_info_caract");
+    },
+    llenarInfo: function llenarInfo() {
+      this.imagenes = [];
+      this.parametros.conidioforo = this.info.conidioforo_id;
+      this.parametros.fialides = this.info.fialides;
+      this.parametros.fialides_forma = this.info.fialides_forma;
+      this.parametros.fialides_otra_caracteristica = this.info.fialides_otra_caracteristica;
+      this.parametros.vesicula = this.info.vesicula;
+      this.parametros.espora_asexual = this.info.espora_asexual_id;
+      this.parametros.esporas_asexuales_conidios_tamano = this.info.esporas_asexuales_conidios_tamano === null ? "Grande" : this.info.esporas_asexuales_conidios_tamano;
+      this.parametros.esporas_asexuales_conidios_color = this.info.esporas_asexuales_conidios_color;
+      this.parametros.esporas_asexuales_conidios_forma = this.info.esporas_asexuales_conidios_forma;
+      this.parametros.esporas_asexuales_conidios_otras = this.info.esporas_asexuales_conidios_otras;
+      this.parametros.espora_sexual = this.info.espora_sexual_id;
+      this.parametros.otras_estructuras = this.info.otras_estructuras;
+      this.parametros.imagen1 = this.info.imagen1;
+      this.parametros.imagen2 = this.info.imagen2;
+      this.parametros.imagen3 = this.info.imagen3;
+      this.llenarArregloImagenes();
+    },
+    accionImagen: function accionImagen(data) {
+      this.$emit("editar", data);
+    },
+    verificarSelects: function verificarSelects() {
+      if (this.obtenerConidioforos.length > 0) {
+        this.parametros.conidioforo = this.obtenerConidioforos[0].id;
+      } else {
+        this.parametros.conidioforo = null;
+      }
+
+      if (this.obtenerEsporasAsexuales.length > 0) {
+        this.parametros.espora_asexual = this.obtenerEsporasAsexuales[0].id;
+      } else {
+        this.parametros.espora_asexual = null;
+      }
+
+      if (this.obtenerEsporasSexuales.length > 0) {
+        this.parametros.espora_sexual = this.obtenerEsporasSexuales[0].id;
+      } else {
+        this.parametros.espora_sexual = null;
+      }
+    }
+  },
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMicroHongos"])), {}, {
+    validarTipoForm: function validarTipoForm() {
+      if (this.tituloForm === "Agregar Característica") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    btnClase: function btnClase() {
+      if (this.tituloForm === "Agregar Característica") {
+        return "btn-success";
+      } else {
+        return "btn-warning";
+      }
+    },
+    obtenerConidioforos: function obtenerConidioforos() {
+      return this.getInfoCaractMicroHongos.conidioforos;
+    },
+    obtenerEsporasAsexuales: function obtenerEsporasAsexuales() {
+      return this.getInfoCaractMicroHongos.esporas_asexuales;
+    },
+    obtenerEsporasSexuales: function obtenerEsporasSexuales() {
+      return this.getInfoCaractMicroHongos.esporas_sexuales;
+    },
+    fialidesPresencia: function fialidesPresencia() {
+      if (this.parametros.fialides === "Presencia") {
+        return true;
+      }
+
+      return false;
+    },
+    mostrarConidios: function mostrarConidios() {
+      if (this.parametros.espora_asexual === 2) {
+        return true;
+      }
+
+      return false;
+    }
+  }),
+  mounted: function mounted() {
+    if (this.info) {
+      this.llenarInfo();
+      this.tituloForm = "Editar Característica";
+      this.nomBtn = "Editar";
+    } else {
+      this.tituloForm = "Agregar Característica";
+      this.nomBtn = "Agregar";
+    }
+
+    var array = [];
+
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    } else {
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
+    }
+  },
+  created: function created() {
+    this.verificarSelects();
+  },
+  watch: {
+    modificarInfo: function modificarInfo() {
+      if (this.modificarInfo) {
+        this.llenarInfo();
+        this.$emit("cambiarVariable");
+      }
+    },
+    obtenerConidioforos: function obtenerConidioforos() {
+      if (this.obtenerConidioforos.length > 0) {
+        this.parametros.conidioforo = this.obtenerConidioforos[0].id;
+      } else {
+        this.parametros.conidioforo = null;
+      }
+    },
+    obtenerEsporasAsexuales: function obtenerEsporasAsexuales() {
+      if (this.obtenerEsporasAsexuales.length > 0) {
+        this.parametros.espora_asexual = this.obtenerEsporasAsexuales[0].id;
+      } else {
+        this.parametros.espora_asexual = null;
+      }
+    },
+    obtenerEsporasSexuales: function obtenerEsporasSexuales() {
+      if (this.obtenerEsporasSexuales.length > 0) {
+        this.parametros.espora_sexual = this.obtenerEsporasSexuales[0].id;
+      } else {
+        this.parametros.espora_sexual = null;
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../forms-caract/FormCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue");
+/* harmony import */ var _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ModalEliminarCaractComponent.vue */ "./resources/js/components/cepas/ModalEliminarCaractComponent.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormCaractMicro: _forms_caract_FormCaractMicroComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ModalEliminar: _ModalEliminarCaractComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      mostrarBtnAgregar: true,
+      mostrarForm: false,
+      modificarForm: false
+    };
+  },
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepa", ["accionAgregarCaract", "accionEditarCaract", "accionEliminarCaract"])), {}, {
+    agregar: function agregar(data) {
+      this.accionAgregarCaract({
+        tipo: "micro",
+        data: data
+      });
+      this.modificarForm = true;
+    },
+    editar: function editar(data) {
+      this.accionEditarCaract({
+        tipo: "micro",
+        data: data
+      });
+      this.modificarForm = true;
+    },
+    eliminar: function eliminar(data) {
+      this.accionEliminarCaract({
+        tipo: "micro",
+        data: data
+      });
+      this.mostrarBtnAgregar = true;
+      this.mostrarForm = false;
+    },
+    cambiarVariable: function cambiarVariable() {
+      this.modificarForm = false;
+    },
+    btnAgregar: function btnAgregar() {
+      this.mostrarForm = true;
+      this.mostrarBtnAgregar = false;
+    },
+    cancelar: function cancelar() {
+      this.mostrarForm = false;
+      this.mostrarBtnAgregar = true;
+    }
+  }),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("cepa", ["getCaractMicro"])), {}, {
+    mostrarBtnEliminar: function mostrarBtnEliminar() {
+      if (this.getCaractMicro) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnCancelar: function mostrarBtnCancelar() {
+      if (this.mostrarForm && !this.getCaractMicro) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    mostrarBtnAgregarComputed: function mostrarBtnAgregarComputed() {
+      return this.mostrarBtnAgregar;
+    }
+  }),
+  mounted: function mounted() {
+    if (this.getCaractMicro) {
+      this.mostrarBtnAgregar = false;
+      this.mostrarForm = true;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "mt-4 mr-4 ml-4" },
+    [
+      _c("div", { staticClass: "row justify-content-md-center" }, [
+        _c("div", { staticClass: "col-sm-6" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(_vm.tituloForm))
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.evento($event)
+                    }
+                  }
+                },
+                [
+                  _vm.errors != ""
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "alert alert-danger" },
+                          _vm._l(_vm.errors, function(item, index) {
+                            return _c("p", { key: index }, [
+                              _vm._v(_vm._s(item[0]))
+                            ])
+                          }),
+                          0
+                        )
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.getInfoCaractMicroHongos
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "conidioforo" } }, [
+                              _vm._v("Conidióforo")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "input-group mb-3" }, [
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model.trim",
+                                      value:
+                                        _vm.$v.parametros.conidioforo.$model,
+                                      expression:
+                                        "$v.parametros.conidioforo.$model",
+                                      modifiers: { trim: true }
+                                    }
+                                  ],
+                                  class: [
+                                    "form-control",
+                                    _vm.$v.parametros.conidioforo.$error
+                                      ? "error-input-select"
+                                      : ""
+                                  ],
+                                  attrs: { name: "select", id: "conidioforo" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.$v.parametros.conidioforo,
+                                        "$model",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                _vm._l(_vm.obtenerConidioforos, function(
+                                  f,
+                                  index
+                                ) {
+                                  return _c(
+                                    "option",
+                                    { key: index, domProps: { value: f.id } },
+                                    [_vm._v(_vm._s(f.nombre))]
+                                  )
+                                }),
+                                0
+                              ),
+                              _vm._v(" "),
+                              _vm.getPermisoByNombre("agregar-otra")
+                                ? _c(
+                                    "div",
+                                    { staticClass: "input-group-append" },
+                                    [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.showModal(
+                                                "conidioforo"
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-plus"
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ]),
+                            _vm._v(" "),
+                            _vm.$v.parametros.conidioforo.$error &&
+                            !_vm.$v.parametros.conidioforo.required
+                              ? _c("em", { staticClass: "text-error-select" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "fialides" } }, [
+                              _vm._v("Fiálides")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "custom-radio custom-control custom-control-inline"
+                                },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.parametros.fialides,
+                                        expression: "parametros.fialides"
+                                      }
+                                    ],
+                                    staticClass: "custom-control-input",
+                                    attrs: {
+                                      type: "radio",
+                                      id: "fialides1",
+                                      name: "fialides",
+                                      value: "Presencia"
+                                    },
+                                    domProps: {
+                                      checked: _vm._q(
+                                        _vm.parametros.fialides,
+                                        "Presencia"
+                                      )
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.$set(
+                                          _vm.parametros,
+                                          "fialides",
+                                          "Presencia"
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass: "custom-control-label",
+                                      attrs: { for: "fialides1" }
+                                    },
+                                    [_vm._v("Presencia")]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "custom-radio custom-control custom-control-inline"
+                                },
+                                [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.parametros.fialides,
+                                        expression: "parametros.fialides"
+                                      }
+                                    ],
+                                    staticClass: "custom-control-input",
+                                    attrs: {
+                                      type: "radio",
+                                      id: "fialides2",
+                                      name: "fialides",
+                                      value: "Ausencia"
+                                    },
+                                    domProps: {
+                                      checked: _vm._q(
+                                        _vm.parametros.fialides,
+                                        "Ausencia"
+                                      )
+                                    },
+                                    on: {
+                                      change: function($event) {
+                                        return _vm.$set(
+                                          _vm.parametros,
+                                          "fialides",
+                                          "Ausencia"
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass: "custom-control-label",
+                                      attrs: { for: "fialides2" }
+                                    },
+                                    [_vm._v("Ausencia")]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm.fialidesPresencia
+                          ? _c("div", { staticClass: "ml-3 mr-3" }, [
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "fialides_forma" } },
+                                    [_vm._v("Forma")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.fialides_forma
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.fialides_forma.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.fialides_forma.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: {
+                                      name: "fialides_forma",
+                                      id: "fialides_forma",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.$v.parametros.fialides_forma.$model
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$v.parametros.fialides_forma,
+                                          "$model",
+                                          $event.target.value.trim()
+                                        )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.$v.parametros.fialides_forma.$error &&
+                                  !_vm.$v.parametros.fialides_forma.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "fialides_otra_caracteristica"
+                                      }
+                                    },
+                                    [_vm._v("Otras características")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value:
+                                          _vm.parametros
+                                            .fialides_otra_caracteristica,
+                                        expression:
+                                          "parametros.fialides_otra_caracteristica"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      name: "fialides_otra_caracteristica",
+                                      id: "fialides_otra_caracteristica",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.parametros
+                                          .fialides_otra_caracteristica
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.parametros,
+                                          "fialides_otra_caracteristica",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "fialides" } }, [
+                          _vm._v("Vesícula")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group mb-3" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "custom-radio custom-control custom-control-inline"
+                            },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.vesicula,
+                                    expression: "parametros.vesicula"
+                                  }
+                                ],
+                                staticClass: "custom-control-input",
+                                attrs: {
+                                  type: "radio",
+                                  id: "vesicula1",
+                                  name: "vesicula",
+                                  value: "Presencia"
+                                },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.parametros.vesicula,
+                                    "Presencia"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.$set(
+                                      _vm.parametros,
+                                      "vesicula",
+                                      "Presencia"
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "custom-control-label",
+                                  attrs: { for: "vesicula1" }
+                                },
+                                [_vm._v("Presencia")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "custom-radio custom-control custom-control-inline"
+                            },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.parametros.vesicula,
+                                    expression: "parametros.vesicula"
+                                  }
+                                ],
+                                staticClass: "custom-control-input",
+                                attrs: {
+                                  type: "radio",
+                                  id: "vesicula2",
+                                  name: "vesicula",
+                                  value: "Ausencia"
+                                },
+                                domProps: {
+                                  checked: _vm._q(
+                                    _vm.parametros.vesicula,
+                                    "Ausencia"
+                                  )
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.$set(
+                                      _vm.parametros,
+                                      "vesicula",
+                                      "Ausencia"
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "custom-control-label",
+                                  attrs: { for: "vesicula2" }
+                                },
+                                [_vm._v("Ausencia")]
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "espora_asexual" } }, [
+                          _vm._v("Espora Asexual")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group mb-3" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model.trim",
+                                  value:
+                                    _vm.$v.parametros.espora_asexual.$model,
+                                  expression:
+                                    "$v.parametros.espora_asexual.$model",
+                                  modifiers: { trim: true }
+                                }
+                              ],
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.espora_asexual.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
+                              attrs: { name: "select", id: "espora_asexual" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.$v.parametros.espora_asexual,
+                                    "$model",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            _vm._l(_vm.obtenerEsporasAsexuales, function(
+                              b,
+                              index
+                            ) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: b.id } },
+                                [_vm._v(_vm._s(b.nombre))]
+                              )
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _vm.getPermisoByNombre("agregar-otra")
+                            ? _c("div", { staticClass: "input-group-append" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.showModal("esporaA")
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-plus" })]
+                                )
+                              ])
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _vm.$v.parametros.espora_asexual.$error &&
+                        !_vm.$v.parametros.espora_asexual.required
+                          ? _c("em", { staticClass: "text-error-select" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.mostrarConidios
+                          ? _c("div", { staticClass: "ml-3 mr-3" }, [
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_tamano"
+                                      }
+                                    },
+                                    [_vm._v("Tamaño")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano1",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Grande"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.parametros
+                                                .esporas_asexuales_conidios_tamano,
+                                              "Grande"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Grande"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano1"
+                                            }
+                                          },
+                                          [_vm._v("Grande")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano2",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Mediano"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.parametros
+                                                .esporas_asexuales_conidios_tamano,
+                                              "Mediano"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Mediano"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano2"
+                                            }
+                                          },
+                                          [_vm._v("Mediano")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "custom-radio custom-control custom-control-inline"
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.parametros
+                                                  .esporas_asexuales_conidios_tamano,
+                                              expression:
+                                                "parametros.esporas_asexuales_conidios_tamano"
+                                            }
+                                          ],
+                                          staticClass: "custom-control-input",
+                                          attrs: {
+                                            type: "radio",
+                                            id:
+                                              "esporas_asexuales_conidios_tamano3",
+                                            name:
+                                              "esporas_asexuales_conidios_tamano",
+                                            value: "Pequeño"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(
+                                              _vm.parametros
+                                                .esporas_asexuales_conidios_tamano,
+                                              "Pequeño"
+                                            )
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.$set(
+                                                _vm.parametros,
+                                                "esporas_asexuales_conidios_tamano",
+                                                "Pequeño"
+                                              )
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-control-label",
+                                            attrs: {
+                                              for:
+                                                "esporas_asexuales_conidios_tamano3"
+                                            }
+                                          },
+                                          [_vm._v("Pequeño")]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_color"
+                                      }
+                                    },
+                                    [_vm._v("Color")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_color
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.esporas_asexuales_conidios_color.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros
+                                        .esporas_asexuales_conidios_color.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_color",
+                                      id: "esporas_asexuales_conidios_color",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.$v.parametros
+                                          .esporas_asexuales_conidios_color
+                                          .$model
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_color,
+                                          "$model",
+                                          $event.target.value.trim()
+                                        )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.$v.parametros
+                                    .esporas_asexuales_conidios_color.$error &&
+                                  !_vm.$v.parametros
+                                    .esporas_asexuales_conidios_color.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_forma"
+                                      }
+                                    },
+                                    [_vm._v("Forma")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_forma
+                                            .$model,
+                                        expression:
+                                          "$v.parametros.esporas_asexuales_conidios_forma.$model",
+                                        modifiers: { trim: true }
+                                      }
+                                    ],
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros
+                                        .esporas_asexuales_conidios_forma.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_forma",
+                                      id: "esporas_asexuales_conidios_forma",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.$v.parametros
+                                          .esporas_asexuales_conidios_forma
+                                          .$model
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$v.parametros
+                                            .esporas_asexuales_conidios_forma,
+                                          "$model",
+                                          $event.target.value.trim()
+                                        )
+                                      },
+                                      blur: function($event) {
+                                        return _vm.$forceUpdate()
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.$v.parametros
+                                    .esporas_asexuales_conidios_forma.$error &&
+                                  !_vm.$v.parametros
+                                    .esporas_asexuales_conidios_forma.required
+                                    ? _c(
+                                        "em",
+                                        { staticClass: "text-error-input" },
+                                        [_vm._v(_vm._s(_vm.mensajes.required))]
+                                      )
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "position-relative form-group" },
+                                [
+                                  _c(
+                                    "label",
+                                    {
+                                      attrs: {
+                                        for: "esporas_asexuales_conidios_otras"
+                                      }
+                                    },
+                                    [_vm._v("Otras características")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value:
+                                          _vm.parametros
+                                            .esporas_asexuales_conidios_otras,
+                                        expression:
+                                          "parametros.esporas_asexuales_conidios_otras"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      name: "esporas_asexuales_conidios_otras",
+                                      id: "esporas_asexuales_conidios_otras",
+                                      placeholder: "...",
+                                      type: "text"
+                                    },
+                                    domProps: {
+                                      value:
+                                        _vm.parametros
+                                          .esporas_asexuales_conidios_otras
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.parametros,
+                                          "esporas_asexuales_conidios_otras",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("label", { attrs: { for: "espora_sexual" } }, [
+                          _vm._v("Espora Sexual")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group mb-3" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model.trim",
+                                  value: _vm.$v.parametros.espora_sexual.$model,
+                                  expression:
+                                    "$v.parametros.espora_sexual.$model",
+                                  modifiers: { trim: true }
+                                }
+                              ],
+                              class: [
+                                "form-control",
+                                _vm.$v.parametros.espora_sexual.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
+                              attrs: { name: "select", id: "espora_sexual" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.$v.parametros.espora_sexual,
+                                    "$model",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            _vm._l(_vm.obtenerEsporasSexuales, function(
+                              b,
+                              index
+                            ) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: b.id } },
+                                [_vm._v(_vm._s(b.nombre))]
+                              )
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _vm.getPermisoByNombre("agregar-otra")
+                            ? _c("div", { staticClass: "input-group-append" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.showModal("esporaS")
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-plus" })]
+                                )
+                              ])
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _vm.$v.parametros.espora_sexual.$error &&
+                        !_vm.$v.parametros.espora_sexual.required
+                          ? _c("em", { staticClass: "text-error-select" }, [
+                              _vm._v(_vm._s(_vm.mensajes.required))
+                            ])
+                          : _vm._e()
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.validarTipoForm
+                    ? [
+                        _c(
+                          "div",
+                          { staticClass: "position-relative form-group" },
+                          [
+                            _c("label", { attrs: { for: "imagen" } }, [
+                              _vm._v("Imágenes")
+                            ]),
+                            _vm._v(" "),
+                            _c("input", {
+                              ref: "inputImagen",
+                              class: [
+                                "form-control-file",
+                                _vm.$v.parametros.imagen1.$error ||
+                                _vm.$v.parametros.imagen2.$error ||
+                                _vm.$v.parametros.imagen3.$error
+                                  ? "error-input-select"
+                                  : ""
+                              ],
+                              attrs: {
+                                name: "imagen",
+                                id: "imagen",
+                                type: "file",
+                                accept: "image/jpeg, image/png",
+                                multiple: ""
+                              },
+                              on: { change: _vm.obtenerImagenes }
+                            }),
+                            _vm._v(" "),
+                            _vm.erroresImagenes
+                              ? _c("em", { staticClass: "text-error-input" }, [
+                                  _vm._v(_vm._s(_vm.erroresImagenes))
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            (_vm.$v.parametros.imagen1.$error &&
+                              !_vm.$v.parametros.imagen1.required) ||
+                            (_vm.$v.parametros.imagen2.$error &&
+                              !_vm.$v.parametros.imagen2.required) ||
+                            (_vm.$v.parametros.imagen3.$error &&
+                              !_vm.$v.parametros.imagen3.required)
+                              ? _c("em", { staticClass: "text-error-input" }, [
+                                  _vm._v(_vm._s(_vm.mensajes.required))
+                                ])
+                              : _vm._e()
+                          ]
+                        )
+                      ]
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "otras_estructuras" } }, [
+                      _vm._v("Otras estructuras")
+                    ]),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.parametros.otras_estructuras,
+                          expression: "parametros.otras_estructuras"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { name: "text", id: "otras_estructuras" },
+                      domProps: { value: _vm.parametros.otras_estructuras },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.parametros,
+                            "otras_estructuras",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "mb-2 mr-2 btn btn-block",
+                      class: _vm.btnClase,
+                      attrs: { disabled: _vm.bloquearBtn }
+                    },
+                    [_vm._v(_vm._s(_vm.nomBtn))]
+                  )
+                ],
+                2
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-6" }, [
+          _c("div", { staticClass: "main-card mb-3 card" }, [
+            _c(
+              "div",
+              { staticClass: "card-body" },
+              [
+                _vm.validarTipoForm
+                  ? [
+                      _vm.imagenesCroppie.length === _vm.cantImagenes &&
+                      _vm.$refs.inputImagen.value
+                        ? [
+                            _c("CroppieCepas", {
+                              attrs: {
+                                imagenes: _vm.imagenesCroppie,
+                                posicion: "vertical"
+                              },
+                              on: { cambiarValorImagen: _vm.cambiarValorImagen }
+                            })
+                          ]
+                        : [_vm._m(0)]
+                    ]
+                  : [
+                      _c("Imagenes", {
+                        attrs: {
+                          parametros: _vm.parametros,
+                          tipoCepa: "hongo/caract-micro",
+                          imagenes: _vm.imagenes,
+                          cepa: _vm.info
+                        },
+                        on: { accionImagen: _vm.accionImagen }
+                      })
+                    ]
+              ],
+              2
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ModalAgregarInfo", {
+        attrs: {
+          url: "info-caract-hongos",
+          tipo: _vm.tipoModal,
+          titulo: _vm.tituloModal,
+          tipoForm: "hongo"
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [_vm._v("SIN IMÁGENES")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "tabs-animation" }, [
+        _c(
+          "div",
+          { staticClass: "mb-3 card" },
+          [
+            _c("div", { staticClass: "card-header-tab card-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "btn-actions-pane-right text-capitalize" },
+                [
+                  _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.mostrarBtnCancelar,
+                          expression: "mostrarBtnCancelar"
+                        }
+                      ],
+                      staticClass:
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                      on: { click: _vm.cancelar }
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.mostrarBtnEliminar,
+                          expression: "mostrarBtnEliminar"
+                        }
+                      ],
+                      staticClass:
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-danger btn-sm",
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.show("modal_eliminar_caract")
+                        }
+                      }
+                    },
+                    [_vm._v("Eliminar Características")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.mostrarBtnAgregarComputed,
+                          expression: "mostrarBtnAgregarComputed"
+                        }
+                      ],
+                      staticClass:
+                        "btn-wide btn-outline-2x mr-md-2 btn btn-outline-success btn-sm",
+                      on: { click: _vm.btnAgregar }
+                    },
+                    [_vm._v("Agregar Características")]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.mostrarForm
+              ? [
+                  _c("FormCaractMicro", {
+                    attrs: {
+                      modificarInfo: _vm.modificarForm,
+                      info: _vm.getCaractMicro
+                    },
+                    on: {
+                      agregar: _vm.agregar,
+                      editar: _vm.editar,
+                      cambiarVariable: _vm.cambiarVariable
+                    }
+                  })
+                ]
+              : [_vm._m(1)]
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c("ModalEliminar", {
+        attrs: {
+          tipo: "Característica",
+          tipoCaract: "Característica Microscópica",
+          caract: _vm.getCaractMicro,
+          url: "hongo/caract-micro"
+        },
+        on: { eliminar: _vm.eliminar }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header-title font-size-lg text-capitalize font-weight-normal"
+      },
+      [
+        _c("i", {
+          staticClass: "header-icon lnr-charts icon-gradient bg-happy-green"
+        }),
+        _vm._v("\n          Características Microscópicas\n        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h5", { staticClass: "mt-5 mb-5" }, [
+        _c("span", { staticClass: "pr-1" }, [
+          _c("b", { staticClass: "text-success" }, [
+            _vm._v("AÚN NO SE HAN AGREGADO LAS CARACTERÍSTICAS")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCaractMicroComponent.vue?vue&type=template&id=ea463a46& */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46&");
+/* harmony import */ var _FormCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCaractMicroComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractMicroComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormCaractMicroComponent.vue?vue&type=template&id=ea463a46& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/forms-caract/FormCaractMicroComponent.vue?vue&type=template&id=ea463a46&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormCaractMicroComponent_vue_vue_type_template_id_ea463a46___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10& */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10&");
+/* harmony import */ var _InfoCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InfoCaractMicroComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InfoCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoCaractMicroComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMicroComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10& ***!
+  \**********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue?vue&type=template&id=277e0d10&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InfoCaractMicroComponent_vue_vue_type_template_id_277e0d10___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);

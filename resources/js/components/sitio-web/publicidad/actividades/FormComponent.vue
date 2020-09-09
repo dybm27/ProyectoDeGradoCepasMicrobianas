@@ -409,7 +409,7 @@ export default {
     ...vuex.mapGetters("publicidad", [
       "getActividadById",
       "getActividadByTitulo",
-      "getActividadByPubliclar",
+      "getActividadByPublicar",
     ]),
     btnClase() {
       if (this.tituloForm === "Agregar Actividad") {
@@ -449,10 +449,10 @@ export default {
       return false;
     },
     validarPublicacion() {
-      if (this.getActividadByPubliclar.length < 7) return false;
+      if (this.getActividadByPublicar.length < 7) return false;
       if (this.validarTipoForm) return true;
       if (
-        this.getActividadByPubliclar.find(
+        this.getActividadByPublicar.find(
           (actividad) => actividad.id == this.info.id
         )
       )
