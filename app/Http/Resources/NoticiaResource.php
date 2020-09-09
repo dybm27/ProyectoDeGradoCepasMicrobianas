@@ -27,7 +27,7 @@ class NoticiaResource extends JsonResource
                 'slug' => $this->resource->slug,
             ],
             'links' => [
-                'self' => route('obtener.noticia', ['slug' => $request->slug])
+                'self' => route('obtener.noticia', ['slug' => $this->resource->slug])
             ]
         ];
     }

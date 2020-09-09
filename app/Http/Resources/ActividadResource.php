@@ -29,7 +29,7 @@ class ActividadResource extends JsonResource
                 'slug' => $this->resource->slug,
             ],
             'links' => [
-                'self' => route('obtener.actividad', ['slug' => $request->slug])
+                'self' => route('obtener.actividad', ['slug' => $this->resource->slug])
             ]
         ];
     }

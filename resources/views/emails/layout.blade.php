@@ -7,8 +7,8 @@
     <title></title>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; background-color: #f8fafc; color: #74787e; height: 100%; hyphens: auto; line-height: 1.4; margin: 0; -moz-hyphens: auto; -ms-word-break: break-all; width: 100% !important; -webkit-hyphens: auto; -webkit-text-size-adjust: none; word-break: break-word;">
-    <div style="max-width: 728px; width: 60%; margin: 0px auto; display: block;">
-        <img src="https://i.ibb.co/h9kQpgh/logo-majumba-email.jpg" width="100%" 
+    <div style="max-width: 800px; width: 80%; margin: 0px auto; display: block;">
+        <img src="https://i.ibb.co/Q8KPVPW/logo-email-majumba.jpg" width="100%" 
         style="
         border-radius: 52px 52px 0px 0px;
         -moz-border-radius: 52px 52px 0px 0px;

@@ -27,7 +27,7 @@ class NovedadResource extends JsonResource
                 'slug' => $this->resource->slug,
             ],
             'links' => [
-                'self' => route('obtener.novedad', ['slug' => $request->slug])
+                'self' => route('obtener.novedad', ['slug' => $this->resource->slug])
             ]
         ];
     }
