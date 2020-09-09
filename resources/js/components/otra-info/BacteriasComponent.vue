@@ -11,6 +11,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasCaractMacro"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -63,6 +64,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasCaractMicro"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -90,6 +92,7 @@
               </div>
               <div class="btn-actions-pane-right actions-icon-btn">
                 <img
+                  class="mostrar-cursor"
                   @click="mostrarTablasMetodos"
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACOklEQVRYhe2XT2sTQRiHn9kNsUnblKoIooKXIhqTDaktagT9GP0MHrRbpNT24sFCq2gbBL+CfgTxoCi2hSataf540YuYQsV6aJuktunOeGgSwm7wsKERZZ/T8OzA+2PmZWYWPDz+R8KL5vFIdqK/kzW1VjKaMh/pfjbF/t5PI23OdCqMsIvw6pihS5VpdlJIIz+YzAJcWzQDFT9LCow26q7rmpb4GH/ytVk6VkZX8oTdaYiT9fGOJkMKLrYRBOCMsqyzdumzi0rIWghu+XJABEDAWjlkLdS/568mvxvLZlxq4pLrKJosZuLzS3bt2CaAcOF2j77rHwGwAvsvC+HnJdeFPTyOkJYNHEuN3lKCSQApxXRueO7dXwkzmB49XUV8BrprqmRJ30Bh+PEGAAoRTY9NCqHcH3qCYnCPqaXrc7vN2nHOVIUwUI0gAD0+fd8ANgDCK3fPIdRD5ToJoKB8jNfAqz+GsSxfRtcOSkBPTZWsKo3roTCY/BZdNaeEIuY6zOHKOLa+Zc9Els2baIc9gyanc/Hke9eFPTyOkJYNfOHDeK8/cDACILt+vejUre0Ic/7tg65Q79YytfcMkKv0HQx9GXi2V58TTd25rITP9QNLSdbzw08X7d5xzoT6thPIRhCASHBbTwBvAKJr905RtVYEyu82jNAglhq9kRmaX2j2jmenBZt2p5T4UR93l60d4JPbIDWKQteLjpCtZhppc0bBOICC2dyVufttFm+PSHaiv9P/TR4e/zS/AX4ptkIOwCnsAAAAAElFTkSuQmCC"
                 />
@@ -159,18 +162,18 @@ export default {
     TablaFormasMicro,
     TablaSuperficies,
     TablaAgars,
-    TablaMetodos
+    TablaMetodos,
   },
   data() {
     return {
       tablasCaractMacro: false,
       tablasCaractMicro: false,
-      tablasMetodos: false
+      tablasMetodos: false,
     };
   },
   mixins: [websocketsOtraInfoMixin("BacteriasInfo")],
   computed: {
-    ...vuex.mapState("info_caract", ["info_caract_bacterias"])
+    ...vuex.mapState("info_caract", ["info_caract_bacterias"]),
   },
   methods: {
     ...vuex.mapActions("info_caract", ["obtenerInfoCaractBacterias"]),
@@ -182,35 +185,35 @@ export default {
     },
     mostrarTablasMetodos() {
       this.tablasMetodos = !this.tablasMetodos;
-    }
+    },
   },
   created() {
     this.obtenerInfoCaractBacterias();
-    this.$events.$on("verificarBloqueos-bordes-bacteria", e =>
+    this.$events.$on("verificarBloqueos-bordes-bacteria", (e) =>
       this.verificarBloqueos("borde")
     );
-    this.$events.$on("verificarBloqueos-colors-bacteria", e =>
+    this.$events.$on("verificarBloqueos-colors-bacteria", (e) =>
       this.verificarBloqueos("color")
     );
-    this.$events.$on("verificarBloqueos-detalles-bacteria", e =>
+    this.$events.$on("verificarBloqueos-detalles-bacteria", (e) =>
       this.verificarBloqueos("detalle")
     );
-    this.$events.$on("verificarBloqueos-elevacions-bacteria", e =>
+    this.$events.$on("verificarBloqueos-elevacions-bacteria", (e) =>
       this.verificarBloqueos("elevacion")
     );
-    this.$events.$on("verificarBloqueos-formas-macro-bacteria", e =>
+    this.$events.$on("verificarBloqueos-formas-macro-bacteria", (e) =>
       this.verificarBloqueos("forma_macro")
     );
-    this.$events.$on("verificarBloqueos-formas-micro-bacteria", e =>
+    this.$events.$on("verificarBloqueos-formas-micro-bacteria", (e) =>
       this.verificarBloqueos("forma_micro")
     );
-    this.$events.$on("verificarBloqueos-superficies-bacteria", e =>
+    this.$events.$on("verificarBloqueos-superficies-bacteria", (e) =>
       this.verificarBloqueos("superficie")
     );
-    this.$events.$on("verificarBloqueos-tipos-agars-bacteria", e =>
+    this.$events.$on("verificarBloqueos-tipos-agars-bacteria", (e) =>
       this.verificarBloqueos("tipo_agar")
     );
-    this.$events.$on("verificarBloqueos-tipos-metodos-bacteria", e =>
+    this.$events.$on("verificarBloqueos-tipos-metodos-bacteria", (e) =>
       this.verificarBloqueos("tipo_metodo")
     );
   },
@@ -224,6 +227,6 @@ export default {
     this.$events.$off("verificarBloqueos-superficies-bacteria");
     this.$events.$off("verificarBloqueos-tipos-agars-bacteria");
     this.$events.$off("verificarBloqueos-tipos-metodos-bacteria");
-  }
+  },
 };
 </script>

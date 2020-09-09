@@ -15,13 +15,12 @@ class CalendarioController extends Controller
         $rules = [
             'titulo' => 'required',
             'fecha' => 'required',
-            'descripcion' => 'required',
-            'tiempo' => 'required'
+            'color' => 'required',
+            'descripcion' => 'required'
         ];
 
         $messages = [
-            'fecha.required' => 'Favor agregar la FECHA',
-            'tiempo.required' => 'Favor agregar la HORA'
+            'fecha.required' => 'Favor agregar la FECHA'
         ];
 
         $this->validate($request, $rules, $messages);
@@ -44,6 +43,7 @@ class CalendarioController extends Controller
         $rules = [
             'titulo' => 'required',
             'fecha' => 'required',
+            'color' => 'required',
             'descripcion' => 'required'
         ];
 
@@ -56,7 +56,6 @@ class CalendarioController extends Controller
         $fecha = Carbon::parse($request->fecha)->format('Y-m-d H:i:s');
 
         $evento = Evento::where('id', $id)->first();
-        $titulo = $evento->titulo;
         $evento->titulo = $request->titulo;
         $evento->fecha = $fecha;
         //    $evento->color = $request->color;

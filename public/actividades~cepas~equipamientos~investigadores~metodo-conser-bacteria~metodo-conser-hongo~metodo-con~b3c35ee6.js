@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/vuetable/FilterBarComponent.vue?vue&type=script&lang=js&":
@@ -168,35 +169,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "my-vuetable",
+  props: ["apiUrl", "fields", "sortOrder", "detailRowComponent", "nameGet"],
   components: {
     Vuetable: vuetable_2_src_components_Vuetable__WEBPACK_IMPORTED_MODULE_1__["default"],
     FilterBar: _FilterBarComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
     VuetablePagination: _PaginationComponent__WEBPACK_IMPORTED_MODULE_3__["default"],
     VuetablePaginationInfo: _PaginationInfoComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
-  },
-  props: {
-    apiUrl: {
-      type: String,
-      required: true
-    },
-    fields: {
-      type: Array,
-      required: true
-    },
-    sortOrder: {
-      type: Array,
-      "default": function _default() {
-        return [];
-      }
-    },
-    detailRowComponent: {
-      type: String
-    },
-    nameGet: {
-      type: String,
-      required: true
-    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_5__["default"]],
   data: function data() {
@@ -346,14 +324,16 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           if (error.response.status === 403) {
             _this4.$router.push("/sin-acceso");
+          } else if (error.response.status === 405 || error.response.status === 401) {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
           }
         });
       } else {
         var datos = this.$refs.vuetable.tableData;
-        axios.get("/exportar/tabla/".concat(this.nameGet), {
-          params: {
-            datos: datos
-          },
+        axios.post("/exportar/tabla/".concat(this.nameGet), {
+          datos: datos
+        }, {
           responseType: "blob"
         }).then(function (res) {
           if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -373,6 +353,9 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           if (error.response.status === 403) {
             _this4.$router.push("/sin-acceso");
+          } else if (error.response.status === 405 || error.response.status === 401) {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
           }
         });
       }
@@ -386,6 +369,9 @@ __webpack_require__.r(__webpack_exports__);
     loadError: function loadError(error) {
       if (error.response.status === 403) {
         this.$router.push("/sin-acceso");
+      } else if (error.response.status === 405 || error.response.status === 401) {
+        localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        window.location.href = "/";
       }
     }
   },
@@ -585,8 +571,6 @@ var map = {
 	"./dv.js": "./node_modules/moment/locale/dv.js",
 	"./el": "./node_modules/moment/locale/el.js",
 	"./el.js": "./node_modules/moment/locale/el.js",
-	"./en-SG": "./node_modules/moment/locale/en-SG.js",
-	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
 	"./en-au": "./node_modules/moment/locale/en-au.js",
 	"./en-au.js": "./node_modules/moment/locale/en-au.js",
 	"./en-ca": "./node_modules/moment/locale/en-ca.js",
@@ -597,8 +581,12 @@ var map = {
 	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
 	"./en-il": "./node_modules/moment/locale/en-il.js",
 	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/moment/locale/en-in.js",
 	"./en-nz": "./node_modules/moment/locale/en-nz.js",
 	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
 	"./eo": "./node_modules/moment/locale/eo.js",
 	"./eo.js": "./node_modules/moment/locale/eo.js",
 	"./es": "./node_modules/moment/locale/es.js",
@@ -615,6 +603,8 @@ var map = {
 	"./fa.js": "./node_modules/moment/locale/fa.js",
 	"./fi": "./node_modules/moment/locale/fi.js",
 	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/moment/locale/fil.js",
 	"./fo": "./node_modules/moment/locale/fo.js",
 	"./fo.js": "./node_modules/moment/locale/fo.js",
 	"./fr": "./node_modules/moment/locale/fr.js",
@@ -631,6 +621,8 @@ var map = {
 	"./gd.js": "./node_modules/moment/locale/gd.js",
 	"./gl": "./node_modules/moment/locale/gl.js",
 	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
 	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
 	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
 	"./gu": "./node_modules/moment/locale/gu.js",
@@ -709,6 +701,8 @@ var map = {
 	"./nl.js": "./node_modules/moment/locale/nl.js",
 	"./nn": "./node_modules/moment/locale/nn.js",
 	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
 	"./pa-in": "./node_modules/moment/locale/pa-in.js",
 	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
 	"./pl": "./node_modules/moment/locale/pl.js",
@@ -753,6 +747,8 @@ var map = {
 	"./tg.js": "./node_modules/moment/locale/tg.js",
 	"./th": "./node_modules/moment/locale/th.js",
 	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
 	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
 	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
 	"./tlh": "./node_modules/moment/locale/tlh.js",
@@ -785,6 +781,8 @@ var map = {
 	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
 	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
 	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
 	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
 	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
 };
@@ -827,8 +825,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "dataTables_filter" }, [
-    _c("label", [
-      _vm._v("\n    Buscar:\n    "),
+    _c("div", { staticClass: "position-relative form-group" }, [
+      _c("label", [_vm._v("Buscar:")]),
+      _vm._v(" "),
       _c("input", {
         directives: [
           {
@@ -871,60 +870,64 @@ var render = function() {
               expression: "'Deshacer'"
             }
           ],
-          staticClass: "btn-icon btn btn-danger",
+          staticClass: "btn btn-danger",
           on: { click: _vm.resetFilter }
         },
         [_c("i", { staticClass: "fas fa-redo" })]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { class: ["dropleft d-inline-block", _vm.show ? "show" : ""] }, [
-      _c(
-        "button",
-        {
-          directives: [
-            {
-              name: "tooltip",
-              rawName: "v-tooltip",
-              value: "Imprimir",
-              expression: "'Imprimir'"
-            }
-          ],
-          staticClass: "mb-2 mr-2 dropdown-toggle btn btn-outline-success",
-          attrs: { type: "button" },
-          on: { click: _vm.abrirMenu }
-        },
-        [_c("i", { staticClass: "fas fa-print" })]
       ),
       _vm._v(" "),
-      _c("div", { class: ["dropdown-menu", _vm.show ? "show" : ""] }, [
-        _c(
-          "button",
-          {
-            staticClass: "dropdown-item",
-            on: {
-              click: function($event) {
-                return _vm.exportar("todo")
-              }
-            }
-          },
-          [_vm._v("Todo")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "dropdown-item",
-            attrs: { disabled: _vm.validarBtn },
-            on: {
-              click: function($event) {
-                return _vm.exportar("tabla")
-              }
-            }
-          },
-          [_vm._v("Tabla")]
-        )
-      ])
+      _c(
+        "div",
+        { class: ["dropleft d-inline-block", _vm.show ? "show" : ""] },
+        [
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "tooltip",
+                  rawName: "v-tooltip",
+                  value: "Imprimir",
+                  expression: "'Imprimir'"
+                }
+              ],
+              staticClass: "mr-2 dropdown-toggle btn btn-outline-success",
+              attrs: { type: "button" },
+              on: { click: _vm.abrirMenu }
+            },
+            [_c("i", { staticClass: "fas fa-print" })]
+          ),
+          _vm._v(" "),
+          _c("div", { class: ["dropdown-menu", _vm.show ? "show" : ""] }, [
+            _c(
+              "button",
+              {
+                staticClass: "dropdown-item",
+                on: {
+                  click: function($event) {
+                    return _vm.exportar("todo")
+                  }
+                }
+              },
+              [_vm._v("Todo")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "dropdown-item",
+                attrs: { disabled: _vm.validarBtn },
+                on: {
+                  click: function($event) {
+                    return _vm.exportar("tabla")
+                  }
+                }
+              },
+              [_vm._v("Tabla")]
+            )
+          ])
+        ]
+      )
     ])
   ])
 }
@@ -1030,7 +1033,7 @@ var render = function() {
       _c("div", { staticClass: "col-sm-12" }, [
         _c(
           "div",
-          { staticClass: "table-responsive" },
+          { staticClass: "table-responsive fixed " },
           [
             _c("vuetable", {
               ref: "vuetable",

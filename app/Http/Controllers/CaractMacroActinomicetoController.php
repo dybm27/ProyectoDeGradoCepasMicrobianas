@@ -117,7 +117,7 @@ class CaractMacroActinomicetoController extends Controller
             'medio' => 'required', 'forma' => 'required',
             'textura' => 'required', 'borde' => 'required',
             'pigmento' => 'required', 'secrecion_geosminas' => 'required',
-            'superficie' => 'required', 'color' => 'required'
+            'superficie' => 'required', 'color' => 'required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
     }

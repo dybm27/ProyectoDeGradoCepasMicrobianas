@@ -14,9 +14,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/tipos-agars-bacteria"
+            :apiUrl="'/info-panel/tipos-agars-bacteria'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
+            :detailRowComponent="''"
             :nameGet="'tipos-agars-bacteria'"
           ></MyVuetable>
         </template>
@@ -48,9 +49,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("tipo_agar")],
@@ -66,7 +67,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

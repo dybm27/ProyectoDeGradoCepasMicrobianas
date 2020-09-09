@@ -17,7 +17,7 @@ class UsuarioController extends Controller
     {
         $rules = [
             'email' => 'required|unique:users,email', 'nombre' => 'required',
-            'pass' => 'required', 'rol' => 'required'
+            'pass' => 'required', 'rol' => 'required', 'imagen' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -33,7 +33,7 @@ class UsuarioController extends Controller
         $usuario->save();
         broadcast(new UsuarioEvent($usuario, 'agregar'))->toOthers();
         $this->crearSeguimiento("Creó un usuario: " . $usuario->email);
-
+        $usuario->sendEmailVerificationNotification();
         return $usuario;
     }
     public function show(Request $request)
@@ -48,29 +48,37 @@ class UsuarioController extends Controller
         ];
         $this->validate($request, $rules);
 
-        if (!is_null($request->imagen)) {
-            Storage::disk('local')->delete($usuario->avatar);
-            $imagen = $this->guardarImagen($request->imagen);
-            $usuario->avatar = $imagen['ruta'];
-            $usuario->avatarPublico = $imagen['rutaPublica'];
+        if ($this->verificarEditarEliminar($usuario)) {
+            if ($request->imagen != $usuario->avatar) {
+                Storage::delete($usuario->avatar);
+                $imagen = $this->guardarImagen($request->imagen);
+                $usuario->avatar = $imagen['ruta'];
+                $usuario->avatarPublico = $imagen['rutaPublica'];
+            }
+            $emailAnterior = $usuario->email;
+            $usuario->email = $request->email;
+            if ($usuario->email != $emailAnterior) {
+                $usuario->email_verified_at = null;
+                $usuario->sendEmailVerificationNotification();
+            }
+            $usuario->name = ucfirst($request->nombre);
+            $usuario->rol_id = intval($request->rol);
+            if (!is_null($request->pass)) {
+                $usuario->password = Hash::make($request->pass);
+            }
+            $usuario->save();
+            broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
+            $this->crearSeguimiento("Editó un usuario: " . $usuario->email);
+            return $usuario;
+        } else {
+            return 'negativo';
         }
-        $usuario->name = ucfirst($request->nombre);
-        $usuario->email = $request->email;
-        $usuario->rol_id = intval($request->rol);
-        if (!is_null($request->pass)) {
-            $usuario->password = Hash::make($request->pass);
-        }
-        $usuario->save();
-        broadcast(new UsuarioEvent($usuario, 'editar'))->toOthers();
-        $this->crearSeguimiento("Editó un usuario: " . $usuario->email);
-
-        return $usuario;
     }
 
     public function destroy($id)
     {
         $usuario = User::find($id);
-        if ($this->verificarEliminar($usuario)) {
+        if ($this->verificarEditarEliminar($usuario)) {
             Storage::disk('local')->delete($usuario->avatar);
             broadcast(new UsuarioEvent($usuario, 'eliminar'))->toOthers();
             $usuario->delete();
@@ -102,7 +110,7 @@ class UsuarioController extends Controller
         $seguimiento->save();
     }
 
-    public function verificarEliminar($usuario)
+    public function verificarEditarEliminar($usuario)
     {
         if (is_null($usuario->session_id)) {
             return true;

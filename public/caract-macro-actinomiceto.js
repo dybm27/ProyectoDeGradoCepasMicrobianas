@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-macro-actinomiceto"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/actinomicetos/forms-caract/FormCaractMacroComponent.vue?vue&type=script&lang=js&":
@@ -14,6 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/obtenerImagenCroopieCepas */ "./resources/js/mixins/obtenerImagenCroopieCepas.js");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _ModalAgregarInfoCaractComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ModalAgregarInfoCaractComponent.vue */ "./resources/js/components/cepas/ModalAgregarInfoCaractComponent.vue");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -302,6 +305,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -334,8 +373,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo "
+      }
     };
+  },
+  validations: {
+    parametros: {
+      medio: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      forma: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      borde: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      textura: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      color: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      pigmento: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      secrecion_geosminas: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      superficie: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      },
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_5__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_obtenerImagenCroopieCepas__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
@@ -343,9 +417,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtn = true;
+      this.$v.parametros.$touch();
 
-      if (this.tituloForm === "Agregar Medio") {
-        if (this.parametros.imagen) {
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
           axios.post("/cepas/actinomiceto/caract-macro", this.parametros).then(function (res) {
             if (res.request.responseURL === "http://127.0.0.1:8000/") {
               localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
@@ -362,51 +437,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               _this.toastr("Agregar Medio", "Medio agregado con exito!!", "success");
             }
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else {
-              _this.bloquearBtn = false;
-
-              if (error.response.status === 422) {
-                _this.errors = [];
-                _this.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarError(error.response.status, error.response.data.errors);
           });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor elija una imagen."]
-          };
-          this.toastr("Error!!", "", "error");
+          axios.put("/cepas/actinomiceto/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
+            _this.bloquearBtn = false;
+            _this.errors = [];
+            _this.$refs.inputImagen.value = "";
+
+            _this.$emit("editar", res.data);
+
+            _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
+          })["catch"](function (error) {
+            _this.verificarError(error.response.status, error.response.data.errors);
+          });
         }
       } else {
-        axios.put("/cepas/actinomiceto/caract-macro/".concat(this.info.id), this.parametros).then(function (res) {
-          _this.bloquearBtn = false;
-          _this.errors = [];
-          _this.$refs.inputImagen.value = "";
-
-          _this.$emit("editar", res.data);
-
-          _this.toastr("Editar Medio", "Medio editado con exito!!", "success");
-        })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            _this.bloquearBtn = false;
-
-            if (error.response.status === 422) {
-              _this.errors = [];
-              _this.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
-        });
+        this.bloquearBtn = false;
+        this.toastr("Error!!", "Favor llenar correctamente los campos", "error");
       }
     },
     llenarInfo: function llenarInfo() {
@@ -479,7 +527,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_caract", ["getInfoCaractMacroActinomicetos"])), {}, {
     btnClase: function btnClase() {
       if (this.tituloForm === "Agregar Medio") {
         return "btn-success";
@@ -487,7 +535,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return "btn-warning";
       }
     },
-    required: function required() {
+    validarTipoForm: function validarTipoForm() {
       if (this.tituloForm === "Agregar Medio") {
         return true;
       } else {
@@ -529,10 +577,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.nomBtn = "Editar";
     }
 
-    if (this.$route.params.cepaActinomicetoId) {
-      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    var array = [];
+
+    if (this.$route.params.cepaActinomicetoSlug) {
+      array = this.$route.params.cepaActinomicetoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created: function created() {
@@ -836,33 +888,48 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.medio,
-                            expression: "parametros.medio"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.medio.$model,
+                            expression: "$v.parametros.medio.$model",
+                            modifiers: { trim: true }
                           }
                         ],
-                        staticClass: "form-control",
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.medio.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "medio",
                           id: "medio",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.medio },
+                        domProps: { value: _vm.$v.parametros.medio.$model },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "medio",
-                              $event.target.value
+                              _vm.$v.parametros.medio,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.medio.$error &&
+                      !_vm.$v.parametros.medio.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
                     ]),
                     _vm._v(" "),
                     _vm.getInfoCaractMacroActinomicetos
@@ -880,12 +947,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.textura,
-                                        expression: "parametros.textura"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.textura.$model,
+                                        expression:
+                                          "$v.parametros.textura.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.textura.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "textura" },
                                     on: {
                                       change: function($event) {
@@ -901,8 +975,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "textura",
+                                          _vm.$v.parametros.textura,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -949,7 +1023,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.textura.$error &&
+                              !_vm.$v.parametros.textura.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-md-6" }, [
@@ -964,12 +1047,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.color,
-                                        expression: "parametros.color"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.color.$model,
+                                        expression:
+                                          "$v.parametros.color.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.color.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "color" },
                                     on: {
                                       change: function($event) {
@@ -985,8 +1075,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "color",
+                                          _vm.$v.parametros.color,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1033,7 +1123,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.color.$error &&
+                              !_vm.$v.parametros.color.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ]),
                           _vm._v(" "),
@@ -1043,79 +1142,106 @@ var render = function() {
                                 _vm._v("Forma")
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "input-group mb-3" }, [
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.forma,
-                                        expression: "parametros.forma"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: { name: "select", id: "forma" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.$set(
-                                          _vm.parametros,
-                                          "forma",
-                                          $event.target.multiple
-                                            ? $$selectedVal
-                                            : $$selectedVal[0]
-                                        )
-                                      }
-                                    }
-                                  },
-                                  _vm._l(_vm.obtenerFormas, function(f, index) {
-                                    return _c(
-                                      "option",
-                                      { key: index, domProps: { value: f.id } },
-                                      [_vm._v(_vm._s(f.nombre))]
-                                    )
-                                  }),
-                                  0
-                                ),
-                                _vm._v(" "),
-                                _vm.getPermisoByNombre("agregar-otra")
-                                  ? _c(
-                                      "div",
-                                      { staticClass: "input-group-append" },
-                                      [
-                                        _c(
-                                          "button",
-                                          {
-                                            staticClass:
-                                              "btn-icon btn-icon-only btn-pill btn btn-outline-success",
-                                            on: {
-                                              click: function($event) {
-                                                $event.preventDefault()
-                                                return _vm.showModal(
-                                                  "forma_macro"
-                                                )
+                              _c("div", { staticClass: "div-error-select" }, [
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model.trim",
+                                          value: _vm.$v.parametros.forma.$model,
+                                          expression:
+                                            "$v.parametros.forma.$model",
+                                          modifiers: { trim: true }
+                                        }
+                                      ],
+                                      class: [
+                                        "form-control",
+                                        _vm.$v.parametros.forma.$error
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: { name: "select", id: "forma" },
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
                                               }
-                                            }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass: "fas fa-plus"
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
                                             })
-                                          ]
-                                        )
-                                      ]
+                                          _vm.$set(
+                                            _vm.$v.parametros.forma,
+                                            "$model",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        }
+                                      }
+                                    },
+                                    _vm._l(_vm.obtenerFormas, function(
+                                      f,
+                                      index
+                                    ) {
+                                      return _c(
+                                        "option",
+                                        {
+                                          key: index,
+                                          domProps: { value: f.id }
+                                        },
+                                        [_vm._v(_vm._s(f.nombre))]
+                                      )
+                                    }),
+                                    0
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.getPermisoByNombre("agregar-otra")
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn-icon btn-icon-only btn-pill btn btn-outline-success",
+                                              on: {
+                                                click: function($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showModal(
+                                                    "forma_macro"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-plus"
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.$v.parametros.forma.$error &&
+                                !_vm.$v.parametros.forma.required
+                                  ? _c(
+                                      "em",
+                                      { staticClass: "text-error-select" },
+                                      [_vm._v(_vm._s(_vm.mensajes.required))]
                                     )
                                   : _vm._e()
                               ])
@@ -1133,12 +1259,20 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.superficie,
-                                        expression: "parametros.superficie"
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.superficie.$model,
+                                        expression:
+                                          "$v.parametros.superficie.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.superficie.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "superficie" },
                                     on: {
                                       change: function($event) {
@@ -1154,8 +1288,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "superficie",
+                                          _vm.$v.parametros.superficie,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1204,7 +1338,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.superficie.$error &&
+                              !_vm.$v.parametros.superficie.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ]),
                           _vm._v(" "),
@@ -1221,12 +1364,19 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.borde,
-                                        expression: "parametros.borde"
+                                        rawName: "v-model.trim",
+                                        value: _vm.$v.parametros.borde.$model,
+                                        expression:
+                                          "$v.parametros.borde.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.borde.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "borde" },
                                     on: {
                                       change: function($event) {
@@ -1242,8 +1392,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "borde",
+                                          _vm.$v.parametros.borde,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1287,7 +1437,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.borde.$error &&
+                              !_vm.$v.parametros.borde.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-md-6" }, [
@@ -1302,12 +1461,20 @@ var render = function() {
                                     directives: [
                                       {
                                         name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.parametros.pigmento,
-                                        expression: "parametros.pigmento"
+                                        rawName: "v-model.trim",
+                                        value:
+                                          _vm.$v.parametros.pigmento.$model,
+                                        expression:
+                                          "$v.parametros.pigmento.$model",
+                                        modifiers: { trim: true }
                                       }
                                     ],
-                                    staticClass: "form-control",
+                                    class: [
+                                      "form-control",
+                                      _vm.$v.parametros.pigmento.$error
+                                        ? "error-input-select"
+                                        : ""
+                                    ],
                                     attrs: { name: "select", id: "pigmento" },
                                     on: {
                                       change: function($event) {
@@ -1323,8 +1490,8 @@ var render = function() {
                                             return val
                                           })
                                         _vm.$set(
-                                          _vm.parametros,
-                                          "pigmento",
+                                          _vm.$v.parametros.pigmento,
+                                          "$model",
                                           $event.target.multiple
                                             ? $$selectedVal
                                             : $$selectedVal[0]
@@ -1371,7 +1538,16 @@ var render = function() {
                                       ]
                                     )
                                   : _vm._e()
-                              ])
+                              ]),
+                              _vm._v(" "),
+                              _vm.$v.parametros.pigmento.$error &&
+                              !_vm.$v.parametros.pigmento.required
+                                ? _c(
+                                    "em",
+                                    { staticClass: "text-error-select" },
+                                    [_vm._v(_vm._s(_vm.mensajes.required))]
+                                  )
+                                : _vm._e()
                             ])
                           ])
                         ]
@@ -1386,33 +1562,51 @@ var render = function() {
                         directives: [
                           {
                             name: "model",
-                            rawName: "v-model",
-                            value: _vm.parametros.secrecion_geosminas,
-                            expression: "parametros.secrecion_geosminas"
+                            rawName: "v-model.trim",
+                            value: _vm.$v.parametros.secrecion_geosminas.$model,
+                            expression:
+                              "$v.parametros.secrecion_geosminas.$model",
+                            modifiers: { trim: true }
                           }
                         ],
-                        staticClass: "form-control",
+                        class: [
+                          "form-control",
+                          _vm.$v.parametros.secrecion_geosminas.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "secrecion_geosminas",
                           id: "secrecion_geosminas",
                           placeholder: "...",
-                          type: "text",
-                          required: ""
+                          type: "text"
                         },
-                        domProps: { value: _vm.parametros.secrecion_geosminas },
+                        domProps: {
+                          value: _vm.$v.parametros.secrecion_geosminas.$model
+                        },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.parametros,
-                              "secrecion_geosminas",
-                              $event.target.value
+                              _vm.$v.parametros.secrecion_geosminas,
+                              "$model",
+                              $event.target.value.trim()
                             )
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm.$v.parametros.secrecion_geosminas.$error &&
+                      !_vm.$v.parametros.secrecion_geosminas.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
+                          ])
+                        : _vm._e()
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "position-relative form-group" }, [
@@ -1422,20 +1616,31 @@ var render = function() {
                       _vm._v(" "),
                       _c("input", {
                         ref: "inputImagen",
-                        staticClass: "form-control-file",
+                        class: [
+                          "form-control-file",
+                          _vm.$v.parametros.imagen.$error
+                            ? "error-input-select"
+                            : ""
+                        ],
                         attrs: {
                           name: "imagen",
                           id: "imagen",
                           accept: "image/jpeg, image/png",
-                          type: "file",
-                          required: _vm.required
+                          type: "file"
                         },
                         on: { change: _vm.obtenerImagen }
                       }),
                       _vm._v(" "),
                       _vm.imagenError
-                        ? _c("span", { staticClass: "text-danger" }, [
+                        ? _c("em", { staticClass: "text-error-input" }, [
                             _vm._v(_vm._s(_vm.imagenError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$v.parametros.imagen.$error &&
+                      !_vm.$v.parametros.imagen.required
+                        ? _c("em", { staticClass: "text-error-input" }, [
+                            _vm._v(_vm._s(_vm.mensajes.required))
                           ])
                         : _vm._e()
                     ]),
@@ -1477,7 +1682,7 @@ var render = function() {
                       {
                         staticClass: "mb-2 mr-2 btn btn-block",
                         class: _vm.btnClase,
-                        attrs: { disabled: _vm.validarBtn || _vm.bloquearBtn }
+                        attrs: { disabled: _vm.bloquearBtn }
                       },
                       [_vm._v(_vm._s(_vm.nomBtnComputed))]
                     )
@@ -2409,6 +2614,110 @@ var infoCaractMacroMixin = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (infoCaractMacroMixin);
+
+/***/ }),
+
+/***/ "./resources/js/mixins/obtenerImagenCroopieCepas.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/mixins/obtenerImagenCroopieCepas.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var obtenerImagenCroopieCepasMixin = {
+  data: function data() {
+    return {
+      imagenMiniatura: "",
+      imagenError: ""
+    };
+  },
+  methods: {
+    cambiarValorImagen: function cambiarValorImagen(valor) {
+      if (valor) {
+        this.parametros.imagen = valor;
+      } else {
+        if (!this.validarTipoForm) {
+          this.parametros.imagen = this.info.imagen;
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.$refs.inputImagen.value = "";
+        } else {
+          this.parametros.imagen = "";
+        }
+      }
+    },
+    obtenerImagen: function obtenerImagen(e) {
+      var file = e.target.files[0];
+      var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
+
+      if (file) {
+        if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
+          this.imagenError = "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
+          this.$refs.inputImagen.value = "";
+
+          if (this.info) {
+            this.imagenMiniatura = this.info.imagenPublica;
+            this.parametros.imagen = this.info.imagen;
+          } else {
+            this.imagenMiniatura = "";
+            this.parametros.imagen = "";
+          }
+        } else {
+          this.imagenError = "";
+          this.cargarImagen(file);
+        }
+      } else {
+        if (this.info) {
+          this.imagenMiniatura = this.info.imagenPublica;
+          this.parametros.imagen = this.info.imagen;
+        } else {
+          this.parametros.imagen = "";
+          this.imagenMiniatura = "";
+        }
+      }
+    },
+    cargarImagen: function cargarImagen(file) {
+      var _this = this;
+
+      var reader = new Image();
+
+      reader.onload = function (e) {
+        _this.imagenMiniatura = reader.src;
+      };
+
+      reader.src = URL.createObjectURL(file);
+    }
+  },
+  computed: {
+    mostraImagen: function mostraImagen() {
+      return this.imagenMiniatura;
+    },
+    mostrarBtnCroppie: function mostrarBtnCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura != this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    validarCroppie: function validarCroppie() {
+      if (this.info) {
+        if (this.imagenMiniatura == this.info.imagenPublica) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (obtenerImagenCroopieCepasMixin);
 
 /***/ })
 

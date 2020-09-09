@@ -6,7 +6,11 @@ const obtenerImagenCroopie3ImagenesMixin = {
             imagenError: {
                 imagen1: "",
                 imagen2: ""
-            }
+            },
+            imagenInfo1: "",
+            imagenInfo2: "",
+            imagenInfoPublica1: "",
+            imagenInfoPublica2: ""
         };
     },
     methods: {
@@ -14,9 +18,9 @@ const obtenerImagenCroopie3ImagenesMixin = {
             if (valor) {
                 this.parametros.imagen1 = valor;
             } else {
-                if (!this.required) {
-                    this.parametros.imagen1 = this.info.img_pcr;
-                    this.imagenMiniatura1 = this.info.img_pcrPublica;
+                if (!this.validarTipoForm) {
+                    this.parametros.imagen1 = this.imagenInfo1;
+                    this.imagenMiniatura1 = this.imagenInfoPublica1;
                     this.$refs.inputImagen1.value = "";
                 } else {
                     this.parametros.imagen1 = "";
@@ -27,9 +31,9 @@ const obtenerImagenCroopie3ImagenesMixin = {
             if (valor) {
                 this.parametros.imagen2 = valor;
             } else {
-                if (!this.required) {
-                    this.parametros.imagen2 = this.info.img_secuen;
-                    this.imagenMiniatura2 = this.info.img_secuenPublica;
+                if (!this.validarTipoForm) {
+                    this.parametros.imagen2 = this.imagenInfo2;
+                    this.imagenMiniatura2 = this.imagenInfoPublica2;
                     this.$refs.inputImagen2.value = "";
                 } else {
                     this.parametros.imagen2 = "";
@@ -43,12 +47,12 @@ const obtenerImagenCroopie3ImagenesMixin = {
                 if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
                     this.imagenError.imagen1 =
                         "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-                    if (this.required) {
+                    if (this.validarTipoForm) {
                         this.imagenMiniatura1 = "";
                         this.parametros.imagen1 = "";
                     } else {
-                        this.imagenMiniatura1 = this.info.img_pcrPublica;
-                        this.parametros.imagen1 = this.info.img_pcr;
+                        this.imagenMiniatura1 = this.imagenInfoPublica1;
+                        this.parametros.imagen1 = this.imagenInfo1;
                     }
                     this.$refs.inputImagen1.value = "";
                 } else {
@@ -56,12 +60,12 @@ const obtenerImagenCroopie3ImagenesMixin = {
                     this.cargarImagen(file, "imagen1");
                 }
             } else {
-                if (this.required) {
+                if (this.validarTipoForm) {
                     this.imagenMiniatura1 = "";
                     this.parametros.imagen1 = "";
                 } else {
-                    this.imagenMiniatura1 = this.info.img_pcrPublica;
-                    this.parametros.imagen1 = this.info.img_pcr;
+                    this.imagenMiniatura1 = this.imagenInfoPublica1;
+                    this.parametros.imagen1 = this.imagenInfo1;
                 }
             }
         },
@@ -72,12 +76,12 @@ const obtenerImagenCroopie3ImagenesMixin = {
                 if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
                     this.imagenError.imagen2 =
                         "La imagen debe ser en formato .png .jpg y menor a 2Mb.";
-                    if (this.required) {
+                    if (this.validarTipoForm) {
                         this.imagenMiniatura2 = "";
                         this.parametros.imagen2 = "";
                     } else {
-                        this.imagenMiniatura2 = this.info.img_secuenPublica;
-                        this.parametros.imagen2 = this.info.img_secuen;
+                        this.imagenMiniatura2 = this.imagenInfoPublica2;
+                        this.parametros.imagen2 = this.imagenInfo2;
                     }
                     this.$refs.inputImagen2.value = "";
                 } else {
@@ -85,12 +89,12 @@ const obtenerImagenCroopie3ImagenesMixin = {
                     this.cargarImagen(file, "imagen2");
                 }
             } else {
-                if (this.required) {
+                if (this.validarTipoForm) {
                     this.imagenMiniatura2 = "";
                     this.parametros.imagen2 = "";
                 } else {
-                    this.imagenMiniatura2 = this.info.img_secuenPublica;
-                    this.parametros.imagen2 = this.info.img_secuen;
+                    this.imagenMiniatura2 = this.imagenInfoPublica2;
+                    this.parametros.imagen2 = this.imagenInfo2;
                 }
             }
         },
@@ -118,7 +122,7 @@ const obtenerImagenCroopie3ImagenesMixin = {
         },
         mostrarBtnCroppie1() {
             if (this.info) {
-                if (this.imagenMiniatura1 != this.info.img_pcrPublica) {
+                if (this.imagenMiniatura1 != this.imagenInfoPublica1) {
                     return true;
                 } else {
                     return false;
@@ -129,7 +133,7 @@ const obtenerImagenCroopie3ImagenesMixin = {
         },
         mostrarBtnCroppie2() {
             if (this.info) {
-                if (this.imagenMiniatura2 != this.info.img_secuenPublica) {
+                if (this.imagenMiniatura2 != this.imagenInfoPublica2) {
                     return true;
                 } else {
                     return false;
@@ -140,7 +144,7 @@ const obtenerImagenCroopie3ImagenesMixin = {
         },
         validarCroppie1() {
             if (this.info) {
-                if (this.imagenMiniatura1 == this.info.img_pcrPublica) {
+                if (this.imagenMiniatura1 == this.imagenInfoPublica1) {
                     return true;
                 } else {
                     return false;
@@ -151,7 +155,7 @@ const obtenerImagenCroopie3ImagenesMixin = {
         },
         validarCroppie2() {
             if (this.info) {
-                if (this.imagenMiniatura2 == this.info.img_secuenPublica) {
+                if (this.imagenMiniatura2 == this.imagenInfoPublica2) {
                     return true;
                 } else {
                     return false;
@@ -159,12 +163,6 @@ const obtenerImagenCroopie3ImagenesMixin = {
             } else {
                 return false;
             }
-        },
-        validarBtn() {
-            if (!this.parametros.imagen1 || !this.parametros.imagen2) {
-                return true;
-            }
-            return false;
         }
     }
 };

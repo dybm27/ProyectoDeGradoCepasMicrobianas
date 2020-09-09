@@ -94,13 +94,13 @@ class InfoPanelCepasController extends Controller
 
     public function obtenerCaracteristicasCepa(Request $request)
     {
-        $cepa = Cepa::where('id', $request->id)->first();
+        $cepa = Cepa::where('id', $request->id)->where('slug', $request->slug)->first();
         if (empty($cepa)) {
             return 'No Existe';
         }
         switch ($cepa->grupo_microbiano_id) {
             case 1:
-                $query = Bacteria::where('cepa_id', $request->id)
+                $query = Bacteria::where('cepa_id', $cepa->id)
                     ->with([
                         'cepa', 'caractMacroscopicas', 'caractMicroscopica', 'caractBioquimica',
                         'caractFisiologica', 'identMolecular', 'metodosConservacion'
@@ -108,7 +108,7 @@ class InfoPanelCepasController extends Controller
                     ->first();
                 break;
             case 2:
-                $query = HongoFilamentoso::where('cepa_id', $request->id)
+                $query = HongoFilamentoso::where('cepa_id', $cepa->id)
                     ->with([
                         'cepa', 'caractMacroscopicas', 'caractMicroscopica',
                         'caractBioquimica', 'identMolecular', 'metodosConservacion'
@@ -116,7 +116,7 @@ class InfoPanelCepasController extends Controller
                     ->first();
                 break;
             case 3:
-                $query = Levadura::where('cepa_id', $request->id)
+                $query = Levadura::where('cepa_id', $cepa->id)
                     ->with([
                         'cepa', 'caractMacroscopicas', 'caractMicroscopica',
                         'caractBioquimica', 'identMolecular', 'metodosConservacion'
@@ -124,7 +124,7 @@ class InfoPanelCepasController extends Controller
                     ->first();
                 break;
             case 4:
-                $query = Actinomiceto::where('cepa_id', $request->id)
+                $query = Actinomiceto::where('cepa_id', $cepa->id)
                     ->with([
                         'cepa', 'caractMacroscopicas', 'caractMicroscopica', 'identBioquimica',
                         'otrasCaracteristicas'/*, 'caractMolecular', 'metodosConservacion'*/

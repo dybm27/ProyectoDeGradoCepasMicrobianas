@@ -30,5 +30,5 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{asset('assets/scripts/template.js')}}"></script>  
         <script src="{{ asset('js/dumar.js') }}"></script>
-    
+    </body>
 </html>

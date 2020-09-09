@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/CroppieCepasComponent.vue?vue&type=script&lang=js&":
@@ -11,6 +12,18 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! croppie */ "./node_modules/croppie/croppie.js");
 /* harmony import */ var croppie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(croppie__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -279,6 +292,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel_CarouselComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../carousel/CarouselComponent.vue */ "./resources/js/components/carousel/CarouselComponent.vue");
 /* harmony import */ var _CroppieComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CroppieComponent.vue */ "./resources/js/components/CroppieComponent.vue");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toastr */ "./resources/js/mixins/toastr.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -480,6 +495,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -499,8 +546,23 @@ __webpack_require__.r(__webpack_exports__);
         nomLabel: "",
         errors: ""
       },
-      imagenMiniatura: ""
+      imagenMiniatura: "",
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres."
+      }
     };
+  },
+  validations: {
+    modalImagen: {
+      imagen: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"]
+      }
+    }
   },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_2__["default"]],
   methods: {
@@ -541,90 +603,70 @@ __webpack_require__.r(__webpack_exports__);
     accionModal: function accionModal() {
       var _this = this;
 
+      this.bloquearBtnModal = true;
       this.modalImagen.errors = "";
 
       if (this.modalImagen.nomBtn === "Cambiar") {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+
+        if (!this.$v.$invalid) {
           var parametros = {
             numero: this.modalImagen.select_imagen,
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/cambiar-imagen/").concat(this.cepa.id), parametros).then(function (res) {
+            _this.bloquearBtnModal = false;
+
             _this.$emit("accionImagen", res.data);
 
             _this.$modal.hide("agregar_cambiar_imagen");
 
             _this.toastr("Cambiar Imagen", "La imagen fue cambiada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                _this.modalImagen.errors = [];
-                _this.modalImagen.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarErrorAxios(error.response.status, error.response.data.errors);
           });
         } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
         var _parametros = {
           numero: this.modalImagen.select_imagen
         };
         axios.put("/cepas/".concat(this.tipoCepa, "/eliminar-imagen/").concat(this.cepa.id), _parametros).then(function (res) {
+          _this.bloquearBtnModal = false;
+
           _this.$emit("accionImagen", res.data);
 
           _this.$modal.hide("eliminar_imagen");
 
           _this.toastr("Eliminar Imagen", "Imagen eliminada con exito!!", "success");
         })["catch"](function (error) {
-          if (error.response.status === 403) {
-            _this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
-            window.location.href = "/";
-          } else {
-            if (error.response.status === 422) {
-              _this.modalImagen.errors = [];
-              _this.modalImagen.errors = error.response.data.errors;
-            }
-
-            _this.toastr("Error!!", "", "error");
-          }
+          _this.verificarErrorAxios(error.response.status, error.response.data.errors);
         });
       } else {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+
+        if (!this.$v.$invalid) {
           this.colocarNumeroAgregar();
           var _parametros2 = {
             numero: this.modalImagen.select_imagen,
             imagen: this.modalImagen.imagen
           };
           axios.put("/cepas/".concat(this.tipoCepa, "/agregar-imagen/").concat(this.cepa.id), _parametros2).then(function (res) {
+            _this.bloquearBtnModal = false;
+
             _this.$emit("accionImagen", res.data);
 
             _this.$modal.hide("agregar_cambiar_imagen");
 
             _this.toastr("Agregar Imagen", "La imagen fue agregada con exito!!", "success");
           })["catch"](function (error) {
-            if (error.response.status === 403) {
-              _this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                _this.modalImagen.errors = [];
-                _this.modalImagen.errors = error.response.data.errors;
-              }
-
-              _this.toastr("Error!!", "", "error");
-            }
+            _this.verificarErrorAxios(error.response.status, error.response.data.errors);
           });
         } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       }
     },
@@ -666,6 +708,21 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       reader.src = URL.createObjectURL(file);
+    },
+    verificarErrorAxios: function verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.modalImagen.errors = [];
+          this.modalImagen.errors = errors;
+        }
+
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     }
   },
   computed: {
@@ -713,13 +770,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     mostraImagen: function mostraImagen() {
       return this.imagenMiniatura;
-    },
-    validarBtn: function validarBtn() {
-      if (!this.modalImagen.imagen) {
-        return true;
-      }
-
-      return false;
     }
   }
 });
@@ -916,48 +966,61 @@ var render = function() {
             _c("div", { staticClass: "container" }, [
               _c(
                 "div",
-                { staticClass: "row mt-2 ml-2 mr-2" },
+                { staticClass: "row mt-2 ml-2 mr-2 mb-2" },
                 [
                   _c("div", { attrs: { id: "croppie1" } }),
                   _vm._v(" "),
                   _vm.imagenes[0]
                     ? [
-                        _vm.btnAprobar1
-                          ? [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success mb-2",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.resultado(1)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Aprobar Imagen")]
-                              ),
-                              _vm._v(" "),
-                              _vm.mostrarMensaje1
-                                ? _c("em", { staticClass: "text-danger" }, [
-                                    _vm._v("Debe Aprobar la imagen")
-                                  ])
-                                : _vm._e()
-                            ]
-                          : [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-danger mb-2 float-right",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.cancelar(1)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancelar")]
-                              )
-                            ]
+                        _c("div", { staticClass: "container" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row d-flex" },
+                            [
+                              _vm.btnAprobar1
+                                ? [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-success",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.resultado(1)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Aprobar Imagen")]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm.mostrarMensaje1
+                                      ? _c(
+                                          "em",
+                                          {
+                                            staticClass:
+                                              "text-danger small mt-2"
+                                          },
+                                          [_vm._v("Debe Aprobar la imagen")]
+                                        )
+                                      : _vm._e()
+                                  ]
+                                : [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-danger ml-auto",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.cancelar(1)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Cancelar")]
+                                    )
+                                  ]
+                            ],
+                            2
+                          )
+                        ])
                       ]
                     : _vm._e()
                 ],
@@ -966,48 +1029,61 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "row mt-2 ml-2 mr-2" },
+                { staticClass: "row mt-2 ml-2 mr-2 mb-2" },
                 [
                   _c("div", { attrs: { id: "croppie2" } }),
                   _vm._v(" "),
                   _vm.imagenes[1]
                     ? [
-                        _vm.btnAprobar2
-                          ? [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success mb-2",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.resultado(2)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Aprobar Imagen")]
-                              ),
-                              _vm._v(" "),
-                              _vm.mostrarMensaje2
-                                ? _c("em", { staticClass: "text-danger" }, [
-                                    _vm._v("Debe Aprobar la imagen")
-                                  ])
-                                : _vm._e()
-                            ]
-                          : [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-danger mb-2 float-right",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.cancelar(2)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancelar")]
-                              )
-                            ]
+                        _c("div", { staticClass: "container" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row d-flex" },
+                            [
+                              _vm.btnAprobar2
+                                ? [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-success",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.resultado(2)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Aprobar Imagen")]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm.mostrarMensaje2
+                                      ? _c(
+                                          "em",
+                                          {
+                                            staticClass:
+                                              "text-danger small mt-2"
+                                          },
+                                          [_vm._v("Debe Aprobar la imagen")]
+                                        )
+                                      : _vm._e()
+                                  ]
+                                : [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-danger ml-auto",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.cancelar(2)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Cancelar")]
+                                    )
+                                  ]
+                            ],
+                            2
+                          )
+                        ])
                       ]
                     : _vm._e()
                 ],
@@ -1016,48 +1092,61 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "row mt-2 ml-2 mr-2" },
+                { staticClass: "row mt-2 ml-2 mr-2 mb-2" },
                 [
                   _c("div", { attrs: { id: "croppie3" } }),
                   _vm._v(" "),
                   _vm.imagenes[2]
                     ? [
-                        _vm.btnAprobar3
-                          ? [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success mb-2",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.resultado(3)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Aprobar Imagen")]
-                              ),
-                              _vm._v(" "),
-                              _vm.mostrarMensaje3
-                                ? _c("em", { staticClass: "text-danger" }, [
-                                    _vm._v("Debe Aprobar la imagen")
-                                  ])
-                                : _vm._e()
-                            ]
-                          : [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-danger mb-2 float-right",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.cancelar(3)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancelar")]
-                              )
-                            ]
+                        _c("div", { staticClass: "container" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row d-flex" },
+                            [
+                              _vm.btnAprobar3
+                                ? [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-success",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.resultado(3)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Aprobar Imagen")]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm.mostrarMensaje3
+                                      ? _c(
+                                          "em",
+                                          {
+                                            staticClass:
+                                              "text-danger small mt-2"
+                                          },
+                                          [_vm._v("Debe Aprobar la imagen")]
+                                        )
+                                      : _vm._e()
+                                  ]
+                                : [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-danger ml-auto",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.cancelar(3)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Cancelar")]
+                                    )
+                                  ]
+                            ],
+                            2
+                          )
+                        ])
                       ]
                     : _vm._e()
                 ],
@@ -1186,448 +1275,555 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "agregar_cambiar_imagen",
-            classes: "my_modal",
-            width: 700,
-            height: 490
-          }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v(_vm._s(_vm.modalImagen.titulo))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar_cambiar_imagen")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "modal-body" },
-              [
-                _vm.modalImagen.nomBtn === "Agregar"
-                  ? [
-                      _c("div", { staticClass: "container" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-sm-6" }, [
-                            _c(
-                              "div",
-                              { staticClass: "position-relative form-group" },
-                              [
-                                _c("label", { attrs: { for: "imagen" } }, [
-                                  _vm._v("Seleccione la nueva Imagen")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  ref: "inputImagenModal",
-                                  staticClass: "form-control-file",
-                                  attrs: {
-                                    name: "imagen",
-                                    id: "imagen",
-                                    type: "file",
-                                    accept: "image/jpeg, image/png"
-                                  },
-                                  on: { change: _vm.verificarImagen }
-                                }),
-                                _vm._v(" "),
-                                _vm.modalImagen.errors
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.modalImagen.errors))
-                                    ])
-                                  : _vm._e()
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-sm-6" },
-                            [
-                              _vm.mostraImagen
-                                ? [
-                                    _c("Croppie", {
-                                      attrs: {
-                                        id: "croppie",
-                                        imagen: _vm.mostraImagen,
-                                        mostrarBtnCroppie: true,
-                                        zoom: 1,
-                                        enableZoom: true,
-                                        editar: false,
-                                        boundaryHeigth: 230,
-                                        viewportWidth: 200
-                                      },
-                                      on: {
-                                        cambiarValorImagen:
-                                          _vm.cambiarValorImagen
-                                      }
-                                    })
-                                  ]
-                                : [
-                                    _c("div", { staticClass: "text-center" }, [
-                                      _c("h5", { staticClass: "mt-5 mb-5" }, [
-                                        _c("span", { staticClass: "pr-1" }, [
-                                          _c(
-                                            "b",
-                                            { staticClass: "text-warning" },
-                                            [_vm._v("SIN IMAGEN")]
-                                          )
-                                        ])
-                                      ])
-                                    ])
-                                  ]
-                            ],
-                            2
-                          )
-                        ])
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "agregar_cambiar_imagen",
+                classes: "my_modal",
+                adaptive: true,
+                maxWidth: 700,
+                height: "auto",
+                scrollable: true
+              }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [_vm._v(_vm._s(_vm.modalImagen.titulo))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("agregar_cambiar_imagen")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
                       ])
                     ]
-                  : _vm._e(),
+                  )
+                ]),
                 _vm._v(" "),
-                _vm.modalImagen.nomBtn === "Cambiar"
-                  ? [
-                      _c("div", { staticClass: "container" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-sm-6" }, [
-                            _c(
-                              "div",
-                              { staticClass: "position-relative form-group" },
-                              [
+                _c(
+                  "div",
+                  { staticClass: "modal-body" },
+                  [
+                    _vm.modalImagen.nomBtn === "Agregar"
+                      ? [
+                          _c("div", { staticClass: "container" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-sm-6" }, [
                                 _c(
-                                  "label",
-                                  { attrs: { for: "select_imagen" } },
-                                  [_vm._v(_vm._s(_vm.modalImagen.nomLabel))]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "select",
+                                  "div",
                                   {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model.number",
-                                        value: _vm.modalImagen.select_imagen,
-                                        expression: "modalImagen.select_imagen",
-                                        modifiers: { number: true }
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    attrs: {
-                                      name: "select_imagen",
-                                      id: "select_imagen"
-                                    },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return _vm._n(val)
-                                          })
-                                        _vm.$set(
-                                          _vm.modalImagen,
-                                          "select_imagen",
-                                          $event.target.multiple
-                                            ? $$selectedVal
-                                            : $$selectedVal[0]
-                                        )
-                                      }
-                                    }
+                                    staticClass: "position-relative form-group"
                                   },
                                   [
-                                    _vm.parametros.imagen1
+                                    _c("label", { attrs: { for: "imagen" } }, [
+                                      _vm._v("Seleccione la nueva Imagen")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      ref: "inputImagenModal",
+                                      class: [
+                                        "form-control-file",
+                                        _vm.$v.modalImagen.imagen.$error != ""
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: {
+                                        name: "imagen",
+                                        id: "imagen",
+                                        type: "file",
+                                        accept: "image/jpeg, image/png"
+                                      },
+                                      on: { change: _vm.verificarImagen }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm.modalImagen.errors
                                       ? _c(
-                                          "option",
-                                          { attrs: { value: "1" } },
-                                          [_vm._v("Primera")]
+                                          "em",
+                                          { staticClass: "text-error-input" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.modalImagen.errors)
+                                            )
+                                          ]
                                         )
                                       : _vm._e(),
                                     _vm._v(" "),
-                                    _vm.parametros.imagen2
+                                    _vm.$v.modalImagen.imagen.$error &&
+                                    !_vm.$v.modalImagen.imagen.required
                                       ? _c(
-                                          "option",
-                                          { attrs: { value: "2" } },
-                                          [_vm._v("Segunda")]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _vm.parametros.imagen3
-                                      ? _c(
-                                          "option",
-                                          { attrs: { value: "3" } },
-                                          [_vm._v("Tercera")]
+                                          "em",
+                                          { staticClass: "text-error-input" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.mensajes.required)
+                                            )
+                                          ]
                                         )
                                       : _vm._e()
                                   ]
                                 )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "position-relative form-group" },
-                              [
-                                _c("label", { attrs: { for: "imagen" } }, [
-                                  _vm._v("Seleccione la nueva Imagen")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  ref: "inputImagenModal",
-                                  staticClass: "form-control-file",
-                                  attrs: {
-                                    name: "imagen",
-                                    id: "imagen",
-                                    type: "file",
-                                    accept: "image/jpeg, image/png"
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "col-sm-6" },
+                                [
+                                  _vm.mostraImagen
+                                    ? [
+                                        _c("Croppie", {
+                                          attrs: {
+                                            id: "croppie",
+                                            imagen: _vm.mostraImagen,
+                                            mostrarBtnCroppie: true,
+                                            zoom: 1,
+                                            enableZoom: true,
+                                            editar: false,
+                                            boundaryHeigth: 230,
+                                            viewportWidth: 200
+                                          },
+                                          on: {
+                                            cambiarValorImagen:
+                                              _vm.cambiarValorImagen
+                                          }
+                                        })
+                                      ]
+                                    : [
+                                        _c(
+                                          "div",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _c(
+                                              "h5",
+                                              { staticClass: "mt-5 mb-5" },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { staticClass: "pr-1" },
+                                                  [
+                                                    _c(
+                                                      "b",
+                                                      {
+                                                        staticClass:
+                                                          "text-warning"
+                                                      },
+                                                      [_vm._v("SIN IMAGEN")]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                ],
+                                2
+                              )
+                            ])
+                          ])
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.modalImagen.nomBtn === "Cambiar"
+                      ? [
+                          _c("div", { staticClass: "container" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-sm-6" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-group"
                                   },
-                                  on: { change: _vm.verificarImagen }
-                                }),
-                                _vm._v(" "),
-                                _vm.modalImagen.errors
-                                  ? _c("span", { staticClass: "text-danger" }, [
-                                      _vm._v(_vm._s(_vm.modalImagen.errors))
-                                    ])
-                                  : _vm._e()
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-sm-6" },
-                            [
-                              _vm.mostraImagen
-                                ? [
-                                    _c("Croppie", {
-                                      attrs: {
-                                        id: "croppie",
-                                        imagen: _vm.mostraImagen,
-                                        mostrarBtnCroppie: true,
-                                        zoom: 1,
-                                        enableZoom: true,
-                                        editar: false,
-                                        boundaryHeigth: 230,
-                                        viewportWidth: 200
+                                  [
+                                    _c(
+                                      "label",
+                                      { attrs: { for: "select_imagen" } },
+                                      [_vm._v(_vm._s(_vm.modalImagen.nomLabel))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model.number",
+                                            value:
+                                              _vm.modalImagen.select_imagen,
+                                            expression:
+                                              "modalImagen.select_imagen",
+                                            modifiers: { number: true }
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          name: "select_imagen",
+                                          id: "select_imagen"
+                                        },
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return _vm._n(val)
+                                              })
+                                            _vm.$set(
+                                              _vm.modalImagen,
+                                              "select_imagen",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
                                       },
-                                      on: {
-                                        cambiarValorImagen:
-                                          _vm.cambiarValorImagen
-                                      }
-                                    })
+                                      [
+                                        _vm.parametros.imagen1
+                                          ? _c(
+                                              "option",
+                                              { attrs: { value: "1" } },
+                                              [_vm._v("Primera")]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.parametros.imagen2
+                                          ? _c(
+                                              "option",
+                                              { attrs: { value: "2" } },
+                                              [_vm._v("Segunda")]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.parametros.imagen3
+                                          ? _c(
+                                              "option",
+                                              { attrs: { value: "3" } },
+                                              [_vm._v("Tercera")]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    )
                                   ]
-                                : [
-                                    _c("div", { staticClass: "text-center" }, [
-                                      _c("h5", { staticClass: "mt-5 mb-5" }, [
-                                        _c("span", { staticClass: "pr-1" }, [
-                                          _c(
-                                            "b",
-                                            { staticClass: "text-warning" },
-                                            [_vm._v("SIN IMAGEN")]
-                                          )
-                                        ])
-                                      ])
-                                    ])
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "position-relative form-group"
+                                  },
+                                  [
+                                    _c("label", { attrs: { for: "imagen" } }, [
+                                      _vm._v("Seleccione la nueva Imagen")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      ref: "inputImagenModal",
+                                      class: [
+                                        "form-control-file",
+                                        _vm.$v.modalImagen.imagen.$error != ""
+                                          ? "error-input-select"
+                                          : ""
+                                      ],
+                                      attrs: {
+                                        name: "imagen",
+                                        id: "imagen",
+                                        type: "file",
+                                        accept: "image/jpeg, image/png"
+                                      },
+                                      on: { change: _vm.verificarImagen }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm.modalImagen.errors
+                                      ? _c(
+                                          "em",
+                                          { staticClass: "text-error-input" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.modalImagen.errors)
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm.$v.modalImagen.imagen.$error &&
+                                    !_vm.$v.modalImagen.imagen.required
+                                      ? _c(
+                                          "em",
+                                          { staticClass: "text-error-input" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(_vm.mensajes.required)
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e()
                                   ]
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]
-                  : _vm._e()
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("agregar_cambiar_imagen")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.validarBtn },
-                  on: { click: _vm.accionModal }
-                },
-                [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]
-              )
-            ])
-          ])
-        ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "col-sm-6" },
+                                [
+                                  _vm.mostraImagen
+                                    ? [
+                                        _c("Croppie", {
+                                          attrs: {
+                                            id: "croppie",
+                                            imagen: _vm.mostraImagen,
+                                            mostrarBtnCroppie: true,
+                                            zoom: 1,
+                                            enableZoom: true,
+                                            editar: false,
+                                            boundaryHeigth: 230,
+                                            viewportWidth: 200
+                                          },
+                                          on: {
+                                            cambiarValorImagen:
+                                              _vm.cambiarValorImagen
+                                          }
+                                        })
+                                      ]
+                                    : [
+                                        _c(
+                                          "div",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _c(
+                                              "h5",
+                                              { staticClass: "mt-5 mb-5" },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { staticClass: "pr-1" },
+                                                  [
+                                                    _c(
+                                                      "b",
+                                                      {
+                                                        staticClass:
+                                                          "text-warning"
+                                                      },
+                                                      [_vm._v("SIN IMAGEN")]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                ],
+                                2
+                              )
+                            ])
+                          ])
+                        ]
+                      : _vm._e()
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("agregar_cambiar_imagen")
+                        }
+                      }
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: { click: _vm.accionModal }
+                    },
+                    [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]
+                  )
+                ])
+              ])
+            ]
+          )
+        ],
+        1
       ),
       _vm._v(" "),
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "eliminar_imagen",
-            classes: "my_modal",
-            width: 450,
-            height: 450
-          }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v(_vm._s(_vm.modalImagen.titulo))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("eliminar_imagen")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "select_imagen" } }, [
-                  _vm._v(_vm._s(_vm.modalImagen.nomLabel))
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "eliminar_imagen",
+                classes: "my_modal",
+                adaptive: true,
+                maxWidth: 450,
+                height: "auto",
+                scrollable: true
+              }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [_vm._v(_vm._s(_vm.modalImagen.titulo))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("eliminar_imagen")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "select_imagen" } }, [
+                      _vm._v(_vm._s(_vm.modalImagen.nomLabel))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
                       {
-                        name: "model",
-                        rawName: "v-model.number",
-                        value: _vm.modalImagen.select_imagen,
-                        expression: "modalImagen.select_imagen",
-                        modifiers: { number: true }
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.number",
+                            value: _vm.modalImagen.select_imagen,
+                            expression: "modalImagen.select_imagen",
+                            modifiers: { number: true }
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { name: "select_imagen", id: "select_imagen" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return _vm._n(val)
+                              })
+                            _vm.$set(
+                              _vm.modalImagen,
+                              "select_imagen",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _vm.parametros.imagen1
+                          ? _c("option", { attrs: { value: "1" } }, [
+                              _vm._v("Primera")
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.parametros.imagen2
+                          ? _c("option", { attrs: { value: "2" } }, [
+                              _vm._v("Segunda")
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.parametros.imagen3
+                          ? _c("option", { attrs: { value: "3" } }, [
+                              _vm._v("Tercera")
+                            ])
+                          : _vm._e()
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("eliminar_imagen")
+                        }
                       }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { name: "select_imagen", id: "select_imagen" },
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return _vm._n(val)
-                          })
-                        _vm.$set(
-                          _vm.modalImagen,
-                          "select_imagen",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  },
-                  [
-                    _vm.parametros.imagen1
-                      ? _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("Primera")
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.parametros.imagen2
-                      ? _c("option", { attrs: { value: "2" } }, [
-                          _vm._v("Segunda")
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.parametros.imagen3
-                      ? _c("option", { attrs: { value: "3" } }, [
-                          _vm._v("Tercera")
-                        ])
-                      : _vm._e()
-                  ]
-                )
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: { click: _vm.accionModal }
+                    },
+                    [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]
+                  )
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("eliminar_imagen")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: { click: _vm.accionModal }
-                },
-                [_vm._v(_vm._s(_vm.modalImagen.nomBtn))]
-              )
-            ])
-          ])
-        ]
+            ]
+          )
+        ],
+        1
       )
     ],
     2
@@ -1931,67 +2127,6 @@ var obtenerImagenCroopie3ImagenesMixin = {
         case 1:
           this.$refs.inputImagen.value = "";
           break;
-      }
-    }
-  },
-  computed: {
-    btnDisable: function btnDisable() {
-      if (this.imagenes != "") {
-        if (this.info) {
-          if (this.info.imagen1) {
-            if (this.imagenes[0] && !this.parametros.imagen1) {
-              return true;
-            }
-
-            if (this.info.imagen2) {
-              if (this.imagenes[1] && !this.parametros.imagen2) {
-                return true;
-              }
-
-              if (this.info.imagen3) {
-                if (this.imagenes[2] && !this.parametros.imagen3) {
-                  return true;
-                }
-              }
-            } else if (this.info.imagen3) {
-              if (this.imagenes[1] && !this.parametros.imagen3) {
-                return true;
-              }
-            }
-          } else if (this.info.imagen2) {
-            if (this.imagenes[0] && !this.parametros.imagen2) {
-              return true;
-            }
-
-            if (this.info.imagen3) {
-              if (this.imagenes[1] && !this.parametros.imagen3) {
-                return true;
-              }
-            }
-          } else if (this.info.imagen3) {
-            if (this.imagenes[0] && !this.parametros.imagen3) {
-              return true;
-            }
-          }
-
-          return false;
-        } else {
-          if (this.imagenes[0] && !this.parametros.imagen1) {
-            return true;
-          }
-
-          if (this.imagenes[1] && !this.parametros.imagen2) {
-            return true;
-          }
-
-          if (this.imagenes[2] && !this.parametros.imagen3) {
-            return true;
-          }
-
-          return false;
-        }
-      } else {
-        return false;
       }
     }
   }

@@ -47,7 +47,7 @@ const routes = [
                     },
                     //bacterias
                     {
-                        path: "bacteria/ver/:cepaId",
+                        path: "bacteria/ver/:cepaSlug",
                         name: "ver-cepa-bacteria",
                         component: () =>
                             import(
@@ -58,7 +58,7 @@ const routes = [
                         meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
-                        path: "bacteria/:cepaId",
+                        path: "bacteria/:cepaSlug",
                         name: "cepa-bacteria",
                         component: () =>
                             import(
@@ -155,7 +155,7 @@ const routes = [
                     },
                     //hongos
                     {
-                        path: "hongo/ver/:cepaId",
+                        path: "hongo/ver/:cepaSlug",
                         name: "ver-cepa-hongo",
                         component: () =>
                             import(
@@ -166,7 +166,7 @@ const routes = [
                         meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
-                        path: "hongo/:cepaId",
+                        path: "hongo/:cepaSlug",
                         name: "cepa-hongo",
                         component: () =>
                             import(
@@ -249,7 +249,7 @@ const routes = [
                     },
                     //levaduras
                     {
-                        path: "levadura/ver/:cepaId",
+                        path: "levadura/ver/:cepaSlug",
                         name: "ver-cepa-levadura",
                         component: () =>
                             import(
@@ -260,7 +260,7 @@ const routes = [
                         meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
-                        path: "levadura/:cepaId",
+                        path: "levadura/:cepaSlug",
                         name: "cepa-levadura",
                         component: () =>
                             import(
@@ -343,7 +343,7 @@ const routes = [
                     },
                     //actinomiceto
                     {
-                        path: "actinomiceto/ver/:cepaId",
+                        path: "actinomiceto/ver/:cepaSlug",
                         name: "ver-cepa-actinomiceto",
                         component: () =>
                             import(
@@ -354,7 +354,7 @@ const routes = [
                         meta: { title: "Ver Cepa", permisos: ["ver-cepa"] }
                     },
                     {
-                        path: "actinomiceto/:cepaId",
+                        path: "actinomiceto/:cepaSlug",
                         name: "cepa-actinomiceto",
                         component: () =>
                             import(
@@ -496,7 +496,7 @@ const routes = [
                         }
                     },
                     {
-                        path: ":cepaBacteriaId",
+                        path: ":cepaBacteriaSlug",
                         name: "caract-bacteria",
                         component: () =>
                             import(
@@ -592,7 +592,7 @@ const routes = [
                         ]
                     },
                     {
-                        path: "ver/:cepaBacteriaId",
+                        path: "ver/:cepaBacteriaSlug",
                         name: "ver-bacteria",
                         component: () =>
                             import(
@@ -650,7 +650,7 @@ const routes = [
                     },
 
                     {
-                        path: ":cepaHongoId",
+                        path: ":cepaHongoSlug",
                         name: "caract-hongo",
                         component: () =>
                             import(
@@ -732,7 +732,7 @@ const routes = [
                         ]
                     },
                     {
-                        path: "ver/:cepaHongoId",
+                        path: "ver/:cepaHongoSlug",
                         name: "ver-hongo",
                         component: () =>
                             import(
@@ -789,7 +789,7 @@ const routes = [
                     },
 
                     {
-                        path: ":cepaLevaduraId",
+                        path: ":cepaLevaduraSlug",
                         name: "caract-levadura",
                         component: () =>
                             import(
@@ -871,7 +871,7 @@ const routes = [
                         ]
                     },
                     {
-                        path: "ver/:cepaLevaduraId",
+                        path: "ver/:cepaLevaduraSlug",
                         name: "ver-levadura",
                         component: () =>
                             import(
@@ -927,7 +927,7 @@ const routes = [
                         }
                     },
                     {
-                        path: ":cepaActinomicetoId",
+                        path: ":cepaActinomicetoSlug",
                         name: "caract-actinomiceto",
                         component: () =>
                             import(
@@ -1023,7 +1023,7 @@ const routes = [
                         ]
                     },
                     {
-                        path: "ver/:cepaActinomicetoId",
+                        path: "ver/:cepaActinomicetoSlug",
                         name: "ver-actinomiceto",
                         component: () =>
                             import(

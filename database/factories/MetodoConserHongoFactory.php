@@ -10,11 +10,11 @@ $factory->define(MetodoConserHongo::class, function (Faker $faker) {
     return [
         'hongo_filamentoso_id' => factory(HongoFilamentoso::class)->create(),
         'tipo_id' => 1,
-        'fecha' => 'qweqwe',
-        'numero_replicas' => 'qweqwe',
+        'fecha' => now(),
+        'numero_replicas' => rand(1, 1000),
         'recuento_microgota' => 'qweqwe',
         'medio_cultivo' => 'qweqwe',
-        'numero_pases' => 'qweqwe',
+        'numero_pases' => rand(1, 1000),
         'observaciones' => 'qweqwe',
         'imagen' => 'qweqwe',
         'imagenPublica' => 'qweqwe'

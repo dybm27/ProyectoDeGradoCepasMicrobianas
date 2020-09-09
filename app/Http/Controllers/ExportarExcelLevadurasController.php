@@ -29,7 +29,7 @@ class ExportarExcelLevadurasController extends Controller
 
     public function metodosLevaduras()
     {
-        return Excel::download(new MetodosLevadurasExport, 'todas-levaduras.xlsx');
+        return Excel::download(new MetodosLevadurasExport, 'metodos-levaduras.xlsx');
     }
 
     public function metodosLevadurasTabla(Request $request)

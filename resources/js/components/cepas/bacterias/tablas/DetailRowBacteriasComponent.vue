@@ -1,14 +1,17 @@
 <template>
   <div @click="onClick">
-    <div class="container">
-      <template v-if="rowData.otras_caract">
-        <div class="row">
-          <div class="col-md-12">
-            <label>Otras Caracteristicas: {{rowData.otras_caract}}</label>
-          </div>
-        </div>
-      </template>
-    </div>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td v-if="rowData.otras_caract">
+            <b>Otras Caracteristicas:</b>
+          </td>
+        </tr>
+        <tr>
+          <td v-if="rowData.otras_caract">{{rowData.otras_caract}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -17,15 +20,15 @@ export default {
   props: {
     rowData: {
       type: Object,
-      required: true
+      required: true,
     },
     rowIndex: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   methods: {
-    onClick(event) {}
+    onClick(event) {},
   },
-  computed: {}
+  computed: {},
 };
 </script>

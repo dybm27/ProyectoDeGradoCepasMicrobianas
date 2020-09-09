@@ -14,7 +14,8 @@ class InvestigadoresController extends Controller
     {
         $rules = [
             'email' => 'required|unique:investigadors,email', 'nombres' => 'required',
-            'apellidos' => 'required', 'nivel_estudio' => 'required', 'cargo' => 'required'
+            'apellidos' => 'required', 'nivel_estudio' => 'required', 'cargo' => 'required',
+            'imagen' => 'required', 'publicar' => 'required'
         ];
         $this->validate($request, $rules);
 
@@ -36,11 +37,10 @@ class InvestigadoresController extends Controller
         $rules = [
             'email' => 'required|unique:investigadors,email,' . $investigador->id,
             'nombres' => 'required', 'apellidos' => 'required',
-            'nivel_estudio' => 'required', 'cargo' => 'required'
+            'nivel_estudio' => 'required', 'cargo' => 'required',
+            'imagen' => 'required', 'publicar' => 'required'
         ];
         $this->validate($request, $rules);
-        return 'paso';
-        $imagen = $this->agregarImagen($request->imagen);
         $datos = [];
         if ($request->imagen != $investigador->imagen) {
             //eliminar imagen vieja

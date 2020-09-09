@@ -16,7 +16,7 @@ class DocumentosController extends Controller
         $rules = [
             'nombre_documento' => 'required|unique:documentos,nombre_documento',
             'nombre_autor' => 'required', 'descripcion' => 'required',
-            'imagen' => 'required', 'archivo' => 'required'
+            'imagen' => 'required', 'archivo' => 'required', 'tipo' => 'required'
         ];
         $messages = [
             'nombre_documento.unique' => 'Ya se encuentra registrado un documento con ese nombre.'
@@ -127,7 +127,7 @@ class DocumentosController extends Controller
 
     public function guardarArchivo($tipo, $file, $nombre_documento)
     {
-        Storage::disk('public')->put('/documentos/' . $tipo . '/archivos/' . $nombre_documento, file_get_contents($file));
+        Storage::disk('local')->put('/public/documentos/' . $tipo . '/archivos/' . $nombre_documento, file_get_contents($file));
         $ruta = '/public/documentos/' . $tipo . '/archivos/' . $nombre_documento;
         $rutaPublica = '/storage/documentos/' . $tipo . '/archivos/' . $nombre_documento;
         return ['ruta' => $ruta, 'rutaPublica' => $rutaPublica];

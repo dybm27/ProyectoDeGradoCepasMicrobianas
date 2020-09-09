@@ -13,8 +13,8 @@ class ImagenLoginController extends Controller
     public function update(Request $request, $id)
     {
         $this->validarCampos($request);
-        if ($this->verificarMostrar($request->mostrar)) {
-            $imagen = ImagenLogin::find($id);
+        $imagen = ImagenLogin::find($id);
+        if ($this->verificarMostrar($request->mostrar, $imagen->id)) {
             if ($request->hasFile('imagen')) {
                 Storage::disk('local')->delete($imagen->imagen);
                 //agregar imagen nueva
@@ -29,7 +29,7 @@ class ImagenLoginController extends Controller
             broadcast(new ImagenesLoginEvent($imagen))->toOthers();
             return $imagen;
         } else {
-            return response(['errors' => ['mostrar' => 'Debe haber minimo una imagen para mostrar.']], 422);
+            return response(['errors' => ['mostrar' => ['Debe haber minimo una imagen para mostrar.']]], 422);
         }
     }
 
@@ -48,10 +48,10 @@ class ImagenLoginController extends Controller
         return ImagenLogin::all();
     }
 
-    public function verificarMostrar($mostrar)
+    public function verificarMostrar($mostrar, $id)
     {
-        $imagenesMostrar = ImagenLogin::where('mostrar', 1)->count();
-        if (!$mostrar && $imagenesMostrar <= 1) {
+        $imagenesMostrar = ImagenLogin::where('mostrar', 1)->get();
+        if (!$mostrar && $imagenesMostrar->count() == 1 && $imagenesMostrar[0]->id == $id) {
             return false;
         }
         return true;
@@ -60,7 +60,8 @@ class ImagenLoginController extends Controller
     public function validarCampos($request)
     {
         $rules = [
-            'titulo' => 'required', 'descripcion' => 'required'
+            'titulo' => 'required', 'descripcion' => 'required', 'imagen' => 'required',
+            'mostrar' => 'required'
         ];
         $this->validate($request, $rules);
     }

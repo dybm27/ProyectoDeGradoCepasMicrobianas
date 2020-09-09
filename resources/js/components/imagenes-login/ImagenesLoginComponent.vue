@@ -45,12 +45,14 @@
     </div>
     <div class="tabs-animation">
       <template v-if="numPestaña==1">
-        <template v-if="!from">
-          <VerImagenes @editarImagen="editarImagen" :bloqueos="bloqueos" />
-        </template>
-        <template v-else>
-          <Form :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
-        </template>
+        <transition enter-active-class="zoomInUp">
+          <template v-if="!from">
+            <VerImagenes @editarImagen="editarImagen" :bloqueos="bloqueos" />
+          </template>
+          <template v-else>
+            <Form :idImagen="idImagen" @mostrarFrom="mostrarFrom" />
+          </template>
+        </transition>
       </template>
       <template v-else>
         <div class="container">

@@ -14,9 +14,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/colors-levadura"
+            :apiUrl="'/info-panel/colors-levadura'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :detailRowComponent="''"
+            :sortOrder="sortOrder"
             :nameGet="'colors-levadura'"
           ></MyVuetable>
         </template>
@@ -48,9 +49,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("color")],
@@ -66,7 +67,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -4,44 +4,49 @@
       <div class="card-body mt-3 ml-2 mr-2">
         <MyVuetable
           ref="tabla"
-          :api-url="url"
+          :apiUrl="url"
           :fields="fields"
-          :sort-order="sortOrder"
+          :sortOrder="sortOrder"
           :nameGet="'metodos-hongos'"
+          :detailRowComponent="''"
         ></MyVuetable>
       </div>
-      <modal
-        name="my_modal_eliminar_metodo"
-        classes="my_modal"
-        :width="400"
-        :height="300"
-        @before-open="beforeOpen"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Método de Conservación</h5>
-            <button type="button" class="close" @click="$modal.hide('my_modal_eliminar_metodo')">
-              <span aria-hidden="true">&times;</span>
-            </button>
+      <transition name="fade">
+        <modal
+          name="my_modal_eliminar_metodo"
+          classes="my_modal"
+          :maxWidth="400"
+          :adaptive="true"
+          height="auto"
+          :scrollable="true"
+          @before-open="beforeOpen"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Método de Conservación</h5>
+              <button type="button" class="close" @click="$modal.hide('my_modal_eliminar_metodo')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Esta segura/o de eliminar el Método?.</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                @click="$modal.hide('my_modal_eliminar_metodo')"
+              >Cancelar</button>
+              <button
+                type="button"
+                class="btn btn-success"
+                :disabled="bloquearBtnModal"
+                @click="eliminarMetodo"
+              >Eliminar</button>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Esta segura/o de eliminar el Método?.</p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              @click="$modal.hide('my_modal_eliminar_metodo')"
-            >Cancelar</button>
-            <button
-              type="button"
-              class="btn btn-success"
-              :disabled="bloquearBtnModal"
-              @click="eliminarMetodo"
-            >Eliminar</button>
-          </div>
-        </div>
-      </modal>
+        </modal>
+      </transition>
     </template>
     <template v-else>
       <div class="text-center">
@@ -99,7 +104,14 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 401
+          ) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;
@@ -129,10 +141,13 @@ export default {
     },
   },
   created() {
-    if (this.$route.params.cepaHongoId) {
-      this.url += this.$route.params.cepaHongoId;
+    let array = [];
+    if (this.$route.params.cepaHongoSlug) {
+      array = this.$route.params.cepaHongoSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     } else {
-      this.url += this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.url += parseInt(array[array.length - 1]);
     }
   },
 };

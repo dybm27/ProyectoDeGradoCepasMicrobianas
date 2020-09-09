@@ -28,7 +28,9 @@
       </li>
     </ul>
     <div class="tabs-animation">
-      <router-view @rutaHijo="cambiarTipo"></router-view>
+      <transition enter-active-class="slideInLeft">
+        <router-view @rutaHijo="cambiarTipo"></router-view>
+      </transition>
     </div>
   </div>
 </template>
@@ -38,7 +40,7 @@ export default {
   methods: {
     cambiarTipo(tipo) {
       this.$emit("rutaHijo", tipo);
-    }
-  }
+    },
+  },
 };
 </script>

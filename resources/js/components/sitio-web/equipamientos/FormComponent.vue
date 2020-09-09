@@ -18,11 +18,17 @@
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombre? 'is-invalid':'']"
-                  v-model="parametros.nombre"
-                  required
+                  :class="['form-control', $v.parametros.nombre.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nombre.$model"
                 />
-                <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
+                <em
+                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.unique"
+                  class="text-error-input"
+                >{{mensajes.unique}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="funcion" class>Funcion</label>
@@ -31,11 +37,17 @@
                   id="funcion"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarFuncion? 'is-invalid':'']"
-                  v-model="parametros.funcion"
-                  required
+                  :class="['form-control', $v.parametros.funcion.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.funcion.$model"
                 />
-                <em v-if="validarFuncion" class="error invalid-feedback">{{mensajeFuncion}}</em>
+                <em
+                  v-if="$v.parametros.funcion.$error&&!$v.parametros.funcion.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.funcion.$error&&!$v.parametros.funcion.alpha"
+                  class="text-error-input"
+                >{{mensajes.alpha}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
@@ -45,11 +57,14 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
+                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                   ref="inputImagen"
-                  :required="required"
                 />
-                <em v-if="imagenError" class="error invalid-feedback">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em
+                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="caracteristicas" class>Características</label>
@@ -58,10 +73,13 @@
                   id="caracteristicas"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.caracteristicas"
-                  required
+                  :class="['form-control', $v.parametros.caracteristicas.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.caracteristicas.$model"
                 />
+                <em
+                  v-if="$v.parametros.caracteristicas.$error&&!$v.parametros.caracteristicas.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
@@ -75,7 +93,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -134,6 +152,7 @@ import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../CroppieComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: {
     Croppie,
@@ -158,80 +177,105 @@ export default {
       mensajeFuncion: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        alpha: "El campo solo puede contener letras.",
+        unique: "Ya existe un registro con ese nombre",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      nombre: {
+        required,
+        unique(value) {
+          if (value == "") return true;
+          if (this.validarNombre) return false;
+          return true;
+        },
+      },
+      funcion: {
+        required,
+        alpha(value) {
+          if (value == "") return true;
+          if (this.validarFuncion) return false;
+          return true;
+        },
+      },
+      caracteristicas: { required },
+      imagen: { required },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("equipamientos", ["accionEquipamiento"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Equipamiento") {
-        axios
-          .post("/equipamientos", this.parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Equipamiento") {
+          axios
+            .post("/equipamientos", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Agregar Equipamiento",
+                  "Equipamiento agregado con exito!!",
+                  "success"
+                );
+                this.accionEquipamiento({ tipo: "agregar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+              }
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
               );
-              window.location.href = "/";
-            } else {
+            });
+        } else {
+          axios
+            .put(`/equipamientos/${this.idEquipamiento}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
               this.toastr(
-                "Agregar Equipamiento",
-                "Equipamiento agregado con exito!!",
+                "Editar Equipamiento",
+                "Equipamiento editado con exito!!",
                 "success"
               );
-              this.accionEquipamiento({ tipo: "agregar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        axios
-          .put(`/equipamientos/${this.idEquipamiento}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Equipamiento",
-              "Equipamiento editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsEquipamiento").whisper(
-              "desbloquearBtnsEquipamiento",
-              {
+              window.Echo.private("desbloquearBtnsEquipamiento").whisper(
+                "desbloquearBtnsEquipamiento",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoEquipamiento", {
                 id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoEquipamiento", {
-              id: res.data.id,
+              });
+              this.accionEquipamiento({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
-            this.accionEquipamiento({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -257,7 +301,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Equipamiento") {
         return true;
       } else {
@@ -271,47 +315,20 @@ export default {
       return this.nomBtn;
     },
     validarNombre() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.nombre) {
-        if (!letters.test(this.parametros.nombre)) {
-          this.mensajeNombre = "Solo se admiten letras.";
+      if (this.getEquipamientoByNombre(this.parametros.nombre)) {
+        if (
+          this.getEquipamientoByNombre(this.parametros.nombre).id !=
+          this.info.id
+        ) {
           return true;
-        } else {
-          if (this.getEquipamientoByNombre(this.parametros.nombre)) {
-            if (
-              this.getEquipamientoByNombre(this.parametros.nombre).id !=
-              this.info.id
-            ) {
-              this.mensajeNombre = "Ya existe un Equipo con ese nombre";
-              return true;
-            }
-            return false;
-          }
-          return false;
         }
+        return false;
       }
       return false;
     },
     validarFuncion() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.funcion) {
-        if (!letters.test(this.parametros.funcion)) {
-          this.mensajeFuncion = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-      return false;
-    },
-    validarBtn() {
-      if (
-        this.validarNombre ||
-        this.validarFuncion ||
-        !this.parametros.imagen
-      ) {
+      if (!letters.test(this.parametros.funcion)) {
         return true;
       }
       return false;

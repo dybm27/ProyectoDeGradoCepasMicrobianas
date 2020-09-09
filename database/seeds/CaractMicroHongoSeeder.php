@@ -12,33 +12,39 @@ class CaractMicroHongoSeeder extends Seeder
     public function run()
     {
         DB::table('conidioforo_hongos')->insert([
-            'nombre' => 'Conidioforo 1'
+            'nombre' => 'Erecto'
         ]);
         DB::table('conidioforo_hongos')->insert([
-            'nombre' => 'Conidioforo 2'
-        ]);
-        DB::table('conidioforo_hongos')->insert([
-            'nombre' => 'Conidioforo 3'
+            'nombre' => 'Ramificado'
         ]);
 
         DB::table('espora_asexual_hongos')->insert([
-            'nombre' => 'Espora Asexual 1'
+            'nombre' => 'Esporangrosporas',
         ]);
         DB::table('espora_asexual_hongos')->insert([
-            'nombre' => 'Espora Asexual 2'
+            'nombre' => 'Conidiosporas',
         ]);
         DB::table('espora_asexual_hongos')->insert([
-            'nombre' => 'Espora Asexual 3'
+            'nombre' => 'Blastosporas',
+        ]);
+        DB::table('espora_asexual_hongos')->insert([
+            'nombre' => 'Oidiosporas',
+        ]);
+        DB::table('espora_asexual_hongos')->insert([
+            'nombre' => 'Artrosporas',
         ]);
 
         DB::table('espora_sexual_hongos')->insert([
-            'nombre' => 'Espora Sexual 1'
+            'nombre' => 'Ascosporas',
         ]);
         DB::table('espora_sexual_hongos')->insert([
-            'nombre' => 'Espora Sexual 2'
+            'nombre' => 'Basidiosporas',
         ]);
         DB::table('espora_sexual_hongos')->insert([
-            'nombre' => 'Espora Sexual 3'
+            'nombre' => 'Oosporas',
+        ]);
+        DB::table('espora_sexual_hongos')->insert([
+            'nombre' => 'Zigosporas',
         ]);
     }
 }

@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tablas-cepas"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/otra-info/CepasComponent.vue?vue&type=script&lang=js&":
@@ -173,6 +174,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../mixins/toastr */ "./resources/js/mixins/toastr.js");
 /* harmony import */ var _mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../mixins/websocketsModalOtraInfo */ "./resources/js/mixins/websocketsModalOtraInfo.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -357,6 +360,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -371,12 +384,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         genero: 1
       },
       errors: "",
-      bloquearBtnModal: false
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        unique: "Ya existe un registro con ese nombre."
+      }
     };
   },
+  validations: {
+    modal: {
+      nombre: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_3__["required"],
+        unique: function unique(value) {
+          if (value == "") return true;
+          if (this.validarNombreUnico) return false;
+          return true;
+        }
+      }
+    }
+  },
   mixins: [_mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_websocketsModalOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("CepasInfo")],
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("info_cepas", ["accionAgregarTipoCepa", "accionEditarTipoCepa", "accionEliminarTipoCepa"])), {}, {
     beforeOpenAgregar: function beforeOpenAgregar(data) {
+      this.id = "";
       this.errors = "";
       this.modal.nombre = "";
       this.modal.tipo = data.params.tipo;
@@ -387,37 +417,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.bloquearBtnModal = true;
-      axios.post("/info-cepas/agregar", this.modal).then(function (res) {
-        if (res.request.responseURL === "http://127.0.0.1:8000/") {
-          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
-          window.location.href = "/";
-        } else {
-          _this.bloquearBtnModal = false;
+      this.$v.modal.$touch();
 
-          _this.accionAgregarTipoCepa({
-            info: res.data,
-            tipo: _this.modal.tipo
-          });
+      if (!this.$v.$invalid) {
+        axios.post("/info-cepas/agregar", this.modal).then(function (res) {
+          if (res.request.responseURL === "http://127.0.0.1:8000/") {
+            localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+            window.location.href = "/";
+          } else {
+            _this.bloquearBtnModal = false;
 
-          _this.$events.fire("actualizartabla" + _this.modal.tipo);
+            _this.accionAgregarTipoCepa({
+              info: res.data,
+              tipo: _this.modal.tipo
+            });
 
-          _this.$modal.hide("modal_agregar_tipo_cepa");
+            _this.$events.fire("actualizartabla" + _this.modal.tipo);
 
-          _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
-        }
-      })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this.$router.push("/sin-acceso");
-        } else {
-          _this.bloquearBtnModal = false;
+            _this.$modal.hide("modal_agregar_tipo_cepa");
 
-          if (error.response.status === 422) {
-            _this.errors = error.response.data.errors;
+            _this.toastr("Agregar ".concat(_this.primeraMayus(_this.modal.tipo)), "".concat(_this.primeraMayus(_this.modal.tipo), " agregado/a con exito"), "success");
           }
-
-          _this.toastr("Error!!!!", "", "error");
-        }
-      });
+        })["catch"](function (error) {
+          _this.verificarErrorAxios(error.response.status, error.response.data.errors);
+        });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEditar: function beforeOpenEditar(data) {
       this.errors = "";
@@ -436,34 +463,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       this.bloquearBtnModal = true;
-      axios.put("/info-cepas/editar/".concat(this.id), this.modal).then(function (res) {
-        _this2.bloquearBtnModal = false;
+      this.$v.modal.$touch();
 
-        _this2.accionEditarTipoCepa({
-          info: res.data,
-          tipo: _this2.modal.tipo
-        });
-
-        _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
-
-        _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success");
-
-        _this2.$modal.hide("modal_editar_tipo_cepa");
-      })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this2.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
-          window.location.href = "/";
-        } else {
+      if (!this.$v.$invalid) {
+        axios.put("/info-cepas/editar/".concat(this.id), this.modal).then(function (res) {
           _this2.bloquearBtnModal = false;
 
-          if (error.response.status === 422) {
-            _this2.errors = error.response.data.errors;
-          }
+          _this2.accionEditarTipoCepa({
+            info: res.data,
+            tipo: _this2.modal.tipo
+          });
 
-          _this2.toastr("Error!!!", "", "error");
-        }
-      });
+          _this2.$events.fire("actualizartabla" + _this2.modal.tipo);
+
+          _this2.toastr("Editar ".concat(_this2.primeraMayus(_this2.modal.tipo)), "".concat(_this2.primeraMayus(_this2.modal.tipo), " editado/a con exito!!"), "success");
+
+          _this2.$modal.hide("modal_editar_tipo_cepa");
+        })["catch"](function (error) {
+          _this2.verificarErrorAxios(error.response.status, error.response.data.errors);
+        });
+      } else {
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "Favor corregir el error.", "error");
+      }
     },
     beforeOpenEliminar: function beforeOpenEliminar(data) {
       this.errors = "";
@@ -496,15 +518,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.$modal.hide("modal_eliminar_tipo_cepa");
       })["catch"](function (error) {
-        if (error.response.status === 403) {
-          _this3.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
-          window.location.href = "/";
-        } else {
-          _this3.bloquearBtnModal = false;
-
-          _this3.toastr("Error!!!", "", "error");
-        }
+        _this3.verificarErrorAxios(error.response.status, error.response.data.errors);
       });
     },
     primeraMayus: function primeraMayus(string) {
@@ -512,26 +526,92 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     cambiarGeneroEspecie: function cambiarGeneroEspecie() {
       this.modal.genero = this.getGenerosId(this.modal.grupo_microbiano)[0].id;
+    },
+    verificarErrorAxios: function verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.errors = [];
+          this.errors = errors;
+        }
+
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGenerosId", "getGrupos", "getGenerosById"]), {
-    validarNombre: function validarNombre() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      var letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGenerosId", "getGrupos", "getGenerosById"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGrupos", "getGeneros", "getEspecies", "getPhylums", "getOrdens", "getReinos", "getDivisiones", "getClases", "getFamilias", "getGenerosId", "getEspeciesId", "getGeneroByNombre", "getEspecieByNombre", "getPhylumByNombre", "getOrdenByNombre", "getReinoByNombre", "getDivisionByNombre", "getClaseByNombre", "getFamiliaByNombre"])), {}, {
+    validarNombreUnico: function validarNombreUnico() {
       if (this.modal.nombre) {
-        if (!letters.test(this.modal.nombre)) {
-          this.errors = "Solo se admiten letras.";
-          return true;
-        } else {
-          this.errors = "";
-          return false;
+        switch (this.modal.tipo) {
+          case "genero":
+            if (this.getGeneroByNombre(this.modal.nombre)) {
+              if (this.getGeneroByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "especie":
+            if (this.getEspecieByNombre(this.modal.nombre)) {
+              if (this.getEspecieByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "familia":
+            if (this.getFamiliaByNombre(this.modal.nombre)) {
+              if (this.getFamiliaByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "orden":
+            if (this.getOrdenByNombre(this.modal.nombre)) {
+              if (this.getOrdenByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "clase":
+            if (this.getClaseByNombre(this.modal.nombre)) {
+              if (this.getClaseByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "phylum":
+            if (this.getPhylumByNombre(this.modal.nombre)) {
+              if (this.getPhylumByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "reino":
+            if (this.getReinoByNombre(this.modal.nombre)) {
+              if (this.getReinoByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
+
+          case "division":
+            if (this.getDivisionByNombre(this.modal.nombre)) {
+              if (this.getDivisionByNombre(this.modal.nombre).id == this.id) return false;
+              return true;
+            }
+
+            break;
         }
-      }
-    },
-    validarBtn: function validarBtn() {
-      if (this.validarNombre || !this.modal.nombre) {
-        return true;
       }
 
       return false;
@@ -597,6 +677,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -617,7 +698,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("clase")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getClases"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getClases"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getClases != "" && this.getClases != null) {
         return true;
@@ -686,6 +767,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -707,7 +789,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("division")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getDivisiones"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getDivisiones"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getDivisiones != "" && this.getDivisiones != null) {
         return true;
@@ -776,6 +858,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -796,7 +879,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("especie")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getEspecies"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getEspecies"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getEspecies != "" && this.getEspecies != null) {
         return true;
@@ -865,6 +948,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -885,7 +969,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("familia")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getFamilias"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getFamilias"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getFamilias != "" && this.getFamilias != null) {
         return true;
@@ -954,6 +1038,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -974,7 +1059,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("genero")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGeneros"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getGeneros"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getGeneros != "" && this.getGeneros != null) {
         return true;
@@ -1043,6 +1128,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1063,7 +1149,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("orden")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getOrdens"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getOrdens"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getOrdens != "" && this.getOrdens != null) {
         return true;
@@ -1132,6 +1218,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1152,7 +1239,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("phylum")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getPhylums"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getPhylums"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getPhylums != "" && this.getPhylums != null) {
         return true;
@@ -1221,6 +1308,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -1241,7 +1329,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsTablaOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("reino")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getReinos"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("info_cepas", ["getReinos"])), {}, {
     siHayDatos: function siHayDatos() {
       if (this.getReinos != "" && this.getReinos != null) {
         return true;
@@ -1373,541 +1461,574 @@ var render = function() {
     "div",
     [
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "modal_agregar_tipo_cepa",
-            classes: "my_modal",
-            width: 450,
-            height: 450
-          },
-          on: { "before-open": _vm.beforeOpenAgregar }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Agregar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo)))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_agregar_tipo_cepa")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _vm.modal.tipo === "genero" || _vm.modal.tipo === "especie"
-                ? _c("div", { staticClass: "position-relative form-group" }, [
-                    _c("label", { attrs: { for: "grupo_microbiano-modal" } }, [
-                      _vm._v("Grupo Microbiano")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.modal.grupo_microbiano,
-                            expression: "modal.grupo_microbiano"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "select", id: "grupo_microbiano-modal" },
-                        on: {
-                          change: [
-                            function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.modal,
-                                "grupo_microbiano",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "modal_agregar_tipo_cepa",
+                classes: "my_modal",
+                maxWidth: 450,
+                adaptive: true,
+                height: "auto",
+                scrollable: true
+              },
+              on: { "before-open": _vm.beforeOpenAgregar }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [
+                      _vm._v(
+                        "Agregar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_agregar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _vm.modal.tipo === "genero" || _vm.modal.tipo === "especie"
+                    ? _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c(
+                            "label",
+                            { attrs: { for: "grupo_microbiano-modal" } },
+                            [_vm._v("Grupo Microbiano")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.modal.grupo_microbiano,
+                                  expression: "modal.grupo_microbiano"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                name: "select",
+                                id: "grupo_microbiano-modal"
+                              },
+                              on: {
+                                change: [
+                                  function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.modal,
+                                      "grupo_microbiano",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  },
+                                  _vm.cambiarGeneroEspecie
+                                ]
+                              }
                             },
-                            _vm.cambiarGeneroEspecie
-                          ]
-                        }
-                      },
-                      _vm._l(_vm.getGrupos, function(gm, index) {
-                        return _c(
-                          "option",
-                          { key: index, domProps: { value: gm.id } },
-                          [_vm._v(_vm._s(gm.nombre))]
-                        )
-                      }),
-                      0
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.modal.tipo === "especie"
-                ? _c("div", { staticClass: "position-relative form-group" }, [
-                    _c("label", { attrs: { for: "genero-modal" } }, [
-                      _vm._v("Genero")
+                            _vm._l(_vm.getGrupos, function(gm, index) {
+                              return _c(
+                                "option",
+                                { key: index, domProps: { value: gm.id } },
+                                [_vm._v(_vm._s(gm.nombre))]
+                              )
+                            }),
+                            0
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.modal.tipo === "especie"
+                    ? _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "genero-modal" } }, [
+                            _vm._v("Genero")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.modal.genero,
+                                  expression: "modal.genero"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { name: "select", id: "genero-modal" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.modal,
+                                    "genero",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            _vm._l(
+                              _vm.getGenerosId(_vm.modal.grupo_microbiano),
+                              function(g, index) {
+                                return _c(
+                                  "option",
+                                  { key: index, domProps: { value: g.id } },
+                                  [_vm._v(_vm._s(g.nombre))]
+                                )
+                              }
+                            ),
+                            0
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "nombre" } }, [
+                      _vm._v("Nombre")
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.modal.genero,
-                            expression: "modal.genero"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "select", id: "genero-modal" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.modal,
-                              "genero",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model.trim",
+                          value: _vm.$v.modal.nombre.$model,
+                          expression: "$v.modal.nombre.$model",
+                          modifiers: { trim: true }
                         }
+                      ],
+                      staticClass: "form-control",
+                      class: [
+                        "form-control",
+                        _vm.$v.modal.nombre.$error || _vm.errors
+                          ? "error-input-select"
+                          : ""
+                      ],
+                      attrs: {
+                        name: "nombre",
+                        id: "nombre",
+                        placeholder: "...",
+                        type: "text"
                       },
-                      _vm._l(
-                        _vm.getGenerosId(_vm.modal.grupo_microbiano),
-                        function(g, index) {
-                          return _c(
-                            "option",
-                            { key: index, domProps: { value: g.id } },
-                            [_vm._v(_vm._s(g.nombre))]
+                      domProps: { value: _vm.$v.modal.nombre.$model },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.$v.modal.nombre,
+                            "$model",
+                            $event.target.value.trim()
                           )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
                         }
-                      ),
-                      0
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.nombre,
-                      expression: "modal.nombre"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  class: [
-                    "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
-                  ],
-                  attrs: {
-                    name: "nombre",
-                    id: "nombre",
-                    placeholder: "...",
-                    type: "text"
-                  },
-                  domProps: { value: _vm.modal.nombre },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
                       }
-                      _vm.$set(_vm.modal, "nombre", $event.target.value)
-                    }
-                  }
-                }),
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.unique
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.unique))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
-                        )
-                      )
-                    ])
-                  : _vm._e()
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_agregar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: { click: _vm.agregarTipo }
+                    },
+                    [_vm._v("Agregar")]
+                  )
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_agregar_tipo_cepa")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
-                  on: { click: _vm.agregarTipo }
-                },
-                [_vm._v("Agregar")]
-              )
-            ])
-          ])
-        ]
+            ]
+          )
+        ],
+        1
       ),
       _vm._v(" "),
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "modal_editar_tipo_cepa",
-            classes: "my_modal",
-            width: 400,
-            height: 450
-          },
-          on: { "before-open": _vm.beforeOpenEditar, closed: _vm.closeEditar }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Editar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo)))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_editar_tipo_cepa")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _vm.modal.tipo === "genero"
-                ? _c("div", { staticClass: "position-relative form-group" }, [
-                    _c("label", { attrs: { for: "grupo_microbiano-modal" } }, [
-                      _vm._v("Grupo Microbiano")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.modal.grupo_microbiano,
-                            expression: "modal.grupo_microbiano"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "select", id: "grupo_microbiano-modal" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.modal,
-                              "grupo_microbiano",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
-                        }
-                      },
-                      _vm._l(_vm.getGrupos, function(gm, index) {
-                        return _c(
-                          "option",
-                          { key: index, domProps: { value: gm.id } },
-                          [_vm._v(_vm._s(gm.nombre))]
-                        )
-                      }),
-                      0
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.modal.tipo === "especie"
-                ? _c("div", { staticClass: "position-relative form-group" }, [
-                    _c("label", { attrs: { for: "genero-modal" } }, [
-                      _vm._v("Genero")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.modal.genero,
-                            expression: "modal.genero"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "select", id: "genero-modal" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.modal,
-                              "genero",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          }
-                        }
-                      },
-                      _vm._l(
-                        _vm.getGenerosId(_vm.modal.grupo_microbiano),
-                        function(g, index) {
-                          return _c(
-                            "option",
-                            { key: index, domProps: { value: g.id } },
-                            [_vm._v(_vm._s(g.nombre))]
-                          )
-                        }
-                      ),
-                      0
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "position-relative form-group" }, [
-                _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "modal_editar_tipo_cepa",
+                classes: "my_modal",
+                maxWidth: 400,
+                adaptive: true,
+                height: "auto",
+                scrollable: true
+              },
+              on: {
+                "before-open": _vm.beforeOpenEditar,
+                closed: _vm.closeEditar
+              }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.modal.nombre,
-                      expression: "modal.nombre"
-                    }
-                  ],
-                  class: [
-                    "form-control",
-                    _vm.validarNombre || _vm.errors ? "is-invalid" : ""
-                  ],
-                  attrs: {
-                    name: "nombre",
-                    id: "nombre",
-                    placeholder: "...",
-                    type: "text"
-                  },
-                  domProps: { value: _vm.modal.nombre },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.modal, "nombre", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.validarNombre || _vm.errors
-                  ? _c("em", { staticClass: "error invalid-feedback" }, [
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [
                       _vm._v(
-                        _vm._s(
-                          _vm.errors.nombre ? _vm.errors.nombre[0] : _vm.errors
-                        )
+                        "Editar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
                       )
-                    ])
-                  : _vm._e()
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_editar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _vm.modal.tipo === "especie"
+                    ? _c(
+                        "div",
+                        { staticClass: "position-relative form-group" },
+                        [
+                          _c("label", { attrs: { for: "genero-modal" } }, [
+                            _vm._v("Genero")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.modal.genero,
+                                  expression: "modal.genero"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { name: "select", id: "genero-modal" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.$set(
+                                    _vm.modal,
+                                    "genero",
+                                    $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  )
+                                }
+                              }
+                            },
+                            _vm._l(
+                              _vm.getGenerosId(_vm.modal.grupo_microbiano),
+                              function(g, index) {
+                                return _c(
+                                  "option",
+                                  { key: index, domProps: { value: g.id } },
+                                  [_vm._v(_vm._s(g.nombre))]
+                                )
+                              }
+                            ),
+                            0
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "position-relative form-group" }, [
+                    _c("label", { attrs: { for: "nombre" } }, [
+                      _vm._v("Nombre")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model.trim",
+                          value: _vm.$v.modal.nombre.$model,
+                          expression: "$v.modal.nombre.$model",
+                          modifiers: { trim: true }
+                        }
+                      ],
+                      class: [
+                        "form-control",
+                        _vm.$v.modal.nombre.$error || _vm.errors
+                          ? "error-input-select"
+                          : ""
+                      ],
+                      attrs: {
+                        name: "nombre",
+                        id: "nombre",
+                        placeholder: "...",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.$v.modal.nombre.$model },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.$v.modal.nombre,
+                            "$model",
+                            $event.target.value.trim()
+                          )
+                        },
+                        blur: function($event) {
+                          return _vm.$forceUpdate()
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.required
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.required))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.$v.modal.nombre.$error && !_vm.$v.modal.nombre.unique
+                      ? _c("em", { staticClass: "text-error-input" }, [
+                          _vm._v(_vm._s(_vm.mensajes.unique))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_editar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: { click: _vm.editarTipo }
+                    },
+                    [_vm._v("Editar")]
+                  )
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_editar_tipo_cepa")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: {
-                    type: "button",
-                    disabled: _vm.validarBtn || _vm.bloquearBtnModal
-                  },
-                  on: { click: _vm.editarTipo }
-                },
-                [_vm._v("Editar")]
-              )
-            ])
-          ])
-        ]
+            ]
+          )
+        ],
+        1
       ),
       _vm._v(" "),
       _c(
-        "modal",
-        {
-          attrs: {
-            name: "modal_eliminar_tipo_cepa",
-            classes: "my_modal",
-            width: 400,
-            height: 300
-          },
-          on: {
-            "before-open": _vm.beforeOpenEliminar,
-            closed: _vm.closeEliminar
-          }
-        },
+        "transition",
+        { attrs: { name: "fade" } },
         [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLongTitle" }
-                },
-                [_vm._v("Eliminar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo)))]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_eliminar_tipo_cepa")
-                    }
-                  }
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×")
+          _c(
+            "modal",
+            {
+              attrs: {
+                name: "modal_eliminar_tipo_cepa",
+                classes: "my_modal",
+                maxWidth: 400,
+                adaptive: true,
+                height: "auto",
+                scrollable: true
+              },
+              on: {
+                "before-open": _vm.beforeOpenEliminar,
+                closed: _vm.closeEliminar
+              }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLongTitle" }
+                    },
+                    [
+                      _vm._v(
+                        "Eliminar " + _vm._s(_vm.primeraMayus(_vm.modal.tipo))
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_eliminar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("p", [
+                    _vm._v(
+                      "Esta segura/o de eliminar el/la " +
+                        _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
+                        "?."
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [
-                _vm._v(
-                  "Esta segura/o de eliminar el/la " +
-                    _vm._s(_vm.primeraMayus(_vm.modal.tipo)) +
-                    "?."
-                )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$modal.hide("modal_eliminar_tipo_cepa")
+                        }
+                      }
+                    },
+                    [_vm._v("Cancelar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button", disabled: _vm.bloquearBtnModal },
+                      on: { click: _vm.eliminarTipo }
+                    },
+                    [_vm._v("Eliminar")]
+                  )
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-secondary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.$modal.hide("modal_eliminar_tipo_cepa")
-                    }
-                  }
-                },
-                [_vm._v("Cancelar")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button", disabled: _vm.bloquearBtnModal },
-                  on: { click: _vm.eliminarTipo }
-                },
-                [_vm._v("Eliminar")]
-              )
-            ])
-          ])
-        ]
+            ]
+          )
+        ],
+        1
       )
     ],
     1
@@ -1963,10 +2084,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/clases",
+                        apiUrl: "/info-panel/clases",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "clases"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "clases",
+                        detailRowComponent: ""
                       }
                     })
                   ]
@@ -2061,9 +2183,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/divisions",
+                        apiUrl: "/info-panel/divisions",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "divisions"
                       }
                     })
@@ -2159,9 +2282,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/especies",
+                        apiUrl: "/info-panel/especies",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "especies"
                       }
                     })
@@ -2257,10 +2381,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/familias",
+                        apiUrl: "/info-panel/familias",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "familias"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "familias",
+                        detailRowComponent: ""
                       }
                     })
                   ]
@@ -2355,9 +2480,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/generos",
+                        apiUrl: "/info-panel/generos",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "generos"
                       }
                     })
@@ -2453,9 +2579,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/ordens",
+                        apiUrl: "/info-panel/ordens",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        detailRowComponent: "",
+                        sortOrder: _vm.sortOrder,
                         nameGet: "ordens"
                       }
                     })
@@ -2551,9 +2678,10 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/phylums",
+                        apiUrl: "/info-panel/phylums",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
+                        sortOrder: _vm.sortOrder,
+                        detailRowComponent: "",
                         nameGet: "phylums"
                       }
                     })
@@ -2649,10 +2777,11 @@ var render = function() {
                     _c("MyVuetable", {
                       ref: "tabla",
                       attrs: {
-                        "api-url": "/info-panel/reinos",
+                        apiUrl: "/info-panel/reinos",
                         fields: _vm.fields,
-                        "sort-order": _vm.sortOrder,
-                        nameGet: "reinos"
+                        sortOrder: _vm.sortOrder,
+                        nameGet: "reinos",
+                        detailRowComponent: ""
                       }
                     })
                   ]

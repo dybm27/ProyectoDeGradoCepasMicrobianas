@@ -76,6 +76,7 @@ export default {
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "micro", data: data });
+      this.modificarForm = true;
     },
     editar(data) {
       this.accionEditarCaract({ tipo: "micro", data: data });

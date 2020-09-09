@@ -2,7 +2,7 @@
   <div>
     <div
       class="container"
-      v-if="getPermisoByNombres(['ver-cepa','editar-cepa','eliminar-cepa','caract-cepa'])"
+      v-if="getPermisoByNombres(['ver-cepa','editar-cepa','eliminar-cepa','caract-cepa'])&&!disabledBtns"
     >
       <div class="row">
         <div class="col-md-12 col-lg-12">
@@ -11,7 +11,6 @@
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success"
             v-tooltip.left="'Agregar y Editar Caracteristicas'"
             @click="caracteristicas( rowData)"
-            :disabled="disabledBtns"
           >
             <i class="far fa-file-alt"></i>
           </button>
@@ -21,7 +20,6 @@
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info"
             v-tooltip="'Ver Cepa'"
             @click="ver( rowData)"
-            :disabled="disabledBtns"
           >
             <i class="far fa-eye"></i>
           </button>
@@ -34,7 +32,6 @@
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning"
             v-tooltip.left="'Editar Cepa'"
             @click="editar(rowData)"
-            :disabled="disabledBtns"
           >
             <i class="fas fa-pencil-alt"></i>
           </button>
@@ -43,8 +40,7 @@
             v-if="getPermisoByNombre('eliminar-cepa')"
             class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
             v-tooltip="'Eliminar Cepa'"
-            @click="showModal(rowData)"
-            :disabled="disabledBtns"
+            @click="eliminar(rowData)"
           >
             <i class="far fa-trash-alt"></i>
           </button>
@@ -86,14 +82,14 @@ export default {
     caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-hongo",
-        params: { cepaHongoId: data.id },
+        params: { cepaHongoSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },
     ver(data) {
       this.$router.push({
         name: "ver-hongo",
-        params: { cepaHongoId: data.id },
+        params: { cepaHongoSlug: data.slug + "-" + data.id },
       });
       this.enviarBloqueo(data);
     },

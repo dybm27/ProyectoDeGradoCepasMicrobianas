@@ -12,20 +12,30 @@ class CaractMacroHongoSeeder extends Seeder
     public function run()
     {
         DB::table('textura_hongos')->insert([
-            'nombre' => 'Textura 1'
+            'nombre' => 'Algodona'
         ]);
         DB::table('textura_hongos')->insert([
-            'nombre' => 'Textura 2'
+            'nombre' => 'Granular'
         ]);
         DB::table('textura_hongos')->insert([
-            'nombre' => 'Textura 3'
+            'nombre' => 'Aterciopelada'
+        ]);
+        DB::table('textura_hongos')->insert([
+            'nombre' => 'Cremosa'
+        ]);
+        DB::table('textura_hongos')->insert([
+            'nombre' => 'Glabra'
+        ]);
+        DB::table('textura_hongos')->insert([
+            'nombre' => 'Polvorienta'
         ]);
 
+
         DB::table('color_hongos')->insert([
-            'nombre' => 'Rojo',
+            'nombre' => 'Dematiaceo (cafe - gris - negro)',
         ]);
         DB::table('color_hongos')->insert([
-            'nombre' => 'Verde',
+            'nombre' => 'Brillante (verdes)',
         ]);
     }
 }

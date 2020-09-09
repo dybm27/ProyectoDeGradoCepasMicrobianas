@@ -14,7 +14,12 @@
               <template v-if="getInfoCaractMicroBacterias">
                 <label for="forma" class>Forma</label>
                 <div class="input-group mb-3">
-                  <select name="select" id="forma" class="form-control" v-model="parametros.forma">
+                  <select
+                    name="select"
+                    id="forma"
+                    :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.forma.$model"
+                  >
                     <option
                       v-for="(f,index) in obtenerFormas"
                       :key="index"
@@ -30,6 +35,10 @@
                     </button>
                   </div>
                 </div>
+                <em
+                  v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                  class="text-error-select"
+                >{{mensajes.required}}</em>
               </template>
               <div class="position-relative form-group">
                 <label for="ordenamiento" class>Ordenamiento</label>
@@ -38,10 +47,13 @@
                   id="ordenamiento"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.ordenamiento"
-                  required
+                  :class="['form-control', $v.parametros.ordenamiento.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.ordenamiento.$model"
                 />
+                <em
+                  v-if="$v.parametros.ordenamiento.$error&&!$v.parametros.ordenamiento.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label>Tinción de Gram</label>
@@ -140,7 +152,7 @@
                   </div>
                 </div>
               </div>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
@@ -149,12 +161,26 @@
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', 
+                        $v.parametros.imagen1.$error
+                        ||$v.parametros.imagen2.$error
+                        ||$v.parametros.imagen3.$error
+                        ? 'error-input-select':'']"
                     ref="inputImagen"
                     multiple
-                    :required="required"
                   />
-                  <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em
+                    v-if="($v.parametros.imagen1.$error
+                    &&!$v.parametros.imagen1.required)
+                    ||
+                    ($v.parametros.imagen2.$error
+                    &&!$v.parametros.imagen2.required) 
+                    ||
+                    ($v.parametros.imagen3.$error
+                    &&!$v.parametros.imagen3.required)"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -169,7 +195,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -179,7 +205,7 @@
         <div class="main-card mb-3 card">
           <div class="card-body">
             <h5 class="card-title">Imagenes</h5>
-            <template v-if="required">
+            <template v-if="validarTipoForm">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
@@ -226,6 +252,7 @@ import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagen
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -249,21 +276,40 @@ export default {
       tituloForm: "",
       nomBtn: "",
       errors: [],
-      erroresImagenes: "",
-      imagenesCroppie: [],
-      imagenes: [],
-      cantImagenes: "",
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      forma: { required },
+      ordenamiento: { required },
+      imagen1: { required },
+      imagen2: {
+        required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/bacteria/caract-micro", this.parametros)
             .then((res) => {
@@ -288,49 +334,41 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/caract-micro/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/caract-micro/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     showModal(tipo) {
@@ -371,7 +409,7 @@ export default {
   computed: {
     ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroBacterias"]),
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -398,10 +436,13 @@ export default {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaBacteriaId) {
-      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    let array = [];
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created() {

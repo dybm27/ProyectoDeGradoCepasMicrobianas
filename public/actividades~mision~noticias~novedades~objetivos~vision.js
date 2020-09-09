@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["actividades~mision~noticias~novedades~objetivos~vision"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/editor-texto/EditorTextoComponent.vue?vue&type=script&lang=js&":
@@ -125,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editorDisabled: false,
       editor: _ckeditor_ckeditor5_editor_classic_src_classiceditor__WEBPACK_IMPORTED_MODULE_1__["default"],
-      editorData: "<p>Content of the editor.</p>",
+      editorData: "",
       editorConfig: {
         extraPlugins: [this.MyCustomUploadAdapterPlugin],
         plugins: [_ckeditor_ckeditor5_essentials_src_essentials__WEBPACK_IMPORTED_MODULE_2__["default"], _ckeditor_ckeditor5_basic_styles_src_bold__WEBPACK_IMPORTED_MODULE_3__["default"], _ckeditor_ckeditor5_basic_styles_src_italic__WEBPACK_IMPORTED_MODULE_4__["default"], _ckeditor_ckeditor5_basic_styles_src_underline__WEBPACK_IMPORTED_MODULE_5__["default"], _ckeditor_ckeditor5_basic_styles_src_strikethrough__WEBPACK_IMPORTED_MODULE_6__["default"], _ckeditor_ckeditor5_basic_styles_src_subscript__WEBPACK_IMPORTED_MODULE_7__["default"], _ckeditor_ckeditor5_basic_styles_src_superscript__WEBPACK_IMPORTED_MODULE_8__["default"], _ckeditor_ckeditor5_link_src_link__WEBPACK_IMPORTED_MODULE_9__["default"], _ckeditor_ckeditor5_paragraph_src_paragraph__WEBPACK_IMPORTED_MODULE_10__["default"], _ckeditor_ckeditor5_highlight_src_highlight__WEBPACK_IMPORTED_MODULE_11__["default"], _ckeditor_ckeditor5_image_src_image__WEBPACK_IMPORTED_MODULE_12__["default"], _ckeditor_ckeditor5_image_src_imagecaption__WEBPACK_IMPORTED_MODULE_13__["default"], _ckeditor_ckeditor5_image_src_imageresize__WEBPACK_IMPORTED_MODULE_14__["default"], _ckeditor_ckeditor5_image_src_imagestyle__WEBPACK_IMPORTED_MODULE_15__["default"], _ckeditor_ckeditor5_image_src_imagetoolbar__WEBPACK_IMPORTED_MODULE_16__["default"], _ckeditor_ckeditor5_image_src_imagetextalternative__WEBPACK_IMPORTED_MODULE_17__["default"], _ckeditor_ckeditor5_image_src_imageupload__WEBPACK_IMPORTED_MODULE_18__["default"], _ckeditor_ckeditor5_list_src_list__WEBPACK_IMPORTED_MODULE_19__["default"], _ckeditor_ckeditor5_alignment_src_alignment__WEBPACK_IMPORTED_MODULE_20__["default"], _ckeditor_ckeditor5_font_src_fontfamily__WEBPACK_IMPORTED_MODULE_21__["default"], _ckeditor_ckeditor5_font_src_fontsize__WEBPACK_IMPORTED_MODULE_22__["default"], _ckeditor_ckeditor5_font_src_fontcolor__WEBPACK_IMPORTED_MODULE_23__["default"], _ckeditor_ckeditor5_font_src_fontbackgroundcolor__WEBPACK_IMPORTED_MODULE_24__["default"], _ckeditor_ckeditor5_heading_src_heading__WEBPACK_IMPORTED_MODULE_25__["default"], _ckeditor_ckeditor5_horizontal_line_src_horizontalline__WEBPACK_IMPORTED_MODULE_26__["default"], _ckeditor_ckeditor5_indent_src_indent__WEBPACK_IMPORTED_MODULE_27__["default"], _ckeditor_ckeditor5_indent_src_indentblock__WEBPACK_IMPORTED_MODULE_28__["default"], _ckeditor_ckeditor5_media_embed_src_mediaembed__WEBPACK_IMPORTED_MODULE_29__["default"], _ckeditor_ckeditor5_special_characters_src_specialcharacters__WEBPACK_IMPORTED_MODULE_30__["default"], _ckeditor_ckeditor5_special_characters_src_specialcharactersessentials__WEBPACK_IMPORTED_MODULE_31__["default"], _ckeditor_ckeditor5_table_src_table__WEBPACK_IMPORTED_MODULE_32__["default"], _ckeditor_ckeditor5_table_src_tabletoolbar__WEBPACK_IMPORTED_MODULE_33__["default"], _ckeditor_ckeditor5_table_src_tableproperties__WEBPACK_IMPORTED_MODULE_34__["default"], _ckeditor_ckeditor5_table_src_tablecellproperties__WEBPACK_IMPORTED_MODULE_35__["default"], _ckeditor_ckeditor5_block_quote_src_blockquote__WEBPACK_IMPORTED_MODULE_36__["default"]],
@@ -301,15 +302,16 @@ var render = function() {
         [
           _vm.mostrarBtn
             ? [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-block btn-success",
-                    attrs: { disabled: _vm.validarBtn },
-                    on: { click: _vm.aceptarContenido }
-                  },
-                  [_vm._v("Aceptar Contenido")]
-                )
+                !_vm.validarBtn
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-block btn-success",
+                        on: { click: _vm.aceptarContenido }
+                      },
+                      [_vm._v("Aceptar Contenido")]
+                    )
+                  : _vm._e()
               ]
             : [
                 _c(
@@ -410,26 +412,25 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./custom.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/editor-texto/custom.css");
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./custom.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/editor-texto/custom.css");
+            content = content.__esModule ? content.default : content;
 
-if(typeof content === 'string') content = [[module.i, content, '']];
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
 
-var transform;
-var insertInto;
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
 
 
 
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -449,9 +450,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var MyUploadAdapter =
-/*#__PURE__*/
-function () {
+var MyUploadAdapter = /*#__PURE__*/function () {
   function MyUploadAdapter(loader) {
     _classCallCheck(this, MyUploadAdapter);
 

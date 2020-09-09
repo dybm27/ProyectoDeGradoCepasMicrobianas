@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'micelio_actinomicetos', 'conidioforo_actinomicetos','textura_levaduras', 'color_levaduras','textura_hongos', 'color_hongos',
             'conidioforo_hongos', 'espora_asexual_hongos','espora_sexual_hongos'
         ]);
-        
+      
         $this->call(RolesSeeder::class);
         $this->call(PermisosSeeder::class);
         $this->call(AdminSeeder::class);
@@ -42,11 +42,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CaractMacroLevaduraSeeder::class);
         $this->call(TiposMetodosConservacionBacteriasSeeder::class);
         $this->call(TiposMetodosConservacionHLSeeder::class);
-        $this->call(ColoresHongosSeeder::class);
-        $this->call(TexturasHongosSeeder::class);
-        $this->call(EsporasAsexualesHongosSeeder::class);
-        $this->call(EsporasSexualesHongosSeeder::class);
-        $this->call(ConidioforosHongosSeeder::class);
         $this->call(GenerosSeeder::class);
         $this->call(EspeciesSeeder::class);
         $this->call(ImgLoginSeeder::class);

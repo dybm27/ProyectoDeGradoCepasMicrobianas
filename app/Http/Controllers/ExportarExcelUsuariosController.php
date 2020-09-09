@@ -23,11 +23,11 @@ class ExportarExcelUsuariosController extends Controller
 
     public function seguimientos()
     {
-        return Excel::download(new SeguimientosExport, 'segumientos.xlsx');
+        return Excel::download(new SeguimientosExport, 'seguimientos.xlsx');
     }
 
     public function seguimientosTabla(Request $request)
     {
-        return Excel::download(new TablaSeguimientosExport($request->datos), 'tabla-segumientos.xlsx');
+        return Excel::download(new TablaSeguimientosExport($request->datos), 'tabla-seguimientos.xlsx');
     }
 }

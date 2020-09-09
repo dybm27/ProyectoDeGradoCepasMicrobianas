@@ -1,18 +1,20 @@
 <template>
   <div class="tabs-animation">
-    <router-view
-      :tipoG="tipoG"
-      @cambiarTipo="cambiarTipo"
-      :bloqueos="bloqueos"
-      :miBloqueo="miBloqueo"
-      :cantUser="cantUser"
-      :cantRecibirBtns="cantRecibirBtns"
-      :tipo="tipo"
-      :detailRowComponent="detailRowComponent"
-      :titulo="titulo"
-      :tituloCepa="tituloCepa"
-      :FieldDefs="FieldDefs"
-    />
+    <transition enter-active-class="slideInLeft">
+      <router-view
+        :tipoG="tipoG"
+        @cambiarTipo="cambiarTipo"
+        :bloqueos="bloqueos"
+        :miBloqueo="miBloqueo"
+        :cantUser="cantUser"
+        :cantRecibirBtns="cantRecibirBtns"
+        :tipo="tipo"
+        :detailRowComponent="detailRowComponent"
+        :titulo="titulo"
+        :tituloCepa="tituloCepa"
+        :FieldDefs="FieldDefs"
+      />
+    </transition>
   </div>
 </template>
 

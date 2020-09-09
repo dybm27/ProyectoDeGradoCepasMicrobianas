@@ -10,7 +10,7 @@ const obtenerImagenCroopieCepasMixin = {
             if (valor) {
                 this.parametros.imagen = valor;
             } else {
-                if (!this.required) {
+                if (!this.validarTipoForm) {
                     this.parametros.imagen = this.info.imagen;
                     this.imagenMiniatura = this.info.imagenPublica;
                     this.$refs.inputImagen.value = "";
@@ -81,12 +81,6 @@ const obtenerImagenCroopieCepasMixin = {
             } else {
                 return false;
             }
-        },
-        validarBtn() {
-            if (!this.parametros.imagen) {
-                return true;
-            }
-            return false;
         }
     }
 };

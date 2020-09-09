@@ -1,3 +1,4 @@
+(function(d){	const l = d['es'] = d['es'] || {};	l.dictionary=Object.assign(		l.dictionary||{},		{"%0 of %1":"%0 de %1","Align cell text to the bottom":"","Align cell text to the center":"","Align cell text to the left":"","Align cell text to the middle":"","Align cell text to the right":"","Align cell text to the top":"","Align center":"Centrar","Align left":"Alinear a la izquierda","Align right":"Alinear a la derecha","Align table to the left":"","Align table to the right":"",Alignment:"",Aquamarine:"Aguamarina",Background:"",Big:"Grande",Black:"Negro","Block quote":"Entrecomillado",Blue:"Azul","Blue marker":"Marcador azul",Bold:"Negrita",Border:"","Bulleted List":"Lista de puntos",Cancel:"Cancelar","Cell properties":"","Center table":"","Centered image":"Imagen centrada","Change image text alternative":"Cambiar el texto alternativo de la imagen","Choose heading":"Elegir Encabezado",Color:"","Color picker":"",Column:"Columna",Dashed:"","Decrease indent":"Disminuir sangría",Default:"Por defecto","Delete column":"Eliminar columna","Delete row":"Eliminar fila","Dim grey":"Gris Oscuro",Dimensions:"","Document colors":"Colores del documento",Dotted:"",Double:"",Downloadable:"Descargable","Dropdown toolbar":"Barra de herramientas desplegable","Edit link":"Editar enlace","Editor toolbar":"Barra de herramientas de edición","Enter image caption":"Introducir título de la imagen","Font Background Color":"Color de Fondo","Font Color":"Color de Fuente","Font Family":"Fuente","Font Size":"Tamaño de fuente","Full size image":"Imagen a tamaño completo",Green:"Verde","Green marker":"Marcador verde","Green pen":"Texto verde",Grey:"Gris",Groove:"","Header column":"Columna de encabezado","Header row":"Fila de encabezado",Heading:"Encabezado","Heading 1":"Encabezado 1","Heading 2":"Encabezado 2","Heading 3":"Encabezado 3","Heading 4":"Encabezado 4","Heading 5":"Encabezado 5","Heading 6":"Encabezado 6",Height:"",Highlight:"Resaltar","Horizontal line":"Línea horizontal","Horizontal text alignment toolbar":"",Huge:"Enorme","Image toolbar":"Barra de herramientas de imagen","image widget":"Widget de imagen","Increase indent":"Aumentar sangría","Insert column left":"Insertar columna izquierda","Insert column right":"Insertar columna derecha","Insert image":"Insertar imagen","Insert media":"Insertar contenido multimedia","Insert paragraph after block":"","Insert paragraph before block":"","Insert row above":"Insertar fila encima","Insert row below":"Insertar fila debajo","Insert table":"Insertar tabla",Inset:"",Italic:"Cursiva",Justify:"Justificar","Justify cell text":"","Left aligned image":"Imagen alineada a la izquierda","Light blue":"Azul Claro","Light green":"Verde Claro","Light grey":"Gris Claro",Link:"Enlace","Link URL":"URL del enlace","Media URL":"URL del contenido multimedia","media widget":"Widget de contenido multimedia","Merge cell down":"Combinar celda inferior","Merge cell left":"Combinar celda izquierda","Merge cell right":"Combinar celda derecha","Merge cell up":"Combinar celda superior","Merge cells":"Combinar celdas",Next:"Siguiente",None:"","Numbered List":"Lista numerada","Open in a new tab":"Abrir en una pestaña nueva ","Open link in new tab":"Abrir enlace en una pestaña nueva",Orange:"Anaranjado",Outset:"",Padding:"",Paragraph:"Párrafo","Paste the media URL in the input.":"Pega la URL del contenido multimedia","Pink marker":"Marcador rosa",Previous:"Anterior",Purple:"Morado",Red:"Rojo","Red pen":"Texto rojo",Redo:"Rehacer","Remove color":"Remover color","Remove highlight":"Quitar resaltado","Rich Text Editor":"Editor de Texto Enriquecido","Rich Text Editor, %0":"Editor de Texto Enriquecido, %0",Ridge:"","Right aligned image":"Imagen alineada a la derecha",Row:"Fila",Save:"Guardar","Select column":"","Select row":"","Show more items":"Mostrar más elementos","Side image":"Imagen lateral",Small:"Pequeño",Solid:"","Split cell horizontally":"Dividir celdas horizontalmente","Split cell vertically":"Dividir celdas verticalmente",Strikethrough:"Tachado",Style:"",Subscript:"Subíndice",Superscript:"Superíndice","Table alignment toolbar":"","Table cell text alignment":"","Table properties":"","Table toolbar":"Barra de herramientas de tabla","Text alignment":"Alineación del texto","Text alignment toolbar":"Barra de herramientas de alineación del texto","Text alternative":"Texto alternativo","Text highlight toolbar":"Barra de herramientas de resaltado de texto","The color is invalid. Try \"#FF0000\" or \"rgb(255,0,0)\" or \"red\".":"","The URL must not be empty.":"La URL no debe estar vacía","The value is invalid. Try \"10px\" or \"2em\" or simply \"2\".":"","This link has no URL":"Este enlace no tiene URL","This media URL is not supported.":"La URL de este contenido multimedia no está soportada",Tiny:"Minúsculo","Tip: Paste the URL into the content to embed faster.":"Tip: pega la URL dentro del contenido para embeber más rápido",Turquoise:"Turquesa",Underline:"Subrayado",Undo:"Deshacer",Unlink:"Quitar enlace","Upload failed":"Fallo en la subida","Upload in progress":"Subida en progreso","Vertical text alignment toolbar":"",White:"Blanco","Widget toolbar":"Barra de herramientas del widget",Width:"",Yellow:"Amarillo","Yellow marker":"Marcador amarillo"}	);l.getPluralForm=function(n){return (n != 1);;};})(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -43,7 +44,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","ver-hongo":"ver-hongo","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","tabla-seguimiento":"tabla-seguimiento","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"caract-molecu-actinomiceto":"caract-molecu-actinomiceto","cepa-hongo":"cepa-hongo","cepas-actinomicetos":"cepas-actinomicetos","cepas-bacterias":"cepas-bacterias","cepas-hongos":"cepas-hongos","cepas-levaduras":"cepas-levaduras","cepas-todas":"cepas-todas","cepas-todas-container":"cepas-todas-container","documentos":"documentos","error-403":"error-403","error-404":"error-404","metodo-conser-actinomiceto":"metodo-conser-actinomiceto","otra-info":"otra-info","publicidad":"publicidad","quienes-somos":"quienes-somos","usuarios":"usuarios","vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d":"vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d","vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7":"vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7","imagenes-login":"imagenes-login","vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura":"vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura","vendors~calendario":"vendors~calendario","calendario":"calendario","vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825":"vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825","actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6":"actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6","cepas":"cepas","otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras":"otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras","otra-info-bacterias":"otra-info-bacterias","tablas-actinomicetos":"tablas-actinomicetos","tablas-cepas":"tablas-cepas","tablas-hongos":"tablas-hongos","tablas-levaduras":"tablas-levaduras","vendors~actividades~mision~noticias~novedades~objetivos~vision":"vendors~actividades~mision~noticias~novedades~objetivos~vision","actividades~mision~noticias~novedades~objetivos~vision":"actividades~mision~noticias~novedades~objetivos~vision","noticias":"noticias","vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35":"vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775","caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561":"caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561","caract-bioqui-bacteria":"caract-bioqui-bacteria","caract-bioqui-hongo":"caract-bioqui-hongo","caract-bioqui-levadura":"caract-bioqui-levadura","caract-fisio-bacteria":"caract-fisio-bacteria","caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae":"caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae","caract-micro-actinomiceto":"caract-micro-actinomiceto","caract-micro-bacteria":"caract-micro-bacteria","caract-micro-hongo":"caract-micro-hongo","caract-micro-levadura":"caract-micro-levadura","identi-bioqui-actinomiceto":"identi-bioqui-actinomiceto","otras-caract-actinomiceto":"otras-caract-actinomiceto","caract-macro-actinomiceto":"caract-macro-actinomiceto","caract-macro-bacteria":"caract-macro-bacteria","caract-macro-hongo":"caract-macro-hongo","caract-macro-levadura":"caract-macro-levadura","identi-molecu-bacteria":"identi-molecu-bacteria","identi-molecu-hongo":"identi-molecu-hongo","identi-molecu-levadura":"identi-molecu-levadura","perfil":"perfil","actividades~equipamientos~investigadores~novedades~proyectos~publicaciones":"actividades~equipamientos~investigadores~novedades~proyectos~publicaciones","equipamientos":"equipamientos","investigadores":"investigadores","proyectos":"proyectos","publicaciones":"publicaciones","tabla-usuarios":"tabla-usuarios","metodo-conser-bacteria":"metodo-conser-bacteria","metodo-conser-hongo":"metodo-conser-hongo","metodo-conser-levadura":"metodo-conser-levadura","novedades":"novedades","actividades":"actividades","ver-hongo":"ver-hongo","tabla-seguimiento":"tabla-seguimiento","vendors~tabla-roles":"vendors~tabla-roles","tabla-roles":"tabla-roles","mision":"mision","objetivos":"objetivos","vision":"vision"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -209,10 +210,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md.
  */
-!function(t,e){ true?module.exports=e():undefined}(window,function(){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:i})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(i,r,function(e){return t[e]}.bind(null,r));return i},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=2)}([function(t,e,n){"use strict";(function(t){var n="object"==typeof t&&t&&t.Object===Object&&t;e.a=n}).call(this,n(1))},function(t,e){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(t){"object"==typeof window&&(n=window)}t.exports=n},function(t,e,n){"use strict";n.r(e);var i=function(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)},r=n(0),o="object"==typeof self&&self&&self.Object===Object&&self,u=r.a||o||Function("return this")(),a=function(){return u.Date.now()},c=u.Symbol,s=Object.prototype,f=s.hasOwnProperty,l=s.toString,d=c?c.toStringTag:void 0;var p=function(t){var e=f.call(t,d),n=t[d];try{t[d]=void 0;var i=!0}catch(t){}var r=l.call(t);return i&&(e?t[d]=n:delete t[d]),r},v=Object.prototype.toString;var y=function(t){return v.call(t)},b="[object Null]",h="[object Undefined]",m=c?c.toStringTag:void 0;var g=function(t){return null==t?void 0===t?h:b:m&&m in Object(t)?p(t):y(t)};var j=function(t){return null!=t&&"object"==typeof t},O="[object Symbol]";var w=function(t){return"symbol"==typeof t||j(t)&&g(t)==O},x=NaN,$=/^\s+|\s+$/g,S=/^[-+]0x[0-9a-f]+$/i,E=/^0b[01]+$/i,T=/^0o[0-7]+$/i,_=parseInt;var D=function(t){if("number"==typeof t)return t;if(w(t))return x;if(i(t)){var e="function"==typeof t.valueOf?t.valueOf():t;t=i(e)?e+"":e}if("string"!=typeof t)return 0===t?t:+t;t=t.replace($,"");var n=E.test(t);return n||T.test(t)?_(t.slice(2),n?2:8):S.test(t)?x:+t},M="Expected a function",P=Math.max,N=Math.min;var F=function(t,e,n){var r,o,u,c,s,f,l=0,d=!1,p=!1,v=!0;if("function"!=typeof t)throw new TypeError(M);function y(e){var n=r,i=o;return r=o=void 0,l=e,c=t.apply(i,n)}function b(t){var n=t-f;return void 0===f||n>=e||n<0||p&&t-l>=u}function h(){var t=a();if(b(t))return m(t);s=setTimeout(h,function(t){var n=e-(t-f);return p?N(n,u-(t-l)):n}(t))}function m(t){return s=void 0,v&&r?y(t):(r=o=void 0,c)}function g(){var t=a(),n=b(t);if(r=arguments,o=this,f=t,n){if(void 0===s)return function(t){return l=t,s=setTimeout(h,e),d?y(t):c}(f);if(p)return clearTimeout(s),s=setTimeout(h,e),y(f)}return void 0===s&&(s=setTimeout(h,e)),c}return e=D(e)||0,i(n)&&(d=!!n.leading,u=(p="maxWait"in n)?P(D(n.maxWait)||0,e):u,v="trailing"in n?!!n.trailing:v),g.cancel=function(){void 0!==s&&clearTimeout(s),l=0,r=f=o=s=void 0},g.flush=function(){return void 0===s?c:m(a())},g};var U={name:"ckeditor",render(t){return t(this.tagName)},props:{editor:{type:Function,default:null},value:{type:String,default:""},config:{type:Object,default:()=>({})},tagName:{type:String,default:"div"},disabled:{type:Boolean,default:!1}},data:()=>({instance:null,$_lastEditorData:{type:String,default:""}}),mounted(){const t=Object.assign({},this.config);this.value&&(t.initialData=this.value),this.editor.create(this.$el,t).then(t=>{this.instance=t,t.isReadOnly=this.disabled,this.$_setUpEditorEvents(),this.$emit("ready",t)}).catch(t=>{console.error(t)})},beforeDestroy(){this.instance&&(this.instance.destroy(),this.instance=null),this.$emit("destroy",this.instance)},watch:{value(t,e){t!==e&&t!==this.$_lastEditorData&&this.instance.setData(t)},disabled(t){this.instance.isReadOnly=t}},methods:{$_setUpEditorEvents(){const t=this.instance;t.model.document.on("change:data",F(e=>{const n=this.$_lastEditorData=t.getData();this.$emit("input",n,e,t)},300)),t.editing.view.document.on("focus",e=>{this.$emit("focus",e,t)}),t.editing.view.document.on("blur",e=>{this.$emit("blur",e,t)})}}};const k={install(t){t.component("ckeditor",U)},component:U};e.default=k}]).default});
+!function(t,e){ true?module.exports=e():undefined}(window,function(){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:i})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(i,r,function(e){return t[e]}.bind(null,r));return i},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=2)}([function(t,e,n){"use strict";(function(t){var n="object"==typeof t&&t&&t.Object===Object&&t;e.a=n}).call(this,n(1))},function(t,e){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(t){"object"==typeof window&&(n=window)}t.exports=n},function(t,e,n){"use strict";n.r(e);var i=function(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)},r=n(0),o="object"==typeof self&&self&&self.Object===Object&&self,u=r.a||o||Function("return this")(),a=function(){return u.Date.now()},c=u.Symbol,s=Object.prototype,f=s.hasOwnProperty,l=s.toString,d=c?c.toStringTag:void 0;var p=function(t){var e=f.call(t,d),n=t[d];try{t[d]=void 0;var i=!0}catch(t){}var r=l.call(t);return i&&(e?t[d]=n:delete t[d]),r},v=Object.prototype.toString;var y=function(t){return v.call(t)},b="[object Null]",h="[object Undefined]",m=c?c.toStringTag:void 0;var g=function(t){return null==t?void 0===t?h:b:m&&m in Object(t)?p(t):y(t)};var j=function(t){return null!=t&&"object"==typeof t},O="[object Symbol]";var w=function(t){return"symbol"==typeof t||j(t)&&g(t)==O},x=NaN,$=/^\s+|\s+$/g,S=/^[-+]0x[0-9a-f]+$/i,E=/^0b[01]+$/i,T=/^0o[0-7]+$/i,_=parseInt;var D=function(t){if("number"==typeof t)return t;if(w(t))return x;if(i(t)){var e="function"==typeof t.valueOf?t.valueOf():t;t=i(e)?e+"":e}if("string"!=typeof t)return 0===t?t:+t;t=t.replace($,"");var n=E.test(t);return n||T.test(t)?_(t.slice(2),n?2:8):S.test(t)?x:+t},M="Expected a function",P=Math.max,N=Math.min;var F=function(t,e,n){var r,o,u,c,s,f,l=0,d=!1,p=!1,v=!0;if("function"!=typeof t)throw new TypeError(M);function y(e){var n=r,i=o;return r=o=void 0,l=e,c=t.apply(i,n)}function b(t){var n=t-f;return void 0===f||n>=e||n<0||p&&t-l>=u}function h(){var t=a();if(b(t))return m(t);s=setTimeout(h,function(t){var n=e-(t-f);return p?N(n,u-(t-l)):n}(t))}function m(t){return s=void 0,v&&r?y(t):(r=o=void 0,c)}function g(){var t=a(),n=b(t);if(r=arguments,o=this,f=t,n){if(void 0===s)return function(t){return l=t,s=setTimeout(h,e),d?y(t):c}(f);if(p)return clearTimeout(s),s=setTimeout(h,e),y(f)}return void 0===s&&(s=setTimeout(h,e)),c}return e=D(e)||0,i(n)&&(d=!!n.leading,u=(p="maxWait"in n)?P(D(n.maxWait)||0,e):u,v="trailing"in n?!!n.trailing:v),g.cancel=function(){void 0!==s&&clearTimeout(s),l=0,r=f=o=s=void 0},g.flush=function(){return void 0===s?c:m(a())},g};var U={name:"ckeditor",render(t){return t(this.tagName)},props:{editor:{type:Function,default:null},value:{type:String,default:""},config:{type:Object,default:()=>({})},tagName:{type:String,default:"div"},disabled:{type:Boolean,default:!1}},data:()=>({instance:null,$_lastEditorData:{type:String,default:""}}),mounted(){const t=Object.assign({},this.config);this.value&&(t.initialData=this.value),this.editor.create(this.$el,t).then(t=>{this.instance=t,t.isReadOnly=this.disabled,this.$_setUpEditorEvents(),this.$emit("ready",t)}).catch(t=>{console.error(t)})},beforeDestroy(){this.instance&&(this.instance.destroy(),this.instance=null),this.$emit("destroy",this.instance)},watch:{value(t,e){t!==e&&t!==this.$_lastEditorData&&this.instance.setData(t)},disabled(t){this.instance.isReadOnly=t}},methods:{$_setUpEditorEvents(){const t=this.instance,e=F(e=>{const n=this.$_lastEditorData=t.getData();this.$emit("input",n,e,t)},300,{leading:!0});t.model.document.on("change:data",e),t.editing.view.document.on("focus",e=>{this.$emit("focus",e,t)}),t.editing.view.document.on("blur",e=>{this.$emit("blur",e,t)})}}};const k={install(t){t.component("ckeditor",U)},component:U};e.default=k}]).default});
 //# sourceMappingURL=ckeditor.js.map
 
 /***/ }),
@@ -1477,7 +1478,6 @@ module.exports = function isAbsoluteURL(url) {
 
 
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
-var isValidXss = __webpack_require__(/*! ./isValidXss */ "./node_modules/axios/lib/helpers/isValidXss.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1497,10 +1497,6 @@ module.exports = (
     */
       function resolveURL(url) {
         var href = url;
-
-        if (isValidXss(url)) {
-          throw new Error('URL contains XSS injection attempt');
-        }
 
         if (msie) {
         // IE needs attribute set twice to normalize properties
@@ -1547,25 +1543,6 @@ module.exports = (
       };
     })()
 );
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/isValidXss.js":
-/*!******************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/isValidXss.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isValidXss(requestURL) {
-  var xssRegex = /(\b)(on\w+)=|javascript|(<\s*)(\/*)script/gi;
-  return xssRegex.test(requestURL);
-};
-
 
 
 /***/ }),
@@ -2127,10 +2104,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2153,7 +2126,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_2__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       var ruta = this.$route.path;
@@ -2163,7 +2136,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-bacteria",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2172,7 +2145,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-hongo",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2181,7 +2154,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-levadura",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2190,7 +2163,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "caract-macro-cepa-actinomiceto",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2206,7 +2179,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-bacteria",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2215,7 +2188,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-hongo",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2224,7 +2197,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-levadura",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2233,7 +2206,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           this.$router.push({
             name: "ver-cepa-actinomiceto",
             params: {
-              cepaId: data.id
+              cepaSlug: data.slug + "-" + data.id
             }
           });
           break;
@@ -2406,6 +2379,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     rowData: {
@@ -2433,6 +2429,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2546,10 +2547,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2572,13 +2569,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-actinomiceto",
         params: {
-          cepaActinomicetoId: data.id
+          cepaActinomicetoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2587,7 +2584,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-actinomiceto",
         params: {
-          cepaActinomicetoId: data.id
+          cepaActinomicetoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2759,10 +2756,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2785,13 +2778,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-bacteria",
         params: {
-          cepaBacteriaId: data.id
+          cepaBacteriaSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2800,7 +2793,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-bacteria",
         params: {
-          cepaBacteriaId: data.id
+          cepaBacteriaSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -2872,7 +2865,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoBacteria", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -2957,6 +2950,50 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    rowData: {
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      type: Number
+    }
+  },
+  methods: {
+    onClick: function onClick(event) {}
+  },
+  computed: {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=script&lang=js& ***!
@@ -2975,10 +3012,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -3056,13 +3089,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-hongo",
         params: {
-          cepaHongoId: data.id
+          cepaHongoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3071,7 +3104,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-hongo",
         params: {
-          cepaHongoId: data.id
+          cepaHongoSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3143,7 +3176,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoHongo", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -3303,10 +3336,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -3329,13 +3358,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [_mixins_websocketsAccionesCepas__WEBPACK_IMPORTED_MODULE_0__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     caracteristicas: function caracteristicas(data) {
       this.$router.push({
         name: "caract-macro-levadura",
         params: {
-          cepaLevaduraId: data.id
+          cepaLevaduraSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3344,7 +3373,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.push({
         name: "ver-levadura",
         params: {
-          cepaLevaduraId: data.id
+          cepaLevaduraSlug: data.slug + "-" + data.id
         }
       });
       this.enviarBloqueo(data);
@@ -3416,7 +3445,7 @@ __webpack_require__.r(__webpack_exports__);
     itemAction: function itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoLevadura", data.id);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", {
         id: data.id
       });
@@ -3551,9 +3580,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -3652,7 +3678,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../mixins/websocketsAccionesSinCheck */ "./resources/js/mixins/websocketsAccionesSinCheck.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
+/* harmony import */ var _IconoNoAccess__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../IconoNoAccess */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3690,12 +3716,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    IconoNoAccess: _IconoNoAccess__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: {
     rowData: {
@@ -3707,7 +3734,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesSinCheck__WEBPACK_IMPORTED_MODULE_0__["default"])("usuario", "Usuario", "usuarios")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_1__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3759,8 +3786,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -3778,7 +3803,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3830,8 +3855,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -3849,7 +3872,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3901,8 +3924,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -3920,7 +3941,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -3972,8 +3993,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -3991,7 +4010,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4043,8 +4062,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4062,7 +4079,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4114,8 +4131,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4133,7 +4148,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("micelio", "micelios-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4185,8 +4200,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4204,7 +4217,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("pigmento", "pigmentos-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4256,8 +4269,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4275,7 +4286,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4291,6 +4302,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../mixins/websocketsAccionesOtraInfo */ "./resources/js/mixins/websocketsAccionesOtraInfo.js");
+/* harmony import */ var _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../IconoNoAccess.vue */ "./resources/js/components/IconoNoAccess.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4323,9 +4335,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    IconoNoAccess: _IconoNoAccess_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   props: {
     rowData: {
       type: Object,
@@ -4388,8 +4407,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4407,7 +4424,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tincion", "tincions-actinomiceto", "actinomiceto", "ActinomicetosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4459,8 +4476,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4478,7 +4493,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("borde", "bordes-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4530,8 +4545,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4549,7 +4562,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4601,8 +4614,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4620,7 +4631,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("detalle", "detalles-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4672,8 +4683,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4691,7 +4700,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("elevacion", "elevacions-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4762,7 +4771,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_macro", "formas-macro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4814,8 +4823,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4833,7 +4840,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("forma_micro", "formas-micro-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4885,8 +4892,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4904,7 +4909,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("superficie", "superficies-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -4956,8 +4961,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -4975,7 +4978,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_agar", "tipos-agars-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5032,8 +5035,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5051,7 +5052,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-bacteria", "bacteria", "BacteriasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5103,8 +5104,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5122,7 +5121,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("clase", "clases", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5174,8 +5173,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5193,7 +5190,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("division", "divisions", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5245,8 +5242,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5264,7 +5259,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("especie", "especies", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -5336,8 +5331,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5355,7 +5348,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("familia", "familias", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5407,8 +5400,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5426,7 +5417,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("genero", "generos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"])),
   methods: {
     editar: function editar(data) {
       this.$modal.show("modal_editar_tipo_cepa", {
@@ -5498,8 +5489,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5517,7 +5506,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("orden", "ordens", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5569,8 +5558,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5588,7 +5575,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("phylum", "phylums", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5640,8 +5627,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5659,7 +5644,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("reino", "reinos", "cepa", "CepasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5711,8 +5696,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5730,7 +5713,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5782,8 +5765,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5801,7 +5782,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("conidioforo", "conidioforos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5858,8 +5839,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5877,7 +5856,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaA", "esporasA-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -5929,8 +5908,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -5948,7 +5925,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("esporaS", "esporasS-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6000,8 +5977,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -6019,7 +5994,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6076,8 +6051,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -6095,7 +6068,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-hongo", "hongo", "HongosInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6166,7 +6139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("color", "colors-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6237,7 +6210,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("textura", "texturas-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6313,7 +6286,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAccionesOtraInfo__WEBPACK_IMPORTED_MODULE_2__["default"])("tipo_metodo", "tipos-metodos-levadura", "levadura", "LevadurasInfo")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6404,6 +6377,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6421,7 +6395,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("proyecto", "Proyecto", "proyectos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6488,12 +6462,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Proyecto", "proyectos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionProyecto"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6515,7 +6489,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
       });
@@ -6584,6 +6559,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6601,7 +6577,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("publicacion", "Publicacion", "publicaciones")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6668,12 +6644,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Publicacion", "publicaciones"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("documentos", ["accionPublicacion"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6695,7 +6671,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
       });
@@ -6764,6 +6741,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6781,7 +6759,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("equipamiento", "Equipamiento", "equipamientos")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -6848,12 +6826,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Equipamiento", "equipamientos"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("equipamientos", ["accionEquipamiento"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -6874,7 +6852,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
       });
@@ -6943,6 +6922,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -6960,7 +6940,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("investigador", "Investigador", "investigadores")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7027,12 +7007,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Investigador", "investigadores"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("investigadores", ["accionInvestigador"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7053,7 +7033,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
       });
@@ -7122,6 +7103,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -7139,7 +7121,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("actividad", "Actividad", "actividades")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7206,12 +7188,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Actividad", "actividades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionActividad"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7233,7 +7215,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -7310,6 +7293,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -7327,7 +7311,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   mixins: [Object(_mixins_websocketsAcciones__WEBPACK_IMPORTED_MODULE_2__["default"])("noticia", "Noticia", "noticias")],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7394,12 +7378,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Noticia", "noticias"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNoticia"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7421,7 +7405,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -7498,6 +7483,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -7520,7 +7506,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       disabledBtns: false
     };
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre", "getPermisoByNombres"]))
 });
 
 /***/ }),
@@ -7587,12 +7573,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mixins: [Object(_mixins_websocketsCheck__WEBPACK_IMPORTED_MODULE_2__["default"])("Novedad", "novedades"), _mixins_toastr__WEBPACK_IMPORTED_MODULE_1__["default"]],
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"]), {
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombre"])), {}, {
     computedDisabled: function computedDisabled() {
       return this.disabled;
     }
   }),
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("publicidad", ["accionNovedad"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -7614,7 +7600,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         } else {
           _this.disabled = false;
@@ -7677,6 +7664,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -7693,12 +7682,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Sider: _Sidebar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Footer: _Footer_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth", "guardarPermisosAuth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerRoles", "obtenerUsers", "obtenerPermisos", "accionRol", "accionUsuario"]), {
+  methods: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions(["accionModificarAuth", "guardarPermisosAuth"])), vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapActions("usuarios", ["obtenerRoles", "obtenerUsers", "obtenerPermisos", "accionRol", "accionUsuario"])), {}, {
     rutaSider: function rutaSider(ruta) {
       this.ruta = ruta;
     }
   }),
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"]), {}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("usuarios", ["getRolById"])),
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapState(["auth"])), vuex__WEBPACK_IMPORTED_MODULE_3__["default"].mapGetters("usuarios", ["getRolById"])),
   created: function created() {
     var _this = this;
 
@@ -7951,7 +7940,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"]), {
+  computed: _objectSpread(_objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["permisos"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters(["getPermisoByNombres"])), {}, {
     classActive: function classActive() {
       if (this.ruta.includes("cepas") || this.ruta.includes("bacterias") || this.ruta.includes("levaduras") || this.ruta.includes("hongos") || this.ruta.includes("actinomicetos")) {
         return "mm-active";
@@ -8017,8 +8006,37 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mostrarHeaderMobile: false
+    };
+  },
   methods: {
     logout: function logout() {
       axios.post("/logout").then(function (res) {
@@ -8026,7 +8044,49 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   },
-  computed: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRolById", "getRoles"]), {}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"]))
+  computed: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapGetters("usuarios", ["getRolById", "getRoles"])), vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapState(["auth"])),
+  created: function created() {
+    var _this = this;
+
+    this.$events.$on("mostrar-ocultar-headerMobie", function (res) {
+      _this.mostrarHeaderMobile = !_this.mostrarHeaderMobile;
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    mostrarHeaderMobile: function mostrarHeaderMobile() {
+      this.$events.fire("mostrar-ocultar-headerMobie");
+    }
+  }
 });
 
 /***/ }),
@@ -8203,17 +8263,17 @@ function fromByteArray (uint8) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
-  * Bootstrap v4.4.1 (https://getbootstrap.com/)
-  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * Bootstrap v4.5.2 (https://getbootstrap.com/)
+  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
    true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
   undefined;
 }(this, (function (exports, $, Popper) { 'use strict';
 
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
-  Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
+  Popper = Popper && Object.prototype.hasOwnProperty.call(Popper, 'default') ? Popper['default'] : Popper;
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -8231,53 +8291,22 @@ function fromByteArray (uint8) {
     return Constructor;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
 
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
       }
-    }
 
-    return target;
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
   }
 
   function _inheritsLoose(subClass, superClass) {
@@ -8288,8 +8317,8 @@ function fromByteArray (uint8) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   /**
@@ -8303,6 +8332,10 @@ function fromByteArray (uint8) {
   var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
   function toType(obj) {
+    if (obj === null || typeof obj === 'undefined') {
+      return "" + obj;
+    }
+
     return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
   }
 
@@ -8315,7 +8348,7 @@ function fromByteArray (uint8) {
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
 
-        return undefined; // eslint-disable-line no-undefined
+        return undefined;
       }
     };
   }
@@ -8465,33 +8498,25 @@ function fromByteArray (uint8) {
    */
 
   var NAME = 'alert';
-  var VERSION = '4.4.1';
+  var VERSION = '4.5.2';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Selector = {
-    DISMISS: '[data-dismiss="alert"]'
-  };
-  var Event = {
-    CLOSE: "close" + EVENT_KEY,
-    CLOSED: "closed" + EVENT_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
-  };
-  var ClassName = {
-    ALERT: 'alert',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
+  var SELECTOR_DISMISS = '[data-dismiss="alert"]';
+  var EVENT_CLOSE = "close" + EVENT_KEY;
+  var EVENT_CLOSED = "closed" + EVENT_KEY;
+  var EVENT_CLICK_DATA_API = "click" + EVENT_KEY + DATA_API_KEY;
+  var CLASS_NAME_ALERT = 'alert';
+  var CLASS_NAME_FADE = 'fade';
+  var CLASS_NAME_SHOW = 'show';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Alert =
-  /*#__PURE__*/
-  function () {
+  var Alert = /*#__PURE__*/function () {
     function Alert(element) {
       this._element = element;
     } // Getters
@@ -8531,14 +8556,14 @@ function fromByteArray (uint8) {
       }
 
       if (!parent) {
-        parent = $(element).closest("." + ClassName.ALERT)[0];
+        parent = $(element).closest("." + CLASS_NAME_ALERT)[0];
       }
 
       return parent;
     };
 
     _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $.Event(Event.CLOSE);
+      var closeEvent = $.Event(EVENT_CLOSE);
       $(element).trigger(closeEvent);
       return closeEvent;
     };
@@ -8546,9 +8571,9 @@ function fromByteArray (uint8) {
     _proto._removeElement = function _removeElement(element) {
       var _this = this;
 
-      $(element).removeClass(ClassName.SHOW);
+      $(element).removeClass(CLASS_NAME_SHOW);
 
-      if (!$(element).hasClass(ClassName.FADE)) {
+      if (!$(element).hasClass(CLASS_NAME_FADE)) {
         this._destroyElement(element);
 
         return;
@@ -8561,7 +8586,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._destroyElement = function _destroyElement(element) {
-      $(element).detach().trigger(Event.CLOSED).remove();
+      $(element).detach().trigger(EVENT_CLOSED).remove();
     } // Static
     ;
 
@@ -8607,7 +8632,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
+  $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -8629,39 +8654,31 @@ function fromByteArray (uint8) {
    */
 
   var NAME$1 = 'button';
-  var VERSION$1 = '4.4.1';
+  var VERSION$1 = '4.5.2';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
   var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
-  var ClassName$1 = {
-    ACTIVE: 'active',
-    BUTTON: 'btn',
-    FOCUS: 'focus'
-  };
-  var Selector$1 = {
-    DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-    DATA_TOGGLES: '[data-toggle="buttons"]',
-    DATA_TOGGLE: '[data-toggle="button"]',
-    DATA_TOGGLES_BUTTONS: '[data-toggle="buttons"] .btn',
-    INPUT: 'input:not([type="hidden"])',
-    ACTIVE: '.active',
-    BUTTON: '.btn'
-  };
-  var Event$1 = {
-    CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
-    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1),
-    LOAD_DATA_API: "load" + EVENT_KEY$1 + DATA_API_KEY$1
-  };
+  var CLASS_NAME_ACTIVE = 'active';
+  var CLASS_NAME_BUTTON = 'btn';
+  var CLASS_NAME_FOCUS = 'focus';
+  var SELECTOR_DATA_TOGGLE_CARROT = '[data-toggle^="button"]';
+  var SELECTOR_DATA_TOGGLES = '[data-toggle="buttons"]';
+  var SELECTOR_DATA_TOGGLE = '[data-toggle="button"]';
+  var SELECTOR_DATA_TOGGLES_BUTTONS = '[data-toggle="buttons"] .btn';
+  var SELECTOR_INPUT = 'input:not([type="hidden"])';
+  var SELECTOR_ACTIVE = '.active';
+  var SELECTOR_BUTTON = '.btn';
+  var EVENT_CLICK_DATA_API$1 = "click" + EVENT_KEY$1 + DATA_API_KEY$1;
+  var EVENT_FOCUS_BLUR_DATA_API = "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1);
+  var EVENT_LOAD_DATA_API = "load" + EVENT_KEY$1 + DATA_API_KEY$1;
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Button =
-  /*#__PURE__*/
-  function () {
+  var Button = /*#__PURE__*/function () {
     function Button(element) {
       this._element = element;
     } // Getters
@@ -8673,33 +8690,30 @@ function fromByteArray (uint8) {
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
-      var rootElement = $(this._element).closest(Selector$1.DATA_TOGGLES)[0];
+      var rootElement = $(this._element).closest(SELECTOR_DATA_TOGGLES)[0];
 
       if (rootElement) {
-        var input = this._element.querySelector(Selector$1.INPUT);
+        var input = this._element.querySelector(SELECTOR_INPUT);
 
         if (input) {
           if (input.type === 'radio') {
-            if (input.checked && this._element.classList.contains(ClassName$1.ACTIVE)) {
+            if (input.checked && this._element.classList.contains(CLASS_NAME_ACTIVE)) {
               triggerChangeEvent = false;
             } else {
-              var activeElement = rootElement.querySelector(Selector$1.ACTIVE);
+              var activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
 
               if (activeElement) {
-                $(activeElement).removeClass(ClassName$1.ACTIVE);
+                $(activeElement).removeClass(CLASS_NAME_ACTIVE);
               }
             }
-          } else if (input.type === 'checkbox') {
-            if (this._element.tagName === 'LABEL' && input.checked === this._element.classList.contains(ClassName$1.ACTIVE)) {
-              triggerChangeEvent = false;
-            }
-          } else {
-            // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
-            triggerChangeEvent = false;
           }
 
           if (triggerChangeEvent) {
-            input.checked = !this._element.classList.contains(ClassName$1.ACTIVE);
+            // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
+            if (input.type === 'checkbox' || input.type === 'radio') {
+              input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
+            }
+
             $(input).trigger('change');
           }
 
@@ -8710,11 +8724,11 @@ function fromByteArray (uint8) {
 
       if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
         if (addAriaPressed) {
-          this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName$1.ACTIVE));
+          this._element.setAttribute('aria-pressed', !this._element.classList.contains(CLASS_NAME_ACTIVE));
         }
 
         if (triggerChangeEvent) {
-          $(this._element).toggleClass(ClassName$1.ACTIVE);
+          $(this._element).toggleClass(CLASS_NAME_ACTIVE);
         }
       }
     };
@@ -8756,17 +8770,18 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$1.CLICK_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
     var button = event.target;
+    var initialButton = button;
 
-    if (!$(button).hasClass(ClassName$1.BUTTON)) {
-      button = $(button).closest(Selector$1.BUTTON)[0];
+    if (!$(button).hasClass(CLASS_NAME_BUTTON)) {
+      button = $(button).closest(SELECTOR_BUTTON)[0];
     }
 
     if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
       event.preventDefault(); // work around Firefox bug #1540995
     } else {
-      var inputBtn = button.querySelector(Selector$1.INPUT);
+      var inputBtn = button.querySelector(SELECTOR_INPUT);
 
       if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
         event.preventDefault(); // work around Firefox bug #1540995
@@ -8774,38 +8789,40 @@ function fromByteArray (uint8) {
         return;
       }
 
-      Button._jQueryInterface.call($(button), 'toggle');
+      if (initialButton.tagName !== 'LABEL' || inputBtn && inputBtn.type !== 'checkbox') {
+        Button._jQueryInterface.call($(button), 'toggle');
+      }
     }
-  }).on(Event$1.FOCUS_BLUR_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
-    var button = $(event.target).closest(Selector$1.BUTTON)[0];
-    $(button).toggleClass(ClassName$1.FOCUS, /^focus(in)?$/.test(event.type));
+  }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
+    var button = $(event.target).closest(SELECTOR_BUTTON)[0];
+    $(button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
   });
-  $(window).on(Event$1.LOAD_DATA_API, function () {
+  $(window).on(EVENT_LOAD_DATA_API, function () {
     // ensure correct active class is set to match the controls' actual values/states
     // find all checkboxes/readio buttons inside data-toggle groups
-    var buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLES_BUTTONS));
+    var buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLES_BUTTONS));
 
     for (var i = 0, len = buttons.length; i < len; i++) {
       var button = buttons[i];
-      var input = button.querySelector(Selector$1.INPUT);
+      var input = button.querySelector(SELECTOR_INPUT);
 
       if (input.checked || input.hasAttribute('checked')) {
-        button.classList.add(ClassName$1.ACTIVE);
+        button.classList.add(CLASS_NAME_ACTIVE);
       } else {
-        button.classList.remove(ClassName$1.ACTIVE);
+        button.classList.remove(CLASS_NAME_ACTIVE);
       }
     } // find all button toggles
 
 
-    buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLE));
+    buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE));
 
     for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
       var _button = buttons[_i];
 
       if (_button.getAttribute('aria-pressed') === 'true') {
-        _button.classList.add(ClassName$1.ACTIVE);
+        _button.classList.add(CLASS_NAME_ACTIVE);
       } else {
-        _button.classList.remove(ClassName$1.ACTIVE);
+        _button.classList.remove(CLASS_NAME_ACTIVE);
       }
     }
   });
@@ -8830,7 +8847,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$2 = 'carousel';
-  var VERSION$2 = '4.4.1';
+  var VERSION$2 = '4.5.2';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
@@ -8858,48 +8875,39 @@ function fromByteArray (uint8) {
     wrap: 'boolean',
     touch: 'boolean'
   };
-  var Direction = {
-    NEXT: 'next',
-    PREV: 'prev',
-    LEFT: 'left',
-    RIGHT: 'right'
-  };
-  var Event$2 = {
-    SLIDE: "slide" + EVENT_KEY$2,
-    SLID: "slid" + EVENT_KEY$2,
-    KEYDOWN: "keydown" + EVENT_KEY$2,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$2,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$2,
-    TOUCHSTART: "touchstart" + EVENT_KEY$2,
-    TOUCHMOVE: "touchmove" + EVENT_KEY$2,
-    TOUCHEND: "touchend" + EVENT_KEY$2,
-    POINTERDOWN: "pointerdown" + EVENT_KEY$2,
-    POINTERUP: "pointerup" + EVENT_KEY$2,
-    DRAG_START: "dragstart" + EVENT_KEY$2,
-    LOAD_DATA_API: "load" + EVENT_KEY$2 + DATA_API_KEY$2,
-    CLICK_DATA_API: "click" + EVENT_KEY$2 + DATA_API_KEY$2
-  };
-  var ClassName$2 = {
-    CAROUSEL: 'carousel',
-    ACTIVE: 'active',
-    SLIDE: 'slide',
-    RIGHT: 'carousel-item-right',
-    LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
-    PREV: 'carousel-item-prev',
-    ITEM: 'carousel-item',
-    POINTER_EVENT: 'pointer-event'
-  };
-  var Selector$2 = {
-    ACTIVE: '.active',
-    ACTIVE_ITEM: '.active.carousel-item',
-    ITEM: '.carousel-item',
-    ITEM_IMG: '.carousel-item img',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
-    INDICATORS: '.carousel-indicators',
-    DATA_SLIDE: '[data-slide], [data-slide-to]',
-    DATA_RIDE: '[data-ride="carousel"]'
-  };
+  var DIRECTION_NEXT = 'next';
+  var DIRECTION_PREV = 'prev';
+  var DIRECTION_LEFT = 'left';
+  var DIRECTION_RIGHT = 'right';
+  var EVENT_SLIDE = "slide" + EVENT_KEY$2;
+  var EVENT_SLID = "slid" + EVENT_KEY$2;
+  var EVENT_KEYDOWN = "keydown" + EVENT_KEY$2;
+  var EVENT_MOUSEENTER = "mouseenter" + EVENT_KEY$2;
+  var EVENT_MOUSELEAVE = "mouseleave" + EVENT_KEY$2;
+  var EVENT_TOUCHSTART = "touchstart" + EVENT_KEY$2;
+  var EVENT_TOUCHMOVE = "touchmove" + EVENT_KEY$2;
+  var EVENT_TOUCHEND = "touchend" + EVENT_KEY$2;
+  var EVENT_POINTERDOWN = "pointerdown" + EVENT_KEY$2;
+  var EVENT_POINTERUP = "pointerup" + EVENT_KEY$2;
+  var EVENT_DRAG_START = "dragstart" + EVENT_KEY$2;
+  var EVENT_LOAD_DATA_API$1 = "load" + EVENT_KEY$2 + DATA_API_KEY$2;
+  var EVENT_CLICK_DATA_API$2 = "click" + EVENT_KEY$2 + DATA_API_KEY$2;
+  var CLASS_NAME_CAROUSEL = 'carousel';
+  var CLASS_NAME_ACTIVE$1 = 'active';
+  var CLASS_NAME_SLIDE = 'slide';
+  var CLASS_NAME_RIGHT = 'carousel-item-right';
+  var CLASS_NAME_LEFT = 'carousel-item-left';
+  var CLASS_NAME_NEXT = 'carousel-item-next';
+  var CLASS_NAME_PREV = 'carousel-item-prev';
+  var CLASS_NAME_POINTER_EVENT = 'pointer-event';
+  var SELECTOR_ACTIVE$1 = '.active';
+  var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
+  var SELECTOR_ITEM = '.carousel-item';
+  var SELECTOR_ITEM_IMG = '.carousel-item img';
+  var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
+  var SELECTOR_INDICATORS = '.carousel-indicators';
+  var SELECTOR_DATA_SLIDE = '[data-slide], [data-slide-to]';
+  var SELECTOR_DATA_RIDE = '[data-ride="carousel"]';
   var PointerType = {
     TOUCH: 'touch',
     PEN: 'pen'
@@ -8910,9 +8918,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Carousel =
-  /*#__PURE__*/
-  function () {
+  var Carousel = /*#__PURE__*/function () {
     function Carousel(element, config) {
       this._items = null;
       this._interval = null;
@@ -8924,7 +8930,7 @@ function fromByteArray (uint8) {
       this.touchDeltaX = 0;
       this._config = this._getConfig(config);
       this._element = element;
-      this._indicatorsElement = this._element.querySelector(Selector$2.INDICATORS);
+      this._indicatorsElement = this._element.querySelector(SELECTOR_INDICATORS);
       this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
       this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
 
@@ -8937,7 +8943,7 @@ function fromByteArray (uint8) {
     // Public
     _proto.next = function next() {
       if (!this._isSliding) {
-        this._slide(Direction.NEXT);
+        this._slide(DIRECTION_NEXT);
       }
     };
 
@@ -8951,7 +8957,7 @@ function fromByteArray (uint8) {
 
     _proto.prev = function prev() {
       if (!this._isSliding) {
-        this._slide(Direction.PREV);
+        this._slide(DIRECTION_PREV);
       }
     };
 
@@ -8960,7 +8966,7 @@ function fromByteArray (uint8) {
         this._isPaused = true;
       }
 
-      if (this._element.querySelector(Selector$2.NEXT_PREV)) {
+      if (this._element.querySelector(SELECTOR_NEXT_PREV)) {
         Util.triggerTransitionEnd(this._element);
         this.cycle(true);
       }
@@ -8987,7 +8993,7 @@ function fromByteArray (uint8) {
     _proto.to = function to(index) {
       var _this = this;
 
-      this._activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
+      this._activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
 
       var activeIndex = this._getItemIndex(this._activeElement);
 
@@ -8996,7 +9002,7 @@ function fromByteArray (uint8) {
       }
 
       if (this._isSliding) {
-        $(this._element).one(Event$2.SLID, function () {
+        $(this._element).one(EVENT_SLID, function () {
           return _this.to(index);
         });
         return;
@@ -9008,7 +9014,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
+      var direction = index > activeIndex ? DIRECTION_NEXT : DIRECTION_PREV;
 
       this._slide(direction, this._items[index]);
     };
@@ -9028,7 +9034,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default, {}, config);
+      config = _extends({}, Default, config);
       Util.typeCheckConfig(NAME$2, config, DefaultType);
       return config;
     };
@@ -9057,15 +9063,15 @@ function fromByteArray (uint8) {
       var _this2 = this;
 
       if (this._config.keyboard) {
-        $(this._element).on(Event$2.KEYDOWN, function (event) {
+        $(this._element).on(EVENT_KEYDOWN, function (event) {
           return _this2._keydown(event);
         });
       }
 
       if (this._config.pause === 'hover') {
-        $(this._element).on(Event$2.MOUSEENTER, function (event) {
+        $(this._element).on(EVENT_MOUSEENTER, function (event) {
           return _this2.pause(event);
-        }).on(Event$2.MOUSELEAVE, function (event) {
+        }).on(EVENT_MOUSELEAVE, function (event) {
           return _this2.cycle(event);
         });
       }
@@ -9126,27 +9132,27 @@ function fromByteArray (uint8) {
         }
       };
 
-      $(this._element.querySelectorAll(Selector$2.ITEM_IMG)).on(Event$2.DRAG_START, function (e) {
+      $(this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
         return e.preventDefault();
       });
 
       if (this._pointerEvent) {
-        $(this._element).on(Event$2.POINTERDOWN, function (event) {
+        $(this._element).on(EVENT_POINTERDOWN, function (event) {
           return start(event);
         });
-        $(this._element).on(Event$2.POINTERUP, function (event) {
+        $(this._element).on(EVENT_POINTERUP, function (event) {
           return end(event);
         });
 
-        this._element.classList.add(ClassName$2.POINTER_EVENT);
+        this._element.classList.add(CLASS_NAME_POINTER_EVENT);
       } else {
-        $(this._element).on(Event$2.TOUCHSTART, function (event) {
+        $(this._element).on(EVENT_TOUCHSTART, function (event) {
           return start(event);
         });
-        $(this._element).on(Event$2.TOUCHMOVE, function (event) {
+        $(this._element).on(EVENT_TOUCHMOVE, function (event) {
           return move(event);
         });
-        $(this._element).on(Event$2.TOUCHEND, function (event) {
+        $(this._element).on(EVENT_TOUCHEND, function (event) {
           return end(event);
         });
       }
@@ -9171,13 +9177,13 @@ function fromByteArray (uint8) {
     };
 
     _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector$2.ITEM)) : [];
+      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(SELECTOR_ITEM)) : [];
       return this._items.indexOf(element);
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
-      var isPrevDirection = direction === Direction.PREV;
+      var isNextDirection = direction === DIRECTION_NEXT;
+      var isPrevDirection = direction === DIRECTION_PREV;
 
       var activeIndex = this._getItemIndex(activeElement);
 
@@ -9188,7 +9194,7 @@ function fromByteArray (uint8) {
         return activeElement;
       }
 
-      var delta = direction === Direction.PREV ? -1 : 1;
+      var delta = direction === DIRECTION_PREV ? -1 : 1;
       var itemIndex = (activeIndex + delta) % this._items.length;
       return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
     };
@@ -9196,9 +9202,9 @@ function fromByteArray (uint8) {
     _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
       var targetIndex = this._getItemIndex(relatedTarget);
 
-      var fromIndex = this._getItemIndex(this._element.querySelector(Selector$2.ACTIVE_ITEM));
+      var fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM));
 
-      var slideEvent = $.Event(Event$2.SLIDE, {
+      var slideEvent = $.Event(EVENT_SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
@@ -9210,13 +9216,13 @@ function fromByteArray (uint8) {
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
-        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector$2.ACTIVE));
-        $(indicators).removeClass(ClassName$2.ACTIVE);
+        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
+        $(indicators).removeClass(CLASS_NAME_ACTIVE$1);
 
         var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
         if (nextIndicator) {
-          $(nextIndicator).addClass(ClassName$2.ACTIVE);
+          $(nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
         }
       }
     };
@@ -9224,7 +9230,7 @@ function fromByteArray (uint8) {
     _proto._slide = function _slide(direction, element) {
       var _this4 = this;
 
-      var activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
+      var activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
 
       var activeElementIndex = this._getItemIndex(activeElement);
 
@@ -9237,17 +9243,17 @@ function fromByteArray (uint8) {
       var orderClassName;
       var eventDirectionName;
 
-      if (direction === Direction.NEXT) {
-        directionalClassName = ClassName$2.LEFT;
-        orderClassName = ClassName$2.NEXT;
-        eventDirectionName = Direction.LEFT;
+      if (direction === DIRECTION_NEXT) {
+        directionalClassName = CLASS_NAME_LEFT;
+        orderClassName = CLASS_NAME_NEXT;
+        eventDirectionName = DIRECTION_LEFT;
       } else {
-        directionalClassName = ClassName$2.RIGHT;
-        orderClassName = ClassName$2.PREV;
-        eventDirectionName = Direction.RIGHT;
+        directionalClassName = CLASS_NAME_RIGHT;
+        orderClassName = CLASS_NAME_PREV;
+        eventDirectionName = DIRECTION_RIGHT;
       }
 
-      if (nextElement && $(nextElement).hasClass(ClassName$2.ACTIVE)) {
+      if (nextElement && $(nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
         this._isSliding = false;
         return;
       }
@@ -9271,14 +9277,14 @@ function fromByteArray (uint8) {
 
       this._setActiveIndicatorElement(nextElement);
 
-      var slidEvent = $.Event(Event$2.SLID, {
+      var slidEvent = $.Event(EVENT_SLID, {
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
         to: nextElementIndex
       });
 
-      if ($(this._element).hasClass(ClassName$2.SLIDE)) {
+      if ($(this._element).hasClass(CLASS_NAME_SLIDE)) {
         $(nextElement).addClass(orderClassName);
         Util.reflow(nextElement);
         $(activeElement).addClass(directionalClassName);
@@ -9294,16 +9300,16 @@ function fromByteArray (uint8) {
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
         $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName$2.ACTIVE);
-          $(activeElement).removeClass(ClassName$2.ACTIVE + " " + orderClassName + " " + directionalClassName);
+          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
+          $(activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
           _this4._isSliding = false;
           setTimeout(function () {
             return $(_this4._element).trigger(slidEvent);
           }, 0);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        $(activeElement).removeClass(ClassName$2.ACTIVE);
-        $(nextElement).addClass(ClassName$2.ACTIVE);
+        $(activeElement).removeClass(CLASS_NAME_ACTIVE$1);
+        $(nextElement).addClass(CLASS_NAME_ACTIVE$1);
         this._isSliding = false;
         $(this._element).trigger(slidEvent);
       }
@@ -9318,10 +9324,10 @@ function fromByteArray (uint8) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY$2);
 
-        var _config = _objectSpread2({}, Default, {}, $(this).data());
+        var _config = _extends({}, Default, $(this).data());
 
         if (typeof config === 'object') {
-          _config = _objectSpread2({}, _config, {}, config);
+          _config = _extends({}, _config, config);
         }
 
         var action = typeof config === 'string' ? config : _config.slide;
@@ -9355,11 +9361,11 @@ function fromByteArray (uint8) {
 
       var target = $(selector)[0];
 
-      if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
+      if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
         return;
       }
 
-      var config = _objectSpread2({}, $(target).data(), {}, $(this).data());
+      var config = _extends({}, $(target).data(), $(this).data());
 
       var slideIndex = this.getAttribute('data-slide-to');
 
@@ -9397,9 +9403,9 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$2.CLICK_DATA_API, Selector$2.DATA_SLIDE, Carousel._dataApiClickHandler);
-  $(window).on(Event$2.LOAD_DATA_API, function () {
-    var carousels = [].slice.call(document.querySelectorAll(Selector$2.DATA_RIDE));
+  $(document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
+  $(window).on(EVENT_LOAD_DATA_API$1, function () {
+    var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
 
     for (var i = 0, len = carousels.length; i < len; i++) {
       var $carousel = $(carousels[i]);
@@ -9428,7 +9434,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$3 = 'collapse';
-  var VERSION$3 = '4.4.1';
+  var VERSION$3 = '4.5.2';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
@@ -9441,42 +9447,32 @@ function fromByteArray (uint8) {
     toggle: 'boolean',
     parent: '(string|element)'
   };
-  var Event$3 = {
-    SHOW: "show" + EVENT_KEY$3,
-    SHOWN: "shown" + EVENT_KEY$3,
-    HIDE: "hide" + EVENT_KEY$3,
-    HIDDEN: "hidden" + EVENT_KEY$3,
-    CLICK_DATA_API: "click" + EVENT_KEY$3 + DATA_API_KEY$3
-  };
-  var ClassName$3 = {
-    SHOW: 'show',
-    COLLAPSE: 'collapse',
-    COLLAPSING: 'collapsing',
-    COLLAPSED: 'collapsed'
-  };
-  var Dimension = {
-    WIDTH: 'width',
-    HEIGHT: 'height'
-  };
-  var Selector$3 = {
-    ACTIVES: '.show, .collapsing',
-    DATA_TOGGLE: '[data-toggle="collapse"]'
-  };
+  var EVENT_SHOW = "show" + EVENT_KEY$3;
+  var EVENT_SHOWN = "shown" + EVENT_KEY$3;
+  var EVENT_HIDE = "hide" + EVENT_KEY$3;
+  var EVENT_HIDDEN = "hidden" + EVENT_KEY$3;
+  var EVENT_CLICK_DATA_API$3 = "click" + EVENT_KEY$3 + DATA_API_KEY$3;
+  var CLASS_NAME_SHOW$1 = 'show';
+  var CLASS_NAME_COLLAPSE = 'collapse';
+  var CLASS_NAME_COLLAPSING = 'collapsing';
+  var CLASS_NAME_COLLAPSED = 'collapsed';
+  var DIMENSION_WIDTH = 'width';
+  var DIMENSION_HEIGHT = 'height';
+  var SELECTOR_ACTIVES = '.show, .collapsing';
+  var SELECTOR_DATA_TOGGLE$1 = '[data-toggle="collapse"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Collapse =
-  /*#__PURE__*/
-  function () {
+  var Collapse = /*#__PURE__*/function () {
     function Collapse(element, config) {
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(Selector$3.DATA_TOGGLE));
+      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$1));
 
       for (var i = 0, len = toggleList.length; i < len; i++) {
         var elem = toggleList[i];
@@ -9508,7 +9504,7 @@ function fromByteArray (uint8) {
 
     // Public
     _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(ClassName$3.SHOW)) {
+      if ($(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         this.hide();
       } else {
         this.show();
@@ -9518,7 +9514,7 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._isTransitioning || $(this._element).hasClass(ClassName$3.SHOW)) {
+      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
@@ -9526,12 +9522,12 @@ function fromByteArray (uint8) {
       var activesData;
 
       if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(Selector$3.ACTIVES)).filter(function (elem) {
+        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES)).filter(function (elem) {
           if (typeof _this._config.parent === 'string') {
             return elem.getAttribute('data-parent') === _this._config.parent;
           }
 
-          return elem.classList.contains(ClassName$3.COLLAPSE);
+          return elem.classList.contains(CLASS_NAME_COLLAPSE);
         });
 
         if (actives.length === 0) {
@@ -9547,7 +9543,7 @@ function fromByteArray (uint8) {
         }
       }
 
-      var startEvent = $.Event(Event$3.SHOW);
+      var startEvent = $.Event(EVENT_SHOW);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -9564,22 +9560,22 @@ function fromByteArray (uint8) {
 
       var dimension = this._getDimension();
 
-      $(this._element).removeClass(ClassName$3.COLLAPSE).addClass(ClassName$3.COLLAPSING);
+      $(this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
       this._element.style[dimension] = 0;
 
       if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(ClassName$3.COLLAPSED).attr('aria-expanded', true);
+        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
       }
 
       this.setTransitioning(true);
 
       var complete = function complete() {
-        $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).addClass(ClassName$3.SHOW);
+        $(_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
         _this._element.style[dimension] = '';
 
         _this.setTransitioning(false);
 
-        $(_this._element).trigger(Event$3.SHOWN);
+        $(_this._element).trigger(EVENT_SHOWN);
       };
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
@@ -9592,11 +9588,11 @@ function fromByteArray (uint8) {
     _proto.hide = function hide() {
       var _this2 = this;
 
-      if (this._isTransitioning || !$(this._element).hasClass(ClassName$3.SHOW)) {
+      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
-      var startEvent = $.Event(Event$3.HIDE);
+      var startEvent = $.Event(EVENT_HIDE);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -9607,7 +9603,7 @@ function fromByteArray (uint8) {
 
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
-      $(this._element).addClass(ClassName$3.COLLAPSING).removeClass(ClassName$3.COLLAPSE).removeClass(ClassName$3.SHOW);
+      $(this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -9618,8 +9614,8 @@ function fromByteArray (uint8) {
           if (selector !== null) {
             var $elem = $([].slice.call(document.querySelectorAll(selector)));
 
-            if (!$elem.hasClass(ClassName$3.SHOW)) {
-              $(trigger).addClass(ClassName$3.COLLAPSED).attr('aria-expanded', false);
+            if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
+              $(trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
             }
           }
         }
@@ -9630,7 +9626,7 @@ function fromByteArray (uint8) {
       var complete = function complete() {
         _this2.setTransitioning(false);
 
-        $(_this2._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).trigger(Event$3.HIDDEN);
+        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
       };
 
       this._element.style[dimension] = '';
@@ -9653,7 +9649,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$1, {}, config);
+      config = _extends({}, Default$1, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
 
       Util.typeCheckConfig(NAME$3, config, DefaultType$1);
@@ -9661,8 +9657,8 @@ function fromByteArray (uint8) {
     };
 
     _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(Dimension.WIDTH);
-      return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT;
+      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH);
+      return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT;
     };
 
     _proto._getParent = function _getParent() {
@@ -9689,10 +9685,10 @@ function fromByteArray (uint8) {
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(ClassName$3.SHOW);
+      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$1);
 
       if (triggerArray.length) {
-        $(triggerArray).toggleClass(ClassName$3.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
+        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
       }
     } // Static
     ;
@@ -9707,9 +9703,9 @@ function fromByteArray (uint8) {
         var $this = $(this);
         var data = $this.data(DATA_KEY$3);
 
-        var _config = _objectSpread2({}, Default$1, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
 
-        if (!data && _config.toggle && /show|hide/.test(config)) {
+        if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
           _config.toggle = false;
         }
 
@@ -9749,7 +9745,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
@@ -9787,7 +9783,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.4.1';
+  var VERSION$4 = '4.5.2';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
@@ -9805,43 +9801,32 @@ function fromByteArray (uint8) {
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
   var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-  var Event$4 = {
-    HIDE: "hide" + EVENT_KEY$4,
-    HIDDEN: "hidden" + EVENT_KEY$4,
-    SHOW: "show" + EVENT_KEY$4,
-    SHOWN: "shown" + EVENT_KEY$4,
-    CLICK: "click" + EVENT_KEY$4,
-    CLICK_DATA_API: "click" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYDOWN_DATA_API: "keydown" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYUP_DATA_API: "keyup" + EVENT_KEY$4 + DATA_API_KEY$4
-  };
-  var ClassName$4 = {
-    DISABLED: 'disabled',
-    SHOW: 'show',
-    DROPUP: 'dropup',
-    DROPRIGHT: 'dropright',
-    DROPLEFT: 'dropleft',
-    MENURIGHT: 'dropdown-menu-right',
-    MENULEFT: 'dropdown-menu-left',
-    POSITION_STATIC: 'position-static'
-  };
-  var Selector$4 = {
-    DATA_TOGGLE: '[data-toggle="dropdown"]',
-    FORM_CHILD: '.dropdown form',
-    MENU: '.dropdown-menu',
-    NAVBAR_NAV: '.navbar-nav',
-    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
-  };
-  var AttachmentMap = {
-    TOP: 'top-start',
-    TOPEND: 'top-end',
-    BOTTOM: 'bottom-start',
-    BOTTOMEND: 'bottom-end',
-    RIGHT: 'right-start',
-    RIGHTEND: 'right-end',
-    LEFT: 'left-start',
-    LEFTEND: 'left-end'
-  };
+  var EVENT_HIDE$1 = "hide" + EVENT_KEY$4;
+  var EVENT_HIDDEN$1 = "hidden" + EVENT_KEY$4;
+  var EVENT_SHOW$1 = "show" + EVENT_KEY$4;
+  var EVENT_SHOWN$1 = "shown" + EVENT_KEY$4;
+  var EVENT_CLICK = "click" + EVENT_KEY$4;
+  var EVENT_CLICK_DATA_API$4 = "click" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var EVENT_KEYDOWN_DATA_API = "keydown" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var EVENT_KEYUP_DATA_API = "keyup" + EVENT_KEY$4 + DATA_API_KEY$4;
+  var CLASS_NAME_DISABLED = 'disabled';
+  var CLASS_NAME_SHOW$2 = 'show';
+  var CLASS_NAME_DROPUP = 'dropup';
+  var CLASS_NAME_DROPRIGHT = 'dropright';
+  var CLASS_NAME_DROPLEFT = 'dropleft';
+  var CLASS_NAME_MENURIGHT = 'dropdown-menu-right';
+  var CLASS_NAME_POSITION_STATIC = 'position-static';
+  var SELECTOR_DATA_TOGGLE$2 = '[data-toggle="dropdown"]';
+  var SELECTOR_FORM_CHILD = '.dropdown form';
+  var SELECTOR_MENU = '.dropdown-menu';
+  var SELECTOR_NAVBAR_NAV = '.navbar-nav';
+  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
+  var PLACEMENT_TOP = 'top-start';
+  var PLACEMENT_TOPEND = 'top-end';
+  var PLACEMENT_BOTTOM = 'bottom-start';
+  var PLACEMENT_BOTTOMEND = 'bottom-end';
+  var PLACEMENT_RIGHT = 'right-start';
+  var PLACEMENT_LEFT = 'left-start';
   var Default$2 = {
     offset: 0,
     flip: true,
@@ -9864,9 +9849,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Dropdown =
-  /*#__PURE__*/
-  function () {
+  var Dropdown = /*#__PURE__*/function () {
     function Dropdown(element, config) {
       this._element = element;
       this._popper = null;
@@ -9882,11 +9865,11 @@ function fromByteArray (uint8) {
 
     // Public
     _proto.toggle = function toggle() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED)) {
         return;
       }
 
-      var isActive = $(this._menu).hasClass(ClassName$4.SHOW);
+      var isActive = $(this._menu).hasClass(CLASS_NAME_SHOW$2);
 
       Dropdown._clearMenus();
 
@@ -9902,14 +9885,14 @@ function fromByteArray (uint8) {
         usePopper = false;
       }
 
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || $(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var showEvent = $.Event(Event$4.SHOW, relatedTarget);
+      var showEvent = $.Event(EVENT_SHOW$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
@@ -9945,7 +9928,7 @@ function fromByteArray (uint8) {
 
 
         if (this._config.boundary !== 'scrollParent') {
-          $(parent).addClass(ClassName$4.POSITION_STATIC);
+          $(parent).addClass(CLASS_NAME_POSITION_STATIC);
         }
 
         this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
@@ -9955,7 +9938,7 @@ function fromByteArray (uint8) {
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
-      if ('ontouchstart' in document.documentElement && $(parent).closest(Selector$4.NAVBAR_NAV).length === 0) {
+      if ('ontouchstart' in document.documentElement && $(parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
         $(document.body).children().on('mouseover', null, $.noop);
       }
 
@@ -9963,19 +9946,19 @@ function fromByteArray (uint8) {
 
       this._element.setAttribute('aria-expanded', true);
 
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_SHOWN$1, relatedTarget));
     };
 
     _proto.hide = function hide() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || !$(this._menu).hasClass(ClassName$4.SHOW)) {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || !$(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
-      var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
+      var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
@@ -9989,8 +9972,8 @@ function fromByteArray (uint8) {
         this._popper.destroy();
       }
 
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
     };
 
     _proto.dispose = function dispose() {
@@ -10018,7 +10001,7 @@ function fromByteArray (uint8) {
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
 
-      $(this._element).on(Event$4.CLICK, function (event) {
+      $(this._element).on(EVENT_CLICK, function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -10027,7 +10010,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, this.constructor.Default, {}, $(this._element).data(), {}, config);
+      config = _extends({}, this.constructor.Default, $(this._element).data(), config);
       Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
       return config;
     };
@@ -10037,7 +10020,7 @@ function fromByteArray (uint8) {
         var parent = Dropdown._getParentFromElement(this._element);
 
         if (parent) {
-          this._menu = parent.querySelector(Selector$4.MENU);
+          this._menu = parent.querySelector(SELECTOR_MENU);
         }
       }
 
@@ -10046,20 +10029,16 @@ function fromByteArray (uint8) {
 
     _proto._getPlacement = function _getPlacement() {
       var $parentDropdown = $(this._element.parentNode);
-      var placement = AttachmentMap.BOTTOM; // Handle dropup
+      var placement = PLACEMENT_BOTTOM; // Handle dropup
 
-      if ($parentDropdown.hasClass(ClassName$4.DROPUP)) {
-        placement = AttachmentMap.TOP;
-
-        if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-          placement = AttachmentMap.TOPEND;
-        }
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPRIGHT)) {
-        placement = AttachmentMap.RIGHT;
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPLEFT)) {
-        placement = AttachmentMap.LEFT;
-      } else if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-        placement = AttachmentMap.BOTTOMEND;
+      if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
+        placement = $(this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPRIGHT)) {
+        placement = PLACEMENT_RIGHT;
+      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPLEFT)) {
+        placement = PLACEMENT_LEFT;
+      } else if ($(this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
+        placement = PLACEMENT_BOTTOMEND;
       }
 
       return placement;
@@ -10076,7 +10055,7 @@ function fromByteArray (uint8) {
 
       if (typeof this._config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2({}, data.offsets, {}, _this2._config.offset(data.offsets, _this2._element) || {});
+          data.offsets = _extends({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
           return data;
         };
       } else {
@@ -10106,7 +10085,7 @@ function fromByteArray (uint8) {
         };
       }
 
-      return _objectSpread2({}, popperConfig, {}, this._config.popperConfig);
+      return _extends({}, popperConfig, this._config.popperConfig);
     } // Static
     ;
 
@@ -10136,7 +10115,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var toggles = [].slice.call(document.querySelectorAll(Selector$4.DATA_TOGGLE));
+      var toggles = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$2));
 
       for (var i = 0, len = toggles.length; i < len; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
@@ -10156,7 +10135,7 @@ function fromByteArray (uint8) {
 
         var dropdownMenu = context._menu;
 
-        if (!$(parent).hasClass(ClassName$4.SHOW)) {
+        if (!$(parent).hasClass(CLASS_NAME_SHOW$2)) {
           continue;
         }
 
@@ -10164,7 +10143,7 @@ function fromByteArray (uint8) {
           continue;
         }
 
-        var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
+        var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
         $(parent).trigger(hideEvent);
 
         if (hideEvent.isDefaultPrevented()) {
@@ -10183,8 +10162,8 @@ function fromByteArray (uint8) {
           context._popper.destroy();
         }
 
-        $(dropdownMenu).removeClass(ClassName$4.SHOW);
-        $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
+        $(dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $(parent).removeClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
       }
     };
 
@@ -10208,36 +10187,35 @@ function fromByteArray (uint8) {
       //  - If key is other than escape
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(Selector$4.MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+        return;
+      }
+
+      if (this.disabled || $(this).hasClass(CLASS_NAME_DISABLED)) {
+        return;
+      }
+
+      var parent = Dropdown._getParentFromElement(this);
+
+      var isActive = $(parent).hasClass(CLASS_NAME_SHOW$2);
+
+      if (!isActive && event.which === ESCAPE_KEYCODE) {
         return;
       }
 
       event.preventDefault();
       event.stopPropagation();
 
-      if (this.disabled || $(this).hasClass(ClassName$4.DISABLED)) {
-        return;
-      }
-
-      var parent = Dropdown._getParentFromElement(this);
-
-      var isActive = $(parent).hasClass(ClassName$4.SHOW);
-
-      if (!isActive && event.which === ESCAPE_KEYCODE) {
-        return;
-      }
-
       if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
         if (event.which === ESCAPE_KEYCODE) {
-          var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
-          $(toggle).trigger('focus');
+          $(parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
         }
 
         $(this).trigger('click');
         return;
       }
 
-      var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS)).filter(function (item) {
+      var items = [].slice.call(parent.querySelectorAll(SELECTOR_VISIBLE_ITEMS)).filter(function (item) {
         return $(item).is(':visible');
       });
 
@@ -10290,12 +10268,12 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$4.KEYDOWN_DATA_API, Selector$4.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event$4.KEYDOWN_DATA_API, Selector$4.MENU, Dropdown._dataApiKeydownHandler).on(Event$4.CLICK_DATA_API + " " + Event$4.KEYUP_DATA_API, Dropdown._clearMenus).on(Event$4.CLICK_DATA_API, Selector$4.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
     event.preventDefault();
     event.stopPropagation();
 
     Dropdown._jQueryInterface.call($(this), 'toggle');
-  }).on(Event$4.CLICK_DATA_API, Selector$4.FORM_CHILD, function (e) {
+  }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
     e.stopPropagation();
   });
   /**
@@ -10319,7 +10297,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$5 = 'modal';
-  var VERSION$5 = '4.4.1';
+  var VERSION$5 = '4.5.2';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
@@ -10338,50 +10316,42 @@ function fromByteArray (uint8) {
     focus: 'boolean',
     show: 'boolean'
   };
-  var Event$5 = {
-    HIDE: "hide" + EVENT_KEY$5,
-    HIDE_PREVENTED: "hidePrevented" + EVENT_KEY$5,
-    HIDDEN: "hidden" + EVENT_KEY$5,
-    SHOW: "show" + EVENT_KEY$5,
-    SHOWN: "shown" + EVENT_KEY$5,
-    FOCUSIN: "focusin" + EVENT_KEY$5,
-    RESIZE: "resize" + EVENT_KEY$5,
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$5,
-    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY$5,
-    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY$5,
-    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY$5,
-    CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
-  };
-  var ClassName$5 = {
-    SCROLLABLE: 'modal-dialog-scrollable',
-    SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
-    BACKDROP: 'modal-backdrop',
-    OPEN: 'modal-open',
-    FADE: 'fade',
-    SHOW: 'show',
-    STATIC: 'modal-static'
-  };
-  var Selector$5 = {
-    DIALOG: '.modal-dialog',
-    MODAL_BODY: '.modal-body',
-    DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
-    FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
-    STICKY_CONTENT: '.sticky-top'
-  };
+  var EVENT_HIDE$2 = "hide" + EVENT_KEY$5;
+  var EVENT_HIDE_PREVENTED = "hidePrevented" + EVENT_KEY$5;
+  var EVENT_HIDDEN$2 = "hidden" + EVENT_KEY$5;
+  var EVENT_SHOW$2 = "show" + EVENT_KEY$5;
+  var EVENT_SHOWN$2 = "shown" + EVENT_KEY$5;
+  var EVENT_FOCUSIN = "focusin" + EVENT_KEY$5;
+  var EVENT_RESIZE = "resize" + EVENT_KEY$5;
+  var EVENT_CLICK_DISMISS = "click.dismiss" + EVENT_KEY$5;
+  var EVENT_KEYDOWN_DISMISS = "keydown.dismiss" + EVENT_KEY$5;
+  var EVENT_MOUSEUP_DISMISS = "mouseup.dismiss" + EVENT_KEY$5;
+  var EVENT_MOUSEDOWN_DISMISS = "mousedown.dismiss" + EVENT_KEY$5;
+  var EVENT_CLICK_DATA_API$5 = "click" + EVENT_KEY$5 + DATA_API_KEY$5;
+  var CLASS_NAME_SCROLLABLE = 'modal-dialog-scrollable';
+  var CLASS_NAME_SCROLLBAR_MEASURER = 'modal-scrollbar-measure';
+  var CLASS_NAME_BACKDROP = 'modal-backdrop';
+  var CLASS_NAME_OPEN = 'modal-open';
+  var CLASS_NAME_FADE$1 = 'fade';
+  var CLASS_NAME_SHOW$3 = 'show';
+  var CLASS_NAME_STATIC = 'modal-static';
+  var SELECTOR_DIALOG = '.modal-dialog';
+  var SELECTOR_MODAL_BODY = '.modal-body';
+  var SELECTOR_DATA_TOGGLE$3 = '[data-toggle="modal"]';
+  var SELECTOR_DATA_DISMISS = '[data-dismiss="modal"]';
+  var SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
+  var SELECTOR_STICKY_CONTENT = '.sticky-top';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Modal =
-  /*#__PURE__*/
-  function () {
+  var Modal = /*#__PURE__*/function () {
     function Modal(element, config) {
       this._config = this._getConfig(config);
       this._element = element;
-      this._dialog = element.querySelector(Selector$5.DIALOG);
+      this._dialog = element.querySelector(SELECTOR_DIALOG);
       this._backdrop = null;
       this._isShown = false;
       this._isBodyOverflowing = false;
@@ -10405,11 +10375,11 @@ function fromByteArray (uint8) {
         return;
       }
 
-      if ($(this._element).hasClass(ClassName$5.FADE)) {
+      if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
         this._isTransitioning = true;
       }
 
-      var showEvent = $.Event(Event$5.SHOW, {
+      var showEvent = $.Event(EVENT_SHOW$2, {
         relatedTarget: relatedTarget
       });
       $(this._element).trigger(showEvent);
@@ -10430,11 +10400,11 @@ function fromByteArray (uint8) {
 
       this._setResizeEvent();
 
-      $(this._element).on(Event$5.CLICK_DISMISS, Selector$5.DATA_DISMISS, function (event) {
+      $(this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
         return _this.hide(event);
       });
-      $(this._dialog).on(Event$5.MOUSEDOWN_DISMISS, function () {
-        $(_this._element).one(Event$5.MOUSEUP_DISMISS, function (event) {
+      $(this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
+        $(_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
           if ($(event.target).is(_this._element)) {
             _this._ignoreBackdropClick = true;
           }
@@ -10457,7 +10427,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var hideEvent = $.Event(Event$5.HIDE);
+      var hideEvent = $.Event(EVENT_HIDE$2);
       $(this._element).trigger(hideEvent);
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
@@ -10465,7 +10435,7 @@ function fromByteArray (uint8) {
       }
 
       this._isShown = false;
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
 
       if (transition) {
         this._isTransitioning = true;
@@ -10475,10 +10445,10 @@ function fromByteArray (uint8) {
 
       this._setResizeEvent();
 
-      $(document).off(Event$5.FOCUSIN);
-      $(this._element).removeClass(ClassName$5.SHOW);
-      $(this._element).off(Event$5.CLICK_DISMISS);
-      $(this._dialog).off(Event$5.MOUSEDOWN_DISMISS);
+      $(document).off(EVENT_FOCUSIN);
+      $(this._element).removeClass(CLASS_NAME_SHOW$3);
+      $(this._element).off(EVENT_CLICK_DISMISS);
+      $(this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
 
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -10495,12 +10465,12 @@ function fromByteArray (uint8) {
         return $(htmlElement).off(EVENT_KEY$5);
       });
       /**
-       * `document` has 2 events `Event.FOCUSIN` and `Event.CLICK_DATA_API`
+       * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
        * Do not move `document` in `htmlElements` array
-       * It will remove `Event.CLICK_DATA_API` event that should remain
+       * It will remove `EVENT_CLICK_DATA_API` event that should remain
        */
 
-      $(document).off(Event$5.FOCUSIN);
+      $(document).off(EVENT_FOCUSIN);
       $.removeData(this._element, DATA_KEY$5);
       this._config = null;
       this._element = null;
@@ -10519,7 +10489,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$3, {}, config);
+      config = _extends({}, Default$3, config);
       Util.typeCheckConfig(NAME$5, config, DefaultType$3);
       return config;
     };
@@ -10528,18 +10498,31 @@ function fromByteArray (uint8) {
       var _this3 = this;
 
       if (this._config.backdrop === 'static') {
-        var hideEventPrevented = $.Event(Event$5.HIDE_PREVENTED);
+        var hideEventPrevented = $.Event(EVENT_HIDE_PREVENTED);
         $(this._element).trigger(hideEventPrevented);
 
         if (hideEventPrevented.defaultPrevented) {
           return;
         }
 
-        this._element.classList.add(ClassName$5.STATIC);
+        var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
-        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+        if (!isModalOverflowing) {
+          this._element.style.overflowY = 'hidden';
+        }
+
+        this._element.classList.add(CLASS_NAME_STATIC);
+
+        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        $(this._element).off(Util.TRANSITION_END);
         $(this._element).one(Util.TRANSITION_END, function () {
-          _this3._element.classList.remove(ClassName$5.STATIC);
+          _this3._element.classList.remove(CLASS_NAME_STATIC);
+
+          if (!isModalOverflowing) {
+            $(_this3._element).one(Util.TRANSITION_END, function () {
+              _this3._element.style.overflowY = '';
+            }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
+          }
         }).emulateTransitionEnd(modalTransitionDuration);
 
         this._element.focus();
@@ -10551,8 +10534,8 @@ function fromByteArray (uint8) {
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
 
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
-      var modalBody = this._dialog ? this._dialog.querySelector(Selector$5.MODAL_BODY) : null;
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+      var modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -10565,7 +10548,9 @@ function fromByteArray (uint8) {
 
       this._element.setAttribute('aria-modal', true);
 
-      if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE) && modalBody) {
+      this._element.setAttribute('role', 'dialog');
+
+      if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
         modalBody.scrollTop = 0;
       } else {
         this._element.scrollTop = 0;
@@ -10575,13 +10560,13 @@ function fromByteArray (uint8) {
         Util.reflow(this._element);
       }
 
-      $(this._element).addClass(ClassName$5.SHOW);
+      $(this._element).addClass(CLASS_NAME_SHOW$3);
 
       if (this._config.focus) {
         this._enforceFocus();
       }
 
-      var shownEvent = $.Event(Event$5.SHOWN, {
+      var shownEvent = $.Event(EVENT_SHOWN$2, {
         relatedTarget: relatedTarget
       });
 
@@ -10605,8 +10590,8 @@ function fromByteArray (uint8) {
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
 
-      $(document).off(Event$5.FOCUSIN) // Guard against infinite focus loop
-      .on(Event$5.FOCUSIN, function (event) {
+      $(document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
+      .on(EVENT_FOCUSIN, function (event) {
         if (document !== event.target && _this5._element !== event.target && $(_this5._element).has(event.target).length === 0) {
           _this5._element.focus();
         }
@@ -10616,14 +10601,18 @@ function fromByteArray (uint8) {
     _proto._setEscapeEvent = function _setEscapeEvent() {
       var _this6 = this;
 
-      if (this._isShown && this._config.keyboard) {
-        $(this._element).on(Event$5.KEYDOWN_DISMISS, function (event) {
-          if (event.which === ESCAPE_KEYCODE$1) {
+      if (this._isShown) {
+        $(this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
+          if (_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
+            event.preventDefault();
+
+            _this6.hide();
+          } else if (!_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
             _this6._triggerBackdropTransition();
           }
         });
       } else if (!this._isShown) {
-        $(this._element).off(Event$5.KEYDOWN_DISMISS);
+        $(this._element).off(EVENT_KEYDOWN_DISMISS);
       }
     };
 
@@ -10631,11 +10620,11 @@ function fromByteArray (uint8) {
       var _this7 = this;
 
       if (this._isShown) {
-        $(window).on(Event$5.RESIZE, function (event) {
+        $(window).on(EVENT_RESIZE, function (event) {
           return _this7.handleUpdate(event);
         });
       } else {
-        $(window).off(Event$5.RESIZE);
+        $(window).off(EVENT_RESIZE);
       }
     };
 
@@ -10648,16 +10637,18 @@ function fromByteArray (uint8) {
 
       this._element.removeAttribute('aria-modal');
 
+      this._element.removeAttribute('role');
+
       this._isTransitioning = false;
 
       this._showBackdrop(function () {
-        $(document.body).removeClass(ClassName$5.OPEN);
+        $(document.body).removeClass(CLASS_NAME_OPEN);
 
         _this8._resetAdjustments();
 
         _this8._resetScrollbar();
 
-        $(_this8._element).trigger(Event$5.HIDDEN);
+        $(_this8._element).trigger(EVENT_HIDDEN$2);
       });
     };
 
@@ -10671,18 +10662,18 @@ function fromByteArray (uint8) {
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
 
-      var animate = $(this._element).hasClass(ClassName$5.FADE) ? ClassName$5.FADE : '';
+      var animate = $(this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
-        this._backdrop.className = ClassName$5.BACKDROP;
+        this._backdrop.className = CLASS_NAME_BACKDROP;
 
         if (animate) {
           this._backdrop.classList.add(animate);
         }
 
         $(this._backdrop).appendTo(document.body);
-        $(this._element).on(Event$5.CLICK_DISMISS, function (event) {
+        $(this._element).on(EVENT_CLICK_DISMISS, function (event) {
           if (_this9._ignoreBackdropClick) {
             _this9._ignoreBackdropClick = false;
             return;
@@ -10699,7 +10690,7 @@ function fromByteArray (uint8) {
           Util.reflow(this._backdrop);
         }
 
-        $(this._backdrop).addClass(ClassName$5.SHOW);
+        $(this._backdrop).addClass(CLASS_NAME_SHOW$3);
 
         if (!callback) {
           return;
@@ -10713,7 +10704,7 @@ function fromByteArray (uint8) {
         var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
         $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
-        $(this._backdrop).removeClass(ClassName$5.SHOW);
+        $(this._backdrop).removeClass(CLASS_NAME_SHOW$3);
 
         var callbackRemove = function callbackRemove() {
           _this9._removeBackdrop();
@@ -10723,7 +10714,7 @@ function fromByteArray (uint8) {
           }
         };
 
-        if ($(this._element).hasClass(ClassName$5.FADE)) {
+        if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
           var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
           $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
@@ -10758,7 +10749,7 @@ function fromByteArray (uint8) {
 
     _proto._checkScrollbar = function _checkScrollbar() {
       var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+      this._isBodyOverflowing = Math.round(rect.left + rect.right) < window.innerWidth;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
@@ -10768,8 +10759,8 @@ function fromByteArray (uint8) {
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
-        var stickyContent = [].slice.call(document.querySelectorAll(Selector$5.STICKY_CONTENT)); // Adjust fixed content padding
+        var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
+        var stickyContent = [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)); // Adjust fixed content padding
 
         $(fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
@@ -10788,19 +10779,19 @@ function fromByteArray (uint8) {
         $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
 
-      $(document.body).addClass(ClassName$5.OPEN);
+      $(document.body).addClass(CLASS_NAME_OPEN);
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
-      var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
+      var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
       $(fixedContent).each(function (index, element) {
         var padding = $(element).data('padding-right');
         $(element).removeData('padding-right');
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
-      var elements = [].slice.call(document.querySelectorAll("" + Selector$5.STICKY_CONTENT));
+      var elements = [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT));
       $(elements).each(function (index, element) {
         var margin = $(element).data('margin-right');
 
@@ -10817,7 +10808,7 @@ function fromByteArray (uint8) {
     _proto._getScrollbarWidth = function _getScrollbarWidth() {
       // thx d.walsh
       var scrollDiv = document.createElement('div');
-      scrollDiv.className = ClassName$5.SCROLLBAR_MEASURER;
+      scrollDiv.className = CLASS_NAME_SCROLLBAR_MEASURER;
       document.body.appendChild(scrollDiv);
       var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
@@ -10829,7 +10820,7 @@ function fromByteArray (uint8) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY$5);
 
-        var _config = _objectSpread2({}, Default$3, {}, $(this).data(), {}, typeof config === 'object' && config ? config : {});
+        var _config = _extends({}, Default$3, $(this).data(), typeof config === 'object' && config ? config : {});
 
         if (!data) {
           data = new Modal(this, _config);
@@ -10869,7 +10860,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
     var _this11 = this;
 
     var target;
@@ -10879,19 +10870,19 @@ function fromByteArray (uint8) {
       target = document.querySelector(selector);
     }
 
-    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
+    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $(target).data(), $(this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
-    var $target = $(target).one(Event$5.SHOW, function (showEvent) {
+    var $target = $(target).one(EVENT_SHOW$2, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
         // Only register focus restorer if modal will actually get shown
         return;
       }
 
-      $target.one(Event$5.HIDDEN, function () {
+      $target.one(EVENT_HIDDEN$2, function () {
         if ($(_this11).is(':visible')) {
           _this11.focus();
         }
@@ -10916,8 +10907,8 @@ function fromByteArray (uint8) {
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Bootstrap (v4.5.2): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
@@ -10941,7 +10932,7 @@ function fromByteArray (uint8) {
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -10961,14 +10952,14 @@ function fromByteArray (uint8) {
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi;
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
 
   function allowedAttribute(attr, allowedAttributeList) {
     var attrName = attr.nodeName.toLowerCase();
@@ -10985,7 +10976,7 @@ function fromByteArray (uint8) {
       return attrRegex instanceof RegExp;
     }); // Check if a regular expression validates the attribute.
 
-    for (var i = 0, l = regExp.length; i < l; i++) {
+    for (var i = 0, len = regExp.length; i < len; i++) {
       if (attrName.match(regExp[i])) {
         return true;
       }
@@ -11042,7 +11033,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.4.1';
+  var VERSION$6 = '4.5.2';
   var DATA_KEY$6 = 'bs.tooltip';
   var EVENT_KEY$6 = "." + DATA_KEY$6;
   var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
@@ -11067,7 +11058,7 @@ function fromByteArray (uint8) {
     whiteList: 'object',
     popperConfig: '(null|object)'
   };
-  var AttachmentMap$1 = {
+  var AttachmentMap = {
     AUTO: 'auto',
     TOP: 'top',
     RIGHT: 'right',
@@ -11092,11 +11083,9 @@ function fromByteArray (uint8) {
     whiteList: DefaultWhitelist,
     popperConfig: null
   };
-  var HoverState = {
-    SHOW: 'show',
-    OUT: 'out'
-  };
-  var Event$6 = {
+  var HOVER_STATE_SHOW = 'show';
+  var HOVER_STATE_OUT = 'out';
+  var Event = {
     HIDE: "hide" + EVENT_KEY$6,
     HIDDEN: "hidden" + EVENT_KEY$6,
     SHOW: "show" + EVENT_KEY$6,
@@ -11108,30 +11097,21 @@ function fromByteArray (uint8) {
     MOUSEENTER: "mouseenter" + EVENT_KEY$6,
     MOUSELEAVE: "mouseleave" + EVENT_KEY$6
   };
-  var ClassName$6 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$6 = {
-    TOOLTIP: '.tooltip',
-    TOOLTIP_INNER: '.tooltip-inner',
-    ARROW: '.arrow'
-  };
-  var Trigger = {
-    HOVER: 'hover',
-    FOCUS: 'focus',
-    CLICK: 'click',
-    MANUAL: 'manual'
-  };
+  var CLASS_NAME_FADE$2 = 'fade';
+  var CLASS_NAME_SHOW$4 = 'show';
+  var SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
+  var SELECTOR_ARROW = '.arrow';
+  var TRIGGER_HOVER = 'hover';
+  var TRIGGER_FOCUS = 'focus';
+  var TRIGGER_CLICK = 'click';
+  var TRIGGER_MANUAL = 'manual';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Tooltip =
-  /*#__PURE__*/
-  function () {
+  var Tooltip = /*#__PURE__*/function () {
     function Tooltip(element, config) {
       if (typeof Popper === 'undefined') {
         throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
@@ -11189,7 +11169,7 @@ function fromByteArray (uint8) {
           context._leave(null, context);
         }
       } else {
-        if ($(this.getTipElement()).hasClass(ClassName$6.SHOW)) {
+        if ($(this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
           this._leave(null, this);
 
           return;
@@ -11249,7 +11229,7 @@ function fromByteArray (uint8) {
         this.setContent();
 
         if (this.config.animation) {
-          $(tip).addClass(ClassName$6.FADE);
+          $(tip).addClass(CLASS_NAME_FADE$2);
         }
 
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
@@ -11268,7 +11248,7 @@ function fromByteArray (uint8) {
 
         $(this.element).trigger(this.constructor.Event.INSERTED);
         this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
-        $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
+        $(tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
@@ -11286,12 +11266,12 @@ function fromByteArray (uint8) {
           _this._hoverState = null;
           $(_this.element).trigger(_this.constructor.Event.SHOWN);
 
-          if (prevHoverState === HoverState.OUT) {
+          if (prevHoverState === HOVER_STATE_OUT) {
             _this._leave(null, _this);
           }
         };
 
-        if ($(this.tip).hasClass(ClassName$6.FADE)) {
+        if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
           var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
           $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
         } else {
@@ -11307,7 +11287,7 @@ function fromByteArray (uint8) {
       var hideEvent = $.Event(this.constructor.Event.HIDE);
 
       var complete = function complete() {
-        if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
+        if (_this2._hoverState !== HOVER_STATE_SHOW && tip.parentNode) {
           tip.parentNode.removeChild(tip);
         }
 
@@ -11332,18 +11312,18 @@ function fromByteArray (uint8) {
         return;
       }
 
-      $(tip).removeClass(ClassName$6.SHOW); // If this is a touch-enabled device we remove the extra
+      $(tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ('ontouchstart' in document.documentElement) {
         $(document.body).children().off('mouseover', null, $.noop);
       }
 
-      this._activeTrigger[Trigger.CLICK] = false;
-      this._activeTrigger[Trigger.FOCUS] = false;
-      this._activeTrigger[Trigger.HOVER] = false;
+      this._activeTrigger[TRIGGER_CLICK] = false;
+      this._activeTrigger[TRIGGER_FOCUS] = false;
+      this._activeTrigger[TRIGGER_HOVER] = false;
 
-      if ($(this.tip).hasClass(ClassName$6.FADE)) {
+      if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
         var transitionDuration = Util.getTransitionDurationFromElement(tip);
         $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
@@ -11375,8 +11355,8 @@ function fromByteArray (uint8) {
 
     _proto.setContent = function setContent() {
       var tip = this.getTipElement();
-      this.setElementContent($(tip.querySelectorAll(Selector$6.TOOLTIP_INNER)), this.getTitle());
-      $(tip).removeClass(ClassName$6.FADE + " " + ClassName$6.SHOW);
+      this.setElementContent($(tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
+      $(tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
@@ -11426,7 +11406,7 @@ function fromByteArray (uint8) {
             behavior: this.config.fallbackPlacement
           },
           arrow: {
-            element: Selector$6.ARROW
+            element: SELECTOR_ARROW
           },
           preventOverflow: {
             boundariesElement: this.config.boundary
@@ -11441,7 +11421,7 @@ function fromByteArray (uint8) {
           return _this3._handlePopperPlacementChange(data);
         }
       };
-      return _objectSpread2({}, defaultBsConfig, {}, this.config.popperConfig);
+      return _extends({}, defaultBsConfig, this.config.popperConfig);
     };
 
     _proto._getOffset = function _getOffset() {
@@ -11451,7 +11431,7 @@ function fromByteArray (uint8) {
 
       if (typeof this.config.offset === 'function') {
         offset.fn = function (data) {
-          data.offsets = _objectSpread2({}, data.offsets, {}, _this4.config.offset(data.offsets, _this4.element) || {});
+          data.offsets = _extends({}, data.offsets, _this4.config.offset(data.offsets, _this4.element) || {});
           return data;
         };
       } else {
@@ -11474,7 +11454,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
-      return AttachmentMap$1[placement.toUpperCase()];
+      return AttachmentMap[placement.toUpperCase()];
     };
 
     _proto._setListeners = function _setListeners() {
@@ -11486,9 +11466,9 @@ function fromByteArray (uint8) {
           $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
             return _this5.toggle(event);
           });
-        } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+        } else if (trigger !== TRIGGER_MANUAL) {
+          var eventIn = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
+          var eventOut = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
           $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
             return _this5._enter(event);
           }).on(eventOut, _this5.config.selector, function (event) {
@@ -11506,7 +11486,7 @@ function fromByteArray (uint8) {
       $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
 
       if (this.config.selector) {
-        this.config = _objectSpread2({}, this.config, {
+        this.config = _extends({}, this.config, {
           trigger: 'manual',
           selector: ''
         });
@@ -11534,16 +11514,16 @@ function fromByteArray (uint8) {
       }
 
       if (event) {
-        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
+        context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
       }
 
-      if ($(context.getTipElement()).hasClass(ClassName$6.SHOW) || context._hoverState === HoverState.SHOW) {
-        context._hoverState = HoverState.SHOW;
+      if ($(context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
+        context._hoverState = HOVER_STATE_SHOW;
         return;
       }
 
       clearTimeout(context._timeout);
-      context._hoverState = HoverState.SHOW;
+      context._hoverState = HOVER_STATE_SHOW;
 
       if (!context.config.delay || !context.config.delay.show) {
         context.show();
@@ -11551,7 +11531,7 @@ function fromByteArray (uint8) {
       }
 
       context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.SHOW) {
+        if (context._hoverState === HOVER_STATE_SHOW) {
           context.show();
         }
       }, context.config.delay.show);
@@ -11567,7 +11547,7 @@ function fromByteArray (uint8) {
       }
 
       if (event) {
-        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
+        context._activeTrigger[event.type === 'focusout' ? TRIGGER_FOCUS : TRIGGER_HOVER] = false;
       }
 
       if (context._isWithActiveTrigger()) {
@@ -11575,7 +11555,7 @@ function fromByteArray (uint8) {
       }
 
       clearTimeout(context._timeout);
-      context._hoverState = HoverState.OUT;
+      context._hoverState = HOVER_STATE_OUT;
 
       if (!context.config.delay || !context.config.delay.hide) {
         context.hide();
@@ -11583,7 +11563,7 @@ function fromByteArray (uint8) {
       }
 
       context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.OUT) {
+        if (context._hoverState === HOVER_STATE_OUT) {
           context.hide();
         }
       }, context.config.delay.hide);
@@ -11606,7 +11586,7 @@ function fromByteArray (uint8) {
           delete dataAttributes[dataAttr];
         }
       });
-      config = _objectSpread2({}, this.constructor.Default, {}, dataAttributes, {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
 
       if (typeof config.delay === 'number') {
         config.delay = {
@@ -11656,8 +11636,7 @@ function fromByteArray (uint8) {
     };
 
     _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      var popperInstance = popperData.instance;
-      this.tip = popperInstance.popper;
+      this.tip = popperData.instance.popper;
 
       this._cleanTipClass();
 
@@ -11672,7 +11651,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      $(tip).removeClass(ClassName$6.FADE);
+      $(tip).removeClass(CLASS_NAME_FADE$2);
       this.config.animation = false;
       this.hide();
       this.show();
@@ -11728,7 +11707,7 @@ function fromByteArray (uint8) {
     }, {
       key: "Event",
       get: function get() {
-        return Event$6;
+        return Event;
       }
     }, {
       key: "EVENT_KEY",
@@ -11766,33 +11745,29 @@ function fromByteArray (uint8) {
    */
 
   var NAME$7 = 'popover';
-  var VERSION$7 = '4.4.1';
+  var VERSION$7 = '4.5.2';
   var DATA_KEY$7 = 'bs.popover';
   var EVENT_KEY$7 = "." + DATA_KEY$7;
   var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
   var CLASS_PREFIX$1 = 'bs-popover';
   var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
 
-  var Default$5 = _objectSpread2({}, Tooltip.Default, {
+  var Default$5 = _extends({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
   });
 
-  var DefaultType$5 = _objectSpread2({}, Tooltip.DefaultType, {
+  var DefaultType$5 = _extends({}, Tooltip.DefaultType, {
     content: '(string|element|function)'
   });
 
-  var ClassName$7 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$7 = {
-    TITLE: '.popover-header',
-    CONTENT: '.popover-body'
-  };
-  var Event$7 = {
+  var CLASS_NAME_FADE$3 = 'fade';
+  var CLASS_NAME_SHOW$5 = 'show';
+  var SELECTOR_TITLE = '.popover-header';
+  var SELECTOR_CONTENT = '.popover-body';
+  var Event$1 = {
     HIDE: "hide" + EVENT_KEY$7,
     HIDDEN: "hidden" + EVENT_KEY$7,
     SHOW: "show" + EVENT_KEY$7,
@@ -11810,9 +11785,7 @@ function fromByteArray (uint8) {
    * ------------------------------------------------------------------------
    */
 
-  var Popover =
-  /*#__PURE__*/
-  function (_Tooltip) {
+  var Popover = /*#__PURE__*/function (_Tooltip) {
     _inheritsLoose(Popover, _Tooltip);
 
     function Popover() {
@@ -11838,7 +11811,7 @@ function fromByteArray (uint8) {
     _proto.setContent = function setContent() {
       var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
 
-      this.setElementContent($tip.find(Selector$7.TITLE), this.getTitle());
+      this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
 
       var content = this._getContent();
 
@@ -11846,8 +11819,8 @@ function fromByteArray (uint8) {
         content = content.call(this.element);
       }
 
-      this.setElementContent($tip.find(Selector$7.CONTENT), content);
-      $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
+      this.setElementContent($tip.find(SELECTOR_CONTENT), content);
+      $tip.removeClass(CLASS_NAME_FADE$3 + " " + CLASS_NAME_SHOW$5);
     } // Private
     ;
 
@@ -11914,7 +11887,7 @@ function fromByteArray (uint8) {
     }, {
       key: "Event",
       get: function get() {
-        return Event$7;
+        return Event$1;
       }
     }, {
       key: "EVENT_KEY",
@@ -11952,7 +11925,7 @@ function fromByteArray (uint8) {
    */
 
   var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.4.1';
+  var VERSION$8 = '4.5.2';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
@@ -11967,52 +11940,40 @@ function fromByteArray (uint8) {
     method: 'string',
     target: '(string|element)'
   };
-  var Event$8 = {
-    ACTIVATE: "activate" + EVENT_KEY$8,
-    SCROLL: "scroll" + EVENT_KEY$8,
-    LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
-  };
-  var ClassName$8 = {
-    DROPDOWN_ITEM: 'dropdown-item',
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active'
-  };
-  var Selector$8 = {
-    DATA_SPY: '[data-spy="scroll"]',
-    ACTIVE: '.active',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    NAV_LINKS: '.nav-link',
-    NAV_ITEMS: '.nav-item',
-    LIST_ITEMS: '.list-group-item',
-    DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
-    DROPDOWN_TOGGLE: '.dropdown-toggle'
-  };
-  var OffsetMethod = {
-    OFFSET: 'offset',
-    POSITION: 'position'
-  };
+  var EVENT_ACTIVATE = "activate" + EVENT_KEY$8;
+  var EVENT_SCROLL = "scroll" + EVENT_KEY$8;
+  var EVENT_LOAD_DATA_API$2 = "load" + EVENT_KEY$8 + DATA_API_KEY$6;
+  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
+  var CLASS_NAME_ACTIVE$2 = 'active';
+  var SELECTOR_DATA_SPY = '[data-spy="scroll"]';
+  var SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
+  var SELECTOR_NAV_LINKS = '.nav-link';
+  var SELECTOR_NAV_ITEMS = '.nav-item';
+  var SELECTOR_LIST_ITEMS = '.list-group-item';
+  var SELECTOR_DROPDOWN = '.dropdown';
+  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
+  var SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
+  var METHOD_OFFSET = 'offset';
+  var METHOD_POSITION = 'position';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var ScrollSpy =
-  /*#__PURE__*/
-  function () {
+  var ScrollSpy = /*#__PURE__*/function () {
     function ScrollSpy(element, config) {
       var _this = this;
 
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.DROPDOWN_ITEMS);
+      this._selector = this._config.target + " " + SELECTOR_NAV_LINKS + "," + (this._config.target + " " + SELECTOR_LIST_ITEMS + ",") + (this._config.target + " " + SELECTOR_DROPDOWN_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
-      $(this._scrollElement).on(Event$8.SCROLL, function (event) {
+      $(this._scrollElement).on(EVENT_SCROLL, function (event) {
         return _this._process(event);
       });
       this.refresh();
@@ -12027,9 +11988,9 @@ function fromByteArray (uint8) {
     _proto.refresh = function refresh() {
       var _this2 = this;
 
-      var autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
+      var autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
       var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
+      var offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollTop() : 0;
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
@@ -12078,9 +12039,9 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$6, {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
 
-      if (typeof config.target !== 'string') {
+      if (typeof config.target !== 'string' && Util.isElement(config.target)) {
         var id = $(config.target).attr('id');
 
         if (!id) {
@@ -12136,9 +12097,7 @@ function fromByteArray (uint8) {
         return;
       }
 
-      var offsetLength = this._offsets.length;
-
-      for (var i = offsetLength; i--;) {
+      for (var i = this._offsets.length; i--;) {
         var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
         if (isActiveTarget) {
@@ -12158,29 +12117,29 @@ function fromByteArray (uint8) {
 
       var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
 
-      if ($link.hasClass(ClassName$8.DROPDOWN_ITEM)) {
-        $link.closest(Selector$8.DROPDOWN).find(Selector$8.DROPDOWN_TOGGLE).addClass(ClassName$8.ACTIVE);
-        $link.addClass(ClassName$8.ACTIVE);
+      if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
+        $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
+        $link.addClass(CLASS_NAME_ACTIVE$2);
       } else {
         // Set triggered link as active
-        $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
+        $link.addClass(CLASS_NAME_ACTIVE$2); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE$2); // Handle special case when .nav-link is inside .nav-item
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
       }
 
-      $(this._scrollElement).trigger(Event$8.ACTIVATE, {
+      $(this._scrollElement).trigger(EVENT_ACTIVATE, {
         relatedTarget: target
       });
     };
 
     _proto._clear = function _clear() {
       [].slice.call(document.querySelectorAll(this._selector)).filter(function (node) {
-        return node.classList.contains(ClassName$8.ACTIVE);
+        return node.classList.contains(CLASS_NAME_ACTIVE$2);
       }).forEach(function (node) {
-        return node.classList.remove(ClassName$8.ACTIVE);
+        return node.classList.remove(CLASS_NAME_ACTIVE$2);
       });
     } // Static
     ;
@@ -12227,8 +12186,8 @@ function fromByteArray (uint8) {
    */
 
 
-  $(window).on(Event$8.LOAD_DATA_API, function () {
-    var scrollSpys = [].slice.call(document.querySelectorAll(Selector$8.DATA_SPY));
+  $(window).on(EVENT_LOAD_DATA_API$2, function () {
+    var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     var scrollSpysLength = scrollSpys.length;
 
     for (var i = scrollSpysLength; i--;) {
@@ -12258,43 +12217,35 @@ function fromByteArray (uint8) {
    */
 
   var NAME$9 = 'tab';
-  var VERSION$9 = '4.4.1';
+  var VERSION$9 = '4.5.2';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
   var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
-  var Event$9 = {
-    HIDE: "hide" + EVENT_KEY$9,
-    HIDDEN: "hidden" + EVENT_KEY$9,
-    SHOW: "show" + EVENT_KEY$9,
-    SHOWN: "shown" + EVENT_KEY$9,
-    CLICK_DATA_API: "click" + EVENT_KEY$9 + DATA_API_KEY$7
-  };
-  var ClassName$9 = {
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active',
-    DISABLED: 'disabled',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$9 = {
-    DROPDOWN: '.dropdown',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    ACTIVE: '.active',
-    ACTIVE_UL: '> li > .active',
-    DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-    DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
-  };
+  var EVENT_HIDE$3 = "hide" + EVENT_KEY$9;
+  var EVENT_HIDDEN$3 = "hidden" + EVENT_KEY$9;
+  var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
+  var EVENT_SHOWN$3 = "shown" + EVENT_KEY$9;
+  var EVENT_CLICK_DATA_API$6 = "click" + EVENT_KEY$9 + DATA_API_KEY$7;
+  var CLASS_NAME_DROPDOWN_MENU = 'dropdown-menu';
+  var CLASS_NAME_ACTIVE$3 = 'active';
+  var CLASS_NAME_DISABLED$1 = 'disabled';
+  var CLASS_NAME_FADE$4 = 'fade';
+  var CLASS_NAME_SHOW$6 = 'show';
+  var SELECTOR_DROPDOWN$1 = '.dropdown';
+  var SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
+  var SELECTOR_ACTIVE$2 = '.active';
+  var SELECTOR_ACTIVE_UL = '> li > .active';
+  var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
+  var SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
+  var SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Tab =
-  /*#__PURE__*/
-  function () {
+  var Tab = /*#__PURE__*/function () {
     function Tab(element) {
       this._element = element;
     } // Getters
@@ -12306,25 +12257,25 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName$9.ACTIVE) || $(this._element).hasClass(ClassName$9.DISABLED)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(CLASS_NAME_ACTIVE$3) || $(this._element).hasClass(CLASS_NAME_DISABLED$1)) {
         return;
       }
 
       var target;
       var previous;
-      var listElement = $(this._element).closest(Selector$9.NAV_LIST_GROUP)[0];
+      var listElement = $(this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
-        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector$9.ACTIVE_UL : Selector$9.ACTIVE;
+        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
         previous = $.makeArray($(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = $.Event(Event$9.HIDE, {
+      var hideEvent = $.Event(EVENT_HIDE$3, {
         relatedTarget: this._element
       });
-      var showEvent = $.Event(Event$9.SHOW, {
+      var showEvent = $.Event(EVENT_SHOW$3, {
         relatedTarget: previous
       });
 
@@ -12345,10 +12296,10 @@ function fromByteArray (uint8) {
       this._activate(this._element, listElement);
 
       var complete = function complete() {
-        var hiddenEvent = $.Event(Event$9.HIDDEN, {
+        var hiddenEvent = $.Event(EVENT_HIDDEN$3, {
           relatedTarget: _this._element
         });
-        var shownEvent = $.Event(Event$9.SHOWN, {
+        var shownEvent = $.Event(EVENT_SHOWN$3, {
           relatedTarget: previous
         });
         $(previous).trigger(hiddenEvent);
@@ -12371,9 +12322,9 @@ function fromByteArray (uint8) {
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector$9.ACTIVE_UL) : $(container).children(Selector$9.ACTIVE);
+      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(SELECTOR_ACTIVE_UL) : $(container).children(SELECTOR_ACTIVE$2);
       var active = activeElements[0];
-      var isTransitioning = callback && active && $(active).hasClass(ClassName$9.FADE);
+      var isTransitioning = callback && active && $(active).hasClass(CLASS_NAME_FADE$4);
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
@@ -12381,7 +12332,7 @@ function fromByteArray (uint8) {
 
       if (active && isTransitioning) {
         var transitionDuration = Util.getTransitionDurationFromElement(active);
-        $(active).removeClass(ClassName$9.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+        $(active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -12389,11 +12340,11 @@ function fromByteArray (uint8) {
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
-        $(active).removeClass(ClassName$9.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector$9.DROPDOWN_ACTIVE_CHILD)[0];
+        $(active).removeClass(CLASS_NAME_ACTIVE$3);
+        var dropdownChild = $(active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName$9.ACTIVE);
+          $(dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -12401,7 +12352,7 @@ function fromByteArray (uint8) {
         }
       }
 
-      $(element).addClass(ClassName$9.ACTIVE);
+      $(element).addClass(CLASS_NAME_ACTIVE$3);
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
@@ -12409,16 +12360,16 @@ function fromByteArray (uint8) {
 
       Util.reflow(element);
 
-      if (element.classList.contains(ClassName$9.FADE)) {
-        element.classList.add(ClassName$9.SHOW);
+      if (element.classList.contains(CLASS_NAME_FADE$4)) {
+        element.classList.add(CLASS_NAME_SHOW$6);
       }
 
-      if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
+      if (element.parentNode && $(element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
+        var dropdownElement = $(element).closest(SELECTOR_DROPDOWN$1)[0];
 
         if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector$9.DROPDOWN_TOGGLE));
-          $(dropdownToggleList).addClass(ClassName$9.ACTIVE);
+          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
+          $(dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -12466,7 +12417,7 @@ function fromByteArray (uint8) {
    */
 
 
-  $(document).on(Event$9.CLICK_DATA_API, Selector$9.DATA_TOGGLE, function (event) {
+  $(document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
     event.preventDefault();
 
     Tab._jQueryInterface.call($(this), 'show');
@@ -12492,23 +12443,19 @@ function fromByteArray (uint8) {
    */
 
   var NAME$a = 'toast';
-  var VERSION$a = '4.4.1';
+  var VERSION$a = '4.5.2';
   var DATA_KEY$a = 'bs.toast';
   var EVENT_KEY$a = "." + DATA_KEY$a;
   var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
-  var Event$a = {
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$a,
-    HIDE: "hide" + EVENT_KEY$a,
-    HIDDEN: "hidden" + EVENT_KEY$a,
-    SHOW: "show" + EVENT_KEY$a,
-    SHOWN: "shown" + EVENT_KEY$a
-  };
-  var ClassName$a = {
-    FADE: 'fade',
-    HIDE: 'hide',
-    SHOW: 'show',
-    SHOWING: 'showing'
-  };
+  var EVENT_CLICK_DISMISS$1 = "click.dismiss" + EVENT_KEY$a;
+  var EVENT_HIDE$4 = "hide" + EVENT_KEY$a;
+  var EVENT_HIDDEN$4 = "hidden" + EVENT_KEY$a;
+  var EVENT_SHOW$4 = "show" + EVENT_KEY$a;
+  var EVENT_SHOWN$4 = "shown" + EVENT_KEY$a;
+  var CLASS_NAME_FADE$5 = 'fade';
+  var CLASS_NAME_HIDE = 'hide';
+  var CLASS_NAME_SHOW$7 = 'show';
+  var CLASS_NAME_SHOWING = 'showing';
   var DefaultType$7 = {
     animation: 'boolean',
     autohide: 'boolean',
@@ -12519,18 +12466,14 @@ function fromByteArray (uint8) {
     autohide: true,
     delay: 500
   };
-  var Selector$a = {
-    DATA_DISMISS: '[data-dismiss="toast"]'
-  };
+  var SELECTOR_DATA_DISMISS$1 = '[data-dismiss="toast"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  var Toast =
-  /*#__PURE__*/
-  function () {
+  var Toast = /*#__PURE__*/function () {
     function Toast(element, config) {
       this._element = element;
       this._config = this._getConfig(config);
@@ -12546,23 +12489,25 @@ function fromByteArray (uint8) {
     _proto.show = function show() {
       var _this = this;
 
-      var showEvent = $.Event(Event$a.SHOW);
+      var showEvent = $.Event(EVENT_SHOW$4);
       $(this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
         return;
       }
 
+      this._clearTimeout();
+
       if (this._config.animation) {
-        this._element.classList.add(ClassName$a.FADE);
+        this._element.classList.add(CLASS_NAME_FADE$5);
       }
 
       var complete = function complete() {
-        _this._element.classList.remove(ClassName$a.SHOWING);
+        _this._element.classList.remove(CLASS_NAME_SHOWING);
 
-        _this._element.classList.add(ClassName$a.SHOW);
+        _this._element.classList.add(CLASS_NAME_SHOW$7);
 
-        $(_this._element).trigger(Event$a.SHOWN);
+        $(_this._element).trigger(EVENT_SHOWN$4);
 
         if (_this._config.autohide) {
           _this._timeout = setTimeout(function () {
@@ -12571,11 +12516,11 @@ function fromByteArray (uint8) {
         }
       };
 
-      this._element.classList.remove(ClassName$a.HIDE);
+      this._element.classList.remove(CLASS_NAME_HIDE);
 
       Util.reflow(this._element);
 
-      this._element.classList.add(ClassName$a.SHOWING);
+      this._element.classList.add(CLASS_NAME_SHOWING);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -12586,11 +12531,11 @@ function fromByteArray (uint8) {
     };
 
     _proto.hide = function hide() {
-      if (!this._element.classList.contains(ClassName$a.SHOW)) {
+      if (!this._element.classList.contains(CLASS_NAME_SHOW$7)) {
         return;
       }
 
-      var hideEvent = $.Event(Event$a.HIDE);
+      var hideEvent = $.Event(EVENT_HIDE$4);
       $(this._element).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
@@ -12601,14 +12546,13 @@ function fromByteArray (uint8) {
     };
 
     _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
+      this._clearTimeout();
 
-      if (this._element.classList.contains(ClassName$a.SHOW)) {
-        this._element.classList.remove(ClassName$a.SHOW);
+      if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
+        this._element.classList.remove(CLASS_NAME_SHOW$7);
       }
 
-      $(this._element).off(Event$a.CLICK_DISMISS);
+      $(this._element).off(EVENT_CLICK_DISMISS$1);
       $.removeData(this._element, DATA_KEY$a);
       this._element = null;
       this._config = null;
@@ -12616,7 +12560,7 @@ function fromByteArray (uint8) {
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread2({}, Default$7, {}, $(this._element).data(), {}, typeof config === 'object' && config ? config : {});
+      config = _extends({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
       Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
       return config;
     };
@@ -12624,7 +12568,7 @@ function fromByteArray (uint8) {
     _proto._setListeners = function _setListeners() {
       var _this2 = this;
 
-      $(this._element).on(Event$a.CLICK_DISMISS, Selector$a.DATA_DISMISS, function () {
+      $(this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
         return _this2.hide();
       });
     };
@@ -12633,12 +12577,12 @@ function fromByteArray (uint8) {
       var _this3 = this;
 
       var complete = function complete() {
-        _this3._element.classList.add(ClassName$a.HIDE);
+        _this3._element.classList.add(CLASS_NAME_HIDE);
 
-        $(_this3._element).trigger(Event$a.HIDDEN);
+        $(_this3._element).trigger(EVENT_HIDDEN$4);
       };
 
-      this._element.classList.remove(ClassName$a.SHOW);
+      this._element.classList.remove(CLASS_NAME_SHOW$7);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -12646,6 +12590,11 @@ function fromByteArray (uint8) {
       } else {
         complete();
       }
+    };
+
+    _proto._clearTimeout = function _clearTimeout() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
     } // Static
     ;
 
@@ -14528,19 +14477,19 @@ function isnan (val) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/sass/fake.scss":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/sass/fake.scss ***!
+  \*********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.centrar[data-v-3fba7148] {\r\n  align-content: center;\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -14753,7 +14702,7 @@ module.exports = Array.isArray || function (arr) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.5.0
+ * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -14763,7 +14712,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2020-04-10T15:07Z
+ * Date: 2020-05-04T22:49Z
  */
 ( function( global, factory ) {
 
@@ -14901,7 +14850,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.5.0",
+	version = "3.5.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -18998,7 +18947,7 @@ Data.prototype = {
 
 		// If not, create one
 		if ( !value ) {
-			value = Object.create( null );
+			value = {};
 
 			// We can accept data for non-element nodes in modern browsers,
 			// but we should not, see #8335.
@@ -25848,7 +25797,7 @@ var Channel = /*#__PURE__*/function () {
       return this.listen('.Illuminate\\Notifications\\Events\\BroadcastNotificationCreated', callback);
     }
     /**
-     * Stop listening for a whispser event on the channel instance.
+     * Stop listening for a whisper event on the channel instance.
      */
 
   }, {
@@ -25967,6 +25916,18 @@ var PusherChannel = /*#__PURE__*/function (_Channel) {
     key: "stopListening",
     value: function stopListening(event) {
       this.subscription.unbind(this.eventFormatter.format(event));
+      return this;
+    }
+    /**
+     * Register a callback to be called anytime a subscription error occurs.
+     */
+
+  }, {
+    key: "error",
+    value: function error(callback) {
+      this.on('pusher:subscription_error', function (status) {
+        callback(status);
+      });
       return this;
     }
     /**
@@ -26195,6 +26156,15 @@ var SocketIoChannel = /*#__PURE__*/function (_Channel) {
       return this;
     }
     /**
+     * Register a callback to be called anytime an error occurs.
+     */
+
+  }, {
+    key: "error",
+    value: function error(callback) {
+      return this;
+    }
+    /**
      * Bind the channel's socket to an event and store the callback.
      */
 
@@ -26399,6 +26369,15 @@ var NullChannel = /*#__PURE__*/function (_Channel) {
   }, {
     key: "stopListening",
     value: function stopListening(event) {
+      return this;
+    }
+    /**
+     * Register a callback to be called anytime an error occurs.
+     */
+
+  }, {
+    key: "error",
+    value: function error(callback) {
       return this;
     }
     /**
@@ -27118,7 +27097,7 @@ var Echo = /*#__PURE__*/function () {
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.19';
+  var VERSION = '4.17.20';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -42694,7 +42673,7 @@ var Echo = /*#__PURE__*/function () {
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
      *
      * // Checking for several possible values
-     * _.filter(users, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * _.filter(objects, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
@@ -42731,7 +42710,7 @@ var Echo = /*#__PURE__*/function () {
      * // => { 'a': 4, 'b': 5, 'c': 6 }
      *
      * // Checking for several possible values
-     * _.filter(users, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * _.filter(objects, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
@@ -44273,7 +44252,7 @@ var Echo = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -44619,7 +44598,7 @@ function getBordersSize(styles, axis) {
   var sideA = axis === 'x' ? 'Left' : 'Top';
   var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+  return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
 }
 
 function getSize(axis, body, html, computedStyle) {
@@ -44774,8 +44753,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   var scrollParent = getScrollParent(children);
 
   var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+  var borderTopWidth = parseFloat(styles.borderTopWidth);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
   // In cases where the parent is fixed, we must ignore negative scroll in offset calc
   if (fixedPosition && isHTML) {
@@ -44796,8 +44775,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
+    var marginTop = parseFloat(styles.marginTop);
+    var marginLeft = parseFloat(styles.marginLeft);
 
     offsets.top -= borderTopWidth - marginTop;
     offsets.bottom -= borderTopWidth - marginTop;
@@ -45736,8 +45715,8 @@ function arrow(data, options) {
   // Compute the sideValue using the updated popper offsets
   // take popper margin in account because we don't have this info available
   var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
   var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
   // prevent arrowElement from being placed not contiguously to its popper
@@ -53843,542 +53822,283 @@ runtime.setup(pusher_Pusher);
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
+"use strict";
 
 
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
 
-var options = {"hmr":true}
+    return memo;
+  };
+}();
 
-options.transform = transform
-options.insertInto = undefined;
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
 
-var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
 
-if(content.locals) module.exports = content.locals;
+      memo[target] = styleTarget;
+    }
 
-if(false) {}
+    return memo[target];
+  };
+}();
 
-/***/ }),
+var stylesInDom = [];
 
-/***/ "./node_modules/style-loader/lib/addStyles.js":
-/*!****************************************************!*\
-  !*** ./node_modules/style-loader/lib/addStyles.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+function getIndexByIdentifier(identifier) {
+  var result = -1;
 
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-
-var stylesInDom = {};
-
-var	memoize = function (fn) {
-	var memo;
-
-	return function () {
-		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-		return memo;
-	};
-};
-
-var isOldIE = memoize(function () {
-	// Test for IE <= 9 as proposed by Browserhacks
-	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-	// Tests for existence of standard globals is to allow style-loader
-	// to operate correctly into non-standard environments
-	// @see https://github.com/webpack-contrib/style-loader/issues/177
-	return window && document && document.all && !window.atob;
-});
-
-var getTarget = function (target, parent) {
-  if (parent){
-    return parent.querySelector(target);
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
   }
-  return document.querySelector(target);
-};
 
-var getElement = (function (fn) {
-	var memo = {};
+  return result;
+}
 
-	return function(target, parent) {
-                // If passing function in options, then use it for resolve "head" element.
-                // Useful for Shadow Root style i.e
-                // {
-                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
-                // }
-                if (typeof target === 'function') {
-                        return target();
-                }
-                if (typeof memo[target] === "undefined") {
-			var styleTarget = getTarget.call(this, target, parent);
-			// Special case to return head of iframe instead of iframe itself
-			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-				try {
-					// This will throw an exception if access to iframe is blocked
-					// due to cross-origin restrictions
-					styleTarget = styleTarget.contentDocument.head;
-				} catch(e) {
-					styleTarget = null;
-				}
-			}
-			memo[target] = styleTarget;
-		}
-		return memo[target]
-	};
-})();
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : undefined;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && btoa) {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
 
 var singleton = null;
-var	singletonCounter = 0;
-var	stylesInsertedAtTop = [];
-
-var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
-
-module.exports = function(list, options) {
-	if (typeof DEBUG !== "undefined" && DEBUG) {
-		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-	}
-
-	options = options || {};
-
-	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
-
-	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-	// tags it will allow on a page
-	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
-
-	// By default, add <style> tags to the <head> element
-        if (!options.insertInto) options.insertInto = "head";
-
-	// By default, add <style> tags to the bottom of the target
-	if (!options.insertAt) options.insertAt = "bottom";
-
-	var styles = listToStyles(list, options);
-
-	addStylesToDom(styles, options);
-
-	return function update (newList) {
-		var mayRemove = [];
-
-		for (var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-
-			domStyle.refs--;
-			mayRemove.push(domStyle);
-		}
-
-		if(newList) {
-			var newStyles = listToStyles(newList, options);
-			addStylesToDom(newStyles, options);
-		}
-
-		for (var i = 0; i < mayRemove.length; i++) {
-			var domStyle = mayRemove[i];
-
-			if(domStyle.refs === 0) {
-				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
-
-				delete stylesInDom[domStyle.id];
-			}
-		}
-	};
-};
-
-function addStylesToDom (styles, options) {
-	for (var i = 0; i < styles.length; i++) {
-		var item = styles[i];
-		var domStyle = stylesInDom[item.id];
-
-		if(domStyle) {
-			domStyle.refs++;
-
-			for(var j = 0; j < domStyle.parts.length; j++) {
-				domStyle.parts[j](item.parts[j]);
-			}
-
-			for(; j < item.parts.length; j++) {
-				domStyle.parts.push(addStyle(item.parts[j], options));
-			}
-		} else {
-			var parts = [];
-
-			for(var j = 0; j < item.parts.length; j++) {
-				parts.push(addStyle(item.parts[j], options));
-			}
-
-			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-		}
-	}
-}
-
-function listToStyles (list, options) {
-	var styles = [];
-	var newStyles = {};
-
-	for (var i = 0; i < list.length; i++) {
-		var item = list[i];
-		var id = options.base ? item[0] + options.base : item[0];
-		var css = item[1];
-		var media = item[2];
-		var sourceMap = item[3];
-		var part = {css: css, media: media, sourceMap: sourceMap};
-
-		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
-		else newStyles[id].parts.push(part);
-	}
-
-	return styles;
-}
-
-function insertStyleElement (options, style) {
-	var target = getElement(options.insertInto)
-
-	if (!target) {
-		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
-	}
-
-	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
-
-	if (options.insertAt === "top") {
-		if (!lastStyleElementInsertedAtTop) {
-			target.insertBefore(style, target.firstChild);
-		} else if (lastStyleElementInsertedAtTop.nextSibling) {
-			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
-		} else {
-			target.appendChild(style);
-		}
-		stylesInsertedAtTop.push(style);
-	} else if (options.insertAt === "bottom") {
-		target.appendChild(style);
-	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
-		var nextSibling = getElement(options.insertAt.before, target);
-		target.insertBefore(style, nextSibling);
-	} else {
-		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
-	}
-}
-
-function removeStyleElement (style) {
-	if (style.parentNode === null) return false;
-	style.parentNode.removeChild(style);
-
-	var idx = stylesInsertedAtTop.indexOf(style);
-	if(idx >= 0) {
-		stylesInsertedAtTop.splice(idx, 1);
-	}
-}
-
-function createStyleElement (options) {
-	var style = document.createElement("style");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-
-	if(options.attrs.nonce === undefined) {
-		var nonce = getNonce();
-		if (nonce) {
-			options.attrs.nonce = nonce;
-		}
-	}
-
-	addAttrs(style, options.attrs);
-	insertStyleElement(options, style);
-
-	return style;
-}
-
-function createLinkElement (options) {
-	var link = document.createElement("link");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-	options.attrs.rel = "stylesheet";
-
-	addAttrs(link, options.attrs);
-	insertStyleElement(options, link);
-
-	return link;
-}
-
-function addAttrs (el, attrs) {
-	Object.keys(attrs).forEach(function (key) {
-		el.setAttribute(key, attrs[key]);
-	});
-}
-
-function getNonce() {
-	if (false) {}
-
-	return __webpack_require__.nc;
-}
-
-function addStyle (obj, options) {
-	var style, update, remove, result;
-
-	// If a transform function was defined, run it on the css
-	if (options.transform && obj.css) {
-	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
-		 : options.transform.default(obj.css);
-
-	    if (result) {
-	    	// If transform returns a value, use that instead of the original css.
-	    	// This allows running runtime transformations on the css.
-	    	obj.css = result;
-	    } else {
-	    	// If the transform function returns a falsy value, don't add this css.
-	    	// This allows conditional loading of css
-	    	return function() {
-	    		// noop
-	    	};
-	    }
-	}
-
-	if (options.singleton) {
-		var styleIndex = singletonCounter++;
-
-		style = singleton || (singleton = createStyleElement(options));
-
-		update = applyToSingletonTag.bind(null, style, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-
-	} else if (
-		obj.sourceMap &&
-		typeof URL === "function" &&
-		typeof URL.createObjectURL === "function" &&
-		typeof URL.revokeObjectURL === "function" &&
-		typeof Blob === "function" &&
-		typeof btoa === "function"
-	) {
-		style = createLinkElement(options);
-		update = updateLink.bind(null, style, options);
-		remove = function () {
-			removeStyleElement(style);
-
-			if(style.href) URL.revokeObjectURL(style.href);
-		};
-	} else {
-		style = createStyleElement(options);
-		update = applyToTag.bind(null, style);
-		remove = function () {
-			removeStyleElement(style);
-		};
-	}
-
-	update(obj);
-
-	return function updateStyle (newObj) {
-		if (newObj) {
-			if (
-				newObj.css === obj.css &&
-				newObj.media === obj.media &&
-				newObj.sourceMap === obj.sourceMap
-			) {
-				return;
-			}
-
-			update(obj = newObj);
-		} else {
-			remove();
-		}
-	};
-}
-
-var replaceText = (function () {
-	var textStore = [];
-
-	return function (index, replacement) {
-		textStore[index] = replacement;
-
-		return textStore.filter(Boolean).join('\n');
-	};
-})();
-
-function applyToSingletonTag (style, index, remove, obj) {
-	var css = remove ? "" : obj.css;
-
-	if (style.styleSheet) {
-		style.styleSheet.cssText = replaceText(index, css);
-	} else {
-		var cssNode = document.createTextNode(css);
-		var childNodes = style.childNodes;
-
-		if (childNodes[index]) style.removeChild(childNodes[index]);
-
-		if (childNodes.length) {
-			style.insertBefore(cssNode, childNodes[index]);
-		} else {
-			style.appendChild(cssNode);
-		}
-	}
-}
-
-function applyToTag (style, obj) {
-	var css = obj.css;
-	var media = obj.media;
-
-	if(media) {
-		style.setAttribute("media", media)
-	}
-
-	if(style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		while(style.firstChild) {
-			style.removeChild(style.firstChild);
-		}
-
-		style.appendChild(document.createTextNode(css));
-	}
-}
-
-function updateLink (link, options, obj) {
-	var css = obj.css;
-	var sourceMap = obj.sourceMap;
-
-	/*
-		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
-		and there is no publicPath defined then lets turn convertToAbsoluteUrls
-		on by default.  Otherwise default to the convertToAbsoluteUrls option
-		directly
-	*/
-	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
-
-	if (options.convertToAbsoluteUrls || autoFixUrls) {
-		css = fixUrls(css);
-	}
-
-	if (sourceMap) {
-		// http://stackoverflow.com/a/26603875
-		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-	}
-
-	var blob = new Blob([css], { type: "text/css" });
-
-	var oldSrc = link.href;
-
-	link.href = URL.createObjectURL(blob);
-
-	if(oldSrc) URL.revokeObjectURL(oldSrc);
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/lib/urls.js":
-/*!***********************************************!*\
-  !*** ./node_modules/style-loader/lib/urls.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
   }
 
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
   }
 
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
 
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
 
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
 
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+    var newLastIdentifiers = modulesToDom(newList, options);
 
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
 
-		// convert the url to a full url
-		var newUrl;
+      var _index = getIndexByIdentifier(_identifier);
 
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
 
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
+        stylesInDom.splice(_index, 1);
+      }
+    }
 
-	// send back the fixed css
-	return fixedCss;
+    lastIdentifiers = newLastIdentifiers;
+  };
 };
-
 
 /***/ }),
 
@@ -59853,7 +59573,7 @@ exports.default = plugin;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,t){ true?module.exports=t():undefined}(window,function(){return function(n){var i={};function o(e){if(i[e])return i[e].exports;var t=i[e]={i:e,l:!1,exports:{}};return n[e].call(t.exports,t,t.exports,o),t.l=!0,t.exports}return o.m=n,o.c=i,o.d=function(e,t,n){o.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.t=function(t,e){if(1&e&&(t=o(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)o.d(n,i,function(e){return t[e]}.bind(null,i));return n},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,"a",t),t},o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},o.p="/dist/",o(o.s=11)}([function(e,t,n){var i=n(6);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("27d83796",i,!1,{})},function(e,t,n){var i=n(8);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("0e783494",i,!1,{})},function(e,t,n){var i=n(10);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("17757f60",i,!1,{})},function(e,t){e.exports=function(n){var a=[];return a.toString=function(){return this.map(function(e){var t=function(e,t){var n=e[1]||"",i=e[3];if(!i)return n;if(t&&"function"==typeof btoa){var o=(a=i,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */"),r=i.sources.map(function(e){return"/*# sourceURL="+i.sourceRoot+e+" */"});return[n].concat(r).concat([o]).join("\n")}var a;return[n].join("\n")}(e,n);return e[2]?"@media "+e[2]+"{"+t+"}":t}).join("")},a.i=function(e,t){"string"==typeof e&&(e=[[null,e,""]]);for(var n={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(n[o]=!0)}for(i=0;i<e.length;i++){var r=e[i];"number"==typeof r[0]&&n[r[0]]||(t&&!r[2]?r[2]=t:t&&(r[2]="("+r[2]+") and ("+t+")"),a.push(r))}},a}},function(e,t,n){"use strict";function l(e,t){for(var n=[],i={},o=0;o<t.length;o++){var r=t[o],a=r[0],s={id:e+":"+o,css:r[1],media:r[2],sourceMap:r[3]};i[a]?i[a].parts.push(s):n.push(i[a]={id:a,parts:[s]})}return n}n.r(t),n.d(t,"default",function(){return p});var i="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!i)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var u={},o=i&&(document.head||document.getElementsByTagName("head")[0]),r=null,a=0,d=!1,s=function(){},c=null,h="data-vue-ssr-id",f="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function p(a,e,t,n){d=t,c=n||{};var s=l(a,e);return m(s),function(e){for(var t=[],n=0;n<s.length;n++){var i=s[n];(o=u[i.id]).refs--,t.push(o)}e?m(s=l(a,e)):s=[];for(n=0;n<t.length;n++){var o;if(0===(o=t[n]).refs){for(var r=0;r<o.parts.length;r++)o.parts[r]();delete u[o.id]}}}}function m(e){for(var t=0;t<e.length;t++){var n=e[t],i=u[n.id];if(i){i.refs++;for(var o=0;o<i.parts.length;o++)i.parts[o](n.parts[o]);for(;o<n.parts.length;o++)i.parts.push(g(n.parts[o]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{var r=[];for(o=0;o<n.parts.length;o++)r.push(g(n.parts[o]));u[n.id]={id:n.id,refs:1,parts:r}}}}function v(){var e=document.createElement("style");return e.type="text/css",o.appendChild(e),e}function g(t){var n,i,e=document.querySelector("style["+h+'~="'+t.id+'"]');if(e){if(d)return s;e.parentNode.removeChild(e)}if(f){var o=a++;e=r||(r=v()),n=w.bind(null,e,o,!1),i=w.bind(null,e,o,!0)}else e=v(),n=function(e,t){var n=t.css,i=t.media,o=t.sourceMap;i&&e.setAttribute("media",i);c.ssrId&&e.setAttribute(h,t.id);o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");if(e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}.bind(null,e),i=function(){e.parentNode.removeChild(e)};return n(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;n(t=e)}else i()}}var b,y=(b=[],function(e,t){return b[e]=t,b.filter(Boolean).join("\n")});function w(e,t,n,i){var o=n?"":i.css;if(e.styleSheet)e.styleSheet.cssText=y(t,o);else{var r=document.createTextNode(o),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(r,a[t]):e.appendChild(r)}}},function(e,t,n){"use strict";var i=n(0);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.vue-modal-resizer {\n  display: block;\n  overflow: hidden;\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  right: 0;\n  bottom: 0;\n  z-index: 9999999;\n  background: transparent;\n  cursor: se-resize;\n}\n.vue-modal-resizer::after {\n  display: block;\n  position: absolute;\n  content: '';\n  background: transparent;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 10px solid #ddd;\n  border-left: 10px solid transparent;\n}\n.vue-modal-resizer.clicked::after {\n  border-bottom: 10px solid #369be9;\n}\n",""])},function(e,t,n){"use strict";var i=n(1);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.v--modal-block-scroll {\n  overflow: hidden;\n  width: 100vw;\n}\n.v--modal-overlay {\n  position: fixed;\n  box-sizing: border-box;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100vh;\n  background: rgba(0, 0, 0, 0.2);\n  z-index: 999;\n  opacity: 1;\n}\n.v--modal-overlay.scrollable {\n  height: 100%;\n  min-height: 100vh;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n}\n.v--modal-overlay .v--modal-background-click {\n  width: 100%;\n  min-height: 100%;\n  height: auto;\n}\n.v--modal-overlay .v--modal-box {\n  position: relative;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.v--modal-overlay.scrollable .v--modal-box {\n  margin-bottom: 2px;\n}\n.v--modal {\n  background-color: white;\n  text-align: left;\n  border-radius: 3px;\n  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);\n  padding: 0;\n}\n.v--modal.v--modal-fullscreen {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  left: 0;\n  top: 0;\n}\n.v--modal-top-right {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.overlay-fade-enter-active,\n.overlay-fade-leave-active {\n  transition: all 0.2s;\n}\n.overlay-fade-enter,\n.overlay-fade-leave-active {\n  opacity: 0;\n}\n.nice-modal-fade-enter-active,\n.nice-modal-fade-leave-active {\n  transition: all 0.4s;\n}\n.nice-modal-fade-enter,\n.nice-modal-fade-leave-active {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n",""])},function(e,t,n){"use strict";var i=n(2);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.vue-dialog div {\n  box-sizing: border-box;\n}\n.vue-dialog .dialog-flex {\n  width: 100%;\n  height: 100%;\n}\n.vue-dialog .dialog-content {\n  flex: 1 0 auto;\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n}\n.vue-dialog .dialog-c-title {\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n.vue-dialog .dialog-c-text {\n}\n.vue-dialog .vue-dialog-buttons {\n  display: flex;\n  flex: 0 1 auto;\n  width: 100%;\n  border-top: 1px solid #eee;\n}\n.vue-dialog .vue-dialog-buttons-none {\n  width: 100%;\n  padding-bottom: 15px;\n}\n.vue-dialog-button {\n  font-size: 12px !important;\n  background: transparent;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  cursor: pointer;\n  box-sizing: border-box;\n  line-height: 40px;\n  height: 40px;\n  color: inherit;\n  font: inherit;\n  outline: none;\n}\n.vue-dialog-button:hover {\n  background: rgba(0, 0, 0, 0.01);\n}\n.vue-dialog-button:active {\n  background: rgba(0, 0, 0, 0.025);\n}\n.vue-dialog-button:not(:first-of-type) {\n  border-left: 1px solid #eee;\n}\n",""])},function(e,t,n){"use strict";n.r(t);var i=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("transition",{attrs:{name:t.overlayTransition}},[t.visibility.overlay?n("div",{ref:"overlay",class:t.overlayClass,attrs:{"aria-expanded":t.visibility.overlay.toString(),"data-modal":t.name}},[n("div",{staticClass:"v--modal-background-click",on:{mousedown:function(e){return e.target!==e.currentTarget?null:t.handleBackgroundClick(e)},touchstart:function(e){return e.target!==e.currentTarget?null:t.handleBackgroundClick(e)}}},[n("div",{staticClass:"v--modal-top-right"},[t._t("top-right")],2),t._v(" "),n("transition",{attrs:{name:t.transition},on:{"before-enter":t.beforeTransitionEnter,"after-enter":t.afterTransitionEnter,"after-leave":t.afterTransitionLeave}},[t.visibility.modal?n("div",{ref:"modal",class:t.modalClass,style:t.modalStyle},[t._t("default"),t._v(" "),t.resizable&&!t.isAutoHeight?n("resizer",{attrs:{"min-width":t.minWidth,"min-height":t.minHeight,"max-width":t.maxWidth,"max-height":t.maxHeight},on:{resize:t.handleModalResize}}):t._e()],2):t._e()])],1)]):t._e()])},o=function(){var e=this.$createElement;return(this._self._c||e)("div",{class:this.className})};function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=[],i=!0,o=!1,r=void 0;try{for(var a,s=e[Symbol.iterator]();!(i=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);i=!0);}catch(e){o=!0,r=e}finally{try{i||null==s.return||s.return()}finally{if(o)throw r}}return n}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(e){s(t,e,n[e])})}return t}function s(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}o._withStripped=i._withStripped=!0;var l=function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:0;return function(){return(e++).toString()}}(),d=function(e,t,n){return n<e?e:t<n?t:n},u=function(){var e=window.innerWidth,t=document.documentElement.clientWidth;return e&&t?Math.min(e,t):t||e},c={name:"VueJsModalResizer",props:{minHeight:{type:Number,default:0},minWidth:{type:Number,default:0},maxWidth:{type:Number,default:Number.MAX_SAFE_INTEGER},maxHeight:{type:Number,default:Number.MAX_SAFE_INTEGER}},data:function(){return{clicked:!1,size:{}}},mounted:function(){this.$el.addEventListener("mousedown",this.start,!1)},computed:{className:function(){return{"vue-modal-resizer":!0,clicked:this.clicked}}},methods:{start:function(e){this.clicked=!0,window.addEventListener("mousemove",this.mousemove,!1),window.addEventListener("mouseup",this.stop,!1),e.stopPropagation(),e.preventDefault()},stop:function(){this.clicked=!1,window.removeEventListener("mousemove",this.mousemove,!1),window.removeEventListener("mouseup",this.stop,!1),this.$emit("resize-stop",{element:this.$el.parentElement,size:this.size})},mousemove:function(e){this.resize(e)},resize:function(e){var t=this.$el.parentElement;if(t){var n=e.clientX-t.offsetLeft,i=e.clientY-t.offsetTop,o=Math.min(u(),this.maxWidth),r=Math.min(window.innerHeight,this.maxHeight);n=d(this.minWidth,o,n),i=d(this.minHeight,r,i),this.size={width:n,height:i},t.style.width=n+"px",t.style.height=i+"px",this.$emit("resize",{element:t,size:this.size})}}}};n(5);function h(e,t,n,i,o,r,a,s){var l,u="function"==typeof e?e.options:e;if(t&&(u.render=t,u.staticRenderFns=n,u._compiled=!0),i&&(u.functional=!0),r&&(u._scopeId="data-v-"+r),a?(l=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),o&&o.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(a)},u._ssrRegister=l):o&&(l=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),l)if(u.functional){u._injectStyles=l;var d=u.render;u.render=function(e,t){return l.call(t),d(e,t)}}else{var c=u.beforeCreate;u.beforeCreate=c?[].concat(c,l):[l]}return{exports:e,options:u}}var f=h(c,o,[],!1,null,null,null);f.options.__file="src/Resizer.vue";var p=f.exports;function m(e){return(m="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var v="[-+]?[0-9]*.?[0-9]+",g=[{name:"px",regexp:new RegExp("^".concat(v,"px$"))},{name:"%",regexp:new RegExp("^".concat(v,"%$"))},{name:"px",regexp:new RegExp("^".concat(v,"$"))}],b=function(e){switch(m(e)){case"number":return{type:"px",value:e};case"string":return function(e){if("auto"===e)return{type:e,value:0};for(var t=0;t<g.length;t++){var n=g[t];if(n.regexp.test(e))return{type:n.name,value:parseFloat(e)}}return{type:"",value:e}}(e);default:return{type:"",value:e}}},y=function(e){if("string"!=typeof e)return 0<=e;var t=b(e);return("%"===t.type||"px"===t.type)&&0<t.value};var w={name:"VueJsModal",props:{name:{required:!0,type:String},delay:{type:Number,default:0},resizable:{type:Boolean,default:!1},adaptive:{type:Boolean,default:!1},draggable:{type:[Boolean,String],default:!1},scrollable:{type:Boolean,default:!1},reset:{type:Boolean,default:!1},overlayTransition:{type:String,default:"overlay-fade"},transition:{type:String},clickToClose:{type:Boolean,default:!0},classes:{type:[String,Array],default:"v--modal"},styles:{type:[String,Array,Object]},minWidth:{type:Number,default:0,validator:function(e){return 0<=e}},minHeight:{type:Number,default:0,validator:function(e){return 0<=e}},maxWidth:{type:Number,default:Number.MAX_SAFE_INTEGER},maxHeight:{type:Number,default:Number.MAX_SAFE_INTEGER},width:{type:[Number,String],default:600,validator:y},height:{type:[Number,String],default:300,validator:function(e){return"auto"===e||y(e)}},pivotX:{type:Number,default:.5,validator:function(e){return 0<=e&&e<=1}},pivotY:{type:Number,default:.5,validator:function(e){return 0<=e&&e<=1}}},components:{Resizer:p},data:function(){return{visible:!1,visibility:{modal:!1,overlay:!1},shift:{left:0,top:0},modal:{width:0,widthType:"px",height:0,heightType:"px",renderedHeight:0},viewport:{width:0,height:0},mutationObserver:null}},created:function(){this.setInitialSize()},beforeMount:function(){var t=this;if(L.event.$on("toggle",this.handleToggleEvent),window.addEventListener("resize",this.handleWindowResize),this.handleWindowResize(),this.scrollable&&!this.isAutoHeight&&console.warn('Modal "'.concat(this.name,'" has scrollable flag set to true ')+'but height is not "auto" ('.concat(this.height,")")),this.isAutoHeight){var e=function(){if("undefined"!=typeof window)for(var e=["","WebKit","Moz","O","Ms"],t=0;t<e.length;t++){var n=e[t]+"MutationObserver";if(n in window)return window[n]}return!1}();e?this.mutationObserver=new e(function(e){t.updateRenderedHeight()}):console.warn("MutationObserver was not found. Vue-js-modal automatic resizing relies heavily on MutationObserver. Please make sure to provide shim for it.")}this.clickToClose&&window.addEventListener("keyup",this.handleEscapeKeyUp)},beforeDestroy:function(){L.event.$off("toggle",this.handleToggleEvent),window.removeEventListener("resize",this.handleWindowResize),this.clickToClose&&window.removeEventListener("keyup",this.handleEscapeKeyUp),this.scrollable&&document.body.classList.remove("v--modal-block-scroll")},computed:{isAutoHeight:function(){return"auto"===this.modal.heightType},position:function(){var e=this.viewport,t=this.shift,n=this.pivotX,i=this.pivotY,o=this.trueModalWidth,r=this.trueModalHeight,a=e.width-o,s=e.height-r,l=t.left+n*a,u=t.top+i*s;return{left:parseInt(d(0,a,l)),top:parseInt(d(0,s,u))}},trueModalWidth:function(){var e=this.viewport,t=this.modal,n=this.adaptive,i=this.minWidth,o=this.maxWidth,r="%"===t.widthType?e.width/100*t.width:t.width,a=Math.max(i,Math.min(e.width,o));return n?d(i,a,r):r},trueModalHeight:function(){var e=this.viewport,t=this.modal,n=this.isAutoHeight,i=this.adaptive,o=this.minHeight,r=this.maxHeight,a="%"===t.heightType?e.height/100*t.height:t.height;if(n)return this.modal.renderedHeight;var s=Math.max(o,Math.min(e.height,r));return i?d(o,s,a):a},overlayClass:function(){return{"v--modal-overlay":!0,scrollable:this.scrollable&&this.isAutoHeight}},modalClass:function(){return["v--modal-box",this.classes]},stylesProp:function(){return"string"==typeof this.styles?this.styles.split(";").map(function(e){return e.trim()}).filter(Boolean).map(function(e){return e.split(":")}).reduce(function(e,t){var n=r(t,2);return a({},e,s({},n[0],n[1]))},{}):this.styles},modalStyle:function(){return[this.stylesProp,{top:this.position.top+"px",left:this.position.left+"px",width:this.trueModalWidth+"px",height:this.isAutoHeight?"auto":this.trueModalHeight+"px"}]}},watch:{visible:function(e){var t=this;e?(this.visibility.overlay=!0,setTimeout(function(){t.visibility.modal=!0,t.$nextTick(function(){t.addDraggableListeners(),t.callAfterEvent(!0)})},this.delay)):(this.visibility.modal=!1,setTimeout(function(){t.visibility.overlay=!1,t.$nextTick(function(){t.removeDraggableListeners(),t.callAfterEvent(!1)})},this.delay))}},methods:{handleToggleEvent:function(e,t,n){if(this.name===e){var i=void 0===t?!this.visible:t;this.toggle(i,n)}},setInitialSize:function(){var e=this.modal,t=b(this.width),n=b(this.height);e.width=t.value,e.widthType=t.type,e.height=n.value,e.heightType=n.type},handleEscapeKeyUp:function(e){27===e.which&&this.visible&&this.$modal.hide(this.name)},handleWindowResize:function(){this.viewport.width=u(),this.viewport.height=window.innerHeight,this.ensureShiftInWindowBounds()},createModalEvent:function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};return function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};return a({id:l(),timestamp:Date.now(),canceled:!1},e)}(function(o){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{},t=Object.keys(r);"function"==typeof Object.getOwnPropertySymbols&&(t=t.concat(Object.getOwnPropertySymbols(r).filter(function(e){return Object.getOwnPropertyDescriptor(r,e).enumerable}))),t.forEach(function(e){var t,n,i;t=o,i=r[n=e],n in t?Object.defineProperty(t,n,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[n]=i})}return o}({name:this.name,ref:this.$refs.modal},e))},handleModalResize:function(e){this.modal.widthType="px",this.modal.width=e.size.width,this.modal.heightType="px",this.modal.height=e.size.height;var t=this.modal.size;this.$emit("resize",this.createModalEvent({size:t}))},toggle:function(e,t){var n=this.reset,i=this.scrollable,o=this.visible;if(o!==e){var r=o?"before-close":"before-open";"before-open"===r?("undefined"!=typeof document&&document.activeElement&&"BODY"!==document.activeElement.tagName&&document.activeElement.blur&&document.activeElement.blur(),n&&(this.setInitialSize(),this.shift.left=0,this.shift.top=0),i&&document.body.classList.add("v--modal-block-scroll")):i&&document.body.classList.remove("v--modal-block-scroll");var a=!1,s=this.createModalEvent({stop:function(){a=!0},state:e,params:t});this.$emit(r,s),a||(this.visible=e)}},getDraggableElement:function(){var e="string"!=typeof this.draggable?".v--modal-box":this.draggable;return e?this.$refs.overlay.querySelector(e):null},handleBackgroundClick:function(){this.clickToClose&&this.toggle(!1)},callAfterEvent:function(e){e?this.connectObserver():this.disconnectObserver();var t=e?"opened":"closed",n=this.createModalEvent({state:e});this.$emit(t,n)},addDraggableListeners:function(){var r=this;if(this.draggable){var e=this.getDraggableElement();if(e){var a=0,s=0,l=0,u=0,d=function(e){return e.touches&&0<e.touches.length?e.touches[0]:e},t=function(e){var t=e.target;if(!t||"INPUT"!==t.nodeName&&"TEXTAREA"!==t.nodeName){var n=d(e),i=n.clientX,o=n.clientY;document.addEventListener("mousemove",c),document.addEventListener("touchmove",c),document.addEventListener("mouseup",h),document.addEventListener("touchend",h),a=i,s=o,l=r.shift.left,u=r.shift.top}},c=function(e){var t=d(e),n=t.clientX,i=t.clientY;r.shift.left=l+n-a,r.shift.top=u+i-s,e.preventDefault()},h=function e(t){r.ensureShiftInWindowBounds(),document.removeEventListener("mousemove",c),document.removeEventListener("touchmove",c),document.removeEventListener("mouseup",e),document.removeEventListener("touchend",e),t.preventDefault()};e.addEventListener("mousedown",t),e.addEventListener("touchstart",t)}}},removeDraggableListeners:function(){},updateRenderedHeight:function(){this.$refs.modal&&(this.modal.renderedHeight=this.$refs.modal.getBoundingClientRect().height)},connectObserver:function(){this.mutationObserver&&this.mutationObserver.observe(this.$refs.overlay,{childList:!0,attributes:!0,subtree:!0})},disconnectObserver:function(){this.mutationObserver&&this.mutationObserver.disconnect()},beforeTransitionEnter:function(){this.connectObserver()},afterTransitionEnter:function(){},afterTransitionLeave:function(){},ensureShiftInWindowBounds:function(){var e=this.viewport,t=this.shift,n=this.pivotX,i=this.pivotY,o=this.trueModalWidth,r=this.trueModalHeight,a=e.width-o,s=e.height-r,l=t.left+n*a,u=t.top+i*s;this.shift.left-=l-d(0,a,l),this.shift.top-=u-d(0,s,u)}}},x=(n(7),h(w,i,[],!1,null,null,null));x.options.__file="src/Modal.vue";var E=x.exports,_=function(){var n=this,e=n.$createElement,i=n._self._c||e;return i("modal",{attrs:{name:"dialog",height:"auto",classes:["v--modal","vue-dialog",this.params.class],width:n.width,"pivot-y":.3,adaptive:!0,clickToClose:n.clickToClose,transition:n.transition},on:{"before-open":n.beforeOpened,"before-close":n.beforeClosed,opened:function(e){n.$emit("opened",e)},closed:function(e){n.$emit("closed",e)}}},[i("div",{staticClass:"dialog-content"},[n.params.title?i("div",{staticClass:"dialog-c-title",domProps:{innerHTML:n._s(n.params.title||"")}}):n._e(),n._v(" "),n.params.component?i(n.params.component,n._b({tag:"component"},"component",n.params.props,!1)):i("div",{staticClass:"dialog-c-text",domProps:{innerHTML:n._s(n.params.text||"")}})],1),n._v(" "),n.buttons?i("div",{staticClass:"vue-dialog-buttons"},n._l(n.buttons,function(e,t){return i("button",{key:t,class:e.class||"vue-dialog-button",style:n.buttonStyle,attrs:{type:"button"},domProps:{innerHTML:n._s(e.title)},on:{click:function(e){e.stopPropagation(),n.click(t,e)}}},[n._v("\n      "+n._s(e.title)+"\n    ")])})):i("div",{staticClass:"vue-dialog-buttons-none"})])};_._withStripped=!0;var S={name:"VueJsDialog",props:{width:{type:[Number,String],default:400},clickToClose:{type:Boolean,default:!0},transition:{type:String,default:"fade"}},data:function(){return{params:{},defaultButtons:[{title:"CLOSE"}]}},computed:{buttons:function(){return this.params.buttons||this.defaultButtons},buttonStyle:function(){return{flex:"1 1 ".concat(100/this.buttons.length,"%")}}},methods:{beforeOpened:function(e){window.addEventListener("keyup",this.onKeyUp),this.params=e.params||{},this.$emit("before-opened",e)},beforeClosed:function(e){window.removeEventListener("keyup",this.onKeyUp),this.params={},this.$emit("before-closed",e)},click:function(e,t){var n=2<arguments.length&&void 0!==arguments[2]?arguments[2]:"click",i=this.buttons[e];i&&"function"==typeof i.handler?i.handler(e,t,{source:n}):this.$modal.hide("dialog")},onKeyUp:function(e){if(13===e.which&&0<this.buttons.length){var t=1===this.buttons.length?0:this.buttons.findIndex(function(e){return e.default});-1!==t&&this.click(t,e,"keypress")}}}},O=(n(9),h(S,_,[],!1,null,null,null));O.options.__file="src/Dialog.vue";var k=O.exports,T=function(){var n=this,e=n.$createElement,i=n._self._c||e;return i("div",{attrs:{id:"modals-container"}},n._l(n.modals,function(t){return i("modal",n._g(n._b({key:t.id,on:{closed:function(e){n.remove(t.id)}}},"modal",t.modalAttrs,!1),t.modalListeners),[i(t.component,n._g(n._b({tag:"component",on:{close:function(e){n.$modal.hide(t.modalAttrs.name)}}},"component",t.componentAttrs,!1),n.$listeners))],1)}))};T._withStripped=!0;var M=h({data:function(){return{modals:[]}},created:function(){this.$root._dynamicContainer=this},methods:{add:function(e){var t=this,n=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},i=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{},o=3<arguments.length&&void 0!==arguments[3]?arguments[3]:{},r=l(),a=i.name||"_dynamic_modal_"+r;this.modals.push({id:r,modalAttrs:function(o){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{},t=Object.keys(r);"function"==typeof Object.getOwnPropertySymbols&&(t=t.concat(Object.getOwnPropertySymbols(r).filter(function(e){return Object.getOwnPropertyDescriptor(r,e).enumerable}))),t.forEach(function(e){var t,n,i;t=o,i=r[n=e],n in t?Object.defineProperty(t,n,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[n]=i})}return o}({},i,{name:a}),modalListeners:o,component:e,componentAttrs:n}),this.$nextTick(function(){t.$modal.show(a)})},remove:function(t){var e=this.modals.findIndex(function(e){return e.id===t});-1!==e&&this.modals.splice(e,1)}}},T,[],!1,null,null,null);M.options.__file="src/ModalsContainer.vue";var C=M.exports;function $(e){return($="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}n.d(t,"getModalsContainer",function(){return j});var j=function(e,t,n){if(!n._dynamicContainer&&t.injectModalsContainer){var i=(o=document.createElement("div"),document.body.appendChild(o),o);new e({parent:n,render:function(e){return e(C)}}).$mount(i)}var o;return n._dynamicContainer},z={install:function(a){var s=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{};if(!this.installed){this.installed=!0,this.event=new a,this.rootInstance=null;var e=s.componentName||"Modal",l=s.dynamicDefaults||{},o=function(e,t,n,i){var o=n&&n.root?n.root:z.rootInstance,r=j(a,s,o);r?r.add(e,t,function(o){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{},t=Object.keys(r);"function"==typeof Object.getOwnPropertySymbols&&(t=t.concat(Object.getOwnPropertySymbols(r).filter(function(e){return Object.getOwnPropertyDescriptor(r,e).enumerable}))),t.forEach(function(e){var t,n,i;t=o,i=r[n=e],n in t?Object.defineProperty(t,n,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[n]=i})}return o}({},l,n),i):console.warn("[vue-js-modal] In order to render dynamic modals, a <modals-container> component must be present on the page.")};a.prototype.$modal={show:function(e){for(var t=arguments.length,n=new Array(1<t?t-1:0),i=1;i<t;i++)n[i-1]=arguments[i];switch($(e)){case"string":return function(e,t){z.event.$emit("toggle",e,!0,t)}.apply(void 0,[e].concat(n));case"object":case"function":return s.dynamic?o.apply(void 0,[e].concat(n)):console.warn("[vue-js-modal] $modal() received object as a first argument, but dynamic modals are switched off. https://github.com/euvl/vue-js-modal/#dynamic-modals");default:console.warn("[vue-js-modal] $modal() received an unsupported argument as a first argument.",e)}},hide:function(e,t){z.event.$emit("toggle",e,!1,t)},toggle:function(e,t){z.event.$emit("toggle",e,void 0,t)}},a.component(e,E),s.dialog&&a.component("VDialog",k),s.dynamic&&(a.component("ModalsContainer",C),a.mixin({beforeMount:function(){null===z.rootInstance&&(z.rootInstance=this.$root)}}))}}},L=t.default=z}])});
+!function(e,t){ true?module.exports=t():undefined}(window,function(){return i={},o.m=n=[function(e,t,n){var i=n(6);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("27d83796",i,!1,{})},function(e,t,n){var i=n(8);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("0e783494",i,!1,{})},function(e,t,n){var i=n(10);"string"==typeof i&&(i=[[e.i,i,""]]),i.locals&&(e.exports=i.locals);(0,n(4).default)("17757f60",i,!1,{})},function(e,t){e.exports=function(n){var a=[];return a.toString=function(){return this.map(function(e){var t=function(e,t){var n=e[1]||"",i=e[3];if(!i)return n;if(t&&"function"==typeof btoa){var o=function(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}(i),r=i.sources.map(function(e){return"/*# sourceURL="+i.sourceRoot+e+" */"});return[n].concat(r).concat([o]).join("\n")}return[n].join("\n")}(e,n);return e[2]?"@media "+e[2]+"{"+t+"}":t}).join("")},a.i=function(e,t){"string"==typeof e&&(e=[[null,e,""]]);for(var n={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(n[o]=!0)}for(i=0;i<e.length;i++){var r=e[i];"number"==typeof r[0]&&n[r[0]]||(t&&!r[2]?r[2]=t:t&&(r[2]="("+r[2]+") and ("+t+")"),a.push(r))}},a}},function(e,t,n){"use strict";function l(e,t){for(var n=[],i={},o=0;o<t.length;o++){var r=t[o],a=r[0],s={id:e+":"+o,css:r[1],media:r[2],sourceMap:r[3]};i[a]?i[a].parts.push(s):n.push(i[a]={id:a,parts:[s]})}return n}n.r(t),n.d(t,"default",function(){return p});var i="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!i)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var u={},o=i&&(document.head||document.getElementsByTagName("head")[0]),r=null,a=0,d=!1,s=function(){},c=null,h="data-vue-ssr-id",f="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function p(a,e,t,n){d=t,c=n||{};var s=l(a,e);return m(s),function(e){for(var t=[],n=0;n<s.length;n++){var i=s[n];(o=u[i.id]).refs--,t.push(o)}e?m(s=l(a,e)):s=[];for(n=0;n<t.length;n++){var o;if(0===(o=t[n]).refs){for(var r=0;r<o.parts.length;r++)o.parts[r]();delete u[o.id]}}}}function m(e){for(var t=0;t<e.length;t++){var n=e[t],i=u[n.id];if(i){i.refs++;for(var o=0;o<i.parts.length;o++)i.parts[o](n.parts[o]);for(;o<n.parts.length;o++)i.parts.push(g(n.parts[o]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{var r=[];for(o=0;o<n.parts.length;o++)r.push(g(n.parts[o]));u[n.id]={id:n.id,refs:1,parts:r}}}}function v(){var e=document.createElement("style");return e.type="text/css",o.appendChild(e),e}function g(t){var n,i,e=document.querySelector("style["+h+'~="'+t.id+'"]');if(e){if(d)return s;e.parentNode.removeChild(e)}if(f){var o=a++;e=r=r||v(),n=w.bind(null,e,o,!1),i=w.bind(null,e,o,!0)}else e=v(),n=function(e,t){var n=t.css,i=t.media,o=t.sourceMap;i&&e.setAttribute("media",i);c.ssrId&&e.setAttribute(h,t.id);o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");if(e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}.bind(null,e),i=function(){e.parentNode.removeChild(e)};return n(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;n(t=e)}else i()}}var b,y=(b=[],function(e,t){return b[e]=t,b.filter(Boolean).join("\n")});function w(e,t,n,i){var o=n?"":i.css;if(e.styleSheet)e.styleSheet.cssText=y(t,o);else{var r=document.createTextNode(o),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(r,a[t]):e.appendChild(r)}}},function(e,t,n){"use strict";var i=n(0);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.vue-modal-resizer {\n  display: block;\n  overflow: hidden;\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  right: 0;\n  bottom: 0;\n  z-index: 9999999;\n  background: transparent;\n  cursor: se-resize;\n}\n.vue-modal-resizer::after {\n  display: block;\n  position: absolute;\n  content: '';\n  background: transparent;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 10px solid #ddd;\n  border-left: 10px solid transparent;\n}\n.vue-modal-resizer.clicked::after {\n  border-bottom: 10px solid #369be9;\n}\n",""])},function(e,t,n){"use strict";var i=n(1);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.v--modal-block-scroll {\n  overflow: hidden;\n  width: 100vw;\n}\n.v--modal-overlay {\n  position: fixed;\n  box-sizing: border-box;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100vh;\n  background: rgba(0, 0, 0, 0.2);\n  z-index: 999;\n  opacity: 1;\n}\n.v--modal-overlay.scrollable {\n  height: 100%;\n  min-height: 100vh;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n}\n.v--modal-overlay .v--modal-background-click {\n  width: 100%;\n  min-height: 100%;\n  height: auto;\n}\n.v--modal-overlay .v--modal-box {\n  position: relative;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.v--modal-overlay.scrollable .v--modal-box {\n  margin-bottom: 2px;\n}\n.v--modal {\n  background-color: white;\n  text-align: left;\n  border-radius: 3px;\n  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);\n  padding: 0;\n}\n.v--modal.v--modal-fullscreen {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  left: 0;\n  top: 0;\n}\n.v--modal-top-right {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.overlay-fade-enter-active,\n.overlay-fade-leave-active {\n  transition: all 0.2s;\n}\n.overlay-fade-enter,\n.overlay-fade-leave-active {\n  opacity: 0;\n}\n.nice-modal-fade-enter-active,\n.nice-modal-fade-leave-active {\n  transition: all 0.4s;\n}\n.nice-modal-fade-enter,\n.nice-modal-fade-leave-active {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n",""])},function(e,t,n){"use strict";var i=n(2);n.n(i).a},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"\n.vue-dialog div {\n  box-sizing: border-box;\n}\n.vue-dialog .dialog-flex {\n  width: 100%;\n  height: 100%;\n}\n.vue-dialog .dialog-content {\n  flex: 1 0 auto;\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n}\n.vue-dialog .dialog-c-title {\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n.vue-dialog .dialog-c-text {\n}\n.vue-dialog .vue-dialog-buttons {\n  display: flex;\n  flex: 0 1 auto;\n  width: 100%;\n  border-top: 1px solid #eee;\n}\n.vue-dialog .vue-dialog-buttons-none {\n  width: 100%;\n  padding-bottom: 15px;\n}\n.vue-dialog-button {\n  font-size: 12px !important;\n  background: transparent;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  cursor: pointer;\n  box-sizing: border-box;\n  line-height: 40px;\n  height: 40px;\n  color: inherit;\n  font: inherit;\n  outline: none;\n}\n.vue-dialog-button:hover {\n  background: rgba(0, 0, 0, 0.01);\n}\n.vue-dialog-button:active {\n  background: rgba(0, 0, 0, 0.025);\n}\n.vue-dialog-button:not(:first-of-type) {\n  border-left: 1px solid #eee;\n}\n",""])},function(e,t,n){"use strict";n.r(t),n.d(t,"getModalsContainer",function(){return N});function i(){var t=this,e=t.$createElement,n=t._self._c||e;return n("transition",{attrs:{name:t.overlayTransition}},[t.visibility.overlay?n("div",{ref:"overlay",class:t.overlayClass,attrs:{"aria-expanded":t.visibility.overlay.toString(),"data-modal":t.name}},[n("div",{staticClass:"v--modal-background-click",on:{mousedown:function(e){return e.target!==e.currentTarget?null:t.handleBackgroundClick(e)},touchstart:function(e){return e.target!==e.currentTarget?null:t.handleBackgroundClick(e)}}},[n("div",{staticClass:"v--modal-top-right"},[t._t("top-right")],2),t._v(" "),n("transition",{attrs:{name:t.transition},on:{"before-enter":t.beforeTransitionEnter,"after-enter":t.afterTransitionEnter,"after-leave":t.afterTransitionLeave}},[t.visibility.modal?n("div",{ref:"modal",class:t.modalClass,style:t.modalStyle,attrs:{role:"dialog","aria-modal":"true"}},[t._t("default"),t._v(" "),t.resizable&&!t.isAutoHeight?n("resizer",{attrs:{"min-width":t.minWidth,"min-height":t.minHeight,"max-width":t.maxWidth,"max-height":t.maxHeight},on:{resize:t.handleModalResize}}):t._e()],2):t._e()])],1)]):t._e()])}function o(){var e=this.$createElement;return(this._self._c||e)("div",{class:this.className})}function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=[],i=!0,o=!1,r=void 0;try{for(var a,s=e[Symbol.iterator]();!(i=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);i=!0);}catch(e){o=!0,r=e}finally{try{i||null==s.return||s.return()}finally{if(o)throw r}}return n}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(e){s(t,e,n[e])})}return t}function s(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}o._withStripped=i._withStripped=!0;function c(e,t,n){return n<e?e:t<n?t:n}function l(){var e=window.innerWidth,t=document.documentElement.clientWidth;return e&&t?Math.min(e,t):t||e}var d=function(e){var t=0<arguments.length&&void 0!==e?e:0;return function(){return(t++).toString()}}(),u={name:"VueJsModalResizer",props:{minHeight:{type:Number,default:0},minWidth:{type:Number,default:0},maxWidth:{type:Number,default:Number.MAX_SAFE_INTEGER},maxHeight:{type:Number,default:Number.MAX_SAFE_INTEGER}},data:function(){return{clicked:!1,size:{}}},mounted:function(){this.$el.addEventListener("mousedown",this.start,!1)},computed:{className:function(){return{"vue-modal-resizer":!0,clicked:this.clicked}}},methods:{start:function(e){this.clicked=!0,window.addEventListener("mousemove",this.mousemove,!1),window.addEventListener("mouseup",this.stop,!1),e.stopPropagation(),e.preventDefault()},stop:function(){this.clicked=!1,window.removeEventListener("mousemove",this.mousemove,!1),window.removeEventListener("mouseup",this.stop,!1),this.$emit("resize-stop",{element:this.$el.parentElement,size:this.size})},mousemove:function(e){this.resize(e)},resize:function(e){var t=this.$el.parentElement;if(t){var n=e.clientX-t.offsetLeft,i=e.clientY-t.offsetTop,o=Math.min(l(),this.maxWidth),r=Math.min(window.innerHeight,this.maxHeight);n=c(this.minWidth,o,n),i=c(this.minHeight,r,i),this.size={width:n,height:i},t.style.width=n+"px",t.style.height=i+"px",this.$emit("resize",{element:t,size:this.size})}}}};n(5);function h(e,t,n,i,o,r,a,s){var l,u="function"==typeof e?e.options:e;if(t&&(u.render=t,u.staticRenderFns=n,u._compiled=!0),i&&(u.functional=!0),r&&(u._scopeId="data-v-"+r),a?(l=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),o&&o.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(a)},u._ssrRegister=l):o&&(l=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),l)if(u.functional){u._injectStyles=l;var d=u.render;u.render=function(e,t){return l.call(t),d(e,t)}}else{var c=u.beforeCreate;u.beforeCreate=c?[].concat(c,l):[l]}return{exports:e,options:u}}var f=h(u,o,[],!1,null,null,null);f.options.__file="src/Resizer.vue";var p=f.exports;function m(e){return(m="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function v(e){switch(m(e)){case"number":return{type:"px",value:e};case"string":return function(t){if("auto"===t)return{type:t,value:0};var e=y.find(function(e){return e.regexp.test(t)});return e?{type:e.name,value:parseFloat(t)}:{type:"",value:t}}(e);default:return{type:"",value:e}}}function g(e){if("string"!=typeof e)return 0<=e;var t=v(e);return("%"===t.type||"px"===t.type)&&0<t.value}var b="[-+]?[0-9]*.?[0-9]+",y=[{name:"px",regexp:new RegExp("^".concat(b,"px$"))},{name:"%",regexp:new RegExp("^".concat(b,"%$"))},{name:"px",regexp:new RegExp("^".concat(b,"$"))}];function w(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var x={name:"VueJsModal",props:{name:{required:!0,type:String},delay:{type:Number,default:0},resizable:{type:Boolean,default:!1},adaptive:{type:Boolean,default:!1},draggable:{type:[Boolean,String],default:!1},scrollable:{type:Boolean,default:!1},reset:{type:Boolean,default:!1},overlayTransition:{type:String,default:"overlay-fade"},transition:{type:String},clickToClose:{type:Boolean,default:!0},classes:{type:[String,Array],default:"v--modal"},styles:{type:[String,Array,Object]},minWidth:{type:Number,default:0,validator:function(e){return 0<=e}},minHeight:{type:Number,default:0,validator:function(e){return 0<=e}},maxWidth:{type:Number,default:Number.MAX_SAFE_INTEGER},maxHeight:{type:Number,default:Number.MAX_SAFE_INTEGER},width:{type:[Number,String],default:600,validator:g},height:{type:[Number,String],default:300,validator:function(e){return"auto"===e||g(e)}},pivotX:{type:Number,default:.5,validator:function(e){return 0<=e&&e<=1}},pivotY:{type:Number,default:.5,validator:function(e){return 0<=e&&e<=1}}},components:{Resizer:p},data:function(){return{visible:!1,visibility:{modal:!1,overlay:!1},shift:{left:0,top:0},modal:{width:0,widthType:"px",height:0,heightType:"px",renderedHeight:0},viewportHeight:0,viewportWidth:0,mutationObserver:null}},created:function(){this.setInitialSize()},beforeMount:function(){var t=this;if(A.event.$on("toggle",this.handleToggleEvent),window.addEventListener("resize",this.handleWindowResize),this.handleWindowResize(),this.scrollable&&!this.isAutoHeight&&console.warn('Modal "'.concat(this.name,'" has scrollable flag set to true ')+'but height is not "auto" ('.concat(this.height,")")),this.isAutoHeight){var e=function(){if("undefined"!=typeof window)for(var e=["","WebKit","Moz","O","Ms"],t=0;t<e.length;t++){var n=e[t]+"MutationObserver";if(n in window)return window[n]}return!1}();e?this.mutationObserver=new e(function(e){t.updateRenderedHeight()}):console.warn("MutationObserver was not found. Vue-js-modal automatic resizing relies heavily on MutationObserver. Please make sure to provide shim for it.")}this.clickToClose&&window.addEventListener("keyup",this.handleEscapeKeyUp)},beforeDestroy:function(){A.event.$off("toggle",this.handleToggleEvent),window.removeEventListener("resize",this.handleWindowResize),this.clickToClose&&window.removeEventListener("keyup",this.handleEscapeKeyUp),this.scrollable&&document.body.classList.remove("v--modal-block-scroll")},computed:{isAutoHeight:function(){return"auto"===this.modal.heightType},position:function(){var e=this.viewportHeight,t=this.viewportWidth,n=this.shift,i=this.pivotX,o=this.pivotY,r=this.trueModalWidth,a=this.trueModalHeight,s=t-r,l=Math.max(e-a,0),u=n.left+i*s,d=n.top+o*l;return{left:parseInt(c(0,s,u)),top:parseInt(c(0,l,d))}},trueModalWidth:function(){var e=this.viewportWidth,t=this.modal,n=this.adaptive,i=this.minWidth,o=this.maxWidth,r="%"===t.widthType?e/100*t.width:t.width,a=Math.max(i,Math.min(e,o));return n?c(i,a,r):r},trueModalHeight:function(){var e=this.viewportHeight,t=this.modal,n=this.isAutoHeight,i=this.adaptive,o=this.minHeight,r=this.maxHeight,a="%"===t.heightType?e/100*t.height:t.height;if(n)return this.modal.renderedHeight;var s=Math.max(o,Math.min(e,r));return i?c(o,s,a):a},overlayClass:function(){return{"v--modal-overlay":!0,scrollable:this.scrollable&&this.isAutoHeight}},modalClass:function(){return["v--modal-box",this.classes]},stylesProp:function(){return"string"==typeof this.styles?this.styles.split(";").map(function(e){return e.trim()}).filter(Boolean).map(function(e){return e.split(":")}).reduce(function(e,t){var n=r(t,2);return a({},e,s({},n[0],n[1]))},{}):this.styles},modalStyle:function(){return[this.stylesProp,{top:this.position.top+"px",left:this.position.left+"px",width:this.trueModalWidth+"px",height:this.isAutoHeight?"auto":this.trueModalHeight+"px"}]}},watch:{visible:function(e){var t=this;e?(this.visibility.overlay=!0,setTimeout(function(){t.visibility.modal=!0,t.$nextTick(function(){t.addDraggableListeners(),t.callAfterEvent(!0)})},this.delay)):(this.visibility.modal=!1,setTimeout(function(){t.visibility.overlay=!1,t.$nextTick(function(){t.removeDraggableListeners(),t.callAfterEvent(!1)})},this.delay))}},methods:{handleToggleEvent:function(e,t,n){if(this.name===e){var i=void 0===t?!this.visible:t;this.toggle(i,n)}},setInitialSize:function(){var e=this.modal,t=v(this.width),n=v(this.height);e.width=t.value,e.widthType=t.type,e.height=n.value,e.heightType=n.type},handleEscapeKeyUp:function(e){27===e.which&&this.visible&&this.$modal.hide(this.name)},handleWindowResize:function(){this.viewportWidth=l(),this.viewportHeight=window.innerHeight,this.ensureShiftInWindowBounds()},createModalEvent:function(e){var t=0<arguments.length&&void 0!==e?e:{};return function(e){var t=0<arguments.length&&void 0!==e?e:{};return a({id:d(),timestamp:Date.now(),canceled:!1},t)}(function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(e){w(t,e,n[e])})}return t}({name:this.name,ref:this.$refs.modal},t))},handleModalResize:function(e){this.modal.widthType="px",this.modal.width=e.size.width,this.modal.heightType="px",this.modal.height=e.size.height;var t=this.modal.size;this.$emit("resize",this.createModalEvent({size:t}))},toggle:function(e,t){var n=this.reset,i=this.scrollable,o=this.visible;if(o!==e){var r=o?"before-close":"before-open";"before-open"==r?(n&&(this.setInitialSize(),this.shift.left=0,this.shift.top=0),i&&document.body.classList.add("v--modal-block-scroll")):i&&document.body.classList.remove("v--modal-block-scroll");var a=!1,s=this.createModalEvent({stop:function(){a=!0},state:e,params:t});this.$emit(r,s),a||(this.visible=e,"before-open"==r&&"undefined"!=typeof document&&document.activeElement&&"BODY"!==document.activeElement.tagName&&document.activeElement.blur&&document.activeElement.blur())}},getDraggableElement:function(){var e="string"!=typeof this.draggable?".v--modal-box":this.draggable;return e?this.$refs.overlay.querySelector(e):null},handleBackgroundClick:function(){this.clickToClose&&this.toggle(!1)},callAfterEvent:function(e){e?this.connectObserver():this.disconnectObserver();var t=e?"opened":"closed",n=this.createModalEvent({state:e});this.$emit(t,n)},addDraggableListeners:function(){var r=this;if(this.draggable){var e=this.getDraggableElement();if(e){var a=0,s=0,l=0,u=0,d=function(e){return e.touches&&0<e.touches.length?e.touches[0]:e},t=function(e){var t=e.target;if(!t||"INPUT"!==t.nodeName&&"TEXTAREA"!==t.nodeName&&"SELECT"!==t.nodeName){var n=d(e),i=n.clientX,o=n.clientY;document.addEventListener("mousemove",c),document.addEventListener("touchmove",c),document.addEventListener("mouseup",h),document.addEventListener("touchend",h),a=i,s=o,l=r.shift.left,u=r.shift.top}},c=function(e){var t=d(e),n=t.clientX,i=t.clientY;r.shift.left=l+n-a,r.shift.top=u+i-s,e.preventDefault()},h=function e(t){r.ensureShiftInWindowBounds(),document.removeEventListener("mousemove",c),document.removeEventListener("touchmove",c),document.removeEventListener("mouseup",e),document.removeEventListener("touchend",e),t.preventDefault()};e.addEventListener("mousedown",t),e.addEventListener("touchstart",t)}}},removeDraggableListeners:function(){},updateRenderedHeight:function(){this.$refs.modal&&(this.modal.renderedHeight=this.$refs.modal.getBoundingClientRect().height)},connectObserver:function(){this.mutationObserver&&this.mutationObserver.observe(this.$refs.overlay,{childList:!0,attributes:!0,subtree:!0})},disconnectObserver:function(){this.mutationObserver&&this.mutationObserver.disconnect()},beforeTransitionEnter:function(){this.connectObserver()},afterTransitionEnter:function(){},afterTransitionLeave:function(){},ensureShiftInWindowBounds:function(){var e=this.viewportHeight,t=this.viewportWidth,n=this.shift,i=this.pivotX,o=this.pivotY,r=this.trueModalWidth,a=this.trueModalHeight,s=t-r,l=Math.max(e-a,0),u=n.left+i*s,d=n.top+o*l;this.shift.left-=u-c(0,s,u),this.shift.top-=d-c(0,l,d)}}},E=(n(7),h(x,i,[],!1,null,null,null));E.options.__file="src/Modal.vue";function _(){var n=this,e=n.$createElement,i=n._self._c||e;return i("modal",{attrs:{name:"dialog",height:"auto",classes:["v--modal","vue-dialog",this.params.class],width:n.width,"pivot-y":.3,adaptive:!0,clickToClose:n.clickToClose,transition:n.transition},on:{"before-open":n.beforeOpened,"before-close":n.beforeClosed,opened:function(e){n.$emit("opened",e)},closed:function(e){n.$emit("closed",e)}}},[i("div",{staticClass:"dialog-content"},[n.params.title?i("div",{staticClass:"dialog-c-title",domProps:{innerHTML:n._s(n.params.title||"")}}):n._e(),n._v(" "),n.params.component?i(n.params.component,n._b({tag:"component"},"component",n.params.props,!1)):i("div",{staticClass:"dialog-c-text",domProps:{innerHTML:n._s(n.params.text||"")}})],1),n._v(" "),n.buttons?i("div",{staticClass:"vue-dialog-buttons"},n._l(n.buttons,function(e,t){return i("button",{key:t,class:e.class||"vue-dialog-button",style:n.buttonStyle,attrs:{type:"button"},domProps:{innerHTML:n._s(e.title)},on:{click:function(e){e.stopPropagation(),n.click(t,e)}}},[n._v("\n      "+n._s(e.title)+"\n    ")])})):i("div",{staticClass:"vue-dialog-buttons-none"})])}var S=E.exports;_._withStripped=!0;var O={name:"VueJsDialog",props:{width:{type:[Number,String],default:400},clickToClose:{type:Boolean,default:!0},transition:{type:String,default:"fade"}},data:function(){return{params:{},defaultButtons:[{title:"CLOSE"}]}},computed:{buttons:function(){return this.params.buttons||this.defaultButtons},buttonStyle:function(){return{flex:"1 1 ".concat(100/this.buttons.length,"%")}}},methods:{beforeOpened:function(e){window.addEventListener("keyup",this.onKeyUp),this.params=e.params||{},this.$emit("before-opened",e)},beforeClosed:function(e){window.removeEventListener("keyup",this.onKeyUp),this.params={},this.$emit("before-closed",e)},click:function(e,t,n){var i=2<arguments.length&&void 0!==n?n:"click",o=this.buttons[e];o&&"function"==typeof o.handler?o.handler(e,t,{source:i}):this.$modal.hide("dialog")},onKeyUp:function(e){if(13===e.which&&0<this.buttons.length){var t=1===this.buttons.length?0:this.buttons.findIndex(function(e){return e.default});-1!==t&&this.click(t,e,"keypress")}}}},k=(n(9),h(O,_,[],!1,null,null,null));k.options.__file="src/Dialog.vue";function T(){var n=this,e=n.$createElement,i=n._self._c||e;return i("div",{attrs:{id:"modals-container"}},n._l(n.modals,function(t){return i("modal",n._g(n._b({key:t.id,on:{closed:function(e){n.remove(t.id)}}},"modal",t.modalAttrs,!1),t.modalListeners),[i(t.component,n._g(n._b({tag:"component",on:{close:function(e){n.$modal.hide(t.modalAttrs.name)}}},"component",t.componentAttrs,!1),n.$listeners))],1)}))}var M=k.exports;function C(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}T._withStripped=!0;var $=h({data:function(){return{modals:[]}},created:function(){this.$root._dynamicContainer=this},methods:{add:function(e,t,n,i){var o=this,r=1<arguments.length&&void 0!==t?t:{},a=2<arguments.length&&void 0!==n?n:{},s=3<arguments.length&&void 0!==i?i:{},l=d(),u=a.name||"_dynamic_modal_"+l;this.modals.push({id:l,modalAttrs:function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(e){C(t,e,n[e])})}return t}({},a,{name:u}),modalListeners:s,component:e,componentAttrs:r}),this.$nextTick(function(){o.$modal.show(u)})},remove:function(t){var e=this.modals.findIndex(function(e){return e.id===t});-1!==e&&this.modals.splice(e,1)}}},T,[],!1,null,null,null);$.options.__file="src/ModalsContainer.vue";var j=$.exports;function z(e){return(z="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function L(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var N=function(e,t,n){if(!n._dynamicContainer&&t.injectModalsContainer){var i=(o=document.createElement("div"),document.body.appendChild(o),o);new e({parent:n,render:function(e){return e(j)}}).$mount(i)}var o;return n._dynamicContainer},H={install:function(a,e){var s=1<arguments.length&&void 0!==e?e:{};if(!this.installed){this.installed=!0,this.event=new a,this.rootInstance=null;var t=s.componentName||"Modal",l=s.dynamicDefaults||{},o=function(e,t,n,i){var o=n&&n.root?n.root:H.rootInstance,r=N(a,s,o);r?r.add(e,t,function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},i=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(e){L(t,e,n[e])})}return t}({},l,n),i):console.warn("[vue-js-modal] In order to render dynamic modals, a <modals-container> component must be present on the page.")};a.prototype.$modal={show:function(e){for(var t=arguments.length,n=new Array(1<t?t-1:0),i=1;i<t;i++)n[i-1]=arguments[i];switch(z(e)){case"string":return function(e,t){H.event.$emit("toggle",e,!0,t)}.apply(void 0,[e].concat(n));case"object":case"function":return s.dynamic?o.apply(void 0,[e].concat(n)):console.warn("[vue-js-modal] $modal() received object as a first argument, but dynamic modals are switched off. https://github.com/euvl/vue-js-modal/#dynamic-modals");default:console.warn("[vue-js-modal] $modal() received an unsupported argument as a first argument.",e)}},hide:function(e,t){H.event.$emit("toggle",e,!1,t)},toggle:function(e,t){H.event.$emit("toggle",e,void 0,t)}},a.component(t,S),s.dialog&&a.component("VDialog",M),s.dynamic&&(a.component("ModalsContainer",j),a.mixin({beforeMount:function(){null===H.rootInstance&&(H.rootInstance=this.$root)}}))}}},A=t.default=H}],o.c=i,o.d=function(e,t,n){o.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.t=function(t,e){if(1&e&&(t=o(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)o.d(n,i,function(e){return t[e]}.bind(null,i));return n},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,"a",t),t},o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},o.p="/dist/",o(o.s=11);function o(e){if(i[e])return i[e].exports;var t=i[e]={i:e,l:!1,exports:{}};return n[e].call(t.exports,t,t.exports,o),t.l=!0,t.exports}var n,i});
 
 /***/ }),
 
@@ -59917,7 +59637,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -59936,7 +59656,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -59961,7 +59680,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -59991,7 +59709,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60016,10 +59733,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60134,136 +59850,189 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.onClick } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _vm.rowData.grupo_microbiano_id === 2
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Clase: " + _vm._s(_vm.rowData.hongo.clase.nombre))
-                  ])
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c(
+        "tbody",
+        [
+          _vm.rowData.grupo_microbiano_id === 2
+            ? [
+                _c("tr", [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.clase.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.orden.nombre))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Orden: " + _vm._s(_vm.rowData.hongo.orden.nombre))
-                  ])
+                _c("tr", [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.familia.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.hongo.phylum.nombre))])
+                ])
+              ]
+            : _vm.rowData.grupo_microbiano_id === 3
+            ? [
+                _c("tr", [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.levadura.clase.nombre))]),
+                  _vm._v(" "),
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(_vm.rowData.levadura.orden.nombre))])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Familia: " + _vm._s(_vm.rowData.hongo.familia.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v("Phylum: " + _vm._s(_vm.rowData.hongo.phylum.nombre))
+                _c("tr", [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.levadura.familia.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.levadura.division.nombre))
                   ])
                 ])
-              ])
-            ]
-          : _vm.rowData.grupo_microbiano_id === 3
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Division: " +
-                        _vm._s(_vm.rowData.levadura.division.nombre)
-                    )
+              ]
+            : _vm.rowData.grupo_microbiano_id === 4
+            ? [
+                _c("tr", [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.clase.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.orden.nombre))
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Clase: " + _vm._s(_vm.rowData.levadura.clase.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Orden: " + _vm._s(_vm.rowData.levadura.orden.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Familia: " + _vm._s(_vm.rowData.levadura.familia.nombre)
-                    )
+                _c("tr", [
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.reino.nombre))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(_vm.rowData.actinomiceto.phylum.nombre))
                   ])
                 ])
-              ])
-            ]
-          : _vm.rowData.grupo_microbiano_id === 4
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Clase: " + _vm._s(_vm.rowData.actinomiceto.clase.nombre)
-                    )
-                  ])
+              ]
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.rowData.otras_caract
+            ? [
+                _c("tr", [
+                  _vm.rowData.otras_caract
+                    ? _c("td", { attrs: { colspan: "4" } }, [
+                        _c("b", [_vm._v("Otras características:")])
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Orden: " + _vm._s(_vm.rowData.actinomiceto.orden.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Phylum: " +
-                        _vm._s(_vm.rowData.actinomiceto.phylum.nombre)
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Reino: " + _vm._s(_vm.rowData.actinomiceto.reino.nombre)
-                    )
-                  ])
+                _c("tr", [
+                  _vm.rowData.otras_caract
+                    ? _c("td", { attrs: { colspan: "4" } }, [
+                        _vm._v(_vm._s(_vm.rowData.otras_caract))
+                      ])
+                    : _vm._e()
                 ])
-              ])
-            ]
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.rowData.otras_caract
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Otras Caracteristicas: " +
-                        _vm._s(_vm.rowData.otras_caract)
-                    )
-                  ])
-                ])
-              ])
-            ]
-          : _vm._e()
-      ],
-      2
-    )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Familia:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Phylum:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Familia:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Division:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Clase:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Orden:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Reino:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Phylum:")])])
+  }
+]
 render._withStripped = true
 
 
@@ -60286,40 +60055,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { on: { click: _vm.onClick } }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("label", [_vm._v("Estado: " + _vm._s(_vm.rowData.estado))])
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c(
+        "tbody",
+        [
+          _c("tr", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.rowData.estado))]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.rowData.origen))])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("label", [_vm._v("Origen: " + _vm._s(_vm.rowData.origen))])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm.rowData.otras_caract
-          ? [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("label", [
-                    _vm._v(
-                      "Otras Caracteristicas: " +
-                        _vm._s(_vm.rowData.otras_caract)
-                    )
+          _vm.rowData.otras_caract
+            ? [
+                _c("tr", [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("td", { attrs: { colspan: "3" } }, [
+                    _vm._v(_vm._s(_vm.rowData.otras_caract))
                   ])
                 ])
-              ])
-            ]
-          : _vm._e()
-      ],
-      2
-    )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Estado:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Origen:")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Otras características:")])])
+  }
+]
 render._withStripped = true
 
 
@@ -60347,7 +60133,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60366,7 +60152,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60391,7 +60176,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60421,7 +60205,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60446,10 +60229,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60569,7 +60351,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60588,7 +60370,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60613,7 +60394,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60643,7 +60423,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60668,10 +60447,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -60746,7 +60524,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -60840,6 +60618,46 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { on: { click: _vm.onClick } }, [
+    _c("table", { staticClass: "table table-bordered" }, [
+      _c("tbody", [
+        _c("tr", [
+          _vm.rowData.otras_caract
+            ? _c("td", [_c("b", [_vm._v("Otras Caracteristicas:")])])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _vm.rowData.otras_caract
+            ? _c("td", [_vm._v(_vm._s(_vm.rowData.otras_caract))])
+            : _vm._e()
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532&":
 /*!*********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue?vue&type=template&id=37919532& ***!
@@ -60861,7 +60679,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -60880,7 +60698,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -60905,7 +60722,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -60935,7 +60751,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -60960,10 +60775,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -61038,7 +60852,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -61153,7 +60967,7 @@ var render = function() {
       "editar-cepa",
       "eliminar-cepa",
       "caract-cepa"
-    ])
+    ]) && !_vm.disabledBtns
       ? _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12 col-lg-12" }, [
@@ -61172,7 +60986,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.caracteristicas(_vm.rowData)
@@ -61197,7 +61010,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-info",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.ver(_vm.rowData)
@@ -61227,7 +61039,6 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
                           return _vm.editar(_vm.rowData)
@@ -61252,10 +61063,9 @@ var render = function() {
                       ],
                       staticClass:
                         "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                      attrs: { disabled: _vm.disabledBtns },
                       on: {
                         click: function($event) {
-                          return _vm.showModal(_vm.rowData)
+                          return _vm.eliminar(_vm.rowData)
                         }
                       }
                     },
@@ -61275,10 +61085,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61330,7 +61140,7 @@ var render = function() {
           "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
         on: {
           click: function($event) {
-            return _vm.showModal(_vm.rowData)
+            return _vm.eliminar(_vm.rowData)
           }
         }
       },
@@ -61455,7 +61265,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.editar(_vm.rowData)
@@ -61478,7 +61287,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.eliminar(_vm.rowData)
@@ -61501,7 +61309,6 @@ var render = function() {
             ],
             staticClass:
               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-success",
-            attrs: { disabled: _vm.disabledBtns },
             on: {
               click: function($event) {
                 return _vm.modificarPermisos(_vm.rowData)
@@ -61537,7 +61344,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"])
+    _vm.getPermisoByNombres(["editar-usuario", "eliminar-usuario"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-usuario")
@@ -61555,7 +61363,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61580,10 +61387,9 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
-                        return _vm.showModal(_vm.rowData)
+                        return _vm.eliminar(_vm.rowData)
                       }
                     }
                   },
@@ -61618,7 +61424,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61636,7 +61443,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61661,7 +61467,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61699,7 +61504,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61717,7 +61523,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61742,7 +61547,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61780,7 +61584,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61798,7 +61603,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61823,7 +61627,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61861,7 +61664,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61879,7 +61683,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61904,7 +61707,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -61942,7 +61744,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -61960,7 +61763,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -61985,7 +61787,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62023,7 +61824,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62041,7 +61843,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62066,7 +61867,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62104,7 +61904,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62122,7 +61923,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62147,7 +61947,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62185,7 +61984,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62203,7 +62003,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62228,7 +62027,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62266,56 +62064,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-lg-12" }, [
-        _c(
-          "button",
-          {
-            directives: [
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
+      ? _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-12" }, [
+            _c(
+              "button",
               {
-                name: "tooltip",
-                rawName: "v-tooltip.left",
-                value: "Editar",
-                expression: "'Editar'",
-                modifiers: { left: true }
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.editar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas fa-pencil-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            directives: [
+                directives: [
+                  {
+                    name: "tooltip",
+                    rawName: "v-tooltip.left",
+                    value: "Editar",
+                    expression: "'Editar'",
+                    modifiers: { left: true }
+                  }
+                ],
+                staticClass:
+                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
+                attrs: { disabled: _vm.disabledBtns },
+                on: {
+                  click: function($event) {
+                    return _vm.editar(_vm.rowData)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fas fa-pencil-alt" })]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
               {
-                name: "tooltip",
-                rawName: "v-tooltip",
-                value: "Eliminar",
-                expression: "'Eliminar'"
-              }
-            ],
-            staticClass:
-              "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-            attrs: { disabled: _vm.disabledBtns },
-            on: {
-              click: function($event) {
-                return _vm.eliminar(_vm.rowData)
-              }
-            }
-          },
-          [_c("i", { staticClass: "far fa-trash-alt" })]
-        )
-      ])
-    ])
+                directives: [
+                  {
+                    name: "tooltip",
+                    rawName: "v-tooltip",
+                    value: "Eliminar",
+                    expression: "'Eliminar'"
+                  }
+                ],
+                staticClass:
+                  "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
+                attrs: { disabled: _vm.disabledBtns },
+                on: {
+                  click: function($event) {
+                    return _vm.eliminar(_vm.rowData)
+                  }
+                }
+              },
+              [_c("i", { staticClass: "far fa-trash-alt" })]
+            )
+          ])
+        ])
+      : _c("div", [_c("IconoNoAccess")], 1)
   ])
 }
 var staticRenderFns = []
@@ -62341,7 +62142,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62359,7 +62161,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62384,7 +62185,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62422,7 +62222,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62440,7 +62241,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62465,7 +62265,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62503,7 +62302,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62521,7 +62321,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62546,7 +62345,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62584,7 +62382,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62602,7 +62401,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62627,7 +62425,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62665,7 +62462,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62683,7 +62481,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62708,7 +62505,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62827,7 +62623,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62845,7 +62642,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62870,7 +62666,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62908,7 +62703,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -62926,7 +62722,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -62951,7 +62746,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -62989,7 +62783,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63007,7 +62802,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63032,7 +62826,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63070,7 +62863,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -63093,7 +62887,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -63118,7 +62911,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -63160,7 +62952,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63178,7 +62971,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63203,7 +62995,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63241,7 +63032,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63259,7 +63051,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63284,7 +63075,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63322,7 +63112,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63340,7 +63131,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63365,7 +63155,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63403,7 +63192,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63421,7 +63211,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63446,7 +63235,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63484,7 +63272,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63502,7 +63291,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63527,7 +63315,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63565,7 +63352,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63583,7 +63371,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63608,7 +63395,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63646,7 +63432,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63664,7 +63451,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63689,7 +63475,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63727,7 +63512,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63745,7 +63531,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63770,7 +63555,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63808,7 +63592,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63826,7 +63611,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63851,7 +63635,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63889,7 +63672,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -63907,7 +63691,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -63932,7 +63715,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -63970,7 +63752,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -63993,7 +63776,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -64018,7 +63800,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -64060,7 +63841,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -64078,7 +63860,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64103,7 +63884,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64141,7 +63921,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-otra")
@@ -64159,7 +63940,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64184,7 +63964,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64222,7 +64001,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"])
+    _vm.getPermisoByNombres(["editar-otra", "eliminar-otra"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -64245,7 +64025,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.editar(_vm.rowData)
@@ -64270,7 +64049,6 @@ var render = function() {
                             ],
                             staticClass:
                               "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                            attrs: { disabled: _vm.disabledBtns },
                             on: {
                               click: function($event) {
                                 return _vm.eliminar(_vm.rowData)
@@ -64565,6 +64343,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("img", {
+      staticStyle: { cursor: "pointer" },
       attrs: {
         src:
           "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADdElEQVRoge2YzW8UZRzHP8+87OxOty/4hpU3Q1MSCCRgqG1dOEAkDVE42BjDgYAHSbz5D3j1LgexBwkaE7lIYsQQo0YDVsREEkxUBNIitdJh7dLusq+dmYfDxDUEgWH6PNsY93OaTJ7n+f4+O8/s88wDbdq0+U8j4jSSH597AeQYsGKxgYVjR8Yf/fT9bYsd52+MeM3kuygoHsCfvJyb3XPgWxVjQWwBVqoKNDOZSGLvq2dVjBdXQBmGk4okJn4bUiGxJAIqJVouIExLqUTrn4BlKpVouQCmoVSi9QKgVKL1U6ijM7q4j0ThpddirxMtF3Cee/6BEguXfs7FlYi5lfheJi85OWJ06IH1WTqC65d+Zf7EcYLiPJ27dpPdMaIjBtA0heaOf4Cf95D1GsXPPiGYv6kjBtAgEFbKzYJTff0gQxamp1THNFEuIBwHjGjqhuWy6uHvQr2AaWH3RptX35sBwOzqUR3TRMs7kNm8NbqQIRgG1hNP6ogBNAm4gzmEFf3B2StWI1IpHTGAJgGjI4uzbj0AwjRA6ltG9KzEoaQx9TsAjasTlM+e0RIDmgTqVy4SlooIM5pGxZMnCGbzOqL0CFTP/wBAdscu0hs3I+s1ZscOE5aKyrOUbyXC8i2qF86DIXCHtiOcNH/lPXzvOoWjR+jcvRc/P4Pv3UAGPsIQ2GvW4m55FsyH/z2VC5TPfI1s1Elv2IS57BH8mWmcvn587zqNa5PMjr19d6fvTtO4fJGefQcfOk+pgKzXKI9/A0RbCu+tN++Y+8K0kIH/T/jjy8G08GemqV74cWkFZOBT+vwkYSXaPjSuTkQBy3tJr9+Es2EjqTVrKZ/+itKXp5D1Gn7ea/ZP9fUnyl28gAypnBun9MUpgrkCAMJJk9kyQMfwduyVq+9ont05gju0jdovP+H/OY30F7CfWkXmmYHWC/g3POY+Okbj2mTznr3qaR57/Q2Ek75nP8PtwN06vJjoJokFGpNXKLz3DmG10rwnTIueV/bft3jVJFsHQsnND48SViuYXd0gomE6R17E7lVyBhybRE9ABn5zUQqK8wC4A8Nkd+r7dLwXiZ6AsG26R/dhdnVjdi+ja88oPS/vBxHrjEApid8BdzCHO5hTWUsiluZkTiH/G4E/tFbx78Q6yognYMhDtFZiChEeamFemzZtlorb+oIyI4Q5NRoAAAAASUVORK5CYII="
@@ -64600,7 +64379,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"])
+    _vm.getPermisoByNombres(["editar-proyecto", "eliminar-proyecto"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-proyecto")
@@ -64618,7 +64398,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64643,7 +64422,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64760,7 +64538,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"])
+    _vm.getPermisoByNombres(["editar-publicacion", "eliminar-publicacion"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-publicacion")
@@ -64778,7 +64557,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64803,7 +64581,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -64920,7 +64697,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"])
+    _vm.getPermisoByNombres(["editar-equipamiento", "eliminar-equipamiento"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-equipamiento")
@@ -64938,7 +64716,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -64963,7 +64740,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65080,7 +64856,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"])
+    _vm.getPermisoByNombres(["editar-investigador", "eliminar-investigador"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-investigador")
@@ -65098,7 +64875,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65123,7 +64899,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65240,7 +65015,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"])
+    _vm.getPermisoByNombres(["editar-actividad", "eliminar-actividad"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-actividad")
@@ -65258,7 +65034,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65283,7 +65058,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65400,7 +65174,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"])
+    _vm.getPermisoByNombres(["editar-noticia", "eliminar-noticia"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-noticia")
@@ -65418,7 +65193,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65443,7 +65217,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65560,7 +65333,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"])
+    _vm.getPermisoByNombres(["editar-novedad", "eliminar-novedad"]) &&
+    !_vm.disabledBtns
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 col-lg-12" }, [
             _vm.getPermisoByNombre("editar-novedad")
@@ -65578,7 +65352,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-warning",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.editar(_vm.rowData)
@@ -65603,7 +65376,6 @@ var render = function() {
                     ],
                     staticClass:
                       "mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger",
-                    attrs: { disabled: _vm.disabledBtns },
                     on: {
                       click: function($event) {
                         return _vm.eliminar(_vm.rowData)
@@ -65734,7 +65506,14 @@ var render = function() {
             _c(
               "div",
               { staticClass: "app-main__inner" },
-              [_c("router-view", { on: { rutaSider: _vm.rutaSider } })],
+              [
+                _c(
+                  "transition",
+                  { attrs: { "enter-active-class": "slideInLeft" } },
+                  [_c("router-view", { on: { rutaSider: _vm.rutaSider } })],
+                  1
+                )
+              ],
               1
             ),
             _vm._v(" "),
@@ -67650,10 +67429,68 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "app-header__content" }, [
-    _c("div", { staticClass: "app-header-left" }),
+    _c("div", { staticClass: "app-header-left" }, [
+      _c(
+        "div",
+        { staticClass: "search-wrappero" },
+        [
+          _vm.mostrarHeaderMobile
+            ? [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.logout($event)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "pe-7s-power" })]
+                )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "app-header-right" }, [
-      _c("div", { staticClass: "header-dots" }),
+      _c(
+        "div",
+        { staticClass: "header-dots" },
+        [
+          _vm.mostrarHeaderMobile
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "text-center" },
+                  [
+                    _c("div", { staticClass: "mb-1" }, [
+                      _c("b", [_vm._v(_vm._s(_vm.auth.name))])
+                    ]),
+                    _vm._v(" "),
+                    _vm.getRoles != ""
+                      ? [
+                          _c("div", [
+                            _c("em", [
+                              _vm._v(
+                                _vm._s(_vm.getRolById(_vm.auth.rol_id).nombre)
+                              )
+                            ])
+                          ])
+                        ]
+                      : _vm._e()
+                  ],
+                  2
+                )
+              ]
+            : _vm._e()
+        ],
+        2
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "header-btn-lg pr-0" }, [
         _c(
@@ -67808,29 +67645,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "app-header__menu" }, [
+    _c("span", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn-icon btn-icon-only btn btn-success btn-sm mobile-toggle-header-nav",
+          attrs: { type: "button" },
+          on: { click: _vm.mostrarHeaderMobile }
+        },
+        [_vm._m(0)]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "app-header__menu" }, [
-      _c("span", [
-        _c(
-          "button",
-          {
-            staticClass:
-              "btn-icon btn-icon-only btn btn-success btn-sm mobile-toggle-header-nav",
-            attrs: { type: "button" }
-          },
-          [
-            _c("span", { staticClass: "btn-icon-wrapper" }, [
-              _c("i", { staticClass: "fa fa-ellipsis-v fa-w-6" })
-            ])
-          ]
-        )
-      ])
+    return _c("span", { staticClass: "btn-icon-wrapper" }, [
+      _c("i", { staticClass: "fa fa-ellipsis-v fa-w-6" })
     ])
   }
 ]
@@ -67960,7 +67796,12 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
       : injectStyles
   }
 
@@ -67969,7 +67810,7 @@ function normalizeComponent (
       // for template-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
-      // register for functioal component in vue file
+      // register for functional component in vue file
       var originalRender = options.render
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -68613,8 +68454,8 @@ if (GlobalVue) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.1.3
-  * (c) 2019 Evan You
+  * vue-router v3.4.3
+  * (c) 2020 Evan You
   * @license MIT
   */
 /*  */
@@ -68629,18 +68470,6 @@ function warn (condition, message) {
   if ( true && !condition) {
     typeof console !== 'undefined' && console.warn(("[vue-router] " + message));
   }
-}
-
-function isError (err) {
-  return Object.prototype.toString.call(err).indexOf('Error') > -1
-}
-
-function isExtendedError (constructor, err) {
-  return (
-    err instanceof constructor ||
-    // _name is to support IE9 too
-    (err && (err.name === constructor.name || err._name === constructor._name))
-  )
 }
 
 function extend (a, b) {
@@ -68680,14 +68509,12 @@ var View = {
     var depth = 0;
     var inactive = false;
     while (parent && parent._routerRoot !== parent) {
-      var vnodeData = parent.$vnode && parent.$vnode.data;
-      if (vnodeData) {
-        if (vnodeData.routerView) {
-          depth++;
-        }
-        if (vnodeData.keepAlive && parent._inactive) {
-          inactive = true;
-        }
+      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
+      if (vnodeData.routerView) {
+        depth++;
+      }
+      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
+        inactive = true;
       }
       parent = parent.$parent;
     }
@@ -68695,17 +68522,32 @@ var View = {
 
     // render previous view if the tree is inactive and kept-alive
     if (inactive) {
-      return h(cache[name], data, children)
+      var cachedData = cache[name];
+      var cachedComponent = cachedData && cachedData.component;
+      if (cachedComponent) {
+        // #2301
+        // pass props
+        if (cachedData.configProps) {
+          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
+        }
+        return h(cachedComponent, data, children)
+      } else {
+        // render previous empty view
+        return h()
+      }
     }
 
     var matched = route.matched[depth];
-    // render empty node if no matched route
-    if (!matched) {
+    var component = matched && matched.components[name];
+
+    // render empty node if no matched route or no config component
+    if (!matched || !component) {
       cache[name] = null;
       return h()
     }
 
-    var component = cache[name] = matched.components[name];
+    // cache component
+    cache[name] = { component: component };
 
     // attach instance registration hook
     // this will be called in the instance's injected lifecycle hooks
@@ -68737,24 +68579,36 @@ var View = {
       }
     };
 
-    // resolve props
-    var propsToPass = data.props = resolveProps(route, matched.props && matched.props[name]);
-    if (propsToPass) {
-      // clone to prevent mutation
-      propsToPass = data.props = extend({}, propsToPass);
-      // pass non-declared props as attrs
-      var attrs = data.attrs = data.attrs || {};
-      for (var key in propsToPass) {
-        if (!component.props || !(key in component.props)) {
-          attrs[key] = propsToPass[key];
-          delete propsToPass[key];
-        }
-      }
+    var configProps = matched.props && matched.props[name];
+    // save route and configProps in cache
+    if (configProps) {
+      extend(cache[name], {
+        route: route,
+        configProps: configProps
+      });
+      fillPropsinData(component, data, route, configProps);
     }
 
     return h(component, data, children)
   }
 };
+
+function fillPropsinData (component, data, route, configProps) {
+  // resolve props
+  var propsToPass = data.props = resolveProps(route, configProps);
+  if (propsToPass) {
+    // clone to prevent mutation
+    propsToPass = data.props = extend({}, propsToPass);
+    // pass non-declared props as attrs
+    var attrs = data.attrs = data.attrs || {};
+    for (var key in propsToPass) {
+      if (!component.props || !(key in component.props)) {
+        attrs[key] = propsToPass[key];
+        delete propsToPass[key];
+      }
+    }
+  }
+}
 
 function resolveProps (route, config) {
   switch (typeof config) {
@@ -68787,8 +68641,8 @@ var commaRE = /%2C/g;
 // - escapes [!'()*]
 // - preserve commas
 var encode = function (str) { return encodeURIComponent(str)
-  .replace(encodeReserveRE, encodeReserveReplacer)
-  .replace(commaRE, ','); };
+    .replace(encodeReserveRE, encodeReserveReplacer)
+    .replace(commaRE, ','); };
 
 var decode = decodeURIComponent;
 
@@ -68808,10 +68662,15 @@ function resolveQuery (
     parsedQuery = {};
   }
   for (var key in extraQuery) {
-    parsedQuery[key] = extraQuery[key];
+    var value = extraQuery[key];
+    parsedQuery[key] = Array.isArray(value)
+      ? value.map(castQueryParamValue)
+      : castQueryParamValue(value);
   }
   return parsedQuery
 }
+
+var castQueryParamValue = function (value) { return (value == null || typeof value === 'object' ? value : String(value)); };
 
 function parseQuery (query) {
   var res = {};
@@ -68825,9 +68684,7 @@ function parseQuery (query) {
   query.split('&').forEach(function (param) {
     var parts = param.replace(/\+/g, ' ').split('=');
     var key = decode(parts.shift());
-    var val = parts.length > 0
-      ? decode(parts.join('='))
-      : null;
+    var val = parts.length > 0 ? decode(parts.join('=')) : null;
 
     if (res[key] === undefined) {
       res[key] = val;
@@ -68842,34 +68699,39 @@ function parseQuery (query) {
 }
 
 function stringifyQuery (obj) {
-  var res = obj ? Object.keys(obj).map(function (key) {
-    var val = obj[key];
+  var res = obj
+    ? Object.keys(obj)
+      .map(function (key) {
+        var val = obj[key];
 
-    if (val === undefined) {
-      return ''
-    }
-
-    if (val === null) {
-      return encode(key)
-    }
-
-    if (Array.isArray(val)) {
-      var result = [];
-      val.forEach(function (val2) {
-        if (val2 === undefined) {
-          return
+        if (val === undefined) {
+          return ''
         }
-        if (val2 === null) {
-          result.push(encode(key));
-        } else {
-          result.push(encode(key) + '=' + encode(val2));
-        }
-      });
-      return result.join('&')
-    }
 
-    return encode(key) + '=' + encode(val)
-  }).filter(function (x) { return x.length > 0; }).join('&') : null;
+        if (val === null) {
+          return encode(key)
+        }
+
+        if (Array.isArray(val)) {
+          var result = [];
+          val.forEach(function (val2) {
+            if (val2 === undefined) {
+              return
+            }
+            if (val2 === null) {
+              result.push(encode(key));
+            } else {
+              result.push(encode(key) + '=' + encode(val2));
+            }
+          });
+          return result.join('&')
+        }
+
+        return encode(key) + '=' + encode(val)
+      })
+      .filter(function (x) { return x.length > 0; })
+      .join('&')
+    : null;
   return res ? ("?" + res) : ''
 }
 
@@ -68983,6 +68845,8 @@ function isObjectEqual (a, b) {
   return aKeys.every(function (key) {
     var aVal = a[key];
     var bVal = b[key];
+    // query values can be null and undefined
+    if (aVal == null || bVal == null) { return aVal === bVal }
     // check nested equality
     if (typeof aVal === 'object' && typeof bVal === 'object') {
       return isObjectEqual(aVal, bVal)
@@ -69193,7 +69057,7 @@ function parse (str, options) {
  * @return {!function(Object=, Object=)}
  */
 function compile (str, options) {
-  return tokensToFunction(parse(str, options))
+  return tokensToFunction(parse(str, options), options)
 }
 
 /**
@@ -69223,14 +69087,14 @@ function encodeAsterisk (str) {
 /**
  * Expose a method for transforming tokens into the path function.
  */
-function tokensToFunction (tokens) {
+function tokensToFunction (tokens, options) {
   // Compile all the tokens into regexps.
   var matches = new Array(tokens.length);
 
   // Compile all the patterns before compilation.
   for (var i = 0; i < tokens.length; i++) {
     if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$');
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options));
     }
   }
 
@@ -69343,7 +69207,7 @@ function attachKeys (re, keys) {
  * @return {string}
  */
 function flags (options) {
-  return options.sensitive ? '' : 'i'
+  return options && options.sensitive ? '' : 'i'
 }
 
 /**
@@ -69531,12 +69395,14 @@ function fillParams (
       (regexpCompileCache[path] = pathToRegexp_1.compile(path));
 
     // Fix #2505 resolving asterisk routes { name: 'not-found', params: { pathMatch: '/not-found' }}
-    if (params.pathMatch) { params[0] = params.pathMatch; }
+    // and fix #3106 so that you can work with location descriptor object having params.pathMatch equal to empty string
+    if (typeof params.pathMatch === 'string') { params[0] = params.pathMatch; }
 
     return filler(params, { pretty: true })
   } catch (e) {
     if (true) {
-      warn(false, ("missing param for " + routeMsg + ": " + (e.message)));
+      // Fix #3072 no warn if `pathMatch` is string
+      warn(typeof params.pathMatch === 'string', ("missing param for " + routeMsg + ": " + (e.message)));
     }
     return ''
   } finally {
@@ -69558,20 +69424,25 @@ function normalizeLocation (
   if (next._normalized) {
     return next
   } else if (next.name) {
-    return extend({}, raw)
+    next = extend({}, raw);
+    var params = next.params;
+    if (params && typeof params === 'object') {
+      next.params = extend({}, params);
+    }
+    return next
   }
 
   // relative params
   if (!next.path && next.params && current) {
     next = extend({}, next);
     next._normalized = true;
-    var params = extend(extend({}, current.params), next.params);
+    var params$1 = extend(extend({}, current.params), next.params);
     if (current.name) {
       next.name = current.name;
-      next.params = params;
+      next.params = params$1;
     } else if (current.matched.length) {
       var rawPath = current.matched[current.matched.length - 1].path;
-      next.path = fillParams(rawPath, params, ("path " + (current.path)));
+      next.path = fillParams(rawPath, params$1, ("path " + (current.path)));
     } else if (true) {
       warn(false, "relative params navigation requires a current route.");
     }
@@ -69627,6 +69498,10 @@ var Link = {
     replace: Boolean,
     activeClass: String,
     exactActiveClass: String,
+    ariaCurrentValue: {
+      type: String,
+      default: 'page'
+    },
     event: {
       type: eventTypes,
       default: 'click'
@@ -69672,6 +69547,8 @@ var Link = {
       ? classes[exactActiveClass]
       : isIncludedRoute(current, compareTarget);
 
+    var ariaCurrentValue = classes[exactActiveClass] ? this.ariaCurrentValue : null;
+
     var handler = function (e) {
       if (guardEvent(e)) {
         if (this$1.replace) {
@@ -69711,7 +69588,7 @@ var Link = {
         if (true) {
           warn(
             false,
-            ("RouterLink with to=\"" + (this.props.to) + "\" is trying to use a scoped slot but it didn't provide exactly one child.")
+            ("RouterLink with to=\"" + (this.to) + "\" is trying to use a scoped slot but it didn't provide exactly one child. Wrapping the content with a span element.")
           );
         }
         return scopedSlot.length === 0 ? h() : h('span', {}, scopedSlot)
@@ -69720,7 +69597,7 @@ var Link = {
 
     if (this.tag === 'a') {
       data.on = on;
-      data.attrs = { href: href };
+      data.attrs = { href: href, 'aria-current': ariaCurrentValue };
     } else {
       // find the first <a> child and apply listener and href
       var a = findAnchor(this.$slots.default);
@@ -69748,6 +69625,7 @@ var Link = {
 
         var aAttrs = (a.data.attrs = extend({}, a.data.attrs));
         aAttrs.href = href;
+        aAttrs['aria-current'] = ariaCurrentValue;
       } else {
         // doesn't have <a> child, apply listener to self
         data.on = on;
@@ -70266,6 +70144,10 @@ function setStateKey (key) {
 var positionStore = Object.create(null);
 
 function setupScroll () {
+  // Prevent browser scroll behavior on History popstate
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
   // Fix for #1585 for Firefox
   // Fix for #2195 Add optional third attribute to workaround a bug in safari https://bugs.webkit.org/show_bug.cgi?id=182678
   // Fix for #2774 Support for apps loaded from Windows file shares not mapped to network drives: replaced location.origin with
@@ -70273,13 +70155,14 @@ function setupScroll () {
   // location.host contains the port and location.hostname doesn't
   var protocolAndPath = window.location.protocol + '//' + window.location.host;
   var absolutePath = window.location.href.replace(protocolAndPath, '');
-  window.history.replaceState({ key: getStateKey() }, '', absolutePath);
-  window.addEventListener('popstate', function (e) {
-    saveScrollPosition();
-    if (e.state && e.state.key) {
-      setStateKey(e.state.key);
-    }
-  });
+  // preserve existing history state as it could be overriden by the user
+  var stateCopy = extend({}, window.history.state);
+  stateCopy.key = getStateKey();
+  window.history.replaceState(stateCopy, '', absolutePath);
+  window.addEventListener('popstate', handlePopState);
+  return function () {
+    window.removeEventListener('popstate', handlePopState);
+  }
 }
 
 function handleScroll (
@@ -70338,6 +70221,13 @@ function saveScrollPosition () {
       x: window.pageXOffset,
       y: window.pageYOffset
     };
+  }
+}
+
+function handlePopState (e) {
+  saveScrollPosition();
+  if (e.state && e.state.key) {
+    setStateKey(e.state.key);
   }
 }
 
@@ -70426,7 +70316,7 @@ var supportsPushState =
       return false
     }
 
-    return window.history && 'pushState' in window.history
+    return window.history && typeof window.history.pushState === 'function'
   })();
 
 function pushState (url, replace) {
@@ -70436,7 +70326,10 @@ function pushState (url, replace) {
   var history = window.history;
   try {
     if (replace) {
-      history.replaceState({ key: getStateKey() }, '', url);
+      // preserve existing history state as it could be overriden by the user
+      var stateCopy = extend({}, history.state);
+      stateCopy.key = getStateKey();
+      history.replaceState(stateCopy, '', url);
     } else {
       history.pushState({ key: setStateKey(genStateKey()) }, '', url);
     }
@@ -70466,6 +70359,88 @@ function runQueue (queue, fn, cb) {
     }
   };
   step(0);
+}
+
+var NavigationFailureType = {
+  redirected: 2,
+  aborted: 4,
+  cancelled: 8,
+  duplicated: 16
+};
+
+function createNavigationRedirectedError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.redirected,
+    ("Redirected when going from \"" + (from.fullPath) + "\" to \"" + (stringifyRoute(
+      to
+    )) + "\" via a navigation guard.")
+  )
+}
+
+function createNavigationDuplicatedError (from, to) {
+  var error = createRouterError(
+    from,
+    to,
+    NavigationFailureType.duplicated,
+    ("Avoided redundant navigation to current location: \"" + (from.fullPath) + "\".")
+  );
+  // backwards compatible with the first introduction of Errors
+  error.name = 'NavigationDuplicated';
+  return error
+}
+
+function createNavigationCancelledError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.cancelled,
+    ("Navigation cancelled from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" with a new navigation.")
+  )
+}
+
+function createNavigationAbortedError (from, to) {
+  return createRouterError(
+    from,
+    to,
+    NavigationFailureType.aborted,
+    ("Navigation aborted from \"" + (from.fullPath) + "\" to \"" + (to.fullPath) + "\" via a navigation guard.")
+  )
+}
+
+function createRouterError (from, to, type, message) {
+  var error = new Error(message);
+  error._isRouter = true;
+  error.from = from;
+  error.to = to;
+  error.type = type;
+
+  return error
+}
+
+var propertiesToLog = ['params', 'query', 'hash'];
+
+function stringifyRoute (to) {
+  if (typeof to === 'string') { return to }
+  if ('path' in to) { return to.path }
+  var location = {};
+  propertiesToLog.forEach(function (key) {
+    if (key in to) { location[key] = to[key]; }
+  });
+  return JSON.stringify(location, null, 2)
+}
+
+function isError (err) {
+  return Object.prototype.toString.call(err).indexOf('Error') > -1
+}
+
+function isNavigationFailure (err, errorType) {
+  return (
+    isError(err) &&
+    err._isRouter &&
+    (errorType == null || err.type === errorType)
+  )
 }
 
 /*  */
@@ -70577,33 +70552,6 @@ function once (fn) {
   }
 }
 
-var NavigationDuplicated = /*@__PURE__*/(function (Error) {
-  function NavigationDuplicated (normalizedLocation) {
-    Error.call(this);
-    this.name = this._name = 'NavigationDuplicated';
-    // passing the message to super() doesn't seem to work in the transpiled version
-    this.message = "Navigating to current location (\"" + (normalizedLocation.fullPath) + "\") is not allowed";
-    // add a stack property so services like Sentry can correctly display it
-    Object.defineProperty(this, 'stack', {
-      value: new Error().stack,
-      writable: true,
-      configurable: true
-    });
-    // we could also have used
-    // Error.captureStackTrace(this, this.constructor)
-    // but it only exists on node and chrome
-  }
-
-  if ( Error ) NavigationDuplicated.__proto__ = Error;
-  NavigationDuplicated.prototype = Object.create( Error && Error.prototype );
-  NavigationDuplicated.prototype.constructor = NavigationDuplicated;
-
-  return NavigationDuplicated;
-}(Error));
-
-// support IE9
-NavigationDuplicated._name = 'NavigationDuplicated';
-
 /*  */
 
 var History = function History (router, base) {
@@ -70616,6 +70564,7 @@ var History = function History (router, base) {
   this.readyCbs = [];
   this.readyErrorCbs = [];
   this.errorCbs = [];
+  this.listeners = [];
 };
 
 History.prototype.listen = function listen (cb) {
@@ -70644,13 +70593,27 @@ History.prototype.transitionTo = function transitionTo (
 ) {
     var this$1 = this;
 
-  var route = this.router.match(location, this.current);
+  var route;
+  // catch redirect option https://github.com/vuejs/vue-router/issues/3201
+  try {
+    route = this.router.match(location, this.current);
+  } catch (e) {
+    this.errorCbs.forEach(function (cb) {
+      cb(e);
+    });
+    // Exception should still be thrown
+    throw e
+  }
   this.confirmTransition(
     route,
     function () {
+      var prev = this$1.current;
       this$1.updateRoute(route);
       onComplete && onComplete(route);
       this$1.ensureURL();
+      this$1.router.afterHooks.forEach(function (hook) {
+        hook && hook(route, prev);
+      });
 
       // fire ready cbs once
       if (!this$1.ready) {
@@ -70666,9 +70629,17 @@ History.prototype.transitionTo = function transitionTo (
       }
       if (err && !this$1.ready) {
         this$1.ready = true;
-        this$1.readyErrorCbs.forEach(function (cb) {
-          cb(err);
-        });
+        // Initial redirection should still trigger the onReady onSuccess
+        // https://github.com/vuejs/vue-router/issues/3225
+        if (!isNavigationFailure(err, NavigationFailureType.redirected)) {
+          this$1.readyErrorCbs.forEach(function (cb) {
+            cb(err);
+          });
+        } else {
+          this$1.readyCbs.forEach(function (cb) {
+            cb(route);
+          });
+        }
       }
     }
   );
@@ -70679,11 +70650,10 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
 
   var current = this.current;
   var abort = function (err) {
-    // after merging https://github.com/vuejs/vue-router/pull/2771 we
-    // When the user navigates through history through back/forward buttons
-    // we do not want to throw the error. We only throw it if directly calling
-    // push/replace. That's why it's not included in isError
-    if (!isExtendedError(NavigationDuplicated, err) && isError(err)) {
+    // changed after adding errors with
+    // https://github.com/vuejs/vue-router/pull/3047 before that change,
+    // redirect and aborted navigation would produce an err == null
+    if (!isNavigationFailure(err) && isError(err)) {
       if (this$1.errorCbs.length) {
         this$1.errorCbs.forEach(function (cb) {
           cb(err);
@@ -70695,13 +70665,16 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     }
     onAbort && onAbort(err);
   };
+  var lastRouteIndex = route.matched.length - 1;
+  var lastCurrentIndex = current.matched.length - 1;
   if (
     isSameRoute(route, current) &&
     // in the case the route map has been dynamically appended to
-    route.matched.length === current.matched.length
+    lastRouteIndex === lastCurrentIndex &&
+    route.matched[lastRouteIndex] === current.matched[lastCurrentIndex]
   ) {
     this.ensureURL();
-    return abort(new NavigationDuplicated(route))
+    return abort(createNavigationDuplicatedError(current, route))
   }
 
   var ref = resolveQueue(
@@ -70728,12 +70701,15 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   this.pending = route;
   var iterator = function (hook, next) {
     if (this$1.pending !== route) {
-      return abort()
+      return abort(createNavigationCancelledError(current, route))
     }
     try {
       hook(route, current, function (to) {
-        if (to === false || isError(to)) {
+        if (to === false) {
           // next(false) -> abort navigation, ensure current URL
+          this$1.ensureURL(true);
+          abort(createNavigationAbortedError(current, route));
+        } else if (isError(to)) {
           this$1.ensureURL(true);
           abort(to);
         } else if (
@@ -70742,7 +70718,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
             (typeof to.path === 'string' || typeof to.name === 'string'))
         ) {
           // next('/') or next({ path: '/' }) -> redirect
-          abort();
+          abort(createNavigationRedirectedError(current, route));
           if (typeof to === 'object' && to.replace) {
             this$1.replace(to);
           } else {
@@ -70767,7 +70743,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     var queue = enterGuards.concat(this$1.router.resolveHooks);
     runQueue(queue, iterator, function () {
       if (this$1.pending !== route) {
-        return abort()
+        return abort(createNavigationCancelledError(current, route))
       }
       this$1.pending = null;
       onComplete(route);
@@ -70783,12 +70759,19 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
 };
 
 History.prototype.updateRoute = function updateRoute (route) {
-  var prev = this.current;
   this.current = route;
   this.cb && this.cb(route);
-  this.router.afterHooks.forEach(function (hook) {
-    hook && hook(route, prev);
+};
+
+History.prototype.setupListeners = function setupListeners () {
+  // Default implementation is empty
+};
+
+History.prototype.teardownListeners = function teardownListeners () {
+  this.listeners.forEach(function (cleanupListener) {
+    cleanupListener();
   });
+  this.listeners = [];
 };
 
 function normalizeBase (base) {
@@ -70933,25 +70916,37 @@ function poll (
 
 var HTML5History = /*@__PURE__*/(function (History) {
   function HTML5History (router, base) {
-    var this$1 = this;
-
     History.call(this, router, base);
 
+    this._startLocation = getLocation(this.base);
+  }
+
+  if ( History ) HTML5History.__proto__ = History;
+  HTML5History.prototype = Object.create( History && History.prototype );
+  HTML5History.prototype.constructor = HTML5History;
+
+  HTML5History.prototype.setupListeners = function setupListeners () {
+    var this$1 = this;
+
+    if (this.listeners.length > 0) {
+      return
+    }
+
+    var router = this.router;
     var expectScroll = router.options.scrollBehavior;
     var supportsScroll = supportsPushState && expectScroll;
 
     if (supportsScroll) {
-      setupScroll();
+      this.listeners.push(setupScroll());
     }
 
-    var initLocation = getLocation(this.base);
-    window.addEventListener('popstate', function (e) {
+    var handleRoutingEvent = function () {
       var current = this$1.current;
 
       // Avoiding first `popstate` event dispatched in some browsers but first
       // history route not updated since async guard at the same time.
       var location = getLocation(this$1.base);
-      if (this$1.current === START && location === initLocation) {
+      if (this$1.current === START && location === this$1._startLocation) {
         return
       }
 
@@ -70960,12 +70955,12 @@ var HTML5History = /*@__PURE__*/(function (History) {
           handleScroll(router, route, current, true);
         }
       });
+    };
+    window.addEventListener('popstate', handleRoutingEvent);
+    this.listeners.push(function () {
+      window.removeEventListener('popstate', handleRoutingEvent);
     });
-  }
-
-  if ( History ) HTML5History.__proto__ = History;
-  HTML5History.prototype = Object.create( History && History.prototype );
-  HTML5History.prototype.constructor = HTML5History;
+  };
 
   HTML5History.prototype.go = function go (n) {
     window.history.go(n);
@@ -71011,7 +71006,7 @@ var HTML5History = /*@__PURE__*/(function (History) {
 
 function getLocation (base) {
   var path = decodeURI(window.location.pathname);
-  if (base && path.indexOf(base) === 0) {
+  if (base && path.toLowerCase().indexOf(base.toLowerCase()) === 0) {
     path = path.slice(base.length);
   }
   return (path || '/') + window.location.search + window.location.hash
@@ -71038,31 +71033,40 @@ var HashHistory = /*@__PURE__*/(function (History) {
   HashHistory.prototype.setupListeners = function setupListeners () {
     var this$1 = this;
 
+    if (this.listeners.length > 0) {
+      return
+    }
+
     var router = this.router;
     var expectScroll = router.options.scrollBehavior;
     var supportsScroll = supportsPushState && expectScroll;
 
     if (supportsScroll) {
-      setupScroll();
+      this.listeners.push(setupScroll());
     }
 
-    window.addEventListener(
-      supportsPushState ? 'popstate' : 'hashchange',
-      function () {
-        var current = this$1.current;
-        if (!ensureSlash()) {
-          return
-        }
-        this$1.transitionTo(getHash(), function (route) {
-          if (supportsScroll) {
-            handleScroll(this$1.router, route, current, true);
-          }
-          if (!supportsPushState) {
-            replaceHash(route.fullPath);
-          }
-        });
+    var handleRoutingEvent = function () {
+      var current = this$1.current;
+      if (!ensureSlash()) {
+        return
       }
+      this$1.transitionTo(getHash(), function (route) {
+        if (supportsScroll) {
+          handleScroll(this$1.router, route, current, true);
+        }
+        if (!supportsPushState) {
+          replaceHash(route.fullPath);
+        }
+      });
+    };
+    var eventType = supportsPushState ? 'popstate' : 'hashchange';
+    window.addEventListener(
+      eventType,
+      handleRoutingEvent
     );
+    this.listeners.push(function () {
+      window.removeEventListener(eventType, handleRoutingEvent);
+    });
   };
 
   HashHistory.prototype.push = function push (location, onComplete, onAbort) {
@@ -71151,9 +71155,7 @@ function getHash () {
       href = decodeURI(href.slice(0, hashIndex)) + href.slice(hashIndex);
     } else { href = decodeURI(href); }
   } else {
-    if (searchIndex > -1) {
-      href = decodeURI(href.slice(0, searchIndex)) + href.slice(searchIndex);
-    }
+    href = decodeURI(href.slice(0, searchIndex)) + href.slice(searchIndex);
   }
 
   return href
@@ -71237,7 +71239,7 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
         this$1.updateRoute(route);
       },
       function (err) {
-        if (isExtendedError(NavigationDuplicated, err)) {
+        if (isNavigationFailure(err, NavigationFailureType.duplicated)) {
           this$1.index = targetIndex;
         }
       }
@@ -71258,8 +71260,6 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
 
 /*  */
 
-
-
 var VueRouter = function VueRouter (options) {
   if ( options === void 0 ) options = {};
 
@@ -71272,7 +71272,8 @@ var VueRouter = function VueRouter (options) {
   this.matcher = createMatcher(options.routes || [], this);
 
   var mode = options.mode || 'hash';
-  this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false;
+  this.fallback =
+    mode === 'history' && !supportsPushState && options.fallback !== false;
   if (this.fallback) {
     mode = 'hash';
   }
@@ -71300,11 +71301,7 @@ var VueRouter = function VueRouter (options) {
 
 var prototypeAccessors = { currentRoute: { configurable: true } };
 
-VueRouter.prototype.match = function match (
-  raw,
-  current,
-  redirectedFrom
-) {
+VueRouter.prototype.match = function match (raw, current, redirectedFrom) {
   return this.matcher.match(raw, current, redirectedFrom)
 };
 
@@ -71315,11 +71312,12 @@ prototypeAccessors.currentRoute.get = function () {
 VueRouter.prototype.init = function init (app /* Vue component instance */) {
     var this$1 = this;
 
-   true && assert(
-    install.installed,
-    "not installed. Make sure to call `Vue.use(VueRouter)` " +
-    "before creating root instance."
-  );
+   true &&
+    assert(
+      install.installed,
+      "not installed. Make sure to call `Vue.use(VueRouter)` " +
+        "before creating root instance."
+    );
 
   this.apps.push(app);
 
@@ -71332,6 +71330,12 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
     // ensure we still have a main app or null if no apps
     // we do not release the router so it can be reused
     if (this$1.app === app) { this$1.app = this$1.apps[0] || null; }
+
+    if (!this$1.app) {
+      // clean up event listeners
+      // https://github.com/vuejs/vue-router/issues/2341
+      this$1.history.teardownListeners();
+    }
   });
 
   // main app previously initialized
@@ -71344,16 +71348,24 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
 
   var history = this.history;
 
-  if (history instanceof HTML5History) {
-    history.transitionTo(history.getCurrentLocation());
-  } else if (history instanceof HashHistory) {
-    var setupHashListener = function () {
+  if (history instanceof HTML5History || history instanceof HashHistory) {
+    var handleInitialScroll = function (routeOrError) {
+      var from = history.current;
+      var expectScroll = this$1.options.scrollBehavior;
+      var supportsScroll = supportsPushState && expectScroll;
+
+      if (supportsScroll && 'fullPath' in routeOrError) {
+        handleScroll(this$1, routeOrError, from, false);
+      }
+    };
+    var setupListeners = function (routeOrError) {
       history.setupListeners();
+      handleInitialScroll(routeOrError);
     };
     history.transitionTo(
       history.getCurrentLocation(),
-      setupHashListener,
-      setupHashListener
+      setupListeners,
+      setupListeners
     );
   }
 
@@ -71431,11 +71443,14 @@ VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
   if (!route) {
     return []
   }
-  return [].concat.apply([], route.matched.map(function (m) {
-    return Object.keys(m.components).map(function (key) {
-      return m.components[key]
+  return [].concat.apply(
+    [],
+    route.matched.map(function (m) {
+      return Object.keys(m.components).map(function (key) {
+        return m.components[key]
+      })
     })
-  }))
+  )
 };
 
 VueRouter.prototype.resolve = function resolve (
@@ -71444,12 +71459,7 @@ VueRouter.prototype.resolve = function resolve (
   append
 ) {
   current = current || this.history.current;
-  var location = normalizeLocation(
-    to,
-    current,
-    append,
-    this
-  );
+  var location = normalizeLocation(to, current, append, this);
   var route = this.match(location, current);
   var fullPath = route.redirectedFrom || route.fullPath;
   var base = this.history.base;
@@ -71487,7 +71497,9 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.1.3';
+VueRouter.version = '3.4.3';
+VueRouter.isNavigationFailure = isNavigationFailure;
+VueRouter.NavigationFailureType = NavigationFailureType;
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
@@ -72313,8 +72325,8 @@ const __vue_script__$3 = VueToastr;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
  * Released under the MIT License.
  */
 
@@ -77753,7 +77765,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.6.11';
+Vue.version = '2.6.12';
 
 /*  */
 
@@ -79959,7 +79971,7 @@ function updateDOMProps (oldVnode, vnode) {
       // skip the update if old and new VDOM state is the same.
       // `value` is handled separately because the DOM value may be temporarily
       // out of sync with VDOM state due to focus, composition and modifiers.
-      // This  #4521 by skipping the unnecesarry `checked` update.
+      // This  #4521 by skipping the unnecessary `checked` update.
       cur !== oldProps[key]
     ) {
       // some property updates can throw
@@ -82204,7 +82216,7 @@ function parse (
       }
     },
     comment: function comment (text, start, end) {
-      // adding anyting as a sibling to the root node is forbidden
+      // adding anything as a sibling to the root node is forbidden
       // comments should still be allowed, but ignored
       if (currentParent) {
         var child = {
@@ -84290,25 +84302,991 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/vuelidate/lib/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/vuelidate/lib/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Vuelidate = Vuelidate;
+Object.defineProperty(exports, "withParams", {
+  enumerable: true,
+  get: function get() {
+    return _params.withParams;
+  }
+});
+exports.default = exports.validationMixin = void 0;
+
+var _vval = __webpack_require__(/*! ./vval */ "./node_modules/vuelidate/lib/vval.js");
+
+var _params = __webpack_require__(/*! ./params */ "./node_modules/vuelidate/lib/params.js");
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var NIL = function NIL() {
+  return null;
+};
+
+var buildFromKeys = function buildFromKeys(keys, fn, keyFn) {
+  return keys.reduce(function (build, key) {
+    build[keyFn ? keyFn(key) : key] = fn(key);
+    return build;
+  }, {});
+};
+
+function isFunction(val) {
+  return typeof val === 'function';
+}
+
+function isObject(val) {
+  return val !== null && (_typeof(val) === 'object' || isFunction(val));
+}
+
+function isPromise(object) {
+  return isObject(object) && isFunction(object.then);
+}
+
+var getPath = function getPath(ctx, obj, path, fallback) {
+  if (typeof path === 'function') {
+    return path.call(ctx, obj, fallback);
+  }
+
+  path = Array.isArray(path) ? path : path.split('.');
+
+  for (var i = 0; i < path.length; i++) {
+    if (obj && _typeof(obj) === 'object') {
+      obj = obj[path[i]];
+    } else {
+      return fallback;
+    }
+  }
+
+  return typeof obj === 'undefined' ? fallback : obj;
+};
+
+var __isVuelidateAsyncVm = '__isVuelidateAsyncVm';
+
+function makePendingAsyncVm(Vue, promise) {
+  var asyncVm = new Vue({
+    data: {
+      p: true,
+      v: false
+    }
+  });
+  promise.then(function (value) {
+    asyncVm.p = false;
+    asyncVm.v = value;
+  }, function (error) {
+    asyncVm.p = false;
+    asyncVm.v = false;
+    throw error;
+  });
+  asyncVm[__isVuelidateAsyncVm] = true;
+  return asyncVm;
+}
+
+var validationGetters = {
+  $invalid: function $invalid() {
+    var _this = this;
+
+    var proxy = this.proxy;
+    return this.nestedKeys.some(function (nested) {
+      return _this.refProxy(nested).$invalid;
+    }) || this.ruleKeys.some(function (rule) {
+      return !proxy[rule];
+    });
+  },
+  $dirty: function $dirty() {
+    var _this2 = this;
+
+    if (this.dirty) {
+      return true;
+    }
+
+    if (this.nestedKeys.length === 0) {
+      return false;
+    }
+
+    return this.nestedKeys.every(function (key) {
+      return _this2.refProxy(key).$dirty;
+    });
+  },
+  $anyDirty: function $anyDirty() {
+    var _this3 = this;
+
+    if (this.dirty) {
+      return true;
+    }
+
+    if (this.nestedKeys.length === 0) {
+      return false;
+    }
+
+    return this.nestedKeys.some(function (key) {
+      return _this3.refProxy(key).$anyDirty;
+    });
+  },
+  $error: function $error() {
+    return this.$dirty && !this.$pending && this.$invalid;
+  },
+  $anyError: function $anyError() {
+    var _this4 = this;
+
+    if (this.$error) return true;
+    return this.nestedKeys.some(function (key) {
+      return _this4.refProxy(key).$anyError;
+    });
+  },
+  $pending: function $pending() {
+    var _this5 = this;
+
+    return this.ruleKeys.some(function (key) {
+      return _this5.getRef(key).$pending;
+    }) || this.nestedKeys.some(function (key) {
+      return _this5.refProxy(key).$pending;
+    });
+  },
+  $params: function $params() {
+    var _this6 = this;
+
+    var vals = this.validations;
+    return _objectSpread({}, buildFromKeys(this.nestedKeys, function (key) {
+      return vals[key] && vals[key].$params || null;
+    }), {}, buildFromKeys(this.ruleKeys, function (key) {
+      return _this6.getRef(key).$params;
+    }));
+  }
+};
+
+function setDirtyRecursive(newState) {
+  this.dirty = newState;
+  var proxy = this.proxy;
+  var method = newState ? '$touch' : '$reset';
+  this.nestedKeys.forEach(function (key) {
+    proxy[key][method]();
+  });
+}
+
+var validationMethods = {
+  $touch: function $touch() {
+    setDirtyRecursive.call(this, true);
+  },
+  $reset: function $reset() {
+    setDirtyRecursive.call(this, false);
+  },
+  $flattenParams: function $flattenParams() {
+    var proxy = this.proxy;
+    var params = [];
+
+    for (var key in this.$params) {
+      if (this.isNested(key)) {
+        var childParams = proxy[key].$flattenParams();
+
+        for (var j = 0; j < childParams.length; j++) {
+          childParams[j].path.unshift(key);
+        }
+
+        params = params.concat(childParams);
+      } else {
+        params.push({
+          path: [],
+          name: key,
+          params: this.$params[key]
+        });
+      }
+    }
+
+    return params;
+  }
+};
+var getterNames = Object.keys(validationGetters);
+var methodNames = Object.keys(validationMethods);
+var _cachedComponent = null;
+
+var getComponent = function getComponent(Vue) {
+  if (_cachedComponent) {
+    return _cachedComponent;
+  }
+
+  var VBase = Vue.extend({
+    computed: {
+      refs: function refs() {
+        var oldVval = this._vval;
+        this._vval = this.children;
+        (0, _vval.patchChildren)(oldVval, this._vval);
+        var refs = {};
+
+        this._vval.forEach(function (c) {
+          refs[c.key] = c.vm;
+        });
+
+        return refs;
+      }
+    },
+    beforeCreate: function beforeCreate() {
+      this._vval = null;
+    },
+    beforeDestroy: function beforeDestroy() {
+      if (this._vval) {
+        (0, _vval.patchChildren)(this._vval);
+        this._vval = null;
+      }
+    },
+    methods: {
+      getModel: function getModel() {
+        return this.lazyModel ? this.lazyModel(this.prop) : this.model;
+      },
+      getModelKey: function getModelKey(key) {
+        var model = this.getModel();
+
+        if (model) {
+          return model[key];
+        }
+      },
+      hasIter: function hasIter() {
+        return false;
+      }
+    }
+  });
+  var ValidationRule = VBase.extend({
+    data: function data() {
+      return {
+        rule: null,
+        lazyModel: null,
+        model: null,
+        lazyParentModel: null,
+        rootModel: null
+      };
+    },
+    methods: {
+      runRule: function runRule(parent) {
+        var model = this.getModel();
+        (0, _params.pushParams)();
+        var rawOutput = this.rule.call(this.rootModel, model, parent);
+        var output = isPromise(rawOutput) ? makePendingAsyncVm(Vue, rawOutput) : rawOutput;
+        var rawParams = (0, _params.popParams)();
+        var params = rawParams && rawParams.$sub ? rawParams.$sub.length > 1 ? rawParams : rawParams.$sub[0] : null;
+        return {
+          output: output,
+          params: params
+        };
+      }
+    },
+    computed: {
+      run: function run() {
+        var _this7 = this;
+
+        var parent = this.lazyParentModel();
+
+        var isArrayDependant = Array.isArray(parent) && parent.__ob__;
+
+        if (isArrayDependant) {
+          var arrayDep = parent.__ob__.dep;
+          arrayDep.depend();
+          var target = arrayDep.constructor.target;
+
+          if (!this._indirectWatcher) {
+            var Watcher = target.constructor;
+            this._indirectWatcher = new Watcher(this, function () {
+              return _this7.runRule(parent);
+            }, null, {
+              lazy: true
+            });
+          }
+
+          var model = this.getModel();
+
+          if (!this._indirectWatcher.dirty && this._lastModel === model) {
+            this._indirectWatcher.depend();
+
+            return target.value;
+          }
+
+          this._lastModel = model;
+
+          this._indirectWatcher.evaluate();
+
+          this._indirectWatcher.depend();
+        } else if (this._indirectWatcher) {
+          this._indirectWatcher.teardown();
+
+          this._indirectWatcher = null;
+        }
+
+        return this._indirectWatcher ? this._indirectWatcher.value : this.runRule(parent);
+      },
+      $params: function $params() {
+        return this.run.params;
+      },
+      proxy: function proxy() {
+        var output = this.run.output;
+
+        if (output[__isVuelidateAsyncVm]) {
+          return !!output.v;
+        }
+
+        return !!output;
+      },
+      $pending: function $pending() {
+        var output = this.run.output;
+
+        if (output[__isVuelidateAsyncVm]) {
+          return output.p;
+        }
+
+        return false;
+      }
+    },
+    destroyed: function destroyed() {
+      if (this._indirectWatcher) {
+        this._indirectWatcher.teardown();
+
+        this._indirectWatcher = null;
+      }
+    }
+  });
+  var Validation = VBase.extend({
+    data: function data() {
+      return {
+        dirty: false,
+        validations: null,
+        lazyModel: null,
+        model: null,
+        prop: null,
+        lazyParentModel: null,
+        rootModel: null
+      };
+    },
+    methods: _objectSpread({}, validationMethods, {
+      refProxy: function refProxy(key) {
+        return this.getRef(key).proxy;
+      },
+      getRef: function getRef(key) {
+        return this.refs[key];
+      },
+      isNested: function isNested(key) {
+        return typeof this.validations[key] !== 'function';
+      }
+    }),
+    computed: _objectSpread({}, validationGetters, {
+      nestedKeys: function nestedKeys() {
+        return this.keys.filter(this.isNested);
+      },
+      ruleKeys: function ruleKeys() {
+        var _this8 = this;
+
+        return this.keys.filter(function (k) {
+          return !_this8.isNested(k);
+        });
+      },
+      keys: function keys() {
+        return Object.keys(this.validations).filter(function (k) {
+          return k !== '$params';
+        });
+      },
+      proxy: function proxy() {
+        var _this9 = this;
+
+        var keyDefs = buildFromKeys(this.keys, function (key) {
+          return {
+            enumerable: true,
+            configurable: true,
+            get: function get() {
+              return _this9.refProxy(key);
+            }
+          };
+        });
+        var getterDefs = buildFromKeys(getterNames, function (key) {
+          return {
+            enumerable: true,
+            configurable: true,
+            get: function get() {
+              return _this9[key];
+            }
+          };
+        });
+        var methodDefs = buildFromKeys(methodNames, function (key) {
+          return {
+            enumerable: false,
+            configurable: true,
+            get: function get() {
+              return _this9[key];
+            }
+          };
+        });
+        var iterDefs = this.hasIter() ? {
+          $iter: {
+            enumerable: true,
+            value: Object.defineProperties({}, _objectSpread({}, keyDefs))
+          }
+        } : {};
+        return Object.defineProperties({}, _objectSpread({}, keyDefs, {}, iterDefs, {
+          $model: {
+            enumerable: true,
+            get: function get() {
+              var parent = _this9.lazyParentModel();
+
+              if (parent != null) {
+                return parent[_this9.prop];
+              } else {
+                return null;
+              }
+            },
+            set: function set(value) {
+              var parent = _this9.lazyParentModel();
+
+              if (parent != null) {
+                parent[_this9.prop] = value;
+
+                _this9.$touch();
+              }
+            }
+          }
+        }, getterDefs, {}, methodDefs));
+      },
+      children: function children() {
+        var _this10 = this;
+
+        return [].concat(_toConsumableArray(this.nestedKeys.map(function (key) {
+          return renderNested(_this10, key);
+        })), _toConsumableArray(this.ruleKeys.map(function (key) {
+          return renderRule(_this10, key);
+        }))).filter(Boolean);
+      }
+    })
+  });
+  var GroupValidation = Validation.extend({
+    methods: {
+      isNested: function isNested(key) {
+        return typeof this.validations[key]() !== 'undefined';
+      },
+      getRef: function getRef(key) {
+        var vm = this;
+        return {
+          get proxy() {
+            return vm.validations[key]() || false;
+          }
+
+        };
+      }
+    }
+  });
+  var EachValidation = Validation.extend({
+    computed: {
+      keys: function keys() {
+        var model = this.getModel();
+
+        if (isObject(model)) {
+          return Object.keys(model);
+        } else {
+          return [];
+        }
+      },
+      tracker: function tracker() {
+        var _this11 = this;
+
+        var trackBy = this.validations.$trackBy;
+        return trackBy ? function (key) {
+          return "".concat(getPath(_this11.rootModel, _this11.getModelKey(key), trackBy));
+        } : function (x) {
+          return "".concat(x);
+        };
+      },
+      getModelLazy: function getModelLazy() {
+        var _this12 = this;
+
+        return function () {
+          return _this12.getModel();
+        };
+      },
+      children: function children() {
+        var _this13 = this;
+
+        var def = this.validations;
+        var model = this.getModel();
+
+        var validations = _objectSpread({}, def);
+
+        delete validations['$trackBy'];
+        var usedTracks = {};
+        return this.keys.map(function (key) {
+          var track = _this13.tracker(key);
+
+          if (usedTracks.hasOwnProperty(track)) {
+            return null;
+          }
+
+          usedTracks[track] = true;
+          return (0, _vval.h)(Validation, track, {
+            validations: validations,
+            prop: key,
+            lazyParentModel: _this13.getModelLazy,
+            model: model[key],
+            rootModel: _this13.rootModel
+          });
+        }).filter(Boolean);
+      }
+    },
+    methods: {
+      isNested: function isNested() {
+        return true;
+      },
+      getRef: function getRef(key) {
+        return this.refs[this.tracker(key)];
+      },
+      hasIter: function hasIter() {
+        return true;
+      }
+    }
+  });
+
+  var renderNested = function renderNested(vm, key) {
+    if (key === '$each') {
+      return (0, _vval.h)(EachValidation, key, {
+        validations: vm.validations[key],
+        lazyParentModel: vm.lazyParentModel,
+        prop: key,
+        lazyModel: vm.getModel,
+        rootModel: vm.rootModel
+      });
+    }
+
+    var validations = vm.validations[key];
+
+    if (Array.isArray(validations)) {
+      var root = vm.rootModel;
+      var refVals = buildFromKeys(validations, function (path) {
+        return function () {
+          return getPath(root, root.$v, path);
+        };
+      }, function (v) {
+        return Array.isArray(v) ? v.join('.') : v;
+      });
+      return (0, _vval.h)(GroupValidation, key, {
+        validations: refVals,
+        lazyParentModel: NIL,
+        prop: key,
+        lazyModel: NIL,
+        rootModel: root
+      });
+    }
+
+    return (0, _vval.h)(Validation, key, {
+      validations: validations,
+      lazyParentModel: vm.getModel,
+      prop: key,
+      lazyModel: vm.getModelKey,
+      rootModel: vm.rootModel
+    });
+  };
+
+  var renderRule = function renderRule(vm, key) {
+    return (0, _vval.h)(ValidationRule, key, {
+      rule: vm.validations[key],
+      lazyParentModel: vm.lazyParentModel,
+      lazyModel: vm.getModel,
+      rootModel: vm.rootModel
+    });
+  };
+
+  _cachedComponent = {
+    VBase: VBase,
+    Validation: Validation
+  };
+  return _cachedComponent;
+};
+
+var _cachedVue = null;
+
+function getVue(rootVm) {
+  if (_cachedVue) return _cachedVue;
+  var Vue = rootVm.constructor;
+
+  while (Vue.super) {
+    Vue = Vue.super;
+  }
+
+  _cachedVue = Vue;
+  return Vue;
+}
+
+var validateModel = function validateModel(model, validations) {
+  var Vue = getVue(model);
+
+  var _getComponent = getComponent(Vue),
+      Validation = _getComponent.Validation,
+      VBase = _getComponent.VBase;
+
+  var root = new VBase({
+    computed: {
+      children: function children() {
+        var vals = typeof validations === 'function' ? validations.call(model) : validations;
+        return [(0, _vval.h)(Validation, '$v', {
+          validations: vals,
+          lazyParentModel: NIL,
+          prop: '$v',
+          model: model,
+          rootModel: model
+        })];
+      }
+    }
+  });
+  return root;
+};
+
+var validationMixin = {
+  data: function data() {
+    var vals = this.$options.validations;
+
+    if (vals) {
+      this._vuelidate = validateModel(this, vals);
+    }
+
+    return {};
+  },
+  beforeCreate: function beforeCreate() {
+    var options = this.$options;
+    var vals = options.validations;
+    if (!vals) return;
+    if (!options.computed) options.computed = {};
+    if (options.computed.$v) return;
+
+    options.computed.$v = function () {
+      return this._vuelidate ? this._vuelidate.refs.$v.proxy : null;
+    };
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (this._vuelidate) {
+      this._vuelidate.$destroy();
+
+      this._vuelidate = null;
+    }
+  }
+};
+exports.validationMixin = validationMixin;
+
+function Vuelidate(Vue) {
+  Vue.mixin(validationMixin);
+}
+
+var _default = Vuelidate;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/vuelidate/lib/params.js":
+/*!**********************************************!*\
+  !*** ./node_modules/vuelidate/lib/params.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pushParams = pushParams;
+exports.popParams = popParams;
+exports.withParams = withParams;
+exports._setTarget = exports.target = void 0;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var stack = [];
+var target = null;
+exports.target = target;
+
+var _setTarget = function _setTarget(x) {
+  exports.target = target = x;
+};
+
+exports._setTarget = _setTarget;
+
+function pushParams() {
+  if (target !== null) {
+    stack.push(target);
+  }
+
+  exports.target = target = {};
+}
+
+function popParams() {
+  var lastTarget = target;
+  var newTarget = exports.target = target = stack.pop() || null;
+
+  if (newTarget) {
+    if (!Array.isArray(newTarget.$sub)) {
+      newTarget.$sub = [];
+    }
+
+    newTarget.$sub.push(lastTarget);
+  }
+
+  return lastTarget;
+}
+
+function addParams(params) {
+  if (_typeof(params) === 'object' && !Array.isArray(params)) {
+    exports.target = target = _objectSpread({}, target, {}, params);
+  } else {
+    throw new Error('params must be an object');
+  }
+}
+
+function withParamsDirect(params, validator) {
+  return withParamsClosure(function (add) {
+    return function () {
+      add(params);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return validator.apply(this, args);
+    };
+  });
+}
+
+function withParamsClosure(closure) {
+  var validator = closure(addParams);
+  return function () {
+    pushParams();
+
+    try {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      return validator.apply(this, args);
+    } finally {
+      popParams();
+    }
+  };
+}
+
+function withParams(paramsOrClosure, maybeValidator) {
+  if (_typeof(paramsOrClosure) === 'object' && maybeValidator !== undefined) {
+    return withParamsDirect(paramsOrClosure, maybeValidator);
+  }
+
+  return withParamsClosure(paramsOrClosure);
+}
+
+/***/ }),
+
+/***/ "./node_modules/vuelidate/lib/vval.js":
+/*!********************************************!*\
+  !*** ./node_modules/vuelidate/lib/vval.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.patchChildren = patchChildren;
+exports.h = h;
+
+function isUndef(v) {
+  return v === null || v === undefined;
+}
+
+function isDef(v) {
+  return v !== null && v !== undefined;
+}
+
+function sameVval(oldVval, vval) {
+  return vval.tag === oldVval.tag && vval.key === oldVval.key;
+}
+
+function createVm(vval) {
+  var Vm = vval.tag;
+  vval.vm = new Vm({
+    data: vval.args
+  });
+}
+
+function updateVval(vval) {
+  var keys = Object.keys(vval.args);
+
+  for (var i = 0; i < keys.length; i++) {
+    keys.forEach(function (k) {
+      vval.vm[k] = vval.args[k];
+    });
+  }
+}
+
+function createKeyToOldIdx(children, beginIdx, endIdx) {
+  var i, key;
+  var map = {};
+
+  for (i = beginIdx; i <= endIdx; ++i) {
+    key = children[i].key;
+    if (isDef(key)) map[key] = i;
+  }
+
+  return map;
+}
+
+function updateChildren(oldCh, newCh) {
+  var oldStartIdx = 0;
+  var newStartIdx = 0;
+  var oldEndIdx = oldCh.length - 1;
+  var oldStartVval = oldCh[0];
+  var oldEndVval = oldCh[oldEndIdx];
+  var newEndIdx = newCh.length - 1;
+  var newStartVval = newCh[0];
+  var newEndVval = newCh[newEndIdx];
+  var oldKeyToIdx, idxInOld, elmToMove;
+
+  while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+    if (isUndef(oldStartVval)) {
+      oldStartVval = oldCh[++oldStartIdx];
+    } else if (isUndef(oldEndVval)) {
+      oldEndVval = oldCh[--oldEndIdx];
+    } else if (sameVval(oldStartVval, newStartVval)) {
+      patchVval(oldStartVval, newStartVval);
+      oldStartVval = oldCh[++oldStartIdx];
+      newStartVval = newCh[++newStartIdx];
+    } else if (sameVval(oldEndVval, newEndVval)) {
+      patchVval(oldEndVval, newEndVval);
+      oldEndVval = oldCh[--oldEndIdx];
+      newEndVval = newCh[--newEndIdx];
+    } else if (sameVval(oldStartVval, newEndVval)) {
+      patchVval(oldStartVval, newEndVval);
+      oldStartVval = oldCh[++oldStartIdx];
+      newEndVval = newCh[--newEndIdx];
+    } else if (sameVval(oldEndVval, newStartVval)) {
+      patchVval(oldEndVval, newStartVval);
+      oldEndVval = oldCh[--oldEndIdx];
+      newStartVval = newCh[++newStartIdx];
+    } else {
+      if (isUndef(oldKeyToIdx)) oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx);
+      idxInOld = isDef(newStartVval.key) ? oldKeyToIdx[newStartVval.key] : null;
+
+      if (isUndef(idxInOld)) {
+        createVm(newStartVval);
+        newStartVval = newCh[++newStartIdx];
+      } else {
+        elmToMove = oldCh[idxInOld];
+
+        if (sameVval(elmToMove, newStartVval)) {
+          patchVval(elmToMove, newStartVval);
+          oldCh[idxInOld] = undefined;
+          newStartVval = newCh[++newStartIdx];
+        } else {
+          createVm(newStartVval);
+          newStartVval = newCh[++newStartIdx];
+        }
+      }
+    }
+  }
+
+  if (oldStartIdx > oldEndIdx) {
+    addVvals(newCh, newStartIdx, newEndIdx);
+  } else if (newStartIdx > newEndIdx) {
+    removeVvals(oldCh, oldStartIdx, oldEndIdx);
+  }
+}
+
+function addVvals(vvals, startIdx, endIdx) {
+  for (; startIdx <= endIdx; ++startIdx) {
+    createVm(vvals[startIdx]);
+  }
+}
+
+function removeVvals(vvals, startIdx, endIdx) {
+  for (; startIdx <= endIdx; ++startIdx) {
+    var ch = vvals[startIdx];
+
+    if (isDef(ch)) {
+      ch.vm.$destroy();
+      ch.vm = null;
+    }
+  }
+}
+
+function patchVval(oldVval, vval) {
+  if (oldVval === vval) {
+    return;
+  }
+
+  vval.vm = oldVval.vm;
+  updateVval(vval);
+}
+
+function patchChildren(oldCh, ch) {
+  if (isDef(oldCh) && isDef(ch)) {
+    if (oldCh !== ch) updateChildren(oldCh, ch);
+  } else if (isDef(ch)) {
+    addVvals(ch, 0, ch.length - 1);
+  } else if (isDef(oldCh)) {
+    removeVvals(oldCh, 0, oldCh.length - 1);
+  }
+}
+
+function h(tag, key, args) {
+  return {
+    tag: tag,
+    key: key,
+    args: args
+  };
+}
+
+/***/ }),
+
 /***/ "./node_modules/vuex/dist/vuex.esm.js":
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
-/*! exports provided: default, Store, install, mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers */
+/*! exports provided: default, Store, createLogger, createNamespacedHelpers, install, mapActions, mapGetters, mapMutations, mapState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLogger", function() { return createLogger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
-/**
- * vuex v3.1.2
- * (c) 2019 Evan You
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/*!
+ * vuex v3.5.1
+ * (c) 2020 Evan You
  * @license MIT
  */
 function applyMixin (Vue) {
@@ -84367,7 +85345,11 @@ function devtoolPlugin (store) {
 
   store.subscribe(function (mutation, state) {
     devtoolHook.emit('vuex:mutation', mutation, state);
-  });
+  }, { prepend: true });
+
+  store.subscribeAction(function (action, state) {
+    devtoolHook.emit('vuex:action', action, state);
+  }, { prepend: true });
 }
 
 /**
@@ -84378,6 +85360,47 @@ function devtoolPlugin (store) {
  * @param {Function} f
  * @return {*}
  */
+function find (list, f) {
+  return list.filter(f)[0]
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function deepCopy (obj, cache) {
+  if ( cache === void 0 ) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) { return c.original === obj; });
+  if (hit) {
+    return hit.copy
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key], cache);
+  });
+
+  return copy
+}
 
 /**
  * forEach for object
@@ -84433,6 +85456,10 @@ Module.prototype.removeChild = function removeChild (key) {
 
 Module.prototype.getChild = function getChild (key) {
   return this._children[key]
+};
+
+Module.prototype.hasChild = function hasChild (key) {
+  return key in this._children
 };
 
 Module.prototype.update = function update (rawModule) {
@@ -84499,7 +85526,7 @@ ModuleCollection.prototype.register = function register (path, rawModule, runtim
     var this$1 = this;
     if ( runtime === void 0 ) runtime = true;
 
-  if (true) {
+  if ((true)) {
     assertRawModule(path, rawModule);
   }
 
@@ -84522,13 +85549,34 @@ ModuleCollection.prototype.register = function register (path, rawModule, runtim
 ModuleCollection.prototype.unregister = function unregister (path) {
   var parent = this.get(path.slice(0, -1));
   var key = path[path.length - 1];
-  if (!parent.getChild(key).runtime) { return }
+  var child = parent.getChild(key);
+
+  if (!child) {
+    if ((true)) {
+      console.warn(
+        "[vuex] trying to unregister module '" + key + "', which is " +
+        "not registered"
+      );
+    }
+    return
+  }
+
+  if (!child.runtime) {
+    return
+  }
 
   parent.removeChild(key);
 };
 
+ModuleCollection.prototype.isRegistered = function isRegistered (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+
+  return parent.hasChild(key)
+};
+
 function update (path, targetModule, newModule) {
-  if (true) {
+  if ((true)) {
     assertRawModule(path, newModule);
   }
 
@@ -84539,7 +85587,7 @@ function update (path, targetModule, newModule) {
   if (newModule.modules) {
     for (var key in newModule.modules) {
       if (!targetModule.getChild(key)) {
-        if (true) {
+        if ((true)) {
           console.warn(
             "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
             'manual reload is needed'
@@ -84610,7 +85658,7 @@ var Store = function Store (options) {
     install(window.Vue);
   }
 
-  if (true) {
+  if ((true)) {
     assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
     assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
     assert(this instanceof Store, "store must be called with the new operator.");
@@ -84673,7 +85721,7 @@ prototypeAccessors$1.state.get = function () {
 };
 
 prototypeAccessors$1.state.set = function (v) {
-  if (true) {
+  if ((true)) {
     assert(false, "use store.replaceState() to explicit replace store state.");
   }
 };
@@ -84690,7 +85738,7 @@ Store.prototype.commit = function commit (_type, _payload, _options) {
   var mutation = { type: type, payload: payload };
   var entry = this._mutations[type];
   if (!entry) {
-    if (true) {
+    if ((true)) {
       console.error(("[vuex] unknown mutation type: " + type));
     }
     return
@@ -84700,10 +85748,13 @@ Store.prototype.commit = function commit (_type, _payload, _options) {
       handler(payload);
     });
   });
-  this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  this._subscribers
+    .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+    .forEach(function (sub) { return sub(mutation, this$1.state); });
 
   if (
-     true &&
+    ( true) &&
     options && options.silent
   ) {
     console.warn(
@@ -84724,7 +85775,7 @@ Store.prototype.dispatch = function dispatch (_type, _payload) {
   var action = { type: type, payload: payload };
   var entry = this._actions[type];
   if (!entry) {
-    if (true) {
+    if ((true)) {
       console.error(("[vuex] unknown action type: " + type));
     }
     return
@@ -84732,10 +85783,11 @@ Store.prototype.dispatch = function dispatch (_type, _payload) {
 
   try {
     this._actionSubscribers
+      .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
       .filter(function (sub) { return sub.before; })
       .forEach(function (sub) { return sub.before(action, this$1.state); });
   } catch (e) {
-    if (true) {
+    if ((true)) {
       console.warn("[vuex] error in before action subscribers: ");
       console.error(e);
     }
@@ -84745,34 +85797,48 @@ Store.prototype.dispatch = function dispatch (_type, _payload) {
     ? Promise.all(entry.map(function (handler) { return handler(payload); }))
     : entry[0](payload);
 
-  return result.then(function (res) {
-    try {
-      this$1._actionSubscribers
-        .filter(function (sub) { return sub.after; })
-        .forEach(function (sub) { return sub.after(action, this$1.state); });
-    } catch (e) {
-      if (true) {
-        console.warn("[vuex] error in after action subscribers: ");
-        console.error(e);
+  return new Promise(function (resolve, reject) {
+    result.then(function (res) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.after; })
+          .forEach(function (sub) { return sub.after(action, this$1.state); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in after action subscribers: ");
+          console.error(e);
+        }
       }
-    }
-    return res
+      resolve(res);
+    }, function (error) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.error; })
+          .forEach(function (sub) { return sub.error(action, this$1.state, error); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in error action subscribers: ");
+          console.error(e);
+        }
+      }
+      reject(error);
+    });
   })
 };
 
-Store.prototype.subscribe = function subscribe (fn) {
-  return genericSubscribe(fn, this._subscribers)
+Store.prototype.subscribe = function subscribe (fn, options) {
+  return genericSubscribe(fn, this._subscribers, options)
 };
 
-Store.prototype.subscribeAction = function subscribeAction (fn) {
+Store.prototype.subscribeAction = function subscribeAction (fn, options) {
   var subs = typeof fn === 'function' ? { before: fn } : fn;
-  return genericSubscribe(subs, this._actionSubscribers)
+  return genericSubscribe(subs, this._actionSubscribers, options)
 };
 
 Store.prototype.watch = function watch (getter, cb, options) {
     var this$1 = this;
 
-  if (true) {
+  if ((true)) {
     assert(typeof getter === 'function', "store.watch only accepts a function.");
   }
   return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
@@ -84791,7 +85857,7 @@ Store.prototype.registerModule = function registerModule (path, rawModule, optio
 
   if (typeof path === 'string') { path = [path]; }
 
-  if (true) {
+  if ((true)) {
     assert(Array.isArray(path), "module path must be a string or an Array.");
     assert(path.length > 0, 'cannot register the root module by using registerModule.');
   }
@@ -84807,7 +85873,7 @@ Store.prototype.unregisterModule = function unregisterModule (path) {
 
   if (typeof path === 'string') { path = [path]; }
 
-  if (true) {
+  if ((true)) {
     assert(Array.isArray(path), "module path must be a string or an Array.");
   }
 
@@ -84817,6 +85883,16 @@ Store.prototype.unregisterModule = function unregisterModule (path) {
     Vue.delete(parentState, path[path.length - 1]);
   });
   resetStore(this);
+};
+
+Store.prototype.hasModule = function hasModule (path) {
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  return this._modules.isRegistered(path)
 };
 
 Store.prototype.hotUpdate = function hotUpdate (newOptions) {
@@ -84833,9 +85909,11 @@ Store.prototype._withCommit = function _withCommit (fn) {
 
 Object.defineProperties( Store.prototype, prototypeAccessors$1 );
 
-function genericSubscribe (fn, subs) {
+function genericSubscribe (fn, subs, options) {
   if (subs.indexOf(fn) < 0) {
-    subs.push(fn);
+    options && options.prepend
+      ? subs.unshift(fn)
+      : subs.push(fn);
   }
   return function () {
     var i = subs.indexOf(fn);
@@ -84913,7 +85991,7 @@ function installModule (store, rootState, path, module, hot) {
 
   // register in namespace map
   if (module.namespaced) {
-    if (store._modulesNamespaceMap[namespace] && "development" !== 'production') {
+    if (store._modulesNamespaceMap[namespace] && ("development" !== 'production')) {
       console.error(("[vuex] duplicate namespace " + namespace + " for the namespaced module " + (path.join('/'))));
     }
     store._modulesNamespaceMap[namespace] = module;
@@ -84924,7 +86002,7 @@ function installModule (store, rootState, path, module, hot) {
     var parentState = getNestedState(rootState, path.slice(0, -1));
     var moduleName = path[path.length - 1];
     store._withCommit(function () {
-      if (true) {
+      if ((true)) {
         if (moduleName in parentState) {
           console.warn(
             ("[vuex] state field \"" + moduleName + "\" was overridden by a module with the same name at \"" + (path.join('.')) + "\"")
@@ -84974,7 +86052,7 @@ function makeLocalContext (store, namespace, path) {
 
       if (!options || !options.root) {
         type = namespace + type;
-        if ( true && !store._actions[type]) {
+        if (( true) && !store._actions[type]) {
           console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
           return
         }
@@ -84991,7 +86069,7 @@ function makeLocalContext (store, namespace, path) {
 
       if (!options || !options.root) {
         type = namespace + type;
-        if ( true && !store._mutations[type]) {
+        if (( true) && !store._mutations[type]) {
           console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
           return
         }
@@ -85076,7 +86154,7 @@ function registerAction (store, type, handler, local) {
 
 function registerGetter (store, type, rawGetter, local) {
   if (store._wrappedGetters[type]) {
-    if (true) {
+    if ((true)) {
       console.error(("[vuex] duplicate getter key: " + type));
     }
     return
@@ -85093,16 +86171,14 @@ function registerGetter (store, type, rawGetter, local) {
 
 function enableStrictMode (store) {
   store._vm.$watch(function () { return this._data.$$state }, function () {
-    if (true) {
+    if ((true)) {
       assert(store._committing, "do not mutate vuex store state outside mutation handlers.");
     }
   }, { deep: true, sync: true });
 }
 
 function getNestedState (state, path) {
-  return path.length
-    ? path.reduce(function (state, key) { return state[key]; }, state)
-    : state
+  return path.reduce(function (state, key) { return state[key]; }, state)
 }
 
 function unifyObjectStyle (type, payload, options) {
@@ -85112,7 +86188,7 @@ function unifyObjectStyle (type, payload, options) {
     type = type.type;
   }
 
-  if (true) {
+  if ((true)) {
     assert(typeof type === 'string', ("expects string as the type, but found " + (typeof type) + "."));
   }
 
@@ -85121,7 +86197,7 @@ function unifyObjectStyle (type, payload, options) {
 
 function install (_Vue) {
   if (Vue && _Vue === Vue) {
-    if (true) {
+    if ((true)) {
       console.error(
         '[vuex] already installed. Vue.use(Vuex) should be called only once.'
       );
@@ -85140,7 +86216,7 @@ function install (_Vue) {
  */
 var mapState = normalizeNamespace(function (namespace, states) {
   var res = {};
-  if ( true && !isValidMap(states)) {
+  if (( true) && !isValidMap(states)) {
     console.error('[vuex] mapState: mapper parameter must be either an Array or an Object');
   }
   normalizeMap(states).forEach(function (ref) {
@@ -85176,7 +86252,7 @@ var mapState = normalizeNamespace(function (namespace, states) {
  */
 var mapMutations = normalizeNamespace(function (namespace, mutations) {
   var res = {};
-  if ( true && !isValidMap(mutations)) {
+  if (( true) && !isValidMap(mutations)) {
     console.error('[vuex] mapMutations: mapper parameter must be either an Array or an Object');
   }
   normalizeMap(mutations).forEach(function (ref) {
@@ -85212,7 +86288,7 @@ var mapMutations = normalizeNamespace(function (namespace, mutations) {
  */
 var mapGetters = normalizeNamespace(function (namespace, getters) {
   var res = {};
-  if ( true && !isValidMap(getters)) {
+  if (( true) && !isValidMap(getters)) {
     console.error('[vuex] mapGetters: mapper parameter must be either an Array or an Object');
   }
   normalizeMap(getters).forEach(function (ref) {
@@ -85225,7 +86301,7 @@ var mapGetters = normalizeNamespace(function (namespace, getters) {
       if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
         return
       }
-      if ( true && !(val in this.$store.getters)) {
+      if (( true) && !(val in this.$store.getters)) {
         console.error(("[vuex] unknown getter: " + val));
         return
       }
@@ -85245,7 +86321,7 @@ var mapGetters = normalizeNamespace(function (namespace, getters) {
  */
 var mapActions = normalizeNamespace(function (namespace, actions) {
   var res = {};
-  if ( true && !isValidMap(actions)) {
+  if (( true) && !isValidMap(actions)) {
     console.error('[vuex] mapActions: mapper parameter must be either an Array or an Object');
   }
   normalizeMap(actions).forEach(function (ref) {
@@ -85336,24 +86412,116 @@ function normalizeNamespace (fn) {
  */
 function getModuleByNamespace (store, helper, namespace) {
   var module = store._modulesNamespaceMap[namespace];
-  if ( true && !module) {
+  if (( true) && !module) {
     console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
   }
   return module
 }
 
-var index_esm = {
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger (ref) {
+  if ( ref === void 0 ) ref = {};
+  var collapsed = ref.collapsed; if ( collapsed === void 0 ) collapsed = true;
+  var filter = ref.filter; if ( filter === void 0 ) filter = function (mutation, stateBefore, stateAfter) { return true; };
+  var transformer = ref.transformer; if ( transformer === void 0 ) transformer = function (state) { return state; };
+  var mutationTransformer = ref.mutationTransformer; if ( mutationTransformer === void 0 ) mutationTransformer = function (mut) { return mut; };
+  var actionFilter = ref.actionFilter; if ( actionFilter === void 0 ) actionFilter = function (action, state) { return true; };
+  var actionTransformer = ref.actionTransformer; if ( actionTransformer === void 0 ) actionTransformer = function (act) { return act; };
+  var logMutations = ref.logMutations; if ( logMutations === void 0 ) logMutations = true;
+  var logActions = ref.logActions; if ( logActions === void 0 ) logActions = true;
+  var logger = ref.logger; if ( logger === void 0 ) logger = console;
+
+  return function (store) {
+    var prevState = deepCopy(store.state);
+
+    if (typeof logger === 'undefined') {
+      return
+    }
+
+    if (logMutations) {
+      store.subscribe(function (mutation, state) {
+        var nextState = deepCopy(state);
+
+        if (filter(mutation, prevState, nextState)) {
+          var formattedTime = getFormattedTime();
+          var formattedMutation = mutationTransformer(mutation);
+          var message = "mutation " + (mutation.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+          endMessage(logger);
+        }
+
+        prevState = nextState;
+      });
+    }
+
+    if (logActions) {
+      store.subscribeAction(function (action, state) {
+        if (actionFilter(action, state)) {
+          var formattedTime = getFormattedTime();
+          var formattedAction = actionTransformer(action);
+          var message = "action " + (action.type) + formattedTime;
+
+          startMessage(logger, message, collapsed);
+          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
+          endMessage(logger);
+        }
+      });
+    }
+  }
+}
+
+function startMessage (logger, message, collapsed) {
+  var startMessage = collapsed
+    ? logger.groupCollapsed
+    : logger.group;
+
+  // render
+  try {
+    startMessage.call(logger, message);
+  } catch (e) {
+    logger.log(message);
+  }
+}
+
+function endMessage (logger) {
+  try {
+    logger.groupEnd();
+  } catch (e) {
+    logger.log('—— log end ——');
+  }
+}
+
+function getFormattedTime () {
+  var time = new Date();
+  return (" @ " + (pad(time.getHours(), 2)) + ":" + (pad(time.getMinutes(), 2)) + ":" + (pad(time.getSeconds(), 2)) + "." + (pad(time.getMilliseconds(), 3)))
+}
+
+function repeat (str, times) {
+  return (new Array(times + 1)).join(str)
+}
+
+function pad (num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num
+}
+
+var index = {
   Store: Store,
   install: install,
-  version: '3.1.2',
+  version: '3.5.1',
   mapState: mapState,
   mapMutations: mapMutations,
   mapGetters: mapGetters,
   mapActions: mapActions,
-  createNamespacedHelpers: createNamespacedHelpers
+  createNamespacedHelpers: createNamespacedHelpers,
+  createLogger: createLogger
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (index_esm);
+/* harmony default export */ __webpack_exports__["default"] = (index);
 
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
@@ -85433,18 +86601,23 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
-/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
-/* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-events */ "./node_modules/vue-events/dist/index.js");
-/* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_events__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toastr */ "./node_modules/vue-toastr/dist/vue-toastr.esm.js");
-/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
-/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var v_tooltip__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! v-tooltip */ "./node_modules/v-tooltip/dist/v-tooltip.esm.js");
-/* harmony import */ var vue_ls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-ls */ "./node_modules/vue-ls/dist/vue-ls.js");
-/* harmony import */ var vue_ls__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_ls__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ckeditor/ckeditor5-vue */ "./node_modules/@ckeditor/ckeditor5-vue/dist/ckeditor.js");
-/* harmony import */ var _ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _sass_fake_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/fake.scss */ "./resources/sass/fake.scss");
+/* harmony import */ var _sass_fake_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_fake_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+/* harmony import */ var _router_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router/index */ "./resources/js/router/index.js");
+/* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-events */ "./node_modules/vue-events/dist/index.js");
+/* harmony import */ var vue_events__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_events__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-toastr */ "./node_modules/vue-toastr/dist/vue-toastr.esm.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
+/* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var v_tooltip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! v-tooltip */ "./node_modules/v-tooltip/dist/v-tooltip.esm.js");
+/* harmony import */ var vue_ls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-ls */ "./node_modules/vue-ls/dist/vue-ls.js");
+/* harmony import */ var vue_ls__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_ls__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ckeditor/ckeditor5-vue */ "./node_modules/@ckeditor/ckeditor5-vue/dist/ckeditor.js");
+/* harmony import */ var _ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuelidate */ "./node_modules/vuelidate/lib/index.js");
+/* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _mixins_errorPeticionAxios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./mixins/errorPeticionAxios */ "./resources/js/mixins/errorPeticionAxios.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -85456,12 +86629,15 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-Vue.use(_ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_7___default.a);
-Vue.use(v_tooltip__WEBPACK_IMPORTED_MODULE_5__["default"]);
-Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_4___default.a);
-Vue.use(vue_events__WEBPACK_IMPORTED_MODULE_2___default.a);
-Vue.use(vue_toastr__WEBPACK_IMPORTED_MODULE_3__["default"]);
-Vue.use(vue_ls__WEBPACK_IMPORTED_MODULE_6___default.a);
+
+
+Vue.use(vuelidate__WEBPACK_IMPORTED_MODULE_9___default.a);
+Vue.use(_ckeditor_ckeditor5_vue__WEBPACK_IMPORTED_MODULE_8___default.a);
+Vue.use(v_tooltip__WEBPACK_IMPORTED_MODULE_6__["default"]);
+Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_5___default.a);
+Vue.use(vue_events__WEBPACK_IMPORTED_MODULE_3___default.a);
+Vue.use(vue_toastr__WEBPACK_IMPORTED_MODULE_4__["default"]);
+Vue.use(vue_ls__WEBPACK_IMPORTED_MODULE_7___default.a);
 Vue.component("app-majumba", __webpack_require__(/*! ./layouts/App.vue */ "./resources/js/layouts/App.vue")["default"]); // ------------- cepas-----------------------------------------
 
 Vue.component("acciones_cepas", __webpack_require__(/*! ./components/cepas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/AccionesCepasComponent.vue")["default"]);
@@ -85474,6 +86650,7 @@ Vue.component("acciones_cepas_hongos", __webpack_require__(/*! ./components/cepa
 Vue.component("checkboxs_publicar_hongos", __webpack_require__(/*! ./components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/hongos/tablas/CheckboxsPublicarComponent.vue")["default"]);
 Vue.component("acciones_cepas_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/AccionesCepasComponent.vue")["default"]);
 Vue.component("checkboxs_publicar_actinomicetos", __webpack_require__(/*! ./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue */ "./resources/js/components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")["default"]);
+Vue.component("my-detail-row-bacterias", __webpack_require__(/*! ./components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue")["default"]);
 Vue.component("my-detail-row-h-l-a", __webpack_require__(/*! ./components/cepas/DetailRowHLAComponent.vue */ "./resources/js/components/cepas/DetailRowHLAComponent.vue")["default"]);
 Vue.component("my-detail-row-cepas", __webpack_require__(/*! ./components/cepas/DetailRowCepasComponent.vue */ "./resources/js/components/cepas/DetailRowCepasComponent.vue")["default"]);
 Vue.component("acciones_tabla_metodo_conser_hongo", __webpack_require__(/*! ./components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue */ "./resources/js/components/cepas/hongos/tablas/AccionesMetodoConserHongoComponent.vue")["default"]);
@@ -85542,10 +86719,12 @@ Vue.component("checkboxs_novedades", __webpack_require__(/*! ./components/sitio-
 Vue.component("acciones_actividades", __webpack_require__(/*! ./components/sitio-web/publicidad/actividades/AccionesComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/AccionesComponent.vue")["default"]);
 Vue.component("checkboxs_actividades", __webpack_require__(/*! ./components/sitio-web/publicidad/actividades/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/CheckboxsPublicarComponent.vue")["default"]);
 Vue.component("checkboxs_investigadores", __webpack_require__(/*! ./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue */ "./resources/js/components/sitio-web/investigadores/CheckboxsPublicarComponent.vue")["default"]);
+
+Vue.mixin(_mixins_errorPeticionAxios__WEBPACK_IMPORTED_MODULE_10__["default"]);
 var app = new Vue({
   el: "#app",
-  store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"],
-  router: _router_index__WEBPACK_IMPORTED_MODULE_1__["default"]
+  store: _store_index__WEBPACK_IMPORTED_MODULE_1__["default"],
+  router: _router_index__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 
 /***/ }),
@@ -86276,6 +87455,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&");
+/* harmony import */ var _DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DetailRowBacteriasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailRowBacteriasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue?vue&type=template&id=39a596a6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetailRowBacteriasComponent_vue_vue_type_template_id_39a596a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/cepas/hongos/tablas/AccionesCepasComponent.vue ***!
@@ -86561,11 +87809,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&");
+/* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&");
 /* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -86573,13 +87819,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _AccionesMetodoConserLevaduraComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "3fba7148",
+  null,
   null
   
 )
@@ -86605,35 +87851,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=style&index=0&id=3fba7148&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_style_index_0_id_3fba7148_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& ***!
-  \*********************************************************************************************************************************************/
+/***/ "./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cepas/levaduras/tablas/AccionesMetodoConserLevaduraComponent.vue?vue&type=template&id=3fba7148&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AccionesMetodoConserLevaduraComponent_vue_vue_type_template_id_3fba7148___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -90757,15 +91987,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HeaderMenu_vue_vue_type_template_id_7ec6d6ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderMenu.vue?vue&type=template&id=7ec6d6ce& */ "./resources/js/layouts/headers/HeaderMenu.vue?vue&type=template&id=7ec6d6ce&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HeaderMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderMenu.vue?vue&type=script&lang=js& */ "./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HeaderMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HeaderMenu_vue_vue_type_template_id_7ec6d6ce___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HeaderMenu_vue_vue_type_template_id_7ec6d6ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -90779,6 +92011,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/layouts/headers/HeaderMenu.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/layouts/headers/HeaderMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -90853,6 +92099,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/mixins/errorPeticionAxios.js":
+/*!***************************************************!*\
+  !*** ./resources/js/mixins/errorPeticionAxios.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var errorPeticionAxiosMixin = {
+  methods: {
+    verificarError: function verificarError(codigo, errors) {
+      if (codigo === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (codigo === 405 || codigo === 401) {
+        localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+        window.location.href = "/";
+      } else {
+        this.bloquearBtn = false;
+
+        if (codigo === 422) {
+          this.errors = [];
+          this.errors = errors;
+        }
+
+        this.toastr("Error!!", "", "error");
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (errorPeticionAxiosMixin);
+
+/***/ }),
+
 /***/ "./resources/js/mixins/toastr.js":
 /*!***************************************!*\
   !*** ./resources/js/mixins/toastr.js ***!
@@ -90911,7 +92191,7 @@ var websocketsAccionesMixin = function websocketsAccionesMixin(tipo, tipoM, tipo
         this.$events.fire("abrirFormulario" + tipoM, data.id);
         this.enviarBloqueo(data);
       },
-      showModal: function showModal(data) {
+      eliminar: function eliminar(data) {
         this.$modal.show("modal_eliminar_" + tipo, {
           id: data.id
         });
@@ -90992,7 +92272,7 @@ var websocketsAccionesCepas = {
       this.$events.fire("abrirFormularioCepa", data.id);
       this.enviarBloqueo(data);
     },
-    showModal: function showModal(data) {
+    eliminar: function eliminar(data) {
       this.$modal.show("modal_eliminar_cepa", {
         id: data.id
       });
@@ -91150,7 +92430,7 @@ var websocketsAccionesSinCheckMixin = function websocketsAccionesSinCheckMixin(t
         this.$events.fire("abrirFormulario" + tipoM, data.id);
         this.enviarBloqueo(data);
       },
-      showModal: function showModal(data) {
+      eliminar: function eliminar(data) {
         this.$modal.show("modal_eliminar_" + tipo, {
           id: data.id
         });
@@ -91303,7 +92583,7 @@ var websocketsCheckCepas = {
       return this.disabled;
     }
   },
-  methods: _objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"]), {
+  methods: _objectSpread(_objectSpread({}, vuex__WEBPACK_IMPORTED_MODULE_0__["default"].mapActions("cepas", ["accionCepas"])), {}, {
     publicar: function publicar(data) {
       var _this = this;
 
@@ -91325,7 +92605,8 @@ var websocketsCheckCepas = {
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
-        } else if (error.response.status === 405) {
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
           window.location.href = "/";
         }
       });
@@ -91411,7 +92692,7 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "cepas",
       component: function component() {
-        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas",
@@ -91419,7 +92700,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }
     }, //bacterias
     {
-      path: "bacteria/ver/:cepaId",
+      path: "bacteria/ver/:cepaSlug",
       name: "ver-cepa-bacteria",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91429,7 +92710,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "bacteria/:cepaId",
+      path: "bacteria/:cepaSlug",
       name: "cepa-bacteria",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91438,7 +92719,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91448,7 +92729,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91458,7 +92739,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91468,7 +92749,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -91478,7 +92759,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91488,7 +92769,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91497,7 +92778,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //hongos
     {
-      path: "hongo/ver/:cepaId",
+      path: "hongo/ver/:cepaSlug",
       name: "ver-cepa-hongo",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91507,7 +92788,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "hongo/:cepaId",
+      path: "hongo/:cepaSlug",
       name: "cepa-hongo",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91516,7 +92797,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91526,7 +92807,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91536,7 +92817,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91546,7 +92827,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91556,7 +92837,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91565,7 +92846,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //levaduras
     {
-      path: "levadura/ver/:cepaId",
+      path: "levadura/ver/:cepaSlug",
       name: "ver-cepa-levadura",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91575,7 +92856,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "levadura/:cepaId",
+      path: "levadura/:cepaSlug",
       name: "cepa-levadura",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91584,7 +92865,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91594,7 +92875,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91604,7 +92885,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91614,7 +92895,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91624,7 +92905,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-cepa-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-cepa-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91633,7 +92914,7 @@ var routes = [//-------------------------------TODAS----------------------------
       }]
     }, //actinomiceto
     {
-      path: "actinomiceto/ver/:cepaId",
+      path: "actinomiceto/ver/:cepaSlug",
       name: "ver-cepa-actinomiceto",
       component: function component() {
         return Promise.all(/*! import() | ver-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91643,7 +92924,7 @@ var routes = [//-------------------------------TODAS----------------------------
         permisos: ["ver-cepa"]
       }
     }, {
-      path: "actinomiceto/:cepaId",
+      path: "actinomiceto/:cepaSlug",
       name: "cepa-actinomiceto",
       component: function component() {
         return __webpack_require__.e(/*! import() | cepa-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91652,7 +92933,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91662,7 +92943,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91672,7 +92953,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -91682,7 +92963,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-cepa-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-cepa-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -91728,14 +93009,14 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "bacterias",
       component: function component() {
-        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Bacterias",
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaBacteriaId",
+      path: ":cepaBacteriaSlug",
       name: "caract-bacteria",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-bacteria */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91744,7 +93025,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91754,7 +93035,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91764,7 +93045,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91774,7 +93055,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-fisio",
         name: "caract-fisio-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
+          return Promise.all(/*! import() | caract-fisio-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-fisio-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoCaractFisioComponent.vue"));
         },
         meta: {
           title: "Características Fisiológicas",
@@ -91784,7 +93065,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91794,7 +93075,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-bacteria",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-bacteria */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-bacteria")]).then(__webpack_require__.bind(null, /*! ../components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/bacterias/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91802,7 +93083,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaBacteriaId",
+      path: "ver/:cepaBacteriaSlug",
       name: "ver-bacteria",
       component: function component() {
         return Promise.all(/*! import() | ver-bacteria */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91830,14 +93111,14 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "hongos",
       component: function component() {
-        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Hongos",
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaHongoId",
+      path: ":cepaHongoSlug",
       name: "caract-hongo",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-hongo */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91846,7 +93127,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91856,7 +93137,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91866,7 +93147,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-hongo",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91876,7 +93157,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-hongo",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91886,7 +93167,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-hongo",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-hongo */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/hongos/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91894,7 +93175,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaHongoId",
+      path: "ver/:cepaHongoSlug",
       name: "ver-hongo",
       component: function component() {
         return Promise.all(/*! import() | ver-hongo */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -91922,14 +93203,14 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "levaduras",
       component: function component() {
-        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Levaduras",
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaLevaduraId",
+      path: ":cepaLevaduraSlug",
       name: "caract-levadura",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-levadura */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -91938,7 +93219,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -91948,7 +93229,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -91958,7 +93239,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-bioqui",
         name: "caract-bioqui-levadura",
         component: function component() {
-          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
+          return Promise.all(/*! import() | caract-bioqui-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-bioqui-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoCaractBioquiComponent.vue"));
         },
         meta: {
           title: "Características Bioquímicas",
@@ -91968,7 +93249,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-molecu",
         name: "identi-molecu-levadura",
         component: function component() {
-          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
+          return Promise.all(/*! import() | identi-molecu-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("identi-molecu-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoIdentiMolecuComponent.vue"));
         },
         meta: {
           title: "Identificación Molecular",
@@ -91978,7 +93259,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "metodo-conser",
         name: "metodo-conser-levadura",
         component: function component() {
-          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
+          return Promise.all(/*! import() | metodo-conser-levadura */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("metodo-conser-levadura")]).then(__webpack_require__.bind(null, /*! ../components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue */ "./resources/js/components/cepas/levaduras/info-caract/InfoMetodoConserComponent.vue"));
         },
         meta: {
           title: "Métodos de Conservación",
@@ -91986,7 +93267,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaLevaduraId",
+      path: "ver/:cepaLevaduraSlug",
       name: "ver-levadura",
       component: function component() {
         return Promise.all(/*! import() | ver-levadura */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92014,14 +93295,14 @@ var routes = [//-------------------------------TODAS----------------------------
       path: "",
       name: "actinomicetos",
       component: function component() {
-        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
+        return Promise.all(/*! import() | actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("cepas")]).then(__webpack_require__.bind(null, /*! ../components/cepas/ContainerFormTablaComponent.vue */ "./resources/js/components/cepas/ContainerFormTablaComponent.vue"));
       },
       meta: {
         title: "Cepas Microbianas - Actinomicetos",
         permisos: ["agregar-cepa", "editar-cepa", "eliminar-cepa", "caract-cepa", "ver-cepa"]
       }
     }, {
-      path: ":cepaActinomicetoId",
+      path: ":cepaActinomicetoSlug",
       name: "caract-actinomiceto",
       component: function component() {
         return __webpack_require__.e(/*! import() | caract-actinomiceto */ "cepa-hongo").then(__webpack_require__.bind(null, /*! ../components/cepas/AgregarEditarCaractComponent.vue */ "./resources/js/components/cepas/AgregarEditarCaractComponent.vue"));
@@ -92030,7 +93311,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-macro",
         name: "caract-macro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~metodo-cons~8edc09fa"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
+          return Promise.all(/*! import() | caract-macro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-macro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMacroComponent.vue"));
         },
         meta: {
           title: "Características Macroscópica",
@@ -92040,7 +93321,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "caract-micro",
         name: "caract-micro-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
+          return Promise.all(/*! import() | caract-micro-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("caract-macro-actinomiceto~caract-macro-bacteria~caract-macro-hongo~caract-macro-levadura~caract-micr~646b4aae"), __webpack_require__.e("caract-micro-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoCaractMicroComponent.vue"));
         },
         meta: {
           title: "Características Microscópica",
@@ -92050,7 +93331,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "identi-bioqui",
         name: "identi-bioqui-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
+          return Promise.all(/*! import() | identi-bioqui-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("identi-bioqui-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoIdentiBioquiComponent.vue"));
         },
         meta: {
           title: "Identificación Bioquímica",
@@ -92060,7 +93341,7 @@ var routes = [//-------------------------------TODAS----------------------------
         path: "otras-caract",
         name: "otras-caract-actinomiceto",
         component: function component() {
-          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
+          return Promise.all(/*! import() | otras-caract-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-macro~0a6d4127"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~1943b561"), __webpack_require__.e("otras-caract-actinomiceto")]).then(__webpack_require__.bind(null, /*! ../components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue */ "./resources/js/components/cepas/actinomicetos/info-caract/InfoOtrasCaractsComponent.vue"));
         },
         meta: {
           title: "Otras Características",
@@ -92088,7 +93369,7 @@ var routes = [//-------------------------------TODAS----------------------------
         }
       }]
     }, {
-      path: "ver/:cepaActinomicetoId",
+      path: "ver/:cepaActinomicetoSlug",
       name: "ver-actinomiceto",
       component: function component() {
         return Promise.all(/*! import() | ver-actinomiceto */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-bacteria~caract-micro~be745775"), __webpack_require__.e("ver-hongo")]).then(__webpack_require__.bind(null, /*! ../components/cepas/VerCepaComponent.vue */ "./resources/js/components/cepas/VerCepaComponent.vue"));
@@ -92111,7 +93392,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "tabla-usuarios",
     component: function component() {
-      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
+      return Promise.all(/*! import() | tabla-usuarios */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("tabla-usuarios")]).then(__webpack_require__.bind(null, /*! ../components/gestionar_usuarios/usuarios/ContainerComponent.vue */ "./resources/js/components/gestionar_usuarios/usuarios/ContainerComponent.vue"));
     },
     meta: {
       title: "Tabla Usuarios",
@@ -92149,7 +93430,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "otra-info-cepas",
     component: function component() {
-      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
+      return Promise.all(/*! import() | tablas-cepas */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-cepas")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/CepasComponent.vue */ "./resources/js/components/otra-info/CepasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Cepas",
@@ -92159,7 +93440,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "bacterias",
     name: "otra-info-bacterias",
     component: function component() {
-      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
+      return Promise.all(/*! import() | otra-info-bacterias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("otra-info-bacterias")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/BacteriasComponent.vue */ "./resources/js/components/otra-info/BacteriasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Bacterias",
@@ -92169,7 +93450,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "hongos",
     name: "otra-info-hongos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
+      return Promise.all(/*! import() | tablas-hongos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-hongos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/HongosComponent.vue */ "./resources/js/components/otra-info/HongosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Hongos",
@@ -92179,7 +93460,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "levaduras",
     name: "otra-info-levaduras",
     component: function component() {
-      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
+      return Promise.all(/*! import() | tablas-levaduras */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-levaduras")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/LevadurasComponent.vue */ "./resources/js/components/otra-info/LevadurasComponent.vue"));
     },
     meta: {
       title: "Tablas Info Levaduras",
@@ -92189,7 +93470,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actinomicetos",
     name: "otra-info-actinomicetos",
     component: function component() {
-      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
+      return Promise.all(/*! import() | tablas-actinomicetos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("otra-info-bacterias~tablas-actinomicetos~tablas-cepas~tablas-hongos~tablas-levaduras"), __webpack_require__.e("tablas-actinomicetos")]).then(__webpack_require__.bind(null, /*! ../components/otra-info/ActinomicetosComponent.vue */ "./resources/js/components/otra-info/ActinomicetosComponent.vue"));
     },
     meta: {
       title: "Tablas Info Actinomicetos",
@@ -92245,7 +93526,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "proyectos",
     component: function component() {
-      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
+      return Promise.all(/*! import() | proyectos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("proyectos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/proyectos/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/proyectos/ContainerComponent.vue"));
     },
     meta: {
       title: "Proyectos",
@@ -92255,7 +93536,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "publicaciones",
     name: "publicaciones",
     component: function component() {
-      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
+      return Promise.all(/*! import() | publicaciones */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("publicaciones")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/documentos/publicaciones/ContainerComponent.vue */ "./resources/js/components/sitio-web/documentos/publicaciones/ContainerComponent.vue"));
     },
     meta: {
       title: "Publicaciones",
@@ -92273,7 +93554,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "",
     name: "noticias",
     component: function component() {
-      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
+      return Promise.all(/*! import() | noticias */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("noticias")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/noticias/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/noticias/ContainerComponent.vue"));
     },
     meta: {
       title: "Noticias",
@@ -92283,7 +93564,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "actividades",
     name: "actividades",
     component: function component() {
-      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | actividades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("actividades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/actividades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/actividades/ContainerComponent.vue"));
     },
     meta: {
       title: "Actividades",
@@ -92293,7 +93574,7 @@ var routes = [//-------------------------------TODAS----------------------------
     path: "novedades",
     name: "novedades",
     component: function component() {
-      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
+      return Promise.all(/*! import() | novedades */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("vendors~actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~mision~noticias~novedades~objetivos~vision"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("novedades")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/publicidad/novedades/ContainerComponent.vue */ "./resources/js/components/sitio-web/publicidad/novedades/ContainerComponent.vue"));
     },
     meta: {
       title: "Novedades",
@@ -92304,7 +93585,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/perfil",
   name: "perfil",
   component: function component() {
-    return Promise.all(/*! import() | perfil */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("perfil")]).then(__webpack_require__.bind(null, /*! ../components/PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue"));
+    return Promise.all(/*! import() | perfil */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("perfil")]).then(__webpack_require__.bind(null, /*! ../components/PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue"));
   },
   meta: {
     title: "Perfil"
@@ -92313,7 +93594,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/calendario",
   name: "calendario",
   component: function component() {
-    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
+    return Promise.all(/*! import() | calendario */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~calendario~metodo-conser-bacteria~metodo-conser-hongo~metodo-conser-levadura"), __webpack_require__.e("vendors~calendario"), __webpack_require__.e("calendario")]).then(__webpack_require__.bind(null, /*! ../components/CalendarioComponent.vue */ "./resources/js/components/CalendarioComponent.vue"));
   },
   meta: {
     title: "Calendario"
@@ -92322,7 +93603,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/imagenes-login/ver",
   name: "imagenes-login",
   component: function component() {
-    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
+    return Promise.all(/*! import() | imagenes-login */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("imagenes-login")]).then(__webpack_require__.bind(null, /*! ../components/imagenes-login/ImagenesLoginComponent.vue */ "./resources/js/components/imagenes-login/ImagenesLoginComponent.vue"));
   },
   meta: {
     title: "Imagenes Login",
@@ -92332,7 +93613,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/investigadores",
   name: "investigadores",
   component: function component() {
-    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
+    return Promise.all(/*! import() | investigadores */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("investigadores")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/InvestigadoresComponent.vue */ "./resources/js/components/sitio-web/InvestigadoresComponent.vue"));
   },
   meta: {
     title: "Investigadores",
@@ -92342,7 +93623,7 @@ var routes = [//-------------------------------TODAS----------------------------
   path: "/equipamientos",
   name: "equipamientos",
   component: function component() {
-    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
+    return Promise.all(/*! import() | equipamientos */[__webpack_require__.e("vendors~actividades~calendario~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~car~a111113d"), __webpack_require__.e("vendors~actividades~caract-bioqui-bacteria~caract-bioqui-hongo~caract-bioqui-levadura~caract-fisio-b~b9ac7b35"), __webpack_require__.e("vendors~actividades~calendario~cepas~equipamientos~imagenes-login~investigadores~metodo-conser-bacte~02bb39d7"), __webpack_require__.e("vendors~actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~me~7c1c6825"), __webpack_require__.e("actividades~cepas~equipamientos~investigadores~metodo-conser-bacteria~metodo-conser-hongo~metodo-con~b3c35ee6"), __webpack_require__.e("actividades~equipamientos~investigadores~novedades~proyectos~publicaciones"), __webpack_require__.e("equipamientos")]).then(__webpack_require__.bind(null, /*! ../components/sitio-web/EquipamientosComponent.vue */ "./resources/js/components/sitio-web/EquipamientosComponent.vue"));
   },
   meta: {
     title: "Equipamientos",
@@ -92783,6 +94064,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -92907,6 +94191,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -92994,6 +94281,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -93027,6 +94317,11 @@ __webpack_require__.r(__webpack_exports__);
           return imagen.id == id;
         });
       };
+    },
+    getImagenLoginByMostrar: function getImagenLoginByMostrar(state) {
+      return state.imagenesLogin.filter(function (imagen) {
+        return imagen.mostrar == 1;
+      });
     }
   },
   mutations: {
@@ -93070,6 +94365,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -93138,6 +94436,41 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroBacteriasByNombre: function getInfoCaractMacroBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_macro":
+            return getters.getInfoCaractMacroBacterias.formas_macros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "borde":
+            return getters.getInfoCaractMacroBacterias.bordes.find(function (borde) {
+              return borde.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "detalle":
+            return getters.getInfoCaractMacroBacterias.detalle_opticos.find(function (detalle) {
+              return detalle.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "elevacion":
+            return getters.getInfoCaractMacroBacterias.elevacions.find(function (elevacion) {
+              return elevacion.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "superficie":
+            return getters.getInfoCaractMacroBacterias.superficies.find(function (superficie) {
+              return superficie.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroBacterias.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMicroBacterias: function getInfoCaractMicroBacterias(state) {
       return state.info_caract_bacterias.caract_micro;
     },
@@ -93147,6 +94480,16 @@ __webpack_require__.r(__webpack_exports__);
           case "forma":
             return getters.getInfoCaractMicroBacterias.formas_micros.find(function (forma) {
               return forma.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMicroBacteriasByNombre: function getInfoCaractMicroBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_micro":
+            return getters.getInfoCaractMicroBacterias.formas_micros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -93169,6 +94512,21 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoMetodoConserBacteriasByNombre: function getInfoMetodoConserBacteriasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserBacterias.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "tipo_agar":
+            return getters.getInfoMetodoConserBacterias.tipo_agar.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMacroLevaduras: function getInfoCaractMacroLevaduras(state) {
       return state.info_caract_levaduras.caract_macro;
     },
@@ -93187,6 +94545,21 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroLevadurasByNombre: function getInfoCaractMacroLevadurasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroLevaduras.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroLevaduras.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoMetodoConserLevaduras: function getInfoMetodoConserLevaduras(state) {
       return state.info_caract_levaduras.metodo_conser;
     },
@@ -93196,6 +94569,16 @@ __webpack_require__.r(__webpack_exports__);
           case "tipo_metodo":
             return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(function (tipo) {
               return tipo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoMetodoConserLevadurasByNombre: function getInfoMetodoConserLevadurasByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserLevaduras.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -93214,6 +94597,21 @@ __webpack_require__.r(__webpack_exports__);
           case "color":
             return getters.getInfoCaractMacroHongos.colores.find(function (color) {
               return color.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMacroHongosByNombre: function getInfoCaractMacroHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroHongos.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroHongos.colores.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -93241,6 +94639,26 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMicroHongosByNombre: function getInfoCaractMicroHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "conidioforo":
+            return getters.getInfoCaractMicroHongos.conidioforos.find(function (conidioforo) {
+              return conidioforo.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "esporaA":
+            return getters.getInfoCaractMicroHongos.esporas_asexuales.find(function (asexual) {
+              return asexual.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "esporaS":
+            return getters.getInfoCaractMicroHongos.esporas_sexuales.find(function (sexual) {
+              return sexual.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoMetodoConserHongos: function getInfoMetodoConserHongos(state) {
       return state.info_caract_hongos.metodo_conser;
     },
@@ -93250,6 +94668,16 @@ __webpack_require__.r(__webpack_exports__);
           case "tipo_metodo":
             return getters.getInfoMetodoConserHongos.tipo_metodo.find(function (tipo) {
               return tipo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoMetodoConserHongosByNombre: function getInfoMetodoConserHongosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "tipo_metodo":
+            return getters.getInfoMetodoConserHongos.tipo_metodo.find(function (tipo) {
+              return tipo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -93292,6 +94720,41 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
     },
+    getInfoCaractMacroActinomicetosByNombre: function getInfoCaractMacroActinomicetosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "textura":
+            return getters.getInfoCaractMacroActinomicetos.texturas.find(function (textura) {
+              return textura.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "color":
+            return getters.getInfoCaractMacroActinomicetos.colors.find(function (color) {
+              return color.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "forma_macro":
+            return getters.getInfoCaractMacroActinomicetos.formas_macros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "superficie":
+            return getters.getInfoCaractMacroActinomicetos.superficies.find(function (superficie) {
+              return superficie.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "borde":
+            return getters.getInfoCaractMacroActinomicetos.bordes.find(function (borde) {
+              return borde.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "pigmento":
+            return getters.getInfoCaractMacroActinomicetos.pigmentos.find(function (pigmento) {
+              return pigmento.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+        }
+      };
+    },
     getInfoCaractMicroActinomicetos: function getInfoCaractMicroActinomicetos(state) {
       return state.info_caract_actinomicetos.caract_micro;
     },
@@ -93316,6 +94779,31 @@ __webpack_require__.r(__webpack_exports__);
           case "conidioforo":
             return getters.getInfoCaractMicroActinomicetos.conidioforos.find(function (conidioforo) {
               return conidioforo.id === data.id;
+            });
+        }
+      };
+    },
+    getInfoCaractMicroActinomicetosByNombre: function getInfoCaractMicroActinomicetosByNombre(state, getters) {
+      return function (data) {
+        switch (data.tipo) {
+          case "forma_micro":
+            return getters.getInfoCaractMicroActinomicetos.formas_micros.find(function (forma) {
+              return forma.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "tincion":
+            return getters.getInfoCaractMicroActinomicetos.tincions.find(function (tincion) {
+              return tincion.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "micelio":
+            return getters.getInfoCaractMicroActinomicetos.micelios.find(function (micelio) {
+              return micelio.nombre.toUpperCase() === data.nombre.toUpperCase();
+            });
+
+          case "conidioforo":
+            return getters.getInfoCaractMicroActinomicetos.conidioforos.find(function (conidioforo) {
+              return conidioforo.nombre.toUpperCase() === data.nombre.toUpperCase();
             });
         }
       };
@@ -93890,6 +95378,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -93919,6 +95410,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this2.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -93948,6 +95442,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this3.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -93977,6 +95474,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this4.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -94335,6 +95835,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -94426,6 +95929,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -94470,6 +95976,11 @@ __webpack_require__.r(__webpack_exports__);
         });
       };
     },
+    getNoticiaByPublicar: function getNoticiaByPublicar(state, getters) {
+      return getters.getNoticias.filter(function (noticia) {
+        return noticia.publicar === 1;
+      });
+    },
     getActividades: function getActividades(state) {
       return state.publicidad.actividades;
     },
@@ -94487,6 +95998,11 @@ __webpack_require__.r(__webpack_exports__);
         });
       };
     },
+    getActividadByPublicar: function getActividadByPublicar(state, getters) {
+      return getters.getActividades.filter(function (actividad) {
+        return actividad.publicar === 1;
+      });
+    },
     getNovedades: function getNovedades(state) {
       return state.publicidad.novedades;
     },
@@ -94503,6 +96019,11 @@ __webpack_require__.r(__webpack_exports__);
           return novedad.titulo.toUpperCase() === nombre.toUpperCase();
         });
       };
+    },
+    getNovedadByPublicar: function getNovedadByPublicar(state, getters) {
+      return getters.getNovedades.filter(function (novedad) {
+        return novedad.publicar === 1;
+      });
     }
   },
   mutations: {
@@ -94510,6 +96031,12 @@ __webpack_require__.r(__webpack_exports__);
       state.publicidad = publicidad;
     },
     modificarNoticia: function modificarNoticia(state, data) {
+      if (data.data.publicar) {
+        data.data.publicar = 1;
+      } else {
+        data.data.publicar = 0;
+      }
+
       switch (data.tipo) {
         case "agregar":
           state.publicidad.noticias.push(data.data);
@@ -94531,6 +96058,12 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     modificarActividad: function modificarActividad(state, data) {
+      if (data.data.publicar) {
+        data.data.publicar = 1;
+      } else {
+        data.data.publicar = 0;
+      }
+
       switch (data.tipo) {
         case "agregar":
           state.publicidad.actividades.push(data.data);
@@ -94552,6 +96085,12 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     modificarNovedad: function modificarNovedad(state, data) {
+      if (data.data.publicar) {
+        data.data.publicar = 1;
+      } else {
+        data.data.publicar = 0;
+      }
+
       switch (data.tipo) {
         case "agregar":
           state.publicidad.novedades.push(data.data);
@@ -94588,6 +96127,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -94657,6 +96199,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response.status === 403) {
           _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
         }
       });
     },
@@ -94781,6 +96326,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   actions: {
     obtenerUsers: function obtenerUsers(_ref, data) {
+      var _this = this;
+
       var commit = _ref.commit;
       axios.get("/info-panel/users").then(function (res) {
         if (res.request.responseURL === "http://127.0.0.1:8000/") {
@@ -94789,6 +96336,13 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         commit("llenarUsuarios", res.data);
+      })["catch"](function (error) {
+        if (error.response.status === 403) {
+          _this.$router.push("/sin-acceso");
+        } else if (error.response.status === 405 || error.response.status === 401) {
+          localStorage.setItem("mensajeLogin", "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente");
+          window.location.href = "/";
+        }
       });
     },
     obtenerRoles: function obtenerRoles(_ref2) {
@@ -94838,6 +96392,35 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/fake.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/fake.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/postcss-loader/src??ref--7-2!../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./fake.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/sass/fake.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
 
 /***/ }),
 

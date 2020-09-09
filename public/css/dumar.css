@@ -257,34 +257,90 @@
 }
 
 .logo-majumba > img {
-    height: 250px;
-    width: 500px;
+    width: 560px;
+    height: 200px;
 }
-@media (max-width: 990px) {
+@media (max-width: 1178px) {
     .logo-majumba > img {
-        height: 300px;
-        width: 600px;
+        width: 520px;
+    }
+}
+@media (max-width: 1087px) {
+    .logo-majumba > img {
+        width: 500px;
     }
 }
 @media (max-width: 772px) {
     .logo-majumba > img {
-        height: 250px;
-        width: 500px;
+        width: 480px;
+        height: 200px;
     }
 }
-@media (max-width: 529px) {
+@media (max-width: 590px) {
     .logo-majumba > img {
+        width: 450px;
         height: 200px;
+    }
+}
+@media (max-width: 503px) {
+    .logo-majumba > img {
         width: 400px;
     }
 }
 @media (max-width: 429px) {
     .logo-majumba > img {
-        height: 150px;
         width: 330px;
     }
 }
+@media (max-width: 370px) {
+    .logo-majumba > img {
+        width: 270px;
+        height: 150px;
+    }
+}
 
+.logo-majumba-reset > img {
+    width: 500px;
+    height: 250px;
+}
+@media (max-width: 1178px) {
+    .logo-majumba-reset > img {
+        width: 600px;
+    }
+}
+@media (max-width: 1087px) {
+    .logo-majumba-reset > img {
+        width: 550px;
+    }
+}
+@media (max-width: 772px) {
+    .logo-majumba-reset > img {
+        width: 480px;
+        height: 200px;
+    }
+}
+@media (max-width: 590px) {
+    .logo-majumba-reset > img {
+        width: 450px;
+        height: 200px;
+    }
+}
+@media (max-width: 503px) {
+    .logo-majumba-reset > img {
+        width: 400px;
+    }
+}
+@media (max-width: 429px) {
+    .logo-majumba-reset > img {
+        width: 330px;
+    }
+}
+@media (max-width: 370px) {
+    .logo-majumba-reset > img {
+        width: 270px;
+        height: 150px;
+    }
+}
 .dropdown-menu {
     min-width: 10rem;
 }
@@ -460,11 +516,6 @@
     display: none;
 }
 
-.logo-majumba > img {
-    height: 200px;
-    width: 400px;
-}
-
 /* btn login con google*/
 #btnGoogle {
     display: inline-block;
@@ -518,5 +569,98 @@ span.buttonText {
 @media (max-width: 772px) {
     #btnGoogle {
         float: right;
+    }
+}
+
+.error-input-select {
+    border-color: #d92550;
+    padding-right: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center right calc(2.25rem / 4);
+    background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+}
+
+.text-error-input {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #d92550;
+}
+
+.text-error-select {
+    position: relative;
+    top: -15px;
+    color: #d92550;
+    font-size: 80%;
+}
+
+.mostrar-cursor {
+    cursor: pointer;
+}
+
+/*mensaje central*/
+.full-height {
+    height: 40vh;
+}
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.position-ref {
+    position: relative;
+}
+.code {
+    border-right: 4px solid;
+    font-size: 60px;
+    padding: 0 15px 0 15px;
+    text-align: center;
+}
+.message {
+    font-size: 40px;
+    text-align: center;
+}
+
+/*list roles*/
+.flip-list-move {
+    transition: transform 0.5s;
+}
+.no-move {
+    transition: transform 0s;
+}
+.ghost {
+    opacity: 0.5;
+    background: #c8ebfb;
+}
+.list-group {
+    min-height: 20px;
+}
+.list-group-item {
+    cursor: move;
+}
+.list-group-item i {
+    cursor: pointer;
+}
+
+/* page title*/
+.app-theme-white .app-page-title {
+    /*rgba(255, 255, 255, 0.45);*/
+    background: #06f37940;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+        0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+        0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+        0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+
+.card-header.card-header-tab .card-header-title {
+    align-items: center;
+    white-space: inherit;
+    margin-bottom: 0.5em;
+}
+
+@media (max-width: 991.98px) {
+    .app-main-verificar-email {
+        display: flex;
     }
 }

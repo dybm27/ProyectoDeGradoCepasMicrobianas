@@ -173,7 +173,7 @@
               <div class="card">
                 <template v-if="imagenes.micro!=''">
                   <div class="mt-3 ml-5 mb-1 mr-5">
-                    <Carousel :imagenes="imagenes.micro"></Carousel>
+                    <Carousel :id="2" :imagenes="imagenes.micro"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>
@@ -277,7 +277,7 @@
               <div class="card">
                 <template v-if="imagenes.bioqui!=''">
                   <div class="mt-2 ml-5 mb-2 mr-5">
-                    <Carousel :imagenes="imagenes.bioqui"></Carousel>
+                    <Carousel :id="1" :imagenes="imagenes.bioqui"></Carousel>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted"></small>
@@ -624,6 +624,7 @@ import IconoMostrar from "../IconoMostrarInfoVer.vue";
 import Toastr from "../../../mixins/toastr";
 moment.locale("es");
 import Carousel from "../../carousel/CarouselComponent.vue";
+import errorPeticionAxiosVerCepaMixin from "../../../mixins/errorPeticionAxiosVerCepa";
 export default {
   components: { Carousel, IconoMostrar },
   data() {
@@ -648,7 +649,7 @@ export default {
       btnSeleccionado: false,
     };
   },
-  mixins: [Toastr],
+  mixins: [Toastr, errorPeticionAxiosVerCepaMixin],
   computed: {
     ...vuex.mapState("cepa", ["cepa"]),
     ...vuex.mapGetters("cepa", [
@@ -695,6 +696,7 @@ export default {
           break;
       }
       if (imprimir) {
+        this.$events.fire("bloquearBtnVolver");
         this.btnTodo = true;
         this.btnSeleccionado = true;
         this.toastr(
@@ -716,6 +718,7 @@ export default {
               );
               window.location.href = "/";
             } else {
+              this.$events.fire("bloquearBtnVolver");
               this.toastr(
                 "Descarga!!",
                 "La descarga se realizo con éxito",
@@ -738,13 +741,7 @@ export default {
             }
           })
           .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.btnTodo = false;
-              this.btnSeleccionado = false;
-              this.toastr("Error!!", "", "error");
-            }
+            this.verificarErrorVerCepa(error.response.status);
           });
       } else {
         this.errorSelect = "Favor seleccionar minimo una opcion";

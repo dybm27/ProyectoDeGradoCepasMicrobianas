@@ -21,6 +21,7 @@ class InfoCaracActinomicetosController extends Controller
 {
     public function agregarInfo(Request $request)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $rules = [
@@ -170,6 +171,7 @@ class InfoCaracActinomicetosController extends Controller
 
     public function EditarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required', 'nombre' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo1 = FormaCaractMacroActinomiceto::find($id);
@@ -308,6 +310,7 @@ class InfoCaracActinomicetosController extends Controller
 
     public function eliminarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo = FormaCaractMacroActinomiceto::find($id);

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Storage;
 
 class PublicidadController extends Controller
 {
+    public $idPublicaion;
+
     public function store(Request $request)
     {
         switch ($request->tipo) {
@@ -32,12 +34,13 @@ class PublicidadController extends Controller
                 break;
         }
         if (is_null($request->cuerpo)) {
-            $reglas += ['link' => 'required', 'imagen' => 'required'];
+            $reglas += ['link' => 'required'];
         }
+        $reglas += ['imagen' => 'required', 'publicar' => 'required'];
         $this->validate($request, $reglas);
 
         if ($request->publicar == 1) {
-            if (!$this->validarCheck($request->tipo)) {
+            if (!$this->validarCheck($request->tipo, "agregar")) {
                 return response(['errors' =>
                 ['publicar' => ['No es posible publicar la ' . $request->tipo]]], 422);
             }
@@ -116,7 +119,17 @@ class PublicidadController extends Controller
         if (is_null($request->cuerpo)) {
             $reglas += ['link' => 'required'];
         }
+        $reglas += ['imagen' => 'required', 'publicar' => 'required'];
         $this->validate($request, $reglas);
+
+
+        $this->idPublicaion = $publicidad->id;
+        if ($request->publicar == 1) {
+            if (!$this->validarCheck($request->tipo, "editar")) {
+                return response(['errors' =>
+                ['publicar' => ['No es posible publicar la ' . $request->tipo]]], 422);
+            }
+        }
 
         if ($request->imagen != $publicidad->imagen) {
             Storage::disk('local')->delete($publicidad->imagen);
@@ -159,12 +172,12 @@ class PublicidadController extends Controller
     {
         if ($tipo == 'noticia') {
             $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '-' . $imagen->getClientOriginalName();
-            Storage::put('/public/publicidad/' . $tipo . '/' . $nombre, file_get_contents($imagen));
+            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, file_get_contents($imagen));
         } else {
             $imagen_array = explode(",", $imagen);
             $data = base64_decode($imagen_array[1]);
             $nombre = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '.png';
-            Storage::put('/public/publicidad/' . $tipo . '/' . $nombre, $data);
+            Storage::disk('local')->put('/public/publicidad/' . $tipo . '/' . $nombre, $data);
         }
         $ruta = '/public/publicidad/' . $tipo . '/' . $nombre;
         $rutaPublica = '/storage/publicidad/' . $tipo . '/' . $nombre;
@@ -173,12 +186,6 @@ class PublicidadController extends Controller
 
     public function publicar(Request $request, $id)
     {
-        if ($request->publicar == 1) {
-            if (!$this->validarCheck($request->tipo)) {
-                return response('No es posible publicar la ' . $request->tipo, 422);
-            }
-        }
-
         switch ($request->tipo) {
             case 'noticia':
                 $publicidad = Noticia::find($id);
@@ -189,6 +196,12 @@ class PublicidadController extends Controller
             case 'novedad':
                 $publicidad =  Novedad::find($id);
                 break;
+        }
+        $this->idPublicaion = $publicidad->id;
+        if ($request->publicar == 1) {
+            if (!$this->validarCheck($request->tipo, "editar")) {
+                return response('No es posible publicar la ' . $request->tipo, 422);
+            }
         }
         $publicidad->publicar = $request->publicar;
         $publicidad->save();
@@ -230,29 +243,39 @@ class PublicidadController extends Controller
         }
     }
 
-    public function validarCheck($tipo)
+    public function validarCheck($tipo, $tipoAccion)
     {
-        $res = false;
+
         switch ($tipo) {
             case 'noticia':
-                $cant = Noticia::where('publicar', 1)->count();
-                if ($cant < 5) {
-                    $res = true;
-                }
+                $publicaciones = Noticia::where('publicar', 1)->get();
+                if ($publicaciones->count() < 5)  return true;
+                if ($tipoAccion == 'agregar') return false;
+                if ($this->findArray($publicaciones)) return true;
                 break;
             case 'actividad':
-                $cant = Actividad::where('publicar', 1)->count();
-                if ($cant < 7) {
-                    $res = true;
-                }
+                $publicaciones = Actividad::where('publicar', 1)->get();
+                if ($publicaciones->count() < 7)  return true;
+                if ($tipoAccion == 'agregar') return false;
+                if ($this->findArray($publicaciones)) return true;
                 break;
             case 'novedad':
-                $cant = Novedad::where('publicar', 1)->count();
-                if ($cant < 7) {
-                    $res = true;
-                }
+                $publicaciones = Novedad::where('publicar', 1)->get();
+                if ($publicaciones->count() < 7)  return true;
+                if ($tipoAccion == 'agregar') return false;
+                if ($this->findArray($publicaciones)) return true;
                 break;
         }
-        return $res;
+        return false;
+    }
+
+    public function findArray($array)
+    {
+        foreach ($array as $item) {
+            if ($item->id == $this->idPublicaion) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -17,7 +17,7 @@
         <template v-if="mostrarBtn">
           <button
             class="btn btn-block btn-success"
-            :disabled="validarBtn"
+            v-if="!validarBtn"
             @click="aceptarContenido"
           >Aceptar Contenido</button>
         </template>
@@ -76,7 +76,7 @@ export default {
     return {
       editorDisabled: false,
       editor: ClassicEditor,
-      editorData: "<p>Content of the editor.</p>",
+      editorData: "",
       editorConfig: {
         extraPlugins: [this.MyCustomUploadAdapterPlugin],
         plugins: [
@@ -114,7 +114,7 @@ export default {
           TableToolbar,
           TableProperties,
           TableCellProperties,
-          BlockQuote
+          BlockQuote,
         ],
         toolbar: {
           items: [
@@ -151,18 +151,18 @@ export default {
             "subscript",
             "superscript",
             "horizontalLine",
-            "blockQuote"
+            "blockQuote",
           ],
-          shouldNotGroupWhenFull: true
+          shouldNotGroupWhenFull: true,
         },
         fontFamily: {
-          supportAllValues: true
+          supportAllValues: true,
         },
         fontSize: {
-          options: [9, 10, 11, 12, 13, "default", 16, 17, 18, 19, 20, 21]
+          options: [9, 10, 11, 12, 13, "default", 16, 17, 18, 19, 20, 21],
         },
         alignment: {
-          options: ["justify", "left", "center", "right"]
+          options: ["justify", "left", "center", "right"],
         },
         image: {
           toolbar: [
@@ -170,9 +170,9 @@ export default {
             "imageStyle:alignCenter",
             "imageStyle:alignRight",
             "|",
-            "imageTextAlternative"
+            "imageTextAlternative",
           ],
-          styles: ["full", "side", "alignLeft", "alignCenter", "alignRight"]
+          styles: ["full", "side", "alignLeft", "alignCenter", "alignRight"],
         },
         mediaEmbed: {
           removeProviders: [
@@ -180,8 +180,8 @@ export default {
             "twitter",
             "googleMaps",
             "flickr",
-            "facebook"
-          ]
+            "facebook",
+          ],
         },
         table: {
           contentToolbar: [
@@ -189,14 +189,14 @@ export default {
             "tableRow",
             "mergeTableCells",
             "tableProperties",
-            "tableCellProperties"
-          ]
-        }
+            "tableCellProperties",
+          ],
+        },
       },
       mostrarBtn: true,
       html: "",
       imagenes: [],
-      todasImagenes: []
+      todasImagenes: [],
     };
   },
   methods: {
@@ -207,7 +207,7 @@ export default {
       this.$emit("contenido", {
         contenido: this.html,
         imagenesEditor: this.imagenes,
-        imagenesGuardadas: this.todasImagenes
+        imagenesGuardadas: this.todasImagenes,
       });
       this.mostrarBtn = false;
       this.editorDisabled = true;
@@ -218,7 +218,7 @@ export default {
       this.editorDisabled = false;
     },
     MyCustomUploadAdapterPlugin(editor) {
-      editor.plugins.get("FileRepository").createUploadAdapter = loader => {
+      editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
         return new MyUploadAdapter(loader);
       };
     },
@@ -257,7 +257,7 @@ export default {
     },
     input(info) {
       this.obtenerPathTodasImagenes();
-    }
+    },
   },
   computed: {
     validarBtn() {
@@ -266,6 +266,6 @@ export default {
       }
       return false;
     },
-  }
+  },
 };
 </script>

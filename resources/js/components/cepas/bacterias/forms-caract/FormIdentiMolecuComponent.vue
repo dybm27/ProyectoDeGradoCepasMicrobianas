@@ -24,10 +24,13 @@
                         name="nombre_forward"
                         id="nombre_forward"
                         type="text"
-                        class="form-control"
-                        v-model="parametros.nombre_forward"
-                        required
+                        :class="['form-control', $v.parametros.nombre_forward.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.nombre_forward.$model"
                       />
+                      <em
+                        v-if="$v.parametros.nombre_forward.$error&&!$v.parametros.nombre_forward.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -37,10 +40,13 @@
                         id="secuen_forward"
                         placeholder="Secuencia..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.secuen_forward"
-                        required
+                        :class="['form-control', $v.parametros.secuen_forward.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.secuen_forward.$model"
                       />
+                      <em
+                        v-if="$v.parametros.secuen_forward.$error&&!$v.parametros.secuen_forward.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -50,10 +56,13 @@
                         id="produc_forward"
                         placeholder="Producto..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.produc_forward"
-                        required
+                        :class="['form-control', $v.parametros.produc_forward.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.produc_forward.$model"
                       />
+                      <em
+                        v-if="$v.parametros.produc_forward.$error&&!$v.parametros.produc_forward.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -68,10 +77,13 @@
                         name="nombre_reversed"
                         id="nombre_reversed"
                         type="text"
-                        class="form-control"
-                        v-model="parametros.nombre_reversed"
-                        required
+                        :class="['form-control', $v.parametros.nombre_reversed.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.nombre_reversed.$model"
                       />
+                      <em
+                        v-if="$v.parametros.nombre_reversed.$error&&!$v.parametros.nombre_reversed.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -81,10 +93,13 @@
                         id="secuen_reversed"
                         placeholder="Secuencia..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.secuen_reversed"
-                        required
+                        :class="['form-control', $v.parametros.secuen_reversed.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.secuen_reversed.$model"
                       />
+                      <em
+                        v-if="$v.parametros.secuen_reversed.$error&&!$v.parametros.secuen_reversed.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -94,10 +109,13 @@
                         id="produc_reversed"
                         placeholder="Producto..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.produc_reversed"
-                        required
+                        :class="['form-control', $v.parametros.produc_reversed.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.produc_reversed.$model"
                       />
+                      <em
+                        v-if="$v.parametros.produc_reversed.$error&&!$v.parametros.produc_reversed.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -130,11 +148,14 @@
                       id="imagen1"
                       type="file"
                       accept="image/jpeg, image/png"
-                      class="form-control-file"
+                      :class="['form-control-file', $v.parametros.imagen1.$error? 'error-input-select':'']"
                       ref="inputImagen1"
-                      :required="required"
                     />
-                    <span v-if="imagenError.imagen1" class="text-danger">{{imagenError.imagen1}}</span>
+                    <em v-if="imagenError.imagen1" class="text-error-input">{{imagenError.imagen1}}</em>
+                    <em
+                      v-if="$v.parametros.imagen1.$error&&!$v.parametros.imagen1.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -146,11 +167,14 @@
                       id="imagen2"
                       type="file"
                       accept="image/jpeg, image/png"
-                      class="form-control-file"
+                      :class="['form-control-file', $v.parametros.imagen2.$error? 'error-input-select':'']"
                       ref="inputImagen2"
-                      :required="required"
                     />
-                    <span v-if="imagenError.imagen2" class="text-danger">{{imagenError.imagen2}}</span>
+                    <em v-if="imagenError.imagen2" class="text-error-input">{{imagenError.imagen2}}</em>
+                    <em
+                      v-if="$v.parametros.imagen2.$error&&!$v.parametros.imagen2.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
               </div>
@@ -161,17 +185,20 @@
                     <textarea
                       name="obser_secuenciacion"
                       id="obser_secuenciacion"
-                      class="form-control"
-                      v-model="parametros.obser_secuenciacion"
-                      required
+                      :class="['form-control', $v.parametros.obser_secuenciacion.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.obser_secuenciacion.$model"
                     ></textarea>
+                    <em
+                      v-if="$v.parametros.obser_secuenciacion.$error&&!$v.parametros.obser_secuenciacion.required"
+                      class="text-error-input"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
               </div>
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </form>
           </div>
@@ -276,6 +303,7 @@ import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie2ImagenesMixin from "../../../../mixins/obtenerImagenCroopie2Imagenes";
 import Croppie from "../../../CroppieComponent";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie },
   props: ["info", "modificarInfo"],
@@ -297,7 +325,23 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      nombre_forward: { required },
+      nombre_reversed: { required },
+      secuen_forward: { required },
+      secuen_reversed: { required },
+      produc_forward: { required },
+      produc_reversed: { required },
+      obser_secuenciacion: { required },
+      imagen1: { required },
+      imagen2: { required },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie2ImagenesMixin],
   watch: {
@@ -311,8 +355,9 @@ export default {
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Identificación") {
-        if (this.parametros.imagen1 && this.parametros.imagen2) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Identificación") {
           axios
             .post("/cepas/bacteria/identi-molecu", this.parametros)
             .then((res) => {
@@ -338,53 +383,43 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = {
-            imagen: ["Favor agregre las respectivas imagenes."],
-          };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/identi-molecu/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen1.value = "";
+              this.$refs.inputImagen2.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Identificación",
+                "Identificación Molecular editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/identi-molecu/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen1.value = "";
-            this.$refs.inputImagen2.value = "";
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Identificación",
-              "Identificación Molecular editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -399,6 +434,10 @@ export default {
       this.parametros.imagen2 = this.info.img_secuen;
       this.imagenMiniatura1 = this.info.img_pcrPublica;
       this.imagenMiniatura2 = this.info.img_secuenPublica;
+      this.imagenInfo1 = this.info.img_pcr;
+      this.imagenInfo2 = this.info.img_secuen;
+      this.imagenInfoPublica1 = this.info.img_pcrPublica;
+      this.imagenInfoPublica2 = this.info.img_secuenPublica;
     },
   },
   computed: {
@@ -410,7 +449,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Identificación") {
         return true;
       } else {
@@ -433,10 +472,13 @@ export default {
       this.tituloForm = "Agregar Identificación";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaBacteriaId) {
-      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    let array = [];
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
 };

@@ -14,42 +14,39 @@
     </thead>
     <tbody>
     @foreach($datos as $dato)
-        @php
-            $datoDecodificado= json_decode($dato);
-        @endphp
         <tr>
-            <td>{{ $datoDecodificado->nombre_tipo_metodo }}</td>
+            <td>{{ $dato['nombre_tipo_metodo'] }}</td>
             <td>
-                @if ($datoDecodificado->numero_replicas==0)
+                @if ($dato['numero_replicas']==0)
                     No Aplica
                 @else
-                    {{$datoDecodificado->numero_replicas}}
+                    {{$dato['numero_replicas']}}
                 @endif
             </td>
             <td>
-                @if (is_null($datoDecodificado->recuento_microgota))
+                @if (is_null($dato['recuento_microgota']))
                     No Aplica
                 @else
-                    {{$datoDecodificado->recuento_microgota}}
+                    {{$dato['recuento_microgota']}}
                 @endif
             </td>
             <td>
-                @if (is_null($datoDecodificado->medio_cultivo))
+                @if (is_null($dato['medio_cultivo']))
                     No Aplica
                 @else
-                    {{$datoDecodificado->medio_cultivo}}
+                    {{$dato['medio_cultivo']}}
                 @endif
             </td>
             <td>
-                @if ($datoDecodificado->numero_pases==0)
+                @if ($dato['numero_pases']==0)
                     No Aplica
                 @else
-                    {{$datoDecodificado->numero_pases}}
+                    {{$dato['numero_pases']}}
                 @endif
             </td>
             <td>
                 @php
-                    $fecha=date('d-m-Y', strtotime($datoDecodificado->fecha))
+                    $fecha=date('d-m-Y', strtotime($dato['fecha']))
                 @endphp
                 {{$fecha}}
             </td>

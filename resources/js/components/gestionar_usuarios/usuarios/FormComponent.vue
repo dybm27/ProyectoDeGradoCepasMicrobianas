@@ -8,7 +8,7 @@
               <h5 class="card-title">{{titulo}}</h5>
               <template v-if="errors!=''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
+                  <p v-for="(item, index) in errors" :key="index">{{item}}</p>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -18,11 +18,17 @@
                   id="nombre"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombre? 'is-invalid':'']"
-                  v-model="parametros.nombre"
-                  required
+                  :class="['form-control', $v.parametros.nombre.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nombre.$model"
                 />
-                <em v-if="validarNombre" class="error invalid-feedback">{{mensajeNombre}}</em>
+                <em
+                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.nombre.$error&&!$v.parametros.nombre.alpha"
+                  class="text-error-input"
+                >{{mensajes.alpha}}</em>
               </div>
               <template v-if="getRoles">
                 <div class="osition-relative form-group">
@@ -30,11 +36,15 @@
                   <select
                     name="select"
                     id="rol"
-                    class="form-control"
-                    v-model.number="parametros.rol"
+                    :class="['form-control', $v.parametros.rol.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.rol.$model"
                   >
                     <option v-for="(tu,index) in getRoles" :key="index" :value="tu.id">{{tu.nombre}}</option>
                   </select>
+                  <em
+                    v-if="$v.parametros.rol.$error&&!$v.parametros.rol.required"
+                    class="text-error-select"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -45,11 +55,14 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
+                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                   ref="inputImagen"
-                  :required="required"
                 />
-                <em v-if="imagenError" class="error invalid-feedback">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em
+                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="email" class>Email</label>
@@ -58,11 +71,21 @@
                   id="email"
                   placeholder="..."
                   type="email"
-                  :class="['form-control', validarEmail? 'is-invalid':'']"
-                  v-model="parametros.email"
-                  :required="required"
+                  :class="['form-control', $v.parametros.email.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.email.$model"
                 />
-                <em v-if="validarEmail" class="error invalid-feedback">{{mensajeErrorEmail}}</em>
+                <em
+                  v-if="$v.parametros.email.$error&&!$v.parametros.email.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.email.$error&&!$v.parametros.email.email"
+                  class="text-error-input"
+                >{{mensajes.email}}</em>
+                <em
+                  v-if="$v.parametros.email.$error&&!$v.parametros.email.unique"
+                  class="text-error-input"
+                >{{mensajes.unique}}</em>
               </div>
               <label for="pass" class>Contraseña</label>
               <div class="input-group mb-3">
@@ -71,9 +94,8 @@
                   id="pass"
                   placeholder="..."
                   :type="showPass?'text':'password'"
-                  :class="['form-control',validarContraseña? 'is-invalid':'']"
-                  v-model="parametros.pass"
-                  :required="required"
+                  :class="['form-control', $v.parametros.pass.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.pass.$model"
                 />
                 <div class="input-group-append verContraseña">
                   <span class="input-group-text" @click="showPass=!showPass">
@@ -81,7 +103,18 @@
                     <i class="fas fa-eye-slash" v-else></i>
                   </span>
                 </div>
-                <em v-if="validarContraseña" class="error invalid-feedback">{{mensajeContraseña}}</em>
+                <em
+                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.required&&validarTipoForm"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.minLength"
+                  class="text-error-input"
+                >{{mensajes.minLength}}</em>
+                <em
+                  v-if="$v.parametros.pass.$error&&!$v.parametros.pass.maxLength"
+                  class="text-error-input"
+                >{{mensajes.maxLength}}</em>
               </div>
               <label for="pass1" class>Confirmar Contraseña</label>
               <div class="input-group mb-3">
@@ -90,9 +123,8 @@
                   id="pass1"
                   placeholder="..."
                   :type="showPass1==true?'text':'password'"
-                  :class="['form-control', validarContraseñas? 'is-invalid':'']"
-                  v-model="parametros.pass1"
-                  :required="required"
+                  :class="['form-control', $v.parametros.pass1.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.pass1.$model"
                 />
                 <div class="input-group-append verContraseña">
                   <span class="input-group-text">
@@ -100,12 +132,19 @@
                     <i class="fas fa-eye-slash" v-else @click="showPass1=!showPass1"></i>
                   </span>
                 </div>
-                <em v-if="validarContraseñas" class="error invalid-feedback">{{mensajeContraseña1}}</em>
+                <em
+                  v-if="$v.parametros.pass1.$error&&!$v.parametros.pass1.required&&validarTipoForm"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.pass1.$error&&!$v.parametros.pass1.sameAs"
+                  class="text-error-input"
+                >{{mensajes.sameAs}}</em>
               </div>
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -163,6 +202,13 @@
 import vuex from "vuex";
 import Toastr from "../../../mixins/toastr";
 import Croppie from "../../CroppieComponent";
+import {
+  required,
+  email,
+  sameAs,
+  minLength,
+  maxLength,
+} from "vuelidate/lib/validators";
 export default {
   components: { Croppie },
   props: ["idUsuario"],
@@ -189,7 +235,91 @@ export default {
       mensajeContraseña1: "",
       mensajeNombre: "",
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        email: "El campo debe ser un email valido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres.",
+        unique: "Ya existe un registro con ese email",
+      },
     };
+  },
+  validations() {
+    if (this.validarTipoForm) {
+      return {
+        parametros: {
+          nombre: {
+            required,
+            alpha(value) {
+              if (value == "") return true;
+
+              if (this.validarNombre) {
+                return false;
+              }
+              return true;
+            },
+          },
+          rol: { required },
+          email: {
+            required,
+            email,
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarEmail) {
+                return false;
+              }
+              return true;
+            },
+          },
+          pass: { required, minLength: minLength(8), maxLength: maxLength(15) },
+          pass1: { required, sameAs: sameAs("pass") },
+          imagen: { required },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          nombre: {
+            required,
+            alpha(value) {
+              if (value == "") return true;
+
+              if (this.validarNombre) {
+                return false;
+              }
+              return true;
+            },
+          },
+          rol: { required },
+          email: {
+            required,
+            email,
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarEmail) {
+                return false;
+              }
+              return true;
+            },
+          },
+          pass: { minLength: minLength(8), maxLength: maxLength(15) },
+          pass1: {
+            sameAs(value) {
+              if (value == "" && !this.parametros.pass) return true;
+
+              if (this.parametros.pass != this.parametros.pass1) return false;
+
+              return true;
+            },
+          },
+          imagen: { required },
+        },
+      };
+    }
   },
   mixins: [Toastr],
   methods: {
@@ -199,7 +329,7 @@ export default {
       if (valor) {
         this.parametros.imagen = valor;
       } else {
-        if (!this.required) {
+        if (!this.validarTipoForm) {
           this.parametros.imagen = this.info.avatar;
           this.imagenMiniatura = this.info.avatarPublico;
           this.$refs.inputImagen.value = "";
@@ -210,84 +340,83 @@ export default {
     },
     evento() {
       this.bloquearBtn = true;
-      this.parametros.pass =
-        this.parametros.pass === undefined ? "" : this.parametros.pass;
-      this.parametros.imagen =
-        this.parametros.imagen === this.info.avatar
-          ? ""
-          : this.parametros.imagen;
-      if (this.tituloForm === "Agregar Usuario") {
-        axios
-          .post("/usuario/agregar", this.parametros)
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              this.accionUsuario({ tipo: "agregar", data: res.data });
-              this.toastr(
-                "Agregar Usuario",
-                "Usuario agregado con exito!!",
-                "success"
-              );
-              this.$emit("cambiarVariableFormulario");
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Usuario") {
+          axios
+            .post("/usuario/agregar", this.parametros)
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.accionUsuario({ tipo: "agregar", data: res.data });
+                this.toastr(
+                  "Agregar Usuario",
+                  "Usuario agregado con exito!!",
+                  "success"
+                );
+                this.$emit("cambiarVariableFormulario");
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        axios
-          .put(`/usuario/editar/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            if (this.auth.id === res.data.id) {
-              this.accionModificarAuth({ data: res.data });
-            }
-            this.accionUsuario({ tipo: "editar", data: res.data });
-            this.toastr(
-              "Editar Usuario",
-              "Usuario editado con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsUsuario").whisper(
-              "desbloquearBtnsUsuario",
-              {
-                id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoUsuario", {
-              id: res.data.id,
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
+        } else {
+          axios
+            .put(`/usuario/editar/${this.info.id}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
+              if (this.auth.id === res.data.id) {
+                this.accionModificarAuth({ data: res.data });
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+              if (res.data != "negativo") {
+                this.accionUsuario({ tipo: "editar", data: res.data });
+                this.toastr(
+                  "Editar Usuario",
+                  "Usuario editado con exito!!",
+                  "success"
+                );
+                window.Echo.private("desbloquearBtnsUsuario").whisper(
+                  "desbloquearBtnsUsuario",
+                  {
+                    id: res.data.id,
+                  }
+                );
+                this.$events.fire("eliminarMiBloqueoUsuario", {
+                  id: res.data.id,
+                });
+                this.$emit("cambiarVariableFormulario");
+              } else {
+                this.toastr(
+                  "Precaución",
+                  "El Usuario se encuentra Logueado y no es posible Editarlo!!",
+                  "warning"
+                );
+                this.bloquearBtn = false;
+              }
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -300,7 +429,6 @@ export default {
     },
     obtenerImagen(e) {
       let file = e.target.files[0];
-      //this.parametros.imagen = file;
       let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
       if (file) {
         if (!allowedExtensions.exec(file.name) || file.size > 2000000) {
@@ -345,7 +473,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Usuario") {
         return true;
       } else {
@@ -358,73 +486,22 @@ export default {
     nomBtnComputed() {
       return this.nomBtn;
     },
-    validarContraseñas() {
-      if (this.parametros.pass) {
-        if (this.parametros.pass != this.parametros.pass1) {
-          this.mensajeContraseña1 = "Las contraseñas no coinciden";
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
     validarEmail() {
-      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (this.parametros.email) {
-        if (!re.test(this.parametros.email)) {
-          this.mensajeErrorEmail = "El correo electrónico debe ser válido.";
+      if (this.getUsuarioByEmail(this.parametros.email)) {
+        if (this.getUsuarioByEmail(this.parametros.email).id != this.info.id) {
+          this.mensajeErrorEmail = "El correo electrónico ya Existe";
           return true;
-        } else {
-          if (this.getUsuarioByEmail(this.parametros.email)) {
-            if (
-              this.getUsuarioByEmail(this.parametros.email).id != this.info.id
-            ) {
-              this.mensajeErrorEmail = "El correo electrónico ya Existe";
-              return true;
-            }
-          }
         }
       }
-      return false;
     },
     validarNombre() {
       // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
       let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.nombre) {
-        if (!letters.test(this.parametros.nombre)) {
-          this.mensajeNombre = "Solo se admiten letras.";
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    validarContraseña() {
-      let regexp_password = /^(?=.*[A-Z])(?=.*\d)(?=.*[$@!%?&#()"'|_])([A-Za-z\d$@!%?&#()"'|_]){8,15}$/;
-      if (this.parametros.pass) {
-        if (!regexp_password.test(this.parametros.pass)) {
-          this.mensajeContraseña = ` La contraseña debe tener:
-                      1: Mínimo 8 y Máximo 15 caracteres 
-                      2: Al menos una letra mayúscula 
-                      3: Al menos un dígito
-                      4: Al menos 1 carácter especial`;
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    validarBtn() {
-      if (
-        this.validarEmail ||
-        this.validarNombre ||
-        this.validarContraseña ||
-        this.validarContraseñas ||
-        !this.parametros.imagen
-      ) {
+      if (!letters.test(this.parametros.nombre)) {
         return true;
+      } else {
+        return false;
       }
-      return false;
     },
     mostrarBtnCroppie() {
       if (this.imagenMiniatura != this.info.avatarPublico) {

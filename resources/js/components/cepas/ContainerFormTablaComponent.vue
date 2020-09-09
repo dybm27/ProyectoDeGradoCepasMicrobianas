@@ -23,23 +23,23 @@
       </div>
     </div>
     <div class="card-body">
-      <template v-if="!formulario">
+      <transition enter-active-class="zoomInUp">
         <Tabla
+          v-if="!formulario"
           @cambiarTipo="cambiarTipo"
           :FieldDefs="FieldDefs"
           :detailRowComponent="detailRowComponent"
           :tipo="tipo"
           :titulo="titulo"
         ></Tabla>
-      </template>
-      <template v-else>
         <Form
+          v-else
           :tipoG="tipoG"
           :idCepa="id"
           @cambiarTipo="cambiarTipo"
           @cambiarVariableFormulario="cambiarVariableFormulario"
         ></Form>
-      </template>
+      </transition>
     </div>
   </div>
 </template>

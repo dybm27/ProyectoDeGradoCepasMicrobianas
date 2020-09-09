@@ -3,13 +3,9 @@
     <div class="card-body m-2">
       <h4 class="card-title">Modificar Permisos</h4>
       <div class="container">
-        <div class="row justify-content-center m-3">
+        <div class="row justify-content-center m-3" v-if="!bloquearBtn">
           <div class="col-md-4">
-            <button
-              class="btn btn-success btn-block"
-              :disabled="bloquearBtn"
-              @click="modificarPermisos"
-            >Aceptar Cambios</button>
+            <button class="btn btn-success btn-lg" @click="modificarPermisos">Aceptar Cambios</button>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -123,7 +119,11 @@ export default {
           this.$emit("cambiarVariableFormulario");
         })
         .catch((error) => {
-          if (error.response.status === 405) {
+          if (error.response.status === 405 || error.response.status === 401) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           }
         });
@@ -131,25 +131,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.flip-list-move {
-  transition: transform 0.5s;
-}
-.no-move {
-  transition: transform 0s;
-}
-.ghost {
-  opacity: 0.5;
-  background: #c8ebfb;
-}
-.list-group {
-  min-height: 20px;
-}
-.list-group-item {
-  cursor: move;
-}
-.list-group-item i {
-  cursor: pointer;
-}
-</style>

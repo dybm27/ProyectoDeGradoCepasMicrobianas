@@ -17,7 +17,7 @@ class CreateDocumentosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tipo_documento_id');
             $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos');
-            $table->string('nombre_documento');
+            $table->string('nombre_documento')->unique();
             $table->string('nombre_autor');
             $table->longText('descripcion');
             $table->boolean('publicar')->default(0);

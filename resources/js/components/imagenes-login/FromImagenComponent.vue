@@ -8,7 +8,7 @@
             <form @submit.prevent="evento">
               <template v-if="errors!=''">
                 <div class="alert alert-danger">
-                  <p v-for="(item, index) in errors" :key="index">{{item}}</p>
+                  <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -18,10 +18,13 @@
                   id="titulo"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.titulo"
-                  required
+                  :class="['form-control', $v.parametros.titulo.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.titulo.$model"
                 />
+                <em
+                  v-if="$v.parametros.titulo.$error&&!$v.parametros.titulo.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="imagen" class>Imagen</label>
@@ -31,30 +34,37 @@
                   id="imagen"
                   accept="image/jpeg"
                   type="file"
-                  class="form-control-file"
+                  :class="['form-control-file', imagenError? 'error-input-select':'']"
                   ref="inputImagen"
                 />
-                <em v-if="imagenError" class="text-danger">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="descripcion">Descripción</label>
                 <textarea
                   name="text"
                   id="descripcion"
-                  class="form-control"
-                  v-model="parametros.descripcion"
-                  required
+                  :class="['form-control', $v.parametros.descripcion.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.descripcion.$model"
                 ></textarea>
+                <em
+                  v-if="$v.parametros.descripcion.$error&&!$v.parametros.descripcion.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
                   type="checkbox"
                   id="mostrar"
-                  :class="['custom-control-input', errors.mostrar? 'is-invalid':'']"
-                  v-model="parametros.mostrar"
+                  :class="['custom-control-input',$v.parametros.mostrar.$error? 'is-invalid':'']"
+                  v-model.trim="$v.parametros.mostrar.$model"
                 />
                 <label class="custom-control-label" for="mostrar">Desea Mostrar la imagen?</label>
               </div>
+              <em
+                v-if="$v.parametros.mostrar.$error&&!$v.parametros.mostrar.validarMostrar"
+                class="text-error-select"
+              >{{mensajes.validarMostrar}}</em>
               <button class="mb-2 mr-2 btn btn-block btn-warning" :disabled="bloquearBtn">Editar</button>
             </form>
           </div>
@@ -86,6 +96,7 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
+import { required } from "vuelidate/lib/validators";
 export default {
   props: ["idImagen"],
   data() {
@@ -98,88 +109,106 @@ export default {
       imagenError: "",
       info: "",
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        validarMostrar: "Debe haber al menos 1 imagen para mostrar.",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      titulo: { required },
+      descripcion: { required },
+      mostrar: {
+        validarMostrar(value) {
+          if (value) return true;
+          if (this.getImagenLoginByMostrar.length == 1) {
+            if (this.getImagenLoginByMostrar[0].id == this.info.id)
+              return false;
+          }
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr],
   methods: {
     ...vuex.mapActions("imagenes_login", ["accionImagenLogin"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.parametros.imagen === this.info.imagen) {
-        axios
-          .put(`/login/imagen/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            if (res.data.mostrar) {
-              res.data.mostrar = 1;
-            } else {
-              res.data.mostrar = 0;
-            }
-            this.accionImagenLogin({ tipo: "editar", data: res.data });
-            this.$emit("mostrarFrom");
-            this.toastr(
-              "Editar Imagen",
-              "Imagen editado con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.parametros.imagen === this.info.imagen) {
+          axios
+            .put(`/login/imagen/${this.info.id}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+              if (res.data.mostrar) {
+                res.data.mostrar = 1;
+              } else {
+                res.data.mostrar = 0;
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        let form = new FormData();
-        form.append("imagen", this.parametros.imagen);
-        form.append("descripcion", this.parametros.descripcion);
-        form.append("titulo", this.parametros.titulo);
-        if (this.parametros.mostrar) {
-          form.append("mostrar", 1);
-        } else {
-          form.append("mostrar", 0);
-        }
-        form.append("_method", "PUT");
-        axios
-          .post(`/login/imagen/${this.info.id}`, form, {
-            headers: { "Content-Type": "multipart/form-data" },
-          })
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              this.toastr(
-                "Editar Imagen",
-                "Imagen editada con exito!!",
-                "success"
-              );
               this.accionImagenLogin({ tipo: "editar", data: res.data });
               this.$emit("mostrarFrom");
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+              this.toastr(
+                "Editar Imagen",
+                "Imagen editado con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
+        } else {
+          let form = new FormData();
+          form.append("imagen", this.parametros.imagen);
+          form.append("descripcion", this.parametros.descripcion);
+          form.append("titulo", this.parametros.titulo);
+          if (this.parametros.mostrar) {
+            form.append("mostrar", 1);
+          } else {
+            form.append("mostrar", 0);
+          }
+          form.append("_method", "PUT");
+          axios
+            .post(`/login/imagen/${this.info.id}`, form, {
+              headers: { "Content-Type": "multipart/form-data" },
+            })
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Editar Imagen",
+                  "Imagen editada con exito!!",
+                  "success"
+                );
+                this.accionImagenLogin({ tipo: "editar", data: res.data });
+                this.$emit("mostrarFrom");
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -242,7 +271,10 @@ export default {
     },
   },
   computed: {
-    ...vuex.mapGetters("imagenes_login", ["getImagenLoginById"]),
+    ...vuex.mapGetters("imagenes_login", [
+      "getImagenLoginById",
+      "getImagenLoginByMostrar",
+    ]),
     ...vuex.mapState(["auth"]),
     mostraImagen() {
       return this.imagenMiniatura;

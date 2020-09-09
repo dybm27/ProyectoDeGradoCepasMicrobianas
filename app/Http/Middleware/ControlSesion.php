@@ -26,7 +26,7 @@ class ControlSesion
             //validar inicio de sesion en otro navegador
             if (!is_null($auth->session_id)) {
                 if (Session::getId() != $auth->session_id) {
-                    if (now()->diffInMinutes($auth->lastActivityTime) >= (30)) {
+                    if (now()->diffInMinutes($auth->lastActivityTime) >= (60)) {
                         $auth->session_id = Session::getId();
                         $auth->save();
                     } else {
@@ -41,7 +41,7 @@ class ControlSesion
                     }
                 } else {
                     //validar estado de la sesion
-                    if (now()->diffInMinutes($auth->lastActivityTime) >= (30)) {
+                    if (now()->diffInMinutes($auth->lastActivityTime) >= (60)) {
                         $auth->session_id = null;
                         $auth->lastActivityTime = null;
                         $auth->save();
@@ -51,7 +51,7 @@ class ControlSesion
                     }
                 }
             } else {
-                if (now()->diffInMinutes($auth->lastActivityTime) >= (30)) {
+                if (now()->diffInMinutes($auth->lastActivityTime) >= (60)) {
                     $auth->session_id = null;
                     $auth->lastActivityTime = null;
                     $auth->save();
@@ -64,7 +64,8 @@ class ControlSesion
                 }
             }
         } else {
-            return redirect('/');
+            $message = "Se ha cerrado la sesión.";
+            return redirect('/')->with('message', $message);
         }
         $auth->lastActivityTime = now();
         $auth->save();

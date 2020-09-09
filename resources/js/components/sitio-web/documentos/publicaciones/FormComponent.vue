@@ -18,14 +18,17 @@
                   id="nombre_documento"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombrePublicacion? 'is-invalid':'']"
-                  v-model="parametros.nombre_documento"
-                  required
+                  :class="['form-control', $v.parametros.nombre_documento.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nombre_documento.$model"
                 />
                 <em
-                  v-if="validarNombrePublicacion"
-                  class="error invalid-feedback"
-                >{{mensajeNombrePublicacion}}</em>
+                  v-if="$v.parametros.nombre_documento.$error&&!$v.parametros.nombre_documento.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.nombre_documento.$error&&!$v.parametros.nombre_documento.unique"
+                  class="text-error-input"
+                >{{mensajes.unique}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="nombre_autor" class>Nombre Autor</label>
@@ -34,13 +37,19 @@
                   id="nombre_autor"
                   placeholder="..."
                   type="text"
-                  :class="['form-control', validarNombreAutor? 'is-invalid':'']"
-                  v-model="parametros.nombre_autor"
-                  required
+                  :class="['form-control', $v.parametros.nombre_autor.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nombre_autor.$model"
                 />
-                <em v-if="validarNombreAutor" class="error invalid-feedback">{{mensajeNombreAutor}}</em>
+                <em
+                  v-if="$v.parametros.nombre_autor.$error&&!$v.parametros.nombre_autor.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
+                <em
+                  v-if="$v.parametros.nombre_autor.$error&&!$v.parametros.nombre_autor.alpha"
+                  class="text-error-input"
+                >{{mensajes.alpha}}</em>
               </div>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="archivo" class>Archivo</label>
                   <input
@@ -49,11 +58,14 @@
                     id="archivo"
                     accept="application/pdf"
                     type="file"
-                    :class="['form-control-file', archivoError!=''? 'is-invalid':'']"
+                    :class="['form-control-file', $v.parametros.archivo.$error? 'error-input-select':'']"
                     ref="inputArchivo"
-                    required
                   />
-                  <em v-if="archivoError" class="error invalid-feedback">{{archivoError}}</em>
+                  <em v-if="archivoError" class="text-error-input">{{archivoError}}</em>
+                  <em
+                    v-if="$v.parametros.archivo.$error&&!$v.parametros.archivo.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -64,11 +76,14 @@
                   id="imagen"
                   accept="image/jpeg, image/png"
                   type="file"
-                  :class="['form-control-file', imagenError!=''? 'is-invalid':'']"
+                  :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                   ref="inputImagen"
-                  :required="required"
                 />
-                <em v-if="imagenError" class="error invalid-feedback">{{imagenError}}</em>
+                <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                <em
+                  v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="descripcion" class>Descripción</label>
@@ -77,10 +92,13 @@
                   id="descripcion"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.descripcion"
-                  required
+                  :class="['form-control', $v.parametros.descripcion.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.descripcion.$model"
                 />
+                <em
+                  v-if="$v.parametros.descripcion.$error&&!$v.parametros.descripcion.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="custom-checkbox custom-control mb-2">
                 <input
@@ -94,7 +112,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="validarBtn||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtnComputed}}</button>
             </div>
           </form>
@@ -153,6 +171,7 @@ import vuex from "vuex";
 import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie from "../../../../mixins/obtenerImagenCroopie";
 import Croppie from "../../../CroppieComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: {
     Croppie,
@@ -170,106 +189,157 @@ export default {
         publicar: false,
         tipo: "publicacion",
       },
-      tituloForm: "",
+      titulo: "",
       imagenMiniatura: "",
       nomBtn: "",
       imagenError: "",
       archivoError: "",
-      mensajeNombrePublicacion: "",
-      mensajeNombreAutor: "",
       traerValorImg: false,
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        alpha: "El campo solo puede contener letras.",
+        unique: "Ya existe un registro con ese nombre",
+      },
     };
+  },
+  validations() {
+    if (this.validarTipoForm) {
+      return {
+        parametros: {
+          nombre_documento: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (this.validarNombrePublicacion) return false;
+              return true;
+            },
+          },
+          nombre_autor: {
+            required,
+            alpha(value) {
+              if (value == "") return true;
+              if (this.validarNombre) return false;
+              return true;
+            },
+          },
+          archivo: { required },
+          descripcion: { required },
+          imagen: { required },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          nombre_documento: {
+            required,
+            unique(value) {
+              if (value == "") return true;
+              if (this.validarNombreProyecto) return false;
+              return true;
+            },
+          },
+          nombre_autor: {
+            required,
+            alpha(value) {
+              if (value == "") return true;
+              if (this.validarNombre) return false;
+              return true;
+            },
+          },
+          descripcion: { required },
+          imagen: { required },
+        },
+      };
+    }
   },
   mixins: [Toastr, obtenerImagenCroopie],
   methods: {
     ...vuex.mapActions("documentos", ["accionPublicacion"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Publicacion") {
-        let form = new FormData();
-        form.append("nombre_documento", this.parametros.nombre_documento);
-        form.append("nombre_autor", this.parametros.nombre_autor);
-        form.append("descripcion", this.parametros.descripcion);
-        form.append("archivo", this.parametros.archivo);
-        form.append("imagen", this.parametros.imagen);
-        if (this.parametros.publicar) {
-          form.append("publicar", 1);
-        } else {
-          form.append("publicar", 0);
-        }
-        form.append("tipo", this.parametros.tipo);
-        axios
-          .post("/documentos", form, {
-            headers: {
-              "content-type": "multipart/form-data",
-            },
-          })
-          .then((res) => {
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.titulo === "Agregar Publicacion") {
+          let form = new FormData();
+          form.append("nombre_documento", this.parametros.nombre_documento);
+          form.append("nombre_autor", this.parametros.nombre_autor);
+          form.append("descripcion", this.parametros.descripcion);
+          form.append("archivo", this.parametros.archivo);
+          form.append("imagen", this.parametros.imagen);
+          if (this.parametros.publicar) {
+            form.append("publicar", 1);
+          } else {
+            form.append("publicar", 0);
+          }
+          form.append("tipo", this.parametros.tipo);
+          axios
+            .post("/documentos", form, {
+              headers: {
+                "content-type": "multipart/form-data",
+              },
+            })
+            .then((res) => {
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtn = false;
+                this.toastr(
+                  "Agregar Publicacion",
+                  "Publicacion agregada con exito!!",
+                  "success"
+                );
+                this.accionPublicacion({ tipo: "agregar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+              }
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
               );
-              window.location.href = "/";
-            } else {
+            });
+        } else {
+          axios
+            .put(`/documentos/${this.idPublicacion}`, this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
               this.toastr(
-                "Agregar Publicacion",
-                "Publicacion agregada con exito!!",
+                "Editar Publicacion",
+                "Publicacion editada con exito!!",
                 "success"
               );
-              this.accionPublicacion({ tipo: "agregar", data: res.data });
-              this.$emit("cambiarVariableFormulario");
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        axios
-          .put(`/documentos/${this.idPublicacion}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.toastr(
-              "Editar Publicacion",
-              "Publicacion editada con exito!!",
-              "success"
-            );
-            window.Echo.private("desbloquearBtnsPublicacion").whisper(
-              "desbloquearBtnsPublicacion",
-              {
+              window.Echo.private("desbloquearBtnsPublicacion").whisper(
+                "desbloquearBtnsPublicacion",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoPublicacion", {
                 id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoPublicacion", {
-              id: res.data.id,
+              });
+              this.accionPublicacion({ tipo: "editar", data: res.data });
+              this.$emit("cambiarVariableFormulario");
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
-            this.accionPublicacion({ tipo: "editar", data: res.data });
-            this.$emit("cambiarVariableFormulario");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -307,67 +377,37 @@ export default {
       "getPublicacionByNombre",
     ]),
     btnClase() {
-      if (this.tituloForm === "Agregar Publicacion") {
+      if (this.titulo === "Agregar Publicacion") {
         return "btn-success";
       } else {
         return "btn-warning";
       }
     },
-    required() {
-      if (this.tituloForm === "Agregar Publicacion") {
+    validarTipoForm() {
+      if (this.titulo === "Agregar Publicacion") {
         return true;
       } else {
         return false;
       }
     },
-    titulo() {
-      return this.tituloForm;
-    },
     nomBtnComputed() {
       return this.nomBtn;
     },
     validarNombrePublicacion() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.nombre_documento) {
-        if (!letters.test(this.parametros.nombre_documento)) {
-          this.mensajeNombrePublicacion = "Solo se admiten letras.";
-          return true;
-        } else {
-          if (this.getPublicacionByNombre(this.parametros.nombre_documento)) {
-            if (
-              this.getPublicacionByNombre(this.parametros.nombre_documento)
-                .id != this.info.id
-            ) {
-              this.mensajeNombrePublicacion =
-                "Ya existe una publicacion con ese nombre";
-              return true;
-            }
-            return false;
-          }
-          return false;
-        }
-      }
-      return false;
-    },
-    validarNombreAutor() {
-      // solo numero /^([0-9])*$/ /^[A-Za-z\s]+$/
-      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
-      if (this.parametros.nombre_autor) {
-        if (!letters.test(this.parametros.nombre_autor)) {
-          this.mensajeNombreAutor = "Solo se admiten letras.";
+      if (this.getPublicacionByNombre(this.parametros.nombre_documento)) {
+        if (
+          this.getPublicacionByNombre(this.parametros.nombre_documento).id !=
+          this.info.id
+        ) {
           return true;
         }
         return false;
       }
       return false;
     },
-    validarBtn() {
-      if (
-        this.validarNombrePublicacion ||
-        this.validarNombreAutor ||
-        !this.parametros.imagen
-      ) {
+    validarNombre() {
+      let letters = /^[A-Za-z\sÁÉÍÓÚáéíóúñÑüÜ]+$/;
+      if (!letters.test(this.parametros.nombre_autor)) {
         return true;
       }
       return false;
@@ -375,14 +415,14 @@ export default {
   },
   created() {
     if (this.idPublicacion === 0) {
-      this.tituloForm = "Agregar Publicacion";
+      this.titulo = "Agregar Publicacion";
       this.nomBtn = "Agregar";
       this.$emit("cambiarTipo", "agregar");
     } else {
       this.info = this.getPublicacionById(this.idPublicacion);
       this.llenarInfo();
       this.$emit("cambiarTipo", "editar");
-      this.tituloForm = "Editar Publicacion";
+      this.titulo = "Editar Publicacion";
       this.nomBtn = "Editar";
     }
   },

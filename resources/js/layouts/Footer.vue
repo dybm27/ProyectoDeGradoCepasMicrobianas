@@ -14,7 +14,6 @@
             <b>1.0</b>
           </p>
         </div>
-        <!-- se tuvo que dejar para que sirvierla el scroll del siderbar-->
         <div class="footer-dots">
           <div class="dropdown">
             <div
@@ -363,7 +362,6 @@
           </div>
         </div>
       </div>
-
       <div class="app-footer-right">
         <img
           width="220"

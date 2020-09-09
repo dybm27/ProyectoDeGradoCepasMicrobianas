@@ -77,6 +77,7 @@ export default {
     ]),
     agregar(data) {
       this.accionAgregarCaract({ tipo: "fisio", data: data });
+      this.modificarForm = true;
     },
     editar(data) {
       this.accionEditarCaract({ tipo: "fisio", data: data });

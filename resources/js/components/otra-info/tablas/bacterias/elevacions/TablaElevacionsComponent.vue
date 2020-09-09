@@ -14,9 +14,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/elevacions-bacteria"
+            :apiUrl="'/info-panel/elevacions-bacteria'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :detailRowComponent="''"
+            :sortOrder="sortOrder"
             :nameGet="'elevacions-bacteria'"
           ></MyVuetable>
         </template>
@@ -48,9 +49,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("elevacion")],
@@ -66,7 +67,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

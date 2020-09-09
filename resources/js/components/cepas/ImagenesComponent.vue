@@ -35,167 +35,198 @@
         </div>
       </div>
     </template>
-    <modal name="agregar_cambiar_imagen" classes="my_modal" :width="700" :height="490">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('agregar_cambiar_imagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <template v-if="modalImagen.nomBtn==='Agregar'">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Seleccione la nueva Imagen</label>
-                    <input
-                      name="imagen"
-                      @change="verificarImagen"
-                      id="imagen"
-                      type="file"
-                      class="form-control-file"
-                      ref="inputImagenModal"
-                      accept="image/jpeg, image/png"
-                    />
-                    <span v-if="modalImagen.errors" class="text-danger">{{modalImagen.errors}}</span>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <template v-if="mostraImagen">
-                    <Croppie
-                      :id="'croppie'"
-                      :imagen="mostraImagen"
-                      @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="true"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="230"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <div class="text-center">
-                      <h5 class="mt-5 mb-5">
-                        <span class="pr-1">
-                          <b class="text-warning">SIN IMAGEN</b>
-                        </span>
-                      </h5>
+    <transition name="fade">
+      <modal
+        name="agregar_cambiar_imagen"
+        classes="my_modal"
+        :adaptive="true"
+        :maxWidth="700"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('agregar_cambiar_imagen')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <template v-if="modalImagen.nomBtn==='Agregar'">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Seleccione la nueva Imagen</label>
+                      <input
+                        name="imagen"
+                        @change="verificarImagen"
+                        id="imagen"
+                        type="file"
+                        :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
+                        ref="inputImagenModal"
+                        accept="image/jpeg, image/png"
+                      />
+                      <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                      <em
+                        v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
-                  </template>
+                  </div>
+                  <div class="col-sm-6">
+                    <template v-if="mostraImagen">
+                      <Croppie
+                        :id="'croppie'"
+                        :imagen="mostraImagen"
+                        @cambiarValorImagen="cambiarValorImagen"
+                        :mostrarBtnCroppie="true"
+                        :zoom="1"
+                        :enableZoom="true"
+                        :editar="false"
+                        :boundaryHeigth="230"
+                        :viewportWidth="200"
+                      />
+                    </template>
+                    <template v-else>
+                      <div class="text-center">
+                        <h5 class="mt-5 mb-5">
+                          <span class="pr-1">
+                            <b class="text-warning">SIN IMAGEN</b>
+                          </span>
+                        </h5>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-          <template v-if="modalImagen.nomBtn==='Cambiar'">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="position-relative form-group">
-                    <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
-                    <select
-                      name="select_imagen"
-                      id="select_imagen"
-                      v-model.number="modalImagen.select_imagen"
-                      class="form-control"
-                    >
-                      <option value="1" v-if="parametros.imagen1">Primera</option>
-                      <option value="2" v-if="parametros.imagen2">Segunda</option>
-                      <option value="3" v-if="parametros.imagen3">Tercera</option>
-                    </select>
-                  </div>
-                  <div class="position-relative form-group">
-                    <label for="imagen" class>Seleccione la nueva Imagen</label>
-                    <input
-                      name="imagen"
-                      @change="verificarImagen"
-                      id="imagen"
-                      type="file"
-                      class="form-control-file"
-                      ref="inputImagenModal"
-                      accept="image/jpeg, image/png"
-                    />
-                    <span v-if="modalImagen.errors" class="text-danger">{{modalImagen.errors}}</span>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <template v-if="mostraImagen">
-                    <Croppie
-                      :id="'croppie'"
-                      :imagen="mostraImagen"
-                      @cambiarValorImagen="cambiarValorImagen"
-                      :mostrarBtnCroppie="true"
-                      :zoom="1"
-                      :enableZoom="true"
-                      :editar="false"
-                      :boundaryHeigth="230"
-                      :viewportWidth="200"
-                    />
-                  </template>
-                  <template v-else>
-                    <div class="text-center">
-                      <h5 class="mt-5 mb-5">
-                        <span class="pr-1">
-                          <b class="text-warning">SIN IMAGEN</b>
-                        </span>
-                      </h5>
+            </template>
+            <template v-if="modalImagen.nomBtn==='Cambiar'">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="position-relative form-group">
+                      <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
+                      <select
+                        name="select_imagen"
+                        id="select_imagen"
+                        v-model.number="modalImagen.select_imagen"
+                        class="form-control"
+                      >
+                        <option value="1" v-if="parametros.imagen1">Primera</option>
+                        <option value="2" v-if="parametros.imagen2">Segunda</option>
+                        <option value="3" v-if="parametros.imagen3">Tercera</option>
+                      </select>
                     </div>
-                  </template>
+                    <div class="position-relative form-group">
+                      <label for="imagen" class>Seleccione la nueva Imagen</label>
+                      <input
+                        name="imagen"
+                        @change="verificarImagen"
+                        id="imagen"
+                        type="file"
+                        :class="['form-control-file', $v.modalImagen.imagen.$error!=''? 'error-input-select':'']"
+                        ref="inputImagenModal"
+                        accept="image/jpeg, image/png"
+                      />
+                      <em v-if="modalImagen.errors" class="text-error-input">{{modalImagen.errors}}</em>
+                      <em
+                        v-if="$v.modalImagen.imagen.$error&&!$v.modalImagen.imagen.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <template v-if="mostraImagen">
+                      <Croppie
+                        :id="'croppie'"
+                        :imagen="mostraImagen"
+                        @cambiarValorImagen="cambiarValorImagen"
+                        :mostrarBtnCroppie="true"
+                        :zoom="1"
+                        :enableZoom="true"
+                        :editar="false"
+                        :boundaryHeigth="230"
+                        :viewportWidth="200"
+                      />
+                    </template>
+                    <template v-else>
+                      <div class="text-center">
+                        <h5 class="mt-5 mb-5">
+                          <span class="pr-1">
+                            <b class="text-warning">SIN IMAGEN</b>
+                          </span>
+                        </h5>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('agregar_cambiar_imagen')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            @click="accionModal"
-            :disabled="validarBtn"
-          >{{modalImagen.nomBtn}}</button>
-        </div>
-      </div>
-    </modal>
-    <modal name="eliminar_imagen" classes="my_modal" :width="450" :height="450">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
-          <button type="button" class="close" @click="$modal.hide('eliminar_imagen')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="position-relative form-group">
-            <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
-            <select
-              name="select_imagen"
-              id="select_imagen"
-              v-model.number="modalImagen.select_imagen"
-              class="form-control"
-            >
-              <option value="1" v-if="parametros.imagen1">Primera</option>
-              <option value="2" v-if="parametros.imagen2">Segunda</option>
-              <option value="3" v-if="parametros.imagen3">Tercera</option>
-            </select>
+            </template>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('agregar_cambiar_imagen')"
+            >Cancelar</button>
+            <button
+              type="button"
+              :disabled="bloquearBtnModal"
+              class="btn btn-success"
+              @click="accionModal"
+            >{{modalImagen.nomBtn}}</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('eliminar_imagen')"
-          >Cancelar</button>
-          <button type="button" class="btn btn-success" @click="accionModal">{{modalImagen.nomBtn}}</button>
+      </modal>
+    </transition>
+    <transition name="fade">
+      <modal
+        name="eliminar_imagen"
+        classes="my_modal"
+        :adaptive="true"
+        :maxWidth="450"
+        height="auto"
+        :scrollable="true"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{modalImagen.titulo}}</h5>
+            <button type="button" class="close" @click="$modal.hide('eliminar_imagen')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="position-relative form-group">
+              <label for="select_imagen" class>{{modalImagen.nomLabel}}</label>
+              <select
+                name="select_imagen"
+                id="select_imagen"
+                v-model.number="modalImagen.select_imagen"
+                class="form-control"
+              >
+                <option value="1" v-if="parametros.imagen1">Primera</option>
+                <option value="2" v-if="parametros.imagen2">Segunda</option>
+                <option value="3" v-if="parametros.imagen3">Tercera</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('eliminar_imagen')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="accionModal"
+              :disabled="bloquearBtnModal"
+            >{{modalImagen.nomBtn}}</button>
+          </div>
         </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -203,6 +234,7 @@
 import Carousel from "../carousel/CarouselComponent.vue";
 import Croppie from "../CroppieComponent.vue";
 import Toastr from "../../mixins/toastr";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Carousel, Croppie },
   props: ["parametros", "tipoCepa", "imagenes", "cepa"],
@@ -217,7 +249,18 @@ export default {
         errors: "",
       },
       imagenMiniatura: "",
+      bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido.",
+        sameAs: "Las contraseñas no coinciden",
+        alpha: "El campo solo puede contener letras.",
+        minLength: "La contraseña debe tener mínimo 8 carácteres.",
+        maxLength: "La contraseña debe tener máximo 15 carácteres.",
+      },
     };
+  },
+  validations: {
+    modalImagen: { imagen: { required } },
   },
   mixins: [Toastr],
   methods: {
@@ -255,9 +298,12 @@ export default {
       }
     },
     accionModal() {
+      this.bloquearBtnModal = true;
+
       this.modalImagen.errors = "";
       if (this.modalImagen.nomBtn === "Cambiar") {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+        if (!this.$v.$invalid) {
           let parametros = {
             numero: this.modalImagen.select_imagen,
             imagen: this.modalImagen.imagen,
@@ -268,6 +314,7 @@ export default {
               parametros
             )
             .then((res) => {
+              this.bloquearBtnModal = false;
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -277,20 +324,14 @@ export default {
               );
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                if (error.response.status === 422) {
-                  this.modalImagen.errors = [];
-                  this.modalImagen.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarErrorAxios(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       } else if (this.modalImagen.nomBtn === "Eliminar") {
         let parametros = {
@@ -302,6 +343,7 @@ export default {
             parametros
           )
           .then((res) => {
+            this.bloquearBtnModal = false;
             this.$emit("accionImagen", res.data);
             this.$modal.hide("eliminar_imagen");
             this.toastr(
@@ -311,20 +353,14 @@ export default {
             );
           })
           .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              if (error.response.status === 422) {
-                this.modalImagen.errors = [];
-                this.modalImagen.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
+            this.verificarErrorAxios(
+              error.response.status,
+              error.response.data.errors
+            );
           });
       } else {
-        if (this.$refs.inputImagenModal.value) {
+        this.$v.modalImagen.$touch();
+        if (!this.$v.$invalid) {
           this.colocarNumeroAgregar();
           let parametros = {
             numero: this.modalImagen.select_imagen,
@@ -336,6 +372,7 @@ export default {
               parametros
             )
             .then((res) => {
+              this.bloquearBtnModal = false;
               this.$emit("accionImagen", res.data);
               this.$modal.hide("agregar_cambiar_imagen");
               this.toastr(
@@ -345,20 +382,14 @@ export default {
               );
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else if (error.response.status === 405) {
-                window.location.href = "/";
-              } else {
-                if (error.response.status === 422) {
-                  this.modalImagen.errors = [];
-                  this.modalImagen.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarErrorAxios(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.modalImagen.errors = "Favor seleccionar una imagen.";
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "Favor agregar una imagen", "error");
         }
       }
     },
@@ -396,6 +427,20 @@ export default {
         this.imagenMiniatura = reader.src;
       };
       reader.src = URL.createObjectURL(file);
+    },
+    verificarErrorAxios(code, errors) {
+      if (code === 403) {
+        this.$router.push("/sin-acceso");
+      } else if (code === 405 || code === 401) {
+        window.location.href = "/";
+      } else {
+        if (code === 422) {
+          this.modalImagen.errors = [];
+          this.modalImagen.errors = errors;
+        }
+        this.bloquearBtnModal = false;
+        this.toastr("Error!!", "", "error");
+      }
     },
   },
   computed: {
@@ -451,12 +496,6 @@ export default {
     },
     mostraImagen() {
       return this.imagenMiniatura;
-    },
-    validarBtn() {
-      if (!this.modalImagen.imagen) {
-        return true;
-      }
-      return false;
     },
   },
 };

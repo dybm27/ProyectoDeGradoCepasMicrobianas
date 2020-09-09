@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="$route.params.cepaId">
+    <template v-if="$route.params.cepaSlug">
       <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
         <li class="nav-item">
           <router-link
@@ -128,6 +128,8 @@
         </li>
       </ul>
     </template>
-    <router-view></router-view>
+    <transition enter-active-class="slideInLeft">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>

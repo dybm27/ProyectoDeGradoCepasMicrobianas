@@ -7,7 +7,7 @@ const websocketsTablaOtraInfo = tipo => ({
             this.tabla = !this.tabla;
         },
         actualizarTabla() {
-            if (this.tabla) {
+            if (this.siHayDatos) {
                 if (this.$refs.tabla) {
                     this.$refs.tabla.refreshDatos();
                 }

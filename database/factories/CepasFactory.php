@@ -6,10 +6,11 @@ use App\Cepa;
 use App\Especie;
 use App\Genero;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Cepa::class, function (Faker $faker) {
     return [
-        'codigo' => $faker->unique()->firstName,
+        'codigo' => $faker->unique()->name,
         'grupo_microbiano_id' =>  rand(1, 4),
         'genero_id' =>  function (array $cepa) {
             return Genero::where('grupo_microbiano_id', $cepa['grupo_microbiano_id'])->first()->id;
@@ -20,6 +21,9 @@ $factory->define(Cepa::class, function (Faker $faker) {
         'estado' => 'vivo',
         'origen' => 'ufps',
         'publicar' => rand(0, 1),
-        'otras_caract' => $faker->sentence()
+        'otras_caract' => $faker->sentence(),
+        'slug' => function (array $cepa) {
+            return Str::slug($cepa['codigo'], "-");
+        },
     ];
 });

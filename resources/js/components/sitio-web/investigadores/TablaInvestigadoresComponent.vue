@@ -3,9 +3,10 @@
     <template v-if="mostrarTabla">
       <MyVuetable
         ref="tabla"
-        api-url="/info-panel/investigadores-tabla"
+        :apiUrl="'/info-panel/investigadores-tabla'"
         :fields="fields"
-        :sort-order="sortOrder"
+        :sortOrder="sortOrder"
+        :detailRowComponent="''"
         :nameGet="'investigadores'"
       ></MyVuetable>
     </template>
@@ -18,39 +19,43 @@
         </h5>
       </div>
     </template>
-    <modal
-      name="modal_eliminar_investigador"
-      classes="my_modal"
-      :width="400"
-      :height="300"
-      @before-open="beforeOpenEliminar"
-      @closed="closeEliminar"
-    >
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Investigador</h5>
-          <button type="button" class="close" @click="$modal.hide('modal_eliminar_investigador')">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <transition name="fade">
+      <modal
+        name="modal_eliminar_investigador"
+        classes="my_modal"
+        :maxWidth="400"
+        :adaptive="true"
+        height="auto"
+        :scrollable="true"
+        @before-open="beforeOpenEliminar"
+        @closed="closeEliminar"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Investigador</h5>
+            <button type="button" class="close" @click="$modal.hide('modal_eliminar_investigador')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Esta segura/o de eliminar el Investigador?.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              @click="$modal.hide('modal_eliminar_investigador')"
+            >Cancelar</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              :disabled="bloquearBtnModal"
+              @click="eliminarInvestigador"
+            >Eliminar</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <p>Esta segura/o de eliminar el Investigador?.</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$modal.hide('modal_eliminar_investigador')"
-          >Cancelar</button>
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="bloquearBtnModal"
-            @click="eliminarInvestigador"
-          >Eliminar</button>
-        </div>
-      </div>
-    </modal>
+      </modal>
+    </transition>
   </div>
 </template>
 
@@ -108,7 +113,14 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 405
+          ) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           } else {
             this.bloquearBtnModal = false;

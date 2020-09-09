@@ -20,6 +20,7 @@ class InfoCaracBacteriasController extends Controller
 {
     public function agregarInfo(Request $request)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $rules = [
@@ -155,6 +156,7 @@ class InfoCaracBacteriasController extends Controller
 
     public function editarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required', 'nombre' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo1 = FormaCaractMacroBacteria::find($id);
@@ -280,6 +282,7 @@ class InfoCaracBacteriasController extends Controller
 
     public function eliminarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "forma_macro":
                 $tipo = FormaCaractMacroBacteria::find($id);

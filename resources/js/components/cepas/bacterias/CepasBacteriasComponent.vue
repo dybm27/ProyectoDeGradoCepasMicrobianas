@@ -34,6 +34,7 @@
             <button
               class="btn-wide mb-2 mr-2 btn-hover-shine btn btn-danger btn-lg"
               @click="volverTabla"
+              :disabled="bloquearBtnVolver"
             >Volver</button>
           </template>
         </div>
@@ -43,7 +44,7 @@
       <router-view
         :tipoG="1"
         :tipo="'bacteria'"
-        :detailRowComponent="'my-detail-row-cepas'"
+        :detailRowComponent="'my-detail-row-bacterias'"
         :titulo="'BACTERIAS'"
         @cambiarTipo="cambiarTipo"
         :tituloCepa="tituloCepa"
@@ -80,6 +81,7 @@ export default {
       tipoAccion: "",
       mostrarBtnVolver: false,
       fields: FieldDefs,
+      bloquearBtnVolver: false,
     };
   },
   mixins: [bloquearPestañasMixin("cepas")],
@@ -183,6 +185,14 @@ export default {
           break;
       }
     });
+  },
+  mounted() {
+    this.$events.$on("bloquearBtnVolver", (e) => {
+      this.bloquearBtnVolver = !this.bloquearBtnVolver;
+    });
+  },
+  destroyed() {
+    this.$events.$off("bloquearBtnVolver");
   },
 };
 </script>

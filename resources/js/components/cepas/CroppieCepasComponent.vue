@@ -50,40 +50,52 @@
     </template>
     <template v-else>
       <div class="container">
-        <div class="row mt-2 ml-2 mr-2">
+        <div class="row mt-2 ml-2 mr-2 mb-2">
           <div id="croppie1"></div>
           <template v-if="imagenes[0]">
-            <template v-if="btnAprobar1">
-              <button class="btn btn-success mb-2" @click="resultado(1)">Aprobar Imagen</button>
-              <em class="text-danger" v-if="mostrarMensaje1">Debe Aprobar la imagen</em>
-            </template>
-            <template v-else>
-              <button class="btn btn-danger mb-2 float-right" @click="cancelar(1)">Cancelar</button>
-            </template>
+            <div class="container">
+              <div class="row d-flex">
+                <template v-if="btnAprobar1">
+                  <button class="btn btn-success" @click="resultado(1)">Aprobar Imagen</button>
+                  <em class="text-danger small mt-2" v-if="mostrarMensaje1">Debe Aprobar la imagen</em>
+                </template>
+                <template v-else>
+                  <button class="btn btn-danger ml-auto" @click="cancelar(1)">Cancelar</button>
+                </template>
+              </div>
+            </div>
           </template>
         </div>
-        <div class="row mt-2 ml-2 mr-2">
+        <div class="row mt-2 ml-2 mr-2 mb-2">
           <div id="croppie2"></div>
           <template v-if="imagenes[1]">
-            <template v-if="btnAprobar2">
-              <button class="btn btn-success mb-2" @click="resultado(2)">Aprobar Imagen</button>
-              <em class="text-danger" v-if="mostrarMensaje2">Debe Aprobar la imagen</em>
-            </template>
-            <template v-else>
-              <button class="btn btn-danger mb-2 float-right" @click="cancelar(2)">Cancelar</button>
-            </template>
+            <div class="container">
+              <div class="row d-flex">
+                <template v-if="btnAprobar2">
+                  <button class="btn btn-success" @click="resultado(2)">Aprobar Imagen</button>
+                  <em class="text-danger small mt-2" v-if="mostrarMensaje2">Debe Aprobar la imagen</em>
+                </template>
+                <template v-else>
+                  <button class="btn btn-danger ml-auto" @click="cancelar(2)">Cancelar</button>
+                </template>
+              </div>
+            </div>
           </template>
         </div>
-        <div class="row mt-2 ml-2 mr-2">
+        <div class="row mt-2 ml-2 mr-2 mb-2">
           <div id="croppie3"></div>
           <template v-if="imagenes[2]">
-            <template v-if="btnAprobar3">
-              <button class="btn btn-success mb-2" @click="resultado(3)">Aprobar Imagen</button>
-              <em class="text-danger" v-if="mostrarMensaje3">Debe Aprobar la imagen</em>
-            </template>
-            <template v-else>
-              <button class="btn btn-danger mb-2 float-right" @click="cancelar(3)">Cancelar</button>
-            </template>
+            <div class="container">
+              <div class="row d-flex">
+                <template v-if="btnAprobar3">
+                  <button class="btn btn-success" @click="resultado(3)">Aprobar Imagen</button>
+                  <em class="text-danger small mt-2" v-if="mostrarMensaje3">Debe Aprobar la imagen</em>
+                </template>
+                <template v-else>
+                  <button class="btn btn-danger ml-auto" @click="cancelar(3)">Cancelar</button>
+                </template>
+              </div>
+            </div>
           </template>
         </div>
       </div>
@@ -102,7 +114,7 @@ export default {
       croppie3: null,
       btnAprobar1: true,
       btnAprobar2: true,
-      btnAprobar3: true
+      btnAprobar3: true,
     };
   },
   mounted() {
@@ -118,14 +130,14 @@ export default {
           this.croppie1 = new Croppie(el1, {
             viewport: {
               width: 200,
-              height: 200
+              height: 200,
             },
             boundary: {
-              height: 250
-            }
+              height: 250,
+            },
           });
           this.croppie1.bind({
-            url: imagen
+            url: imagen,
           });
           break;
         case 2:
@@ -133,14 +145,14 @@ export default {
           this.croppie2 = new Croppie(el2, {
             viewport: {
               width: 200,
-              height: 200
+              height: 200,
             },
             boundary: {
-              height: 250
-            }
+              height: 250,
+            },
           });
           this.croppie2.bind({
-            url: imagen
+            url: imagen,
           });
           break;
         case 3:
@@ -148,14 +160,14 @@ export default {
           this.croppie3 = new Croppie(el3, {
             viewport: {
               width: 200,
-              height: 200
+              height: 200,
             },
             boundary: {
-              height: 250
-            }
+              height: 250,
+            },
           });
           this.croppie3.bind({
-            url: imagen
+            url: imagen,
           });
           break;
       }
@@ -163,19 +175,19 @@ export default {
     resultado(num) {
       switch (num) {
         case 1:
-          this.croppie1.result().then(res => {
+          this.croppie1.result().then((res) => {
             this.btnAprobar1 = false;
             this.$emit("cambiarValorImagen", { data: res, num: num });
           });
           break;
         case 2:
-          this.croppie2.result().then(res => {
+          this.croppie2.result().then((res) => {
             this.btnAprobar2 = false;
             this.$emit("cambiarValorImagen", { data: res, num: num });
           });
           break;
         case 3:
-          this.croppie3.result().then(res => {
+          this.croppie3.result().then((res) => {
             this.btnAprobar3 = false;
             this.$emit("cambiarValorImagen", { data: res, num: num });
           });
@@ -197,7 +209,7 @@ export default {
           this.$emit("cambiarValorImagen", { data: "", num: num });
           break;
       }
-    }
+    },
   },
   computed: {
     mostrarMensaje1() {
@@ -217,7 +229,7 @@ export default {
         return true;
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

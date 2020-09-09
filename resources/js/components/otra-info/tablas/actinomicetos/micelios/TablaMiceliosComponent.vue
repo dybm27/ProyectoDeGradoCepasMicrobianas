@@ -18,9 +18,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/micelios-actinomiceto"
+            :apiUrl="'/info-panel/micelios-actinomiceto'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
+            :detailRowComponent="''"
             :nameGet="'micelios-actinomiceto'"
           ></MyVuetable>
         </template>
@@ -52,9 +53,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("micelio")],
@@ -70,7 +71,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

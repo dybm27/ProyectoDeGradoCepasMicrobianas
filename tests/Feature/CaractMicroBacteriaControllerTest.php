@@ -120,7 +120,7 @@ class CaractMicroBacteriaControllerTest extends TestCase
 
     /** @test */
     public function agregar_cambiar_eliminar_imagen_caract_micro_bacteria()
-    {  // 'image' => $file = UploadedFile::fake()->image('image.jpg', 1, 1)
+    {  
         $this->withoutMiddleware();
         Storage::fake('public');
         $caract = factory(CaracMicroBacteria::class)->create();

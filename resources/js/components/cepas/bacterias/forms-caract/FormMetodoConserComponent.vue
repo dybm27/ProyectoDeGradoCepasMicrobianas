@@ -12,14 +12,14 @@
                     <p v-for="(item, index) in errors" :key="index">{{item[0]}}</p>
                   </div>
                 </template>
-                <template v-if="getInfoMetodoConserBacterias">
+                <div v-if="getInfoMetodoConserBacterias" class="position-relative form-group">
                   <label for="forma" class>Método de Conservación</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
                       id="forma"
-                      class="form-control"
-                      v-model.number="parametros.tipo_metodo"
+                      :class="['form-control', $v.parametros.tipo_metodo.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.tipo_metodo.$model"
                     >
                       <option
                         v-for="(m,index) in obtenerMetodos"
@@ -36,15 +36,19 @@
                       </button>
                     </div>
                   </div>
-                </template>
-                <template v-if="mostrarAgar">
+                  <em
+                    v-if="$v.parametros.tipo_metodo.$error&&!$v.parametros.tipo_metodo.required"
+                    class="text-error-select"
+                  >{{mensajes.required}}</em>
+                </div>
+                <div v-if="mostrarAgar" class="position-relative form-group">
                   <label for="tipo_agar" class>Tipo Agar</label>
                   <div class="input-group mb-3">
                     <select
                       name="select"
                       id="tipo_agar"
-                      class="form-control"
-                      v-model.number="parametros.tipo_agar"
+                      :class="['form-control', $v.parametros.tipo_agar.$error? 'error-input-select':'']"
+                      v-model.trim="$v.parametros.tipo_agar.$model"
                     >
                       <option
                         v-for="(f,index) in obtenerAgars"
@@ -61,7 +65,11 @@
                       </button>
                     </div>
                   </div>
-                </template>
+                  <em
+                    v-if="$v.parametros.tipo_agar.$error&&!$v.parametros.tipo_agar.required"
+                    class="text-error-select"
+                  >{{mensajes.required}}</em>
+                </div>
                 <div class="form-row">
                   <div class="col-md-6">
                     <div class="container">
@@ -71,11 +79,16 @@
                       <div class="row">
                         <date-picker
                           :lang="lang"
-                          v-model="parametros.fecha"
+                          v-model.trim="$v.parametros.fecha.$model"
                           type="datetime"
                           value-type="format"
                           placeholder="..."
+                          :class="$v.parametros.fecha.$error? 'error-input-select':''"
                         ></date-picker>
+                        <em
+                          v-if="$v.parametros.fecha.$error&&!$v.parametros.fecha.required"
+                          class="text-error-input"
+                        >{{mensajes.required}}</em>
                       </div>
                     </div>
                   </div>
@@ -87,10 +100,21 @@
                         id="numero_replicas"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model.number="parametros.numero_replicas"
-                        required
+                        :class="['form-control', $v.parametros.numero_replicas.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.numero_replicas.$model"
                       />
+                      <em
+                        v-if="$v.parametros.numero_replicas.$error&&!$v.parametros.numero_replicas.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
+                      <em
+                        v-if="$v.parametros.numero_replicas.$error&&!$v.parametros.numero_replicas.numeric"
+                        class="text-error-input"
+                      >{{mensajes.numeric}}</em>
+                      <em
+                        v-if="$v.parametros.numero_replicas.$error&&!$v.parametros.numero_replicas.between"
+                        class="text-error-input"
+                      >{{mensajes.between+$v.parametros.numero_replicas.$params.between.min+' a '+$v.parametros.numero_replicas.$params.between.max}}</em>
                     </div>
                   </div>
                 </div>
@@ -102,11 +126,14 @@
                     id="imagen"
                     type="file"
                     accept="image/jpeg, image/png"
-                    class="form-control-file"
+                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                     ref="inputImagen"
-                    :required="required"
                   />
-                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
+                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em
+                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <div class="position-relative form-group">
                   <label for="recuento_microgota" class>Recuento Microgota</label>
@@ -115,15 +142,18 @@
                     id="recuento_microgota"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.recuento_microgota"
-                    required
+                    :class="['form-control', $v.parametros.recuento_microgota.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.recuento_microgota.$model"
                   />
+                  <em
+                    v-if="$v.parametros.recuento_microgota.$error&&!$v.parametros.recuento_microgota.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </div>
             </form>
@@ -193,6 +223,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepasMixin from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required, numeric, between } from "vuelidate/lib/validators";
 export default {
   props: ["idMetodo"],
   components: { DatePicker, Croppie, ModalAgregarInfo },
@@ -218,7 +249,36 @@ export default {
       imagenError: "",
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        numeric: "El campo debe ser un numero.",
+        between: "Debe estar en el rango de ",
+      },
     };
+  },
+  validations() {
+    if (this.mostrarAgar) {
+      return {
+        parametros: {
+          tipo_metodo: { required },
+          tipo_agar: { required },
+          fecha: { required },
+          numero_replicas: { required, numeric, between: between(1, 10000) },
+          recuento_microgota: { required },
+          imagen: { required },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          tipo_metodo: { required },
+          fecha: { required },
+          numero_replicas: { required, numeric, between: between(1, 10000) },
+          recuento_microgota: { required },
+          imagen: { required },
+        },
+      };
+    }
   },
   mixins: [Toastr, obtenerImagenCroopieCepasMixin],
   methods: {
@@ -226,12 +286,13 @@ export default {
     ...vuex.mapActions("info_caract", ["accionAgregarTipoCaractBacteria"]),
     evento() {
       this.bloquearBtn = true;
-      this.parametros.tipo_agar =
-        this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
-      this.parametros.fecha =
-        this.parametros.fecha === null ? "" : this.parametros.fecha;
-      if (this.tituloForm === "Agregar Método") {
-        if (this.parametros.imagen) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        this.parametros.tipo_agar =
+          this.parametros.tipo_metodo === 4 ? this.parametros.tipo_agar : 1;
+        this.parametros.fecha =
+          this.parametros.fecha === null ? "" : this.parametros.fecha;
+        if (this.tituloForm === "Agregar Método") {
           axios
             .post("/cepas/bacteria/metodo-conser", this.parametros)
             .then((res) => {
@@ -253,49 +314,41 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/bacteria/metodo-conser/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.accionEditarCaract({ tipo: "metodo", data: res.data });
+              this.toastr(
+                "Editar Método",
+                "Método editado con exito!!",
+                "success"
+              );
+              this.$emit("cambiarVariable");
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(`/cepas/bacteria/metodo-conser/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.accionEditarCaract({ tipo: "metodo", data: res.data });
-            this.toastr(
-              "Editar Método",
-              "Método editado con exito!!",
-              "success"
-            );
-            this.$emit("cambiarVariable");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -349,7 +402,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Método") {
         return true;
       } else {
@@ -380,10 +433,13 @@ export default {
       this.tituloForm = "Editar Método";
       this.nomBtn = "Editar";
     }
-    if (this.$route.params.cepaBacteriaId) {
-      this.parametros.cepaId = this.$route.params.cepaBacteriaId;
+    let array = [];
+    if (this.$route.params.cepaBacteriaSlug) {
+      array = this.$route.params.cepaBacteriaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   watch: {

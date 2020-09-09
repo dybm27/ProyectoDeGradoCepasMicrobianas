@@ -12,12 +12,9 @@
         <link rel="shortcut icon" href="{{asset('imagenes/logo_majumba-g-p.png')}}">
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{asset('assets/styles/template.css')}}" rel="stylesheet">
         <link href="{{ asset('css/dumar.css') }}" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     </head>
-
     <body>
         <div class="app-container app-theme-white body-tabs-shadow">
             <div class="app-container">
@@ -61,8 +58,9 @@
                               <span>Bienvenido!!.. Por favor, inicia sesión con tu cuenta.</span>
                             </h4>
                             <div class="divider row"></div>
-                            <div>
+                            <div id="formLogin">
                               <form method="POST" action="{{ route('login') }}">
+                                <div class="alert alert-danger" role="alert" id="mensajeLogin" style="display: none" ></div>
                                   @csrf
                                   @if(session('errorLoginGoogle'))
                                     <div class="alert alert-danger" role="alert">
@@ -84,7 +82,7 @@
                                             class="form-control @error('email') is-invalid @enderror"
                                             name="email"
                                             value="{{ old('email') }}"
-                                            placeholder="Email..."
+                                            placeholder="Correo electrónico..."
                                             required autocomplete="email" autofocus
                                         />
                                         @error('email')
@@ -115,14 +113,14 @@
                                 </div> 
                                 <div class="form-row">
                                   <div class="col-md-6">
-                                    <div class="position-relative form-check">
-                                      <input name="check" id="exampleCheck" type="checkbox" class="form-check-input" />
-                                      <label for="exampleCheck" class="form-check-label"> {{ __('Remember Me') }}</label>
-                                    </div>    
+                                    <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" id="1" class="custom-control-input"> 
+                                      <label for="1" class="custom-control-label"> {{ __('Remember Me') }}</label>
+                                    </div> 
                                   </div>
                                   <div class="col-md-6">
                                     @if (Route::has('password.request'))
-                                      <a class="btn-lg btn btn-link float-right" href="{{ route('password.request') }}">
+                                      <a class="btn-lg btn btn-link float-right text-success" href="{{ route('password.request') }}">
                                           {{ __('Forgot Your Password?') }}
                                       </a>
                                     @endif 
@@ -163,16 +161,6 @@
                 </div>
               </div>
         </div>
-        <script src="{{asset('assets/scripts/template.js')}}"></script>  
         <script src="{{ asset('js/dumar.js') }}"></script>
-        <script>
-          let mensaje = localStorage.getItem("mensajeLogin");
-          if(mensaje){
-            let div= document.getElementById('mensajeLogin');
-            div.style.display='block';
-            div.innerText=mensaje; 
-            localStorage.removeItem("mensajeLogin");
-          }
-        </script>
       </body>
 </html>

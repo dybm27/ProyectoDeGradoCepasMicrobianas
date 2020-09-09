@@ -99,7 +99,8 @@ class CaractMacroHongoController extends Controller
     {
         $rules = [
             'medio' => 'required', 'textura' => 'required',
-            'caracteristicas_reverso' => 'required', 'color' => 'required'
+            'caracteristicas_reverso' => 'required', 'color' => 'required',
+            'imagen' => 'required'
         ];
         $this->validate($request, $rules);
     }

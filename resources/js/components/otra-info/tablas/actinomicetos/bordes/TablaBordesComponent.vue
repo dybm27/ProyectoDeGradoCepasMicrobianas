@@ -14,9 +14,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/bordes-actinomiceto"
+            :apiUrl="'/info-panel/bordes-actinomiceto'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
+            :detailRowComponent="''"
             :nameGet="'bordes-actinomiceto'"
           ></MyVuetable>
         </template>
@@ -48,9 +49,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("borde")],
@@ -66,7 +67,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

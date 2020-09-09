@@ -5,7 +5,9 @@
       <Sider :ruta="ruta" />
       <div class="app-main__outer">
         <div class="app-main__inner">
-          <router-view @rutaSider="rutaSider"></router-view>
+          <transition enter-active-class="slideInLeft">
+            <router-view @rutaSider="rutaSider"></router-view>
+          </transition>
         </div>
         <div class="app-wrapper-footer">
           <Footer />

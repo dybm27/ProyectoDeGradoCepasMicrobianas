@@ -35,7 +35,7 @@ class ExportarExcelHongosController extends Controller
 
     public function metodosHongos()
     {
-        return Excel::download(new MetodosHongosExport, 'todas-hongos.xlsx');
+        return Excel::download(new MetodosHongosExport, 'metodos-hongos.xlsx');
     }
 
     public function metodosHongosTabla(Request $request)

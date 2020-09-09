@@ -11,7 +11,7 @@
     <button
       class="mb-2 mr-2 btn-icon btn-icon-only btn-shadow btn-outline-2x btn btn-outline-danger"
       v-tooltip.left="'Eliminar Metodo'"
-      @click="showModal(rowData)"
+      @click="eliminar(rowData)"
     >
       <i class="far fa-trash-alt"></i>
     </button>
@@ -38,7 +38,7 @@ export default {
     itemAction(action, data, index) {
       this.$events.fire("abrirFormularioMetodoBacteria", data.id);
     },
-    showModal(data) {
+    eliminar(data) {
       this.$modal.show("my_modal_eliminar_metodo", { id: data.id });
     },
   },

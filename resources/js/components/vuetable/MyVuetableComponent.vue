@@ -26,7 +26,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="table-responsive">
+        <div class="table-responsive fixed ">
           <vuetable
             noDataTemplate="Cargando informacion..."
             ref="vuetable"
@@ -76,35 +76,12 @@ import VuetablePagination from "./PaginationComponent";
 import VuetablePaginationInfo from "./PaginationInfoComponent";
 import Toastr from "../../mixins/toastr";
 export default {
-  name: "my-vuetable",
+  props: ["apiUrl", "fields", "sortOrder", "detailRowComponent", "nameGet"],
   components: {
     Vuetable,
     FilterBar,
     VuetablePagination,
     VuetablePaginationInfo,
-  },
-  props: {
-    apiUrl: {
-      type: String,
-      required: true,
-    },
-    fields: {
-      type: Array,
-      required: true,
-    },
-    sortOrder: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    detailRowComponent: {
-      type: String,
-    },
-    nameGet: {
-      type: String,
-      required: true,
-    },
   },
   mixins: [Toastr],
   data() {
@@ -260,15 +237,27 @@ export default {
           .catch((error) => {
             if (error.response.status === 403) {
               this.$router.push("/sin-acceso");
+            } else if (
+              error.response.status === 405 ||
+              error.response.status === 401
+            ) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
             }
           });
       } else {
         let datos = this.$refs.vuetable.tableData;
         axios
-          .get(`/exportar/tabla/${this.nameGet}`, {
-            params: { datos: datos },
-            responseType: "blob",
-          })
+          .post(
+            `/exportar/tabla/${this.nameGet}`,
+            { datos: datos },
+            {
+              responseType: "blob",
+            }
+          )
           .then((res) => {
             if (res.request.responseURL === process.env.MIX_LOGIN) {
               localStorage.setItem(
@@ -295,6 +284,15 @@ export default {
           .catch((error) => {
             if (error.response.status === 403) {
               this.$router.push("/sin-acceso");
+            } else if (
+              error.response.status === 405 ||
+              error.response.status === 401
+            ) {
+              localStorage.setItem(
+                "mensajeLogin",
+                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+              );
+              window.location.href = "/";
             }
           });
       }
@@ -311,6 +309,15 @@ export default {
     loadError(error) {
       if (error.response.status === 403) {
         this.$router.push("/sin-acceso");
+      } else if (
+        error.response.status === 405 ||
+        error.response.status === 401
+      ) {
+        localStorage.setItem(
+          "mensajeLogin",
+          "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+        );
+        window.location.href = "/";
       }
     },
   },

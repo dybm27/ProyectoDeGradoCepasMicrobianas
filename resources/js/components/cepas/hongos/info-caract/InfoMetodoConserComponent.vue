@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       formulario: false,
-      id: 0
+      id: 0,
     };
   },
   methods: {
@@ -57,13 +57,13 @@ export default {
     },
     cambiarVariableFormulario() {
       this.formulario = !this.formulario;
-    }
+    },
   },
   created() {
-    this.$events.$on("abrirFormularioMetodoHongo", e =>
+    this.$events.$on("abrirFormularioMetodoHongo", (e) =>
       this.abrirFormulario(e)
     );
-  }
+  },
 };
 </script>
 

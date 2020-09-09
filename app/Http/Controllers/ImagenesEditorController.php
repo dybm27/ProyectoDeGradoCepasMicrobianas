@@ -18,7 +18,7 @@ class ImagenesEditorController extends Controller
             $file = $request->file('upload');
             $fileName = Auth::user()->id . '-' . rand(Auth::user()->id, 1000) . '-' . time() . '-' . $file->getClientOriginalName();
 
-            Storage::put('/public/editor/imagenes/' . $fileName, file_get_contents($file));
+            Storage::disk('local')->put('/public/editor/imagenes/' . $fileName, file_get_contents($file));
 
             $url = asset('/storage/editor/imagenes/' . $fileName);
             return response()->json([
@@ -32,7 +32,7 @@ class ImagenesEditorController extends Controller
         ]);
     }
 
-    /* public function eliminarImagenesDelStorage()
+    public function eliminarImagenesDelStorage()
     {
         $arrayImagenes = [];
         $noticias = Noticia::all('imagenesEditor');
@@ -78,5 +78,5 @@ class ImagenesEditorController extends Controller
             Storage::delete($resultado);
         };
         return $resultados;
-    } */
+    }
 }

@@ -21,7 +21,9 @@
       </li>
     </ul>
     <div class="tabs-animation">
-      <router-view @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></router-view>
+      <transition enter-active-class="slideInLeft">
+        <router-view @rutaHijo="ruta" @cambiarTipo="cambiarTipo"></router-view>
+      </transition>
     </div>
   </div>
 </template>

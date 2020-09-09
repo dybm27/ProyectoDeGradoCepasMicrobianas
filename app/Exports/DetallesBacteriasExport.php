@@ -69,7 +69,7 @@ class DetallesBacteriasExport implements FromView, WithEvents
     public function view(): View
     {
         return view('excel.tipos', [
-            'tipos' => ColorBacteria::all(),
+            'tipos' => DetalleOpticoBacteria::all(),
             'titulo' => 'Detalles Ópticos Bacterias'
         ]);
     }

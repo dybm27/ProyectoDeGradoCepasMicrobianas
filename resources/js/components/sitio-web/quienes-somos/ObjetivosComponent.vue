@@ -15,13 +15,12 @@
                   />
                 </div>
               </div>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center" v-if="!verificarBtn">
                 <div class="col-md-4 mt-3">
                   <button
                     class="btn btn-block btn-success"
-                    :disabled="verificarBtn"
                     @click="cambiarObjetivos"
-                  >Cambiar</button>
+                  >Guardar Cambios</button>
                 </div>
               </div>
             </template>
@@ -124,7 +123,14 @@ export default {
         .catch((error) => {
           if (error.response.status === 403) {
             this.$router.push("/sin-acceso");
-          } else if (error.response.status === 405) {
+          } else if (
+            error.response.status === 405 ||
+            error.response.status === 401
+          ) {
+            localStorage.setItem(
+              "mensajeLogin",
+              "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+            );
             window.location.href = "/";
           }
         });

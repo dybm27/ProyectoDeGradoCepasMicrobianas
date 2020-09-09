@@ -1,6 +1,7 @@
 require("./bootstrap");
 window.Vue = require("vue");
 
+import fake from "../sass/fake.scss";
 import store from "./store/index";
 import router from "./router/index";
 import VueEvents from "vue-events";
@@ -9,6 +10,8 @@ import VModal from "vue-js-modal";
 import VTooltip from "v-tooltip";
 import Storage from "vue-ls";
 import CKEditor from "@ckeditor/ckeditor5-vue";
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
 Vue.use(CKEditor);
 Vue.use(VTooltip);
 Vue.use(VModal);
@@ -65,6 +68,10 @@ Vue.component(
     "checkboxs_publicar_actinomicetos",
     require("./components/cepas/actinomicetos/tablas/CheckboxsPublicarComponent.vue")
         .default
+);
+Vue.component(
+    "my-detail-row-bacterias",
+    require("./components/cepas/bacterias/tablas/DetailRowBacteriasComponent.vue").default
 );
 Vue.component(
     "my-detail-row-h-l-a",
@@ -305,8 +312,7 @@ Vue.component(
 // --------------- acciones documentos -------------------
 Vue.component(
     "descargar_documento",
-    require("./components/sitio-web/documentos/DescargarComponent.vue")
-        .default
+    require("./components/sitio-web/documentos/DescargarComponent.vue").default
 );
 Vue.component(
     "acciones_proyectos",
@@ -364,6 +370,9 @@ Vue.component(
     require("./components/sitio-web/investigadores/CheckboxsPublicarComponent.vue")
         .default
 );
+
+import errorPeticionAxiosMixin from "./mixins/errorPeticionAxios";
+Vue.mixin(errorPeticionAxiosMixin);
 
 const app = new Vue({
     el: "#app",

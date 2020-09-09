@@ -2,37 +2,37 @@
 
 @section('contenido-pdf')
 @if (in_array('todo',$imprimir)||in_array('cepa',$imprimir))
-<div class="div-cepa">
-    <table class="table tabla-cepa">
-        <thead>
-            <tr>
-                <th colspan="2">Cepa Microbiana</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
-                <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
-                <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Clase:</b> {{$cepa->levadura->clase->nombre}}</td>
-                <td><b>Orden:</b> {{$cepa->levadura->orden->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Familia:</b> {{$cepa->levadura->familia->nombre}}</td>
-                <td><b>Division:</b> {{$cepa->levadura->division->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Estado:</b> {{$cepa->estado}}</td>
-                <td><b>Origen:</b> {{$cepa->origen}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="div-cepa">
+        <table class="table tabla-cepa">
+            <thead>
+                <tr>
+                    <th colspan="2">Cepa Microbiana</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
+                    <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
+                    <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Clase:</b> {{$cepa->levadura->clase->nombre}}</td>
+                    <td><b>Orden:</b> {{$cepa->levadura->orden->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Familia:</b> {{$cepa->levadura->familia->nombre}}</td>
+                    <td><b>Division:</b> {{$cepa->levadura->division->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Estado:</b> {{$cepa->estado}}</td>
+                    <td><b>Origen:</b> {{$cepa->origen}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 @endif
 @if(count($cepa->levadura->caractMacroscopicas))
     @if (in_array('todo',$imprimir)||in_array('caract-macro',$imprimir))
@@ -87,6 +87,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->levadura->caractMicroscopica))
@@ -146,100 +147,102 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->levadura->caractBioquimica))
     @if (in_array('todo',$imprimir)||in_array('caract-bioqui',$imprimir))
-    @php
-        $rowTermo = 0;
-      if($cepa->levadura->caractBioquimica->termotolerancia_37){
-        $rowTermo++;
-      }
-      if($cepa->levadura->caractBioquimica->termotolerancia_42){
-        $rowTermo++;
-      }
-      if($cepa->levadura->caractBioquimica->termotolerancia_45){
-        $rowTermo++;
-      }
-      if($cepa->levadura->caractBioquimica->termotolerancia_otra){
-        $rowTermo++;
-      }
-    @endphp
-    <div class="div-caract-bioqui">
-        <table class="table tabla-caract-bioqui">
-            <tbody>
-                <tr>
-                    <td colspan="4" class="thead-caract-bioqui"><b>Características Bioquímicas</b></td>
-                </tr>
-                <tr>
-                    <td><b>Ureasa</b></td>
-                    <td>{{$cepa->levadura->caractBioquimica->ureasa}}</td>
-                    <td><b>Fenol Oxidasa</b></td>
-                    <td>{{$cepa->levadura->caractBioquimica->fenol_oxidasa}}</td>
-                </tr>
-                <tr>
-                    <td><b>Crecimineto</b></td>
-                    <td>{{$cepa->levadura->caractBioquimica->crecimiento}}</td>
-                    <td><b>Nitratos</b></td>
-                    <td>{{$cepa->levadura->caractBioquimica->nitratos}}</td>
-                </tr>
-                <tr>
-                    <td rowspan="{{$rowTermo}}" style="text-align: center"><b>Termotolerancia</b></td>
-                    @if($cepa->levadura->caractBioquimica->termotolerancia_37)
-                        <td><b>37°C</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_37}}</td>
-                    @elseif($cepa->levadura->caractBioquimica->termotolerancia_42)
-                        <td><b>42°C</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_42}}</td>
-                    @elseif($cepa->levadura->caractBioquimica->termotolerancia_45)
-                        <td><b>45°C</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_45}}</td>
-                    @else
-                        <td><b>otra°</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>
+        @php
+            $rowTermo = 0;
+            if($cepa->levadura->caractBioquimica->termotolerancia_37){
+                $rowTermo++;
+            }
+            if($cepa->levadura->caractBioquimica->termotolerancia_42){
+                $rowTermo++;
+            }
+            if($cepa->levadura->caractBioquimica->termotolerancia_45){
+                $rowTermo++;
+            }
+            if($cepa->levadura->caractBioquimica->termotolerancia_otra){
+                $rowTermo++;
+            }
+        @endphp
+        <div class="div-caract-bioqui">
+            <table class="table tabla-caract-bioqui">
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="thead-caract-bioqui"><b>Características Bioquímicas</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Ureasa</b></td>
+                        <td>{{$cepa->levadura->caractBioquimica->ureasa}}</td>
+                        <td><b>Fenol Oxidasa</b></td>
+                        <td>{{$cepa->levadura->caractBioquimica->fenol_oxidasa}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Crecimineto</b></td>
+                        <td>{{$cepa->levadura->caractBioquimica->crecimiento}}</td>
+                        <td><b>Nitratos</b></td>
+                        <td>{{$cepa->levadura->caractBioquimica->nitratos}}</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="{{$rowTermo}}" style="text-align: center"><b>Termotolerancia</b></td>
+                        @if($cepa->levadura->caractBioquimica->termotolerancia_37)
+                            <td><b>37°C</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_37}}</td>
+                        @elseif($cepa->levadura->caractBioquimica->termotolerancia_42)
+                            <td><b>42°C</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_42}}</td>
+                        @elseif($cepa->levadura->caractBioquimica->termotolerancia_45)
+                            <td><b>45°C</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_45}}</td>
+                        @else
+                            <td><b>otra°</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>
+                        @endif
+                    </tr>
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_42&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                        <tr>
+                            <td><b>42°C</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_42}}</td>
+                        </tr>
                     @endif
-                </tr>
-                @if($cepa->levadura->caractBioquimica->termotolerancia_42&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_45&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                        <tr>
+                            <td><b>45°C</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_45}}</td>
+                        </tr>
+                    @endif
+                    @if($cepa->levadura->caractBioquimica->termotolerancia_otra&&$cepa->levadura->caractBioquimica->termotolerancia_37)
+                        <tr>
+                            <td><b>otra°</b></td>
+                            <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>
+                        </tr>
+                    @endif
                     <tr>
-                        <td><b>42°C</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_42}}</td>
+                        <td><b>Producción de ácido a partir de algunos azúcares</b></td>
+                        <td colspan="3">{{$cepa->levadura->caractBioquimica->produccion_acido}}</td>
                     </tr>
-                @endif
-                @if($cepa->levadura->caractBioquimica->termotolerancia_45&&$cepa->levadura->caractBioquimica->termotolerancia_37)
                     <tr>
-                        <td><b>45°C</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_45}}</td>
+                        <td colspan="4" style="text-align: center">
+                            @if ($cepa->levadura->caractBioquimica->imagenPublica1) 
+                                <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica1)}}" 
+                                style="padding-top: 25px;padding-right: 60px"/>
+                            @endif
+                            @if ($cepa->levadura->caractBioquimica->imagenPublica2) 
+                                <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica2)}}" 
+                                style="padding-top: 25px;padding-right: 60px"/>
+                            @endif
+                            @if ($cepa->levadura->caractBioquimica->imagenPublica3) 
+                                <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica3)}}" 
+                                    style="padding-top: 25px"/>
+                            @endif    
+                        </td>
                     </tr>
-                @endif
-                @if($cepa->levadura->caractBioquimica->termotolerancia_otra&&$cepa->levadura->caractBioquimica->termotolerancia_37)
-                    <tr>
-                        <td><b>otra°</b></td>
-                        <td colspan="2">{{$cepa->levadura->caractBioquimica->termotolerancia_otra}}</td>
-                    </tr>
-                @endif
-                <tr>
-                    <td><b>Producción de ácido a partir de algunos azúcares</b></td>
-                    <td colspan="3">{{$cepa->levadura->caractBioquimica->produccion_acido}}</td>
-                </tr>
-                <tr>
-                    <td colspan="4" style="text-align: center">
-                        @if ($cepa->levadura->caractBioquimica->imagenPublica1) 
-                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica1)}}" 
-                            style="padding-top: 25px;padding-right: 60px"/>
-                        @endif
-                        @if ($cepa->levadura->caractBioquimica->imagenPublica2) 
-                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica2)}}" 
-                            style="padding-top: 25px;padding-right: 60px"/>
-                        @endif
-                        @if ($cepa->levadura->caractBioquimica->imagenPublica3) 
-                            <img id="redondear" width="150px" height="150px" src="{{public_path($cepa->levadura->caractBioquimica->imagenPublica3)}}" 
-                                style="padding-top: 25px"/>
-                        @endif    
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->levadura->identMolecular))
@@ -324,6 +327,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(count($cepa->levadura->metodosConservacion))

@@ -19,10 +19,13 @@
                     id="medio"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.medio"
-                    required
+                    :class="['form-control', $v.parametros.medio.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.medio.$model"
                   />
+                  <em
+                    v-if="$v.parametros.medio.$error&&!$v.parametros.medio.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <template v-if="getInfoCaractMacroLevaduras">
                   <div class="form-row">
@@ -32,8 +35,8 @@
                         <select
                           name="select"
                           id="color"
-                          class="form-control"
-                          v-model="parametros.color"
+                          :class="['form-control', $v.parametros.color.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.color.$model"
                         >
                           <option
                             v-for="(c,index) in obtenerColores"
@@ -50,6 +53,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.color.$error&&!$v.parametros.color.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="textura" class>Textura</label>
@@ -57,8 +64,8 @@
                         <select
                           name="select"
                           id="textura"
-                          class="form-control"
-                          v-model="parametros.textura"
+                          :class="['form-control', $v.parametros.textura.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.textura.$model"
                         >
                           <option
                             v-for="(t,index) in obtenerTexturas"
@@ -75,6 +82,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.textura.$error&&!$v.parametros.textura.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </template>
@@ -86,11 +97,14 @@
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', $v.parametros.imagen.$error? 'error-input-select':'']"
                     ref="inputImagen"
-                    :required="required"
                   />
-                  <span v-if="imagenError" class="text-danger">{{imagenError}}</span>
+                  <em v-if="imagenError" class="text-error-input">{{imagenError}}</em>
+                  <em
+                    v-if="$v.parametros.imagen.$error&&!$v.parametros.imagen.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <div class="position-relative form-group">
                   <label for="topografia_superficie" class>Topografía de la Superficie</label>
@@ -99,10 +113,13 @@
                     id="topografia_superficie"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.topografia_superficie"
-                    required
+                    :class="['form-control', $v.parametros.topografia_superficie.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.topografia_superficie.$model"
                   />
+                  <em
+                    v-if="$v.parametros.topografia_superficie.$error&&!$v.parametros.topografia_superficie.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <div class="position-relative form-group">
                   <label for="borde_colonia" class>Borde de la Colonia</label>
@@ -111,15 +128,18 @@
                     id="borde_colonia"
                     placeholder="..."
                     type="text"
-                    class="form-control"
-                    v-model="parametros.borde_colonia"
-                    required
+                    :class="['form-control', $v.parametros.borde_colonia.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.borde_colonia.$model"
                   />
+                  <em
+                    v-if="$v.parametros.borde_colonia.$error&&!$v.parametros.borde_colonia.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
                 <button
                   class="mb-2 mr-2 btn btn-block"
                   :class="btnClase"
-                  :disabled="validarBtn||bloquearBtn"
+                  :disabled="bloquearBtn"
                 >{{nomBtnComputed}}</button>
               </form>
             </div>
@@ -185,6 +205,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopieCepas from "../../../../mixins/obtenerImagenCroopieCepas";
 import Croppie from "../../../CroppieComponent.vue";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { Croppie, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -206,14 +227,29 @@ export default {
       errors: [],
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      medio: { required },
+      color: { required },
+      textura: { required },
+      topografia_superficie: { required },
+      borde_colonia: { required },
+      imagen: { required },
+    },
   },
   mixins: [obtenerImagenCroopieCepas, Toastr],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Medio") {
-        if (this.parametros.imagen) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Medio") {
           axios
             .post("/cepas/levadura/caract-macro", this.parametros)
             .then((res) => {
@@ -238,46 +274,42 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/levadura/caract-macro/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$refs.inputImagen.value = "";
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Medio",
+                "Medio editado con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(`/cepas/levadura/caract-macro/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$refs.inputImagen.value = "";
-            this.$emit("editar", res.data);
-            this.toastr("Editar Medio", "Medio editado con exito!!", "success");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -321,7 +353,7 @@ export default {
         return "btn-warning";
       }
     },
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Medio") {
         return true;
       } else {
@@ -350,10 +382,13 @@ export default {
       this.tituloForm = "Editar Medio";
       this.nomBtn = "Editar";
     }
-    if (this.$route.params.cepaLevaduraId) {
-      this.parametros.cepaId = this.$route.params.cepaLevaduraId;
+    let array = [];
+    if (this.$route.params.cepaLevaduraSlug) {
+      array = this.$route.params.cepaLevaduraSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created() {

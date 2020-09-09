@@ -19,8 +19,8 @@
                       <select
                         name="select"
                         id="tincion"
-                        class="form-control"
-                        v-model="parametros.tincion"
+                        :class="['form-control', $v.parametros.tincion.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.tincion.$model"
                       >
                         <option
                           v-for="(f,index) in obtenerTinciones"
@@ -37,6 +37,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.tincion.$error&&!$v.parametros.tincion.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                   <div class="col-md-6">
                     <label for="forma" class>Forma</label>
@@ -44,8 +48,8 @@
                       <select
                         name="select"
                         id="forma"
-                        class="form-control"
-                        v-model="parametros.forma"
+                        :class="['form-control', $v.parametros.forma.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.forma.$model"
                       >
                         <option
                           v-for="(f,index) in obtenerFormas"
@@ -62,6 +66,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.forma.$error&&!$v.parametros.forma.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
                 <div class="form-row">
@@ -71,8 +79,8 @@
                       <select
                         name="select"
                         id="micelio"
-                        class="form-control"
-                        v-model="parametros.micelio"
+                        :class="['form-control', $v.parametros.micelio.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.micelio.$model"
                       >
                         <option
                           v-for="(f,index) in obtenerMicelios"
@@ -89,6 +97,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.micelio.$error&&!$v.parametros.micelio.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                   <div class="col-md-6">
                     <label for="conidioforo" class>Conidióforo</label>
@@ -96,8 +108,8 @@
                       <select
                         name="select"
                         id="conidioforo"
-                        class="form-control"
-                        v-model="parametros.conidioforo"
+                        :class="['form-control', $v.parametros.conidioforo.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.conidioforo.$model"
                       >
                         <option
                           v-for="(f,index) in obtenerConidioforos"
@@ -114,6 +126,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.conidioforo.$error&&!$v.parametros.conidioforo.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
               </template>
@@ -124,12 +140,15 @@
                   id="forma_estructura_reproduccion"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.forma_estructura_reproduccion"
-                  required
+                  :class="['form-control', $v.parametros.forma_estructura_reproduccion.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.forma_estructura_reproduccion.$model"
                 />
+                <em
+                  v-if="$v.parametros.forma_estructura_reproduccion.$error&&!$v.parametros.forma_estructura_reproduccion.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
@@ -138,12 +157,26 @@
                     id="imagen"
                     accept="image/jpeg, image/png"
                     type="file"
-                    class="form-control-file"
+                    :class="['form-control-file', 
+                        $v.parametros.imagen1.$error
+                        ||$v.parametros.imagen2.$error
+                        ||$v.parametros.imagen3.$error
+                        ? 'error-input-select':'']"
                     ref="inputImagen"
                     multiple
-                    :required="required"
                   />
-                  <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em
+                    v-if="($v.parametros.imagen1.$error
+                    &&!$v.parametros.imagen1.required)
+                    ||
+                    ($v.parametros.imagen2.$error
+                    &&!$v.parametros.imagen2.required) 
+                    ||
+                    ($v.parametros.imagen3.$error
+                    &&!$v.parametros.imagen3.required)"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -158,7 +191,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable||bloquearBtn"
+                :disabled="bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -167,7 +200,7 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <template v-if="required">
+            <template v-if="validarTipoForm">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
@@ -214,6 +247,7 @@ import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagen
 import CroppieCepas from "../../CroppieCepasComponent";
 import Imagenes from "../../ImagenesComponent";
 import ModalAgregarInfo from "../../ModalAgregarInfoCaractComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes, ModalAgregarInfo },
   props: ["info", "modificarInfo"],
@@ -238,14 +272,40 @@ export default {
       errors: [],
       bloquearBtn: false,
       bloquearBtnModal: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      forma: { required },
+      tincion: { required },
+      micelio: { required },
+      conidioforo: { required },
+      forma_estructura_reproduccion: { required },
+      imagen1: { required },
+      imagen2: {
+        required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [Toastr, obtenerImagenCroopie3ImagenesMixin],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/actinomiceto/caract-micro", this.parametros)
             .then((res) => {
@@ -270,52 +330,41 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos 1 imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/actinomiceto/caract-micro/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Característica Microscópica",
+                "Característica Microscópica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(
-            `/cepas/actinomiceto/caract-micro/${this.info.id}`,
-            this.parametros
-          )
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Característica Microscópica",
-              "Característica Microscópica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     showModal(tipo) {
@@ -373,7 +422,7 @@ export default {
   computed: {
     ...vuex.mapGetters(["getPermisoByNombre"]),
     ...vuex.mapGetters("info_caract", ["getInfoCaractMicroActinomicetos"]),
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -409,10 +458,13 @@ export default {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaActinomicetoId) {
-      this.parametros.cepaId = this.$route.params.cepaActinomicetoId;
+    let array = [];
+    if (this.$route.params.cepaActinomicetoSlug) {
+      array = this.$route.params.cepaActinomicetoSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
   created() {

@@ -19,11 +19,21 @@
                     id="codigo"
                     placeholder="..."
                     type="text"
-                    :class="['form-control', validarCodigo===true? 'is-invalid':'']"
-                    v-model="parametros.codigo"
-                    required
+                    :class="['form-control', $v.parametros.codigo.$error? 'error-input-select':'']"
+                    v-model.trim="$v.parametros.codigo.$model"
                   />
-                  <em v-if="validarCodigo" class="error invalid-feedback">{{mensajeCodigo}}</em>
+                  <em
+                    v-if="$v.parametros.codigo.$error&&!$v.parametros.codigo.required"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
+                  <em
+                    v-if="$v.parametros.codigo.$error&&!$v.parametros.codigo.minLength"
+                    class="text-error-input"
+                  >{{mensajes.minLength + $v.parametros.codigo.$params.minLength.min+' letras.'}}</em>
+                  <em
+                    v-if="$v.parametros.codigo.$error&&!$v.parametros.codigo.unique"
+                    class="text-error-input"
+                  >{{mensajes.unique}}</em>
                 </div>
                 <div class="position-relative form-group" v-if="mostrarGrupos&&!disabled">
                   <label for="grupo_microbiano" class>Grupo Microbiano</label>
@@ -48,8 +58,8 @@
                       <select
                         name="select"
                         id="genero"
-                        class="form-control"
-                        v-model="parametros.genero"
+                        :class="['form-control', $v.parametros.genero.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.genero.$model"
                         @change="cambiarEspecie"
                       >
                         <option
@@ -67,6 +77,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.genero.$error&&!$v.parametros.genero.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                   <div class="col-md-6">
                     <label for="especie" class>Especie</label>
@@ -74,8 +88,8 @@
                       <select
                         name="select"
                         id="especie"
-                        class="form-control"
-                        v-model="parametros.especie"
+                        :class="['form-control', $v.parametros.especie.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.especie.$model"
                       >
                         <option
                           v-for="(e,index) in getEspeciesId(parametros.genero)"
@@ -92,6 +106,10 @@
                         </button>
                       </div>
                     </div>
+                    <em
+                      v-if="$v.parametros.especie.$error&&!$v.parametros.especie.required"
+                      class="text-error-select"
+                    >{{mensajes.required}}</em>
                   </div>
                 </div>
                 <div class="form-row">
@@ -104,8 +122,8 @@
                         <select
                           name="select"
                           id="familia"
-                          class="form-control"
-                          v-model="parametros.familia"
+                          :class="['form-control', $v.parametros.familia.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.familia.$model"
                         >
                           <option
                             v-for="(f,index) in getFamilias"
@@ -122,6 +140,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.familia.$error&&!$v.parametros.familia.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div v-if=" parametros.grupo_microbiano === 4 ">
                       <label for="reino" class>Reino</label>
@@ -129,8 +151,8 @@
                         <select
                           name="select"
                           id="reino"
-                          class="form-control"
-                          v-model="parametros.reino"
+                          :class="['form-control', $v.parametros.reino.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.reino.$model"
                         >
                           <option
                             v-for="(r,index) in getReinos"
@@ -147,6 +169,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.reino.$error&&!$v.parametros.reino.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -158,8 +184,8 @@
                         <select
                           name="select"
                           id="phylum"
-                          class="form-control"
-                          v-model="parametros.phylum"
+                          :class="['form-control', $v.parametros.phylum.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.phylum.$model"
                         >
                           <option
                             v-for="(p,index) in getPhylums"
@@ -176,6 +202,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.phylum.$error&&!$v.parametros.phylum.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div v-if=" parametros.grupo_microbiano === 3 ">
                       <label for="division" class>Division</label>
@@ -183,8 +213,8 @@
                         <select
                           name="select"
                           id="division"
-                          class="form-control"
-                          v-model="parametros.division"
+                          :class="['form-control', $v.parametros.division.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.division.$model"
                         >
                           <option
                             v-for="(d,index) in getDivisiones"
@@ -201,6 +231,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.division.$error&&!$v.parametros.division.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -214,8 +248,8 @@
                         <select
                           name="select"
                           id="clase"
-                          class="form-control"
-                          v-model="parametros.clase"
+                          :class="['form-control', $v.parametros.clase.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.clase.$model"
                         >
                           <option
                             v-for="(c,index) in getClases"
@@ -232,6 +266,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.clase.$error&&!$v.parametros.clase.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                     <div class="col-md-6">
                       <label for="orden" class>Orden</label>
@@ -239,8 +277,8 @@
                         <select
                           name="select"
                           id="orden"
-                          class="form-control"
-                          v-model="parametros.orden"
+                          :class="['form-control', $v.parametros.orden.$error? 'error-input-select':'']"
+                          v-model.trim="$v.parametros.orden.$model"
                         >
                           <option
                             v-for="(o,index) in getOrdens"
@@ -257,6 +295,10 @@
                           </button>
                         </div>
                       </div>
+                      <em
+                        v-if="$v.parametros.orden.$error&&!$v.parametros.orden.required"
+                        class="text-error-select"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                 </div>
@@ -269,10 +311,13 @@
                         id="estado"
                         placeholder="..."
                         type="text"
-                        class="form-control"
-                        v-model="parametros.estado"
-                        required
+                        :class="['form-control', $v.parametros.estado.$error? 'error-input-select':'']"
+                        v-model.trim="$v.parametros.estado.$model"
                       />
+                      <em
+                        v-if="$v.parametros.estado.$error&&!$v.parametros.estado.required"
+                        class="text-error-input"
+                      >{{mensajes.required}}</em>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -321,7 +366,14 @@
         </div>
       </div>
     </form>
-    <modal name="agregar-otra-info" classes="my_modal" :width="450" :height="450">
+    <modal
+      name="agregar-otra-info"
+      classes="my_modal"
+      :maxWidth="450"
+      :adaptive="true"
+      height="auto"
+      :scrollable="true"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{modal.titulo}}</h5>
@@ -337,7 +389,6 @@
               id="grupo_microbiano-modal"
               class="form-control"
               v-model="modal.grupo_microbiano"
-              :disabled="disabled"
             >
               <option v-for="(gm,index) in getGrupos" :key="index" :value="gm.id">{{gm.nombre}}</option>
             </select>
@@ -359,14 +410,14 @@
               id="nombre"
               placeholder="..."
               type="text"
-              :class="['form-control', validarNombreUnico? 'is-invalid':'']"
+              :class="['form-control', validarNombreUnico||modal.errors? 'error-input-select':'']"
               v-model="modal.input"
-              required
             />
             <em
               v-if="validarNombreUnico"
-              class="error invalid-feedback"
-            >Ya Existe un registro con ese nombre</em>
+              class="text-error-input"
+            >Ya existe un registro con ese nombre</em>
+            <em v-if="modal.errors" class="text-error-input">{{mensajes.required}}</em>
           </div>
         </div>
         <div class="modal-footer">
@@ -378,7 +429,7 @@
           <button
             type="button"
             class="btn btn-success"
-            :disabled="bloquearBtnModal||validarNombreUnico"
+            :disabled="bloquearBtnModal"
             @click="agregarInfo"
           >Agregar</button>
         </div>
@@ -390,6 +441,8 @@
 <script>
 import vuex from "vuex";
 import Toastr from "../../mixins/toastr";
+import { required, minLength } from "vuelidate/lib/validators";
+import toastr from "../../mixins/toastr";
 export default {
   props: ["tipoG", "idCepa"],
   data() {
@@ -417,7 +470,7 @@ export default {
         tipo: "",
         grupo_microbiano: 1,
         genero: 1,
-        errors: [],
+        errors: false,
       },
       errors: [],
       mostrarGrupos: true,
@@ -428,7 +481,107 @@ export default {
       bloquearBtn: false,
       bloquearBtnModal: false,
       mensajeCodigo: "",
+      mensajes: {
+        required: "El campo es requerido",
+        minLength: "El campo debe tener como minimo ",
+        unique: "",
+      },
     };
+  },
+  validations() {
+    if (this.parametros.grupo_microbiano == 1) {
+      return {
+        parametros: {
+          codigo: {
+            required,
+            minLength: minLength(4),
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+              return true;
+            },
+          },
+          genero: { required },
+          especie: { required },
+          estado: { required },
+        },
+      };
+    } else if (this.parametros.grupo_microbiano == 2) {
+      return {
+        parametros: {
+          codigo: {
+            required,
+            minLength: minLength(4),
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+              return true;
+            },
+          },
+          genero: { required },
+          especie: { required },
+          phylum: { required },
+          clase: { required },
+          orden: { required },
+          familia: { required },
+          estado: { required },
+        },
+      };
+    } else if (this.parametros.grupo_microbiano == 3) {
+      return {
+        parametros: {
+          codigo: {
+            required,
+            minLength: minLength(4),
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+              return true;
+            },
+          },
+          genero: { required },
+          especie: { required },
+          clase: { required },
+          orden: { required },
+          division: { required },
+          familia: { required },
+          estado: { required },
+        },
+      };
+    } else {
+      return {
+        parametros: {
+          codigo: {
+            required,
+            minLength: minLength(4),
+            unique(value) {
+              if (value == "") return true;
+
+              if (this.validarCodigo) {
+                return false;
+              }
+              return true;
+            },
+          },
+          genero: { required },
+          especie: { required },
+          phylum: { required },
+          clase: { required },
+          orden: { required },
+          reino: { required },
+          estado: { required },
+        },
+      };
+    }
   },
   mixins: [Toastr],
   methods: {
@@ -436,70 +589,68 @@ export default {
     ...vuex.mapActions("info_cepas", ["accionAgregarTipoCepa"]),
     evento() {
       this.bloquearBtn = true;
-      if (this.nombre === "Editar Cepa") {
-        axios
-          .put(`/cepas/editar/${this.idCepa}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid) {
+        if (this.nombre === "Editar Cepa") {
+          axios
+            .put(`/cepas/editar/${this.idCepa}`, this.parametros)
+            .then((res) => {
+              this.bloquearBtn = false;
 
-            this.accionCepas({ tipo: "editar", data: res.data });
-            window.Echo.private("desbloquearBtnsCepa").whisper(
-              "desbloquearBtnsCepa",
-              {
+              this.accionCepas({ tipo: "editar", data: res.data });
+              window.Echo.private("desbloquearBtnsCepa").whisper(
+                "desbloquearBtnsCepa",
+                {
+                  id: res.data.id,
+                }
+              );
+              this.$events.fire("eliminarMiBloqueoCepa", {
                 id: res.data.id,
-              }
-            );
-            this.$events.fire("eliminarMiBloqueoCepa", {
-              id: res.data.id,
-            });
-            this.$emit("cambiarVariableFormulario");
-            this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
-      } else {
-        axios
-          .post("/cepas/agregar", this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.accionCepas({ tipo: "agregar", data: res.data });
+              });
               this.$emit("cambiarVariableFormulario");
-              this.toastr(
-                "Agregar Cepa",
-                "Cepa agregada con exito!!",
-                "success"
+              this.toastr("Editar Cepa", "Cepa editada con exito!!", "success");
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
               );
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
+            });
+        } else {
+          axios
+            .post("/cepas/agregar", this.parametros)
+            .then((res) => {
               this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = error.response.data.errors;
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.accionCepas({ tipo: "agregar", data: res.data });
+                this.$emit("cambiarVariableFormulario");
+                this.toastr(
+                  "Agregar Cepa",
+                  "Cepa agregada con exito!!",
+                  "success"
+                );
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
+        }
+      } else {
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarParametros(cepa) {
@@ -564,8 +715,8 @@ export default {
       )[0].id;
     },
     showModal(tipo) {
+      this.modal.errors = false;
       this.modal.input = "";
-      this.modal.errors = [];
       this.modal.tipo = tipo;
       if (tipo === "genero") {
         this.modal.titulo = "Agregar Nuevo Género";
@@ -588,49 +739,60 @@ export default {
     },
     agregarInfo() {
       if (this.modal.input === "") {
-        this.modal.errors = { nombre: { 0: "Favor llenar este campo" } };
+        this.modal.errors = true;
       } else {
         this.bloquearBtnModal = true;
-        let parametros = {
-          tipo: this.modal.tipo,
-          nombre: this.modal.input,
-          genero: this.modal.genero,
-          grupo_microbiano: this.modal.grupo_microbiano,
-        };
-        axios
-          .post("/info-cepas/agregar", parametros)
-          .then((res) => {
-            this.bloquearBtnModal = false;
-            if (res.request.responseURL === process.env.MIX_LOGIN) {
-              localStorage.setItem(
-                "mensajeLogin",
-                "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
-              );
-              window.location.href = "/";
-            } else {
-              this.accionAgregarTipoCepa({
-                info: res.data,
-                tipo: this.modal.tipo,
-              });
-              this.$modal.hide("agregar-otra-info");
-              this.toastr(
-                "Agregar Info",
-                `${this.modal.tipo} agregado/a con exito`,
-                "success"
-              );
-            }
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else {
+        if (!this.validarNombreUnico) {
+          let parametros = {
+            tipo: this.modal.tipo,
+            nombre: this.modal.input,
+            genero: this.modal.genero,
+            grupo_microbiano: this.modal.grupo_microbiano,
+          };
+          axios
+            .post("/info-cepas/agregar", parametros)
+            .then((res) => {
               this.bloquearBtnModal = false;
-              if (error.response.status === 422) {
-                this.modal.errors = error.response.data.errors;
+              if (res.request.responseURL === process.env.MIX_LOGIN) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.accionAgregarTipoCepa({
+                  info: res.data,
+                  tipo: this.modal.tipo,
+                });
+                this.$modal.hide("agregar-otra-info");
+                this.toastr(
+                  "Agregar Info",
+                  `${this.modal.tipo} agregado/a con exito`,
+                  "success"
+                );
               }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+            })
+            .catch((error) => {
+              if (error.response.status === 403) {
+                this.$router.push("/sin-acceso");
+              } else if (
+                error.response.status === 405 ||
+                error.response.status === 401
+              ) {
+                localStorage.setItem(
+                  "mensajeLogin",
+                  "Sobrepasaste el limite de inactividad o iniciaste sesion desde otro navegador. Por favor ingresa nuevamente"
+                );
+                window.location.href = "/";
+              } else {
+                this.bloquearBtnModal = false;
+                this.toastr("Error!!", "", "error");
+              }
+            });
+        } else {
+          this.bloquearBtnModal = false;
+          this.toastr("Error!!", "favor arregla el error", "error");
+        }
       }
     },
     verificarSelects() {
@@ -756,12 +918,15 @@ export default {
       if (this.parametros.codigo) {
         if (this.getCepaByCodigo(this.parametros.codigo)) {
           if (this.getCepaByCodigo(this.parametros.codigo).id != this.info.id) {
-            this.mensajeCodigo = "Ya existe una cepa con ese codigo";
+            this.mensajes.unique = "Ya existe una cepa con ese codigo";
             return true;
           }
         }
       }
       return false;
+    },
+    inputModal() {
+      return this.modal.input;
     },
   },
   created() {
@@ -852,6 +1017,13 @@ export default {
         this.parametros.familia = this.getFamilias[0].id;
       } else {
         this.parametros.familia = null;
+      }
+    },
+    inputModal() {
+      if (!this.inputModal) {
+        this.modal.errors = true;
+      } else {
+        this.modal.errors = false;
       }
     },
   },

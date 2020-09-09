@@ -18,10 +18,13 @@
                   id="ureasa"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.ureasa"
-                  required
+                  :class="['form-control', $v.parametros.ureasa.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.ureasa.$model"
                 />
+                <em
+                  v-if="$v.parametros.ureasa.$error&&!$v.parametros.ureasa.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="fenol_oxidasa" class>Fenol Oxidasa</label>
@@ -30,10 +33,13 @@
                   id="fenol_oxidasa"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.fenol_oxidasa"
-                  required
+                  :class="['form-control', $v.parametros.fenol_oxidasa.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.fenol_oxidasa.$model"
                 />
+                <em
+                  v-if="$v.parametros.fenol_oxidasa.$error&&!$v.parametros.fenol_oxidasa.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
                 <label for="produccion_acido" class>Producción de ácido a partir de algunos azúcares</label>
@@ -42,13 +48,16 @@
                   id="produccion_acido"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.produccion_acido"
-                  required
+                  :class="['form-control', $v.parametros.produccion_acido.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.produccion_acido.$model"
                 />
+                <em
+                  v-if="$v.parametros.produccion_acido.$error&&!$v.parametros.produccion_acido.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
               <div class="position-relative form-group">
-                <label for="fenol_oxidasa" class>Termotolerancia</label>
+                <label for="termontolerancia" class>Termotolerancia</label>
                 <div class="input-group mb-1">
                   <div class="input-group-prepend">
                     <span class="input-group-text">37°C</span>
@@ -73,10 +82,10 @@
                   </div>
                   <input type="text" class="form-control" v-model="parametros.termotolerancia_otra" />
                 </div>
-                <span
+                <em
                   v-if="termotolerancia"
-                  class="text-danger"
-                >Llenar al menos una de las diferentes temperaturas.</span>
+                  class="text-error-input"
+                >Llenar al menos una de las diferentes temperaturas.</em>
               </div>
               <div class="position-relative form-group">
                 <label>Crecimineto</label>
@@ -112,12 +121,15 @@
                   id="nitratos"
                   placeholder="..."
                   type="text"
-                  class="form-control"
-                  v-model="parametros.nitratos"
-                  required
+                  :class="['form-control', $v.parametros.nitratos.$error? 'error-input-select':'']"
+                  v-model.trim="$v.parametros.nitratos.$model"
                 />
+                <em
+                  v-if="$v.parametros.nitratos.$error&&!$v.parametros.nitratos.required"
+                  class="text-error-input"
+                >{{mensajes.required}}</em>
               </div>
-              <template v-if="required">
+              <template v-if="validarTipoForm">
                 <div class="position-relative form-group">
                   <label for="imagen" class>Imágenes</label>
                   <input
@@ -126,12 +138,26 @@
                     id="imagen"
                     type="file"
                     accept="image/jpeg, image/png"
-                    class="form-control-file"
+                    :class="['form-control-file', 
+                      $v.parametros.imagen1.$error
+                      ||$v.parametros.imagen2.$error
+                      ||$v.parametros.imagen3.$error
+                      ? 'error-input-select':'']"
                     ref="inputImagen"
                     multiple
-                    :required="required"
                   />
-                  <span v-if="erroresImagenes" class="text-danger">{{erroresImagenes}}</span>
+                  <em v-if="erroresImagenes" class="text-error-input">{{erroresImagenes}}</em>
+                  <em
+                    v-if="($v.parametros.imagen1.$error
+                        &&!$v.parametros.imagen1.required)
+                        ||
+                        ($v.parametros.imagen2.$error
+                        &&!$v.parametros.imagen2.required) 
+                        ||
+                        ($v.parametros.imagen3.$error
+                        &&!$v.parametros.imagen3.required)"
+                    class="text-error-input"
+                  >{{mensajes.required}}</em>
                 </div>
               </template>
               <div class="position-relative form-group">
@@ -146,7 +172,7 @@
               <button
                 class="mb-2 mr-2 btn btn-block"
                 :class="btnClase"
-                :disabled="btnDisable||bloquearBtn||termotolerancia"
+                :disabled="bloquearBtn"
               >{{nomBtn}}</button>
             </form>
           </div>
@@ -155,7 +181,7 @@
       <div class="col-sm-6">
         <div class="main-card mb-3 card">
           <div class="card-body">
-            <template v-if="required">
+            <template v-if="validarTipoForm">
               <template v-if="imagenesCroppie.length===cantImagenes&&$refs.inputImagen.value">
                 <CroppieCepas
                   :imagenes="imagenesCroppie"
@@ -194,6 +220,7 @@ import Toastr from "../../../../mixins/toastr";
 import obtenerImagenCroopie3ImagenesMixin from "../../../../mixins/obtenerImagenCroopie3Imagenes";
 import CroppieCepas from "../../CroppieCepasComponent.vue";
 import Imagenes from "../../ImagenesComponent.vue";
+import { required } from "vuelidate/lib/validators";
 export default {
   components: { CroppieCepas, Imagenes },
   props: ["info", "modificarInfo"],
@@ -227,14 +254,39 @@ export default {
       nomBtn: "",
       errors: [],
       bloquearBtn: false,
+      mensajes: {
+        required: "El campo es requerido",
+      },
     };
+  },
+  validations: {
+    parametros: {
+      ureasa: { required },
+      fenol_oxidasa: { required },
+      produccion_acido: { required },
+      nitratos: { required },
+      imagen1: { required },
+      imagen2: {
+        required(value) {
+          if (value == "" && this.cantImagenes > 1) return false;
+          return true;
+        },
+      },
+      imagen3: {
+        required(value) {
+          if (value == "" && this.cantImagenes == 3) return false;
+          return true;
+        },
+      },
+    },
   },
   mixins: [obtenerImagenCroopie3ImagenesMixin, Toastr],
   methods: {
     evento() {
       this.bloquearBtn = true;
-      if (this.tituloForm === "Agregar Característica") {
-        if (this.parametros.imagen1) {
+      this.$v.parametros.$touch();
+      if (!this.$v.$invalid && !this.termotolerancia) {
+        if (this.tituloForm === "Agregar Característica") {
           axios
             .post("/cepas/levadura/caract-bioqui", this.parametros)
             .then((res) => {
@@ -259,49 +311,41 @@ export default {
               }
             })
             .catch((error) => {
-              if (error.response.status === 403) {
-                this.$router.push("/sin-acceso");
-              } else {
-                this.bloquearBtn = false;
-                if (error.response.status === 422) {
-                  this.errors = [];
-                  this.errors = error.response.data.errors;
-                }
-                this.toastr("Error!!", "", "error");
-              }
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
             });
         } else {
-          this.bloquearBtn = false;
-          this.errors = { imagen: ["Favor elija al menos una imagen."] };
-          this.toastr("Error!!", "", "error");
+          axios
+            .put(
+              `/cepas/levadura/caract-bioqui/${this.info.id}`,
+              this.parametros
+            )
+            .then((res) => {
+              this.bloquearBtn = false;
+              this.errors = [];
+              this.$emit("editar", res.data);
+              this.toastr(
+                "Editar Características Bioquímicas",
+                "Característica Bioquímica editada con exito!!",
+                "success"
+              );
+            })
+            .catch((error) => {
+              this.verificarError(
+                error.response.status,
+                error.response.data.errors
+              );
+            });
         }
       } else {
-        axios
-          .put(`/cepas/levadura/caract-bioqui/${this.info.id}`, this.parametros)
-          .then((res) => {
-            this.bloquearBtn = false;
-            this.errors = [];
-            this.$emit("editar", res.data);
-            this.toastr(
-              "Editar Características Bioquímicas",
-              "Característica Bioquímica editada con exito!!",
-              "success"
-            );
-          })
-          .catch((error) => {
-            if (error.response.status === 403) {
-              this.$router.push("/sin-acceso");
-            } else if (error.response.status === 405) {
-              window.location.href = "/";
-            } else {
-              this.bloquearBtn = false;
-              if (error.response.status === 422) {
-                this.errors = [];
-                this.errors = error.response.data.errors;
-              }
-              this.toastr("Error!!", "", "error");
-            }
-          });
+        this.bloquearBtn = false;
+        this.toastr(
+          "Error!!",
+          "Favor llenar correctamente los campos",
+          "error"
+        );
       }
     },
     llenarInfo() {
@@ -326,7 +370,7 @@ export default {
     },
   },
   computed: {
-    required() {
+    validarTipoForm() {
       if (this.tituloForm === "Agregar Característica") {
         return true;
       } else {
@@ -361,10 +405,13 @@ export default {
       this.tituloForm = "Agregar Característica";
       this.nomBtn = "Agregar";
     }
-    if (this.$route.params.cepaLevaduraId) {
-      this.parametros.cepaId = this.$route.params.cepaLevaduraId;
+    let array = [];
+    if (this.$route.params.cepaLevaduraSlug) {
+      array = this.$route.params.cepaLevaduraSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     } else {
-      this.parametros.cepaId = this.$route.params.cepaId;
+      array = this.$route.params.cepaSlug.split("-");
+      this.parametros.cepaId = parseInt(array[array.length - 1]);
     }
   },
 };

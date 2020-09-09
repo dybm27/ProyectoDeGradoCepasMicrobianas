@@ -1,8 +1,32 @@
 <template>
   <div class="app-header__content">
-    <div class="app-header-left"></div>
+    <div class="app-header-left">
+      <div class="search-wrappero">
+        <template v-if="mostrarHeaderMobile">
+          <button
+            class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-danger"
+            @click.prevent="logout"
+          >
+            <i class="pe-7s-power"></i>
+          </button>
+        </template>
+      </div>
+    </div>
     <div class="app-header-right">
-      <div class="header-dots"></div>
+      <div class="header-dots">
+        <template v-if="mostrarHeaderMobile">
+          <div class="text-center">
+            <div class="mb-1">
+              <b>{{auth.name}}</b>
+            </div>
+            <template v-if="getRoles!=''">
+              <div>
+                <em>{{getRolById(auth.rol_id).nombre}}</em>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
       <div class="header-btn-lg pr-0">
         <div class="widget-content p-0">
           <template v-if="auth">
@@ -38,6 +62,11 @@
 <script>
 import vuex from "vuex";
 export default {
+  data() {
+    return {
+      mostrarHeaderMobile: false,
+    };
+  },
   methods: {
     logout() {
       axios.post("/logout").then((res) => {
@@ -48,6 +77,11 @@ export default {
   computed: {
     ...vuex.mapGetters("usuarios", ["getRolById", "getRoles"]),
     ...vuex.mapState(["auth"]),
+  },
+  created() {
+    this.$events.$on("mostrar-ocultar-headerMobie", (res) => {
+      this.mostrarHeaderMobile = !this.mostrarHeaderMobile;
+    });
   },
 };
 </script>

@@ -18,9 +18,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/formas-macro-bacteria"
+            :detailRowComponent="''"
+            :apiUrl="'/info-panel/formas-macro-bacteria'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
             :nameGet="'formas-macro-bacteria'"
           ></MyVuetable>
         </template>
@@ -52,9 +53,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("forma_macro")],
@@ -70,7 +71,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

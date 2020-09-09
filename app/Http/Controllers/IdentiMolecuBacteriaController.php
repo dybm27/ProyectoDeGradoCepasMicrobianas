@@ -119,7 +119,8 @@ class IdentiMolecuBacteriaController extends Controller
             'nombre_forward' => 'required', 'produc_forward' => 'required',
             'nombre_reversed' => 'required', 'produc_reversed' => 'required',
             'secuen_forward' => 'required', 'obser_secuenciacion' => 'required',
-            'secuen_reversed' => 'required'
+            'secuen_reversed' => 'required', 'imagen1' => 'required',
+            'imagen2' => 'required'
         ];
         $this->validate($request, $rules);
     }

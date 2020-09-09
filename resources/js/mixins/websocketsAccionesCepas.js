@@ -7,7 +7,7 @@ const websocketsAccionesCepas = {
             this.$events.fire("abrirFormularioCepa", data.id);
             this.enviarBloqueo(data);
         },
-        showModal(data) {
+        eliminar(data) {
             this.$modal.show("modal_eliminar_cepa", {
                 id: data.id
             });

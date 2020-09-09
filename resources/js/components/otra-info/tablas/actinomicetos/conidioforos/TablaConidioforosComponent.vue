@@ -18,9 +18,10 @@
         <template v-if="siHayDatos">
           <MyVuetable
             ref="tabla"
-            api-url="/info-panel/conidioforos-actinomiceto"
+            :apiUrl="'/info-panel/conidioforos-actinomiceto'"
             :fields="fields"
-            :sort-order="sortOrder"
+            :sortOrder="sortOrder"
+            :detailRowComponent="''"
             :nameGet="'conidioforos-actinomiceto'"
           ></MyVuetable>
         </template>
@@ -53,9 +54,9 @@ export default {
       sortOrder: [
         {
           field: "nombre",
-          direction: "asc"
-        }
-      ]
+          direction: "asc",
+        },
+      ],
     };
   },
   mixins: [websocketsTablaOtraInfoMixin("conidioforo")],
@@ -71,7 +72,7 @@ export default {
         }
       }
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

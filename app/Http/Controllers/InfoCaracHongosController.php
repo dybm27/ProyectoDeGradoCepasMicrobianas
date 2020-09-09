@@ -17,6 +17,7 @@ class InfoCaracHongosController extends Controller
 {
     public function agregarInfo(Request $request)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "color":
                 $rules = [
@@ -111,6 +112,7 @@ class InfoCaracHongosController extends Controller
 
     public function editarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required', 'nombre' => 'required']);
         switch ($request->tipo) {
             case "color":
                 $tipo1 = ColorHongo::find($id);
@@ -197,6 +199,7 @@ class InfoCaracHongosController extends Controller
 
     public function eliminarInfo(Request $request, $id)
     {
+        $this->validate($request, ['tipo' => 'required']);
         switch ($request->tipo) {
             case "color":
                 $tipo = ColorHongo::find($id);

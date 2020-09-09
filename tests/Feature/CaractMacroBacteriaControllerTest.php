@@ -59,7 +59,7 @@ class CaractMacroBacteriaControllerTest extends TestCase
                 [
                     'cepaId' => $bacteria->cepa_id, 'medio' => 'qwew', 'forma' => 1,
                     'elevacion' => 1, 'borde' => 1, 'detalle_optico' => 1, 'superficie' => 1,
-                    'tamaño' => 'aasd', 'color' => 1, 'imagen' => $this->imagen
+                    'tamaño' => 'aasd', 'color' => 1, 'imagen' => $this->imagen, 'otras_caract' => 'aasd'
                 ]
             );
         $response->assertStatus(201);
@@ -74,6 +74,8 @@ class CaractMacroBacteriaControllerTest extends TestCase
         $this->assertEquals($caract->detalleoptico_id, 1);
         $this->assertEquals($caract->superficie_id, 1);
         $this->assertEquals($caract->color_id, 1);
+        $this->assertEquals($caract->tamano, 'aasd');
+        $this->assertEquals($caract->otras_caract, 'aasd');
     }
 
     /** @test */
@@ -86,11 +88,12 @@ class CaractMacroBacteriaControllerTest extends TestCase
                 '/cepas/bacteria/caract-macro/' . $caract->id,
                 [
                     'medio' => 'asds', 'forma' => 2, 'elevacion' => 2, 'borde' => 2,
-                    'detalle_optico' => 2, 'superficie' => 2, 'tamaño' => 'aasd',
+                    'detalle_optico' => 2, 'superficie' => 2, 'tamaño' => 'asdasd',
                     'color' => 2, 'imagen' => $this->imagen, 'otras_caract' => 'asdasd'
                 ]
             );
         $response->assertStatus(200);
+        Storage::assertMissing($caract->imagen);
         $caract = $caract->fresh();
         $this->assertCount(1, Seguimiento::all());
         $this->assertCount(1, CaracMacroBacteria::all());
@@ -102,6 +105,7 @@ class CaractMacroBacteriaControllerTest extends TestCase
         $this->assertEquals($caract->detalleoptico_id, 2);
         $this->assertEquals($caract->superficie_id, 2);
         $this->assertEquals($caract->color_id, 2);
+        $this->assertEquals($caract->tamano, 'asdasd');
         $this->assertEquals($caract->otras_caract, 'asdasd');
     }
 

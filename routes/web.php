@@ -18,27 +18,18 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
-// Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
-
 // Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-
-// Password Confirmation Routes...
-Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
+Route::get('contraseña/from-restablecer', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('contraseña/enviar-email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('contraseña/restablecer/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('contraseña/restablecer', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 // Email Verification Routes...
-Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::get('email/verificar', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verificar/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-//, 'verified'
 
-Route::group(['middleware' => ['auth', 'control_sesion']], function () {
+Route::group(['middleware' => ['auth', 'control_sesion', 'verified']], function () {
     //--------------------- CEPAS -------------------------------------------------------------------
     //-- crud cepas
     Route::post('/cepas/agregar', 'CepaController@store')->middleware('control_permisos:agregar-cepa');
@@ -175,16 +166,16 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         // ----------------------- EXCEl --------------------------------------
         //metodos-bacterias
         Route::get('/exportar/metodos-bacterias', 'ExportarExcelBacteriasController@metodosBacterias');
-        Route::get('/exportar/tabla/metodos-bacterias', 'ExportarExcelBacteriasController@metodosBacteriasTabla');
+        Route::post('/exportar/tabla/metodos-bacterias', 'ExportarExcelBacteriasController@metodosBacteriasTabla');
         //metodos-hongos
         Route::get('/exportar/metodos-hongos', 'ExportarExcelHongosController@metodosHongos');
-        Route::get('/exportar/tabla/metodos-hongos', 'ExportarExcelHongosController@metodosHongosTabla');
+        Route::post('/exportar/tabla/metodos-hongos', 'ExportarExcelHongosController@metodosHongosTabla');
         //metodos-levaduras
         Route::get('/exportar/metodos-levaduras', 'ExportarExcelLevadurasController@metodosLevaduras');
-        Route::get('/exportar/tabla/metodos-levaduras', 'ExportarExcelLevadurasController@metodosLevadurasTabla');
+        Route::post('/exportar/tabla/metodos-levaduras', 'ExportarExcelLevadurasController@metodosLevadurasTabla');
         //actinomicetos
         Route::get('/exportar/metodos-actinomicetos', 'ExportarExcelActinomicetosController@metodosActinomicetos');
-        Route::get('/exportar/tabla/metodos-actinomicetos', 'ExportarExcelActinomicetosController@metodosActinomicetosTabla');
+        Route::post('/exportar/tabla/metodos-actinomicetos', 'ExportarExcelActinomicetosController@metodosActinomicetosTabla');
     });
 
     //---------------------- EVENTOS -------------------------------------------------------------
@@ -197,9 +188,9 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //---------------------- USUARIOS ------------------------------------------------------------
     //-- Perfil
-    Route::put('/perfil/cambiar-nombre/{id}', 'PerfilController@cambiarNombre');
-    Route::put('/perfil/cambiar-imagen/{id}', 'PerfilController@cambiarImagen');
-    Route::put('/perfil/cambiar-contraseña/{id}', 'PerfilController@cambiarContraseña');
+    Route::put('/perfil/cambiar-nombre', 'PerfilController@cambiarNombre');
+    Route::put('/perfil/cambiar-imagen', 'PerfilController@cambiarImagen');
+    Route::put('/perfil/cambiar-contraseña', 'PerfilController@cambiarContraseña');
 
     //-- Usuarios
     Route::post('/usuario/agregar', 'UsuarioController@store')->middleware('control_permisos:agregar-usuario');
@@ -218,30 +209,30 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     Route::group(['middleware' => ['control_permisos:agregar-cepa,editar-cepa,eliminar-cepa,ver-cepa,caract-cepa']], function () {
         //cepas
         Route::get('/exportar/cepas', 'ExportarExcelCepasController@cepas');
-        Route::get('/exportar/tabla/cepas', 'ExportarExcelCepasController@cepasTabla');
+        Route::post('/exportar/tabla/cepas', 'ExportarExcelCepasController@cepasTabla');
         //bacterias
         Route::get('/exportar/bacterias', 'ExportarExcelBacteriasController@bacterias');
-        Route::get('/exportar/tabla/bacterias', 'ExportarExcelBacteriasController@bacteriasTabla');
+        Route::post('/exportar/tabla/bacterias', 'ExportarExcelBacteriasController@bacteriasTabla');
         //hongos
         Route::get('/exportar/hongos', 'ExportarExcelHongosController@hongos');
-        Route::get('/exportar/tabla/hongos', 'ExportarExcelHongosController@hongosTabla');
+        Route::post('/exportar/tabla/hongos', 'ExportarExcelHongosController@hongosTabla');
         //levaduras
         Route::get('/exportar/levaduras', 'ExportarExcelLevadurasController@levaduras');
-        Route::get('/exportar/tabla/levaduras', 'ExportarExcelLevadurasController@levadurasTabla');
+        Route::post('/exportar/tabla/levaduras', 'ExportarExcelLevadurasController@levadurasTabla');
         //actinomicetos
         Route::get('/exportar/actinomicetos', 'ExportarExcelActinomicetosController@actinomicetos');
-        Route::get('/exportar/tabla/actinomicetos', 'ExportarExcelActinomicetosController@actinomicetosTabla');
+        Route::post('/exportar/tabla/actinomicetos', 'ExportarExcelActinomicetosController@actinomicetosTabla');
     });
 
     Route::group(['middleware' => ['control_permisos:agregar-usuario,editar-usuario,eliminar-usuario']], function () {
         //usuarios
         Route::get('/exportar/usuarios', 'ExportarExcelUsuariosController@usuarios');
-        Route::get('/exportar/tabla/usuarios', 'ExportarExcelUsuariosController@usuariosTabla');
+        Route::post('/exportar/tabla/usuarios', 'ExportarExcelUsuariosController@usuariosTabla');
     });
 
     //seguimientos
     Route::get('/exportar/seguimientos', 'ExportarExcelUsuariosController@seguimientos');
-    Route::get('/exportar/tabla/seguimientos', 'ExportarExcelUsuariosController@seguimientosTabla');
+    Route::post('/exportar/tabla/seguimientos', 'ExportarExcelUsuariosController@seguimientosTabla');
 
     Route::group(['middleware' => ['control_permisos:agregar-otra,editar-otra,eliminar-otra']], function () {
 
@@ -281,14 +272,14 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('/exportar/clases', 'ExportarExcelCepasController@clases');
         Route::get('/exportar/phylums', 'ExportarExcelCepasController@phylums');
         Route::get('/exportar/ordens', 'ExportarExcelCepasController@ordens');
-        Route::get('/exportar/tabla/generos', 'ExportarExcelCepasController@generosTabla');
-        Route::get('/exportar/tabla/especies', 'ExportarExcelCepasController@especiesTabla');
-        Route::get('/exportar/tabla/familias', 'ExportarExcelCepasController@familiasTabla');
-        Route::get('/exportar/tabla/divisions', 'ExportarExcelCepasController@divisionsTabla');
-        Route::get('/exportar/tabla/reinos', 'ExportarExcelCepasController@reinosTabla');
-        Route::get('/exportar/tabla/clases', 'ExportarExcelCepasController@clasesTabla');
-        Route::get('/exportar/tabla/phylums', 'ExportarExcelCepasController@phylumsTabla');
-        Route::get('/exportar/tabla/ordens', 'ExportarExcelCepasController@ordensTabla');
+        Route::post('/exportar/tabla/generos', 'ExportarExcelCepasController@generosTabla');
+        Route::post('/exportar/tabla/especies', 'ExportarExcelCepasController@especiesTabla');
+        Route::post('/exportar/tabla/familias', 'ExportarExcelCepasController@familiasTabla');
+        Route::post('/exportar/tabla/divisions', 'ExportarExcelCepasController@divisionsTabla');
+        Route::post('/exportar/tabla/reinos', 'ExportarExcelCepasController@reinosTabla');
+        Route::post('/exportar/tabla/clases', 'ExportarExcelCepasController@clasesTabla');
+        Route::post('/exportar/tabla/phylums', 'ExportarExcelCepasController@phylumsTabla');
+        Route::post('/exportar/tabla/ordens', 'ExportarExcelCepasController@ordensTabla');
         // otra-info-bacterias
         Route::get('/exportar/formas-macro-bacteria', 'ExportarExcelBacteriasController@formasMacro');
         Route::get('/exportar/formas-micro-bacteria', 'ExportarExcelBacteriasController@formasMicro');
@@ -299,15 +290,15 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('/exportar/colors-bacteria', 'ExportarExcelBacteriasController@colors');
         Route::get('/exportar/tipos-metodos-bacteria', 'ExportarExcelBacteriasController@tiposMetodos');
         Route::get('/exportar/tipos-agars-bacteria', 'ExportarExcelBacteriasController@tiposAgars');
-        Route::get('/exportar/tabla/formas-macro-bacteria', 'ExportarExcelBacteriasController@formasMacroTabla');
-        Route::get('/exportar/tabla/formas-micro-bacteria', 'ExportarExcelBacteriasController@formasMicroTabla');
-        Route::get('/exportar/tabla/bordes-bacteria', 'ExportarExcelBacteriasController@bordesTabla');
-        Route::get('/exportar/tabla/detalles-bacteria', 'ExportarExcelBacteriasController@detallesTabla');
-        Route::get('/exportar/tabla/elevacions-bacteria', 'ExportarExcelBacteriasController@elevacionsTabla');
-        Route::get('/exportar/tabla/superficies-bacteria', 'ExportarExcelBacteriasController@superficiesTabla');
-        Route::get('/exportar/tabla/colors-bacteria', 'ExportarExcelBacteriasController@colorsTabla');
-        Route::get('/exportar/tabla/tipos-metodos-bacteria', 'ExportarExcelBacteriasController@tiposMetodosTabla');
-        Route::get('/exportar/tabla/tipos-agars-bacteria', 'ExportarExcelBacteriasController@tiposAgarsTabla');
+        Route::post('/exportar/tabla/formas-macro-bacteria', 'ExportarExcelBacteriasController@formasMacroTabla');
+        Route::post('/exportar/tabla/formas-micro-bacteria', 'ExportarExcelBacteriasController@formasMicroTabla');
+        Route::post('/exportar/tabla/bordes-bacteria', 'ExportarExcelBacteriasController@bordesTabla');
+        Route::post('/exportar/tabla/detalles-bacteria', 'ExportarExcelBacteriasController@detallesTabla');
+        Route::post('/exportar/tabla/elevacions-bacteria', 'ExportarExcelBacteriasController@elevacionsTabla');
+        Route::post('/exportar/tabla/superficies-bacteria', 'ExportarExcelBacteriasController@superficiesTabla');
+        Route::post('/exportar/tabla/colors-bacteria', 'ExportarExcelBacteriasController@colorsTabla');
+        Route::post('/exportar/tabla/tipos-metodos-bacteria', 'ExportarExcelBacteriasController@tiposMetodosTabla');
+        Route::post('/exportar/tabla/tipos-agars-bacteria', 'ExportarExcelBacteriasController@tiposAgarsTabla');
         //otra-info-hongos
         Route::get('/exportar/colors-hongo', 'ExportarExcelHongosController@colors');
         Route::get('/exportar/texturas-hongo', 'ExportarExcelHongosController@texturas');
@@ -315,19 +306,19 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('/exportar/esporasA-hongo', 'ExportarExcelHongosController@esporasAsexual');
         Route::get('/exportar/esporasS-hongo', 'ExportarExcelHongosController@esporasSexual');
         Route::get('/exportar/tipos-metodos-hongo', 'ExportarExcelHongosController@tiposMetodos');
-        Route::get('/exportar/tabla/colors-hongo', 'ExportarExcelHongosController@colorsTabla');
-        Route::get('/exportar/tabla/texturas-hongo', 'ExportarExcelHongosController@texturasTabla');
-        Route::get('/exportar/tabla/conidioforos-hongo', 'ExportarExcelHongosController@conidioforosTabla');
-        Route::get('/exportar/tabla/esporasA-hongo', 'ExportarExcelHongosController@esporasAsexualTabla');
-        Route::get('/exportar/tabla/esporasS-hongo', 'ExportarExcelHongosController@esporasSexualTabla');
-        Route::get('/exportar/tabla/tipos-metodos-hongo', 'ExportarExcelHongosController@tiposMetodosTabla');
+        Route::post('/exportar/tabla/colors-hongo', 'ExportarExcelHongosController@colorsTabla');
+        Route::post('/exportar/tabla/texturas-hongo', 'ExportarExcelHongosController@texturasTabla');
+        Route::post('/exportar/tabla/conidioforos-hongo', 'ExportarExcelHongosController@conidioforosTabla');
+        Route::post('/exportar/tabla/esporasA-hongo', 'ExportarExcelHongosController@esporasAsexualTabla');
+        Route::post('/exportar/tabla/esporasS-hongo', 'ExportarExcelHongosController@esporasSexualTabla');
+        Route::post('/exportar/tabla/tipos-metodos-hongo', 'ExportarExcelHongosController@tiposMetodosTabla');
         //otra-info-levaduras
         Route::get('/exportar/colors-levadura', 'ExportarExcelLevadurasController@colors');
         Route::get('/exportar/texturas-levadura', 'ExportarExcelLevadurasController@texturas');
         Route::get('/exportar/tipos-metodos-levadura', 'ExportarExcelLevadurasController@tiposMetodos');
-        Route::get('/exportar/tabla/colors-levadura', 'ExportarExcelLevadurasController@colorsTabla');
-        Route::get('/exportar/tabla/texturas-levadura', 'ExportarExcelLevadurasController@texturasTabla');
-        Route::get('/exportar/tabla/tipos-metodos-levadura', 'ExportarExcelLevadurasController@tiposMetodosTabla');
+        Route::post('/exportar/tabla/colors-levadura', 'ExportarExcelLevadurasController@colorsTabla');
+        Route::post('/exportar/tabla/texturas-levadura', 'ExportarExcelLevadurasController@texturasTabla');
+        Route::post('/exportar/tabla/tipos-metodos-levadura', 'ExportarExcelLevadurasController@tiposMetodosTabla');
         //otra-info-actinomicetos
         Route::get('/exportar/colors-actinomiceto', 'ExportarExcelActinomicetosController@colors');
         Route::get('/exportar/texturas-actinomiceto', 'ExportarExcelActinomicetosController@texturas');
@@ -339,46 +330,46 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         Route::get('/exportar/superficies-actinomiceto', 'ExportarExcelActinomicetosController@superficies');
         Route::get('/exportar/micelios-actinomiceto', 'ExportarExcelActinomicetosController@micelios');
         Route::get('/exportar/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforos');
-        Route::get('/exportar/tabla/colors-actinomiceto', 'ExportarExcelActinomicetosController@colorsTabla');
-        Route::get('/exportar/tabla/texturas-actinomiceto', 'ExportarExcelActinomicetosController@texturasTabla');
-        Route::get('/exportar/tabla/formas-macro-actinomiceto', 'ExportarExcelActinomicetosController@formasMacroTabla');
-        Route::get('/exportar/tabla/formas-micro-actinomiceto', 'ExportarExcelActinomicetosController@formasMicroTabla');
-        Route::get('/exportar/tabla/bordes-actinomiceto', 'ExportarExcelActinomicetosController@bordesTabla');
-        Route::get('/exportar/tabla/pigmentos-actinomiceto', 'ExportarExcelActinomicetosController@pigmentosTabla');
-        Route::get('/exportar/tabla/tincions-actinomiceto', 'ExportarExcelActinomicetosController@tincionsTabla');
-        Route::get('/exportar/tabla/superficies-actinomiceto', 'ExportarExcelActinomicetosController@superficiesTabla');
-        Route::get('/exportar/tabla/micelios-actinomiceto', 'ExportarExcelActinomicetosController@miceliosTabla');
-        Route::get('/exportar/tabla/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforosTabla');
+        Route::post('/exportar/tabla/colors-actinomiceto', 'ExportarExcelActinomicetosController@colorsTabla');
+        Route::post('/exportar/tabla/texturas-actinomiceto', 'ExportarExcelActinomicetosController@texturasTabla');
+        Route::post('/exportar/tabla/formas-macro-actinomiceto', 'ExportarExcelActinomicetosController@formasMacroTabla');
+        Route::post('/exportar/tabla/formas-micro-actinomiceto', 'ExportarExcelActinomicetosController@formasMicroTabla');
+        Route::post('/exportar/tabla/bordes-actinomiceto', 'ExportarExcelActinomicetosController@bordesTabla');
+        Route::post('/exportar/tabla/pigmentos-actinomiceto', 'ExportarExcelActinomicetosController@pigmentosTabla');
+        Route::post('/exportar/tabla/tincions-actinomiceto', 'ExportarExcelActinomicetosController@tincionsTabla');
+        Route::post('/exportar/tabla/superficies-actinomiceto', 'ExportarExcelActinomicetosController@superficiesTabla');
+        Route::post('/exportar/tabla/micelios-actinomiceto', 'ExportarExcelActinomicetosController@miceliosTabla');
+        Route::post('/exportar/tabla/conidioforos-actinomiceto', 'ExportarExcelActinomicetosController@conidioforosTabla');
     });
 
     //sitio-web
     Route::group(['middleware' => ['control_permisos:agregar-investigador,editar-investigador,eliminar-investigador']], function () {
         Route::get('/exportar/investigadores', 'ExportarExcelSitioWebController@investigadores');
-        Route::get('/exportar/tabla/investigadores', 'ExportarExcelSitioWebController@investigadoresTabla');
+        Route::post('/exportar/tabla/investigadores', 'ExportarExcelSitioWebController@investigadoresTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-proyecto,editar-proyecto,eliminar-proyecto']], function () {
         Route::get('/exportar/proyectos', 'ExportarExcelSitioWebController@proyectos');
-        Route::get('/exportar/tabla/proyectos', 'ExportarExcelSitioWebController@proyectosTabla');
+        Route::post('/exportar/tabla/proyectos', 'ExportarExcelSitioWebController@proyectosTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-publicacion,editar-publicacion,eliminar-publicacion']], function () {
         Route::get('/exportar/publicaciones', 'ExportarExcelSitioWebController@publicaciones');
-        Route::get('/exportar/tabla/publicaciones', 'ExportarExcelSitioWebController@publicacionesTabla');
+        Route::post('/exportar/tabla/publicaciones', 'ExportarExcelSitioWebController@publicacionesTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-equipamiento,editar-equipamiento,eliminar-equipamiento']], function () {
         Route::get('/exportar/equipamientos', 'ExportarExcelSitioWebController@equipamientos');
-        Route::get('/exportar/tabla/equipamientos', 'ExportarExcelSitioWebController@equipamientosTabla');
+        Route::post('/exportar/tabla/equipamientos', 'ExportarExcelSitioWebController@equipamientosTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-noticia,editar-noticia,eliminar-noticia']], function () {
         Route::get('/exportar/noticias', 'ExportarExcelSitioWebController@noticias');
-        Route::get('/exportar/tabla/noticias', 'ExportarExcelSitioWebController@noticiasTabla');
+        Route::post('/exportar/tabla/noticias', 'ExportarExcelSitioWebController@noticiasTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-actividad,editar-actividad,eliminar-actividad']], function () {
         Route::get('/exportar/actividades', 'ExportarExcelSitioWebController@actividades');
-        Route::get('/exportar/tabla/actividades', 'ExportarExcelSitioWebController@actividadesTabla');
+        Route::post('/exportar/tabla/actividades', 'ExportarExcelSitioWebController@actividadesTabla');
     });
     Route::group(['middleware' => ['control_permisos:agregar-novedad,editar-novedad,eliminar-novedad']], function () {
         Route::get('/exportar/novedades', 'ExportarExcelSitioWebController@novedades');
-        Route::get('/exportar/tabla/novedades', 'ExportarExcelSitioWebController@novedadesTabla');
+        Route::post('/exportar/tabla/novedades', 'ExportarExcelSitioWebController@novedadesTabla');
     });
 
     //--------------------- IMAGENES LOGIN -----------------------------------------------------
@@ -420,7 +411,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
 
     //editor
     Route::post('/editor/upload', 'ImagenesEditorController@uploadImagen');
-    //Route::get('/editor/upload', 'ImagenesEditorController@eliminarImagenesDelStorage');
+    Route::get('/editor/upload', 'ImagenesEditorController@eliminarImagenesDelStorage');
 
     //--------------------- RUTAS GET DEL PANEL ADMINISTRACION -----------------------------------
     Route::group(['prefix' => 'info-panel'], function () {
@@ -436,7 +427,7 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
         });
         Route::group(['middleware' => ['control_permisos:ver-cepa,caract-cepa']], function () {
             //--------------------- obtener caracteristicas cepas ------------------------------------
-            Route::get('cepa/agregar-editar-caract/{id}', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
+            Route::get('cepa/agregar-editar-caract', 'InfoPanelCepasController@obtenerCaracteristicasCepa');
             //----------- urls tablas metodos de conservacion ----------------------------------------
             Route::get('cepa/bacteria/metodos-conser/{id}', 'InfoPanelBacteriasController@metodos');
             Route::get('cepa/levadura/metodos-conser/{id}', 'InfoPanelLevadurasController@metodos');
@@ -544,5 +535,3 @@ Route::group(['middleware' => ['auth', 'control_sesion']], function () {
     // ruta vuejs
     Route::get('{vue_capture?}', 'SpaController@index')->where('vue_capture', '[\/\w\.-]*');
 });
-
-

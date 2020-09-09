@@ -2,36 +2,36 @@
 
 @section('contenido-pdf')
 @if (in_array('todo',$imprimir)||in_array('cepa',$imprimir))
-<div class="div-cepa">
-    <table class="table tabla-cepa">
-        <thead>
-            <tr>
-                <th colspan="2">Cepa Microbiana </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
-                <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
-                <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Reino:</b> {{$cepa->actinomiceto->reino->nombre}}</td>
-                <td><b>Phylum:</b> {{$cepa->actinomiceto->phylum->nombre}}</td>
-            </tr><tr>
-                <td><b>Clase:</b> {{$cepa->actinomiceto->clase->nombre}}</td>
-                <td><b>Orden:</b> {{$cepa->actinomiceto->orden->nombre}}</td>
-            </tr>
-            <tr>
-                <td><b>Estado:</b> {{$cepa->estado}}</td>
-                <td><b>Origen:</b> {{$cepa->origen}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="div-cepa">
+        <table class="table tabla-cepa">
+            <thead>
+                <tr>
+                    <th colspan="2">Cepa Microbiana </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Código de la Cepa:</b> {{$cepa->codigo}}</td>
+                    <td><b>Grupo Microbiano:</b> {{$cepa->grupoMicrobiano->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Genero:</b> {{$cepa->genero->nombre}}</td>
+                    <td><b>Especie:</b> {{$cepa->especie->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Reino:</b> {{$cepa->actinomiceto->reino->nombre}}</td>
+                    <td><b>Phylum:</b> {{$cepa->actinomiceto->phylum->nombre}}</td>
+                </tr><tr>
+                    <td><b>Clase:</b> {{$cepa->actinomiceto->clase->nombre}}</td>
+                    <td><b>Orden:</b> {{$cepa->actinomiceto->orden->nombre}}</td>
+                </tr>
+                <tr>
+                    <td><b>Estado:</b> {{$cepa->estado}}</td>
+                    <td><b>Origen:</b> {{$cepa->origen}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 @endif
 @if(count($cepa->actinomiceto->caractMacroscopicas))
     @if (in_array('todo',$imprimir)||in_array('caract-macro',$imprimir))
@@ -98,6 +98,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->actinomiceto->caractMicroscopica))
@@ -147,6 +148,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->actinomiceto->identBioquimica))
@@ -161,7 +163,7 @@
         <table class="table tabla-identi-bioqui">
             <tbody>
                 <tr>
-                    <td colspan="5" class="thead-identi-bioqui"><b>Características Bioquímicas</b></td>
+                    <td colspan="5" class="thead-identi-bioqui"><b>Identificaciones Bioquímicas</b></td>
                 </tr>
                 <tr>
                     <td colspan="2"><b>Oxidasa</b></td>
@@ -227,6 +229,7 @@
             </tbody>
         </table>
     </div>
+    <div class="nueva-pagina"></div>
     @endif
 @endif
 @if(!is_null($cepa->actinomiceto->otrasCaracteristicas))
